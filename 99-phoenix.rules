@@ -1,0 +1,4 @@
+# udev rules for expEYES interface: AVR, FT232 and MCP2200
+ATTR{idVendor}=="03eb", ATTR{idProduct}=="21ff", MODE="666"
+ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="666"
+ATTR{idVendor}=="04d8", ATTR{idProduct}=="00df", MODE="666"

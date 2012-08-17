@@ -1,0 +1,5 @@
+pushd /usr/share/expeyes/firmware
+./set_fuse.sh
+./upload.sh eyes
+python test.py
+

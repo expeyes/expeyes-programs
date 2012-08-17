@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=/usr/bin/expeyes
+Icon=/usr/share/icons/expeyes.png
+Terminal=false
+Name=expEYES
+GenericName=expEYES
+Comment=hardware & software framework for developing science experiments
+Comment[fr_FR]=environnement matériel et logiciel pour développer des expériences scientifiques
+Categories=GNOME;Application;Education;Science;

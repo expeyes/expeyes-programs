@@ -1,0 +1,2689 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: expEYES 2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-08-16 17:15+0200\n"
+"PO-Revision-Date: 2012-07-08 11:35+0100\n"
+"Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
+"Language-Team: ESPERANTO <eo@li.org>\n"
+"Language: Esperanto\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../expeyes/eyeplot.py:51
+msgid "mSec"
+msgstr ""
+
+#: ../expeyes/eyeplot.py:138 ../expeyes/eyeplot.py:142
+#, python-format
+msgid "%3.2f %s/div"
+msgstr ""
+
+#: ../expeyes/eyeplot.py:304
+msgid "EYES plot"
+msgstr ""
+
+#: ../expeyes/eyeplot.py:306 ../eyes/amfm.py:47 ../eyes/amfm.py:68
+#: ../eyes/amfm.py:69 ../eyes/cro.py:44 ../eyes/cro.py:62 ../eyes/cro.py:122
+#: ../eyes/explore.py:336 ../eyes/explore.py:457 ../eyes/explore.py:474
+#: ../eyes/explore.py:492 ../eyes/explore.py:512 ../eyes/induction.py:111
+#: ../eyes/interference-sound.py:50 ../eyes/interference-sound.py:110
+#: ../eyes-junior/ac-circuit.py:57 ../eyes-junior/ac-circuit.py:131
+#: ../eyes-junior/ac-circuit.py:171 ../eyes-junior/amfm.py:48
+#: ../eyes-junior/amfm.py:68 ../eyes-junior/amfm.py:69
+#: ../eyes-junior/croplus.py:141 ../eyes-junior/croplus.py:349
+#: ../eyes-junior/croplus.py:567 ../eyes-junior/induction.py:112
+#: ../eyes-junior/interference-sound.py:55
+#: ../eyes-junior/interference-sound.py:108 ../eyes-junior/RCcircuit.py:102
+#: ../eyes-junior/RLCdischarge.py:86 ../eyes-junior/RLcircuit.py:104
+#: ../eyes-junior/sound-burst.py:113 ../eyes-junior/velocity-sound.py:90
+#: ../eyes/RCcircuit.py:98 ../eyes/RLCdischarge.py:86 ../eyes/RLcircuit.py:102
+#: ../eyes/sound.py:98 ../eyes/velocity-sound.py:98
+msgid "mS"
+msgstr "ms"
+
+#: ../expeyes/eyeplot.py:308 ../eyes/amfm.py:47 ../eyes/amfm.py:68
+#: ../eyes/amfm.py:69 ../eyes/amfm.py:116 ../eyes/cro.py:44 ../eyes/cro.py:62
+#: ../eyes/cro.py:122 ../eyes/diode_iv.py:42 ../eyes/diode_iv.py:119
+#: ../eyes/explore.py:336 ../eyes/explore.py:457 ../eyes/explore.py:474
+#: ../eyes/explore.py:492 ../eyes/explore.py:512 ../eyes/induction.py:111
+#: ../eyes/interference-sound.py:50 ../eyes/interference-sound.py:110
+#: ../eyes-junior/ac-circuit.py:57 ../eyes-junior/ac-circuit.py:131
+#: ../eyes-junior/ac-circuit.py:171 ../eyes-junior/diode_iv.py:113
+#: ../eyes-junior/induction.py:112 ../eyes-junior/interference-sound.py:55
+#: ../eyes-junior/interference-sound.py:108 ../eyes-junior/RCcircuit.py:102
+#: ../eyes-junior/RCcircuit.py:108 ../eyes-junior/RLCdischarge.py:86
+#: ../eyes-junior/RLCdischarge.py:92 ../eyes-junior/RLcircuit.py:104
+#: ../eyes-junior/RLcircuit.py:110 ../eyes-junior/sound-burst.py:113
+#: ../eyes-junior/transistor.py:123 ../eyes-junior/velocity-sound.py:90
+#: ../eyes/LED_iv.py:39 ../eyes/LED_iv.py:136 ../eyes/phototransistor.py:99
+#: ../eyes/RCcircuit.py:98 ../eyes/RCcircuit.py:105 ../eyes/resistor_iv.py:121
+#: ../eyes/RLCdischarge.py:86 ../eyes/RLCdischarge.py:93
+#: ../eyes/RLcircuit.py:102 ../eyes/RLcircuit.py:109 ../eyes/sound.py:98
+#: ../eyes/transistor.py:124 ../eyes/transistor.py:135
+#: ../eyes/velocity-sound.py:98
+msgid "V"
+msgstr ""
+
+#: ../expeyes/eyeplot.py:330 ../expeyes/eyeplot.py:336
+msgid "Schematic"
+msgstr ""
+
+#: ../expeyes/eyesj.py:124
+msgid "Could not find EYES Junior hardware"
+msgstr ""
+
+#: ../expeyes/eyesj.py:125 ../expeyes/eyes.py:116 ../expeyes/mca.py:39
+msgid "Check the connections."
+msgstr ""
+
+#: ../expeyes/eyesj.py:168 ../expeyes/eyes.py:157 ../expeyes/mca.py:70
+#, python-format
+msgid "Port %s is existing "
+msgstr ""
+
+#: ../expeyes/eyesj.py:170 ../expeyes/eyes.py:159 ../expeyes/mca.py:72
+msgid "but could not open"
+msgstr ""
+
+#: ../expeyes/eyesj.py:172 ../expeyes/eyes.py:161 ../expeyes/mca.py:74
+msgid "and opened. "
+msgstr ""
+
+#: ../expeyes/eyesj.py:208
+msgid "Calibration data NOT found. You may run Calibrate program"
+msgstr ""
+
+#: ../expeyes/eyesj.py:212
+msgid "No EYES Junior hardware detected"
+msgstr ""
+
+#: ../expeyes/eyesj.py:229
+msgid "GETVERSION ERROR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:242
+msgid "IRSEND1 ERROR "
+msgstr ""
+
+#: ../expeyes/eyesj.py:243
+msgid "IRSEND1 ERROR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:255
+msgid "IRSEND4 ERROR "
+msgstr ""
+
+#: ../expeyes/eyesj.py:256
+msgid "IRSEND4 ERROR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:294
+msgid "Current to be set only on IN1(3) or IN2(4)"
+msgstr ""
+
+#: ../expeyes/eyesj.py:295 ../expeyes/eyesj.py:344 ../expeyes/eyesj.py:345
+msgid "Current to be set only on IN1 or IN2"
+msgstr ""
+
+#: ../expeyes/eyesj.py:303
+msgid "MEASURECV ERROR "
+msgstr ""
+
+#: ../expeyes/eyesj.py:304
+msgid "MEASURECV ERROR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:321
+#, python-format
+msgid "Error measuring capacitance %5.3f"
+msgstr ""
+
+#: ../expeyes/eyesj.py:322
+msgid "Error measuring capacitance"
+msgstr ""
+
+#: ../expeyes/eyesj.py:352 ../expeyes/eyesj.py:353
+msgid "SETCURRENT ERROR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:368
+msgid "READTEMP error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:369
+msgid "READTEMP error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:384 ../expeyes/eyesj.py:385
+msgid "Pin should be digital input capable: 0,3,4,5,6 or 7"
+msgstr ""
+
+#: ../expeyes/eyesj.py:388 ../expeyes/eyesj.py:389
+msgid "skip exceeded 249 edges"
+msgstr ""
+
+#: ../expeyes/eyesj.py:393 ../expeyes/eyesj.py:394
+msgid "Both pins should be digital input capable: 0,3,4,5,6 or 7"
+msgstr ""
+
+#: ../expeyes/eyesj.py:398 ../expeyes/eyesj.py:399
+msgid "Starting pin should be digital output capable: 8,9,10 or 11"
+msgstr ""
+
+#: ../expeyes/eyesj.py:402 ../expeyes/eyesj.py:403
+msgid "Destination pin should be digital input capable: 0,3,4,5,6 or 7"
+msgstr ""
+
+#: ../expeyes/eyesj.py:410
+msgid "Time measurement command error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:411
+#, python-format
+msgid "Time measurement command %d error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:523 ../expeyes/eyesj.py:524
+msgid "SETSTATE error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:536 ../expeyes/eyesj.py:537
+msgid "GETSTATE error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:549 ../expeyes/eyesj.py:550
+msgid "GETPORTB error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:576 ../expeyes/eyesj.py:577
+msgid "SETPWM error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:614
+msgid "Invalid channel number"
+msgstr ""
+
+#: ../expeyes/eyesj.py:615
+msgid "Invalid Channel"
+msgstr ""
+
+#: ../expeyes/eyesj.py:636 ../expeyes/eyesj.py:695 ../expeyes/eyesj.py:696
+msgid "Invalid Freqency"
+msgstr ""
+
+#: ../expeyes/eyesj.py:646
+msgid "SETSQR error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:678 ../expeyes/eyesj.py:679
+msgid "Invalid phase difference"
+msgstr ""
+
+#: ../expeyes/eyesj.py:708 ../expeyes/eyesj.py:709
+msgid "SETSQRS error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:726 ../expeyes/eyesj.py:727
+msgid "SETDAC error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:735 ../expeyes/eyesj.py:788 ../expeyes/eyesj.py:808
+#: ../expeyes/eyesj.py:822 ../expeyes/eyesj.py:834 ../expeyes/eyesj.py:835
+#: ../expeyes/eyesj.py:850 ../expeyes/eyesj.py:860 ../expeyes/eyesj.py:861
+#: ../expeyes/eyes.py:506 ../expeyes/eyes.py:524 ../expeyes/eyes.py:543
+#: ../expeyes/mca.py:148
+msgid "Argument error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:741 ../expeyes/eyesj.py:742 ../expeyes/eyes.py:512
+#: ../expeyes/mca.py:154
+msgid "READADC error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:754 ../expeyes/eyesj.py:755
+msgid "invalid voltage"
+msgstr ""
+
+#: ../expeyes/eyesj.py:777 ../expeyes/eyesj.py:778
+msgid "SETADCREF error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:787
+msgid "READADC: Argument error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:794 ../expeyes/eyesj.py:795
+msgid "READADC error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:807
+msgid "get_voltage: Argument error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:821
+msgid "get_voltageNS: Argument error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:849
+msgid "get_voltage_time: Argument error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:873 ../expeyes/eyesj.py:908
+msgid "Minimum Timegap is 4 us"
+msgstr ""
+
+#: ../expeyes/eyesj.py:881
+msgid "CAPTURE error"
+msgstr ""
+
+#: ../expeyes/eyesj.py:882 ../expeyes/eyesj.py:916 ../expeyes/eyesj.py:917
+#: ../expeyes/eyes.py:616
+msgid "CAPTURE error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:888 ../expeyes/eyesj.py:923
+#, python-format
+msgid "CAPTURE: size mismatch %d %d"
+msgstr ""
+
+#: ../expeyes/eyesj.py:889 ../expeyes/eyesj.py:924 ../expeyes/eyes.py:624
+msgid "CAPTURE: size mismatch "
+msgstr ""
+
+#: ../expeyes/eyesj.py:943 ../expeyes/eyesj.py:981 ../expeyes/eyesj.py:1018
+#: ../expeyes/eyesj.py:1062
+msgid "Minimum Timegap is (4*number of channels)usec"
+msgstr ""
+
+#: ../expeyes/eyesj.py:952 ../expeyes/eyesj.py:953
+msgid "CAPTURE2 error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:959 ../expeyes/eyesj.py:960
+msgid "CAPTURE2: size mismatch"
+msgstr ""
+
+#: ../expeyes/eyesj.py:990 ../expeyes/eyesj.py:991
+msgid "CAPTURE2_HR error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:997 ../expeyes/eyesj.py:998
+msgid "CAPTURE2_HR: size mismatch"
+msgstr ""
+
+#: ../expeyes/eyesj.py:1028 ../expeyes/eyesj.py:1029
+msgid "CAPTURE3 error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:1035 ../expeyes/eyesj.py:1036
+msgid "CAPTURE3: size mismatch "
+msgstr ""
+
+#: ../expeyes/eyesj.py:1073 ../expeyes/eyesj.py:1074
+msgid "CAPTURE4 error ="
+msgstr ""
+
+#: ../expeyes/eyesj.py:1080 ../expeyes/eyesj.py:1081
+msgid "CAPTURE4: size mismatch "
+msgstr ""
+
+#: ../expeyes/eyesj.py:1121 ../expeyes/eyesj.py:1122
+msgid "SETTRIGVAL error "
+msgstr ""
+
+#: ../expeyes/eyesj.py:1137 ../expeyes/eyesj.py:1138
+msgid "ERROR: SETACTION"
+msgstr ""
+
+#: ../expeyes/eyesj.py:1151
+msgid "SETACTION ERR"
+msgstr ""
+
+#: ../expeyes/eyesj.py:1152
+#, python-format
+msgid "SETACTION ERR: action = %d ch = %d"
+msgstr ""
+
+#: ../expeyes/eyesj.py:1217
+msgid "Invalid pulse width"
+msgstr ""
+
+#: ../expeyes/eyesj.py:1223 ../expeyes/eyesj.py:1224
+msgid "ERROR: SETPULWIDTH"
+msgstr ""
+
+#: ../expeyes/eyes.py:115
+msgid "Could not find Phoenix-EYES hardware"
+msgstr ""
+
+#: ../expeyes/eyes.py:174
+msgid "Found EYES version "
+msgstr ""
+
+#: ../expeyes/eyes.py:177
+msgid "No EYES hardware detected"
+msgstr ""
+
+#: ../expeyes/eyes.py:389
+msgid "eeprom write byte error = "
+msgstr ""
+
+#: ../expeyes/eyes.py:402
+msgid "eeprom read block error = "
+msgstr ""
+
+#: ../expeyes/eyes.py:422
+#, python-format
+msgid "SC: ch = %d m=%10.6f  c=%10.6f"
+msgstr ""
+
+#: ../expeyes/eyes.py:430
+msgid "BAD Calibration data. EEPROM does not have any data "
+msgstr ""
+
+#: ../expeyes/eyes.py:437
+#, python-format
+msgid "LC: ch = %d m=%10.6f  c=%10.6f"
+msgstr ""
+
+#: ../expeyes/eyes.py:453
+msgid "ERR:Current must be from 0.02 to 2.0 mA"
+msgstr ""
+
+#: ../expeyes/eyes.py:474 ../expeyes/eyes.py:530 ../expeyes/eyes.py:550
+msgid "WRITEDAC error "
+msgstr ""
+
+#: ../expeyes/eyes.py:563
+msgid "Sampling time MUST NOT exceed 250 microseconds"
+msgstr ""
+
+#: ../expeyes/eyes.py:569
+msgid "SETSAMTIME ERROR "
+msgstr ""
+
+#: ../expeyes/eyes.py:577
+msgid "ADC datasize MUST be 1 or 2 bytes"
+msgstr ""
+
+#: ../expeyes/eyes.py:583
+msgid "SETADCSIZE ERROR "
+msgstr ""
+
+#: ../expeyes/eyes.py:604
+msgid "QCAPTURE Error "
+msgstr ""
+
+#: ../expeyes/eyes.py:669 ../expeyes/eyes.py:681
+msgid "CAPTURE01 error "
+msgstr ""
+
+#: ../expeyes/eyes.py:691
+msgid "CAPTURE01: size mismatch "
+msgstr ""
+
+#: ../expeyes/eyes.py:731
+msgid "CAPTURE_M32 error "
+msgstr ""
+
+#: ../expeyes/eyes.py:738
+msgid "CAPTURE_M32: size mismatch "
+msgstr ""
+
+#: ../expeyes/eyes.py:781 ../expeyes/eyes.py:808
+msgid "wait_rising "
+msgstr ""
+
+#: ../expeyes/eyes.py:890
+msgid "Echo error = "
+msgstr ""
+
+#: ../expeyes/eyes.py:919
+msgid "Time Measurement call Error. CMD = "
+msgstr ""
+
+#: ../expeyes/eyes.py:1035
+msgid "DIGIN error"
+msgstr ""
+
+#: ../expeyes/mca.py:38
+msgid "Could not find Phoenix-MCA hardware"
+msgstr ""
+
+#: ../expeyes/mca.py:78
+msgid "inWaiting"
+msgstr ""
+
+#: ../expeyes/mca.py:82
+msgid "res = "
+msgstr ""
+
+#: ../expeyes/mca.py:90
+msgid "Found MCA version "
+msgstr ""
+
+#: ../expeyes/mca.py:93
+msgid "No MCA hardware detected"
+msgstr ""
+
+#: ../expeyes/mca.py:133
+msgid "HIST read data error"
+msgstr ""
+
+#: ../eyes/alpha.py:25 ../eyes/alpha.py:59
+msgid "Channel"
+msgstr ""
+
+#: ../eyes/alpha.py:33 ../eyes/alpha.py:51 ../eyes/alpha.py:59
+#: ../eyes/alpha.py:68 ../eyes/alpha.py:96 ../eyes/alpha.py:130
+msgid "dN"
+msgstr ""
+
+#: ../eyes/alpha.py:38
+msgid "No data yet"
+msgstr ""
+
+#: ../eyes/alpha.py:41
+msgid "Mark a Peak before calibration"
+msgstr ""
+
+#: ../eyes/alpha.py:50
+msgid "Energy (MeV)"
+msgstr ""
+
+#: ../eyes/alpha.py:51
+msgid "Energy(MeV)"
+msgstr ""
+
+#: ../eyes/alpha.py:54
+msgid "Calibration done"
+msgstr ""
+
+#: ../eyes/alpha.py:60
+msgid "Existing Calibration Removed. Do it again"
+msgstr ""
+
+#: ../eyes/alpha.py:68 ../eyes/alpha.py:141
+msgid "E"
+msgstr ""
+
+#: ../eyes/alpha.py:75
+msgid "No data to fit"
+msgstr ""
+
+#: ../eyes/alpha.py:79
+#, python-format
+msgid "Amplitude= %5.1f  %s= %5.2f  sigma = %5.2f"
+msgstr ""
+
+#: ../eyes/alpha.py:110
+msgid "Acquisition Started"
+msgstr ""
+
+#: ../eyes/alpha.py:116
+msgid "Acquisition stopped by user"
+msgstr ""
+
+#: ../eyes/alpha.py:121
+msgid "Spectrum Cleared by user"
+msgstr ""
+
+#: ../eyes/alpha.py:126
+msgid "Histogram saved"
+msgstr ""
+
+#: ../eyes/alpha.py:131
+msgid "Called xmgrace"
+msgstr ""
+
+#: ../eyes/alpha.py:141
+msgid "dN/dE"
+msgstr ""
+
+#: ../eyes/alpha.py:145
+msgid "y-scale"
+msgstr ""
+
+#: ../eyes/alpha.py:154
+msgid "Auto/Man"
+msgstr ""
+
+#: ../eyes/alpha.py:156
+msgid "UPDATE"
+msgstr ""
+
+#: ../eyes/alpha.py:158 ../eyes/diode_iv.py:127 ../eyes/freq-response.py:124
+#: ../eyes/interference-sound.py:74 ../eyes/interference-sound.py:145
+#: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:123
+#: ../eyes-junior/interference-sound.py:141 ../eyes-junior/logger.py:153
+#: ../eyes-junior/pendulum.py:118 ../eyes-junior/pt100.py:205
+#: ../eyes-junior/rodpend.py:126 ../eyes-junior/transistor.py:136
+#: ../eyes/LED_iv.py:142 ../eyes/logger.py:153 ../eyes/pendulum.py:118
+#: ../eyes/phototransistor.py:104 ../eyes/pt100.py:206
+#: ../eyes/resistor_iv.py:126 ../eyes/rodpend.py:154
+#: ../eyes/temp-controller.py:190 ../eyes/transistor.py:137
+msgid "START"
+msgstr ""
+
+#: ../eyes/alpha.py:160 ../eyes/interference-sound.py:71
+#: ../eyes-junior/interference-sound.py:143 ../eyes-junior/logger.py:155
+#: ../eyes-junior/pendulum.py:120 ../eyes-junior/pt100.py:207
+#: ../eyes-junior/rodpend.py:128 ../eyes/logger.py:155 ../eyes/pendulum.py:120
+#: ../eyes/pt100.py:208 ../eyes/rodpend.py:156 ../eyes/temp-controller.py:192
+msgid "STOP"
+msgstr ""
+
+#: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:136
+#: ../eyes/induction.py:127 ../eyes-junior/diode_iv.py:129
+#: ../eyes-junior/freq-response.py:135 ../eyes-junior/induction.py:128
+#: ../eyes-junior/logger.py:157 ../eyes-junior/pendulum.py:124
+#: ../eyes-junior/pt100.py:209 ../eyes-junior/RCcircuit.py:140
+#: ../eyes-junior/RLCdischarge.py:116 ../eyes-junior/RLcircuit.py:129
+#: ../eyes-junior/rodpend.py:130 ../eyes-junior/sound-burst.py:124
+#: ../eyes-junior/transistor.py:147 ../eyes/LED_iv.py:153
+#: ../eyes/logger.py:157 ../eyes/pendulum.py:124
+#: ../eyes/phototransistor.py:115 ../eyes/pt100.py:210
+#: ../eyes/RCcircuit.py:135 ../eyes/resistor_iv.py:138
+#: ../eyes/RLCdischarge.py:117 ../eyes/RLcircuit.py:128 ../eyes/rodpend.py:158
+#: ../eyes/temp-controller.py:194 ../eyes/transistor.py:148
+msgid "CLEAR"
+msgstr ""
+
+#: ../eyes/alpha.py:164 ../eyes/cro.py:158 ../eyes/diode_iv.py:142
+#: ../eyes/explore.py:545 ../eyes/gravity_tof2.py:114
+#: ../eyes-junior/diode_iv.py:133 ../eyes-junior/pendulum.py:122
+#: ../eyes-junior/RLCdischarge.py:118 ../eyes/LED_iv.py:157
+#: ../eyes/pendulum.py:122 ../eyes/RLCdischarge.py:119
+msgid "FIT"
+msgstr ""
+
+#: ../eyes/alpha.py:166
+msgid "xmGrace"
+msgstr ""
+
+#: ../eyes/alpha.py:171
+msgid "Calibrate using Peak at"
+msgstr ""
+
+#: ../eyes/alpha.py:177
+msgid "MeV"
+msgstr ""
+
+#: ../eyes/alpha.py:180
+msgid "SAVE Histogram to"
+msgstr ""
+
+#: ../eyes/alpha.py:190 ../eyes/amfm.py:89 ../eyes/calibrate.py:178
+#: ../eyes/cro.py:160 ../eyes/diode_iv.py:136 ../eyes/explore.py:554
+#: ../eyes/freq-response.py:134 ../eyes/gravity_tof2.py:121
+#: ../eyes/gravity_tof.py:97 ../eyes/induction.py:123
+#: ../eyes/interference-sound.py:160 ../eyes/janagana.py:82
+#: ../eyes-junior/amfm.py:89 ../eyes-junior/croplus.py:687
+#: ../eyes-junior/diode_iv.py:127 ../eyes-junior/driven-pendulum.py:19
+#: ../eyes-junior/freq-response.py:133 ../eyes-junior/induction.py:124
+#: ../eyes-junior/interference-sound.py:157 ../eyes-junior/logger.py:169
+#: ../eyes-junior/pendulum.py:134 ../eyes-junior/pt100.py:246
+#: ../eyes-junior/RCcircuit.py:131 ../eyes-junior/RLCdischarge.py:112
+#: ../eyes-junior/RLcircuit.py:149 ../eyes-junior/rodpend.py:140
+#: ../eyes-junior/sound-burst.py:136 ../eyes-junior/stroboscope.py:19
+#: ../eyes-junior/transistor.py:145 ../eyes-junior/velocity-sound.py:120
+#: ../eyes/LED_iv.py:151 ../eyes/logger.py:169 ../eyes/pendulum.py:134
+#: ../eyes/phototransistor.py:113 ../eyes/pt100.py:220
+#: ../eyes/RCcircuit.py:126 ../eyes/resistor_iv.py:136
+#: ../eyes/RLCdischarge.py:113 ../eyes/RLcircuit.py:148 ../eyes/rodpend.py:183
+#: ../eyes/sound.py:130 ../eyes/temp-controller.py:204
+#: ../eyes/transistor.py:146 ../eyes/usound_tof.py:37
+#: ../eyes/velocity-sound.py:131
+msgid "QUIT"
+msgstr "FOR"
+
+#: ../eyes/alpha.py:195 ../eyes/amfm.py:121 ../eyes/cro.py:165
+#: ../eyes/explore.py:559 ../eyes/induction.py:132
+#: ../eyes/interference-sound.py:166 ../eyes-junior/amfm.py:121
+#: ../eyes-junior/induction.py:133 ../eyes-junior/interference-sound.py:163
+#: ../eyes-junior/RLCdischarge.py:123 ../eyes-junior/sound-burst.py:141
+#: ../eyes-junior/velocity-sound.py:126 ../eyes/RLCdischarge.py:124
+#: ../eyes/sound.py:140 ../eyes/velocity-sound.py:137
+msgid "Messages"
+msgstr ""
+
+#: ../eyes/alpha.py:199 ../eyes/alpha.py:200
+msgid "ERROR: Spectrometer hardware NOT found"
+msgstr ""
+
+#: ../eyes/alpha.py:202
+msgid "PHOENIX Alpha Spectrometer"
+msgstr ""
+
+#: ../eyes/amfm.py:29 ../eyes/explore.py:254 ../eyes/interference-sound.py:84
+#: ../eyes-junior/amfm.py:29 ../eyes-junior/interference-sound.py:84
+#: ../eyes-junior/velocity-sound.py:66 ../eyes/sound.py:74
+#: ../eyes/velocity-sound.py:72
+msgid "freq"
+msgstr "frek"
+
+#: ../eyes/amfm.py:29 ../eyes/explore.py:254 ../eyes/interference-sound.py:84
+#: ../eyes-junior/amfm.py:29 ../eyes-junior/interference-sound.py:84
+#: ../eyes-junior/velocity-sound.py:66 ../eyes/sound.py:74
+#: ../eyes/velocity-sound.py:72
+msgid "power"
+msgstr ""
+
+#: ../eyes/amfm.py:83 ../eyes-junior/amfm.py:83 ../eyes/sound.py:118
+msgid "Capture"
+msgstr ""
+
+#: ../eyes/amfm.py:86 ../eyes-junior/amfm.py:86
+msgid "Power Spectrum"
+msgstr ""
+
+#: ../eyes/amfm.py:94 ../eyes-junior/amfm.py:94
+msgid "Number of Samples ="
+msgstr ""
+
+#: ../eyes/amfm.py:101 ../eyes-junior/amfm.py:101
+msgid "Delay between samples="
+msgstr ""
+
+#: ../eyes/amfm.py:107 ../eyes-junior/amfm.py:107
+msgid "uS."
+msgstr "µs."
+
+#: ../eyes/amfm.py:110
+msgid "UPV ="
+msgstr ""
+
+#: ../eyes/amfm.py:124 ../eyes-junior/amfm.py:123 ../eyes-junior/amfm.py:124
+msgid "Amplitude Modulation"
+msgstr ""
+
+#: ../eyes/calibrate.py:48
+#, python-format
+msgid "Point %5.3fV. Deviation A0 %5.2f%%"
+msgstr ""
+
+#: ../eyes/calibrate.py:50
+msgid "ERROR: Check BPV to A0 connection"
+msgstr ""
+
+#: ../eyes/calibrate.py:63
+msgid "ERROR: Check BPV to A1 connection"
+msgstr ""
+
+#: ../eyes/calibrate.py:71
+#, python-format
+msgid "ERROR : Point %5.3f Volts NOT done"
+msgstr ""
+
+#: ../eyes/calibrate.py:77
+#, python-format
+msgid "Readback for %5.3f V point = %5.3f V NOT GOOD"
+msgstr ""
+
+#: ../eyes/calibrate.py:102
+msgid "ADC0 m & c "
+msgstr ""
+
+#: ../eyes/calibrate.py:103
+msgid "ADC1 m & c "
+msgstr ""
+
+#: ../eyes/calibrate.py:104
+msgid "DAC0 m & c "
+msgstr ""
+
+#: ../eyes/calibrate.py:109
+#, python-format
+msgid "DONE: (%7.6f,%5.3f)(%7.6f,%5.3f)(%5.1f,%5.1f)"
+msgstr ""
+
+#: ../eyes/calibrate.py:145
+#, python-format
+msgid "Set %3.0f Volts"
+msgstr ""
+
+#: ../eyes/calibrate.py:153
+msgid "Measured ="
+msgstr ""
+
+#: ../eyes/calibrate.py:163
+msgid ""
+"First you MUST Connect BPV to A0 & A1.\n"
+"Then click on each \"Set Volts Button\","
+msgstr ""
+
+#: ../eyes/calibrate.py:164
+msgid ""
+"Measure BPV with a 4.5 DMM and\n"
+" enter it in the \"Measured=\" Field.\n"
+msgstr ""
+
+#: ../eyes/calibrate.py:165
+msgid "IMPROPER USE MAY SPOIL THE CALIBRATION"
+msgstr ""
+
+#: ../eyes/calibrate.py:171 ../eyes/explore.py:598
+#: ../eyes-junior/calibrate.py:80 ../eyes-junior/croplus.py:719
+#: ../eyes-junior/pt100.py:243 ../eyes/pt100.py:229
+msgid "Calibrate"
+msgstr ""
+
+#: ../eyes/calibrate.py:174
+msgid "Verify CH0"
+msgstr ""
+
+#: ../eyes/calibrate.py:176
+msgid "Verify CH1"
+msgstr ""
+
+#: ../eyes/calibrate.py:182
+msgid "msg"
+msgstr ""
+
+#: ../eyes/calibrate.py:185
+msgid "AD/DA CALIBRATION. NOT FOR EVERYONE!!"
+msgstr ""
+
+#: ../eyes/cro.py:38
+msgid "You can select SEN, A2 or (A1, A0 or both)"
+msgstr ""
+
+#: ../eyes/cro.py:63
+msgid "NP delay = "
+msgstr ""
+
+#: ../eyes/cro.py:76 ../eyes/cro.py:85 ../eyes/cro.py:95
+#, python-format
+msgid "Vpeak = %5.2f V | Freq = %5.2f Hz"
+msgstr ""
+
+#: ../eyes/cro.py:106
+#, python-format
+msgid "CH0 Vp = %5.2f V | Freq = %5.2f Hz "
+msgstr ""
+
+#: ../eyes/cro.py:110
+#, python-format
+msgid "CH1 Vp = %5.2f V | Freq = %5.2f Hz"
+msgstr ""
+
+#: ../eyes/cro.py:126 ../eyes/explore.py:516 ../eyes-junior/RCcircuit.py:117
+#: ../eyes-junior/RLCdischarge.py:97 ../eyes-junior/RLcircuit.py:119
+#: ../eyes/RCcircuit.py:114 ../eyes/RLCdischarge.py:98
+#: ../eyes/RLcircuit.py:118
+msgid "mS/div"
+msgstr ""
+
+#: ../eyes/cro.py:131 ../eyes-junior/ac-circuit.py:181
+#: ../eyes-junior/croplus.py:548
+msgid "Volt/div"
+msgstr ""
+
+#: ../eyes/cro.py:153 ../eyes-junior/logger.py:134 ../eyes/logger.py:134
+msgid "SEN"
+msgstr ""
+
+#: ../eyes/cro.py:168
+msgid "EYES CRO Program"
+msgstr ""
+
+#: ../eyes/diode_iv.py:42 ../eyes/diode_iv.py:77 ../eyes/diode_iv.py:119
+#: ../eyes-junior/diode_iv.py:37 ../eyes-junior/diode_iv.py:72
+#: ../eyes-junior/diode_iv.py:113 ../eyes-junior/pt100.py:228
+#: ../eyes-junior/RCcircuit.py:108 ../eyes-junior/RLCdischarge.py:92
+#: ../eyes-junior/RLcircuit.py:110 ../eyes-junior/transistor.py:97
+#: ../eyes-junior/transistor.py:123 ../eyes/LED_iv.py:39 ../eyes/LED_iv.py:80
+#: ../eyes/LED_iv.py:136 ../eyes/phototransistor.py:73
+#: ../eyes/phototransistor.py:99 ../eyes/RCcircuit.py:105
+#: ../eyes/resistor_iv.py:86 ../eyes/resistor_iv.py:121
+#: ../eyes/RLCdischarge.py:93 ../eyes/RLcircuit.py:109
+#: ../eyes/transistor.py:97 ../eyes/transistor.py:124
+msgid "mA"
+msgstr ""
+
+#: ../eyes/diode_iv.py:73 ../eyes-junior/diode_iv.py:68 ../eyes/LED_iv.py:70
+msgid "Starting to plot I-V"
+msgstr ""
+
+#: ../eyes/diode_iv.py:77 ../eyes/interference-sound.py:97
+#: ../eyes-junior/diode_iv.py:72 ../eyes-junior/interference-sound.py:97
+#: ../eyes-junior/RCcircuit.py:85 ../eyes-junior/RLCdischarge.py:69
+#: ../eyes-junior/RLcircuit.py:87 ../eyes-junior/sound-burst.py:82
+#: ../eyes-junior/transistor.py:97 ../eyes-junior/velocity-sound.py:79
+#: ../eyes/LED_iv.py:80 ../eyes/phototransistor.py:73 ../eyes/RCcircuit.py:81
+#: ../eyes/resistor_iv.py:85 ../eyes/RLCdischarge.py:69
+#: ../eyes/RLcircuit.py:85 ../eyes/sound.py:87 ../eyes/transistor.py:97
+#: ../eyes/velocity-sound.py:85
+msgid "Volts"
+msgstr ""
+
+#: ../eyes/diode_iv.py:77 ../eyes-junior/diode_iv.py:72
+#: ../eyes-junior/transistor.py:97 ../eyes/phototransistor.py:73
+#: ../eyes/transistor.py:97
+msgid "Diode IV Curve"
+msgstr ""
+
+#: ../eyes/diode_iv.py:87 ../eyes/freq-response.py:99 ../eyes/induction.py:96
+#: ../eyes/interference-sound.py:93 ../eyes-junior/diode_iv.py:82
+#: ../eyes-junior/freq-response.py:99 ../eyes-junior/induction.py:98
+#: ../eyes-junior/interference-sound.py:93 ../eyes-junior/RCcircuit.py:81
+#: ../eyes-junior/RLCdischarge.py:65 ../eyes-junior/RLcircuit.py:83
+#: ../eyes-junior/sound-burst.py:96 ../eyes-junior/transistor.py:107
+#: ../eyes-junior/velocity-sound.py:75 ../eyes/LED_iv.py:90
+#: ../eyes/phototransistor.py:83 ../eyes/RCcircuit.py:77
+#: ../eyes/resistor_iv.py:102 ../eyes/RLCdischarge.py:65
+#: ../eyes/RLcircuit.py:81 ../eyes/sound.py:83 ../eyes/transistor.py:107
+#: ../eyes/velocity-sound.py:81
+msgid "Data saved to file "
+msgstr ""
+
+#: ../eyes/diode_iv.py:102 ../eyes-junior/diode_iv.py:97
+#, python-format
+msgid "Fitted with Diode Equation : Io = %5.2e mA , Ideality factor = %5.2f"
+msgstr ""
+
+#: ../eyes/diode_iv.py:125
+msgid "ZENER"
+msgstr ""
+
+#: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:126
+#: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:125
+#: ../eyes-junior/logger.py:162 ../eyes-junior/pendulum.py:128
+#: ../eyes-junior/pt100.py:231 ../eyes-junior/rodpend.py:132
+#: ../eyes-junior/transistor.py:138 ../eyes/LED_iv.py:144
+#: ../eyes/logger.py:162 ../eyes/pendulum.py:128
+#: ../eyes/phototransistor.py:106 ../eyes/pt100.py:214
+#: ../eyes/resistor_iv.py:128 ../eyes/rodpend.py:160
+#: ../eyes/temp-controller.py:198 ../eyes/transistor.py:139
+msgid "SAVE to"
+msgstr ""
+
+#: ../eyes/diode_iv.py:140 ../eyes/freq-response.py:138
+#: ../eyes-junior/diode_iv.py:131 ../eyes-junior/freq-response.py:137
+#: ../eyes-junior/transistor.py:149 ../eyes/LED_iv.py:155
+#: ../eyes/phototransistor.py:117 ../eyes/resistor_iv.py:140
+#: ../eyes/transistor.py:150
+msgid "Grace"
+msgstr ""
+
+#: ../eyes/diode_iv.py:147 ../eyes/gravity_tof.py:95
+#: ../eyes-junior/diode_iv.py:138 ../eyes-junior/logger.py:174
+#: ../eyes-junior/pendulum.py:139 ../eyes-junior/pt100.py:251
+#: ../eyes-junior/rodpend.py:148 ../eyes-junior/transistor.py:156
+#: ../eyes/LED_iv.py:162 ../eyes/logger.py:174 ../eyes/pendulum.py:139
+#: ../eyes/phototransistor.py:124 ../eyes/pt100.py:234
+#: ../eyes/resistor_iv.py:145 ../eyes/rodpend.py:188
+#: ../eyes/temp-controller.py:210 ../eyes/transistor.py:157
+msgid "Message"
+msgstr ""
+
+#: ../eyes/diode_iv.py:150 ../eyes-junior/diode_iv.py:141
+msgid "Diode IV Characteristic"
+msgstr ""
+
+#: ../eyes/diode_iv.py:151 ../eyes-junior/diode_iv.py:142
+msgid "EYES: Diode IV characteristics"
+msgstr ""
+
+#: ../eyes/explore.py:32
+msgid ""
+"For help, click on the Terminal Boxes(1 to 32).\n"
+"LIZ : Lissajous figure.\n"
+msgstr ""
+
+#: ../eyes/explore.py:33
+msgid ""
+"FT : Fourier Transform power spectrum.\n"
+"XM : Xmgrace 2D plotting program\n"
+msgstr ""
+
+#: ../eyes/explore.py:34
+msgid "XmGrace is NOT available under MSWindows"
+msgstr ""
+
+#: ../eyes/explore.py:35
+msgid ""
+"1.Software can read the voltage input level, LOW ( < .8V) or HIGH (>2V).\n"
+msgstr ""
+
+#: ../eyes/explore.py:36
+msgid ""
+"If a square wave input is given, click on the Buttons for measuring "
+"frequency / duty cycle"
+msgstr ""
+
+#: ../eyes/explore.py:37
+msgid "2. Can sense input level"
+msgstr ""
+
+#: ../eyes/explore.py:38
+msgid ""
+"3. Digital Output.  Can be set to 0 or 5 volts.\n"
+"Use the Checkbutton to change the Level"
+msgstr ""
+
+#: ../eyes/explore.py:39
+msgid ""
+"4. Digital Output.  Can be set to 0 or 5 volts.\n"
+"Use the Checkbutton to change the Level"
+msgstr ""
+
+#: ../eyes/explore.py:40
+msgid "5. Ground (zero volts)"
+msgstr ""
+
+#: ../eyes/explore.py:41
+msgid ""
+"6. SQR1: Generates Square Wave. Voltage swings between 0 and 5V. Frequency "
+"is programmable from "
+msgstr ""
+
+#: ../eyes/explore.py:42
+msgid "Hz to1 MHz. All intermediate values of frequency are not possible."
+msgstr ""
+
+#: ../eyes/explore.py:43
+msgid ""
+"7. SQR2: Generates Square Wave. The frequency range is controlled by "
+"software and fine adjustment "
+msgstr ""
+
+#: ../eyes/explore.py:44
+msgid ""
+"is done by an external 22 kOhm variable resistor. Frequency range is from "
+"0.7 Hz to 90 kHz."
+msgstr ""
+
+#: ../eyes/explore.py:45
+msgid "8. 22 kOhm resistor used for frequency adjustment of SQR2."
+msgstr ""
+
+#: ../eyes/explore.py:46
+msgid "9. 22 kOhm resistor used for frequency adjustment of SQR2."
+msgstr ""
+
+#: ../eyes/explore.py:47
+#, python-format
+msgid ""
+"10. Programmable Pulse. Frequency is 488.3 Hz. Duty cycle from 0 to 100% in "
+"255 steps."
+msgstr ""
+
+#: ../eyes/explore.py:48
+msgid "11. Ground"
+msgstr ""
+
+#: ../eyes/explore.py:49
+msgid "12. Output of Inverting Amplifier with a gain of 47. (Input at 14)"
+msgstr ""
+
+#: ../eyes/explore.py:50
+msgid "13. Output of Inverting Amplifier with a gain of 47. (Input at 15)"
+msgstr ""
+
+#: ../eyes/explore.py:51
+msgid "14. Input of Inverting Amplifier with a gain of 47. (Output at 12)"
+msgstr ""
+
+#: ../eyes/explore.py:52
+msgid ""
+"15. Input of Inverting Amplifier with a gain of 47. (Output at 13). Also "
+"acts as a Frequency counter, "
+msgstr ""
+
+#: ../eyes/explore.py:53
+msgid ""
+"for a bipolar a signal (amplitude from 100 mV to 5V). If the signal is "
+"unipolar feed it "
+msgstr ""
+
+#: ../eyes/explore.py:54
+msgid "via a series capacitor"
+msgstr ""
+
+#: ../eyes/explore.py:55
+msgid "16. Ground"
+msgstr ""
+
+#: ../eyes/explore.py:56
+msgid ""
+"17. Input of Inverting Amplifier. Default Gain=100. The gain can be reduced "
+"by a series resistor at the input. "
+msgstr ""
+
+#: ../eyes/explore.py:57
+msgid ""
+"The gain will be given by G = 10000/(100+R), where R is the value of the "
+"external series resistor."
+msgstr ""
+
+#: ../eyes/explore.py:58
+msgid "18. Output of the Inverting Amplifier (Input 17)"
+msgstr ""
+
+#: ../eyes/explore.py:59
+msgid "19. Ground"
+msgstr ""
+
+#: ../eyes/explore.py:60
+msgid ""
+"20. Gain control resistor for Non-Inverting amplifier, from 20 to Ground. "
+"Gain = 1 + 10000/Rg."
+msgstr ""
+
+#: ../eyes/explore.py:61
+msgid "21. Input of Non-Inverting Amplifier (Output 22)"
+msgstr ""
+
+#: ../eyes/explore.py:62
+msgid "22. Output of Non-Inverting Amplifier(Input 21)"
+msgstr ""
+
+#: ../eyes/explore.py:63
+msgid ""
+"23. Sensor Input. Connect Photo transistor collector here and emitter to "
+"Ground."
+msgstr ""
+
+#: ../eyes/explore.py:64
+msgid "24. Voltage measurement terminal. Input must be in the 0 to 5V range."
+msgstr ""
+
+#: ../eyes/explore.py:65
+msgid "25. Voltage measurement terminal. Input must be in the -5V to 5V range."
+msgstr ""
+
+#: ../eyes/explore.py:66
+msgid "26. Voltage measurement terminal. Input must be in the -5V to 5V range."
+msgstr ""
+
+#: ../eyes/explore.py:67
+msgid "27. Ground"
+msgstr ""
+
+#: ../eyes/explore.py:68
+msgid ""
+"28. Programmable constant current source. 0.05 to 2 milli ampere range. The "
+"load resistor "
+msgstr ""
+
+#: ../eyes/explore.py:69
+msgid "should be chosen to make the product of I and R less than 2 volts."
+msgstr ""
+
+#: ../eyes/explore.py:70
+msgid ""
+"29. Output of 30 through a 1kOhm resistor. Used for doing diode I-V "
+"characteristic."
+msgstr ""
+
+#: ../eyes/explore.py:71
+msgid "30. Programmable voltage between -5V to +5V."
+msgstr ""
+
+#: ../eyes/explore.py:72
+msgid "31. Programmable voltage between 0 to +5V."
+msgstr ""
+
+#: ../eyes/explore.py:73
+msgid ""
+"32. Sine wave output. Frequency around 90 Hz. Voltage swings between -4V to "
+"+4V."
+msgstr ""
+
+#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:684
+msgid "EXPERIMENTS"
+msgstr ""
+
+#: ../eyes/explore.py:165 ../eyes/explore.py:321
+msgid "LO"
+msgstr ""
+
+#: ../eyes/explore.py:176 ../eyes/explore.py:181 ../eyes/explore.py:184
+msgid "F"
+msgstr ""
+
+#: ../eyes/explore.py:192 ../eyes/explore.py:201 ../eyes/explore.py:210
+#: ../eyes/explore.py:283 ../eyes/explore.py:315 ../eyes/explore.py:421
+#: ../eyes/explore.py:429
+msgid "0 Hz"
+msgstr ""
+
+#: ../eyes/explore.py:236
+msgid "Traces saved to explore.dat"
+msgstr ""
+
+#: ../eyes/explore.py:240 ../eyes-junior/ac-circuit.py:142
+#: ../eyes-junior/croplus.py:472
+msgid "Could not find Xmgrace or Pygrace. Install them"
+msgstr ""
+
+#: ../eyes/explore.py:246
+msgid "Could not find scipy package. Install it"
+msgstr ""
+
+#: ../eyes/explore.py:255
+msgid "Fourier transform Saved to exploreFFT.dat."
+msgstr ""
+
+#: ../eyes/explore.py:324
+msgid "HI"
+msgstr ""
+
+#: ../eyes/explore.py:352
+msgid "python-scipy not installed. Required for data fitting"
+msgstr ""
+
+#: ../eyes/explore.py:360
+#, python-format
+msgid "CH%d %5.2f V , F= %5.2f Hz"
+msgstr ""
+
+#: ../eyes/explore.py:362
+#, python-format
+msgid "CH%d nosig "
+msgstr ""
+
+#: ../eyes/explore.py:371
+#, python-format
+msgid "CH0 : %5.2f V , %5.2f Hz "
+msgstr ""
+
+#: ../eyes/explore.py:373
+msgid "CH0: no signal "
+msgstr ""
+
+#: ../eyes/explore.py:380
+#, python-format
+msgid "| CH1 %5.2f V , %5.2f Hz"
+msgstr ""
+
+#: ../eyes/explore.py:382
+#, python-format
+msgid " | dphi= %5.1f"
+msgstr ""
+
+#: ../eyes/explore.py:384
+msgid "| CH1:no signal "
+msgstr ""
+
+#: ../eyes/explore.py:436
+msgid "Transaction Error."
+msgstr ""
+
+#: ../eyes/explore.py:540
+msgid "LIZ"
+msgstr ""
+
+#: ../eyes/explore.py:547
+msgid "Save"
+msgstr ""
+
+#: ../eyes/explore.py:549
+msgid "FT"
+msgstr ""
+
+#: ../eyes/explore.py:552
+msgid "XM"
+msgstr ""
+
+#: ../eyes/explore.py:576
+msgid "Resistor IV"
+msgstr ""
+
+#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:702
+msgid "RC Circuit"
+msgstr ""
+
+#: ../eyes/explore.py:578 ../eyes-junior/croplus.py:703
+msgid "RL Circuit"
+msgstr ""
+
+#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:704
+#: ../eyes/RLCdischarge.py:127
+msgid "RLC Discharge"
+msgstr ""
+
+#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:705
+msgid "EM Induction"
+msgstr ""
+
+#: ../eyes/explore.py:581 ../eyes-junior/croplus.py:706
+msgid "Diode IV"
+msgstr ""
+
+#: ../eyes/explore.py:582
+msgid "LED IV"
+msgstr ""
+
+#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:707
+msgid "Transistor CE"
+msgstr ""
+
+#: ../eyes/explore.py:584 ../eyes-junior/croplus.py:709
+msgid "Frequency Response"
+msgstr ""
+
+#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:710
+#: ../eyes-junior/velocity-sound.py:129 ../eyes/usound_tof.py:41
+#: ../eyes/velocity-sound.py:140
+msgid "Velocity of Sound"
+msgstr ""
+
+#: ../eyes/explore.py:586 ../eyes-junior/croplus.py:711
+msgid "Interference of Sound"
+msgstr ""
+
+#: ../eyes/explore.py:587
+msgid "Photo-Transistor CE"
+msgstr ""
+
+#: ../eyes/explore.py:588 ../eyes-junior/croplus.py:714
+msgid "Rod Pendulum"
+msgstr ""
+
+#: ../eyes/explore.py:589
+msgid "Gravity TOF"
+msgstr ""
+
+#: ../eyes/explore.py:590 ../eyes-junior/croplus.py:715
+msgid "Pendulum Wavefrorm"
+msgstr ""
+
+#: ../eyes/explore.py:591
+msgid "40 kHz Piezo TOF"
+msgstr ""
+
+#: ../eyes/explore.py:592 ../eyes-junior/croplus.py:716
+msgid "PT100 Sensor"
+msgstr ""
+
+#: ../eyes/explore.py:593
+msgid "Temp Comptroller"
+msgstr ""
+
+#: ../eyes/explore.py:594 ../eyes-junior/croplus.py:718
+msgid "Data Logger"
+msgstr ""
+
+#: ../eyes/explore.py:595
+msgid "CRO"
+msgstr ""
+
+#: ../eyes/explore.py:596 ../eyes-junior/croplus.py:708
+msgid "AM and FM"
+msgstr ""
+
+#: ../eyes/explore.py:597
+msgid "Music"
+msgstr ""
+
+#: ../eyes/explore.py:609
+msgid "Finished "
+msgstr ""
+
+#: ../eyes/explore.py:616 ../eyes-junior/croplus.py:728
+msgid "Finished \""
+msgstr ""
+
+#: ../eyes/explore.py:628
+msgid "EYES Hardware NOT found."
+msgstr ""
+
+#: ../eyes/explore.py:629
+msgid ""
+"EYES Hardware Not Found.\n"
+"Re-Connect USB cable and restart the program."
+msgstr ""
+
+#: ../eyes/explore.py:633
+msgid "EYES Hardware found on "
+msgstr ""
+
+#: ../eyes/freq-response.py:62
+#, python-format
+msgid "Fo = %5.0f Hz"
+msgstr ""
+
+#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:82
+msgid "Frequency"
+msgstr ""
+
+#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:83
+msgid "Amplitude"
+msgstr ""
+
+#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:84
+msgid "Frequency response curve"
+msgstr ""
+
+#: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
+#: ../eyes-junior/freq-response.py:118
+msgid "Freq"
+msgstr ""
+
+#: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
+#: ../eyes-junior/freq-response.py:118
+msgid "Amp"
+msgstr ""
+
+#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:131
+msgid "Fmax = "
+msgstr ""
+
+#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:142
+msgid ""
+"Connect Piezo from SQR1 to GND. Microphone to 16,15 & 31. Wire from 13 to 26"
+msgstr ""
+
+#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:145
+msgid "Frequency Response Curve"
+msgstr ""
+
+#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:146
+msgid "Audio Frequency response Curve"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:39
+#, python-format
+msgid "Value of \"g\" by fitting the data points = %5.2f"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:69
+msgid "Invalid H"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:80
+#, python-format
+msgid "t=%6.4f g=%5.1f"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:82
+msgid "Timeout Err"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:94
+msgid "Attach Ball at H="
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:100 ../eyes/gravity_tof.py:61
+msgid "cm"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:102 ../eyes/gravity_tof.py:65
+msgid "Measure TOF"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:109
+msgid "Acceleration due to gravity by Time of Flight"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:116 ../eyes/induction.py:118
+#: ../eyes/interference-sound.py:155 ../eyes-junior/induction.py:119
+#: ../eyes-junior/interference-sound.py:152 ../eyes-junior/RCcircuit.py:142
+#: ../eyes-junior/RLCdischarge.py:107 ../eyes-junior/RLcircuit.py:131
+#: ../eyes-junior/sound-burst.py:131 ../eyes-junior/velocity-sound.py:115
+#: ../eyes/RCcircuit.py:137 ../eyes/RLCdischarge.py:108
+#: ../eyes/RLcircuit.py:130 ../eyes/sound.py:125 ../eyes/velocity-sound.py:126
+msgid "Save to"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:124 ../eyes/gravity_tof.py:100
+msgid "Gravity by TOF"
+msgstr ""
+
+#: ../eyes/gravity_tof2.py:125 ../eyes/gravity_tof.py:101
+msgid "Gravity by Time of Flight"
+msgstr ""
+
+#: ../eyes/gravity_tof.py:26 ../eyes/gravity_tof.py:35
+#: ../eyes/usound_tof.py:18
+#, python-format
+msgid "%8.6f sec"
+msgstr ""
+
+#: ../eyes/gravity_tof.py:28
+msgid "Timeout Error.."
+msgstr ""
+
+#: ../eyes/gravity_tof.py:37 ../eyes/looptest.py:15 ../eyes/usound_tof.py:20
+msgid "Error.."
+msgstr ""
+
+#: ../eyes/gravity_tof.py:46
+msgid " Error"
+msgstr ""
+
+#: ../eyes/gravity_tof.py:55
+msgid "Height="
+msgstr ""
+
+#: ../eyes/gravity_tof.py:63
+msgid "Attach Ball"
+msgstr ""
+
+#: ../eyes/induction.py:55 ../eyes-junior/induction.py:55
+#, python-format
+msgid "Voltage Scan on Coil Done. Noise Voltage = %5.3f V"
+msgstr ""
+
+#: ../eyes/induction.py:115 ../eyes-junior/induction.py:116
+#: ../eyes-junior/sound-burst.py:122
+msgid "Start Scanning"
+msgstr ""
+
+#: ../eyes/induction.py:125 ../eyes-junior/induction.py:126
+#: ../eyes-junior/sound-burst.py:126
+msgid "VIEW"
+msgstr ""
+
+#: ../eyes/induction.py:135 ../eyes-junior/induction.py:136
+msgid "Electromagnetic Induction"
+msgstr ""
+
+#: ../eyes/induction.py:136
+msgid "EYES: Electromagnetic Induction"
+msgstr ""
+
+#: ../eyes/interference-sound.py:38 ../eyes-junior/interference-sound.py:41
+#, python-format
+msgid "Freq = %5.0f Hz"
+msgstr ""
+
+#: ../eyes/interference-sound.py:40 ../eyes-junior/interference-sound.py:43
+#: ../eyes-junior/velocity-sound.py:46 ../eyes/velocity-sound.py:47
+msgid "No Signal"
+msgstr ""
+
+#: ../eyes/interference-sound.py:85 ../eyes-junior/interference-sound.py:85
+#: ../eyes-junior/velocity-sound.py:67 ../eyes/sound.py:75
+#: ../eyes/velocity-sound.py:73
+msgid "Fourier transform Saved to FFT.dat."
+msgstr ""
+
+#: ../eyes/interference-sound.py:97 ../eyes-junior/interference-sound.py:97
+#: ../eyes-junior/RCcircuit.py:85 ../eyes-junior/RLCdischarge.py:69
+#: ../eyes-junior/RLcircuit.py:87 ../eyes-junior/sound-burst.py:82
+#: ../eyes-junior/velocity-sound.py:79 ../eyes/RCcircuit.py:81
+#: ../eyes/RLCdischarge.py:69 ../eyes/RLcircuit.py:85 ../eyes/sound.py:87
+#: ../eyes/velocity-sound.py:85
+msgid "milliSeconds"
+msgstr ""
+
+#: ../eyes/interference-sound.py:113 ../eyes-junior/interference-sound.py:111
+#: ../eyes-junior/RCcircuit.py:110 ../eyes-junior/RLcircuit.py:112
+#: ../eyes/RCcircuit.py:107 ../eyes/RLcircuit.py:111 ../eyes/sound.py:101
+#: ../eyes/velocity-sound.py:101
+msgid "EYES Hardware Not Found. Check Connections and restart the program"
+msgstr ""
+
+#: ../eyes/interference-sound.py:121
+msgid "NS ="
+msgstr ""
+
+#: ../eyes/interference-sound.py:128
+msgid "PULSE="
+msgstr ""
+
+#: ../eyes/interference-sound.py:137 ../eyes-junior/interference-sound.py:125
+msgid "SQR1="
+msgstr ""
+
+#: ../eyes/interference-sound.py:149 ../eyes-junior/interference-sound.py:146
+#: ../eyes-junior/pendulum.py:126 ../eyes-junior/pt100.py:229
+#: ../eyes-junior/RCcircuit.py:138 ../eyes-junior/RLCdischarge.py:114
+#: ../eyes-junior/RLcircuit.py:139 ../eyes-junior/rodpend.py:138
+#: ../eyes-junior/velocity-sound.py:109 ../eyes/pendulum.py:126
+#: ../eyes/pt100.py:212 ../eyes/RCcircuit.py:133 ../eyes/RLCdischarge.py:115
+#: ../eyes/RLcircuit.py:138 ../eyes/rodpend.py:169 ../eyes/sound.py:132
+#: ../eyes/temp-controller.py:196 ../eyes/velocity-sound.py:120
+msgid "Xmgrace"
+msgstr ""
+
+#: ../eyes/interference-sound.py:152 ../eyes-junior/interference-sound.py:149
+#: ../eyes-junior/velocity-sound.py:112 ../eyes/sound.py:134
+#: ../eyes/velocity-sound.py:123
+msgid "FFT"
+msgstr ""
+
+#: ../eyes/interference-sound.py:169 ../eyes-junior/interference-sound.py:166
+msgid "Sound Interference"
+msgstr ""
+
+#: ../eyes/interference-sound.py:170 ../eyes-junior/interference-sound.py:167
+msgid "EYES: Interference of Sound"
+msgstr ""
+
+#: ../eyes/janagana.py:66
+msgid "Exiting"
+msgstr ""
+
+#: ../eyes/janagana.py:79
+msgid "Playing Music"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:58
+#, python-format
+msgid "X-scale changed to %d mS/div.Capturing %d samples with %d usec spacing"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:106
+msgid "Error in Fit (A0: Black &Yellow, A1-Red & Green). Try Changing X-scale"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:109
+#, python-format
+msgid "Frequency = %5.1f Hz"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:110
+#, python-format
+msgid "A1:Total voltage = %5.2f V"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:111
+#, python-format
+msgid "A2:Voltage across R = %5.2f V"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:112
+#, python-format
+msgid "A1-A2:Voltage across LC = %5.2f V"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:113
+#, python-format
+msgid "Phase Shift = %5.1f deg"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:121
+msgid "Curve Fitfing failed. Try changing X scale"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:123
+msgid "Capture Error. Check input voltage levels."
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:137 ../eyes-junior/croplus.py:464
+#, python-format
+msgid "Traces saved to %s"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:144 ../eyes-junior/croplus.py:474
+msgid "Traces send to Xmgrace"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:159
+#, python-format
+msgid ""
+"XC = %5.1f   XL = %5.1f\n"
+"Dphi = %5.1f degree"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:162
+msgid "Wrong Input"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:175 ../eyes-junior/croplus.py:543
+msgid "mSec/div"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:187 ../eyes-junior/croplus.py:664
+msgid "Save Traces to"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:193 ../eyes-junior/sound-burst.py:128
+msgid "XmGrace"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:200
+msgid ""
+"Connect SINE to A1, R from A2 to GND. Inductor and/or Capacitor from A1 to "
+"A2."
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:209
+msgid "Phasor Plot"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:224
+msgid "Calculator"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:227 ../eyes-junior/velocity-sound.py:103
+#: ../eyes/velocity-sound.py:114
+msgid "Freq="
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:231
+msgid "Hz R="
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:235 ../eyes/pt100.py:196
+msgid "Ohm"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:239
+msgid "C="
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:243
+msgid "uF. L="
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:247
+msgid "mH"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:249
+msgid "Calculate XL, XC and Angle"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:255
+msgid "Study of AC Circuit"
+msgstr ""
+
+#: ../eyes-junior/ac-circuit.py:256 ../eyes-junior/croplus.py:701
+msgid "Study of AC Circuits"
+msgstr ""
+
+#: ../eyes-junior/amfm.py:110
+msgid "PVS ="
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:33
+#, python-format
+msgid "PVS is NOT connected to A1%f %f"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:37
+#, python-format
+msgid "PVS is NOT connected to A2%f %f"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:76
+msgid "Calibrated: "
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:79
+msgid "Connect PVS to both A1 and A2"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:83
+msgid "Exit"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:86
+msgid "EYES Junior Hardware not found"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:87
+msgid "Calibrate A1 & A2"
+msgstr ""
+
+#: ../eyes-junior/calibrate.py:88
+msgid "EYES Junior Calibration: PVS should be conected to A1 & A2"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:53
+msgid "Analog Trigger"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:53
+msgid "Wait for HIGH"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:53
+msgid "Wait for LOW"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:54
+msgid "Wait for Rising Edge"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:54
+msgid "Wait for Falling Edge"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:55
+msgid "Set HIGH"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:55
+msgid "Set LOW"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:55
+msgid "High True Pulse"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:56
+msgid "Low True Pulse"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:58 ../eyes-junior/croplus.py:59
+msgid "Analog Input -5 to +5 volts. Drag this to CH1 .. CH4 to Display it"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:60 ../eyes-junior/croplus.py:61
+#: ../eyes-junior/croplus.py:62 ../eyes-junior/croplus.py:63
+#: ../eyes-junior/croplus.py:64
+msgid "Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:65
+msgid ""
+"Digital Output 0 to +5 volts. SHI, SLO,HTP or LTP can be assigned to this"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:66
+msgid ""
+"Constant Current Source Output. SHI, SLO,HTP or LTP can be assigned to this"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:105
+msgid "Fourier Transform,power spectrum"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:106
+#, python-format
+msgid "%s Fourier transform done, Data saved to \"fft.dat\""
+msgstr ""
+
+#: ../eyes-junior/croplus.py:153
+#, python-format
+msgid "%4s : Freq = %5.3f. Duty Cycle = %5.1f %%"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:155
+#, python-format
+msgid "No squarewave detected on %4s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:167
+#, python-format
+msgid ""
+"%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | Phase difference = %5.1f "
+"degree"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:171
+msgid "Fitting of data failed. Try with Xmgrace"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:173
+msgid "Selected channel and the next one should have data"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:180
+msgid "Invalid Action"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:186
+#, python-format
+msgid "Assigned Data Input %4s to Channel %s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:192
+#, python-format
+msgid "%4s effective on Output %s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:196
+#, python-format
+msgid "%4s effective on Input %s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:211 ../eyes-junior/croplus.py:216
+#: ../eyes-junior/croplus.py:223
+#, python-format
+msgid "Channel %s is Empty"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:221
+#, python-format
+msgid "Disabled fitting %s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:227
+#, python-format
+msgid "Voltage at %s = %5.3f V"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:230
+#, python-format
+msgid " (Logic Level = %d)"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:233
+msgid "Invalid selection"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:245
+#, python-format
+msgid "%4s is an Output"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:248
+#, python-format
+msgid ""
+"Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To show value "
+"release button."
+msgstr ""
+
+#: ../eyes-junior/croplus.py:253
+#, python-format
+msgid "Selected %4s. Drag cursor to the OD1 or CSS Output"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:257
+#, python-format
+msgid "Selected %4s. Drag cursor to desired Data Input"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:261
+#, python-format
+msgid "Selected %4s. Drag cursor to NML FIT or DEL"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:329
+msgid "Communication Error. Check input voltage levels."
+msgstr ""
+
+#: ../eyes-junior/croplus.py:340
+#, python-format
+msgid "%5.2f V, %5.1f Hz"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:358
+msgid "ONE "
+msgstr ""
+
+#: ../eyes-junior/croplus.py:359
+msgid "Press SCAN Button to do a single Capture"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:361 ../eyes-junior/croplus.py:673
+msgid "LOOP"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:367
+#, python-format
+msgid "Captured %d points in %d usecs"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:369
+msgid "Use this only in Single scan mode"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:376
+msgid "Enter a value between 0 to +5 volts"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:378
+#, python-format
+msgid "PVS set to %5.3f volts"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:380
+msgid "Enter voltage between -5 and +5 volts"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:386 ../eyes-junior/croplus.py:437
+msgid "SQR1 set to LOW"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:392 ../eyes-junior/croplus.py:408
+#: ../eyes-junior/croplus.py:426
+msgid "Enter a value between .7 to 200000 Hz"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:394
+#, python-format
+msgid "SQR1 set to %5.1f Hertz"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:396 ../eyes-junior/croplus.py:412
+msgid "Enter valid frequency, in Hertz"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:402
+msgid "SQR2 set to LOW"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:410
+#, python-format
+msgid "SQR2 set to %5.1f Hertz"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:419
+msgid "SQR1 and SQR2 set to LOW"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:428
+#, python-format
+msgid "SQR1 and SQR2 set to %5.1f Hertz, Shift is %5.2f %% of Period"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:430
+msgid "Enter valid frequency in Hertz and phase shift in percentage"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:440
+#, python-format
+msgid "SQR1 set to %5.1f"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:453
+msgid "Error, Is Capacitance too high?"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:455
+#, python-format
+msgid "Capacitance = %6.1f pF(including ~30pF of the connector)"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:499
+msgid "expEYES Junior NOT found. Bad connection or another program using it"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:502 ../eyes-junior/croplus.py:696
+#, python-format
+msgid "Four Channel CRO+ found expEYES-Junior on %s"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:538
+msgid "Move UP"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:538
+msgid "CENTER"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:538
+msgid "Move DOWN"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:554
+msgid "Trig level"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:570
+msgid "Use Left Side Panel to Select Data Sources and Modifiers."
+msgstr ""
+
+#: ../eyes-junior/croplus.py:572
+msgid "Search Hardware"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:595
+msgid "Setting Squarewaves"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:601
+msgid "Hz. dphi="
+msgstr ""
+
+#: ../eyes-junior/croplus.py:614
+msgid "BOTH"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:622
+msgid "Set PVS ="
+msgstr ""
+
+#: ../eyes-junior/croplus.py:633
+msgid "Set State"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:640
+msgid "Measure C on IN1"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:644
+msgid "Type command<Enter>"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:676
+msgid "SCAN"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:678
+msgid "XMG"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:692
+msgid ""
+"Could not open expEYES Junior. Bad connection or another program using it"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:700
+msgid "Select Experiment"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:712
+msgid "Capture Burst of Sound"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:713 ../eyes-junior/driven-pendulum.py:20
+msgid "Driven Pendulum"
+msgstr ""
+
+#: ../eyes-junior/croplus.py:717
+msgid "Stroboscope"
+msgstr ""
+
+#: ../eyes-junior/driven-pendulum.py:16 ../eyes-junior/resonance.py:16
+msgid "Use Slider to change SQR1 from 1 to 50 Hz"
+msgstr ""
+
+#: ../eyes-junior/driven-pendulum.py:21 ../eyes-junior/stroboscope.py:21
+msgid "EYES Junior: Driven Pendulum"
+msgstr ""
+
+#: ../eyes-junior/induction.py:78
+#, python-format
+msgid "Peak voltages %5.2f and %5.3f separated by %5.3f msec"
+msgstr ""
+
+#: ../eyes-junior/induction.py:137
+msgid "EYESJUN: Electromagnetic Induction"
+msgstr ""
+
+#: ../eyes-junior/interference-sound.py:134
+msgid "SQR2="
+msgstr ""
+
+#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:45
+#: ../eyes-junior/pt100.py:88 ../eyes/logger.py:44 ../eyes/pendulum.py:45
+#: ../eyes/pt100.py:87 ../eyes/temp-controller.py:62
+msgid "Time"
+msgstr ""
+
+#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:45
+#: ../eyes-junior/pt100.py:88 ../eyes/logger.py:44 ../eyes/pendulum.py:45
+#: ../eyes/pt100.py:87 ../eyes/temp-controller.py:62
+msgid "Volt"
+msgstr ""
+
+#: ../eyes-junior/logger.py:49 ../eyes/logger.py:49
+msgid "Starting the Measurement"
+msgstr ""
+
+#: ../eyes-junior/logger.py:52 ../eyes/logger.py:52
+msgid "Failed to Start Measurement"
+msgstr ""
+
+#: ../eyes-junior/logger.py:103 ../eyes/logger.py:103
+msgid "Data Saved"
+msgstr ""
+
+#: ../eyes-junior/logger.py:132
+msgid "IN1"
+msgstr ""
+
+#: ../eyes-junior/logger.py:133
+msgid "IN2"
+msgstr ""
+
+#: ../eyes-junior/logger.py:137 ../eyes-junior/pt100.py:174
+#: ../eyes/logger.py:137 ../eyes/pt100.py:158 ../eyes/temp-controller.py:161
+msgid "Read Every"
+msgstr ""
+
+#: ../eyes-junior/logger.py:143 ../eyes-junior/pt100.py:180
+#: ../eyes/logger.py:143 ../eyes/pt100.py:164 ../eyes/temp-controller.py:167
+msgid "mS,"
+msgstr ""
+
+#: ../eyes-junior/logger.py:145 ../eyes-junior/pt100.py:182
+#: ../eyes/logger.py:145 ../eyes/pt100.py:166 ../eyes/temp-controller.py:169
+msgid "for total"
+msgstr ""
+
+#: ../eyes-junior/logger.py:151 ../eyes/logger.py:151
+msgid "Seconds"
+msgstr ""
+
+#: ../eyes-junior/logger.py:177
+msgid "EYES-Junior: Four Channel Data Logger"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:30 ../eyes/pendulum.py:30
+#, python-format
+msgid "Angular velocity = %5.2f rad/sec. Damping Factor = %5.3f"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:32 ../eyes/pendulum.py:32
+msgid "Failed to fit data"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:47 ../eyes-junior/pt100.py:92
+#: ../eyes-junior/rodpend.py:61 ../eyes/pendulum.py:47 ../eyes/pt100.py:91
+#: ../eyes/rodpend.py:71
+msgid "Starting the Measurements"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:50 ../eyes-junior/pt100.py:95
+#: ../eyes/pendulum.py:50 ../eyes/pt100.py:94 ../eyes/temp-controller.py:71
+msgid "Failed to Start"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:55 ../eyes-junior/pt100.py:101
+#: ../eyes-junior/rodpend.py:68 ../eyes/pendulum.py:55 ../eyes/pt100.py:100
+#: ../eyes/rodpend.py:78 ../eyes/temp-controller.py:80
+msgid "User Stopped the measurements"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:74 ../eyes-junior/pt100.py:126
+#: ../eyes-junior/rodpend.py:84 ../eyes/pendulum.py:74 ../eyes/pt100.py:125
+#: ../eyes/rodpend.py:99 ../eyes/temp-controller.py:108
+msgid "Completed the Measurements"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:84 ../eyes-junior/pt100.py:147
+#: ../eyes-junior/rodpend.py:99 ../eyes/pendulum.py:84 ../eyes/pt100.py:135
+#: ../eyes/rodpend.py:114 ../eyes/temp-controller.py:120
+#, python-format
+msgid "Data saved to %s"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:91 ../eyes-junior/pt100.py:154
+#: ../eyes-junior/rodpend.py:106 ../eyes/pendulum.py:91 ../eyes/pt100.py:142
+#: ../eyes/rodpend.py:121 ../eyes/temp-controller.py:127
+msgid "Cleared Data and Trace"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:107 ../eyes/pendulum.py:107
+msgid "Digitize for"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:113 ../eyes-junior/pt100.py:188
+#: ../eyes/pendulum.py:113 ../eyes/pt100.py:172 ../eyes/temp-controller.py:175
+msgid "Seconds."
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:143 ../eyes/pendulum.py:143
+msgid "Pendulum Oscillations"
+msgstr ""
+
+#: ../eyes-junior/pendulum.py:144 ../eyes/pendulum.py:144
+msgid "Oscillations of Pendulum"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:36 ../eyes/pt100.py:36
+#, python-format
+msgid "Voltage at Freezing Point is %5.3f V"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:38 ../eyes-junior/pt100.py:49 ../eyes/pt100.py:38
+#: ../eyes/pt100.py:49
+msgid "Something wrong. Check the connection & Rg"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:47 ../eyes/pt100.py:47
+#, python-format
+msgid "Voltage at Boiling Point is %5.3f V"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:56 ../eyes/pt100.py:56
+#, python-format
+msgid "Calibration Done m = %5.3f, c = 5.3f"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:58 ../eyes/pt100.py:58
+msgid "Boiling & Freezing points to be measured first"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:138
+msgid "Wrong connections or value of Rg"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:191
+msgid "Range"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:197 ../eyes/pt100.py:181
+msgid "to,"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:203
+msgid "C. "
+msgstr ""
+
+#: ../eyes-junior/pt100.py:215
+msgid "Gain="
+msgstr ""
+
+#: ../eyes-junior/pt100.py:222
+msgid "Current ="
+msgstr ""
+
+#: ../eyes-junior/pt100.py:239 ../eyes/pt100.py:225
+msgid "Freezing Point"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:241 ../eyes/pt100.py:227
+msgid "Boiling Point"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:254
+msgid "Temperatue by PT100"
+msgstr ""
+
+#: ../eyes-junior/pt100.py:255 ../eyes/pt100.py:239
+msgid "Temperature measuements using PT100"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:45 ../eyes-junior/RLcircuit.py:43
+#: ../eyes/RCcircuit.py:41 ../eyes/RLcircuit.py:41
+msgid "Done"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:62 ../eyes/RCcircuit.py:58
+#, python-format
+msgid "RC = %5.2f mSec"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:64 ../eyes/RCcircuit.py:60
+msgid "Failed to fit the curve with V=Vo*exp(-t/RC)"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:123 ../eyes-junior/RLcircuit.py:125
+#: ../eyes/RCcircuit.py:120 ../eyes/RLcircuit.py:124
+msgid "0 to 5V STEP"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:125 ../eyes-junior/RLcircuit.py:127
+#: ../eyes/RCcircuit.py:122 ../eyes/RLcircuit.py:126
+msgid "5 to 0V STEP"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:127
+msgid "CC Charge"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:129 ../eyes/RCcircuit.py:124
+msgid "Calculate RC"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:136 ../eyes/RCcircuit.py:131
+msgid "ViewAll"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:153 ../eyes/RCcircuit.py:148
+msgid "RC Circuit, Transient"
+msgstr ""
+
+#: ../eyes-junior/RCcircuit.py:154 ../eyes/RCcircuit.py:149
+msgid "Transient response of RC Circuit"
+msgstr ""
+
+#: ../eyes-junior/resonance.py:19
+msgid "EYES Junior: Set SQR1"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:38 ../eyes/RLCdischarge.py:38
+msgid "Discharge Done"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:42 ../eyes/RLCdischarge.py:42
+msgid "Fit Failed"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:49 ../eyes/RLCdischarge.py:49
+#, python-format
+msgid "Resonant Frequency = %5.2f kHz Damping = %5.3f"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:104
+msgid "5->0V STEP"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:125 ../eyes/RLCdischarge.py:126
+msgid "RLC Circuit, Transient"
+msgstr ""
+
+#: ../eyes-junior/RLCdischarge.py:126
+msgid "EYES Junior: RLC Discharge"
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:64 ../eyes/RLcircuit.py:62
+#, python-format
+msgid "L/R = %5.3f mSec : Rind = %5.0f Ohm : L = %5.1f mH"
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:66 ../eyes/RLcircuit.py:64
+msgid "Failed to Fit. Try fitting V=Vo*exp(-tR/L) with Xmgrace"
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:141 ../eyes/RLcircuit.py:140
+msgid "Rext="
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:146 ../eyes/RLcircuit.py:145
+msgid "Calculate R/L"
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:156 ../eyes/RLcircuit.py:155
+msgid "RL Circuit, Transient"
+msgstr ""
+
+#: ../eyes-junior/RLcircuit.py:157 ../eyes/RLcircuit.py:156
+msgid "Transient response of RL Circuit"
+msgstr ""
+
+#: ../eyes-junior/rodpend.py:75
+#, python-format
+msgid "%5.1f mS\n"
+msgstr ""
+
+#: ../eyes-junior/rodpend.py:89 ../eyes/rodpend.py:104
+msgid "Timeout Error. Check Connections"
+msgstr ""
+
+#: ../eyes-junior/rodpend.py:120 ../eyes/rodpend.py:70
+msgid "Trials"
+msgstr ""
+
+#: ../eyes-junior/rodpend.py:151
+msgid "Period of a Pendulum"
+msgstr ""
+
+#: ../eyes-junior/rodpend.py:152
+msgid "EYES Junior: Pendulum"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:56
+#, python-format
+msgid "Volatge Scan Done. Noise Level = %5.3f V"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:59
+msgid "wait"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:73
+msgid "Captured Sound Burst"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:118
+msgid "Wait for HIGH on IN1"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:144
+msgid "Capture a burst of sound"
+msgstr ""
+
+#: ../eyes-junior/sound-burst.py:145
+msgid "EYESJUN: Capturing burst of sound"
+msgstr ""
+
+#: ../eyes-junior/stroboscope.py:16
+msgid "Use Slider to change SQR1 from 1 to 100 Hz"
+msgstr ""
+
+#: ../eyes-junior/transistor.py:36 ../eyes-junior/transistor.py:53
+#: ../eyes/phototransistor.py:35 ../eyes/transistor.py:36
+#: ../eyes/transistor.py:53
+msgid "Busy Drawing"
+msgstr ""
+
+#: ../eyes-junior/transistor.py:42 ../eyes/transistor.py:42
+#, python-format
+msgid "Base Current = %5.1f uA"
+msgstr ""
+
+#: ../eyes-junior/transistor.py:87 ../eyes/transistor.py:87
+#, python-format
+msgid "Ib=%4.0f uA"
+msgstr ""
+
+#: ../eyes-junior/transistor.py:128 ../eyes/transistor.py:129
+msgid "Vb (via 200K)="
+msgstr ""
+
+#: ../eyes-junior/transistor.py:159 ../eyes/transistor.py:160
+msgid "Transistor CE Char (NPN)"
+msgstr ""
+
+#: ../eyes-junior/transistor.py:160
+msgid "EYES Junior: Transistor CE characteristics"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:36
+msgid "Invalid Frequency"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:49
+msgid "Measurement failed"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:54
+#, python-format
+msgid "Freq = %5.0f Hz Phase = %5.0f deg"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:93
+msgid ""
+"EYES Junior Hardware Not Found. Check Connections and restart the program"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:100
+msgid "Measure Phase"
+msgstr ""
+
+#: ../eyes-junior/velocity-sound.py:130
+msgid "EYES Junior: Velocity of Sound"
+msgstr ""
+
+#: ../eyes/LED_iv.py:80
+msgid "Linear part of IV Curve (I > 1mA)"
+msgstr ""
+
+#: ../eyes/LED_iv.py:165
+msgid "LED IV char. Connections"
+msgstr ""
+
+#: ../eyes/LED_iv.py:167
+msgid "EYES: LED IV characteristics"
+msgstr ""
+
+#: ../eyes/logger.py:177
+msgid "EYES: Four Channel Data Logger"
+msgstr ""
+
+#: ../eyes/phototransistor.py:127
+msgid "Photo Transistor CE Char."
+msgstr ""
+
+#: ../eyes/phototransistor.py:128
+msgid "EYES: Photo-transistor CE characteristics"
+msgstr ""
+
+#: ../eyes/pt100.py:175
+msgid "Temp From"
+msgstr ""
+
+#: ../eyes/pt100.py:187
+msgid "Deg C. "
+msgstr ""
+
+#: ../eyes/pt100.py:190 ../eyes/temp-controller.py:143
+msgid "Rg="
+msgstr ""
+
+#: ../eyes/pt100.py:238
+msgid "Temperatue bt PT100"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:33
+msgid "CS (28) is open or the resistor connected is > 20 kOhm"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:64
+#, python-format
+msgid "Linear Fitting of VI curve gave R = %5.0f Ohm"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:65
+#, python-format
+msgid "R = %5.0f Ohm"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:87
+msgid "Resistor VI curve"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:134
+msgid "R = "
+msgstr ""
+
+#: ../eyes/resistor_iv.py:148
+msgid "Resistor IV char. Connections"
+msgstr ""
+
+#: ../eyes/resistor_iv.py:149
+msgid "EYES: Resistor IV characteristics"
+msgstr ""
+
+#: ../eyes/RLCdischarge.py:105
+msgid "Discharge"
+msgstr ""
+
+#: ../eyes/rodpend.py:70
+msgid "T & g"
+msgstr ""
+
+#: ../eyes/rodpend.py:136
+msgid "Length="
+msgstr ""
+
+#: ../eyes/rodpend.py:142
+msgid "cm. "
+msgstr ""
+
+#: ../eyes/rodpend.py:145
+msgid "Measure"
+msgstr ""
+
+#: ../eyes/rodpend.py:151
+msgid "times."
+msgstr ""
+
+#: ../eyes/rodpend.py:191
+msgid "Period of Rod Pendulum"
+msgstr ""
+
+#: ../eyes/rodpend.py:192
+msgid "EYES: Value of Accn. due to gravity using Pendulum"
+msgstr ""
+
+#: ../eyes/sound.py:26
+msgid "Already Running"
+msgstr ""
+
+#: ../eyes/sound.py:39
+#, python-format
+msgid "CH0 : %5.1f V , %5.1f Hz "
+msgstr ""
+
+#: ../eyes/sound.py:110
+msgid "Buzzer1"
+msgstr ""
+
+#: ../eyes/sound.py:114
+msgid "Buzzer2"
+msgstr ""
+
+#: ../eyes/sound.py:121
+msgid "FreeRUN"
+msgstr ""
+
+#: ../eyes/sound.py:142
+msgid "EYES: Sound Experiments"
+msgstr ""
+
+#: ../eyes/temp-controller.py:52
+msgid "temperature setpoint out of range"
+msgstr ""
+
+#: ../eyes/temp-controller.py:60
+msgid "UPV setpoint out of range"
+msgstr ""
+
+#: ../eyes/temp-controller.py:66
+msgid "Starting the Controller"
+msgstr ""
+
+#: ../eyes/temp-controller.py:149
+msgid "Ohm. "
+msgstr ""
+
+#: ../eyes/temp-controller.py:152
+msgid "UPV="
+msgstr ""
+
+#: ../eyes/temp-controller.py:158
+msgid "V. "
+msgstr ""
+
+#: ../eyes/temp-controller.py:181
+msgid "Set at"
+msgstr ""
+
+#: ../eyes/temp-controller.py:187
+msgid "deg C"
+msgstr ""
+
+#: ../eyes/temp-controller.py:213
+msgid "Temperature Controller (LM35)"
+msgstr ""
+
+#: ../eyes/temp-controller.py:214
+msgid "Temperature controller using LM35"
+msgstr ""
+
+#: ../eyes/transistor.py:161
+msgid "EYES: Transistor CE characteristics"
+msgstr ""
+
+#: ../eyes/usound_tof.py:29
+msgid "Connect Transmitter from OD1 to Ground"
+msgstr ""
+
+#: ../eyes/usound_tof.py:30
+msgid "Connect Receiver from T15 to Ground"
+msgstr ""
+
+#: ../eyes/usound_tof.py:31
+msgid "Keep them facing each other, at a known distance"
+msgstr ""
+
+#: ../eyes/usound_tof.py:33
+msgid "Measure Time of Travel"
+msgstr ""
+
+#: ../eyes/usound_tof.py:40
+msgid "Velocity of Sound, 40kHz"
+msgstr ""
+
+#: ../eyes/velocity-sound.py:45
+#, python-format
+msgid "Phase = %5.0f deg"
+msgstr ""
+
+#: ../eyes/velocity-sound.py:110
+msgid "ON/OFF"
+msgstr ""
+
+#: ../eyes/velocity-sound.py:141
+msgid "EYES: Velocity of Sound"
+msgstr ""

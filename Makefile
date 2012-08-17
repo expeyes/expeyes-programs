@@ -1,0 +1,41 @@
+DESTDIR =
+SUBDIRS = doc bin firmware po
+all:
+	python setup.py build
+	for d in $(SUBDIRS); do \
+	  make -C $$d $@; \
+	done
+
+install:
+	# for python-expeyes
+	python setup.py install --root=$(DESTDIR) --prefix=/usr
+	install -d $(DESTDIR)/lib/udev/rules.d/
+	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
+	# for expeyes
+	install -d $(DESTDIR)/usr/share/expeyes
+	cp -a eyes eyes-junior $(DESTDIR)/usr/share/expeyes
+	install -d $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/expeyes-logo.png \
+	  $(DESTDIR)/usr/share/icons/expeyes.png
+	install -m 644 pixmaps/expeyes-junior-icon.png \
+	  $(DESTDIR)/usr/share/icons
+	install -d $(DESTDIR)/usr/share/applications
+	install -m 644 desktop/expeyes.desktop desktop/expeyes-junior.desktop \
+	  $(DESTDIR)/usr/share/applications
+	make -C po install DESTDIR=$(DESTDIR)
+	# subdirs stuff
+	for d in $(SUBDIRS); do \
+	  make -C $$d $@ DESTDIR=$(DESTDIR); \
+	done
+	# fix permissions in /usr/share/expeyes
+	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
+
+
+clean:
+	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
+	for d in $(SUBDIRS); do \
+	  make -C $$d $@; \
+	done
+
+
+.PHONY: all install clean

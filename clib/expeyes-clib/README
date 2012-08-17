@@ -1,0 +1,7 @@
+The package of sources is controlled by GNU autotools.
+To clean it before a distribution, invoke the script clean-all.sh
+
+COMPILING:
+=========
+First use autotools: invoke "libtoolize; autoreconf --install".
+Then run "./configure", then "make".
