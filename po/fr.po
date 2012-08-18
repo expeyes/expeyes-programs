@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-16 17:15+0200\n"
-"PO-Revision-Date: 2012-08-16 17:37+0200\n"
+"POT-Creation-Date: 2012-08-18 16:41+0200\n"
+"PO-Revision-Date: 2012-08-18 17:08+0200\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,13 +26,13 @@ msgstr "Graphique EYES"
 #: ../expeyes/eyeplot.py:306 ../eyes/amfm.py:47 ../eyes/amfm.py:68
 #: ../eyes/amfm.py:69 ../eyes/cro.py:44 ../eyes/cro.py:62 ../eyes/cro.py:122
 #: ../eyes/explore.py:336 ../eyes/explore.py:457 ../eyes/explore.py:474
-#: ../eyes/explore.py:492 ../eyes/explore.py:512 ../eyes/induction.py:111
+#: ../eyes/explore.py:492 ../eyes/explore.py:511 ../eyes/induction.py:111
 #: ../eyes/interference-sound.py:50 ../eyes/interference-sound.py:110
 #: ../eyes-junior/ac-circuit.py:57 ../eyes-junior/ac-circuit.py:131
 #: ../eyes-junior/ac-circuit.py:171 ../eyes-junior/amfm.py:48
 #: ../eyes-junior/amfm.py:68 ../eyes-junior/amfm.py:69
 #: ../eyes-junior/croplus.py:141 ../eyes-junior/croplus.py:349
-#: ../eyes-junior/croplus.py:567 ../eyes-junior/induction.py:112
+#: ../eyes-junior/croplus.py:569 ../eyes-junior/induction.py:112
 #: ../eyes-junior/interference-sound.py:55
 #: ../eyes-junior/interference-sound.py:108 ../eyes-junior/RCcircuit.py:102
 #: ../eyes-junior/RLCdischarge.py:86 ../eyes-junior/RLcircuit.py:104
@@ -46,7 +46,7 @@ msgstr "ms"
 #: ../eyes/amfm.py:69 ../eyes/amfm.py:116 ../eyes/cro.py:44 ../eyes/cro.py:62
 #: ../eyes/cro.py:122 ../eyes/diode_iv.py:42 ../eyes/diode_iv.py:119
 #: ../eyes/explore.py:336 ../eyes/explore.py:457 ../eyes/explore.py:474
-#: ../eyes/explore.py:492 ../eyes/explore.py:512 ../eyes/induction.py:111
+#: ../eyes/explore.py:492 ../eyes/explore.py:511 ../eyes/induction.py:111
 #: ../eyes/interference-sound.py:50 ../eyes/interference-sound.py:110
 #: ../eyes-junior/ac-circuit.py:57 ../eyes-junior/ac-circuit.py:131
 #: ../eyes-junior/ac-circuit.py:171 ../eyes-junior/diode_iv.py:113
@@ -594,7 +594,7 @@ msgid "CLEAR"
 msgstr "EFFACER"
 
 #: ../eyes/alpha.py:164 ../eyes/cro.py:158 ../eyes/diode_iv.py:142
-#: ../eyes/explore.py:545 ../eyes/gravity_tof2.py:114
+#: ../eyes/explore.py:544 ../eyes/gravity_tof2.py:114
 #: ../eyes-junior/diode_iv.py:133 ../eyes-junior/pendulum.py:122
 #: ../eyes-junior/RLCdischarge.py:118 ../eyes/LED_iv.py:157
 #: ../eyes/pendulum.py:122 ../eyes/RLCdischarge.py:119
@@ -618,20 +618,21 @@ msgid "SAVE Histogram to"
 msgstr "Enregistrer l'histogramme dans"
 
 #: ../eyes/alpha.py:190 ../eyes/amfm.py:89 ../eyes/calibrate.py:178
-#: ../eyes/cro.py:160 ../eyes/diode_iv.py:136 ../eyes/explore.py:554
+#: ../eyes/cro.py:160 ../eyes/diode_iv.py:136 ../eyes/explore.py:553
 #: ../eyes/freq-response.py:134 ../eyes/gravity_tof2.py:121
 #: ../eyes/gravity_tof.py:97 ../eyes/induction.py:123
 #: ../eyes/interference-sound.py:160 ../eyes/janagana.py:82
-#: ../eyes-junior/amfm.py:89 ../eyes-junior/croplus.py:687
-#: ../eyes-junior/diode_iv.py:127 ../eyes-junior/driven-pendulum.py:19
-#: ../eyes-junior/freq-response.py:133 ../eyes-junior/induction.py:124
-#: ../eyes-junior/interference-sound.py:157 ../eyes-junior/logger.py:169
-#: ../eyes-junior/pendulum.py:134 ../eyes-junior/pt100.py:246
-#: ../eyes-junior/RCcircuit.py:131 ../eyes-junior/RLCdischarge.py:112
-#: ../eyes-junior/RLcircuit.py:149 ../eyes-junior/rodpend.py:140
-#: ../eyes-junior/sound-burst.py:136 ../eyes-junior/stroboscope.py:19
-#: ../eyes-junior/transistor.py:145 ../eyes-junior/velocity-sound.py:120
-#: ../eyes/LED_iv.py:151 ../eyes/logger.py:169 ../eyes/pendulum.py:134
+#: ../eyes-junior/ac-circuit.py:195 ../eyes-junior/amfm.py:89
+#: ../eyes-junior/croplus.py:689 ../eyes-junior/diode_iv.py:127
+#: ../eyes-junior/driven-pendulum.py:19 ../eyes-junior/freq-response.py:133
+#: ../eyes-junior/induction.py:124 ../eyes-junior/interference-sound.py:157
+#: ../eyes-junior/logger.py:169 ../eyes-junior/pendulum.py:134
+#: ../eyes-junior/pt100.py:246 ../eyes-junior/RCcircuit.py:131
+#: ../eyes-junior/RLCdischarge.py:112 ../eyes-junior/RLcircuit.py:149
+#: ../eyes-junior/rodpend.py:140 ../eyes-junior/sound-burst.py:136
+#: ../eyes-junior/stroboscope.py:19 ../eyes-junior/transistor.py:145
+#: ../eyes-junior/velocity-sound.py:120 ../eyes/LED_iv.py:151
+#: ../eyes/logger.py:169 ../eyes/pendulum.py:134
 #: ../eyes/phototransistor.py:113 ../eyes/pt100.py:220
 #: ../eyes/RCcircuit.py:126 ../eyes/resistor_iv.py:136
 #: ../eyes/RLCdischarge.py:113 ../eyes/RLcircuit.py:148 ../eyes/rodpend.py:183
@@ -642,7 +643,7 @@ msgid "QUIT"
 msgstr "Quitter"
 
 #: ../eyes/alpha.py:195 ../eyes/amfm.py:121 ../eyes/cro.py:165
-#: ../eyes/explore.py:559 ../eyes/induction.py:132
+#: ../eyes/explore.py:558 ../eyes/induction.py:132
 #: ../eyes/interference-sound.py:166 ../eyes-junior/amfm.py:121
 #: ../eyes-junior/induction.py:133 ../eyes-junior/interference-sound.py:163
 #: ../eyes-junior/RLCdischarge.py:123 ../eyes-junior/sound-burst.py:141
@@ -770,8 +771,8 @@ msgstr ""
 msgid "IMPROPER USE MAY SPOIL THE CALIBRATION"
 msgstr "UN USAGE IMPROPRE PEUT DÉFAIRE LA CALIBRATION"
 
-#: ../eyes/calibrate.py:171 ../eyes/explore.py:598
-#: ../eyes-junior/calibrate.py:80 ../eyes-junior/croplus.py:719
+#: ../eyes/calibrate.py:171 ../eyes/explore.py:597
+#: ../eyes-junior/calibrate.py:80 ../eyes-junior/croplus.py:726
 #: ../eyes-junior/pt100.py:243 ../eyes/pt100.py:229
 msgid "Calibrate"
 msgstr "Calibrer"
@@ -815,7 +816,7 @@ msgstr "CH0 Vp = %5.2f V | Fréq = %5.2f Hz "
 msgid "CH1 Vp = %5.2f V | Freq = %5.2f Hz"
 msgstr "CH1 Vp = %5.2f V | Fréq = %5.2f Hz"
 
-#: ../eyes/cro.py:126 ../eyes/explore.py:516 ../eyes-junior/RCcircuit.py:117
+#: ../eyes/cro.py:126 ../eyes/explore.py:515 ../eyes-junior/RCcircuit.py:117
 #: ../eyes-junior/RLCdischarge.py:97 ../eyes-junior/RLcircuit.py:119
 #: ../eyes/RCcircuit.py:114 ../eyes/RLCdischarge.py:98
 #: ../eyes/RLcircuit.py:118
@@ -823,7 +824,7 @@ msgid "mS/div"
 msgstr "ms/div"
 
 #: ../eyes/cro.py:131 ../eyes-junior/ac-circuit.py:181
-#: ../eyes-junior/croplus.py:548
+#: ../eyes-junior/croplus.py:550
 msgid "Volt/div"
 msgstr "V/div"
 
@@ -1191,7 +1192,7 @@ msgstr ""
 "32. Sortie de signal sinusoïdal. Fréquence proche de 90 Hz. La tension "
 "oscille entre -4 V et +4 V."
 
-#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:684
+#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:686
 msgid "EXPERIMENTS"
 msgstr "EXPÉRIENCES"
 
@@ -1214,7 +1215,7 @@ msgid "Traces saved to explore.dat"
 msgstr "Données enregistrées dans \"explore.dat\""
 
 #: ../eyes/explore.py:240 ../eyes-junior/ac-circuit.py:142
-#: ../eyes-junior/croplus.py:472
+#: ../eyes-junior/croplus.py:474
 msgid "Could not find Xmgrace or Pygrace. Install them"
 msgstr "XmGrace ou Pygrace introuvables. Installez-les"
 
@@ -1272,126 +1273,122 @@ msgstr "| CH1 : pas de signal "
 msgid "Transaction Error."
 msgstr "Erreur de transaction."
 
-#: ../eyes/explore.py:540
+#: ../eyes/explore.py:539
 msgid "LIZ"
 msgstr "LIS"
 
-#: ../eyes/explore.py:547
+#: ../eyes/explore.py:546
 msgid "Save"
 msgstr "Enregistrer"
 
-#: ../eyes/explore.py:549
+#: ../eyes/explore.py:548
 msgid "FT"
 msgstr "FT"
 
-#: ../eyes/explore.py:552
+#: ../eyes/explore.py:551
 msgid "XM"
 msgstr "XM"
 
-#: ../eyes/explore.py:576
+#: ../eyes/explore.py:575
 msgid "Resistor IV"
 msgstr "Courbe U-I de résistances"
 
-#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:702
+#: ../eyes/explore.py:576 ../eyes-junior/croplus.py:709
 msgid "RC Circuit"
 msgstr "Circuit RC"
 
-#: ../eyes/explore.py:578 ../eyes-junior/croplus.py:703
+#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:710
 msgid "RL Circuit"
 msgstr "Circuit RL"
 
-#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:704
+#: ../eyes/explore.py:578 ../eyes-junior/croplus.py:711
 #: ../eyes/RLCdischarge.py:127
 msgid "RLC Discharge"
 msgstr "Décharge RLC"
 
-#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:705
+#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:712
 msgid "EM Induction"
 msgstr "Induction électro-magnétique"
 
-#: ../eyes/explore.py:581 ../eyes-junior/croplus.py:706
+#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:713
 msgid "Diode IV"
 msgstr "Courbe I-U d'une diode"
 
-#: ../eyes/explore.py:582
+#: ../eyes/explore.py:581
 msgid "LED IV"
 msgstr "Courbe I-U d'une DEL"
 
-#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:707
+#: ../eyes/explore.py:582 ../eyes-junior/croplus.py:714
 msgid "Transistor CE"
 msgstr "Transistor en émetteur commun"
 
-#: ../eyes/explore.py:584 ../eyes-junior/croplus.py:709
+#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:716
 msgid "Frequency Response"
 msgstr "Réponse en fréquence"
 
-#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:710
+#: ../eyes/explore.py:584 ../eyes-junior/croplus.py:717
 #: ../eyes-junior/velocity-sound.py:129 ../eyes/usound_tof.py:41
 #: ../eyes/velocity-sound.py:140
 msgid "Velocity of Sound"
 msgstr "Vitesse du son"
 
-#: ../eyes/explore.py:586 ../eyes-junior/croplus.py:711
+#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:718
 msgid "Interference of Sound"
 msgstr "Interférences sonores"
 
-#: ../eyes/explore.py:587
+#: ../eyes/explore.py:586
 msgid "Photo-Transistor CE"
 msgstr "Photo-transistor en émetteur commun"
 
-#: ../eyes/explore.py:588 ../eyes-junior/croplus.py:714
+#: ../eyes/explore.py:587 ../eyes-junior/croplus.py:721
 msgid "Rod Pendulum"
 msgstr "Pendule pesant"
 
-#: ../eyes/explore.py:589
+#: ../eyes/explore.py:588
 msgid "Gravity TOF"
 msgstr "Gravité par temps de vol (TDV)"
 
-#: ../eyes/explore.py:590 ../eyes-junior/croplus.py:715
+#: ../eyes/explore.py:589 ../eyes-junior/croplus.py:722
 msgid "Pendulum Wavefrorm"
 msgstr "Signal du pendule"
 
-#: ../eyes/explore.py:591
+#: ../eyes/explore.py:590
 msgid "40 kHz Piezo TOF"
 msgstr "TDV piézo 40 kHz"
 
-#: ../eyes/explore.py:592 ../eyes-junior/croplus.py:716
+#: ../eyes/explore.py:591 ../eyes-junior/croplus.py:723
 msgid "PT100 Sensor"
 msgstr "Capteur PT100"
 
-#: ../eyes/explore.py:593
+#: ../eyes/explore.py:592
 msgid "Temp Comptroller"
 msgstr "Contôleur de température"
 
-#: ../eyes/explore.py:594 ../eyes-junior/croplus.py:718
+#: ../eyes/explore.py:593 ../eyes-junior/croplus.py:725
 msgid "Data Logger"
 msgstr "Enregistreur de données"
 
-#: ../eyes/explore.py:595
+#: ../eyes/explore.py:594
 msgid "CRO"
 msgstr "Oscilloscope"
 
-#: ../eyes/explore.py:596 ../eyes-junior/croplus.py:708
+#: ../eyes/explore.py:595 ../eyes-junior/croplus.py:715
 msgid "AM and FM"
 msgstr "AM et FM"
 
-#: ../eyes/explore.py:597
+#: ../eyes/explore.py:596
 msgid "Music"
 msgstr "Musique"
 
-#: ../eyes/explore.py:609
+#: ../eyes/explore.py:606
 msgid "Finished "
 msgstr "Terminé "
 
-#: ../eyes/explore.py:616 ../eyes-junior/croplus.py:728
-msgid "Finished \""
-msgstr "Terminé \""
-
-#: ../eyes/explore.py:628
+#: ../eyes/explore.py:619
 msgid "EYES Hardware NOT found."
 msgstr "Boîtier EYES PAS trouvé."
 
-#: ../eyes/explore.py:629
+#: ../eyes/explore.py:620
 msgid ""
 "EYES Hardware Not Found.\n"
 "Re-Connect USB cable and restart the program."
@@ -1399,7 +1396,7 @@ msgstr ""
 "Boîtier EYES PAS trouvé.\n"
 "Re-connecter le câble USB et relancer le programme."
 
-#: ../eyes/explore.py:633
+#: ../eyes/explore.py:624
 msgid "EYES Hardware found on "
 msgstr "Boîtier EYES trouvé sur "
 
@@ -1632,11 +1629,15 @@ msgstr "En train de jouer de la musique"
 #: ../eyes-junior/ac-circuit.py:58
 #, python-format
 msgid "X-scale changed to %d mS/div.Capturing %d samples with %d usec spacing"
-msgstr "Échelle-X changée en %d ms/div. Capture de %d échantillons, intervalle de %d µs"
+msgstr ""
+"Échelle-X changée en %d ms/div. Capture de %d échantillons, intervalle de %d "
+"µs"
 
 #: ../eyes-junior/ac-circuit.py:106
 msgid "Error in Fit (A0: Black &Yellow, A1-Red & Green). Try Changing X-scale"
-msgstr "Modélisation fausse (A0 : Noir/Jaune, A1 : Rouge/Vert). Essayez de changer l'échelle-X"
+msgstr ""
+"Modélisation fausse (A0 : Noir/Jaune, A1 : Rouge/Vert). Essayez de changer "
+"l'échelle-X"
 
 #: ../eyes-junior/ac-circuit.py:109
 #, python-format
@@ -1671,12 +1672,12 @@ msgstr "Échec de modélisation de la courbe. Essayez de changer l'échelle X"
 msgid "Capture Error. Check input voltage levels."
 msgstr "Erreur de capture. Vérifiez les niveaux de tension d'entrée."
 
-#: ../eyes-junior/ac-circuit.py:137 ../eyes-junior/croplus.py:464
+#: ../eyes-junior/ac-circuit.py:137 ../eyes-junior/croplus.py:466
 #, python-format
 msgid "Traces saved to %s"
 msgstr "Courbes enregistrées dans %s"
 
-#: ../eyes-junior/ac-circuit.py:144 ../eyes-junior/croplus.py:474
+#: ../eyes-junior/ac-circuit.py:144 ../eyes-junior/croplus.py:476
 msgid "Traces send to Xmgrace"
 msgstr "Courbes envoyées à Xmgrace"
 
@@ -1693,11 +1694,11 @@ msgstr ""
 msgid "Wrong Input"
 msgstr "Entrée incorrecte"
 
-#: ../eyes-junior/ac-circuit.py:175 ../eyes-junior/croplus.py:543
+#: ../eyes-junior/ac-circuit.py:175 ../eyes-junior/croplus.py:545
 msgid "mSec/div"
 msgstr "ms/div"
 
-#: ../eyes-junior/ac-circuit.py:187 ../eyes-junior/croplus.py:664
+#: ../eyes-junior/ac-circuit.py:187 ../eyes-junior/croplus.py:666
 msgid "Save Traces to"
 msgstr "Enr. courbes sous"
 
@@ -1709,7 +1710,9 @@ msgstr "XmGrace"
 msgid ""
 "Connect SINE to A1, R from A2 to GND. Inductor and/or Capacitor from A1 to "
 "A2."
-msgstr "Connectez SINE à A1, R entre A2 et GND. Bobinage et/ou condensateur entre A1 et A2."
+msgstr ""
+"Connectez SINE à A1, R entre A2 et GND. Bobinage et/ou condensateur entre A1 "
+"et A2."
 
 #: ../eyes-junior/ac-circuit.py:209
 msgid "Phasor Plot"
@@ -1752,7 +1755,7 @@ msgstr "Calculer ZL, ZC et l'angle"
 msgid "Study of AC Circuit"
 msgstr "Étude de circuit en alternatif"
 
-#: ../eyes-junior/ac-circuit.py:256 ../eyes-junior/croplus.py:701
+#: ../eyes-junior/ac-circuit.py:256 ../eyes-junior/croplus.py:708
 msgid "Study of AC Circuits"
 msgstr "Étude de circuits en alternatif"
 
@@ -1979,7 +1982,7 @@ msgstr "UN COUP"
 msgid "Press SCAN Button to do a single Capture"
 msgstr "Cliquez le bouton SCAN pour une capture monocoup"
 
-#: ../eyes-junior/croplus.py:361 ../eyes-junior/croplus.py:673
+#: ../eyes-junior/croplus.py:361 ../eyes-junior/croplus.py:675
 msgid "LOOP"
 msgstr "BOUCLE"
 
@@ -2051,110 +2054,118 @@ msgstr ""
 msgid "SQR1 set to %5.1f"
 msgstr "SQR1 réglé à %5.1f"
 
-#: ../eyes-junior/croplus.py:453
-msgid "Error, Is Capacitance too high?"
-msgstr "Erreur, la capacité est-elle trop grande ?"
+#: ../eyes-junior/croplus.py:452
+msgid "Starting Capacitance Measurement.."
+msgstr "Commence à mesurer la capacité.."
 
 #: ../eyes-junior/croplus.py:455
-#, python-format
-msgid "Capacitance = %6.1f pF(including ~30pF of the connector)"
-msgstr "Capacité = %6.1f pF(y compris ~30pF de la connexion)"
+msgid "Error: Capacitance too high or short to ground"
+msgstr "Erreur : capacité trop grande ou court-circuit à la masse"
 
-#: ../eyes-junior/croplus.py:499
+#: ../eyes-junior/croplus.py:457
+#, python-format
+msgid "Capacitance = %6.1f pF(%6.1fpF - %6.1fpF of the Socket)"
+msgstr "Capacité = %6.1f pF(%6.1fpF - %6.1fpF de la connection)"
+
+#: ../eyes-junior/croplus.py:501
 msgid "expEYES Junior NOT found. Bad connection or another program using it"
 msgstr ""
 "expEYES Junior PAS trouvé. Mauvaise connexion, ou blocage par un autre "
 "programme"
 
-#: ../eyes-junior/croplus.py:502 ../eyes-junior/croplus.py:696
+#: ../eyes-junior/croplus.py:504 ../eyes-junior/croplus.py:703
 #, python-format
 msgid "Four Channel CRO+ found expEYES-Junior on %s"
 msgstr "Oscillo 4 canaux expEYES-Junior trouvé sur %s"
 
-#: ../eyes-junior/croplus.py:538
+#: ../eyes-junior/croplus.py:540
 msgid "Move UP"
 msgstr "Monter"
 
-#: ../eyes-junior/croplus.py:538
+#: ../eyes-junior/croplus.py:540
 msgid "CENTER"
 msgstr "Centrer"
 
-#: ../eyes-junior/croplus.py:538
+#: ../eyes-junior/croplus.py:540
 msgid "Move DOWN"
 msgstr "Descendre"
 
-#: ../eyes-junior/croplus.py:554
+#: ../eyes-junior/croplus.py:556
 msgid "Trig level"
 msgstr "Seuil (trigger)"
 
-#: ../eyes-junior/croplus.py:570
+#: ../eyes-junior/croplus.py:572
 msgid "Use Left Side Panel to Select Data Sources and Modifiers."
 msgstr ""
 "Utiliser le panneau gauche pour sélectionner les entrées et les "
 "modifications."
 
-#: ../eyes-junior/croplus.py:572
+#: ../eyes-junior/croplus.py:574
 msgid "Search Hardware"
 msgstr "Chercher le matériel"
 
-#: ../eyes-junior/croplus.py:595
+#: ../eyes-junior/croplus.py:597
 msgid "Setting Squarewaves"
 msgstr "Réglage des signaux carrés"
 
-#: ../eyes-junior/croplus.py:601
+#: ../eyes-junior/croplus.py:603
 msgid "Hz. dphi="
 msgstr "Hz. dϕ ="
 
-#: ../eyes-junior/croplus.py:614
+#: ../eyes-junior/croplus.py:616
 msgid "BOTH"
 msgstr "1&2"
 
-#: ../eyes-junior/croplus.py:622
+#: ../eyes-junior/croplus.py:624
 msgid "Set PVS ="
 msgstr "Régler PVS ="
 
-#: ../eyes-junior/croplus.py:633
+#: ../eyes-junior/croplus.py:635
 msgid "Set State"
 msgstr "Régler l'état"
 
-#: ../eyes-junior/croplus.py:640
+#: ../eyes-junior/croplus.py:642
 msgid "Measure C on IN1"
 msgstr "Mesure de C sur IN1"
 
-#: ../eyes-junior/croplus.py:644
+#: ../eyes-junior/croplus.py:646
 msgid "Type command<Enter>"
 msgstr "Commande + <Entrée>"
 
-#: ../eyes-junior/croplus.py:676
+#: ../eyes-junior/croplus.py:678
 msgid "SCAN"
 msgstr "SCAN"
 
-#: ../eyes-junior/croplus.py:678
+#: ../eyes-junior/croplus.py:680
 msgid "XMG"
 msgstr "XMG"
 
-#: ../eyes-junior/croplus.py:692
+#: ../eyes-junior/croplus.py:694
 msgid ""
 "Could not open expEYES Junior. Bad connection or another program using it"
 msgstr ""
 "expEYES Junior n'a pas pu être ouvert. Mauvaise connexion ou blocage par un "
 "autre programme"
 
-#: ../eyes-junior/croplus.py:700
+#: ../eyes-junior/croplus.py:707
 msgid "Select Experiment"
 msgstr "Choisir l'expérience"
 
-#: ../eyes-junior/croplus.py:712
+#: ../eyes-junior/croplus.py:719
 msgid "Capture Burst of Sound"
 msgstr "Capture d'impulsion sonore"
 
-#: ../eyes-junior/croplus.py:713 ../eyes-junior/driven-pendulum.py:20
+#: ../eyes-junior/croplus.py:720 ../eyes-junior/driven-pendulum.py:20
 msgid "Driven Pendulum"
 msgstr "Pendule excité"
 
-#: ../eyes-junior/croplus.py:717
+#: ../eyes-junior/croplus.py:724
 msgid "Stroboscope"
 msgstr "Stroboscope"
+
+#: ../eyes-junior/croplus.py:735
+msgid "Finished \""
+msgstr "Terminé \""
 
 #: ../eyes-junior/driven-pendulum.py:16 ../eyes-junior/resonance.py:16
 msgid "Use Slider to change SQR1 from 1 to 50 Hz"
