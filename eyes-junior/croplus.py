@@ -448,11 +448,13 @@ def control_ccs():
 	p.set_state(11, state)
 
 def measurecap():
+	global stray_cap
+	msg(_('Starting Capacitance Measurement..'))
 	cap = p.measure_cap()
 	if cap == None:
-		msg(_('Error, Is Capacitance too high?'),'red')
+		msg(_('Error: Capacitance too high or short to ground'),'red')
 		return
-	msg(_('Capacitance = %6.1f pF(including ~30pF of the connector)') %cap)
+	msg(_('Capacitance = %6.1f pF(%6.1fpF - %6.1fpF of the Socket)')%(cap-stray_cap, cap, stray_cap))
 
 def save_data():
 	fn = Fname.get()
@@ -693,6 +695,11 @@ if p == None:
 	Recon.pack(side=LEFT)
 else:
 	p.disable_actions()
+	c = p.measure_cap()
+	if c < 40:
+		stray_cap = c
+	else:
+		stray_cap = 32.0
 	root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
 	root.after(TIMER,update)
 #------------------------------ experiments menu ------------------------------
