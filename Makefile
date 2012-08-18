@@ -34,6 +34,8 @@ install:
 	done
 	# fix permissions in /usr/share/expeyes
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
+	# for expeyes-clib
+	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
 
 clean:
