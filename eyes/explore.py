@@ -493,9 +493,8 @@ def lissa_mode():
 		lissa = False
 
 #-----------------------------main program starts here-----------------------------
-for k in range(20):		# Test the hardware availability by by running another program.
+for k in range(10):		# Test the hardware availability by by running another program.
 	stat,out = commands.getstatusoutput('python '+ eyeplot.abs_path() + 'hwtest.py')
-	print stat
 	if stat == 0:
 		break
 
@@ -601,19 +600,11 @@ expts = [
 
 def run_expt(expt):
 	global w
-	if os.name == 'nt':		# For windows OS
-		w.eye.fd.close()	# Close hardware port
-		cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
-		os.system(cmd)
-		w.eye = eyes.open()	# Open hardware port again
-		showhelp(_('Finished ') + expt)
-	else:
-		#print abs_path() + expt+'.py'
-		stat,out = commands.getstatusoutput('python '+ eyeplot.abs_path() + expt+'.py')
-		if stat != 0:
-			showhelp(out)
-		else:
-			showhelp(_('Finished "')+expt+'.py"')
+	w.eye.fd.close()		# Close hardware port
+	cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
+	os.system(cmd)
+	showhelp(_('Finished ') + expt)
+	w.eye = eyes.open()		# Open hardware port again
 	w.eye.disable_actions()
 
 menu = Menu(w.panel, tearoff=0)
