@@ -39,7 +39,7 @@ install:
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS); do \
-	  make -C $$d $@; \
+	  [ ! -f $$d/Makefile ] || make -C $$d $@; \
 	  if [ -x $$d/configure ] && [ -f $$d/Makefile ] ; then \
 	    make -C $$d distclean; \
 	  fi; \
