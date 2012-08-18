@@ -1,9 +1,14 @@
 DESTDIR =
-SUBDIRS = doc bin firmware po
+SUBDIRS = doc bin firmware po clib/expeyes-clib
 all:
 	python setup.py build
 	for d in $(SUBDIRS); do \
-	  make -C $$d $@; \
+	  if [ -x $$d/configure ]; then \
+	    cd $$d; ./configure -prefix=/usr; \
+	    make all; \
+	  else \
+	    make -C $$d $@; \
+	  fi; \
 	done
 
 install:
@@ -35,6 +40,9 @@ clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS); do \
 	  make -C $$d $@; \
+	  if [ -x $$d/configure ] && [ -f $$d/Makefile ] ; then \
+	    make -C $$d distclean; \
+	  fi; \
 	done
 
 
