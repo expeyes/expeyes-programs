@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=0.9.0
+Type=Application
+
+Exec=evince /usr/share/doc/expeyes/eyes.pdf
+Icon=eyes-doc
+
+Name=expEYES Manual
+
+Comment=expEYES User Manual
+Categories=Electronics;Education;Science;
+MimeType=application/x-pdf
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false
