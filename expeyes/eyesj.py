@@ -206,11 +206,12 @@ class Eyesjun:
 						#print _('Loaded Calibration from File'), m1,c1,m2,c2
 				except:
 					print _('Calibration data NOT found. You may run Calibrate program')
-				return 
-			else:
-				print self.msg
-				print _('No EYES Junior hardware detected')
-				self.fd = None
+				return 		# Successful return
+			else:			# If it is not our device close the file
+				handle.close()
+		print self.msg
+		print _('No EYES Junior hardware detected')
+		self.fd = None
 #------------------------------------------------------------------------------------
 	def sendByte(self,bval):
 		self.fd.write(chr(bval))
@@ -321,7 +322,10 @@ class Eyesjun:
 			self.msg = _('Error measuring capacitance %5.3f') %v
 			print _('Error measuring capacitance'), v
 			return 
-		c = 5.5 * ctime / v 	# returns value in pF 
+		if v > 0:
+			c = 5.5 * ctime / v 	# returns value in pF 
+		else:
+			c = 0
 		#print ctime, v, c
 		return c
 
