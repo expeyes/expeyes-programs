@@ -1,11 +1,10 @@
 DESTDIR =
-SUBDIRS = doc bin firmware po clib/expeyes-clib
+SUBDIRS = $(shell ls -d doc bin firmware po clib/expeyes-clib 2>/dev/null)
 all:
 	python setup.py build
 	for d in $(SUBDIRS); do \
 	  if [ -x $$d/configure ]; then \
-	    cd $$d; ./configure -prefix=/usr; \
-	    make all; \
+	    (cd $$d; ./configure -prefix=/usr; make all;) \
 	  else \
 	    make -C $$d $@; \
 	  fi; \
@@ -13,7 +12,7 @@ all:
 
 install:
 	# for python-expeyes
-	python setup.py install --root=$(DESTDIR) --prefix=/usr
+	python setup.py install --root=$(DESTDIR)/ --prefix=/usr
 	install -d $(DESTDIR)/lib/udev/rules.d/
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes
