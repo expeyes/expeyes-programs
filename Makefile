@@ -12,8 +12,12 @@ all:
 
 install:
 	# for python-expeyes
-	python setup.py install --install-layout=deb \
-	       --root=$(DESTDIR)/ --prefix=/usr
+	if grep -q Debian /etc/issue; then \
+	  python setup.py install --install-layout=deb \
+	         --root=$(DESTDIR)/ --prefix=/usr; \
+	else \
+	  python setup.py --root=$(DESTDIR)/ --prefix=/usr; \
+	fi
 	install -d $(DESTDIR)/lib/udev/rules.d/
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes

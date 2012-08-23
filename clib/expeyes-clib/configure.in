@@ -16,6 +16,7 @@ AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
 
 # for C language
 AC_PROG_CC
+LDFLAGS="$LDFLAGS -lm"
 # generate libtool stuff
 AC_PROG_LIBTOOL
 AC_SUBST(LIBTOOL_DEPS)
