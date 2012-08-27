@@ -11,12 +11,13 @@ all:
 	done
 
 install:
+	mkdir -p $(DESTDIR) # just in case...
 	# for python-expeyes
-	if grep -q Debian /etc/issue; then \
+	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
 	  python setup.py install --install-layout=deb \
 	         --root=$(DESTDIR)/ --prefix=/usr; \
 	else \
-	  python setup.py --root=$(DESTDIR)/ --prefix=/usr; \
+	  python setup.py install --root=$(DESTDIR)/ --prefix=/usr; \
 	fi
 	install -d $(DESTDIR)/lib/udev/rules.d/
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
