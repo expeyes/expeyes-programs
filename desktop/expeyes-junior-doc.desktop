@@ -2,7 +2,7 @@
 Version=1.0.0
 Type=Application
 
-Exec=evince /usr/share/doc/expeyes/eyesj.pdf
+Exec=expeyes-junior-doc
 Icon=eyesj-doc
 
 Name=expEYES Junior Manual

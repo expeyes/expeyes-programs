@@ -27,11 +27,17 @@ install:
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-logo.png \
 	  $(DESTDIR)/usr/share/icons/expeyes.png
-	install -m 644 pixmaps/expeyes-junior-icon.png pixmaps/*doc.png \
+	install -m 644 pixmaps/expeyes-junior-icon.png \
 	  $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
-	install -m 644 desktop/*.desktop $(DESTDIR)/usr/share/applications
+	install -m 644 desktop/expeyes.desktop desktop/expeyes-junior.desktop \
+	  $(DESTDIR)/usr/share/applications
 	make -C po install DESTDIR=$(DESTDIR)
+	# for expeyes-doc-common
+	install -d $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
+	install -d $(DESTDIR)/usr/share/applications
+	install -m 644 desktop/*doc.desktop $(DESTDIR)/usr/share/applications
 	# subdirs stuff
 	for d in $(SUBDIRS); do \
 	  make -C $$d $@ DESTDIR=$(DESTDIR); \
