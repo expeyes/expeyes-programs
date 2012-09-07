@@ -696,10 +696,10 @@ if p == None:
 else:
 	p.disable_actions()
 	c = p.measure_cap()
-	if c < 40:
+	if 25 < c < 35:
 		stray_cap = c
 	else:
-		stray_cap = 32.0
+		stray_cap = 30.0
 	root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
 	root.after(TIMER,update)
 #------------------------------ experiments menu ------------------------------

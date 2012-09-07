@@ -325,7 +325,7 @@ class Eyesjun:
 		if v > 0:
 			c = 5.5 * ctime / v 	# returns value in pF 
 		else:
-			c = 0
+			return
 		#print ctime, v, c
 		return c
 
