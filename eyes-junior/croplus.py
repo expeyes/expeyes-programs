@@ -696,7 +696,7 @@ if p == None:
 else:
 	p.disable_actions()
 	c = p.measure_cap()
-	if 25 < c < 35:
+	if 25 < c < 45:
 		stray_cap = c
 	else:
 		stray_cap = 30.0
