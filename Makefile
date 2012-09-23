@@ -11,7 +11,6 @@ all:
 	done
 
 install:
-	mkdir -p $(DESTDIR) # just in case...
 	# for python-expeyes
 	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
 	  python setup.py install --install-layout=deb \
