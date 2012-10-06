@@ -640,6 +640,7 @@ Checkbutton(f,text = 'CCS', variable = Ccs, command = control_ccs).pack(side=LEF
 Canvas(cf, height = 5, width= 100).pack(side=TOP)	# Spacer
 
 Button(cf,text =_('Measure C on IN1'), command=measurecap).pack(side=TOP, anchor=N)
+Button(cf,text =_('Measure R on SEN'), command=measureres).pack(side=TOP, anchor=N)
 
 Canvas(cf, height = 5, width= 100).pack(side=TOP)	# Spacer
 

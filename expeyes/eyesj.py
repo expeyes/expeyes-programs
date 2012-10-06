@@ -329,6 +329,21 @@ class Eyesjun:
 		#print ctime, v, c
 		return c
 
+	def measure_res(self):
+		'''
+		Measures the resistance connected between SEN and GND.
+		'''
+		v = self.get_voltage(5)
+		if v > 4.9:
+			self.msg = _('Resistance too high or open %5.3f') %v
+			print _('Resistance too high or open'), v
+			return
+		elif v < 0.1:
+			self.msg = _('Resistance too low or short %5.3f') %v
+			print _('Resistance too low or short'), v
+			return
+		return 5100.0 * v /(5-v)
+
 	def set_current(self, ch, i): # channel 3 or 4, 0 means stop CTMU
 		'''
 		Sets CTMU current 'i' on a channel 'ch' and returns the voltage measured across the load. Allowed values
