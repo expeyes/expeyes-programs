@@ -17,7 +17,7 @@ bgcol = 'ivory'
 
 BUFSIZE = 1800		# uC buffer size in bytes
 TIMER = 100
-WIDTH  = 600   		# width of drawing canvas
+WIDTH  = 500   		# width of drawing canvas  (make 550)
 HEIGHT = 400   		# height 
 VPERDIV = 1.0		# Volts per division, vertical scale
 NP = 400			# Number of samples
@@ -151,6 +151,8 @@ def measure_freq(e):
 		if freq > 0.5:
 			r2f = p.r2ftime(target, target)*1.0e-6
 			msg(_('%4s : Freq = %5.3f. Duty Cycle = %5.1f %%') %(sources[target-1], freq, r2f*freq*100))
+			s=_('%4s\n%5.3f Hz\n%5.1f %%')%(sources[target-1], freq, r2f*freq*100)
+			g.disp(s)
 		else:
 			msg(_('No squarewave detected on %4s') %(sources[target-1]))
 	elif e.x > LPWIDTH/2 and e.y > OFFSET and target < 3:	 # Selected CH1, CH2 or CH3
@@ -167,6 +169,8 @@ def measure_freq(e):
 				s = _('%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | Phase difference = %5.1f degree') \
 				    % (channels[target], v1, f1, channels[target+1],v2, f2, (p2-p1)*180/3.1416)
 				msg(s)
+				s=_('%4s\n%5.3f Hz\n%5.1f %%')%(sources[target-1], freq, r2f*freq*100)
+				g.disp(s)
 			else:
 				msg(_('Fitting of data failed. Try with Xmgrace'))
 		else:
@@ -225,10 +229,12 @@ def release(e):
 		src = sources[target-1]
 		val = p.get_voltage(target)
 		ss = _('Voltage at %s = %5.3f V') %(src,val)
+		sm = _('%3s: %5.3f V')%(src, val)
 		if 2 < target < 8:
 			level = p.get_state(target)
 			ss += _(' (Logic Level = %d)') %level
 		msg(ss)
+		g.disp(sm)
 	else:
 		msg(_('Invalid selection'), 'red')		
 
@@ -245,20 +251,21 @@ def press(e):
 			msg(_('%4s is an Output') %sources[seltag-1], 'red')
 			return
 		selection = SELSRC
-		msg(_('Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To show value release button.') %sources[seltag-1],'black')
+		msg(_('Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To print value release the button.')\
+				%sources[seltag-1])
 		w.configure(cursor = 'pencil')
 	elif e.x > LPWIDTH/2 and e.y < OFFSET:		# Trigger selection
 		if seltag >= 5:
 			selection = SETACT
-			msg(_('Selected %4s. Drag cursor to the OD1 or CSS Output') %acthelp[seltag],'black')
+			msg(_('Selected %4s. Drag cursor to the OD1 or CSS Output') %acthelp[seltag])
 			w.configure(cursor = 'hand1')
 		else:
 			selection = WAITACT
-			msg(_('Selected %4s. Drag cursor to desired Data Input') %acthelp[seltag],'black')
+			msg(_('Selected %4s. Drag cursor to desired Data Input') %acthelp[seltag],)
 			w.configure(cursor = 'hand2')
 	elif e.x > LPWIDTH/2 and e.y > OFFSET:		# Channel selection
 			selection = SELCHAN
-			msg(_('Selected %4s. Drag cursor to NML FIT or DEL') %channels[seltag],'black')
+			msg(_('Selected %4s. Drag cursor to NML FIT or DEL') %channels[seltag],)
 			w.configure(cursor = 'pencil')
 
 def update():
@@ -376,6 +383,7 @@ def set_pvs(e):
 			msg(_('Enter a value between 0 to +5 volts'),'red')
 		else:
 			msg(_('PVS set to %5.3f volts') %res)
+			g.disp(_('PVS: %5.3f V')%res)
 	except:
 		msg(_('Enter voltage between -5 and +5 volts'),'red')
 
@@ -448,13 +456,25 @@ def control_ccs():
 	p.set_state(11, state)
 
 def measurecap():
-	global stray_cap
 	msg(_('Starting Capacitance Measurement..'))
 	cap = p.measure_cap()
 	if cap == None:
 		msg(_('Error: Capacitance too high or short to ground'),'red')
 		return
-	msg(_('Capacitance = %6.1f pF(%6.1fpF - %6.1fpF of the Socket)')%(cap-stray_cap, cap, stray_cap))
+	g.disp(_('IN1: %6.1f pF')%cap)
+	if p.socket_cap == 30.0 and p.cap_calib == 1.0:
+		msg(_('IN1 Not Calibrated.'))
+	else:
+		msg(_('IN1: %6.1f pF')%cap)
+
+
+def measureres():
+	res = p.measure_res()
+	if res == None:
+		msg(p.msg,'red')
+		return
+	msg(_('Resistance from SEN to GND = %6.0f Ohm')%res)
+	g.disp(_('%5.0f Ohm'%res))
 
 def save_data():
 	fn = Fname.get()
@@ -508,9 +528,11 @@ def reconnect():
 
 #=============================== main program starts here ===================================
 root = Tk()    
-f1 = Frame(root, width = LPWIDTH, height = HEIGHT)
-
+top = Frame(root)
+top.pack(side=TOP, anchor =W)
+f1 = Frame(top, width = LPWIDTH, height = HEIGHT)
 f1.pack(side=LEFT,  fill = BOTH, expand = 1)				# Left side frame
+
 w = Canvas(f1, width=LPWIDTH, height=LPHEIGHT,bg = bgcol)   # Canvas for drag n drop controls
 w.pack(side=TOP, anchor = W)
 for k in range(len(sources)):
@@ -561,20 +583,15 @@ Trig.set(2050)
 
 
 #--------------------------------- Middle Frame ------------------------------
-a = Frame(root, width = LPWIDTH, height = HEIGHT)
+a = Frame(top, width = LPWIDTH, height = HEIGHT)
 a.pack(side=LEFT,  fill = BOTH, expand = 1)
 f = Frame(a, width = 75, height = HEIGHT)
 f.pack(side=TOP,  fill = BOTH, expand = 1)
 g = eyeplot.graph(f, width=WIDTH, height=HEIGHT)	# make plot objects using draw.disp
 g.setWorld(0, -5, 20, 5,_('mS'),'V')
-mf = Frame(a, width = 75, height = HEIGHT)
-mf.pack(side=TOP,  fill = BOTH, expand = 1)
-msgwin = Label(mf,text = _('Use Left Side Panel to Select Data Sources and Modifiers.'), fg = 'blue')
-msgwin.pack(side=LEFT)#, anchor = SW)
-Recon = Button(mf,text = _('Search Hardware'), command =reconnect)
 
 #============== Vertical scales for OFFSET adjustment. Lambda not working with Scale callbacks !!! =====
-of = Frame(root, width = 1, height = HEIGHT)
+of = Frame(top, width = 1, height = HEIGHT)
 of.pack(side=LEFT,  fill = BOTH, expand = 1)
 
 Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[0],\
@@ -587,7 +604,7 @@ Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[3],
 		from_ = 4, to=-4, resolution=1, command = set_ch4_offset).pack(side=TOP)
 
 #========================= Right Side panel ===========================================
-rf = Frame(root, width = 75, height = HEIGHT)
+rf = Frame(top, width = 75, height = HEIGHT)
 rf.pack(side=LEFT,  fill = BOTH, expand = 1)
 
 #---------------------- Extra Features -----------------------------
@@ -639,13 +656,17 @@ Ccs = IntVar()
 Checkbutton(f,text = 'CCS', variable = Ccs, command = control_ccs).pack(side=LEFT, anchor=N)
 Canvas(cf, height = 5, width= 100).pack(side=TOP)	# Spacer
 
+#ff = Frame(cf)			# Setting OD1 and CCS
+#ff.pack(side=TOP)
+#Button(ff,text =_('ZeroSet'), command=cap_setzero).pack(side=LEFT, anchor=N)
+
 Button(cf,text =_('Measure C on IN1'), command=measurecap).pack(side=TOP, anchor=N)
 Button(cf,text =_('Measure R on SEN'), command=measureres).pack(side=TOP, anchor=N)
 
 Canvas(cf, height = 5, width= 100).pack(side=TOP)	# Spacer
 
-Label(cf, text = _('Type command<Enter>'), fg='blue').pack(side=TOP)
-Result = Text(cf, width = 25, height = 6)
+#Label(cf, text = _('Type command<Enter>'), fg='blue').pack(side=TOP)
+Result = Text(cf, width = 25, height = 5)
 Result.pack(side=TOP)
 Result.bind("<Return>", process_command)
 Result.bind("<KP_Enter>", process_command)
@@ -680,7 +701,6 @@ Scan = Button(f, text=_('SCAN'), command = scan)
 Scan.pack(side=LEFT)
 Grace = Button(f, text=_('XMG'), command = xmgrace)
 Grace.pack(side=LEFT)
-#Canvas(rf, height = 5, width= 100).pack(side=TOP)	# Spacer
 
 f = Frame(rf)
 f.pack(side=TOP, anchor = W)
@@ -690,22 +710,24 @@ Expt.pack(side=LEFT)
 q = Button(f,text=_('QUIT'), command = sys.exit)
 q.pack(side=LEFT, anchor=N)
 
+mf = Frame(root, bg='white')
+mf.pack(side=TOP,  fill = BOTH, expand = 1)
+msgwin = Label(mf,text = '', justify=CENTER, bg = 'white', fg = 'blue', font=('Helvetica', 12))
+msgwin.pack(side=LEFT, anchor = CENTER)
+Recon = Button(mf,text = _('Search Hardware'), command =reconnect)
+
 p = eyes.open()
 if p == None:
 	msg(_('Could not open expEYES Junior. Bad connection or another program using it'),'red')
 	Recon.pack(side=LEFT)
 else:
 	p.disable_actions()
-	c = p.measure_cap()
-	if 25 < c < 45:
-		stray_cap = c
-	else:
-		stray_cap = 30.0
 	root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
 	root.after(TIMER,update)
 #------------------------------ experiments menu ------------------------------
 expts = [ 
 [_('Select Experiment'),''],
+[_('Control PVS'),'change-pvs'],
 [_('Study of AC Circuits'),'ac-circuit'],
 [_('RC Circuit'),'RCcircuit'],
 [_('RL Circuit'),'RLcircuit'],

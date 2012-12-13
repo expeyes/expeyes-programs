@@ -4,6 +4,7 @@ Python library to communicate to the PIC24FV32KA302 uC running 'eyesj.c'
 Author  : Ajith Kumar B.P, bpajith@gmail.com, ajith@iuac.res.in
 License : GNU GPL version 3
 Started on 25-Mar-2012
+Last edit : 25-Oct-2012, added storing calibration to EEPROM
 *
 The micro-controller pins used are mapped into 13 I/O channels (numbered 0 to 12)
 and act like a kind of logical channels.  The Python function calls refer to them
@@ -28,18 +29,10 @@ import serial, struct, math, time, commands, sys, os, os.path
 import __builtin__		# Need to do this since 'eyes.py' redefines 'open'
 
 import gettext # For localization, inputs from Georges (georges.khaznadar@free.fr)
-gettext.bindtextdomain("expeyes")
+gettext.bindtextdomain('expeyes')
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-#Path to the calibration file
-if sys.platform.startswith('linux'):
-	calibrationDir=os.path.expanduser('~/.local/share/data/expeyes')
-else:
-	calibrationDir="."
-if not os.path.isdir(calibrationDir):
-	os.makedirs(calibrationDir)
-calibrationFile=os.path.abspath(os.path.join(calibrationDir,'eyesj.cal'))
 
 #Commands with One byte argument (41 to 80) 
 GETVERSION  =   1
@@ -54,6 +47,7 @@ NANODELAY   =   43  # from IN2 to SEN, using CTMU, send current range
 SETADCREF   =   44  # non-zero value selects external +Vref option
 READADCSM   =	45	# Read the ADC channel, in Sleep Mode
 IRSEND1     =   46  # Sends one byte over IR on SQR1
+RDEEPROM	=   47	# Read nwords starting from addr
 
 # Commands with Two bytes argument (81 to 120)
 R2RTIME     =   81  # Time from rising edge to rising edge,arguments pin1 & pin2
@@ -76,9 +70,11 @@ SETCURRENT	=   97	# ADC channel, CTMU Irange
 SETACTION   =   98  # capture modifiers, action, target pin
 SETTRIGVAL  =   99  # Analog trigger level, 2 bytes
 
+
 # Commands with Three bytes argument (121 to 160)    
 SETSQR1		=  121	# Square wave on OSC2
 SETSQR2		=  122	# Square wave on OSC3
+WREEPROM	=  123  # write 1 word to the address
 
 #Commands with Four bytes argument (161 to 200)
 MEASURECV   = 163    # ch, irange, duration
@@ -120,6 +116,7 @@ def open(dev = None):
 	obj = Eyesjun()
 	if obj.fd != None:
 		obj.disable_actions()			# Disable capture modifiers
+		obj.load_calibration()
 		return obj
 	print _('Could not find EYES Junior hardware')
 	print _('Check the connections.')
@@ -134,6 +131,9 @@ class Eyesjun:
 	m12 = [5.0/4095] + [10.0/4095]*2 + [5.0/4095]*10
 	m8 =  [5.0/255]  + [10.0/255] *2 + [5.0/255] *10
 	c = [0.0] + [-5.0]*2 + [0.0]*10
+	sen_pullup = 5100.0
+	cap_calib = 1.0				# Default values, to be loaded from file.
+	socket_cap = 30.0			# Set by calibrate.py
 	msg = ''
 
 	def __init__(self, dev = None):
@@ -161,7 +161,6 @@ class Eyesjun:
 		for dev in device_list:
 			try:
 				handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3) #8,1,no parity
-				#print 'OP ',dev
 			except:
 				continue
 
@@ -183,29 +182,6 @@ class Eyesjun:
 				self.version = ver
 				handle.timeout = 4.0	# r2rtime on .7 Hz require this
 				self.msg += 'Found EYES Junior version ' + ver
-				try:
-					f = __builtin__.open(calibrationFile,'r')
-					ss = f.readline().split()
-					m1 = float(ss[0])
-					c1 = float(ss[1])
-					m2 = float(ss[2])
-					c2 = float(ss[3])
-					f.close()
-					m = 10.0/4095
-					c = -5.0
-					dm = m * 0.02			# maximum 2% deviation
-					dc = 5 * 0.02
-					#print m1,c1,m2,c2, dm, dc
-					if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:
-						self.m12[1] = m1
-						self.c[1] = c1
-						self.m12[2] = m2
-						self.c[2] = c2
-						self.m8[1] = m1 * 4095./255
-						self.m8[2] = m2 * 4095./255
-						#print _('Loaded Calibration from File'), m1,c1,m2,c2
-				except:
-					print _('Calibration data NOT found. You may run Calibrate program')
 				return 		# Successful return
 			else:			# If it is not our device close the file
 				handle.close()
@@ -232,9 +208,120 @@ class Eyesjun:
 		ver = self.fd.read(5)
 		return ver
 
-#--------------------------------------CTMU -------------
-	ctmui = [550, 0.55, 5.5, 55.0]
+#-----------------------------------EEPROM----------------------------------
+	def eeprom_write(self, addr, data):
+		self.sendByte(WREEPROM)
+		self.sendByte(addr)
+		self.sendInt(data)
+		res = self.fd.read(1)
+		if res != 'D':
+			self.msg = _('WREEPROM ERROR ') + res
+			print _('WREEPROM ERROR'), res
+			return None
+		return 1			# number of words written
 
+	def eeprom_read(self, addr):
+		self.sendByte(RDEEPROM)
+		self.sendByte(addr)
+		res = self.fd.read(1)
+		if res != 'D':
+			self.msg = _('RDEEPROM ERROR ') + res
+			return None
+		res = self.fd.read(2)
+		return ord(res[0]) | (ord(res[1]) << 8)
+
+	def store_float(self, addr, data):	# store a floating point number to EEPROM
+		ss = struct.pack('f', data)
+		lo = ord(ss[0]) | (ord(ss[1]) << 8)
+		hi  = ord(ss[2]) | (ord(ss[3]) << 8)
+		if self.eeprom_write(addr, lo) == None:
+			return None
+		if self.eeprom_write(addr+1, hi) == None:
+			return None
+		return 1
+
+	def restore_float(self, addr):		# restore a floating point number from EEPROM
+		lo = self.eeprom_read(addr)
+		hi = self.eeprom_read(addr+1)
+		data = (hi << 16) | lo
+		ss = struct.pack('I', data)
+		res = struct.unpack('f', ss)
+		return res[0]					# return the float
+
+	AM1 = 0		# EEPROM location of the parameters, y = mx + c, for A1 and A2
+	AC1 = 2
+	AM2 = 4
+	AC2 = 6
+	ASOC = 8      # Socket cap IN1
+	ACCF = 10     # Capacitance error factor
+	ARP  = 12     # Pullup Resistance 
+
+	def storeCF_a1a2(self, m1,c1,m2,c2): # slope & intercept for A1 and A2		
+		if self.store_float(self.AM1, m1) == None:
+			return None
+		self.store_float(self.AC1, c1)
+		self.store_float(self.AM2, m2)
+		self.store_float(self.AC2, c2)
+		return 4		# Number of items written
+
+	def storeCF_cap(self, soc, ccf):  	#Socket capacitance and error factor
+		if self.store_float(self.ASOC, soc) == None:
+			return None
+		self.store_float(self.ACCF, ccf)
+		return 2
+
+	def storeCF_sen(self, r):			# pullup resistor value
+		if self.store_float(self.ARP, r) == None:
+			return None
+		return 1
+
+	def load_calibration(self):
+		try:
+			m1 = self.restore_float(self.AM1)
+			c1 = self.restore_float(self.AC1)
+			m2 = self.restore_float(self.AM2)
+			c2 = self.restore_float(self.AC2)
+			m = 10.0/4095
+			c = -5.0
+			dm = m * 0.02			# maximum 2% deviation
+			dc = 5 * 0.02
+			#print m1,c1,m2,c2, dm, dc
+			if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:
+				self.m12[1] = m1
+				self.c[1] = c1
+				self.m12[2] = m2
+				self.c[2] = c2
+				self.m8[1] = m1 * 4095./255		# Scale factors for 8 bit read
+				self.m8[2] = m2 * 4095./255
+				#print _('Calibration Factors :'), m1,c1,m2,c2
+			else:
+				print _('Invalid Calibration factors for A1,A2'), m1,c1,m2,c2
+		except:
+			print _('Could not load A1 & A2 Calibration')
+
+		try:
+			soc = self.restore_float(self.ASOC)
+			ccf = self.restore_float(self.ACCF)
+			if (.8 < ccf < 1.2) and (20 < soc < 50):
+				self.cap_calib = ccf
+				self.socket_cap = soc
+				#print _('IN1 Calibration :'), ccf, soc
+			else:
+				print _('Invalid Calibration factors for IN1'), soc, ccf
+		except:
+			print _('Could not load IN1 Capacitor Calibration')
+
+		try:
+			r = self.restore_float(self.ARP)
+			if 4950 < r < 5250:
+				self.sen_pullup = r
+				#print _('SEN Pullup :'), r
+			else:
+				print _('Invalid Pullup resistor value'), r
+		except:
+			print _('Could not load SEN Pullup calibration')
+
+#------------------------- Infrared comm. ----------------
 	def irsend1(self, d1):
 		self.sendByte(IRSEND1)
 		self.sendByte(d1)
@@ -258,6 +345,8 @@ class Eyesjun:
 			return
 		return 1
 
+#--------------------------------------CTMU -------------
+	ctmui = [550, 0.55, 5.5, 55.0]
 	def nano_delay(self, i):
 		'''
 		Using the CTMU of PIC, measure r2r from IN2 or SEN. uses cap of IN1. Incomplete
@@ -278,8 +367,8 @@ class Eyesjun:
 
 	def measure_cv(self, ch, ctime, i = 5.5):  
 		'''
-		Using the CTMU of PIC, charges a capacitor connected to IN1, IN2 or SEN, for 'ctime' microseconds
-		and then mesures the voltage across it.
+		Using the CTMU of PIC, charges a capacitor connected to IN1, IN2 or SEN, 
+		for 'ctime' microseconds and then mesures the voltage across it.
 		The value of current can be set to .55uA, 5.5 uA, 55uA or 550 uA
 		'''
 		if i > 500:		# 550 uA
@@ -309,45 +398,49 @@ class Eyesjun:
 		v = self.m12[ch] * iv + self.c[ch]
 		return v
 
-	def measure_cap(self, ctmin = 10):
+	def measure_cap_raw(self, ctmin = 10):
 		'''
-		Measures the capacitance connected between IN1 and GND. Stray capacitance should be
-		subtracted from the measured value. Measurement is done by charging the capacitor with 5.5 uA
-		for a given time interval. 
+		Measures the capacitance connected between IN1 and GND. Stray capacitance 
+		should be subtracted from the measured value. Measurement is done by charging 
+		the capacitor with 5.5 uA for a given time interval. Any error in the value of
+		current is corrected by calibrating.
 		'''
 		for ctime in range(ctmin, 1000, 10):
 			v = self.measure_cv(3, ctime, 5.5)   # 5.5 uA range is chosen
 			if v > 2.0: break
-		if v > 4:
+		if (v > 4) or (v == 0):
 			self.msg = _('Error measuring capacitance %5.3f') %v
 			print _('Error measuring capacitance'), v
-			return 
-		if v > 0:
-			c = 5.5 * ctime / v 	# returns value in pF 
+			return None
+		return 5.5 * ctime / v    # returns value in pF 
+
+	def measure_cap(self, ctmin = 10):
+		'''
+		Measures the capacitance connected between IN1 and GND.
+		Returns the value after applying corrections.
+		'''
+		cap = self.measure_cap_raw()
+		if cap != None:
+			return (cap - self.socket_cap) * self.cap_calib
 		else:
-			return
-		#print ctime, v, c
-		return c
+			return None
 
 	def measure_res(self):
 		'''
 		Measures the resistance connected between SEN and GND.
 		'''
 		v = self.get_voltage(5)
-		if v > 4.9:
-			self.msg = _('Resistance too high or open %5.3f') %v
-			print _('Resistance too high or open'), v
+		if .1 < v < 4.9:
+			return self.sen_pullup * v /(5-v)
+		else:
+			self.msg = _('Resistance NOT in 100 Ohm to 100 kOhm range')
+			print _('Resistance NOT in 100 Ohm to 100 kOhm range')
 			return
-		elif v < 0.1:
-			self.msg = _('Resistance too low or short %5.3f') %v
-			print _('Resistance too low or short'), v
-			return
-		return 5100.0 * v /(5-v)
 
 	def set_current(self, ch, i): # channel 3 or 4, 0 means stop CTMU
 		'''
-		Sets CTMU current 'i' on a channel 'ch' and returns the voltage measured across the load. Allowed values
-		of current are .55, 5.5, 55 and 550 micro ampleres.
+		Sets CTMU current 'i' on a channel 'ch' and returns the voltage measured 
+		across the load. Allowed values of current are .55, 5.5, 55 and 550 uAmps.
 		'''
 		if i > 500:		# 550 uA
 			irange = 0
@@ -775,13 +868,13 @@ class Eyesjun:
 			return
 		goal = int(v * self.DACM + 0.5)
 		iv = goal
-		for k in range(15):
+		for k in range(10):
 			self.write_dac(iv)
-			isv = self.read_adc(12)		# actual value
-			#print 'iv & isv ', iv, isv	
-			if abs(isv-goal) <= 1: break
-			if isv > goal: iv -= 1
-			elif isv < goal: iv += 1
+			isv = self.read_adc(12)			# actual value
+			err = goal - isv
+			#print 'iv & isv err', iv, isv, err	, k
+			if abs(err) <= 1: break
+			iv = iv + err/2				# Even if it exceeds 4095, write_dac() will fix it
 		sv = self.get_voltage(12)		# The voltage actually set
 		return sv
 

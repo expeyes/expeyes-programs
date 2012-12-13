@@ -80,10 +80,10 @@ b=Checkbutton(cf,text='A1', variable=A1, fg= 'black')
 b.pack(side=LEFT, anchor = SW)
 
 
-b=Button(cf,text=_(_('Capture')), command = a.capture, fg= 'black')
+b=Button(cf,text=_('Capture'), command = a.capture, fg= 'black')
 b.pack(side=LEFT, anchor = SW)
 
-b=Button(cf,text=_(_('Power Spectrum')), command = a.do_fft, fg= 'black')
+b=Button(cf,text=_('Power Spectrum'), command = a.do_fft, fg= 'black')
 b.pack(side=LEFT, anchor = SW)
 
 b5 = Button(cf, text = _('QUIT'), command = sys.exit)

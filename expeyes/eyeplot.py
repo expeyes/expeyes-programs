@@ -82,6 +82,17 @@ class graph:
 		self.setWorld(0 , 0, self.SCX, self.SCY, self.xlabel, self.ylabel)   # initialize scale factors 
 		self.grid()
 
+#----------------------- Another window ---------------------
+	def clear_fm(self):
+		try:
+			self.canvas.delete(self.msg_window)
+		except:
+			pass
+
+	def disp(self, msg):
+		self.clear_fm()
+		win = Button(text = msg, bg = 'yellow', fg='blue', font=("Helvetica", 30), command=self.clear_fm)
+		self.msg_window = self.canvas.create_window(self.SCX/4, self.SCY/10, window=win, anchor=NW)
 #--------------------------------- Manage the Marker's --------------------------------------
 	def enable_marker(self, marker_max = 3):
 		self.canvas.bind("<Button-3>", self.show_marker)

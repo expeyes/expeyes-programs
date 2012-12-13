@@ -44,7 +44,7 @@ _('7. SQR2: Generates Square Wave. The frequency range is controlled by software
 _('is done by an external 22 kOhm variable resistor. Frequency range is from 0.7 Hz to 90 kHz.'),
 _('8. 22 kOhm resistor used for frequency adjustment of SQR2.'),
 _('9. 22 kOhm resistor used for frequency adjustment of SQR2.'),
-_('10. Programmable Pulse. Frequency is 488.3 Hz. Duty cycle from 0 to 100% in 255 steps.'),
+_('10. Programmable Pulse. Frequency is 488.3 Hz. Duty cycle from 0 to 100%% in 255 steps.'),
 _('11. Ground'),
 _('12. Output of Inverting Amplifier with a gain of 47. (Input at 14)'),
 _('13. Output of Inverting Amplifier with a gain of 47. (Input at 15)'),
@@ -600,11 +600,19 @@ expts = [
 
 def run_expt(expt):
 	global w
-	w.eye.fd.close()		# Close hardware port
-	cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
-	os.system(cmd)
-	showhelp(_('Finished ') + expt)
-	w.eye = eyes.open()		# Open hardware port again
+	w.eye.fd.close()	# Close hardware port
+	if os.name == 'nt':		# For windows OS
+		cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
+		os.system(cmd)
+		showhelp(_('Finished ') + expt)
+	else:
+		#print abs_path() + expt+'.py'
+		stat,out = commands.getstatusoutput('python '+ eyeplot.abs_path() + expt+'.py')
+		if stat != 0:
+			showhelp(out)
+		else:
+			showhelp(_('Finished "')+expt+'.py"')
+	w.eye = eyes.open()	# Open hardware port again
 	w.eye.disable_actions()
 
 menu = Menu(w.panel, tearoff=0)

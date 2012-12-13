@@ -64,6 +64,7 @@ def update():
 		CMERR = False 
 		msg('')
 	try:
+		p.set_trig_source(1)
 		t0,v0,t1,v1 = p.capture2_hr(1,2,NP,delay)
 		g.delete_lines()
 		vp.delete_lines()
@@ -164,6 +165,8 @@ def calc():
 #=============================== main program starts here ===================================
 p = eyes.open()
 if p == None: sys.exit()
+
+p.set_trigger(2048)
 root = Tk()    
 f = Frame(root)
 f.pack(side=LEFT)
@@ -252,7 +255,7 @@ Calc2 = Label(rf,text = '')
 Calc2.pack(side=TOP)
 #---------------
 
-eyeplot.pop_image('pics/ac-circuit.png', _('Study of AC Circuit'))
+eyeplot.pop_image('pics/ac-circuits.png', _('Study of AC Circuit'))
 root.title(_('Study of AC Circuits'))
 root.after(10,update)
 root.mainloop()

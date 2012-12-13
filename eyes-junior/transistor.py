@@ -117,6 +117,9 @@ def clear():
 
 p = eyes.open()
 p.disable_actions()
+p.set_sqr1_dc(5)
+time.sleep(.5)
+
 root = Tk()
 Canvas(root, width = WIDTH, height = 5).pack(side=TOP)  # Some space at the top
 g = eyeplot.graph(root, width=WIDTH, height=HEIGHT, bip=False)	# make plot objects using draw.disp
@@ -128,7 +131,7 @@ cf.pack(side=TOP,  fill = BOTH, expand = 1)
 l = Label(cf, text=_('Vb (via 200K)='))
 l.pack(side=LEFT, anchor = SW )
 Bias =StringVar()
-Bias.set('3.0')
+Bias.set('1.0')
 e =Entry(cf, width=5, bg = 'white', textvariable = Bias)
 e.pack(side = LEFT)
 l = Label(cf, text='V')

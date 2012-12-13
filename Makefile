@@ -28,8 +28,11 @@ install:
 	  $(DESTDIR)/usr/share/icons/expeyes.png
 	install -m 644 pixmaps/expeyes-junior-icon.png \
 	  $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/nuclear-icon.png \
+	  $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
-	install -m 644 desktop/expeyes.desktop desktop/expeyes-junior.desktop \
+	install -m 644 desktop/expeyes.desktop \
+	  desktop/expeyes-junior.desktop desktop/Phoenix-ASM.desktop \
 	  $(DESTDIR)/usr/share/applications
 	make -C po install DESTDIR=$(DESTDIR)
 	# for expeyes-doc-common

@@ -102,7 +102,7 @@ class Pend:
 		if self.running == True:
 			return
 		self.nt = [ [], [] ]
-		g.delete_lines()
+		Result.delete(1.0,END)
 		self.msg(_('Cleared Data and Trace'))
 
 	def msg(self,s, col = 'blue'):
