@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0.1
+Type=Application
+
+Exec=python /usr/share/expeyes/eyes/alpha.py
+Icon=nuclear-icon.png
+Name=Phoenix-AlphaSpec
+Comment=Phoenix Alpha Spectrometer
+
+Categories=ExpEYES;Education;Science;Other;	
+MimeType=application/x-python
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false
