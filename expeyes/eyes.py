@@ -26,7 +26,7 @@ The hardware consisists of :
 12)2 Inverting amplifiers with gain = 47 , mainly used for microphones. 
 '''
 
-import serial, struct, math, time, commands, sys, os
+import serial, struct, math, time, commands, sys, os, glob, fnmatch
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -101,7 +101,7 @@ AWAITFALL	= 8
 BUFSIZE     = 1800       # status + adcinfo + 1800 data
 
 #Serial devices to search for EYES hardware.  
-linux_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2', '/dev/cu.usbserial-A100P0WJ']
+linux_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2', '/dev/cu.usbserial']
 
 
 def open(dev = None):
@@ -142,6 +142,9 @@ class Eyes:
 				device_list.append(s)
 			for k in range(1,11):
 				device_list.append(k)
+		elif (os.uname()[0] == 'Darwin'):
+			device_list = []
+			device_list = glob.glob('/dev/cu.usbserial*')
 		else:
 			device_list = []    # gather unused ones from the linux_list
 			for dev in linux_list:
