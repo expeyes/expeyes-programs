@@ -101,7 +101,7 @@ AWAITFALL	= 8
 BUFSIZE     = 1800       # status + adcinfo + 1800 data
 
 #Serial devices to search for EYES hardware.  
-linux_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2']
+linux_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2', '/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2', '/dev/cu.usbserial-A100P0WJ']
 
 
 def open(dev = None):
