@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expEYES 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-13 15:38+0100\n"
+"POT-Creation-Date: 2012-12-13 16:31+0100\n"
 "PO-Revision-Date: 2012-07-08 11:35+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "Language-Team: ESPERANTO <eo@li.org>\n"
@@ -75,323 +75,323 @@ msgstr ""
 msgid "Schematic"
 msgstr ""
 
-#: ../expeyes/eyesj.py:133
+#: ../expeyes/eyesj.py:121
 msgid "Could not find EYES Junior hardware"
 msgstr ""
 
-#: ../expeyes/eyesj.py:134 ../expeyes/eyes.py:116 ../expeyes/mca.py:39
+#: ../expeyes/eyesj.py:122 ../expeyes/eyes.py:116 ../expeyes/mca.py:39
 msgid "Check the connections."
 msgstr ""
 
-#: ../expeyes/eyesj.py:179 ../expeyes/eyes.py:157 ../expeyes/mca.py:70
+#: ../expeyes/eyesj.py:167 ../expeyes/eyes.py:157 ../expeyes/mca.py:70
 #, python-format
 msgid "Port %s is existing "
 msgstr ""
 
-#: ../expeyes/eyesj.py:181 ../expeyes/eyes.py:159 ../expeyes/mca.py:72
+#: ../expeyes/eyesj.py:169 ../expeyes/eyes.py:159 ../expeyes/mca.py:72
 msgid "but could not open"
 msgstr ""
 
-#: ../expeyes/eyesj.py:183 ../expeyes/eyes.py:161 ../expeyes/mca.py:74
+#: ../expeyes/eyesj.py:171 ../expeyes/eyes.py:161 ../expeyes/mca.py:74
 msgid "and opened. "
 msgstr ""
 
-#: ../expeyes/eyesj.py:201
+#: ../expeyes/eyesj.py:189
 msgid "No EYES Junior hardware detected"
 msgstr ""
 
-#: ../expeyes/eyesj.py:218
+#: ../expeyes/eyesj.py:206
 msgid "GETVERSION ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:230
+#: ../expeyes/eyesj.py:218
 msgid "WREEPROM ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:231
+#: ../expeyes/eyesj.py:219
 msgid "WREEPROM ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:240
+#: ../expeyes/eyesj.py:228
 msgid "RDEEPROM ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:310
+#: ../expeyes/eyesj.py:298
 msgid "Invalid Calibration factors for A1,A2"
 msgstr ""
 
-#: ../expeyes/eyesj.py:312
+#: ../expeyes/eyesj.py:300
 msgid "Could not load A1 & A2 Calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:322
+#: ../expeyes/eyesj.py:310
 msgid "Invalid Calibration factors for IN1"
 msgstr ""
 
-#: ../expeyes/eyesj.py:324
+#: ../expeyes/eyesj.py:312
 msgid "Could not load IN1 Capacitor Calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:332
+#: ../expeyes/eyesj.py:320
 msgid "Invalid Pullup resistor value"
 msgstr ""
 
-#: ../expeyes/eyesj.py:334
+#: ../expeyes/eyesj.py:322
 msgid "Could not load SEN Pullup calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:342
+#: ../expeyes/eyesj.py:330
 msgid "IRSEND1 ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:343
+#: ../expeyes/eyesj.py:331
 msgid "IRSEND1 ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:355
+#: ../expeyes/eyesj.py:343
 msgid "IRSEND4 ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:356
+#: ../expeyes/eyesj.py:344
 msgid "IRSEND4 ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:396
+#: ../expeyes/eyesj.py:384
 msgid "Current to be set only on IN1(3) or IN2(4)"
 msgstr ""
 
-#: ../expeyes/eyesj.py:397 ../expeyes/eyesj.py:468 ../expeyes/eyesj.py:469
+#: ../expeyes/eyesj.py:385 ../expeyes/eyesj.py:456 ../expeyes/eyesj.py:457
 msgid "Current to be set only on IN1 or IN2"
 msgstr ""
 
-#: ../expeyes/eyesj.py:405
+#: ../expeyes/eyesj.py:393
 msgid "MEASURECV ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:406
+#: ../expeyes/eyesj.py:394
 msgid "MEASURECV ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:424
+#: ../expeyes/eyesj.py:412
 #, python-format
 msgid "Error measuring capacitance %5.3f"
 msgstr ""
 
-#: ../expeyes/eyesj.py:425
+#: ../expeyes/eyesj.py:413
 msgid "Error measuring capacitance"
 msgstr ""
 
-#: ../expeyes/eyesj.py:448 ../expeyes/eyesj.py:449
+#: ../expeyes/eyesj.py:436 ../expeyes/eyesj.py:437
 msgid "Resistance NOT in 100 Ohm to 100 kOhm range"
 msgstr ""
 
-#: ../expeyes/eyesj.py:476 ../expeyes/eyesj.py:477
+#: ../expeyes/eyesj.py:464 ../expeyes/eyesj.py:465
 msgid "SETCURRENT ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:492
+#: ../expeyes/eyesj.py:480
 msgid "READTEMP error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:493
+#: ../expeyes/eyesj.py:481
 msgid "READTEMP error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:508 ../expeyes/eyesj.py:509
+#: ../expeyes/eyesj.py:496 ../expeyes/eyesj.py:497
 msgid "Pin should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:512 ../expeyes/eyesj.py:513
+#: ../expeyes/eyesj.py:500 ../expeyes/eyesj.py:501
 msgid "skip exceeded 249 edges"
 msgstr ""
 
-#: ../expeyes/eyesj.py:517 ../expeyes/eyesj.py:518
+#: ../expeyes/eyesj.py:505 ../expeyes/eyesj.py:506
 msgid "Both pins should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:522 ../expeyes/eyesj.py:523
+#: ../expeyes/eyesj.py:510 ../expeyes/eyesj.py:511
 msgid "Starting pin should be digital output capable: 8,9,10 or 11"
 msgstr ""
 
-#: ../expeyes/eyesj.py:526 ../expeyes/eyesj.py:527
+#: ../expeyes/eyesj.py:514 ../expeyes/eyesj.py:515
 msgid "Destination pin should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:534
+#: ../expeyes/eyesj.py:522
 msgid "Time measurement command error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:535
+#: ../expeyes/eyesj.py:523
 #, python-format
 msgid "Time measurement command %d error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:647 ../expeyes/eyesj.py:648
+#: ../expeyes/eyesj.py:635 ../expeyes/eyesj.py:636
 msgid "SETSTATE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:660 ../expeyes/eyesj.py:661
+#: ../expeyes/eyesj.py:648 ../expeyes/eyesj.py:649
 msgid "GETSTATE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:673 ../expeyes/eyesj.py:674
+#: ../expeyes/eyesj.py:661 ../expeyes/eyesj.py:662
 msgid "GETPORTB error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:700 ../expeyes/eyesj.py:701
+#: ../expeyes/eyesj.py:688 ../expeyes/eyesj.py:689
 msgid "SETPWM error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:738
+#: ../expeyes/eyesj.py:726
 msgid "Invalid channel number"
 msgstr ""
 
-#: ../expeyes/eyesj.py:739
+#: ../expeyes/eyesj.py:727
 msgid "Invalid Channel"
 msgstr ""
 
-#: ../expeyes/eyesj.py:760 ../expeyes/eyesj.py:819 ../expeyes/eyesj.py:820
+#: ../expeyes/eyesj.py:748 ../expeyes/eyesj.py:807 ../expeyes/eyesj.py:808
 msgid "Invalid Freqency"
 msgstr ""
 
-#: ../expeyes/eyesj.py:770
+#: ../expeyes/eyesj.py:758
 msgid "SETSQR error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:802 ../expeyes/eyesj.py:803
+#: ../expeyes/eyesj.py:790 ../expeyes/eyesj.py:791
 msgid "Invalid phase difference"
 msgstr ""
 
-#: ../expeyes/eyesj.py:832 ../expeyes/eyesj.py:833
+#: ../expeyes/eyesj.py:820 ../expeyes/eyesj.py:821
 msgid "SETSQRS error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:850 ../expeyes/eyesj.py:851
+#: ../expeyes/eyesj.py:838 ../expeyes/eyesj.py:839
 msgid "SETDAC error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:859 ../expeyes/eyesj.py:912 ../expeyes/eyesj.py:932
-#: ../expeyes/eyesj.py:946 ../expeyes/eyesj.py:958 ../expeyes/eyesj.py:959
-#: ../expeyes/eyesj.py:974 ../expeyes/eyesj.py:984 ../expeyes/eyesj.py:985
+#: ../expeyes/eyesj.py:847 ../expeyes/eyesj.py:900 ../expeyes/eyesj.py:920
+#: ../expeyes/eyesj.py:934 ../expeyes/eyesj.py:946 ../expeyes/eyesj.py:947
+#: ../expeyes/eyesj.py:962 ../expeyes/eyesj.py:972 ../expeyes/eyesj.py:973
 #: ../expeyes/eyes.py:506 ../expeyes/eyes.py:524 ../expeyes/eyes.py:543
 #: ../expeyes/mca.py:148
 msgid "Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:865 ../expeyes/eyesj.py:866 ../expeyes/eyes.py:512
+#: ../expeyes/eyesj.py:853 ../expeyes/eyesj.py:854 ../expeyes/eyes.py:512
 #: ../expeyes/mca.py:154
 msgid "READADC error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:878 ../expeyes/eyesj.py:879
+#: ../expeyes/eyesj.py:866 ../expeyes/eyesj.py:867
 msgid "invalid voltage"
 msgstr ""
 
-#: ../expeyes/eyesj.py:901 ../expeyes/eyesj.py:902
+#: ../expeyes/eyesj.py:889 ../expeyes/eyesj.py:890
 msgid "SETADCREF error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:911
+#: ../expeyes/eyesj.py:899
 msgid "READADC: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:918 ../expeyes/eyesj.py:919
+#: ../expeyes/eyesj.py:906 ../expeyes/eyesj.py:907
 msgid "READADC error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:931
+#: ../expeyes/eyesj.py:919
 msgid "get_voltage: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:945
+#: ../expeyes/eyesj.py:933
 msgid "get_voltageNS: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:973
+#: ../expeyes/eyesj.py:961
 msgid "get_voltage_time: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:997 ../expeyes/eyesj.py:1032
+#: ../expeyes/eyesj.py:985 ../expeyes/eyesj.py:1020
 msgid "Minimum Timegap is 4 us"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1005
+#: ../expeyes/eyesj.py:993
 msgid "CAPTURE error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1006 ../expeyes/eyesj.py:1040 ../expeyes/eyesj.py:1041
+#: ../expeyes/eyesj.py:994 ../expeyes/eyesj.py:1028 ../expeyes/eyesj.py:1029
 #: ../expeyes/eyes.py:616
 msgid "CAPTURE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1012 ../expeyes/eyesj.py:1047
+#: ../expeyes/eyesj.py:1000 ../expeyes/eyesj.py:1035
 #, python-format
 msgid "CAPTURE: size mismatch %d %d"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1013 ../expeyes/eyesj.py:1048 ../expeyes/eyes.py:624
+#: ../expeyes/eyesj.py:1001 ../expeyes/eyesj.py:1036 ../expeyes/eyes.py:624
 msgid "CAPTURE: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1067 ../expeyes/eyesj.py:1105 ../expeyes/eyesj.py:1142
-#: ../expeyes/eyesj.py:1186
+#: ../expeyes/eyesj.py:1055 ../expeyes/eyesj.py:1093 ../expeyes/eyesj.py:1130
+#: ../expeyes/eyesj.py:1174
 msgid "Minimum Timegap is (4*number of channels)usec"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1076 ../expeyes/eyesj.py:1077
+#: ../expeyes/eyesj.py:1064 ../expeyes/eyesj.py:1065
 msgid "CAPTURE2 error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1083 ../expeyes/eyesj.py:1084
+#: ../expeyes/eyesj.py:1071 ../expeyes/eyesj.py:1072
 msgid "CAPTURE2: size mismatch"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1114 ../expeyes/eyesj.py:1115
+#: ../expeyes/eyesj.py:1102 ../expeyes/eyesj.py:1103
 msgid "CAPTURE2_HR error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1121 ../expeyes/eyesj.py:1122
+#: ../expeyes/eyesj.py:1109 ../expeyes/eyesj.py:1110
 msgid "CAPTURE2_HR: size mismatch"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1152 ../expeyes/eyesj.py:1153
+#: ../expeyes/eyesj.py:1140 ../expeyes/eyesj.py:1141
 msgid "CAPTURE3 error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1159 ../expeyes/eyesj.py:1160
+#: ../expeyes/eyesj.py:1147 ../expeyes/eyesj.py:1148
 msgid "CAPTURE3: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1197 ../expeyes/eyesj.py:1198
+#: ../expeyes/eyesj.py:1185 ../expeyes/eyesj.py:1186
 msgid "CAPTURE4 error ="
 msgstr ""
 
-#: ../expeyes/eyesj.py:1204 ../expeyes/eyesj.py:1205
+#: ../expeyes/eyesj.py:1192 ../expeyes/eyesj.py:1193
 msgid "CAPTURE4: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1245 ../expeyes/eyesj.py:1246
+#: ../expeyes/eyesj.py:1233 ../expeyes/eyesj.py:1234
 msgid "SETTRIGVAL error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1261 ../expeyes/eyesj.py:1262
+#: ../expeyes/eyesj.py:1249 ../expeyes/eyesj.py:1250
 msgid "ERROR: SETACTION"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1275
+#: ../expeyes/eyesj.py:1263
 msgid "SETACTION ERR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1276
+#: ../expeyes/eyesj.py:1264
 #, python-format
 msgid "SETACTION ERR: action = %d ch = %d"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1341
+#: ../expeyes/eyesj.py:1329
 msgid "Invalid pulse width"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1347 ../expeyes/eyesj.py:1348
+#: ../expeyes/eyesj.py:1335 ../expeyes/eyesj.py:1336
 msgid "ERROR: SETPULWIDTH"
 msgstr ""
 
