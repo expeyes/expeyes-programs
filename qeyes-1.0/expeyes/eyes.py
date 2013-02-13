@@ -1,11 +1,13 @@
 '''
 EYES for Young Engineers and Scientists (EYES 1.0)
 Python library to communicate to the AtMega32 uC running 'eyes.c'
-Author  : Ajith Kumar B.P, bpajith@gmail.com
+Authors : Ajith Kumar B.P, bpajith@gmail.com
+          Georges Khaznadar, georgesk@debian.org
 License : GNU GPL version 3
 Started on 1-Nov-2010
 Last Edit : 13-Oct-2011   : Added MCP2200 support (for version 2)
 Last Edit : 4-Nov-2011    : DAC maximum set to 5.000 volts
+Last Edit : 13-Feb-2013   : rewritten for python3, added normalized comments
 
 
 The hardware consisists of :
@@ -33,71 +35,70 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-ZERO            =  b'\x00'
 
 #Commands with One byte argument (41 to 80) 
-GETVERSION      =  b'\x01'
-DIGIN            =  b'\x02' # Digital Input (4 bits)
-USOUND            =  b'\x03' # Pulse OD1 to get rising edge on ID2(internal)
+GETVERSION  = 1
+DIGIN       = 2   # Digital Input (4 bits)
+USOUND      = 3   # Pulse OD1 to get rising edge on ID2(internal)
 
-#Commands with One byte argument (41 to 80 = hexa 29 to 50) 
-SETSAMTIME    =  b'\x29' # MCP3208 sampling duration
-SETADCSIZE    =  b'\x2a'
-READADC        =  b'\x2b' #Read the specified ADC channel
-R2FTIME        =  b'\x2c' # Rise to Fall of signal on input pins
-R2RTIME        =  b'\x2d' # Rise to Fall of signal on input pins
-F2RTIME        =  b'\x2e' # Fall to Rise of signal on input pins
-F2FTIME        =  b'\x2f' # Fall to Rise of signal on input pins
-SET2RTIME    =  b'\x30' # Setting of bit to rising edge
-SET2FTIME    =  b'\x31' # to falling time
-CLR2RTIME    =  b'\x32' # Setting of bit to rising edge
-CLR2FTIME    =  b'\x33' # to falling time
-PULSE2RTIME    =  b'\x34' # Pulse to rising edge
-PULSE2FTIME    =  b'\x35' # Pulse to rising edge
-SETPULSEWID    =  b'\x36' # width for PULSE2 functions (0 to 250)
-SETPULSEPOL    =  b'\x37' # PULSE polarity (0 for HIGH true)
-DIGOUT         =  b'\x38' # Digital output (4 bits)
-ADC2CMP        =  b'\x39' # Route ADC input to ACOMP-
-SETPWM        =  b'\x3a' # Set 488 Hz PWM wave on TC0
-SETPWMDAC    =  b'\x3b' # Set 31.25 kHz PWM wave on TC0
-GETPORT        =  b'\x3c' # PINX data from port X
-IRSEND          =  b'\x3d' # Send 8 bit data on SQR1, using infrared LED
+#Commands with One byte argument (41 to 80) 
+SETSAMTIME   =  41    # MCP3208 sampling duration
+SETADCSIZE   =  42
+READADC      =  43    #Read the specified ADC channel
+R2FTIME      =  44    # Rise to Fall of signal on input pins
+R2RTIME      =  45    # Rise to Fall of signal on input pins
+F2RTIME      =  46    # Fall to Rise of signal on input pins
+F2FTIME      =  47    # Fall to Rise of signal on input pins
+SET2RTIME    =  48    # Setting of bit to rising edge
+SET2FTIME    =  49    # to falling time
+CLR2RTIME    =  50    # Setting of bit to rising edge
+CLR2FTIME    =  51    # to falling time
+PULSE2RTIME  =  52    # Pulse to rising edge
+PULSE2FTIME  =  53    # Pulse to rising edge
+SETPULSEWID  =  54    # width for PULSE2 functions (0 to 250)
+SETPULSEPOL  =  55    # PULSE polarity (0 for HIGH true)
+DIGOUT       =  56    # Digital output (4 bits)
+ADC2CMP      =  57    # Route ADC input to ACOMP-
+SETPWM       =  58    # Set 488 Hz PWM wave on TC0
+SETPWMDAC    =  59    # Set 31.25 kHz PWM wave on TC0
+GETPORT      =  60    # PINX data from port X
+IRSEND       =  61    # Send 8 bit data on SQR1, using infrared LED
 
-# Commands with Two bytes argument (81 to 120 = hexa 51 to 78)
-SETPWM0        =  b'\x51' # PWM on on OSC0
-SETCOUNTER0    =  b'\x52' # Square wave on OSC0
-SETCOUNTER2    =  b'\x53' # Square wave on OSC2
-SETACTION    =  b'\x54' # Capture Actions of SET/CLR type
-MULTIR2R    =  b'\x55' # Rising edge to a rising edge after N cycles
-ADCTRIGS    =  b'\x56' # Trigger levels for read_block functions
-SETWAVEFORM    =  b'\x57' # ISR Wavegen. OCR0 and which DAC from the caller
-PULSE_D0D1    =  b'\x58' # Interrupt driven square wave on D0 and D1
-SETDDR        =  b'\x59' # DDRX = dirmask (arg1 = X, arg2 = mask)
-SETPORT        =  b'\x5a' # PORTX = DATA (arg1 = X, arg2 = DATA)
+# Commands with Two bytes argument (81 to 120)
+SETPWM0      =  81    # PWM on on OSC0
+SETCOUNTER0  =  82    # Square wave on OSC0
+SETCOUNTER2  =  83    # Square wave on OSC2
+SETACTION    =  84    # Capture Actions of SET/CLR type
+MULTIR2R     =  85    # Rising edge to a rising edge after N cycles
+ADCTRIGS     =  86    # Trigger levels for read_block functions
+SETWAVEFORM  =  87    # ISR Wavegen. OCR0 and which DAC from the caller
+PULSE_D0D1   =  88    # Interrupt driven square wave on D0 and D1
+SETDDR       =  90    # DDRX = dirmask (arg1 = X, arg2 = mask)
+SETPORT      =  91    # PORTX = DATA (arg1 = X, arg2 = DATA)
 
-# Commands with Three bytes argument (121 to 160 = hexa 79 to a0)    
-SETDAC        =  b'\x79' # Serial DAC: send ch, dlo & dhi 
-QCAPTURE01    =  b'\x7a' # 2 bytes N, 1 byte dt. captures channel 0 and 1
-WREEPROM    =  b'\x7b' # Write EEPROM , 2 byte addr & 1 byte data
-RDEEPROM    =  b'\x7c' # Read EEPROM , 2 byte addr , 1 byte nb
+# Commands with Three bytes argument (121 to 160)    
+SETDAC       = 121    # Serial DAC: send ch, dlo & dhi 
+QCAPTURE01   = 122    # 2 bytes N, 1 byte dt. captures channel 0 and 1
+WREEPROM     = 123    # Write EEPROM , 2 byte addr & 1 byte data
+RDEEPROM     = 124    # Read EEPROM , 2 byte addr , 1 byte nb
 
-#Commands with Four bytes argument (161 to 200 = hexa a1 to c8)
-CAPTURE01    =  b'\xa1' # 2 bytes N, 2 bytes dt. Capture channel 0 and 1
-QCAPTURE     =  b'\xa2' # Ch, 2 byte N, 1 byte dt. 
+#Commands with Four bytes argument (161 to 200)
+CAPTURE01    = 161     # 2 bytes N, 2 bytes dt. Capture channel 0 and 1
+QCAPTURE     = 162     # Ch, 2 byte N, 1 byte dt. 
 
-#Commands with Five bytes argument (201 to 240 = hexa c9 to f0)
-CAPTURE      =  b'\xc9' # Ch, 2 byte N, 2 byte dt. Capture from MCP3208 ADC
-CAPTURE_M32    =  b'\xca' # Ch, 2 byte N, 2 byte dt. Capture from ATmega32 ADC
+#Commands with Five bytes argument (201 to 240)
+CAPTURE      = 201     # Ch, 2 byte N, 2 byte dt. Capture from MCP3208 ADC
+CAPTURE_M32  = 202     # Ch, 2 byte N, 2 byte dt. Capture from ATmega32 ADC
 
 # Actions before capturing waveforms
-ASET        = b'\x01'
-ACLR        = b'\x02'
-APULSEHI    = b'\x03'
-APULSELO    = b'\x04'
-AWAITHI        = b'\x05'
-AWAITLO        = b'\x06'
-AWAITRISE    = b'\x07'
-AWAITFALL    = b'\x08'
+ASET        = 1
+ACLR        = 2
+APULSEHI    = 3
+APULSELO    = 4
+AWAITHI     = 5
+AWAITLO     = 6
+AWAITRISE   = 7
+AWAITFALL   = 8
 
 BUFSIZE     = 1800       # status + adcinfo + 1800 data
 
@@ -109,7 +110,8 @@ linux_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyUSB2',
 
 def open(dev = None):
     '''
-    If EYES hardware in found, returns an instance of 'Eyes', else returns None.
+    opens the session with EYES
+    @return if EYES hardware is found, an instance of 'Eyes', else None.
     '''
     obj = Eyes()
     if obj.fd != None:
@@ -118,11 +120,11 @@ def open(dev = None):
     print (_('Could not find Phoenix-EYES hardware'))
     print (_('Check the connections.'))
 
-DACMAX = 5.000      # MCP4922 DAC goes only up to 4.933 volts, in version 1
-BAUDRATE = 38400    # Serial communication
+DACMAX   = 5.000  # MCP4922 DAC goes only up to 4.933 volts, in version 1
+BAUDRATE = 38400  # Serial communication
 
 class Eyes:
-    fd = None       # init should fill this
+    fd = None     # init should fill this
     adcsize = 1
     m = [10.0/4095]*2 + [5.0/4095]*6 + [4095./DACMAX/2, 4095.0/DACMAX] # 8th and 9th are for DAC
     c = [-5.0]*2 + [0.0]*6 + [4095.0/2, 0]
@@ -130,11 +132,13 @@ class Eyes:
 
     def __init__(self, dev = None):
         """
-        Searches for EYES hardware on RS232 ports and the USB-to-Serial adapters. Presence of the
-        device is done by reading the version string.
-        The timeout at Python end is set to 3.2 milliseconds, twice the minimum 555 output time period.
-        TODO : Supporting more than one EYES on a PC to be done. The question is how to find out 
-        whether a port is already open or not, without doing any transactions to it.
+        Searches for EYES hardware on RS232 ports and the
+        USB-to-Serial adapters. Presence of the device is done by
+        reading the version string.  The timeout at Python end is set
+        to 3.2 milliseconds, twice the minimum 555 output time period.
+        TODO : Supporting more than one EYES on a PC to be done. The
+        question is how to find out whether a port is already open or
+        not, without doing any transactions to it.
         """
         self.adcsize = 2;
         
@@ -169,7 +173,7 @@ class Eyes:
             time.sleep(.5)
             while handle.inWaiting() > 0 :
                 handle.flushInput()
-            handle.write(GETVERSION)
+            handle.write(struct.pack('B',GETVERSION))
             res = handle.read(1)
             ver = handle.read(5)    # 5 character version number
             if ver[:2] == b'ey':
@@ -182,43 +186,43 @@ class Eyes:
             else:
                 print (_('No EYES hardware detected'))
                 self.fd = None
-#------------------------------------------------------------------------------------
+#----------------------------------------------------------------------
 
-    def dwrite(self,ch):
+    def writeslow(self, format, *args):
         """
-        writes a byte into the file descriptor
-        making a conversion of type when necessary
-        @param ch: the value to write, preferabily of 'bytes' type
+        converts a variable sequence into a byte string and feeds it slowly
+        into self.fd
+        @param format a format string for struct.pack
+        @param len 
+        @param args a sequence of arguments
         """
-        if isinstance(ch,bytes):
-            self.fd.write(ch)
-        else:
-            if not isinstance(ch,int):
-                ch=int(ch)
-            if ch < 0:
-                ch=0
-            if ch > 255:
-                ch=255
-            # ch is now an integer in range(256)
-            assert(isinstance(ch,int) and ch in range(256))
-            b = struct.pack('i',ch)[:1]
-            # the bytes string begins with the right value
-            # as the integer was big endian (always granted?)
-            assert(b[0]==ch)
-            self.fd.write(b)
-        time.sleep(0.01)        #MCP2200 to ATmega transfer has no handshake
+        for i in range(len(args)):
+            bs=struct.pack(format[i],args[i])
+            self.fd.write(bs)
+            time.sleep(0.01)
 
-#-------------------- Pulse Width Modulated Waveform on TC0 and TC2 ------------------
+    def b2int(self, bs):
+        """
+        converts a two-bytes string
+        to an integer
+        @param bs a byte string
+        @result an integer value
+        """
+        return bs[0] + (bs[1] << 8)
+    
+#-------------- Pulse Width Modulated Waveform on TC0 and TC2 -------------
     def set_pwmdac(self, vout):        # Value in 0 to 5V
         '''
-        Sets the PULSE output (T10) to 31.25 kHz and sets the duty cycle to make the
-        average voltage = vout. Need External RC filter to use this as a DC output.
-        0 to 5V range is covered in 255 steps and the function returns the value set.
+        Sets the PULSE output (T10) to 31.25 kHz and sets the duty
+        cycle to make the average voltage = vout. Need External RC
+        filter to use this as a DC output.  0 to 5V range is covered
+        in 255 steps and the function returns the value set.
+        @param vout voltage to output
+        @return the voltage set
         '''
         if 0 <= vout <= 5.0:
             val = int(vout*255.0/5.0)
-            self.dwrite(SETPWMDAC)
-            self.dwrite(val)
+            self.writeslow('BB',SETPWMDAC,val)
             self.fd.read(1)
             return val * 5.0 / 255
 
@@ -226,30 +230,35 @@ class Eyes:
         '''
         Sets the frequency on PULSE to 488.3 Hz. Dutycycle is set to 'ds'. 
         Returns the actual value set.
+        @param ds the value of duty cycle
+        @return the value set
         '''
         if 0 <= ds <= 100:
             val = int(ds*255.0/100)
-            self.dwrite(SETPWM)
-            self.dwrite(val)
+            self.writeslow('BB',SETPWM,val)
             self.fd.read(1)
             return val * 100.0 / 255
 
-#---------------- Square Wave Generation & Measuring the Frequency ------------------
-    def irsend(self, dat):                # Infrared transmission
-            self.dwrite(IRSEND)
-            self.dwrite(dat)
-            self.fd.read(1)
+#------------ Square Wave Generation & Measuring the Frequency --------------
+    def irsend(self, dat):
+        """
+        Infrared transmission
+        @param dat the data to send
+        """
+        self.writeslow('BB',IRSEND,dat)
+        self.fd.read(1)
 
-    def set_sqr0(self, freq):        # Sets Squarewave on the PULSE output
+    def set_sqr0(self, freq):
         '''
-        Sets a square wave on the PULSE output. Frequency from 15Hz to 40000000 Hz (4 MHz), but 
-        it is not possible to set all intermediate values. 
-        The function sets the nearest possible value and returns it.
+        Sets a square wave on the PULSE output. Frequency from 15Hz to
+        40000000 Hz (4 MHz), but it is not possible to set all
+        intermediate values.  The function sets the nearest possible
+        value and returns it.
+        @param freq the desired frequency
+        @return the frequency set
         '''
         if freq < 1:        # Disable squarewave on PULSE
-            self.dwrite(SETCOUNTER0)
-            self.dwrite(ZERO)
-            self.dwrite(ZERO)
+            self.writeslow('BH',SETCOUNTER0,0)
             self.fd.read(1)
             return 0
 
@@ -263,10 +272,7 @@ class Eyes:
         if setpoint > 255:
             setpoint = 255
         OCR0 = int(setpoint)-1
-        #print clock_sel, OCR2
-        self.dwrite(SETCOUNTER0)
-        self.dwrite(clock_sel)
-        self.dwrite(OCR0)
+        self.writeslow('BBB',SETCOUNTER0,clock_sel,OCR0)
         res = self.fd.read(1)
         if res != b'D':
             return None
@@ -275,16 +281,17 @@ class Eyes:
         else:
             return freq0/(OCR0+1)
 
-    def set_sqr1(self, freq):        # Freq in Hertz
+    def set_sqr1(self, freq):
         '''
-        Sets the output frequency of the SQR1. Ranges from 15Hz to 40000000 Hz (4 MHz), but 
-        it is not possible to set all intermediate values. 
-        The function sets the nearest possible value and returns it.
+        Sets the output frequency of the SQR1. Ranges from 15Hz to
+        40000000 Hz (4 MHz), but it is not possible to set all
+        intermediate values.  The function sets the nearest possible
+        value and returns it.
+        @param freq the desired frequency in hertz
+        @return the frequency set
         '''
         if freq < 1:        # Disable PWG
-            self.dwrite(SETCOUNTER2)
-            self.dwrite(ZERO)
-            self.dwrite(ZERO)
+            self.writeslow('BH',SETCOUNTER2,0)
             self.fd.read(1)
             return 0
 
@@ -298,10 +305,7 @@ class Eyes:
         if setpoint > 255:
             setpoint = 255
         OCR2 = int(setpoint)-1
-        #print clock_sel, OCR2
-        self.dwrite(SETCOUNTER2)
-        self.dwrite(clock_sel)
-        self.dwrite(OCR2)
+        self.writeslow('BBB',SETCOUNTER2,clock_sel,OCR2)
         res = self.fd.read(1)
         if res != b'D':
             return None
@@ -314,6 +318,7 @@ class Eyes:
         '''
         This function measures the frequency of SQR1. There is no need of this
         since set_sqr1 returns the frequency actually set.
+        @return measured frequency
         '''
         self.adc2cmp(6)
         t = self.multi_r2rtime(4)
@@ -324,31 +329,34 @@ class Eyes:
 
     def set_sqr2(self, fmax):
         '''
-        This function sets the frequency range of SQR2.
-        The ranges are : 0.7 to 25, 25 to 1000, 1000 to 10000 and 10000 to 90000.
-        You need to adjust the 22 KOhm variable resistor to get the desired frequency
-        within the selected range. Software allows you to measure the frequency while 
-        adjusting the resistor. Frequency can be set from .7 Hz to 90 KHz in different ranges.
+        This function sets the frequency range of SQR2.  The ranges
+        are : 0.7 to 25, 25 to 1000, 1000 to 10000 and 10000 to 90000.
+        You need to adjust the 22 KOhm variable resistor to get the
+        desired frequency within the selected range. Software allows
+        you to measure the frequency while adjusting the
+        resistor. Frequency can be set from .7 Hz to 90 KHz in
+        different ranges.
+        @param fmax maximum value of the desired frequency
         '''
-        if fmax < 0:                    #PA0 to LOW, makes 555 output LOW
+        if fmax < 0:                  #PA0 to LOW, makes 555 output LOW
             self.set_ddr(0,1)
             self.set_port(0,1)
-        elif fmax == 0:                    #PA0 to LOW, makes 555 output HIGH
+        elif fmax == 0:               #PA0 to LOW, makes 555 output HIGH
             self.set_ddr(0,1)
             self.set_port(0,0)
         elif fmax<= 25:
-            self.set_ddr(0, 2+4+8+16)    # connect (47 + 1 + 0.1 + 0.01) uF 
+            self.set_ddr(0, 2+4+8+16) # connect (47 + 1 + 0.1 + 0.01) uF 
             self.set_port(0,0)
         elif fmax<= 1000:
-            self.set_ddr(0, 2+4+8)        # connect (1 + 0.1 + 0.01) uF 
+            self.set_ddr(0, 2+4+8)    # connect (1 + 0.1 + 0.01) uF 
             self.set_port(0,0)
         elif fmax<= 10000:
-            self.set_ddr(0, 2+4)        # connect (0.1 + 0.01) uF 
+            self.set_ddr(0, 2+4)      # connect (0.1 + 0.01) uF 
             self.set_port(0,0)
-        elif fmax <= 90000:                # connect 0.01 uF
+        elif fmax <= 90000:           # connect 0.01 uF
             self.set_ddr(0, 2)
             self.set_port(0,0)
-        elif fmax > 300000:                # Oscllate with stray capacitance only
+        elif fmax > 300000:           # Oscillate with stray capacitance only
             self.set_ddr(0, 0)
             self.set_port(0,0)
 
@@ -356,6 +364,7 @@ class Eyes:
         '''
         This function measures the frequency of SQR2 (555 oscillator).
         Call this while adjusting the frequency using the variable resistor.
+        @return measured frequency
         '''
         self.adc2cmp(6)
         t = self.multi_r2rtime(4)
@@ -369,6 +378,7 @@ class Eyes:
     def sensor_frequency(self):
         '''
         This function measures the frequency on the signal on SENS (T23) input.
+        @return measured frequency
         '''
         self.adc2cmp(5)
         t = self.multi_r2rtime(4)
@@ -381,11 +391,13 @@ class Eyes:
 
     def ampin_frequency(self):
         '''
-        This function measures the frequency of an external BIPOLAR signal connected to Terminal 15.
-        If your signal is unipolar , connect it through a 1uF series 
-        The amplitude must be more than 100 mV
+        This function measures the frequency of an external BIPOLAR
+        signal connected to Terminal 15.  If your signal is unipolar ,
+        connect it through a 1uF series The amplitude must be more
+        than 100 mV
+        @return measured frequency
         '''
-        return self.digin_frequency(2)    # Amplifier output is connected to PC2
+        return self.digin_frequency(2) # Amplifier output is connected to PC2
 
     def digin_frequency(self, pin):
         '''
@@ -402,43 +414,49 @@ class Eyes:
             return 1.0e7/t
         return 1.0e6 / t
 
-#-------------------------------------- ADC & DAC Calibrations -----------------------------
+#------------------------------ ADC & DAC Calibrations ---------------------
     def eeprom_write_char(self,addr, dat):
         '''
-        Writes one byte to the specified address of the EEPROM memory of ATmega32.
-        Used for storing the calibration constants of ADC and DAC.
+        Writes one byte to the specified address of the EEPROM memory
+        of ATmega32.  Used for storing the calibration constants of
+        ADC and DAC.
         WARNING: Using this function may destroy the Calibration Data.
+        @param addr a two byte address
+        @param dat a one byte data
         '''
-        self.dwrite(WREEPROM)
-        self.dwrite(addr&255)
-        self.dwrite(addr>>8)
-        self.dwrite(dat)
+        self.writeslow('BHB',WREEPROM,addr,dat)
         res = self.fd.read(1)
         if res != b'D':
             print (_('eeprom write byte error = %s') %res)
 
-    def eeprom_read_block(self, addr, nb):    # get nb bytes starting from addr
+    def eeprom_read_block(self, addr, nb):
         '''
-        Reads 'nb' bytes starting from the specified address of the EEPROM memory of ATmega32.
+        Reads 'nb' bytes starting from the specified address of the
+        EEPROM memory of ATmega32.
         Used for restoring the calibration constants of ADC and DAC.
+        @param addr a two-byte address
+        @param nb a one-byte length
+        @return an nb-byte long string
         '''
-        self.dwrite(RDEEPROM)
-        self.dwrite(addr&255)
-        self.dwrite(addr>>8)
-        self.dwrite(nb)
+        self.writeslow('BHB',RDEEPROM,addr,nb)
         res = self.fd.read(1)
         if res != b'D':
             print (_('eeprom read block error = %s') %res)
         dat = self.fd.read(nb)
         return dat
 
-    def save_calib(self, ch, m, c):    # Saves m & c (8 bytes) to addr ch*8
+    def save_calib(self, ch, m, c):  # Saves m & c (8 bytes) to addr ch*8
         '''
-        It is possible to reduce the offset and gain errors of the ADC, DAC and the op-amps
-        used in the circuit by doing a calibration. The -5V to 5V output is connected to both
-        the -5V to +5V inputs before running the calibrate.py program. The output is measured
-        with a >= 4.5 digit voltmeter and the calibration constants are stored to the EEPROM.
+        It is possible to reduce the offset and gain errors of the
+        ADC, DAC and the op-amps used in the circuit by doing a
+        calibration. The -5V to 5V output is connected to both the -5V
+        to +5V inputs before running the calibrate.py program. The
+        output is measured with a >= 4.5 digit voltmeter and the
+        calibration constants are stored to the EEPROM.
         WARNING: Using this function may destroy the Calibration Data.
+        @param ch channel number
+        @param m multiplier
+        @param c additive constant
         '''
         addr = ch*8
         s = struct.pack('f'*2, m, c)    # pack to floats
@@ -452,7 +470,9 @@ class Eyes:
 
     def load_calib(self, ch):    # Load m & c from EEPROM
         '''
-        Loads the calibration constants from the EEPROM and assigns them to the slope & intercept.    
+        Loads the calibration constants from the EEPROM and assigns
+        them to the slope & intercept.
+        @param ch channel number
         '''
         res = self.eeprom_read_block(ch*8,8)
         if res[0] == 255 and res[1] == 255:
@@ -470,34 +490,35 @@ class Eyes:
         self.load_calib(1)
         self.load_calib(8)
 
-#------------------------------------ ADC & DAC transactions -----------------------------
+#---------------------------- ADC & DAC transactions ---------------------
 
     def set_current(self, i):
         '''
-        Sets the current of the Programmable Current Source.
-        Possible to set it from .020 mA to 2 mA, provided the IR drop across the load resistor < 2V
-        Returns the voltage at the Current Source Output.
+        Sets the current of the Programmable Current Source.  Possible
+        to set it from .020 mA to 2 mA, provided the IR drop across
+        the load resistor < 2V
+        @param i the desired current value in mA
+        @return the voltage at the Current Source Output.
         '''
         if (i < 0.020) or (i > 2.0):
             print (_('ERR:Current must be from 0.02 to 2.0 mA'))
             return None
-        i += 0.005                # 5 uA correction is applied. NEED TO SOLVE THIS PROBLEM !!!
-        Rc = 1000.0                      # Collector Resistance from 5V reference
-        v = 5.0 - Rc * i * 1.0e-3        # mA to A
-        #print (_('DAC0 to set current = %s') %v)
+        i += 0.005  # 5 uA correction is applied. NEED TO SOLVE THIS PROBLEM !!!
+        Rc = 1000.0 # Collector Resistance from 5V reference
+        v = 5.0 - Rc * i * 1.0e-3 # mA to A
         self.set_voltage(1,v)
         return self.get_voltage(6)
 
     def write_dac(self, ch, data):
         '''
         Writes binary data to DAC. Low level routine, generally not used.
+        @param ch channel number
+        @param data two bytes data
+        @return the value of data (maybe truncated to 4095)
         '''
         if (data > 4095):         # DAC linearity problem
             data = 4095
-        self.dwrite(SETDAC)
-        self.dwrite(ch)
-        self.dwrite(data&255)
-        self.dwrite(data>>8)
+        self.writeslow('BBH',SETDAC,ch,data)
         res = self.fd.read(1)
         if res != b'D':
             print (_('WRITEDAC error %s') %res)
@@ -537,84 +558,88 @@ class Eyes:
 
     def read_adc(self, ch):
         '''
-        Reads the specified ADC channel, returns a number from 0 to 4095. Low level routine.
+        Reads the specified ADC channel, returns a number from 0 to
+        4095. Low level routine.
+        @param ch channel number
         '''
         if (ch > 7):
             print (_('Argument error'))
             return
-        self.dwrite(READADC)
-        self.dwrite(ch)
+        self.writeslow('BB',READADC,ch)
         res = self.fd.read(1)
         if res != b'D':
             print (_('READADC error %s') %res)
             return
         res = self.fd.read(2)
-        iv = res[0] | (res[1] << 8)
+        iv = b2int(res)
         return iv
 
     def get_voltage(self, ch):
         '''
-        Reads the specified channel of the ADC. Returns -5V to 5V for channels 0 and 1
-        0V to 5V for other channels.
+        Reads the specified channel of the ADC. Returns -5V to 5V for
+        channels 0 and 1 0V to 5V for other channels.
+        @param ch chanel number
+        @return the voltage measured
         '''
         if (ch > 7):
             print (_('Argument error'))
             return
-        self.dwrite(READADC)
-        self.dwrite(ch)
+        self.writeslow('BB',READADC,ch)
         res = self.fd.read(1)
         if res != b'D':
             print (_('WRITEDAC error %s') %res)
             return
         res = self.fd.read(2)
-        iv = res[0] | (res[1] << 8)
+        iv = self.b2int(res)
         v = self.m[ch] * iv + self.c[ch]
         return v
 
     def get_voltage_time(self, ch):
         '''
-        Reads the specified channel of the ADC. Returns -5V to 5V for channels 0 and 1
-        0V to 5V for other channels. Adds the PC time info
+        Reads the specified channel of the ADC. Returns -5V to 5V for
+        channels 0 and 1 0V to 5V for other channels. Adds the PC time
+        info
+        @param ch channel number
         '''
         if (ch > 7):
             print (_('Argument error'))
             return
-        self.dwrite(READADC)
-        self.dwrite(ch)
+        self.writeslow('BB',READADC,ch)
         tm = time.time()                # Job is sent. Now mark the time
         res = self.fd.read(1)
         if res != b'D':
             print (_('WRITEDAC error %s') %res)
             return
         res = self.fd.read(2)
-        iv = res[0] | (res[1] << 8)
+        iv = b2int(res)
         v = self.m[ch] * iv + self.c[ch]
         return tm, v
 
     def set_samtime(self, sam):
         '''
-        Sets the sampling time of MCP3208 ADC, minimum required is 2 uSec. Give more for high input
-        impedance signals.
+        Sets the sampling time of MCP3208 ADC, minimum required is 2
+        uSec. Give more for high input impedance signals.
+        @param sam the sampling time
         '''        
         if sam > 250:
             print (_('Sampling time MUST NOT exceed 250 microseconds'))
             return
-        self.dwrite(SETSAMTIME)
-        self.dwrite(sam)
+        self.writeslow(SETSAMTIME,sam)
         res = self.fd.read(1)
         if res != b'D':
             print (_('SETSAMTIME ERROR %s') %res)
 
     def set_adcsize(self, size):
         '''
-        The ADC output is 12 bits (2 bytes space). Capture functions gives the option to discard
-        4 LSBs and return the data in 1 byte, saving space and time.
+        The ADC output is 12 bits (2 bytes space). Capture functions
+        gives the option to discard 4 LSBs and return the data in 1
+        byte, saving space and time.
+        @param size 1 or 2, the size of returned measurements in byte
         '''
         if size > 2:
             print (_('ADC datasize MUST be 1 or 2 bytes'))
             return
-        self.dwrite(SETADCSIZE)
-        self.dwrite(size)
+        self.writeslow('BB',SETADCSIZE,size)
         res = self.fd.read(1)
         if res != b'D':
             print (_('SETADCSIZE ERROR %s') %res)
@@ -633,11 +658,7 @@ class Eyes:
         if delay < 10:
             return
         if delay < 20:
-            self.dwrite(QCAPTURE)
-            self.dwrite(ch)
-            self.dwrite(np&255)
-            self.dwrite(np>>8)
-            self.dwrite(delay)
+            self.writeslow('BBHB',QCAPTURE,ch,np,delay)
             st = time.time()
             res = self.fd.read(1)
             if res != b'D':
@@ -645,18 +666,13 @@ class Eyes:
                 return 0,0
             asize = 1                    # adc datasize = 1 for QCAPTURE
         else:
-            self.dwrite(CAPTURE)
-            self.dwrite(ch)
-            self.dwrite(np&255)
-            self.dwrite(np>>8)
-            self.dwrite(delay&255)
-            self.dwrite(delay>>8)
+            self.writeslow('BBHH',CAPTURE,ch,np,delay)
             res = self.fd.read(1)
             if res != b'D':
                 print (_('CAPTURE error %s') %res)
                 return
             res = self.fd.read(1)        # adc_size info from other end
-            asize = res
+            asize = res[0]
         nc = asize * np     
         data = self.fd.read(nc)
         dl = len(data)
@@ -666,8 +682,8 @@ class Eyes:
         
         ta = []
         va = []
-        if ch <= 1:                                    # Channel 0 or 1 (-5V to +5V)
-            if asize == 2:                            # 2 byte dataword
+        if ch <= 1:                                 # Channel 0 or 1 (-5V to +5V)
+            if asize == 2:                          # 2 byte dataword
                 raw = struct.unpack('H'* np, data)  # 2 byte words in the structure
                 for i in range(np):
                     ta.append(0.001 * i * delay)    # microseconds to milliseconds
@@ -675,7 +691,7 @@ class Eyes:
             else:
                 raw = struct.unpack('B'* np, data)  # 1 byte words in the structure
                 for i in range(np):
-                    ta.append(0.001 * i * delay)        # microseconds to milliseconds
+                    ta.append(0.001 * i * delay)    # microseconds to milliseconds
                     va.append(raw[i]*10.0/255 - 5.0)
         else:
             if asize == 2:                            # 2 byte dataword
@@ -696,14 +712,15 @@ class Eyes:
         Samples the first two channels 'np' times. 
         Time gap between samples is 'delay' usecs.
         If delay < 20, 9 usecs offset between CH0 & CH1, else 17 usecs.
+        @param np number of desired samples
+        @param delay the duration between successive samples
+        @return if everything goes fine, a tuple time vector, voltage vector, 
+        time vector, voltage vector
         '''
         if delay < 10:
             return
         if delay < 20:                # Fast Capture, datasize = 1 byte
-            self.dwrite(QCAPTURE01)
-            self.dwrite(np&255)
-            self.dwrite(np>>8)
-            self.dwrite(delay)
+            self.writeslow('BHB',QCAPTURE01,np,delay)
             res = self.fd.read(1)
             if res != b'D':
                 print (_('CAPTURE01 error %s') %res)
@@ -711,17 +728,13 @@ class Eyes:
             asize = 1
             tg01 =  0.009            # 0.009 milliseconds between CH0 and CH1
         else:                        # A slow capture
-            self.dwrite(CAPTURE01)
-            self.dwrite(np&255)
-            self.dwrite(np>>8)
-            self.dwrite(delay&255)
-            self.dwrite(delay>>8)
+            self.writeslow('BHH',CAPTURE01,np,delay)
             res = self.fd.read(1)
             if res != b'D':
                 print (_('CAPTURE01 error %s') %res)
                 return
             res = self.fd.read(1)    # adc_size info from other end
-            asize = res
+            asize = res[0]
             tg01 = 0.017            # 0.017 milliseconds between Ch0 & Ch1 digitizations
 
         nb = asize *np * 2        # data from two channels 
@@ -755,17 +768,14 @@ class Eyes:
     def capture_m32(self, ch, np, delay):   # Not working properly
         '''
         Capture 'np' samples from the ATmega32 ADC.
-        Arguments : channel number , number of samples and timegap between consecutive
-        digitizations. Returns a list of [time, volatge] coordinates.
+        @param ch channel number
+        @param np number of samples
+        @param delay timegap between consecutive digitizations.
+        @return a list of [time, voltage] coordinates.
         '''
         if delay < 10:
             return
-        self.dwrite(CAPTURE_M32)
-        self.dwrite(ch)
-        self.dwrite(np&255)
-        self.dwrite(np>>8)
-        self.dwrite(delay&255)
-        self.dwrite(delay>>8)
+        self.writeslow('BBHH',CAPTURE_M32,ch,np,delay)
         res = self.fd.read(1)
         if res != b'D':
             print (_('CAPTURE_M32 error %s') %(res))
@@ -792,104 +802,96 @@ class Eyes:
         Disable all modifiers to the capture call. The capture will try to
         do a self triggering on the ADC input.
         '''
-        self.dwrite(SETACTION)
-        self.dwrite(ZERO)
-        self.dwrite(ZERO)
+        self.writeslow('BH', SETACTION, 0)
         self.fd.read(1)
 
     def enable_wait_high(self, pin):
         '''
         Wait for a HIGH on the speciied 'pin' just before every Capture.
+        @param pin a pin number
         '''
         if pin == 4:
             mask = 0
         else:
             mask = 1 << pin          
-        self.dwrite(SETACTION)
-        self.dwrite(AWAITHI)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,AWAITHI,mask)
         self.fd.read(1)
 
     def enable_wait_rising(self, pin):
         '''
         Wait for a rising EDGE on the speciied 'pin' just before every Capture.
+        @param pin a pin number
         '''
         if pin == 4:
             mask = 0
         else:
             mask = 1 << pin          
         print (_('wait_rising %s') %AWAITRISE)
-        self.dwrite(SETACTION)
-        self.dwrite(AWAITRISE)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,AWAITRISE,mask)
         self.fd.read(1)
 
     def enable_wait_low(self, pin):
         '''
         Wait for a LOW on the speciied 'pin' just before every Capture.
+        @param pin a pin number
         '''
         if pin == 4:
             mask = 0
         else:
             mask = 1 << pin          
-        self.dwrite(SETACTION)
-        self.dwrite(AWAITLO)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,AWAITLO,mask)
         self.fd.read(1)
 
     def enable_wait_falling(self, pin):
         '''
         Wait for a falling EDGE on the speciied 'pin' just before every Capture.
+        @param pin a pin number
         '''
         if pin == 4:
             mask = 0
         else:
             mask = 1 << pin          
         print (_('wait_rising %s') %AWAITRISE)
-        self.dwrite(SETACTION)
-        self.dwrite(AWAITFALL)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,AWAITFALL,mask)
         self.fd.read(1)
 
     def enable_set_high(self, pin):
         '''
         Sets the speciied 'pin' HIGH, just before every Capture.
+        @param pin a pin number
         '''
         mask = 1 << pin
-        self.dwrite(SETACTION)
-        self.dwrite(ASET)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,ASET,mask)
         self.fd.read(1)
 
     def enable_set_low(self, pin):
         '''
         Sets the speciied 'pin' LOW, just before every Capture.
+        @param pin a pin number
         '''
         mask = 1 << pin
-        self.dwrite(SETACTION)
-        self.dwrite(ACLR)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,ACLR,mask)
         self.fd.read(1)
 
     def enable_pulse_high(self, pin):
         '''
-        Generate a HIGH TRUE Pulse on the speciied 'pin', just before every Capture.
-        width is specified by the set_pulsewidth() function.
+        Generate a HIGH TRUE Pulse on the speciied 'pin', just before
+        every Capture.  width is specified by the set_pulsewidth()
+        function.
+        @param pin a pin number
         '''
         mask = 1 << pin
-        self.dwrite(SETACTION)
-        self.dwrite(APULSEHI)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,APULSEHI,mask)
         self.fd.read(1)
 
     def enable_pulse_low(self, pin):
         '''
-        Generate a LOW TRUE Pulse on the speciied 'pin', just before every Capture.
+        Generate a LOW TRUE Pulse on the specified 'pin', just before
+        every Capture.
+        @param pin a pin number
         '''
         mask = 1 << pin
-        self.dwrite(SETACTION)
-        self.dwrite(APULSELO)
-        self.dwrite(mask)
+        self.writeslow('BBB',SETACTION,APULSELO,mask)
         self.fd.read(1)
 
         
@@ -898,10 +900,9 @@ class Eyes:
     def set_pulsepol(self, pol):
         '''
         Sets the 'pulse_polarity' parameter for pulse2rtime()
-        pol = 0 means HIGH TRUE pulse 
+        @param pol = 0 means HIGH TRUE pulse
         '''
-        self.dwrite(SETPULSEPOL)
-        self.dwrite(pol)
+        self.writeslow('BB',SETPULSEPOL,pol)
         res = self.fd.read(1)
         if res == b'D':
             self.pulse_pol = pol
@@ -910,27 +911,29 @@ class Eyes:
         '''
         Sets the 'pulse_width' parameter for pulse2rtime() command. 
         Also used by usound_time() and the elable_pulse_high/low() functions
+        @param width the desired width of the pulse
         '''
-        self.dwrite(SETPULSEWID)
-        self.dwrite(width)
+        self.writeslow('BB',SETPULSEWID,width)
         res = self.fd.read(1)
         if res == b'D':
             self.pulse_width = width
 
     def usound_time(self):
         '''
-        Used for measuring the velocity of sound. Connect the Transmitter Piezo to OD1 (T4).
-        The Receiver is connected to the amplifier input T15. This function measures the time
-        from a Pulse on ID1 to a signal on T15, in microseconds. 
+        Used for measuring the velocity of sound. Connect the
+        Transmitter Piezo to OD1 (T4).  The Receiver is connected to
+        the amplifier input T15. This function measures the time from
+        a Pulse on ID1 to a signal on T15, in microseconds.
         Use set_pulsewidth() to set the width to 13 microseconds.
+        @return a duration in microseconds
         '''
-        self.dwrite(USOUND)
+        self.writeslow('B',USOUND)
         res = self.fd.read(1)
         if res != b'D':
             print (_('Echo error = %s') %res)
             return -1.0
         res = self.fd.read(3)
-        low = (res[1] << 8) | res[0]
+        low = b2int(res)
         return low + 50000 * res[2]
 
     def __helper(self, cmd, pin1, pin2):    # pins 0 to 3
@@ -939,6 +942,10 @@ class Eyes:
         Make an 8 bit mask from pin1 and pin2.
         First argument (pin1) is encoded in the HIGH half.
         for example pin1 = 2 , pin2 = 0, mask = 0010:0001
+        @param cmd a command code (one byte)
+        @param pin1 first pin number
+        @param pin2 second pin number
+        @return a duration in microseconds
         '''
         if pin1 > 4 or pin2 > 4:
             return -1.0
@@ -952,20 +959,22 @@ class Eyes:
         else:
             low  = 1 << pin2
         mask = hi | low;
-        self.dwrite(cmd)
-        self.dwrite(mask)
+        self.writeslow('BB',cmd,mask)
         res = self.fd.read(1)
         if res != b'D':
             print (_('Time Measurement call Error. CMD = %s %s') %(cmd, res))
             return -1.0
         res = self.fd.read(3)
-        low = (res[1] << 8) | res[0]
+        low = b2int(res)
         return float(low + 50000 * res[2])
     
     def r2ftime(self, pin1, pin2):
         '''
         Measures time from a rising edge of pin1 to a falling edge on pin2.
         Pins could be same or distinct.
+        @param pin1 first pin number
+        @param pin2 second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(R2FTIME, pin1, pin2)
 
@@ -973,6 +982,9 @@ class Eyes:
         '''
         Measures time from a falling edge of pin1 to a rising edge on pin2.
         Pins could be same or distinct.
+        @param pin1 first pin number
+        @param pin2 second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(F2RTIME, pin1, pin2)
 
@@ -980,6 +992,9 @@ class Eyes:
         '''
         Measures time from a rising edge of pin1 to a rising edge on pin2.
         Pins could be same or distinct.
+        @param pin1 first pin number
+        @param pin2 second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(R2RTIME, pin1, pin2)
 
@@ -987,42 +1002,63 @@ class Eyes:
         '''
         Measures time from a falling edge of pin1 to a falling edge on pin2.
         Pins could be same or distinct.
+        @param pin1 first pin number
+        @param pin2 second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(F2FTIME, pin1, pin2)
 
     def set2ftime(self, op, ip):
         '''
         Measures time from Setting output pin 'op' to a LOW on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(SET2FTIME, op, ip)
 
     def set2rtime(self, op, ip):
         '''
         Measures time from Setting output pin 'op' to a HIGH on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(SET2RTIME, op, ip)
 
     def clr2rtime(self, op, ip):
         '''
         Measures time from Clearing output pin 'op' to a HIGH on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(CLR2RTIME, op, ip)
 
     def clr2ftime(self, op, ip):
         '''
         Measures time from Clearing output pin 'op' to a LOW on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(CLR2FTIME, op, ip)
 
     def pulse2rtime(self, op, ip):
         '''
         Measures time from a Pulse on pin 'op' to a HIGH on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(PULSE2RTIME, op, ip)
 
     def pulse2ftime(self, op, ip):
         '''
         Measures time from a Pulse on pin 'op' to a LOW on input pin 'ip'
+        @param op first pin number
+        @param ip second pin number
+        @return a duration in microseconds
         '''
         return self.__helper(PULSE2FTIME, op, ip)
 
@@ -1031,6 +1067,8 @@ class Eyes:
         Time between two rising edges on the same input pin.
         separated by 'skipcycles' number of cycles.
         If skipcycles is zero the period of the waveform is returned.
+        @param pin pin number
+        @param skipcycles numer of cycles to skip
         '''
         if pin > 4:            # ADC inputs
             mask = pin << 4
@@ -1038,38 +1076,36 @@ class Eyes:
             mask = 0
         else:
             mask = 1 << pin
-        self.dwrite(MULTIR2R)
-        self.dwrite(mask)
-        self.dwrite(skipcycles)
+        self.writeslow('BBB',MULTIR2R,mask,skipcycles)
         if self.fd.read(1) != b'D':
             return -1.0
         res = self.fd.read(3)
-        low = (res[1] << 8) | res[0]
+        low = b2int(res)
         return float(low + 65536 * res[2])
 
 
     def adc2cmp(self, ch):            # Route ADC input to comparator (AIN-)
         '''
         Route the specified ADC channel to the Analog Comparator Input (AIN-)
+        @param ch channel number
         '''
-        self.dwrite(ADC2CMP)
-        self.dwrite(ch)
+        self.writeslow('BB',ADC2CMP,ch)
         self.fd.read(1)
 
-#----------------------------- Simple Digital I/O functions ----------------------------
+#----------------------- Simple Digital I/O functions ----------------------
     def write_outputs(self, val):
         '''
         Writes  a 2 bit number to the Digital Outputs
+        @param val the value to write
         '''
-        self.dwrite(DIGOUT)
-        self.dwrite(val)
+        self.writeslow('BB', DIGOUT, val)
         self.fd.read(1)
 
     def read_inputs(self):
         '''
         Gets a 4 bit number representing the Digital Input voltage Levels
         '''
-        self.dwrite(DIGIN)
+        self.writeslow('B',DIGIN)
         res = self.fd.read(1)
         if res != b'D':
             print (_('DIGIN error'))
@@ -1077,30 +1113,44 @@ class Eyes:
         res = self.fd.read(1)
         return res[0] & 15        # 4 LSBs
 
-#-----------DIRECT PORT ACCESS FUNCTIONS (Use only if you know what you are doing)---------
+#-----DIRECT PORT ACCESS FUNCTIONS (Use only if you know what you are doing)---
     def set_ddr(self, port, direc):
-        self.dwrite(SETDDR)           
-        self.dwrite(port)     # 0 to 3 for A,B,C and D
-        self.dwrite(direc)
+        """
+        set direction data register
+        @param port port number: 0 to 3 for A,B,C and D
+        @param direc direction of data exchange
+        """
+        self.writeslow('BBB',SETDDR,port,direc)
         self.fd.read(1)
         return
 
     def set_port(self, port, val):
-        self.dwrite(SETPORT)           
-        self.dwrite(port)     # 0 to 3 for A,B,C and D
-        self.dwrite(val)
+        """
+        set a one-byte value at a port
+        @param port port number: 0 to 3 for A,B,C and D
+        @param vale one-byte value        
+        """
+        self.writeslow('BBB',SETPORT,port,val)
         self.fd.read(1)
         return
 
     def get_port(self, port):
-        self.dwrite(SETPORT)           
-        self.dwrite(port)     # 0 to 3 for A,B,C and D
+        """
+        read a status byte from a port
+        @param port port number: 0 to 3 for A,B,C and D
+        @return the status byte
+        """
+        self.writeslow('BB',SETPORT,port)
         self.fd.read(1)
         data = self.fd.read(1)          # get the status byte only
-        return ord(data)
+        return data[0]
 
-#--------------------------------- may go to eyeutils.py ------------------------------
+#--------------------------- may go to eyeutils.py ------------------------
     def minimum(self,va):
+        """
+        @param va vector of values
+        @return the minimum of the vector
+        """
         vmin = 1.0e10        # need to change
         for v in va:
             if v < vmin:
@@ -1108,6 +1158,10 @@ class Eyes:
         return vmin
 
     def maximum(self,va):
+        """
+        @param va vector of values
+        @return the maximum of the vector
+        """
         vmax = 1.0e-10        # need to change
         for v in va:
             if v > vmax:
@@ -1115,6 +1169,10 @@ class Eyes:
         return vmax
 
     def rms(self,va):
+        """
+        @param va vector of values
+        @return the rms of the vector
+        """
         vsum = 0.0
         for v in va:
             vsum += v**2
@@ -1122,6 +1180,10 @@ class Eyes:
         return math.sqrt(v)
 
     def mean(self,va):
+        """
+        @param va vector of values
+        @return the mean of the vector
+        """
         vsum = 0.0
         for v in va:
             vsum += v
@@ -1130,10 +1192,13 @@ class Eyes:
 
     def save(self, data, filename = 'plot.dat'):
         '''
-        Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
+        Input data is of the form, [ [x1,y1], [x2,y2],....] where x
+        and y are vectors
+        @param data the data to write
+        @param filename the name of the output file
         '''
         if data == None: return
-        import __builtin__                    # Need to do this since 'eyes.py' redefines 'open'
+        import __builtin__  # Need to do this since 'eyes.py' redefines 'open'
         f = __builtin__.open(filename,'w')
         for xy in data:
             for k in range(len(xy[0])):
@@ -1143,7 +1208,13 @@ class Eyes:
 
     def grace(self, data, xlab = '', ylab = '', title = ''):
         '''
-        Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
+        plots data with xmgrace
+        Input data is of the form, [ [x1,y1], [x2,y2],....] where x
+        and y are vectors
+        @param data the data to plot
+        @param xlab label for abscissa
+        @param ylab label for ordinate
+        @param title title for the plot
         '''
         try:
             import pygrace
@@ -1157,6 +1228,3 @@ class Eyes:
             return True
         except:
             return False
-
-
-

@@ -115,8 +115,15 @@ class mainWindow(QMainWindow):
         self.connect(self.ui.OD0_check, SIGNAL("stateChanged(int)"), self.OD0toggle)
         self.connect(self.ui.OD1_check, SIGNAL("stateChanged(int)"), self.OD1toggle)
         self.connect(self.ui.ID0_button_F, SIGNAL("clicked()"), self.freq_id0)
+        self.connect(self.ui.AMPLI_button_F, SIGNAL("clicked()"), self.freq_ampin)
+        self.connect(self.ui.SEN_button_F, SIGNAL("clicked()"), self.freq_sen)
         self.connect(self.ui.ID0_button_pcent, SIGNAL("clicked()"), self.pcent_id0)
+        self.connect(self.ui.horizontalSlider, SIGNAL("valueChanged(int)"), self.set_timebase)
         # other intializations
+        self.VPERDIV = 1.0      # Volts per division, vertical scale
+        self.delay = 10         # Time interval between samples
+        self.np = 100           # Number of samples
+        self.NC = 1             # Number of channels
         self.lissa = False      # drawing lissajous-type plots
         self.chanmask=1         # byte to store the mask for active analogic channels.
         self.np=100             # number of points to plot (and samples to get)
@@ -130,9 +137,17 @@ class mainWindow(QMainWindow):
         # connect to the eyes box
         self.eye=eyes.open()   # Try several times to make a connection
         # starts the timer for refresh loop
-        self.timer=QTimer(self)
-        self.connect(self.timer, SIGNAL("timeout()"), self.update)
-        self.timer.start(500)   # refresh twice per second if possible
+        if self.eye == None:
+            self.setWindowTitle('EYES Hardware NOT found.')
+            self.showhelp('EYES Hardware Not Found.<br/>Re-Connect USB cable and restart the program.', 'red')
+        else:
+            self.setWindowTitle(('EYES Hardware found on ' + str(self.eye.device)))
+            self.eye.write_outputs(0)
+            self.eye.disable_actions()
+            self.eye.loadall_calib()
+            self.timer=QTimer(self)
+            self.connect(self.timer, SIGNAL("timeout()"), self.update)
+            self.timer.start(500)   # refresh twice per second if possible
 
     def freq_id0(self):
         """
@@ -143,6 +158,24 @@ class mainWindow(QMainWindow):
             self.labset(1, '0 Hz')
         else:
             self.labset(1, '%5.2f Hz'%fr)
+
+    def freq_ampin(self):
+        fr = self.eye.ampin_frequency()
+        if fr < 0:
+            self.labset(15, '0 Hz')
+            self.NOAF = True
+        else:
+            self.labset(15, '%5.2f Hz'%(fr))
+            self.NOAF = False
+
+    def freq_sen(self):
+        fr = self.eye.sensor_frequency()
+        if fr < 0:
+            self.labset(22, '0 Hz')
+            self.NOSF = True
+        else:
+            self.labset(22, '%5.2f Hz'%(fr))
+            self.NOSF = False
 
     def pcent_id0(self):
         """
@@ -155,6 +188,30 @@ class mainWindow(QMainWindow):
             self.labset(1, '%5.2f %%'%(ds))
         else:
             self.labset(1,'0 Hz')
+
+    def set_timebase(self, value):
+        """
+        callback for the horizontal slider
+        @param value: the position of the cursor in range(10)
+        """
+        divs = [0.050, 0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]
+        assert value in range(10)
+        msperdiv = divs[value]
+        totalusec = int(msperdiv * 1000 * 10)
+        self.np = 200                    # Assume 100 samples to start with
+        self.delay = int(totalusec/100)  # Calculate delay
+        if self.delay < 10:
+            sf = 10/self.delay
+            self.delay = 10
+            self.np = self.np/sf * self.NC
+        elif self.delay > 1000:
+            self.sf = delay/1000
+            self.delay = 1000
+            self.np =self. NP * sf / self.NC
+        self.ui.graphWidget.setWorld(0,
+                                     -5*self.VPERDIV, 
+                                     self.np * self.delay * 0.001, 
+                                     5*self.VPERDIV)
 
     def OD0toggle(self, state):
         """
