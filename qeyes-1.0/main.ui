@@ -60,8 +60,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>8</x>
-      <y>348</y>
+      <x>14</x>
+      <y>370</y>
       <width>401</width>
       <height>38</height>
      </rect>
@@ -189,9 +189,9 @@
     <property name="geometry">
      <rect>
       <x>11</x>
-      <y>385</y>
+      <y>409</y>
       <width>405</width>
-      <height>160</height>
+      <height>136</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -223,10 +223,10 @@
    <widget class="QFrame" name="frame_3">
     <property name="geometry">
      <rect>
-      <x>15</x>
+      <x>4</x>
       <y>309</y>
-      <width>405</width>
-      <height>48</height>
+      <width>418</width>
+      <height>69</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -235,47 +235,38 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QLabel" name="msgLabel">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>15</y>
-       <width>158</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Courier 10 Pitch</family>
-       <pointsize>11</pointsize>
-      </font>
-     </property>
-     <property name="text">
-      <string>Messages         </string>
-     </property>
-    </widget>
-    <widget class="QSlider" name="horizontalSlider">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>15</y>
-       <width>222</width>
-       <height>18</height>
-      </rect>
-     </property>
-     <property name="maximum">
-      <number>9</number>
-     </property>
-     <property name="pageStep">
-      <number>1</number>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="tickPosition">
-      <enum>QSlider::TicksAbove</enum>
-     </property>
-    </widget>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QSlider" name="horizontalSlider">
+       <property name="maximum">
+        <number>9</number>
+       </property>
+       <property name="pageStep">
+        <number>1</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::TicksAbove</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="msgLabel">
+       <property name="font">
+        <font>
+         <family>Courier 10 Pitch</family>
+         <pointsize>7</pointsize>
+         <italic>true</italic>
+        </font>
+       </property>
+       <property name="text">
+        <string>Messages         </string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QLineEdit" name="ID1_display">

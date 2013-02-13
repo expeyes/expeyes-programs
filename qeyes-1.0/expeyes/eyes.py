@@ -1198,8 +1198,8 @@ class Eyes:
         @param filename the name of the output file
         '''
         if data == None: return
-        import __builtin__  # Need to do this since 'eyes.py' redefines 'open'
-        f = __builtin__.open(filename,'w')
+        import builtins  # Need to do this since 'eyes.py' redefines 'open'
+        f = builtins.open(filename,'w')
         for xy in data:
             for k in range(len(xy[0])):
                 f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))

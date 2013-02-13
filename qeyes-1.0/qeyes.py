@@ -11,7 +11,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 import os, sys, subprocess, math
-import expeyes.eyes as eyes, expeyes.eyeplotQt as eyeplot
+import expeyes.eyes as eyes
 
 try:        
     import expeyes.eyemath as eyemath        # Will fail if scipy is not installed
@@ -119,6 +119,14 @@ class mainWindow(QMainWindow):
         self.connect(self.ui.SEN_button_F, SIGNAL("clicked()"), self.freq_sen)
         self.connect(self.ui.ID0_button_pcent, SIGNAL("clicked()"), self.pcent_id0)
         self.connect(self.ui.horizontalSlider, SIGNAL("valueChanged(int)"), self.set_timebase)
+        self.connect(self.ui.A0Check, SIGNAL("stateChanged(int)"), self.toggleA0)
+        self.connect(self.ui.A1Check, SIGNAL("stateChanged(int)"), self.toggleA1)
+        self.connect(self.ui.fitCheck, SIGNAL("stateChanged(int)"), self.toggleFit)
+        self.connect(self.ui.lisCheck, SIGNAL("stateChanged(int)"), self.toggleLis)
+        self.connect(self.ui.saveButton, SIGNAL("clicked()"), self.save)
+        self.connect(self.ui.xmButton, SIGNAL("clicked()"), self.xmgrace)
+        self.connect(self.ui.ftButton, SIGNAL("clicked()"), self.do_fft)
+        self.connect(self.ui.quitButton, SIGNAL("clicked()"), self.close)
         # other intializations
         self.VPERDIV = 1.0      # Volts per division, vertical scale
         self.delay = 10         # Time interval between samples
@@ -128,7 +136,7 @@ class mainWindow(QMainWindow):
         self.chanmask=1         # byte to store the mask for active analogic channels.
         self.np=100             # number of points to plot (and samples to get)
         self.delay=10           # delay for measurements (µs between two samples)
-        self.measure = 0        # the channel which is measured ??? (check that semantic)
+        self.measure = 0        # boolean to toggle data fitting
         self.NOSQR2 = True      # SQR2 is not set
         self.NOSF = True        # No frequency on SENSOR input
         self.NOAF = True        # No frequency on Amplifier input, T15
@@ -148,6 +156,95 @@ class mainWindow(QMainWindow):
             self.timer=QTimer(self)
             self.connect(self.timer, SIGNAL("timeout()"), self.update)
             self.timer.start(500)   # refresh twice per second if possible
+
+    def save(self, filename='measures.dat'):
+        """
+        save current data to a file
+        @param filename the name of the file
+        """
+        self.eye.save(self.trace,filename)
+        self.showhelp('Traces saved to %s' %filename)
+
+    def xmgrace(self):
+        """
+        opens xmgrage with current data in a plot
+        """
+        if self.eye.grace(self.trace) == False:
+            self.showhelp('Could not find Xmgrace or Pygrace. Install them','red')
+
+
+    def do_fft(self, filename='measureFFT.dat'):
+        """
+        opens xmgrage with current data in a FFT plot
+        @param filename the name of the file
+        """
+        if EYEMATH == False:
+            self.showhelp('Could not find scipy package. Install it','red')
+            return
+        if self.trace == None: return
+        transform = []
+        for xy in self.trace:
+            fr,tr = eyemath.fft(xy[1], self.delay * self.NC * 0.001)
+            transform.append([fr,tr])
+        self.eye.save(transform, filename)
+        self.eye.grace(transform, 'freq', 'power')
+        self.showhelp('Fourier transform Saved to %s' %filename)
+
+    
+    def toggleA0(self, state):
+        """
+        callback function for the A0 check box
+        @param state state of the checkbox
+        """
+        if state == Qt.Checked:
+            self.chanmask = self.chanmask | 1
+        else:
+            self.chanmask = self.chanmask & 254
+        self.adjustChannels()
+
+    def toggleA1(self, state):
+        """
+        callback function for the A1 check box
+        @param state state of the checkbox
+        """
+        if state == Qt.Checked:
+            self.chanmask = self.chanmask | 2
+        else:
+            self.chanmask = self.chanmask & 253
+        self.adjustChannels()
+
+    def adjustChannels(self):
+        """
+        adjust channel flags when some has been toggled
+        """
+        if self.chanmask == 3: 
+            self.NC = 2
+        else:
+            self.NC = 1
+        if self.chanmask == 0:
+            self.ui.graphWidget.delete_lines()
+            self.ui.graphWidget.update()
+
+    def toggleFit(self, state):
+        """
+        callback function for the Fit check box
+        @param state state of the checkbox
+        """
+        if state == Qt.Checked:
+            self.measure = 1
+        else:
+            self.measure = 0
+
+    def toggleLis(self, state):
+        """
+        callback function for the Lis check box
+        @param state state of the checkbox
+        """
+        if state == Qt.Checked:
+            self.lissa = 1
+        else:
+            self.lissa = 0
+
 
     def freq_id0(self):
         """
@@ -208,10 +305,17 @@ class mainWindow(QMainWindow):
             self.sf = delay/1000
             self.delay = 1000
             self.np =self. NP * sf / self.NC
+        self.setTimeVoltageWorld()
+
+    def setTimeVoltageWorld(self):
+        """
+        ensures the right viewport for ordinary oscillogramme
+        """
         self.ui.graphWidget.setWorld(0,
                                      -5*self.VPERDIV, 
                                      self.np * self.delay * 0.001, 
-                                     5*self.VPERDIV)
+                                     5*self.VPERDIV,
+                                     xUnit='ms', yUnit='V')
 
     def OD0toggle(self, state):
         """
@@ -353,23 +457,25 @@ class mainWindow(QMainWindow):
         if self.lissa == True:
             t,v,tt,vv = self.eye.capture01(self.np,self.delay)
             g.delete_lines()
-            g.setWorld(-5,-5,5,5,'mS','V')
+            g.setWorld(-5,-5,5,5,xUnit='V',yUnit='V')
             g.polyline(v,vv)
             self.trace.append([v,vv])
         elif self.chanmask == 1 or self.chanmask == 2:                # Waveform display code 
             t, v = self.eye.capture(self.chanmask-1,self.np,self.delay)
             g.delete_lines()
+            self.setTimeVoltageWorld()
             g.polyline(t,v,self.chanmask-1)
             self.trace.append([t,v])
         elif self.chanmask == 3:
             t,v,tt,vv = self.eye.capture01(self.np,self.delay)
             g.delete_lines()
+            self.setTimeVoltageWorld()
             g.polyline(t,v)
             g.polyline(tt,vv,1)
             self.trace.append([t,v])
             self.trace.append([tt,vv])
         if self.measure == 1 and EYEMATH == False:
-            showhelp('python-scipy not installed. Required for data fitting','red')
+            self.showhelp('python-scipy not installed. Required for data fitting','red')
         if self.measure == 1 and self.lissa == False and EYEMATH == True:        # Curve Fitting
             if self.chanmask == 1 or self.chanmask == 2:            
                 fa = eyemath.fit_sine(t, v)
@@ -377,9 +483,9 @@ class mainWindow(QMainWindow):
                     #g.polyline(t,fa[0], 8)
                     rms = self.eye.rms(v)
                     f0 = fa[1][1] * 1000
-                    s = 'CH%d %5.2f V , F= %5.2f Hz'%(self.chanmask>>1, rms, f0)
+                    s = 'CH%d: %5.2f V, F= %5.2f Hz'%(self.chanmask>>1, rms, f0)
                 else:
-                    s = 'CH%d nosig '%(self.chanmask>>1)
+                    s = 'CH%d: nosig '%(self.chanmask>>1)
 
             elif self.chanmask == 3:    
                 fa = eyemath.fit_sine(t,v)
@@ -388,7 +494,7 @@ class mainWindow(QMainWindow):
                     rms = self.eye.rms(v)
                     f0 = fa[1][1]*1000
                     ph0 = fa[1][2]
-                    s += 'CH0 : %5.2f V , %5.2f Hz '%(rms, f0)
+                    s += 'CH0: %5.2f V, %5.2f Hz'%(rms, f0)
                 else:
                     s += 'CH0: no signal '
                 fb = eyemath.fit_sine(tt,vv)
@@ -397,11 +503,11 @@ class mainWindow(QMainWindow):
                     rms = self.eye.rms(vv)
                     f1 = fb[1][1]*1000
                     ph1 = fb[1][2]
-                    s = s + '| CH1 %5.2f V , %5.2f Hz'%(rms, f1)
+                    s = s + ' | CH1: %5.2f V, %5.2f Hz'%(rms, f1)
                     if fa != None and abs(f0-f1) < f0*0.1:
                         s = s + ' | dphi= %5.1f'%( (ph1-ph0)*180.0/math.pi)
                 else:
-                    s += '| CH1:no signal '
+                    s += ' | CH1:no signal '
         self.ui.msgLabel.setText(s)            # CRO part over    
 
         v = self.eye.get_voltage(6)            # CS voltage

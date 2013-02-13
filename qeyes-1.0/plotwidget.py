@@ -44,8 +44,6 @@ class plotWidget(QGraphicsView):
     scaletext = []
     markerval = []
     markertext = None
-    xlabel = 'mSec'            # Default axis lables
-    ylabel = 'V'
 
     def __init__(self, parent=None, width=400., height=300.,color = 'white', labels = True, bip=True):
         """
@@ -76,9 +74,16 @@ class plotWidget(QGraphicsView):
         self.setWorld(0 , 0, self.SCX, self.SCY)
         self.grid()
 
-    def setWorld(self, x1, y1, x2, y2):
+    def setWorld(self, x1, y1, x2, y2, xUnit='ms', yUnit='V'):
         '''
-        Calculates the scale factors for world to screen coordinate transformation. 
+        Calculates the scale factors for world to screen
+        coordinate transformation.
+        @param x1 lowest value of x to plot
+        @param y1 lowest value of y to plot
+        @param x2 highest value of x to plot
+        @param y2 highest value of y to plot
+        @param xUnit the unit to use for abscissa
+        @param yUnit the unit to use for ordinate
         '''
         self.xmin = float(x1)
         self.ymin = float(y1)
@@ -86,26 +91,28 @@ class plotWidget(QGraphicsView):
         self.ymax = float(y2)
         self.xscale = (self.xmax - self.xmin) / (self.SCX)
         self.yscale = (self.ymax - self.ymin) / (self.SCY)   
-        self.mark_labels()
+        self.mark_labels(xUnit, yUnit)
         if self.labels == True:
             return
         for txt in self.scaletext:
             self.scene.removeItem(txt)
         self.scaletext = []
-        s = '%3.2f %s/div'%( (self.xmax-self.xmin)/NGRID1, self.xlabel)
+        s = '%3.2f %s/div'%( (self.xmax-self.xmin)/NGRID1, xUnit)
         t =  self.scene.addSimpleText(s)
         t.setPos(QPointF(2, self.SCY*9/20))
         t.setPen(self.labelPen)
         self.scaletext.append(t)
-        s = '%3.2f %s/div'%( (self.ymax-self.ymin)/NGRID1, ylabel)
+        s = '%3.2f %s/div'%( (self.ymax-self.ymin)/NGRID1, yUnit)
         t =  self.scene.addSimpleText(s)
         t.setPos(QPointF(self.SCX/2,10))
         t.setPen(self.labelPen)
         self.scaletext.append(t)
 
-    def mark_labels(self):
+    def mark_labels(self, xUnit, yUnit):
         '''
         Draws the X and Y axis divisions and labels. Only used internally.
+        @param xUnit the unit to use for xaxis
+        @param yUnit the unit to use for yaxis
         '''
         if self.labels == False:
             return
@@ -113,7 +120,7 @@ class plotWidget(QGraphicsView):
         self.xaxis = []
         self.yaxis = []
         pos=QPoint(self.SCX/2, self.SCY-AXWIDTH+15)
-        self.xaxis.append((self.textPen, pos, self.labelFont, self.xlabel, "right", "bottom" ))
+        self.xaxis.append((self.textPen, pos, self.labelFont, xUnit, "right", "bottom" ))
         dx = float(self.SCX)/NUMDIV
         for x in range(0,NUMDIV+1):
             a = x *(self.xmax - self.xmin)/NUMDIV + self.xmin
@@ -124,7 +131,7 @@ class plotWidget(QGraphicsView):
             pos=QPoint(x*dx+adjust, self.SCY-AXWIDTH)
             self.xaxis.append((self.textPen, pos, self.labelFont, s, "center", "bottom"))
         pos=QPoint(2,(self.SCY-AXWIDTH)/2)
-        self.yaxis.append((self.textPen, pos, self.labelFont, self.ylabel, "right", "top"))
+        self.yaxis.append((self.textPen, pos, self.labelFont, yUnit, "right", "top"))
         dy = float(self.SCY)/NUMDIV
         for y in range(0,NUMDIV+1):
             a = y*(self.ymax - self.ymin)/5    # + self.ymin

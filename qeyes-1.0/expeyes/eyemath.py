@@ -4,7 +4,7 @@ Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
 
-import eyes, sys, time, math
+import expeyes.eyes, sys, time, math
 from numpy import *
 import numpy.fft
 from scipy import optimize 
@@ -47,7 +47,7 @@ def find_frequency(x,y):		# Returns the fundamental frequency using FFT
 	mx = max(ty)
 	for i in range(1,len(ty)):
 		if ty[i] != 0:
-			print 'FF', tx[i], ty[i]
+			print ('FF', tx[i], ty[i])
 		if ty[i] > 5*m:
 			return tx[i]
 	return None					# Could not find FFT Peak
@@ -68,17 +68,17 @@ def fit_sine(xlist,ylist, freq = 0):	# Time in mS, V in volts, freq in Hz
 		freq = find_frequency(xa,ya)
 	if freq == None:
 		return None
-	#print 'guess a & freq = ', amp, freq
+	#print ('guess a & freq = %s %s'%(amp, freq))
 	par = [abs(amp), freq*0.001, 0.0, 0.0] # Amp, freq, phase , offset
 	plsq = leastsq(sine_erf, par,args=(ya,xa))
 	if plsq[1] > 4:
 		return None
 	yfit = sine_eval(xa, plsq[0])
 	if plsq[0][0] < 0:
-		#print plsq[0]
+		#print (plsq[0])
 		plsq[0][0] *= -1
 		plsq[0][2] += pi
-		#print plsq[0]
+		#print (plsq[0])
 	return yfit,plsq[0]
 
 #--------------------------Damped Sine Fit ------------------------------------------------
@@ -95,7 +95,7 @@ def fit_dsine(xlist, ylist, freq = 0):
 	amp = (max(ya)-min(ya))/2
 	if freq == 0:
 		freq = find_frequency(xa,ya)
-	print freq
+	print (freq)
 	par = [amp, freq, 0.0, 0.0, 0.1] # Amp, freq, phase , offset, decay constant
 	plsq = leastsq(dsine_erf, par,args=(ya,xa))
 	if plsq[1] > 4:

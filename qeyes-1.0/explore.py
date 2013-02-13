@@ -355,9 +355,9 @@ class eyePanel:
                     #g.line(t,fa[0], 8)
                     rms = self.eye.rms(v)
                     f0 = fa[1][1] * 1000
-                    s = 'CH%d %5.2f V , F= %5.2f Hz'%(chanmask>>1, rms, f0)
+                    s = 'CH%d: %5.2f V, F= %5.2f Hz'%(chanmask>>1, rms, f0)
                 else:
-                    s = 'CH%d nosig '%(chanmask>>1)
+                    s = 'CH%d: nosig'%(chanmask>>1)
 
             elif chanmask == 3:    
                 fa = eyemath.fit_sine(t,v)
@@ -366,7 +366,7 @@ class eyePanel:
                     rms = self.eye.rms(v)
                     f0 = fa[1][1]*1000
                     ph0 = fa[1][2]
-                    s += 'CH0 : %5.2f V , %5.2f Hz '%(rms, f0)
+                    s += 'CH0: %5.2f V, %5.2f Hz'%(rms, f0)
                 else:
                     s += 'CH0: no signal '
                 fb = eyemath.fit_sine(tt,vv)
@@ -375,7 +375,7 @@ class eyePanel:
                     rms = self.eye.rms(vv)
                     f1 = fb[1][1]*1000
                     ph1 = fb[1][2]
-                    s = s + '| CH1 %5.2f V , %5.2f Hz'%(rms, f1)
+                    s = s + ' | CH1: %5.2f V, %5.2f Hz'%(rms, f1)
                     if fa != None and abs(f0-f1) < f0*0.1:
                         s = s + ' | dphi= %5.1f'%( (ph1-ph0)*180.0/math.pi)
                 else:
