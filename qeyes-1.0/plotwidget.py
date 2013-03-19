@@ -26,6 +26,10 @@ NGRID1    = 10
 NGRID2    = 5
 
 class plotWidget(QGraphicsView):
+    """
+    a widget to plot measurements coming from Expeyes box.
+    it features x and y axis, and can manage scaling commands
+    """
     border = 2
     pad = 0
     bordcol = Qt.gray     # Border color
@@ -45,7 +49,7 @@ class plotWidget(QGraphicsView):
     markerval = []
     markertext = None
 
-    def __init__(self, parent=None, width=400., height=300.,color = 'white', labels = True, bip=True):
+    def __init__(self, parent=None, width=400., height=300.,color = 'white', labels = True, bip=True, xAxisWidget=None, yAxisWidget=None):
         """
         constructor.
         @param parent a widget (default=None)
@@ -54,6 +58,8 @@ class plotWidget(QGraphicsView):
         @param color background color
         @param labels True to display labels (default=True)
         @param bip True if the O V is in the middle (default=True)
+        @param xAxisWidget a widget to draw abscissa labels and ticks
+        @param yAxisWidget a widget to draw ordinate labels and ticks        
         """
         QGraphicsView.__init__(self, parent)
         self.parent = parent
@@ -89,9 +95,13 @@ class plotWidget(QGraphicsView):
         self.ymin = float(y1)
         self.xmax = float(x2)
         self.ymax = float(y2)
+        if hasattr(self.parent.parent().ui,"xAxisWidget"): # wait initialization
+            self.parent.parent().ui.xAxisWidget.setRange(self.xmin,self.xmax,xUnit)
+        if hasattr(self.parent.parent().ui,"yAxisWidget"): # wait initialization
+            self.parent.parent().ui.yAxisWidget.setRange(self.ymin,self.ymax,yUnit)
         self.xscale = (self.xmax - self.xmin) / (self.SCX)
         self.yscale = (self.ymax - self.ymin) / (self.SCY)   
-        self.mark_labels(xUnit, yUnit)
+        #self.mark_labels(xUnit, yUnit)
         if self.labels == True:
             return
         for txt in self.scaletext:
@@ -175,7 +185,8 @@ class plotWidget(QGraphicsView):
 
     def paintEvent(self, event=None):
         """
-        redefinition of the SLOT which deals with paint events (raised by repaint or update)
+        redefinition of the SLOT which deals with paint events (raised
+        by repaint or update)
         @param event the paint event
         """
         QGraphicsView.paintEvent(self, event)

@@ -131,7 +131,7 @@ class mainWindow(QMainWindow):
         self.VPERDIV = 1.0      # Volts per division, vertical scale
         self.delay = 10         # Time interval between samples
         self.np = 100           # Number of samples
-        self.NC = 1             # Number of channels
+        self.nc = 1             # Number of channels
         self.lissa = False      # drawing lissajous-type plots
         self.chanmask=1         # byte to store the mask for active analogic channels.
         self.np=100             # number of points to plot (and samples to get)
@@ -184,7 +184,7 @@ class mainWindow(QMainWindow):
         if self.trace == None: return
         transform = []
         for xy in self.trace:
-            fr,tr = eyemath.fft(xy[1], self.delay * self.NC * 0.001)
+            fr,tr = eyemath.fft(xy[1], self.delay * self.nc * 0.001)
             transform.append([fr,tr])
         self.eye.save(transform, filename)
         self.eye.grace(transform, 'freq', 'power')
@@ -218,9 +218,9 @@ class mainWindow(QMainWindow):
         adjust channel flags when some has been toggled
         """
         if self.chanmask == 3: 
-            self.NC = 2
+            self.nc = 2
         else:
-            self.NC = 1
+            self.nc = 1
         if self.chanmask == 0:
             self.ui.graphWidget.delete_lines()
             self.ui.graphWidget.update()
@@ -234,6 +234,7 @@ class mainWindow(QMainWindow):
             self.measure = 1
         else:
             self.measure = 0
+            self.showhelp('') # to erase previous fittings if any
 
     def toggleLis(self, state):
         """
@@ -291,20 +292,22 @@ class mainWindow(QMainWindow):
         callback for the horizontal slider
         @param value: the position of the cursor in range(10)
         """
-        divs = [0.050, 0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]
         assert value in range(10)
+        divs = [0.050, 0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]
         msperdiv = divs[value]
-        totalusec = int(msperdiv * 1000 * 10)
-        self.np = 200                    # Assume 100 samples to start with
-        self.delay = int(totalusec/100)  # Calculate delay
-        if self.delay < 10:
-            sf = 10/self.delay
+        self.np = 200
+        self.delay = msperdiv * 100
+        if self.delay < 10: # for value==0
+            # self.delay == 5 is too short; increase the delay, get less measurements
+            self.np = 20 * self.delay * self.nc
             self.delay = 10
-            self.np = self.np/sf * self.NC
-        elif self.delay > 1000:
-            self.sf = delay/1000
+        elif self.delay > 1000: # for value in [8,9]
+            # self.delay in [2000, 5000] is too long; get more measurements, decrease the delay
+            self.np = self.delay / 5 / self.nc
             self.delay = 1000
-            self.np =self. NP * sf / self.NC
+        # don't allow float values
+        self.delay=int(self.delay)
+        self.np=int(self.np) 
         self.setTimeVoltageWorld()
 
     def setTimeVoltageWorld(self):
@@ -450,9 +453,9 @@ class mainWindow(QMainWindow):
         """
         sequence of actions to be done at each timer's tick
         """
-        s = ''
         self.trace = []  # a pair of vectors which remains local to mainWindow
         g=self.ui.graphWidget
+        tt, vv = None, None
 
         if self.lissa == True:
             t,v,tt,vv = self.eye.capture01(self.np,self.delay)
@@ -463,52 +466,17 @@ class mainWindow(QMainWindow):
         elif self.chanmask == 1 or self.chanmask == 2:                # Waveform display code 
             t, v = self.eye.capture(self.chanmask-1,self.np,self.delay)
             g.delete_lines()
-            self.setTimeVoltageWorld()
             g.polyline(t,v,self.chanmask-1)
             self.trace.append([t,v])
         elif self.chanmask == 3:
             t,v,tt,vv = self.eye.capture01(self.np,self.delay)
             g.delete_lines()
-            self.setTimeVoltageWorld()
             g.polyline(t,v)
             g.polyline(tt,vv,1)
             self.trace.append([t,v])
             self.trace.append([tt,vv])
-        if self.measure == 1 and EYEMATH == False:
-            self.showhelp('python-scipy not installed. Required for data fitting','red')
-        if self.measure == 1 and self.lissa == False and EYEMATH == True:        # Curve Fitting
-            if self.chanmask == 1 or self.chanmask == 2:            
-                fa = eyemath.fit_sine(t, v)
-                if fa != None:
-                    #g.polyline(t,fa[0], 8)
-                    rms = self.eye.rms(v)
-                    f0 = fa[1][1] * 1000
-                    s = 'CH%d: %5.2f V, F= %5.2f Hz'%(self.chanmask>>1, rms, f0)
-                else:
-                    s = 'CH%d: nosig '%(self.chanmask>>1)
 
-            elif self.chanmask == 3:    
-                fa = eyemath.fit_sine(t,v)
-                if fa != None:
-                    #g.polyline(t,fa[0],8)
-                    rms = self.eye.rms(v)
-                    f0 = fa[1][1]*1000
-                    ph0 = fa[1][2]
-                    s += 'CH0: %5.2f V, %5.2f Hz'%(rms, f0)
-                else:
-                    s += 'CH0: no signal '
-                fb = eyemath.fit_sine(tt,vv)
-                if fb != None:
-                    #g.polyline(tt,fb[0],8)
-                    rms = self.eye.rms(vv)
-                    f1 = fb[1][1]*1000
-                    ph1 = fb[1][2]
-                    s = s + ' | CH1: %5.2f V, %5.2f Hz'%(rms, f1)
-                    if fa != None and abs(f0-f1) < f0*0.1:
-                        s = s + ' | dphi= %5.1f'%( (ph1-ph0)*180.0/math.pi)
-                else:
-                    s += ' | CH1:no signal '
-        self.ui.msgLabel.setText(s)            # CRO part over    
+        self.curveFit(t,v,tt,vv)               # fits the curves
 
         v = self.eye.get_voltage(6)            # CS voltage
         self.labset(27, '%5.3f V'%v)                    
@@ -554,10 +522,51 @@ class mainWindow(QMainWindow):
             else:
                 self.labset(22, '0 Hz')
                 self.NOSF = True
-        # dirty workaround, for graphWidget to be redrawn!
-        # self.ui.graphWidget.paintEvent()
 
+    def curveFit(self, t, v, tt=None, vv=None):
+        """
+        Curve fitting routine
+        @param t : abscissa vector
+        @param v : ordinate vector
+        @param tt: abscissa vector
+        @param vv: ordinate vector
+        """
+        if not self.measure:
+            return
+        if not EYEMATH:
+            self.showhelp('python-scipy not installed. Required for data fitting','red')
+            return
+        s = ''
+        if self.chanmask in (1,2):
+            fa = eyemath.fit_sine(t, v)
+            if fa != None:
+                rms = self.eye.rms(v)
+                f0 = fa[1][1] * 1000
+                s = 'CH%d: %5.2f V, F= %5.2f Hz'%(self.chanmask>>1, rms, f0)
+            else:
+                s = 'CH%d: nosig '%(self.chanmask>>1)
 
+        elif self.chanmask == 3:    
+            fa = eyemath.fit_sine(t,v)
+            if fa != None:
+                rms = self.eye.rms(v)
+                f0 = fa[1][1]*1000
+                ph0 = fa[1][2]
+                s += 'CH0: %5.2f V, F= %5.2f Hz'%(rms, f0)
+            else:
+                s += 'CH0: no signal'
+            fb = eyemath.fit_sine(tt,vv)
+            if fb != None:
+                rms = self.eye.rms(vv)
+                f1 = fb[1][1]*1000
+                ph1 = fb[1][2]
+                s = s + '<br/>CH1: %5.2f V, F= %5.2f Hz'%(rms, f1)
+                if fa != None and abs(f0-f1) < f0*0.1:
+                    s = s + '<br/>dphi= %5.1f'%( (ph1-ph0)*180.0/math.pi)
+            else:
+                s += '<br/>CH1:no signal'
+        self.showhelp(s,'blue')
+        return
 
     def showhelp(self, s, color='black'):
         """

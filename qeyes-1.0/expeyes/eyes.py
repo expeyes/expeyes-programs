@@ -199,7 +199,7 @@ class Eyes:
         for i in range(len(args)):
             bs=struct.pack(format[i],args[i])
             self.fd.write(bs)
-            time.sleep(0.01)
+            time.sleep(0.02)
 
     def b2int(self, bs):
         """

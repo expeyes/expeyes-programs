@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>888</width>
+    <width>909</width>
     <height>568</height>
    </rect>
   </property>
@@ -60,9 +60,9 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>14</x>
-      <y>370</y>
-      <width>401</width>
+      <x>28</x>
+      <y>361</y>
+      <width>405</width>
       <height>38</height>
      </rect>
     </property>
@@ -188,10 +188,10 @@
    <widget class="QTextBrowser" name="helpBrowser">
     <property name="geometry">
      <rect>
-      <x>11</x>
-      <y>409</y>
+      <x>28</x>
+      <y>406</y>
       <width>405</width>
-      <height>136</height>
+      <height>139</height>
      </rect>
     </property>
     <property name="sizePolicy">
@@ -210,8 +210,8 @@
    <widget class="plotWidget" name="graphWidget" native="true">
     <property name="geometry">
      <rect>
-      <x>6</x>
-      <y>5</y>
+      <x>28</x>
+      <y>1</y>
       <width>405</width>
       <height>305</height>
      </rect>
@@ -220,53 +220,47 @@
      <string notr="true">background:wheat;</string>
     </property>
    </widget>
-   <widget class="QFrame" name="frame_3">
+   <widget class="QSlider" name="horizontalSlider">
     <property name="geometry">
      <rect>
-      <x>4</x>
-      <y>309</y>
-      <width>418</width>
-      <height>69</height>
+      <x>28</x>
+      <y>333</y>
+      <width>405</width>
+      <height>23</height>
      </rect>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="maximum">
+     <number>9</number>
     </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
+    <property name="pageStep">
+     <number>1</number>
     </property>
-    <layout class="QVBoxLayout" name="verticalLayout">
-     <item>
-      <widget class="QSlider" name="horizontalSlider">
-       <property name="maximum">
-        <number>9</number>
-       </property>
-       <property name="pageStep">
-        <number>1</number>
-       </property>
-       <property name="orientation">
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="tickPosition">
-        <enum>QSlider::TicksAbove</enum>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLabel" name="msgLabel">
-       <property name="font">
-        <font>
-         <family>Courier 10 Pitch</family>
-         <pointsize>7</pointsize>
-         <italic>true</italic>
-        </font>
-       </property>
-       <property name="text">
-        <string>Messages         </string>
-       </property>
-      </widget>
-     </item>
-    </layout>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+    <property name="tickPosition">
+     <enum>QSlider::TicksAbove</enum>
+    </property>
+   </widget>
+   <widget class="axisWidget" name="yAxisWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>1</y>
+      <width>29</width>
+      <height>305</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="axisWidget" name="xAxisWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>28</x>
+      <y>306</y>
+      <width>405</width>
+      <height>26</height>
+     </rect>
+    </property>
    </widget>
   </widget>
   <widget class="QLineEdit" name="ID1_display">
@@ -795,6 +789,12 @@
    <class>plotWidget</class>
    <extends>QWidget</extends>
    <header>plotwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>axisWidget</class>
+   <extends>QWidget</extends>
+   <header>axiswidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
