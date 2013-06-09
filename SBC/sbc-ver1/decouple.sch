@@ -1,0 +1,1045 @@
+EESchema Schematic File Version 2  date Thu 30 May 2013 10:03:11 AM IST
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:A10-plus
+LIBS:myconns
+LIBS:a10-sbc-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 3
+Title ""
+Date "30 may 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text GLabel 1000 3650 0    60   Input ~ 0
+3.3V
+Text GLabel 950  1450 0    60   Input ~ 0
+1.25V
+Text GLabel 1000 2250 0    60   Input ~ 0
+DRAM_VCC
+Text GLabel 900  750  0    60   Input ~ 0
+1.2V
+$Comp
+L C C49
+U 1 1 515197E6
+P 1000 950
+F 0 "C49" H 1050 1050 50  0000 L CNN
+F 1 ".22u" H 1050 850 50  0000 L CNN
+	1    1000 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C82
+U 1 1 51523C00
+P 1250 2450
+F 0 "C82" H 1300 2550 50  0000 L CNN
+F 1 ".22u" H 1300 2350 50  0000 L CNN
+	1    1250 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C83
+U 1 1 51518E22
+P 1600 2450
+F 0 "C83" H 1650 2550 50  0000 L CNN
+F 1 ".22u" H 1650 2350 50  0000 L CNN
+	1    1600 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C84
+U 1 1 51518E28
+P 1950 2450
+F 0 "C84" H 2000 2550 50  0000 L CNN
+F 1 ".22u" H 2000 2350 50  0000 L CNN
+	1    1950 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C85
+U 1 1 51518E2E
+P 2300 2450
+F 0 "C85" H 2350 2550 50  0000 L CNN
+F 1 ".22u" H 2350 2350 50  0000 L CNN
+	1    2300 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C86
+U 1 1 51518E34
+P 2650 2450
+F 0 "C86" H 2700 2550 50  0000 L CNN
+F 1 ".22u" H 2700 2350 50  0000 L CNN
+	1    2650 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C87
+U 1 1 51518E3A
+P 3000 2450
+F 0 "C87" H 3050 2550 50  0000 L CNN
+F 1 ".22u" H 3050 2350 50  0000 L CNN
+	1    3000 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C88
+U 1 1 51518E40
+P 3350 2450
+F 0 "C88" H 3400 2550 50  0000 L CNN
+F 1 ".22u" H 3400 2350 50  0000 L CNN
+	1    3350 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C89
+U 1 1 51518E46
+P 3700 2450
+F 0 "C89" H 3750 2550 50  0000 L CNN
+F 1 ".22u" H 3750 2350 50  0000 L CNN
+	1    3700 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C90
+U 1 1 51518E4C
+P 4050 2450
+F 0 "C90" H 4100 2550 50  0000 L CNN
+F 1 ".22u" H 4100 2350 50  0000 L CNN
+	1    4050 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C91
+U 1 1 51518E52
+P 4400 2450
+F 0 "C91" H 4450 2550 50  0000 L CNN
+F 1 ".22u" H 4450 2350 50  0000 L CNN
+	1    4400 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C92
+U 1 1 51518E58
+P 4750 2450
+F 0 "C92" H 4800 2550 50  0000 L CNN
+F 1 ".22u" H 4800 2350 50  0000 L CNN
+	1    4750 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C93
+U 1 1 51518E5E
+P 5100 2450
+F 0 "C93" H 5150 2550 50  0000 L CNN
+F 1 ".22u" H 5150 2350 50  0000 L CNN
+	1    5100 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C94
+U 1 1 51518E64
+P 5450 2450
+F 0 "C94" H 5500 2550 50  0000 L CNN
+F 1 ".22u" H 5500 2350 50  0000 L CNN
+	1    5450 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C95
+U 1 1 51518E6A
+P 5800 2450
+F 0 "C95" H 5850 2550 50  0000 L CNN
+F 1 ".22u" H 5850 2350 50  0000 L CNN
+	1    5800 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C96
+U 1 1 51518E70
+P 6150 2450
+F 0 "C96" H 6200 2550 50  0000 L CNN
+F 1 ".22u" H 6200 2350 50  0000 L CNN
+	1    6150 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C97
+U 1 1 51518E76
+P 6500 2450
+F 0 "C97" H 6550 2550 50  0000 L CNN
+F 1 ".22u" H 6550 2350 50  0000 L CNN
+	1    6500 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C98
+U 1 1 51518E7C
+P 6850 2450
+F 0 "C98" H 6900 2550 50  0000 L CNN
+F 1 ".22u" H 6900 2350 50  0000 L CNN
+	1    6850 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C99
+U 1 1 51518E82
+P 7200 2450
+F 0 "C99" H 7250 2550 50  0000 L CNN
+F 1 ".22u" H 7250 2350 50  0000 L CNN
+	1    7200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C100
+U 1 1 51518E88
+P 7550 2450
+F 0 "C100" H 7600 2550 50  0000 L CNN
+F 1 ".22u" H 7600 2350 50  0000 L CNN
+	1    7550 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C101
+U 1 1 51518E8E
+P 7900 2450
+F 0 "C101" H 7950 2550 50  0000 L CNN
+F 1 ".22u" H 7950 2350 50  0000 L CNN
+	1    7900 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C102
+U 1 1 51518E94
+P 8200 2450
+F 0 "C102" H 8250 2550 50  0000 L CNN
+F 1 ".22u" H 8250 2350 50  0000 L CNN
+	1    8200 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C103
+U 1 1 51518E9A
+P 8550 2450
+F 0 "C103" H 8600 2550 50  0000 L CNN
+F 1 ".22u" H 8600 2350 50  0000 L CNN
+	1    8550 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C104
+U 1 1 51518EA0
+P 8900 2450
+F 0 "C104" H 8950 2550 50  0000 L CNN
+F 1 ".22u" H 8950 2350 50  0000 L CNN
+	1    8900 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C105
+U 1 1 51518EA6
+P 9250 2450
+F 0 "C105" H 9300 2550 50  0000 L CNN
+F 1 ".22u" H 9300 2350 50  0000 L CNN
+	1    9250 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C106
+U 1 1 51518EAC
+P 9600 2450
+F 0 "C106" H 9650 2550 50  0000 L CNN
+F 1 ".22u" H 9650 2350 50  0000 L CNN
+	1    9600 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C107
+U 1 1 51518EB2
+P 9950 2450
+F 0 "C107" H 10000 2550 50  0000 L CNN
+F 1 ".22u" H 10000 2350 50  0000 L CNN
+	1    9950 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C50
+U 1 1 5151947E
+P 1350 950
+F 0 "C50" H 1400 1050 50  0000 L CNN
+F 1 ".22u" H 1400 850 50  0000 L CNN
+	1    1350 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C53
+U 1 1 51519484
+P 2400 950
+F 0 "C53" H 2450 1050 50  0000 L CNN
+F 1 ".22u" H 2450 850 50  0000 L CNN
+	1    2400 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C52
+U 1 1 5151948A
+P 2050 950
+F 0 "C52" H 2100 1050 50  0000 L CNN
+F 1 ".22u" H 2100 850 50  0000 L CNN
+	1    2050 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C51
+U 1 1 51519490
+P 1700 950
+F 0 "C51" H 1750 1050 50  0000 L CNN
+F 1 ".22u" H 1750 850 50  0000 L CNN
+	1    1700 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C54
+U 1 1 51519496
+P 2750 950
+F 0 "C54" H 2800 1050 50  0000 L CNN
+F 1 ".22u" H 2800 850 50  0000 L CNN
+	1    2750 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C55
+U 1 1 5151949C
+P 3100 950
+F 0 "C55" H 3150 1050 50  0000 L CNN
+F 1 ".22u" H 3150 850 50  0000 L CNN
+	1    3100 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C56
+U 1 1 515194A2
+P 3450 950
+F 0 "C56" H 3500 1050 50  0000 L CNN
+F 1 ".22u" H 3500 850 50  0000 L CNN
+	1    3450 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C57
+U 1 1 515194A8
+P 3800 950
+F 0 "C57" H 3850 1050 50  0000 L CNN
+F 1 ".22u" H 3850 850 50  0000 L CNN
+	1    3800 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C58
+U 1 1 515194AE
+P 1100 1650
+F 0 "C58" H 1150 1750 50  0000 L CNN
+F 1 ".22u" H 1150 1550 50  0000 L CNN
+	1    1100 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C59
+U 1 1 515194B4
+P 1450 1650
+F 0 "C59" H 1500 1750 50  0000 L CNN
+F 1 ".22u" H 1500 1550 50  0000 L CNN
+	1    1450 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C60
+U 1 1 515194BA
+P 1800 1650
+F 0 "C60" H 1850 1750 50  0000 L CNN
+F 1 ".22u" H 1850 1550 50  0000 L CNN
+	1    1800 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C61
+U 1 1 515194C0
+P 1100 3850
+F 0 "C61" H 1150 3950 50  0000 L CNN
+F 1 ".22u" H 1150 3750 50  0000 L CNN
+	1    1100 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C62
+U 1 1 515194C6
+P 1450 3850
+F 0 "C62" H 1500 3950 50  0000 L CNN
+F 1 ".22u" H 1500 3750 50  0000 L CNN
+	1    1450 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C63
+U 1 1 515194D6
+P 1800 3850
+F 0 "C63" H 1850 3950 50  0000 L CNN
+F 1 ".22u" H 1850 3750 50  0000 L CNN
+	1    1800 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C64
+U 1 1 515194DC
+P 2150 3850
+F 0 "C64" H 2200 3950 50  0000 L CNN
+F 1 ".22u" H 2200 3750 50  0000 L CNN
+	1    2150 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C65
+U 1 1 515194E2
+P 2500 3850
+F 0 "C65" H 2550 3950 50  0000 L CNN
+F 1 ".22u" H 2550 3750 50  0000 L CNN
+	1    2500 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C66
+U 1 1 515194E8
+P 2850 3850
+F 0 "C66" H 2900 3950 50  0000 L CNN
+F 1 ".22u" H 2900 3750 50  0000 L CNN
+	1    2850 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C67
+U 1 1 515194EE
+P 3200 3850
+F 0 "C67" H 3250 3950 50  0000 L CNN
+F 1 ".22u" H 3250 3750 50  0000 L CNN
+	1    3200 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C68
+U 1 1 515194F4
+P 3550 3850
+F 0 "C68" H 3600 3950 50  0000 L CNN
+F 1 ".22u" H 3600 3750 50  0000 L CNN
+	1    3550 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C69
+U 1 1 51519600
+P 3900 3850
+F 0 "C69" H 3950 3950 50  0000 L CNN
+F 1 ".22u" H 3950 3750 50  0000 L CNN
+	1    3900 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C70
+U 1 1 51519606
+P 4250 3850
+F 0 "C70" H 4300 3950 50  0000 L CNN
+F 1 ".22u" H 4300 3750 50  0000 L CNN
+	1    4250 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C72
+U 1 1 5151960C
+P 4950 3850
+F 0 "C72" H 5000 3950 50  0000 L CNN
+F 1 ".22u" H 5000 3750 50  0000 L CNN
+	1    4950 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C71
+U 1 1 51519612
+P 4600 3850
+F 0 "C71" H 4650 3950 50  0000 L CNN
+F 1 ".22u" H 4650 3750 50  0000 L CNN
+	1    4600 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C73
+U 1 1 51519618
+P 7800 1800
+F 0 "C73" H 7850 1900 50  0000 L CNN
+F 1 ".22u" H 7850 1700 50  0000 L CNN
+	1    7800 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C74
+U 1 1 5151961E
+P 8150 1800
+F 0 "C74" H 8200 1900 50  0000 L CNN
+F 1 ".22u" H 8200 1700 50  0000 L CNN
+	1    8150 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C75
+U 1 1 51519624
+P 8500 1800
+F 0 "C75" H 8550 1900 50  0000 L CNN
+F 1 ".22u" H 8550 1700 50  0000 L CNN
+	1    8500 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C76
+U 1 1 5151962A
+P 8850 1800
+F 0 "C76" H 8900 1900 50  0000 L CNN
+F 1 ".22u" H 8900 1700 50  0000 L CNN
+	1    8850 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C109
+U 1 1 515198E6
+P 1300 3050
+F 0 "C109" H 1350 3150 50  0000 L CNN
+F 1 ".22u" H 1350 2950 50  0000 L CNN
+	1    1300 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C110
+U 1 1 51519944
+P 1650 3050
+F 0 "C110" H 1700 3150 50  0000 L CNN
+F 1 ".22u" H 1700 2950 50  0000 L CNN
+	1    1650 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C111
+U 1 1 5151994A
+P 2000 3050
+F 0 "C111" H 2050 3150 50  0000 L CNN
+F 1 ".22u" H 2050 2950 50  0000 L CNN
+	1    2000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C112
+U 1 1 51519950
+P 2350 3050
+F 0 "C112" H 2400 3150 50  0000 L CNN
+F 1 ".22u" H 2400 2950 50  0000 L CNN
+	1    2350 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C113
+U 1 1 51519956
+P 2750 3050
+F 0 "C113" H 2800 3150 50  0000 L CNN
+F 1 ".22u" H 2800 2950 50  0000 L CNN
+	1    2750 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C114
+U 1 1 5151995C
+P 3100 3050
+F 0 "C114" H 3150 3150 50  0000 L CNN
+F 1 ".22u" H 3150 2950 50  0000 L CNN
+	1    3100 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C115
+U 1 1 51519962
+P 3450 3050
+F 0 "C115" H 3500 3150 50  0000 L CNN
+F 1 ".22u" H 3500 2950 50  0000 L CNN
+	1    3450 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C116
+U 1 1 51519968
+P 3800 3050
+F 0 "C116" H 3850 3150 50  0000 L CNN
+F 1 ".22u" H 3850 2950 50  0000 L CNN
+	1    3800 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C117
+U 1 1 5151996E
+P 4200 3050
+F 0 "C117" H 4250 3150 50  0000 L CNN
+F 1 ".22u" H 4250 2950 50  0000 L CNN
+	1    4200 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C118
+U 1 1 51519974
+P 4550 3050
+F 0 "C118" H 4600 3150 50  0000 L CNN
+F 1 ".22u" H 4600 2950 50  0000 L CNN
+	1    4550 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C119
+U 1 1 5151997A
+P 4900 3050
+F 0 "C119" H 4950 3150 50  0000 L CNN
+F 1 ".22u" H 4950 2950 50  0000 L CNN
+	1    4900 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C120
+U 1 1 51519980
+P 5250 3050
+F 0 "C120" H 5300 3150 50  0000 L CNN
+F 1 ".22u" H 5300 2950 50  0000 L CNN
+	1    5250 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C121
+U 1 1 51519986
+P 5600 3050
+F 0 "C121" H 5650 3150 50  0000 L CNN
+F 1 ".22u" H 5650 2950 50  0000 L CNN
+	1    5600 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C122
+U 1 1 5151998C
+P 5950 3050
+F 0 "C122" H 6000 3150 50  0000 L CNN
+F 1 ".22u" H 6000 2950 50  0000 L CNN
+	1    5950 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C123
+U 1 1 51519992
+P 6300 3050
+F 0 "C123" H 6350 3150 50  0000 L CNN
+F 1 ".22u" H 6350 2950 50  0000 L CNN
+	1    6300 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C124
+U 1 1 51519998
+P 6650 3050
+F 0 "C124" H 6700 3150 50  0000 L CNN
+F 1 ".22u" H 6700 2950 50  0000 L CNN
+	1    6650 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C125
+U 1 1 5151999E
+P 7000 3050
+F 0 "C125" H 7050 3150 50  0000 L CNN
+F 1 ".22u" H 7050 2950 50  0000 L CNN
+	1    7000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C23
+U 1 1 515199A4
+P 7350 3050
+F 0 "C23" H 7400 3150 50  0000 L CNN
+F 1 ".22u" H 7400 2950 50  0000 L CNN
+	1    7350 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR061
+U 1 1 51513645
+P 900 1150
+F 0 "#PWR061" H 900 1150 30  0001 C CNN
+F 1 "GND" H 900 1080 30  0001 C CNN
+	1    900  1150
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR062
+U 1 1 515136F7
+P 1000 1850
+F 0 "#PWR062" H 1000 1850 30  0001 C CNN
+F 1 "GND" H 1000 1780 30  0001 C CNN
+	1    1000 1850
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR063
+U 1 1 515136FD
+P 1000 4050
+F 0 "#PWR063" H 1000 4050 30  0001 C CNN
+F 1 "GND" H 1000 3980 30  0001 C CNN
+	1    1000 4050
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR064
+U 1 1 51513850
+P 1150 2650
+F 0 "#PWR064" H 1150 2650 30  0001 C CNN
+F 1 "GND" H 1150 2580 30  0001 C CNN
+	1    1150 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L C C108
+U 1 1 51513AB2
+P 10300 2450
+F 0 "C108" H 10200 2350 50  0000 L CNN
+F 1 "22u" H 10100 2550 50  0000 L CNN
+	1    10300 2450
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R33
+U 1 1 515147D0
+P 10750 1850
+F 0 "R33" V 10830 1850 50  0000 C CNN
+F 1 "2k2" V 10750 1850 50  0000 C CNN
+	1    10750 1850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R32
+U 1 1 515147DD
+P 10750 1600
+F 0 "R32" V 10830 1600 50  0000 C CNN
+F 1 "2k2" V 10750 1600 50  0000 C CNN
+	1    10750 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR065
+U 1 1 51514A33
+P 11050 1600
+F 0 "#PWR065" H 11050 1600 30  0001 C CNN
+F 1 "GND" H 11050 1530 30  0001 C CNN
+	1    11050 1600
+	0    -1   -1   0   
+$EndComp
+$Comp
+L C C80
+U 1 1 51514B03
+P 10250 1800
+F 0 "C80" H 10300 1900 50  0000 L CNN
+F 1 ".22u" H 10300 1700 50  0000 L CNN
+	1    10250 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C79
+U 1 1 51514BCD
+P 9900 1800
+F 0 "C79" H 9950 1900 50  0000 L CNN
+F 1 ".22u" H 9950 1700 50  0000 L CNN
+	1    9900 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C78
+U 1 1 51514BD3
+P 9600 1800
+F 0 "C78" H 9650 1900 50  0000 L CNN
+F 1 ".22u" H 9650 1700 50  0000 L CNN
+	1    9600 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C77
+U 1 1 51514BD9
+P 9250 1800
+F 0 "C77" H 9300 1900 50  0000 L CNN
+F 1 ".22u" H 9300 1700 50  0000 L CNN
+	1    9250 1800
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C81
+U 1 1 51514BDF
+P 10750 2100
+F 0 "C81" V 10850 2200 50  0000 L CNN
+F 1 ".22u" V 10850 1850 50  0000 L CNN
+	1    10750 2100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR066
+U 1 1 515150B9
+P 10300 2000
+F 0 "#PWR066" H 10300 2000 30  0001 C CNN
+F 1 "GND" H 10300 1930 30  0001 C CNN
+	1    10300 2000
+	0    -1   -1   0   
+$EndComp
+Text GLabel 7650 1600 0    60   Input ~ 0
+DRAM_REF
+Text Notes 800  4600 0    100  ~ 0
+After ERC check passed, all Power supply labels are disconnected to do routing\nfirst without decoupling capacitors.
+Connection ~ 3450 750 
+Connection ~ 2400 750 
+Connection ~ 9250 1600
+Connection ~ 10250 2000
+Connection ~ 9600 2000
+Connection ~ 9900 2000
+Connection ~ 10250 1600
+Connection ~ 9900 1600
+Connection ~ 9600 1600
+Wire Wire Line
+	7800 2000 10300 2000
+Connection ~ 11050 2100
+Wire Wire Line
+	10950 2100 11050 2100
+Connection ~ 10500 1850
+Wire Wire Line
+	10500 2100 10550 2100
+Wire Wire Line
+	7650 1600 10500 1600
+Wire Wire Line
+	10500 1600 10500 2100
+Wire Wire Line
+	11050 2250 11050 1850
+Wire Wire Line
+	11050 1850 11000 1850
+Wire Wire Line
+	11050 1600 11000 1600
+Connection ~ 10300 2650
+Connection ~ 9950 2650
+Connection ~ 10300 2250
+Connection ~ 9950 2250
+Connection ~ 1250 2650
+Connection ~ 1100 1850
+Connection ~ 1100 4050
+Connection ~ 1000 1150
+Connection ~ 1450 4050
+Connection ~ 1800 4050
+Connection ~ 2150 4050
+Connection ~ 2500 4050
+Connection ~ 2850 4050
+Connection ~ 3200 4050
+Connection ~ 3550 4050
+Connection ~ 3900 4050
+Connection ~ 4250 4050
+Connection ~ 4600 4050
+Connection ~ 4950 4050
+Connection ~ 4950 3650
+Connection ~ 4600 3650
+Connection ~ 4250 3650
+Connection ~ 3900 3650
+Connection ~ 3200 3650
+Connection ~ 2850 3650
+Connection ~ 2500 3650
+Connection ~ 2150 3650
+Connection ~ 1800 3650
+Connection ~ 1450 3650
+Connection ~ 1100 3650
+Connection ~ 7900 2650
+Connection ~ 8200 2650
+Connection ~ 7550 2650
+Connection ~ 8550 2650
+Connection ~ 8900 2650
+Connection ~ 9250 2650
+Connection ~ 9600 2650
+Connection ~ 9600 2250
+Connection ~ 9250 2250
+Connection ~ 8900 2250
+Connection ~ 8550 2250
+Connection ~ 8200 2250
+Connection ~ 7900 2250
+Connection ~ 7550 2250
+Connection ~ 1450 1450
+Connection ~ 6150 2250
+Connection ~ 5450 2650
+Connection ~ 5800 2650
+Connection ~ 5450 2250
+Connection ~ 6150 2650
+Connection ~ 6500 2650
+Connection ~ 6850 2650
+Connection ~ 7200 2650
+Connection ~ 7200 2250
+Connection ~ 6850 2250
+Connection ~ 6500 2250
+Connection ~ 5800 2250
+Connection ~ 1600 2650
+Connection ~ 1950 2650
+Connection ~ 2300 2650
+Connection ~ 2650 2650
+Connection ~ 3000 2650
+Connection ~ 3350 2650
+Connection ~ 3700 2650
+Connection ~ 4050 2650
+Connection ~ 4400 2650
+Connection ~ 4750 2650
+Connection ~ 5100 2650
+Connection ~ 5100 2250
+Connection ~ 4750 2250
+Connection ~ 4400 2250
+Connection ~ 4050 2250
+Connection ~ 3350 2250
+Connection ~ 3000 2250
+Connection ~ 2650 2250
+Connection ~ 2300 2250
+Connection ~ 1950 2250
+Connection ~ 1600 2250
+Connection ~ 1250 2250
+Wire Wire Line
+	1000 2250 11050 2250
+Connection ~ 1450 1850
+Connection ~ 1800 1850
+Connection ~ 1800 1450
+Connection ~ 1100 1450
+Connection ~ 1350 1150
+Connection ~ 1700 1150
+Connection ~ 2050 1150
+Connection ~ 2400 1150
+Connection ~ 2750 1150
+Connection ~ 3100 1150
+Connection ~ 3450 1150
+Connection ~ 3800 1150
+Connection ~ 4150 1150
+Connection ~ 4150 750 
+Connection ~ 3800 750 
+Connection ~ 3100 750 
+Connection ~ 2750 750 
+Connection ~ 2050 750 
+Connection ~ 1700 750 
+Connection ~ 1350 750 
+Connection ~ 1000 750 
+Wire Wire Line
+	900  750  4150 750 
+Connection ~ 3700 2250
+Wire Wire Line
+	10300 2650 1150 2650
+Connection ~ 3550 3650
+Wire Wire Line
+	900  2850 8050 2850
+Connection ~ 2000 2850
+Connection ~ 1650 2850
+Wire Wire Line
+	900  2850 900  2400
+Wire Wire Line
+	900  2400 1100 2400
+Wire Wire Line
+	1100 2400 1100 2250
+Connection ~ 1100 2250
+Connection ~ 1300 2850
+Wire Wire Line
+	1200 3250 8050 3250
+Connection ~ 1650 3250
+Connection ~ 2000 3250
+$Comp
+L GND #PWR067
+U 1 1 518773CA
+P 1200 3250
+F 0 "#PWR067" H 1200 3250 30  0001 C CNN
+F 1 "GND" H 1200 3180 30  0001 C CNN
+	1    1200 3250
+	0    1    1    0   
+$EndComp
+Connection ~ 1300 3250
+Connection ~ 2350 2850
+Connection ~ 2750 2850
+Connection ~ 3100 2850
+Connection ~ 3450 2850
+Connection ~ 2350 3250
+Connection ~ 2750 3250
+Connection ~ 3100 3250
+Connection ~ 3450 3250
+Connection ~ 3800 2850
+Connection ~ 4200 2850
+Connection ~ 4550 2850
+Connection ~ 4900 2850
+Connection ~ 3800 3250
+Connection ~ 5250 2850
+Connection ~ 5600 2850
+Connection ~ 5950 2850
+Connection ~ 6300 2850
+Connection ~ 6650 2850
+Connection ~ 7000 2850
+Connection ~ 7000 3250
+Connection ~ 6650 3250
+Connection ~ 6300 3250
+Connection ~ 5950 3250
+Connection ~ 5600 3250
+Connection ~ 5250 3250
+Connection ~ 4900 3250
+Connection ~ 4550 3250
+Connection ~ 4200 3250
+Connection ~ 8850 1600
+Connection ~ 8500 1600
+Connection ~ 9250 2000
+Connection ~ 8850 2000
+Connection ~ 8150 1600
+Connection ~ 8500 2000
+Connection ~ 8150 2000
+Connection ~ 7800 1600
+Connection ~ 7350 2850
+Connection ~ 7700 2850
+Connection ~ 7700 3250
+Connection ~ 7350 3250
+Wire Wire Line
+	900  1150 4150 1150
+Wire Wire Line
+	1800 1450 950  1450
+Wire Wire Line
+	1800 1850 1000 1850
+Wire Wire Line
+	1000 3650 4950 3650
+Wire Wire Line
+	4950 4050 1000 4050
+$EndSCHEMATC

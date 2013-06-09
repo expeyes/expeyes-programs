@@ -1,0 +1,356 @@
+EESchema Schematic File Version 2  date Thu 06 Jun 2013 09:54:25 AM IST
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:special
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:A10-plus
+LIBS:myconns
+LIBS:a10-sbc-cache
+EELAYER 27 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 3 3
+Title ""
+Date "6 jun 2013"
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L R R27
+U 1 1 51ADDEEE
+P 3750 5850
+F 0 "R27" V 3650 5850 50  0000 C CNN
+F 1 "2k2" V 3750 5850 50  0000 C CNN
+	1    3750 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR061
+U 1 1 51ADDEF4
+P 3850 5300
+F 0 "#PWR061" H 3850 5300 30  0001 C CNN
+F 1 "GND" H 3850 5230 30  0001 C CNN
+	1    3850 5300
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR062
+U 1 1 51ADDEFA
+P 3850 4700
+F 0 "#PWR062" H 3850 4700 30  0001 C CNN
+F 1 "GND" H 3850 4630 30  0001 C CNN
+	1    3850 4700
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR063
+U 1 1 51ADDF00
+P 3850 4100
+F 0 "#PWR063" H 3850 4100 30  0001 C CNN
+F 1 "GND" H 3850 4030 30  0001 C CNN
+	1    3850 4100
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR064
+U 1 1 51ADDF06
+P 4700 4100
+F 0 "#PWR064" H 4700 4100 30  0001 C CNN
+F 1 "GND" H 4700 4030 30  0001 C CNN
+	1    4700 4100
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR065
+U 1 1 51ADDF0C
+P 4700 5300
+F 0 "#PWR065" H 4700 5300 30  0001 C CNN
+F 1 "GND" H 4700 5230 30  0001 C CNN
+	1    4700 5300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR066
+U 1 1 51ADDF12
+P 4700 4700
+F 0 "#PWR066" H 4700 4700 30  0001 C CNN
+F 1 "GND" H 4700 4630 30  0001 C CNN
+	1    4700 4700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L 524P U8
+U 1 1 51ADDF18
+P 4250 5450
+F 0 "U8" H 4400 5900 50  0000 C CNN
+F 1 "524P" H 4200 5900 50  0000 C CNN
+F 2 "~" H 4250 5450 50  0001 C CNN
+F 3 "~" H 4250 5450 50  0001 C CNN
+	1    4250 5450
+	1    0    0    -1  
+$EndComp
+$Comp
+L 524P U6
+U 1 1 51ADDF1E
+P 4250 4850
+F 0 "U6" H 4400 5300 50  0000 C CNN
+F 1 "524P" H 4200 5300 50  0000 C CNN
+F 2 "~" H 4250 4850 50  0001 C CNN
+F 3 "~" H 4250 4850 50  0001 C CNN
+	1    4250 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L 524P U4
+U 1 1 51ADDF24
+P 4250 4250
+F 0 "U4" H 4400 4700 50  0000 C CNN
+F 1 "524P" H 4200 4700 50  0000 C CNN
+F 2 "~" H 4250 4250 50  0001 C CNN
+F 3 "~" H 4250 4250 50  0001 C CNN
+	1    4250 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L HEADER_19 J1
+U 1 1 51ADDF2A
+P 5400 4800
+F 0 "J1" V 5450 6050 60  0000 C CNN
+F 1 "HDMI Connector" V 5500 4700 60  0000 C CNN
+	1    5400 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R26
+U 1 1 51ADDF30
+P 3600 5850
+F 0 "R26" V 3700 5850 50  0000 C CNN
+F 1 "2k2" V 3600 5850 50  0000 C CNN
+	1    3600 5850
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR067
+U 1 1 51ADDF36
+P 5200 3550
+F 0 "#PWR067" H 5200 3550 30  0001 C CNN
+F 1 "GND" H 5200 3480 30  0001 C CNN
+	1    5200 3550
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C23
+U 1 1 51ADDF49
+P 4200 5900
+F 0 "C23" H 4050 5800 50  0000 L CNN
+F 1 ".22u" H 4000 6000 50  0000 L CNN
+	1    4200 5900
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR068
+U 1 1 51ADDF4F
+P 4200 6100
+F 0 "#PWR068" H 4200 6100 30  0001 C CNN
+F 1 "GND" H 4200 6030 30  0001 C CNN
+	1    4200 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 3900 5300 3900
+Wire Wire Line
+	4700 4000 5100 4000
+Wire Wire Line
+	5100 4000 5100 4100
+Wire Wire Line
+	5100 4100 5300 4100
+Wire Wire Line
+	4700 4200 5300 4200
+Wire Wire Line
+	5300 4400 5100 4400
+Wire Wire Line
+	5100 4400 5100 4300
+Wire Wire Line
+	5100 4300 4700 4300
+Wire Wire Line
+	5300 4500 4700 4500
+Wire Wire Line
+	4700 4600 5100 4600
+Wire Wire Line
+	5100 4600 5100 4700
+Wire Wire Line
+	5100 4700 5300 4700
+Wire Wire Line
+	5300 4800 4700 4800
+Wire Wire Line
+	4700 4900 5100 4900
+Wire Wire Line
+	5100 4900 5100 5000
+Wire Wire Line
+	5100 5000 5300 5000
+Wire Wire Line
+	5300 5100 4700 5100
+Wire Wire Line
+	5100 5300 5300 5300
+Wire Wire Line
+	5100 5200 5100 5300
+Wire Wire Line
+	4700 5200 5100 5200
+Wire Wire Line
+	4700 5400 5300 5400
+Wire Wire Line
+	5200 5900 5300 5900
+Wire Wire Line
+	5200 3550 5200 5900
+Wire Wire Line
+	5200 3700 5300 3700
+Wire Wire Line
+	5300 3800 5200 3800
+Connection ~ 5200 3800
+Wire Wire Line
+	5300 4000 5200 4000
+Connection ~ 5200 4000
+Wire Wire Line
+	5300 4300 5200 4300
+Connection ~ 5200 4300
+Wire Wire Line
+	5300 4600 5200 4600
+Connection ~ 5200 4600
+Wire Wire Line
+	5300 4900 5200 4900
+Connection ~ 5200 4900
+Wire Wire Line
+	5200 5200 5300 5200
+Connection ~ 5200 5200
+Wire Wire Line
+	5300 5500 5200 5500
+Connection ~ 5200 5500
+Connection ~ 5200 5900
+Wire Wire Line
+	5300 5800 5200 5800
+Connection ~ 5200 5800
+Connection ~ 5200 3700
+Wire Wire Line
+	3550 3900 3850 3900
+Wire Wire Line
+	3550 4000 3850 4000
+Wire Wire Line
+	3850 4200 3550 4200
+Wire Wire Line
+	3850 4300 3550 4300
+Wire Wire Line
+	3850 4500 3550 4500
+Wire Wire Line
+	3850 4600 3550 4600
+Wire Wire Line
+	3850 4800 3550 4800
+Wire Wire Line
+	3850 4900 3550 4900
+Wire Wire Line
+	3850 5100 3550 5100
+Wire Wire Line
+	3850 5200 3550 5200
+Wire Wire Line
+	3850 5400 3550 5400
+Wire Wire Line
+	3850 5500 3550 5500
+Wire Wire Line
+	4700 5500 5100 5500
+Wire Wire Line
+	4800 5700 5300 5700
+Wire Wire Line
+	5100 5500 5100 5700
+Wire Wire Line
+	4650 5600 5300 5600
+Connection ~ 4200 5700
+Wire Wire Line
+	3950 5700 4650 5700
+Text GLabel 3550 5100 0    40   Input ~ 0
+HCEC
+Text GLabel 3550 5500 0    40   Input ~ 0
+HHPD
+Text GLabel 3550 5400 0    40   Input ~ 0
+HSDA
+Text GLabel 3550 5200 0    40   Input ~ 0
+HSCL
+Text GLabel 3550 4900 0    40   Input ~ 0
+HTXCN
+Text GLabel 3550 4800 0    40   Input ~ 0
+HTXCP
+Text GLabel 3550 4600 0    40   Input ~ 0
+HTX0N
+Text GLabel 3550 4500 0    40   Input ~ 0
+HTX0P
+Text GLabel 3550 4300 0    40   Input ~ 0
+HTX1N
+Text GLabel 3550 4200 0    40   Input ~ 0
+HTX1P
+Text GLabel 3550 4000 0    40   Input ~ 0
+HTX2N
+Text GLabel 3550 3900 0    40   Input ~ 0
+HTX2P
+Wire Wire Line
+	3750 5600 3750 5400
+Connection ~ 3750 5400
+Wire Wire Line
+	3600 5600 3600 5200
+Connection ~ 3600 5200
+Wire Wire Line
+	3950 6100 3950 5700
+Wire Wire Line
+	3600 6100 3950 6100
+Connection ~ 3750 6100
+Wire Wire Line
+	4650 5700 4650 5600
+Connection ~ 5100 5700
+$Comp
+L R R34
+U 1 1 51ADE12E
+P 4800 5950
+F 0 "R34" V 4700 5950 50  0000 C CNN
+F 1 "47k" V 4800 5950 50  0000 C CNN
+	1    4800 5950
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR069
+U 1 1 51ADE134
+P 4800 6200
+F 0 "#PWR069" H 4800 6200 30  0001 C CNN
+F 1 "GND" H 4800 6130 30  0001 C CNN
+	1    4800 6200
+	1    0    0    -1  
+$EndComp
+Text GLabel 3600 6100 0    60   Input ~ 0
+5V_IN
+$EndSCHEMATC
