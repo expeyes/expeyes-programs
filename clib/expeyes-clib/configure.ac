@@ -1,9 +1,7 @@
-AC_INIT(src/capdemo.c, src/capdemo4.c, src/ejlib.c, src/basic-io.c, src/capdemo2.c, src/capdemo-hr.c, src/ccs-cap.c, src/capdemo1.c, src/capdemo3.c)
+AC_INIT([EXPEYES_JR], [3.0.5])
+AC_CONFIG_SRCDIR(src/capdemo.c, src/capdemo4.c, src/ejlib.c, src/basic-io.c, src/capdemo2.c, src/capdemo-hr.c, src/ccs-cap.c, src/capdemo1.c, src/capdemo3.c)
 
-PACKAGE=EXPEYES_JR
-VERSION=0.1.0
-
-AM_INIT_AUTOMAKE($PACKAGE, $VERSION)
+AM_INIT_AUTOMAKE
 
 #### example snippet for dependency on INTI
 #INTI_REQUIRED_VERSION=1.0.7

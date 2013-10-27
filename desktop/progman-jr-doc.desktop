@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0.0
+Type=Application
+
+Exec=expeyes-progman-jr-doc
+Icon=expeyes-progman-jr-doc
+
+Name=expEYES Junior Programmer Manual
+
+Comment=expEYES Junior Programmer Manual
+Categories=Electronics;Education;Science;
+MimeType=application/x-pdf
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false

@@ -28,6 +28,8 @@ install:
 	  $(DESTDIR)/usr/share/icons/expeyes.png
 	install -m 644 pixmaps/expeyes-junior-icon.png \
 	  $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/expeyes-progman-jr-doc.png \
+	  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/nuclear-icon.png \
 	  $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
@@ -58,6 +60,8 @@ clean:
 	    make -C $$d distclean; \
 	  fi; \
 	done
+	# temporary fix for unauthorized symlinks in the source package
+	rm -f webeyes-1.0/jquery*
 
 
 .PHONY: all install clean

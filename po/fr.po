@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-13 16:31+0100\n"
+"POT-Creation-Date: 2013-10-26 15:28+0200\n"
 "PO-Revision-Date: 2012-12-13 15:36+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
@@ -73,20 +73,20 @@ msgstr "Schéma"
 msgid "Could not find EYES Junior hardware"
 msgstr "Le matériel EYES Junior n'a pas été trouvé"
 
-#: ../expeyes/eyesj.py:122 ../expeyes/eyes.py:116 ../expeyes/mca.py:39
+#: ../expeyes/eyesj.py:122 ../expeyes/eyes.py:118 ../expeyes/mca.py:39
 msgid "Check the connections."
 msgstr "Vérifiez les connexions."
 
-#: ../expeyes/eyesj.py:167 ../expeyes/eyes.py:157 ../expeyes/mca.py:70
+#: ../expeyes/eyesj.py:167 ../expeyes/eyes.py:162 ../expeyes/mca.py:70
 #, python-format
 msgid "Port %s is existing "
 msgstr "Le port %s existe "
 
-#: ../expeyes/eyesj.py:169 ../expeyes/eyes.py:159 ../expeyes/mca.py:72
+#: ../expeyes/eyesj.py:169 ../expeyes/eyes.py:164 ../expeyes/mca.py:72
 msgid "but could not open"
 msgstr "mais n'a pas pu être ouvert"
 
-#: ../expeyes/eyesj.py:171 ../expeyes/eyes.py:161 ../expeyes/mca.py:74
+#: ../expeyes/eyesj.py:171 ../expeyes/eyes.py:166 ../expeyes/mca.py:74
 msgid "and opened. "
 msgstr "et est ouvert."
 
@@ -270,12 +270,12 @@ msgstr "Erreur de SETDAC "
 #: ../expeyes/eyesj.py:847 ../expeyes/eyesj.py:900 ../expeyes/eyesj.py:920
 #: ../expeyes/eyesj.py:934 ../expeyes/eyesj.py:946 ../expeyes/eyesj.py:947
 #: ../expeyes/eyesj.py:962 ../expeyes/eyesj.py:972 ../expeyes/eyesj.py:973
-#: ../expeyes/eyes.py:506 ../expeyes/eyes.py:524 ../expeyes/eyes.py:543
+#: ../expeyes/eyes.py:511 ../expeyes/eyes.py:529 ../expeyes/eyes.py:548
 #: ../expeyes/mca.py:148
 msgid "Argument error"
 msgstr "Erreur d'argument"
 
-#: ../expeyes/eyesj.py:853 ../expeyes/eyesj.py:854 ../expeyes/eyes.py:512
+#: ../expeyes/eyesj.py:853 ../expeyes/eyesj.py:854 ../expeyes/eyes.py:517
 #: ../expeyes/mca.py:154
 msgid "READADC error "
 msgstr "Erreur de READADC "
@@ -317,7 +317,7 @@ msgid "CAPTURE error"
 msgstr "Erreur de CAPTURE"
 
 #: ../expeyes/eyesj.py:994 ../expeyes/eyesj.py:1028 ../expeyes/eyesj.py:1029
-#: ../expeyes/eyes.py:616
+#: ../expeyes/eyes.py:621
 msgid "CAPTURE error "
 msgstr "Erreur CAPTURE "
 
@@ -326,7 +326,7 @@ msgstr "Erreur CAPTURE "
 msgid "CAPTURE: size mismatch %d %d"
 msgstr "CAPTURE : erreur de taille %d %d"
 
-#: ../expeyes/eyesj.py:1001 ../expeyes/eyesj.py:1036 ../expeyes/eyes.py:624
+#: ../expeyes/eyesj.py:1001 ../expeyes/eyesj.py:1036 ../expeyes/eyes.py:629
 msgid "CAPTURE: size mismatch "
 msgstr "CAPTURE : erreur de taille"
 
@@ -392,97 +392,97 @@ msgstr "Largeur d'impulsion invalide"
 msgid "ERROR: SETPULWIDTH"
 msgstr "ERREUR : SETPULWIDTH"
 
-#: ../expeyes/eyes.py:115
+#: ../expeyes/eyes.py:117
 msgid "Could not find Phoenix-EYES hardware"
 msgstr "Le matériel Phoenix-EYES n'a pas été trouvé"
 
-#: ../expeyes/eyes.py:174
+#: ../expeyes/eyes.py:179
 msgid "Found EYES version "
 msgstr "Trouvé expEYES version "
 
-#: ../expeyes/eyes.py:177
+#: ../expeyes/eyes.py:182
 msgid "No EYES hardware detected"
 msgstr "Pas de matériel expEYES trouvé"
 
-#: ../expeyes/eyes.py:389
+#: ../expeyes/eyes.py:394
 msgid "eeprom write byte error = "
 msgstr "Erreur d'écriture d'eeprom octet = "
 
-#: ../expeyes/eyes.py:402
+#: ../expeyes/eyes.py:407
 msgid "eeprom read block error = "
 msgstr "Erreur d'écriture d'eeprom bloc = "
 
-#: ../expeyes/eyes.py:422
+#: ../expeyes/eyes.py:427
 #, python-format
 msgid "SC: ch = %d m=%10.6f  c=%10.6f"
 msgstr "SC: ch = %d m=%10.6f  c=%10.6f"
 
-#: ../expeyes/eyes.py:430
+#: ../expeyes/eyes.py:435
 msgid "BAD Calibration data. EEPROM does not have any data "
 msgstr "Mauvaises données de calibration. L'EEPROM n'a aucune donnée "
 
-#: ../expeyes/eyes.py:437
+#: ../expeyes/eyes.py:442
 #, python-format
 msgid "LC: ch = %d m=%10.6f  c=%10.6f"
 msgstr "LC: ch = %d m=%10.6f  c=%10.6f"
 
-#: ../expeyes/eyes.py:453
+#: ../expeyes/eyes.py:458
 msgid "ERR:Current must be from 0.02 to 2.0 mA"
 msgstr "ERR : le courant doit être entre 0,02 et 2,0 mA"
 
-#: ../expeyes/eyes.py:474 ../expeyes/eyes.py:530 ../expeyes/eyes.py:550
+#: ../expeyes/eyes.py:479 ../expeyes/eyes.py:535 ../expeyes/eyes.py:555
 msgid "WRITEDAC error "
 msgstr "Erreur de WRITEDAC "
 
-#: ../expeyes/eyes.py:563
+#: ../expeyes/eyes.py:568
 msgid "Sampling time MUST NOT exceed 250 microseconds"
 msgstr "Le temps d'échantillonnage NE DOIT PAS dépasser 250 µs"
 
-#: ../expeyes/eyes.py:569
+#: ../expeyes/eyes.py:574
 msgid "SETSAMTIME ERROR "
 msgstr "ERREUR SETSAMTIME "
 
-#: ../expeyes/eyes.py:577
+#: ../expeyes/eyes.py:582
 msgid "ADC datasize MUST be 1 or 2 bytes"
 msgstr "La taille des données ADC DOIT être de 1 ou 2 octets"
 
-#: ../expeyes/eyes.py:583
+#: ../expeyes/eyes.py:588
 msgid "SETADCSIZE ERROR "
 msgstr "ERREUR SETADCSIZE "
 
-#: ../expeyes/eyes.py:604
+#: ../expeyes/eyes.py:609
 msgid "QCAPTURE Error "
 msgstr "Erreur QCAPTURE "
 
-#: ../expeyes/eyes.py:669 ../expeyes/eyes.py:681
+#: ../expeyes/eyes.py:674 ../expeyes/eyes.py:686
 msgid "CAPTURE01 error "
 msgstr "Erreur CAPTURE01 "
 
-#: ../expeyes/eyes.py:691
+#: ../expeyes/eyes.py:696
 msgid "CAPTURE01: size mismatch "
 msgstr "CAPTURE01 : erreur de taille "
 
-#: ../expeyes/eyes.py:731
+#: ../expeyes/eyes.py:736
 msgid "CAPTURE_M32 error "
 msgstr "Erreur CAPTURE_M32 "
 
-#: ../expeyes/eyes.py:738
+#: ../expeyes/eyes.py:743
 msgid "CAPTURE_M32: size mismatch "
 msgstr "CAPTURE_M32 : erreur de taille "
 
-#: ../expeyes/eyes.py:781 ../expeyes/eyes.py:808
+#: ../expeyes/eyes.py:786 ../expeyes/eyes.py:813
 msgid "wait_rising "
 msgstr "attente_montée"
 
-#: ../expeyes/eyes.py:890
+#: ../expeyes/eyes.py:895
 msgid "Echo error = "
 msgstr "Écho erreur = "
 
-#: ../expeyes/eyes.py:919
+#: ../expeyes/eyes.py:924
 msgid "Time Measurement call Error. CMD = "
 msgstr "Appel de mesure du temps erroné. CMD = "
 
-#: ../expeyes/eyes.py:1035
+#: ../expeyes/eyes.py:1040
 msgid "DIGIN error"
 msgstr "Erreur DIGIN"
 
