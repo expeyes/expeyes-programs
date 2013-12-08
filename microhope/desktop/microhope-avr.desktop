@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=2.0.0
+Type=Application
+
+Exec=python /usr/share/microhope/mh-ide.py
+Icon=microhope.png
+Name=microHOPE
+Comment=MicroHOPE microcontroller programming system
+
+Categories=Phoenix;Education;Science;Other;
+MimeType=application/x-python
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false

@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=2.0.0
+Type=Application
+
+Exec=evince /usr/share/microhope/microhope.pdf
+Icon=gnome-word.png
+
+Name=microHOPE Manual
+
+Comment=microHOPE User Manual
+Categories=Electronics;Education;Science;
+MimeType=application/x-pdf
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false
