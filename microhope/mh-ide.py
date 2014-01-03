@@ -84,11 +84,20 @@ def Compile():
 	mw.insert(END, res[1])
 	show('Compilation Done')
 
+def pulseRTS(dev):
+	import serial, time
+	fd = serial.Serial(dev, 38400, stopbits=1, timeout = 1.0)
+	fd.setRTS(0)
+	fd.setRTS(1)
+	fd.setRTS(0)
+	fd.close()
+	
 def Upload():
 	global device
 	if device == None:
 		show('Hardware device not selected','red')
 		return
+	pulseRTS(device)               # Sending a pulse on RTS pin to reset the uC
 	show('Starting Upload....')
 	fname = filename.split(".")[0]
 	cmd= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(device, fname)
