@@ -28,6 +28,9 @@ def fft(ya, si):
 	Sampling interval 'si', in milliseconds
 	'''
 	np = len(ya)
+	if np %2 == 1:  # odd values of np give exceptions
+		np=np-1 # make it even
+		ya=ya[:-1]
 	v = array(ya)
 	tr = abs(numpy.fft.fft(v))/np
 	frq = numpy.fft.fftfreq(np, si * 1.0e-3)
@@ -91,13 +94,28 @@ def dsine_erf(p,y,x):
 def dsine_eval(x,p):
 	return     p[0] * sin(2*pi*p[1]*x+p[2]) * exp(-p[4]*x) - p[3]
 
-def fit_dsine(xlist, ylist, freq = 0):
+def fit_dsine(xlist, ylist, freq = 0, mode="kHz"):
+	"""
+	Fits a damped sinusoidal signal
+	@param xlist the time series
+	@param ylist the signal series
+	@param freq the frequency to use for the fit. If zero, a FFT will be
+	called to find a suitable frequency
+	@param mode "kHz" (default) or "Hz". When the data in xlist are
+	milliseconds, you may let mode to be "kHz", which is the default.
+	However when the data in xlist are seconds, you must choose the
+	mode "Hz".
+	@return a vector of fitted data, and a quality value. If the quality
+	is too bad, returns None.
+	"""
 	size = len(xlist)
 	xa = array(xlist, dtype=float)
 	ya = array(ylist, dtype=float)
 	amp = (max(ya)-min(ya))/2
 	if freq == 0:
 		freq = find_frequency(xa,ya)
+		if mode=="Hz":
+			freq=freq/1000
 	print freq
 	par = [amp, freq, 0.0, 0.0, 0.1] # Amp, freq, phase , offset, decay constant
 	plsq = leastsq(dsine_erf, par,args=(ya,xa))
