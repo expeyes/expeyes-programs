@@ -17,13 +17,22 @@ HEIGHT = 400   # height
 class Pend:
 	tv = [ [], [] ]			# Lists for Readings
 	TIMER = 5			# Time interval between reads
+	IDLE_TIMER = 100                # time interval between idle reads
+	idle_threshold = 3              # 3V are necessary to autostart
 	MINY = -5			# Voltage range
 	MAXY = 5
 	running = False
 	MAXTIME = 10
 
+	def __init__(self):
+		"""
+		The constructor
+		"""
+		self.reset_idle()
+		root.after(self.IDLE_TIMER, self.idle)
+
 	def fit_curve(self):
-		fa = eyemath.fit_dsine(self.tv[0], self.tv[1])
+		fa = eyemath.fit_dsine(self.tv[0], self.tv[1], mode="Hz")
 		if fa != None:
 			pa = fa[1]
 			g.line(self.tv[0], fa[0],1)
@@ -36,8 +45,35 @@ class Pend:
 			return
 		p.grace([self.tv])
 
+	def reset_idle(self):
+		"""
+		resets an internal list of 20 samples
+		"""
+		self.idle_values=[0.0]*20
+		return
+
+	def idle(self):
+		"""
+		callback used when no other method is in action.
+		stores internally 20 previous samples of voltage measured
+		recently, every tenth of second.
+		When this list contains values with an amplitude greater
+		than a given threshold, creates an "autolaunch".
+		"""
+		if self.running:
+			return
+		t,v = p.get_voltage_time(1)
+		del self.idle_values[0]
+		self.idle_values.append(v)
+		amplitude=max(self.idle_values) - min(self.idle_values)
+		if amplitude > self.idle_threshold:
+			self.start()
+		root.after(self.IDLE_TIMER, self.idle)
+		return
+		
 	def start(self):
 		self.running = True
+		self.reset_idle()
 		self.index = 0
 		self.tv = [ [], [] ]
 		try:
@@ -53,6 +89,7 @@ class Pend:
 		self.running = False
 		Dur.config(state=NORMAL)
 		self.msg(_('User Stopped the measurements'))
+		root.after(self.IDLE_TIMER, self.idle)
 
 	def update(self):
 		if self.running == False:
@@ -72,6 +109,7 @@ class Pend:
 			self.running = False
 			Dur.config(state=NORMAL)
 			self.msg(_('Completed the Measurements'))
+			root.after(self.IDLE_TIMER, self.idle)
 			return 
 		root.after(self.TIMER, self.update)
 
@@ -108,7 +146,7 @@ b3 = Label(cf, text = _('Digitize for'))
 b3.pack(side = LEFT, anchor = SW)
 DURATION = StringVar()
 Dur =Entry(cf, width=5, bg = 'white', textvariable = DURATION)
-DURATION.set('10')
+DURATION.set('15')
 Dur.pack(side = LEFT, anchor = SW)
 b3 = Label(cf, text = _('Seconds.'))
 b3.pack(side = LEFT, anchor = SW)
