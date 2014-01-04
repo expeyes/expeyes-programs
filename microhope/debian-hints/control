@@ -1,9 +1,0 @@
-Package: microHope
-Priority: extra
-Depends: python-tk, avr-libc, avrdude
-Architecture: all
-Maintainer: ajith@iuac.res.in
-Version: 2.0.0
-Installed-Size: 1275
-Description: microHope AVR microcontroller programming. 
-
