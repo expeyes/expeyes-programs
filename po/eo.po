@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expEYES 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-10-26 15:28+0200\n"
+"POT-Creation-Date: 2014-01-03 23:29+0100\n"
 "PO-Revision-Date: 2012-07-08 11:35+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "Language-Team: ESPERANTO <eo@li.org>\n"
@@ -599,7 +599,7 @@ msgstr ""
 #: ../eyes/interference-sound.py:74 ../eyes/interference-sound.py:145
 #: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:123
 #: ../eyes-junior/interference-sound.py:141 ../eyes-junior/logger.py:153
-#: ../eyes-junior/pendulum.py:118 ../eyes-junior/pt100.py:205
+#: ../eyes-junior/pendulum.py:156 ../eyes-junior/pt100.py:205
 #: ../eyes-junior/rodpend.py:126 ../eyes-junior/transistor.py:139
 #: ../eyes/LED_iv.py:142 ../eyes/logger.py:153 ../eyes/pendulum.py:118
 #: ../eyes/phototransistor.py:104 ../eyes/pt100.py:206
@@ -610,7 +610,7 @@ msgstr ""
 
 #: ../eyes/alpha.py:160 ../eyes/interference-sound.py:71
 #: ../eyes-junior/interference-sound.py:143 ../eyes-junior/logger.py:155
-#: ../eyes-junior/pendulum.py:120 ../eyes-junior/pt100.py:207
+#: ../eyes-junior/pendulum.py:158 ../eyes-junior/pt100.py:207
 #: ../eyes-junior/rodpend.py:128 ../eyes/logger.py:155 ../eyes/pendulum.py:120
 #: ../eyes/pt100.py:208 ../eyes/rodpend.py:156 ../eyes/temp-controller.py:192
 msgid "STOP"
@@ -619,7 +619,7 @@ msgstr ""
 #: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:136
 #: ../eyes/induction.py:127 ../eyes-junior/diode_iv.py:129
 #: ../eyes-junior/freq-response.py:135 ../eyes-junior/induction.py:128
-#: ../eyes-junior/logger.py:157 ../eyes-junior/pendulum.py:124
+#: ../eyes-junior/logger.py:157 ../eyes-junior/pendulum.py:162
 #: ../eyes-junior/pt100.py:209 ../eyes-junior/RCcircuit.py:140
 #: ../eyes-junior/RLCdischarge.py:116 ../eyes-junior/RLcircuit.py:129
 #: ../eyes-junior/rodpend.py:130 ../eyes-junior/sound-burst.py:124
@@ -634,7 +634,7 @@ msgstr ""
 
 #: ../eyes/alpha.py:164 ../eyes/cro.py:158 ../eyes/diode_iv.py:142
 #: ../eyes/explore.py:544 ../eyes/gravity_tof2.py:114
-#: ../eyes-junior/diode_iv.py:133 ../eyes-junior/pendulum.py:122
+#: ../eyes-junior/diode_iv.py:133 ../eyes-junior/pendulum.py:160
 #: ../eyes-junior/RLCdischarge.py:118 ../eyes/LED_iv.py:157
 #: ../eyes/pendulum.py:122 ../eyes/RLCdischarge.py:119
 msgid "FIT"
@@ -666,7 +666,7 @@ msgstr ""
 #: ../eyes-junior/diode_iv.py:127 ../eyes-junior/driven-pendulum.py:19
 #: ../eyes-junior/freq-response.py:133 ../eyes-junior/induction.py:124
 #: ../eyes-junior/interference-sound.py:157 ../eyes-junior/logger.py:169
-#: ../eyes-junior/pendulum.py:134 ../eyes-junior/pt100.py:246
+#: ../eyes-junior/pendulum.py:172 ../eyes-junior/pt100.py:246
 #: ../eyes-junior/RCcircuit.py:131 ../eyes-junior/RLCdischarge.py:112
 #: ../eyes-junior/RLcircuit.py:149 ../eyes-junior/rodpend.py:140
 #: ../eyes-junior/sound-burst.py:136 ../eyes-junior/stroboscope.py:19
@@ -932,7 +932,7 @@ msgstr ""
 
 #: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:126
 #: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:125
-#: ../eyes-junior/logger.py:162 ../eyes-junior/pendulum.py:128
+#: ../eyes-junior/logger.py:162 ../eyes-junior/pendulum.py:166
 #: ../eyes-junior/pt100.py:231 ../eyes-junior/rodpend.py:132
 #: ../eyes-junior/transistor.py:141 ../eyes/LED_iv.py:144
 #: ../eyes/logger.py:162 ../eyes/pendulum.py:128
@@ -952,7 +952,7 @@ msgstr ""
 
 #: ../eyes/diode_iv.py:147 ../eyes/gravity_tof.py:95
 #: ../eyes-junior/diode_iv.py:138 ../eyes-junior/logger.py:174
-#: ../eyes-junior/pendulum.py:139 ../eyes-junior/pt100.py:251
+#: ../eyes-junior/pendulum.py:177 ../eyes-junior/pt100.py:251
 #: ../eyes-junior/rodpend.py:148 ../eyes-junior/transistor.py:159
 #: ../eyes/LED_iv.py:162 ../eyes/logger.py:174 ../eyes/pendulum.py:139
 #: ../eyes/phototransistor.py:124 ../eyes/pt100.py:234
@@ -1259,7 +1259,7 @@ msgstr ""
 msgid "LIZ"
 msgstr ""
 
-#: ../eyes/explore.py:546
+#: ../eyes/explore.py:546 ../microhope/mh-ide.py:188
 msgid "Save"
 msgstr ""
 
@@ -1574,7 +1574,7 @@ msgid "SQR1="
 msgstr ""
 
 #: ../eyes/interference-sound.py:149 ../eyes-junior/interference-sound.py:146
-#: ../eyes-junior/pendulum.py:126 ../eyes-junior/pt100.py:229
+#: ../eyes-junior/pendulum.py:164 ../eyes-junior/pt100.py:229
 #: ../eyes-junior/RCcircuit.py:138 ../eyes-junior/RLCdischarge.py:114
 #: ../eyes-junior/RLcircuit.py:139 ../eyes-junior/rodpend.py:138
 #: ../eyes-junior/velocity-sound.py:109 ../eyes/pendulum.py:126
@@ -2298,13 +2298,13 @@ msgstr ""
 msgid "SQR2="
 msgstr ""
 
-#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:45
+#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:81
 #: ../eyes-junior/pt100.py:88 ../eyes/logger.py:44 ../eyes/pendulum.py:45
 #: ../eyes/pt100.py:87 ../eyes/temp-controller.py:62
 msgid "Time"
 msgstr ""
 
-#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:45
+#: ../eyes-junior/logger.py:44 ../eyes-junior/pendulum.py:81
 #: ../eyes-junior/pt100.py:88 ../eyes/logger.py:44 ../eyes/pendulum.py:45
 #: ../eyes/pt100.py:87 ../eyes/temp-controller.py:62
 msgid "Volt"
@@ -2353,65 +2353,65 @@ msgstr ""
 msgid "EYES-Junior: Four Channel Data Logger"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:30 ../eyes/pendulum.py:30
+#: ../eyes-junior/pendulum.py:39 ../eyes/pendulum.py:30
 #, python-format
 msgid "Angular velocity = %5.2f rad/sec. Damping Factor = %5.3f"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:32 ../eyes/pendulum.py:32
+#: ../eyes-junior/pendulum.py:41 ../eyes/pendulum.py:32
 msgid "Failed to fit data"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:47 ../eyes-junior/pt100.py:92
+#: ../eyes-junior/pendulum.py:83 ../eyes-junior/pt100.py:92
 #: ../eyes-junior/rodpend.py:61 ../eyes/pendulum.py:47 ../eyes/pt100.py:91
 #: ../eyes/rodpend.py:71
 msgid "Starting the Measurements"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:50 ../eyes-junior/pt100.py:95
+#: ../eyes-junior/pendulum.py:86 ../eyes-junior/pt100.py:95
 #: ../eyes/pendulum.py:50 ../eyes/pt100.py:94 ../eyes/temp-controller.py:71
 msgid "Failed to Start"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:55 ../eyes-junior/pt100.py:101
+#: ../eyes-junior/pendulum.py:91 ../eyes-junior/pt100.py:101
 #: ../eyes-junior/rodpend.py:68 ../eyes/pendulum.py:55 ../eyes/pt100.py:100
 #: ../eyes/rodpend.py:78 ../eyes/temp-controller.py:80
 msgid "User Stopped the measurements"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:74 ../eyes-junior/pt100.py:126
+#: ../eyes-junior/pendulum.py:111 ../eyes-junior/pt100.py:126
 #: ../eyes-junior/rodpend.py:84 ../eyes/pendulum.py:74 ../eyes/pt100.py:125
 #: ../eyes/rodpend.py:99 ../eyes/temp-controller.py:108
 msgid "Completed the Measurements"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:84 ../eyes-junior/pt100.py:147
+#: ../eyes-junior/pendulum.py:122 ../eyes-junior/pt100.py:147
 #: ../eyes-junior/rodpend.py:99 ../eyes/pendulum.py:84 ../eyes/pt100.py:135
 #: ../eyes/rodpend.py:114 ../eyes/temp-controller.py:120
 #, python-format
 msgid "Data saved to %s"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:91 ../eyes-junior/pt100.py:154
+#: ../eyes-junior/pendulum.py:129 ../eyes-junior/pt100.py:154
 #: ../eyes-junior/rodpend.py:106 ../eyes/pendulum.py:91 ../eyes/pt100.py:142
 #: ../eyes/rodpend.py:121 ../eyes/temp-controller.py:127
 msgid "Cleared Data and Trace"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:107 ../eyes/pendulum.py:107
+#: ../eyes-junior/pendulum.py:145 ../eyes/pendulum.py:107
 msgid "Digitize for"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:113 ../eyes-junior/pt100.py:188
+#: ../eyes-junior/pendulum.py:151 ../eyes-junior/pt100.py:188
 #: ../eyes/pendulum.py:113 ../eyes/pt100.py:172 ../eyes/temp-controller.py:175
 msgid "Seconds."
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:143 ../eyes/pendulum.py:143
+#: ../eyes-junior/pendulum.py:181 ../eyes/pendulum.py:143
 msgid "Pendulum Oscillations"
 msgstr ""
 
-#: ../eyes-junior/pendulum.py:144 ../eyes/pendulum.py:144
+#: ../eyes-junior/pendulum.py:182 ../eyes/pendulum.py:144
 msgid "Oscillations of Pendulum"
 msgstr ""
 
@@ -2883,4 +2883,151 @@ msgstr ""
 
 #: ../eyes/velocity-sound.py:141
 msgid "EYES: Velocity of Sound"
+msgstr ""
+
+#: ../microhope/create-microhope-env:19
+msgid "Create microHope environment"
+msgstr ""
+
+#: ../microhope/create-microhope-env:20
+msgid ""
+"Do you want to create your own microHope environment?\n"
+"\n"
+"If you reply \"Yes\", a subdirectory named microHope will be created in your "
+"home directory, and a set of files will be copied into it.\n"
+"\n"
+"If any previous installation existed, its contents will be overwriten."
+msgstr ""
+
+#: ../microhope/mh-ide.py:25
+msgid "C files"
+msgstr ""
+
+#: ../microhope/mh-ide.py:25
+msgid "text files"
+msgstr ""
+
+#: ../microhope/mh-ide.py:25
+msgid "All files"
+msgstr ""
+
+#: ../microhope/mh-ide.py:27
+msgid ""
+"microHOPE IDE\n"
+"\n"
+"(c) 2013-2014 Ajith Kumar\n"
+"\n"
+"This program is free software, it is available under the license GPL-3; on "
+"Debian systems, please see the file /usr/share/common-licenses/GPL-3\n"
+"\n"
+"Translations:\n"
+"(FR) (c) 2014 Georges Khaznadar"
+msgstr ""
+
+#: ../microhope/mh-ide.py:37 ../microhope/mh-ide.py:38
+msgid "Not Selected"
+msgstr ""
+
+#: ../microhope/mh-ide.py:39
+#, python-format
+msgid "MicroHOPE: File->%s : Device-> %s"
+msgstr ""
+
+#: ../microhope/mh-ide.py:40
+#, python-format
+msgid "File->%s : Device-> %s"
+msgstr ""
+
+#: ../microhope/mh-ide.py:65
+msgid "File Saved"
+msgstr ""
+
+#: ../microhope/mh-ide.py:80 ../microhope/mh-ide.py:121
+msgid "No file selected"
+msgstr ""
+
+#: ../microhope/mh-ide.py:87
+msgid "Compilation Error"
+msgstr ""
+
+#: ../microhope/mh-ide.py:93
+msgid "Compilation Done"
+msgstr ""
+
+#: ../microhope/mh-ide.py:106
+msgid "Hardware device not selected"
+msgstr ""
+
+#: ../microhope/mh-ide.py:109
+msgid "Starting Upload...."
+msgstr ""
+
+#: ../microhope/mh-ide.py:115
+msgid "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
+msgstr ""
+
+#: ../microhope/mh-ide.py:117 ../microhope/mh-ide.py:132
+msgid "Upload Completed"
+msgstr ""
+
+#: ../microhope/mh-ide.py:123
+msgid "Starting Upload via USBASP...."
+msgstr ""
+
+#: ../microhope/mh-ide.py:129
+msgid "Upload Error: Make use USBASP programmer is connected"
+msgstr ""
+
+#: ../microhope/mh-ide.py:151
+msgid "microHOPE hardware not found?"
+msgstr ""
+
+#: ../microhope/mh-ide.py:163 ../microhope/mh-ide.py:201
+msgid "About ..."
+msgstr ""
+
+#: ../microhope/mh-ide.py:177 ../microhope/mh-ide.py:203
+msgid "Hints"
+msgstr ""
+
+#: ../microhope/mh-ide.py:177
+msgid ""
+"You may need to build the directory ~/microhope with the command 'create-"
+"microhope-env'. See 'man create-microhope-env'."
+msgstr ""
+
+#: ../microhope/mh-ide.py:186
+msgid "New File"
+msgstr ""
+
+#: ../microhope/mh-ide.py:187
+msgid "Open"
+msgstr ""
+
+#: ../microhope/mh-ide.py:189
+msgid "Save As"
+msgstr ""
+
+#: ../microhope/mh-ide.py:191
+msgid "Upload using USBASP"
+msgstr ""
+
+#: ../microhope/mh-ide.py:193
+msgid "File"
+msgstr ""
+
+#: ../microhope/mh-ide.py:196
+msgid "Compile"
+msgstr ""
+
+#: ../microhope/mh-ide.py:197
+msgid "Upload"
+msgstr ""
+
+#: ../microhope/mh-ide.py:202
+msgid "Documentation"
+msgstr ""
+
+#: ../microhope/mh-ide.py:204
+msgid "Help"
 msgstr ""

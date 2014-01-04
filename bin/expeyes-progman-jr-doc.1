@@ -1,0 +1,82 @@
+'\" t
+.\"     Title: EXPEYES-PROGMAN-JR-DOC
+.\"    Author: Georges Khaznadar <georgesk@ofset.org>
+.\" Generator: DocBook XSL Stylesheets v1.78.1 <http://docbook.sf.net/>
+.\"      Date: 01/03/2014
+.\"    Manual: expEYES Jr Programmer's Manual
+.\"    Source: expeyes-progman-jr-doc
+.\"  Language: English
+.\"
+.TH "EXPEYES\-PROGMAN\-JR" "1" "01/03/2014" "expeyes-progman-jr-doc" "expEYES Jr Programmer's Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+expeyes-progman-jr-doc \- program to display the user manual of expeyes and expeyes\-junior\&.
+.SH "SYNOPSIS"
+.HP \w'\fBexpeyes\-progman\-jr\-doc\fR\ 'u
+\fBexpeyes\-progman\-jr\-doc\fR [\fIlang\fR]
+.HP \w'\fBexpeyes\-junior\-doc\fR\ 'u
+\fBexpeyes\-junior\-doc\fR [\fIlang\fR]
+.SH "DESCRIPTION"
+.PP
+\fBexpeyes\-progman\-jr\-doc\fR
+launches a viewer for the programmer\*(Aqs manual of expEYES Jr\&.
+.PP
+The preferred language is detected automatically\&.
+.SH "OPTIONS"
+.PP
+\fB\fIlang\fR\fR
+.RS 4
+Enforces the language
+\fIlang\fR
+as preferred\&. For example,
+\fIlang\fR
+may be \*(Aqen\*(Aq or \*(Aqfr\*(Aq\&.
+.RE
+.SH "ENVIRONMENT"
+.PP
+\fBLANGUAGE\fR, \fBLANG\fR, \fBLC_ALL\fR
+.RS 4
+If defined, these variables are taken in account to find automatically the preferred language\&. These variables are taken in account only when the optional argument
+\fIlang\fR
+is not given\&.
+.RE
+.SH "SEE ALSO"
+.PP
+\fBexpeyes\fR(1),
+\fBexpeyes-junior\fR(1)
+.SH "AUTHOR"
+.PP
+\fBGeorges Khaznadar\fR <\&georgesk@ofset\&.org\&>
+.RS 4
+Wrote this manpage for the Debian system\&.
+.RE
+.SH "COPYRIGHT"
+.br
+Copyright \(co 2013 Georges Khaznadar
+.br
+.PP
+This manual page was written for the Debian system (and may be used by others)\&.
+.PP
+Permission is granted to copy, distribute and/or modify this document under the terms of the GNU General Public License, Version 2 or (at your option) any later version published by the Free Software Foundation\&.
+.PP
+On Debian systems, the complete text of the GNU General Public License can be found in
+/usr/share/common\-licenses/GPL\&.
+.sp

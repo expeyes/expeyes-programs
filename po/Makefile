@@ -1,5 +1,5 @@
 DESTDIR =
-SOURCES = $(shell ls ../eyes/*.py ../expeyes/*.py ../eyes-junior/*.py)
+SOURCES = $(shell ls ../eyes/*.py ../expeyes/*.py ../eyes-junior/*.py ../microhope/create-microhope-env ../microhope/*.py)
 POFILES = $(shell ls *.po)
 MOFILES = $(patsubst %.po, %.mo, $(POFILES))
 LANG = $(patsubst %.po, %, $(POFILES))

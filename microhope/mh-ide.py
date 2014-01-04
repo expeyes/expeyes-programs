@@ -7,16 +7,24 @@ last edit : 6-Dec-2013
 '''
 
 from Tkinter import *
+import tkMessageBox
 from tkFileDialog import *
-import commands
+import commands, subprocess
    
+import gettext
+gettext.bindtextdomain('expeyes')
+gettext.textdomain('expeyes')
+_ = gettext.gettext
+
 # Global variables   
 filename = ''  			 # Currently active file
 device   = ''            # User should choose this from the list
 mcu = 'atmega32'		 # mcu  
 
 file_opt = {'defaultextension':'.c', 'initialdir':'~/microhope',\
-		'filetypes': [('C files', '.c'), ('text files', '.txt'),('All files', '.*')]}
+		'filetypes': [(_('C files'), '.c'), (_('text files'), '.txt'),(_('All files'), '.*')]}
+
+credentials=_("microHOPE IDE\n\n(c) 2013-2014 Ajith Kumar\n\nThis program is free software, it is available under the license GPL-3; on Debian systems, please see the file /usr/share/common-licenses/GPL-3\n\nTranslations:\n(FR) (c) 2014 Georges Khaznadar")
 
 def show(s, col='blue'):
 	Res.config(text =s, fg=col)
@@ -26,10 +34,10 @@ def show_status():
 	global filename, device
 	f = filename
 	d = device
-	if filename == '': f = 'Not Selected'
-	if device == '': d = 'Not Selected'
-	root.title('MicroHOPE: File->%s : Device-> %s'%(f, d))
-	show('File->%s : Device-> %s'%(f, d))
+	if filename == '': f = _('Not Selected')
+	if device == '': d = _('Not Selected')
+	root.title(_('MicroHOPE: File->%s : Device-> %s') %(f, d))
+	show(_('File->%s : Device-> %s') %(f, d))
 
 def newFile():
 	global filename
@@ -54,7 +62,7 @@ def saveFile():
 	f = open(filename, 'w')
 	text = tw.get(0.0, END).rstrip() # contents of the text widget, no trailing whitespaces
 	f.write(text + '\n')
-	show('File Saved')
+	show(_('File Saved'))
 
 def openFile():
 	global filename
@@ -69,20 +77,20 @@ def openFile():
 	
 def Compile():
 	if filename == '' :
-		show('No file selected', 'red')
+		show(_('No file selected'), 'red')
 		return
 	saveFile()
 	fname = filename.split(".")[0]
 	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s.c' %(mcu,fname,fname)
 	res = commands.getstatusoutput(cmd)
 	if res[0] != 0:
-		show('Compilation Error','red')
+		show(_('Compilation Error'),'red')
 		mw.insert(END, res[1])
 		return
 	cmd = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname,fname)
 	res = commands.getstatusoutput(cmd)
 	mw.insert(END, res[1])
-	show('Compilation Done')
+	show(_('Compilation Done'))
 
 def pulseRTS(dev):
 	import serial, time
@@ -95,33 +103,33 @@ def pulseRTS(dev):
 def Upload():
 	global device
 	if device == None:
-		show('Hardware device not selected','red')
+		show(_('Hardware device not selected'),'red')
 		return
 	pulseRTS(device)               # Sending a pulse on RTS pin to reset the uC
-	show('Starting Upload....')
+	show(_('Starting Upload....'))
 	fname = filename.split(".")[0]
 	cmd= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(device, fname)
 	res = commands.getstatusoutput(cmd)
 	mw.insert(END, res[1])
 	if res[0] != 0:
-		show('Upload Error: Try pressing nicroHOPE Reset button just before Uploading')
+		show(_('Upload Error: Try pressing nicroHOPE Reset button just before Uploading'))
 		return
-	show('Upload Completed')
+	show(_('Upload Completed'))
 	   
 def upload_usbasp():
 	if filename == '' :
-		show('No file selected', 'red')
+		show(_('No file selected'), 'red')
 		return
-	show('Starting Upload via USBASP....')
+	show(_('Starting Upload via USBASP....'))
 	fname = filename.split(".")[0]
 	cmd= 'avrdude -c usbasp -patmega32 -U flash:w:%s.hex'%(fname)
 	print cmd
 	res = commands.getstatusoutput(cmd)
 	if res[0] != 0:
-		show('Upload Error: Make use USBASP programmer is connected', 'red')
+		show(_('Upload Error: Make use USBASP programmer is connected'), 'red')
 		return
 	mw.insert(END, res[1])	
-	show('Upload Completed')
+	show(_('Upload Completed'))
 	
 def set_device(d):
 	global device
@@ -140,7 +148,7 @@ def select_device(event):
 		devs += res[1].split('\n')
 	print devs
 	if devs == []:
-		show('microHOPE hardware not found?', 'red')
+		show(_('microHOPE hardware not found?'), 'red')
 		return
 	popup = Menu(root, tearoff=0)
 	for k in devs:
@@ -149,8 +157,25 @@ def select_device(event):
 	try:
 		popup.tk_popup(event.x_root,event.y_root, 0)
 	finally:
-		popup.grab_release()	   
-			   
+		popup.grab_release()
+
+def about():
+	tkMessageBox.showinfo(_("About ..."), credentials)
+	return
+
+def documentation():
+	docfile="/usr/share/microhope/doc/microhope-en.pdf"
+	loc=subprocess.Popen("locale | sed -n 's/LANG=\\(.*\\)$/\\1/ p'", shell=True, stdout=subprocess.PIPE).communicate()[0][:2]
+	# assert (loc in ['fr', 'en'])
+	# !! here there should be some localization system !!
+	loc='en'
+	# there is only one locale available now
+	subprocess.call("(evince %s)" %docfile, shell=True)
+	return
+
+def hints():
+	tkMessageBox.showinfo(_("Hints"), _("You may need to build the directory ~/microhope with the command 'create-microhope-env'. See 'man create-microhope-env'."))
+
 root = Tk()
 root.minsize(width=500,height=200)
                    
@@ -158,19 +183,26 @@ root.minsize(width=500,height=200)
 menubar = Menu(root)
 
 filemenu = Menu(menubar,tearoff=0,font=('Monospace', 12))
-filemenu.add_command(label="New File", command=newFile, accelerator="Ctrl+N")
-filemenu.add_command(label="Open", command=openFile, accelerator="Ctrl+O")
-filemenu.add_command(label="Save", command=saveFile, accelerator="Ctrl+s")
-filemenu.add_command(label="Save As", command=saveAs, accelerator="Ctrl+Shift+S")
+filemenu.add_command(label=_("New File"), command=newFile, accelerator="Ctrl+N")
+filemenu.add_command(label=_("Open"), command=openFile, accelerator="Ctrl+O")
+filemenu.add_command(label=_("Save"), command=saveFile, accelerator="Ctrl+s")
+filemenu.add_command(label=_("Save As"), command=saveAs, accelerator="Ctrl+Shift+S")
 filemenu.add_separator()
-filemenu.add_command(label="Upload using USBASP", command = upload_usbasp)
+filemenu.add_command(label=_("Upload using USBASP"), command = upload_usbasp)
 
-menubar.add_cascade(label="File", menu=filemenu,font=('Monospace', 12))
+menubar.add_cascade(label=_("File"), menu=filemenu,font=('Monospace', 12))
 root.config(menu=menubar)
 
-menubar.add_command(label='Compile', command=Compile, font=('Monospace', 12))
-menubar.add_command(label='Upload',  command=Upload, font=('Monospace', 12))
- 
+menubar.add_command(label=_('Compile'), command=Compile, font=('Monospace', 12))
+menubar.add_command(label=_('Upload'),  command=Upload, font=('Monospace', 12))
+
+menubar.add_separator()
+helpmenu = Menu(menubar,tearoff=0,font=('Monospace', 12))
+helpmenu.add_command(label=_("About ..."), command=about)
+helpmenu.add_command(label=_("Documentation"), command=documentation)
+helpmenu.add_command(label=_("Hints"), command=hints)
+menubar.add_cascade(label=_("Help"), menu=helpmenu,font=('Monospace', 12))
+
 # Top Frame and scrollable editor text widget inside that
 top = Frame(root)
 top.pack(side=TOP, expand=YES, fill=BOTH)

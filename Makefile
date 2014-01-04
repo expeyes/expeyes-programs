@@ -1,5 +1,5 @@
 DESTDIR =
-SUBDIRS = $(shell ls -d doc bin firmware po clib/expeyes-clib 2>/dev/null)
+SUBDIRS = $(shell ls -d doc bin firmware po clib/expeyes-clib microhope/microhope-doc 2>/dev/null)
 all:
 	python setup.py build
 	for d in $(SUBDIRS); do \
@@ -30,6 +30,8 @@ install:
 	  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-progman-jr-doc.png \
 	  $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/expeyes-progman-jr-doc.svg \
+	  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/nuclear-icon.png \
 	  $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
@@ -55,7 +57,7 @@ install:
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS); do \
-	  [ ! -f $$d/Makefile ] || make -C $$d $@; \
+	  [ ! -f $$d/Makefile ] || make -C $$d $@ distclean || true; \
 	  if [ -x $$d/configure ] && [ -f $$d/Makefile ] ; then \
 	    make -C $$d distclean; \
 	  fi; \

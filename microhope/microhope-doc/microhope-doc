@@ -1,0 +1,9 @@
+#! /bin/sh
+
+loc=$(locale | sed -n 's/LANG=\(.*\)$/\1/ p' | cut -c 1-2)
+# $loc should be something like fr, en, etc.
+loc=en
+# there is only one locale available now
+
+exec evince /usr/share/microhope/doc/microhope-${loc}.pdf
+

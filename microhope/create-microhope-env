@@ -1,0 +1,26 @@
+#! /usr/bin/python
+
+import Tkinter
+import tkMessageBox
+import subprocess
+
+import gettext
+gettext.bindtextdomain('expeyes')
+gettext.textdomain('expeyes')
+_ = gettext.gettext
+
+def create_microhope_env():
+    print "creating microhope environment"
+    subprocess.call("mkdir -p ~/microhope && cp -Rd /usr/share/microhope/src/* ~/microhope", shell=True)
+
+top = Tkinter.Tk()
+top.withdraw()
+
+if tkMessageBox.askyesno(_("Create microHope environment"),
+                         _("Do you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten.")
+                         ):
+    create_microhope_env()
+else:
+    top.quit()
+
+#top.mainloop()
