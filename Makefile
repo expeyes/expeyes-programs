@@ -9,6 +9,8 @@ all:
 	    make -C $$d $@; \
 	  fi; \
 	done
+	# make the bootloader hex file
+	make -C microhope/firmware atmega32
 
 install:
 	# for python-expeyes
@@ -62,8 +64,8 @@ clean:
 	    make -C $$d distclean; \
 	  fi; \
 	done
-	# temporary fix for unauthorized symlinks in the source package
-	rm -f webeyes-1.0/jquery*
+	# clean the bootloader hex file
+	make -C microhope/firmware clean
 
 
 .PHONY: all install clean
