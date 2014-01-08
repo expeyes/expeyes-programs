@@ -9,13 +9,16 @@ XP     = xsltproc --nonet --param man.charmap.use.subset "0"
 
 all: microhope-en.pdf
 
-manpages: ../create-microhope-env.1 ../microhope.1 microhope-doc.1
+manpages: ../create-microhope-env.1 ../microhope.1 microhope-doc.1 ../uhope.1
 
 ../create-microhope-env.1: ../create-microhope-env.xml
 	cd ..; $(XP) $(DB2MAN) create-microhope-env.xml
 
 ../microhope.1: ../microhope.xml
 	cd ..; $(XP) $(DB2MAN) microhope.xml
+
+../uhope.1: ../uhope.xml
+	cd ..; $(XP) $(DB2MAN) uhope.xml
 
 microhope-doc.1: microhope-doc.xml
 	$(XP) $(DB2MAN) $<

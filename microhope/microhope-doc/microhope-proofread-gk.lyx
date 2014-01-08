@@ -96,14 +96,14 @@ thispagestyle{empty}
 \align center
 
 \size giant
-microHOPE
+MicroHOPE
 \end_layout
 
 \begin_layout Standard
 \align center
 \begin_inset Graphics
 	filename pics/microhope-with-2x16lcd.jpg
-	lyxscale 40
+	lyxscale 30
 	width 9cm
 
 \end_inset
@@ -147,11 +147,7 @@ Hobby Projects and Education
 
 \begin_layout Standard
 \align center
-Ajith Kumar B P
-\begin_inset Newline newline
-\end_inset
-
-ajith@iuac.res.in
+Ajith Kumar B P & V V V Satyanarayana
 \begin_inset Newline newline
 \end_inset
 
@@ -175,6 +171,11 @@ New Delhi 110 067
 http://expeyes.in
 \end_layout
 
+\begin_layout Standard
+\align center
+ajith@iuac.res.in
+\end_layout
+
 \begin_layout Chapter
 Introduction
 \end_layout
@@ -190,7 +191,7 @@ g of a CPU combined with program and data memory, peripherals like analog
  purpose Input/Output ports.
  Intel 8051, Atmel AVR, PIC etc.
  are popular micro controllers available in the market.
- To design the microHOPE hardware, we have chosen ATmega32 micro-controller
+ To design the MicroHOPE hardware, we have chosen ATmega32 micro-controller
  from Atmel, after considering the hardware resources available on it and
  the software support of GNU C compiler.
 \end_layout
@@ -404,30 +405,24 @@ name "fig:MicroHOPE-User-Interface"
 \begin_layout Standard
 An Integrated Development Environment (IDE) is available for writing, compiling
  and uploading programs.
- It is available in .deb format, microhope-2.0.0.deb.
- To install it, under Debian/Ubuntu, open a Terminal and follow the steps
- given below:
-\end_layout
-
-\begin_layout LyX-Code
-$ sudo -s
-\end_layout
-
-\begin_layout LyX-Code
-# apt-get install gdebi
-\end_layout
-
-\begin_layout LyX-Code
-# gdebi microhope-2.0.0.deb
+ To install it, under Debian/Ubuntu, just install the package
+\family typewriter
+ microhope
+\family default
+, with your favorite package management application.
 \end_layout
 
 \begin_layout Standard
-After installing the package, drag the directory 
-\series bold
-/etc/skel/microhope
-\series default
- to your home directory.
- The program can be started by choosing Science->microHOPE from the Applications
+After installing the package, launch the command
+\family typewriter
+ create-microhope-env
+\family default
+: this one will create a copy of the development environment necessary for
+ microhope.
+\end_layout
+
+\begin_layout Standard
+The program can be started by choosing Science->microHOPE from the Applications
  menu.
  A screen shot of the microhope IDE is shown in figure 
 \begin_inset CommandInset ref
@@ -466,9 +461,7 @@ mh-
 You can select any of the example programs, compile and upload them using
  the menu.
  Correct all the compile errors before doing Upload.
- On GNU/Linux systems, the device file created for microHOPE hardware should
- be '/dev/ttyUSB0'.
- 
+ Select the hardware device by Right-clicking inside the Editor window.
 \end_layout
 
 \begin_layout Subsection
@@ -507,27 +500,16 @@ avrdude : To upload the Hex file
 
 \begin_layout Standard
 These packages are available under GNU/Linux.
- For Debian/Ubuntu distributions they can be installed from the repository
- using the commands:
-\end_layout
-
-\begin_layout LyX-Code
-# apt-get install avr-libc
-\end_layout
-
-\begin_layout LyX-Code
-# apt-get install avrdude
-\end_layout
-
-\begin_layout LyX-Code
-# chmod u+s /usr/bin/avrdude
+ They are automatically installed as dependencies when you install the package
+ 
+\series bold
+microhope
+\series default
+ from Debian/Ubuntu official repositories.
 \end_layout
 
 \begin_layout Standard
-Installing avr-libc, automatically installs gcc-avr and other required packages.
- The last command will enable non-root users to use avrdude.
- The installed programs can be invoked from the command line.
- Use a text editor to create your source program, for example 
+Use a text editor to create your source program, for example 
 \series bold
 blink.c
 \series default
@@ -587,23 +569,15 @@ compile-mega32.sh
 \end_layout
 
 \begin_layout Quote
-
-\family typewriter
-avr-gcc  -Wall -O2 -mmcu=atmega32 -Wl,-Map,$1.map -o $1 $1.c 
+$ avr-gcc  -Wall -O2 -mmcu=atmega32 -Wl,-Map,$1.map -o $1 $1.c 
 \end_layout
 
 \begin_layout Quote
-
-\family typewriter
-avr-objcopy -j .text -j .data -O ihex $1 $1.hex 
+$ avr-objcopy -j .text -j .data -O ihex $1 $1.hex 
 \end_layout
 
 \begin_layout Quote
-
-\family typewriter
-avr-objdump -S $1 > $1.lst
-\family default
- 
+$ avr-objdump -S $1 > $1.lst 
 \end_layout
 
 \begin_layout Standard
@@ -631,7 +605,7 @@ mh-upload.sh
 \end_layout
 
 \begin_layout LyX-Code
-avrdude -b 19200 -P /dev/ttyUSB0 -pm32 -c stk500v1 -U flash:w:$1.hex 
+$ avrdude -b 19200 -P /dev/ttyUSB0 -pm32 -c stk500v1 -U flash:w:$1.hex 
 \end_layout
 
 \begin_layout Standard
@@ -662,15 +636,36 @@ reference "sub:Details-of-compilation"
 Using under MS Windows
 \end_layout
 
-\begin_layout Standard
-For Windows, you can download 
+\begin_layout Quote
+Download 
 \series bold
 winavr
 \series default
  package from sourceforge.net and install it.
- Also download install avrdude for windows.
- You also need to download and install the drivers for FTDI232, the USB
- to Serial converter IC.
+\end_layout
+
+\begin_layout Quote
+For FT232 version, install the VCP drivers from 
+\end_layout
+
+\begin_layout Quote
+http://www.ftdichip.com/Drivers/VCP.htm
+\end_layout
+
+\begin_layout Quote
+For MCP2200 version, install the ACM drivers from
+\end_layout
+
+\begin_layout Quote
+http://www.expeyes.in/sites/default/files/debs/MCP2200-driver.zip
+\end_layout
+
+\begin_layout Quote
+Download and install the MicroHOPE IDE from expeyes website
+\end_layout
+
+\begin_layout Subsection*
+Running from command prompt
 \end_layout
 
 \begin_layout Standard
@@ -699,13 +694,8 @@ C:
 
 \begin_layout Standard
 Where COMxx is the virtual com port number assigned by Windows.
- 
-\end_layout
-
-\begin_layout Standard
-We have found it very difficult to get it going under Windows, due to the
- arbitrary naming of COM ports and reliability issues in the hardware communicat
-ion.
+ We have found it very difficult due to the arbitrary naming of COM ports
+ and reliability issues in the hardware communication.
 \end_layout
 
 \begin_layout Chapter
@@ -713,8 +703,11 @@ Getting Started
 \end_layout
 
 \begin_layout Standard
-After installing the Debian package, you must have copied the directory
- /etc/skel/microhope to you home directory.
+After installing the Debian package, you must have launched the command
+\family typewriter
+ create-microhope-env
+\family default
+ which provides you a directory with a necessary set of files.
  Start the microHOPE IDE from the menu Applications->Science.
  Choosing File->Open from the menubar will display all the C files inside
  the 
@@ -725,7 +718,8 @@ microhope
  You can open any of the examples (except the filenames starting with mh-)
  , compile and upload it by clicking on the menubar.
  We will start by programming the Digital Input/Output ports of Atmega32,
- and them proceed to the peripheral devices
+ and then proceed to the peripheral devices.
+ 
 \begin_inset Foot
 status collapsed
 
@@ -754,9 +748,13 @@ Testing the Hardware
 \begin_layout Standard
 Connect MicroHOPE hardware to a USB port and start the microHOPE IDE from
  the menu Applications->Science.
- The program will display the status of the hardware detected, it should
- appear as '/dev/ttyUSB0' in most cases.
- If you get an error message, reconnect the hardware and restart the program.
+ The program will show the Device as Not Selected.
+ Right-click inside the Editor window to get a popup menu of the available
+ USB to Serial devices.
+ It will contain entries like '/dev/ttyUSB0', '/dev/ttyACM0' etc.
+ If the board has FT232 IC (28 pin SMD chip) , choose the ttyUSB type.
+ If the board has MCP2200 (20 pin SMD chip) choose ttyACM type.
+ If you are running expEYES, do not choose the device used by expEYES.
 \end_layout
 
 \begin_layout Standard
@@ -774,7 +772,7 @@ microhope
  If not, check the USB connections first.
  If problem persists, try pressing and releasing the microHOPE Reset button
  at the same time when you click on Upload.
- 
+ Make sure that the PCRST jumper is closed.
 \end_layout
 
 \begin_layout Standard
@@ -1033,8 +1031,8 @@ GETBIT(variable, bit position)
 \end_layout
 
 \begin_layout Standard
-This macro returns the specified bit if the specified bit of the variable
- is 1, else it returns zero.
+This macro returns the value of the specified bit if the specified bit of
+ the variable is 1, else it returns zero.
  For example: if x = 3, GETBIT(x, 1) will return 2 and GETBIT(x,3) will
  return zero.
 \end_layout
@@ -1373,7 +1371,7 @@ reference "fig:LCD-display.-(a)"
 \end_inset
 
 (a).
- Pins 4, 5 and 7 of the LCD display are control lines, connected to PC1,
+ Pins 4,5 and 7 of the LCD display are control lines, connected to PC1,
  PC2 and PC4.
  The ASCII codes are transferred in the 4bit mode, using pins 11 to 14 connected
  to PC4, PC5, PC6 and PC7.
@@ -1477,11 +1475,7 @@ lcd_put_string("Hello World");
 \end_layout
 
 \begin_layout Standard
-The file 
-\family typewriter
-mh-lcd.c
-\family default
- provides the following functions :
+The file pmdk_lcd.c provides the following functions :
 \end_layout
 
 \begin_layout Itemize
@@ -1852,13 +1846,14 @@ Temperature Controller
 \begin_layout Standard
 The program adc-loop.c can be easily modified to make a temperature monitor/contr
 oller using the LM35 temperature sensor.
- Connect LM35 output to PA0 , preferrably via a DC amplifier with gain=30.
- If the temperature is 100
+ Connect LM35 output to PA0.
+ At 100
 \begin_inset Formula $^{0}$
 \end_inset
 
-C , LM35 gives 100 millivolts output, that gives 3 volts after amplification,
- and around 613 at the ADC output.
+C , the output of LM35 will be 1 volt.
+ With the internal 2.56 volts as reference, the ADC output will be around
+ 400 (1.0 / 2.56 * 1023).
 \end_layout
 
 \begin_layout Standard
@@ -1875,7 +1870,7 @@ and within the loop:
 \end_layout
 
 \begin_layout LyX-Code
-if (data > 613)       // switch off heater
+if (data > 400)       // switch off heater 
 \end_layout
 
 \begin_deeper
@@ -1885,7 +1880,7 @@ PORTB = 0;
 
 \end_deeper
 \begin_layout LyX-Code
-else if (data < 600)   // switch on heater
+else if (data < 395)   // switch on heater
 \end_layout
 
 \begin_deeper
@@ -1895,9 +1890,9 @@ PORTB = 1;
 
 \end_deeper
 \begin_layout Standard
-The heater will be switched OFF when the ADC output is greater than 613.
- It will be switched ON only when the output goes below 600.
- The window of 13 is given to avoid the relay chattering.
+The heater will be switched OFF when the ADC output is greater than 400.
+ It will be switched ON only when the output goes below 395.
+ The window of 6 is given to avoid the relay chattering.
 \end_layout
 
 \begin_layout Section
@@ -2958,6 +2953,18 @@ After uploading this program, open a terminal window, change to the directory
 echo.py
 \series default
  listed below, using the commands:
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+If you are using microHOPE with MCP2200 IC, edit echo.py to replace ttyUSB0
+ with ttyACM0.
+ The same thing applies to programs like cro.py, pymicro.py etc.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2973,7 +2980,7 @@ import serial
 \end_layout
 
 \begin_layout LyX-Code
-fd = serial.Serial('/dev/ttyS0', 38400, stopbits=1, 
+fd = serial.Serial('/dev/ttyUSB0', 38400, stopbits=1, 
 \backslash
 
 \end_layout
@@ -3204,6 +3211,132 @@ for(;;)
 
 \begin_layout LyX-Code
 }
+\end_layout
+
+\begin_layout Subsection
+A simple Oscilloscope
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+cro.c
+\series default
+ can digitize the input at PA0 in a block mode and send the data to the
+ PC.
+ The number of samples and the time interval between consecutive digitizations
+ are send from the PC.
+ The program 
+\series bold
+cro.py
+\series default
+ can communicate to cro.c and graphically display the received data.
+ While running cro.py , the PCRST jumper should be open.
+\end_layout
+
+\begin_layout Subsection
+Infrared Receiver
+\end_layout
+
+\begin_layout Standard
+The program ir-recv.c can receive data using the TSOP1738 IR receiver.
+ The output of the chip is connected to bit 2 of PORTD.
+ The received byte is displayed on the LCD display.
+ The receiver is for the non-standard data senb by expEYES junior using
+ an infra-red LED.
+ 
+\end_layout
+
+\begin_layout Standard
+To test ir-recv.c, make the connections as shown below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/ir-receiver.png
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Inside the command window of expEYES junior GUI, type 
+\series bold
+irsend1(nn)
+\series default
+ , where nn could be any number from 0 to 255, and press Enter.
+ The received number will be displayed on the LCD display of microHOPE.
+\end_layout
+
+\begin_layout Subsection
+Controlling the uC from Python
+\end_layout
+
+\begin_layout Standard
+This section demonstrates a simple method to read/write the Input/Output
+ ports and other registers of the micro-controller, from Python.
+ A program called 
+\series bold
+pymicro.c
+\series default
+ is running on the micro-controller.
+ It listens over the serial port for two commands, READB or WRITEB.
+ The first one should be followed by the address of the register to be read.
+ The WRITE command is followed by the register address and the data to be
+ written.
+\end_layout
+
+\begin_layout Standard
+On the PC side, 
+\series bold
+pymicro.py
+\series default
+ handles the communication to the micro-controller.
+ It defines a class named atm32, that contains the communication routines.
+ The example program listed below demonstrates a blinking LED code in Python
+\end_layout
+
+\begin_layout LyX-Code
+import time 
+\end_layout
+
+\begin_layout LyX-Code
+from pymicro import * 
+\end_layout
+
+\begin_layout LyX-Code
+u=atm32()
+\end_layout
+
+\begin_layout LyX-Code
+while 1: 	
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+u.outb(PORTB, 1)
+\end_layout
+
+\begin_layout LyX-Code
+time.sleep(0.5)
+\end_layout
+
+\begin_layout LyX-Code
+u.outb(PORTB, 0)
+\end_layout
+
+\begin_layout LyX-Code
+time.sleep(0.5)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+To run this program, compile and upload pymicro.c, remove the PCRST jumper
+ and then run blink.py.
+ It is very easy to implement many programs, for example a stepper motor
+ controller, in Python using this method.
 \end_layout
 
 \begin_layout Chapter
