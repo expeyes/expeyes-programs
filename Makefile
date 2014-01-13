@@ -59,10 +59,7 @@ install:
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS); do \
-	  [ ! -f $$d/Makefile ] || make -C $$d $@ distclean || true; \
-	  if [ -x $$d/configure ] && [ -f $$d/Makefile ] ; then \
-	    make -C $$d distclean; \
-	  fi; \
+	  [ ! -f $$d/Makefile ] || make -C $$d distclean || make -C $$d clean; \
 	done
 	# clean the bootloader hex file
 	make -C microhope/firmware clean

@@ -3,5 +3,5 @@
 int main()
 {
 lcd_init();
-lcd_put_string("Hello World");
+lcd_put_string("Hello World..");
 }

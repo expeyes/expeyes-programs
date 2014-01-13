@@ -18,7 +18,7 @@ TSOP1738 connections:
 
 
 volatile uint8_t val=0,rb=0,x=0;
-ISR (INT0_vect)		// interrupt triggered on a falling edge on PD2
+SIGNAL (SIG_INTERRUPT0)		// interrupt triggered on a falling edge on PD2
 {
 uint16_t time;
 time=TCNT1;

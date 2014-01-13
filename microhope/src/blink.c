@@ -8,8 +8,8 @@ int main (void)
   for(;;)
     {
     PORTB = 1;	
-    delay_ms(500);
+    delay_ms(100);
     PORTB = 0;
-    delay_ms(500);
+    delay_ms(100);
   }
 }

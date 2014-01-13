@@ -809,7 +809,7 @@ chip_disable();
 
 //-------------------- Interrupt Service Routines----------------------
 
-ISR (TIMER0_COMP_vect)	// TIMER0 Compare Match Interrupt
+SIGNAL (SIG_OUTPUT_COMPARE0)	// TIMER0 Compare Match Interrupt
 {
 switch(par.irq_func)
   {
@@ -945,7 +945,7 @@ MULTIREADBLOCK.
 }
 
 
-ISR (ANA_COMP_vect)			// HISTOGRAM
+SIGNAL (SIG_COMPARATOR)			// HISTOGRAM
 {
 sbi(ADCSRA, ADIF);			// clear old status
 ADMUX = AVREF | BV(ADLAR) | 0;			// chan 0 , left adjest
@@ -1772,7 +1772,7 @@ the Plug-in card's Data Ready signal.
 /*------------------------------------------------------------------------ 
 Functions below are based on the TC0 interrupt. They setup TC0 registers
 and other required variables and return. The work is carried out later by 
-the interrup service routine "ISR (TIMER0_COMP_vect)".
+the interrup service routine "SIGNAL (SIG_OUTPUT_COMPARE0)".
 PC collects the results later using appropriate function calls.
 */
 

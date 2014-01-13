@@ -1,5 +1,5 @@
 /* uhope: A Linux Shell for Microhope Copyright (C) 2014  A.Chatterjee    *
- * with some modifications to DetectHardware it would work on Windows too *
+ * Author: A.Chatterjee <DrAmbar@gmail.com>                               *
  * GNU General Public License, version 3 (see Help-->About)                         *
  * Created: 1 Jan 2014 Last Update: 13 Jan 2014                            */
 #include <gtk/gtk.h>
@@ -209,6 +209,7 @@ if (gtk_dialog_run(GTK_DIALOG(Dialog)) == GTK_RESPONSE_ACCEPT)
   fclose(Fp); strcpy(FileName,FName); g_free(FName);
   }
 gtk_widget_destroy(Dialog);
+strcpy(Path,FileName); Path[strrchr(FileName,'/')-FileName]='\0';                        //Store the path for next time
 
 gtk_text_buffer_get_start_iter(Buf,&Start); gtk_text_buffer_place_cursor(Buf,&Start);         //Position cursor at start
 gtk_statusbar_pop(GTK_STATUSBAR(StatBar),0);
