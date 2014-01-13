@@ -2,9 +2,9 @@
 Version=2.0.0
 Type=Application
 
-Exec=microhope
+Exec=uhope
 Icon=mh-logo.png
-Name=microHOPE
+Name=µHOPE
 Comment=MicroHOPE microcontroller programming system
 
 Categories=Education;Science;

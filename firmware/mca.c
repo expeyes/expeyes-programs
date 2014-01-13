@@ -153,7 +153,7 @@ void read_ch0()
 
 volatile u8 done = 0; 
 
-SIGNAL(SIG_COMPARATOR)	// HISTOGRAM
+ISR(ANA_COMP_vect)	// HISTOGRAM
 {
 read_ch0();				// digitize A0, 12 bit result in adval
 adval >>= 3;            // right shift to make it 9 bits

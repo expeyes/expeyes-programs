@@ -1,7 +1,7 @@
 /* uhope: A Linux Shell for Microhope Copyright (C) 2014  A.Chatterjee    *
  * with some modifications to DetectHardware it would work on Windows too *
  * GNU General Public License, version 3 (see Help-->About)                         *
- * Created: 1 Jan 2014 Last Update: 7 Jan 2014                            */
+ * Created: 1 Jan 2014 Last Update: 13 Jan 2014                            */
 #include <gtk/gtk.h>
 #include <stdlib.h>
 #include <stdio.h>
@@ -12,9 +12,6 @@
 #include <sys/stat.h>
 #include <dirent.h>
 
-//We will detect the OS at run time
-#define LINUX   0                                                                         //Path separator is / in Linux
-#define WINDOWS 1                                                                      //Path separator is \\ in Windows
 #define MAX_LINE    256                                                             //Max length of a line in the editor
 #define MAX_FNAME   256                                                                      //Max length of a file name
 #define MAX_SRCH    256                                                                    //Max length of search string
@@ -104,11 +101,11 @@ else sprintf(StatusLine,"Device:%s",Device);
 gtk_statusbar_push(GTK_STATUSBAR(StatBar),StatID,StatusLine);
 }
 //----------------------------------------------------------------------------------------------------------------------
-void DeviceSelected(GtkComboBox *Combo,gpointer Data)
+void DeviceSelected(GtkComboBoxText *Combo,gpointer Data)
 {
 gchar *Str;
 
-Str=gtk_combo_box_get_active_text(Combo);
+Str=gtk_combo_box_text_get_active_text(Combo);
 strcpy(Device,Str); g_free(Str);
 ShowDeviceOnStatusLine();
 }
@@ -149,10 +146,11 @@ gtk_container_add(GTK_CONTAINER(Win),VBox);
 
 Label=gtk_label_new("Multiple devices.\nPlease select Microhope from the list:");
 gtk_box_pack_start(GTK_BOX(VBox),Label,FALSE,FALSE,0);
-Combo=gtk_combo_box_new_text();
+Combo=gtk_combo_box_text_new_with_entry();
 
 HBox=gtk_hbox_new(FALSE,0); gtk_box_pack_start(GTK_BOX(VBox),HBox,FALSE,FALSE,0);
-for (i=0;i<N;++i) { sprintf(Str,"/dev/%s",DName[i]); gtk_combo_box_append_text(GTK_COMBO_BOX(Combo),Str); }
+for (i=0;i<N;++i) { sprintf(Str,"/dev/%s",DName[i]); gtk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT(Combo),Str); }
+
 g_signal_connect(G_OBJECT(Combo),"changed",G_CALLBACK(DeviceSelected),NULL);
 gtk_box_pack_start(GTK_BOX(HBox),Combo,FALSE,FALSE,0);
 
@@ -190,7 +188,7 @@ gchar Line[MAX_LINE],StatusLine[MAX_STAT];
 FILE *Fp;
 GtkTextIter Start,End;
 
-Dialog=gtk_file_chooser_dialog_new("Open File",GTK_WINDOW(W),GTK_FILE_CHOOSER_ACTION_OPEN,
+Dialog=gtk_file_chooser_dialog_new("Open File",GTK_WINDOW(MWin),GTK_FILE_CHOOSER_ACTION_OPEN,
        GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL,GTK_STOCK_OPEN,GTK_RESPONSE_ACCEPT,NULL);
 gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(Dialog),Path);
 Filter=gtk_file_filter_new(); gtk_file_filter_set_name(Filter,"C source (*.c)");
@@ -240,7 +238,7 @@ gchar *BufText,StatusLine[MAX_STAT];
 gtk_text_buffer_get_start_iter(Buf,&Start); gtk_text_buffer_get_end_iter(Buf,&End);
 BufText=gtk_text_buffer_get_text(Buf,&Start,&End,FALSE);
 
-Dialog=gtk_file_chooser_dialog_new("Save As",GTK_WINDOW(W),GTK_FILE_CHOOSER_ACTION_SAVE,
+Dialog=gtk_file_chooser_dialog_new("Save As",GTK_WINDOW(MWin),GTK_FILE_CHOOSER_ACTION_SAVE,
        GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL,GTK_STOCK_SAVE,GTK_RESPONSE_ACCEPT,NULL);
 gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(Dialog),Path);
 Filter=gtk_file_filter_new(); gtk_file_filter_set_name(Filter,"C source (*.c)");
@@ -466,7 +464,9 @@ VBox2=gtk_vbox_new(FALSE,10); gtk_box_pack_start(GTK_BOX(HBox),VBox2,FALSE,FALSE
 HBox=gtk_hbox_new(FALSE,0); gtk_box_pack_start(GTK_BOX(VBox1),HBox,FALSE,FALSE,0);
 Label=gtk_label_new("Text to Find:"); gtk_box_pack_start(GTK_BOX(HBox),Label,FALSE,FALSE,0);
 
-FindEntry=gtk_entry_new_with_max_length(MAX_SRCH-1); gtk_box_pack_start(GTK_BOX(VBox1),FindEntry,FALSE,FALSE,0);
+FindEntry=gtk_entry_new();
+gtk_entry_set_max_length(GTK_ENTRY(FindEntry),MAX_SRCH-1);
+gtk_box_pack_start(GTK_BOX(VBox1),FindEntry,FALSE,FALSE,0);
 gtk_entry_set_text(GTK_ENTRY(FindEntry),SrchStr);
 
 VBox=gtk_vbox_new(FALSE,0); gtk_box_pack_start(GTK_BOX(VBox1),VBox,FALSE,FALSE,10);
@@ -597,12 +597,14 @@ VBox2=gtk_vbox_new(FALSE,10); gtk_box_pack_start(GTK_BOX(HBox),VBox2,FALSE,FALSE
 
 HBox=gtk_hbox_new(FALSE,24); gtk_box_pack_start(GTK_BOX(VBox1),HBox,FALSE,FALSE,0);
 Label=gtk_label_new("Find what:"); gtk_box_pack_start(GTK_BOX(HBox),Label,FALSE,FALSE,0);
-RFind=gtk_entry_new_with_max_length(MAX_SRCH-1); gtk_box_pack_start(GTK_BOX(HBox),RFind,FALSE,FALSE,0);
+RFind=gtk_entry_new(); gtk_entry_set_max_length(GTK_ENTRY(RFind),MAX_SRCH-1);
+gtk_box_pack_start(GTK_BOX(HBox),RFind,FALSE,FALSE,0);
 gtk_entry_set_text(GTK_ENTRY(RFind),SrchStr);
 
 HBox=gtk_hbox_new(FALSE,5); gtk_box_pack_start(GTK_BOX(VBox1),HBox,FALSE,FALSE,0);
 Label=gtk_label_new("Replace with:"); gtk_box_pack_start(GTK_BOX(HBox),Label,FALSE,FALSE,0);
-RRepl=gtk_entry_new_with_max_length(MAX_SRCH-1); gtk_box_pack_start(GTK_BOX(HBox),RRepl,FALSE,FALSE,0);
+RRepl=gtk_entry_new(); gtk_entry_set_max_length(GTK_ENTRY(RRepl),MAX_SRCH-1);
+gtk_box_pack_start(GTK_BOX(HBox),RRepl,FALSE,FALSE,0);
 gtk_entry_set_text(GTK_ENTRY(RRepl),ReplStr);
 
 VBox=gtk_vbox_new(FALSE,0); gtk_box_pack_start(GTK_BOX(VBox1),VBox,FALSE,FALSE,10);
@@ -632,7 +634,7 @@ void Help(GtkWidget *W,gpointer Unused)
 {
 GtkWidget *Win,*Label;
 static gchar Txt[]=
-"uhope: A Windows Shell for Microhope\n\n\
+"uhope: A Linux Shell for Microhope\n\n\
 To use uhope:\n\
    1. Create, Edit and Save C source files just like gedit\n\
 Sample files and the hardware manual are located in the folder microhope\n\
@@ -761,53 +763,62 @@ if (UnsavedChanges) { Quit(NULL,NULL); return TRUE; };
 return FALSE;
 }
 //----------------------------------------------------------------------------------------------------------------------
-GtkWidget *GetMenubarMenu(GtkWidget *W)                                                       //Returns a menubar widget
+static GtkActionEntry entries[]=
 {
-GtkItemFactory *ItemFactory;
-GtkAccelGroup *AccelGroup;
-static GtkItemFactoryEntry menu_items[]={
- { "/_File",NULL,NULL,0,"<Branch>"},
- { "/File/_New","<CTRL>N",FileNew,0,"<StockItem>",GTK_STOCK_NEW},
- { "/File/_Open","<CTRL>O",FileOpen,0,"<StockItem>",GTK_STOCK_OPEN},
- { "/File/_Save","<CTRL>S",FileSave,0,"<StockItem>",GTK_STOCK_SAVE},
- { "/File/Save _As",NULL,FileSaveAs,0,"<StockItem>",GTK_STOCK_SAVE},
- { "/File/sep1",NULL,NULL,0,"<Separator>"},
- { "/File/_Quit","<CTRL>Q",Quit,0,"<StockItem>",GTK_STOCK_QUIT},
- { "/_Edit",NULL,NULL,0,"<Branch>"},
- { "/Edit/_Undo","<CTRL>Z",Undo,0,"<StockItem>",GTK_STOCK_UNDO},
- { "/Edit/sep",NULL,NULL,0,"<Separator>"},
- { "/Edit/Cu_t","<CTRL>X",EditCut,0,"<StockItem>",GTK_STOCK_CUT},
- { "/Edit/_Copy","<CTRL>C",EditCopy,0,"<StockItem>",GTK_STOCK_COPY},
- { "/Edit/_Paste","<CTRL>V",EditPaste,0,"<StockItem>",GTK_STOCK_PASTE},
- { "/Edit/De_lete",NULL,EditDelete,0,"<StockItem>",GTK_STOCK_DELETE},
- { "/Edit/sep",NULL,NULL,0,"<Separator>"},
- { "/Edit/_Find","<CTRL>F",EditFind,0,"<StockItem>",GTK_STOCK_FIND},
- { "/Edit/Find Ne_xt","<CTRL>G",FindNext,0,"<StockItem>",GTK_STOCK_FIND},
- { "/Edit/_Replace","<CTRL>H",EditReplace,0,"<StockItem>",GTK_STOCK_FIND_AND_REPLACE},
- { "/Edit/sep",NULL,NULL,0,"<Separator>"},
- { "/Edit/Select _All","<CTRL>A",SelectAll,0,"<StockItem>",GTK_STOCK_SELECT_ALL},
- { "/_Microhope",NULL,NULL,0,"<Branch>"},
- { "/Microhope/_Compile",NULL,Compile,0,"<Item>"},
- { "/Microhope/_Detect Hardware",NULL,DetectHardware,0,"<Item>"},
- { "/Microhope/_Upload",NULL,Upload,0,"",NULL},
- { "/_Help",NULL,NULL,0,"<Branch>"},
- { "/_Help/Help",NULL,Help,0,"<StockItem>",GTK_STOCK_HELP},
- { "/_Help/About",NULL,About,0,"<StockItem>",GTK_STOCK_ABOUT},
-};
-static gint nmenu_items=sizeof(menu_items)/sizeof(menu_items[0]);
+  {"FileMenuAction",GTK_STOCK_FILE,"_File"},
+  {"EditMenuAction",GTK_STOCK_EDIT,"_Edit"},
+  {"MicrohopeMenuAction",GTK_STOCK_EDIT,"_Microhope"},
+  {"HelpMenuAction",GTK_STOCK_HELP,"_Help"},
 
-AccelGroup=gtk_accel_group_new();                                             //Make an accelerator group(shortcut keys)
-ItemFactory=gtk_item_factory_new(GTK_TYPE_MENU_BAR,"<main>",AccelGroup);     //Make an ItemFactory(that makes a menubar)
-gtk_item_factory_create_items(ItemFactory,nmenu_items,menu_items,NULL);
-gtk_window_add_accel_group(GTK_WINDOW(W),AccelGroup);                   //Attach the new accelerator group to the window
-return gtk_item_factory_get_widget(ItemFactory,"<main>");
-}
+  {"NewAction",GTK_STOCK_NEW,"_New","<control>N","New",G_CALLBACK(FileNew)},
+  {"OpenAction",GTK_STOCK_OPEN,"_Open","<control>O","Open",G_CALLBACK(FileOpen)},
+  {"SaveAction",GTK_STOCK_SAVE,"_Save","<control>S","Save",G_CALLBACK(FileSave)},
+  {"SaveAsAction",GTK_STOCK_SAVE_AS,"Save _As","<shift><control>S","Save As",G_CALLBACK(FileSaveAs)},
+  {"QuitAction",GTK_STOCK_QUIT,"_Quit","<control>Q","Quit",G_CALLBACK(Quit)},
+
+  {"UndoAction",GTK_STOCK_UNDO,"_Undo","<control>Z","Undo",G_CALLBACK(Undo)},
+  {"CutAction",GTK_STOCK_CUT,"Cu_t","<control>X","Cut",G_CALLBACK(EditCut)},
+  {"CopyAction",GTK_STOCK_COPY,"_Copy","<control>C","Copy",G_CALLBACK(EditCopy)},
+  {"PasteAction",GTK_STOCK_PASTE,"_Paste","<control>V","Paste",G_CALLBACK(EditPaste)},
+  {"DeleteAction",GTK_STOCK_DELETE,"De_lete","Delete","Delete",G_CALLBACK(EditDelete)},
+  {"FindAction",GTK_STOCK_FIND,"Find","<control>F","Find",G_CALLBACK(EditFind)},
+  {"FindNextAction",GTK_STOCK_FIND,"Find Ne_xt","<control>G","Find Next",G_CALLBACK(FindNext)},
+  {"ReplaceAction",GTK_STOCK_FIND_AND_REPLACE,"_Replace","<control>H","Replace",G_CALLBACK(EditReplace)},
+  {"SelectAllAction",GTK_STOCK_SELECT_ALL,"SelectAll","<control>A","SelectAll",G_CALLBACK(SelectAll)},
+
+  {"CompileAction",GTK_STOCK_UNDO,"_Compile","","Compile",G_CALLBACK(Compile)},
+  {"DetectHardwareAction",GTK_STOCK_CUT,"_Detect Hardware","","Detect Hardware",G_CALLBACK(DetectHardware)},
+  {"UploadAction",GTK_STOCK_COPY,"_Upload","","Upload",G_CALLBACK(Upload)},
+
+  {"HelpAction",GTK_STOCK_HELP,"Help","<control>H","Help",G_CALLBACK(Help)},
+  {"AboutAction",GTK_STOCK_ABOUT,"About","","About",G_CALLBACK(About)},
+};
+//---------------------------------------------------------------------------------------------------------------------
+static guint n_entries=G_N_ELEMENTS(entries);
 //----------------------------------------------------------------------------------------------------------------------
 int main(int argc,char *argv[])
 {
 GtkWidget *VBox,*SBox,*MenuBar;
+GtkActionGroup *ActionGroup;
+GtkUIManager *MenuManager;
+GError *Error;
 struct stat Info;
-gchar StatusLine[MAX_STAT];
+gchar StatusLine[MAX_STAT],Str[MAX_FNAME+128];
+char *HomeStr;
+static gchar GuiStr[]="\
+   <ui><menubar name='MainMenu'><menu name='FileMenu' action='FileMenuAction'><menuitem name='New' action='NewAction' />\
+   <menuitem name='Open' action='OpenAction' /><menuitem name='Save' action='SaveAction' />\
+   <menuitem name='Save As' action='SaveAsAction' /><separator/><menuitem name='Quit' action='QuitAction' />\
+   <placeholder name='FileMenuAdditions' /></menu><menu name='EditMenu' action='EditMenuAction'>\
+   <menuitem name='Undo' action='UndoAction'/><separator/><menuitem name='Cut' action='CutAction'/>\
+   <menuitem name='Copy' action='CopyAction'/><menuitem name='Paste' action='PasteAction'/>\
+   <menuitem name='Delete' action='DeleteAction'/><separator/><menuitem name='Find' action='FindAction'/>\
+   <menuitem name='FindNext' action='FindNextAction'/><menuitem name='Replace' action='ReplaceAction'/>\
+   <separator/><menuitem name='SelectAll' action='SelectAllAction'/></menu>\
+   <menu name='MicrohopeMenu' action='MicrohopeMenuAction'><menuitem name='Compile' action='CompileAction' />\
+   <menuitem name='DetectHardware' action='DetectHardwareAction' /><menuitem name='Upload' action='UploadAction' />\
+   </menu><menu name='HelpMenu' action='HelpMenuAction'><menuitem name='Help' action='HelpAction' />\
+   <menuitem name='About' action='AboutAction' /></menu></menubar></ui>";
 
 gtk_init(&argc,&argv);
 MWin=gtk_window_new(GTK_WINDOW_TOPLEVEL);
@@ -823,8 +834,19 @@ VBox=gtk_vbox_new(FALSE,1);
 gtk_container_set_border_width(GTK_CONTAINER(VBox),1);
 gtk_container_add(GTK_CONTAINER(MWin),VBox);
 
-MenuBar=GetMenubarMenu(MWin);
+ActionGroup=gtk_action_group_new("GuiActions");
+gtk_action_group_set_translation_domain(ActionGroup,"blah");
+MenuManager=gtk_ui_manager_new();
+gtk_action_group_add_actions(ActionGroup,entries,n_entries,NULL);
+gtk_ui_manager_insert_action_group(MenuManager,ActionGroup,0);
+
+Error=NULL;
+gtk_ui_manager_add_ui_from_string(MenuManager,GuiStr,-1,&Error);
+if (Error) { Attention("Building menus failed",FALSE); g_error_free(Error); }
+
+MenuBar=gtk_ui_manager_get_widget(MenuManager,"/MainMenu");
 gtk_box_pack_start(GTK_BOX(VBox),MenuBar,FALSE,TRUE,0);
+gtk_window_add_accel_group(GTK_WINDOW(MWin),gtk_ui_manager_get_accel_group(MenuManager));
 
 SBox=gtk_scrolled_window_new(NULL,NULL);
 gtk_container_set_border_width(GTK_CONTAINER(SBox),2);
@@ -846,12 +868,14 @@ gtk_statusbar_push(GTK_STATUSBAR(StatBar),StatID,StatusLine);
 
 gtk_widget_show_all(MWin);
 
-getcwd(Path,MAX_FNAME);                                                               //Path from where uhope is running
-if (strchr(Path,'/')) System=LINUX; else System=WINDOWS;                   //Detect OS based on path separator character
-if (System==WINDOWS) strcat(Path,"\\microhope");                                       //On Windows: directory microhope
-else strcat(Path,"/microhope");                                       //On Linux:The directory microhope should be below
-if (stat(Path,&Info)) getcwd(Path,MAX_FNAME);        //If src directory does not exist, revert to where uhope is running
-
+HomeStr=getenv("HOME");
+sprintf(Path,"%s/microhope",HomeStr);
+if (stat(Path,&Info))
+   {
+   sprintf(Str,"The directory %s is missing\nYou can work with another directory",Path);
+   Attention(Str,FALSE);
+   (void)getcwd(Path,MAX_FNAME);                              //If directory does not exist, revert to current directory
+   }
 gtk_main();
 return 0;
 }
