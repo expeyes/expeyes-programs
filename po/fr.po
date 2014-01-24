@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-03 23:29+0100\n"
+"POT-Creation-Date: 2014-01-19 16:35+0100\n"
 "PO-Revision-Date: 2014-01-03 23:27+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
@@ -1313,7 +1313,7 @@ msgstr "Erreur de transaction."
 msgid "LIZ"
 msgstr "LIS"
 
-#: ../eyes/explore.py:546 ../microhope/mh-ide.py:188
+#: ../eyes/explore.py:546
 msgid "Save"
 msgstr "Enregistrer"
 
@@ -2995,151 +2995,121 @@ msgstr ""
 "\n"
 "Si une installation précédente existait, son contenu sera écrasé."
 
-#: ../microhope/mh-ide.py:25
-msgid "C files"
-msgstr "Fichiers C"
+#~ msgid "C files"
+#~ msgstr "Fichiers C"
 
-#: ../microhope/mh-ide.py:25
-msgid "text files"
-msgstr "Fichiers texte"
+#~ msgid "text files"
+#~ msgstr "Fichiers texte"
 
-#: ../microhope/mh-ide.py:25
-msgid "All files"
-msgstr "Tous fichiers"
+#~ msgid "All files"
+#~ msgstr "Tous fichiers"
 
-#: ../microhope/mh-ide.py:27
-msgid ""
-"microHOPE IDE\n"
-"\n"
-"(c) 2013-2014 Ajith Kumar\n"
-"\n"
-"This program is free software, it is available under the license GPL-3; on "
-"Debian systems, please see the file /usr/share/common-licenses/GPL-3\n"
-"\n"
-"Translations:\n"
-"(FR) (c) 2014 Georges Khaznadar"
-msgstr ""
-"Environnement de développement microHOPE\n"
-"\n"
-"(c) 2013-2014 Ajith Kumar\n"
-"\n"
-"Ce programme est un logiciel libre, il est sous licence GPL-3 ; sur un "
-"système Debian, voir le fichier /usr/share/common-licenses/GPL-3\n"
-"\n"
-"Traductions :\n"
-"(FR) (c) 2014 Georges Khaznadar"
+#~ msgid ""
+#~ "microHOPE IDE\n"
+#~ "\n"
+#~ "(c) 2013-2014 Ajith Kumar\n"
+#~ "\n"
+#~ "This program is free software, it is available under the license GPL-3; "
+#~ "on Debian systems, please see the file /usr/share/common-licenses/GPL-3\n"
+#~ "\n"
+#~ "Translations:\n"
+#~ "(FR) (c) 2014 Georges Khaznadar"
+#~ msgstr ""
+#~ "Environnement de développement microHOPE\n"
+#~ "\n"
+#~ "(c) 2013-2014 Ajith Kumar\n"
+#~ "\n"
+#~ "Ce programme est un logiciel libre, il est sous licence GPL-3 ; sur un "
+#~ "système Debian, voir le fichier /usr/share/common-licenses/GPL-3\n"
+#~ "\n"
+#~ "Traductions :\n"
+#~ "(FR) (c) 2014 Georges Khaznadar"
 
-#: ../microhope/mh-ide.py:37 ../microhope/mh-ide.py:38
-msgid "Not Selected"
-msgstr "Non sélectionné(e)"
+#~ msgid "Not Selected"
+#~ msgstr "Non sélectionné(e)"
 
-#: ../microhope/mh-ide.py:39
-#, python-format
-msgid "MicroHOPE: File->%s : Device-> %s"
-msgstr "MicroHOPE: Fichier->%s : Périph-> %s"
+#~ msgid "MicroHOPE: File->%s : Device-> %s"
+#~ msgstr "MicroHOPE: Fichier->%s : Périph-> %s"
 
-#: ../microhope/mh-ide.py:40
-#, python-format
-msgid "File->%s : Device-> %s"
-msgstr "Fichier->%s : Périph-> %s"
+#~ msgid "File->%s : Device-> %s"
+#~ msgstr "Fichier->%s : Périph-> %s"
 
-#: ../microhope/mh-ide.py:65
-msgid "File Saved"
-msgstr "Fichier enregistré"
+#~ msgid "File Saved"
+#~ msgstr "Fichier enregistré"
 
-#: ../microhope/mh-ide.py:80 ../microhope/mh-ide.py:121
-msgid "No file selected"
-msgstr "Pas de fichier sélectionné"
+#~ msgid "No file selected"
+#~ msgstr "Pas de fichier sélectionné"
 
-#: ../microhope/mh-ide.py:87
-msgid "Compilation Error"
-msgstr "Erreur de compilation."
+#~ msgid "Compilation Error"
+#~ msgstr "Erreur de compilation."
 
-#: ../microhope/mh-ide.py:93
-msgid "Compilation Done"
-msgstr "Calibration terminée"
+#~ msgid "Compilation Done"
+#~ msgstr "Calibration terminée"
 
-#: ../microhope/mh-ide.py:106
-msgid "Hardware device not selected"
-msgstr "Pas de périphérique détecté"
+#~ msgid "Hardware device not selected"
+#~ msgstr "Pas de périphérique détecté"
 
-#: ../microhope/mh-ide.py:109
-msgid "Starting Upload...."
-msgstr "Début de chargement ..."
+#~ msgid "Starting Upload...."
+#~ msgstr "Début de chargement ..."
 
-#: ../microhope/mh-ide.py:115
-msgid "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
-msgstr ""
-"Erreur de chargement : essayez d'appuyer sur le bouton RESET de microHOPE "
-"avant un nouveau chargement"
+#~ msgid ""
+#~ "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
+#~ msgstr ""
+#~ "Erreur de chargement : essayez d'appuyer sur le bouton RESET de microHOPE "
+#~ "avant un nouveau chargement"
 
-#: ../microhope/mh-ide.py:117 ../microhope/mh-ide.py:132
-msgid "Upload Completed"
-msgstr "Chargement terminé"
+#~ msgid "Upload Completed"
+#~ msgstr "Chargement terminé"
 
-#: ../microhope/mh-ide.py:123
-msgid "Starting Upload via USBASP...."
-msgstr "Démarrage du chargement à l'aide de USBASP ..."
+#~ msgid "Starting Upload via USBASP...."
+#~ msgstr "Démarrage du chargement à l'aide de USBASP ..."
 
-#: ../microhope/mh-ide.py:129
-msgid "Upload Error: Make use USBASP programmer is connected"
-msgstr "Erreur de chargement : vérifiez si le programmeur USBASP est connecté"
+#~ msgid "Upload Error: Make use USBASP programmer is connected"
+#~ msgstr ""
+#~ "Erreur de chargement : vérifiez si le programmeur USBASP est connecté"
 
-#: ../microhope/mh-ide.py:151
-msgid "microHOPE hardware not found?"
-msgstr "Boîtier microHOPE pas trouvé ?"
+#~ msgid "microHOPE hardware not found?"
+#~ msgstr "Boîtier microHOPE pas trouvé ?"
 
-#: ../microhope/mh-ide.py:163 ../microhope/mh-ide.py:201
-msgid "About ..."
-msgstr "À propos ..."
+#~ msgid "About ..."
+#~ msgstr "À propos ..."
 
-#: ../microhope/mh-ide.py:177 ../microhope/mh-ide.py:203
-msgid "Hints"
-msgstr "Trucs et astuces"
+#~ msgid "Hints"
+#~ msgstr "Trucs et astuces"
 
-#: ../microhope/mh-ide.py:177
-msgid ""
-"You may need to build the directory ~/microhope with the command 'create-"
-"microhope-env'. See 'man create-microhope-env'."
-msgstr ""
-"Il se peut que vous ayez à créer le répertoire ~/microhope à  l'aide de la "
-"commande « create-microhope-env ». Voyez « man create-microhope-env »."
+#~ msgid ""
+#~ "You may need to build the directory ~/microhope with the command 'create-"
+#~ "microhope-env'. See 'man create-microhope-env'."
+#~ msgstr ""
+#~ "Il se peut que vous ayez à créer le répertoire ~/microhope à  l'aide de "
+#~ "la commande « create-microhope-env ». Voyez « man create-microhope-env »."
 
-#: ../microhope/mh-ide.py:186
-msgid "New File"
-msgstr "Nouveau fichier"
+#~ msgid "New File"
+#~ msgstr "Nouveau fichier"
 
-#: ../microhope/mh-ide.py:187
-msgid "Open"
-msgstr "Ouvrir"
+#~ msgid "Open"
+#~ msgstr "Ouvrir"
 
-#: ../microhope/mh-ide.py:189
-msgid "Save As"
-msgstr "Enregistrer sous"
+#~ msgid "Save As"
+#~ msgstr "Enregistrer sous"
 
-#: ../microhope/mh-ide.py:191
-msgid "Upload using USBASP"
-msgstr "Charger à l'aide d'USBASP"
+#~ msgid "Upload using USBASP"
+#~ msgstr "Charger à l'aide d'USBASP"
 
-#: ../microhope/mh-ide.py:193
-msgid "File"
-msgstr "Fichier"
+#~ msgid "File"
+#~ msgstr "Fichier"
 
-#: ../microhope/mh-ide.py:196
-msgid "Compile"
-msgstr "Compiler"
+#~ msgid "Compile"
+#~ msgstr "Compiler"
 
-#: ../microhope/mh-ide.py:197
-msgid "Upload"
-msgstr "Charger"
+#~ msgid "Upload"
+#~ msgstr "Charger"
 
-#: ../microhope/mh-ide.py:202
-msgid "Documentation"
-msgstr "Documentation"
+#~ msgid "Documentation"
+#~ msgstr "Documentation"
 
-#: ../microhope/mh-ide.py:204
-msgid "Help"
-msgstr "Aide"
+#~ msgid "Help"
+#~ msgstr "Aide"
 
 #~ msgid ""
 #~ "microHOPE IDE\n"

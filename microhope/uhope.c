@@ -16,7 +16,8 @@
 #define MAX_FNAME   256                                                                      //Max length of a file name
 #define MAX_SRCH    256                                                                    //Max length of search string
 #define MAX_STAT    512                                                                      //Max length of status line
-#define MAX_FSIZE   32000           //Max file size. If its exceeded Undo and Redo wont work, but program will not crash
+#define MAX_FSIZE   64000           //Max file size. If its exceeded Undo and Redo wont work, but program will not crash
+#define DSPL_SIZE   4096                                                   //Max size of redirected out files to display
 
 //Global variables
 gint System,StatID,UStat=0;
@@ -57,12 +58,13 @@ gtk_widget_show_all(W);
 void Dspl(gchar *What,gint Status,gboolean Scroll)                                        //Shows the output of system()
 {
 FILE *Fp;
-gchar Out[4096],Line[256],StatusLine[MAX_STAT];
+gchar Out[DSPL_SIZE],Line[256],StatusLine[MAX_STAT];
 
 if (Status) strcpy(Out,"ERROR:\n"); else strcpy(Out,"SUCCESS\n");
 if (!(Fp=fopen("out.txt","r"))) return;
 while (TRUE)
    {
+   if (strlen(Out)>(DSPL_SIZE-250)) { strcat(Out,"...output too big, view truncated"); break; }
    if (!fgets(Line,255,Fp)) break;
    strcat(Out,Line);
    }
@@ -77,18 +79,61 @@ UnsavedChanges=FALSE;
 //----------------------------------------------------------------------------------------------------------------------
 void Compile(GtkWidget *W,gpointer Unused)
 {
-gchar BaseFName[MAX_FNAME],Cmd[1024];
-gint Status;
+gchar BaseFName[MAX_FNAME],FType[5],Cmd[1024];
+gint Status,L;
 
-if (!strcmp(FileName,"Untitled")) { Attention("ERROR: No file loaded!",FALSE); return; }
+if (!strcmp(FileName,"Untitled")) { Attention("ERROR: No c-file loaded!",FALSE); return; }
 if (UnsavedChanges)  { Attention("ERROR: There are unsaved changes!\nPlease save the file first",FALSE); return; }
-strcpy(BaseFName,FileName); BaseFName[strlen(FileName)-2]='\0';
+L=strlen(FileName);
+strcpy(BaseFName,FileName); BaseFName[L-2]='\0'; strcpy(FType,&FileName[L-2]);
+if (strcmp(FType,".c")) { Attention("ERROR: The loaded file type is not .c",FALSE); return; }
 sprintf(Cmd,"avr-gcc -Wall -O2 -mmcu=atmega32 -o %s %s 1>out.txt 2>>out.txt",BaseFName,FileName);
 Status=system(Cmd);
 if (Status!=0) { Dspl("Compilation",Status,FALSE); return; }
 sprintf(Cmd,"avr-objcopy -j .text -j .data -O ihex %s %s.hex 1>>out.txt 2>>out.txt",BaseFName,BaseFName);
 Status=system(Cmd);
 Dspl("Compilation",Status,FALSE);
+sprintf(Cmd,"avr-objdump -S %s >%s.lst",BaseFName,BaseFName);
+Status=system(Cmd);
+}
+//----------------------------------------------------------------------------------------------------------------------
+void Assemble(GtkWidget *W,gpointer Unused)
+{
+gchar BaseFName[MAX_FNAME],FType[5],Cmd[1024];
+gint Status,L;
+
+if (!strcmp(FileName,"Untitled")) { Attention("ERROR: No assembler file loaded!",FALSE); return; }
+if (UnsavedChanges)  { Attention("ERROR: There are unsaved changes!\nPlease save the file first",FALSE); return; }
+L=strlen(FileName);
+strcpy(BaseFName,FileName); BaseFName[L-2]='\0'; strcpy(FType,&FileName[L-2]);
+if (strcmp(FType,".S")) { Attention("ERROR: The loaded file type is not .S",FALSE); return; }
+sprintf(Cmd,"avr-gcc -Wall -O2 -mmcu=atmega32 -o %s %s 1>out.txt 2>>out.txt",BaseFName,FileName);
+Status=system(Cmd);
+if (Status!=0) { Dspl("Assembly",Status,FALSE); return; }
+sprintf(Cmd,"avr-objcopy -j .text -j .data -O ihex %s %s.hex 1>>out.txt 2>>out.txt",BaseFName,BaseFName);
+Status=system(Cmd);
+Dspl("Assembly",Status,FALSE);
+sprintf(Cmd,"avr-objdump -S %s >%s.lst",BaseFName,BaseFName);
+Status=system(Cmd);
+}
+//----------------------------------------------------------------------------------------------------------------------
+void ViewObjDump(GtkWidget *W,gpointer Unused)
+{
+FILE *Fp;
+gchar DumpFName[MAX_FNAME],Out[MAX_FSIZE],Line[256];
+
+strcpy(DumpFName,FileName); DumpFName[strlen(FileName)-2]='\0'; strcat(DumpFName,".lst");
+if (!(Fp=fopen(DumpFName,"r")))
+   {  Attention("ERROR: Dump file not found!\nPlease Compile or Assemble first",FALSE); return; }
+sprintf(Out,"Displaying file %s\n",DumpFName);
+while (TRUE)
+   {
+   if (strlen(Out)>(MAX_FSIZE-250)) { strcat(Out,"...file too big, view truncated"); break; }
+   if (!fgets(Line,255,Fp)) break;
+   strcat(Out,Line);
+   }
+fclose(Fp);
+Attention(Out,TRUE);
 }
 //----------------------------------------------------------------------------------------------------------------------
 void ShowDeviceOnStatusLine()
@@ -183,17 +228,22 @@ return;
 void FileOpen(GtkWidget *W,gpointer Unused)
 {
 GtkWidget *Dialog;
-GtkFileFilter *Filter;
+GtkFileFilter *FilterC,*FilterS;
 gchar Line[MAX_LINE],StatusLine[MAX_STAT];
 FILE *Fp;
 GtkTextIter Start,End;
+gchar *P;
 
-Dialog=gtk_file_chooser_dialog_new("Open File",GTK_WINDOW(MWin),GTK_FILE_CHOOSER_ACTION_OPEN,
+Dialog=gtk_file_chooser_dialog_new("Open C or Assembler File",GTK_WINDOW(MWin),GTK_FILE_CHOOSER_ACTION_OPEN,
        GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL,GTK_STOCK_OPEN,GTK_RESPONSE_ACCEPT,NULL);
 gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(Dialog),Path);
-Filter=gtk_file_filter_new(); gtk_file_filter_set_name(Filter,"C source (*.c)");
-gtk_file_filter_add_pattern(Filter,"*.c");
-gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),Filter);
+
+FilterC=gtk_file_filter_new(); gtk_file_filter_set_name(FilterC,"C source (*.c)");
+gtk_file_filter_add_pattern(FilterC,"*.c"); gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),FilterC);
+
+FilterS=gtk_file_filter_new(); gtk_file_filter_set_name(FilterS,"Assembler (*.S)");
+gtk_file_filter_add_pattern(FilterS,"*.S"); gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),FilterS);
+
 if (gtk_dialog_run(GTK_DIALOG(Dialog)) == GTK_RESPONSE_ACCEPT)
   {
   gchar *FName;
@@ -207,9 +257,9 @@ if (gtk_dialog_run(GTK_DIALOG(Dialog)) == GTK_RESPONSE_ACCEPT)
      gtk_text_buffer_insert(Buf,&End,Line,strlen(Line));
      }
   fclose(Fp); strcpy(FileName,FName); g_free(FName);
+  if ((P=strrchr(FileName,'/'))) { strcpy(Path,FileName); Path[P-FileName]='\0'; }        //Store the path for next time
   }
 gtk_widget_destroy(Dialog);
-strcpy(Path,FileName); Path[strrchr(FileName,'/')-FileName]='\0';                        //Store the path for next time
 
 gtk_text_buffer_get_start_iter(Buf,&Start); gtk_text_buffer_place_cursor(Buf,&Start);         //Position cursor at start
 gtk_statusbar_pop(GTK_STATUSBAR(StatBar),0);
@@ -231,7 +281,7 @@ UnsavedChanges=FALSE;
 void FileSaveAs(GtkWidget *W,gpointer Unused)
 {
 GtkWidget *Dialog;
-GtkFileFilter *Filter;
+GtkFileFilter *FilterC,*FilterS;
 FILE *Fp;
 GtkTextIter Start,End;
 gchar *BufText,StatusLine[MAX_STAT];
@@ -241,13 +291,15 @@ BufText=gtk_text_buffer_get_text(Buf,&Start,&End,FALSE);
 
 Dialog=gtk_file_chooser_dialog_new("Save As",GTK_WINDOW(MWin),GTK_FILE_CHOOSER_ACTION_SAVE,
        GTK_STOCK_CANCEL,GTK_RESPONSE_CANCEL,GTK_STOCK_SAVE,GTK_RESPONSE_ACCEPT,NULL);
+
 gtk_file_chooser_set_current_folder(GTK_FILE_CHOOSER(Dialog),Path);
-Filter=gtk_file_filter_new(); gtk_file_filter_set_name(Filter,"C source (*.c)");
-gtk_file_filter_add_pattern(Filter,"*.c");
-gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),Filter);
+FilterC=gtk_file_filter_new(); gtk_file_filter_set_name(FilterC,"C source (*.c)");
+gtk_file_filter_add_pattern(FilterC,"*.c"); gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),FilterC);
+FilterS=gtk_file_filter_new(); gtk_file_filter_set_name(FilterS,"Assembler (*.S)");
+gtk_file_filter_add_pattern(FilterS,"*.S"); gtk_file_chooser_add_filter(GTK_FILE_CHOOSER(Dialog),FilterS);
+
 gtk_file_chooser_set_do_overwrite_confirmation(GTK_FILE_CHOOSER(Dialog),TRUE);
-if (!strcmp(FileName,"Untitled")) gtk_file_chooser_set_current_name(GTK_FILE_CHOOSER(Dialog),"new.c");
-else gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(Dialog),FileName);
+if (strcmp(FileName,"Untitled")) gtk_file_chooser_set_filename(GTK_FILE_CHOOSER(Dialog),FileName);
 if (gtk_dialog_run(GTK_DIALOG(Dialog)) == GTK_RESPONSE_ACCEPT)
   {
   gchar *FName;
@@ -637,18 +689,20 @@ GtkWidget *Win,*Label;
 static gchar Txt[]=
 "uhope: A Linux Shell for Microhope\n\n\
 To use uhope:\n\
-   1. Create, Edit and Save C source files just like gedit\n\
+   1. Create, Edit and Save C-source (*.c) and Assembler (*.S) files just like gedit\n\
 Sample files and the hardware manual are located in the folder microhope\n\
 in the same location where uhope is installed\n\
-   2. Compile by selecting Microhope->Compile\n\
-   3. Connect Microhope and wait a minute\n\
-   4. Click Microhope->Detect Hardware\n\
-   5. If Microhope is not found, repeat or reconnect Microhope\n\
-   6. Upload the hex file to Microhope by selecting Microhope->Upload\n\
-   7. After first connection, Upload may fail because Microhope is not ready\n\
-   8. If Upload fails, click Microhope->Upload again\n";
+   2. Compile C code by selecting Microhope->Compile\n\
+or Assembler code by selecting Microhope->Assemble\n\
+   3. You can view the objdump file (Microhope->View objdump)\n\
+   4. Connect Microhope and wait a minute\n\
+   5. Click Microhope->Detect Hardware\n\
+   6. If Microhope is not found, repeat or reconnect Microhope\n\
+   7. Upload the hex file to Microhope by selecting Microhope->Upload\n\
+   8. After first connection, Upload may fail because Microhope is not ready\n\
+   9. If Upload fails, click Microhope->Upload again\n";
 
-Win=gtk_dialog_new_with_buttons("Help",GTK_WINDOW(W),GTK_DIALOG_DESTROY_WITH_PARENT,GTK_STOCK_OK,GTK_RESPONSE_NONE,NULL);
+Win=gtk_dialog_new_with_buttons("Help",GTK_WINDOW(MWin),GTK_DIALOG_DESTROY_WITH_PARENT,GTK_STOCK_OK,GTK_RESPONSE_NONE,NULL);
 gtk_window_set_position(GTK_WINDOW(Win),GTK_WIN_POS_CENTER);
 gtk_window_set_modal(GTK_WINDOW(Win),TRUE);
 gtk_window_set_transient_for(GTK_WINDOW(Win),GTK_WINDOW(MWin));
@@ -674,7 +728,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n\
 GNU General Public License www.gnu.org/licenses\n\
 for more details.\n";
 
-Win=gtk_dialog_new_with_buttons("About",GTK_WINDOW(W),GTK_DIALOG_DESTROY_WITH_PARENT,GTK_STOCK_OK,GTK_RESPONSE_NONE,NULL);
+Win=gtk_dialog_new_with_buttons("About",GTK_WINDOW(MWin),GTK_DIALOG_DESTROY_WITH_PARENT,GTK_STOCK_OK,GTK_RESPONSE_NONE,NULL);
 gtk_window_set_position(GTK_WINDOW(Win),GTK_WIN_POS_CENTER);
 gtk_window_set_modal(GTK_WINDOW(Win),TRUE);
 gtk_window_set_transient_for(GTK_WINDOW(Win),GTK_WINDOW(MWin));
@@ -787,9 +841,11 @@ static GtkActionEntry entries[]=
   {"ReplaceAction",GTK_STOCK_FIND_AND_REPLACE,"_Replace","<control>H","Replace",G_CALLBACK(EditReplace)},
   {"SelectAllAction",GTK_STOCK_SELECT_ALL,"SelectAll","<control>A","SelectAll",G_CALLBACK(SelectAll)},
 
-  {"CompileAction",GTK_STOCK_UNDO,"_Compile","","Compile",G_CALLBACK(Compile)},
-  {"DetectHardwareAction",GTK_STOCK_CUT,"_Detect Hardware","","Detect Hardware",G_CALLBACK(DetectHardware)},
-  {"UploadAction",GTK_STOCK_COPY,"_Upload","","Upload",G_CALLBACK(Upload)},
+  {"CompileAction",GTK_STOCK_CONVERT,"_Compile","","Compile",G_CALLBACK(Compile)},
+  {"AssembleAction",GTK_STOCK_CONVERT,"_Assemble","","Assemble",G_CALLBACK(Assemble)},
+  {"ObjDumpAction",GTK_STOCK_EXECUTE,"_View objdump","","View objdump",G_CALLBACK(ViewObjDump)},
+  {"DetectHardwareAction",GTK_STOCK_CONNECT,"_Detect Hardware","","Detect Hardware",G_CALLBACK(DetectHardware)},
+  {"UploadAction",GTK_STOCK_NETWORK,"_Upload","","Upload",G_CALLBACK(Upload)},
 
   {"HelpAction",GTK_STOCK_HELP,"Help","<control>H","Help",G_CALLBACK(Help)},
   {"AboutAction",GTK_STOCK_ABOUT,"About","","About",G_CALLBACK(About)},
@@ -807,19 +863,41 @@ struct stat Info;
 gchar StatusLine[MAX_STAT],Str[MAX_FNAME+128];
 char *HomeStr;
 static gchar GuiStr[]="\
-   <ui><menubar name='MainMenu'><menu name='FileMenu' action='FileMenuAction'><menuitem name='New' action='NewAction' />\
-   <menuitem name='Open' action='OpenAction' /><menuitem name='Save' action='SaveAction' />\
-   <menuitem name='Save As' action='SaveAsAction' /><separator/><menuitem name='Quit' action='QuitAction' />\
-   <placeholder name='FileMenuAdditions' /></menu><menu name='EditMenu' action='EditMenuAction'>\
-   <menuitem name='Undo' action='UndoAction'/><separator/><menuitem name='Cut' action='CutAction'/>\
-   <menuitem name='Copy' action='CopyAction'/><menuitem name='Paste' action='PasteAction'/>\
-   <menuitem name='Delete' action='DeleteAction'/><separator/><menuitem name='Find' action='FindAction'/>\
-   <menuitem name='FindNext' action='FindNextAction'/><menuitem name='Replace' action='ReplaceAction'/>\
-   <separator/><menuitem name='SelectAll' action='SelectAllAction'/></menu>\
-   <menu name='MicrohopeMenu' action='MicrohopeMenuAction'><menuitem name='Compile' action='CompileAction' />\
-   <menuitem name='DetectHardware' action='DetectHardwareAction' /><menuitem name='Upload' action='UploadAction' />\
-   </menu><menu name='HelpMenu' action='HelpMenuAction'><menuitem name='Help' action='HelpAction' />\
-   <menuitem name='About' action='AboutAction' /></menu></menubar></ui>";
+   <ui>\
+     <menubar name='MainMenu'>\
+        <menu name='FileMenu' action='FileMenuAction'>\
+           <menuitem name='New' action='NewAction' always-show-image='true'/>\
+           <menuitem name='Open' action='OpenAction' always-show-image='true'/>\
+           <menuitem name='Save' action='SaveAction' always-show-image='true'/>\
+           <menuitem name='Save As' action='SaveAsAction' always-show-image='true'/>\
+           <separator/>\
+           <menuitem name='Quit' action='QuitAction' always-show-image='true'/>\
+        </menu>\
+        <menu name='EditMenu' action='EditMenuAction'>\
+           <menuitem name='Undo' action='UndoAction' always-show-image='true'/><separator/>\
+           <menuitem name='Cut' action='CutAction' always-show-image='true'/>\
+           <menuitem name='Copy' action='CopyAction' always-show-image='true'/>\
+           <menuitem name='Paste' action='PasteAction' always-show-image='true'/>\
+           <menuitem name='Delete' action='DeleteAction' always-show-image='true'/><separator/>\
+           <menuitem name='Find' action='FindAction' always-show-image='true'/>\
+           <menuitem name='FindNext' action='FindNextAction' always-show-image='true'/>\
+           <menuitem name='Replace' action='ReplaceAction' always-show-image='true'/>\
+           <separator/>\
+           <menuitem name='SelectAll' action='SelectAllAction' always-show-image='true'/>\
+        </menu>\
+        <menu name='MicrohopeMenu' action='MicrohopeMenuAction'>\
+           <menuitem name='Compile' action='CompileAction' always-show-image='false'/>\
+           <menuitem name='Assemble' action='AssembleAction' always-show-image='false'/>\
+           <menuitem name='View objdump' action='ObjDumpAction' always-show-image='false'/>\
+           <menuitem name='DetectHardware' action='DetectHardwareAction' always-show-image='false'/>\
+           <menuitem name='Upload' action='UploadAction' always-show-image='false'/>\
+        </menu>\
+        <menu name='HelpMenu' action='HelpMenuAction'>\
+           <menuitem name='Help' action='HelpAction' always-show-image='true'/>\
+           <menuitem name='About' action='AboutAction' always-show-image='true'/>\
+        </menu>\
+     </menubar>\
+   </ui>";
 
 gtk_init(&argc,&argv);
 MWin=gtk_window_new(GTK_WINDOW_TOPLEVEL);

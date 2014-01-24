@@ -1,6 +1,6 @@
 '''
-MicroHOPE IDE program, a tkinter text widget with File I/O, Compile and Upload options  
-author : Ajith Kumar B.P., ajith@iuac.res.in  
+MicroHOPE IDE program, a tkinter text widget with File I/O, Compile and Upload options
+author : Ajith Kumar B.P., ajith@iuac.res.in
 Licence : GPL version 3
 Date: 21-Oct-2013
 last edit : 6-Dec-2013
@@ -9,31 +9,31 @@ last edit : 6-Dec-2013
 from Tkinter import *
 from tkFileDialog import *
 import commands
-   
-# Global variables   
+
+# Global variables
 filename = ''  			 # Currently active file
 device   = ''            # User should choose this from the list
-mcu = 'atmega32'		 # mcu  
+mcu = 'atmega32'		 # mcu
 
 file_opt = {'defaultextension':'.c', 'initialdir':'~/microhope',\
-		'filetypes': [('C files', '.c'),('asm files', '.S'), ('text files', '.txt'),('All files', '.*')]}
+		'filetypes': [('C files', '.c'), ('text files', '.txt'),('All files', '.*')]}
 
 def show(s, col='blue'):
 	Res.config(text =s, fg=col)
 	Res.update()
-	
-def show_status():	
+
+def show_status():
 	global filename, device
 	f = filename
 	d = device
 	if filename == '': f = 'Not Selected'
-	if device == '': d = 'Right-Click to Select'
+	if device == '': d = 'Not Selected'
 	root.title('MicroHOPE: File->%s : Device-> %s'%(f, d))
 	show('File->%s : Device-> %s'%(f, d))
 
 def newFile():
 	global filename
-	tw.delete(0.0, END)	
+	tw.delete(0.0, END)
 	mw.delete(0.0, END)
 	filename = ''
 
@@ -45,7 +45,7 @@ def saveAs():
 	f.write(text + '\n')
 	filename = f.name
 	show_status()
-	
+
 def saveFile():
 	global filename
 	if filename == '':
@@ -62,31 +62,10 @@ def openFile():
 	if f == None: return
 	data = f.read() 			# Get all the text from file.
 	tw.delete(0.0, END)
-	tw.insert(0.0, data)    
+	tw.insert(0.0, data)
    	filename = f.name
 	show_status()
 	mw.delete(0.0, END)
-	
-def Assemble():
-	if filename == '' :
-		show('No file selected', 'red')
-		return
-	saveFile()
-	fname = filename.split(".")[0]
-	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s.S' %(mcu,fname,fname)
-	res = commands.getstatusoutput(cmd)
-	if res[0] != 0:
-		show('Assembler Error','red')
-		mw.insert(END, res[1])
-		return
-	cmd = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname,fname)
-
-	res = commands.getstatusoutput(cmd)
-	cmd = 'avr-objdump -S %s > %s.lst'%(fname,fname)
-
-	res = commands.getstatusoutput(cmd)
-	mw.insert(END, res[1])
-	show('Assembing Done')
 
 def Compile():
 	if filename == '' :
@@ -102,28 +81,14 @@ def Compile():
 		return
 	cmd = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname,fname)
 	res = commands.getstatusoutput(cmd)
-
-	# added 2 lines
-	cmd = 'avr-objdump -S %s > %s.lst'%(fname,fname)
-	res = commands.getstatusoutput(cmd)
-
 	mw.insert(END, res[1])
 	show('Compilation Done')
 
-def pulseRTS(dev):
-	import serial, time
-	fd = serial.Serial(dev, 38400, stopbits=1, timeout = 1.0)
-	fd.setRTS(0)
-	fd.setRTS(1)
-	fd.setRTS(0)
-	fd.close()
-	
 def Upload():
 	global device
 	if device == None:
 		show('Hardware device not selected','red')
 		return
-	pulseRTS(device)               # Sending a pulse on RTS pin to reset the uC
 	show('Starting Upload....')
 	fname = filename.split(".")[0]
 	cmd= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(device, fname)
@@ -133,7 +98,7 @@ def Upload():
 		show('Upload Error: Try pressing nicroHOPE Reset button just before Uploading')
 		return
 	show('Upload Completed')
-	   
+
 def upload_usbasp():
 	if filename == '' :
 		show('No file selected', 'red')
@@ -146,14 +111,14 @@ def upload_usbasp():
 	if res[0] != 0:
 		show('Upload Error: Make use USBASP programmer is connected', 'red')
 		return
-	mw.insert(END, res[1])	
+	mw.insert(END, res[1])
 	show('Upload Completed')
-	
+
 def set_device(d):
 	global device
 	device = d
 	show_status()
-		   
+
 def select_device(event):
 	cmd = "ls /dev/ttyUSB*"         # search for MCP2200 type
 	res = commands.getstatusoutput(cmd)   # get the device name, mostly on USB0
@@ -179,7 +144,7 @@ def select_device(event):
 
 root = Tk()
 root.minsize(width=500,height=200)
-                   
+
 # Set up basic Menu
 menubar = Menu(root)
 
@@ -194,7 +159,6 @@ filemenu.add_command(label="Upload using USBASP", command = upload_usbasp)
 menubar.add_cascade(label="File", menu=filemenu,font=('Monospace', 12))
 root.config(menu=menubar)
 
-menubar.add_command(label='Assemble', command=Assemble, font=('Monospace', 12))
 menubar.add_command(label='Compile', command=Compile, font=('Monospace', 12))
 menubar.add_command(label='Upload',  command=Upload, font=('Monospace', 12))
 
@@ -204,7 +168,7 @@ top.pack(side=TOP, expand=YES, fill=BOTH)
 sb1 = Scrollbar(top)
 sb1.pack(side=RIGHT, fill=BOTH)
 tw = Text(top, height= 22, font=('Monospace', 11), bg='ivory', yscrollcommand=sb1.set)
-tw.pack(expand=YES, fill=BOTH) 
+tw.pack(expand=YES, fill=BOTH)
 sb1.config(command=tw.yview)
 tw.bind("<Button-3>", select_device)
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expEYES 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-03 23:29+0100\n"
+"POT-Creation-Date: 2014-01-19 16:35+0100\n"
 "PO-Revision-Date: 2012-07-08 11:35+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "Language-Team: ESPERANTO <eo@li.org>\n"
@@ -1259,7 +1259,7 @@ msgstr ""
 msgid "LIZ"
 msgstr ""
 
-#: ../eyes/explore.py:546 ../microhope/mh-ide.py:188
+#: ../eyes/explore.py:546
 msgid "Save"
 msgstr ""
 
@@ -2897,137 +2897,4 @@ msgid ""
 "home directory, and a set of files will be copied into it.\n"
 "\n"
 "If any previous installation existed, its contents will be overwriten."
-msgstr ""
-
-#: ../microhope/mh-ide.py:25
-msgid "C files"
-msgstr ""
-
-#: ../microhope/mh-ide.py:25
-msgid "text files"
-msgstr ""
-
-#: ../microhope/mh-ide.py:25
-msgid "All files"
-msgstr ""
-
-#: ../microhope/mh-ide.py:27
-msgid ""
-"microHOPE IDE\n"
-"\n"
-"(c) 2013-2014 Ajith Kumar\n"
-"\n"
-"This program is free software, it is available under the license GPL-3; on "
-"Debian systems, please see the file /usr/share/common-licenses/GPL-3\n"
-"\n"
-"Translations:\n"
-"(FR) (c) 2014 Georges Khaznadar"
-msgstr ""
-
-#: ../microhope/mh-ide.py:37 ../microhope/mh-ide.py:38
-msgid "Not Selected"
-msgstr ""
-
-#: ../microhope/mh-ide.py:39
-#, python-format
-msgid "MicroHOPE: File->%s : Device-> %s"
-msgstr ""
-
-#: ../microhope/mh-ide.py:40
-#, python-format
-msgid "File->%s : Device-> %s"
-msgstr ""
-
-#: ../microhope/mh-ide.py:65
-msgid "File Saved"
-msgstr ""
-
-#: ../microhope/mh-ide.py:80 ../microhope/mh-ide.py:121
-msgid "No file selected"
-msgstr ""
-
-#: ../microhope/mh-ide.py:87
-msgid "Compilation Error"
-msgstr ""
-
-#: ../microhope/mh-ide.py:93
-msgid "Compilation Done"
-msgstr ""
-
-#: ../microhope/mh-ide.py:106
-msgid "Hardware device not selected"
-msgstr ""
-
-#: ../microhope/mh-ide.py:109
-msgid "Starting Upload...."
-msgstr ""
-
-#: ../microhope/mh-ide.py:115
-msgid "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
-msgstr ""
-
-#: ../microhope/mh-ide.py:117 ../microhope/mh-ide.py:132
-msgid "Upload Completed"
-msgstr ""
-
-#: ../microhope/mh-ide.py:123
-msgid "Starting Upload via USBASP...."
-msgstr ""
-
-#: ../microhope/mh-ide.py:129
-msgid "Upload Error: Make use USBASP programmer is connected"
-msgstr ""
-
-#: ../microhope/mh-ide.py:151
-msgid "microHOPE hardware not found?"
-msgstr ""
-
-#: ../microhope/mh-ide.py:163 ../microhope/mh-ide.py:201
-msgid "About ..."
-msgstr ""
-
-#: ../microhope/mh-ide.py:177 ../microhope/mh-ide.py:203
-msgid "Hints"
-msgstr ""
-
-#: ../microhope/mh-ide.py:177
-msgid ""
-"You may need to build the directory ~/microhope with the command 'create-"
-"microhope-env'. See 'man create-microhope-env'."
-msgstr ""
-
-#: ../microhope/mh-ide.py:186
-msgid "New File"
-msgstr ""
-
-#: ../microhope/mh-ide.py:187
-msgid "Open"
-msgstr ""
-
-#: ../microhope/mh-ide.py:189
-msgid "Save As"
-msgstr ""
-
-#: ../microhope/mh-ide.py:191
-msgid "Upload using USBASP"
-msgstr ""
-
-#: ../microhope/mh-ide.py:193
-msgid "File"
-msgstr ""
-
-#: ../microhope/mh-ide.py:196
-msgid "Compile"
-msgstr ""
-
-#: ../microhope/mh-ide.py:197
-msgid "Upload"
-msgstr ""
-
-#: ../microhope/mh-ide.py:202
-msgid "Documentation"
-msgstr ""
-
-#: ../microhope/mh-ide.py:204
-msgid "Help"
 msgstr ""

@@ -49,7 +49,7 @@ install: all
 clean:
 	rm -f *~ *.aux *.log *.toc *.lof *.tex
 
-distclean:
+distclean: clean
 	rm -f $(PDFS) microhope-*.pdf pics/*.eps
 
 .PHONY: clean distclean all manpages install
