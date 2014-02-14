@@ -1,0 +1,6884 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass book
+\begin_preamble
+\usepackage{wrapfig}
+ \setlength{\intextsep}{0cm plus1cm minus1cm}
+\newcommand{\menuitem}[1]{\textbf{\emph{#1}}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 0
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 3cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size giant
+MicroHOPE
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/microhope-with-lcd.jpg
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+User's Manual 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size largest
+Micro-controllers
+\begin_inset Newline newline
+\end_inset
+
+for
+\begin_inset Newline newline
+\end_inset
+
+Hobby Projects and Education
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Inter-University Accelerator Centre 
+\begin_inset Newline newline
+\end_inset
+
+(A Research Centre of UGC)
+\begin_inset Newline newline
+\end_inset
+
+New Delhi 110 067
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Visit http://expeyes.in/microhope for updates
+\end_layout
+
+\begin_layout Chapter
+Introduction
+\end_layout
+
+\begin_layout Standard
+Most of computer systems in use today are embedded in other machinery, such
+ as automobiles, telephones, appliances, and peripherals for computer systems.
+ Tasks requiring smaller amounts of processing power and memory are generally
+ implemented using micro-controllers (uC).
+ A micro-controller is a small computer on a single integrated circuit consistin
+g of a CPU combined with program and data memory, peripherals like analog
+ to digital converters, timer/counters, serial communication ports and general
+ purpose Input/Output ports.
+ Intel 8051, Atmel AVR, PIC etc.
+ are popular micro controllers available in the market.
+ To design the MicroHOPE hardware, we have chosen ATmega32 micro-controller
+ from Atmel AVR series, after considering the hardware resources available
+ on it and the support of Free Software tools like GNU assembler and C compiler.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Why microHOPE ?
+\end_layout
+
+\begin_layout Standard
+Many people who write programs that run on a PC find it difficult to get
+ started on coding for a microcontroller, mainly due to:
+\end_layout
+
+\begin_layout Enumerate
+Programming a uC requires some knowledge about the target hardware.
+\end_layout
+
+\begin_layout Enumerate
+Transferring the program from the PC to the target device requires some
+ special hardware and software.
+\end_layout
+
+\begin_layout Standard
+There are plenty of micro-controller development kits in the market, but
+ most of them focus on explaining the hardware and software of the development
+ kit rather than the micro-controller.
+ They teach programming the I/O pins of the development board using the
+ library functions provided and the user can get things done without understandi
+ng anything about the micro-controller.
+ The objective of this work is to help learning uC architecture and programming,
+ not the MicroHOPE hardware or software.
+ The focus will be on the features of the micro-controller without hiding
+ its details from the user.
+ 
+\end_layout
+
+\begin_layout Standard
+A simple Graphical User Interface is provided to Edit, Compile (or Assemble)
+ and upload the program.
+ We start by programming the Input/Output ports of Atmega32, which require
+ some basic knowledge of binary number system and C language, with its bit
+ manipulation operators.
+ After that we will proceed to the programming of the peripherals like ADC,
+ Timer/Counter etc.
+ Since they are more complex, we will start with a software library, in
+ the form of C source files, that can be included in your program
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+We are very much aware of the drawback of this method.
+ When you include a file all the functions in that will get added to your
+ executable, increasing its size.
+ Once the code is working, copy the necessary functions to your source file,
+ instead of including the whole file, to get rid of this difficulty.
+\end_layout
+
+\end_inset
+
+.
+ Once you learn how to program the peripherals, using the Special Function
+ Registers, there is no need to use these library functions.
+\end_layout
+
+\begin_layout Standard
+MicroHOPE allows you to code in assembly language.
+ This feature is included mainly to get a better idea about the architechture
+ of the uC, by playing with the registers and assembly instructions directly.
+ The content of registers can be displayed using LEDs connected to the I/O
+ ports of the micro-controller.
+\end_layout
+
+\begin_layout Standard
+Since microHOPE comes with a bootloader pre-installed inside the program
+ memory of Atmega32, you can upload code using the USB interface with a
+ single click, from the GUI provided.
+ At the same time, executing the compile and upload programs from a text
+ terminal are also explained.
+ For compiling the C program we use the 
+\series bold
+avr-gcc
+\series default
+ compiler and 
+\series bold
+avrdude
+\series default
+ for uploading it to the target.
+ 
+\end_layout
+
+\begin_layout Section
+MicroHOPE Hardware
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/mh-block.png
+	width 8cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+(a)MicroHOPE Block diagram.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MicroHOPE-Block-diagram."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/microhope-photo-horiz.jpg
+	lyxscale 30
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MicroHOPE board
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MicroHOPE-board"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/circuit-mh.png
+	lyxscale 30
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Circuit schematic of microHOPE
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Circuit-schematic-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A block diagram of microHOPE hardware is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MicroHOPE-Block-diagram."
+
+\end_inset
+
+.
+ Programs can be uploaded from the PC through the USB port, with the help
+ of the pre-loaded boot-loader code on the uC.
+ To load a new program, the PC asserts the RTS signal of MCP2200, generating
+ a pulse that resets ATmega32.
+ On reset, the boot loader code will start, waiting for new code from the
+ PC.
+ If new code is available it is loaded and control is transferred to it,
+ otherwise the existing code will start running.
+\end_layout
+
+\begin_layout Standard
+Atmega32 has 32 Input/Output pins, organized as 4 ports, each 8 bit wide.
+ The IC is available in DIP package, that can be socket mounted.
+ The ATmega32 has 32 kB of Flash memory, 512 bytes EEPROM and 2 kB Static
+ RAM.
+ Three Timer/Counters, a serial interface (USART), a byte oriented Two-wire
+ Serial Interface, an 8-channel 10-bit ADC and an SPI serial port are some
+ of the peripheral devices on the chip.
+\end_layout
+
+\begin_layout Standard
+The processor on the microHOPE board runs at 8MHz, using the external crystal.
+ All the I/O pins (except the two bits of port D that are used by the UART
+ Rx/Tx pins) are available to the user on the four I/O connectors.
+ An LED is connected to Bit 0 of Port B, for quick testing of the board.
+ A reset button is also provided.
+ The 5V USB power, via a fuse, is connected to both VCC and AVCC inputs.
+ A jumper is provided to disable the reset option from the PC, required
+ when the board is running programs that need to communicate with a PC,
+ like a data logger or oscilloscope.
+ The circuit schematic is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuit-schematic-of"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Accessories
+\end_layout
+
+\begin_layout Standard
+There are several accessory boards, that can be plugged in to the I/O sockets.
+ Some of them are explained below.
+ Visit the website to know about new additions.
+\end_layout
+
+\begin_layout Subsection
+Digital Output Board, 8 LEDs
+\end_layout
+
+\begin_layout Standard
+This can be plugged into any of the four ports to monitor the output, useful
+ for debugging code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/led8-schematic.png
+	lyxscale 50
+	width 7cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/led8.jpg
+	lyxscale 30
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+The digital output Board
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-digital-output"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Alphanumeric LCD 
+\end_layout
+
+\begin_layout Standard
+For some applications, it is necessary to have a local display.
+ The HD44780 controller, or compatible IC, based LCD displays are widely
+ available.
+ They come with a 16 pin connector and the transfer protocol is well documented
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For details refer to http://en.wikipedia.org/wiki/Hitachi_HD44780_LCD_controller
+\end_layout
+
+\end_inset
+
+.
+ The connections between microHOPE and the LCD display are shown in figure
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:LCD-display-board"
+
+\end_inset
+
+(a).
+ Pins 4,5 and 7 of the LCD display are control lines, connected to PC1,
+ PC2 and PC4.
+ The ASCII codes are transferred in the 4bit mode, using pins 11 to 14 connected
+ to PC4, PC5, PC6 and PC7.
+ The LCD should be connected to port C socket, to use the C library functions
+ to access the display.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/lcd-schematics.png
+	lyxscale 40
+	width 5cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/lcd-photo.jpg
+	lyxscale 30
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+LCD display board
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:LCD-display-board"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/H-bridge.png
+	lyxscale 50
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/mh-hbridge.jpg
+	lyxscale 30
+	width 4cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+H-Bridge board
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:H-Bridge-board"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Motor Control Board
+\end_layout
+
+\begin_layout Standard
+The motor control board consists of 2 H-bridges (IC L293D).
+ Board can be powered from outside or from the MicroHOPE socket.
+ An INT/EXT jumper is provided to select the power option.
+ The voltage level at the for outputs of L293 is decided by the four LSBs
+ of the port on which it is connected.
+ The outputs (A,B,C & D) can be used for controlling 2 DC motors or one
+ stepper motor.
+\end_layout
+
+\begin_layout Subsection
+USBASP Programmer board
+\end_layout
+
+\begin_layout Standard
+This is an open sourced ISP (In-System Programming) programmer available
+ from http://www.fischl.de/usbasp/ .
+ This is provided as an accessory to MicroHOPE due to several reasons.
+ If you want to develop programs that uses the UART of Atmega32, you need
+ to upload code using ISP.
+ It can be used for programming other AVR micro-controllers also.
+ It can be used for burning the boot loader.
+ The LED on the board indicates power.
+ It goes off while uploding code, giving an additional indication.
+ More details are given in chapter 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Programming-details"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/mh-usbasp.jpg
+	lyxscale 30
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+MicroHOPE Software
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/mh-IDE.png
+	lyxscale 50
+	width 12cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+MicroHOPE User Interface
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:MicroHOPE-User-Interface"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MicroHOPE's software requirements are a text editor, a cross compiler and
+ assembler, avr C library, a code uploader and other associated programs.
+ We have written a minimal text editor (that is our IDE) that can invoke
+ the compiler, uploader etc.
+ and also detect the MicroHOPE hardware.
+ It can edit, compile/assemble and upload programs.
+ It is available for both GNU/Linux and MS Windows platforms
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Download from http://expeyes.in/microhope
+\end_layout
+
+\end_inset
+
+.
+ On MSwindows, you need to install the Winavr package and the driver for
+ MCP2200 IC from Microchip.
+\end_layout
+
+\begin_layout Subsection
+All GNU/Linux Systems
+\end_layout
+
+\begin_layout Standard
+Download and install avr-gcc, avrlib and avrdude from the repositories of
+ your GNU/Linux distribution.
+ Download the source file uhope.c and the Makefile from MicroHOPE website.
+ The command 
+\end_layout
+
+\begin_layout Standard
+$ make 
+\end_layout
+
+\begin_layout Standard
+will compile and create the executable uhope, you need to install gtk library.
+ Copy it to /usr/bin.
+\end_layout
+
+\begin_layout Standard
+$ uhope
+\end_layout
+
+\begin_layout Standard
+will start the program
+\end_layout
+
+\begin_layout Subsubsection
+Debian and derivatives, like Ubuntu
+\end_layout
+
+\begin_layout Standard
+Debian package is available on the website.
+ After installing the package, run 'create-microhope-env' from a terminal
+ to copy the example programs to a directory named microhope, inside your
+ home directory.
+ The MicroHOPE program can be started from the applications menu.
+ A screen shot of the microhope IDE is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:MicroHOPE-User-Interface"
+
+\end_inset
+
+.
+ By default it looks for files inside a subdirectory named 'microhope',
+ inside your home directory.
+ The IDE allows you to load/save files, detect the hardware, compile/assemble
+ the code and upload the output.
+ 
+\end_layout
+
+\begin_layout Standard
+The examples given in this document will appear inside the directory named
+ 'microhope'.
+ All files starting with 
+\series bold
+mh-
+\series default
+ are the files containing library functions to access the various peripherals
+ of Atmega32.
+ To make the source code visible to the user, they are not compiled as a
+ library file.
+ Do not modify the files starting with 
+\series bold
+mh-
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+You can select any of the example programs, compile/assemble and upload
+ them using the menu.
+ Correct all the errors before doing Upload.
+ You also need to detect the hardware once before uploading.
+ For assembly language programs, the file name extension should be .s or
+ .S (The pre-processor is invoked if .S is used.)
+\end_layout
+
+\begin_layout Subsection
+MS Windows
+\end_layout
+
+\begin_layout Quote
+Download and install the software from 
+\end_layout
+
+\begin_layout Quote
+http://www.expeyes.herobo.com/microhope.php .
+ 
+\end_layout
+
+\begin_layout Quote
+The requirements are the USB to Serial IC drivers, 
+\series bold
+winavr
+\series default
+ package from sourceforge.net and the microHOPE installer.
+\end_layout
+
+\begin_layout Chapter
+Getting Started
+\end_layout
+
+\begin_layout Standard
+After installing the required software packages, you must have copied the
+ examples to a directory named microhope inside your home directory.
+ Start the microHOPE IDE.
+ Choosing File->Open from the menubar will display all the C files inside
+ the 
+\series bold
+microhope
+\series default
+ directory.
+ You can open any of the examples (do not modify the files starting with
+ mh-), compile/assemble and upload from the IDE.
+ We will start by programming the digital Input/Output ports of Atmega32,
+ and them proceed to the peripheral devices.
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For complete details of Atmega32 refer to http://www.atmel.in/Images/doc2503.pdf
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Testing the Hardware
+\end_layout
+
+\begin_layout Standard
+Connect MicroHOPE hardware to a USB port and start the microHOPE IDE from
+ the menu.
+ Click on Detect-MH to get a popup menu of the available USB to Serial devices.
+ It will contain entries like '/dev/ttyACM0', '/dev/ttyACM1' etc
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+For old model of microHOPE using FT232, it will be ttyUSB*
+\end_layout
+
+\end_inset
+
+.
+ If you are running expEYES, find out the device descriptor used by it from
+ the expEYES GUI titlebar and avoid using the same.
+\end_layout
+
+\begin_layout Standard
+Using File->Open from the menubar, load 
+\series bold
+blink.c
+\series default
+ from the 
+\series bold
+microhope
+\series default
+ directory.
+ Compile and Upload the program by clicking on the menubar.
+ In case of error, check the USB connections first.
+ If problem persists, try pressing and releasing the microHOPE resent button
+ at the same time when you click on Upload.
+ Make sure that the PCRST jumper is closed.
+\end_layout
+
+\begin_layout Standard
+Once the program is uploaded, the LED connected to PB0 should blink at 1
+ Hz rate.
+ 
+\series bold
+\bar under
+If not, press the reset button on the board.
+\end_layout
+
+\begin_layout Section
+Input/Output ports of Atmega32
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/avr-block.png
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Atmega32 Pinout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Atmega32-Pinout"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The pinout diagram of Atmega32 is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Atmega32-Pinout"
+
+\end_inset
+
+.
+ There are 32 pins organized as four ports named A, B, C and D, each 8 bit
+ wide.
+ Each pin can be configured as an input or output.
+ The data direction and transfer are done by writing to the registers DDRX,
+ PORTX and PINX (where X stands for A, B, C or D).
+ The avr-gcc compiler allows us to program the registers and their individual
+ bits using the same names given in the Atmega32 manual.
+ The C compiler allows you to access them just like normal variables.
+ For example, the statement PORTB = 15 , writes the number 15 to Port B.
+ The individual pins are referred using names like PA0, means BIT 0 of Port
+ A.
+ 
+\end_layout
+
+\begin_layout Itemize
+DDRX : Direction of every pin of an I/O port is decided by the state of
+ corresponding bit in the Data Direction registers DDRX.
+ To configure a pin as output, make the bit 1, and to make it as input make
+ it zero.
+ For example, DDRA = 1 will configure BIT 0 of Port A (PA0) as output, and
+ all other pins as input.
+\end_layout
+
+\begin_layout Itemize
+PORTX : For pins that are configured as ouput, assigning a value to PORTX
+ will set that data on them.
+ For example PORTA = 1 will make PA0 high, that can be measured on the pin
+ number 40 of the IC.
+ 
+\end_layout
+
+\begin_layout Itemize
+PINX : For the pins configured as inputs, PINX will read the status of the
+ external voltage level connected to the pins.
+ For pins that are configured as outputs, PINX will return the data written
+ to PORTX.
+\end_layout
+
+\begin_layout Standard
+If the pins configured as inputs are left unconnected, there could be unwanted
+ level changes due to electrical noise, this can be prevented by enabling
+ the internal pull-up resistor.
+ For pins that are configured as inputs, setting/clearing the bits in PORTX
+ will enable/disable the corresponding internal pullup resistor.
+ 
+\end_layout
+
+\begin_layout Standard
+The operations described above can be understood easily with some examples.
+ For a quick test, MicroHOPE hardware has an LED connected to PB0, with
+ a series resistor for current limiting.
+\end_layout
+
+\begin_layout Subsection
+Reading and Writing Ports
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+copy.c
+\series default
+ reads the voltage level at PA0 (Pin 0 of Port A) and sets the same on PB0,
+ where we have the LED.
+ We will enable the internal pullup resistor on PA0 so that and it will
+ go LOW only when it is connected to ground using a piece of wire.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include <avr/io.h>   // Include file for I/O operations
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int main (void)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+DDRA = 0;             // Port A as Input
+\end_layout
+
+\begin_layout LyX-Code
+PORTA = 1;          // Enable pullup on PA0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+DDRB = 1;             // Configure PB0 as output  
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+     PORTB = PINA;   // Read Port A and write it to Port B
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Standard
+To test this example, open 
+\series bold
+copy.c
+\series default
+ from the File menu of microHOPE IDE, Click on Compile and then Upload from
+ the menubar The LED on PB0 should start glowing after uploading the program.
+ LED will be off when you connect PA0 to ground.
+ You may rewrite the program so that the LED may be controlled by some other
+ bit configured as input.
+ 
+\end_layout
+
+\begin_layout Standard
+The simple program given above has certain drawbacks.
+ It changes PORTB as a whole instead of acting on PB0 alone.
+ Suppose we have something else connected to the other pins of Port B, they
+ also will be affected by the action of 
+\begin_inset Formula $PORTB=PINA$
+\end_inset
+
+.
+ To avoid such problems, we should manipulate individual bits.
+ The include file 
+\series bold
+mh-digital.c
+\series default
+ contains macros for setting and clearing bits by specifying their position.
+\end_layout
+
+\begin_layout Subsection
+Bit manipulation macros
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+The macros are implemented using:
+\begin_inset Newline newline
+\end_inset
+
+#define BITVAL(bit) (1 << (bit))
+\begin_inset Newline newline
+\end_inset
+
+#define CLRBIT(sfr, bit) (_SFR_BYTE(sfr) &= ~BITVAL(bit))
+\begin_inset Newline newline
+\end_inset
+
+#define SETBIT(sfr, bit) (_SFR_BYTE(sfr) |= BITVAL(bit))
+\begin_inset Newline newline
+\end_inset
+
+#define GETBIT(sfr, bit) (_SFR_BYTE(sfr) & BITVAL(bit))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+These macros can be used on variables, defined in the program, and also
+ on registers like DDRX, PORTX etc.
+\end_layout
+
+\begin_layout Subsubsection*
+BITVAL(bit position)
+\end_layout
+
+\begin_layout Standard
+The value of bit position could be 0 to 7 in the case of 8 bit integers
+ and 0 to 15 for 16 bit integers.
+ This macro returns (1 << bit position).
+ For example BITVAL(3), will give 8, that is binary 1000, obtained by left
+ shifting of 1 thrice.
+\end_layout
+
+\begin_layout Subsubsection*
+SETBIT(variable, bit position)
+\end_layout
+
+\begin_layout Standard
+This macro SETS the specified bit in the given variable, without affecting
+ the other bits.
+ For example SETBIT(DDRB, 7), will make the last bit of DDRB high.
+\end_layout
+
+\begin_layout Subsubsection*
+CLRBIT(variable, bit position)
+\end_layout
+
+\begin_layout Standard
+This macro clears the specified bit of the given variable.
+ For example CLRBIT(val, 0), clears the least significant bit of 'val',
+ that is an integer type variable.
+\end_layout
+
+\begin_layout Subsubsection*
+GETBIT(variable, bit position)
+\end_layout
+
+\begin_layout Standard
+This macro returns the value the specified bit if the specified bit of the
+ variable is 1, else it returns zero.
+ For example: if x = 3, GETBIT(x, 1) will return 2 and GETBIT(x,3) will
+ return zero.
+\end_layout
+
+\begin_layout Standard
+Let us rewrite the previous program as 
+\series bold
+copy2.c
+\series default
+, using these macros as:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  int main (void)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  uint8_t  val;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  DDRA = 0;             // Port A as Input
+\end_layout
+
+\begin_layout LyX-Code
+  PORTA = 1;          // Enable pullup on PORTA, bit 0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  DDRB = 1;             // Pin 0 of Port B as output
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+  for(;;)
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+{
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size small
+     val = GETBIT(PORTA, 0);
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+if (val != 0)
+\end_layout
+
+\begin_layout LyX-Code
+   SETBIT(PORTB, 0);
+\end_layout
+
+\begin_layout LyX-Code
+else
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+CLRBIT(PORTB, 0);
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+}
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+
+\size small
+  }
+\end_layout
+
+\begin_layout Standard
+The same can be done, without using the bit manipulation macros, as shown
+ in 
+\series bold
+copy3.c
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include <avr/io.h>   // Include file for I/O operations
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int main (void)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+uint8_t  val;         // 8 bit unsigned word
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+DDRA = 0;             // Port A as Input
+\end_layout
+
+\begin_layout LyX-Code
+PORTA = 1;          // Enable pullup on PA0
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+DDRB = 1;             // Configure PB0 as output  
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+   if(PINA & 1)        // If PA0 is set
+\end_layout
+
+\begin_layout LyX-Code
+       PORTB |= 1;     // Set PB0, by ORing with 00000001b
+\end_layout
+
+\begin_layout LyX-Code
+   else                // otherwise clear PB0
+\end_layout
+
+\begin_layout LyX-Code
+       PORTB &= ~1;    // by ANDing with 11111110b (~00000001b)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Standard
+The code fragment shown above uses the Bitwise AND, OR and NOT operators.
+\end_layout
+
+\begin_layout Subsection
+Blinking LED
+\end_layout
+
+\begin_layout Standard
+Making pin PB0 HIGH and LOW in a closed loop result in the blinking of the
+ LED conencted to it.
+ We need to slow down the rate of blinking so that it can be perceived by
+ our eyes.
+ This can be done by making the processor wait for a while between writing
+ to PORTB.
+ There are some delay functions provided for this.
+ The file 
+\series bold
+mh-utils.c
+\series default
+ contains the following functions:
+\end_layout
+
+\begin_layout Subsubsection*
+delay_100us(int n)
+\end_layout
+
+\begin_layout Standard
+This function will make the CPU idle for n x100 microseconds.
+ For example to insert a 200 microsecond delay, call delay_100us(2)
+\end_layout
+
+\begin_layout Subsubsection*
+delay_ms(int n)
+\end_layout
+
+\begin_layout Standard
+This function will make the CPU idle for n milliseconds.
+ For example to insert a 500 millisecond delay, call delay_ms(500)
+\end_layout
+
+\begin_layout Standard
+The program blink.c lis listed below:
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+mh-utils.c
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int main (void)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   DDRB = 1;     // configure PB0 as output
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   PORTB = 1; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   delay_ms(500);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   PORTB = 0;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   delay_ms(500);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+   }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Standard
+If everything goes fine, you should see the LED blinking.
+ You can remove the delay statements and watch the high frequency pulses
+ on PB0 using an oscilloscope.
+\end_layout
+
+\begin_layout Section
+The LCD Display
+\end_layout
+
+\begin_layout Standard
+The file 
+\series bold
+mh-lcd.c
+\series default
+ contains functions to access the display, connected to port C.
+ The example program 
+\series bold
+hello.c
+\series default
+ listed below demonstrates the usage of the LCD display.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+int main()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+lcd_put_string("Hello World");
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Standard
+The file mh-lcd.c provides the following functions :
+\end_layout
+
+\begin_layout Itemize
+lcd_init() : Initializes the LCD display, must be called once in the beginning
+\end_layout
+
+\begin_layout Itemize
+lcd_clear() : Clears the display
+\end_layout
+
+\begin_layout Itemize
+lcd_put_char(char ch) : Outputs a single character to the LCD display
+\end_layout
+
+\begin_layout Itemize
+lcd_put_string(char* s) : Displays a string to the LCD
+\end_layout
+
+\begin_layout Itemize
+lcd_put_byte(uint8_t i) : Diplays an 8 bit unsigned integer
+\end_layout
+
+\begin_layout Itemize
+lcd_put_int(uint16_t i) : Displays a 16 bit unsigned integer
+\end_layout
+
+\begin_layout Itemize
+lcd_put_long(uint32_t i) : Displays a 32 bit unsigned integer
+\end_layout
+
+\begin_layout Standard
+The file mh-lcd-float.c provides lcd_put_float(float val, uint8_t ndec),
+ where ndec is the number of decimal places, restricted to 3.
+ Defining float type data increases the program size a lot.
+\end_layout
+
+\begin_layout Section
+Analog to Digital Converter
+\end_layout
+
+\begin_layout Standard
+Most of the I/O PORT pins of Atmega32 have alternate functions.
+ PA0 to PA7 can be used as ADC inputs by enabling the built-in ADC.
+ All the pins configured as inputs in the DDRA will become ADC inputs, but
+ the ones configured as outputs will remain as digital output pins.
+ The ADC converts the analog input voltage in to a 10-bit number.
+ The minimum value represents GND and the maximum value represents the ADC
+ reference voltage.
+ The reference inputs could be AVCC, an internal 2.56V or a voltage connected
+ to the AREF pin.
+ The selection is done in software.
+ The ADC operation is controlled via the registers ADMUX and ADCSRA.
+ The data is read from ADCH and ADCL.
+\end_layout
+
+\begin_layout Standard
+The include file 'mh-adc.c' provides the following functions:
+\end_layout
+
+\begin_layout Enumerate
+adc_enable() : Enables the ADC
+\end_layout
+
+\begin_layout Enumerate
+adc_disable() : Disables the ADC
+\end_layout
+
+\begin_layout Enumerate
+adc_set_ref(ref) : Select the reference, where ref is REF_EXT is an external
+ voltage is applied to the AVREF pin, REF_INT to use the internal 2.56 V
+ reference and REF_AVCC to connect the AVCC supply internally to AVREF.
+\end_layout
+
+\begin_layout Enumerate
+read_adc(ch) : Converts the voltage on channel ch and returns it in a 16
+ bit number.
+\end_layout
+
+\begin_layout Subsection
+Reading an Analog Voltage
+\end_layout
+
+\begin_layout Standard
+The example program 
+\emph on
+adc.c
+\emph default
+ , reads an ADC input and display the result on the LCD.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-adc.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+main()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+uint16_t data;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+adc_enable();
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+data = read_adc(0);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+lcd_put_int(data);
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Subsection
+Programmig ADC registers
+\end_layout
+
+\begin_layout Standard
+The operation of the ADC is controlled mainly by the registers ADCSRA and
+ ADMUX.
+ Setting ADEN will enable the ADC and setting ADSC will start a conversion.
+ The bit ADIF is set after a conversion and this bit can be cleared by writing
+ a '1' to it.
+ The ADSP bits decide the speed of operation of the ADC, by pre-scaling
+ the clock input.
+ The channel number is selected by the MUX0 to MUX4 bits in the ADMUX rregister.
+ The reference input is selected by the REFS0 and REFS1 bits.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/adcsra.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/admux.png
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The program adc-v2.c, demonstrates the usage of these registers.
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h> 
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+// convert channel 0, set pre-scaler to 7 
+\end_layout
+
+\begin_layout LyX-Code
+main()
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+uint16_t data; 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+ADCSRA = (1 << ADEN) |  7;      // Enable ADC, set clock pre-scaler
+\end_layout
+
+\begin_layout LyX-Code
+ADMUX =  (1 << REFS0);		  // AVCC reference, channel 0 	
+\end_layout
+
+\begin_layout LyX-Code
+ADCSRA |=  (1 <<ADSC);          // Start ADC 
+\end_layout
+
+\begin_layout LyX-Code
+while ( !(ADCSRA & (1<<ADIF)) ) ;	 // wait for ADC conversion
+\end_layout
+
+\begin_layout LyX-Code
+data = (ADCH << 8) | ADCL;    // make 10 bit data from ADCL and ADCH 
+\end_layout
+
+\begin_layout LyX-Code
+lcd_put_int(data);
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout Subsection
+Reading in a Loop
+\end_layout
+
+\begin_layout Standard
+The example program 
+\series bold
+adc-loop.c
+\series default
+ , reads an ADC input in a loop and display the result on the LCD.
+ If the input is left unconnected, the displayed value could be anywhere
+ between 0 an 1023.
+ Connecting PA0 to 5V will display 1023, the maximum output.
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-adc.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+#include "mh-utils.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+main()
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+{
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+uint16_t data;
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+adc_enable();
+\end_layout
+
+\begin_layout LyX-Code
+for (;;)
+\end_layout
+
+\begin_layout LyX-Code
+   {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    data = read_adc(0);
+\end_layout
+
+\begin_layout LyX-Code
+    lcd_clear();
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+    lcd_put_int(data);
+\end_layout
+
+\begin_layout LyX-Code
+    delay_ms(100);
+\end_layout
+
+\begin_layout LyX-Code
+   }
+\end_layout
+
+\begin_layout LyX-Code
+
+\size small
+}
+\end_layout
+
+\begin_layout Standard
+Modify the code for reading other ADC channels.
+\end_layout
+
+\begin_layout Subsection
+Temperature Control
+\end_layout
+
+\begin_layout Standard
+The program adc-loop.c can be easily modified to make a temperature monitor/contr
+oller using the LM35 temperature sensor.
+ Connect LM35 output to PA0.
+ At 100
+\begin_inset Formula $^{0}$
+\end_inset
+
+C , the output of LM35 will be 1 volt.
+ With the internal 2.56 volts as reference, the ADC output will be around
+ 400 (1.0 / 2.56 * 1023).
+\end_layout
+
+\begin_layout Standard
+Drive the relay contact controlling the heater from PB0, via a transistor.
+ Insert the following line in the beginning
+\end_layout
+
+\begin_layout LyX-Code
+DDRB = 1       
+\end_layout
+
+\begin_layout Standard
+and within the loop:
+\end_layout
+
+\begin_layout LyX-Code
+if (data > 400)       // switch off heater 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+PORTB = 0;
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+else if (data < 395)   // switch on heater
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+PORTB = 1;
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+The heater will be switched OFF when the ADC output is greater than 400.
+ It will be switched ON only when the output goes below 395.
+ The window of 6 is given to avoid the relay chattering.
+\end_layout
+
+\begin_layout Section
+Timer/Counters
+\end_layout
+
+\begin_layout Standard
+ATmega16 has three counter/timer units.
+ Two of them are of 8 bit size and one is 16 bit.
+ The counter input could be derived from the internal clock or from an external
+ source.
+ The output of the counter is compared with setpoint registers and different
+ types of actions are taken on compare match.
+ The mode of operation of Counter/Timer is programmed by setting the bits
+ in the control registers.
+ These circuits are useful for time interval measurements and generating
+ different kinds of waveforms.
+\end_layout
+
+\begin_layout Subsection
+8 bit Timer/Counter0
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/TCNT0.png
+	lyxscale 50
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+8 bit Timer/Counter0 Schematic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:8-bit-Timer/Counter0"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A block diagram of Timer/Counter0 is shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:8-bit-Timer/Counter0"
+
+\end_inset
+
+.
+ The counter TCNT0 gets its input and control signals from the control logic
+ circuit.
+ The counter output is compared with a Output Compare Register OCR0 and
+ a compare match can trigger different types of actions, like generating
+ a waveform on OC0 (pin 4 of Atmega32, same as PB3).
+ The mode of operation is decided by the register TCCR0, shown below:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/tccr0.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let us start using Timer/Counter0 with the help of the following functions.
+\end_layout
+
+\begin_layout Subsubsection*
+sqwave_tc0(csb, ocrval) 
+\end_layout
+
+\begin_layout Standard
+This function generates a square wave on OC0, whose frequency is decided
+ by the clock select bits (csb) and ocrval.
+ Example 
+\series bold
+sqwave-tc0.c
+\series default
+ listed below demonstrates the usage of this function.
+\end_layout
+
+\begin_layout LyX-Code
+// example : sqwave-tc0.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c"
+\end_layout
+
+\begin_layout LyX-Code
+csb = 2;       // Clock select bits 
+\end_layout
+
+\begin_layout LyX-Code
+ocrval = 99;   // Output Compare register vaule
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+sqwave_tc0(csb, ocrval);
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+The 8MHz system clock is divided by 8 (csb =2, refer to table below) to
+ get a 1MHz input to the counter.
+ The OCR0 register is set to 99.
+ The mode bits are set such that the when the counter value reaches the
+ OCR0, the output is toggled and counter is cleared.
+ This will result in the waveform generator output toggles after every 100
+ clock cycles, giving a 5kHz sqaurewave on pin OC0 (PB3).
+ You may view this on an oscilloscope.
+ If you do not have one, connect a loudspeaker with a 100
+\begin_inset Formula $\Omega$
+\end_inset
+
+ series resistor from PB3 to ground.
+ We have used expEYES for viewing and characterizing the waveforms generated
+ by microHOPE.
+\end_layout
+
+\begin_layout Standard
+Changing ocrval to 199 will give output 2.5kHz on the output.
+ The output frequency is given by the relation
+\begin_inset Formula 
+\[
+f=\frac{f_{clock}}{2.N.(1+OCR0)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $f_{clock}$
+\end_inset
+
+ is the system clock and 
+\begin_inset Formula $N$
+\end_inset
+
+ is the clock division factor, as shown below.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/tc0-clockselect.png
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+pwm_tc0(csb, ocrval) 
+\end_layout
+
+\begin_layout Standard
+This function generates a Pulse Width Modulated waveform on OC0, whose frequency
+ is decided by the clock select bits (csb) and the duty cycle by the ocrval.
+ The output OC0 is cleared when the counter reaches the OCR0 value, the
+ counter proceeds upto 255 and then sets OC0.
+ The program 
+\series bold
+pwm-tc0.c
+\series default
+ generates a 3.9 kHz PWM with 25% dutycycle.
+\end_layout
+
+\begin_layout LyX-Code
+// example : pwm-tc0.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c"
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t  csb = 2;   // Clock select bits uint8_t  
+\end_layout
+
+\begin_layout LyX-Code
+ocrval = 63;       // Output Compare register vaule
+\end_layout
+
+\begin_layout LyX-Code
+int main()
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+  pwm_tc0(csb, ocrval);
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+PWM waveforms are often used for generating analog DC voltages, in 0 to
+ 5 volts range, by filtering it using an RC circuit.
+ It is better to set a higher frequency so that the filter RC value could
+ be small.
+ The frequency can be made 31.25kHz by setting csb=1.
+ The DC level is decided by the value of OCR0, ranging from 0 to 255.
+ Once you learn howto manipulate the control registers, the same thing can
+ be done without calling the library function, as shown below.
+\end_layout
+
+\begin_layout LyX-Code
+// example : pwm-tc0-v2.c
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t csb = 1;     // Clock select bits uint8_t 
+\end_layout
+
+\begin_layout LyX-Code
+ocrval = 254/4;      // Output Compare register vaule
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+// Set TCCR0 in the Fast PWM mode 
+\end_layout
+
+\begin_layout LyX-Code
+TCCR0 =(1 << WGM01) | (1 << WGM00) | (1 << COM01) | csb; 
+\end_layout
+
+\begin_layout LyX-Code
+OCR0 = ocrval; 
+\end_layout
+
+\begin_layout LyX-Code
+TCNT0 = 0; 
+\end_layout
+
+\begin_layout LyX-Code
+DDRB |= (1 << PB3); // Set PB3(OC0) as output 
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+Connect a 1k resistor and 100uF capacitor in series from PB3 to ground,as
+ shown below, and measure the voltage across the capacitor using a voltmeter.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/pwm-rc.png
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+16 bit Timer/Counter1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/tc1-block.png
+	lyxscale 50
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+16 bit Timer/Counter1 schematic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:16-bit-Timer/Counter1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Timer/Counter1 has more features like two Output Compare Registers,
+ Input Capture unit etc., as shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:16-bit-Timer/Counter1"
+
+\end_inset
+
+.
+ The frequency and duty cycle of the waveforms can be controlled better
+ due to the 16 bit size of the counters.
+ Some C functions to use the T/C1 are given below.
+\end_layout
+
+\begin_layout Subsubsection*
+sqwave_tc1(csb, OCRA) 
+\end_layout
+
+\begin_layout LyX-Code
+// example : sqwave-tc1.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c" 
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t  csb = 2;       // 2 is divide by 8 option, 1MHz clock in 
+\end_layout
+
+\begin_layout LyX-Code
+uint16_t  ocra = 50000;  // Output Compare register A
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+sqwave_tc1(csb, ocra);
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+pwm10_tc1(csb, OCRA) 
+\end_layout
+
+\begin_layout Standard
+This function generates a PWM waveform with 10bit resolution.
+ The value of ocra should be from 0 to 1023 to set the duty cycle.
+\end_layout
+
+\begin_layout LyX-Code
+// example : pwm-tc1.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c"
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t  csb = 1;        // 1 => 8MHz clock in 
+\end_layout
+
+\begin_layout LyX-Code
+uint16_t  ocra = 1024/3;  // Duty cycle arounf 33%
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+  { 
+\end_layout
+
+\begin_layout LyX-Code
+  pwm10_tc1(csb, ocra);
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout Subsection
+8 bit Timer/Counter2
+\end_layout
+
+\begin_layout Standard
+This one is similar to Timer/Counter0.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+sqwave_tc2(uint32_t freq) 
+\end_layout
+
+\begin_layout Standard
+This function generates a square wave on OC2.
+ The clock selction bits and the OCR2 value are calculated.
+ It is not possible to set all frequency values using this method.
+ The actual frequency set is returned and displayed on the LCD.
+\end_layout
+
+\begin_layout LyX-Code
+//Example sqwave-tc2.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c" 
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+uint32_t f;
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+f = set_sqr_tc2(1500);
+\end_layout
+
+\begin_layout LyX-Code
+lcd_put_long(f);
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Subsubsection*
+PWM by programming the registers
+\end_layout
+
+\begin_layout Standard
+The example given below demonstrates the usage of T/C2 as a PWM waveform
+ generator, by setting the control register bits.
+ The duty cycle is set to 25% by setting the OCR2 to one fourth of the maximum.
+\end_layout
+
+\begin_layout LyX-Code
+// example : pwm-tc2.c
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t csb = 2;     // Clock select bits uint8_t 
+\end_layout
+
+\begin_layout LyX-Code
+ocrval = 255/4;      // Output Compare register vaule
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+// Set TCCR2 in the Fast PWM mode 
+\end_layout
+
+\begin_layout LyX-Code
+TCCR2 =(1 << WGM21) | (1 << WGM20) | (1 << COM21) | csb; 
+\end_layout
+
+\begin_layout LyX-Code
+OCR2 = ocrval; 
+\end_layout
+
+\begin_layout LyX-Code
+TCNT0 = 0; 
+\end_layout
+
+\begin_layout LyX-Code
+DDRD |= (1 << PD7); // Set PD7(OC2) as output 
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Subsection
+More applications of Timer/Counter
+\end_layout
+
+\begin_layout Standard
+Timer/Counter can be used for timing applications, like measuring the time
+ elapsed between two events or counting the number of pulse inputs during
+ a specified time interval.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+measure_frequency()
+\end_layout
+
+\begin_layout Standard
+This function counts the number of pulses received on the external input
+ of Timer/Counter1 (PB1) during 500 milliseconds to calculates the frequency
+ of the input pulse.
+\end_layout
+
+\begin_layout LyX-Code
+// Example freq-counter.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-utils.c" 
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c" 
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main() 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+uint32_t f; 
+\end_layout
+
+\begin_layout LyX-Code
+set_sqr_tc2(1500);    // Set a square wave on TC2 output (PD7)
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init(); 
+\end_layout
+
+\begin_layout LyX-Code
+while(1)    
+\end_layout
+
+\begin_layout LyX-Code
+   {
+\end_layout
+
+\begin_layout LyX-Code
+   f = measure_freq();
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_clear();
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_put_long(f);
+\end_layout
+
+\begin_layout LyX-Code
+   delay_ms(200);
+\end_layout
+
+\begin_layout LyX-Code
+   }
+\end_layout
+
+\begin_layout LyX-Code
+return 0;
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+Connect PD7 to PB1 and upload the program 
+\series bold
+freq-counter.c
+\series default
+ to read the frequency on the LCD display.
+ You can also connect PB1 to an external pulse source to measure its frequency.
+ The maximum frequency that can be measured is limited by the size of the
+ counter, that is 63535, means we it can handle upto around 126 kHz.
+\end_layout
+
+\begin_layout Subsubsection*
+Time Interval Measurement
+\end_layout
+
+\begin_layout Standard
+The T/C units can be programmed to keep track of time interval between two
+ events.
+ The program 
+\series bold
+r2ftime.c
+\series default
+ measures the rising edge to falling edge time on PB1.
+\end_layout
+
+\begin_layout LyX-Code
+// Example r2ftime.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-utils.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main()
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+set_sqr_tc2(500);    // Test signal on PD7
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+while(1)
+\end_layout
+
+\begin_layout LyX-Code
+   {
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_clear();
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_put_long(r2ftime(PB1));
+\end_layout
+
+\begin_layout LyX-Code
+   delay_ms(100);
+\end_layout
+
+\begin_layout LyX-Code
+   }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout Standard
+The function r2ftime() uses two other functions, called start_timer() and
+ read_timer(), that are explained below.
+\end_layout
+
+\begin_layout Itemize
+void start_timer() : Start the counter with a 1 MHz clock input.
+ An interrupt service routine is activated when the count reached 50000,
+ that increments another interger.
+\end_layout
+
+\begin_layout Itemize
+uint32_t read_timer() : Stops the counter and returns the microseconds elapsed
+ after calling start_timer().
+ There will be an error of 2 to 3 microseconds, that is due to the overhead
+ of the function calls.
+\end_layout
+
+\begin_layout Subsubsection
+Distance Measurement
+\end_layout
+
+\begin_layout Standard
+This technique is used for measuring distance using an ultrasound echo module
+ HY-SRF05
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://www.robot-electronics.co.uk/htm/srf05tech.htm
+\end_layout
+
+\end_inset
+
+, using 
+\series bold
+ultra-sound-echo.c
+\series default
+.
+ The trigger is connected to PB0 and the echo is connected to PB1.
+ The distance is measured by 
+\end_layout
+
+\begin_layout LyX-Code
+// Example ultra-sound-echo.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-utils.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-timer.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+int vsby2 = 17;  // velocity of sound in air = 34 mS/cm
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main()
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+uint32_t x;
+\end_layout
+
+\begin_layout LyX-Code
+DDRB |=  (1 << PB0);  // set PB0 as output
+\end_layout
+
+\begin_layout LyX-Code
+DDRB &= ~(1 << PB1);  // and PB1 as inpt    
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+while(1)
+\end_layout
+
+\begin_layout LyX-Code
+   {
+\end_layout
+
+\begin_layout LyX-Code
+   PORTB |=  (1 << PB0);   // set PB0 HIGH
+\end_layout
+
+\begin_layout LyX-Code
+   delay_100us(1);
+\end_layout
+
+\begin_layout LyX-Code
+   PORTB &=  ~(1 << PB0);  // set PB0 LOW
+\end_layout
+
+\begin_layout LyX-Code
+   delay_100us(5);         // Wait for a while to avoid false triggering
+\end_layout
+
+\begin_layout LyX-Code
+   start_timer();    
+\end_layout
+
+\begin_layout LyX-Code
+   while( (PINB & 2) != 0 ) ;   // Wait for LOW on PB1
+\end_layout
+
+\begin_layout LyX-Code
+   x = read_timer() + 400;
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_clear();
+\end_layout
+
+\begin_layout LyX-Code
+   lcd_put_long(x*vsby2/1000);  // distance in cm
+\end_layout
+
+\begin_layout LyX-Code
+   delay_ms(500);
+\end_layout
+
+\begin_layout LyX-Code
+   }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Section
+Talking to the PC, via USB
+\end_layout
+
+\begin_layout Standard
+On the microHOPE board, the Rx/Tx pins of ATmega32 are connected to the
+ USB to Serial Converter IC.
+ User programs also can use this path to communicate to the PC via the USB
+ port.
+\end_layout
+
+\begin_layout Standard
+The following functions are available for handling the UART
+\end_layout
+
+\begin_layout Enumerate
+uart_init(baud) : 38400 is the maximum baudrate supported.
+ You can use any submultiple of that.
+ We use 1 Stop Bit and the parity is Even.
+\end_layout
+
+\begin_layout Enumerate
+uart_recv_byte() : Waits on the UART receiver for a character and returns
+ it
+\end_layout
+
+\begin_layout Enumerate
+uart_send_byte(c) : Sends one character over the UART transmitter.
+\end_layout
+
+\begin_layout Standard
+On the PC side, we use a simple Python program to communicate to the micro-contr
+oller.
+ The USB to Serial interface will appear as a virtual COM port on the PC,
+ on GNU/Linux systems it can be accessed as /dev/ttyACM0.
+ You need to install Python interpreter and the python-serial module on
+ the PC for this to work.
+ These Python programs should be terminated before using MicroHOPE again
+ to upload programs.
+\end_layout
+
+\begin_layout Subsection
+Send/receive Characters
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+echo.c
+\series default
+ waits for data from the PC, vis the USB to serial converter, increment
+ it by one and sends it back.
+ The received data is also displayed on the local LCD display.
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c" 
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-uart.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main(void) 
+\end_layout
+
+\begin_layout LyX-Code
+{ 
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t data;
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init(); 
+\end_layout
+
+\begin_layout LyX-Code
+uart_init(38400);
+\end_layout
+
+\begin_layout LyX-Code
+for(;;)   
+\end_layout
+
+\begin_layout LyX-Code
+     {
+\end_layout
+
+\begin_layout LyX-Code
+      data = uart_recv_byte();
+\end_layout
+
+\begin_layout LyX-Code
+      lcd_put_char(data);
+\end_layout
+
+\begin_layout LyX-Code
+      uart_send_byte(data);
+\end_layout
+
+\begin_layout LyX-Code
+     }
+\end_layout
+
+\begin_layout LyX-Code
+} 
+\end_layout
+
+\begin_layout Standard
+After uploading this program, open a terminal window, change to the directory
+ named microhope and run the python program 
+\series bold
+echo.py
+\series default
+ listed below, using the commands:
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+If you are using old microHOPE with FT232 IC, edit echo.py to replace ttyACM0
+ with ttyUSB0.
+ The same thing applies to programs like cro.py, pymicro.py etc.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+$ cd microhope
+\end_layout
+
+\begin_layout Standard
+$ python echo.py 
+\end_layout
+
+\begin_layout LyX-Code
+import serial
+\end_layout
+
+\begin_layout LyX-Code
+fd = serial.Serial('/dev/ttyACM0', 38400, stopbits=1, 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+    timeout = 1.0)
+\end_layout
+
+\begin_layout LyX-Code
+while 1:   
+\end_layout
+
+\begin_layout LyX-Code
+    c = raw_input('Enter the character to send: ')
+\end_layout
+
+\begin_layout LyX-Code
+    fd.write(c)	   
+\end_layout
+
+\begin_layout LyX-Code
+    print 'Receiced ', fd.read() 
+\end_layout
+
+\begin_layout Standard
+We can rewrite echo.c without using the library functions.
+ The program 
+\series bold
+echo-v2.c
+\series default
+ listed below id functionally identical to echo.c
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+int main(void)
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+  uint8_t data;
+\end_layout
+
+\begin_layout LyX-Code
+  lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+  //38400 baudrate, 8 databit, 1 stopbit, No parity
+\end_layout
+
+\begin_layout LyX-Code
+  UCSRB = (1 << RXEN) | (1 << TXEN);
+\end_layout
+
+\begin_layout LyX-Code
+  UBRRH = 0;
+\end_layout
+
+\begin_layout LyX-Code
+  UBRRL = 12;            // At 8MHz (12 =>38400)
+\end_layout
+
+\begin_layout LyX-Code
+  UCSRC = (1<<URSEL) | (1<<UCSZ1) | (1<< UCSZ0); 
+\end_layout
+
+\begin_layout LyX-Code
+  for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+     {
+\end_layout
+
+\begin_layout LyX-Code
+     while ( !(UCSRA & (1<<RXC)) );  //wait on Rx
+\end_layout
+
+\begin_layout LyX-Code
+     data = UDR;                     // read a byte
+\end_layout
+
+\begin_layout LyX-Code
+     lcd_put_char(data);
+\end_layout
+
+\begin_layout LyX-Code
+     while ( !(UCSRA & (1<<UDRE)) ); // Rx Empty ?
+\end_layout
+
+\begin_layout LyX-Code
+     UDR = data;
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Subsection
+Sending ADC data
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+remote-adc.c
+\series default
+, listed below, on receiving a channel number, in 0 to 7 range, reads the
+ corresponding channel and send the data to the PC using the UART, via the
+ USB to Serial converter.
+ Use the Python program 
+\series bold
+remote-adc.py
+\series default
+ on the PC side.
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-uart.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-adc.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main(void)
+\end_layout
+
+\begin_layout LyX-Code
+{
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t chan, low, hi;
+\end_layout
+
+\begin_layout LyX-Code
+uint16_t adcval;
+\end_layout
+
+\begin_layout LyX-Code
+lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+uart_init(38400);
+\end_layout
+
+\begin_layout LyX-Code
+adc_enable();
+\end_layout
+
+\begin_layout LyX-Code
+for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+    {
+\end_layout
+
+\begin_layout LyX-Code
+    data = uart_recv_byte();
+\end_layout
+
+\begin_layout LyX-Code
+    if (chan <= 7)
+\end_layout
+
+\begin_layout LyX-Code
+      {
+\end_layout
+
+\begin_layout LyX-Code
+      adcval = read_adc(chan);
+\end_layout
+
+\begin_layout LyX-Code
+	  lcd_clear();
+\end_layout
+
+\begin_layout LyX-Code
+      lcd_put_int(low);
+\end_layout
+
+\begin_layout LyX-Code
+      low = adcval & 255;
+\end_layout
+
+\begin_layout LyX-Code
+      hi = adcval >> 8;
+\end_layout
+
+\begin_layout LyX-Code
+      uart_send_byte(low);      // send LOW byte
+\end_layout
+
+\begin_layout LyX-Code
+      uart_send_byte(hi);       // send HI byte
+\end_layout
+
+\begin_layout LyX-Code
+      }
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Subsection
+A simple Oscilloscope
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+cro.c
+\series default
+ can waits for a command byte from the PC.
+ On receiving a '1', it digitizes the input at PA0 500 times, with 100 microseco
+nds in between samples, and sends the data to the PC.
+ The program 
+\series bold
+cro.py
+\series default
+ sends the necessary command, receives the data and displays it as shown
+ in the figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Oscilloscope-screen-shot"
+
+\end_inset
+
+.
+ While running cro.py , the PCRST jumper should be open.
+ The C program running on the micro-controller is listed below.
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+#define	READBLOCK  1    // code for readblock is 1
+\end_layout
+
+\begin_layout LyX-Code
+#define NS			500  // upto1800 for ATmega32
+\end_layout
+
+\begin_layout LyX-Code
+#define TG			100  // 100 usec between samples
+\end_layout
+
+\begin_layout LyX-Code
+uint8_t tmp8, dbuffer[NS];
+\end_layout
+
+\begin_layout LyX-Code
+uint16_t tmp16;
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main (void)
+\end_layout
+
+\begin_layout LyX-Code
+{   
+\end_layout
+
+\begin_layout LyX-Code
+// UART at 38400 baud, 8, 1stop, No parity
+\end_layout
+
+\begin_layout LyX-Code
+UCSRB = (1 << RXEN) | (1 << TXEN);   UBRRH = 0;
+\end_layout
+
+\begin_layout LyX-Code
+UBRRL = 12;
+\end_layout
+
+\begin_layout LyX-Code
+UCSRC = (1 <<URSEL) | (1 << UCSZ1) | (1 << UCSZ0);
+\end_layout
+
+\begin_layout LyX-Code
+ADCSRA = (1 << ADEN); // Enable ADC
+\end_layout
+
+\begin_layout LyX-Code
+for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+    {
+\end_layout
+
+\begin_layout LyX-Code
+    while ( !(UCSRA & (1<<RXC)) ); // wait for the PC
+\end_layout
+
+\begin_layout LyX-Code
+    if(UDR == 1)  // '1' is our command
+\end_layout
+
+\begin_layout LyX-Code
+      {
+\end_layout
+
+\begin_layout LyX-Code
+      TCCR1B = (1 << CS11);
+\end_layout
+
+\begin_layout LyX-Code
+      ADMUX = (1 << REFS0) |(1 << ADLAR) | 0; 
+\end_layout
+
+\begin_layout LyX-Code
+      ADCSRA |= ADIF; 
+\end_layout
+
+\begin_layout LyX-Code
+      for(tmp16 = 0; tmp16 < NS; ++tmp16) 
+\end_layout
+
+\begin_layout LyX-Code
+        {
+\end_layout
+
+\begin_layout LyX-Code
+        TCNT1 = 1; // counter for TG
+\end_layout
+
+\begin_layout LyX-Code
+        ADCSRA |= (1 << ADSC) | 1; // Start ADC
+\end_layout
+
+\begin_layout LyX-Code
+        while ( !(ADCSRA & (1<<ADIF)) ) ; // Done ?
+\end_layout
+
+\begin_layout LyX-Code
+        dbuffer[tmp16] = ADCH; // Collect Data 
+\end_layout
+
+\begin_layout LyX-Code
+        ADCSRA |= ADIF; // reset ADC DONE flag
+\end_layout
+
+\begin_layout LyX-Code
+	    while(TCNT1L < TG) ; // Wait TG usecs
+\end_layout
+
+\begin_layout LyX-Code
+        }
+\end_layout
+
+\begin_layout LyX-Code
+    while( !(UCSRA & (1 <<UDRE) ) );  // Wait Tx empty
+\end_layout
+
+\begin_layout LyX-Code
+    UDR = 'D';	// Send a 'D' first
+\end_layout
+
+\begin_layout LyX-Code
+    for(tmp16=0; tmp16 < NS; ++tmp16) // Send to the PC
+\end_layout
+
+\begin_layout LyX-Code
+   	{
+\end_layout
+
+\begin_layout LyX-Code
+   	while( !(UCSRA & (1 <<UDRE) ) );
+\end_layout
+
+\begin_layout LyX-Code
+   	UDR = dbuffer[tmp16];
+\end_layout
+
+\begin_layout LyX-Code
+   	}
+\end_layout
+
+\begin_layout LyX-Code
+     }
+\end_layout
+
+\begin_layout LyX-Code
+   }
+\end_layout
+
+\begin_layout LyX-Code
+}
+\end_layout
+
+\begin_layout Standard
+The Python program cro.py 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/mh-cro-screen.png
+	lyxscale 40
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Oscilloscope screen shot
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Oscilloscope-screen-shot"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+import serial, struct, time 
+\end_layout
+
+\begin_layout LyX-Code
+import numpy as np 
+\end_layout
+
+\begin_layout LyX-Code
+import matplotlib.pyplot as plt
+\end_layout
+
+\begin_layout LyX-Code
+NP = 500 
+\end_layout
+
+\begin_layout LyX-Code
+TG = 100
+\end_layout
+
+\begin_layout LyX-Code
+fd=serial.Serial('/dev/ttyACM0',38400,stopbits=1,timeout = 1.0) 
+\end_layout
+
+\begin_layout LyX-Code
+fd.flush()
+\end_layout
+
+\begin_layout LyX-Code
+fig=plt.figure()
+\end_layout
+
+\begin_layout LyX-Code
+plt.axis([0, NP*TG/1000, 0, 5])
+\end_layout
+
+\begin_layout LyX-Code
+plt.ion()
+\end_layout
+
+\begin_layout LyX-Code
+plt.show()
+\end_layout
+
+\begin_layout LyX-Code
+va =ta = range(NP)
+\end_layout
+
+\begin_layout LyX-Code
+line, = plt.plot(ta,va)
+\end_layout
+
+\begin_layout LyX-Code
+while 1:
+\end_layout
+
+\begin_layout LyX-Code
+  fd.write(chr(1)) # command for the uC
+\end_layout
+
+\begin_layout LyX-Code
+  print fd.read()  # This must be a 'D'
+\end_layout
+
+\begin_layout LyX-Code
+  data = fd.read(NP)
+\end_layout
+
+\begin_layout LyX-Code
+  raw = struct.unpack('B'* NP, data) # convert to byte array
+\end_layout
+
+\begin_layout LyX-Code
+  ta = [] 	
+\end_layout
+
+\begin_layout LyX-Code
+  va = [] 	
+\end_layout
+
+\begin_layout LyX-Code
+  for i in range(NP):
+\end_layout
+
+\begin_layout LyX-Code
+    ta.append(0.001 * i * TG) # micro to milliseconds
+\end_layout
+
+\begin_layout LyX-Code
+    va.append(raw[i] * 5.0 / 255)
+\end_layout
+
+\begin_layout LyX-Code
+  line.set_xdata(ta)
+\end_layout
+
+\begin_layout LyX-Code
+  line.set_ydata(va)
+\end_layout
+
+\begin_layout LyX-Code
+  plt.draw()
+\end_layout
+
+\begin_layout LyX-Code
+  time.sleep(0.05)
+\end_layout
+
+\begin_layout Standard
+Modifed versions (cro2.c and cro2.py), that allows changing NS and TG from
+ the Python program are also provided.
+\end_layout
+
+\begin_layout Subsection
+Controlling the uC from Python
+\end_layout
+
+\begin_layout Standard
+This section demonstrates a simple method to read/write the Input/Output
+ ports and other registers of the micro-controller, from the PC using Python.
+ A program called 
+\series bold
+pymicro.c
+\series default
+ runs on the micro-controller.
+ It listens over the serial port for two commands, READB or WRITEB.
+ The first one should be followed by the address of the register to be read.
+ The WRITE command is followed by the register address and the data to be
+ written.
+\end_layout
+
+\begin_layout Standard
+On the PC side, 
+\series bold
+pymicro.py
+\series default
+ handles the communication to the micro-controller.
+ It defines a class named atm32, that contains the communication routines.
+ The example program listed below demonstrates a blinking LED code in Python
+\end_layout
+
+\begin_layout LyX-Code
+import time 
+\end_layout
+
+\begin_layout LyX-Code
+from pymicro import * 
+\end_layout
+
+\begin_layout LyX-Code
+u=atm32()
+\end_layout
+
+\begin_layout LyX-Code
+while 1: 	
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+u.outb(PORTB, 1)
+\end_layout
+
+\begin_layout LyX-Code
+time.sleep(0.5)
+\end_layout
+
+\begin_layout LyX-Code
+u.outb(PORTB, 0)
+\end_layout
+
+\begin_layout LyX-Code
+time.sleep(0.5)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+To run this program, compile and upload pymicro.c, remove the PCRST jumper
+ and then run blink.py.
+ It is very easy to implement some programs, for example a stepper motor
+ controller in Python, using this method.
+\end_layout
+
+\begin_layout Section
+Motor Control, H-bridge
+\end_layout
+
+\begin_layout Standard
+The H-bridge accessory is useful for controlling DC and stepper motors.
+ The circuit schematic is shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:H-bridge-schematic"
+
+\end_inset
+
+.
+ One can use the pymicro.c program to test the H-bridge.
+ After uploading pymicro, you can control the motor control outputs from
+ Python interpreter.
+ For example, connect the board to port A and a DC motor (with series resistor
+ for current limiting) between the H-bridge output pins A and B.
+ The following Python code will rotate the motor.
+\end_layout
+
+\begin_layout LyX-Code
+from pymicro import * 
+\end_layout
+
+\begin_layout LyX-Code
+p=atm32()
+\end_layout
+
+\begin_layout LyX-Code
+p.outb(DDRA,15)
+\end_layout
+
+\begin_layout LyX-Code
+p.outb(PORTA,1) 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/H-bridge.png
+	lyxscale 50
+	width 9cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+H-bridge schematic
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:H-bridge-schematic"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Infrared Receiver
+\end_layout
+
+\begin_layout Standard
+The program ir-recv.c can receive data using the TSOP1738 IR receiver.
+ The output of the chip is connected to bit 2 of PORTD.
+ The received byte is displayed on the LCD display.
+ The receiver tested using TV remote controls.
+ To test ir-recv.c, make the connections as shown below:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/ir-receiver.png
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Press some buttons on the remote control panel.
+ The received number will be displayed on the LCD display of microHOPE.
+ The code ir-recv.c is available on the website.
+ It can be modified to work with the single byte IR transmitted from expEYES.
+\end_layout
+
+\begin_layout Section
+Alternate Serial Port
+\end_layout
+
+\begin_layout Standard
+The Atmega32 controller has only one Serial Port (UART), that is already
+ connected to the USB to Serial converter.
+ In order to communicate to other devices that supports serial communication,
+ we have a simple library that will convert PD2 to a Transmit pin and PD3
+ a Receive pin.
+ The functions available are:
+\end_layout
+
+\begin_layout Itemize
+enable_uart(9600) // baudrates 2400,4800, 9600 & 19200 only
+\end_layout
+
+\begin_layout Itemize
+uart_read() , returns one byte from the receiver buffer, call only when
+ variable ubcount is nonzero
+\end_layout
+
+\begin_layout Itemize
+uart_write(uint8_t) , writes a byte to the transmitter
+\end_layout
+
+\begin_layout Itemize
+disable_uart() , disable the interrupts
+\end_layout
+
+\begin_layout Standard
+The Soft Serial code is tested by connecting PD2 (soft Rx) and PD3 (soft
+ Tx) to a computer through the USB to Serial converter MCP2200 (by using
+ another microHOPE board with the uC removed).
+ The Transmit output from MCP2200 that appears on pin 14 of the uC socket
+ is connected to PD2.
+ Receive input (on pin15) is connected to PD3.
+ The program 
+\series bold
+soft-echo.c,
+\series default
+ listed below, waits for data from the PC and the received data is send
+ to the LCD display and also to the PC via PD3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/soft-serial-test.jpg
+	lyxscale 40
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Connection to PC via soft serial port
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Connection-to-PC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-soft-uart.c"
+\end_layout
+
+\begin_layout LyX-Code
+#include "mh-lcd.c"
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+int main()
+\end_layout
+
+\begin_layout LyX-Code
+  {
+\end_layout
+
+\begin_layout LyX-Code
+  uint8_t x=0;
+\end_layout
+
+\begin_layout LyX-Code
+  lcd_init();
+\end_layout
+
+\begin_layout LyX-Code
+  enable_uart(9600); // 2400,4800, 9600 & 19200 allowed
+\end_layout
+
+\begin_layout LyX-Code
+  for(;;)
+\end_layout
+
+\begin_layout LyX-Code
+	{
+\end_layout
+
+\begin_layout LyX-Code
+    while(!ubcount) ;  // wait for Rx data
+\end_layout
+
+\begin_layout LyX-Code
+    x = uart_read();
+\end_layout
+
+\begin_layout LyX-Code
+    lcd_put_char(x);
+\end_layout
+
+\begin_layout LyX-Code
+    uart_write(x);
+\end_layout
+
+\begin_layout LyX-Code
+    }
+\end_layout
+
+\begin_layout LyX-Code
+  }
+\end_layout
+
+\begin_layout Standard
+The Python echo.py is used on the PC side.
+ The device name is shown as /dev/ttyACM1, assuming that /dev/ttyACM0 is
+ already taken by the microhope board used for program development.
+\end_layout
+
+\begin_layout LyX-Code
+import serial
+\end_layout
+
+\begin_layout LyX-Code
+fd = serial.Serial('/dev/ttyACM1', 9600, stopbits=1, 
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+    timeout = 1.0)
+\end_layout
+
+\begin_layout LyX-Code
+while 1:   
+\end_layout
+
+\begin_layout LyX-Code
+    c = raw_input('Enter the character to send: ')
+\end_layout
+
+\begin_layout LyX-Code
+    fd.write(c)	   
+\end_layout
+
+\begin_layout LyX-Code
+    print 'Receiced ', fd.read() 
+\end_layout
+
+\begin_layout Standard
+Even though this code has been tested, it seems to be having severe limitations.
+ Receiver cannot handle data coming a high rates, require at least 2 to
+ 3 milliseconds gap between bytes.
+\end_layout
+
+\begin_layout Chapter
+Coding in Assembly Language
+\end_layout
+
+\begin_layout Standard
+Main objective of this chapter is to learn the architecture of the micro-control
+ler rather than developing large programs.
+ Some examples justifying coding in assembly for better performance will
+ be demonstrated.
+ One concern with assembly or machine language coding is that the work is
+ specific to the architecture of the selected device.
+ The approach will be to examine the architecture in a generic manner and
+ provide some example programs that are more or less common to any kind
+ of processors.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://sourceware.org/binutils/docs/as/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/avr-architecture.png
+	lyxscale 40
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A block diagram of Micro-controller
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: uC-block-diagram"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Major components of a micro-controller are shown in figure
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: uC-block-diagram"
+
+\end_inset
+
+.
+ After powering up (or Reset) the Program Counter in initialized to zero,
+ so that it points to the beginning of the Program Memory.
+ The instruction stored at that location is brought to the Instruction Decoder
+ and executed.
+ This could be operations like; moving data between the Working Registers
+ and RAM, performing some arithmetic and logical operations, changing the
+ content of the program counter, etc.
+ Writing to the Special Function Registers control the Input/Output pins
+ and also the operation of peripheral devices like ADC, Timer/Counter etc.
+ The popular family of micro-controllers like 8051, AVR and PIC follows
+ the same architechture, even though the details may differ.
+ Understanding them from a generic point of view makes switching from one
+ type of device to another easier.
+\end_layout
+
+\begin_layout Standard
+To program in assembly language, we need to have some understanding about
+ the Instruction Set, the Registers and the memory configuration of the
+ micro-controller.
+ We also need to know the syntax supported by the assembler we use, there
+ is usually small differences between various assemblers.
+ Since we are using Atmega32, belonging to the AVR family, and the GNU assember
+ for AVR, further discussions will be restricted to them.
+\end_layout
+
+\begin_layout Section
+Format of an Assembler Program
+\end_layout
+
+\begin_layout Standard
+A single line of code may have a
+\end_layout
+
+\begin_layout Itemize
+Label: , always terminated by a colon
+\end_layout
+
+\begin_layout Itemize
+The instruction
+\end_layout
+
+\begin_layout Itemize
+The operands (could be 0, 1 or 2 of them)
+\end_layout
+
+\begin_layout Itemize
+A comment starting with a semicolon
+\end_layout
+
+\begin_layout LyX-Code
+lab1: INC  R1  ;increment the content of Register r1
+\end_layout
+
+\begin_layout Standard
+The instruction and operand is not case sensitive but the labels are case
+ sensitive, Lab1 is not the same as lab1.
+ A complete program is shown below.
+\end_layout
+
+\begin_layout LyX-Code
+;first.s , example assembler program, for avr-gcc.
+\end_layout
+
+\begin_layout LyX-Code
+work = 1
+\end_layout
+
+\begin_layout LyX-Code
+  .equ DDRB, 0x37  ; memory mapped addresses
+\end_layout
+
+\begin_layout LyX-Code
+  .equ PORTB, 0x38 ; of DDRB and PORTB
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  .section .data ; the data section
+\end_layout
+
+\begin_layout LyX-Code
+var1:
+\end_layout
+
+\begin_layout LyX-Code
+  .byte 15  ; global variable var1
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text  ; The code section
+\end_layout
+
+\begin_layout LyX-Code
+  .global __do_copy_data  ; initialize variables 
+\end_layout
+
+\begin_layout LyX-Code
+  .global __do_clear_bss  ; and setup stack 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  .global main ; declare label main as global
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  lds work, var1  ; load var1 to R1
+\end_layout
+
+\begin_layout LyX-Code
+  sts DDRB, work  ; PB0 as output
+\end_layout
+
+\begin_layout LyX-Code
+  sts PORTB, work ; set  PB0  HIGH
+\end_layout
+
+\begin_layout LyX-Code
+  .end       
+\end_layout
+
+\begin_layout Enumerate
+The Working registers (R1 to R31) and the SFRs can be assigned different
+ names, as shown in the beginning.
+\end_layout
+
+\begin_layout Enumerate
+.data, starts a data section, initialized RAM variables.
+\end_layout
+
+\begin_layout Enumerate
+.text, starts a text section, code and ROM constants.
+\end_layout
+
+\begin_layout Enumerate
+.byte, allocates single byte constants.
+\end_layout
+
+\begin_layout Enumerate
+.ascii, allocates a non-terminated string.
+\end_layout
+
+\begin_layout Enumerate
+.asciz, allocates a 
+\backslash
+0-terminated string.
+\end_layout
+
+\begin_layout Enumerate
+.set declares a symbol as a constant expression (identical to .equ)
+\end_layout
+
+\begin_layout Enumerate
+.global, declares a public symbol that is visible to the linker
+\end_layout
+
+\begin_layout Enumerate
+.end, singifies the end of the program
+\end_layout
+
+\begin_layout Standard
+The lines .global __do_copy_data and .global __do_clear_bss will tell the
+ compiler to insert code for initializing variables, which is a must for
+ programs having initialized data.
+ Assembling and uploading first.s will set the 4 LSBs of port B.
+\end_layout
+
+\begin_layout Section
+AVR Architecture
+\end_layout
+
+\begin_layout Standard
+A schematic of the AVR architecture is shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: uC-block-diagram"
+
+\end_inset
+
+.
+ The 32 General Purpose Registers (R1 to R31, 8 bit wide) are also called
+ the Register File.
+ Data is moved between the Registers and the memory.
+ Addressing memory locations above 255 is done by combining two 8bit registers
+ to form a 16 bit register.
+ R26 and R27 combined is the X register, R28 with R29 is the Y register,
+ and R30 with R31 is the Z register.
+ Different types of addressing modes are defined for transferring data between
+ the Registers and the memory locations, mostly the SRAM.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/avr-data-memory-map.png
+	lyxscale 40
+	width 8cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/avr-flash-memory.png
+	lyxscale 40
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+AVR memory maps.(a)Data memory.(b) Program memory
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AVR-memory-maps.(a)Data"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In the AVR data memory space (figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AVR-memory-maps.(a)Data"
+
+\end_inset
+
+), locations 0 to 31 (0x1F)are occupied by the Register File.
+ Generally the assembler refers to them by names R1 to R31, not by the adresses.
+ Location 0x20 to 0x5F (32 to 95) are occupied by the Special Function Registers
+ (SFR), like the Status Register, the Stack Pointer and the control/status
+ registers of the peripherals.
+ The Special Function Registers can also be accessed using the I/O address
+ space ranging from 0 to 0x3F, using IN and OUT insructions.
+ Some of the special function registers are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:AVR-Special-Function"
+
+\end_inset
+
+(b), refer to the Atmega32 data sheet for a complete list.
+ Use the address given inside the parantheses to access them as memory locations.
+ 
+\end_layout
+
+\begin_layout Standard
+The first Register is SREG, the status register that holds the flags resulting
+ from the last executed arithmetic or logical instruction.
+ There are several instructions whose results depend on the status of the
+ bits inside SREG.
+ Availability of SREG as a special function register allows us to examine
+ the status of various flags, after arithmetic and logical operations.
+ Stack Pointer is used as a pointer to the data address space.
+ PUSH and POP instructions are used for moving data between the register
+ file and location specified by the stack pointer.
+\end_layout
+
+\begin_layout Standard
+All the peripherals and the general purpose I/O ports are operated by accessing
+ the corresponding SFRs.
+ We will be using ports A and B to view data written to them using 8 LEDs.
+ The SFRs used often in the example programs are listed below.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I/O Addr.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mem Addr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Function
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DDRA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x1A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x3A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data Direction of Port A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PORTA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x1B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x3B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output to Port A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PINA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input from Port A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DDRB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x17
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x37
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data Direction of Port B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PORTB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Output to Port B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PINB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Input from Port B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SREG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x3F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0x5F
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Status Register
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/avr-spreg1.png
+	lyxscale 50
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+AVR Special Function Registers.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:AVR-Special-Function"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+The Program Memory Space
+\end_layout
+
+\begin_layout Section
+Atmega32 Instruction Set
+\end_layout
+
+\begin_layout Standard
+For a complete list of instructions supported by Atmega32, refer to the
+ data sheet.
+ We will only examine some of them to demonstrate different types of memory
+ addressing and the arithmetic and logical operations.
+\end_layout
+
+\begin_layout Section
+Addressing Modes
+\end_layout
+
+\begin_layout Standard
+The micro-controller spends most of the time transferring data between the
+ Register File, SFRs and the RAM.
+ Let us examine the different modes of addressing the Registers and Memory.
+\end_layout
+
+\begin_layout Subsection
+Register Direct (Single Register)
+\end_layout
+
+\begin_layout Standard
+The contents of the register is read, specified operation is performed on
+ it and the result is written back to the same register.
+ For example
+\end_layout
+
+\begin_layout LyX-Code
+Lab1:  INC  R2   ; increments Register 2 
+\end_layout
+
+\begin_layout Standard
+The line above shows the format a line of code in assembly language.
+ The label field is required only if the program needs to jump to that line.
+ Everything after the semicolon is comment only.
+\end_layout
+
+\begin_layout Subsection
+Register Direct (Two Registers )
+\end_layout
+
+\begin_layout Standard
+The contents of the source and destination registers are read, specified
+ operation is performed and the result is written back to the destination
+ register.
+ The format is to specify the destination first.
+ For example
+\end_layout
+
+\begin_layout LyX-Code
+MOV  R2, R5   ; content of R5 is copied to R2
+\end_layout
+
+\begin_layout LyX-Code
+ADD  R1, R2   ; r1 + r2 stored to r1
+\end_layout
+
+\begin_layout Subsection
+I/O Direct 
+\end_layout
+
+\begin_layout Standard
+These type of instructions are to transfer data between the Registers (r1
+ to r31) and the Special Function Registers, that can also be accessed as
+ I/O ports.
+ The following example demonstrates this.
+ At this point we are writing a complete example program, 
+\series bold
+io-direct.s
+\series default
+ .
+\end_layout
+
+\begin_layout LyX-Code
+    .section .text    ; denotes code section         
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+.global main                           
+\end_layout
+
+\end_deeper
+\begin_layout LyX-Code
+main: 	
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+clr  r1
+\end_layout
+
+\begin_layout LyX-Code
+inc  r1         ; R1 now contains 1
+\end_layout
+
+\begin_layout LyX-Code
+out  0x17, r1   ; using I/O address, DDRB and
+\end_layout
+
+\begin_layout LyX-Code
+out  0x18, r1   ; PORTB.
+ LED should glow
+\end_layout
+
+\begin_layout LyX-Code
+.end
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Executing this program should switch ON the LED connected to the LSB of
+ Port B.
+ Modify the program to remove the INC instruction, assemble and upload it
+ again, the LED should go off.
+ 
+\end_layout
+
+\begin_layout Subsection
+Immediate 
+\end_layout
+
+\begin_layout Standard
+In this mode, data to be transferred from/to any of the Registers, is part
+ of the instruction itself.
+ Registers below r16 cannot be used under this mode.
+\end_layout
+
+\begin_layout LyX-Code
+; 
+\series bold
+immed.s
+\series default
+  , demonstrate Load Immediate mode
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+  .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, 255      ; load r16 with 255
+\end_layout
+
+\begin_layout LyX-Code
+  out 0x17, r16  ; Display content of R16
+\end_layout
+
+\begin_layout LyX-Code
+  out 0x18, r16  ; using LEDs on port B
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+Assembling and running 
+\series bold
+immed.s
+\series default
+ listed above makes all port B bits HIGH, can be viewed using the LED board.
+\end_layout
+
+\begin_layout Subsection
+Data Direct 
+\end_layout
+
+\begin_layout Standard
+In this mode, the address of the memory location containing the data is
+ specified, instead of the data itself.
+ Data could be transferred from the specified location to a register (LDS)
+ or from a register to the memory location (STS).
+ The instruction mnemonics are LDS, for moving data from RAM to Register,
+ and STS for storing Register content to RAM.
+ The example 
+\series bold
+data-direct.s
+\series default
+ demonstrates the usage of LDS and STS instructions.
+ First we use the immediate mode to initialize R17 with some value.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+; data-direct.s,demonstrate data direct mode
+\end_layout
+
+\begin_layout LyX-Code
+DDRB = 0x37 
+\end_layout
+
+\begin_layout LyX-Code
+PORTB = 0x38
+\end_layout
+
+\begin_layout LyX-Code
+   .section .data  
+\end_layout
+
+\begin_layout LyX-Code
+var1:
+\end_layout
+
+\begin_layout LyX-Code
+	
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  ldi  R17, 0xf0      ; set r17 to 11110000b
+\end_layout
+
+\begin_layout LyX-Code
+  sts  var1, r17      ; store r17 to location var1 
+\end_layout
+
+\begin_layout LyX-Code
+  lds  r16, var1      ; content of RAM at var1 to r16
+\end_layout
+
+\begin_layout LyX-Code
+  sts  DDRB, r16      ; store R16 to DDRB & PORTB 
+\end_layout
+
+\begin_layout LyX-Code
+  sts  PORTB, r16     ; using their memory addresses
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+The actual address of the memory location is not known to us, it is decided
+ by the linker.
+ The label 'var1', defined inside the data section is used inside the code.
+ The actual value can be seen from the .lst file generated by the avr-objdumb
+ program.
+ Generated machine language code for the section 'main' is shown below.
+ It can be seen that the label 'var1' is given the RAM address of 0x0060.
+ Also note that the main is at address 0x0000006c in the program address
+ space.
+ Examine the .lst file to have a look at the complete code, including the
+ sections added by the assembler.
+ Moving data from R16 to DDRB and PORTB is done using both the I/O space
+ address and the memory space address.
+ The generated code is smaller in the case of I/O space addressing using
+ the OUT instruction.
+\end_layout
+
+\begin_layout LyX-Code
+0000006c <main>:
+\end_layout
+
+\begin_layout LyX-Code
+  6c:	10 ef       	ldi	r17, 0xF0	
+\end_layout
+
+\begin_layout LyX-Code
+  6e:    10 93 60 00 	sts	0x0060, r17
+\end_layout
+
+\begin_layout LyX-Code
+  72:	00 91 60 00 	lds	r16, 0x0060
+\end_layout
+
+\begin_layout LyX-Code
+  76:	07 bb       	out	0x17, r16	
+\end_layout
+
+\begin_layout LyX-Code
+  78:	08 bb       	out	0x18, r16	
+\end_layout
+
+\begin_layout LyX-Code
+  7a:	00 93 37 00 	sts	0x0037, r16
+\end_layout
+
+\begin_layout LyX-Code
+  7e:	00 93 38 00 	sts	0x0038, r16
+\end_layout
+
+\begin_layout Subsection
+Data Indirect 
+\end_layout
+
+\begin_layout Standard
+In the previous mode, the address of the memory location is part of the
+ instruction word.
+ In Data Indirect mode the address of the memory location is taken from
+ the contents of the X, Y or Z registers.
+ This mode has several variations like pre and post incrementing of the
+ register or adding an offset to it.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+ ; 
+\series bold
+data-indirect.s
+\series default
+, addressing using pointer 
+\end_layout
+
+\begin_layout LyX-Code
+  .section .data    ; data section starts here
+\end_layout
+
+\begin_layout LyX-Code
+var1:
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r17, 0b10101010 ; set r17 to 10101010b
+\end_layout
+
+\begin_layout LyX-Code
+   sts  var1, r17       ; store it to RAM at var1
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r26, lo8(var1)  ; lower byte and
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r27, hi8(var1)  ; higher byte of the address
+\end_layout
+
+\begin_layout LyX-Code
+   ld   r16, X          ; data from where X is pointing to
+\end_layout
+
+\begin_layout LyX-Code
+   out  0x17, r16
+\end_layout
+
+\begin_layout LyX-Code
+   out  0x18, r16
+\end_layout
+
+\begin_layout LyX-Code
+   .end
+\end_layout
+
+\begin_layout Standard
+The operators lo8() and hi8() are provided by the assembler to extract the
+ high and low bytes of the 16bit memory address.
+\end_layout
+
+\begin_layout Section
+Variable Initialization
+\end_layout
+
+\begin_layout Standard
+In the previous examples, we have not initialized the global variable 'var1'
+ inside the program.
+ The example 
+\series bold
+global-init.s
+\series default
+ listed below demonstrates this feature.
+\end_layout
+
+\begin_layout LyX-Code
+; global-init.s, variable initialization
+\end_layout
+
+\begin_layout LyX-Code
+DDRB = 0x37 
+\end_layout
+
+\begin_layout LyX-Code
+PORTB = 0x38
+\end_layout
+
+\begin_layout LyX-Code
+   .section .data  
+\end_layout
+
+\begin_layout LyX-Code
+var1:
+\end_layout
+
+\begin_layout LyX-Code
+   .byte 0xee
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+   .global __do_copy_data ; initialize global variables 
+\end_layout
+
+\begin_layout LyX-Code
+   .global __do_clear_bss ; and setup stack pointer
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  lds  r16, var1      ; content of RAM at var1 to r16
+\end_layout
+
+\begin_layout LyX-Code
+  sts  DDRB, r16      ; store R16 to DDRB & PORTB 
+\end_layout
+
+\begin_layout LyX-Code
+  sts  PORTB, r16     ; using their memory addresses
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+The lines 
+\end_layout
+
+\begin_layout LyX-Code
+.global __do_copy_data ; initialize global variables 
+\end_layout
+
+\begin_layout LyX-Code
+.global __do_clear_bss ; and setup stack pointer
+\end_layout
+
+\begin_layout Standard
+are for initializing variables and setting up the stack, essential for programs
+ with initialized data.
+\end_layout
+
+\begin_layout Section
+Program Flow Control
+\end_layout
+
+\begin_layout Standard
+The programs written so far has an execution flow from beginning to end,
+ without any branching or subroutine calls, generally required in all practical
+ programs.
+ The execution flow can be controlled by CALL and JMP
+\end_layout
+
+\begin_layout Subsection
+Calling a Subroutine
+\end_layout
+
+\begin_layout Standard
+The subroutine call can be relative or direct.
+ For a direct call, the content of the Program Counter is replaced by the
+ operand of the CALL instruction.
+ For an indirect call, the operand is added to the current value of the
+ Program Counter.
+ In both cases the current value of the PC is pushed into the memory location
+ pointed by the Stack Pointer register.
+ The RET instruction, inside the called subroutine, pops the stored PC to
+ resume execution from the called point.
+ Program sub-routine.s listed below demonstrates this feature.
+\end_layout
+
+\begin_layout LyX-Code
+   
+\end_layout
+
+\begin_layout LyX-Code
+  ; 
+\series bold
+sub-routine.s
+\series default
+  , CALL instruction
+\end_layout
+
+\begin_layout LyX-Code
+IO_DDRB = 0x17
+\end_layout
+
+\begin_layout LyX-Code
+IO_PORTB = 0x18
+\end_layout
+
+\begin_layout LyX-Code
+  
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text    ; code section starts
+\end_layout
+
+\begin_layout LyX-Code
+disp:                ; subroutine
+\end_layout
+
+\begin_layout LyX-Code
+   inc r1          
+\end_layout
+
+\begin_layout LyX-Code
+   out  0x18, r1   ; PORTB
+\end_layout
+
+\begin_layout LyX-Code
+   ret
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, 255
+\end_layout
+
+\begin_layout LyX-Code
+   out  0x17, r16   ; DDRB
+\end_layout
+
+\begin_layout LyX-Code
+   clr  r1 
+\end_layout
+
+\begin_layout LyX-Code
+   rcall disp   ; relative call
+\end_layout
+
+\begin_layout LyX-Code
+   ;call disp    ; direct call
+\end_layout
+
+\begin_layout LyX-Code
+   .end
+\end_layout
+
+\begin_layout Standard
+The LED connected to PB0 will light up.
+ Uncomment the CALL DISP and find out the difference in the generated code,
+ from the .lst file.
+ Functionally both are same but relative jump is possible only if the offset
+ is less than 256.
+ 
+\end_layout
+
+\begin_layout Subsection
+Jump instructions
+\end_layout
+
+\begin_layout Standard
+The program counter can be modified to change the flow of execution of the
+ code.
+\end_layout
+
+\begin_layout LyX-Code
+  .section .data    ; data section starts here
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+  .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  ldi  r16, 255
+\end_layout
+
+\begin_layout LyX-Code
+  out  0x17, r16   ; DDRB
+\end_layout
+
+\begin_layout LyX-Code
+  jmp lab1
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, 15 ; load 15 ro r16
+\end_layout
+
+\begin_layout LyX-Code
+lab1:
+\end_layout
+
+\begin_layout LyX-Code
+  out  0x18, r16    ; r16 to PortB
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+Running this code, 
+\series bold
+jump.s
+\series default
+, will put on all the LEDs.
+ Comment the JMP instruction and execute the code again to figure out the
+ difference it is making.
+ Jumps can be conditional also, like:
+\end_layout
+
+\begin_layout LyX-Code
+CPI   R16, 100
+\end_layout
+
+\begin_layout LyX-Code
+BREQ  loop1
+\end_layout
+
+\begin_layout Standard
+The branching will happen only if R16 is equal to 100.
+\end_layout
+
+\begin_layout Subsection
+Interrupt, Call from anywhere
+\end_layout
+
+\begin_layout Standard
+So far we have seen that the execution flow is decided by the program instructio
+ns.
+ There are situations where the uC should respond to external events, stopping
+ the current program temporarily.
+ This is done using Interrupts, that are external signals, either from the
+ I/O pins or from from some of the peripheral devices.
+ On receiving an interrupt signal, the processor stores the current Program
+ Counter to the memory location pointed to by the Stack Pointer and jumps
+ to the corresponding interrupt vector location, as shown in figure .
+ For example, the processor will jump to location 0x0002 (0x0004 if you
+ count them as bytes), if external interrupt pin INT0 is activated, provided
+ the interrupt is enabled by the processor beforehand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/avr-interrupt-table.png
+	lyxscale 40
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Interrupt vectors of Atmega32.
+ Addresses according to a 2byte word arrangement.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Interrupt-vectors-of"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The interrupt vector location is filled with the address of the subroutine
+ handling the interrupt.
+ For the interrupts that are not used by the program, the assembler fills
+ some default values.
+ After executing the Interrupt Service Routine, the program execution resumes
+ at the point where it was interrupted.
+ The program 
+\series bold
+interrpt.s
+\series default
+ listed below shows the usage of interrupts.
+ Connect 8 LEDs to Port B and run the code.
+ Connect PD2 to ground momentarily and watch the LEDs.
+ 
+\end_layout
+
+\begin_layout LyX-Code
+  .section .data    ; data section starts here
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text    ; denotes code section
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  .global __vector_1 ; INT0_vect 
+\end_layout
+
+\begin_layout LyX-Code
+__vector_1:
+\end_layout
+
+\begin_layout LyX-Code
+  inc r1
+\end_layout
+
+\begin_layout LyX-Code
+  out 0x18, r1
+\end_layout
+
+\begin_layout LyX-Code
+  reti
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+  .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+	ldi  r16, 255
+\end_layout
+
+\begin_layout LyX-Code
+	out  0x17, r16   ; DDRB
+\end_layout
+
+\begin_layout LyX-Code
+	out  0x12, r16   ; Port D pullup
+\end_layout
+
+\begin_layout LyX-Code
+	ldi  r16, 0x40   ; enable INT0
+\end_layout
+
+\begin_layout LyX-Code
+	out  0x3b, r16
+\end_layout
+
+\begin_layout LyX-Code
+	clr r1
+\end_layout
+
+\begin_layout LyX-Code
+    sei
+\end_layout
+
+\begin_layout LyX-Code
+loop:
+\end_layout
+
+\begin_layout LyX-Code
+	rjmp loop
+\end_layout
+
+\begin_layout LyX-Code
+	.end
+\end_layout
+
+\begin_layout Section
+Output of the Assembler
+\end_layout
+
+\begin_layout Standard
+We have learned howto write, assemble and execute simple assembler programs.
+ Let us assemble a program with a single instruction, as shown below.
+\end_layout
+
+\begin_layout LyX-Code
+ ; test.s , an single line program 
+\end_layout
+
+\begin_layout LyX-Code
+  .section .data ; data section starts here 
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text ; denotes code section 
+\end_layout
+
+\begin_layout LyX-Code
+  .global main 
+\end_layout
+
+\begin_layout LyX-Code
+main: 
+\end_layout
+
+\begin_layout LyX-Code
+  clr r1
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+The generated machine language output can be examined by looking at the
+ .lst output, shown below, generated by the objdump program.
+ It can be seen that the assembler generates some code that is required
+ for the proper operation of the uC.
+ In the Atmega32 Program memory, the first 80 (50hex) bytes are supposed
+ to be filled with the addresses of the 20 interrupt vectors.
+ It can be seen that, the program jumps to location __ctors_end (54hex).
+ The porcessor status register (0x3F) is cleared and the Stack Pointer is
+ initialized to 0x085F (the last RAM location), before calling our main
+ section.
+ After returning from the main, it jumps to _exit (0x6e), clears the interrupt
+ flag and then enters an infinite loop.
+ That means we need to end the main section with an infinite loop, if our
+ program uses interrupts.
+\end_layout
+
+\begin_layout LyX-Code
+/home/ajith/microhope/ASM/test:     file format elf32-avr
+\end_layout
+
+\begin_layout LyX-Code
+Disassembly of section .text:
+\end_layout
+
+\begin_layout LyX-Code
+00000000 <__vectors>:
+\end_layout
+
+\begin_layout LyX-Code
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+\end_layout
+
+\begin_layout LyX-Code
+   4:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+   8:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+   c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  10:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  14:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  18:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  1c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  20:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  24:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  28:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  2c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  30:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  34:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  38:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  3c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  40:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  44:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  48:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  4c:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+  50:	0c 94 34 00 	jmp	0x68	; 0x68 <__bad_interrupt>
+\end_layout
+
+\begin_layout LyX-Code
+00000054 <__ctors_end>:
+\end_layout
+
+\begin_layout LyX-Code
+  54:	11 24       	eor	r1, r1
+\end_layout
+
+\begin_layout LyX-Code
+  56:	1f be       	out	0x3f, r1	; 63
+\end_layout
+
+\begin_layout LyX-Code
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+\end_layout
+
+\begin_layout LyX-Code
+  5a:	d8 e0       	ldi	r29, 0x08	; 8
+\end_layout
+
+\begin_layout LyX-Code
+  5c:	de bf       	out	0x3e, r29	; 62
+\end_layout
+
+\begin_layout LyX-Code
+  5e:	cd bf       	out	0x3d, r28	; 61
+\end_layout
+
+\begin_layout LyX-Code
+  60:	0e 94 36 00 	call	0x6c	; 0x6c <main>
+\end_layout
+
+\begin_layout LyX-Code
+  64:	0c 94 3e 00 	jmp	0x7c	; 0x7c <_exit>
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+00000068 <__bad_interrupt>:
+\end_layout
+
+\begin_layout LyX-Code
+  68:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+0000006c <main>:
+\end_layout
+
+\begin_layout LyX-Code
+  6c:	88 27       	eor	r16, r16
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+0000006e <_exit>:
+\end_layout
+
+\begin_layout LyX-Code
+  6e:	f8 94       	cli
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+00000070 <__stop_program>:
+\end_layout
+
+\begin_layout LyX-Code
+  70:	ff cf       	rjmp	.-2; 0x70 <__stop_program>
+\end_layout
+
+\begin_layout Section
+Using Pre-processor, .s and .S
+\end_layout
+
+\begin_layout Standard
+The examples described so far used the 
+\series bold
+.s 
+\series default
+extension for the filenames.
+ The program 
+\series bold
+square-wave-tc0.s
+\series default
+ listed below generates a 15.93 kHz square wave on PB3.
+\end_layout
+
+\begin_layout LyX-Code
+TCCR0 = 0x53
+\end_layout
+
+\begin_layout LyX-Code
+WGM01 =  3
+\end_layout
+
+\begin_layout LyX-Code
+COM00 = 4
+\end_layout
+
+\begin_layout LyX-Code
+OCR0 = 0x5C
+\end_layout
+
+\begin_layout LyX-Code
+DDRB = 0x37
+\end_layout
+
+\begin_layout LyX-Code
+PB3 =  3
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text  ;code section
+\end_layout
+
+\begin_layout LyX-Code
+  .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16,  (1 << WGM01) | (1 << COM00) |  1  ;CTC mode
+\end_layout
+
+\begin_layout LyX-Code
+  sts TCCR0 , r16
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, 100   
+\end_layout
+
+\begin_layout LyX-Code
+  sts OCR0, r16
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, (1 <<  PB3)
+\end_layout
+
+\begin_layout LyX-Code
+  sts DDRB, r16
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+The addresses of the Special Function Registers and the various bits inside
+ them are defined inside the program (first 6 lines).
+ Instead of entering them like this, we can use the corresponding include
+ file.
+ We need to use the 
+\series bold
+.S
+\series default
+ file extension to tell avr-gcc to call the assembler with the suitable
+ pre-processor options.
+ The same program re-written with .S extension
+\series bold
+, square-wave-tc0.S
+\series default
+, is listed below.
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+  .section .text
+\end_layout
+
+\begin_layout LyX-Code
+  .global main 
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16,(1 << WGM01) | (1 << COM00) | 1 ; CTC mode
+\end_layout
+
+\begin_layout LyX-Code
+  sts TCCR0 , r16
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, 250
+\end_layout
+
+\begin_layout LyX-Code
+  sts OCR0, r16
+\end_layout
+
+\begin_layout LyX-Code
+  ldi r16, (1 << PB3)
+\end_layout
+
+\begin_layout LyX-Code
+  sts DDRB, r16
+\end_layout
+
+\begin_layout LyX-Code
+  .end
+\end_layout
+
+\begin_layout Standard
+The second method is advisable if you plan to develop larger assembler programs
+ for practical applications.
+\end_layout
+
+\begin_layout Section
+Example Programs
+\end_layout
+
+\begin_layout Standard
+The programs described below performs better than their C counterparts.
+ 
+\end_layout
+
+\begin_layout Subsection
+R2R DAC on Port B
+\end_layout
+
+\begin_layout Standard
+A R2R network, as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:R2R-DAC-on"
+
+\end_inset
+
+(a), is connected to port B.
+ The program writes the content of R1 to port B in an infinite loop.
+ R1 ia incremented every time and after reaching 255, it will become 0,
+ resulting in a ramp at the output of the R-2R network, figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:R2R-DAC-on"
+
+\end_inset
+
+(b).
+ The frequency of the ramp generated is around 8 kHz.
+\end_layout
+
+\begin_layout LyX-Code
+; program 
+\series bold
+ramp-on-R2RDAC.S
+\series default
+ , generates ramp on Port B
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text  
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+   ldi r16, 255
+\end_layout
+
+\begin_layout LyX-Code
+   sts DDRB, r16 ; all bits of DDRB set
+\end_layout
+
+\begin_layout LyX-Code
+loop:
+\end_layout
+
+\begin_layout LyX-Code
+   inc r1  
+\end_layout
+
+\begin_layout LyX-Code
+   sts PORTB, r1   ; R1 to PORTB.
+ LEDs 
+\end_layout
+
+\begin_layout LyX-Code
+   rjmp loop
+\end_layout
+
+\begin_layout LyX-Code
+   .end
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/r2r-dac.png
+	lyxscale 30
+	width 8cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/ramp-screenshop.png
+	lyxscale 40
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+R2R DAC on port B (a) schematic (b) output waveform
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:R2R-DAC-on"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sine wave Generator
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+sine-wave.S
+\series default
+ listed below uses Timer/Counter 0 to trigger an interrupt when the counter
+ reaches the set point register OCR0.
+ Register X is pointed to a sine table stored in SRAM.
+ On an interrupt the value from sine table, pointed to by X, is written
+ to Port B where the R-2R DAC is connected.
+ Register R22 is used for reseting the pointer after 32 increments.
+ The R-2R DAC on port B generates the DC values, that makes the sine wave.
+\end_layout
+
+\begin_layout LyX-Code
+#include <avr/io.h>
+\end_layout
+
+\begin_layout LyX-Code
+   .section .data
+\end_layout
+
+\begin_layout LyX-Code
+   .global stab
+\end_layout
+
+\begin_layout LyX-Code
+stab:	; sine table
+\end_layout
+
+\begin_layout LyX-Code
+   .byte 128,150,171,191,209,223,234,240,242,240,234,
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+	223,209,191,171,150,128,105,84,64,46,32,21,
+\backslash
+
+\end_layout
+
+\begin_layout LyX-Code
+    15,13,15,21,32,46,64,84,105,127
+\end_layout
+
+\begin_layout LyX-Code
+   .section .text   ; code section
+\end_layout
+
+\begin_layout LyX-Code
+   .global __do_copy_data
+\end_layout
+
+\begin_layout LyX-Code
+   .global __do_clear_bss
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+   .global  TIMER0_COMP_vect
+\end_layout
+
+\begin_layout LyX-Code
+TIMER0_COMP_vect:     ; ISR
+\end_layout
+
+\begin_layout LyX-Code
+   ld   r24, X+	; load from table, increment
+\end_layout
+
+\begin_layout LyX-Code
+   sts  PORTB, r24 ; write it to PORTB
+\end_layout
+
+\begin_layout LyX-Code
+   inc  r22 ; increment r22
+\end_layout
+
+\begin_layout LyX-Code
+   CPSE r20,r22	; reached the end ?
+\end_layout
+
+\begin_layout LyX-Code
+   reti	        ; Skip if equal 
+\end_layout
+
+\begin_layout LyX-Code
+   clr  r22		; ready for next round
+\end_layout
+
+\begin_layout LyX-Code
+   subi r26,32 	; set X to table start
+\end_layout
+
+\begin_layout LyX-Code
+   reti
+\end_layout
+
+\begin_layout LyX-Code
+   
+\end_layout
+
+\begin_layout LyX-Code
+   .global main
+\end_layout
+
+\begin_layout LyX-Code
+main:
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, 255
+\end_layout
+
+\begin_layout LyX-Code
+   sts  DDRB, r16
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, (1 << WGM01) |  1  ; TCCR0 to CTC mode
+\end_layout
+
+\begin_layout LyX-Code
+   sts  TCCR0 , r16
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, 50   ; Set point reg to 50       
+\end_layout
+
+\begin_layout LyX-Code
+   sts  OCR0, r16
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, (1 << OCIE0)  ; set TC0 compare interrupt enable
+\end_layout
+
+\begin_layout LyX-Code
+   sts  TIMSK, r16
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r16, (1 << OCF0)   ; interrupt enable bit
+\end_layout
+
+\begin_layout LyX-Code
+   sts  TIFR, r16 
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  XL, lo8(stab)  ; point X to the sine table
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  XH, hi8(stab)
+\end_layout
+
+\begin_layout LyX-Code
+   clr  r22  ; R22 will keep track of the  location in table
+\end_layout
+
+\begin_layout LyX-Code
+   ldi  r20,32  ; Store size of the table in R20
+\end_layout
+
+\begin_layout LyX-Code
+   sei
+\end_layout
+
+\begin_layout LyX-Code
+loop:
+\end_layout
+
+\begin_layout LyX-Code
+   rjmp loop   ; infinite loop
+\end_layout
+
+\begin_layout LyX-Code
+   .end
+\end_layout
+
+\begin_layout Chapter
+Programming details
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Programming-details"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+MicroHOPE does program loading through the Rx/Tx pins of the UART, with
+ the help of the pre-loaded boot loader program.
+ The boot loader code is first loaded using the In-System Programming (ISP)
+ feature of the uC, implemented using the Serial Peripheral Interface (SPI)
+ interface of the micro-controller.
+ Both the methods are explained below.
+\end_layout
+
+\begin_layout Section
+Compile and Upload, using bootloader
+\end_layout
+
+\begin_layout Standard
+Even though the IDE does the job, it is a good idea to learn about the programs
+ used behind the seen, to compile and upload the code.
+ The software packages used are:
+\end_layout
+
+\begin_layout Itemize
+avr-gcc : To compile the C program, also require the C library avr-libc
+\end_layout
+
+\begin_layout Itemize
+avr-objcopy : To generate the HEX file
+\end_layout
+
+\begin_layout Itemize
+avrdude : To upload the Hex file
+\end_layout
+
+\begin_layout Standard
+These packages are available under GNU/Linux.
+ For Debian/Ubuntu distributions they can be installed from the repository
+ using the commands:
+\end_layout
+
+\begin_layout LyX-Code
+# apt-get install avr-libc
+\end_layout
+
+\begin_layout LyX-Code
+# apt-get install avrdude
+\end_layout
+
+\begin_layout LyX-Code
+# chmod u+s avrdude
+\end_layout
+
+\begin_layout Standard
+Insatlling avr-libc, automatically installs gcc-avr and other required packages.
+ The last command will enable non-root users to use avrdude.
+ The installed programs can be invoked from the command line.
+ Use a text editor to create your source program, for example 
+\series bold
+blink.c
+\series default
+, and compile it using:
+\end_layout
+
+\begin_layout LyX-Code
+$ avr-gcc  -Wall -O2 -mmcu=atmega32 -o blink blink.c
+\end_layout
+
+\begin_layout Standard
+We have asked the compiler to print all the warnings, optimize to level
+ 2, generate code for atmega32.
+ The executable output stored in blink and input taken from blink.c.
+ The executable file is converted into Intel Hex format using the following
+ command:
+\end_layout
+
+\begin_layout LyX-Code
+$ avr-objcopy -j .text -j .data -O ihex blink blink.hex
+\end_layout
+
+\begin_layout Standard
+The Hex file is now ready for upload.
+ This can be done using the command:
+\end_layout
+
+\begin_layout LyX-Code
+$ 
+\size footnotesize
+avrdude -b 19200 -P /dev/ttyACM0 -pm32 -c stk500v1 -U flash:w:blink.hex
+\end_layout
+
+\begin_layout Standard
+We have specified a baudrate of 19200, the output device is /dev/ttyACM0,
+ m32 processor and the transfer protocol stk500v1.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+CDC ACM Device
+\end_layout
+
+\begin_layout Standard
+The PC is connected to the uC through the USB to Serial Converter IC, MCP2200.
+ This chip implements the Communication Device Class (CDC) protocol of USB
+ and is classified as an Abstract Control Model (ACM) device.
+ It apprears as a virtual COM port to the application program.
+ They get the device names /dev/ttyACM0, /dev/ttyACM1 etc.
+ in the order in which they are plugged in.
+ Remember to close the application programs before disconnecting the device,
+ otherwise it will get higher numbers when connected again.
+\end_layout
+
+\begin_layout Subsection
+Batch files
+\end_layout
+
+\begin_layout Standard
+Since a lot of command line arguments are required to specify the compiler,
+ linker and loader options, it is convenient to put them in small batch
+ files or shell scripts.
+ These files can be found inside the 
+\series bold
+microhope
+\series default
+ directory, once the package is installed.
+ The compilation of C code and generation of Intel Hex format file for uploading
+ is done by 
+\series bold
+compile-mega32.sh
+\series default
+, listed below.
+ 
+\end_layout
+
+\begin_layout Quote
+$ avr-gcc  -Wall -O2 -mmcu=atmega32 -Wl,-Map,$1.map -o $1 $1.c 
+\end_layout
+
+\begin_layout Quote
+$ avr-objcopy -j .text -j .data -O ihex $1 $1.hex 
+\end_layout
+
+\begin_layout Quote
+$ avr-objdump -S $1 > $1.lst 
+\end_layout
+
+\begin_layout Standard
+For example, to compile a program named 'hello.c', it should be invoked from
+ the command line as;
+\end_layout
+
+\begin_layout LyX-Code
+$./compile-mega32.sh hello
+\end_layout
+
+\begin_layout Standard
+The .c extension should not be specified.
+ The script also generates the linker MAP file and a listing file, that
+ may be used for examining the generated output.
+\end_layout
+
+\begin_layout Standard
+Under GNU/Linux, microhope on the USB port will appear as file '/dev/ttyACM0'
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+For the old model of microhope using FT232 IC, this will be /dev/ttyUSB0
+\end_layout
+
+\end_inset
+
+ and program uploading is done by 
+\series bold
+mh-upload.sh
+\series default
+, listed below
+\end_layout
+
+\begin_layout LyX-Code
+$ avrdude -b 19200 -P /dev/ttyACM0 -pm32 -c stk500v1 -U flash:w:$1.hex 
+\end_layout
+
+\begin_layout Standard
+To upload hello.hex, use the command
+\end_layout
+
+\begin_layout LyX-Code
+$./mh-upload hello
+\end_layout
+
+\begin_layout Subsection*
+Running from DOS prompt
+\end_layout
+
+\begin_layout Standard
+Use a text editor like notepad to edit the source program and save it with
+ a .c extension.
+ The commands for compilation and uploading are:
+\end_layout
+
+\begin_layout LyX-Code
+C:
+\backslash
+> avr-gcc  -Wall -O2 -mmcu=atmega32 -o blink blink.c
+\end_layout
+
+\begin_layout LyX-Code
+C:
+\backslash
+> avr-objcopy -j .text -j .data -O ihex blink blink.hex
+\end_layout
+
+\begin_layout LyX-Code
+C:
+\backslash
+> avrdude -b 19200 -P COMxx -pm32 -c stk500v1 -U flash:w:blink.hex
+\end_layout
+
+\begin_layout Standard
+Where COMxx is the virtual com port number assigned by Windows.
+ We have found it very difficult due to the arbitrary numbering of the COM
+ ports.
+\end_layout
+
+\begin_layout Section
+Serial Loading of Program memory
+\end_layout
+
+\begin_layout Standard
+Most of the uCs have the In-System Programming (ISP) feature, implemented
+ using three pins, Serial ClocK (SCK), Master-In–Slave-Out (MISO) and Master-Out
+–Slave- In (MOSI).
+ All types of memory on the micro-controller can be accessed using the SCK,
+ MISO and MOSI pins, while holding the RESET pin LOW.
+ These pins, along with ground, are available on the 5 pin header J7 on
+ the microHOPE board.
+ For details, refer to the circuit schematic shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Circuit-schematic-of"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The SPI pins can be accessed by connecting to the Parallel port of the PC,
+ using a cable as shown is figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:PC-Parallel-port"
+
+\end_inset
+
+.
+ We can also use In-System Programmers that can be connected to the USB
+ port of the PC.
+ We are using an ISP called the USBASP, that is open hardware.
+ 
+\end_layout
+
+\begin_layout Standard
+The microHOPE IDE can upload programs using the USBASP programmer
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/minimum_circuit.eps
+	width 6cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/prog_cable.jpg
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+PC Parallel port cable for Serial loading of program memory.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:PC-Parallel-port"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pics/usbasp.png
+	width 5cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename pics/usbasp-plugin.jpg
+	lyxscale 30
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+USBASP programmer.(a) block diagram (b) with MicroHOPE
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:USBASP-programmer.(a)-block"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Software
+\end_layout
+
+\begin_layout Standard
+The program 
+\series bold
+avrdude
+\series default
+ can be used for programming the micro-controller by using Parallal port
+ or the USBASP programmer.
+ The commands to use, as root user, are:
+\end_layout
+
+\begin_layout LyX-Code
+# avrdude -c dapa -patmega32 -U flash:w:blink.hex
+\end_layout
+
+\begin_layout LyX-Code
+# avrdude -c usbasp -patmega32 -U flash:w:blink.hex
+\end_layout
+
+\begin_layout Standard
+The -c option is used for specifying the programmer to be used.
+ The commands should be given from a terminal, after changing to the directory
+ 'microhope', where all the data files are kept.
+\end_layout
+
+\begin_layout Subsubsection*
+Setting up the Boot Loader
+\end_layout
+
+\begin_layout Standard
+We can use one of these methods for uploading the bootloader program of
+ microHOPE.
+ The commands for uploading the hex file and setting the fuses, using the
+ parallel port cable, are:
+\end_layout
+
+\begin_layout Quote
+avrdude -c dapa -patmega32 -U flash:w:ATmegaBOOT_168_atmega32.hex 
+\end_layout
+
+\begin_layout Quote
+avrdude -c dapa -patmega32 -U lfuse:w:0xef:m -U hfuse:w:0xda:m 
+\end_layout
+
+\begin_layout Standard
+If you are using USBASP, use:
+\end_layout
+
+\begin_layout Quote
+avrdude -B10 -c usbasp -patmega32 -U flash:w:ATmegaBOOT_168_atmega32.hex
+ 
+\end_layout
+
+\begin_layout Quote
+avrdude -B10 -c usbasp -patmega32 -U lfuse:w:0xef:m -U hfuse:w:0xda:m 
+\end_layout
+
+\begin_layout Standard
+For more details refer to the microhope section of the website expeyes.in
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Latest version of this document can be downloaded from expeyes.in/microhope.
+ This product is from the PHOENIX project of IUAC, New Delhi, with contributions
+ from the academic community.
+\end_layout
+
+\begin_layout LyX-Code
+People involved in development and testing:
+\end_layout
+
+\begin_layout LyX-Code
+\align left
+Ajith Kumar B P
+\end_layout
+
+\begin_layout LyX-Code
+\align left
+V V V Satyanarayana
+\end_layout
+
+\begin_layout LyX-Code
+Ambar Chatterjee
+\end_layout
+
+\begin_layout LyX-Code
+Jithin B P
+\end_layout
+
+\begin_layout LyX-Code
+Georges Khaznadar
+\end_layout
+
+\begin_layout LyX-Code
+Jeffrey Antony
+\end_layout
+
+\begin_layout LyX-Code
+Kishore T
+\end_layout
+
+\begin_layout LyX-Code
+Pramode C E
+\end_layout
+
+\begin_layout LyX-Code
+Arun Jayan
+\end_layout
+
+\begin_layout LyX-Code
+Akshay M
+\end_layout
+
+\end_body
+\end_document
