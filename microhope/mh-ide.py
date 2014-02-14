@@ -16,7 +16,7 @@ device   = ''            # User should choose this from the list
 mcu = 'atmega32'		 # mcu  
 
 file_opt = {'defaultextension':'.c', 'initialdir':'~/microhope',\
-		'filetypes': [('C files', '.c'),('asm files', '.S'), ('text files', '.txt'),('All files', '.*')]}
+		'filetypes': [('All files', '.*'),('C files', '.c'),('asm files', '.s'), ('text files', '.txt')]}
 
 def show(s, col='blue'):
 	Res.config(text =s, fg=col)
@@ -73,7 +73,7 @@ def Assemble():
 		return
 	saveFile()
 	fname = filename.split(".")[0]
-	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s.S' %(mcu,fname,fname)
+	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s.s' %(mcu,fname,fname)
 	res = commands.getstatusoutput(cmd)
 	if res[0] != 0:
 		show('Assembler Error','red')
@@ -94,10 +94,10 @@ def Compile():
 		return
 	saveFile()
 	fname = filename.split(".")[0]
-	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s.c' %(mcu,fname,fname)
+	cmd = 'avr-gcc -Wall -O2 -mmcu=%s -o %s %s' %(mcu,fname,filename)
 	res = commands.getstatusoutput(cmd)
 	if res[0] != 0:
-		show('Compilation Error','red')
+		show('Compile/Assemble Error','red')
 		mw.insert(END, res[1])
 		return
 	cmd = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname,fname)
@@ -108,7 +108,7 @@ def Compile():
 	res = commands.getstatusoutput(cmd)
 
 	mw.insert(END, res[1])
-	show('Compilation Done')
+	show('Done, generated HEX file')
 
 def pulseRTS(dev):
 	import serial, time
@@ -154,7 +154,7 @@ def set_device(d):
 	device = d
 	show_status()
 		   
-def select_device(event):
+def select_device():
 	cmd = "ls /dev/ttyUSB*"         # search for MCP2200 type
 	res = commands.getstatusoutput(cmd)   # get the device name, mostly on USB0
 	devs = []
@@ -170,13 +170,14 @@ def select_device(event):
 		return
 	popup = Menu(root, tearoff=0)
 	for k in devs:
-		popup.add_command(label=k , command= lambda dev=k :set_device(dev))
+		popup.add_command(label=k , command= lambda dev=k :set_device(dev), font=('Monospace', 12))
 	# display the popup menu
 	try:
-		popup.tk_popup(event.x_root,event.y_root, 0)
+		print tw.winfo_rooty()
+		popup.tk_popup(tw.winfo_rootx()+130, tw.winfo_rooty()+15, 0)
 	finally:
-		popup.grab_release()
-
+		popup.grab_release()	   
+			   
 root = Tk()
 root.minsize(width=500,height=200)
                    
@@ -190,14 +191,14 @@ filemenu.add_command(label="Save", command=saveFile, accelerator="Ctrl+s")
 filemenu.add_command(label="Save As", command=saveAs, accelerator="Ctrl+Shift+S")
 filemenu.add_separator()
 filemenu.add_command(label="Upload using USBASP", command = upload_usbasp)
-
 menubar.add_cascade(label="File", menu=filemenu,font=('Monospace', 12))
 root.config(menu=menubar)
 
-menubar.add_command(label='Assemble', command=Assemble, font=('Monospace', 12))
-menubar.add_command(label='Compile', command=Compile, font=('Monospace', 12))
+#menubar.add_command(label='Assemble', command=Assemble, font=('Monospace', 12))
+X = menubar.add_command(label='Detect-uHOPE', command=select_device, font=('Monospace', 12))
+menubar.add_command(label='Compile/Assemble', command=Compile, font=('Monospace', 12))
 menubar.add_command(label='Upload',  command=Upload, font=('Monospace', 12))
-
+ 
 # Top Frame and scrollable editor text widget inside that
 top = Frame(root)
 top.pack(side=TOP, expand=YES, fill=BOTH)
@@ -206,7 +207,8 @@ sb1.pack(side=RIGHT, fill=BOTH)
 tw = Text(top, height= 22, font=('Monospace', 11), bg='ivory', yscrollcommand=sb1.set)
 tw.pack(expand=YES, fill=BOTH) 
 sb1.config(command=tw.yview)
-tw.bind("<Button-3>", select_device)
+#tw.bind("<Button-3>", select_device)
+
 
 Res = Label(root, fg = 'blue')
 Res.pack(side=TOP, expand=NO, fill=X)
