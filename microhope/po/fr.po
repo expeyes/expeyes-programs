@@ -1,0 +1,617 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Microhope 3.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-03-05 14:20+0100\n"
+"PO-Revision-Date: 2014-03-04 22:55+0100\n"
+"Last-Translator: Georges Khaznadar <georgesk@debian.Org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../uhope.c:40 ../uhope.c:47 ../uhope.c:41 ../uhope.c:43 ../uhope.c:44
+#: ../uhope.c:42
+msgid "Message"
+msgstr "Message"
+
+#: ../uhope.c:65 ../uhope.c:72 ../uhope.c:66 ../uhope.c:68 ../uhope.c:69
+#: ../uhope.c:67
+#, c-format
+msgid "ERROR:%s\n"
+msgstr "ERREUR : %s\n"
+
+#: ../uhope.c:65 ../uhope.c:72 ../uhope.c:66 ../uhope.c:68 ../uhope.c:69
+#: ../uhope.c:67
+#, c-format
+msgid "SUCCESS:%s\n"
+msgstr "SUCCÈS :%s\n"
+
+#: ../uhope.c:69 ../uhope.c:76 ../uhope.c:70 ../uhope.c:72 ../uhope.c:73
+#: ../uhope.c:71
+msgid "...output too big, view truncated"
+msgstr "... sortie trop longue, la vue est tronquée"
+
+#: ../uhope.c:76 ../uhope.c:83 ../uhope.c:77 ../uhope.c:79 ../uhope.c:80
+#: ../uhope.c:78
+#, c-format
+msgid "%s %s was successful"
+msgstr "%s %s a réussi"
+
+#: ../uhope.c:77 ../uhope.c:84 ../uhope.c:78 ../uhope.c:80 ../uhope.c:81
+#: ../uhope.c:79
+#, c-format
+msgid "%s of %s failed"
+msgstr "%s de %s : échec"
+
+#: ../uhope.c:89 ../uhope.c:96 ../uhope.c:90 ../uhope.c:92 ../uhope.c:93
+#: ../uhope.c:91
+msgid "uhope - No device detected"
+msgstr "uhope - matériel non détecté"
+
+#: ../uhope.c:90 ../uhope.c:97 ../uhope.c:91 ../uhope.c:93 ../uhope.c:94
+#: ../uhope.c:92
+msgid "No device detected"
+msgstr "Matériel non détecté"
+
+#: ../uhope.c:94 ../uhope.c:101 ../uhope.c:95 ../uhope.c:97 ../uhope.c:98
+#: ../uhope.c:96
+#, c-format
+msgid "uhope - Device:%s"
+msgstr "uhope - interface : %s"
+
+#: ../uhope.c:95 ../uhope.c:102 ../uhope.c:96 ../uhope.c:98 ../uhope.c:99
+#: ../uhope.c:97
+#, c-format
+msgid "Device:%s"
+msgstr "Interface : %s"
+
+#: ../uhope.c:128 ../uhope.c:135 ../uhope.c:129 ../uhope.c:131 ../uhope.c:132
+#: ../uhope.c:130
+msgid "No device detected!"
+msgstr "Matériel non détecté !"
+
+#: ../uhope.c:131 ../uhope.c:138 ../uhope.c:132 ../uhope.c:134 ../uhope.c:135
+#: ../uhope.c:133
+#, c-format
+msgid "Device detected: %s"
+msgstr "Matériel détecté à %s"
+
+#: ../uhope.c:138 ../uhope.c:145 ../uhope.c:139 ../uhope.c:141 ../uhope.c:142
+#: ../uhope.c:140
+msgid "Select Microhope device"
+msgstr "Choisir le matériel Microhope"
+
+#: ../uhope.c:144 ../uhope.c:151 ../uhope.c:145 ../uhope.c:147 ../uhope.c:148
+#: ../uhope.c:146
+msgid ""
+"Multiple devices.\n"
+"Please select Microhope from the list:"
+msgstr ""
+"Plusieurs matériels.\n"
+"Veuillez choisir Microhope depuis la liste :"
+
+#: ../uhope.c:167 ../uhope.c:174 ../uhope.c:168 ../uhope.c:170 ../uhope.c:171
+#: ../uhope.c:169
+msgid "ERROR: No file loaded!"
+msgstr "ERREUR : pas de fichier ouvert !"
+
+#: ../uhope.c:170 ../uhope.c:177 ../uhope.c:171 ../uhope.c:173 ../uhope.c:174
+#: ../uhope.c:172
+msgid "ERROR: No hex file. Compile first!"
+msgstr "ERREUR : pas de fichier hex. Compilez d'abord !"
+
+#: ../uhope.c:172 ../uhope.c:179 ../uhope.c:173 ../uhope.c:175 ../uhope.c:176
+#: ../uhope.c:174
+msgid "ERROR: Please Detect Hardware first!"
+msgstr "ERREUR : Veuillez détecter le matériel d'abord !"
+
+#: ../uhope.c:176 ../uhope.c:861 ../uhope.c:183 ../uhope.c:868 ../uhope.c:867
+#: ../uhope.c:869 ../uhope.c:862 ../uhope.c:895 ../uhope.c:864 ../uhope.c:863
+#: ../uhope.c:177 ../uhope.c:179 ../uhope.c:866 ../uhope.c:180 ../uhope.c:178
+#: ../uhope.c:865 ../uhope.c:872
+msgid "Upload"
+msgstr "Charger"
+
+#: ../uhope.c:189 ../uhope.c:196 ../uhope.c:190 ../uhope.c:192 ../uhope.c:193
+#: ../uhope.c:191
+msgid "Open File"
+msgstr "Ouvrir le fichier"
+
+#: ../uhope.c:193 ../uhope.c:255 ../uhope.c:200 ../uhope.c:262 ../uhope.c:194
+#: ../uhope.c:256 ../uhope.c:196 ../uhope.c:258 ../uhope.c:197 ../uhope.c:259
+#: ../uhope.c:195 ../uhope.c:257
+msgid "C source (*.c)"
+msgstr "source C (*.c)"
+
+#: ../uhope.c:195 ../uhope.c:257 ../uhope.c:202 ../uhope.c:264 ../uhope.c:196
+#: ../uhope.c:258 ../uhope.c:198 ../uhope.c:260 ../uhope.c:199 ../uhope.c:261
+#: ../uhope.c:197 ../uhope.c:259
+msgid "Asm (*.S,*.s)"
+msgstr "Asm (*.S,*.s)"
+
+#: ../uhope.c:198 ../uhope.c:260 ../uhope.c:205 ../uhope.c:267 ../uhope.c:199
+#: ../uhope.c:261 ../uhope.c:201 ../uhope.c:263 ../uhope.c:202 ../uhope.c:264
+#: ../uhope.c:200 ../uhope.c:262
+msgid "Text (*.txt)"
+msgstr "Texte (*.txt)"
+
+#: ../uhope.c:200 ../uhope.c:207 ../uhope.c:201 ../uhope.c:203 ../uhope.c:204
+#: ../uhope.c:202
+msgid "Obj Dump (*.lst)"
+msgstr "Obj Dump (*.lst)"
+
+#: ../uhope.c:202 ../uhope.c:262 ../uhope.c:209 ../uhope.c:269 ../uhope.c:203
+#: ../uhope.c:263 ../uhope.c:205 ../uhope.c:265 ../uhope.c:206 ../uhope.c:266
+#: ../uhope.c:204 ../uhope.c:264
+msgid "All types (*.*)"
+msgstr "Tous les types (*.*)"
+
+#: ../uhope.c:234 ../uhope.c:266 ../uhope.c:286 ../uhope.c:300 ../uhope.c:241
+#: ../uhope.c:273 ../uhope.c:293 ../uhope.c:307 ../uhope.c:235 ../uhope.c:267
+#: ../uhope.c:287 ../uhope.c:301 ../uhope.c:237 ../uhope.c:269 ../uhope.c:289
+#: ../uhope.c:303 ../uhope.c:238 ../uhope.c:270 ../uhope.c:290 ../uhope.c:304
+#: ../uhope.c:236 ../uhope.c:268 ../uhope.c:288 ../uhope.c:302
+msgid "Untitled"
+msgstr "SansNom"
+
+#: ../uhope.c:274 ../uhope.c:291 ../uhope.c:281 ../uhope.c:298 ../uhope.c:275
+#: ../uhope.c:292 ../uhope.c:277 ../uhope.c:294 ../uhope.c:278 ../uhope.c:295
+#: ../uhope.c:276 ../uhope.c:293
+#, c-format
+msgid "%s saved"
+msgstr "%s enregistré"
+
+#: ../uhope.c:300 ../uhope.c:307 ../uhope.c:301 ../uhope.c:303 ../uhope.c:304
+#: ../uhope.c:302
+msgid "ERROR: No C file loaded!"
+msgstr "ERREUR : fichier C non ouvert !"
+
+#: ../uhope.c:303 ../uhope.c:310 ../uhope.c:304 ../uhope.c:306 ../uhope.c:307
+#: ../uhope.c:305
+msgid "ERROR: The loaded file type is not .c"
+msgstr "ERREUR : le type de fichier ouvert n'est pas .c"
+
+#: ../uhope.c:307 ../uhope.c:310 ../uhope.c:314 ../uhope.c:317 ../uhope.c:308
+#: ../uhope.c:311 ../uhope.c:313 ../uhope.c:309 ../uhope.c:312
+msgid "Compilation"
+msgstr "Compilation"
+
+#: ../uhope.c:320 ../uhope.c:327 ../uhope.c:321 ../uhope.c:323 ../uhope.c:324
+#: ../uhope.c:322
+msgid "ERROR: No assembler file loaded!"
+msgstr "ERREUR : pas de fichier assembleur ouvert !"
+
+#: ../uhope.c:324 ../uhope.c:331 ../uhope.c:325 ../uhope.c:327 ../uhope.c:328
+#: ../uhope.c:326
+msgid "ERROR: The loaded file type is not .S or .s"
+msgstr "ERREUR : le type de fichier ouvert n'est pas .S ni .s"
+
+#: ../uhope.c:328 ../uhope.c:331 ../uhope.c:335 ../uhope.c:338 ../uhope.c:329
+#: ../uhope.c:332 ../uhope.c:334 ../uhope.c:330 ../uhope.c:333
+msgid "Assembly"
+msgstr "Assemblage"
+
+#: ../uhope.c:429 ../uhope.c:486 ../uhope.c:436 ../uhope.c:493 ../uhope.c:430
+#: ../uhope.c:487 ../uhope.c:432 ../uhope.c:489 ../uhope.c:433 ../uhope.c:490
+#: ../uhope.c:431 ../uhope.c:488
+#, c-format
+msgid "%s not found"
+msgstr "%s pas trouvé"
+
+#: ../uhope.c:442 ../uhope.c:499 ../uhope.c:449 ../uhope.c:506 ../uhope.c:443
+#: ../uhope.c:500 ../uhope.c:445 ../uhope.c:502 ../uhope.c:446 ../uhope.c:503
+#: ../uhope.c:444 ../uhope.c:501
+#, c-format
+msgid "%s found after wrap"
+msgstr "%s trouvé après recherche circulaire"
+
+#: ../uhope.c:512 ../uhope.c:538 ../uhope.c:854 ../uhope.c:519 ../uhope.c:545
+#: ../uhope.c:861 ../uhope.c:860 ../uhope.c:862 ../uhope.c:855 ../uhope.c:888
+#: ../uhope.c:857 ../uhope.c:856 ../uhope.c:513 ../uhope.c:539 ../uhope.c:515
+#: ../uhope.c:541 ../uhope.c:859 ../uhope.c:516 ../uhope.c:542 ../uhope.c:514
+#: ../uhope.c:540 ../uhope.c:858 ../uhope.c:865
+msgid "Find"
+msgstr "Trouver"
+
+#: ../uhope.c:523 ../uhope.c:530 ../uhope.c:524 ../uhope.c:526 ../uhope.c:527
+#: ../uhope.c:525
+msgid "Text to Find:"
+msgstr "Texte à chercher :"
+
+#: ../uhope.c:531 ../uhope.c:669 ../uhope.c:538 ../uhope.c:676 ../uhope.c:532
+#: ../uhope.c:670 ../uhope.c:534 ../uhope.c:672 ../uhope.c:535 ../uhope.c:673
+#: ../uhope.c:533 ../uhope.c:671
+msgid "Match case"
+msgstr "Tenir compte de la casse"
+
+#: ../uhope.c:534 ../uhope.c:672 ../uhope.c:541 ../uhope.c:679 ../uhope.c:535
+#: ../uhope.c:673 ../uhope.c:537 ../uhope.c:675 ../uhope.c:538 ../uhope.c:676
+#: ../uhope.c:536 ../uhope.c:674
+msgid "Wrap around"
+msgstr "Recherche circulaire"
+
+#: ../uhope.c:597 ../uhope.c:604 ../uhope.c:598 ../uhope.c:600 ../uhope.c:601
+#: ../uhope.c:599
+#, c-format
+msgid "%s replaced by %s"
+msgstr "%s remplacé par %s"
+
+#: ../uhope.c:622 ../uhope.c:629 ../uhope.c:623 ../uhope.c:625 ../uhope.c:626
+#: ../uhope.c:624
+#, c-format
+msgid "%d replacements made"
+msgstr "%d remplacements faits"
+
+#: ../uhope.c:676 ../uhope.c:855 ../uhope.c:683 ../uhope.c:862 ../uhope.c:861
+#: ../uhope.c:863 ../uhope.c:856 ../uhope.c:889 ../uhope.c:858 ../uhope.c:857
+#: ../uhope.c:677 ../uhope.c:679 ../uhope.c:860 ../uhope.c:680 ../uhope.c:678
+#: ../uhope.c:859 ../uhope.c:866
+msgid "Find Next"
+msgstr "Chercher le suivant"
+
+#: ../uhope.c:679 ../uhope.c:856 ../uhope.c:686 ../uhope.c:863 ../uhope.c:862
+#: ../uhope.c:864 ../uhope.c:857 ../uhope.c:890 ../uhope.c:859 ../uhope.c:858
+#: ../uhope.c:680 ../uhope.c:682 ../uhope.c:861 ../uhope.c:683 ../uhope.c:681
+#: ../uhope.c:860 ../uhope.c:867
+msgid "Replace"
+msgstr "Remplacer"
+
+#: ../uhope.c:682 ../uhope.c:689 ../uhope.c:683 ../uhope.c:685 ../uhope.c:686
+#: ../uhope.c:684
+msgid "Replace All"
+msgstr "Tout remplacer"
+
+#: ../uhope.c:696 ../uhope.c:703 ../uhope.c:697 ../uhope.c:699 ../uhope.c:700
+#: ../uhope.c:698
+msgid ""
+"uhope: A Linux Shell for Microhope\n"
+"\n"
+"To use uhope:\n"
+"   1. Create, Edit and Save C-source (*.c) and Assembler (*.S and *.s) files "
+"just like gedit\n"
+"Sample files and the hardware manual are located in the folder microhope\n"
+"in the same location where uhope is installed\n"
+"   2. Compile C code by clicking Compile or Assembler code by clicking "
+"Assemble\n"
+"   3. You can view the objdump file (*.lst) by opening it in the editor\n"
+"   4. Connect Microhope and wait a minute\n"
+"   5. Click Detect-MH\n"
+"   6. If Microhope is not found, repeat or reconnect Microhope\n"
+"   7. Upload the hex file to Microhope by clicking Upload\n"
+"   8. After first connection, Upload may fail because Microhope is not "
+"ready\n"
+"   9. If Upload fails, click Microhope->Upload again\n"
+msgstr ""
+"uhope: un environnement Linux pour Microhope\n"
+"\n"
+"Pour utiliser uhope :\n"
+"   1. Créer, éditer et enregistrer un fichier source C (*.c) ou assembleur "
+"(*.S et *.s) comme avec gedit\n"
+"Des fichier d'exemple et le manuel pour le matériel sont situés \n"
+"dans le répertoire microhope là où uhope a été installé\n"
+"   2. Compiler le code C en cliquant « Compiler » ou le code assembleur en "
+"cliquant « Assemblage »\n"
+"   3. On peut examiner le fichier objdump (*.lst) en l'ouvrant dans "
+"l'éditeur\n"
+"   4. Connecter Microhope et attendre un moment\n"
+"   5. Cliquer sur Detecter-MH\n"
+"   6. Si Microhope n'est pas trouvé, recommencer ou reconnecter le boîtier\n"
+"   7. Charger le fichier hex vers Microhope en cliquant « Charger »\n"
+"   8. Après la première connexion, « Charger » peut ne pas fonctionner parce "
+"que Microhope n'est pas prêt\n"
+"   9. Si le chargement échoue, cliquer sur Microhope -> Charger à nouveau\n"
+
+#: ../uhope.c:712 ../uhope.c:719 ../uhope.c:713 ../uhope.c:715 ../uhope.c:716
+#: ../uhope.c:714
+msgid "Help"
+msgstr "Aide"
+
+#: ../uhope.c:732 ../uhope.c:739 ../uhope.c:733 ../uhope.c:735 ../uhope.c:736
+#: ../uhope.c:734
+msgid ""
+"uhope: A Linux Shell for Microhope\n"
+"Copyright (C) 2014  A.Chatterjee <DrAmbar@gmail.com>\n"
+"\n"
+"This program is free software: you can redistribute it and/or modify\n"
+"it under the terms of the GNU General Public License as published by\n"
+"the Free Software Foundation, either version 3 of the License, or\n"
+"(at your option) any later version.\n"
+"\n"
+"This program is distributed in the hope that it will be useful,\n"
+"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+"GNU General Public License www.gnu.org/licenses\n"
+"for more details.\n"
+msgstr ""
+"uhope: un environnement Linux pour Microhope\n"
+"Copyright (C) 2014  A.Chatterjee <DrAmbar@gmail.com>\n"
+"\n"
+"Ce programme est un logiciel libre ; vous pouvez le redistribuer et/ou\n"
+"le modifier selon les termes de la licence GNU General Public License,\n"
+"telle que publiée par la Free Software Foundation, soit la version 3\n"
+"de la licence, ou (à votre préférence), toute version ultérieure.\n"
+"\n"
+"Ce programme est distribué dans l'espoir qu'il soit utile,\n"
+"mais SANS AUCUNE GARANTIE ; sans même de garantie implicite\n"
+"d'USAGE MARCHAND ou D'USAGE POSSIBLE POUR UN USAGE PARTICULIER.\n"
+"Voir la licence GNU General Public License www.gnu.org/licenses\n"
+"pour plus de détails.\n"
+
+#: ../uhope.c:746 ../uhope.c:865 ../uhope.c:753 ../uhope.c:872 ../uhope.c:871
+#: ../uhope.c:873 ../uhope.c:866 ../uhope.c:899 ../uhope.c:868 ../uhope.c:867
+#: ../uhope.c:747 ../uhope.c:749 ../uhope.c:870 ../uhope.c:750 ../uhope.c:748
+#: ../uhope.c:869 ../uhope.c:754 ../uhope.c:876
+msgid "About"
+msgstr "À propos"
+
+#: ../uhope.c:767 ../uhope.c:847 ../uhope.c:774 ../uhope.c:854 ../uhope.c:853
+#: ../uhope.c:855 ../uhope.c:848 ../uhope.c:881 ../uhope.c:850 ../uhope.c:849
+#: ../uhope.c:768 ../uhope.c:770 ../uhope.c:852 ../uhope.c:771 ../uhope.c:769
+#: ../uhope.c:851 ../uhope.c:776 ../uhope.c:858
+msgid "Quit"
+msgstr "Quitter"
+
+#: ../uhope.c:767 ../uhope.c:774 ../uhope.c:768 ../uhope.c:770 ../uhope.c:771
+#: ../uhope.c:769 ../uhope.c:776
+msgid "Dont quit"
+msgstr "Ne pas quitter"
+
+#: ../uhope.c:770 ../uhope.c:777 ../uhope.c:771 ../uhope.c:773 ../uhope.c:774
+#: ../uhope.c:772 ../uhope.c:779
+msgid ""
+"\n"
+"There are unsaved changes.\n"
+"Do you really want to quit?\n"
+msgstr ""
+"\n"
+"Il y a des modification non enregistrées.\n"
+"Voulez-vous vraiment quitter ?\n"
+
+#: ../uhope.c:826 ../uhope.c:833 ../uhope.c:827 ../uhope.c:829 ../uhope.c:830
+#: ../uhope.c:828 ../uhope.c:835
+#, c-format
+msgid "%s \t Line:%d Col:%d"
+msgstr "%s \t Lig : %d Col : %d"
+
+#: ../uhope.c:838 ../uhope.c:845 ../uhope.c:839 ../uhope.c:844 ../uhope.c:846
+#: ../uhope.c:872 ../uhope.c:841 ../uhope.c:840 ../uhope.c:843 ../uhope.c:842
+#: ../uhope.c:849
+msgid "_File"
+msgstr "_Fichier"
+
+#: ../uhope.c:839 ../uhope.c:846 ../uhope.c:845 ../uhope.c:840 ../uhope.c:841
+#: ../uhope.c:847 ../uhope.c:873 ../uhope.c:842 ../uhope.c:844 ../uhope.c:843
+#: ../uhope.c:850
+msgid "_Edit"
+msgstr "_Editer"
+
+#: ../uhope.c:840 ../uhope.c:847 ../uhope.c:846 ../uhope.c:848 ../uhope.c:841
+#: ../uhope.c:874 ../uhope.c:843 ../uhope.c:842 ../uhope.c:845 ../uhope.c:844
+#: ../uhope.c:851
+msgid "_Help"
+msgstr "_Aide"
+
+#: ../uhope.c:841 ../uhope.c:848 ../uhope.c:847 ../uhope.c:849 ../uhope.c:842
+#: ../uhope.c:875 ../uhope.c:844 ../uhope.c:843 ../uhope.c:846 ../uhope.c:845
+#: ../uhope.c:852
+msgid "_Microhope"
+msgstr "_Microhope"
+
+#: ../uhope.c:843 ../uhope.c:850 ../uhope.c:849 ../uhope.c:851 ../uhope.c:844
+#: ../uhope.c:877 ../uhope.c:846 ../uhope.c:845 ../uhope.c:848 ../uhope.c:847
+#: ../uhope.c:854
+msgid "_New"
+msgstr "_Nouveau"
+
+#: ../uhope.c:843 ../uhope.c:850 ../uhope.c:849 ../uhope.c:851 ../uhope.c:844
+#: ../uhope.c:877 ../uhope.c:846 ../uhope.c:845 ../uhope.c:848 ../uhope.c:847
+#: ../uhope.c:854
+msgid "New"
+msgstr "Nouveau"
+
+#: ../uhope.c:844 ../uhope.c:851 ../uhope.c:850 ../uhope.c:852 ../uhope.c:845
+#: ../uhope.c:878 ../uhope.c:847 ../uhope.c:846 ../uhope.c:849 ../uhope.c:848
+#: ../uhope.c:855
+msgid "_Open"
+msgstr "_Ouvrir"
+
+#: ../uhope.c:844 ../uhope.c:851 ../uhope.c:850 ../uhope.c:852 ../uhope.c:845
+#: ../uhope.c:878 ../uhope.c:847 ../uhope.c:846 ../uhope.c:849 ../uhope.c:848
+#: ../uhope.c:855
+msgid "Open"
+msgstr "Ouvrir"
+
+#: ../uhope.c:845 ../uhope.c:852 ../uhope.c:851 ../uhope.c:853 ../uhope.c:846
+#: ../uhope.c:879 ../uhope.c:848 ../uhope.c:847 ../uhope.c:850 ../uhope.c:849
+#: ../uhope.c:856
+msgid "_Save"
+msgstr "Engegi_strer"
+
+#: ../uhope.c:845 ../uhope.c:852 ../uhope.c:851 ../uhope.c:853 ../uhope.c:846
+#: ../uhope.c:879 ../uhope.c:848 ../uhope.c:847 ../uhope.c:850 ../uhope.c:849
+#: ../uhope.c:856
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ../uhope.c:846 ../uhope.c:853 ../uhope.c:852 ../uhope.c:854 ../uhope.c:847
+#: ../uhope.c:880 ../uhope.c:849 ../uhope.c:848 ../uhope.c:851 ../uhope.c:850
+#: ../uhope.c:857
+msgid "Save _As"
+msgstr "Enregistrer Sous"
+
+#: ../uhope.c:846 ../uhope.c:853 ../uhope.c:852 ../uhope.c:854 ../uhope.c:847
+#: ../uhope.c:880 ../uhope.c:849 ../uhope.c:848 ../uhope.c:851 ../uhope.c:850
+#: ../uhope.c:857
+msgid "Save As"
+msgstr "Enregistrer Sous"
+
+#: ../uhope.c:847 ../uhope.c:854 ../uhope.c:853 ../uhope.c:855 ../uhope.c:848
+#: ../uhope.c:881 ../uhope.c:850 ../uhope.c:849 ../uhope.c:852 ../uhope.c:851
+#: ../uhope.c:858
+msgid "_Quit"
+msgstr "_Quitter"
+
+#: ../uhope.c:849 ../uhope.c:856 ../uhope.c:855 ../uhope.c:857 ../uhope.c:850
+#: ../uhope.c:883 ../uhope.c:852 ../uhope.c:851 ../uhope.c:854 ../uhope.c:853
+#: ../uhope.c:860
+msgid "_Undo"
+msgstr "_Défaire"
+
+#: ../uhope.c:849 ../uhope.c:856 ../uhope.c:855 ../uhope.c:857 ../uhope.c:850
+#: ../uhope.c:883 ../uhope.c:852 ../uhope.c:851 ../uhope.c:854 ../uhope.c:853
+#: ../uhope.c:860
+msgid "Undo"
+msgstr "Défaire"
+
+#: ../uhope.c:850 ../uhope.c:857 ../uhope.c:856 ../uhope.c:858 ../uhope.c:851
+#: ../uhope.c:884 ../uhope.c:853 ../uhope.c:852 ../uhope.c:855 ../uhope.c:854
+#: ../uhope.c:861
+msgid "Cu_t"
+msgstr "Couper"
+
+#: ../uhope.c:850 ../uhope.c:857 ../uhope.c:856 ../uhope.c:858 ../uhope.c:851
+#: ../uhope.c:884 ../uhope.c:853 ../uhope.c:852 ../uhope.c:855 ../uhope.c:854
+#: ../uhope.c:861
+msgid "Cut"
+msgstr "Couper"
+
+#: ../uhope.c:851 ../uhope.c:858 ../uhope.c:857 ../uhope.c:859 ../uhope.c:852
+#: ../uhope.c:885 ../uhope.c:854 ../uhope.c:853 ../uhope.c:856 ../uhope.c:855
+#: ../uhope.c:862
+msgid "_Copy"
+msgstr "_Copier"
+
+#: ../uhope.c:851 ../uhope.c:858 ../uhope.c:857 ../uhope.c:859 ../uhope.c:852
+#: ../uhope.c:885 ../uhope.c:854 ../uhope.c:853 ../uhope.c:856 ../uhope.c:855
+#: ../uhope.c:862
+msgid "Copy"
+msgstr "Copier"
+
+#: ../uhope.c:852 ../uhope.c:859 ../uhope.c:858 ../uhope.c:860 ../uhope.c:853
+#: ../uhope.c:886 ../uhope.c:855 ../uhope.c:854 ../uhope.c:857 ../uhope.c:856
+#: ../uhope.c:863
+msgid "_Paste"
+msgstr "Coller"
+
+#: ../uhope.c:852 ../uhope.c:859 ../uhope.c:858 ../uhope.c:860 ../uhope.c:853
+#: ../uhope.c:886 ../uhope.c:855 ../uhope.c:854 ../uhope.c:857 ../uhope.c:856
+#: ../uhope.c:863
+msgid "Paste"
+msgstr "Coller"
+
+#: ../uhope.c:853 ../uhope.c:860 ../uhope.c:859 ../uhope.c:861 ../uhope.c:854
+#: ../uhope.c:887 ../uhope.c:856 ../uhope.c:855 ../uhope.c:858 ../uhope.c:857
+#: ../uhope.c:864
+msgid "De_lete"
+msgstr "Supprimer"
+
+#: ../uhope.c:853 ../uhope.c:860 ../uhope.c:859 ../uhope.c:861 ../uhope.c:854
+#: ../uhope.c:887 ../uhope.c:856 ../uhope.c:855 ../uhope.c:858 ../uhope.c:857
+#: ../uhope.c:864
+msgid "Delete"
+msgstr "Supprimer"
+
+#: ../uhope.c:855 ../uhope.c:862 ../uhope.c:861 ../uhope.c:863 ../uhope.c:856
+#: ../uhope.c:889 ../uhope.c:858 ../uhope.c:857 ../uhope.c:860 ../uhope.c:859
+#: ../uhope.c:866
+msgid "Find Ne_xt"
+msgstr "Trouver le suivant"
+
+#: ../uhope.c:856 ../uhope.c:863 ../uhope.c:862 ../uhope.c:864 ../uhope.c:857
+#: ../uhope.c:890 ../uhope.c:859 ../uhope.c:858 ../uhope.c:861 ../uhope.c:860
+#: ../uhope.c:867
+msgid "_Replace"
+msgstr "_Remplacer"
+
+#: ../uhope.c:857 ../uhope.c:864 ../uhope.c:863 ../uhope.c:865 ../uhope.c:858
+#: ../uhope.c:891 ../uhope.c:860 ../uhope.c:859 ../uhope.c:862 ../uhope.c:861
+#: ../uhope.c:868
+msgid "SelectAll"
+msgstr "Tout sélectionner"
+
+#: ../uhope.c:859 ../uhope.c:866 ../uhope.c:865 ../uhope.c:867 ../uhope.c:860
+#: ../uhope.c:893 ../uhope.c:862 ../uhope.c:861 ../uhope.c:864 ../uhope.c:863
+#: ../uhope.c:870
+msgid "_Compile"
+msgstr "_Compiler"
+
+#: ../uhope.c:859 ../uhope.c:866 ../uhope.c:865 ../uhope.c:867 ../uhope.c:860
+#: ../uhope.c:893 ../uhope.c:862 ../uhope.c:861 ../uhope.c:864 ../uhope.c:863
+#: ../uhope.c:870
+msgid "Compile"
+msgstr "Compiler"
+
+#: ../uhope.c:860 ../uhope.c:867 ../uhope.c:866 ../uhope.c:868 ../uhope.c:861
+#: ../uhope.c:894 ../uhope.c:863 ../uhope.c:862 ../uhope.c:865 ../uhope.c:864
+#: ../uhope.c:871
+msgid "_Assemble"
+msgstr "_Assembler"
+
+#: ../uhope.c:860 ../uhope.c:867 ../uhope.c:866 ../uhope.c:868 ../uhope.c:861
+#: ../uhope.c:894 ../uhope.c:863 ../uhope.c:862 ../uhope.c:865 ../uhope.c:864
+#: ../uhope.c:871
+msgid "Assemble"
+msgstr "Assembler"
+
+#: ../uhope.c:861 ../uhope.c:868 ../uhope.c:867 ../uhope.c:869 ../uhope.c:862
+#: ../uhope.c:895 ../uhope.c:864 ../uhope.c:863 ../uhope.c:866 ../uhope.c:865
+#: ../uhope.c:872
+msgid "_Upload"
+msgstr "Charger"
+
+#: ../uhope.c:862 ../uhope.c:869 ../uhope.c:868 ../uhope.c:870 ../uhope.c:863
+#: ../uhope.c:896 ../uhope.c:865 ../uhope.c:864 ../uhope.c:867 ../uhope.c:866
+#: ../uhope.c:873
+msgid "_Detect-MH"
+msgstr "_Détecter-MH"
+
+#: ../uhope.c:862 ../uhope.c:869 ../uhope.c:868 ../uhope.c:870 ../uhope.c:863
+#: ../uhope.c:896 ../uhope.c:865 ../uhope.c:864 ../uhope.c:867 ../uhope.c:866
+#: ../uhope.c:873
+msgid "Detect Microhope"
+msgstr "Détecter Microhope"
+
+#: ../uhope.c:864 ../uhope.c:871 ../uhope.c:870 ../uhope.c:872 ../uhope.c:865
+#: ../uhope.c:898 ../uhope.c:867 ../uhope.c:866 ../uhope.c:869 ../uhope.c:868
+#: ../uhope.c:875
+msgid "HowTo"
+msgstr "Comment faire"
+
+#: ../uhope.c:866 ../uhope.c:873 ../uhope.c:872 ../uhope.c:874 ../uhope.c:867
+#: ../uhope.c:900 ../uhope.c:869 ../uhope.c:868 ../uhope.c:871 ../uhope.c:870
+#: ../uhope.c:877
+msgid "Documentation"
+msgstr "Documentation"
+
+#: ../uhope.c:879 ../uhope.c:886 ../uhope.c:885 ../uhope.c:887 ../uhope.c:913
+#: ../uhope.c:883 ../uhope.c:882 ../uhope.c:884 ../uhope.c:891
+#, c-format
+msgid "Could not create %s."
+msgstr "Impossible de créer %s."
+
+#: ../uhope.c:942 ../uhope.c:946 ../uhope.c:953 ../uhope.c:952 ../uhope.c:954
+#: ../uhope.c:980 ../uhope.c:948 ../uhope.c:947 ../uhope.c:949 ../uhope.c:950
+#: ../uhope.c:951 ../uhope.c:957
+msgid "uhope - A Linux Shell for Microhope"
+msgstr "uhope - un environnement Linux pour Microhope"
+
+#: ../uhope.c:960 ../uhope.c:964 ../uhope.c:971 ../uhope.c:970 ../uhope.c:972
+#: ../uhope.c:1000 ../uhope.c:967 ../uhope.c:966 ../uhope.c:968 ../uhope.c:969
+#: ../uhope.c:976
+msgid "Building menus failed"
+msgstr "Échec à la construction des menus"
+
+#: ../uhope.c:750
+#, fuzzy
+#| msgid "uhope - A Linux Shell for Microhope"
+msgid ""
+"uhope: A Linux Shell for Microhope\n"
+"GRRR\n"
+msgstr "uhope - un environnement Linux pour Microhope"

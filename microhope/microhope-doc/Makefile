@@ -24,7 +24,7 @@ microhope-doc.1: microhope-doc.xml
 	$(XP) $(DB2MAN) $<
 
 microhope-en.pdf: $(PDFS)
-	cp microhope-proofread-gk.pdf $@
+	cp microhope.pdf $@
 
 install: all
 	install -m 644 microhope-en.pdf  $(DESTDIR)
@@ -47,9 +47,11 @@ install: all
 	@echo Done.
 
 clean:
-	rm -f *~ *.aux *.log *.toc *.lof *.tex
+	[ -f ../../keep-expeyes-tex ] || rm -f *.tex
+	rm -f *~ *.aux *.log *.toc *.lof
 
 distclean: clean
-	rm -f $(PDFS) microhope-*.pdf pics/*.eps
+	[ -e ../../keep-expeyes-pdf  ] || rm -f $(PDFS) microhope-*.pdf
+	rm -f pics/*.eps
 
 .PHONY: clean distclean all manpages install

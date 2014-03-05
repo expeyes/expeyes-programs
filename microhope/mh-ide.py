@@ -8,7 +8,7 @@ last edit : 6-Dec-2013
 
 from Tkinter import *
 from tkFileDialog import *
-import commands
+import commands, os.path
    
 # Global variables   
 filename = ''  			 # Currently active file
@@ -30,6 +30,22 @@ def show_status():
 	if device == '': d = 'Right-Click to Select'
 	root.title('MicroHOPE: File->%s : Device-> %s'%(f, d))
 	show('File->%s : Device-> %s'%(f, d))
+
+def check_user_environment():
+	"""
+	Checks whether the user has a ~/microhope directory.
+	If not, opens a dialog to propose its creation.
+	"""
+	microhope_path="~/microhope"
+	if not os.path.isdir(os.path.expanduser(microhope_path)):
+		cmd="create-microhope-env"
+		res=commands.getstatusoutput(cmd)
+		if res[0] != 0:
+			show('Could not create: %s' %microhope_path,'red')
+			mw.insert(END, res[1])
+			return
+	return
+
 
 def newFile():
 	global filename
@@ -222,5 +238,6 @@ mw.pack(side = TOP, expand=YES, fill=BOTH)
 sb2.config(command=mw.yview)
 
 show_status()
+root.after(1, check_user_environment) # schedule an initial check
 root.mainloop()
 
