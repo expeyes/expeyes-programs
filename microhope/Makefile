@@ -13,6 +13,7 @@ install: uhope
 
 clean:
 	rm -f *.o uhope
+	make -C po clean
 
 .PHONY: all install clean
 

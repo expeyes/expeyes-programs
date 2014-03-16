@@ -51,7 +51,7 @@ clean:
 	rm -f *~ *.aux *.log *.toc *.lof
 
 distclean: clean
-	[ -e ../../keep-expeyes-pdf  ] || rm -f $(PDFS) microhope-*.pdf
+	[ -e ../../keep-expeyes-docs  ] || rm -f $(PDFS) microhope-*.pdf
 	rm -f pics/*.eps
 
 .PHONY: clean distclean all manpages install
