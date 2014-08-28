@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expEYES 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 16:35+0100\n"
+"POT-Creation-Date: 2014-03-23 17:12+0100\n"
 "PO-Revision-Date: 2012-07-08 11:35+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "Language-Team: ESPERANTO <eo@li.org>\n"
@@ -597,7 +597,7 @@ msgstr ""
 
 #: ../eyes/alpha.py:158 ../eyes/diode_iv.py:127 ../eyes/freq-response.py:124
 #: ../eyes/interference-sound.py:74 ../eyes/interference-sound.py:145
-#: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:123
+#: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:144
 #: ../eyes-junior/interference-sound.py:141 ../eyes-junior/logger.py:153
 #: ../eyes-junior/pendulum.py:156 ../eyes-junior/pt100.py:205
 #: ../eyes-junior/rodpend.py:126 ../eyes-junior/transistor.py:139
@@ -618,7 +618,7 @@ msgstr ""
 
 #: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:136
 #: ../eyes/induction.py:127 ../eyes-junior/diode_iv.py:129
-#: ../eyes-junior/freq-response.py:135 ../eyes-junior/induction.py:128
+#: ../eyes-junior/freq-response.py:156 ../eyes-junior/induction.py:128
 #: ../eyes-junior/logger.py:157 ../eyes-junior/pendulum.py:162
 #: ../eyes-junior/pt100.py:209 ../eyes-junior/RCcircuit.py:140
 #: ../eyes-junior/RLCdischarge.py:116 ../eyes-junior/RLcircuit.py:129
@@ -664,7 +664,7 @@ msgstr ""
 #: ../eyes-junior/ac-circuit.py:198 ../eyes-junior/amfm.py:89
 #: ../eyes-junior/change-pvs.py:22 ../eyes-junior/croplus.py:710
 #: ../eyes-junior/diode_iv.py:127 ../eyes-junior/driven-pendulum.py:19
-#: ../eyes-junior/freq-response.py:133 ../eyes-junior/induction.py:124
+#: ../eyes-junior/freq-response.py:154 ../eyes-junior/induction.py:124
 #: ../eyes-junior/interference-sound.py:157 ../eyes-junior/logger.py:169
 #: ../eyes-junior/pendulum.py:172 ../eyes-junior/pt100.py:246
 #: ../eyes-junior/RCcircuit.py:131 ../eyes-junior/RLCdischarge.py:112
@@ -909,7 +909,7 @@ msgstr ""
 
 #: ../eyes/diode_iv.py:87 ../eyes/freq-response.py:99 ../eyes/induction.py:96
 #: ../eyes/interference-sound.py:93 ../eyes-junior/diode_iv.py:82
-#: ../eyes-junior/freq-response.py:99 ../eyes-junior/induction.py:98
+#: ../eyes-junior/freq-response.py:120 ../eyes-junior/induction.py:98
 #: ../eyes-junior/interference-sound.py:93 ../eyes-junior/RCcircuit.py:81
 #: ../eyes-junior/RLCdischarge.py:65 ../eyes-junior/RLcircuit.py:83
 #: ../eyes-junior/sound-burst.py:96 ../eyes-junior/transistor.py:107
@@ -931,7 +931,7 @@ msgid "ZENER"
 msgstr ""
 
 #: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:126
-#: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:125
+#: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:146
 #: ../eyes-junior/logger.py:162 ../eyes-junior/pendulum.py:166
 #: ../eyes-junior/pt100.py:231 ../eyes-junior/rodpend.py:132
 #: ../eyes-junior/transistor.py:141 ../eyes/LED_iv.py:144
@@ -943,7 +943,7 @@ msgid "SAVE to"
 msgstr ""
 
 #: ../eyes/diode_iv.py:140 ../eyes/freq-response.py:138
-#: ../eyes-junior/diode_iv.py:131 ../eyes-junior/freq-response.py:137
+#: ../eyes-junior/diode_iv.py:131 ../eyes-junior/freq-response.py:158
 #: ../eyes-junior/transistor.py:152 ../eyes/LED_iv.py:155
 #: ../eyes/phototransistor.py:117 ../eyes/resistor_iv.py:140
 #: ../eyes/transistor.py:150
@@ -1389,42 +1389,45 @@ msgstr ""
 msgid "Fo = %5.0f Hz"
 msgstr ""
 
-#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:82
+#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:88
+#: ../eyes-junior/freq-response.py:103
 msgid "Frequency"
 msgstr ""
 
-#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:83
+#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:89
+#: ../eyes-junior/freq-response.py:104
 msgid "Amplitude"
 msgstr ""
 
-#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:84
+#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:87
+#: ../eyes-junior/freq-response.py:105
 msgid "Frequency response curve"
 msgstr ""
 
 #: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
-#: ../eyes-junior/freq-response.py:118
+#: ../eyes-junior/freq-response.py:139
 msgid "Freq"
 msgstr ""
 
 #: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
-#: ../eyes-junior/freq-response.py:118
+#: ../eyes-junior/freq-response.py:139
 msgid "Amp"
 msgstr ""
 
-#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:131
+#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:152
 msgid "Fmax = "
 msgstr ""
 
-#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:142
+#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:163
 msgid ""
 "Connect Piezo from SQR1 to GND. Microphone to 16,15 & 31. Wire from 13 to 26"
 msgstr ""
 
-#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:145
+#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:166
 msgid "Frequency Response Curve"
 msgstr ""
 
-#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:146
+#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:167
 msgid "Audio Frequency response Curve"
 msgstr ""
 

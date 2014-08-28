@@ -34,6 +34,8 @@ import os
 import commands
 import time
 import serial
+import gettext
+_ = gettext.gettext
 
 class microhope(wx.Frame):
 	def __init__(self,parent,id,title,size):
@@ -46,11 +48,11 @@ class microhope(wx.Frame):
 		self.redo = []
 		self.dname = ''
 		self.fname = ''
-		self.mhdevice = 'Not connected'
-		self.mcu = 'atmega32'
+		self.mhdevice = _('Not connected')
+		self.mcu = _('atmega32')
 		self.isnew = True
 		# Text widget
-		self.SetTitle("uHOPE :: File --> "+"Not selected"+"\t\tDevice -->"+"Not connected")
+		self.SetTitle(_("uHOPE :: File --> ")+_("Not selected")+_("\t\tDevice -->")+_("Not connected"))
 		self.text = wx.TextCtrl(self, 1, style=wx.TE_MULTILINE)
 		self.text.Bind(wx.EVT_TEXT, self.istext_changed, id=1)
 		self.text.Bind(wx.EVT_KEY_DOWN, self.key_down)
@@ -61,34 +63,34 @@ class microhope(wx.Frame):
 		menubar = wx.MenuBar()
 		# file-menu
 		file_menu = wx.Menu()
-		file_menu.Append(10,"&New\tCtrl+N","Create a new Document")
+		file_menu.Append(10,_("&New\tCtrl+N"),_("Create a new Document"))
 		file_menu.AppendSeparator()
-		file_menu.Append(11,"&Open\tCtrl+O","Open a file")
+		file_menu.Append(11,_("&Open\tCtrl+O"),_("Open a file"))
 		examples = wx.Menu()
 		examples.Append(0,"None",kind = wx.ITEM_RADIO)
-		examples.Append(400,"blink.c",'Blinks a LED on PB0',kind = wx.ITEM_RADIO)
-		examples.Append(401,"adc.c",'Reads ADC channel 0 and diplays the result on the LCD',kind = wx.ITEM_RADIO)
-		examples.Append(405,'adc-loop.c','Reads ADC channel 0 and diplays the result on the LCD in loop',kind = wx.ITEM_RADIO)
-		examples.Append(406,"adc-v2.c",'ADC -version 2',kind = wx.ITEM_RADIO)
-		examples.Append(407,"adc-v3.c",'ADC -version 3',kind = wx.ITEM_RADIO)
-		examples.Append(402,"copy.c",'Copies a PORTA and display it on PORTB',kind = wx.ITEM_RADIO)
-		examples.Append(403,"copy2.c",'Copy 2',kind = wx.ITEM_RADIO)
-		examples.Append(404,'copy3.c','Copy 3',kind = wx.ITEM_RADIO)
+		examples.Append(400,"blink.c",_('Blinks a LED on PB0'),kind = wx.ITEM_RADIO)
+		examples.Append(401,"adc.c",_('Reads ADC channel 0 and diplays the result on the LCD'),kind = wx.ITEM_RADIO)
+		examples.Append(405,'adc-loop.c',_('Reads ADC channel 0 and diplays the result on the LCD in loop'),kind = wx.ITEM_RADIO)
+		examples.Append(406,"adc-v2.c",_('ADC -version 2'),kind = wx.ITEM_RADIO)
+		examples.Append(407,"adc-v3.c",_('ADC -version 3'),kind = wx.ITEM_RADIO)
+		examples.Append(402,"copy.c",_('Copies a PORTA and display it on PORTB'),kind = wx.ITEM_RADIO)
+		examples.Append(403,"copy2.c",_('Copy 2'),kind = wx.ITEM_RADIO)
+		examples.Append(404,'copy3.c',_('Copy 3'),kind = wx.ITEM_RADIO)
 		examples.Append(409,"echo.c","echo.c" , kind = wx.ITEM_RADIO)
 		examples.Append(410,"echo-v2.c","echo-v2.c", kind = wx.ITEM_RADIO)
-		examples.Append(413,"pwm-tc0.c","PWM-tc0 version 1",kind = wx.ITEM_RADIO)
-		examples.Append(411,"h-bridge.c","H-Bridge Controlling motor",kind = wx.ITEM_RADIO)
-		examples.Append(414,"pwm-tc0-v2.c","PWM tc0 version 2",kind = wx.ITEM_RADIO)
-		examples.Append(415,"cro.c","To make microHOPE as small CRO",kind = wx.ITEM_RADIO)
-		examples.Append(416,"cro2.c","To make microHOPE as small CRO (version 2)" , kind = wx.ITEM_RADIO)
-		examples.Append(408,'hello.c','Print message in LCD',kind = wx.ITEM_RADIO)
-		examples.Append(412,"hello-blink.c","Blinking messages in LCD",kind = wx.ITEM_RADIO)
-		file_menu.AppendMenu(444,"Examples",examples)
-		file_menu.Append(12,"&Save\tCtrl+S","Save the current file")
-		file_menu.Append(13,"&SaveAs\tShift+Ctrl+S","Save the current file with a different name")
+		examples.Append(413,"pwm-tc0.c",_("PWM-tc0 version 1"),kind = wx.ITEM_RADIO)
+		examples.Append(411,"h-bridge.c",_("H-Bridge Controlling motor"),kind = wx.ITEM_RADIO)
+		examples.Append(414,"pwm-tc0-v2.c",_("PWM tc0 version 2"),kind = wx.ITEM_RADIO)
+		examples.Append(415,"cro.c",_("To make microHOPE as small CRO"),kind = wx.ITEM_RADIO)
+		examples.Append(416,"cro2.c",_("To make microHOPE as small CRO (version 2)") , kind = wx.ITEM_RADIO)
+		examples.Append(408,'hello.c',_('Print message in LCD'),kind = wx.ITEM_RADIO)
+		examples.Append(412,"hello-blink.c",_("Blinking messages in LCD"),kind = wx.ITEM_RADIO)
+		file_menu.AppendMenu(444,_("Examples"),examples)
+		file_menu.Append(12,_("&Save\tCtrl+S"),_("Save the current file"))
+		file_menu.Append(13,_("&SaveAs\tShift+Ctrl+S"),_("Save the current file with a different name"))
 		file_menu.AppendSeparator()
-		file_menu.Append(999,"&Init()\tCtrl+I","Initialize microhope working directory")
-		file_menu.Append(14,"&Exit\tCtrl+Q","Quit the programme")
+		file_menu.Append(999,_("&Init()\tCtrl+I"),_("Initialize microhope working directory"))
+		file_menu.Append(14,_("&Exit\tCtrl+Q"),_("Quit the programme"))
 		self.Bind(wx.EVT_MENU,self.open_echoc,id = 409)
 		self.Bind(wx.EVT_MENU,self.open_hbridgec , id = 411)
 		self.Bind(wx.EVT_MENU,self.open_pwmtc0v1 , id = 413)
@@ -114,15 +116,15 @@ class microhope(wx.Frame):
 		self.Bind(wx.EVT_MENU,self.Quit,id=14)
 		# edit-menu
 		editmenu = wx.Menu()
-		editmenu.Append(15,"&Undo\tCtrl+Z","")
-		editmenu.Append(16,"&Redo\tCtrl+Y","")
+		editmenu.Append(15,_("&Undo\tCtrl+Z"),"")
+		editmenu.Append(16,_("&Redo\tCtrl+Y"),"")
 		editmenu.AppendSeparator()
-		editmenu.Append(17,"&Cut\tCtrl+X","Cut the selection")
-		editmenu.Append(18,"&Copy\tCtrl+C","Copy the selection")
-		editmenu.Append(19,"&Paste\tCtrl+P","Paste the clipboard")
-		editmenu.Append(20,"&Delete","Deleted the selected text")
+		editmenu.Append(17,_("&Cut\tCtrl+X"),_("Cut the selection"))
+		editmenu.Append(18,_("&Copy\tCtrl+C"),_("Copy the selection"))
+		editmenu.Append(19,_("&Paste\tCtrl+P"),_("Paste the clipboard"))
+		editmenu.Append(20,_("&Delete"),_("Deleted the selected text"))
 		editmenu.AppendSeparator()
-		editmenu.Append(21,"&Select All\tCtrl+A","select the entire document")
+		editmenu.Append(21,_("&Select All\tCtrl+A"),_("select the entire document"))
 		self.Bind(wx.EVT_MENU,self.Undo,id=15)
 		self.Bind(wx.EVT_MENU,self.Redo,id=16)
 		self.Bind(wx.EVT_MENU,self.Cut,id=17)
@@ -132,17 +134,17 @@ class microhope(wx.Frame):
 		self.Bind(wx.EVT_MENU,self.Delete,id = 20)
 		#view-menu #
 		viewmenu = wx.Menu()
-		self.statusbaritem = wx.MenuItem(viewmenu, 22,"&Statusbar","Show or hide the statusbar in the current window")
+		self.statusbaritem = wx.MenuItem(viewmenu, 22,_("&Statusbar"),_("Show or hide the statusbar in the current window"))
 		self.statusbaritem.SetCheckable(True)
 		viewmenu.AppendItem(self.statusbaritem)
 		self.statusbaritem.Check()
 		wx.EVT_MENU(self, 22, self.toggle_statusbar)
 		chng_bg_font_color = wx.Menu()
-		chng_bg_font_color.Append(23,"Black on white(default)",kind = wx.ITEM_RADIO)
-		chng_bg_font_color.Append(24,"White on Black",kind = wx.ITEM_RADIO)
-		viewmenu.AppendMenu(25,"Theme",chng_bg_font_color)
+		chng_bg_font_color.Append(23,_("Black on white(default)"),kind = wx.ITEM_RADIO)
+		chng_bg_font_color.Append(24,_("White on Black"),kind = wx.ITEM_RADIO)
+		viewmenu.AppendMenu(25,_("Theme"),chng_bg_font_color)
 		font_size = wx.Menu()
-		font_size.Append(26,"Default",kind = wx.ITEM_RADIO)
+		font_size.Append(26,_("Default"),kind = wx.ITEM_RADIO)
 		font_size.Append(27,"10",kind = wx.ITEM_RADIO)
 		font_size.Append(28,"11",kind = wx.ITEM_RADIO)
 		font_size.Append(29,"12",kind = wx.ITEM_RADIO) 
@@ -154,8 +156,8 @@ class microhope(wx.Frame):
 		font_size.Append(35,"18",kind = wx.ITEM_RADIO)
 		font_size.Append(36,"19",kind = wx.ITEM_RADIO)
 		font_size.Append(37,"20",kind = wx.ITEM_RADIO)
-		font_size.Append(38,"Large",kind = wx.ITEM_RADIO)
-		viewmenu.AppendMenu(39,"Font Size",font_size)
+		font_size.Append(38,_("Large"),kind = wx.ITEM_RADIO)
+		viewmenu.AppendMenu(39,_("Font Size"),font_size)
 		self.Bind(wx.EVT_MENU,self.font_Large, id =38)
 		self.Bind(wx.EVT_MENU,self.fontsize10, id = 27)
 		self.Bind(wx.EVT_MENU,self.fontsize11, id = 28)
@@ -174,30 +176,30 @@ class microhope(wx.Frame):
 		#-_----------------------------------_#
 		#device
 		devise = wx.Menu()
-		devise.Append(90,'Detect Board\tCtrl+B','Detect the hardware')
+		devise.Append(90,_('Detect Board\tCtrl+B'),_('Detect the hardware'))
 		devise.AppendSeparator()
-		devise.Append(52,'Set Bootloader','For setting the mcu by uploading the bootloader')
-		devise.Append(50,'Soft RST','Software RESET')
+		devise.Append(52,_('Set Bootloader'),_('For setting the mcu by uploading the bootloader'))
+		devise.Append(50,_('Soft RST'),_('Software RESET'))
 		self.Bind(wx.EVT_MENU,self.detect, id = 90)
 		self.Bind(wx.EVT_MENU,self.softRST,id = 50)
 		self.Bind(wx.EVT_MENU,self.set_mhbootloader , id = 52)
 		#--------------------------------------#
 		#Build menu
 		build = wx.Menu()
-		build.Append(43,'Compile\tCtrl+K','To Compile the program')
-		build.Append(51,'Assemble\tCtrl+J','To Assemble the program')
+		build.Append(43,_('Compile\tCtrl+K'),_('To Compile the program'))
+		build.Append(51,_('Assemble\tCtrl+J'),_('To Assemble the program'))
 		build.AppendSeparator()
-		build.Append(44,'Uplod\tCtrl+L','To upload the program to mcu')
-		build.Append(53,'Upload via USBASP','Upload program via USBASP')
+		build.Append(44,_('Uplod\tCtrl+L'),_('To upload the program to mcu'))
+		build.Append(53,_('Upload via USBASP'),_('Upload program via USBASP'))
 		self.Bind(wx.EVT_MENU,self.mhcompile,id = 43)
 		self.Bind(wx.EVT_MENU,self.mhupload,id = 44)
 		self.Bind(wx.EVT_MENU,self.mhAssemble , id = 51)
 		self.Bind(wx.EVT_MENU,self.usbasp_uplod , id = 53)
 		#---------------------------------#
 		about = wx.Menu()
-		about.Append(45,"&Help\tShift+Ctrl+H","")
-		about.Append(46,"&About","")
-		about.Append(47,"&Author","")
+		about.Append(45,_("&Help\tShift+Ctrl+H"),"")
+		about.Append(46,_("&About"),"")
+		about.Append(47,_("&Author"),"")
 		self.Bind(wx.EVT_MENU,self.mhhelp,id =45)
 		self.Bind(wx.EVT_MENU,self.About,id = 46)
 		self.Bind(wx.EVT_MENU,self.Author,id= 47)
@@ -216,22 +218,22 @@ class microhope(wx.Frame):
 	        #toolbar
 		toolbar = wx.ToolBar(self, -1, style=wx.TB_HORIZONTAL | wx.NO_BORDER)
 		toolbar.SetBackgroundColour("#f2f1f0")
-		toolbar.AddSimpleTool(140, wx.Image(self.icon_theme+'/document-new.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Create a new document', '')
-		toolbar.AddSimpleTool(141, wx.Image(self.icon_theme+'/document-open.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Open a file', '')
-		toolbar.AddSimpleTool(142,wx.Image(self.icon_theme+'/document-save.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Save the current file', '')
+		toolbar.AddSimpleTool(140, wx.Image(self.icon_theme+'/document-new.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Create a new document'), '')
+		toolbar.AddSimpleTool(141, wx.Image(self.icon_theme+'/document-open.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Open a file'), '')
+		toolbar.AddSimpleTool(142,wx.Image(self.icon_theme+'/document-save.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Save the current file'), '')
 		toolbar.AddSeparator()
-		toolbar.AddSimpleTool(150, wx.Image(self.icon_theme+'/edit-undo.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Undo the last action', '')
-		toolbar.AddSimpleTool(151, wx.Image(self.icon_theme+'/edit-redo.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Redo the last undone action', '')
+		toolbar.AddSimpleTool(150, wx.Image(self.icon_theme+'/edit-undo.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Undo the last action'), '')
+		toolbar.AddSimpleTool(151, wx.Image(self.icon_theme+'/edit-redo.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Redo the last undone action'), '')
 		toolbar.AddSeparator()
-		toolbar.AddSimpleTool(143, wx.Image(self.icon_theme+'/edit-cut.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Cut the selection', '')
-		toolbar.AddSimpleTool(144, wx.Image(self.icon_theme+'/edit-copy.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Copy the selection', '')
-		toolbar.AddSimpleTool(145, wx.Image(self.icon_theme+'/edit-paste.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'Paste the clipboard', '')
+		toolbar.AddSimpleTool(143, wx.Image(self.icon_theme+'/edit-cut.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Cut the selection'), '')
+		toolbar.AddSimpleTool(144, wx.Image(self.icon_theme+'/edit-copy.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Copy the selection'), '')
+		toolbar.AddSimpleTool(145, wx.Image(self.icon_theme+'/edit-paste.png',  wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('Paste the clipboard'), '')
 		toolbar.AddSeparator()
-		toolbar.AddSimpleTool(146,wx.Image(self.icon_theme+'/gnome-run.png', wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'To compile the current programe','')
-		toolbar.AddSimpleTool(147,wx.Image(self.icon_theme+'/gtk-sort-descending.png',wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'To upload the pgm to mh','')
-		toolbar.AddSimpleTool(200,wx.Image(self.path_to_pixmaps+'/hardware.png' ,wx.BITMAP_TYPE_PNG).ConvertToBitmap(), 'To detect microhope hardware','')
+		toolbar.AddSimpleTool(146,wx.Image(self.icon_theme+'/gnome-run.png', wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('To compile the current programe'),'')
+		toolbar.AddSimpleTool(147,wx.Image(self.icon_theme+'/gtk-sort-descending.png',wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('To upload the pgm to mh'),'')
+		toolbar.AddSimpleTool(200,wx.Image(self.path_to_pixmaps+'/hardware.png' ,wx.BITMAP_TYPE_PNG).ConvertToBitmap(), _('To detect microhope hardware'),'')
 		toolbar.AddSeparator()
-		toolbar.AddSimpleTool(148,wx.Image(self.icon_theme+'/help-about.png',wx.BITMAP_TYPE_PNG).ConvertToBitmap(),'Help for microHOPE','')
+		toolbar.AddSimpleTool(148,wx.Image(self.icon_theme+'/help-about.png',wx.BITMAP_TYPE_PNG).ConvertToBitmap(),_('Help for microHOPE'),'')
 		self.Bind(wx.EVT_TOOL, self.Newfile, id=140)
 		self.Bind(wx.EVT_TOOL, self.open_file, id=141)
 		self.Bind(wx.EVT_TOOL, self.save_file, id=142)
@@ -245,34 +247,34 @@ class microhope(wx.Frame):
 		self.Bind(wx.EVT_TOOL,self.Redo, id =151)
 		self.Bind(wx.EVT_TOOL,self.detect , id = 200)
 		#-----------------------------------#
-		menubar.Append(file_menu,"File")
-		menubar.Append(editmenu,"Edit")
-		menubar.Append(viewmenu,"View")
-		menubar.Append(devise,"Device")
-		menubar.Append(build,"Build")
-		menubar.Append(about,"About")
+		menubar.Append(file_menu,_("File"))
+		menubar.Append(editmenu,_("Edit"))
+		menubar.Append(viewmenu,_("View"))
+		menubar.Append(devise,_("Device"))
+		menubar.Append(build,_("Build"))
+		menubar.Append(about,_("About"))
 		self.SetToolBar(toolbar)
 		self.SetMenuBar(menubar)
 		self.Show()
 	def istext_changed(self,event):
 		self.modify = True
 		if self.fname == '':
-			self.SetTitle("uHOPE :: File -->New File.c *"+"\t\tDevice -->"+self.mhdevice)
+			self.SetTitle(_("uHOPE :: File -->New File.c *")+_("\t\tDevice -->")+self.mhdevice)
 		else :
-			self.SetTitle("uHOPE :: File -->"+self.dname+"/"+self.fname+"*"+"\t\tDevice -->"+self.mhdevice)
+			self.SetTitle(_("uHOPE :: File -->")+self.dname+"/"+self.fname+"*"+_("\t\tDevice -->")+self.mhdevice)
 		event.Skip()
 	def key_down(self,event):
 		kycode = event.GetKeyCode()
 		self.undo.append(self.text.GetValue())
 		if len(self.undo) >= 30: self.undo = self.undo[1:]
 		c,l = self.text.PositionToXY(self.text.GetInsertionPoint())
-		stat = "line =%s\t\tcolumn=%s" % (l+1,c+1)
+		stat = _("line ={line}\t\tcolumn={column}").format(line=l+1, column=c+1)
 		self.StatusBar.SetStatusText(stat, number=0)
 		event.Skip()
 	def save_as(self,event):
 		# do not reset self.dirname if not necessary
 		# self.dirname = ''
-		dlg = wx.FileDialog(self,"Choose a file",self.dirname,"","*.*",wx.SAVE)
+		dlg = wx.FileDialog(self,_("Choose a file"),self.dirname,"","*.*",wx.SAVE)
 		
 		if dlg.ShowModal() == wx.ID_OK:
 			self.filename = dlg.GetFilename()
@@ -281,7 +283,7 @@ class microhope(wx.Frame):
 			file_.write(self.text.GetValue().encode('utf8'))
 			file_.close()
 		dlg.Destroy()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.dname = self.dirname
 		self.fname = self.filename
 		self.isnew = False
@@ -292,7 +294,7 @@ class microhope(wx.Frame):
 			#self.show(self.filename)
 			file_ = open(os.path.join(self.dname,self.fname),'w')
 			file_.write(self.text.GetValue().encode("utf8"))
-			self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+			self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 			self.modify = False
 		elif self.isnew == True:
 			 self.save_as(event)
@@ -301,7 +303,7 @@ class microhope(wx.Frame):
 		self.dirname = os.path.expanduser('~/microhope')
 		if not os.path.exists(self.dirname):
 			self.dirname=''
-		dlg = wx.FileDialog(self,"Choose a file",self.dirname,"","*.*",wx.OPEN)
+		dlg = wx.FileDialog(self,_("Choose a file"),self.dirname,"","*.*",wx.OPEN)
 		if dlg.ShowModal() == wx.ID_OK:
 			self.filename = dlg.GetFilename()
 			
@@ -309,7 +311,7 @@ class microhope(wx.Frame):
 			file_ = open(os.path.join(self.dirname,self.filename),'r')
 			self.text.SetValue(file_.read())
 			file_.close()
-			self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+			self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		dlg.Destroy()
 		self.fname = self.filename
 		self.dname = self.dirname
@@ -317,7 +319,7 @@ class microhope(wx.Frame):
 		self.modify = False
 	def Quit(self,event):
 		if self.modify == True:
-			dlg = wx.MessageDialog(self,"Save before exiting ?",'',wx.YES_NO | wx.YES_DEFAULT | wx.CANCEL |  wx.ICON_QUESTION)
+			dlg = wx.MessageDialog(self,_("Save before exiting ?"),'',wx.YES_NO | wx.YES_DEFAULT | wx.CANCEL |  wx.ICON_QUESTION)
 			chk = dlg.ShowModal()
 			if chk == wx.ID_YES:
 				self.save_file(event)
@@ -327,7 +329,7 @@ class microhope(wx.Frame):
 			else:
 				self.Destroy()
 		elif self.modify == False:
-			dlg = wx.MessageDialog(self,"Are you sure ?",'',wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+			dlg = wx.MessageDialog(self,_("Are you sure ?"),'',wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
 			chk = dlg.ShowModal()
 			if chk == wx.ID_YES:
 				self.Destroy()
@@ -349,16 +351,16 @@ class microhope(wx.Frame):
 		self.redo = self.redo[:-1]
 	def Newfile(self,event):
 		if self.modify == True:
-			dlg = wx.MessageDialog(self,"Save before opening New File ?",'',wx.YES_NO | wx.YES_DEFAULT | wx.CANCEL |  wx.ICON_QUESTION)
+			dlg = wx.MessageDialog(self,_("Save before opening New File ?"),'',wx.YES_NO | wx.YES_DEFAULT | wx.CANCEL |  wx.ICON_QUESTION)
 			chk = dlg.ShowModal()
 			if chk == wx.ID_YES:
 				self.save_file(event)
 				dlg.Destroy()
 				# do not reset self.dirname when unnecessary
-				# self.filename,self.dirname = 'New file',''
-				self.filename = 'New file'
+				# self.filename,self.dirname = _('New file'),''
+				self.filename = _('New file')
 				self.text.Clear()
-				self.SetTitle("uHOPE :: File --> "+self.filename+".c\t\tDevice -->"+self.mhdevice)
+				self.SetTitle(_("uHOPE :: File --> ")+self.filename+_(".c\t\tDevice -->")+self.mhdevice)
 				self.dname = self.dirname
 				self.fname = self.filename
 			
@@ -366,18 +368,18 @@ class microhope(wx.Frame):
 				dlg.Destroy()
 			else:
 				# do not reset self.dirname when unnecessary
-				# self.filename,self.dirname = 'New file',''
-				self.filename = 'New file'
+				# self.filename,self.dirname = _('New file'),''
+				self.filename = _('New file')
 				self.text.Clear()
-				self.SetTitle("uHOPE :: File --> "+self.filename+".c\t\tDevice -->"+self.mhdevice)
+				self.SetTitle(_("uHOPE :: File --> ")+self.filename+_(".c\t\tDevice -->")+self.mhdevice)
 				self.fname = self.filename
 				self.dname = self.dirname
 		else :
 			# do not reset self.dirname when unnecessary
-			# self.filename,self.dirname = 'New file',''
-			self.filename = 'New file'
+			# self.filename,self.dirname = _('New file'),''
+			self.filename = _('New file')
 			self.text.Clear()
-			self.SetTitle("uHOPE :: File --> "+self.filename+".c\t\tDevice -->"+self.mhdevice)
+			self.SetTitle(_("uHOPE :: File --> ")+self.filename+_(".c\t\tDevice -->")+self.mhdevice)
 			self.fname = self.filename
 			self.dname = self.dirname
 		self.isnew = True
@@ -429,20 +431,20 @@ class microhope(wx.Frame):
 		self.text.SetBackgroundColour("#220a3e")
 		self.text.SetForegroundColour(wx.WHITE)
 	def show(self,msg):
-		dlg = wx.MessageDialog(self,msg,'uHOPE :: Status',wx.OK|wx.ICON_INFORMATION)
+		dlg = wx.MessageDialog(self,msg,_('uHOPE :: Status'),wx.OK|wx.ICON_INFORMATION)
 		dlg.ShowModal()
 		dlg.Destroy()	
 	def show_err(self,msg):
-		dlg = wx.MessageDialog(self,msg,'uHOPE :: Status',wx.CANCEL|wx.ICON_ERROR)
+		dlg = wx.MessageDialog(self,msg,_('uHOPE :: Status'),wx.CANCEL|wx.ICON_ERROR)
 		dlg.ShowModal()
 		dlg.Destroy()
 	def warning(self,msg):
-		dlg = wx.MessageDialog(self,msg,'uHOPE :: Status',wx.CANCEL|wx.ICON_WARNING)
+		dlg = wx.MessageDialog(self,msg,_('uHOPE :: Status'),wx.CANCEL|wx.ICON_WARNING)
 		dlg.ShowModal()
 		dlg.Destroy()
 	def mhcompile(self,event):
 		if self.fname == '':
-			self.warning('Filename not selected .')
+			self.warning(_('Filename not selected .'))
 			return 
 		self.save_file(event)
 		self.fd = self.dname+"/"+self.fname
@@ -452,19 +454,19 @@ class microhope(wx.Frame):
 		self.result = commands.getstatusoutput(command)
 		
 		if self.result[0] != 0:
-			self.show_err('Compilation Error :\n'+self.result[1])
-			self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+			self.show_err(_('Compilation Error :\n')+self.result[1])
+			self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 			return
 		
 		
 		command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(self.fname_witout_extn,self.fname_witout_extn) 
 		
 		self.result = commands.getstatusoutput(command)
-		self.show('Compilation Done')
-		self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+		self.show(_('Compilation Done'))
+		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 	def mhupload(self,event):
 		if self.mhdevice == '':
-			self.warning('Device not selected\nPlease select a device')
+			self.warning(_('Device not selected\nPlease select a device'))
 			self.devce = []
 			self.command = "ls /dev/ttyUSB*"
 			self.result = commands.getstatusoutput(self.command)
@@ -490,29 +492,29 @@ class microhope(wx.Frame):
 		command= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(self.mhdevice, self.fname_witout_extn)
 		result = commands.getstatusoutput(command)
 		if result[0] != 0:
-			self.warning('Upload Error:\n'+result[1]+'\nTry pressing microHOPE Reset button just before Uploading')
-			self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+			self.warning(_('Upload Error:\n')+result[1]+_('\nTry pressing microHOPE Reset button just before Uploading'))
+			self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 			return
 		else:
-			self.show('Upload Completed\n'+result[1])
-			self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+			self.show(_('Upload Completed\n')+result[1])
+			self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 	def mhhelp(self,event):
-		dlg = wx.MessageDialog(self,"Steps:\n1.Write a program on editor / Open a programe C or Assembler files\n2.Compile it by cliking on compile\n3.You can view the objdump file(*.lst) by opening it in the editoring\n4.Connect microHOPE and wait a minute\n5.Click on Device->Detect Board to detect your board\n6.If microHOPE is not found , repeat or reconnect microHOPE\n7.Upload the hex file to microHOPE (Build->Upload)\n8.If upload fails check microHOPE and upload again\n\nNote: Make sure that microhope folder from /usr/share/microhope/microhope is copied to your home folder .\nIt contains example programes , mh-libs etc.","microHOPE-Help",wx.OK|wx.ICON_INFORMATION)
+		dlg = wx.MessageDialog(self,_("Steps:\n1.Write a program on editor / Open a programe C or Assembler files\n2.Compile it by cliking on compile\n3.You can view the objdump file(*.lst) by opening it in the editoring\n4.Connect microHOPE and wait a minute\n5.Click on Device->Detect Board to detect your board\n6.If microHOPE is not found , repeat or reconnect microHOPE\n7.Upload the hex file to microHOPE (Build->Upload)\n8.If upload fails check microHOPE and upload again\n\nNote: Make sure that microhope folder from /usr/share/microhope/microhope is copied to your home folder .\nIt contains example programes , mh-libs etc."),_("microHOPE-Help"),wx.OK|wx.ICON_INFORMATION)
 		dlg.ShowModal()
 		dlg.Destroy()
 	def Author(self,event):
-		dlg = wx.MessageDialog(self,"Author :Arun Jayan\narun.jayan.j@ieee.org\nGNU USERS NETWORK","Author of IDE",wx.OK|wx.ICON_INFORMATION)
+		dlg = wx.MessageDialog(self,_("Author :Arun Jayan\narun.jayan.j@ieee.org\nGNU USERS NETWORK"),_("Author of IDE"),wx.OK|wx.ICON_INFORMATION)
 		dlg.ShowModal()
 		dlg.Destroy()
 	def mh_status(self,f,d):
 		if f == '':
-			f = 'Not selected'
+			f = _('Not selected')
 		if d == '':
-			d = 'Not selected'
-		msg = 'uHOPE :: File -> %s & Device -> %s'%(f,d)
+			d = _('Not selected')
+		msg = _('uHOPE :: File -> {file} & Device -> {dev}').format(file=f, dev=d)
 		self.show(msg)
 	def About(self,event):
-		abt = wx.MessageDialog(self,"microHOPE is a developement Board using Atmega32\nCreated by :Dr.Ajith Kumar B P\n\t\t\t\t IUAC,New Delhi\n\t\t\t\t http://www.expeyes.in/microhope","About uHOPE",wx.OK|wx.ICON_INFORMATION)
+		abt = wx.MessageDialog(self,_("microHOPE is a developement Board using Atmega32\nCreated by :Dr.Ajith Kumar B P\n\t\t\t\t IUAC,New Delhi\n\t\t\t\t http://www.expeyes.in/microhope"),_("About uHOPE"),wx.OK|wx.ICON_INFORMATION)
 		abt.ShowModal()
 		abt.Destroy()
 	def pulseRTS(self,dev):
@@ -528,7 +530,7 @@ class microhope(wx.Frame):
 				self.pulseRTS('/dev/ttyUSB0')	
 	def mhAssemble(self,event):
 		if self.fname == '':
-			self.show('Filename not selected .')
+			self.show(_('Filename not selected .'))
 			return 
 		self.save_file(event)
 		self.fd = self.dname+"/"+self.fname
@@ -538,8 +540,8 @@ class microhope(wx.Frame):
 		self.result = commands.getstatusoutput(command)
 		
 		if self.result[0] != 0:
-			self.show('Assembler Error :\n'+self.result[1])
-			self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+			self.show(_('Assembler Error :\n')+self.result[1])
+			self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 			return
 		
 		
@@ -548,37 +550,37 @@ class microhope(wx.Frame):
 		self.result = commands.getstatusoutput(command)
 		command = 'avr-objdump -S %s > %s.lst'%(self.fname_witout_extn,self.fname_witout_extn)
 		self.result = commands.getstatusoutput(command)
-		self.show('Assembing Done')
-		self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+		self.show(_('Assembing Done'))
+		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 	def set_mhbootloader(self,event):
-		self.SetTitle("Setting up MicroHOPE bootloader via USBASP.....")
-		self.show("Setting up MicroHOPE bootloader via USBASP.... \nIt will take few seconds")
+		self.SetTitle(_("Setting up MicroHOPE bootloader via USBASP....."))
+		self.show(_("Setting up MicroHOPE bootloader via USBASP.... \nIt will take few seconds"))
 		self.command = 'avrdude -B10 -c usbasp -patmega32 -U flash:w:/etc/skel/microhope/ISP/ATmegaBOOT_168_atmega32.hex'
 		self.result = commands.getstatusoutput(self.command)
 		if self.result[0] != 0 :
-			self.show('Error: Check Connections....')
+			self.show(_('Error: Check Connections....'))
 			
 			return 
 		self.command = 'avrdude -B10 -c usbasp -patmega32 -U lfuse:w:0xff:m -U hfuse:w:0xda:m'
 		self.result = commands.getstatusoutput(self.command)
 		if self.result[0] != 0:
-			self.show('Error: Setting up fuses')
+			self.show(_('Error: Setting up fuses'))
 			
 			return 
-		self.show('Upload Completed')
-		self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+		self.show(_('Upload Completed'))
+		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 	def usbasp_uplod(self,event):
-		self.show("Uploading through USBASP ....")
+		self.show(_("Uploading through USBASP ...."))
 		self.fname_witout_extn = self.dname+"/"+os.path.splitext(self.fname)[0]
 		self.command ="avrdude -c usbasp -patmega32 -U flash:w:%s.hex"%(self.fname_witout_extn)
 		self.result = commands.getstatusoutput(self.command)
 		if self.result[0] != 0:
-			self.show("Check connections of USBASP")
+			self.show(_("Check connections of USBASP"))
 			
 			return
 		else:
-			self.show("Uploading via USBASP completed.....")
-		self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
+			self.show(_("Uploading via USBASP completed....."))
+		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 
 	def detect(self,event):
 		command = "ls /dev/ttyUSB*"
@@ -592,19 +594,19 @@ class microhope(wx.Frame):
 		if result[0] == 0:
 			devc = result[1].split('\n')
 		if devc == []:
-			self.show('microHOPE hardware not found?')
+			self.show(_('microHOPE hardware not found?'))
 			if self.fname =='':
-				self.SetTitle("uHOPE :: File --> New File"+"\t\tDevice --> Not Connected")
+				self.SetTitle(_("uHOPE :: File --> New File")+_("\t\tDevice --> Not Connected"))
 			else :
-				self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice --> Not Connected")
+				self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice --> Not Connected"))
 			return 
 		else:
 			self.mhdevice = devc[0]
 			if self.fname =='':
-				self.SetTitle("uHOPE :: File --> New File"+"\t\tDevice -->"+self.mhdevice)
+				self.SetTitle(_("uHOPE :: File --> New File")+_("\t\tDevice -->")+self.mhdevice)
 			else :
-				self.SetTitle("uHOPE :: File --> "+self.dname+"/"+self.fname+"\t\tDevice -->"+self.mhdevice)
-			self.show("Device is found at "+ devc[0])
+				self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
+			self.show(_("Device is found at ")+ devc[0])
 	def Delete(self,event):
 		frm , to = self.text.GetSelection()
 		self.text.Remove(frm,to)
@@ -614,7 +616,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -625,7 +627,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -636,7 +638,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -647,7 +649,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname , self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -658,7 +660,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -669,7 +671,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -680,7 +682,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -691,7 +693,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -702,7 +704,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -713,7 +715,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -724,7 +726,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -735,7 +737,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -746,7 +748,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -757,7 +759,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -768,7 +770,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -779,7 +781,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -790,7 +792,7 @@ class microhope(wx.Frame):
 		file_ = open(os.path.join(self.dirname,self.filename),'r')
 		self.text.SetValue(file_.read())
 		file_.close()
-		self.SetTitle("uHOPE :: File --> "+self.dirname+"/"+self.filename+"\t\tDevice -->"+self.mhdevice)
+		self.SetTitle(_("uHOPE :: File --> ")+self.dirname+"/"+self.filename+_("\t\tDevice -->")+self.mhdevice)
 		self.fname = self.filename
 		self.dname = self.dirname
 		self.isnew = False
@@ -798,12 +800,12 @@ class microhope(wx.Frame):
 
 ## to create micrphope working directory 
 	def init(self,event):
-		dlg = wx.MessageDialog(None,"Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten.",'uHOPE init()',wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+		dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten."),_("uHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
 		chk = dlg.ShowModal()
 		if chk == wx.ID_YES:
 			dlg.Destroy()
 			os.system("mkdir -p ~/microhope && cp -Rd /usr/share/microhope/microhope/* ~/microhope/")
-			self.show("creating microhope environment")
+			self.show(_("creating microhope environment"))
 		elif chk == wx.ID_CANCEL:
 			dlg.Destroy()
 		else:
@@ -811,6 +813,9 @@ class microhope(wx.Frame):
 
 def main():
 	app = wx.App()
+	gettext.bindtextdomain('uhope')
+	gettext.textdomain('uhope')
+
 	microhope(None,-1,'uHOPE','size')
 	app.MainLoop()
 	

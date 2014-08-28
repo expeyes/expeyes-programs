@@ -3,92 +3,79 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Microhope 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-03-05 14:20+0100\n"
-"PO-Revision-Date: 2014-03-04 22:55+0100\n"
-"Last-Translator: Georges Khaznadar <georgesk@debian.Org>\n"
+"POT-Creation-Date: 2014-08-29 00:03+0200\n"
+"PO-Revision-Date: 2014-08-29 00:15+0200\n"
+"Last-Translator: Georges Khaznadar <georgesk@debian.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: French\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../uhope.c:40 ../uhope.c:47 ../uhope.c:41 ../uhope.c:43 ../uhope.c:44
 #: ../uhope.c:42
 msgid "Message"
 msgstr "Message"
 
-#: ../uhope.c:65 ../uhope.c:72 ../uhope.c:66 ../uhope.c:68 ../uhope.c:69
 #: ../uhope.c:67
 #, c-format
 msgid "ERROR:%s\n"
 msgstr "ERREUR : %s\n"
 
-#: ../uhope.c:65 ../uhope.c:72 ../uhope.c:66 ../uhope.c:68 ../uhope.c:69
 #: ../uhope.c:67
 #, c-format
 msgid "SUCCESS:%s\n"
 msgstr "SUCCÈS :%s\n"
 
-#: ../uhope.c:69 ../uhope.c:76 ../uhope.c:70 ../uhope.c:72 ../uhope.c:73
 #: ../uhope.c:71
 msgid "...output too big, view truncated"
 msgstr "... sortie trop longue, la vue est tronquée"
 
-#: ../uhope.c:76 ../uhope.c:83 ../uhope.c:77 ../uhope.c:79 ../uhope.c:80
 #: ../uhope.c:78
 #, c-format
 msgid "%s %s was successful"
 msgstr "%s %s a réussi"
 
-#: ../uhope.c:77 ../uhope.c:84 ../uhope.c:78 ../uhope.c:80 ../uhope.c:81
 #: ../uhope.c:79
 #, c-format
 msgid "%s of %s failed"
 msgstr "%s de %s : échec"
 
-#: ../uhope.c:89 ../uhope.c:96 ../uhope.c:90 ../uhope.c:92 ../uhope.c:93
 #: ../uhope.c:91
 msgid "uhope - No device detected"
 msgstr "uhope - matériel non détecté"
 
-#: ../uhope.c:90 ../uhope.c:97 ../uhope.c:91 ../uhope.c:93 ../uhope.c:94
 #: ../uhope.c:92
 msgid "No device detected"
 msgstr "Matériel non détecté"
 
-#: ../uhope.c:94 ../uhope.c:101 ../uhope.c:95 ../uhope.c:97 ../uhope.c:98
 #: ../uhope.c:96
 #, c-format
 msgid "uhope - Device:%s"
 msgstr "uhope - interface : %s"
 
-#: ../uhope.c:95 ../uhope.c:102 ../uhope.c:96 ../uhope.c:98 ../uhope.c:99
 #: ../uhope.c:97
 #, c-format
 msgid "Device:%s"
 msgstr "Interface : %s"
 
-#: ../uhope.c:128 ../uhope.c:135 ../uhope.c:129 ../uhope.c:131 ../uhope.c:132
 #: ../uhope.c:130
 msgid "No device detected!"
 msgstr "Matériel non détecté !"
 
-#: ../uhope.c:131 ../uhope.c:138 ../uhope.c:132 ../uhope.c:134 ../uhope.c:135
 #: ../uhope.c:133
 #, c-format
 msgid "Device detected: %s"
 msgstr "Matériel détecté à %s"
 
-#: ../uhope.c:138 ../uhope.c:145 ../uhope.c:139 ../uhope.c:141 ../uhope.c:142
 #: ../uhope.c:140
 msgid "Select Microhope device"
 msgstr "Choisir le matériel Microhope"
 
-#: ../uhope.c:144 ../uhope.c:151 ../uhope.c:145 ../uhope.c:147 ../uhope.c:148
 #: ../uhope.c:146
 msgid ""
 "Multiple devices.\n"
@@ -97,178 +84,127 @@ msgstr ""
 "Plusieurs matériels.\n"
 "Veuillez choisir Microhope depuis la liste :"
 
-#: ../uhope.c:167 ../uhope.c:174 ../uhope.c:168 ../uhope.c:170 ../uhope.c:171
 #: ../uhope.c:169
 msgid "ERROR: No file loaded!"
 msgstr "ERREUR : pas de fichier ouvert !"
 
-#: ../uhope.c:170 ../uhope.c:177 ../uhope.c:171 ../uhope.c:173 ../uhope.c:174
 #: ../uhope.c:172
 msgid "ERROR: No hex file. Compile first!"
 msgstr "ERREUR : pas de fichier hex. Compilez d'abord !"
 
-#: ../uhope.c:172 ../uhope.c:179 ../uhope.c:173 ../uhope.c:175 ../uhope.c:176
 #: ../uhope.c:174
 msgid "ERROR: Please Detect Hardware first!"
 msgstr "ERREUR : Veuillez détecter le matériel d'abord !"
 
-#: ../uhope.c:176 ../uhope.c:861 ../uhope.c:183 ../uhope.c:868 ../uhope.c:867
-#: ../uhope.c:869 ../uhope.c:862 ../uhope.c:895 ../uhope.c:864 ../uhope.c:863
-#: ../uhope.c:177 ../uhope.c:179 ../uhope.c:866 ../uhope.c:180 ../uhope.c:178
-#: ../uhope.c:865 ../uhope.c:872
+#: ../uhope.c:178 ../uhope.c:865
 msgid "Upload"
 msgstr "Charger"
 
-#: ../uhope.c:189 ../uhope.c:196 ../uhope.c:190 ../uhope.c:192 ../uhope.c:193
 #: ../uhope.c:191
 msgid "Open File"
 msgstr "Ouvrir le fichier"
 
-#: ../uhope.c:193 ../uhope.c:255 ../uhope.c:200 ../uhope.c:262 ../uhope.c:194
-#: ../uhope.c:256 ../uhope.c:196 ../uhope.c:258 ../uhope.c:197 ../uhope.c:259
 #: ../uhope.c:195 ../uhope.c:257
 msgid "C source (*.c)"
 msgstr "source C (*.c)"
 
-#: ../uhope.c:195 ../uhope.c:257 ../uhope.c:202 ../uhope.c:264 ../uhope.c:196
-#: ../uhope.c:258 ../uhope.c:198 ../uhope.c:260 ../uhope.c:199 ../uhope.c:261
 #: ../uhope.c:197 ../uhope.c:259
 msgid "Asm (*.S,*.s)"
 msgstr "Asm (*.S,*.s)"
 
-#: ../uhope.c:198 ../uhope.c:260 ../uhope.c:205 ../uhope.c:267 ../uhope.c:199
-#: ../uhope.c:261 ../uhope.c:201 ../uhope.c:263 ../uhope.c:202 ../uhope.c:264
 #: ../uhope.c:200 ../uhope.c:262
 msgid "Text (*.txt)"
 msgstr "Texte (*.txt)"
 
-#: ../uhope.c:200 ../uhope.c:207 ../uhope.c:201 ../uhope.c:203 ../uhope.c:204
 #: ../uhope.c:202
 msgid "Obj Dump (*.lst)"
 msgstr "Obj Dump (*.lst)"
 
-#: ../uhope.c:202 ../uhope.c:262 ../uhope.c:209 ../uhope.c:269 ../uhope.c:203
-#: ../uhope.c:263 ../uhope.c:205 ../uhope.c:265 ../uhope.c:206 ../uhope.c:266
 #: ../uhope.c:204 ../uhope.c:264
 msgid "All types (*.*)"
 msgstr "Tous les types (*.*)"
 
-#: ../uhope.c:234 ../uhope.c:266 ../uhope.c:286 ../uhope.c:300 ../uhope.c:241
-#: ../uhope.c:273 ../uhope.c:293 ../uhope.c:307 ../uhope.c:235 ../uhope.c:267
-#: ../uhope.c:287 ../uhope.c:301 ../uhope.c:237 ../uhope.c:269 ../uhope.c:289
-#: ../uhope.c:303 ../uhope.c:238 ../uhope.c:270 ../uhope.c:290 ../uhope.c:304
 #: ../uhope.c:236 ../uhope.c:268 ../uhope.c:288 ../uhope.c:302
 msgid "Untitled"
 msgstr "SansNom"
 
-#: ../uhope.c:274 ../uhope.c:291 ../uhope.c:281 ../uhope.c:298 ../uhope.c:275
-#: ../uhope.c:292 ../uhope.c:277 ../uhope.c:294 ../uhope.c:278 ../uhope.c:295
 #: ../uhope.c:276 ../uhope.c:293
 #, c-format
 msgid "%s saved"
 msgstr "%s enregistré"
 
-#: ../uhope.c:300 ../uhope.c:307 ../uhope.c:301 ../uhope.c:303 ../uhope.c:304
 #: ../uhope.c:302
 msgid "ERROR: No C file loaded!"
 msgstr "ERREUR : fichier C non ouvert !"
 
-#: ../uhope.c:303 ../uhope.c:310 ../uhope.c:304 ../uhope.c:306 ../uhope.c:307
 #: ../uhope.c:305
 msgid "ERROR: The loaded file type is not .c"
 msgstr "ERREUR : le type de fichier ouvert n'est pas .c"
 
-#: ../uhope.c:307 ../uhope.c:310 ../uhope.c:314 ../uhope.c:317 ../uhope.c:308
-#: ../uhope.c:311 ../uhope.c:313 ../uhope.c:309 ../uhope.c:312
+#: ../uhope.c:309 ../uhope.c:312
 msgid "Compilation"
 msgstr "Compilation"
 
-#: ../uhope.c:320 ../uhope.c:327 ../uhope.c:321 ../uhope.c:323 ../uhope.c:324
 #: ../uhope.c:322
 msgid "ERROR: No assembler file loaded!"
 msgstr "ERREUR : pas de fichier assembleur ouvert !"
 
-#: ../uhope.c:324 ../uhope.c:331 ../uhope.c:325 ../uhope.c:327 ../uhope.c:328
 #: ../uhope.c:326
 msgid "ERROR: The loaded file type is not .S or .s"
 msgstr "ERREUR : le type de fichier ouvert n'est pas .S ni .s"
 
-#: ../uhope.c:328 ../uhope.c:331 ../uhope.c:335 ../uhope.c:338 ../uhope.c:329
-#: ../uhope.c:332 ../uhope.c:334 ../uhope.c:330 ../uhope.c:333
+#: ../uhope.c:330 ../uhope.c:333
 msgid "Assembly"
 msgstr "Assemblage"
 
-#: ../uhope.c:429 ../uhope.c:486 ../uhope.c:436 ../uhope.c:493 ../uhope.c:430
-#: ../uhope.c:487 ../uhope.c:432 ../uhope.c:489 ../uhope.c:433 ../uhope.c:490
 #: ../uhope.c:431 ../uhope.c:488
 #, c-format
 msgid "%s not found"
 msgstr "%s pas trouvé"
 
-#: ../uhope.c:442 ../uhope.c:499 ../uhope.c:449 ../uhope.c:506 ../uhope.c:443
-#: ../uhope.c:500 ../uhope.c:445 ../uhope.c:502 ../uhope.c:446 ../uhope.c:503
 #: ../uhope.c:444 ../uhope.c:501
 #, c-format
 msgid "%s found after wrap"
 msgstr "%s trouvé après recherche circulaire"
 
-#: ../uhope.c:512 ../uhope.c:538 ../uhope.c:854 ../uhope.c:519 ../uhope.c:545
-#: ../uhope.c:861 ../uhope.c:860 ../uhope.c:862 ../uhope.c:855 ../uhope.c:888
-#: ../uhope.c:857 ../uhope.c:856 ../uhope.c:513 ../uhope.c:539 ../uhope.c:515
-#: ../uhope.c:541 ../uhope.c:859 ../uhope.c:516 ../uhope.c:542 ../uhope.c:514
-#: ../uhope.c:540 ../uhope.c:858 ../uhope.c:865
+#: ../uhope.c:514 ../uhope.c:540 ../uhope.c:858
 msgid "Find"
 msgstr "Trouver"
 
-#: ../uhope.c:523 ../uhope.c:530 ../uhope.c:524 ../uhope.c:526 ../uhope.c:527
 #: ../uhope.c:525
 msgid "Text to Find:"
 msgstr "Texte à chercher :"
 
-#: ../uhope.c:531 ../uhope.c:669 ../uhope.c:538 ../uhope.c:676 ../uhope.c:532
-#: ../uhope.c:670 ../uhope.c:534 ../uhope.c:672 ../uhope.c:535 ../uhope.c:673
 #: ../uhope.c:533 ../uhope.c:671
 msgid "Match case"
 msgstr "Tenir compte de la casse"
 
-#: ../uhope.c:534 ../uhope.c:672 ../uhope.c:541 ../uhope.c:679 ../uhope.c:535
-#: ../uhope.c:673 ../uhope.c:537 ../uhope.c:675 ../uhope.c:538 ../uhope.c:676
 #: ../uhope.c:536 ../uhope.c:674
 msgid "Wrap around"
 msgstr "Recherche circulaire"
 
-#: ../uhope.c:597 ../uhope.c:604 ../uhope.c:598 ../uhope.c:600 ../uhope.c:601
 #: ../uhope.c:599
 #, c-format
 msgid "%s replaced by %s"
 msgstr "%s remplacé par %s"
 
-#: ../uhope.c:622 ../uhope.c:629 ../uhope.c:623 ../uhope.c:625 ../uhope.c:626
 #: ../uhope.c:624
 #, c-format
 msgid "%d replacements made"
 msgstr "%d remplacements faits"
 
-#: ../uhope.c:676 ../uhope.c:855 ../uhope.c:683 ../uhope.c:862 ../uhope.c:861
-#: ../uhope.c:863 ../uhope.c:856 ../uhope.c:889 ../uhope.c:858 ../uhope.c:857
-#: ../uhope.c:677 ../uhope.c:679 ../uhope.c:860 ../uhope.c:680 ../uhope.c:678
-#: ../uhope.c:859 ../uhope.c:866
+#: ../uhope.c:678 ../uhope.c:859
 msgid "Find Next"
 msgstr "Chercher le suivant"
 
-#: ../uhope.c:679 ../uhope.c:856 ../uhope.c:686 ../uhope.c:863 ../uhope.c:862
-#: ../uhope.c:864 ../uhope.c:857 ../uhope.c:890 ../uhope.c:859 ../uhope.c:858
-#: ../uhope.c:680 ../uhope.c:682 ../uhope.c:861 ../uhope.c:683 ../uhope.c:681
-#: ../uhope.c:860 ../uhope.c:867
+#: ../uhope.c:681 ../uhope.c:860
 msgid "Replace"
 msgstr "Remplacer"
 
-#: ../uhope.c:682 ../uhope.c:689 ../uhope.c:683 ../uhope.c:685 ../uhope.c:686
 #: ../uhope.c:684
 msgid "Replace All"
 msgstr "Tout remplacer"
 
-#: ../uhope.c:696 ../uhope.c:703 ../uhope.c:697 ../uhope.c:699 ../uhope.c:700
 #: ../uhope.c:698
 msgid ""
 "uhope: A Linux Shell for Microhope\n"
@@ -308,12 +244,10 @@ msgstr ""
 "que Microhope n'est pas prêt\n"
 "   9. Si le chargement échoue, cliquer sur Microhope -> Charger à nouveau\n"
 
-#: ../uhope.c:712 ../uhope.c:719 ../uhope.c:713 ../uhope.c:715 ../uhope.c:716
 #: ../uhope.c:714
 msgid "Help"
 msgstr "Aide"
 
-#: ../uhope.c:732 ../uhope.c:739 ../uhope.c:733 ../uhope.c:735 ../uhope.c:736
 #: ../uhope.c:734
 msgid ""
 "uhope: A Linux Shell for Microhope\n"
@@ -344,27 +278,19 @@ msgstr ""
 "Voir la licence GNU General Public License www.gnu.org/licenses\n"
 "pour plus de détails.\n"
 
-#: ../uhope.c:746 ../uhope.c:865 ../uhope.c:753 ../uhope.c:872 ../uhope.c:871
-#: ../uhope.c:873 ../uhope.c:866 ../uhope.c:899 ../uhope.c:868 ../uhope.c:867
-#: ../uhope.c:747 ../uhope.c:749 ../uhope.c:870 ../uhope.c:750 ../uhope.c:748
-#: ../uhope.c:869 ../uhope.c:754 ../uhope.c:876
+#: ../uhope.c:748 ../uhope.c:869 ../mh-ide.py:253 ../mh-ide.py:255
 msgid "About"
 msgstr "À propos"
 
-#: ../uhope.c:767 ../uhope.c:847 ../uhope.c:774 ../uhope.c:854 ../uhope.c:853
-#: ../uhope.c:855 ../uhope.c:848 ../uhope.c:881 ../uhope.c:850 ../uhope.c:849
-#: ../uhope.c:768 ../uhope.c:770 ../uhope.c:852 ../uhope.c:771 ../uhope.c:769
-#: ../uhope.c:851 ../uhope.c:776 ../uhope.c:858
+#: ../uhope.c:769 ../uhope.c:851
 msgid "Quit"
 msgstr "Quitter"
 
-#: ../uhope.c:767 ../uhope.c:774 ../uhope.c:768 ../uhope.c:770 ../uhope.c:771
-#: ../uhope.c:769 ../uhope.c:776
+#: ../uhope.c:769
 msgid "Dont quit"
 msgstr "Ne pas quitter"
 
-#: ../uhope.c:770 ../uhope.c:777 ../uhope.c:771 ../uhope.c:773 ../uhope.c:774
-#: ../uhope.c:772 ../uhope.c:779
+#: ../uhope.c:772
 msgid ""
 "\n"
 "There are unsaved changes.\n"
@@ -374,244 +300,763 @@ msgstr ""
 "Il y a des modification non enregistrées.\n"
 "Voulez-vous vraiment quitter ?\n"
 
-#: ../uhope.c:826 ../uhope.c:833 ../uhope.c:827 ../uhope.c:829 ../uhope.c:830
-#: ../uhope.c:828 ../uhope.c:835
+#: ../uhope.c:828
 #, c-format
 msgid "%s \t Line:%d Col:%d"
 msgstr "%s \t Lig : %d Col : %d"
 
-#: ../uhope.c:838 ../uhope.c:845 ../uhope.c:839 ../uhope.c:844 ../uhope.c:846
-#: ../uhope.c:872 ../uhope.c:841 ../uhope.c:840 ../uhope.c:843 ../uhope.c:842
-#: ../uhope.c:849
+#: ../uhope.c:842
 msgid "_File"
 msgstr "_Fichier"
 
-#: ../uhope.c:839 ../uhope.c:846 ../uhope.c:845 ../uhope.c:840 ../uhope.c:841
-#: ../uhope.c:847 ../uhope.c:873 ../uhope.c:842 ../uhope.c:844 ../uhope.c:843
-#: ../uhope.c:850
+#: ../uhope.c:843
 msgid "_Edit"
 msgstr "_Editer"
 
-#: ../uhope.c:840 ../uhope.c:847 ../uhope.c:846 ../uhope.c:848 ../uhope.c:841
-#: ../uhope.c:874 ../uhope.c:843 ../uhope.c:842 ../uhope.c:845 ../uhope.c:844
-#: ../uhope.c:851
+#: ../uhope.c:844
 msgid "_Help"
 msgstr "_Aide"
 
-#: ../uhope.c:841 ../uhope.c:848 ../uhope.c:847 ../uhope.c:849 ../uhope.c:842
-#: ../uhope.c:875 ../uhope.c:844 ../uhope.c:843 ../uhope.c:846 ../uhope.c:845
-#: ../uhope.c:852
+#: ../uhope.c:845
 msgid "_Microhope"
 msgstr "_Microhope"
 
-#: ../uhope.c:843 ../uhope.c:850 ../uhope.c:849 ../uhope.c:851 ../uhope.c:844
-#: ../uhope.c:877 ../uhope.c:846 ../uhope.c:845 ../uhope.c:848 ../uhope.c:847
-#: ../uhope.c:854
+#: ../uhope.c:847
 msgid "_New"
 msgstr "_Nouveau"
 
-#: ../uhope.c:843 ../uhope.c:850 ../uhope.c:849 ../uhope.c:851 ../uhope.c:844
-#: ../uhope.c:877 ../uhope.c:846 ../uhope.c:845 ../uhope.c:848 ../uhope.c:847
-#: ../uhope.c:854
+#: ../uhope.c:847
 msgid "New"
 msgstr "Nouveau"
 
-#: ../uhope.c:844 ../uhope.c:851 ../uhope.c:850 ../uhope.c:852 ../uhope.c:845
-#: ../uhope.c:878 ../uhope.c:847 ../uhope.c:846 ../uhope.c:849 ../uhope.c:848
-#: ../uhope.c:855
+#: ../uhope.c:848
 msgid "_Open"
 msgstr "_Ouvrir"
 
-#: ../uhope.c:844 ../uhope.c:851 ../uhope.c:850 ../uhope.c:852 ../uhope.c:845
-#: ../uhope.c:878 ../uhope.c:847 ../uhope.c:846 ../uhope.c:849 ../uhope.c:848
-#: ../uhope.c:855
+#: ../uhope.c:848
 msgid "Open"
 msgstr "Ouvrir"
 
-#: ../uhope.c:845 ../uhope.c:852 ../uhope.c:851 ../uhope.c:853 ../uhope.c:846
-#: ../uhope.c:879 ../uhope.c:848 ../uhope.c:847 ../uhope.c:850 ../uhope.c:849
-#: ../uhope.c:856
+#: ../uhope.c:849
 msgid "_Save"
 msgstr "Engegi_strer"
 
-#: ../uhope.c:845 ../uhope.c:852 ../uhope.c:851 ../uhope.c:853 ../uhope.c:846
-#: ../uhope.c:879 ../uhope.c:848 ../uhope.c:847 ../uhope.c:850 ../uhope.c:849
-#: ../uhope.c:856
+#: ../uhope.c:849
 msgid "Save"
 msgstr "Enregistrer"
 
-#: ../uhope.c:846 ../uhope.c:853 ../uhope.c:852 ../uhope.c:854 ../uhope.c:847
-#: ../uhope.c:880 ../uhope.c:849 ../uhope.c:848 ../uhope.c:851 ../uhope.c:850
-#: ../uhope.c:857
+#: ../uhope.c:850
 msgid "Save _As"
 msgstr "Enregistrer Sous"
 
-#: ../uhope.c:846 ../uhope.c:853 ../uhope.c:852 ../uhope.c:854 ../uhope.c:847
-#: ../uhope.c:880 ../uhope.c:849 ../uhope.c:848 ../uhope.c:851 ../uhope.c:850
-#: ../uhope.c:857
+#: ../uhope.c:850
 msgid "Save As"
 msgstr "Enregistrer Sous"
 
-#: ../uhope.c:847 ../uhope.c:854 ../uhope.c:853 ../uhope.c:855 ../uhope.c:848
-#: ../uhope.c:881 ../uhope.c:850 ../uhope.c:849 ../uhope.c:852 ../uhope.c:851
-#: ../uhope.c:858
+#: ../uhope.c:851
 msgid "_Quit"
 msgstr "_Quitter"
 
-#: ../uhope.c:849 ../uhope.c:856 ../uhope.c:855 ../uhope.c:857 ../uhope.c:850
-#: ../uhope.c:883 ../uhope.c:852 ../uhope.c:851 ../uhope.c:854 ../uhope.c:853
-#: ../uhope.c:860
+#: ../uhope.c:853
 msgid "_Undo"
 msgstr "_Défaire"
 
-#: ../uhope.c:849 ../uhope.c:856 ../uhope.c:855 ../uhope.c:857 ../uhope.c:850
-#: ../uhope.c:883 ../uhope.c:852 ../uhope.c:851 ../uhope.c:854 ../uhope.c:853
-#: ../uhope.c:860
+#: ../uhope.c:853
 msgid "Undo"
 msgstr "Défaire"
 
-#: ../uhope.c:850 ../uhope.c:857 ../uhope.c:856 ../uhope.c:858 ../uhope.c:851
-#: ../uhope.c:884 ../uhope.c:853 ../uhope.c:852 ../uhope.c:855 ../uhope.c:854
-#: ../uhope.c:861
+#: ../uhope.c:854
 msgid "Cu_t"
 msgstr "Couper"
 
-#: ../uhope.c:850 ../uhope.c:857 ../uhope.c:856 ../uhope.c:858 ../uhope.c:851
-#: ../uhope.c:884 ../uhope.c:853 ../uhope.c:852 ../uhope.c:855 ../uhope.c:854
-#: ../uhope.c:861
+#: ../uhope.c:854
 msgid "Cut"
 msgstr "Couper"
 
-#: ../uhope.c:851 ../uhope.c:858 ../uhope.c:857 ../uhope.c:859 ../uhope.c:852
-#: ../uhope.c:885 ../uhope.c:854 ../uhope.c:853 ../uhope.c:856 ../uhope.c:855
-#: ../uhope.c:862
+#: ../uhope.c:855
 msgid "_Copy"
 msgstr "_Copier"
 
-#: ../uhope.c:851 ../uhope.c:858 ../uhope.c:857 ../uhope.c:859 ../uhope.c:852
-#: ../uhope.c:885 ../uhope.c:854 ../uhope.c:853 ../uhope.c:856 ../uhope.c:855
-#: ../uhope.c:862
+#: ../uhope.c:855
 msgid "Copy"
 msgstr "Copier"
 
-#: ../uhope.c:852 ../uhope.c:859 ../uhope.c:858 ../uhope.c:860 ../uhope.c:853
-#: ../uhope.c:886 ../uhope.c:855 ../uhope.c:854 ../uhope.c:857 ../uhope.c:856
-#: ../uhope.c:863
+#: ../uhope.c:856
 msgid "_Paste"
 msgstr "Coller"
 
-#: ../uhope.c:852 ../uhope.c:859 ../uhope.c:858 ../uhope.c:860 ../uhope.c:853
-#: ../uhope.c:886 ../uhope.c:855 ../uhope.c:854 ../uhope.c:857 ../uhope.c:856
-#: ../uhope.c:863
+#: ../uhope.c:856
 msgid "Paste"
 msgstr "Coller"
 
-#: ../uhope.c:853 ../uhope.c:860 ../uhope.c:859 ../uhope.c:861 ../uhope.c:854
-#: ../uhope.c:887 ../uhope.c:856 ../uhope.c:855 ../uhope.c:858 ../uhope.c:857
-#: ../uhope.c:864
+#: ../uhope.c:857
 msgid "De_lete"
 msgstr "Supprimer"
 
-#: ../uhope.c:853 ../uhope.c:860 ../uhope.c:859 ../uhope.c:861 ../uhope.c:854
-#: ../uhope.c:887 ../uhope.c:856 ../uhope.c:855 ../uhope.c:858 ../uhope.c:857
-#: ../uhope.c:864
+#: ../uhope.c:857
 msgid "Delete"
 msgstr "Supprimer"
 
-#: ../uhope.c:855 ../uhope.c:862 ../uhope.c:861 ../uhope.c:863 ../uhope.c:856
-#: ../uhope.c:889 ../uhope.c:858 ../uhope.c:857 ../uhope.c:860 ../uhope.c:859
-#: ../uhope.c:866
+#: ../uhope.c:859
 msgid "Find Ne_xt"
 msgstr "Trouver le suivant"
 
-#: ../uhope.c:856 ../uhope.c:863 ../uhope.c:862 ../uhope.c:864 ../uhope.c:857
-#: ../uhope.c:890 ../uhope.c:859 ../uhope.c:858 ../uhope.c:861 ../uhope.c:860
-#: ../uhope.c:867
+#: ../uhope.c:860
 msgid "_Replace"
 msgstr "_Remplacer"
 
-#: ../uhope.c:857 ../uhope.c:864 ../uhope.c:863 ../uhope.c:865 ../uhope.c:858
-#: ../uhope.c:891 ../uhope.c:860 ../uhope.c:859 ../uhope.c:862 ../uhope.c:861
-#: ../uhope.c:868
+#: ../uhope.c:861
 msgid "SelectAll"
 msgstr "Tout sélectionner"
 
-#: ../uhope.c:859 ../uhope.c:866 ../uhope.c:865 ../uhope.c:867 ../uhope.c:860
-#: ../uhope.c:893 ../uhope.c:862 ../uhope.c:861 ../uhope.c:864 ../uhope.c:863
-#: ../uhope.c:870
+#: ../uhope.c:863
 msgid "_Compile"
 msgstr "_Compiler"
 
-#: ../uhope.c:859 ../uhope.c:866 ../uhope.c:865 ../uhope.c:867 ../uhope.c:860
-#: ../uhope.c:893 ../uhope.c:862 ../uhope.c:861 ../uhope.c:864 ../uhope.c:863
-#: ../uhope.c:870
+#: ../uhope.c:863
 msgid "Compile"
 msgstr "Compiler"
 
-#: ../uhope.c:860 ../uhope.c:867 ../uhope.c:866 ../uhope.c:868 ../uhope.c:861
-#: ../uhope.c:894 ../uhope.c:863 ../uhope.c:862 ../uhope.c:865 ../uhope.c:864
-#: ../uhope.c:871
+#: ../uhope.c:864
 msgid "_Assemble"
 msgstr "_Assembler"
 
-#: ../uhope.c:860 ../uhope.c:867 ../uhope.c:866 ../uhope.c:868 ../uhope.c:861
-#: ../uhope.c:894 ../uhope.c:863 ../uhope.c:862 ../uhope.c:865 ../uhope.c:864
-#: ../uhope.c:871
+#: ../uhope.c:864
 msgid "Assemble"
 msgstr "Assembler"
 
-#: ../uhope.c:861 ../uhope.c:868 ../uhope.c:867 ../uhope.c:869 ../uhope.c:862
-#: ../uhope.c:895 ../uhope.c:864 ../uhope.c:863 ../uhope.c:866 ../uhope.c:865
-#: ../uhope.c:872
+#: ../uhope.c:865
 msgid "_Upload"
 msgstr "Charger"
 
-#: ../uhope.c:862 ../uhope.c:869 ../uhope.c:868 ../uhope.c:870 ../uhope.c:863
-#: ../uhope.c:896 ../uhope.c:865 ../uhope.c:864 ../uhope.c:867 ../uhope.c:866
-#: ../uhope.c:873
+#: ../uhope.c:866
 msgid "_Detect-MH"
 msgstr "_Détecter-MH"
 
-#: ../uhope.c:862 ../uhope.c:869 ../uhope.c:868 ../uhope.c:870 ../uhope.c:863
-#: ../uhope.c:896 ../uhope.c:865 ../uhope.c:864 ../uhope.c:867 ../uhope.c:866
-#: ../uhope.c:873
+#: ../uhope.c:866
 msgid "Detect Microhope"
 msgstr "Détecter Microhope"
 
-#: ../uhope.c:864 ../uhope.c:871 ../uhope.c:870 ../uhope.c:872 ../uhope.c:865
-#: ../uhope.c:898 ../uhope.c:867 ../uhope.c:866 ../uhope.c:869 ../uhope.c:868
-#: ../uhope.c:875
+#: ../uhope.c:868
 msgid "HowTo"
 msgstr "Comment faire"
 
-#: ../uhope.c:866 ../uhope.c:873 ../uhope.c:872 ../uhope.c:874 ../uhope.c:867
-#: ../uhope.c:900 ../uhope.c:869 ../uhope.c:868 ../uhope.c:871 ../uhope.c:870
-#: ../uhope.c:877
+#: ../uhope.c:870
 msgid "Documentation"
 msgstr "Documentation"
 
-#: ../uhope.c:879 ../uhope.c:886 ../uhope.c:885 ../uhope.c:887 ../uhope.c:913
-#: ../uhope.c:883 ../uhope.c:882 ../uhope.c:884 ../uhope.c:891
+#: ../uhope.c:884
 #, c-format
 msgid "Could not create %s."
 msgstr "Impossible de créer %s."
 
-#: ../uhope.c:942 ../uhope.c:946 ../uhope.c:953 ../uhope.c:952 ../uhope.c:954
-#: ../uhope.c:980 ../uhope.c:948 ../uhope.c:947 ../uhope.c:949 ../uhope.c:950
-#: ../uhope.c:951 ../uhope.c:957
+#: ../uhope.c:950
 msgid "uhope - A Linux Shell for Microhope"
 msgstr "uhope - un environnement Linux pour Microhope"
 
-#: ../uhope.c:960 ../uhope.c:964 ../uhope.c:971 ../uhope.c:970 ../uhope.c:972
-#: ../uhope.c:1000 ../uhope.c:967 ../uhope.c:966 ../uhope.c:968 ../uhope.c:969
-#: ../uhope.c:976
+#: ../uhope.c:969
 msgid "Building menus failed"
 msgstr "Échec à la construction des menus"
 
-#: ../uhope.c:750
-#, fuzzy
-#| msgid "uhope - A Linux Shell for Microhope"
+#: ../mh-ide.py:49 ../mh-ide.py:53 ../mh-ide.py:51 ../mh-ide.py:55
+msgid "Not connected"
+msgstr "Non connecté"
+
+#: ../mh-ide.py:50 ../mh-ide.py:52
+msgid "atmega32"
+msgstr "atmega32"
+
+#: ../mh-ide.py:53 ../mh-ide.py:284 ../mh-ide.py:295 ../mh-ide.py:312
+#: ../mh-ide.py:361 ../mh-ide.py:372 ../mh-ide.py:380 ../mh-ide.py:456
+#: ../mh-ide.py:464 ../mh-ide.py:494 ../mh-ide.py:498 ../mh-ide.py:542
+#: ../mh-ide.py:552 ../mh-ide.py:569 ../mh-ide.py:581 ../mh-ide.py:599
+#: ../mh-ide.py:606 ../mh-ide.py:617 ../mh-ide.py:628 ../mh-ide.py:639
+#: ../mh-ide.py:650 ../mh-ide.py:661 ../mh-ide.py:672 ../mh-ide.py:683
+#: ../mh-ide.py:694 ../mh-ide.py:705 ../mh-ide.py:716 ../mh-ide.py:727
+#: ../mh-ide.py:738 ../mh-ide.py:749 ../mh-ide.py:760 ../mh-ide.py:771
+#: ../mh-ide.py:782 ../mh-ide.py:793 ../mh-ide.py:55 ../mh-ide.py:286
+#: ../mh-ide.py:297 ../mh-ide.py:314 ../mh-ide.py:363 ../mh-ide.py:374
+#: ../mh-ide.py:382 ../mh-ide.py:458 ../mh-ide.py:466 ../mh-ide.py:496
+#: ../mh-ide.py:500 ../mh-ide.py:544 ../mh-ide.py:554 ../mh-ide.py:571
+#: ../mh-ide.py:583 ../mh-ide.py:601 ../mh-ide.py:608 ../mh-ide.py:619
+#: ../mh-ide.py:630 ../mh-ide.py:641 ../mh-ide.py:652 ../mh-ide.py:663
+#: ../mh-ide.py:674 ../mh-ide.py:685 ../mh-ide.py:696 ../mh-ide.py:707
+#: ../mh-ide.py:718 ../mh-ide.py:729 ../mh-ide.py:740 ../mh-ide.py:751
+#: ../mh-ide.py:762 ../mh-ide.py:773 ../mh-ide.py:784 ../mh-ide.py:795
+msgid "uHOPE :: File --> "
+msgstr "µHOPE :: Fichier --> "
+
+#: ../mh-ide.py:53 ../mh-ide.py:509 ../mh-ide.py:511 ../mh-ide.py:55
+#: ../mh-ide.py:513
+msgid "Not selected"
+msgstr "Non sélectionné"
+
+#: ../mh-ide.py:53 ../mh-ide.py:260 ../mh-ide.py:262 ../mh-ide.py:284
+#: ../mh-ide.py:295 ../mh-ide.py:312 ../mh-ide.py:456 ../mh-ide.py:464
+#: ../mh-ide.py:494 ../mh-ide.py:498 ../mh-ide.py:542 ../mh-ide.py:552
+#: ../mh-ide.py:569 ../mh-ide.py:581 ../mh-ide.py:604 ../mh-ide.py:606
+#: ../mh-ide.py:617 ../mh-ide.py:628 ../mh-ide.py:639 ../mh-ide.py:650
+#: ../mh-ide.py:661 ../mh-ide.py:672 ../mh-ide.py:683 ../mh-ide.py:694
+#: ../mh-ide.py:705 ../mh-ide.py:716 ../mh-ide.py:727 ../mh-ide.py:738
+#: ../mh-ide.py:749 ../mh-ide.py:760 ../mh-ide.py:771 ../mh-ide.py:782
+#: ../mh-ide.py:793 ../mh-ide.py:55 ../mh-ide.py:264 ../mh-ide.py:286
+#: ../mh-ide.py:297 ../mh-ide.py:314 ../mh-ide.py:458 ../mh-ide.py:466
+#: ../mh-ide.py:496 ../mh-ide.py:500 ../mh-ide.py:544 ../mh-ide.py:554
+#: ../mh-ide.py:571 ../mh-ide.py:583 ../mh-ide.py:608 ../mh-ide.py:619
+#: ../mh-ide.py:630 ../mh-ide.py:641 ../mh-ide.py:652 ../mh-ide.py:663
+#: ../mh-ide.py:674 ../mh-ide.py:685 ../mh-ide.py:696 ../mh-ide.py:707
+#: ../mh-ide.py:718 ../mh-ide.py:729 ../mh-ide.py:740 ../mh-ide.py:751
+#: ../mh-ide.py:762 ../mh-ide.py:773 ../mh-ide.py:784 ../mh-ide.py:795
+msgid "\t\tDevice -->"
+msgstr "\t\tPériph. -->"
+
+#: ../mh-ide.py:64 ../mh-ide.py:66
+msgid "&New\tCtrl+N"
+msgstr "&Nouveau\tCtrl+N"
+
+#: ../mh-ide.py:64 ../mh-ide.py:66
+msgid "Create a new Document"
+msgstr "Créer un nouveau document"
+
+#: ../mh-ide.py:66 ../mh-ide.py:68
+msgid "&Open\tCtrl+O"
+msgstr "&Ouvrir\tCtrl+O"
+
+#: ../mh-ide.py:66 ../mh-ide.py:220 ../mh-ide.py:68 ../mh-ide.py:222
+msgid "Open a file"
+msgstr "Ouvrir un fichier"
+
+#: ../mh-ide.py:69 ../mh-ide.py:71
+msgid "Blinks a LED on PB0"
+msgstr "Fait clignoter une DEL sur PB0"
+
+#: ../mh-ide.py:70 ../mh-ide.py:72
+msgid "Reads ADC channel 0 and diplays the result on the LCD"
+msgstr "Lit le canal 0 ADC et affche le résultat sur l'écran LCD"
+
+#: ../mh-ide.py:71 ../mh-ide.py:73
+msgid "Reads ADC channel 0 and diplays the result on the LCD in loop"
+msgstr "Lit le canal 0 ADC et affche le résultat sur l'écran LCD en boucle"
+
+#: ../mh-ide.py:72 ../mh-ide.py:74
+msgid "ADC -version 2"
+msgstr "ADC -version 2"
+
+#: ../mh-ide.py:73 ../mh-ide.py:75
+msgid "ADC -version 3"
+msgstr "ADC -version 3"
+
+#: ../mh-ide.py:74 ../mh-ide.py:76
+msgid "Copies a PORTA and display it on PORTB"
+msgstr "Copie un PORTA et l'affiche sur PORTB"
+
+#: ../mh-ide.py:75 ../mh-ide.py:77
+msgid "Copy 2"
+msgstr "Copier 2"
+
+#: ../mh-ide.py:76 ../mh-ide.py:78
+msgid "Copy 3"
+msgstr "Copier 3"
+
+#: ../mh-ide.py:79 ../mh-ide.py:81
+msgid "PWM-tc0 version 1"
+msgstr "PWM-tc0 version 1"
+
+#: ../mh-ide.py:80 ../mh-ide.py:82
+msgid "H-Bridge Controlling motor"
+msgstr "Controle de moteur en pont-H"
+
+#: ../mh-ide.py:81 ../mh-ide.py:83
+msgid "PWM tc0 version 2"
+msgstr "PWM tc0 version 2"
+
+#: ../mh-ide.py:82 ../mh-ide.py:84
+msgid "To make microHOPE as small CRO"
+msgstr "faire un petit oscillo avec µHOPE"
+
+#: ../mh-ide.py:83 ../mh-ide.py:85
+msgid "To make microHOPE as small CRO (version 2)"
+msgstr "faire un petit oscillo avec µHOPE (version 2)"
+
+#: ../mh-ide.py:84 ../mh-ide.py:86
+msgid "Print message in LCD"
+msgstr "Afficher un message à l'écran LCD"
+
+#: ../mh-ide.py:85 ../mh-ide.py:87
+msgid "Blinking messages in LCD"
+msgstr "Afficher des messages clignotants sur l'écran LCD"
+
+#: ../mh-ide.py:86 ../mh-ide.py:88
+msgid "Examples"
+msgstr "Exemples"
+
+#: ../mh-ide.py:87 ../mh-ide.py:89
+msgid "&Save\tCtrl+S"
+msgstr "Enregistrer\tCtrl+S"
+
+#: ../mh-ide.py:87 ../mh-ide.py:221 ../mh-ide.py:89 ../mh-ide.py:223
+msgid "Save the current file"
+msgstr "Enregistrer le fichier courant"
+
+#: ../mh-ide.py:88 ../mh-ide.py:90
+msgid "&SaveAs\tShift+Ctrl+S"
+msgstr "Enregistrer sous...\tMaj+Ctrl+S"
+
+#: ../mh-ide.py:88 ../mh-ide.py:90
+msgid "Save the current file with a different name"
+msgstr "Enregistrer le fichier courant sous un nouveau nom"
+
+#: ../mh-ide.py:90 ../mh-ide.py:92
+msgid "&Init()\tCtrl+I"
+msgstr "&Init()\tCtrl+I"
+
+#: ../mh-ide.py:90 ../mh-ide.py:92
+msgid "Initialize microhope working directory"
+msgstr "Initialiser le répertoire personnel µHOPE"
+
+#: ../mh-ide.py:91 ../mh-ide.py:93
+msgid "&Exit\tCtrl+Q"
+msgstr "&Quitter\tCtrl+Q"
+
+#: ../mh-ide.py:91 ../mh-ide.py:93
+msgid "Quit the programme"
+msgstr "Quitter le programme"
+
+#: ../mh-ide.py:117 ../mh-ide.py:119
+msgid "&Undo\tCtrl+Z"
+msgstr "&Défaire\tCtrl+Z"
+
+#: ../mh-ide.py:118 ../mh-ide.py:120
+msgid "&Redo\tCtrl+Y"
+msgstr "&Refaire\tCtrl+Y"
+
+#: ../mh-ide.py:120 ../mh-ide.py:122
+msgid "&Cut\tCtrl+X"
+msgstr "&Couper\tCtrl+X"
+
+#: ../mh-ide.py:120 ../mh-ide.py:226 ../mh-ide.py:122 ../mh-ide.py:228
+msgid "Cut the selection"
+msgstr "Couper le texte sélectionné"
+
+#: ../mh-ide.py:121 ../mh-ide.py:123
+msgid "&Copy\tCtrl+C"
+msgstr "&Copier\tCtrl+C"
+
+#: ../mh-ide.py:121 ../mh-ide.py:227 ../mh-ide.py:123 ../mh-ide.py:229
+msgid "Copy the selection"
+msgstr "Copier le texte sélectionné"
+
+#: ../mh-ide.py:122 ../mh-ide.py:124
+msgid "&Paste\tCtrl+P"
+msgstr "&Coller\tCtrl+P"
+
+#: ../mh-ide.py:122 ../mh-ide.py:228 ../mh-ide.py:124 ../mh-ide.py:230
+msgid "Paste the clipboard"
+msgstr "Coller le presse-papier"
+
+#: ../mh-ide.py:123 ../mh-ide.py:125
+msgid "&Delete"
+msgstr "Supprimer"
+
+#: ../mh-ide.py:123 ../mh-ide.py:125
+msgid "Deleted the selected text"
+msgstr "Supprimer le texte sélectionné"
+
+#: ../mh-ide.py:125 ../mh-ide.py:127
+msgid "&Select All\tCtrl+A"
+msgstr "Tout sélectionner\tCtrl+A"
+
+#: ../mh-ide.py:125 ../mh-ide.py:127
+msgid "select the entire document"
+msgstr "Sélectionner le document complet"
+
+#: ../mh-ide.py:135 ../mh-ide.py:137
+msgid "&Statusbar"
+msgstr "Barre de &statut"
+
+#: ../mh-ide.py:135 ../mh-ide.py:137
+msgid "Show or hide the statusbar in the current window"
+msgstr "Montrer ou cacher la barre de statut dans la fenêtre courante"
+
+#: ../mh-ide.py:141 ../mh-ide.py:143
+msgid "Black on white(default)"
+msgstr "Noir sur blanc (par défaut)"
+
+#: ../mh-ide.py:142 ../mh-ide.py:144
+msgid "White on Black"
+msgstr "Blanc sur noir"
+
+#: ../mh-ide.py:143 ../mh-ide.py:145
+msgid "Theme"
+msgstr "Thème"
+
+#: ../mh-ide.py:145 ../mh-ide.py:147
+msgid "Default"
+msgstr "Par défaut"
+
+#: ../mh-ide.py:157 ../mh-ide.py:159
+msgid "Large"
+msgstr "Grand"
+
+#: ../mh-ide.py:158 ../mh-ide.py:160
+msgid "Font Size"
+msgstr "Taille de police"
+
+#: ../mh-ide.py:177 ../mh-ide.py:179
+msgid "Detect Board\tCtrl+B"
+msgstr "Détecter la carte\tCtrl+B"
+
+#: ../mh-ide.py:177 ../mh-ide.py:179
+msgid "Detect the hardware"
+msgstr "Détecter le matériel"
+
+#: ../mh-ide.py:179 ../mh-ide.py:181
+msgid "Set Bootloader"
+msgstr "Mettre en place le bootloader"
+
+#: ../mh-ide.py:179 ../mh-ide.py:181
+msgid "For setting the mcu by uploading the bootloader"
+msgstr "Initialiser le MCU en chargeant le bootloader"
+
+#: ../mh-ide.py:180 ../mh-ide.py:182
+msgid "Soft RST"
+msgstr "RST logiciel"
+
+#: ../mh-ide.py:180 ../mh-ide.py:182
+msgid "Software RESET"
+msgstr "RESET logiciel"
+
+#: ../mh-ide.py:187 ../mh-ide.py:189
+msgid "Compile\tCtrl+K"
+msgstr "Compiler\tCtrl+K"
+
+#: ../mh-ide.py:187 ../mh-ide.py:189
+msgid "To Compile the program"
+msgstr "Compiler le programme"
+
+#: ../mh-ide.py:188 ../mh-ide.py:190
+msgid "Assemble\tCtrl+J"
+msgstr "Assembler\tCtrl+J"
+
+#: ../mh-ide.py:188 ../mh-ide.py:190
+msgid "To Assemble the program"
+msgstr "Assembler le programme"
+
+#: ../mh-ide.py:190 ../mh-ide.py:192
+msgid "Uplod\tCtrl+L"
+msgstr "Charger\tCtrl+L"
+
+#: ../mh-ide.py:190 ../mh-ide.py:192
+msgid "To upload the program to mcu"
+msgstr "Charger le programme dans le MCU"
+
+#: ../mh-ide.py:191 ../mh-ide.py:193
+msgid "Upload via USBASP"
+msgstr "Charger via USBASP"
+
+#: ../mh-ide.py:191 ../mh-ide.py:193
+msgid "Upload program via USBASP"
+msgstr "Charger le programme via USBASP"
+
+#: ../mh-ide.py:198 ../mh-ide.py:200
+msgid "&Help\tShift+Ctrl+H"
+msgstr "&Aide\tMaj+Cltr+H"
+
+#: ../mh-ide.py:199 ../mh-ide.py:201
+msgid "&About"
+msgstr "À propos"
+
+#: ../mh-ide.py:200 ../mh-ide.py:202
+msgid "&Author"
+msgstr "&Auteur"
+
+#: ../mh-ide.py:219 ../mh-ide.py:221
+msgid "Create a new document"
+msgstr "Créer un nouveau document"
+
+#: ../mh-ide.py:223 ../mh-ide.py:225
+msgid "Undo the last action"
+msgstr "Défaire la dernière action"
+
+#: ../mh-ide.py:224 ../mh-ide.py:226
+msgid "Redo the last undone action"
+msgstr "Refaire la dernière action défaite"
+
+#: ../mh-ide.py:230 ../mh-ide.py:232
+msgid "To compile the current programe"
+msgstr "Compiler le programme courant"
+
+#: ../mh-ide.py:231 ../mh-ide.py:233
+msgid "To upload the pgm to mh"
+msgstr "Charger le programme dans µHOPE"
+
+#: ../mh-ide.py:232 ../mh-ide.py:234
+msgid "To detect microhope hardware"
+msgstr "Détecter le matériel de microhope"
+
+#: ../mh-ide.py:234 ../mh-ide.py:236
+msgid "Help for microHOPE"
+msgstr "Aide pour microHOPE"
+
+#: ../mh-ide.py:248 ../mh-ide.py:250
+msgid "File"
+msgstr "Fichier"
+
+#: ../mh-ide.py:249 ../mh-ide.py:251
+msgid "Edit"
+msgstr "Éditer"
+
+#: ../mh-ide.py:250 ../mh-ide.py:252
+msgid "View"
+msgstr "Voir"
+
+#: ../mh-ide.py:251 ../mh-ide.py:253
+msgid "Device"
+msgstr "Interface"
+
+#: ../mh-ide.py:252 ../mh-ide.py:254
+msgid "Build"
+msgstr "Compiler"
+
+#: ../mh-ide.py:260 ../mh-ide.py:262
+msgid "uHOPE :: File -->New File.c *"
+msgstr "µHOPE :: Fichier --> Nouveau Fichier.c *"
+
+#: ../mh-ide.py:262 ../mh-ide.py:264
+msgid "uHOPE :: File -->"
+msgstr "µHOPE :: Fichier -->"
+
+#: ../mh-ide.py:269 ../mh-ide.py:271
+#, python-brace-format
+msgid "line ={line}\t\tcolumn={column}"
+msgstr "ligne = {line}\t\tcolonne = {column}"
+
+#: ../mh-ide.py:275 ../mh-ide.py:304 ../mh-ide.py:277 ../mh-ide.py:306
+msgid "Choose a file"
+msgstr "Choisir un fichier"
+
+#: ../mh-ide.py:320 ../mh-ide.py:322
+msgid "Save before exiting ?"
+msgstr "Enregistrer avant de quitter ?"
+
+#: ../mh-ide.py:330 ../mh-ide.py:332
+msgid "Are you sure ?"
+msgstr "Êtes-vous sûr ?"
+
+#: ../mh-ide.py:352 ../mh-ide.py:354
+msgid "Save before opening New File ?"
+msgstr "Enregistrer avant d'ouvrir un Nouveau Fichier ?"
+
+#: ../mh-ide.py:359 ../mh-ide.py:370 ../mh-ide.py:378 ../mh-ide.py:361
+#: ../mh-ide.py:372 ../mh-ide.py:380
+msgid "New file"
+msgstr "Nouveau Fichier"
+
+#: ../mh-ide.py:361 ../mh-ide.py:372 ../mh-ide.py:380 ../mh-ide.py:363
+#: ../mh-ide.py:374 ../mh-ide.py:382
+msgid ".c\t\tDevice -->"
+msgstr ".c\t\tPériph. -->"
+
+#: ../mh-ide.py:432 ../mh-ide.py:436 ../mh-ide.py:440 ../mh-ide.py:434
+#: ../mh-ide.py:438 ../mh-ide.py:442
+msgid "uHOPE :: Status"
+msgstr "µHOPE :: Statut"
+
+#: ../mh-ide.py:445 ../mh-ide.py:531 ../mh-ide.py:447 ../mh-ide.py:533
+msgid "Filename not selected ."
+msgstr "Fichier non sélectionné."
+
+#: ../mh-ide.py:455 ../mh-ide.py:457
+msgid "Compilation Error :\n"
+msgstr "Erreur de compilation :\n"
+
+#: ../mh-ide.py:463 ../mh-ide.py:465
+msgid "Compilation Done"
+msgstr "Compilation terminée"
+
+#: ../mh-ide.py:467 ../mh-ide.py:469
 msgid ""
-"uhope: A Linux Shell for Microhope\n"
-"GRRR\n"
-msgstr "uhope - un environnement Linux pour Microhope"
+"Device not selected\n"
+"Please select a device"
+msgstr ""
+"Préphérique non sélectionné\n"
+"Veuillez choisir un périphérique"
+
+#: ../mh-ide.py:493 ../mh-ide.py:495
+msgid "Upload Error:\n"
+msgstr "Erreur de chargement :\n"
+
+#: ../mh-ide.py:493 ../mh-ide.py:495
+msgid ""
+"\n"
+"Try pressing microHOPE Reset button just before Uploading"
+msgstr ""
+"\n"
+"Essayez d'appuyer sur le bouton RESET de µHOPE juste avant de charger"
+
+#: ../mh-ide.py:497 ../mh-ide.py:499
+msgid "Upload Completed\n"
+msgstr "Chargement terminé\n"
+
+#: ../mh-ide.py:500 ../mh-ide.py:502
+msgid ""
+"Steps:\n"
+"1.Write a program on editor / Open a programe C or Assembler files\n"
+"2.Compile it by cliking on compile\n"
+"3.You can view the objdump file(*.lst) by opening it in the editoring\n"
+"4.Connect microHOPE and wait a minute\n"
+"5.Click on Device->Detect Board to detect your board\n"
+"6.If microHOPE is not found , repeat or reconnect microHOPE\n"
+"7.Upload the hex file to microHOPE (Build->Upload)\n"
+"8.If upload fails check microHOPE and upload again\n"
+"\n"
+"Note: Make sure that microhope folder from /usr/share/microhope/microhope is "
+"copied to your home folder .\n"
+"It contains example programes , mh-libs etc."
+msgstr ""
+"Étapes :\n"
+"1. Éditer un programme / Ouvrir un fichier de programme en C ou en "
+"assembleur\n"
+"2. Le compiler en cliquant sur « Compiler »\n"
+"3. On peut voir le fichier dump objet (*.lst) en l'ouvrant dans l'éditeur\n"
+"4. Connecter µHOPE et attendre un peu\n"
+"5. Cliquer sur Périph.->Détecter Carte pour détecter la carte\n"
+"6. Si µHOPE n'est pas trouvé, recommencer et reconnecter µHOPE\n"
+"7. Charger le fichier hex vers µHOPE (Compiler->Charger)\n"
+"8. Si le chargement échoue contrôler µHOPE et charger à nouveau\n"
+"\n"
+"Note : Il faut s'assurer que le dossier microhope de /usr/share/microhope/"
+"microhope est recopier dans le répertoire personnel.\n"
+"Il contient des programmes d'exemple, les biblothèques de µH, etc."
+
+#: ../mh-ide.py:500 ../mh-ide.py:502
+msgid "microHOPE-Help"
+msgstr "µHOPE-Aide"
+
+#: ../mh-ide.py:504 ../mh-ide.py:506
+msgid ""
+"Author :Arun Jayan\n"
+"arun.jayan.j@ieee.org\n"
+"GNU USERS NETWORK"
+msgstr ""
+"Auteur : Arun Jayan\n"
+"arun.jayan.j@ieee.org\n"
+"GNU USERS NETWORK"
+
+#: ../mh-ide.py:504 ../mh-ide.py:506
+msgid "Author of IDE"
+msgstr "Auteur de l'environnement graphique"
+
+#: ../mh-ide.py:512 ../mh-ide.py:514
+#, python-brace-format
+msgid "uHOPE :: File -> {file} & Device -> {dev}"
+msgstr "µHOPE :: Fichier-> {file} & Périph. -> {dev}"
+
+#: ../mh-ide.py:515 ../mh-ide.py:517
+msgid ""
+"microHOPE is a developement Board using Atmega32\n"
+"Created by :Dr.Ajith Kumar B P\n"
+"\t\t\t\t IUAC,New Delhi\n"
+"\t\t\t\t http://www.expeyes.in/microhope"
+msgstr ""
+"µHOPE est une carte de développement basée sur Atmega32\n"
+"Créée par : Dr. Ajith Kumar B P\n"
+"\t\t\t\t IUAC,New Delhi\n"
+"\t\t\t\t http://www.expeyes.in/microhope"
+
+#: ../mh-ide.py:515 ../mh-ide.py:517
+msgid "About uHOPE"
+msgstr "À propos de µHOPE"
+
+#: ../mh-ide.py:541 ../mh-ide.py:543
+msgid "Assembler Error :\n"
+msgstr "Erreur de l'assembleur :\n"
+
+#: ../mh-ide.py:551 ../mh-ide.py:553
+msgid "Assembing Done"
+msgstr "Assemblage terminé"
+
+#: ../mh-ide.py:554 ../mh-ide.py:556
+msgid "Setting up MicroHOPE bootloader via USBASP....."
+msgstr "Mise en place du bootloader de µHOPE via USBASP..."
+
+#: ../mh-ide.py:555 ../mh-ide.py:557
+msgid ""
+"Setting up MicroHOPE bootloader via USBASP.... \n"
+"It will take few seconds"
+msgstr ""
+"Mise en place du bootloader de µHOPE via USBASP...\n"
+"Cela va durer quelques secondes"
+
+#: ../mh-ide.py:559 ../mh-ide.py:561
+msgid "Error: Check Connections...."
+msgstr "Erreur : vérifier les connexions..."
+
+#: ../mh-ide.py:565 ../mh-ide.py:567
+msgid "Error: Setting up fuses"
+msgstr "Erreur : mise en place de fuses"
+
+#: ../mh-ide.py:568 ../mh-ide.py:570
+msgid "Upload Completed"
+msgstr "Chargement terminé"
+
+#: ../mh-ide.py:571 ../mh-ide.py:573
+msgid "Uploading through USBASP ...."
+msgstr "Chargement via USBASP..."
+
+#: ../mh-ide.py:576 ../mh-ide.py:578
+msgid "Check connections of USBASP"
+msgstr "Vérifier les connexions d'USBASP"
+
+#: ../mh-ide.py:580 ../mh-ide.py:582
+msgid "Uploading via USBASP completed....."
+msgstr "Chargement via USBASP terminé..."
+
+#: ../mh-ide.py:595 ../mh-ide.py:597
+msgid "microHOPE hardware not found?"
+msgstr "Matériel µHOPE non trouvé ?"
+
+#: ../mh-ide.py:597 ../mh-ide.py:604 ../mh-ide.py:599 ../mh-ide.py:606
+msgid "uHOPE :: File --> New File"
+msgstr "µHOPE :: Fichier --> Nouveau Fichier"
+
+#: ../mh-ide.py:597 ../mh-ide.py:599 ../mh-ide.py:601
+msgid "\t\tDevice --> Not Connected"
+msgstr "\t\tPériphérique --> Non connecté"
+
+#: ../mh-ide.py:607 ../mh-ide.py:609
+msgid "Device is found at "
+msgstr "Périphérique trouvé à "
+
+#: ../mh-ide.py:801 ../mh-ide.py:803
+msgid ""
+"Create microHope environment\n"
+"Do you want to create your own microHope environment?\n"
+"\n"
+"If you reply \"Yes\", a subdirectory named microHope will be created in your "
+"home directory, and a set of files will be copied into it.\n"
+"\n"
+"If any previous installation existed, its contents will be overwriten."
+msgstr ""
+"Création de l'environnement microHOPE\n"
+"Voulez-vous créer votre environnement microHOPE ?\n"
+"\n"
+"Si vous répondez « oui », un répertoire nommé microhope sera créé dans votre "
+"répertoire personnel, et un ensemble de fichiers y sera copié.\n"
+"\n"
+"Si des versions précédentes s'y trouvaient, leurs contenus seront écrasés."
+
+#: ../mh-ide.py:801 ../mh-ide.py:803
+msgid "uHOPE init()"
+msgstr "µHOPE() init()"
+
+#: ../mh-ide.py:806 ../mh-ide.py:808
+msgid "creating microhope environment"
+msgstr "Création de l'environnement pour microHOPE"
+
+#, fuzzy
+#~| msgid "uhope - A Linux Shell for Microhope"
+#~ msgid ""
+#~ "uhope: A Linux Shell for Microhope\n"
+#~ "GRRR\n"
+#~ msgstr "uhope - un environnement Linux pour Microhope"
