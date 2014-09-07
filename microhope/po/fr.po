@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: Microhope 3.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-08-29 00:03+0200\n"
-"PO-Revision-Date: 2014-08-29 00:15+0200\n"
+"PO-Revision-Date: 2014-08-29 12:28+0200\n"
 "Last-Translator: Georges Khaznadar <georgesk@debian.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: French\n"
@@ -600,7 +600,7 @@ msgstr "Enregistrer le fichier courant"
 
 #: ../mh-ide.py:88 ../mh-ide.py:90
 msgid "&SaveAs\tShift+Ctrl+S"
-msgstr "Enregistrer sous...\tMaj+Ctrl+S"
+msgstr "Enregistrer sous...\tShift+Ctrl+S"
 
 #: ../mh-ide.py:88 ../mh-ide.py:90
 msgid "Save the current file with a different name"
@@ -760,7 +760,7 @@ msgstr "Charger le programme via USBASP"
 
 #: ../mh-ide.py:198 ../mh-ide.py:200
 msgid "&Help\tShift+Ctrl+H"
-msgstr "&Aide\tMaj+Cltr+H"
+msgstr "&Aide\tShift+Ctrl+H"
 
 #: ../mh-ide.py:199 ../mh-ide.py:201
 msgid "&About"
