@@ -8,6 +8,7 @@ head="""\
   <title>{title}</title>
   <link rel="stylesheet" href="/inc/style.css" type="text/css" media="screen"/>
   <script type="text/javascript" src="http://{host}/javascript/jquery/jquery.js"></script>
+  <script type="text/javascript" src="/inc/eyesJr.js"></script>
 </head>
 <body>
 """
