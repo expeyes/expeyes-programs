@@ -44,22 +44,17 @@ class EyesServer:
         return
 
     @cherrypy.expose
-    def index(self, **kw):
+    def index(self):
+        """
+        the default page of the service
+        """
         # tries to reconnect expeyes-jr box if some issue has occurred
         self.recheck()
-        # puts widgets in the body
-        body="""\
-  <form method="post" action="index">
-    <div id="menuadc">{menuadc}</div>
-  </form>
-""".format(
-            menuadc=menuADC(self,**kw),
-            )
-        # returns a well-formed HTML file, valid as XHTML-1.0 Strict
+       # returns a well-formed HTML file, valid as XHTML-1.0 Strict
         return head.format(
             title="Expeyes-Jr web interface", 
             host="localhost") + \
-            body +\
+            menuADC(self)+\
             foot.format(ok=self.ok)
 
     @cherrypy.expose

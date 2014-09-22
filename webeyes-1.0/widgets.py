@@ -9,23 +9,22 @@ a POST dataset; returns HTML code as a unicode string.
 
 from eyesJr import adc_list
 
-def menuADC(eserver, **kw):
+def menuADC(eserver):
     """
-    !!!! TO BE REWORKED !!!!! this one should need no **kw since it uses a $.getJSON call !!!
-    creates an HTML widget to display the voltage at a choosen ADC input
-    this widget features a roll-down menu and a display for measurements
+    creates an HTML widget to display the voltage at a choosen ADC input.
+    This widget features a roll-down menu and a display for measurements
     @param eserver an instance of EyesServer
-    @param kw a dictionary of parameter->value records; this widget will
-    be activated when the dictionary contains the keyword "adc" with an
-    integer value between 0 and 12 (number of an ADC entry of eyes-jr)
     @return HTML code as a unicode string
     """
     return """
-{select} 
-<div id="voltage" style="display:inline;"></div>
+    <fieldset id="menuadc" class="widget">
+      <legend>Measuring the voltage from an ADC entry</legend>
+      {select} 
+      <div class="voltage" style="display:inline;"></div>
+    </fieldset>
 """.format(select=selectfield(
                [("Select an ADC", -1)] + adc_list,
-               extra="onchange='adcWjson(this);'"
+               extra="title='Modifiy the option to trigger one measurement' onchange='menuADC(this);'"
                ))
 
 

@@ -5,16 +5,17 @@
 /**
  * Callback function for a widget which features a select element and
  * a neighboring div to display the result of a measurement
- * @param sel the select element (from the DOM tree)
+ * @param sel a select element (from the DOM tree), where some ADC entry
+ * of eyesjr box is supposed to be selected
  **/
-function adcWjson(sel){
+function menuADC(sel){
+    /* find the selected ADC entry */
     var option=$(sel).find(":selected");
     var name=option.text();
     var val=option.val();
-    console.log(name, val);
     $.getJSON(
 	"/eyesJSON", {
-	    fun: "allADC",
+	    fun: "menuADC",
 	    name: name,
 	    val: val,
 	}

@@ -24,7 +24,7 @@ adc_list=[
     ("PVS readback", 12),
     ]
 
-def allADC(es, **kw):
+def menuADC(es, **kw):
     """
     callback function to measure a voltage from an ADC
     @param es an EyesServer instance

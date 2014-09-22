@@ -1,3 +1,31 @@
 body {
      background-color: #eeeeff;
    }
+
+fieldset.widget{
+    border: 2px solid #888888;
+    background-color: #cccccc;
+    border-radius: 15px;
+    display: inline;
+}
+
+fieldset.widget legend{
+    background-color: #ffffcc;
+    box-shadow: 3px 3px 1px #888888;
+    border-radius: 5px;
+    margin-bottom:5px;
+}
+
+fieldset.widget select{
+    background-color: #ffddcc;
+    border-radius: 5px;
+}
+
+fieldset.widget div.voltage{
+    margin-left: 20px;
+    padding: 3px;
+    border: 2px solid #888888;
+    background-color: #ffddcc;
+    border-radius: 5px;
+}
+
