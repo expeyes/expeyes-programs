@@ -1,0 +1,87 @@
+#backgroundImage {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 0px;
+}
+#leftButtons{
+  position: absolute;
+  left: 3px;
+  top: 4px;
+  border: 1px navy solid;
+  border-radius: 5px;
+  background-color: rgba(255,255,200,0.5);
+  width: 80px;
+  height: 327px;
+  z-index: 50;
+}
+#leftSliders{
+  position: absolute;
+  left: 3px;
+  top: 331px;
+  border: 1px navy solid;
+  border-radius: 5px;
+  background-color: rgba(255,255,200,0.5);
+  width: 80px;
+  height: 112px;
+  z-index: 50;
+}
+#rightSliders{
+  position: absolute;
+  left: 650px;
+  top: 5px;
+  border: 1px navy solid;
+  border-radius: 5px;
+  background-color: rgba(255,255,200,0.5);
+  width: 20px;
+  height: 400px;
+  z-index: 50;
+}
+.drag-item {
+  position: absolute;
+  padding: 2px;
+  margin: 0px;
+  width: 28px;
+  border-radius: 3px;
+  font-family: "Courier New",Courier,monospace;
+  text-align: center;
+  font-size: 15px;
+}
+#cro-canvas {
+  position: absolute;
+  left: 145px;
+  z-index: 100;
+}
+#
+.left-slider {
+    width: 77px;
+    height: 10px;
+    z-index: 100;
+}
+.right-slider {
+    width: 8px;
+    height: 90px;
+    margin-left: 5px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    z-index: 100;
+}
+.leftSliders .ui-slider-handle {
+
+    cursor: move;
+    top: 0px;
+    margin-left:-2px;
+    height: 12px;
+    width: 6px;
+    background: peru;
+    z-index: 100;
+}
+.rightSliders .ui-slider-handle {
+
+    cursor: move;
+    margin-left:0px;
+    left:0px;
+    height: 20px;
+    width: 6px;
+    z-index: 100;
+}
