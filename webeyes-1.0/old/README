@@ -1,6 +1,0 @@
-In this directory should be added two subdirectories :
-jquery and jquery-ui
-
-These are coming from third parties, so they are not included here.
-The current other files have been successfully tested with current
-packages jquery and jquery-ui on December 2013.

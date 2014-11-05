@@ -1,4 +1,4 @@
-/*
+/*  
 EYES for Young Engineers & Scientists (EYES  1.0)
 Program : eyes.c, running on AtMega32 micro-controller
 Listens on the RS232 port for commands fom the PC, by eyes.py, and acts accordingly.
@@ -21,7 +21,7 @@ Last Edit 13-Oct-2011 : added IRSEND
 #define DIGIN		2	// Digital Input (4 bits)
 #define USOUND		3	// Send a pulse on OD1 and look for echo on ID2
 
-// Commands with One byte argument (41 to 80)
+// Commands with One byte argument (41 to 80) 
 #define SETSAMTIME	41	// MCP3208 sampling duration
 #define SETADCSIZE	42	// ADC data size (1 or 2)
 #define READADC		43	// Read the specified ADC channel
@@ -60,11 +60,11 @@ Last Edit 13-Oct-2011 : added IRSEND
 #define SETDAC		121	// Serial DAC: send ch, dlo & dhi
 #define	QCAPTURE01	122	// 2 bytes N, 1 byte dt. captures channel 0 and 1
 #define WREEPROM	123	// Write EEPROM , 2 byte addr & 1 byte data
-#define RDEEPROM	124	// Read EEPROM , 2 byte addr , 1 byte number of bytes
+#define RDEEPROM	124	// Read EEPROM , 2 byte addr , 1 byte number of bytes 
 
 // Commands with Four bytes argument (161 to 200)
 #define	CAPTURE01	161	// 2 bytes N, 2 bytes dt. Capture channel 0 and 1
-#define	QCAPTURE	162	// Ch, 2 byte N, 1 byte dt.
+#define	QCAPTURE	162	// Ch, 2 byte N, 1 byte dt. 
 
 // Commands with Five bytes argument (201 to 220)
 #define	CAPTURE		201		// Ch, 2 byte N, 2 byte dt. Capture single channel MCP3208
@@ -139,9 +139,9 @@ void capture_m32(u8 ch, u16 np, u16 timegap)  // sqr1 = ch7, sqr2 = ch6, SENSOR 
     else if(timegap < 160)lo = (1<<ADEN) | (1<<ADSC) | 4;
     else if(timegap < 320)lo = (1<<ADEN) | (1<<ADSC) | 5;
     else lo = (1<<ADEN) | (1<<ADSC) | 6;
-
+	
 	TCCR1B = (1<<CS11);		// Counter1 Normal mode, 1 MHz
-
+      
     ADMUX = (1<<REFS0) |(1 << ADLAR) | ch; // MUX
     timegap -= 1;
 	PORTC |= 128;
@@ -157,7 +157,7 @@ void capture_m32(u8 ch, u16 np, u16 timegap)  // sqr1 = ch7, sqr2 = ch6, SENSOR 
        ADCSRA |= ADIF;						// reset ADC flag
 	   while(TCNT1L < timegap) ;			// Wait on counter
        }
-    ADCSRA = 0;								// Disable ADC
+    ADCSRA = 0;								// Disable ADC 	
 	PORTC &= 127;
 }
 
@@ -175,12 +175,12 @@ void qcapture_min(u8 ch, u16 np, u8 timer)	// only for 10 microseconds spacing
 		{
 		TCNT1L = 0;
 		SPIWR = OUTHI;		// start bit
-		SPICTL = ADCKLO;	// 1st clock
-		SPICTL = ADCKHI;
+		SPICTL = ADCKLO;	// 1st clock	
+		SPICTL = ADCKHI;  
 				// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO;	// 2nd clock
 		SPICTL = ADCKHI;
-
+	
 		SPIWR = d2;			// Channel # D2
 		SPICTL = ADCKLO;  	// 3rd clock
 		SPICTL = ADCKHI;
@@ -196,7 +196,7 @@ void qcapture_min(u8 ch, u16 np, u8 timer)	// only for 10 microseconds spacing
 		SPICTL = ADCKLO; SPICTL = ADCKLO;  		// 6th clock
 		SPICTL = ADCKHI; 						// sampling end
 		SPICTL = ADCKLO;	// 7th clock, Null bit
-		SPICTL = ADCKHI;
+		SPICTL = ADCKHI;  
 
 		SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
@@ -209,7 +209,7 @@ void qcapture_min(u8 ch, u16 np, u8 timer)	// only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -217,7 +217,7 @@ void qcapture_min(u8 ch, u16 np, u8 timer)	// only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -250,12 +250,12 @@ void qcapture(u8 ch, u16 np, u8 timer)
 		{
 		TCNT1L = 0;
 		SPIWR = OUTHI;		// start bit
-		SPICTL = ADCKLO;	// 1st clock
-		SPICTL = ADCKHI;
+		SPICTL = ADCKLO;	// 1st clock	
+		SPICTL = ADCKHI;  
 				// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO;	// 2nd clock
 		SPICTL = ADCKHI;
-
+	
 		SPIWR = d2;			// Channel # D2
 		SPICTL = ADCKLO;  	// 3rd clock
 		SPICTL = ADCKHI;
@@ -271,7 +271,7 @@ void qcapture(u8 ch, u16 np, u8 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;  		// 6th clock
 		SPICTL = ADCKHI; 						// sampling end
 		SPICTL = ADCKLO;	// 7th clock, Null bit
-		SPICTL = ADCKHI;
+		SPICTL = ADCKHI;  
 
 		SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
@@ -284,7 +284,7 @@ void qcapture(u8 ch, u16 np, u8 timer)
 		SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -292,7 +292,7 @@ void qcapture(u8 ch, u16 np, u8 timer)
 		SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -324,12 +324,12 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		{
 		TCNT1L = 0;
 		SPIWR = OUTHI;		// start bit
-		SPICTL = ADCKLO;	// 1st clock
-		SPICTL = ADCKHI;
+		SPICTL = ADCKLO;	// 1st clock	
+		SPICTL = ADCKHI;  
 				// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO;	// 2nd clock
 		SPICTL = ADCKHI;
-
+	
 		SPIWR = OUTLO;			// Channel # D2
 		SPICTL = ADCKLO;  	// 3rd clock
 		SPICTL = ADCKHI;
@@ -345,7 +345,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO; SPICTL = ADCKLO;  		// 6th clock
 		SPICTL = ADCKHI; 						// sampling end
 		SPICTL = ADCKLO;	// 7th clock, Null bit
-		SPICTL = ADCKHI;
+		SPICTL = ADCKHI;  
 
 		SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
@@ -358,7 +358,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -366,7 +366,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -383,12 +383,12 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 
 		// Read Channel #1 now
 		SPIWR = OUTHI;		// start bit
-		SPICTL = ADCKLO;	// 1st clock
-		SPICTL = ADCKHI;
+		SPICTL = ADCKLO;	// 1st clock	
+		SPICTL = ADCKHI;  
 				// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO;	// 2nd clock
 		SPICTL = ADCKHI;
-
+	
 		SPIWR = OUTLO;		// Channel # D2
 		SPICTL = ADCKLO;  	// 3rd clock
 		SPICTL = ADCKHI;
@@ -404,7 +404,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO; SPICTL = ADCKLO;  		// 6th clock
 		SPICTL = ADCKHI; 						// sampling end
 		SPICTL = ADCKLO;	// 7th clock, Null bit
-		SPICTL = ADCKHI;
+		SPICTL = ADCKHI;  
 
 		SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
@@ -417,7 +417,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -425,7 +425,7 @@ void qcapture01(u16 np, u8 timer)	// CH0 & CH1, only for 10 microseconds spacing
 		SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -461,7 +461,7 @@ void capture(u8 ch, u16 np, u16 timer)
 		{
 		TCNT1 = 0;
 		SPIWR = OUTHI;						// start bit
-		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock
+		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock	
 		SPICTL = ADCKHI; SPICTL = ADCKHI;
 								// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 2nd clock
@@ -490,7 +490,7 @@ void capture(u8 ch, u16 np, u16 timer)
 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 7th clock, Null bit
 		SPICTL = ADCKHI;  SPICTL = ADCKHI;
-
+		
 		SPICTL = ADCKLO;SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
 		hi = SPIRD & 1;
@@ -502,7 +502,7 @@ void capture(u8 ch, u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -510,7 +510,7 @@ void capture(u8 ch, u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -530,7 +530,7 @@ void capture(u8 ch, u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 17th clock, B2
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 18th clock, B1
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
@@ -540,11 +540,11 @@ void capture(u8 ch, u16 np, u16 timer)
 		lo = (lo << 1) | (SPIRD & 1);
 		SPICTL = CSHI;
 
-		if(adc_size > 1)
+		if(adc_size > 1) 
 			dbuffer[buf_index++] = lo << 4;
 		dbuffer[buf_index++] = hi;
 
-	    while(TCNT1 < timer) ;			// Wait on TCNT1
+	    while(TCNT1 < timer) ;			// Wait on TCNT1	
 		asm("nop");	asm("nop");	asm("nop");
 		//asm("nop");	asm("nop");	asm("nop");
 	    }
@@ -561,7 +561,7 @@ void capture01(u16 np, u16 timer)
 		{
 		TCNT1 = 0;
 		SPIWR = OUTHI;						// start bit
-		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock
+		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock	
 		SPICTL = ADCKHI; SPICTL = ADCKHI;
 								// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 2nd clock
@@ -590,7 +590,7 @@ void capture01(u16 np, u16 timer)
 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 7th clock, Null bit
 		SPICTL = ADCKHI;  SPICTL = ADCKHI;
-
+		
 		SPICTL = ADCKLO;SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
 		hi = SPIRD & 1;
@@ -602,7 +602,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -610,7 +610,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -630,7 +630,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 17th clock, B2
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 18th clock, B1
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
@@ -640,13 +640,13 @@ void capture01(u16 np, u16 timer)
 		lo = (lo << 1) | (SPIRD & 1);
 		SPICTL = CSHI;
 
-		if(adc_size > 1)
+		if(adc_size > 1) 
 			dbuffer[buf_index++] = lo << 4;
 		dbuffer[buf_index++] = hi;
-
+		
 		// Read Channel #1
 		SPIWR = OUTHI;						// start bit
-		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock
+		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock	
 		SPICTL = ADCKHI; SPICTL = ADCKHI;
 								// DATA remains HI, for SGL mode
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 2nd clock
@@ -675,7 +675,7 @@ void capture01(u16 np, u16 timer)
 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 7th clock, Null bit
 		SPICTL = ADCKHI;  SPICTL = ADCKHI;
-
+		
 		SPICTL = ADCKLO;SPICTL = ADCKLO;	// 8th clock, B11
 		SPICTL = ADCKHI;
 		hi = SPIRD & 1;
@@ -687,7 +687,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 10th clock, B9
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+ 
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 11th clock, B8
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -695,7 +695,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 12th clock, B7
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 13th clock, B6
 		SPICTL = ADCKHI;
 		hi = (hi << 1) | (SPIRD & 1);
@@ -715,7 +715,7 @@ void capture01(u16 np, u16 timer)
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 17th clock, B2
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
-
+	
 		SPICTL = ADCKLO; SPICTL = ADCKLO;	// 18th clock, B1
 		SPICTL = ADCKHI;
 		lo = (lo << 1) | (SPIRD & 1);
@@ -725,11 +725,11 @@ void capture01(u16 np, u16 timer)
 		lo = (lo << 1) | (SPIRD & 1);
 		SPICTL = CSHI;
 
-		if(adc_size > 1)
+		if(adc_size > 1) 
 			dbuffer[buf_index++] = lo << 4;
 		dbuffer[buf_index++] = hi;
 
-	    while(TCNT1 < timer) ;		// Wait on TCNT1
+	    while(TCNT1 < timer) ;		// Wait on TCNT1	
 		asm("nop");	asm("nop");	asm("nop");
 	    }
 	PORTC &= 127;
@@ -738,7 +738,7 @@ void capture01(u16 np, u16 timer)
 u16 read_sadc(u8 ch)
 {
 	SPIWR = OUTHI;					   	// MCP3208 start bit
-	SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock
+	SPICTL = ADCKLO; SPICTL = ADCKLO;	// 1st clock	
 	SPICTL = ADCKHI; SPICTL = ADCKHI;
 
 	//if(diffmode) SPIWR = OUTLO;			// DATA remains HI, for SGL mode
@@ -747,32 +747,32 @@ u16 read_sadc(u8 ch)
 	SPICTL = ADCKHI;
 
 	if(ch & 4) 							// D2 bit of channel
-		SPIWR = OUTHI;
+		SPIWR = OUTHI;		
 	else
-		SPIWR = OUTLO;
+		SPIWR = OUTLO;		
 	SPICTL = ADCKLO;SPICTL = ADCKLO;	// 3rd clock
 	SPICTL = ADCKHI;
 
 	if(ch & 2) 							// D1 bit of channel
-		SPIWR = OUTHI;
+		SPIWR = OUTHI;		
 	else
-		SPIWR = OUTLO;
+		SPIWR = OUTLO;		
 	SPICTL = ADCKLO;SPICTL = ADCKLO;	// 4th clock
 	SPICTL = ADCKHI;
 
 	if(ch & 1) 							// D0 bit of channel
-		SPIWR = OUTHI;
+		SPIWR = OUTHI;		
 	else
-		SPIWR = OUTLO;
+		SPIWR = OUTLO;		
 	SPICTL = ADCKLO;SPICTL = ADCKLO;	// 5th clock
-	SPICTL = ADCKHI;
+	SPICTL = ADCKHI; 
 
 	SPICTL = ADCKLO;					// 6th clock
 
 	TCCR1B = (1<<CS11);				// Counter1 Normal mode, 1 MHz
 	TCNT1 = 0;
 	while(TCNT1L < sampling_time) ;		// Wait for sampling
-	SPICTL = ADCKHI; SPICTL = ADCKHI;
+	SPICTL = ADCKHI; SPICTL = ADCKHI; 
 
 	SPICTL = ADCKLO; SPICTL = ADCKLO;	// 7th clock, Null bit
 	SPICTL = ADCKHI; SPICTL = ADCKHI;
@@ -788,7 +788,7 @@ u16 read_sadc(u8 ch)
 	SPICTL = ADCKLO; SPICTL = ADCKLO;	// 10th clock, B9
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
-
+ 
 	SPICTL = ADCKLO; SPICTL = ADCKLO;	// 11th clock, B8
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
@@ -837,12 +837,12 @@ void  fast_read_sadc(u8 ch)	// data saved in hi. Used by trigger routine only
 	u8 d2 = ((ch & 4)>>1) | 1;	// Channel D2
 
 	SPIWR = OUTHI;		// start bit
-	SPICTL = ADCKLO;	// 1st clock
-	SPICTL = ADCKHI;
+	SPICTL = ADCKLO;	// 1st clock	
+	SPICTL = ADCKHI;  
 			// DATA remains HI, for SGL mode
 	SPICTL = ADCKLO;	// 2nd clock
 	SPICTL = ADCKHI;
-
+	
 	SPIWR = d2;			// Channel # D2
 	SPICTL = ADCKLO;  	// 3rd clock
 	SPICTL = ADCKHI;
@@ -858,7 +858,7 @@ void  fast_read_sadc(u8 ch)	// data saved in hi. Used by trigger routine only
 	SPICTL = ADCKLO; SPICTL = ADCKLO;  		// 6th clock
 	SPICTL = ADCKHI; 						// sampling end
 	SPICTL = ADCKLO;	// 7th clock, Null bit
-	SPICTL = ADCKHI;
+	SPICTL = ADCKHI;  
 
 	SPICTL = ADCKLO;	// 8th clock, B11
 	SPICTL = ADCKHI;
@@ -871,7 +871,7 @@ void  fast_read_sadc(u8 ch)	// data saved in hi. Used by trigger routine only
 	SPICTL = ADCKLO;	// 10th clock, B9
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
-
+ 
 	SPICTL = ADCKLO;	// 11th clock, B8
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
@@ -879,7 +879,7 @@ void  fast_read_sadc(u8 ch)	// data saved in hi. Used by trigger routine only
 	SPICTL = ADCKLO;	// 12th clock, B7
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
-
+	
 	SPICTL = ADCKLO;	// 13th clock, B6
 	SPICTL = ADCKHI;
 	hi = (hi << 1) | (SPIRD & 1);
@@ -898,19 +898,19 @@ void set_dac(u8 ch, u16 val)		// channel number & data
 {
 	SPICTL = DACKLO;						// DAC CS and CLK goes LO
 	SPIWR = (ch << 1) | 1;					// channel select bit and PB0 pullup
-	SPICTL = DACKLO;	SPICTL = DACKLO;	// 1st clock
+	SPICTL = DACKLO;	SPICTL = DACKLO;	// 1st clock	
 	SPICTL = DACKHI;    SPICTL = DACKHI;
-
+	
 	SPIWR = OUTHI;			// Buffer enable
-	SPICTL = DACKLO;	SPICTL = DACKLO;	// 2st clock
+	SPICTL = DACKLO;	SPICTL = DACKLO;	// 2st clock	
 	SPICTL = DACKHI;    SPICTL = DACKHI;
 
 	SPIWR = OUTHI;			// gain = 1
-	SPICTL = DACKLO;	SPICTL = DACKLO;	// 3rd clock
+	SPICTL = DACKLO;	SPICTL = DACKLO;	// 3rd clock	
 	SPICTL = DACKHI;    SPICTL = DACKHI;
 
 	SPIWR = OUTHI;			// power down bit
-	SPICTL = DACKLO;	SPICTL = DACKLO;	// 4th clock
+	SPICTL = DACKLO;	SPICTL = DACKLO;	// 4th clock	
 	SPICTL = DACKHI;    SPICTL = DACKHI;
 
 	tmp16 = 0x800;
@@ -920,7 +920,7 @@ void set_dac(u8 ch, u16 val)		// channel number & data
 			SPIWR = OUTHI;			// data bit PB1 + pullup PB0
 		else
 			SPIWR = OUTLO;
-		SPICTL = DACKLO;	SPICTL = DACKLO;	// send clock
+		SPICTL = DACKLO;	SPICTL = DACKLO;	// send clock	
 		SPICTL = DACKHI;    SPICTL = DACKHI;
 		tmp16 >>= 1;
 		}
@@ -931,7 +931,7 @@ void set_dac(u8 ch, u16 val)		// channel number & data
 //------------------ Time Interval Measurements ----------------------
 boolean wait_for_high(u8 mask)	// Wait until the Input is HIGH
 {
-/*Returns TRUE if any of the Digital Input Socket specified in the
+/*Returns TRUE if any of the Digital Input Socket specified in the 
 'mask' goes HIGH. If mask is zero, waits for a rising edge on CMP
 input socket. Timeout after '50 * TIMEOUTVAL' milliseconds.
 */
@@ -945,7 +945,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(~ACSR & (1<< ACO))	// When AIN- goes above 1.23V, ACO goes LOW
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -971,7 +971,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(ACSR & (1<< ACO))	// When AIN- goes below 1.23V, ACO goes HIGH
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -988,8 +988,8 @@ return TRUE;
 
 boolean clear_on_rise(u8 mask)	// Clear counters on rising edge
 {
-/* Clears the TCNT1 register and variable HTM and returns TRUE if any of the
-Digital Input (sockets) specified in the 'mask'goes HIGH.
+/* Clears the TCNT1 register and variable HTM and returns TRUE if any of the 
+Digital Input (sockets) specified in the 'mask'goes HIGH. 
 If mask is zero, waits for a rising edge on analog comparator
 input socket.
 */
@@ -1004,7 +1004,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(~ACSR & (1<< ACO))	// When AIN- goes above 1.23V, ACO goes LOW
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -1015,7 +1015,7 @@ for(;;)
          }
        }
     }
-TCNT1 = 0;
+TCNT1 = 0; 
 HTM = 0;
 return TRUE;
 }
@@ -1025,7 +1025,7 @@ boolean clear_on_fall(u8 mask)	// Clear counters on falling edge
 HTM = 0;
 for(;;)
     {
-    if(mask)
+    if(mask)			
        {
        if(~PINC & mask)		// Digital Input specified by mask
          break;
@@ -1044,7 +1044,7 @@ for(;;)
          }
        }
     }
-TCNT1 = 0;
+TCNT1 = 0;    
 HTM = 0;
 return TRUE;
 }
@@ -1058,9 +1058,9 @@ TCNT1 is cleared every time it touches 'TIMESIZE' and variable 'HTM' is incremet
 8 bit HTM and 16 bit TCNT1 together stores a 24 bit size time interval
 that is send to the PC.
 */
-for(;;)
+for(;;)		
     {
-    if(mask)
+    if(mask)			
        {
        if(PINC & mask)		// Digital Input specified by mask
          break;
@@ -1085,11 +1085,11 @@ dbuffer[buf_index++] = HTM;
 return TRUE;
 }
 
-boolean mark_on_fall(u8 mask)	// Save counter to dbuffer
+boolean mark_on_fall(u8 mask)	// Save counter to dbuffer 
 {
 for(;;)
     {
-    if(mask)
+    if(mask)	
        {
        if(~PINC & mask)		// Digital Input specified by mask
          break;
@@ -1097,7 +1097,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(ACSR & (1<< ACO))	// When AIN- goes below 1.23V, ACO goes HIGH
         break;
-
+ 
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -1154,14 +1154,14 @@ void triggers(u8 ch, u16 tg)
 		case APULSEHI:
 	        PORTC |= actionmask;			// Set the output bits as per mask
 			TCNT1 = 0;
-			while(TCNT1 < pulse_width) ;	// delay
+			while(TCNT1 < pulse_width) ;	// delay			
 	        PORTC &= ~actionmask;			// Clear the output bits as per mask
 			break;
 
         case APULSELO:
 	        PORTC &= ~actionmask; 			// Clear the output bit as per mask
 			TCNT1 = 0;
-			while(TCNT1 < pulse_width) ;	// delay
+			while(TCNT1 < pulse_width) ;	// delay			
     	    PORTC |= actionmask;			// Set the output bits as per mask
 			break;
 
@@ -1242,7 +1242,7 @@ for(;;)
 				}
 			triggers(ch,tg);
 			dbuffer[buf_index++] = adc_size;	 // adc_size to the caller
-			capture(ch, ns, tg);    // dbuffer[1] is channel #
+			capture(ch, ns, tg);    // dbuffer[1] is channel #		 
 		    break;
 
 	     case CAPTURE01:	// Captures ch0 & ch1
@@ -1255,7 +1255,7 @@ for(;;)
 				}
 			dbuffer[buf_index++] = adc_size;		 // adc_size to the caller
 			triggers(0,tg);
-			capture01(ns, tg);
+			capture01(ns, tg); 		 
 		    break;
 
          case QCAPTURE:
@@ -1319,7 +1319,7 @@ for(;;)
       		break;
 
 	     case SETACTION:
-/*
+/* 
 action 1 to 4 : SET/CLR/PULSE Digital Outputs just before capturing waveform.
 action 5 to 8 : Waits on Levels/Edges on Digital Inputs.
 actionmask MSBs keep the Digout Bits. LSBs keep the Digin Bits.
@@ -1343,35 +1343,35 @@ actionmask MSBs keep the Digout Bits. LSBs keep the Digin Bits.
 /* To get a stable display of periodic waveform, every time the digitization
 should start roughly at the same position of the waveform. Two levels are
 specified to allow rising and falling edge triggering.
-*/
+*/    
 	     	triglo = dbuffer[1];			// First Trigger level
 		    trighi = dbuffer[2];			// Second Trigger Level
 		    break;
 
 		 case ADC2CMP:	// ch > 7 means disconnect routing
-			if(dbuffer[1] <= 7)
+			if(dbuffer[1] <= 7)				
 				{
-		        ADMUX = dbuffer[1];
+		        ADMUX = dbuffer[1];		
       			SFIOR = (1 << ACME);	 	// Route ADC input to AIN-
 		        ADCSRA = 0;					// Disable ADC
 				}
 			else
-				SFIOR = 0;					// Disconnect AIN- from ADC inputs
-			break;
+				SFIOR = 0;					// Disconnect AIN- from ADC inputs 
+			break;			
 
 // Timer Counter related functions start here.
 	     case SETCOUNTER0:	// TC0 in CTC mode, caller sends CS bits & OCR0
-	        TCCR0 = (1<<WGM01) | (1<<COM00) | (dbuffer[1] & 7);
+	        TCCR0 = (1<<WGM01) | (1<<COM00) | (dbuffer[1] & 7);	
 	        OCR0 = dbuffer[2];
 		    break;
 
 	     case SETCOUNTER2:	// TC2 in CTC mode, caller sends CS bits & OCR2
-	        TCCR2 = (1<<WGM21) | (1<<COM20) | (dbuffer[1] & 7);
+	        TCCR2 = (1<<WGM21) | (1<<COM20) | (dbuffer[1] & 7);	
 	        OCR2 = dbuffer[2];
 		    break;
 
-	     case SETPWM:			// Set TC0 to 488 Hz PWM
-			if(dbuffer[1] == 0)
+	     case SETPWM:			// Set TC0 to 488 Hz PWM 
+			if(dbuffer[1] == 0) 
 				TCCR0 = 0;		// Switch off
 			else
 				{
@@ -1380,8 +1380,8 @@ specified to allow rising and falling edge triggering.
 				}
       		break;
 
-	     case SETPWMDAC:			// Set TC0 to 31.25 kHz PWM
-			if(dbuffer[1] == 0)
+	     case SETPWMDAC:			// Set TC0 to 31.25 kHz PWM 
+			if(dbuffer[1] == 0) 
 				TCCR0 = 0;		// Switch off
 			else
 				{
@@ -1410,7 +1410,7 @@ specified to allow rising and falling edge triggering.
 				TCNT1 = 0; while(TCNT1 < SPACE);
 				if(lo & 128)
 					{
-					TCNT1 = 0; while(TCNT1 < SPACE);
+					TCNT1 = 0; while(TCNT1 < SPACE);			
 					}
 				lo <<= 1;
 				}
@@ -1425,24 +1425,24 @@ specified to allow rising and falling edge triggering.
 The 16 bit Timer/Counter is used for time measurements. A 1 MHz clock is fed
 to the counter and the variable HTM is incremented after when it reaches 50000.
 Timeout is provided on all time measurements.
-Measures the time interval between a Level Transition one Digital Input to
+Measures the time interval between a Level Transition one Digital Input to 
 another. The 8 bit input data specifies the Input Sockets to wait for.
 The HIGH 4 bits contain the Sockets to look for the First Transition.
-For example dbuffer[1] = 00100001, time between a transition on D1 to a
+For example dbuffer[1] = 00100001, time between a transition on D1 to a 
 transition on D0 is measured.
-In fact it is possible to wait for more than one sockets at the same time and
-which ever come first can be taken. At the moment the Python function sets only
+In fact it is possible to wait for more than one sockets at the same time and 
+which ever come first can be taken. At the moment the Python function sets only 
 a single bit in each half. The Start and Stop inputs could be same or different.
 
 A special case arise when all the 4 bits are zero. In that case transition on
 the Analog Comparator input Socket is waited for. Using the ADC2CMP function,
 it is possible to route ADC input pins to Analog Comaparator Input.
-*/
+*/ 
 	     case R2RTIME:
 			hi = dbuffer[1] >> 4;		// 4 MSBs start pins
      		lo = dbuffer[1] & 15;		// 4 LSBs end pins
       		if(wait_for_low(hi))		// Just make sure the level is LOW
-        	  if(clear_on_rise(hi))		// Clear counter on rising edge src pin
+        	  if(clear_on_rise(hi))		// Clear counter on rising edge src pin 
           		if(wait_for_low(lo))	// DST pin should be LOW
             	  mark_on_rise(lo);		// Store counters at rising edge dst pin
       		break;
@@ -1451,7 +1451,7 @@ it is possible to route ADC input pins to Analog Comaparator Input.
 			hi = dbuffer[1] >> 4;		// 4 MSBs start pins
      		lo = dbuffer[1] & 15;		// 4 LSBs end pins
       		if(wait_for_high(hi))		// Just make sure the level is HIGH
-        	  if(clear_on_fall(hi))		// Clear counter on falling edge src pin
+        	  if(clear_on_fall(hi))		// Clear counter on falling edge src pin 
           		if(wait_for_high(lo))	// DST pin should be HIGH
             	  mark_on_fall(lo);		// Store counters at falling edge dst pin
       		break;
@@ -1460,7 +1460,7 @@ it is possible to route ADC input pins to Analog Comaparator Input.
 			hi = dbuffer[1] >> 4;		// 4 MSBs start pins
      		lo = dbuffer[1] & 15;		// 4 LSBs end pins
       		if(wait_for_low(hi))		// Just make sure the level is LOW
-        	  if(clear_on_rise(hi))		// Clear counter on rising edge src pin
+        	  if(clear_on_rise(hi))		// Clear counter on rising edge src pin 
             	mark_on_fall(lo);		// Store counters at falling edge dst pin
       		break;
 
@@ -1468,24 +1468,24 @@ it is possible to route ADC input pins to Analog Comaparator Input.
 			hi = dbuffer[1] >> 4;		// 4 MSBs start pins
      		lo = dbuffer[1] & 15;		// 4 LSBs end pins
       		if(wait_for_high(hi))		// Just make sure the level is HIGH
-        	  if(clear_on_fall(hi))		// Clear counter on falling edge src pin
+        	  if(clear_on_fall(hi))		// Clear counter on falling edge src pin 
             	mark_on_rise(lo);		// Store counters at rising edge dst pin
       		break;
-
-	     case MULTIR2R:
+		
+	     case MULTIR2R:	
 /* Measures the time interval between two rising edges on the same Input Socket.
 The 4 LSBs of the first argument specifies the Input Socket to look for.
 The second argument specifies the number of rising edges to be skipped in between
 the two edges measured. For example dbuffer[2] = 9 returns the time taken
 for 10 cycles. Averaging is useful for  better measurement accuracy.
-*/
-	      	lo = dbuffer[1] & 15;		// pin number in 4 LSBs
+*/    
+	      	lo = dbuffer[1] & 15;		// pin number in 4 LSBs 
       		TCNT1 =0;
       		HTM = 0;
       		if(!wait_for_low(lo)) break;	// Make sure the level is LOW
-      		if(!clear_on_rise(lo))break;	// Clear counter on rising edge src pin
+      		if(!clear_on_rise(lo))break;	// Clear counter on rising edge src pin 
       		if(!wait_for_low(lo)) break;
-
+     
       		while (dbuffer[2]--)
       			{
 		        if(!wait_for_high(lo))break;
@@ -1496,33 +1496,33 @@ for 10 cycles. Averaging is useful for  better measurement accuracy.
 		    break;
 
 /*-------------------- Active Time Interval Measurements ----------------------
-Sets the DIGITAL Output Sockets as per the 4 MSBs of the argument and measures
-the time from that to a Level Transition on the Input Socket specified by the 4 LSBs
+Sets the DIGITAL Output Sockets as per the 4 MSBs of the argument and measures 
+the time from that to a Level Transition on the Input Socket specified by the 4 LSBs 
 of the argument. 4 LSBs zero means Analog Comparator.
-*/
+*/  
 		 case SET2RTIME:
-        	PORTC |= dbuffer[1] & 0xF0;		// SET as per 4 MSBs
+        	PORTC |= dbuffer[1] & 0xF0;		// SET as per 4 MSBs 
       		HTM = 0;
       		TCNT1 = 0;
       		mark_on_rise(dbuffer[1] & 15);	// Wait as per 4 LSBs
     		break;
 
 		 case SET2FTIME:
-        	PORTC |= dbuffer[1] & 0xF0;		// SET as per 4 MSBs
+        	PORTC |= dbuffer[1] & 0xF0;		// SET as per 4 MSBs 
       		HTM = 0;
       		TCNT1 = 0;
       		mark_on_fall(dbuffer[1] & 15);	// Wait as per 4 LSBs
     		break;
 
 		 case CLR2RTIME:
-        	PORTC &= ~(dbuffer[1] & 0xF0);	// CLR as per 4 MSBs
+        	PORTC &= ~(dbuffer[1] & 0xF0);	// CLR as per 4 MSBs 
       		HTM = 0;
       		TCNT1 = 0;
       		mark_on_rise(dbuffer[1] & 15);	// Wait as per 4 LSBs
     		break;
 
 		 case CLR2FTIME:
-        	PORTC &= ~(dbuffer[1] & 0xF0);	// CLR as per 4 MSBs
+        	PORTC &= ~(dbuffer[1] & 0xF0);	// CLR as per 4 MSBs 
       		HTM = 0;
       		TCNT1 = 0;
       		mark_on_fall(dbuffer[1] & 15);	// Wait as per 4 LSBs
@@ -1536,19 +1536,19 @@ of the argument. 4 LSBs zero means Analog Comparator.
 	     	pulse_pol = dbuffer[1];
       		break;
 
-		 case USOUND:					// Sends a Pulse of PC5, look on PC2
+		 case USOUND:					// Sends a Pulse of PC5, look on PC2	
        		PORTC |= (1 << PC4);			// set OD0
 			TCNT1 = 0;
 			while(TCNT1L < pulse_width) ;	//kill time
 	        PORTC &= ~(1 << PC4);			// Clear OD0
 		    HTM = 0;
-			TCNT1 = 0;
+			TCNT1 = 0;     
 			while(TCNT1 < DEADTIME) ;		// Wait to settle noise
 		    mark_on_rise(1<<PC2);			// Store counters at rising of PC2
-			break;
+			break;			
 
-		 case PULSE2RTIME:
-		 case PULSE2FTIME:
+		 case PULSE2RTIME:	
+		 case PULSE2FTIME:	
 			hi = dbuffer[1] & 0xF0;		// 4 MSBs start pins
      		lo = dbuffer[1] & 15;		// 4 LSBs end pins
 		    if(pulse_pol)				// HIGH TRUE pulse
@@ -1566,7 +1566,7 @@ of the argument. 4 LSBs zero means Analog Comparator.
 		        PORTC |= hi;			// Restore old value
         		}
 		    HTM = 0;
-			TCNT1 = 0;
+			TCNT1 = 0;     
 			while(TCNT1 < DEADTIME) ;	// Wait to settle noise
 			if(cmd == PULSE2RTIME)
 			    mark_on_rise(lo);		// Store counters at rising of dst
@@ -1581,7 +1581,7 @@ of the argument. 4 LSBs zero means Analog Comparator.
 		    break;
 
 	     case DIGIN:			// 3 bits of PortC, 4th is analog comparator output
-	        ADMUX = 5;					// SENSOR output is on ADC input 5
+	        ADMUX = 5;					// SENSOR output is on ADC input 5		
    			SFIOR = (1 << ACME);	 	// Route ADC input to AIN-
 	        ADCSRA = 0;					// Disable ADC
      		dbuffer[buf_index++] = (PINC & 7) | ((ACSR & (1<<ACO))>>2);
@@ -1615,7 +1615,7 @@ of the argument. 4 LSBs zero means Analog Comparator.
       		else if(dbuffer[1] == 2) PORTC = dbuffer[2];
       		else if(dbuffer[1] == 3) PORTD = dbuffer[2];
       		break;
-
+	     
 		 case GETPORT:
       		if(dbuffer[1] == 0) dbuffer[buf_index++] = PINA;
       		else if(dbuffer[1] == 1) dbuffer[buf_index++] = PINB;
@@ -1630,14 +1630,14 @@ of the argument. 4 LSBs zero means Analog Comparator.
 
     	 default:
       		dbuffer[0] = INVCMD;		// Invalid Command
-      		break;
+      		break;	
          }
 
    	  while( !(UCSRA & (1 <<UDRE) ) );
       UDR = dbuffer[0];					// Send the response byte in all cases
 	  // If no error, send the data bytes to the PC. No handshake used.
 	  if(dbuffer[0] == 'D')
-	 	 for(tmp16=1; tmp16 < buf_index; ++tmp16)
+	 	 for(tmp16=1; tmp16 < buf_index; ++tmp16)	
       		{
     		while( !(UCSRA & (1 <<UDRE) ) );
     		UDR = dbuffer[tmp16];

@@ -7,4 +7,4 @@ while 1:
 	time.sleep(0.5)
 	u.outb(PORTB, 0)
 	time.sleep(0.5)
-
+	

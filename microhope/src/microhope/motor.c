@@ -39,7 +39,7 @@ int main (void)
   {
   DDRA = 15;		// Data Direction Register for PORT A
 
-  for(;;) rotateMotor(100,0);
-
+  for(;;) { rotateMotor(100,0); rotateMotor(100,1);}
+  
   return 0;
 }

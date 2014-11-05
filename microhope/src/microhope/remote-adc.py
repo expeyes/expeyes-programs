@@ -1,14 +1,14 @@
 import serial, time
 fd = serial.Serial('/dev/ttyUSB0', 38400, stopbits=1, timeout = 1.0)
-fd.flush()
+fd.flush()	
 time.sleep(1)
 
 while 1:
   ch = input('Enter Channel Number to read ADC ')
   if ch < 0 or ch > 7:
      print 'Enter from 0 to 7 only'
-     continue
-  fd.write(chr(ch))
+     continue       	
+  fd.write(chr(ch))	
   try:
     low = fd.read()
     hi = fd.read()

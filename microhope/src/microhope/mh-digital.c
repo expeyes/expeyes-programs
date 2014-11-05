@@ -1,4 +1,4 @@
-/* mh-digital.c -- routines for manipulating the I/O pins.
+/* mh-digital.c -- routines for manipulating the I/O pins. 
 
    Copyright (C) 2008 Ajith Kumar, Inter-University Accelerator Centre,
 

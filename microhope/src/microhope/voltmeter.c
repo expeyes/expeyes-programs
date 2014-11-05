@@ -1,4 +1,4 @@
-// Reads ADC channel 0 and diplays the result on the LCD
+// Reads ADC channel 0 and diplays the result on the LCD 
 
 #include "mh-lcd.c"
 #include "mh-adc.c"

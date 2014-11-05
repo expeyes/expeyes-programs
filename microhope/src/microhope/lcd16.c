@@ -80,7 +80,7 @@ writeLCD (char c)
   ++cpos;
   if(cpos == 8)
     commandLCD(128+40);
-}
+}  
 
 
 void write16(uint16_t i)
@@ -93,21 +93,21 @@ if(i/10000)
   writeLCD('0' + i/10000);
   i %= 10000;
   }
-
+  
 if( (i/1000) || pos)
   {
   pos = 1;
   writeLCD('0' + i/1000);
   i %= 1000;
   }
-
+  
 if( (i/100) || pos)
   {
   pos = 1;
   writeLCD('0' + i/100);
   i %= 100;
   }
-
+  
 if( (i/10) || pos)
   {
   writeLCD('0' + i/10);

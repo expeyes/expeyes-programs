@@ -1,4 +1,4 @@
-/*
+/* 
 Last revised on 31-3-08. Added the macros BV, sbi and cbi
 Revision started on 27-11-06. TC0 and ACOMP Interrupts are now used.
    1. Command ranges changed. Maximum 40 in each group
@@ -14,10 +14,10 @@ Last revision on 30-Nov-07 : readblock calls are changed
 Note: This program is written for ATmega16 working at 8MHz clock speed. Changing
 clock speed will require changes in the program.
 
-Revision May-08 :
+Revision May-08 : 
 rewriting SPI Interface  for top panel sockets
 
-Revision 26-Jul-08:
+Revision 26-Jul-08: 
 Version changed to 2.4
 Added code for 24bit  AD7718  ADC.
 Added conditional compilation for ATmega32 chip.
@@ -72,20 +72,20 @@ typedef	uint32_t u32;
 #define STOPHIST	13	// Stop histogramming
 #define STOPWAVE	14	// Disable interrupt based waveform generation
 #define SMRB_START	15	// Initiate an interrupt driven multi read block
-#define SMRB_STATUS	16	// Returns TC0 ISR status & number of bytes
+#define SMRB_STATUS	16	// Returns TC0 ISR status & number of bytes 
 #define SMRB_GETDATA	17	// Sends the data collected by SMRB to PC
 #define SMRB_STOP	18	// Stop SMRB and disable Timer interrupt
 #define PMRB_RUNNING	19	// Returns the TC0 ISR status
 #define PMRB_GETDATA	20	// Data collected in PROM by PMRB to PC
 #define SPI_PULL	21	// Pull one byte from SPI
 #define SPI_PULL_BAR	22	// Pull one byte from SPI (AD7718 like device)
-#define CHIP_DISABLE	23	// Disable all SPI device (D3,D2 & D1 to HIGH)
+#define CHIP_DISABLE	23	// Disable all SPI device (D3,D2 & D1 to HIGH)	
 #define HR_ADCINIT	24	// Initialize SPI ADC
 #define HRADCREAD	25	// Digitizes the plug-in ADC ,current channel
 #define GETMCUSTAT	26	// Get several microcontroller registers
 #define GETVERSION	27	// Get the phoenix firmware version
 
-// Commands with One byte argument (41 to 80)
+// Commands with One byte argument (41 to 80) 
 #define	DIGOUT 		41	// Digital output (4 bits)
 #define SETADCSIZE	42	// ADC data size (1 or 2)
 #define SETCURCHAN	43	// Select Current ADC channel
@@ -105,20 +105,20 @@ typedef	uint32_t u32;
 #define	DELCHAN		57	// Remove from MRB list
 #define SETDAC		58	// Sets the PWM DAC from 0 to 5V (0 to 255)
 #define TPEND		59	// Penulum Period from light barrier
-#define PULSEOUT	60	// Generates 1 pulse on D3 with given T
+#define PULSEOUT	60	// Generates 1 pulse on D3 with given T 
 #define AINPERIOD	61	// Connect ADC input to ACMP to measure freq.
 #define LCD_PUTCHAR	62	// Print a character on LCD Display
-#define CHIP_ENABLE	63	// Enable the specified SPI device
+#define CHIP_ENABLE	63	// Enable the specified SPI device	
 #define CHIP_ENABLE_BAR	64	// Enable for devices like AD7718
-#define SPI_PUSH	65	// Push one byte to SPI
-#define SPI_PUSH_BAR	66	// Push one byte to SPI
+#define SPI_PUSH	65	// Push one byte to SPI	
+#define SPI_PUSH_BAR	66	// Push one byte to SPI	
 #define HR_SETCHAN	67	// Select SPI ADC channel
 #define HR_CALINT	68	// internal calibration of selected channel
 #define HR_CALEXT	69	// External Zero / Full scale calibration
 #define GETPORT		70	// PINX data from port X
 
 // Commands with Two bytes argument (81 to 120)
-#define	SETNUMSAMPLES	81	// Number of samples per channel
+#define	SETNUMSAMPLES	81	// Number of samples per channel 
 #define	SETCOUNTER2	82	// Square wave on OSC2
 #define	SETADCDELAY	83	// interval between ADC conversions,10 to 1000
 #define	SETACTION	84	// MRB Actions of SET/CLR type
@@ -151,7 +151,7 @@ typedef	uint32_t u32;
 
 #define IDLE		0	// TC0 Interrupt is not enabled
 #define	CLOCK		1	// Incrementing par.pctime every second
-#define USERWAVE	2	// Wave Table from AVR EEPROM, loaded by user
+#define USERWAVE	2	// Wave Table from AVR EEPROM, loaded by user 
 #define HRUSERWAVE	3	// Wave Table from AVR EEPROM, to plug-in HRDAC
 #define	IN_SMRB		4	// SLOW MRB in progress
 #define IN_PMRB		5	// PROM MRB in progress
@@ -184,7 +184,7 @@ typedef	uint32_t u32;
 // Less function arguments or local variables. Not much RAM for stack
 u8	tmp8, tmp8_1, isr_tmp8;
 u8	HTM;			// Increment when TCNT1 crossing TIMERSIZE
-u16	tmp16, isr_tmp16;
+u16	tmp16, isr_tmp16;	
 
 
 struct data {				// All local data in one structure
@@ -193,14 +193,14 @@ struct data {				// All local data in one structure
   u16   buf_index;			// Variable for indexing the buffer
   u16	adc_delay;			// Time between samples, for READBLOCKs
   u16	num_samples;			// Number of samples, for READBLOCKs
-
+  
   u16	pmrb_delay;			// Interval between PMRB samples
   u16	pmrb_numblocks;			// Do this many blocks of 128bytes
   u8	pmrb_chlist[4];			// channel list for PMRB
   u8	pmrb_num_chan;			// Number of active PMRB channels
   u8	pmrb_bufpos;			// position on th 2 x 128 bytes buffer
-  u8	filling_half;			// upper or lower 128 byte block
-
+  u8	filling_half;			// upper or lower 128 byte block 
+    
   u8	irq_func;			// Function of the TC0 Interrupt routine
   u8	chlist[4], num_chan, chmask;	// data for MULTIREADBLOCK call
   u8	current_chan;			// Selected channel
@@ -210,7 +210,7 @@ struct data {				// All local data in one structure
   u8	buf[BUFSIZE+2];			// 1 stat + 1 MRB info + upto 800 data
   u8	set, setmask, wait, waitmask;	// SET and WAIT actions, READBLOCKs
   u8	tr1, tr2;			// ADC trigger limits
-}par;
+}par;		
 
 
 const char version[] PROGMEM = "ph2.4";
@@ -224,21 +224,21 @@ void initialize(void){
   UCSRC = BV (URSEL) | BV (UPM1) | BV (UCSZ1) | BV (UCSZ0); // 8,1,E
 
   DDRA = 0xF0;			// 4 bits ADC Input , rest for LCD Data
-  DDRB = 0;			// Configure as input
+  DDRB = 0;			// Configure as input 
   PORTB= 255;			// Enable pullup resistors
   DDRC = 0xF0;			// Low nibble Input & High nibble output
   PORTC= 15;			// Enable pullup resistors (low 4)
   DDRD = 0xff;			// All outputs
   PORTD= 0;			// All lines to LOW
   ACSR = BV(ACBG);		// AIN(+) connected to Vbg = 1.23V
-  TCCR1B = BV(CS11);		// Normal mode, Clock/8
+  TCCR1B = BV(CS11);		// Normal mode, Clock/8 
   ADCSRA = BV(ADEN);		// Enable the ADC
 
   par.adc_size = 1;
   par.num_samples = 100;
   par.adc_delay = 10;		// 10 miccrosec between samples
   par.pmrb_delay = 1;		// 1 second between samples
-  par.adc_ctmask = 1;
+  par.adc_ctmask = 1;		
   par.current_chan = 0;
   par.pulse_width = 13;		// default for 40 KHz piezo
   par.pulse_pol = 0;		// HIGH true pulse is default
@@ -247,7 +247,7 @@ void initialize(void){
   par.num_chan = 1;		// Channel zero is enabled by default, MRB
   par.chlist[0] = 0;		// Channel zero is first in list, MRB
   par.chmask = 1;		// mask is 0001 binary =>channel zero enabled,MRB
-
+  
   par.set = 0;			// No SET actions while starting
   par.setmask = 0;		// No SETMASK
   par.wait = 0;			// No wait action either
@@ -269,17 +269,17 @@ void d100us (uint16_t k)	 // 100 usecs for k = 1
 void delay_us(u16 x)		// Delay routine using 16 bit timer
 {
 if(x < 4) return;
-x -= 3;
+x -= 3;  
 TCNT1 = 0;
 while(1)
-  if (TCNT1 >= x)
+  if (TCNT1 >= x) 
     return;
 }
 
 
 boolean wait_for_high(u8 mask)	// Wait until the Input is HIGH
 {
-/*Returns TRUE if any of the Digital Input Socket specified in the
+/*Returns TRUE if any of the Digital Input Socket specified in the 
 'mask' goes HIGH. If mask is zero, waits for a rising edge on CMP
 input socket. Timeout after '50 * par.timeoutval' milliseconds.
 */
@@ -293,7 +293,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(~ACSR & BV(ACO))	// When AIN- goes above 1.23V, ACO goes LOW
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -319,7 +319,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(ACSR & BV(ACO))	// When AIN- goes below 1.23V, ACO goes HIGH
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -336,8 +336,8 @@ return TRUE;
 
 boolean clear_on_rise(u8 mask)	// Clear counters on rising edge
 {
-/* Clears the TCNT1 register and variable HTM and returns TRUE if any of the
-Digital Input (sockets) specified in the 'mask'goes HIGH.
+/* Clears the TCNT1 register and variable HTM and returns TRUE if any of the 
+Digital Input (sockets) specified in the 'mask'goes HIGH. 
 If mask is zero, waits for a rising edge on analog comparator
 input socket.
 */
@@ -352,7 +352,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(~ACSR & BV(ACO))	// When AIN- goes above 1.23V, ACO goes LOW
         break;
-
+       
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -363,7 +363,7 @@ for(;;)
          }
        }
     }
-TCNT1 = 0;
+TCNT1 = 0; 
 HTM = 0;
 return TRUE;
 }
@@ -373,7 +373,7 @@ boolean clear_on_fall(u8 mask)	// Clear counters on falling edge
 HTM = 0;
 for(;;)
     {
-    if(mask)
+    if(mask)			
        {
        if(~PINC & mask)		// Digital Input specified by mask
          break;
@@ -392,7 +392,7 @@ for(;;)
          }
        }
     }
-TCNT1 = 0;
+TCNT1 = 0;    
 HTM = 0;
 return TRUE;
 }
@@ -406,9 +406,9 @@ TCNT1 is cleared every time it touches 'TIMESIZE' and variable 'HTM' is incremet
 8 bit HTM and 16 bit TCNT1 together stores a 24 bit size time interval
 that is send to the PC.
 */
-for(;;)
+for(;;)		
     {
-    if(mask)
+    if(mask)			
        {
        if(PINC & mask)		// Digital Input specified by mask
          break;
@@ -433,11 +433,11 @@ par.buf[par.buf_index++] = HTM;
 return TRUE;
 }
 
-boolean mark_on_fall(u8 mask)	// Save counter to par.buf
+boolean mark_on_fall(u8 mask)	// Save counter to par.buf 
 {
 for(;;)
     {
-    if(mask)
+    if(mask)	
        {
        if(~PINC & mask)		// Digital Input specified by mask
          break;
@@ -445,7 +445,7 @@ for(;;)
     else			// Mask = 0 means ACMP input
       if(ACSR & BV(ACO))	// When AIN- goes below 1.23V, ACO goes HIGH
         break;
-
+ 
     if(TCNT1 > TIMERSIZE)
        {
        TCNT1 = 0;
@@ -517,7 +517,7 @@ while(i)
         if(val & 0x80)			// Push MSB first
 		PORTA |= SPI_DOUT;	// Set DOUT if Databit is '1'
         else
-		PORTA &= ~SPI_DOUT;	// else clear DOUT
+		PORTA &= ~SPI_DOUT;	// else clear DOUT 
 	PORTA |= SPI_CLK;		// Set CLOCK to HIGH
 	PORTA |= SPI_CLK;		// wait a bit
 	val <<= 1;			// make next bit the new MSB
@@ -542,7 +542,7 @@ while(i)
 	--i;
 	}
 return dat;
-}
+}	
 
 
 void spi_push_bar(u8 val)	// Should Enter with CS = LOW and SCLK = HIGH
@@ -553,7 +553,7 @@ while(i)
         if(val & 0x80)			// Push MSB first
 		PORTA |= SPI_DOUT;	// Set DOUT if Databit is '1'
         else
-		PORTA &= ~SPI_DOUT;	// else clear DOUT
+		PORTA &= ~SPI_DOUT;	// else clear DOUT 
 	PORTA &= ~SPI_CLK;		// Take Clock LOW, Time set with CRO
 	PORTA &= ~SPI_CLK;		// Take Clock LOW
 	PORTA &= ~SPI_CLK;		// Take Clock LOW
@@ -581,7 +581,7 @@ while(i)
 	--i;
 	}
 return dat;
-}
+}	
 //----------------------- End of SPI routines ---------------------
 
 
@@ -595,9 +595,9 @@ return dat;
 u8 seeprom_status(void)	// Return The Status register of AT25HP seeprom
 {
 u8 stat;
-chip_enable(CSROM);
+chip_enable(CSROM);      
 spi_push(RDSR);
-stat = spi_pull();		// Read from the slave
+stat = spi_pull();		// Read from the slave 
 chip_disable();
 return stat;
 }
@@ -616,7 +616,7 @@ chip_enable(CSROM);
 spi_push(WRDAT);
 spi_push(addr >> 8);
 spi_push(addr & 255);
-for(tmp8=0; tmp8 < 128; ++tmp8) spi_push(data[tmp8]);
+for(tmp8=0; tmp8 < 128; ++tmp8) spi_push(data[tmp8]);      
 chip_disable();
 }
 
@@ -649,7 +649,7 @@ void hr_set_dac(void)
 #define COMREG	0
 #define STATREG 0
 #define MODREG  1
-#define CONREG  2
+#define CONREG  2	
 #define FILREG	3
 #define DATREG  4
 #define OFFREG  5
@@ -823,8 +823,8 @@ switch(par.irq_func)
           PORTC &= 0xcf;		// clear D0 and D1
       else
         PORTC |= 0x30;			// Set D0 and D1
-      }
-    break;
+      }  
+    break;  
 
 
   case IN_PMRB:
@@ -839,7 +839,7 @@ The upper 256 bytes of par.buf[] is used by this routine. The 8 bit variable
 pmrb_buf_pos is used for indexing. When it crosses the LOWER 128 bytes are
 saved to SEEPROM and when it overflows, the UPPER 128 bytes are saved and
 this process goes on until the requested number of blocks are filled.
-*/
+*/  
     if(par.minor_ticks++ == 124) 	// One second elapsed
       {
       par.minor_ticks = 0;
@@ -848,7 +848,7 @@ this process goes on until the requested number of blocks are filled.
         {
         // Convert ADC channels as per par.pmrb_chlist. Store data
         for(isr_tmp8=0; isr_tmp8 < par.pmrb_num_chan; ++isr_tmp8)
-          {
+          { 
           sbi(ADCSRA, ADIF);
           ADMUX = AVREF | ((par.adc_size & 1) << 5) | par.pmrb_chlist[isr_tmp8];
           ADCSRA = BV(ADEN) | BV(ADSC) | SLOW_CONV_MASK;
@@ -857,48 +857,48 @@ this process goes on until the requested number of blocks are filled.
             par.buf[PMRB_INDEX + par.pmrb_bufpos++] = ADCL;
           par.buf[PMRB_INDEX + par.pmrb_bufpos++] = ADCH;
           }
-
+ 
         if( (par.pmrb_bufpos & 128) && (par.filling_half == LOWER) )
           {
-          seeprom_write_enable();
-          while(seeprom_status() & 1);
+          seeprom_write_enable(); 
+          while(seeprom_status() & 1); 
           seeprom_write_block(128 * isr_tmp16++, par.buf + PMRB_INDEX);
           par.filling_half = UPPER;	// Mark the current HALF
           }
         else
         if( !(par.pmrb_bufpos & 128) && (par.filling_half == UPPER) )
           {
-          seeprom_write_enable();
-          while(seeprom_status() & 1);
+          seeprom_write_enable(); 
+          while(seeprom_status() & 1); 
           seeprom_write_block(128 * isr_tmp16++, par.buf+BUFSIZE - 128);
-          par.filling_half = LOWER;
+          par.filling_half = LOWER;	
           }
 
         if(isr_tmp16 == par.pmrb_numblocks)	// Stop acquiring data
           {
-          while(seeprom_status() & 1);	// Extra Block for END Time stamp
-          seeprom_write_enable();
-          while(seeprom_status() & 1);
+          while(seeprom_status() & 1);	// Extra Block for END Time stamp 
+          seeprom_write_enable(); 
+          while(seeprom_status() & 1); 
           seeprom_write_block(128 * isr_tmp16, (u8*) &par.pctime);
           par.irq_func = CLOCK;
           }
         }
       }
   break;
-
+      
   case CLOCK:
-/*
+/* 
 Increments the 4 byte time stamp loaded from PC, by SETTIME,  every second.
 This is how we keep a local clock so long as power is up. Time stamp
 is required by PMRB functions.
-*/
+*/  
     if(par.minor_ticks++ == 124) 	// One second elapsed
       {
       par.minor_ticks = 0;
       ++par.pctime;
       }
   break;
-
+  
   case USERWAVE:	// Output to PWM DAC, whatever loaded by the user
     OCR2 = eeprom_read_byte((u8ptr)par.minor_ticks++);
     if(par.minor_ticks == TABLESIZE) par.minor_ticks = 0;
@@ -916,14 +916,14 @@ is required by PMRB functions.
   case IN_SMRB:
 /*
 SMRB_START sets the TC0 interrupt 4 times per millisecond. So (4 * adc_delay)
-gives delay in milliseconds. Data is stored in a manner simlar to
+gives delay in milliseconds. Data is stored in a manner simlar to 
 MULTIREADBLOCK.
-*/
+*/  
     if(par.minor_ticks++ % (4 * par.adc_delay) )	// 250 us * 4 * adc_delay
       break;
-
+      
     for(isr_tmp8=0; isr_tmp8 < par.num_chan; ++isr_tmp8)	// Multi-channel
-      {
+      { 
       sbi(ADCSRA, ADIF);
       ADMUX =  ((par.adc_size & 1) << 5) | par.chlist[isr_tmp8];
       ADCSRA = BV(ADEN) | BV(ADSC) | SLOW_CONV_MASK;
@@ -932,12 +932,12 @@ MULTIREADBLOCK.
          par.buf[isr_tmp16++] = ADCL;
       par.buf[isr_tmp16++] = ADCH;
       }
-
+      
     if (isr_tmp16 >= (par.num_samples * par.adc_size * par.num_chan + 4) )
       {
       par.irq_func = 0;			// Job is over. Caller checks this flag
       TIMSK &= ~BV(OCIE0);		// Disable Compare0 match interrupts
-      }
+      }  
     break;
 
 
@@ -955,7 +955,7 @@ while ( !(ADCSRA & (1<<ADIF)) ) ;	// wait for ADC conversion
 ++*( (u16*) par.buf + ADCH + 2);	// Increment location as 16 bit word
 if(*( (u16*) par.buf + ADCH + 2) == 0xffff)
       ACSR &= ~BV(ACIE);		// Overflow. Disable interrupts
-
+      
 tmp8 = PORTC;				// Clear DRDY flag
 PORTC = tmp8 & 0x7f;			// Take D4 LOW
 PORTC = tmp8 | 0x80;			// and back to HIGH
@@ -971,12 +971,12 @@ in executing the command. At the 'response + output data' is to the PC.
 The number of bytes returned depends on the command and arguments.
 The calling Python routines are written accordingly. In general
 1. Time measurement calls return 1+3 bytes
-2. READBLOCK and MULTIREADBLOCK sends two bytes after the response byte
+2. READBLOCK and MULTIREADBLOCK sends two bytes after the response byte 
 indicating the number of data bytes following.
 Using the format "par.buf[par.bufindex++] = byte"
 for filling keeps track of the number of bytes filled in par.bufindex.
 */
-u8 cmd = par.buf[0];		// Save the Command
+u8 cmd = par.buf[0];		// Save the Command 
 par.buf[0] = DONE;		// Fill reply Assuming Success
 par.buf_index = 1;		// Filling of return Data from second byte onwards
 
@@ -986,7 +986,7 @@ switch(cmd)
 The normal MULTIREADBLOCK call allows a delay is specified in microseconds.
 When digitizing the maximum possible 800 samples at a delay of 3000 the total
 time takes in 2.4 seconds. Waiting long for ATmega16 at PC end may create
-a feeling that the program is not responding. The Interrupt driver
+a feeling that the program is not responding. The Interrupt driver 
 SLOW MULTI READ BLOCK (SMRB) is called in a manner similar to MRB.
 The delay specified is taken as in milliseconds. The call returns after setting
 the ISR and the user program can collect the data later, after checking the
@@ -1001,13 +1001,13 @@ the ADC reads or 'get_frequency()' function. They will mess up SMRB.
         par.buf[0] = INVBUFSIZE;
         break;
         }
-      isr_tmp16 = 4;		// First 4 bytes status + chmask + nwords;
+      isr_tmp16 = 4;		// First 4 bytes status + chmask + nwords; 
       par.irq_func = IN_SMRB;		// Set the function for ISR
       par.minor_ticks = 0;
-      OCR0 = 249;			// Tick every 250 usecs
+      OCR0 = 249;			// Tick every 250 usecs 
       TCCR0 = BV(WGM01) | BV(CS01);	// TC0 in Wavegen mode, Clock/8, 1 usec
       TIMSK = BV(OCIE0);		// Enable Compare0 match interrupts
-      break;
+      break;            
 
     case SMRB_GETDATA:
       par.buf[1] = par.chmask | (par.adc_size << 4);	// chmask + size
@@ -1027,7 +1027,7 @@ the ADC reads or 'get_frequency()' function. They will mess up SMRB.
       par.buf[par.buf_index++] = (tmp16 >> 8) & 255;
       break;
 
-//---------------- Top panel SPI fine control functions. -----------------
+//---------------- Top panel SPI fine control functions. -----------------    
     case SPI_PULL:
       par.buf[par.buf_index++] = spi_pull();
       break;
@@ -1060,8 +1060,8 @@ the ADC reads or 'get_frequency()' function. They will mess up SMRB.
     case COPY_E2S:
     /*
     Used only for trouble shooting the SEEPROM Plugin. This will copy 128 bytes
-    from the beginning of the internal EEPROM to the AT25HP512
-    Serial EEPROM plugged into the front side slot.
+    from the beginning of the internal EEPROM to the AT25HP512 
+    Serial EEPROM plugged into the front side slot.    
     Important : This one uses isr_tmp16.
     */
       TIMSK &= ~BV(OCIE0);	// Disable Compare0 interrupts, for isr_tmp16
@@ -1072,20 +1072,20 @@ the ADC reads or 'get_frequency()' function. They will mess up SMRB.
           par.buf[par.buf_index++] = eeprom_read_byte((u8ptr)tmp16++);
       seeprom_write_enable();
       seeprom_write_block(isr_tmp16, par.buf+1); // write at the address
-      par.buf_index = 1;
+      par.buf_index = 1; 
       break;
-
+      
     case GETMCUSTAT:
 /*
   Used only for trouble shooting. More registers can be added as and when
   required. The get_mcustatus() in phm.py must be changed accordingly.
-*/
+*/    
       par.buf[par.buf_index++] = DDRA;
       par.buf[par.buf_index++] = DDRB;
       par.buf[par.buf_index++] = DDRC;
       par.buf[par.buf_index++] = DDRD;
       break;
-
+      
     case GETVERSION:
       memcpy_P(&par.buf[1], version,5);
       par.buf_index += 5;
@@ -1141,7 +1141,7 @@ the ADC reads or 'get_frequency()' function. They will mess up SMRB.
 /*
 The 10 bit ADC output can be made 8 bit by the LEFT ADJUST option. This reduces
 the data size from two bytes one byte. User can select this option.
-*/
+*/    
         if(par.buf[1] > 2)
           {
           par.buf[0] = INVARG;
@@ -1149,11 +1149,11 @@ the data size from two bytes one byte. User can select this option.
           }
         par.adc_size = par.buf[1];
         break;
-
+        
     case SETCURCHAN:
 /*
 The ADC input channel to be used by the subsequent ADCREAD and READBLOCK calls.
-*/
+*/    
       if(par.buf[1] <= 4)
         par.current_chan = par.buf[1];
       else
@@ -1164,7 +1164,7 @@ The ADC input channel to be used by the subsequent ADCREAD and READBLOCK calls.
 /*
 Number of samples for BLOCKREAD and MULTIREADBLOCK calls. The upper limit
 is decided by the RAM available, 800 bytes buffer for ATMEGA16
-*/
+*/    
       tmp16 = par.buf[2] << 8;		// Shift High bytes
       tmp16 |= par.buf[1];		// Low bytes came first
       par.num_samples = tmp16;
@@ -1175,14 +1175,14 @@ is decided by the RAM available, 800 bytes buffer for ATMEGA16
 /*
 Samples the currently selected ADC input channel and does a coversion.
 Using smaller clock frequency for better accuracy.
-*/
+*/    
       sbi(ADCSRA, ADIF);			// clear old status
       ADMUX = AVREF | ((par.adc_size & 1) << 5) | par.current_chan;
       ADCSRA = BV(ADEN) | BV(ADSC) | SLOW_CONV_MASK;	// Low clock speed
       while ( !(ADCSRA & (1<<ADIF)) ) ;		// wait for ADC conversion
       if(par.adc_size == 2)			// Read ADCL for 10 bit data
          par.buf[par.buf_index++] = ADCL;
-      par.buf[par.buf_index++] = ADCH;
+      par.buf[par.buf_index++] = ADCH; 
       sbi(ADCSRA, ADIF);
       break;
 
@@ -1191,7 +1191,7 @@ Using smaller clock frequency for better accuracy.
 The time interval between two digitizations in the READBLOCK calls is set here.
 The ADC clock speed is set to get the highest possible conversion time that is
 less than the requested interval. Slow conversions have better accuracy.
-*/
+*/    
       tmp16 = par.buf[2] << 8;		// Shift High bytes
       tmp16 |= par.buf[1];		// Low bytes came first
       if( (tmp16 < 7) || (tmp16 > MAXDELAY) )
@@ -1232,21 +1232,21 @@ values of 'par.setmask.
 
     case WAITACTION:
 /* For digitizing a transient waveform, we wait for a LEVEL transition on one
-of the DIGITAL input Sockets, before proceeding towards the digitization.
+of the DIGITAL input Sockets, before proceeding towards the digitization. 
 */
       par.wait = par.buf[1];		// 1 => rising edge, 2 => falling
       par.waitmask = par.buf[2];	// bits to wait on
       break;
-
+ 
     case ADDCHAN:			// For MRB calls
 /*
 The MULTIREADBLOCK call digitizes the channels as per 'par.chmask'.
-par.chlist[] is made from chmask. The order in which channels are selected is
+par.chlist[] is made from chmask. The order in which channels are selected is 
 decided by 'par.chlist'. For example, if chmask is 1001 binary, chlist becomes
 chlist = {1,0,0,1}. MULTIREADBLOCK digitizes first and fourth channels.
 ADDCHAN is for adding a channel to the list and DELCHAN for removing one.
 par.num_chan and par.chlist[] are evaluated every time you change 'par.chmask'.
-*/
+*/    
       if(par.buf[1] > 3)		// Channels from 0 to 3 only
           {
           par.buf[0] = INVARG;
@@ -1272,9 +1272,9 @@ par.num_chan and par.chlist[] are evaluated every time you change 'par.chmask'.
           par.chlist[par.num_chan++] = tmp8;
       break;
 
-    case GETCHANMASK:
+    case GETCHANMASK:			
         par.buf[par.buf_index++] = par.chmask | (par.adc_size << 4);
-        break;
+        break;	
 
     case ADCTRIGLEVELS:
 /*
@@ -1282,7 +1282,7 @@ To get a stable display of periodic waveform, every time the digitization
 should start roughly at the same position of the waveform. Two levels are
 specified to allow rising and falling edge triggering. See the MULTIREADBLOCK
 below to see the usage of the variables below.
-*/
+*/    
       par.tr1 = par.buf[1];			// First Trigger level
       par.tr2 = par.buf[2];			// Second Trigger Level
       break;
@@ -1293,16 +1293,16 @@ below to see the usage of the variables below.
 /*
 READBLOCK digitizes ADC input 'current_chan'. Number of samples is limited to
 BUFSIZE if 'adc_size' is one byte, half of it for two byte 'adc_size'.
-The time interval between samples is decided by 'par.adc_delay'.
-
+The time interval between samples is decided by 'par.adc_delay'. 
+    
 MULTIREADBLOCK digitizes upto four channels as per the current chmask[],
 num_samples and adc_size. Total data output should not exceed BUFSIZE.
-In one byte size, upto 200 samples possible when all four channels
+In one byte size, upto 200 samples possible when all four channels 
 are selected.
 
 SET, CLEAR and PULSE on Digital Output Sockets and WAIT on Digital Inputs
 are common to both calls.
-*/
+*/    
       if (cmd == READBLOCK)	// Command is stored in cmd
         {
         ADMUX = AVREF | BV(ADLAR) | par.current_chan;	// Trigger Source
@@ -1321,15 +1321,15 @@ are common to both calls.
           break;
           }
         }
-      // Second byte: Returns info on chmask and adc_size to the caller.
+      // Second byte: Returns info on chmask and adc_size to the caller.  
       par.buf[par.buf_index++] = par.chmask | (par.adc_size << 4);
 
-/*
+/*        
 Operations on Digital I/O Sockets just before block reads are done here,
 based on the values of par.set, par.wait, par.setmask and par.waitmask.
-par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
-*/
-      if(par.set == 1)		// Check for SET/CLR type Actions
+par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE 
+*/      
+      if(par.set == 1)		// Check for SET/CLR type Actions 
         PORTC |= par.setmask;	// Set the output bits as per mask
       else
       if(par.set == 2)
@@ -1342,7 +1342,7 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
         {
         tmp8 = PORTC;			// Set the output bit as per mask
         PORTC |= par.setmask;		// Set the output bits as per mask
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC = tmp8 | 15;		// Restore the old value
         }
       else
@@ -1350,7 +1350,7 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
         {
         tmp8 = PORTC;			// Clear the output bit as per mask
         PORTC = (tmp8 & ~par.setmask) | 15;	// 15 maintains pullups
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC = tmp8 | 15;		// Restore the old value
         }
 
@@ -1364,7 +1364,7 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
         {
         if(!clear_on_fall(par.waitmask))  // Wait for a falling edge
           break;
-        }
+        }      
 
       if( (par.set == 0) && (par.wait == 0) )	// No conditions, so trigger
         {
@@ -1379,11 +1379,11 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
           while ( !(ADCSRA & (1<<ADIF)) ) ;	// wait for ADC conversion
           sbi(ADCSRA, ADIF);
           tmp8_1 = ADCH;
-
+          
           if(par.tr1 < par.tr2)		// Rising Edge Trigger
             {
             if( (tmp8 < tmp8_1) && (tmp8 > par.tr1) && (tmp8 < par.tr2) )
-              break;
+              break;	
             }
           else				// Falling Edge Trigger
           if( (tmp8 > tmp8_1) && (tmp8 < par.tr1) && (tmp8 > par.tr2) )
@@ -1393,12 +1393,12 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
 
       // Wavegen mode, Clock/8 to TCC1. TCNT1 clears when it matches OCR1A
       TCCR1B = BV(WGM12) | BV(CS11);
-
+      
       // Digitization starts. Code for RB and MRB are different from here.
       if(cmd == READBLOCK)	// Command is stored in cmd
         {
         ADMUX = AVREF |((par.adc_size & 1) << 5) | par.current_chan; // MUX
-        OCR1A = par.adc_delay - 1;
+        OCR1A = par.adc_delay - 1; 
         TCNT1 = 0;		// Reset TCNT1 before intering loop
         for(tmp16=0; tmp16 < par.num_samples; ++tmp16)
           {
@@ -1410,19 +1410,19 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
           sbi(ADCSRA, ADIF);		// reset ADC flag
           while(TCNT1 > 2) ;		// Wait until CTC clears TCNT1
           }
-        ADCSRA = BV(ADEN);			// Leave ADC enabled
-        TCCR1B = BV(CS11);			// T/C to Normal mode, Clock/8
+        ADCSRA = BV(ADEN);			// Leave ADC enabled	
+        TCCR1B = BV(CS11);			// T/C to Normal mode, Clock/8 
         break;
         }
-
+        
       // MULTIREADBLOCK Code starts here
       if(par.adc_ctmask < 2) 	// ADC conversion time mask
         ADCSRA = BV(ADEN) | par.adc_ctmask;
       else
         ADCSRA = BV(ADEN) | 2;
       tmp8 = (par.adc_size & 1) << 5;	// ADLAR  BIT
-      ADMUX = AVREF | tmp8 | par.chlist[0];
-      OCR1A = par.num_chan * par.adc_delay - 1;
+      ADMUX = AVREF | tmp8 | par.chlist[0]; 
+      OCR1A = par.num_chan * par.adc_delay - 1; 
       tmp16 = 0;
       TCNT1 = 0;		// Reset TCNT1 before intering loop
       while(tmp16 < par.num_samples)
@@ -1445,8 +1445,8 @@ par.set: 1 for SET; 2 for CLR; 3 for HIGH PULSE; 4 for LOW PULSE
         ++tmp16;
         while(TCNT1 > 2) isr_tmp16 = TCNT1;	// Wait until CTC clears TCNT1
         }
-      ADCSRA = BV(ADEN);			// Leave ADC enabled
-      TCCR1B = BV(CS11);			// T/C to Normal mode, Clock/8
+      ADCSRA = BV(ADEN);			// Leave ADC enabled	
+      TCCR1B = BV(CS11);			// T/C to Normal mode, Clock/8 
       break;
 
 
@@ -1458,17 +1458,17 @@ and measure the time interval between two consecutive rising edges.
       ADCSRA = 0;
       ADMUX = AVREF | (par.buf[1] & 3);	// only four channels to look for
       SFIOR |= BV(ACME);
-
+          
       tmp16 = 0;
-      tmp8_1 = par.buf[1] & 15;		// 4 LSBs
+      tmp8_1 = par.buf[1] & 15;		// 4 LSBs 
       TCNT1 =0;
       HTM = 0;
       if(!wait_for_low(0)) break;	// Make sure the level is LOW
-      if(!clear_on_rise(0))break;	// Clear counter on rising edge src pin
+      if(!clear_on_rise(0))break;	// Clear counter on rising edge src pin 
       if(!wait_for_low(0)) break;
       mark_on_rise(0);			// Store counters at rising edge
       break;
-
+      
 /*---------------------------------------------------------------------------
  Time interval measurement functions using DIGITAL I/O and ACOMP Sockets.
 The 16 bit Timer/Counter is used for time measurements. A 1 MHz clock is fed
@@ -1485,11 +1485,11 @@ Python function sets only a single bit in each half.
 A special case arise when all the 4 bits are zero. In that case transition on
 the Analog Comparator input Socket is waited for.
 For R2R, R2F,F2R and F2F type calls both Start and Stop could same or different.
-*/
+*/    
     case R2RTIME:
       tmp8_1 = par.buf[1];		// 4 LSBs source pins -4 MSBs end pins
       if(clear_on_fall(tmp8_1 & 15))	// Just make sure the level is LOW
-        if(clear_on_rise(tmp8_1 & 15))	// Clear counter on rising edge src pin
+        if(clear_on_rise(tmp8_1 & 15))	// Clear counter on rising edge src pin 
           if(wait_for_low(tmp8_1 & 15))	// Wait for it to go LOW
             mark_on_rise(tmp8_1 >> 4);	// Store counters at rising edge dst pin
       break;
@@ -1497,7 +1497,7 @@ For R2R, R2F,F2R and F2F type calls both Start and Stop could same or different.
     case R2FTIME:
       tmp8_1 = par.buf[1];		// 4 LSBs source pins -4 MSBs end pins
       if(clear_on_fall(tmp8_1 & 15))	// Just make sure the level is LOW
-        if(clear_on_rise(tmp8_1 & 15))	// Clear counter on rising edge src pin
+        if(clear_on_rise(tmp8_1 & 15))	// Clear counter on rising edge src pin 
           mark_on_fall(tmp8_1 >> 4);	// Store counters at falling edge dst pin
       break;
 
@@ -1506,14 +1506,14 @@ For R2R, R2F,F2R and F2F type calls both Start and Stop could same or different.
     case F2RTIME:
       tmp8_1 = par.buf[1];	// 4 LSBs source pins --4 MSBs end pins
       if(clear_on_rise(tmp8_1 & 15))	//Just make sure the level is HIGH
-        if(clear_on_fall(tmp8_1 & 15))	//Clear counter on falling of src pin
+        if(clear_on_fall(tmp8_1 & 15))	//Clear counter on falling of src pin 
           mark_on_rise(tmp8_1 >> 4);	// Store counters at rising of dst pin
     break;
 
     case F2FTIME:
       tmp8_1 = par.buf[1];		// 4 LSBs source pins -4 MSBs end pins
       if(clear_on_rise(tmp8_1 & 15))	// Just make sure the level is LOW
-        if(clear_on_fall(tmp8_1 & 15))	// Clear counter on rising edge src pin
+        if(clear_on_fall(tmp8_1 & 15))	// Clear counter on rising edge src pin 
           if(wait_for_high(tmp8_1 & 15))// Wait for it to go HIGH
             mark_on_fall(tmp8_1 >> 4);	// Store counters at falling edge dst pin
       break;
@@ -1525,15 +1525,15 @@ The 4 LSBs of the first argument specifies the Input Socket to look for.
 The second argument specifies the number of rising edges to be skipped in between
 the two edges measured. For example par.buf[2] = 9 returns the time taken
 for 10 cycles. Averaging is useful for  better measurement accuracy.
-*/
+*/    
       tmp16 = 0;
-      tmp8_1 = par.buf[1] & 15;		// 4 LSBs
+      tmp8_1 = par.buf[1] & 15;		// 4 LSBs 
       TCNT1 =0;
       HTM = 0;
       if(!wait_for_low(tmp8_1)) break;	// Make sure the level is LOW
-      if(!clear_on_rise(tmp8_1))break;	// Clear counter on rising edge src pin
+      if(!clear_on_rise(tmp8_1))break;	// Clear counter on rising edge src pin 
       if(!wait_for_low(tmp8_1)) break;
-
+      
       while (par.buf[2]--)
         {
         if(!wait_for_high(tmp8_1))break;
@@ -1541,7 +1541,7 @@ for 10 cycles. Averaging is useful for  better measurement accuracy.
         }
 
       if(par.buf[0] == TIMEOUT) break;
-
+  
       mark_on_rise(tmp8_1);		// Store counters at rising edge
       break;
 
@@ -1549,14 +1549,14 @@ for 10 cycles. Averaging is useful for  better measurement accuracy.
 /*
 This is no more required. multi_r2r() with skip = 1 does the job.
 This function was written to take care of the noise in light barrier output.
-*/
+*/    
       tmp16 = 0;
-      tmp8_1 = par.buf[1] & 15;		// 4 LSBs
+      tmp8_1 = par.buf[1] & 15;		// 4 LSBs 
       TCNT1 =0;
       HTM = 0;
       if(!wait_for_low(tmp8_1)) break;	// Make sure the level is LOW
       d100us(1);
-      if(!clear_on_rise(tmp8_1))break;	// Clear counter on rising edge src pin
+      if(!clear_on_rise(tmp8_1))break;	// Clear counter on rising edge src pin 
       d100us(1);
       if(!wait_for_low(tmp8_1)) break;
       d100us(1);
@@ -1569,10 +1569,10 @@ This function was written to take care of the noise in light barrier output.
 
     case SET2RTIME:	// Argument: 4 LSBs Source pins --4 MSBs end pins
 /*
-Sets the DIGITAL Output Sockets as per the 4 MSBs of the argument and measures
-the time from that to a rising edge on the Input Socket specified by the 4 LSBs
+Sets the DIGITAL Output Sockets as per the 4 MSBs of the argument and measures 
+the time from that to a rising edge on the Input Socket specified by the 4 LSBs 
 of the argument. SET2F, CLR2R and CLR2F are similar functions.
-*/
+*/    
       PORTC |= par.buf[1] << 4;
       HTM = 0;
       TCNT1 = 0;
@@ -1607,7 +1607,7 @@ of the argument. SET2F, CLR2R and CLR2F are similar functions.
 /*
 The width of the pulse generated by the PULSE2RTIME and PULSE2FTIME calls
 are set here. Used by SETACTION pulse before BLOCK READ also.
-*/
+*/    
       par.pulse_width = par.buf[1];
       break;
 
@@ -1618,50 +1618,50 @@ after 'pulse_width' microseconds. The Digital Output must be made LOW before
 making this call, otherwise you will get a STEP only.
 Polarity '1' implies a HIGH to LOW and going back to HIGH. Digital output
 must be set to HIGH before calling it.
-*/
+*/    
       par.pulse_pol = par.buf[1];
       break;
 
     case PULSE2RTIME:	// Lower nibble output, upper inputs
 /*
-Sends a Pulse on the specified, by 4 LSBs, Digital Output Socket and waits for
+Sends a Pulse on the specified, by 4 LSBs, Digital Output Socket and waits for 
 a rising edge on the Input Sockets specified by 4 MSBs of the argument.
 Time taken in microseconds is returned.
-*/
-      tmp8_1 = (par.buf[1]<<4) & 0xf0;	// get the output pins mask
+*/    
+      tmp8_1 = (par.buf[1]<<4) & 0xf0;	// get the output pins mask		
       if(!par.pulse_pol)		// HIGH TRUE pulse
         {
         PORTC |= tmp8_1;		// Set source bit
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC &= ~tmp8_1;		// Restore old value
         }
       else				// LOW TRUE pulse
         {
         PORTC &= ~tmp8_1;		// Clear source bit
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC |= tmp8_1;		// Restore old value
-        }
+        }     
       delay_us(PULSEDEADTIME);		// To avoid false trigger
       HTM = 0;
       TCNT1 = PULSEDEADTIME;		// add that up in the result
-
+                                        
       mark_on_rise(par.buf[1] >> 4);	// Store counters at rising of dst pin
     break;
 
     case PULSE2FTIME:		// Argument: 4LSB write pins  - 4MSB read pins
-      tmp8_1 = (par.buf[1]<<4) & 0xf0;	// get the output pins mask
+      tmp8_1 = (par.buf[1]<<4) & 0xf0;	// get the output pins mask		
       if(!par.pulse_pol)		// HIGH TRUE pulse
         {
         PORTC |= tmp8_1;		// Set source bit
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC &= ~tmp8_1;		// Restore old value
         }
       else				// LOW TRUE pulse
         {
         PORTC &= ~tmp8_1;		// Clear source bit
-        delay_us(par.pulse_width);
+        delay_us(par.pulse_width);			
         PORTC |= tmp8_1;		// Restore old value
-        }
+        }     
       delay_us(PULSEDEADTIME);		// To avoid false trigger
       HTM = 0;
       TCNT1 = PULSEDEADTIME;		// add that up in the result
@@ -1673,7 +1673,7 @@ Time taken in microseconds is returned.
 /*
 Sets the Timer/Counter 2 using the two arguments send by caller. A Square wave
 output is generated on the PWG output socket.
-*/
+*/    
       if(par.buf[1] <= 7)
         {
         TCCR2 = BV(WGM21) | BV(COM20) | par.buf[1];	// CTC mode
@@ -1688,7 +1688,7 @@ output is generated on the PWG output socket.
 /* The PWG output is filtered by an RC network (R = 10K, c = 0.1 uF) and
 connected to the DAC Socket. This feature is not avilable along with
 the SETCOUNTER2 feature since they use the same PWG output.
-*/
+*/    
       OCR2 = par.buf[1];
       TCCR2 = BV(WGM21) | BV(WGM20) | BV(COM21) | BV(CS20); // Fast PWM mode
       TCNT2 = 0;
@@ -1701,7 +1701,7 @@ of the 8 bit Timer/Counter0 in one second. Calling this function will
 disturb the operation of functions using the Timer Interrupt features.
 For example SETTIME, GETTIME functions use Timer0 interrupts to
 maintain a clock.
-*/
+*/    
       cli();
       tmp8_1 = TCCR0;			// Save TCCR0
       TCCR0 = 0;
@@ -1723,7 +1723,7 @@ maintain a clock.
             break;
             }
           }
-
+          
         if(TIFR & BV(TOV0))		// TC0 overflow after 255 counts
           {
           ++tmp16;
@@ -1739,15 +1739,15 @@ maintain a clock.
       break;
 
 
-/*------------------------------------------------------------------------
+/*------------------------------------------------------------------------ 
 Radiation Detection System Plug-in card routines for processing input signals
-coming at random intervals. The Radiation Detection Plugin circuit takes
-ACOMP input LOW when a pulse comes. The stretched pulse is fed to ADC ch0.
-The ACOMP interrupt routine digitizes the data and makes a 256 channel
-histogram with 16 bit per channel. The interrupts are automatically disabled
-if any of the channels reach 65535. A LOW TRUE pulse is send on D4 to clear
+coming at random intervals. The Radiation Detection Plugin circuit takes 
+ACOMP input LOW when a pulse comes. The stretched pulse is fed to ADC ch0. 
+The ACOMP interrupt routine digitizes the data and makes a 256 channel 
+histogram with 16 bit per channel. The interrupts are automatically disabled 
+if any of the channels reach 65535. A LOW TRUE pulse is send on D4 to clear 
 the Plug-in card's Data Ready signal.
-*/
+*/    
     case STARTHIST:
       ACSR = BV(ACIS1) | BV(ACIS0);	// AIN+ = 1.23V, F.edge interrupt
       ACSR |= BV(ACBG) | BV(ACIE);	// AIN+ = 1.23V, F.edge interrupt
@@ -1769,16 +1769,16 @@ the Plug-in card's Data Ready signal.
       ACSR &= ~BV(ACIE);		// disable AC interrupt
       break;
 
-/*------------------------------------------------------------------------
+/*------------------------------------------------------------------------ 
 Functions below are based on the TC0 interrupt. They setup TC0 registers
-and other required variables and return. The work is carried out later by
+and other required variables and return. The work is carried out later by 
 the interrup service routine "SIGNAL (SIG_OUTPUT_COMPARE0)".
 PC collects the results later using appropriate function calls.
 */
 
-    case SETTIME:
+    case SETTIME:	
 /*
-Initialize the 32 bit integer 'pctime' to the Timestamp send from the PC.
+Initialize the 32 bit integer 'pctime' to the Timestamp send from the PC. 
 The ISR is set to run after every 8 milliseconds and it increments 'pctime' once
 in a second. GETTIME returns the current value of 'pctime' to the PC.
 */
@@ -1788,7 +1788,7 @@ in a second. GETTIME returns the current value of 'pctime' to the PC.
       par.pctime = (par.pctime << 8) | par.buf[2];
       par.pctime = (par.pctime << 8) | par.buf[1];
       par.minor_ticks = 0;
-
+                      
       TCCR0 = BV(WGM01) | BV(CS02);	// Wavegen mode, Clock/256 to TCC0
       sbi(TIFR,OCF0);			// Clear pending int. flag, if any
       OCR0 =  249;			// Interrupt every 32*250=8000 usec
@@ -1807,13 +1807,13 @@ in a second. GETTIME returns the current value of 'pctime' to the PC.
     case SETWAVEFORM:
 /*
 Configures TC0 interrupt to run in multiples of 32 microseconds. The DAC output
-is set by the ISR. The sinewave table is part of the code. Ramp and Triagular
+is set by the ISR. The sinewave table is part of the code. Ramp and Triagular 
 waves are generated by calculations. Generates waves from 0.5 Hz to 125 Hz.
 The wave forms are not of great quality since we do not have a proper DAC,
 we use the PWM DAC
-*/
+*/    
       par.irq_func = par.buf[2];		// Set the type of wave
-      if(par.irq_func == HRUSERWAVE)		// Use plug-in DAC
+      if(par.irq_func == HRUSERWAVE)		// Use plug-in DAC	
         {
 //        SDACP_DIR |= SDACP_DMASK;		// Set direction for SDAC
 //        DDRA = PA_SPIMASK;	      		// and SPI communication
@@ -1823,25 +1823,25 @@ we use the PWM DAC
 
       par.minor_ticks = 0;		// Used by ISR
       isr_tmp16 = 0;			// Used by TRI and RAMP
-      OCR0 = par.buf[1];		// Tick every 32 * par.buf[1] usecs
+      OCR0 = par.buf[1];		// Tick every 32 * par.buf[1] usecs 
       TCCR0 = BV(WGM01) | BV(CS02);	// TC0 in Wavegen mode, Clock/256, 32 usec
       TIMSK = BV(OCIE0);		// Enable Compare0 match interrupts
-      break;
+      break;            
 
     case STOPWAVE:
       par.irq_func = 0;			// Mark that we are through
       TIMSK &= ~BV(OCIE0);		// Disable Compare0 match interrupts
       break;
-
+      
     case PULSE_D0D1:
       par.irq_func = IN_PULSE;		// Mark where we are
       par.minor_ticks = 0;		// use this as a counter
       isr_tmp16 = par.buf[2] << 8;	// Toggle D0 and D1 when
       isr_tmp16 |= par.buf[1];		// minor_ticks reaches isr_tmp16
-      OCR0 = 0;				// Tick every 32 usecs
+      OCR0 = 0;				// Tick every 32 usecs 
       TCCR0 = BV(WGM01) | BV(CS02);	// TC0 in Wavegen mode, Clock/256, 32 usec
       TIMSK = BV(OCIE0);		// Enable Compare0 match interrupts
-      break;
+      break;            
 
 
 //------Functions using the Serial EEPROM Plug-in Module------------------
@@ -1849,7 +1849,7 @@ we use the PWM DAC
     case PMRB_START:
 /*
 PROM MULTI READ BLOCK, PMRB, is meant for converting Phoenix-M into a multi-
-channel data logger. It requires the SEEPROM plug-in module. PMRB_START
+channel data logger. It requires the SEEPROM plug-in module. PMRB_START 
 is called with the number of Samples and the delay between digitizations.
 SETTIME must be called before calling PMRB.
 The adc_size and active channel information should be set earlier.
@@ -1894,7 +1894,7 @@ from the serial port and taken anywhere to record data.
       isr_tmp16 = 0;		// Point to EEPROM first block,128 bytes
       par.pmrb_bufpos = 0;	// position on th 2 x 128 bytes buffer
       par.filling_half = LOWER;	// Start with lower block
-
+      
       // Add the 10 bytes header with sampling details + 4 byte timestamp
       par.buf[PMRB_INDEX + par.pmrb_bufpos++] = par.buf[1]; 	// numblocks
       par.buf[PMRB_INDEX + par.pmrb_bufpos++] = par.buf[2];
@@ -1912,7 +1912,7 @@ from the serial port and taken anywhere to record data.
       par.buf[PMRB_INDEX + par.pmrb_bufpos++] = (par.pctime >> 24) & 255;
 
       ADCSRA = BV(ADEN);	// Enable ADC
-      break;
+      break;            
 
     case PMRB_RUNNING:
       if(par.irq_func == IN_PMRB)
@@ -2025,7 +2025,7 @@ main (void)
   for(;;)
     {
     while ( !(UCSRA & (1<<RXC)) ) ;		// wait for receiver data
-    par.buf[par.buf_index++] = UDR;		// Put the byte in the buffer. Error TODO
+    par.buf[par.buf_index++] = UDR;		// Put the byte in the buffer. Error TODO 
 
     if(par.buf_index*GROUPSIZE > par.buf[0])	// Process after required no. of arguments
       {

@@ -2,7 +2,7 @@
 Version=2.0.0
 Type=Application
 
-Exec=uhope
+Exec=python /usr/share/microhope/mh-ide.py
 Icon=mh-logo.png
 Name=µHOPE
 Comment=MicroHOPE microcontroller programming system

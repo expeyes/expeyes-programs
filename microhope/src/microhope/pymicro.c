@@ -1,4 +1,4 @@
-/*
+/* 
 Program : pymicro.c
 author  : Ajith Kumar (ajith@iuac.res.in)
 License : GNU GPL version 3 or above
@@ -28,17 +28,17 @@ uint16_t *port;
   for(;;)				// Infinite loop waiting for commands from PC
     {
     while ( !(UCSRA & (1<<RXC)) ) ;		// wait for command from PC
-    cmd = UDR;							// Store the received byte
+    cmd = UDR;							// Store the received byte 
     if(cmd == READB)
     	{
     	while ( !(UCSRA & (1<<RXC)) ) ;		// wait for serial data
-		port =  UDR;						// get the port address to read
+		port =  UDR;						// get the port address to read		
 		UDR = *port;
 		}
 	else if(cmd == WRITEB)
 		{
 		while ( !(UCSRA & (1<<RXC)) ) ;		// wait for serial data
-		port = UDR;							// get the port address to read
+		port = UDR;							// get the port address to read		
 		while ( !(UCSRA & (1<<RXC)) ) ;		// wait for serial data
 		data = UDR;
 		*port = data;						// write it to the port address
