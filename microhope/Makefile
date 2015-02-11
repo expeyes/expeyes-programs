@@ -12,7 +12,7 @@ install: uhope
 	make -C po install DESTDIR=$(DESTDIR)
 
 clean:
-	rm -f *.o uhope
+	rm -f *.o uhope *~ *.pyc
 	make -C po clean
 
 .PHONY: all install clean
