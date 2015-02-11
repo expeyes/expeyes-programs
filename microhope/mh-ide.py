@@ -503,7 +503,7 @@ class microhope(wx.Frame):
 		dlg.ShowModal()
 		dlg.Destroy()
 	def Author(self,event):
-		dlg = wx.MessageDialog(self,_("Author :Arun Jayan\narun.jayan.j@ieee.org\nGNU USERS NETWORK"),_("Author of IDE"),wx.OK|wx.ICON_INFORMATION)
+		dlg = wx.MessageDialog(self,_("Arun Jayan\narunjayan32@gmail.com\nFOSSR -College Of Engineering,Poonjar\n\nhttps://github.com/ArunJayan"),_("Author of IDE"),wx.OK|wx.ICON_INFORMATION)
 		dlg.ShowModal()
 		dlg.Destroy()
 	def mh_status(self,f,d):
@@ -555,7 +555,7 @@ class microhope(wx.Frame):
 	def set_mhbootloader(self,event):
 		self.SetTitle(_("Setting up MicroHOPE bootloader via USBASP....."))
 		self.show(_("Setting up MicroHOPE bootloader via USBASP.... \nIt will take few seconds"))
-		self.command = 'avrdude -B10 -c usbasp -patmega32 -U flash:w:/etc/skel/microhope/ISP/ATmegaBOOT_168_atmega32.hex'
+		self.command = 'avrdude -B10 -c usbasp -patmega32 -U flash:w:/usr/share/microhope/firmware/Bootloader_atmega32.hex'
 		self.result = commands.getstatusoutput(self.command)
 		if self.result[0] != 0 :
 			self.show(_('Error: Check Connections....'))
