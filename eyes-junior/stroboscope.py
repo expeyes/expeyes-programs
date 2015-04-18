@@ -1,6 +1,16 @@
-from Tkinter import *
-import expeyes.eyesj, expeyes.eyeplot as eyeplot
-p=expeyes.eyesj.open()
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
+
+p=eyes.open()
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -14,7 +24,7 @@ def set_freq(w):
 
 w = Tk()
 Label(text=_('Use Slider to change SQR1 from 1 to 100 Hz')).pack(side=TOP)
-Sqr1 = Scale(w,command = set_freq, orient=HORIZONTAL, length=220, showvalue=True, from_ = 1, to=50, resolution=.1)
+Sqr1 = Scale(w,command = set_freq, orient=HORIZONTAL, length=220, showvalue=True, from_ = 1, to=100, resolution=.1)
 Sqr1.pack(side=TOP)
 Button(text=_('QUIT'), command=sys.exit).pack(side=TOP)
 #eyeplot.pop_image('pics/driven-pend.png', _('Driven Pendulum'))
