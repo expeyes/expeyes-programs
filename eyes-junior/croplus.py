@@ -14,9 +14,9 @@ _ = gettext.gettext
 import sys
 sys.path=[".."] + sys.path
 if sys.version_info.major==3:
-        from tkinter import *
+    from tkinter import *
 else:
-        from Tkinter import *
+    from Tkinter import *
 
 import expeyes.eyesj as eyes
 import expeyes.eyeplot as eyeplot
@@ -38,10 +38,11 @@ CMERR = False
 
 MAXCHAN = 4
 chan4 = [ [1, [], [],0,[],0,0,0,None,None,0.0 ],\
-		  [0, [], [],0,[],0,0,0,None,None,0.0 ],\
-		  [0, [], [],0,[],0,0,0,None,None,0.0 ],\
-		  [0, [], [],0,[],0,0,0,None,None,0.0 ]\
-		] # Source, t, v, fitflag, vfit, amp, freq, phase, widget1, widget2, display offset in volts
+          [0, [], [],0,[],0,0,0,None,None,0.0 ],\
+          [0, [], [],0,[],0,0,0,None,None,0.0 ],\
+          [0, [], [],0,[],0,0,0,None,None,0.0 ]\
+]
+# Source, t, v, fitflag, vfit, amp, freq, phase, widget1, widget2, display offset in volts
 CHSRC   = 0		# index of each item in the list above.
 TDATA   = 1
 VDATA   = 2
@@ -60,506 +61,555 @@ channels = ['CH1', 'CH2', 'CH3', 'CH4']
 chancols = ['black', 'red', 'blue','magenta']
 # Actions before capturing waveforms
 actions = ['ATR', 'WHI', 'WLO', 'WRE', 'WFE','SHI', 'SLO', 'HTP', 'LTP']
-acthelp = [_('Analog Trigger'),_('Wait for HIGH'), _('Wait for LOW'), \
-	   _('Wait for Rising Edge'), _('Wait for Falling Edge'),\
-	   _('Set HIGH'), _('Set LOW'), _('High True Pulse'), \
-	   _('Low True Pulse')]
+acthelp = [_('Analog Trigger'),_('Wait for HIGH'), _('Wait for LOW'),
+	   _('Wait for Rising Edge'), _('Wait for Falling Edge'),
+	   _('Set HIGH'), _('Set LOW'), _('High True Pulse'),
+	   _('Low True Pulse')
+]
 
-srchelp = [_('Analog Input -5 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input -5 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),\
-	   _('Digital Output 0 to +5 volts. SHI, SLO,HTP or LTP can be assigned to this'),\
-	   _('Constant Current Source Output. SHI, SLO,HTP or LTP can be assigned to this')\
-	   ]
+srchelp = [
+  _('Analog Input -5 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input -5 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Analog Input  0 to +5 volts. Drag this to CH1 .. CH4 to Display it'),
+  _('Digital Output 0 to +5 volts. SHI, SLO,HTP or LTP can be assigned to this'),
+  _('Constant Current Source Output. SHI, SLO,HTP or LTP can be assigned to this')
+]
 
 # Geometry of the left panel, selection of triggers  & channels
 LPWIDTH  = 80
 LPHEIGHT = 320
-VSTEP = 25
-VBORD = 10
+VSTEP    = 25
+VBORD    = 10
 OFFSET   = VSTEP * len(sources)
-SELSRC  = 1
-SETACT  = 2
-WAITACT = 3
-SELCHAN = 4
-NORMAL = 100		# Status of Display channel
-FIT = 101			# Fit to Sinusoid
-DEL = 102		    # Remove entry
-FTR = 103			# Fourier transform
-selection  = 0
-seltag = ''		# selected tag
+SELSRC   = 1
+SETACT   = 2
+WAITACT  = 3
+SELCHAN  = 4
+NORMAL   = 100	      # Status of Display channel
+FIT      = 101	      # Fit to Sinusoid
+DEL      = 102	      # Remove entry
+FTR      = 103	      # Fourier transform
+selection = 0
+seltag    = ''	      # selected tag
 
 def set_ch1_offset(val):
-	chan4[0][DOFFSET] = int(val) * VPERDIV
+    chan4[0][DOFFSET] = int(val) * VPERDIV
 
 def set_ch2_offset(val):
-	chan4[1][DOFFSET] = int(val) * VPERDIV
+    chan4[1][DOFFSET] = int(val) * VPERDIV
 
 def set_ch3_offset(val):
-	chan4[2][DOFFSET] = int(val) * VPERDIV
+    chan4[2][DOFFSET] = int(val) * VPERDIV
 
 def set_ch4_offset(val):
-	chan4[3][DOFFSET] = int(val) * VPERDIV
+    chan4[3][DOFFSET] = int(val) * VPERDIV
 
 def show_ftr(ch):
-	fa = eyemath.fit_sine(chan4[ch][TDATA],chan4[ch][VDATA])	# get frequency to decide suitable 'dt'
-	if fa != None:
-		fr = fa[1][1]*1000			# frequency in Hz
-		dt = int(1.e6/ (20 * fr))	# dt in usecs, 20 samples per cycle
-		t,v = p.capture(chan4[ch][CHSRC], 1800, dt)
-		xa,ya = eyemath.fft(v,dt)
-		eyeplot.plot(xa*1000,ya, title = _('Fourier Transform,power spectrum'), xl = _('Freq'), yl = _('Amp'))
-		msg(_('%s Fourier transform done, Data saved to "fft.dat"') %(channels[seltag]))
-		p.save([[xa,ya]],'fft.dat')
+    fa = eyemath.fit_sine(chan4[ch][TDATA],chan4[ch][VDATA])	# get frequency to decide suitable 'dt'
+    if fa != None:
+        fr = fa[1][1]*1000        # frequency in Hz
+        dt = int(1.e6/ (20 * fr)) # dt in usecs, 20 samples per cycle
+        t,v = p.capture(chan4[ch][CHSRC], 1800, dt)
+        xa,ya = eyemath.fft(v,dt)
+        eyeplot.plot(xa*1000,ya,
+                     title = _('Fourier Transform,power spectrum'),
+                     xl = _('Freq'), yl = _('Amp'))
+        msg(_('%s Fourier transform done, Data saved to "fft.dat"')
+            % (channels[seltag]))
+        p.save([[xa,ya]],'fft.dat')
 
 def msg(s, col='blue'):
-	msgwin.config(text=s, fg=col)
+    msgwin.config(text=s, fg=col)
 
 def set_timebase(w):
-	global delay, NP, NC, VPERDIV, chan4
-	divs = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0,100.0]
-	msperdiv = divs[int(timebase.get())]
-	totalusec = int(msperdiv * 1000 * 10)
-	chans = []				# Update channel & color information
-	for m in range(len(chan4)):
-		if chan4[m][0] > 0:
-			chans.append(chan4[m][0])		# channel number
-	NC = len(chans)
-	if NC < 1:
-		return
-	if totalusec == 1000:
-		NP = 250
-		delay = 4*NC
-	else:
-		NP = 400
-		delay = (totalusec/NP)*NC
+    global delay, NP, NC, VPERDIV, chan4
+    divs = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0,100.0]
+    msperdiv = divs[int(timebase.get())]
+    totalusec = int(msperdiv * 1000 * 10)
+    chans = []             # Update channel & color information
+    for m in range(len(chan4)):
+        if chan4[m][0] > 0:
+            chans.append(chan4[m][0])  # channel number
+    NC = len(chans)
+    if NC < 1:
+        return
+    if totalusec == 1000:
+        NP = 250
+        delay = 4*NC
+    else:
+        NP = 400
+        delay = (totalusec/NP)*NC
 
-	if delay < MINDEL*NC:
-		delay = MINDEL*NC
-	elif delay > 1000:
-		delay = 1000
+    if delay < MINDEL*NC:
+        delay = MINDEL*NC
+    elif delay > 1000:
+        delay = 1000
 
-	totalmsec = round(0.001 * NP * NC *delay)
-	tms = int(totalmsec)
-	NP = tms * 1000/NC/delay
-	if NP%2 == 1 : NP += 1		# Must be an even number, for fitting
-	if NP > 450: NP = 450
-	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),'V')
-	#print (_('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv)
+    totalmsec = round(0.001 * NP * NC *delay)
+    tms = int(totalmsec)
+    NP = tms * 1000/NC/delay
+    if NP%2 == 1 : NP += 1  # Must be an even number, for fitting
+    if NP > 450: NP = 450
+    g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),'V')
+    #print (_('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv)
 
 def measure_freq(e):
-	w = e.widget
-	tag =w.find_closest(e.x, e.y)
-	item = w.itemcget(tag,'tag')
-	target = int(item.split()[0])
-	if e.x < LPWIDTH/2 and e.y < OFFSET and 2 < target < 8:	 # Selected IN1, IN2, SEN, SQR1 or SQR2
-		freq = p.get_frequency(target)
-		if freq > 0.5:
-			r2f = p.r2ftime(target, target)*1.0e-6
-			msg(_('%4s : Freq = %5.3f. Duty Cycle = %5.1f %%') %(sources[target-1], freq, r2f*freq*100))
-			s=_('%4s\n%5.3f Hz\n%5.1f %%')%(sources[target-1], freq, r2f*freq*100)
-			g.disp(s)
-		else:
-			msg(_('No squarewave detected on %4s') %(sources[target-1]))
-	elif e.x > LPWIDTH/2 and e.y > OFFSET and target < 3:	 # Selected CH1, CH2 or CH3
-		if chan4[target][CHSRC] != 0 and chan4[target+1][CHSRC] != 0:  # both channels active
-			fa = eyemath.fit_sine(chan4[target][TDATA],chan4[target][VDATA])
-			fb = eyemath.fit_sine(chan4[target+1][TDATA],chan4[target+1][VDATA])
-			if fa != None and fb != None:
-				v1 = fa[1][0]
-				v2 = fb[1][0]
-				f1 = fa[1][1]*1000	# millisecond x-axis gives frequency in kHz, convert it
-				f2 = fb[1][1]*1000
-				p1 = fa[1][2]
-				p2 = fb[1][2]
-				s = _('%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | Phase difference = %5.1f degree') \
-				    % (channels[target], v1, f1, channels[target+1],v2, f2, (p2-p1)*180/3.1416)
-				msg(s)
-				s=_('%4s\n%5.3f Hz\n%5.1f %%')%(sources[target-1], freq, r2f*freq*100)
-				g.disp(s)
-			else:
-				msg(_('Fitting of data failed. Try with Xmgrace'))
-		else:
-			msg(_('Selected channel and the next one should have data'), 'red')
+    w = e.widget
+    tag =w.find_closest(e.x, e.y)
+    item = w.itemcget(tag,'tag')
+    target = int(item.split()[0])
+    if e.x < LPWIDTH/2 and e.y < OFFSET and 2 < target < 8:
+        # Selected IN1, IN2, SEN, SQR1 or SQR2
+        freq = p.get_frequency(target)
+        if freq > 0.5:
+            r2f = p.r2ftime(target, target)*1.0e-6
+            msg(_('%4s : Freq = %5.3f. Duty Cycle = %5.1f %%')
+                % (sources[target-1], freq, r2f*freq*100))
+            s=_('%4s\n%5.3f Hz\n%5.1f %%')%(sources[target-1], freq, r2f*freq*100)
+            g.disp(s)
+        else:
+            msg(_('No squarewave detected on %4s')
+                % (sources[target-1]))
+    elif e.x > LPWIDTH/2 and e.y > OFFSET and target < 3:
+        # Selected CH1, CH2 or CH3
+        if chan4[target][CHSRC] != 0 and chan4[target+1][CHSRC] != 0:  # both channels active
+            fa = eyemath.fit_sine(chan4[target][TDATA],
+                                  chan4[target][VDATA])
+            fb = eyemath.fit_sine(chan4[target+1][TDATA],
+                                  chan4[target+1][VDATA])
+            if fa != None and fb != None:
+                v1 = fa[1][0]
+                v2 = fb[1][0]
+                f1 = fa[1][1]*1000
+                # millisecond x-axis gives frequency in kHz, convert it
+                f2 = fb[1][1]*1000
+                p1 = fa[1][2]
+                p2 = fb[1][2]
+                s = _('%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | Phase difference = %5.1f degree') \
+                    % (channels[target], v1, f1, channels[target+1],v2, f2, (p2-p1)*180/3.1416)
+                msg(s)
+                s=_('%4s\n%5.3f Hz\n%5.1f %%') \
+                   % (sources[target-1], freq, r2f*freq*100)
+                g.disp(s)
+            else:
+                msg(_('Fitting of data failed. Try with Xmgrace'))
+        else:
+            msg(_('Selected channel and the next one should have data'), 'red')
 
 def release(e):
-	global selection, seltag, chan4, NC
-	w = e.widget
-	w.configure(cursor = 'arrow')
-	if selection == 0:
-		msg(_('Invalid Action'), 'red')
-		return
-	tag =w.find_closest(e.x, e.y)
-	item = w.itemcget(tag,'tag')
-	target = int(item.split()[0])
-	if e.x > LPWIDTH/2 and e.y > OFFSET and selection == SELSRC:		# Assign source to channel
-		msg(_('Assigned Data Input %4s to Channel %s') %(sources[seltag-1],channels[target]))
-		s = '%s:' %(sources[seltag-1])
-		chan4[target][WINFO].config(text = s, fg=chancols[target])
-		chan4[target][0] = seltag
-		set_timebase(0)				# Adding  a channel require recalculation
-	elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == SETACT and target > 6:   
-		msg(_('%4s effective on Output %s') %(acthelp[seltag], sources[target-1]))
-		p.enable_action(seltag, target+2)		# There is an offset of 2 for OD1 & CCS
-		#print ('SET ', seltag,target+2)
-	elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == WAITACT and target <= 7:   
-		msg(_('%4s effective on Input %s') %(acthelp[seltag], sources[target-1]))
-		p.enable_action(seltag, target)
-	elif e.x < LPWIDTH/2 and e.y > OFFSET and selection == SELCHAN:    # Selected channel    
-		if target == DEL:
-			chan4[seltag][CHSRC] = 0 
-			chan4[seltag][FITFLAG] = 0 
-			chan4[seltag][WINFO].config(text = '')
-			chan4[seltag][WFIT].config(text = '')
-			msg('Disabled Display channel %s'%(channels[seltag]))
-			set_timebase(0)				# Deleting a channel require recalculation
-		elif target == FIT:
-			if chan4[seltag][CHSRC] != 0:
-				chan4[seltag][FITFLAG] = True
-				msg('Selected %s for fitting'%(channels[seltag]))
-			else:
-				msg(_('Channel %s is Empty') %(channels[seltag]), 'red')
-		elif target == FTR:
-			if chan4[seltag][CHSRC] != 0:
-				show_ftr(seltag)			# Channel for FT
-			else:
-				msg(_('Channel %s is Empty') %(channels[seltag]), 'red')
-		elif target == NORMAL:
-			if chan4[seltag][CHSRC] != 0:
-				chan4[seltag][FITFLAG] = False
-				chan4[seltag][WFIT].config(text = '')
-				msg(_('Disabled fitting %s') %(channels[seltag]))
-			else:
-				msg(_('Channel %s is Empty') %(channels[seltag]), 'red')
-	elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == SELSRC:    # Selected Source
-		src = sources[target-1]
-		val = p.get_voltage(target)
-		ss = _('Voltage at %s = %5.3f V') %(src,val)
-		sm = _('%3s: %5.3f V')%(src, val)
-		if 2 < target < 8:
-			level = p.get_state(target)
-			ss += _(' (Logic Level = %d)') %level
-		msg(ss)
-		g.disp(sm)
-	else:
-		msg(_('Invalid selection'), 'red')		
+    global selection, seltag, chan4, NC
+    w = e.widget
+    w.configure(cursor = 'arrow')
+    if selection == 0:
+        msg(_('Invalid Action'), 'red')
+        return
+    tag =w.find_closest(e.x, e.y)
+    item = w.itemcget(tag,'tag')
+    target = int(item.split()[0])
+    if e.x > LPWIDTH/2 and e.y > OFFSET and selection == SELSRC:
+        # Assign source to channel
+        msg(_('Assigned Data Input %4s to Channel %s') %(sources[seltag-1],channels[target]))
+        s = '%s:' %(sources[seltag-1])
+        chan4[target][WINFO].config(text = s, fg=chancols[target])
+        chan4[target][0] = seltag
+        set_timebase(0)	# Adding  a channel require recalculation
+    elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == SETACT and target > 6:   
+        msg(_('%4s effective on Output %s') 
+            %(acthelp[seltag], sources[target-1]))
+        p.enable_action(seltag, target+2) # There is an offset of 2 for OD1 & CCS
+        #print ('SET ', seltag,target+2)
+    elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == WAITACT and target <= 7:   
+        msg(_('%4s effective on Input %s') 
+            %(acthelp[seltag], sources[target-1]))
+        p.enable_action(seltag, target)
+    elif e.x < LPWIDTH/2 and e.y > OFFSET and selection == SELCHAN:
+        # Selected channel    
+        if target == DEL:
+            chan4[seltag][CHSRC] = 0 
+            chan4[seltag][FITFLAG] = 0 
+            chan4[seltag][WINFO].config(text = '')
+            chan4[seltag][WFIT].config(text = '')
+            msg('Disabled Display channel %s'%(channels[seltag]))
+            set_timebase(0)				# Deleting a channel require recalculation
+        elif target == FIT:
+            if chan4[seltag][CHSRC] != 0:
+                chan4[seltag][FITFLAG] = True
+                msg('Selected %s for fitting'%(channels[seltag]))
+            else:
+                msg(_('Channel %s is Empty')
+                    %(channels[seltag]), 'red')
+        elif target == FTR:
+            if chan4[seltag][CHSRC] != 0:
+                show_ftr(seltag)	# Channel for FT
+            else:
+                msg(_('Channel %s is Empty') %(channels[seltag]), 'red')
+        elif target == NORMAL:
+            if chan4[seltag][CHSRC] != 0:
+                chan4[seltag][FITFLAG] = False
+                chan4[seltag][WFIT].config(text = '')
+                msg(_('Disabled fitting %s') %(channels[seltag]))
+            else:
+                msg(_('Channel %s is Empty')
+                    %(channels[seltag]), 'red')
+    elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == SELSRC:
+        # Selected Source
+        src = sources[target-1]
+        val = p.get_voltage(target)
+        ss = _('Voltage at %s = %5.3f V') %(src,val)
+        sm = _('%3s: %5.3f V')%(src, val)
+        if 2 < target < 8:
+            level = p.get_state(target)
+            ss += _(' (Logic Level = %d)') %level
+            msg(ss)
+            g.disp(sm)
+        else:
+            msg(_('Invalid selection'), 'red')		
 
 def press(e):
-	global selection, seltag
-	selection = 0
-	w = e.widget
-	tag =w.find_closest(e.x, e.y)
-	item = w.itemcget(tag,'tag')
-	if item == '' or item[0] == 'c': return		# clicked on borders
-	seltag = int(item.split()[0])
-	if e.x < LPWIDTH/2 and e.y < OFFSET:		# Source selection
-		if seltag > 7: 
-			msg(_('%4s is an Output') %sources[seltag-1], 'red')
-			return
-		selection = SELSRC
-		msg(_('Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To print value release the button.')\
-				%sources[seltag-1])
-		w.configure(cursor = 'pencil')
-	elif e.x > LPWIDTH/2 and e.y < OFFSET:		# Trigger selection
-		if seltag >= 5:
-			selection = SETACT
-			msg(_('Selected %4s. Drag cursor to the OD1 or CSS Output') %acthelp[seltag])
-			w.configure(cursor = 'hand1')
-		else:
-			selection = WAITACT
-			msg(_('Selected %4s. Drag cursor to desired Data Input') %acthelp[seltag],)
-			w.configure(cursor = 'hand2')
-	elif e.x > LPWIDTH/2 and e.y > OFFSET:		# Channel selection
-			selection = SELCHAN
-			msg(_('Selected %4s. Drag cursor to NML FIT or DEL') %channels[seltag],)
-			w.configure(cursor = 'pencil')
+    global selection, seltag
+    selection = 0
+    w = e.widget
+    tag =w.find_closest(e.x, e.y)
+    item = w.itemcget(tag,'tag')
+    if item == '' or item[0] == 'c': return		# clicked on borders
+    seltag = int(item.split()[0])
+    if e.x < LPWIDTH/2 and e.y < OFFSET:		# Source selection
+        if seltag > 7: 
+            msg(_('%4s is an Output') %sources[seltag-1], 'red')
+            return
+        selection = SELSRC
+        msg(_('Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To print value release the button.')\
+            %sources[seltag-1])
+        w.configure(cursor = 'pencil')
+    elif e.x > LPWIDTH/2 and e.y < OFFSET:		# Trigger selection
+        if seltag >= 5:
+            selection = SETACT
+            msg(_('Selected %4s. Drag cursor to the OD1 or CSS Output') %acthelp[seltag])
+            w.configure(cursor = 'hand1')
+        else:
+            selection = WAITACT
+            msg(_('Selected %4s. Drag cursor to desired Data Input') %acthelp[seltag],)
+            w.configure(cursor = 'hand2')
+    elif e.x > LPWIDTH/2 and e.y > OFFSET:		# Channel selection
+        selection = SELCHAN
+        msg(_('Selected %4s. Drag cursor to NML FIT or DEL') %channels[seltag],)
+        w.configure(cursor = 'pencil')
 
 def update():
-	global delay, NP, NC, VPERDIV, chan4, CMERR
-	global NP, NC, delay,chan4
-	chans = []						# Update channel & color information
-	index = []
-	for m in range(len(chan4)):
-		if chan4[m][0] > 0:
-			 chans.append(chan4[m][0])		# channel number
-			 index.append(m)				# Store the used indices, for storing & fitting
-	NC = len( chans)
-	try:
-		if NC == 1:
-			chan4[index[0]][TDATA],chan4[index[0]][VDATA] = p.capture_hr(chans[0],NP,delay)
-			v1 = []
-			for k in range(NP): v1.append( chan4[index[0]][VDATA][k] + chan4[index[0]][DOFFSET])
-			g.delete_lines()
-			g.line(chan4[index[0]][TDATA],v1, index[0])
-		elif NC == 2:
-			chan4[index[0]][TDATA],chan4[index[0]][VDATA], \
-			chan4[index[1]][TDATA],chan4[index[1]][VDATA] = p.capture2_hr( chans[0],  chans[1],NP,delay)
-			v1 = []
-			v2 = []
-			for k in range(NP): 
-				v1.append( chan4[index[0]][VDATA][k] + chan4[index[0]][DOFFSET])
-				v2.append( chan4[index[1]][VDATA][k] + chan4[index[1]][DOFFSET])
-			g.delete_lines()
-			g.line(chan4[index[0]][TDATA], v1, index[0])
-			g.line(chan4[index[1]][TDATA], v2, index[1])
-		elif NC == 3:
-			chan4[index[0]][TDATA],chan4[index[0]][VDATA], chan4[index[1]][TDATA],chan4[index[1]][VDATA], \
-			chan4[index[2]][TDATA],chan4[index[2]][VDATA] = p.capture3( chans[0], chans[1], chans[2],NP,delay)
-			v1 = []
-			v2 = []
-			v3 = []
-			for k in range(NP): 
-				v1.append( chan4[index[0]][VDATA][k] + chan4[index[0]][DOFFSET])
-				v2.append( chan4[index[1]][VDATA][k] + chan4[index[1]][DOFFSET])
-				v3.append( chan4[index[2]][VDATA][k] + chan4[index[2]][DOFFSET])
-			g.delete_lines()
-			g.line(chan4[index[0]][TDATA], v1, index[0])
-			g.line(chan4[index[1]][TDATA], v2, index[1])
-			g.line(chan4[index[2]][TDATA], v3, index[2])
-		elif NC == 4:
-			chan4[index[0]][TDATA],chan4[index[0]][VDATA], chan4[index[1]][TDATA],chan4[index[1]][VDATA], \
-			chan4[index[2]][TDATA],chan4[index[2]][VDATA], chan4[index[3]][TDATA],chan4[index[3]][VDATA] \
-				 = p.capture4( chans[0],  chans[1], chans[2], chans[3],NP,delay)
-			v1 = []
-			v2 = []
-			v3 = []
-			v4 = []
-			for k in range(NP): 
-				v1.append( chan4[index[0]][VDATA][k] + chan4[index[0]][DOFFSET])
-				v2.append( chan4[index[1]][VDATA][k] + chan4[index[1]][DOFFSET])
-				v3.append( chan4[index[2]][VDATA][k] + chan4[index[2]][DOFFSET])
-				v4.append( chan4[index[3]][VDATA][k] + chan4[index[3]][DOFFSET])
-			g.delete_lines()
-			g.line(chan4[index[0]][TDATA], v1, index[0])
-			g.line(chan4[index[1]][TDATA], v2, index[1])
-			g.line(chan4[index[2]][TDATA], v3, index[2])
-			g.line(chan4[index[3]][TDATA], v4, index[3])
-		if CMERR == True: 
-			CMERR = False
-			msg('')
-	except:
-
-		msg(_('Communication Error. Check input voltage levels.'),'red')
-		CMERR = True
+    global delay, NP, NC, VPERDIV, chan4, CMERR
+    global NP, NC, delay,chan4
+    chans = []                    # Update channel & color information
+    index = []
+    for m in range(len(chan4)):
+        if chan4[m][0] > 0:
+            chans.append(chan4[m][0])  # channel number
+            index.append(m) # Store the used indices, for storing & fitting
+    NC = len( chans)
+    
+    # force int types as NP and delay can come from float divisions
+    # with Python3
+    NP=int(NP)
+    delay=int(delay)
+    
+    try:
+        if NC == 1:
+            chan4[index[0]][TDATA], \
+                chan4[index[0]][VDATA] \
+                =  p.capture_hr(chans[0], NP, delay)
+            v1 = []
+            for k in range(NP): v1.append(
+                    chan4[index[0]][VDATA][k] +
+                    chan4[index[0]][DOFFSET])
+            g.delete_lines()
+            g.line(chan4[index[0]][TDATA],v1, index[0])
+        elif NC == 2:
+            chan4[index[0]][TDATA],chan4[index[0]][VDATA], \
+                chan4[index[1]][TDATA],chan4[index[1]][VDATA] = p.capture2_hr( chans[0],  chans[1], NP, delay)
+            v1 = []
+            v2 = []
+            for k in range(NP): 
+                v1.append(
+                    chan4[index[0]][VDATA][k] +
+                    chan4[index[0]][DOFFSET])
+                v2.append(
+                    chan4[index[1]][VDATA][k] +
+                    chan4[index[1]][DOFFSET])
+            g.delete_lines()
+            g.line(chan4[index[0]][TDATA], v1, index[0])
+            g.line(chan4[index[1]][TDATA], v2, index[1])
+        elif NC == 3:
+            chan4[index[0]][TDATA],chan4[index[0]][VDATA], chan4[index[1]][TDATA],chan4[index[1]][VDATA], \
+                chan4[index[2]][TDATA],chan4[index[2]][VDATA] = p.capture3( chans[0], chans[1], chans[2], NP, delay)
+            v1 = []
+            v2 = []
+            v3 = []
+            for k in range(NP): 
+                v1.append(
+                    chan4[index[0]][VDATA][k] +
+                    chan4[index[0]][DOFFSET])
+                v2.append(
+                    chan4[index[1]][VDATA][k] +
+                    chan4[index[1]][DOFFSET])
+                v3.append(
+                    chan4[index[2]][VDATA][k] +
+                    chan4[index[2]][DOFFSET])
+            g.delete_lines()
+            g.line(chan4[index[0]][TDATA], v1, index[0])
+            g.line(chan4[index[1]][TDATA], v2, index[1])
+            g.line(chan4[index[2]][TDATA], v3, index[2])
+        elif NC == 4:
+            chan4[index[0]][TDATA],chan4[index[0]][VDATA], chan4[index[1]][TDATA],chan4[index[1]][VDATA], \
+                chan4[index[2]][TDATA],chan4[index[2]][VDATA], chan4[index[3]][TDATA],chan4[index[3]][VDATA] \
+                = p.capture4( chans[0],  chans[1], chans[2], chans[3], NP, delay)
+            v1 = []
+            v2 = []
+            v3 = []
+            v4 = []
+            for k in range(NP): 
+                v1.append(
+                    chan4[index[0]][VDATA][k] +
+                    chan4[index[0]][DOFFSET])
+                v2.append(
+                    chan4[index[1]][VDATA][k] +
+                    chan4[index[1]][DOFFSET])
+                v3.append(
+                    chan4[index[2]][VDATA][k] +
+                    chan4[index[2]][DOFFSET])
+                v4.append(
+                    chan4[index[3]][VDATA][k] +
+                    chan4[index[3]][DOFFSET])
+            g.delete_lines()
+            g.line(chan4[index[0]][TDATA], v1, index[0])
+            g.line(chan4[index[1]][TDATA], v2, index[1])
+            g.line(chan4[index[2]][TDATA], v3, index[2])
+            g.line(chan4[index[3]][TDATA], v4, index[3])
+        if CMERR == True: 
+            CMERR = False
+            msg('')
+    except:
+        msg(_('Communication Error. Check input voltage levels.'),
+            'red')
+        CMERR = True
 	
-	for k in range(4):
-		if chan4[k][CHSRC] != 0 and chan4[k][FITFLAG] == 1:
-			fa = eyemath.fit_sine(chan4[k][TDATA],chan4[k][VDATA])
-			if fa != None:
-				chan4[k][VFDAT] = fa[0]
-				chan4[k][AMP] = abs(fa[1][0])
-				chan4[k][FREQ] = fa[1][1]*1000
-				chan4[k][PHASE] = fa[1][2] * 180/eyemath.pi
-				s = _('%5.2f V, %5.1f Hz')%(chan4[k][AMP],chan4[k][FREQ])
-				chan4[k][WFIT].config(text = s, fg= chancols[k])
-	if looping.get() == '0':
-		root.after(10,update)
+    for k in range(4):
+        if chan4[k][CHSRC] != 0 and chan4[k][FITFLAG] == 1:
+            fa = eyemath.fit_sine(chan4[k][TDATA],chan4[k][VDATA])
+            if fa != None:
+                chan4[k][VFDAT] = fa[0]
+                chan4[k][AMP] = abs(fa[1][0])
+                chan4[k][FREQ] = fa[1][1]*1000
+                chan4[k][PHASE] = fa[1][2] * 180/eyemath.pi
+                s = _('%5.2f V, %5.1f Hz')\
+                    %(chan4[k][AMP],chan4[k][FREQ])
+                chan4[k][WFIT].config(text = s, fg= chancols[k])
+    if looping.get() == '0':
+        root.after(10,update)
 
 def set_vertical(w):
-	global delay, NP, NC, VPERDIV
-	divs = [5.0, 1.0, 0.5, 0.2]
-	VPERDIV = divs[int(Vpd.get())]
-	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),'V')
+    global delay, NP, NC, VPERDIV
+    divs = [5.0, 1.0, 0.5, 0.2]
+    VPERDIV = divs[int(Vpd.get())]
+    g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),'V')
 
 def set_trigger(w):
-	tv = Trig.get()
-	if p != None: p.set_trigger(tv)
+    tv = Trig.get()
+    if p != None: p.set_trigger(tv)
 
 def cro_mode():
-	state = looping.get()
-	if state == '1':
-		Loop.config(text=_('ONE '))
-		msg(_('Press SCAN Button to do a single Capture'))
-	else:
-		Loop.config(text=_('LOOP'))
-		root.after(10,update)
+    state = looping.get()
+    if state == '1':
+        Loop.config(text=_('ONE '))
+        msg(_('Press SCAN Button to do a single Capture'))
+    else:
+        Loop.config(text=_('LOOP'))
+        root.after(10,update)
 
 def scan():
-	if looping.get() == '1':
-		update()
-		msg(_('Captured %d points in %d usecs') %(NP,NP*delay))
-	else:
-		msg(_('Use this only in Single scan mode'), 'red')
+    if looping.get() == '1':
+        update()
+        msg(_('Captured %d points in %d usecs') %(NP,NP*delay))
+    else:
+        msg(_('Use this only in Single scan mode'), 'red')
 
 def set_pvs(e):
-	try:
-		v = float(Pvs.get())
-		res = p.set_voltage(v)
-		if res == None:
-			msg(_('Enter a value between 0 to +5 volts'),'red')
-		else:
-			msg(_('PVS set to %5.3f volts') %res)
-			g.disp(_('PVS: %5.3f V')%res)
-	except:
-		msg(_('Enter voltage between -5 and +5 volts'),'red')
+    try:
+        v = float(Pvs.get())
+        res = p.set_voltage(v)
+        if res == None:
+            msg(_('Enter a value between 0 to +5 volts'),'red')
+        else:
+            msg(_('PVS set to %5.3f volts') %res)
+            g.disp(_('PVS: %5.3f V')%res)
+    except:
+        msg(_('Enter voltage between -5 and +5 volts'),'red')
 
 def set_sqr1():
-	state = int(Sqr1.get())
-	if state == 0:
-		p.set_sqr1(-1)
-		msg(_('SQR1 set to LOW'))
-	else:
-		try:
-			fr = float(Freq.get())
-			res = p.set_sqr1(fr)
-			if res == None:
-				msg(_('Enter a value between .7 to 200000 Hz'))
-			else:
-				msg(_('SQR1 set to %5.1f Hertz') %res)
-		except:
-			msg(_('Enter valid frequency, in Hertz'),'red')
+    state = int(Sqr1.get())
+    if state == 0:
+        p.set_sqr1(-1)
+        msg(_('SQR1 set to LOW'))
+    else:
+        try:
+            fr = float(Freq.get())
+            res = p.set_sqr1(fr)
+            if res == None:
+                msg(_('Enter a value between .7 to 200000 Hz'))
+            else:
+                msg(_('SQR1 set to %5.1f Hertz') %res)
+        except:
+            msg(_('Enter valid frequency, in Hertz'),'red')
 
 def set_sqr2():
-	state = int(Sqr2.get())
-	if state == 0:
-		p.set_sqr2(-1)
-		msg(_('SQR2 set to LOW'))
-	else:
-		try:
-			fr = float(Freq.get())
-			res = p.set_sqr2(fr)
-			if res == None:
-				msg(_('Enter a value between .7 to 200000 Hz'))
-			else:
-				msg(_('SQR2 set to %5.1f Hertz') %res)
-		except:
-			msg(_('Enter valid frequency, in Hertz'),'red')
+    state = int(Sqr2.get())
+    if state == 0:
+        p.set_sqr2(-1)
+        msg(_('SQR2 set to LOW'))
+    else:
+        try:
+            fr = float(Freq.get())
+            res = p.set_sqr2(fr)
+            if res == None:
+                msg(_('Enter a value between .7 to 200000 Hz'))
+            else:
+                msg(_('SQR2 set to %5.1f Hertz') %res)
+        except:
+            msg(_('Enter valid frequency, in Hertz'),'red')
 
 def set_sqrs():
-	state = int(Both.get())
-	if state == 0:
-		p.set_sqr1(-1)
-		p.set_sqr2(-1)
-		msg(_('SQR1 and SQR2 set to LOW'))
-	else:
-		try:
-			fr = float(Freq.get())
-			shift = float(Phase.get())
-			res = p.set_sqrs(fr,shift)
-			if res == None:
-				msg(_('Enter a value between .7 to 200000 Hz'))
-			else:
-				msg(_('SQR1 and SQR2 set to %5.1f Hertz, Shift is %5.2f %% of Period') %(res,shift))
-		except:
-			msg(_('Enter valid frequency in Hertz and phase shift in percentage'),'red')
-
+    state = int(Both.get())
+    if state == 0:
+        p.set_sqr1(-1)
+        p.set_sqr2(-1)
+        msg(_('SQR1 and SQR2 set to LOW'))
+    else:
+        try:
+            fr = float(Freq.get())
+            shift = float(Phase.get())
+            res = p.set_sqrs(fr,shift)
+            if res == None:
+                msg(_('Enter a value between .7 to 200000 Hz'))
+            else:
+                msg(_('SQR1 and SQR2 set to %5.1f Hertz, Shift is %5.2f %% of Period') %(res,shift))
+        except:
+            msg(_('Enter valid frequency in Hertz and phase shift in percentage'),'red')
+            
 def sqr1_slider(w):
-	if p == None: return
-	freq = SQR1slider.get()
-	if freq == 0: 
-		p.set_sqr1(-1)
-		msg(_('SQR1 set to LOW'))
-	else:
-		fs = p.set_sqr1(freq)
-		msg(_('SQR1 set to %5.1f') %fs)
+    if p == None: return
+    freq = SQR1slider.get()
+    if freq == 0: 
+        p.set_sqr1(-1)
+        msg(_('SQR1 set to LOW'))
+    else:
+        fs = p.set_sqr1(freq)
+        msg(_('SQR1 set to %5.1f') %fs)
 
 def control_od1():
-	state = int(Od1.get())
-	p.set_state(10, state)
+    state = int(Od1.get())
+    p.set_state(10, state)
 
 def control_ccs():
-	state = int(Ccs.get())
-	p.set_state(11, state)
+    state = int(Ccs.get())
+    p.set_state(11, state)
 
 def measurecap():
-	msg(_('Starting Capacitance Measurement..'))
-	cap = p.measure_cap()
-	if cap == None:
-		msg(_('Error: Capacitance too high or short to ground'),'red')
-		return
-	g.disp(_('IN1: %6.1f pF')%cap)
-	if p.socket_cap == 30.0 and p.cap_calib == 1.0:
-		msg(_('IN1 Not Calibrated.'))
-	else:
-		msg(_('IN1: %6.1f pF')%cap)
+    msg(_('Starting Capacitance Measurement..'))
+    cap = p.measure_cap()
+    if cap == None:
+        msg(_('Error: Capacitance too high or short to ground'),'red')
+        return
+    g.disp(_('IN1: %6.1f pF')%cap)
+    if p.socket_cap == 30.0 and p.cap_calib == 1.0:
+        msg(_('IN1 Not Calibrated.'))
+    else:
+        msg(_('IN1: %6.1f pF')%cap)
 
 
 def measureres():
-	res = p.measure_res()
-	if res == None:
-		msg(p.msg,'red')
-		return
-	msg(_('Resistance from SEN to GND = %6.0f Ohm')%res)
-	g.disp(_('%5.0f Ohm'%res))
+    res = p.measure_res()
+    if res == None:
+        msg(p.msg,'red')
+        return
+    msg(_('Resistance from SEN to GND = %6.0f Ohm')%res)
+    g.disp(_('%5.0f Ohm'%res))
 
 def save_data():
-	fn = Fname.get()
-	dat = []
-	for k in range(4):
-		if chan4[k][CHSRC] != 0:
-			dat.append( [chan4[k][TDATA],chan4[k][VDATA]])
-	p.save(dat,fn)
-	msg(_('Traces saved to %s') %fn)
+    fn = Fname.get()
+    dat = []
+    for k in range(4):
+        if chan4[k][CHSRC] != 0:
+            dat.append( [chan4[k][TDATA],chan4[k][VDATA]])
+    p.save(dat,fn)
+    msg(_('Traces saved to %s') %fn)
 
 def xmgrace():
-	dat = []
-	for k in range(4):
-		if chan4[k][CHSRC] != 0:
-			dat.append( [chan4[k][TDATA],chan4[k][VDATA]])
-	if p.grace(dat) == False:
-		msg(_('Could not find Xmgrace or Pygrace. Install them'),'red')
-	else:
-		msg(_('Traces send to Xmgrace'))
+    dat = []
+    for k in range(4):
+        if chan4[k][CHSRC] != 0:
+            dat.append( [chan4[k][TDATA],chan4[k][VDATA]])
+    if p.grace(dat) == False:
+        msg(_('Could not find Xmgrace or Pygrace. Install them'),'red')
+    else:
+        msg(_('Traces send to Xmgrace'))
 
 def process_command(e):
-	cp = Result.index(INSERT)
-	row = int(cp.split('.')[0])
-	ss = Result.get("%d.0"%row, "%d.end"%row)	# User's entry
-	cmd = 'p.'+ ss								# command
-	p.msg = ''
-	try:
-		res = eval(cmd)
-		if res == None: 
-			res = p.msg
-	except:
-		res = 'Invalid command or argument'
-	Result.insert("%d.0"%(row+1), '\n'+str(res))		# Result below
+    cp = Result.index(INSERT)
+    row = int(cp.split('.')[0])
+    ss = Result.get("%d.0"%row, "%d.end"%row)	# User's entry
+    cmd = 'p.'+ ss  # command
+    p.msg = ''
+    try:
+        res = eval(cmd)
+        if res == None: 
+            res = p.msg
+    except:
+        res = 'Invalid command or argument'
+        Result.insert("%d.0"%(row+1), '\n'+str(res)) # Result below
 
 def pop_expt_menu(event):
-	poped = True
-	menu.post(event.x_root, event.y_root)
+    poped = True
+    menu.post(event.x_root, event.y_root)
 
 def reconnect():
-	global p
-	import expeyes.eyesj
-	p=expeyes.eyesj.open()
-	if p == None:
-		msg(_('expEYES Junior NOT found. Bad connection or another program using it'),'red')
-	else:
-		Recon.forget()
-		s = _('Four Channel CRO+ found expEYES-Junior on %s') %p.device
-		root.title(s)
-		msg(s)
-		root.after(TIMER,update)
+    global p
+    import expeyes.eyesj
+    p=expeyes.eyesj.open()
+    if p == None:
+        msg(_('expEYES Junior NOT found. Bad connection or another program using it'),'red')
+    else:
+        Recon.forget()
+        s = _('Four Channel CRO+ found expEYES-Junior on %s') %p.device
+        root.title(s)
+        msg(s)
+        root.after(TIMER,update)
 
-#=============================== main program starts here ===================================
+#=================== main program starts here ==================
 root = Tk()    
 top = Frame(root)
 top.pack(side=TOP, anchor =W)
 f1 = Frame(top, width = LPWIDTH, height = HEIGHT)
-f1.pack(side=LEFT,  fill = BOTH, expand = 1)				# Left side frame
+f1.pack(side=LEFT,  fill = BOTH, expand = 1)	# Left side frame
 
 w = Canvas(f1, width=LPWIDTH, height=LPHEIGHT,bg = bgcol)   # Canvas for drag n drop controls
 w.pack(side=TOP, anchor = W)
 for k in range(len(sources)):
-	if k >6: 
-		col = 'blue'
-	else:
-		col = 'black'
-	w.create_text (LPWIDTH/2-10, VBORD+k*VSTEP, anchor = E, text = sources[k], tag = k+1, fill=col)
+    if k >6: 
+        col = 'blue'
+    else:
+        col = 'black'
+    w.create_text (LPWIDTH/2-10, VBORD+k*VSTEP, anchor = E, text = sources[k], tag = k+1, fill=col)
 for k in range(len(actions)):
-	if  k >= 5:
-		col = 'blue'
-	else:
-		col = 'black'
-	w.create_text (LPWIDTH/2+10, VBORD+k*VSTEP, anchor = W, text = actions[k], tag = k, fill=col)
+    if  k >= 5:
+        col = 'blue'
+    else:
+        col = 'black'
+    w.create_text (LPWIDTH/2+10, VBORD+k*VSTEP, anchor = W, text = actions[k], tag = k, fill=col)
 for k in range(4):
-	w.create_text (LPWIDTH/2+10, VBORD + OFFSET + k*VSTEP, anchor = W, text = channels[k], tag = k,\
-		fill= chancols[k])
+    w.create_text (LPWIDTH/2+10, VBORD + OFFSET + k*VSTEP, anchor = W, text = channels[k], tag = k,\
+                   fill= chancols[k])
 w.create_text (LPWIDTH/2-10, VBORD + OFFSET + 0*VSTEP, anchor = E, text = 'NML', tag = NORMAL)
 w.create_text (LPWIDTH/2-10, VBORD + OFFSET + 1*VSTEP, anchor = E, text = 'FTR', tag = FTR)
 w.create_text (LPWIDTH/2-10, VBORD + OFFSET + 2*VSTEP, anchor = E, text = 'FIT', tag = FIT)
@@ -572,27 +622,27 @@ w.bind ("<ButtonRelease-1>", release)
 offsets = [_('Move UP'), _('CENTER'), _('Move DOWN')]	
 offsetmenu = Menu(w, tearoff=0)
 for k in range(len(offsets)):
-	offsetmenu.add_command(label=offsets[k], background= 'ivory', command = lambda cmd=k :change_offset(cmd))
+    offsetmenu.add_command(label=offsets[k], background= 'ivory', command = lambda cmd=k :change_offset(cmd))
 
 Label(f1,text = _('mSec/div')).pack(side=TOP, anchor = SW)		# Sliders for Adjusting Axes & Trigger Level
 timebase = Scale(f1,command = set_timebase, orient=HORIZONTAL, length=LPWIDTH, showvalue=False,\
-	from_ = 0, to=9, resolution=1)
+                 from_ = 0, to=9, resolution=1)
 timebase.pack(side=TOP, anchor = SW)
 
 Label(f1,text = _('Volt/div')).pack(side=TOP, anchor = SW)
 Vpd = Scale(f1,command = set_vertical, orient=HORIZONTAL, length=LPWIDTH, showvalue=False,\
-	from_ = 0, to=3, resolution=1)
+            from_ = 0, to=3, resolution=1)
 Vpd.pack(side=TOP, anchor = SW)
 Vpd.set(1)
 
 Label(f1,text = _('Trig level')).pack(side=TOP, anchor = SW)
 Trig = Scale(f1,command = set_trigger, orient=HORIZONTAL, length=LPWIDTH, showvalue=False,\
-	from_ = 100, to=4000, resolution=10)
+             from_ = 100, to=4000, resolution=10)
 Trig.pack(side=TOP, anchor = SW)
 Trig.set(2050)
 
 
-#--------------------------------- Middle Frame ------------------------------
+#----------------------- Middle Frame ------------------------
 a = Frame(top, width = LPWIDTH, height = HEIGHT)
 a.pack(side=LEFT,  fill = BOTH, expand = 1)
 f = Frame(a, width = 75, height = HEIGHT)
@@ -605,15 +655,15 @@ of = Frame(top, width = 1, height = HEIGHT)
 of.pack(side=LEFT,  fill = BOTH, expand = 1)
 
 Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[0],\
-		from_ = 4, to=-4, resolution=1, command = set_ch1_offset).pack(side=TOP)
+      from_ = 4, to=-4, resolution=1, command = set_ch1_offset).pack(side=TOP)
 Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[1],\
-		from_ = 4, to=-4, resolution=1, command = set_ch2_offset).pack(side=TOP)
+      from_ = 4, to=-4, resolution=1, command = set_ch2_offset).pack(side=TOP)
 Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[2],\
-		from_ = 4, to=-4, resolution=1, command = set_ch3_offset).pack(side=TOP)
+      from_ = 4, to=-4, resolution=1, command = set_ch3_offset).pack(side=TOP)
 Scale(of, orient=VERTICAL, length=HEIGHT/4, showvalue = False, bg = chancols[3],\
-		from_ = 4, to=-4, resolution=1, command = set_ch4_offset).pack(side=TOP)
+      from_ = 4, to=-4, resolution=1, command = set_ch4_offset).pack(side=TOP)
 
-#========================= Right Side panel ===========================================
+#================ Right Side panel ====================
 rf = Frame(top, width = 75, height = HEIGHT)
 rf.pack(side=LEFT,  fill = BOTH, expand = 1)
 
@@ -728,13 +778,14 @@ Recon = Button(mf,text = _('Search Hardware'), command =reconnect)
 
 p = eyes.open()
 if p == None:
-	msg(_('Could not open expEYES Junior. Bad connection or another program using it'),'red')
-	Recon.pack(side=LEFT)
+    msg(_('Could not open expEYES Junior. Bad connection or another program using it'),'red')
+    Recon.pack(side=LEFT)
 else:
-	p.disable_actions()
-	root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
-	root.after(TIMER,update)
-#------------------------------ experiments menu ------------------------------
+    p.disable_actions()
+    root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
+    root.after(TIMER,update)
+    
+#------------------- experiments menu ------------------------------
 expts = [ 
 [_('Select Experiment'),''],
 [_('Control PVS'),'change-pvs'],
@@ -760,21 +811,24 @@ expts = [
  ]
 
 def run_expt(expt):
-	global p
-	if expt == '': return
-	p.fd.close()	# Free the device from this program, the child will open it
-	cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
-	os.system(cmd)
-	msg(_('Finished "')+expt+'.py"')
-	p = eyes.open()	# Establish hardware communication again, for the parent
-	p.disable_actions()
+    global p
+    if expt == '': return
+    p.fd.close()	# Free the device from this program, the child will open it
+    cmd = sys.executable + ' ' + eyeplot.abs_path() + expt+'.py'
+    os.system(cmd)
+    msg(_('Finished "')+expt+'.py"')
+    p = eyes.open()	# Establish hardware communication again, for the parent
+    p.disable_actions()
 
 menu = Menu(Expt, tearoff=0)
 for k in range(len(expts)):
-	text = expts[k][0]
-	cmd = expts[k][1]
-	#print (text, cmd)
-	menu.add_command(label=text, background= 'ivory', command = lambda expt=cmd :run_expt(expt))
+    text = expts[k][0]
+    cmd = expts[k][1]
+    #print (text, cmd)
+    menu.add_command(label=text, background= 'ivory', command = lambda expt=cmd :run_expt(expt))
 
 root.mainloop()
 
+# Local Variables:
+# python-indent: 4
+# End:
