@@ -1091,6 +1091,7 @@ class Eyesjun:
         if tg < 4:		# Minimum time required
             self.msg = _('Minimum Timegap is 4 us')
             return
+        ns=int(ns)
         self.sendByte(CAPTURE)
         self.sendByte(chr(ch))
         self.sendInt(ns)
@@ -1128,6 +1129,7 @@ class Eyesjun:
         if tg < 4:
             self.msg = _('Minimum Timegap is 4 us')
             return
+        ns=int(ns)
         self.sendByte(CAPTURE_HR)
         self.sendByte(chr(ch))
         self.sendInt(ns)
@@ -1166,6 +1168,7 @@ class Eyesjun:
         if tg < 8:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
+        ns=int(ns)
         self.sendByte(CAPTURE2)
         self.sendByte(chr(cha))
         self.sendByte(chr(chb))
@@ -1207,6 +1210,7 @@ class Eyesjun:
         if tg < 8:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
+        ns=int(ns)
         self.sendByte(CAPTURE2_HR)
         self.sendByte(chr(cha))
         self.sendByte(chr(chb))
@@ -1250,6 +1254,7 @@ class Eyesjun:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
         ch12 = (ch2 << 4) | ch1		# first two channels packed in 1 byte
+        ns=int(ns)
         self.sendByte(CAPTURE3)
         self.sendByte(chr(ch12))
         self.sendByte(chr(ch3))
@@ -1301,6 +1306,7 @@ class Eyesjun:
             return
         ch12 = (ch2 << 4) | ch1		# first two channels packed in 1 byte
         ch34 = (ch4 << 4) | ch3		# other two channels packed in 1 byte
+        ns=int(ns)
         self.sendByte(CAPTURE4)
         self.sendByte(chr(ch12))
         self.sendByte(chr(ch34))
