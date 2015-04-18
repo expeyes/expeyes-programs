@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, math, sys
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 TIMER = 100
 WIDTH  = 500   # width of drawing canvas
@@ -59,7 +68,7 @@ def update():
 	global data, history, trial, NP, delay, noise
 	t, v= p.capture_hr(1,NP,delay)		# Scan for 5 times more
 	p1,p2 = find_peaks(t,v)
-	print v[p1], v[p2]
+	#print v[p1], v[p2]
 	if abs(v[p1] - noise) > 0.5 and p1 < .9*NP:  # Signal at least 0.5 volts above noise
 		index = p1-50
 		tbeg = t[index]
