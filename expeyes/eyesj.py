@@ -30,16 +30,17 @@ import serial, struct, math, time, subprocess, sys, os, os.path
 
 # override chr() for Python3, to return a bytes rather than a string
 if sys.version_info.major == 3:
-        def chr(val):
-            return bytes(__builtin__.chr(val), encoding="raw_unicode_escape")
-        def tostr(s):
-            return str(s, encoding="utf-8")
-        import builtins as __builtin__
+    #Python3
+    import builtins as __builtin__
+    def chr(val):
+        return bytes(__builtin__.chr(val), encoding="raw_unicode_escape")
+    def warningWithResult(warn, res):
+        return warn + str(res, encoding="utf-8")
 else:
-        #Python2
-        import __builtin__
-        def tostr(s):
-            return str(s)
+    #Python2
+    import __builtin__
+    def warningWithResult(warn, res):
+        return warn + res
 
 import gettext # For localization, inputs from Georges (georges.khaznadar@free.fr)
 gettext.bindtextdomain('expeyes')
@@ -200,7 +201,7 @@ class Eyesjun:
                 self.fd = handle
                 self.version = ver
                 handle.timeout = 4.0	# r2rtime on .7 Hz require this
-                self.msg += 'Found EYES Junior version ' + tostr(ver)
+                self.msg += warningWithResult('Found EYES Junior version ', ver)
                 return 		# Successful return
             else:			# If it is not our device close the file
                 handle.close()
@@ -223,37 +224,43 @@ class Eyesjun:
         send on integer to the inteface
         @parameter ival an integer lesser than 65536
         """
+        delay=0.005 # This delay is for MCP2200 + uC
         self.fd.write(chr(ival & 255))
-        time.sleep(0.005) # This delay is for MCP2200 + uC
+        time.sleep(delay)
         self.fd.write(chr(ival >> 8))
-        time.sleep(0.005) # This delay is for MCP2200 + uC
+        time.sleep(delay)
         return
     
     def get_version(self):
+        """
+        reads the version number from the device
+        @return a bytes
+        """
         self.sendByte(GETVERSION)
         res = self.fd.read(1)
         if res != b'D':
-            p.msg = _('GETVERSION ERROR') + tostr(res)
+            self.msg = warningWithResult(_('GETVERSION ERROR'), ver)
             return
         ver = self.fd.read(5)
         return ver
 
-    #-----------------------------------EEPROM----------------------------------
+    """------------------------EEPROM---------------------"""
     def eeprom_write(self, addr, data):
         """
         writes a few bytes to the EEPROM
         @param addr a small integer
         @param byte an integer (16 bits)
+        @return 1 (number of written words)
         """
         self.sendByte(WREEPROM)
         self.sendByte(chr(addr))
         self.sendInt(data)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('WREEPROM ERROR ') + tostr(res)
-            print (_('WREEPROM ERROR'), res)
+            self.msg =  warningWithResult(_('WREEPROM ERROR '), res)
+            print (warningWithResult(_('WREEPROM ERROR'), res))
             return None
-        return 1 # number of words written
+        return 1
 
     def eeprom_read(self, addr):
         """
@@ -265,7 +272,7 @@ class Eyesjun:
         self.sendByte(chr(addr))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('RDEEPROM ERROR ') + tostr(res)
+            self.msg = warningWithResult(_('RDEEPROM ERROR '), res)
             return None
         res = self.fd.read(2)
         if sys.version_info.major == 3:
@@ -275,8 +282,12 @@ class Eyesjun:
 
     def store_float(self, addr, data): # store a floating point number to EEPROM
         ss = struct.pack('f', data)
-        lo = ord(ss[0]) | (ord(ss[1]) << 8)
-        hi  = ord(ss[2]) | (ord(ss[3]) << 8)
+        if sys.version_info.major == 3:
+            lo = ss[0] | (ss[1] << 8)
+            hi  = ss[2] | (ss[3] << 8)
+        else:
+            lo = ord(ss[0]) | (ord(ss[1]) << 8)
+            hi  = ord(ss[2]) | (ord(ss[3]) << 8)
         if self.eeprom_write(addr, lo) == None:
             return None
         if self.eeprom_write(addr+1, hi) == None:
@@ -375,8 +386,8 @@ class Eyesjun:
         self.sendByte(chr(d1))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('IRSEND1 ERROR ') + tostr(res)
-            print (_('IRSEND1 ERROR'), res)
+            self.msg = warningWithResult(_('IRSEND1 ERROR '), res)
+            print (warningWithResult(_('IRSEND1 ERROR '), res))
             return
         return 1
 
@@ -395,8 +406,8 @@ class Eyesjun:
         self.sendByte(chr(d4))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('IRSEND4 ERROR ')+ tostr(res)
-            print (_('IRSEND4 ERROR'), res)
+            self.msg = warningWithResult(_('IRSEND4 ERROR '), res)
+            print (warningWithResult(_('IRSEND4 ERROR '), res))
             return
         return 1
 
@@ -448,11 +459,14 @@ class Eyesjun:
         self.sendInt(ctime)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('MEASURECV ERROR ') + tostr(res)
-            print (_('MEASURECV ERROR'), res)
+            self.msg = warningWithResult(_('MEASURECV ERROR '), res)
+            print (warningWithResult(_('MEASURECV ERROR '), res))
             return 
         res = self.fd.read(2)
-        iv = ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            iv = res[0] | (res[1] << 8)
+        else:
+            iv = ord(res[0]) | (ord(res[1]) << 8)
         v = self.m12[ch] * iv + self.c[ch]
         return v
 
@@ -523,11 +537,14 @@ class Eyesjun:
         self.sendByte(irange)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('SETCURRENT ERROR') + tostr(res)
-            print (_('SETCURRENT ERROR'), res)
+            self.msg = warningWithResult(_('SETCURRENT ERROR'), res)
+            print (warningWithResult(_('SETCURRENT ERROR'), res))
             return 
         res = self.fd.read(2)
-        iv = ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            iv = res[0] | (res[1] << 8)
+        else:
+            iv = ord(res[0]) | (ord(res[1]) << 8)
         v = self.m12[ch] * iv + self.c[ch]
         return v
 
@@ -541,10 +558,13 @@ class Eyesjun:
         res = self.fd.read(1)
         if res != b'D':
             print (_('READTEMP error '), res)
-            self.msg = _('READTEMP error') + tostr(res)
+            self.msg = warningWithResult(_('READTEMP error'),res)
             return
         res = self.fd.read(2)
-        iv = ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            iv = res[0] | (res[1] << 8)
+        else:
+            iv = ord(res[0]) | (ord(res[1]) << 8)
         return iv
 
     #---------- Time Interval Measurements ----------------------
@@ -711,6 +731,7 @@ class Eyesjun:
         gets the status of the digital input pin. IN1, IN2 & SEN are
         set to digital mode before sensing input level.
         @param pin a pin number
+        @return the state of the pin as a small integer
         '''
         self.sendByte(GETSTATE)	
         self.sendByte(chr(pin))	
@@ -928,7 +949,10 @@ class Eyesjun:
             print(_('READADC error '), res)
             return 
         res = self.fd.read(2)
-        iv = ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            iv = res[0] | (res[1] << 8)
+        else:
+            iv = ord(res[0]) | (ord(res[1]) << 8)
         return iv
 
     def set_voltage(self, v):
@@ -985,7 +1009,10 @@ class Eyesjun:
             print(_('READADC error'), res)
             return 
         res = self.fd.read(2)
-        iv = ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            iv = res[0] | (res[1] << 8)
+        else:
+            iv = ord(res[0]) | (ord(res[1]) << 8)
         return iv
 
     def get_voltage(self, ch):  # Sleep mode
