@@ -4,14 +4,24 @@ Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 Date : Apr-2012
 '''
+from __future__ import print_function
 
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, os, commands
+import sys
+sys.path=[".."] + sys.path
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
+import time, os
 
 bgcol = 'ivory'
 
@@ -139,7 +149,7 @@ def set_timebase(w):
 	if NP%2 == 1 : NP += 1		# Must be an even number, for fitting
 	if NP > 450: NP = 450
 	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),'V')
-	#print _('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv
+	#print (_('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv)
 
 def measure_freq(e):
 	w = e.widget
@@ -195,7 +205,7 @@ def release(e):
 	elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == SETACT and target > 6:   
 		msg(_('%4s effective on Output %s') %(acthelp[seltag], sources[target-1]))
 		p.enable_action(seltag, target+2)		# There is an offset of 2 for OD1 & CCS
-		#print 'SET ', seltag,target+2
+		#print ('SET ', seltag,target+2)
 	elif e.x < LPWIDTH/2 and e.y < OFFSET and selection == WAITACT and target <= 7:   
 		msg(_('%4s effective on Input %s') %(acthelp[seltag], sources[target-1]))
 		p.enable_action(seltag, target)
@@ -763,7 +773,7 @@ menu = Menu(Expt, tearoff=0)
 for k in range(len(expts)):
 	text = expts[k][0]
 	cmd = expts[k][1]
-	#print text, cmd
+	#print (text, cmd)
 	menu.add_command(label=text, background= 'ivory', command = lambda expt=cmd :run_expt(expt))
 
 root.mainloop()
