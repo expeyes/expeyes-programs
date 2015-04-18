@@ -1380,14 +1380,17 @@ class Eyesjun:
     def enable_action(self, action, ch):
         """
         Enables some action
-        @param action a small integer (0 to 8)
+        @param action a bytes of length 1
         @param ch a channel number
+        @return action's value
         """
-        if  action < 0 or action > 8 or ch < 1  or ch > 11:	
+        actions=(AANATRIG, AWAITHI, AWAITLO, AWAITRISE, AWAITFALL, ASET,
+                 ACLR, APULSEHT, APULSELT)
+        if  action not in actions or ch < 1  or ch > 11:	
             self.msg = 'Invalid actions or source specified'
             return
         self.sendByte(SETACTION)
-        self.sendByte(chr(action))
+        self.sendByte(action)
         self.sendByte(chr(ch))
         res = self.fd.read(1)
         if res != b'D':
