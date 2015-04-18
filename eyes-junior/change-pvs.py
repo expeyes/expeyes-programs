@@ -1,5 +1,13 @@
-from Tkinter import *
+import sys
+
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
 import expeyes.eyesj, expeyes.eyeplot as eyeplot
+
 p=expeyes.eyesj.open()
 
 import gettext
