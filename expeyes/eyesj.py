@@ -607,7 +607,7 @@ class Eyesjun:
             res = self.fd.read(1)
             if res != b'D':
                 self.msg = _('Time measurement command error')
-                print (_('Time measurement command %d error ') %cmd, res)
+                print (_('Time measurement command %d error ') %ord(cmd), res)
                 return -1.0
             res = self.fd.read(1)
             data = self.fd.read(4)
