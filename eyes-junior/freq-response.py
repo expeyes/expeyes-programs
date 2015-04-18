@@ -3,10 +3,18 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
-from Tkinter import *
-import expeyes.eyesj as eyes
-import expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath
 import time, sys, numpy, shelve, tempfile, subprocess, os
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
+
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -78,7 +86,7 @@ def plotdata(pref="qtiplot"):		# Send the data to XmGrace or QtiPlot
 	"""
 	global history
 	if pref=="qtiplot":
-		print len(history)
+		#print len(history)
 		for dat in history:
 			tmpfile=tempfile.NamedTemporaryFile(prefix="tmpExpEYES")
 			name=tmpfile.name
