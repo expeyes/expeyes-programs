@@ -25,22 +25,27 @@ using the corresponding number, ie 0 => A0.
  * A12: Analog Input  AN0 / RA0  (dummy entry for RA0), special case
 '''
 
+from __future__ import print_function
 import serial, struct, math, time, subprocess, sys, os, os.path
+
+# override chr() for Python3, to return a bytes rather than a string
+if sys.version_info.major == 3:
+        def chr(val):
+            return bytes(__builtin__.chr(val), encoding="raw_unicode_escape")
+        def tostr(s):
+            return str(s, encoding="utf-8")
+        import builtins as __builtin__
+else:
+        #Python2
+        import __builtin__
+        def tostr(s):
+            return str(s)
 
 import gettext # For localization, inputs from Georges (georges.khaznadar@free.fr)
 gettext.bindtextdomain('expeyes')
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-# override chr() for Python3, to return a bytes rather than a string
-if sys.version_info.major == 3:
-        def chr(val):
-                return bytes(__builtin__.chr(val), encoding="raw_unicode_escape")
-        import builtins as __builtin__
-else:
-        #Python2
-        from _future_ import print_function
-        import __builtin__
         
 #Commands with One byte argument (41 to 80) 
 GETVERSION  =   chr(1)
@@ -190,13 +195,12 @@ class Eyesjun:
             handle.write(GETVERSION)
             res = handle.read(1)
             ver = handle.read(5)		# 5 character version number
-            print ("GRRR res, ver=", res, ver, ver[:2], ver[:2] == b'ej')
             if ver[:2] == b'ej':
                 self.device = dev
                 self.fd = handle
                 self.version = ver
                 handle.timeout = 4.0	# r2rtime on .7 Hz require this
-                self.msg += 'Found EYES Junior version ' + str(ver, encoding="utf-8")
+                self.msg += 'Found EYES Junior version ' + tostr(ver)
                 return 		# Successful return
             else:			# If it is not our device close the file
                 handle.close()
@@ -229,7 +233,7 @@ class Eyesjun:
         self.sendByte(GETVERSION)
         res = self.fd.read(1)
         if res != b'D':
-            p.msg = _('GETVERSION ERROR') + str(res, encoding="utf-8")
+            p.msg = _('GETVERSION ERROR') + tostr(res)
             return
         ver = self.fd.read(5)
         return ver
@@ -246,7 +250,7 @@ class Eyesjun:
         self.sendInt(data)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('WREEPROM ERROR ') + str(res, encoding="utf-8")
+            self.msg = _('WREEPROM ERROR ') + tostr(res)
             print (_('WREEPROM ERROR'), res)
             return None
         return 1 # number of words written
@@ -255,15 +259,19 @@ class Eyesjun:
         """
         read data from the EEPROM
         @param addr a small integer (8bit)
+        @return an integer value (16 bits)
         """
         self.sendByte(RDEEPROM)
         self.sendByte(chr(addr))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('RDEEPROM ERROR ') + str(res, encoding="utf-8")
+            self.msg = _('RDEEPROM ERROR ') + tostr(res)
             return None
         res = self.fd.read(2)
-        return ord(res[0]) | (ord(res[1]) << 8)
+        if sys.version_info.major == 3:
+            return res[0] | (res[1] << 8)
+        else:
+            return ord(res[0]) | (ord(res[1]) << 8)
 
     def store_float(self, addr, data): # store a floating point number to EEPROM
         ss = struct.pack('f', data)
@@ -320,7 +328,7 @@ class Eyesjun:
             c = -5.0
             dm = m * 0.02			# maximum 2% deviation
             dc = 5 * 0.02
-            #print (m1,c1,m2,c2, dm, dc)
+            # print (m1,c1,m2,c2, dm, dc)
             if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:
                 self.m12[1] = m1
                 self.c[1] = c1
@@ -328,7 +336,7 @@ class Eyesjun:
                 self.c[2] = c2
                 self.m8[1] = m1 * 4095./255	# Scale factors for 8 bit read
                 self.m8[2] = m2 * 4095./255
-                #print (_('Calibration Factors :'), m1,c1,m2,c2)
+                # print (_('Calibration Factors :'), m1,c1,m2,c2)
             else:
                 print (_('Invalid Calibration factors for A1,A2'), m1,c1,m2,c2)
         except:
@@ -367,7 +375,7 @@ class Eyesjun:
         self.sendByte(chr(d1))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('IRSEND1 ERROR ') + str(res, encoding="utf-8")
+            self.msg = _('IRSEND1 ERROR ') + tostr(res)
             print (_('IRSEND1 ERROR'), res)
             return
         return 1
@@ -387,7 +395,7 @@ class Eyesjun:
         self.sendByte(chr(d4))
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('IRSEND4 ERROR ')+ str(res, encoding="utf-8")
+            self.msg = _('IRSEND4 ERROR ')+ tostr(res)
             print (_('IRSEND4 ERROR'), res)
             return
         return 1
@@ -440,7 +448,7 @@ class Eyesjun:
         self.sendInt(ctime)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('MEASURECV ERROR ') + str(res, encoding="utf-8")
+            self.msg = _('MEASURECV ERROR ') + tostr(res)
             print (_('MEASURECV ERROR'), res)
             return 
         res = self.fd.read(2)
@@ -515,7 +523,7 @@ class Eyesjun:
         self.sendByte(irange)
         res = self.fd.read(1)
         if res != b'D':
-            self.msg = _('SETCURRENT ERROR') + str(res, encoding="utf-8")
+            self.msg = _('SETCURRENT ERROR') + tostr(res)
             print (_('SETCURRENT ERROR'), res)
             return 
         res = self.fd.read(2)
@@ -533,7 +541,7 @@ class Eyesjun:
         res = self.fd.read(1)
         if res != b'D':
             print (_('READTEMP error '), res)
-            self.msg = _('READTEMP error') + str(res, encoding="utf-8")
+            self.msg = _('READTEMP error') + tostr(res)
             return
         res = self.fd.read(2)
         iv = ord(res[0]) | (ord(res[1]) << 8)
