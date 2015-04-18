@@ -1,6 +1,16 @@
-from Tkinter import *
-import expeyes.eyesj, expeyes.eyeplot as eyeplot
-p=expeyes.eyesj.open()
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
+
+p=eyes.open()
 
 import gettext
 gettext.bindtextdomain("expeyes")
