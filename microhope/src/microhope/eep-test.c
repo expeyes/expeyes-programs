@@ -5,7 +5,7 @@ int main()
 {
 uint8_t x, i, *p;
 
-p = 10;   // selected EEPROM location
+p = 10;   // selected EEPROM location 
 
 lcd_init();
 for(i = 0; i < 5; ++i) eeprom_write_byte (p+i, i*2);   // write to eeprom

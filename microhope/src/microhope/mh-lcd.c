@@ -14,9 +14,9 @@
 #include <stdint.h>
 
 // LCD control bits of Port C on Phoenix MDK. Refer to the Schematic
-#define ENBIT 0x8
-#define RWBIT 0x4
-#define RSBIT 0x2
+#define ENBIT 0x8  	
+#define RWBIT 0x4  
+#define RSBIT 0x2  
 
 void delay(uint16_t k)
 {
@@ -34,7 +34,7 @@ void lcd_command (uint8_t cmd)
 	PORTC |= (cmd & 0xF0);			// Put 4 MSBs, RS, RW & EN Low
 	PORTC |= ENBIT;  PORTC &= ~ENBIT;	// Pulse on EN pin
 	PORTC &= 1;
-	PORTC |= (cmd << 4);			// Put 4 LSBs
+	PORTC |= (cmd << 4);			// Put 4 LSBs 
 	PORTC |= ENBIT;  PORTC &= ~ENBIT;	// Pulse on EN pin
 	delay (10000);
 }
@@ -71,12 +71,12 @@ void lcd_put_char (char c)
 	PORTC |= RSBIT | (c & 0xF0);		// Put 4 MSBs, RS High, RW & EN Low
 	PORTC |= ENBIT;  PORTC &= ~ENBIT;	// Pulse on EN pin
 	PORTC &= 1;
-	PORTC |= RSBIT | (c << 4);		// Put 4 LSBs
+	PORTC |= RSBIT | (c << 4);		// Put 4 LSBs 
 	PORTC |= ENBIT;  PORTC &= ~ENBIT;	// Pulse on EN pin
 	delay(1000);
-	++cpos;  if(cpos == 8)
+	++cpos;  if(cpos == 8) 
 		lcd_command(128 + 32 + 8);	// 1 x 16 display
-}
+}  
 
 
 void lcd_put_string(char *p)

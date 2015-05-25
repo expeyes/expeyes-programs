@@ -3,16 +3,25 @@ expEYES Junior calibration program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 
-import gettext, sys, os, os.path
+import gettext, sys, os, os.path, time 
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
 from numpy import mean, zeros
-from Tkinter import *
-import expeyes.eyesj, time, expeyes.eyeplot as eyeplot
 
 def msg(s, col='blue'):
 	msgwin.config(text=s, fg=col)
@@ -69,13 +78,13 @@ def save_calib():	# Saves scale factors of A1 & A2 to calibrationFile
 	if abs(m2 - ucm) > dm or abs(c2 - ucc) > dc:	# Error check
 		msg(_('Too much error in A2: m = %f  c=%f')%(m2,c2),'red')
 		return
-	print m1,c1,m2,c2
+	print (m1,c1,m2,c2)
 	if p.storeCF_a1a2(m1, c1, m2, c2) == None:	# Store to EEPROM
 		msg(_('EEPROM write failed. Old Firmware ?'),'red')
 		return	
 	ss =_('m1 = %f   c1 = %6.3f\nm2 = %f   c2 = %6.3f')%(m1, c1, m2, c2)
 	msg(_('A1&A2 Calibration Saved to EEPROM\n')+ss)
-	print ss
+	print (ss)
 
 #------------------------------------------------------------------------------
 def save_calibsen():	# Saves scale factors of A1 & A2 to file 'eyesj.cal'
@@ -86,7 +95,7 @@ def save_calibsen():	# Saves scale factors of A1 & A2 to file 'eyesj.cal'
 	except:
 		msg(_('Enter the R connected to SEN'), 'red')
 		return
-	print R
+	print (R)
 	if (R < 4950) or (R > 5250):
 		msg(_('Wrong Resistor ??. Calculated Rp =%5.1f Ohm')%R, 'red')
 		return
@@ -125,7 +134,7 @@ def save_calibcap():
 		msg(_('Mesuring capacitor failed'),'red')
 		return
 
-	print creal, cm, error, cm*error
+	print (creal, cm, error, cm*error)
 	if error < 0.85 or error > 1.15 or socket_cap > 50:	# Error check
 		msg(_('Too much error: Socket C= %f CF=%f')%(socket_cap, error),'red')
 		return
@@ -181,7 +190,7 @@ separator.pack(fill=X, padx=5, pady=5)
 
 Button(text = _("Exit"), command = sys.exit).pack(side = TOP)
 
-p = expeyes.eyesj.open()
+p = eyes.open()
 if p == None:
 	root.title(_('EYES Junior Hardware not found'))
 eyeplot.pop_image('pics/calibrate.png', _('Calibrate A1 & A2'))

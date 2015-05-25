@@ -1,4 +1,4 @@
-// Reads ADC channel 0 and diplays the result on the LCD
+// Reads ADC channel 0 and diplays the result on the LCD 
 
 #include "mh-lcd.c"
 #include "mh-adc.c"
@@ -16,7 +16,7 @@ adc_set_ref(REF_INT);
 while(1)
     {
     data = read_adc(0);   				// Read voltage at PA0
-    if (data > v100c)
+    if (data > v100c) 
 	PORTB = 0;              // switch ON heater control
     else if (data < (v100c - 10))     // window of 10
 	PORTB = 1;              // switch OFF hrater control

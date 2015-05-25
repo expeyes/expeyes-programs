@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, math, sys
+import  time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 TIMER = 100
 WIDTH  = 500   # width of drawing canvas
@@ -54,11 +63,11 @@ def fit_curve():
 	Vind = p.get_voltage(1)     # voltage across the Inductor
 	i = (vtotal - Vind)/Rext
 	Rind = Vind/i
-	print v,Rind
+	# print v,Rind
 	fa = eyemath.fit_exp(data[0], data[1])
 	if fa != None:
 		pa = fa[1]
-		print pa
+		# print pa
 		par1 = abs(1.0 / pa[1])
 		g.line(data[0],fa[0],1)
 		dispmsg(_('L/R = %5.3f mSec : Rind = %5.0f Ohm : L = %5.1f mH')%(par1, Rind, (Rext+Rind)*par1))
@@ -96,11 +105,11 @@ def set_timebase(w):
 	if delay < 10:
 		sf = 10/delay
 		delay = 10
-		NP = NP/sf
+		NP = int(NP/sf)
 	elif delay > 1000:
 		sf = delay/1000
 		delay = 1000
-		NP = NP * sf
+		NP = int(NP * sf)
 	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),_('V'))
 
 p = eyes.open()

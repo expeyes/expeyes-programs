@@ -2,13 +2,12 @@
 Version=2.0.0
 Type=Application
 
-Exec=uhope
+Exec=microhope
 Icon=mh-logo.png
 Name=µHOPE
 Comment=MicroHOPE microcontroller programming system
 
 Categories=Education;Science;
-MimeType=application/x-python
 
 Terminal=false
 NoDisplay=false

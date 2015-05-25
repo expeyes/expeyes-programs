@@ -8,7 +8,7 @@ uint16_t data;
 lcd_init();
 
 ADCSRA = (1 << ADEN) |  7;   // Enable ADC, set clock pre-scaler
-ADMUX =  (1 << REFS0);			     // AVCC reference, channel 0
+ADMUX =  (1 << REFS0);			     // AVCC reference, channel 0 	
 
 ADCSRA |=  (1 <<ADSC);             // Start ADC
 while ( !(ADCSRA & (1<<ADIF)) ) ;	 // wait for ADC conversion

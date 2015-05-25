@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, math, sys
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 TIMER = 100
 WIDTH  = 700   # width of drawing canvas
@@ -54,9 +63,9 @@ def base_scan():
 	p1,p2 = find_peaks(t,v)
 	noise = abs(v[p1])
 	msgwin.config(text = _('Volatge Scan Done. Noise Level = %5.3f V')%noise)
-	print WAIT.get()
+	#print WAIT.get()
 	if WAIT.get() == '1':
-		print _('wait')
+		#print _('wait')
 		p.enable_wait_high(3)
 	root.after(TIMER, update)
 

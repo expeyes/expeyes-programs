@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-19 16:35+0100\n"
+"POT-Creation-Date: 2014-11-05 18:19+0100\n"
 "PO-Revision-Date: 2014-01-03 23:27+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
@@ -594,7 +594,7 @@ msgstr "M-à-J."
 
 #: ../eyes/alpha.py:158 ../eyes/diode_iv.py:127 ../eyes/freq-response.py:124
 #: ../eyes/interference-sound.py:74 ../eyes/interference-sound.py:145
-#: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:123
+#: ../eyes-junior/diode_iv.py:118 ../eyes-junior/freq-response.py:144
 #: ../eyes-junior/interference-sound.py:141 ../eyes-junior/logger.py:153
 #: ../eyes-junior/pendulum.py:156 ../eyes-junior/pt100.py:205
 #: ../eyes-junior/rodpend.py:126 ../eyes-junior/transistor.py:139
@@ -615,7 +615,7 @@ msgstr "STOP"
 
 #: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:136
 #: ../eyes/induction.py:127 ../eyes-junior/diode_iv.py:129
-#: ../eyes-junior/freq-response.py:135 ../eyes-junior/induction.py:128
+#: ../eyes-junior/freq-response.py:156 ../eyes-junior/induction.py:128
 #: ../eyes-junior/logger.py:157 ../eyes-junior/pendulum.py:162
 #: ../eyes-junior/pt100.py:209 ../eyes-junior/RCcircuit.py:140
 #: ../eyes-junior/RLCdischarge.py:116 ../eyes-junior/RLcircuit.py:129
@@ -661,7 +661,7 @@ msgstr "Enregistrer l'histogramme dans"
 #: ../eyes-junior/ac-circuit.py:198 ../eyes-junior/amfm.py:89
 #: ../eyes-junior/change-pvs.py:22 ../eyes-junior/croplus.py:710
 #: ../eyes-junior/diode_iv.py:127 ../eyes-junior/driven-pendulum.py:19
-#: ../eyes-junior/freq-response.py:133 ../eyes-junior/induction.py:124
+#: ../eyes-junior/freq-response.py:154 ../eyes-junior/induction.py:124
 #: ../eyes-junior/interference-sound.py:157 ../eyes-junior/logger.py:169
 #: ../eyes-junior/pendulum.py:172 ../eyes-junior/pt100.py:246
 #: ../eyes-junior/RCcircuit.py:131 ../eyes-junior/RLCdischarge.py:112
@@ -910,7 +910,7 @@ msgstr "Courbe I-U d'une diode"
 
 #: ../eyes/diode_iv.py:87 ../eyes/freq-response.py:99 ../eyes/induction.py:96
 #: ../eyes/interference-sound.py:93 ../eyes-junior/diode_iv.py:82
-#: ../eyes-junior/freq-response.py:99 ../eyes-junior/induction.py:98
+#: ../eyes-junior/freq-response.py:120 ../eyes-junior/induction.py:98
 #: ../eyes-junior/interference-sound.py:93 ../eyes-junior/RCcircuit.py:81
 #: ../eyes-junior/RLCdischarge.py:65 ../eyes-junior/RLcircuit.py:83
 #: ../eyes-junior/sound-burst.py:96 ../eyes-junior/transistor.py:107
@@ -933,7 +933,7 @@ msgid "ZENER"
 msgstr "ZÉNER"
 
 #: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:126
-#: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:125
+#: ../eyes-junior/diode_iv.py:120 ../eyes-junior/freq-response.py:146
 #: ../eyes-junior/logger.py:162 ../eyes-junior/pendulum.py:166
 #: ../eyes-junior/pt100.py:231 ../eyes-junior/rodpend.py:132
 #: ../eyes-junior/transistor.py:141 ../eyes/LED_iv.py:144
@@ -945,7 +945,7 @@ msgid "SAVE to"
 msgstr "ENREGISTRER dans"
 
 #: ../eyes/diode_iv.py:140 ../eyes/freq-response.py:138
-#: ../eyes-junior/diode_iv.py:131 ../eyes-junior/freq-response.py:137
+#: ../eyes-junior/diode_iv.py:131 ../eyes-junior/freq-response.py:158
 #: ../eyes-junior/transistor.py:152 ../eyes/LED_iv.py:155
 #: ../eyes/phototransistor.py:117 ../eyes/resistor_iv.py:140
 #: ../eyes/transistor.py:150
@@ -1445,44 +1445,47 @@ msgstr "Boîtier EYES trouvé sur "
 msgid "Fo = %5.0f Hz"
 msgstr "Fo = %5.0f Hz"
 
-#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:82
+#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:88
+#: ../eyes-junior/freq-response.py:103
 msgid "Frequency"
 msgstr "Fréquence"
 
-#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:83
+#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:89
+#: ../eyes-junior/freq-response.py:104
 msgid "Amplitude"
 msgstr "Amplitude"
 
-#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:84
+#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:87
+#: ../eyes-junior/freq-response.py:105
 msgid "Frequency response curve"
 msgstr "Courbe de réponse fréquencielle"
 
 #: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
-#: ../eyes-junior/freq-response.py:118
+#: ../eyes-junior/freq-response.py:139
 msgid "Freq"
 msgstr "Fréq"
 
 #: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:105
-#: ../eyes-junior/freq-response.py:118
+#: ../eyes-junior/freq-response.py:139
 msgid "Amp"
 msgstr "A"
 
-#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:131
+#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:152
 msgid "Fmax = "
 msgstr "Fmax = "
 
-#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:142
+#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:163
 msgid ""
 "Connect Piezo from SQR1 to GND. Microphone to 16,15 & 31. Wire from 13 to 26"
 msgstr ""
 "Connecter le piézo entre SQR1 et GND (Masse) ; Le micro à 16, 15 et 31. Un "
 "fil entre 13 et 26"
 
-#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:145
+#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:166
 msgid "Frequency Response Curve"
 msgstr "Courbe de réponse fréquencielle"
 
-#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:146
+#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:167
 msgid "Audio Frequency response Curve"
 msgstr "Courbe de réponse fréquencielle audio"
 
@@ -2995,8 +2998,646 @@ msgstr ""
 "\n"
 "Si une installation précédente existait, son contenu sera écrasé."
 
-#~ msgid "C files"
-#~ msgstr "Fichiers C"
+#: ../microhope/mh-ide.py:51 ../microhope/mh-ide.py:55
+#, fuzzy
+#| msgid "Not Selected"
+msgid "Not connected"
+msgstr "Non sélectionné(e)"
+
+#: ../microhope/mh-ide.py:52
+msgid "atmega32"
+msgstr ""
+
+#: ../microhope/mh-ide.py:55 ../microhope/mh-ide.py:286
+#: ../microhope/mh-ide.py:297 ../microhope/mh-ide.py:314
+#: ../microhope/mh-ide.py:363 ../microhope/mh-ide.py:374
+#: ../microhope/mh-ide.py:382 ../microhope/mh-ide.py:458
+#: ../microhope/mh-ide.py:466 ../microhope/mh-ide.py:496
+#: ../microhope/mh-ide.py:500 ../microhope/mh-ide.py:544
+#: ../microhope/mh-ide.py:554 ../microhope/mh-ide.py:571
+#: ../microhope/mh-ide.py:583 ../microhope/mh-ide.py:601
+#: ../microhope/mh-ide.py:608 ../microhope/mh-ide.py:619
+#: ../microhope/mh-ide.py:630 ../microhope/mh-ide.py:641
+#: ../microhope/mh-ide.py:652 ../microhope/mh-ide.py:663
+#: ../microhope/mh-ide.py:674 ../microhope/mh-ide.py:685
+#: ../microhope/mh-ide.py:696 ../microhope/mh-ide.py:707
+#: ../microhope/mh-ide.py:718 ../microhope/mh-ide.py:729
+#: ../microhope/mh-ide.py:740 ../microhope/mh-ide.py:751
+#: ../microhope/mh-ide.py:762 ../microhope/mh-ide.py:773
+#: ../microhope/mh-ide.py:784 ../microhope/mh-ide.py:795
+msgid "uHOPE :: File --> "
+msgstr ""
+
+#: ../microhope/mh-ide.py:55 ../microhope/mh-ide.py:511
+#: ../microhope/mh-ide.py:513
+#, fuzzy
+#| msgid "Not Selected"
+msgid "Not selected"
+msgstr "Non sélectionné(e)"
+
+#: ../microhope/mh-ide.py:55 ../microhope/mh-ide.py:262
+#: ../microhope/mh-ide.py:264 ../microhope/mh-ide.py:286
+#: ../microhope/mh-ide.py:297 ../microhope/mh-ide.py:314
+#: ../microhope/mh-ide.py:458 ../microhope/mh-ide.py:466
+#: ../microhope/mh-ide.py:496 ../microhope/mh-ide.py:500
+#: ../microhope/mh-ide.py:544 ../microhope/mh-ide.py:554
+#: ../microhope/mh-ide.py:571 ../microhope/mh-ide.py:583
+#: ../microhope/mh-ide.py:606 ../microhope/mh-ide.py:608
+#: ../microhope/mh-ide.py:619 ../microhope/mh-ide.py:630
+#: ../microhope/mh-ide.py:641 ../microhope/mh-ide.py:652
+#: ../microhope/mh-ide.py:663 ../microhope/mh-ide.py:674
+#: ../microhope/mh-ide.py:685 ../microhope/mh-ide.py:696
+#: ../microhope/mh-ide.py:707 ../microhope/mh-ide.py:718
+#: ../microhope/mh-ide.py:729 ../microhope/mh-ide.py:740
+#: ../microhope/mh-ide.py:751 ../microhope/mh-ide.py:762
+#: ../microhope/mh-ide.py:773 ../microhope/mh-ide.py:784
+#: ../microhope/mh-ide.py:795
+msgid "\t\tDevice -->"
+msgstr ""
+
+#: ../microhope/mh-ide.py:66
+msgid "&New\tCtrl+N"
+msgstr ""
+
+#: ../microhope/mh-ide.py:66
+msgid "Create a new Document"
+msgstr ""
+
+#: ../microhope/mh-ide.py:68
+msgid "&Open\tCtrl+O"
+msgstr ""
+
+#: ../microhope/mh-ide.py:68 ../microhope/mh-ide.py:222
+msgid "Open a file"
+msgstr ""
+
+#: ../microhope/mh-ide.py:71
+msgid "Blinks a LED on PB0"
+msgstr ""
+
+#: ../microhope/mh-ide.py:72
+msgid "Reads ADC channel 0 and diplays the result on the LCD"
+msgstr ""
+
+#: ../microhope/mh-ide.py:73
+msgid "Reads ADC channel 0 and diplays the result on the LCD in loop"
+msgstr ""
+
+#: ../microhope/mh-ide.py:74
+#, fuzzy
+#| msgid "Found MCA version "
+msgid "ADC -version 2"
+msgstr "Trouvé MCA version "
+
+#: ../microhope/mh-ide.py:75
+#, fuzzy
+#| msgid "Found MCA version "
+msgid "ADC -version 3"
+msgstr "Trouvé MCA version "
+
+#: ../microhope/mh-ide.py:76
+msgid "Copies a PORTA and display it on PORTB"
+msgstr ""
+
+#: ../microhope/mh-ide.py:77
+msgid "Copy 2"
+msgstr ""
+
+#: ../microhope/mh-ide.py:78
+msgid "Copy 3"
+msgstr ""
+
+#: ../microhope/mh-ide.py:81
+msgid "PWM-tc0 version 1"
+msgstr ""
+
+#: ../microhope/mh-ide.py:82
+msgid "H-Bridge Controlling motor"
+msgstr ""
+
+#: ../microhope/mh-ide.py:83
+msgid "PWM tc0 version 2"
+msgstr ""
+
+#: ../microhope/mh-ide.py:84
+msgid "To make microHOPE as small CRO"
+msgstr ""
+
+#: ../microhope/mh-ide.py:85
+msgid "To make microHOPE as small CRO (version 2)"
+msgstr ""
+
+#: ../microhope/mh-ide.py:86
+msgid "Print message in LCD"
+msgstr ""
+
+#: ../microhope/mh-ide.py:87
+msgid "Blinking messages in LCD"
+msgstr ""
+
+#: ../microhope/mh-ide.py:88
+msgid "Examples"
+msgstr ""
+
+#: ../microhope/mh-ide.py:89
+msgid "&Save\tCtrl+S"
+msgstr ""
+
+#: ../microhope/mh-ide.py:89 ../microhope/mh-ide.py:223
+msgid "Save the current file"
+msgstr ""
+
+#: ../microhope/mh-ide.py:90
+msgid "&SaveAs\tShift+Ctrl+S"
+msgstr ""
+
+#: ../microhope/mh-ide.py:90
+msgid "Save the current file with a different name"
+msgstr ""
+
+#: ../microhope/mh-ide.py:92
+msgid "&Init()\tCtrl+I"
+msgstr ""
+
+#: ../microhope/mh-ide.py:92
+msgid "Initialize microhope working directory"
+msgstr ""
+
+#: ../microhope/mh-ide.py:93
+msgid "&Exit\tCtrl+Q"
+msgstr ""
+
+#: ../microhope/mh-ide.py:93
+msgid "Quit the programme"
+msgstr ""
+
+#: ../microhope/mh-ide.py:119
+msgid "&Undo\tCtrl+Z"
+msgstr ""
+
+#: ../microhope/mh-ide.py:120
+msgid "&Redo\tCtrl+Y"
+msgstr ""
+
+#: ../microhope/mh-ide.py:122
+msgid "&Cut\tCtrl+X"
+msgstr ""
+
+#: ../microhope/mh-ide.py:122 ../microhope/mh-ide.py:228
+#, fuzzy
+#| msgid "Check the connections."
+msgid "Cut the selection"
+msgstr "Vérifiez les connexions."
+
+#: ../microhope/mh-ide.py:123
+msgid "&Copy\tCtrl+C"
+msgstr ""
+
+#: ../microhope/mh-ide.py:123 ../microhope/mh-ide.py:229
+#, fuzzy
+#| msgid "Check the connections."
+msgid "Copy the selection"
+msgstr "Vérifiez les connexions."
+
+#: ../microhope/mh-ide.py:124
+msgid "&Paste\tCtrl+P"
+msgstr ""
+
+#: ../microhope/mh-ide.py:124 ../microhope/mh-ide.py:230
+msgid "Paste the clipboard"
+msgstr ""
+
+#: ../microhope/mh-ide.py:125
+msgid "&Delete"
+msgstr ""
+
+#: ../microhope/mh-ide.py:125
+msgid "Deleted the selected text"
+msgstr ""
+
+#: ../microhope/mh-ide.py:127
+msgid "&Select All\tCtrl+A"
+msgstr ""
+
+#: ../microhope/mh-ide.py:127
+msgid "select the entire document"
+msgstr ""
+
+#: ../microhope/mh-ide.py:137
+msgid "&Statusbar"
+msgstr ""
+
+#: ../microhope/mh-ide.py:137
+msgid "Show or hide the statusbar in the current window"
+msgstr ""
+
+#: ../microhope/mh-ide.py:143
+msgid "Black on white(default)"
+msgstr ""
+
+#: ../microhope/mh-ide.py:144
+msgid "White on Black"
+msgstr ""
+
+#: ../microhope/mh-ide.py:145
+msgid "Theme"
+msgstr ""
+
+#: ../microhope/mh-ide.py:147
+msgid "Default"
+msgstr ""
+
+#: ../microhope/mh-ide.py:159
+msgid "Large"
+msgstr ""
+
+#: ../microhope/mh-ide.py:160
+msgid "Font Size"
+msgstr ""
+
+#: ../microhope/mh-ide.py:179
+msgid "Detect Board\tCtrl+B"
+msgstr ""
+
+#: ../microhope/mh-ide.py:179
+#, fuzzy
+#| msgid "Search Hardware"
+msgid "Detect the hardware"
+msgstr "Chercher le matériel"
+
+#: ../microhope/mh-ide.py:181
+#, fuzzy
+#| msgid "Set State"
+msgid "Set Bootloader"
+msgstr "Régler l'état"
+
+#: ../microhope/mh-ide.py:181
+msgid "For setting the mcu by uploading the bootloader"
+msgstr ""
+
+#: ../microhope/mh-ide.py:182
+msgid "Soft RST"
+msgstr ""
+
+#: ../microhope/mh-ide.py:182
+msgid "Software RESET"
+msgstr ""
+
+#: ../microhope/mh-ide.py:189
+#, fuzzy
+#| msgid "Compile"
+msgid "Compile\tCtrl+K"
+msgstr "Compiler"
+
+#: ../microhope/mh-ide.py:189
+msgid "To Compile the program"
+msgstr ""
+
+#: ../microhope/mh-ide.py:190
+msgid "Assemble\tCtrl+J"
+msgstr ""
+
+#: ../microhope/mh-ide.py:190
+msgid "To Assemble the program"
+msgstr ""
+
+#: ../microhope/mh-ide.py:192
+msgid "Uplod\tCtrl+L"
+msgstr ""
+
+#: ../microhope/mh-ide.py:192
+msgid "To upload the program to mcu"
+msgstr ""
+
+#: ../microhope/mh-ide.py:193
+#, fuzzy
+#| msgid "Upload using USBASP"
+msgid "Upload via USBASP"
+msgstr "Charger à l'aide d'USBASP"
+
+#: ../microhope/mh-ide.py:193
+#, fuzzy
+#| msgid "Upload using USBASP"
+msgid "Upload program via USBASP"
+msgstr "Charger à l'aide d'USBASP"
+
+#: ../microhope/mh-ide.py:200
+msgid "&Help\tShift+Ctrl+H"
+msgstr ""
+
+#: ../microhope/mh-ide.py:201
+#, fuzzy
+#| msgid "About ..."
+msgid "&About"
+msgstr "À propos ..."
+
+#: ../microhope/mh-ide.py:202
+msgid "&Author"
+msgstr ""
+
+#: ../microhope/mh-ide.py:221
+msgid "Create a new document"
+msgstr ""
+
+#: ../microhope/mh-ide.py:225
+msgid "Undo the last action"
+msgstr ""
+
+#: ../microhope/mh-ide.py:226
+msgid "Redo the last undone action"
+msgstr ""
+
+#: ../microhope/mh-ide.py:232
+msgid "To compile the current programe"
+msgstr ""
+
+#: ../microhope/mh-ide.py:233
+msgid "To upload the pgm to mh"
+msgstr ""
+
+#: ../microhope/mh-ide.py:234
+msgid "To detect microhope hardware"
+msgstr ""
+
+#: ../microhope/mh-ide.py:236
+msgid "Help for microHOPE"
+msgstr ""
+
+#: ../microhope/mh-ide.py:250
+msgid "File"
+msgstr "Fichier"
+
+#: ../microhope/mh-ide.py:251
+msgid "Edit"
+msgstr ""
+
+#: ../microhope/mh-ide.py:252
+#, fuzzy
+#| msgid "ViewAll"
+msgid "View"
+msgstr "Tout voir"
+
+#: ../microhope/mh-ide.py:253
+msgid "Device"
+msgstr ""
+
+#: ../microhope/mh-ide.py:254
+msgid "Build"
+msgstr ""
+
+#: ../microhope/mh-ide.py:255
+#, fuzzy
+#| msgid "About ..."
+msgid "About"
+msgstr "À propos ..."
+
+#: ../microhope/mh-ide.py:262
+msgid "uHOPE :: File -->New File.c *"
+msgstr ""
+
+#: ../microhope/mh-ide.py:264
+msgid "uHOPE :: File -->"
+msgstr ""
+
+#: ../microhope/mh-ide.py:271
+#, python-brace-format
+msgid "line ={line}\t\tcolumn={column}"
+msgstr ""
+
+#: ../microhope/mh-ide.py:277 ../microhope/mh-ide.py:306
+#, fuzzy
+#| msgid "C files"
+msgid "Choose a file"
+msgstr "Fichiers C"
+
+#: ../microhope/mh-ide.py:322
+msgid "Save before exiting ?"
+msgstr ""
+
+#: ../microhope/mh-ide.py:332
+msgid "Are you sure ?"
+msgstr ""
+
+#: ../microhope/mh-ide.py:354
+msgid "Save before opening New File ?"
+msgstr ""
+
+#: ../microhope/mh-ide.py:361 ../microhope/mh-ide.py:372
+#: ../microhope/mh-ide.py:380
+#, fuzzy
+#| msgid "New File"
+msgid "New file"
+msgstr "Nouveau fichier"
+
+#: ../microhope/mh-ide.py:363 ../microhope/mh-ide.py:374
+#: ../microhope/mh-ide.py:382
+msgid ".c\t\tDevice -->"
+msgstr ""
+
+#: ../microhope/mh-ide.py:434 ../microhope/mh-ide.py:438
+#: ../microhope/mh-ide.py:442
+msgid "uHOPE :: Status"
+msgstr ""
+
+#: ../microhope/mh-ide.py:447 ../microhope/mh-ide.py:533
+#, fuzzy
+#| msgid "No file selected"
+msgid "Filename not selected ."
+msgstr "Pas de fichier sélectionné"
+
+#: ../microhope/mh-ide.py:457
+#, fuzzy
+#| msgid "Compilation Error"
+msgid "Compilation Error :\n"
+msgstr "Erreur de compilation."
+
+#: ../microhope/mh-ide.py:465
+msgid "Compilation Done"
+msgstr "Calibration terminée"
+
+#: ../microhope/mh-ide.py:469
+msgid ""
+"Device not selected\n"
+"Please select a device"
+msgstr ""
+
+#: ../microhope/mh-ide.py:495
+#, fuzzy
+#| msgid " Error"
+msgid "Upload Error:\n"
+msgstr "Erreur"
+
+#: ../microhope/mh-ide.py:495
+#, fuzzy
+#| msgid ""
+#| "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
+msgid ""
+"\n"
+"Try pressing microHOPE Reset button just before Uploading"
+msgstr ""
+"Erreur de chargement : essayez d'appuyer sur le bouton RESET de microHOPE "
+"avant un nouveau chargement"
+
+#: ../microhope/mh-ide.py:499
+#, fuzzy
+#| msgid "Upload Completed"
+msgid "Upload Completed\n"
+msgstr "Chargement terminé"
+
+#: ../microhope/mh-ide.py:502
+msgid ""
+"Steps:\n"
+"1.Write a program on editor / Open a programe C or Assembler files\n"
+"2.Compile it by cliking on compile\n"
+"3.You can view the objdump file(*.lst) by opening it in the editoring\n"
+"4.Connect microHOPE and wait a minute\n"
+"5.Click on Device->Detect Board to detect your board\n"
+"6.If microHOPE is not found , repeat or reconnect microHOPE\n"
+"7.Upload the hex file to microHOPE (Build->Upload)\n"
+"8.If upload fails check microHOPE and upload again\n"
+"\n"
+"Note: Make sure that microhope folder from /usr/share/microhope/microhope is "
+"copied to your home folder .\n"
+"It contains example programes , mh-libs etc."
+msgstr ""
+
+#: ../microhope/mh-ide.py:502
+msgid "microHOPE-Help"
+msgstr ""
+
+#: ../microhope/mh-ide.py:506
+msgid ""
+"Author :Arun Jayan\n"
+"arun.jayan.j@ieee.org\n"
+"GNU USERS NETWORK"
+msgstr ""
+
+#: ../microhope/mh-ide.py:506
+msgid "Author of IDE"
+msgstr ""
+
+#: ../microhope/mh-ide.py:514
+#, fuzzy, python-brace-format
+#| msgid "MicroHOPE: File->%s : Device-> %s"
+msgid "uHOPE :: File -> {file} & Device -> {dev}"
+msgstr "MicroHOPE: Fichier->%s : Périph-> %s"
+
+#: ../microhope/mh-ide.py:517
+msgid ""
+"microHOPE is a developement Board using Atmega32\n"
+"Created by :Dr.Ajith Kumar B P\n"
+"\t\t\t\t IUAC,New Delhi\n"
+"\t\t\t\t http://www.expeyes.in/microhope"
+msgstr ""
+
+#: ../microhope/mh-ide.py:517
+#, fuzzy
+#| msgid "About ..."
+msgid "About uHOPE"
+msgstr "À propos ..."
+
+#: ../microhope/mh-ide.py:543
+msgid "Assembler Error :\n"
+msgstr ""
+
+#: ../microhope/mh-ide.py:553
+msgid "Assembing Done"
+msgstr ""
+
+#: ../microhope/mh-ide.py:556
+#, fuzzy
+#| msgid "Starting Upload via USBASP...."
+msgid "Setting up MicroHOPE bootloader via USBASP....."
+msgstr "Démarrage du chargement à l'aide de USBASP ..."
+
+#: ../microhope/mh-ide.py:557
+msgid ""
+"Setting up MicroHOPE bootloader via USBASP.... \n"
+"It will take few seconds"
+msgstr ""
+
+#: ../microhope/mh-ide.py:561
+#, fuzzy
+#| msgid "Timeout Error. Check Connections"
+msgid "Error: Check Connections...."
+msgstr "Erreur de délai dépassé. Vérifier les connexions"
+
+#: ../microhope/mh-ide.py:567
+msgid "Error: Setting up fuses"
+msgstr ""
+
+#: ../microhope/mh-ide.py:570
+msgid "Upload Completed"
+msgstr "Chargement terminé"
+
+#: ../microhope/mh-ide.py:573
+#, fuzzy
+#| msgid "Upload using USBASP"
+msgid "Uploading through USBASP ...."
+msgstr "Charger à l'aide d'USBASP"
+
+#: ../microhope/mh-ide.py:578
+#, fuzzy
+#| msgid "Check the connections."
+msgid "Check connections of USBASP"
+msgstr "Vérifiez les connexions."
+
+#: ../microhope/mh-ide.py:582
+#, fuzzy
+#| msgid "Starting Upload via USBASP...."
+msgid "Uploading via USBASP completed....."
+msgstr "Démarrage du chargement à l'aide de USBASP ..."
+
+#: ../microhope/mh-ide.py:597
+msgid "microHOPE hardware not found?"
+msgstr "Boîtier microHOPE pas trouvé ?"
+
+#: ../microhope/mh-ide.py:599 ../microhope/mh-ide.py:606
+msgid "uHOPE :: File --> New File"
+msgstr ""
+
+#: ../microhope/mh-ide.py:599 ../microhope/mh-ide.py:601
+msgid "\t\tDevice --> Not Connected"
+msgstr ""
+
+#: ../microhope/mh-ide.py:609
+msgid "Device is found at "
+msgstr ""
+
+#: ../microhope/mh-ide.py:803
+#, fuzzy
+#| msgid ""
+#| "Do you want to create your own microHope environment?\n"
+#| "\n"
+#| "If you reply \"Yes\", a subdirectory named microHope will be created in "
+#| "your home directory, and a set of files will be copied into it.\n"
+#| "\n"
+#| "If any previous installation existed, its contents will be overwriten."
+msgid ""
+"Create microHope environment\n"
+"Do you want to create your own microHope environment?\n"
+"\n"
+"If you reply \"Yes\", a subdirectory named microHope will be created in your "
+"home directory, and a set of files will be copied into it.\n"
+"\n"
+"If any previous installation existed, its contents will be overwriten."
+msgstr ""
+"Voulez-vous créer votre environnement MicroHope ?\n"
+"\n"
+"Si vous répondez « oui », un sous-répertoire nommé microHope sera créé dans "
+"votre répertoire personnel, et un ensemble de fichiers y sera copié.\n"
+"\n"
+"Si une installation précédente existait, son contenu sera écrasé."
+
+#: ../microhope/mh-ide.py:803
+msgid "uHOPE init()"
+msgstr ""
+
+#: ../microhope/mh-ide.py:808
+#, fuzzy
+#| msgid "Create microHope environment"
+msgid "creating microhope environment"
+msgstr "Créer un environnement microHope"
 
 #~ msgid "text files"
 #~ msgstr "Fichiers texte"
@@ -3025,26 +3666,11 @@ msgstr ""
 #~ "Traductions :\n"
 #~ "(FR) (c) 2014 Georges Khaznadar"
 
-#~ msgid "Not Selected"
-#~ msgstr "Non sélectionné(e)"
-
-#~ msgid "MicroHOPE: File->%s : Device-> %s"
-#~ msgstr "MicroHOPE: Fichier->%s : Périph-> %s"
-
 #~ msgid "File->%s : Device-> %s"
 #~ msgstr "Fichier->%s : Périph-> %s"
 
 #~ msgid "File Saved"
 #~ msgstr "Fichier enregistré"
-
-#~ msgid "No file selected"
-#~ msgstr "Pas de fichier sélectionné"
-
-#~ msgid "Compilation Error"
-#~ msgstr "Erreur de compilation."
-
-#~ msgid "Compilation Done"
-#~ msgstr "Calibration terminée"
 
 #~ msgid "Hardware device not selected"
 #~ msgstr "Pas de périphérique détecté"
@@ -3052,27 +3678,9 @@ msgstr ""
 #~ msgid "Starting Upload...."
 #~ msgstr "Début de chargement ..."
 
-#~ msgid ""
-#~ "Upload Error: Try pressing nicroHOPE Reset button just before Uploading"
-#~ msgstr ""
-#~ "Erreur de chargement : essayez d'appuyer sur le bouton RESET de microHOPE "
-#~ "avant un nouveau chargement"
-
-#~ msgid "Upload Completed"
-#~ msgstr "Chargement terminé"
-
-#~ msgid "Starting Upload via USBASP...."
-#~ msgstr "Démarrage du chargement à l'aide de USBASP ..."
-
 #~ msgid "Upload Error: Make use USBASP programmer is connected"
 #~ msgstr ""
 #~ "Erreur de chargement : vérifiez si le programmeur USBASP est connecté"
-
-#~ msgid "microHOPE hardware not found?"
-#~ msgstr "Boîtier microHOPE pas trouvé ?"
-
-#~ msgid "About ..."
-#~ msgstr "À propos ..."
 
 #~ msgid "Hints"
 #~ msgstr "Trucs et astuces"
@@ -3084,23 +3692,11 @@ msgstr ""
 #~ "Il se peut que vous ayez à créer le répertoire ~/microhope à  l'aide de "
 #~ "la commande « create-microhope-env ». Voyez « man create-microhope-env »."
 
-#~ msgid "New File"
-#~ msgstr "Nouveau fichier"
-
 #~ msgid "Open"
 #~ msgstr "Ouvrir"
 
 #~ msgid "Save As"
 #~ msgstr "Enregistrer sous"
-
-#~ msgid "Upload using USBASP"
-#~ msgstr "Charger à l'aide d'USBASP"
-
-#~ msgid "File"
-#~ msgstr "Fichier"
-
-#~ msgid "Compile"
-#~ msgstr "Compiler"
 
 #~ msgid "Upload"
 #~ msgstr "Charger"

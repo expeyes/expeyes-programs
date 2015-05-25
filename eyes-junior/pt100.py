@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, math
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 WIDTH  = 600   # width of drawing canvas
 HEIGHT = 400   # height    
@@ -29,7 +38,7 @@ class PT100:
 	def get_freezing(self):
 		v = p.get_voltage(1)
 		temp = self.v2t(v)
-		print temp
+		#print temp
 		if -10 < temp < 10:
 			self.BPvoltage = v
 			self.fpdone = True
@@ -40,7 +49,7 @@ class PT100:
 	def get_boiling(self):
 		v = p.get_voltage(1)
 		temp = self.v2t(v)
-		print temp
+		#print temp
 		if 90 < temp < 110:
 			self.BPvoltage = v
 			self.bpdone = True
@@ -65,7 +74,7 @@ class PT100:
 		c = 1 - r/r0
 		b4ac = math.sqrt( A*A - 4 * B * c)
 		t = (-A + b4ac) / (2.0 * B)
-		print self.current, self.gain, v, r, t
+		#print self.current, self.gain, v, r, t
 		#print r,t
 		return t
 
@@ -84,7 +93,7 @@ class PT100:
 			self.MAXY = int(TMAX.get())
 			self.gain = float(Gval.get())
 			self.current = float(CCval.get())
-			print self.gain, self.current
+			#print self.gain, self.current
 			g.setWorld(0, self.MINY, self.MAXTIME, self.MAXY,_('Time'),_('Volt'))
 			self.TIMER = int(TGAP.get())
 			Total.config(state=DISABLED)
@@ -114,7 +123,7 @@ class PT100:
 			temp = self.m * v + self.c		# Use the calibration 
 		else:
 			temp = self.v2t(v)
-		print v,temp
+		#print v,temp
 		self.tv[1].append(temp)
 		if len(self.tv[0]) >= 2:
 			g.delete_lines()
@@ -130,7 +139,7 @@ class PT100:
 	def calc_gain(self):
 		vs = p.set_voltage(.1)
 		va = p.get_voltage(1)
-		print va, vs, va/vs
+		#print va, vs, va/vs
 		if va < -1:
 			self.gain = va/vs
 		else:

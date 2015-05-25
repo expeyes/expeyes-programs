@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, math
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 WIDTH  = 600   # width of drawing canvas
 HEIGHT = 400   # height    
@@ -43,13 +52,13 @@ class Pend:
 		tmean = (tmin+tmax)/2
 		span = tmax - tmin
 		step = span / nbin
-		print tmin, tmax, span, step
+		#print tmin, tmax, span, step
 		for k in range(self.nmax):
 			for j in range(nbin):
 				#print tmin+j*step, self.nt[1][k], tmin+(j+1)*step
 				if tmin+j*step < data[k] <= tmin+(j+1)*step:
 					self.h[j] += 1
-		print self.h
+		#print self.h
 
 
 	def start(self):
@@ -70,10 +79,10 @@ class Pend:
 	def update(self):
 		if self.running == False:
 			return
-		t = p.multi_r2rtime(0,1)
+		t = p.multi_r2rtime(0,3)
 		if t > 0:
 			s = _('%5.1f mS\n') %(t*1.0e-3)
-			print s
+			#print s
 			Result.insert(END, s)	
 			self.nt[0].append(self.index)
 			self.nt[1].append(t*1.0e-3)

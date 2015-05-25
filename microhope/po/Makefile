@@ -1,6 +1,6 @@
 DESTDIR = 
 
-SRCFILES = ../uhope.c
+SRCFILES = ../uhope.c ../mh-ide.py
 POFILES = $(shell ls *.po)
 MOFILES = $(patsubst %.po, %.mo, $(POFILES))
 LANG    = $(patsubst %.po, %, $(POFILES))

@@ -8,8 +8,17 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, math
+import time, math, sys
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
 
 TIMER = 100
 WIDTH  = 800        # width of drawing canvas
@@ -50,7 +59,7 @@ def measure_phase():
 		return
 
 	phase = phsum/n * (180.0/math.pi)
-	print n,phase	
+	#print n,phase	
 	s = _('Freq = %5.0f Hz Phase = %5.0f deg')%(fs, phase)
 	msgwin.config(text=s)			
 	data.append([t,v])

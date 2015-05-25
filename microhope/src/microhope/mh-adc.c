@@ -18,7 +18,7 @@
 #define REF_EXT		0	// Feed reference voltage externally
 #define REF_INT		(3<<6)	// use the 2.56 V internal reference
 #define REF_AVCC	(1<<6)	// Connect AVCC internally to reference
-#define ADMAX		7	// channels 0 to 7
+#define ADMAX		7	// channels 0 to 7 
 #define ADC_SPEED	7	// ADCClk = (8 MHz/ 128) = 62.5 KHz =>208 usec
 
 

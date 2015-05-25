@@ -2,7 +2,7 @@
 #include "mh-timer.c"
 #include "mh-lcd.c"
 
-
+ 
 int main()
 {
 lcd_init();

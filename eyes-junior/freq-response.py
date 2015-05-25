@@ -3,8 +3,18 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, numpy
+import time, sys, numpy, shelve, tempfile, subprocess, os
+if sys.version_info.major==3:
+        from tkinter import *
+else:
+        from Tkinter import *
+
+sys.path=[".."] + sys.path
+
+import expeyes.eyesj as eyes
+import expeyes.eyeplot as eyeplot
+import expeyes.eyemath as eyemath
+
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -69,19 +79,38 @@ def update():					# Called periodically by the Tk toolkit
 	index += 1
 	root.after(TIMER, update)
 
-def xmgrace():		# Send the data to Xmgrace
+def plotdata(pref="qtiplot"):		# Send the data to XmGrace or QtiPlot
+	"""
+	sends the data to a plotter/analyser with many features
+	@param pref the preferred program, defaults to qtiplot
+	"""
 	global history
-	try:
-		import pygrace
-	except:
-		return
-	pg = pygrace.grace()
-	for dat in history:
-		pg.plot(dat[0],dat[1])
-		pg.hold(1)			# Do not erase the old data
-	pg.xlabel(_('Frequency'))
-	pg.ylabel(_('Amplitude'))
-	pg.title(_('Frequency response curve'))
+	if pref=="qtiplot":
+		#print len(history)
+		for dat in history:
+			tmpfile=tempfile.NamedTemporaryFile(prefix="tmpExpEYES")
+			name=tmpfile.name
+			tmpfile.close()
+			d = shelve.open(name,"c")
+			d["title"]=_('Frequency response curve').decode('utf8').encode('latin1')
+			d["xlabel"]=_('Frequency').decode('utf8').encode('latin1')
+			d["ylabel"]=_('Amplitude').decode('utf8').encode('latin1')
+			d["data"]=[dat[0],dat[1]]
+			d.close()
+			cmd="EXPEYES_SHELVE=%s qtiplot -x /usr/share/expeyes/eyes-junior/expeyes2qtiplot.py &" % name
+			subprocess.call(cmd, shell=True)
+	else:
+		try:
+			import pygrace
+		except:
+			return
+		pg = pygrace.grace()
+		for dat in history:
+			pg.plot(dat[0],dat[1])
+			pg.hold(1)			# Do not erase the old data
+		pg.xlabel(_('Frequency'))
+		pg.ylabel(_('Amplitude'))
+		pg.title(_('Frequency response curve'))
 
 def save():
 	global history, running
@@ -134,7 +163,7 @@ b5 = Button(cf, text = _('QUIT'), command = quit)
 b5.pack(side = RIGHT, anchor = N)
 b4 = Button(cf, text = _('CLEAR'), command = clear)
 b4.pack(side = RIGHT, anchor = N)
-b5 = Button(cf, text = _('Grace'), command = xmgrace)
+b5 = Button(cf, text = _('Grace'), command = plotdata)
 b5.pack(side = RIGHT, anchor = N)
 
 mf = Frame(root, width = WIDTH, height = 10)

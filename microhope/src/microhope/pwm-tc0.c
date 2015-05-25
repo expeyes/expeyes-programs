@@ -6,6 +6,6 @@ uint8_t  ocrval = 50;   // Output Compare register vaule
 
 int main()
 {
-while(1) {delay_ms(100); pwm_tc0(csb, ocrval); }
+while(1) {delay_ms(100); pwm_tc0(csb, ocrval); } 
 return 0;
 }

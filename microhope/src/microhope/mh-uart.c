@@ -1,4 +1,4 @@
-
+                                                                               
 /* uart.c -- routines for manipulating the ATmega16 UART.
 
    Copyright (C) 2008 Ajith Kumar, Inter-University Accelerator Centre,
