@@ -1,6 +1,7 @@
 '''
 expEYES program
-Developed as a part of GSoC-2014 project  " Plugins-for-ExpEYES "
+Author  : Praveen Patil, Ajith Kumar B.P
+Developed as a part of GSoC- project  
 License : GNU GPL version 3
 
 Program to plot oscillations of TWO coupled pendulums in real-time
