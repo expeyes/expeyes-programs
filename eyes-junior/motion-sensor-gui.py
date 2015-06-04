@@ -2,6 +2,10 @@
 expEYES program for interfacing SRF05 motion sensor 
 
 '''
+import gettext
+gettext.bindtextdomain("expeyes")
+gettext.textdomain('expeyes')
+_ = gettext.gettext
 
 from Tkinter import *
 import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, math
