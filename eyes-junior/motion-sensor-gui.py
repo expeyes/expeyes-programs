@@ -1,3 +1,7 @@
+''
+expEYES program for interfacing SRF05 motion sensor 
+
+'''
 
 from Tkinter import *
 import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, math
