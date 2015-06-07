@@ -3,6 +3,10 @@ expEYES program
 Developed as a part of GSoC Project 
 this program allows user to use TWO motion sensors (srf-05 modules) and plot graphs in real-time.
 '''
+import gettext
+gettext.bindtextdomain("expeyes")
+gettext.textdomain('expeyes')
+_ = gettext.gettext
 
 from Tkinter import *
 import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, time, sys, math
