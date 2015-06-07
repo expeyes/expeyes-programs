@@ -8,8 +8,7 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyesj as eyes, expeyes.eyeplot as eyeplot, time, sys, math
+
 WIDTH = 600 # width of drawing canvas
 HEIGHT = 400 # height
 vs = 0.034000
