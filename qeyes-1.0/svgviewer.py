@@ -76,7 +76,14 @@ class SvgView(QGraphicsView):
     
         s.addItem(self.svgItem)
 
-  
+        self.printHotRectangles()
+
+    def printHotRectangles(self):
+        names="GND0,GND1,GND2,GND3,A1,A2,PVS,OUT,IN,MIC,SINE,IN1,IN2,SEN,SQR1,SQR2,OD1,CCS".split(",")
+        for n in names:
+            print(n, self.svgItem.renderer().boundsOnElement(n))
+
+        
     def wheelEvent(self, event):
         factor = pow(1.2, event.angleDelta().y() / 240.0)
         self.scale(factor, factor)

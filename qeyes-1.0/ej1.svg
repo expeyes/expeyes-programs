@@ -9,6 +9,7 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -248,6 +249,7 @@
      d="m 416.44717,162.10819 18.89222,25.12043"
      id="path3819-7"
      inkscape:connector-curvature="0" />
+  <a xlink:href="http://localhost">
   <path
      sodipodi:type="arc"
      style="fill:#ffcc00;fill-opacity:1;stroke:#806600;stroke-width:3;stroke-linecap:square;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;stroke-dashoffset:0"
@@ -259,6 +261,7 @@
      d="m 39.860514,287.58737 a 15.674316,15.259103 0 1 1 -31.3486331,0 15.674316,15.259103 0 1 1 31.3486331,0 z"
      transform="translate(401.91469,-73.473684)"
      inkscape:label="#path3817-5-76" />
+  </a>
   <path
      style="opacity:0.247;fill:none;stroke:#806600;stroke-width:5.50500011;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      d="m 416.44717,201.13827 18.89222,25.12043"
