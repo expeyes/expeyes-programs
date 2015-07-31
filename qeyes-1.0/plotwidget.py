@@ -1,12 +1,13 @@
 '''
-Plotting libray, using Qt4 for expEYES
+Plotting libray, using Qt5 for expEYES
 Author  : Georges Khaznadar <georgesk@debian.org>
 Based on Ajith Kumar's work
 License : GNU GPL version 3
 '''
 
-from PyQt4.QtCore import *
-from PyQt4.QtGui import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import *
 
 AXWIDTH = 40   # width of the axis display canvas
 AYWIDTH = 50   # width of the axis display canvas
@@ -95,10 +96,6 @@ class plotWidget(QGraphicsView):
         self.ymin = float(y1)
         self.xmax = float(x2)
         self.ymax = float(y2)
-        if hasattr(self.parent.parent().ui,"xAxisWidget"): # wait initialization
-            self.parent.parent().ui.xAxisWidget.setRange(self.xmin,self.xmax,xUnit)
-        if hasattr(self.parent.parent().ui,"yAxisWidget"): # wait initialization
-            self.parent.parent().ui.yAxisWidget.setRange(self.ymin,self.ymax,yUnit)
         self.xscale = (self.xmax - self.xmin) / (self.SCX)
         self.yscale = (self.ymax - self.ymin) / (self.SCY)   
         #self.mark_labels(xUnit, yUnit)
@@ -256,8 +253,10 @@ class plotWidget(QGraphicsView):
 
 if __name__ == '__main__':
     import numpy as np
+    import sys
+    
     app = QApplication(sys.argv)
-    view = graph()
+    view = plotWidget(labels=False)
     view.show()
     nbPoint=100
     x=np.fromiter((400.0*x/nbPoint for x in range(nbPoint+1)), dtype=np.float)

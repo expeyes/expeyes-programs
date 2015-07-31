@@ -1,17 +1,10 @@
-DESTDIR = 
-SOURCES = $(shell ls *.py)
-ITF_SOURCES = $(shell ls *.ui)
-ITF = $(patsubst %.ui, Ui_%.py, $(ITF_SOURCES))
+RCFILES = $(shell ls *.qrc)
+PYRCFILES = $(patsubst %.qrc, %_rc.py, $(RCFILES))
 
-all: interfaces
+all: $(PYRCFILES)
 
-interfaces: $(ITF)
-
-Ui_%.py: %.ui
-	pyuic4 $< > $@
-
+%_rc.py: %.qrc
+	pyrcc5 -o $@ $<
 clean:
-	rm -rf build __pycache__
-	rm -f *~ Ui_* *.pyc
+	rm -rf *~ __pycache__ *.bak *_rc.py
 
-distclean: clean
