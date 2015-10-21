@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import serial, struct, time
 import numpy as np
 import matplotlib.pyplot as plt
@@ -17,7 +19,7 @@ va =ta = range(NP)
 line, = plt.plot(ta,va)
 while 1:
 	fd.write(chr(1))		# 1 is the readblock command for uC end
-	print fd.read()		    # This must be a 'D'
+	print (fd.read())		    # This must be a 'D')
 	data = fd.read(NP)
 	raw = struct.unpack('B'* NP, data)  # 8 bit data in byte array
 	ta = []

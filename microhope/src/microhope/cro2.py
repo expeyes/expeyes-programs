@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import serial, struct, time
 import numpy as np
 import matplotlib.pyplot as plt
@@ -33,7 +35,7 @@ plt.show()
 
 ta,va = readblock(NP,TG)
 line, = plt.plot(ta,va)
-print ta[-1]
+print (ta[-1])
 while 1:
 	ta,va = readblock(NP,TG)
 	line.set_xdata(ta)

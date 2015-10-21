@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import serial
 try:
 	fd = serial.Serial('/dev/ttyUSB0', 38400, stopbits=1, timeout = 1.0)
@@ -8,4 +10,4 @@ except:
 while 1:
   c = raw_input('Enter a character : ')
   fd.write(c)	
-  print 'Receiced ', fd.read()
+  print ('Received ', fd.read())

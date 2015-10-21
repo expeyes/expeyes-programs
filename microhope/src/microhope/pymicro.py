@@ -4,6 +4,8 @@ author  : Ajith Kumar (ajith@iuac.res.in)
 License : GNU GPL version 3 or above
 A program to read/write the microcontroller registers 
 '''
+from __future__ import print_function
+
 
 READB  = 1   # Codes for the uC end
 WRITEB = 2        
@@ -39,7 +41,7 @@ class atm32:
 		self.fd = serial.Serial('/dev/ttyACM0', 38400, stopbits=1, timeout = 1.0)
 		time.sleep(2)   # even if user forgets to remove PCRST jumper
 		if self.fd == None:
-			print 'Error opening ATmega32 connection'
+			print ('Error opening ATmega32 connection')
 	
 	def outb(self,port, data):			#Output a byte to the specified port 
 		self.fd.write(chr(WRITEB))
