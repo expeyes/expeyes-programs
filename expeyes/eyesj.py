@@ -47,7 +47,19 @@ gettext.bindtextdomain('expeyes')
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-        
+#Path to the calibration file
+'''
+if sys.platform.startswith('linux'):
+	calibrationDir=os.path.expanduser('~/.expeyes')
+else:
+	calibrationDir="."
+if not os.path.isdir(calibrationDir):
+	os.makedirs(calibrationDir)
+calibrationFile=os.path.abspath(os.path.join(calibrationDir,'eyesj.cal'))
+calibrationFileSEN=os.path.abspath(os.path.join(calibrationDir,'eyesj-sen.cal'))
+calibrationFileCAP=os.path.abspath(os.path.join(calibrationDir,'eyesj-cap.cal'))
+'''
+
 #Commands with One byte argument (41 to 80) 
 GETVERSION  =   chr(1)
 READCMP     =   chr(2)	# Status of comparator output 
@@ -83,7 +95,7 @@ SETDAC	    =   chr(96)  # 12 bit DAC setting
 SETCURRENT  =   chr(97)  # ADC channel, CTMU Irange
 SETACTION   =   chr(98)  # capture modifiers, action, target pin
 SETTRIGVAL  =   chr(99)  # Analog trigger level, 2 bytes
-
+SRFECHOTIME =   chr(100) # Trigger to Echo time for SRF0x modules
 
 # Commands with Three bytes argument (121 to 160)    
 SETSQR1	    =  chr(121)  # Square wave on OSC2
@@ -707,6 +719,12 @@ class Eyesjun:
         Time from LOW True pulse on pin1 to a falling edge on pin2.
         '''
         return self.tim_helper(LTPUL2FTIME, pin1, pin2)
+
+    def srfechotime(self, pin1, pin2):
+	'''
+	Time from Trigger on Echo for SRF0x module. Trig on pin1 and Echo on pin2.
+	'''
+	return self.tim_helper(SRFECHOTIME, pin1, pin2)
 
     """------------------------- Digital I/O-----------------------------"""
     def set_state(self, pin, state):
