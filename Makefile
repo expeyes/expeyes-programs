@@ -2,6 +2,7 @@ DESTDIR =
 SUBDIRS = $(shell ls -d doc bin firmware po clib/expeyes-clib microhope microhope/microhope-doc 2>/dev/null)
 all:
 	python setup.py build
+	python3 setup.py build
 	for d in $(SUBDIRS); do \
 	  if [ -x $$d/configure ]; then \
 	    (cd $$d; ./configure -prefix=/usr; make all;) \
@@ -17,8 +18,11 @@ install:
 	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
 	  python setup.py install --install-layout=deb \
 	         --root=$(DESTDIR)/ --prefix=/usr; \
+	  python3 setup.py install --install-layout=deb \
+	         --root=$(DESTDIR)/ --prefix=/usr; \
 	else \
 	  python setup.py install --root=$(DESTDIR)/ --prefix=/usr; \
+	  python3 setup.py install --root=$(DESTDIR)/ --prefix=/usr; \
 	fi
 	install -d $(DESTDIR)/lib/udev/rules.d/
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
