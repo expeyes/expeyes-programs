@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import expeyes.eyes, time
 p=expeyes.eyes.open()
 
@@ -10,5 +12,5 @@ p.stop_hist()
 a = p.read_hist()
 for k in a:
 	if k[1] != 0:
-		print k
+		print (k)
 

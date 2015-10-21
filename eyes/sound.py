@@ -25,7 +25,7 @@ def capture():
 	if looping == True: 
 		msgwin.config(text = _('Already Running'))
 		return
- 	p.write_outputs(outmask)
+	p.write_outputs(outmask)
 	time.sleep(0.5)
 	t, v = p.capture(0,NP,delay)
 	p.write_outputs(0)
@@ -56,7 +56,7 @@ def start():
 		outmask |= 1
 	if M2.get() == 1:
 		outmask |= 2
- 	p.write_outputs(outmask)
+	p.write_outputs(outmask)
 
 	if LOOP.get() == 1:
 		if looping == False:

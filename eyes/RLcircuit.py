@@ -3,6 +3,8 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
+
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
@@ -52,11 +54,11 @@ def fit_curve():
 	Vind = p.get_voltage(0)     # voltage across the Inductor
 	i = (vtotal - Vind)/Rext
 	Rind = Vind/i
-	print v,Rind
+	print (v,Rind)
 	fa = eyemath.fit_exp(data[0], data[1])
 	if fa != None:
 		pa = fa[1]
-		print pa
+		print (pa)
 		par1 = abs(1.0 / pa[1])
 		g.line(data[0],fa[0],1)
 		dispmsg(_('L/R = %5.3f mSec : Rind = %5.0f Ohm : L = %5.1f mH')%(par1, Rind, (Rext+Rind)*par1))

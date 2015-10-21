@@ -1,5 +1,6 @@
 #Author : Jithin B.P., jithinbp@gmail.com
 #Distributed under GNU General Public License, GPL-3
+from __future__ import print_function
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -63,7 +64,7 @@ def put_freq():
 	root.after(TIMER, put_freq)
 
 def quit():
-	print _('Exiting')
+	print (_('Exiting'))
 	p.set_sqr1(0)
 	sys.exit()
 

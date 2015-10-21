@@ -3,6 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -72,12 +73,12 @@ def calib():
 			return
 		mv = float(mesVar[k].get())
 		sv = cpoints[k]
-		print sv, abs(sv-mv)
+		print (sv, abs(sv-mv))
 		if abs(sv-mv) > 0.1:
 			msg(_('Readback for %5.3f V point = %5.3f V NOT GOOD') %(sv,mv), 'red')
 			return
 		advolts[k] = mv
-		print cpoints[k], dabin[k], mv, adbin0[k], adbin1[k]
+		print (cpoints[k], dabin[k], mv, adbin0[k], adbin1[k])
 
 	x = adbin0				# Calculate m & c for CH0
 	y = advolts
@@ -99,9 +100,9 @@ def calib():
 	ybar = mean(y)
 	m8 = sum(y*(x-xbar)) / sum(x*(x-xbar))
 	c8 = ybar - xbar * m8
-	print _('ADC0 m & c '), m0,c0
-	print _('ADC1 m & c '), m1,c1
-	print _('DAC0 m & c '), m8,c8
+	print (_('ADC0 m & c '), m0,c0)
+	print (_('ADC1 m & c '), m1,c1)
+	print (_('DAC0 m & c '), m8,c8)
 
 	p.save_calib(0,m0,c0)		# Save it on EEPROM
 	p.save_calib(1,m1,c1)		# Save it on EEPROM
@@ -119,7 +120,7 @@ def verify(ch):
 		rv = p.get_voltage(ch)		
 		ss = '%10.3f %10.4f'%(v,v-rv)
 		f.write(ss+'\n')
-		print ss
+		print (ss)
 		v = v + 0.1
 	f.close()
 

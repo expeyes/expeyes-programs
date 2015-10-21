@@ -3,6 +3,8 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
+
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
@@ -29,7 +31,7 @@ class PT100:
 	def get_freezing(self):
 		v = p.get_voltage(2)
 		temp = self.v2t(v)
-		print temp
+		print (temp)
 		if -10 < temp < 10:
 			self.BPvoltage = v
 			self.fpdone = True
@@ -40,7 +42,7 @@ class PT100:
 	def get_boiling(self):
 		v = p.get_voltage(2)
 		temp = self.v2t(v)
-		print temp
+		print (temp)
 		if 90 < temp < 110:
 			self.BPvoltage = v
 			self.bpdone = True
@@ -66,7 +68,7 @@ class PT100:
 		c = 1 - r/r0
 		b4ac = math.sqrt( A*A - 4 * B * c)
 		t = (-A + b4ac) / (2.0 * B)
-		#print r,t
+		#print (r,t)
 		return t
 
 	def xmgrace(self):
@@ -113,7 +115,7 @@ class PT100:
 			temp = self.m * v + self.c		# Use the calibration 
 		else:
 			temp = self.v2t(v)
-		print v,temp
+		print (v,temp)
 		self.tv[1].append(temp)
 		if len(self.tv[0]) >= 2:
 			g.delete_lines()

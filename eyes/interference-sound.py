@@ -3,6 +3,8 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
+
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
@@ -48,7 +50,7 @@ def start():
 	if 100 <= n <=1800:			# Number of samples
 		NP = n
 		g.setWorld(0,-5, NP * delay * 0.001, 5,_('mS'),_('V'))
-	print NP
+	print (NP)
 	if RUN.get() == 1:
 		if A0.get() == 1:
 			f = float(Freq0.get())

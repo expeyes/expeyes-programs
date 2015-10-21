@@ -1,5 +1,6 @@
 # Reads and plots data from three channels of Phoenix, for 'maxtime' seconds.
 # Uses draw.py
+from __future__ import print_function
 
 from Tkinter import *
 import phm, draw, time, sys
@@ -37,7 +38,7 @@ def update():	# Called periodically by the Tk toolkit
 def save():
 	global data, running, filename
 	s = e1.get()
-	print s
+	print (s)
 	if s == '':
 		s = filename
 	f = open(s, 'w')
@@ -46,7 +47,7 @@ def save():
 			f.write('%5.3f  %5.0f\n'%(item[0], item[1]))
 		f.write('\n')
 	f.close()
-	print 'Data saved to file ', s
+	print ('Data saved to file ', s)
 
 def clear():
 	global data, dispobjects, running

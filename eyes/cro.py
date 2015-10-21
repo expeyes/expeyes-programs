@@ -3,6 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -42,7 +43,7 @@ def set_vertical(w):
 	divs = [1.0, 0.5, 0.2]
 	VPERDIV = divs[int(vpd.get())]
 	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),_('V'))
-	print VPERDIV
+	print (VPERDIV)
 
 def set_timebase(w):
 	global delay, NP, NC, VPERDIV
@@ -60,7 +61,7 @@ def set_timebase(w):
 		delay = 1000
 		NP = NP * sf
 	g.setWorld(0,-5*VPERDIV, NP * delay * 0.001, 5*VPERDIV,_('mS'),_('V'))
-	print _('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv
+	print (_('NP delay = '),NP, delay, 0.0001 * NP*delay, msperdiv)
 
 def update():
 	global NP, delay, chanmask, measure, chan

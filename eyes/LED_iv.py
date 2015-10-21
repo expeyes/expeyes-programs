@@ -3,6 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -117,7 +118,7 @@ def fit_curve():
 	y  = array(aa)
 	from scipy import polyfit, polyval
 	(ar,br)=polyfit(x,y,1)
-	print polyval([ar,br],[0])
+	print (polyval([ar,br],[0]))
 
 def clear():
 	global history, trial, running

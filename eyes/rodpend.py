@@ -3,6 +3,8 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
+
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
@@ -50,13 +52,13 @@ class Pend:
 		tmean = (tmin+tmax)/2
 		span = tmax - tmin
 		step = span / nbin
-		print tmin, tmax, span, step
+		print (tmin, tmax, span, step)
 		for k in range(self.nmax):
 			for j in range(nbin):
-				#print tmin+j*step, self.nt[1][k], tmin+(j+1)*step
+				#print (tmin+j*step, self.nt[1][k], tmin+(j+1)*step)
 				if tmin+j*step < data[k] <= tmin+(j+1)*step:
 					self.h[j] += 1
-		print self.h
+		print (self.h)
 
 
 	def start(self):
@@ -86,7 +88,7 @@ class Pend:
 			self.nt[1].append(t*1.0e-3)
 			self.ng[0].append(self.index)
 			accn = 4.0 * math.pi**2 * 2.0 * self.length / (3.0 *  (t*1.0e-6)**2)
-			print accn
+			print (accn)
 			self.ng[1].append(accn)
 			self.index += 1
 			if self.index >= 2:

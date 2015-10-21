@@ -3,6 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
@@ -39,7 +40,7 @@ def get_tof2():
 def calc_g():
 	global t1, t2, h1, h2
 	try:
-		print t1,t2,h1,h2
+		print (t1,t2,h1,h2)
 		g = 2 * (h2-h1) / (t2**2 - t1**2)
 		msgwin.config(text='g = %5.1f'%g)
 	except:

@@ -3,6 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+from __future__ import print_function
 from Tkinter import *
 import expeyes.eyes as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as em, math
 
@@ -31,7 +32,7 @@ def calc_g():
 			y.append(h)
 		except:
 			continue
-	print x , y
+	print (x , y)
 	if len(x) < 3:
 		return
 	y,p=em.fit_qdr(x,y)
@@ -68,7 +69,7 @@ def get_tof(index):
 	except:
 		Results[index].config(text = _('Invalid H'))
 		return
-	print index, h
+	print (index, h)
 	if (p.read_inputs() & 4) == 0:    # ID2 is currently LOW
 		t = p.clr2rtime(0,2)*1.0e-6
 	else:
@@ -76,7 +77,7 @@ def get_tof(index):
 	if t > 0:
 		tvals[index] = t
 		g = 2*h/t**2
-		print g
+		print (g)
 		Results[index].config(text = _('t=%6.4f g=%5.1f') %(t,g))
 	else:
 		Results[index].config(text = _('Timeout Err'))

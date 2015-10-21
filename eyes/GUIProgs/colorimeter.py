@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 from Tkinter import *
 import phm, time, math, sys
 p=phm.phm()
@@ -62,7 +64,7 @@ def quit():
 	
 def doCalib(index):
 	global base, selected, Calib
-	print 'Index = ', index
+	print ('Index = ', index)
 	if base == [] :
 		msg.config(text='Do Base First', fg = 'red')
 		return
@@ -89,7 +91,7 @@ def uk_sample():
 	xy = []
 	for k in range(NUMCAL):
 		s = Calib[k][0].get()
-		print s
+		print (s)
 		try:
 			nrm = float(s)
 			xy.append( [Calib[k][2], nrm] )
@@ -102,7 +104,7 @@ def uk_sample():
 
 	m = (xy[1][1] - xy[0][1]) / (xy[1][0] - xy[0][0])
 	c = xy[0][1] - m * xy[0][0]
-	print m, c
+	print (m, c)
 	val = measure(selected)
 	tr = val / base[selected] * 100
 	ab = 2.0 - math.log10(tr)
@@ -123,7 +125,7 @@ Selected = StringVar()    # Index of LED with maximum absorbance
 Selected.set('nn')
 s=Entry(cf1, width=3, bg = 'white', textvariable = Selected)
 s.pack(side=LEFT)
-print Selected.get()
+print (Selected.get())
 
 Start = Button(cf1,text = 'Base Solution', command = do_base)
 Start.pack(side=LEFT)
