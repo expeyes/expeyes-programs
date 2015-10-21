@@ -25,6 +25,7 @@ The hardware consisists of :
 11)1 Inverting amplifier, gain can be selected using a series resistance at the input
 12)2 Inverting amplifiers with gain = 47 , mainly used for microphones. 
 '''
+from __future__ import print_function
 
 import serial, struct, math, time, commands, sys, os, glob, fnmatch
 
@@ -114,8 +115,8 @@ def open(dev = None):
 	if obj.fd != None:
 		obj.disable_actions()
 		return obj
-	print _('Could not find Phoenix-EYES hardware')
-	print _('Check the connections.')
+	print (_('Could not find Phoenix-EYES hardware'))
+	print (_('Check the connections.'))
 
 DACMAX = 5.000				# MCP4922 DAC goes only up to 4.933 volts, in version 1
 BAUDRATE = 38400			# Serial communication
@@ -159,11 +160,11 @@ class Eyes:
 				handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3, parity=serial.PARITY_EVEN)
 			except:
 				continue
-			print _('Port %s is existing ')%dev,
+			print (_('Port %s is existing ')%dev,)
 			if handle.isOpen() != True:
-				print _('but could not open')
+				print (_('but could not open'))
 				continue
-			print _('and opened. '),
+			print (_('and opened. '),)
 			handle.flush()
 			time.sleep(.5)
 			while handle.inWaiting() > 0 :
@@ -176,10 +177,10 @@ class Eyes:
 				self.fd = handle
 				self.version = ver
 				handle.timeout = 4.0	# r2rtime on .7 Hz require this
-				print _('Found EYES version '),ver
+				print (_('Found EYES version '),ver)
 				return 
 			else:
-				print _('No EYES hardware detected')
+				print (_('No EYES hardware detected'))
 				self.fd = None
 #------------------------------------------------------------------------------------
 
@@ -242,7 +243,7 @@ class Eyes:
 		if setpoint > 255:
 			setpoint = 255
 		OCR0 = int(setpoint)-1
-		#print clock_sel, OCR2
+		#print (clock_sel, OCR2)
 		self.dwrite(chr(SETCOUNTER0))
 		self.dwrite(chr(clock_sel))
 		self.dwrite(chr(OCR0))
@@ -277,7 +278,7 @@ class Eyes:
 		if setpoint > 255:
 			setpoint = 255
 		OCR2 = int(setpoint)-1
-		#print clock_sel, OCR2
+		#print (clock_sel, OCR2)
 		self.dwrite(chr(SETCOUNTER2))
 		self.dwrite(chr(clock_sel))
 		self.dwrite(chr(OCR2))
@@ -391,7 +392,7 @@ class Eyes:
 		self.dwrite(dat)
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('eeprom write byte error = '), res
+			print (_('eeprom write byte error = '), res)
 
 	def eeprom_read_block(self, addr, nb):	# get nb bytes starting from addr
 		'''
@@ -404,7 +405,7 @@ class Eyes:
 		self.dwrite(chr(nb))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('eeprom read block error = '), res
+			print (_('eeprom read block error = '), res)
 		dat = self.fd.read(nb)
 		return dat
 
@@ -420,11 +421,11 @@ class Eyes:
 		s = struct.pack('f'*2, m, c)	# pack to floats
 		for i in range(2*4):	
 			self.eeprom_write_char(addr+i, s[i])
-			print ord(s[i]),
-		print
+			print (ord(s[i]),)
+		print()
 		self.m[ch] = m
 		self.c[ch] = c
-		print _('SC: ch = %d m=%10.6f  c=%10.6f')%(ch, self.m[ch], self.c[ch])
+		print (_('SC: ch = %d m=%10.6f  c=%10.6f')%(ch, self.m[ch], self.c[ch]))
 
 	def load_calib(self, ch):	# Load m & c from EEPROM
 		'''
@@ -432,14 +433,14 @@ class Eyes:
 		'''
 		res = self.eeprom_read_block(ch*8,8)
 		if ord(res[0]) == 255 and ord(res[1]) == 255:
-			print _('BAD Calibration data. EEPROM does not have any data ')
+			print (_('BAD Calibration data. EEPROM does not have any data '))
 			return
 		raw = struct.unpack('f'*2, res)
 		self.m[ch] = raw[0]
 		self.c[ch] = raw[1]
-		for c in res: print ord(c),
-		print
-		print _('LC: ch = %d m=%10.6f  c=%10.6f')%(ch, self.m[ch], self.c[ch])
+		for c in res: print (ord(c),)
+		print()
+		print (_('LC: ch = %d m=%10.6f  c=%10.6f')%(ch, self.m[ch], self.c[ch]))
 
 	def loadall_calib(self):
 		self.load_calib(0)
@@ -455,12 +456,12 @@ class Eyes:
 		Returns the voltage at the Current Source Output.
 		'''
 		if (i < 0.020) or (i > 2.0):
-			print _('ERR:Current must be from 0.02 to 2.0 mA')
+			print (_('ERR:Current must be from 0.02 to 2.0 mA'))
 			return None
 		i += 0.005				# 5 uA correction is applied. NEED TO SOLVE THIS PROBLEM !!!
 		Rc = 1000.0					  # Collector Resistance from 5V reference
 		v = 5.0 - Rc * i * 1.0e-3  	  # mA to A
-		#print _('DAC0 to set current = '), v
+		#print (_('DAC0 to set current = '), v)
 		self.set_voltage(1,v)
 		return self.get_voltage(6)
 
@@ -476,7 +477,7 @@ class Eyes:
 		self.dwrite(chr(data>>8))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('WRITEDAC error '), res
+			print (_('WRITEDAC error '), res)
 			return
 		return data
 
@@ -508,13 +509,13 @@ class Eyes:
 		Reads the specified ADC channel, returns a number from 0 to 4095. Low level routine.
 		'''
 		if (ch > 7):
-			print _('Argument error')
+			print (_('Argument error'))
 			return
 		self.dwrite(chr(READADC))
 		self.dwrite(chr(ch))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('READADC error '), res
+			print (_('READADC error '), res)
 			return
 		res = self.fd.read(2)
 		iv = ord(res[0]) | (ord(res[1]) << 8)
@@ -526,13 +527,13 @@ class Eyes:
 		0V to 5V for other channels.
 		'''
 		if (ch > 7):
-			print _('Argument error')
+			print (_('Argument error'))
 			return
 		self.dwrite(chr(READADC))
 		self.dwrite(chr(ch))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('WRITEDAC error '), res
+			print (_('WRITEDAC error '), res)
 			return
 		res = self.fd.read(2)
 		iv = ord(res[0]) | (ord(res[1]) << 8)
@@ -545,14 +546,14 @@ class Eyes:
 		0V to 5V for other channels. Adds the PC time info
 		'''
 		if (ch > 7):
-			print _('Argument error')
+			print (_('Argument error'))
 			return
 		self.dwrite(chr(READADC))
 		self.dwrite(chr(ch))
 		tm = time.time()				# Job is sent. Now mark the time
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('WRITEDAC error '), res
+			print (_('WRITEDAC error '), res)
 			return
 		res = self.fd.read(2)
 		iv = ord(res[0]) | (ord(res[1]) << 8)
@@ -565,13 +566,13 @@ class Eyes:
 		impedance signals.
 		'''		
 		if sam > 250:
-			print _('Sampling time MUST NOT exceed 250 microseconds')
+			print (_('Sampling time MUST NOT exceed 250 microseconds'))
 			return
 		self.dwrite(chr(SETSAMTIME))
 		self.dwrite(chr(sam))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('SETSAMTIME ERROR '), res
+			print (_('SETSAMTIME ERROR '), res)
 
 	def set_adcsize(self, size):
 		'''
@@ -579,13 +580,13 @@ class Eyes:
 		4 LSBs and return the data in 1 byte, saving space and time.
 		'''
 		if size > 2:
-			print _('ADC datasize MUST be 1 or 2 bytes')
+			print (_('ADC datasize MUST be 1 or 2 bytes'))
 			return
 		self.dwrite(chr(SETADCSIZE))
 		self.dwrite(chr(size))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('SETADCSIZE ERROR '), res
+			print (_('SETADCSIZE ERROR '), res)
 		else:
 			self.adcsize = size
 
@@ -606,7 +607,7 @@ class Eyes:
 			st = time.time()
 			res = self.fd.read(1)
 			if res != 'D':
-				print _('QCAPTURE Error '), res, time.time()-st
+				print (_('QCAPTURE Error '), res, time.time()-st)
 				return 0,0
 			asize = 1					# adc datasize = 1 for QCAPTURE
 		else:
@@ -618,7 +619,7 @@ class Eyes:
 			self.dwrite(chr(delay>>8))
 			res = self.fd.read(1)
 			if res != 'D':
-				print _('CAPTURE error '), res
+				print (_('CAPTURE error '), res)
 				return
 			res = self.fd.read(1)		# adc_size info from other end
 			asize = ord(res)
@@ -626,7 +627,7 @@ class Eyes:
 		data = self.fd.read(nc)
 		dl = len(data)
 		if dl != nc:
-			print _('CAPTURE: size mismatch '), nc, dl
+			print (_('CAPTURE: size mismatch '), nc, dl)
 			return
 		
 		ta = []
@@ -671,7 +672,7 @@ class Eyes:
 			self.dwrite(chr(delay))
 			res = self.fd.read(1)
 			if res != 'D':
-				print _('CAPTURE01 error '), res
+				print (_('CAPTURE01 error '), res)
 				return		
 			asize = 1
 			tg01 =  0.009			# 0.009 milliseconds between CH0 and CH1
@@ -683,7 +684,7 @@ class Eyes:
 			self.dwrite(chr(delay>>8))
 			res = self.fd.read(1)
 			if res != 'D':
-				print _('CAPTURE01 error '), res
+				print (_('CAPTURE01 error '), res)
 				return
 			res = self.fd.read(1)	# adc_size info from other end
 			asize = ord(res)
@@ -693,7 +694,7 @@ class Eyes:
 		data = self.fd.read(nb)
 		dl = len(data)
 		if dl != nb:
-			print _('CAPTURE01: size mismatch '), nb, dl
+			print (_('CAPTURE01: size mismatch '), nb, dl)
 			return
 
 		taa = []	# time & voltage arrays for CH0
@@ -733,14 +734,14 @@ class Eyes:
 		self.dwrite(chr(delay>>8))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('CAPTURE_M32 error '), res
+			print (_('CAPTURE_M32 error '), res)
 			return
 		asize = 1			# datasize = 1 for CAPTURE_M32
 		nc = asize * np 	
 		data = self.fd.read(nc)
 		dl = len(data)
 		if dl != nc:
-			print _('CAPTURE_M32: size mismatch '), nc, dl
+			print (_('CAPTURE_M32: size mismatch '), nc, dl)
 			return
 		
 		ta = []
@@ -783,7 +784,7 @@ class Eyes:
 			mask = 0
 		else:
 			mask = 1 << pin          
-		print _('wait_rising '), AWAITRISE
+		print (_('wait_rising '), AWAITRISE)
 		self.dwrite(chr(SETACTION))
 		self.dwrite(chr(AWAITRISE))
 		self.dwrite(chr(mask))
@@ -810,7 +811,7 @@ class Eyes:
 			mask = 0
 		else:
 			mask = 1 << pin          
-		print _('wait_rising '), AWAITRISE
+		print (_('wait_rising '), AWAITRISE)
 		self.dwrite(chr(SETACTION))
 		self.dwrite(chr(AWAITFALL))
 		self.dwrite(chr(mask))
@@ -892,7 +893,7 @@ class Eyes:
 		self.dwrite(chr(USOUND))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('Echo error = '),res
+			print (_('Echo error = '),res)
 			return -1.0
 		res = self.fd.read(3)
 		low = (ord(res[1]) << 8) | ord(res[0])
@@ -921,7 +922,7 @@ class Eyes:
 		self.dwrite(chr(mask))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('Time Measurement call Error. CMD = '), cmd, res
+			print (_('Time Measurement call Error. CMD = '), cmd, res)
 			return -1.0
 		res = self.fd.read(3)
 		low = (ord(res[1]) << 8) | ord(res[0])
@@ -1037,7 +1038,7 @@ class Eyes:
 		self.dwrite(chr(DIGIN))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('DIGIN error')
+			print (_('DIGIN error'))
 			return
 		res = self.fd.read(1)
 		return ord(res) & 15		# 4 LSBs

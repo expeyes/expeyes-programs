@@ -721,10 +721,10 @@ class Eyesjun:
         return self.tim_helper(LTPUL2FTIME, pin1, pin2)
 
     def srfechotime(self, pin1, pin2):
-	'''
-	Time from Trigger on Echo for SRF0x module. Trig on pin1 and Echo on pin2.
-	'''
-	return self.tim_helper(SRFECHOTIME, pin1, pin2)
+        '''
+        Time from Trigger on Echo for SRF0x module. Trig on pin1 and Echo on pin2.
+        '''
+        return self.tim_helper(SRFECHOTIME, pin1, pin2)
 
     """------------------------- Digital I/O-----------------------------"""
     def set_state(self, pin, state):

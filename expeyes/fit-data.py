@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 fi = open('bi-decay.dat','r')
 x = []
 y = []
@@ -11,7 +13,7 @@ while(1):
 	x.append(time)
 	y.append(cnt)
 
-print x,y
+print (x,y)
 
 y1, par = em.fitexp(x,y)
-print par
+print (par)

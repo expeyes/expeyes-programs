@@ -5,6 +5,7 @@ Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 Last Edit : 20-Nov-2011
 '''
+from __future__ import print_function
 
 import serial, struct, math, time, commands, sys, os
 
@@ -35,8 +36,8 @@ def open(dev = None):
 	obj = MCA()
 	if obj.fd != None:
 		return obj
-	print _('Could not find Phoenix-MCA hardware')
-	print _('Check the connections.')
+	print (_('Could not find Phoenix-MCA hardware'))
+	print (_('Check the connections.'))
 
 class MCA:
 	fd = None								# init should fill this
@@ -60,37 +61,37 @@ class MCA:
 		
 
 		for dev in device_list:
-			print dev
+			print (dev)
 			#handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3, parity=serial.PARITY_EVEN)
 			try:
 				handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3, \
 					parity=serial.PARITY_EVEN)
 			except:
 				continue
-			print _('Port %s is existing ') %dev,
+			print (_('Port %s is existing ') %dev,)
 			if handle.isOpen() != True:
-				print _('but could not open')
+				print (_('but could not open'))
 				continue
-			print _('and opened. '),
+			print (_('and opened. '),)
 			handle.flush()
 			time.sleep(.5)
 			while handle.inWaiting() > 0 :
-				print _('inWaiting')
+				print (_('inWaiting'))
 				handle.flushInput()
 			handle.write(chr(GETVERSION))
 			res = handle.read(1)
-			print _('res = '), res
+			print (_('res = '), res)
 			ver = handle.read(5)		# 5 character version number
-			print ver
+			print (ver)
 			if ver[:2] == 'mc':
 				self.device = dev
 				self.fd = handle
 				self.version = ver
 				handle.timeout = 3.0	# 
-				print _('Found MCA version '),ver
+				print (_('Found MCA version '),ver)
 				return 
 			else:
-				print _('No MCA hardware detected')
+				print (_('No MCA hardware detected'))
 				self.fd = None
 
 #------------------------------------------Histogram-----------------------------------
@@ -128,9 +129,9 @@ class MCA:
 		self.fd.read(1)           # The pad byte
 		data = self.fd.read(NUMCHANS*WORDSIZE)
 		dl = len(data)
-		#for k in data: print ord(k),
+		#for k in data: print (ord(k),)
 		if dl != NUMCHANS*WORDSIZE:
-			print _('HIST read data error')
+			print (_('HIST read data error'))
 			return None
 		raw = struct.unpack('H'* (NUMCHANS), data)  	# 16 bit data in uint16 array
 		ch = []
@@ -145,13 +146,13 @@ class MCA:
 		Reads the specified ADC channel, returns a number from 0 to 4095. Low level routine.
 		'''
 		if (ch > 7):
-			print _('Argument error')
+			print (_('Argument error'))
 			return
 		self.fd.write(chr(READADC))
 		self.fd.write(chr(ch))
 		res = self.fd.read(1)
 		if res != 'D':
-			print _('READADC error '), res
+			print (_('READADC error '), res)
 			return
 		res = self.fd.read(2)
 		iv = ord(res[0]) | (ord(res[1]) << 8)
