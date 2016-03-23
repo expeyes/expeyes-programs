@@ -782,7 +782,7 @@ if p == None:
     Recon.pack(side=LEFT)
 else:
 	p.disable_actions()
-	root.title(_('CRO Plus found expEYES-Junior on %s (firmware: %s)') %(p.device,p.get_version()))
+	root.title(_('CRO Plus found expEYES-Junior on %s (firmware: %s)') %(p.device,p.get_version().decode("utf-8")))
 	root.after(TIMER,update)
 #------------------------------ experiments menu ------------------------------
 expts = [ 
