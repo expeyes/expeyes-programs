@@ -95,13 +95,13 @@ def save_calibref():	# Saves reference voltage
 		return
 	print (v)
 	if (v < 4.950) or (v > 5.050):
-		msg(_('Too much error in reference %5.3f voltage')%v, _('red'))
+		msg(_('Too much error in reference %5.3f voltage')%v, 'red')
 		return
 	if p.storeCF_ref(v) == None:					# Store to EEPROM
-		msg(_('EEPROM write failed. Old Firmware ?'),_('red'))
+		msg(_('EEPROM write failed. Old Firmware ?'),'red')
 		return
 	else:
-		msg(_('Calibrted Reference. Vref =%5.0f')%v )
+		msg(_('Calibrated Reference. Vref =%5.0f')%v )
 
 #------------------------------------------------------------------------------
 def save_calibsen():	# Saves scale factors of A1 & A2 to file 'eyesj.cal'
