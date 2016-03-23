@@ -781,11 +781,10 @@ if p == None:
     msg(_('Could not open expEYES Junior. Bad connection or another program using it'),'red')
     Recon.pack(side=LEFT)
 else:
-    p.disable_actions()
-    root.title(_('Four Channel CRO+ found expEYES-Junior on %s') %p.device)
-    root.after(TIMER,update)
-    
-#------------------- experiments menu ------------------------------
+	p.disable_actions()
+	root.title(_('CRO Plus found expEYES-Junior on %s (firmware: %s)') %(p.device,p.get_version()))
+	root.after(TIMER,update)
+#------------------------------ experiments menu ------------------------------
 expts = [ 
 [_('Select Experiment'),''],
 [_('Control PVS'),'change-pvs'],
@@ -807,6 +806,7 @@ expts = [
 [_('PT100 Sensor'), 'pt100'],
 [_('Stroboscope'), 'stroboscope'],
 [_('Data Logger'), 'logger'],
+[_('HY-SRF05 Echo module'), 'gecho'],
 [_('Calibrate'),'calibrate']
  ]
 

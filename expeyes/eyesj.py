@@ -50,11 +50,11 @@ _ = gettext.gettext
 #Path to the calibration file
 '''
 if sys.platform.startswith('linux'):
-	calibrationDir=os.path.expanduser('~/.expeyes')
+    calibrationDir=os.path.expanduser('~/.expeyes')
 else:
-	calibrationDir="."
+    calibrationDir="."
 if not os.path.isdir(calibrationDir):
-	os.makedirs(calibrationDir)
+    os.makedirs(calibrationDir)
 calibrationFile=os.path.abspath(os.path.join(calibrationDir,'eyesj.cal'))
 calibrationFileSEN=os.path.abspath(os.path.join(calibrationDir,'eyesj-sen.cal'))
 calibrationFileCAP=os.path.abspath(os.path.join(calibrationDir,'eyesj-cap.cal'))
@@ -62,18 +62,18 @@ calibrationFileCAP=os.path.abspath(os.path.join(calibrationDir,'eyesj-cap.cal'))
 
 #Commands with One byte argument (41 to 80) 
 GETVERSION  =   chr(1)
-READCMP     =   chr(2)	# Status of comparator output 
-READTEMP    =   chr(3)	# IC Temperature
+READCMP     =   chr(2)       # Status of comparator output 
+READTEMP    =   chr(3)       # IC Temperature
 GETPORTB    =   chr(4)
 
 #Commands with One byte argument (41 to 80)
-READADC	    =	chr(41)  # Read the ADC channel
-GETSTATE    =   chr(42)  # Digital Input Status
-NANODELAY   =   chr(43)  # from IN2 to SEN, using CTMU, send current range
-SETADCREF   =   chr(44)  # non-zero value selects external +Vref option
-READADCSM   =	chr(45)  # Read the ADC channel, in Sleep Mode
-IRSEND1     =   chr(46)  # Sends one byte over IR on SQR1
-RDEEPROM    =   chr(47)  # Read nwords starting from addr
+READADC        =    chr(41)  # Read the ADC channel
+GETSTATE    =   chr(42)      # Digital Input Status
+NANODELAY   =   chr(43)      # from IN2 to SEN, using CTMU, send current range
+SETADCREF   =   chr(44)      # non-zero value selects external +Vref option
+READADCSM   =    chr(45)     # Read the ADC channel, in Sleep Mode
+IRSEND1     =   chr(46)      # Sends one byte over IR on SQR1
+RDEEPROM    =   chr(47)      # Read nwords starting from addr
 
 # Commands with Two bytes argument (81 to 120)
 R2RTIME     =   chr(81)  # Time from rising edge to rising edge,arguments pin1 & pin2
@@ -91,15 +91,15 @@ LTPUL2RTIME =   chr(92)  #
 LTPUL2FTIME =   chr(93)  #
 SETPULWIDTH =   chr(94)  # Width setting for PULSE2* functions    
 SETSTATE    =   chr(95)  # SQR1, SQR2, OD & CCS only
-SETDAC	    =   chr(96)  # 12 bit DAC setting
+SETDAC      =   chr(96)  # 12 bit DAC setting
 SETCURRENT  =   chr(97)  # ADC channel, CTMU Irange
 SETACTION   =   chr(98)  # capture modifiers, action, target pin
 SETTRIGVAL  =   chr(99)  # Analog trigger level, 2 bytes
 SRFECHOTIME =   chr(100) # Trigger to Echo time for SRF0x modules
 
 # Commands with Three bytes argument (121 to 160)    
-SETSQR1	    =  chr(121)  # Square wave on OSC2
-SETSQR2	    =  chr(122)  # Square wave on OSC3
+SETSQR1     =  chr(121)  # Square wave on OSC2
+SETSQR2     =  chr(122)  # Square wave on OSC3
 WREEPROM    =  chr(123)  # write 1 word to the address
 
 #Commands with Four bytes argument (161 to 200)
@@ -111,7 +111,7 @@ IRSEND4     = chr(166)    # 4 byte  IR
 #Commands with Five bytes argument (201 to 240)
 CAPTURE     = chr(201)    # Ch, 2 byte NS, 2 byte TG 
 CAPTURE_HR  = chr(202)    # Ch, 2 byte NS, 2 byte TG
-SETSQRS	    = chr(203)    # Set both square waves, with specified phase difference. scale, ocr, diff
+SETSQRS     = chr(203)    # Set both square waves, with specified phase difference. scale, ocr, diff
 
 #Commands with Six bytes argument (241 to 255)
 CAPTURE2     = chr(241)   # ch1, ch2, NS, TG (1, 1, 2, 2)bytes
@@ -121,16 +121,16 @@ CAPTURE4     = chr(244)   # ch1&ch2, ch3&ch4, ns , tg
 
 # Actions before capturing waveforms
 AANATRIG     = chr(0)     # Trigger on analog input level, set by SETRIGVAL
-AWAITHI	     = chr(1)
-AWAITLO	     = chr(2)
+AWAITHI      = chr(1)
+AWAITLO      = chr(2)
 AWAITRISE    = chr(3)
 AWAITFALL    = chr(4)
-ASET	     = chr(5)
-ACLR	     = chr(6)
+ASET         = chr(5)
+ACLR         = chr(6)
 APULSEHT     = chr(7)
 APULSELT     = chr(8)
 
-BUFSIZE     = 1800       # status + adcinfo + 1800 data
+BUFSIZE      = 1800       # status + adcinfo + 1800 data
 
 #Serial devices to search for EYES hardware.  
 linux_list = ['/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyAMA0']  
@@ -141,41 +141,36 @@ def open(dev = None):
     '''
     obj = Eyesjun()
     if obj.fd != None:
-        print(obj.msg)
-        obj.disable_actions()			# Disable capture modifiers
+        obj.disable_actions()     # Disable capture modifiers
         obj.load_calibration()
         return obj
     print (_('Could not find EYES Junior hardware'))
     print (_('Check the connections.'))
 
-BAUDRATE = 115200	      # Serial communication
+BAUDRATE = 115200                 # Serial communication
 
 class Eyesjun:
-    fd = None		      # init should fill this
-    DACMAX = 5.000	      # DAC upper limit
-    DACM = 4095.0/5
-    tgap =  0.004	      # 0.004 ms shift between two channels of capture2
-    m12 = [5.0/4095] + [10.0/4095]*2 + [5.0/4095]*10
-    m8 =  [5.0/255]  + [10.0/255] *2 + [5.0/255] *10
-    c = [0.0] + [-5.0]*2 + [0.0]*10
+    fd = None                     # init should fill this
+    refval = 5.000                # regulator output, nominal value
+    DACMAX = refval               # DAC upper limit
+    DACM = 4095.0/refval
+    tgap =  0.004                 # 0.004 ms shift between two channels of capture2
+    m12 = [refval/4095] + [2*refval/4095]*2 + [refval/4095]*10
+    m8 =  [refval/255]  + [2*refval/255] *2 + [refval/255] *10
+    c = [0.0] + [-refval]*2 + [0.0]*10
     sen_pullup = 5100.0
-    cap_calib = 1.0	      # Default values, to be loaded from file.
-    socket_cap = 30.0	      # Set by calibrate.py
+    cap_calib = 1.0               # Default values, to be loaded from file.
+    socket_cap = 30.0             # Set by calibrate.py
     msg = ''
 
     def __init__(self, dev = None):
         """
         Searches for EYES hardware on USB-to-Serial adapters. Presence of the
         device is done by reading the version string. Timeout set to 4 sec
-
-        TODO : Supporting more than one EYES on a PC to be done. The
-        question is how to find out whether a port is already open or
-        not, without doing any transactions to it.
-        @param dev a device to open, Defaults to None, so a few devices
-        will be tested
+        TODO : Supporting more than one EYES on a PC to be done. The question is how to find out 
+        whether a port is already open or not, without doing any transactions to it.
         """
-		
-        if os.name == 'nt':	# for Windows machines, search COM1 to COM255
+        if os.name == 'nt':       # for Windows machines, search COM1 to COM255
             device_list = []
             for k in range(1,255):
                 s = 'COM%d'%k
@@ -183,7 +178,7 @@ class Eyesjun:
                 for k in range(1,11):
                     device_list.append(k)
         else:
-            device_list = []	# Gather unused devices from linux_list
+            device_list = []      # Gather unused devices from linux_list
             for dev in linux_list:
                 cmd='lsof -t {0} 2>&1; true'.format(dev)
                 res = subprocess.check_output(cmd, shell=True)
@@ -207,15 +202,15 @@ class Eyesjun:
                 handle.flushInput()
             handle.write(GETVERSION)
             res = handle.read(1)
-            ver = handle.read(5)		# 5 character version number
+            ver = handle.read(5)        # 5 character version number
             if ver[:2] == b'ej':
                 self.device = dev
                 self.fd = handle
                 self.version = ver
-                handle.timeout = 4.0	# r2rtime on .7 Hz require this
+                handle.timeout = 4.0    # r2rtime on .7 Hz require this
                 self.msg += warningWithResult('Found EYES Junior version ', ver)
-                return 		# Successful return
-            else:			# If it is not our device close the file
+                return                  # Successful return
+            else:                       # If it is not our device close the file
                 handle.close()
             print (self.msg)
             print (_('No EYES Junior hardware detected'))
@@ -236,7 +231,7 @@ class Eyesjun:
         send on integer to the inteface
         @parameter ival an integer lesser than 65536
         """
-        delay=0.005 # This delay is for MCP2200 + uC
+        delay=0.005       # This delay is for MCP2200 + uC
         self.fd.write(chr(ival & 255))
         time.sleep(delay)
         self.fd.write(chr(ival >> 8))
@@ -312,12 +307,12 @@ class Eyesjun:
         data = (hi << 16) | lo
         ss = struct.pack('I', data)
         res = struct.unpack('f', ss)
-        return res[0]					# return the float
+        return res[0]              # return the float
 
-    AM1 = 0       # EEPROM location of the parameters, y = mx + c, for A1 and A2
-    AC1 = 2
-    AM2 = 4
-    AC2 = 6
+    AM1  = 0      # EEPROM location of the parameters, y = mx + c, for A1 and A2
+    AC1  = 2
+    AM2  = 4
+    AC2  = 6
     ASOC = 8      # Socket cap IN1
     ACCF = 10     # Capacitance error factor
     ARP  = 12     # Pullup Resistance 
@@ -328,15 +323,15 @@ class Eyesjun:
         self.store_float(self.AC1, c1)
         self.store_float(self.AM2, m2)
         self.store_float(self.AC2, c2)
-        return 4  # Number of items written
+        return 4                         # Number of items written
 
-    def storeCF_cap(self, soc, ccf):  	#Socket capacitance and error factor
+    def storeCF_cap(self, soc, ccf):     #Socket capacitance and error factor
         if self.store_float(self.ASOC, soc) == None:
             return None
         self.store_float(self.ACCF, ccf)
         return 2
 
-    def storeCF_sen(self, r):			# pullup resistor value
+    def storeCF_sen(self, r):            # pullup resistor value
         if self.store_float(self.ARP, r) == None:
             return None
         return 1
@@ -349,7 +344,7 @@ class Eyesjun:
             c2 = self.restore_float(self.AC2)
             m = 10.0/4095
             c = -5.0
-            dm = m * 0.02			# maximum 2% deviation
+            dm = m * 0.02            # maximum 2% deviation
             dc = 5 * 0.02
             # print (m1,c1,m2,c2, dm, dc)
             if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:
@@ -357,7 +352,7 @@ class Eyesjun:
                 self.c[1] = c1
                 self.m12[2] = m2
                 self.c[2] = c2
-                self.m8[1] = m1 * 4095./255	# Scale factors for 8 bit read
+                self.m8[1] = m1 * 4095./255    # Scale factors for 8 bit read
                 self.m8[2] = m2 * 4095./255
                 # print (_('Calibration Factors :'), m1,c1,m2,c2)
             else:
@@ -440,7 +435,7 @@ class Eyesjun:
         print (iv)
         v = self.m12[ch] * iv + self.c[ch]
         return v
-        '''		
+        '''        
         return
 
     def measure_cv(self, ch, ctime, i = 5.5):  
@@ -452,13 +447,13 @@ class Eyesjun:
         @param ctime duration in microseconds
         @param i value of the current (defaults to 5.5 uA)
         '''
-        if i > 500:		# 550 uA
+        if i > 500:        # 550 uA
             irange = 0
-        elif i > 50:	#55 uA
+        elif i > 50:       #55 uA
             irange = 3
-        elif i > 5:		#5.5 uA,  default value
+        elif i > 5:        #5.5 uA,  default value
             irange = 2
-        else:			# 0.55 uA
+        else:              # 0.55 uA
             irange = 1
             
         if ch not in [3,4]:
@@ -497,7 +492,7 @@ class Eyesjun:
                 self.msg = _('Error measuring capacitance %5.3f') %v
                 print (_('Error measuring capacitance'), v)
                 return None
-        return 5.5 * ctime / v    # returns value in pF 
+        return 5.5 * ctime / v                   # returns value in pF 
 
     def measure_cap(self, ctmin = 10):
         '''
@@ -530,15 +525,15 @@ class Eyesjun:
         @param ch channel number
         @param i value of the current
         '''
-        if i > 500:		# 550 uA
+        if i > 500:            # 550 uA
             irange = 0
-        elif i > 50:	#55 uA
+        elif i > 50:           #55 uA
             irange = 3
-        elif i > 5:		#5.5 uA,  default value
+        elif i > 5:            #5.5 uA,  default value
             irange = 2
-        else:			# 0.55 uA
+        else:                  # 0.55 uA
             irange = 1
-        if i == 0 : 		# indication to stop CTMU
+        if i == 0 :            # indication to stop CTMU
             ch = 0 
         if ch not in [0,3,4]:  # 0 means stopping CTMU
             self.msg = _('Current to be set only on IN1 or IN2')
@@ -613,9 +608,9 @@ class Eyesjun:
                 self.msg = _('Destination pin should be digital input capable: 0,3,4,5,6 or 7')
                 print (_('Destination pin should be digital input capable: 0,3,4,5,6 or 7'))
                 return -1
-            self.sendByte(cmd)	
-            self.sendByte(chr(src))	
-            self.sendByte(chr(dst))	
+            self.sendByte(cmd)    
+            self.sendByte(chr(src))    
+            self.sendByte(chr(dst))    
             res = self.fd.read(1)
             if res != b'D':
                 self.msg = _('Time measurement command error')
@@ -624,7 +619,7 @@ class Eyesjun:
             res = self.fd.read(1)
             data = self.fd.read(4)
             raw = struct.unpack('I'* 1, data)  # 32 bit data from T4/T5 counter, 0.125us cycles
-            ncycle = raw[0] + 0		       # .25 usec correction
+            ncycle = raw[0] + 0                # .25 usec correction
         return round(float(ncycle)*0.125)      # returns in microseconds
 
     """-------------- Passive Time Interval Measurements --------------------"""
@@ -734,9 +729,9 @@ class Eyesjun:
         @param pin pin number
         @param state a value 0 or 1
         '''
-        self.sendByte(SETSTATE)	
-        self.sendByte(chr(pin))	
-        self.sendByte(chr(state))	
+        self.sendByte(SETSTATE)    
+        self.sendByte(chr(pin))    
+        self.sendByte(chr(state))    
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('SETSTATE error ')
@@ -751,8 +746,8 @@ class Eyesjun:
         @param pin a pin number
         @return the state of the pin as a small integer
         '''
-        self.sendByte(GETSTATE)	
-        self.sendByte(chr(pin))	
+        self.sendByte(GETSTATE)    
+        self.sendByte(chr(pin))    
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('GETSTATE error ')
@@ -765,19 +760,19 @@ class Eyesjun:
         '''
         Reads portB, returns 16 bits of data.
         '''
-        self.sendByte(GETPORTB)	
+        self.sendByte(GETPORTB)    
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('GETPORTB error ')
             print (_('GETPORTB error '), res)
             return 
         res = self.fd.read(2)
-        raw = struct.unpack('H', res) 		 # 16 bit data in byte array
+        raw = struct.unpack('H', res)          # 16 bit data in byte array
         print('%x'%raw)
         return raw[0]
 
     """------- Square Wave Generation & Measuring the Frequency ----------"""
-    def set_pwm(self, osc, ds, resol=14):        # osc and duty cycle, resolution 14 bits byn default
+    def set_pwm(self, osc, ds, resol=14):      # osc and duty cycle, resolution 14 bits byn default
         '''
         Sets PWM on SQR1 / SQR2. The frequency is decided by the resolution in bits.
         '''
@@ -786,13 +781,13 @@ class Eyesjun:
         ocxrs = 2**resol
         ocx = int(0.01 * ds * ocxrs + 0.5)
         #print(ocxrs, ocx)
-		
+        
         if osc == 0:
             self.sendByte(SETPWM1)
         else:
             self.sendByte(SETPWM2)
-        self.sendInt(ocxrs-1)					# ocxrs
-        self.sendInt(ocx)					# ocx
+        self.sendInt(ocxrs-1)                    # ocxrs
+        self.sendInt(ocx)                        # ocx
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('SETPWM error ')
@@ -800,7 +795,7 @@ class Eyesjun:
             return 
         return ds
 
-    def set_sqr1_pwm(self, dc, resol=14):		# Duty cycle, resolution 14 bits (f = 488Hz) by default
+    def set_sqr1_pwm(self, dc, resol=14):        # Duty cycle, resolution 14 bits (f = 488Hz) by default
         '''
         Sets 488 Hz PWM on SQR1. Duty cycle is specified in percentage. The third argument, PWM resolution, is 
         14 bits by default. Decreasing this by one doubles the frequency.
@@ -814,7 +809,7 @@ class Eyesjun:
         '''
         return self.set_pwm(1,dc,resol)
 
-    def set_sqr1_dc(self, volt):			
+    def set_sqr1_dc(self, volt):            
         '''
         PWM DAC on SQR1. Resolution is 10 bits (f = 7.8 kHz) by default. External Filter is required to get the DC
         The voltage can be set from 0 to 5 volts.
@@ -838,15 +833,15 @@ class Eyesjun:
             return 
         OCRS = 0
         TCKPS = 0
-        if freq < 0:	# Disable Timer and Set Output LOW
+        if freq < 0:    # Disable Timer and Set Output LOW
             TCKPS = 254
         elif freq == 0:
             TCKPS = 255
         else:
             T = 0.125e-6                   # Fosc = 16MHz
             mtvals = [T, T*8, T*64, T*256] # Possible Timer period values
-            per = 1.0/freq		   # T requested
-            for k in range(4):		   # Find the optimum scaling, OCR value
+            per = 1.0/freq                 # T requested
+            for k in range(4):             # Find the optimum scaling, OCR value
                 if per < mtvals[k]*50000:
                     TCKPS = k
                     OCRS = 1.0*per/mtvals[k]
@@ -861,8 +856,8 @@ class Eyesjun:
                 self.sendByte(SETSQR1)
             elif chan == 9:
                 self.sendByte(SETSQR2)
-            self.sendByte(chr(TCKPS))	# prescaling for timer
-            self.sendInt(OCRS)		# OCRS value
+            self.sendByte(chr(TCKPS))    # prescaling for timer
+            self.sendInt(OCRS)           # OCRS value
             res = self.fd.read(1)
             if res != b'D':
                 print(_('SETSQR error '), res)
@@ -888,11 +883,11 @@ class Eyesjun:
         Sets the output frequency of both SQR1 & SQR2. The function returns actual value set. The second argument is the
         phase difference between them  in percentage.
         '''
-        if freq == 0:		# Disable both Square waves
+        if freq == 0:         # Disable both Square waves
             self.set_sqr1(0)
             self.set_sqr2(0)
             return 0
-        elif freq < 0:		# Disable both Square waves
+        elif freq < 0:        # Disable both Square waves
             self.set_sqr1(-1)
             self.set_sqr2(-1)
             return 0
@@ -902,10 +897,10 @@ class Eyesjun:
             return
         OCRS = 0
         TCKPS = 0
-        T = 0.125e-6					# Fosc = 16MHz
-        mtvals = [T, T*8, T*64, T*256]	# Possible Timer period values
-        per = 1.0/freq					# T requested
-        for k in range(4):				# Find the optimum scaling, OCR value
+        T = 0.125e-6                      # Fosc = 16MHz
+        mtvals = [T, T*8, T*64, T*256]    # Possible Timer period values
+        per = 1.0/freq                    # T requested
+        for k in range(4):                # Find the optimum scaling, OCR value
             if per < mtvals[k]*50000:
                 TCKPS = k
                 OCRS = 1.0*per/mtvals[k]
@@ -918,13 +913,13 @@ class Eyesjun:
             print(_('Invalid Freqency'))
             return 
         TG = int(1.0*diff*OCRS/100 +0.5)
-        if TG == 0: TG = 1		# Need to examine this
+        if TG == 0: TG = 1        # Need to examine this
         #print('TCKPS ', TCKPS, 'ocrs ', OCRS, TG)
 
         self.sendByte(SETSQRS)
-        self.sendByte(chr(TCKPS))				# prescaling for timer
-        self.sendInt(OCRS)					# OCRS value
-        self.sendInt(TG)					# time difference
+        self.sendByte(chr(TCKPS))           # prescaling for timer
+        self.sendInt(OCRS)                  # OCRS value
+        self.sendInt(TG)                    # time difference
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('SETSQRS error ')
@@ -939,7 +934,7 @@ class Eyesjun:
         Writes the 12 bit I2C DAC to the desired value.
         @param iv a value (integer between 0 and 4095)
         '''
-        if iv < 0: iv = 0			# Force within limits
+        if iv < 0: iv = 0            # Force within limits
         if iv > 4095: iv = 4095
 
         self.sendByte(SETDAC)
@@ -986,12 +981,12 @@ class Eyesjun:
         iv = goal
         for k in range(10):
             self.write_dac(iv)
-            isv = self.read_adc(12)			# actual value
+            isv = self.read_adc(12)            # actual value
             err = goal - isv
-            #print('iv & isv err', iv, isv, err	, k)
+            #print('iv & isv err', iv, isv, err    , k)
             if abs(err) <= 1: break
-            iv = iv + int(err/2)				# Even if it exceeds 4095, write_dac() will fix it
-        sv = self.get_voltage(12)		# The voltage actually set
+            iv = iv + int(err/2)                # Even if it exceeds 4095, write_dac() will fix it
+        sv = self.get_voltage(12)               # The voltage actually set
         return sv
 
     def set_adcref(self, option):
@@ -1061,7 +1056,7 @@ class Eyesjun:
         v = self.m12[ch] * iv + self.c[ch]
         return v
 
-    def get_voltage_within(self, ch, vmax):		# Channel and the expected maximum value, < 5V
+    def get_voltage_within(self, ch, vmax):        # Channel and the expected maximum value, < 5V
         '''
         Sets the DAC to vmax and uses it as external +Vref, to increase resolution
         '''
@@ -1070,9 +1065,9 @@ class Eyesjun:
             print(_('Argument error'))
             return
         VM = self.set_voltage(vmax)
-        self.set_adcref(1)			# External +Vref, from DAC
+        self.set_adcref(1)            # External +Vref, from DAC
         res = self.get_voltage(ch)
-        self.set_adcref(0)			# Back to Vref+ = Vdd
+        self.set_adcref(0)            # Back to Vref+ = Vdd
         return res * VM/5.0
 
     def get_voltage_time(self, ch):
@@ -1106,7 +1101,7 @@ class Eyesjun:
         @param tg time gap between samples.
         @return a vector of ns timesstamps and another of ns values from the ADC
         '''
-        if tg < 4:		# Minimum time required
+        if tg < 4:                  # Minimum time required
             self.msg = _('Minimum Timegap is 4 us')
             return
         ns=int(ns)
@@ -1119,7 +1114,7 @@ class Eyesjun:
             self.msg = _('CAPTURE error')
             print(_('CAPTURE error '), res)
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns)
         dl = len(data)
         if dl != ns:
@@ -1129,9 +1124,9 @@ class Eyesjun:
         
         ta = []
         va = []
-        raw = struct.unpack('B'* ns, data)  # 1 byte words in the structure
+        raw = struct.unpack('B'* ns, data)   # 1 byte words in the structure
         for i in range(ns):
-            ta.append(0.001 * i * tg)	    # microseconds to milliseconds
+            ta.append(0.001 * i * tg)        # microseconds to milliseconds
             va.append(raw[i] * self.m8[ch] + self.c[ch])
         return ta,va
 
@@ -1157,19 +1152,19 @@ class Eyesjun:
             self.msg =  _('CAPTURE error ')
             print(_('CAPTURE error '), res)
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns*2)
         dl = len(data)
         if dl != ns*2:
             self.msg = _('CAPTURE: size mismatch %d %d') %(ns, dl)
             print(_('CAPTURE: size mismatch '), ns, dl)
             return
-		
+        
         ta = []
         va = []
-        raw = struct.unpack('H'* ns, data)  # 1 byte words in the structure
+        raw = struct.unpack('H'* ns, data)   # 1 byte words in the structure
         for i in range(ns):
-            ta.append(0.001 * i * tg)		# microseconds to milliseconds
+            ta.append(0.001 * i * tg)        # microseconds to milliseconds
             va.append(raw[i] * self.m12[ch] + self.c[ch])
         return ta,va
 
@@ -1197,17 +1192,17 @@ class Eyesjun:
             self.msg =_('CAPTURE2 error ')
             print(_('CAPTURE2 error '), res)
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns*2)
         dl = len(data)
         if dl != ns*2:
             self.msg = _('CAPTURE2: size mismatch')
             print(_('CAPTURE2: size mismatch'), ns*2, dl)
             return
-        taa = []	# time & voltage arrays for CH0
-        vaa = []	
-        tba = []	# time & voltage arrays for CH1
-        vba = []	
+        taa = []    # time & voltage arrays for CH0
+        vaa = []    
+        tba = []    # time & voltage arrays for CH1
+        vba = []    
         raw = struct.unpack('B'* 2*ns, data)  # 8 bit data in byte array
         for i in range(ns):
             taa.append(0.001 * i * tg)
@@ -1239,17 +1234,17 @@ class Eyesjun:
             self.msg = _('CAPTURE2_HR error ')
             print(_('CAPTURE2_HR error '), res)
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns*2*2)
         dl = len(data)
         if dl != ns*2*2:
             self.msg = _('CAPTURE2_HR: size mismatch')
             print(_('CAPTURE2_HR: size mismatch'), ns*2*2, dl)
             return
-        taa = []	# time & voltage arrays for CH0
-        vaa = []	
-        tba = []	# time & voltage arrays for CH1
-        vba = []	
+        taa = []    # time & voltage arrays for CH0
+        vaa = []    
+        tba = []    # time & voltage arrays for CH1
+        vba = []    
         raw = struct.unpack('H'* 2*ns, data)  # 16 bit data in byte array
         for i in range(ns):
             taa.append(0.001 * i * tg)
@@ -1271,7 +1266,7 @@ class Eyesjun:
         if tg < 12:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
-        ch12 = (ch2 << 4) | ch1		# first two channels packed in 1 byte
+        ch12 = (ch2 << 4) | ch1      # first two channels packed in 1 byte
         ns=int(ns)
         self.sendByte(CAPTURE3)
         self.sendByte(chr(ch12))
@@ -1283,19 +1278,19 @@ class Eyesjun:
             self.msg = _('CAPTURE3 error ')
             print(_('CAPTURE3 error '), res)
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns*3)
         dl = len(data)
         if dl != ns*3:
             self.msg = _('CAPTURE3: size mismatch ')
             print(_('CAPTURE3: size mismatch '), ns*3, dl)
             return
-        taa = []	# time & voltage arrays for CH0
-        vaa = []	
-        tba = []	# time & voltage arrays for CH1
-        vba = []	
-        tca = []	# time & voltage arrays for CH2
-        vca = []	
+        taa = []    # time & voltage arrays for CH0
+        vaa = []    
+        tba = []    # time & voltage arrays for CH1
+        vba = []    
+        tca = []    # time & voltage arrays for CH2
+        vca = []    
         raw = struct.unpack('B'* 3*ns, data)  # 8 bit data in byte array
         #print(raw)
         for i in range(ns):
@@ -1322,8 +1317,8 @@ class Eyesjun:
         if tg < 16:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
-        ch12 = (ch2 << 4) | ch1		# first two channels packed in 1 byte
-        ch34 = (ch4 << 4) | ch3		# other two channels packed in 1 byte
+        ch12 = (ch2 << 4) | ch1        # first two channels packed in 1 byte
+        ch34 = (ch4 << 4) | ch3        # other two channels packed in 1 byte
         ns=int(ns)
         self.sendByte(CAPTURE4)
         self.sendByte(chr(ch12))
@@ -1335,21 +1330,21 @@ class Eyesjun:
             self.msg = _('CAPTURE4 error =')
             print(_('CAPTURE4 error ='), ord(res))
             return
-        res = self.fd.read(1)		# adc_size info from other end, ignored
+        res = self.fd.read(1)        # adc_size info from other end, ignored
         data = self.fd.read(ns*4)
         dl = len(data)
         if dl != ns*4:
             self.msg = _('CAPTURE4: size mismatch ')
             print(_('CAPTURE4: size mismatch '), ns*4, dl)
             return
-        taa = []	# time & voltage arrays for CH0
-        vaa = []	
-        tba = []	# time & voltage arrays for CH1
-        vba = []	
-        tca = []	# time & voltage arrays for CH3
-        vca = []	
-        tda = []	# time & voltage arrays for CH4
-        vda = []	
+        taa = []    # time & voltage arrays for CH0
+        vaa = []    
+        tba = []    # time & voltage arrays for CH1
+        vba = []    
+        tca = []    # time & voltage arrays for CH3
+        vca = []    
+        tda = []    # time & voltage arrays for CH4
+        vda = []    
         raw = struct.unpack('B'* 4*ns, data)  # 8 bit data in byte array
         #print(raw)
         for i in range(ns):
@@ -1393,7 +1388,7 @@ class Eyesjun:
         '''
         self.sendByte(SETACTION)
         self.sendByte(AANATRIG)
-        self.sendByte(chr(0))		# Self trigger on channel zero means the first channel captured
+        self.sendByte(chr(0))        # Self trigger on channel zero means the first channel captured
         res = self.fd.read(1)
         if res != b'D':
             self.msg = _('ERROR: SETACTION')
@@ -1410,7 +1405,7 @@ class Eyesjun:
         """
         actions=(AANATRIG, AWAITHI, AWAITLO, AWAITRISE, AWAITFALL, ASET,
                  ACLR, APULSEHT, APULSELT)
-        if  action not in actions or ch < 1  or ch > 11:	
+        if  action not in actions or ch < 1  or ch > 11:    
             self.msg = 'Invalid actions or source specified'
             return
         self.sendByte(SETACTION)
@@ -1422,13 +1417,13 @@ class Eyesjun:
             print(_('SETACTION ERR: action = %d ch = %d') %(action,ch), res)
             return
         return action
-		
+        
     def set_trig_source(self, ch):
         '''
         Analog Trigger of the desired channel
         '''
         return self.enable_action(AANATRIG, ch)
-		
+        
     def enable_wait_high(self, ch):
         '''
         Wait for a HIGH on the specified 'pin' just before every Capture.
@@ -1501,35 +1496,35 @@ class Eyesjun:
     """-----------(Use only if you know what you are doing)---------"""
     def set_ddr(self, port, direc):
         self.dwrite(SETDDR)           
-        self.dwrite(chr(port))	 # 0 to 3 for A,B,C and D
+        self.dwrite(chr(port))     # 0 to 3 for A,B,C and D
         self.dwrite(chr(direc))
         self.fd.read(1)
         return
 
     def set_port(self, port, val):
         self.dwrite(SETPORT)           
-        self.dwrite(chr(port))	 # 0 to 3 for A,B,C and D
+        self.dwrite(chr(port))     # 0 to 3 for A,B,C and D
         self.dwrite(chr(val))
         self.fd.read(1)
         return
 
     def get_port(self, port):
         self.dwrite(SETPORT)           
-        self.dwrite(chr(port))	 # 0 to 3 for A,B,C and D
+        self.dwrite(chr(port))     # 0 to 3 for A,B,C and D
         self.fd.read(1)
-        data = self.fd.read(1)     	 # get the status byte only
+        data = self.fd.read(1)     # get the status byte only
         return ord(data)
 
     """---------------------- may go to eyeutils.py --------------------"""
     def minimum(self,va):
-        vmin = 1.0e10		# need to change
+        vmin = 1.0e10        # need to change
         for v in va:
             if v < vmin:
                 vmin = v
         return vmin
 
     def maximum(self,va):
-        vmax = 1.0e-10		# need to change
+        vmax = 1.0e-10        # need to change
         for v in va:
             if v > vmax:
                 vmax = v
@@ -1570,7 +1565,7 @@ class Eyesjun:
             pg = pygrace.grace()
             for xy in data:
                 pg.plot(xy[0],xy[1])
-                pg.hold(1)				# Do not erase the old data
+                pg.hold(1)                # Do not erase the old data
             pg.xlabel(xlab)
             pg.ylabel(ylab)
             pg.title(title)

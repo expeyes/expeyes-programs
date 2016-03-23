@@ -45,7 +45,7 @@ def save_calib():	# Saves scale factors of A1 & A2 to calibrationFile
 		p.write_dac(iv)
 		time.sleep(0.01)
 		x[k] = p.read_adc(1)				# binary from A1, after level shifting
-		y[k] = p.read_adc(12)*5.0/4095		# voltage at PVS (connected to A1)
+		y[k] = p.read_adc(12)*p.refval/4095		# voltage at PVS (connected to A1)
 		iv += 350
 	xbar = mean(x)							# Calculate m & c for A1  , 12 bit
 	ybar = mean(y)
@@ -56,8 +56,8 @@ def save_calib():	# Saves scale factors of A1 & A2 to calibrationFile
 	# Do some sanity check here
 	ucm = 10.0/4095		# Uncalibrated values of m and c
 	ucc = -5.0
-	dm = ucm * 0.02			# maximum 2% deviation
-	dc = 5 * 0.02
+	dm = ucm * 0.03			# maximum 3% deviation
+	dc = 5 * 0.03
 	if abs(m1 - ucm) > dm or abs(c1 - ucc) > dc:
 		msg(_('Too much error in A1: m = %f  c=%f')%(m1,c1),'red')
 		return
@@ -67,8 +67,8 @@ def save_calib():	# Saves scale factors of A1 & A2 to calibrationFile
 		p.write_dac(iv)
 		time.sleep(0.01)
 		x[k] = p.read_adc(2)				# binary from A2, after level shifting
-		y[k] = p.read_adc(12)*5.0/4095	# voltage at PVS (connected to A2)			
-		iv += 400
+		y[k] = p.read_adc(12)*p.refval/4095	# voltage at PVS (connected to A2)			
+		iv += 350
 	xbar = mean(x)							# Calculate m & c for A1  , 12 bit
 	ybar = mean(y)
 	m2 = sum(y*(x-xbar)) / sum(x*(x-xbar))
@@ -85,6 +85,23 @@ def save_calib():	# Saves scale factors of A1 & A2 to calibrationFile
 	ss =_('m1 = %f   c1 = %6.3f\nm2 = %f   c2 = %6.3f')%(m1, c1, m2, c2)
 	msg(_('A1&A2 Calibration Saved to EEPROM\n')+ss)
 	print (ss)
+
+#------------------------------------------------------------------------------
+def save_calibref():	# Saves reference voltage
+	try:
+		v = float(Rref.get())
+	except:
+		msg(_('Enter the valid voltage'), 'red')
+		return
+	print (v)
+	if (v < 4.950) or (v > 5.050):
+		msg(_('Too much error in reference %5.3f voltage')%v, _('red'))
+		return
+	if p.storeCF_ref(v) == None:					# Store to EEPROM
+		msg(_('EEPROM write failed. Old Firmware ?'),_('red'))
+		return
+	else:
+		msg(_('Calibrted Reference. Vref =%5.0f')%v )
 
 #------------------------------------------------------------------------------
 def save_calibsen():	# Saves scale factors of A1 & A2 to file 'eyesj.cal'
@@ -111,7 +128,7 @@ socket_cap = 0
 def measure_socketcap():
 	global socket_cap
 	sc = p.measure_cap_raw()
-	if 20 < sc < 50:
+	if 10 < sc < 60:
 		socket_cap = sc
 		msg(_('Empty Socket is %5.1f pF')%socket_cap)
 	else:
@@ -135,7 +152,7 @@ def save_calibcap():
 		return
 
 	print (creal, cm, error, cm*error)
-	if error < 0.85 or error > 1.15 or socket_cap > 50:	# Error check
+	if error < 0.7 or error > 1.3 or socket_cap > 60:	# Error check
 		msg(_('Too much error: Socket C= %f CF=%f')%(socket_cap, error),'red')
 		return
 	if p.storeCF_cap(socket_cap, error) == None:		# Store to EEPROM
@@ -145,6 +162,21 @@ def save_calibcap():
 
 #---------------------------------------------------------------------------------
 root = Tk()
+Label(root, text = _('Reference Calibration'),font=('Helvetica', 14),\
+		fg='blue').pack(side=TOP)
+f = Frame(root, relief = SUNKEN)
+f.pack(side=TOP)
+Label(f, text = _('Enter measured value of Vref')).pack(side=LEFT)
+Refval = StringVar()
+Rref = Entry(f, width=6, textvariable=Refval)
+Rref.pack(side=LEFT)
+Refval.set('5.000')
+Label(f, text = _('V')).pack(side=LEFT)
+Button(root,text = _("and Click here to Set Reference"), \
+	command = save_calibref).pack(side = TOP)
+separator = Frame(height=2, bd=1, relief=SUNKEN)
+
+separator.pack(fill=X, padx=5, pady=5)
 Label(root, text = _('Calibration of Inputs A1 & A2'), fg='blue',\
 			font=('Helvetica', 14)).pack(side=TOP)
 Label(root, text = _('Connect PVS to both A1 and A2')).pack(side=TOP)
@@ -183,17 +215,22 @@ Button(root,text = _("and Click Here to Calibrate IN1"), command = save_calibcap
 separator = Frame(height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=5)
 
-msgwin = Label(root, text = _('calibration program'))
+msgwin = Label(root, text = '')
 msgwin.pack(side=TOP)
 separator = Frame(height=2, bd=1, relief=SUNKEN)
 separator.pack(fill=X, padx=5, pady=5)
 
 Button(text = _("Exit"), command = sys.exit).pack(side = TOP)
 
-p = eyes.open()
+p = expeyes.eyesj.open()
 if p == None:
 	root.title(_('EYES Junior Hardware not found'))
 eyeplot.pop_image('pics/calibrate.png', _('Calibrate A1 & A2'))
+
+cfvals = _('Existing calibration Data\n')+\
+_('Ref=%5.3fV\nm1=%6.3f c1=%6.3f\nm2=%6.3f c2=%6.3f\nIN1: CF=%6.3f Socket=%6.3fpF\n SEN pullup=%6.1fOhm')\
+		%(p.refval,p.m12[1], p.c[1],p.m12[2], p.c[2], p.cap_calib, p.socket_cap,p.sen_pullup)
+msg(cfvals)
 root.title(_('EYES Junior Calibration'))
 root.mainloop()
 
