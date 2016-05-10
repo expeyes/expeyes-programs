@@ -1,0 +1,131 @@
+/* Space out content a bit */
+body {
+padding-top: 20px;
+padding-bottom: 20px;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+padding-right: 15px;
+padding-left: 15px;
+}
+/* Custom page header */
+.header {
+padding-bottom: 20px;
+border-bottom: 1px solid #e5e5e5;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+margin-top: 0;
+margin-bottom: 0;
+line-height: 40px;
+}
+/* Custom page footer */
+.footer {
+padding-top: 19px;
+color: #777777;
+border-top: 1px solid #e5e5e5;
+}
+/* Customize container */
+@media (min-width: 768px) {
+.container {
+max-width: 730px;
+}
+}
+.container-narrow > hr {
+margin: 30px 0;
+}
+/* Main marketing message and sign up button */
+.jumbotron {
+text-align: center;
+padding: 0 auto;
+border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+/*  padding: 14px 24px;
+font-size: 21px;*/
+}
+/* Supporting marketing content */
+.marketing {
+margin: 40px 0;
+}
+.marketing p + h4 {
+margin-top: 28px;
+}
+
+.alert{
+	margin: 15px auto;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+/* Remove the padding we set earlier */
+.header,
+.marketing,
+.footer {
+padding-right: 0;
+padding-left: 0;
+}
+/* Space out the masthead */
+.header {
+margin-bottom: 30px;
+}
+/* Remove the bottom border on the jumbotron for visual effect */
+.jumbotron {
+border-bottom: 0;
+}
+}
+/*ON/OFF Button */
+.onoffswitch {
+position: relative; width: 95px;
+-webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+display: none;
+}
+.onoffswitch-label {
+display: block; overflow: hidden; cursor: pointer;
+border: 2px solid #FFFFF; border-radius: 5px;
+}
+.onoffswitch-inner {
+display: block; width: 200%; margin-left: -100%;
+transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+display: block; float: left; width: 50%; height: 32px; padding: 0; line-height: 32px;
+font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+content: "TURN ON";
+padding-right: 23px;
+background-color: #5cb85c; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+content: "TURN OFF";
+padding-right: 7px;
+background-color: #d9534f; color: #FFFFFF;
+text-align: right;
+}
+.onoffswitch-switch {
+display: block; width: 15px; margin: 10px;
+background: #FFFFFF;
+position: absolute; top: 0; bottom: 0;
+right: 62px;
+border: 1px solid #FFFFF; border-radius: 5px;
+transition: all 0.3s ease-in 0s;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+right: 0px;
+}
+@media (min-width:320px) and (max-width:768px) {
+  .jumbotron .btn{
+    margin-top: 10px;
+  }
+  .alert{
+  	visibility: hidden;
+  }
+}
