@@ -1,4 +1,9 @@
 #!C:\Python27\python.exe
+"""
+CGI script for setting status for output pins of expEYES Junior connected to server
+Copyright 2016,  Authors : , Jishnu R(jishnu47@gmail.com), Rakesh K M(rakeshkm2203@gmail.com), Manoj.S.Nair(manojsnair007@gmail.com) [Amrita School of Engineering, Amritapuri Campus, Kollam 690525, Kerala]
+License : GNU GPL version 3
+"""
 import sys,os,cgi
 sys.path.insert(0,"C:\\Python27\\expeyes-3.0.0\\expeyes-3.0.0\\eyes-junior"))#path to eyes-junior folder
 import expeyes.eyesj as eyes

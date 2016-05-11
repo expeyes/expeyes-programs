@@ -1,3 +1,8 @@
+<!--
+Responsive web interface for expEYES Junior connected to server
+Copyright 2016,  Authors : Rakesh K M(rakeshkm2203@gmail.com), Manoj.S.Nair(manojsnair007@gmail.com), Jishnu R(jishnu47@gmail.com) [Amrita School of Engineering, Amritapuri Campus, Kollam 690525, Kerala]
+License : GNU GPL version 3
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
