@@ -15,7 +15,7 @@ License : GNU GPL version 3
     <link rel="icon" href="images/favicon.ico">
     <title>expEYES | Control Panel</title>
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.custom.css" rel="stylesheet">
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this page -->
