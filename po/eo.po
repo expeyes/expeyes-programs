@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expEYES 2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-23 15:39+0100\n"
+"POT-Creation-Date: 2016-06-23 17:08+0200\n"
 "PO-Revision-Date: 2012-07-08 11:35+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "Language-Team: ESPERANTO <eo@li.org>\n"
@@ -64,7 +64,7 @@ msgstr "ms"
 #: ../eyes-junior/RLcircuit.py:119 ../eyes-junior/sound-burst.py:122
 #: ../eyes-junior/transistor.py:135 ../eyes-junior/velocity-sound.py:99
 #: ../eyes/LED_iv.py:40 ../eyes/LED_iv.py:137 ../eyes/phototransistor.py:99
-#: ../eyes/RCcircuit.py:98 ../eyes/RCcircuit.py:105 ../eyes/resistor_iv.py:121
+#: ../eyes/RCcircuit.py:98 ../eyes/RCcircuit.py:105 ../eyes/resistor_iv.py:122
 #: ../eyes/RLCdischarge.py:86 ../eyes/RLCdischarge.py:93
 #: ../eyes/RLcircuit.py:104 ../eyes/RLcircuit.py:111 ../eyes/sound.py:98
 #: ../eyes/transistor.py:124 ../eyes/transistor.py:135
@@ -105,286 +105,286 @@ msgstr ""
 msgid "GETVERSION ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:267
+#: ../expeyes/eyesj.py:269
 msgid "WREEPROM ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:268
+#: ../expeyes/eyesj.py:270
 msgid "WREEPROM ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:282
+#: ../expeyes/eyesj.py:284
 msgid "RDEEPROM ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:359
+#: ../expeyes/eyesj.py:361
 msgid "Invalid Calibration factors for A1,A2"
 msgstr ""
 
-#: ../expeyes/eyesj.py:361
+#: ../expeyes/eyesj.py:363
 msgid "Could not load A1 & A2 Calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:371
+#: ../expeyes/eyesj.py:373
 msgid "Invalid Calibration factors for IN1"
 msgstr ""
 
-#: ../expeyes/eyesj.py:373
+#: ../expeyes/eyesj.py:375
 msgid "Could not load IN1 Capacitor Calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:381
+#: ../expeyes/eyesj.py:383
 msgid "Invalid Pullup resistor value"
 msgstr ""
 
-#: ../expeyes/eyesj.py:383
+#: ../expeyes/eyesj.py:385
 msgid "Could not load SEN Pullup calibration"
 msgstr ""
 
-#: ../expeyes/eyesj.py:396 ../expeyes/eyesj.py:397
+#: ../expeyes/eyesj.py:398 ../expeyes/eyesj.py:399
 msgid "IRSEND1 ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:416 ../expeyes/eyesj.py:417
+#: ../expeyes/eyesj.py:418 ../expeyes/eyesj.py:419
 msgid "IRSEND4 ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:460
+#: ../expeyes/eyesj.py:462
 msgid "Current to be set only on IN1(3) or IN2(4)"
 msgstr ""
 
-#: ../expeyes/eyesj.py:461 ../expeyes/eyesj.py:539 ../expeyes/eyesj.py:540
+#: ../expeyes/eyesj.py:463 ../expeyes/eyesj.py:541 ../expeyes/eyesj.py:542
 msgid "Current to be set only on IN1 or IN2"
 msgstr ""
 
-#: ../expeyes/eyesj.py:469 ../expeyes/eyesj.py:470
+#: ../expeyes/eyesj.py:471 ../expeyes/eyesj.py:472
 msgid "MEASURECV ERROR "
 msgstr ""
 
-#: ../expeyes/eyesj.py:492
+#: ../expeyes/eyesj.py:494
 #, python-format
 msgid "Error measuring capacitance %5.3f"
 msgstr ""
 
-#: ../expeyes/eyesj.py:493
+#: ../expeyes/eyesj.py:495
 msgid "Error measuring capacitance"
 msgstr ""
 
-#: ../expeyes/eyesj.py:516 ../expeyes/eyesj.py:517
+#: ../expeyes/eyesj.py:518 ../expeyes/eyesj.py:519
 msgid "Resistance NOT in 100 Ohm to 100 kOhm range"
 msgstr ""
 
-#: ../expeyes/eyesj.py:547 ../expeyes/eyesj.py:548
+#: ../expeyes/eyesj.py:549 ../expeyes/eyesj.py:550
 msgid "SETCURRENT ERROR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:567
+#: ../expeyes/eyesj.py:569
 msgid "READTEMP error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:568
+#: ../expeyes/eyesj.py:570
 msgid "READTEMP error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:590 ../expeyes/eyesj.py:591
+#: ../expeyes/eyesj.py:592 ../expeyes/eyesj.py:593
 msgid "Pin should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:594 ../expeyes/eyesj.py:595
+#: ../expeyes/eyesj.py:596 ../expeyes/eyesj.py:597
 msgid "skip exceeded 249 edges"
 msgstr ""
 
-#: ../expeyes/eyesj.py:599 ../expeyes/eyesj.py:600
+#: ../expeyes/eyesj.py:601 ../expeyes/eyesj.py:602
 msgid "Both pins should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:604 ../expeyes/eyesj.py:605
+#: ../expeyes/eyesj.py:606 ../expeyes/eyesj.py:607
 msgid "Starting pin should be digital output capable: 8,9,10 or 11"
 msgstr ""
 
-#: ../expeyes/eyesj.py:608 ../expeyes/eyesj.py:609
+#: ../expeyes/eyesj.py:610 ../expeyes/eyesj.py:611
 msgid "Destination pin should be digital input capable: 0,3,4,5,6 or 7"
 msgstr ""
 
-#: ../expeyes/eyesj.py:616
+#: ../expeyes/eyesj.py:618
 msgid "Time measurement command error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:617
+#: ../expeyes/eyesj.py:619
 #, python-format
 msgid "Time measurement command %d error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:737 ../expeyes/eyesj.py:738
+#: ../expeyes/eyesj.py:739 ../expeyes/eyesj.py:740
 msgid "SETSTATE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:753 ../expeyes/eyesj.py:754
+#: ../expeyes/eyesj.py:755 ../expeyes/eyesj.py:756
 msgid "GETSTATE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:766 ../expeyes/eyesj.py:767
+#: ../expeyes/eyesj.py:768 ../expeyes/eyesj.py:769
 msgid "GETPORTB error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:793 ../expeyes/eyesj.py:794
+#: ../expeyes/eyesj.py:795 ../expeyes/eyesj.py:796
 msgid "SETPWM error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:831
+#: ../expeyes/eyesj.py:833
 msgid "Invalid channel number"
 msgstr ""
 
-#: ../expeyes/eyesj.py:832
+#: ../expeyes/eyesj.py:834
 msgid "Invalid Channel"
 msgstr ""
 
-#: ../expeyes/eyesj.py:853 ../expeyes/eyesj.py:912 ../expeyes/eyesj.py:913
+#: ../expeyes/eyesj.py:855 ../expeyes/eyesj.py:914 ../expeyes/eyesj.py:915
 msgid "Invalid Freqency"
 msgstr ""
 
-#: ../expeyes/eyesj.py:863
+#: ../expeyes/eyesj.py:865
 msgid "SETSQR error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:895 ../expeyes/eyesj.py:896
+#: ../expeyes/eyesj.py:897 ../expeyes/eyesj.py:898
 msgid "Invalid phase difference"
 msgstr ""
 
-#: ../expeyes/eyesj.py:925 ../expeyes/eyesj.py:926
+#: ../expeyes/eyesj.py:927 ../expeyes/eyesj.py:928
 msgid "SETSQRS error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:944 ../expeyes/eyesj.py:945
+#: ../expeyes/eyesj.py:946 ../expeyes/eyesj.py:947
 msgid "SETDAC error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:955 ../expeyes/eyesj.py:1015 ../expeyes/eyesj.py:1038
-#: ../expeyes/eyesj.py:1052 ../expeyes/eyesj.py:1064 ../expeyes/eyesj.py:1065
-#: ../expeyes/eyesj.py:1080 ../expeyes/eyesj.py:1090 ../expeyes/eyesj.py:1091
+#: ../expeyes/eyesj.py:957 ../expeyes/eyesj.py:1017 ../expeyes/eyesj.py:1040
+#: ../expeyes/eyesj.py:1054 ../expeyes/eyesj.py:1066 ../expeyes/eyesj.py:1067
+#: ../expeyes/eyesj.py:1082 ../expeyes/eyesj.py:1092 ../expeyes/eyesj.py:1093
 #: ../expeyes/eyes.py:512 ../expeyes/eyes.py:530 ../expeyes/eyes.py:549
 #: ../expeyes/mca.py:149
 msgid "Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:961 ../expeyes/eyesj.py:962 ../expeyes/eyes.py:518
+#: ../expeyes/eyesj.py:963 ../expeyes/eyesj.py:964 ../expeyes/eyes.py:518
 #: ../expeyes/mca.py:155
 msgid "READADC error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:977 ../expeyes/eyesj.py:978
+#: ../expeyes/eyesj.py:979 ../expeyes/eyesj.py:980
 msgid "invalid voltage"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1002 ../expeyes/eyesj.py:1003
+#: ../expeyes/eyesj.py:1004 ../expeyes/eyesj.py:1005
 msgid "SETADCREF error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1014
+#: ../expeyes/eyesj.py:1016
 msgid "READADC: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1021 ../expeyes/eyesj.py:1022
+#: ../expeyes/eyesj.py:1023 ../expeyes/eyesj.py:1024
 msgid "READADC error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1037
+#: ../expeyes/eyesj.py:1039
 msgid "get_voltage: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1051
+#: ../expeyes/eyesj.py:1053
 msgid "get_voltageNS: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1079
+#: ../expeyes/eyesj.py:1081
 msgid "get_voltage_time: Argument error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1092
+#: ../expeyes/eyesj.py:1094
 msgid "Error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1105 ../expeyes/eyesj.py:1143
+#: ../expeyes/eyesj.py:1107 ../expeyes/eyesj.py:1145
 msgid "Minimum Timegap is 4 us"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1114
+#: ../expeyes/eyesj.py:1116
 msgid "CAPTURE error"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1115 ../expeyes/eyesj.py:1152 ../expeyes/eyesj.py:1153
+#: ../expeyes/eyesj.py:1117 ../expeyes/eyesj.py:1154 ../expeyes/eyesj.py:1155
 #: ../expeyes/eyes.py:622
 msgid "CAPTURE error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1121 ../expeyes/eyesj.py:1159
+#: ../expeyes/eyesj.py:1123 ../expeyes/eyesj.py:1161
 #, python-format
 msgid "CAPTURE: size mismatch %d %d"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1122 ../expeyes/eyesj.py:1160 ../expeyes/eyes.py:630
+#: ../expeyes/eyesj.py:1124 ../expeyes/eyesj.py:1162 ../expeyes/eyes.py:630
 msgid "CAPTURE: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1182 ../expeyes/eyesj.py:1224 ../expeyes/eyesj.py:1267
-#: ../expeyes/eyesj.py:1318
+#: ../expeyes/eyesj.py:1184 ../expeyes/eyesj.py:1226 ../expeyes/eyesj.py:1269
+#: ../expeyes/eyesj.py:1320
 msgid "Minimum Timegap is (4*number of channels)usec"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1192 ../expeyes/eyesj.py:1193
+#: ../expeyes/eyesj.py:1194 ../expeyes/eyesj.py:1195
 msgid "CAPTURE2 error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1199 ../expeyes/eyesj.py:1200
+#: ../expeyes/eyesj.py:1201 ../expeyes/eyesj.py:1202
 msgid "CAPTURE2: size mismatch"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1234 ../expeyes/eyesj.py:1235
+#: ../expeyes/eyesj.py:1236 ../expeyes/eyesj.py:1237
 msgid "CAPTURE2_HR error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1241 ../expeyes/eyesj.py:1242
+#: ../expeyes/eyesj.py:1243 ../expeyes/eyesj.py:1244
 msgid "CAPTURE2_HR: size mismatch"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1278 ../expeyes/eyesj.py:1279
+#: ../expeyes/eyesj.py:1280 ../expeyes/eyesj.py:1281
 msgid "CAPTURE3 error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1285 ../expeyes/eyesj.py:1286
+#: ../expeyes/eyesj.py:1287 ../expeyes/eyesj.py:1288
 msgid "CAPTURE3: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1330 ../expeyes/eyesj.py:1331
+#: ../expeyes/eyesj.py:1332 ../expeyes/eyesj.py:1333
 msgid "CAPTURE4 error ="
 msgstr ""
 
-#: ../expeyes/eyesj.py:1337 ../expeyes/eyesj.py:1338
+#: ../expeyes/eyesj.py:1339 ../expeyes/eyesj.py:1340
 msgid "CAPTURE4: size mismatch "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1378 ../expeyes/eyesj.py:1379
+#: ../expeyes/eyesj.py:1380 ../expeyes/eyesj.py:1381
 msgid "SETTRIGVAL error "
 msgstr ""
 
-#: ../expeyes/eyesj.py:1394 ../expeyes/eyesj.py:1395
+#: ../expeyes/eyesj.py:1396 ../expeyes/eyesj.py:1397
 msgid "ERROR: SETACTION"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1416
+#: ../expeyes/eyesj.py:1418
 msgid "SETACTION ERR"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1417
+#: ../expeyes/eyesj.py:1419
 #, python-format
 msgid "SETACTION ERR: action = %d ch = %d"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1484
+#: ../expeyes/eyesj.py:1486
 msgid "Invalid pulse width"
 msgstr ""
 
-#: ../expeyes/eyesj.py:1490 ../expeyes/eyesj.py:1491
+#: ../expeyes/eyesj.py:1492 ../expeyes/eyesj.py:1493
 msgid "ERROR: SETPULWIDTH"
 msgstr ""
 
@@ -588,15 +588,15 @@ msgstr ""
 msgid "UPDATE"
 msgstr ""
 
-#: ../eyes/alpha.py:158 ../eyes/diode_iv.py:127 ../eyes/freq-response.py:124
+#: ../eyes/alpha.py:158 ../eyes/diode_iv.py:127 ../eyes/freq-response.py:125
 #: ../eyes/interference-sound.py:76 ../eyes/interference-sound.py:147
-#: ../eyes-junior/diode_iv.py:127 ../eyes-junior/freq-response.py:152
+#: ../eyes-junior/diode_iv.py:127 ../eyes-junior/freq-response.py:153
 #: ../eyes-junior/interference-sound.py:150 ../eyes-junior/logger.py:162
 #: ../eyes-junior/Motion-Sensor-GUI.py:144 ../eyes-junior/pendulum.py:165
 #: ../eyes-junior/pt100.py:214 ../eyes-junior/rodpend.py:135
 #: ../eyes-junior/transistor.py:148 ../eyes/LED_iv.py:143 ../eyes/logger.py:153
 #: ../eyes/pendulum.py:118 ../eyes/phototransistor.py:104 ../eyes/pt100.py:208
-#: ../eyes/resistor_iv.py:126 ../eyes/rodpend.py:156
+#: ../eyes/resistor_iv.py:127 ../eyes/rodpend.py:156
 #: ../eyes/temp-controller.py:190 ../eyes/transistor.py:137
 msgid "START"
 msgstr ""
@@ -610,9 +610,9 @@ msgstr ""
 msgid "STOP"
 msgstr ""
 
-#: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:136
+#: ../eyes/alpha.py:162 ../eyes/diode_iv.py:138 ../eyes/freq-response.py:137
 #: ../eyes/induction.py:127 ../eyes-junior/diode_iv.py:138
-#: ../eyes-junior/freq-response.py:164 ../eyes-junior/induction.py:137
+#: ../eyes-junior/freq-response.py:165 ../eyes-junior/induction.py:137
 #: ../eyes-junior/logger.py:166 ../eyes-junior/Motion-Sensor-GUI.py:148
 #: ../eyes-junior/pendulum.py:171 ../eyes-junior/pt100.py:218
 #: ../eyes-junior/RCcircuit.py:150 ../eyes-junior/RLCdischarge.py:125
@@ -620,7 +620,7 @@ msgstr ""
 #: ../eyes-junior/sound-burst.py:133 ../eyes-junior/transistor.py:159
 #: ../eyes/LED_iv.py:154 ../eyes/logger.py:157 ../eyes/pendulum.py:124
 #: ../eyes/phototransistor.py:115 ../eyes/pt100.py:212 ../eyes/RCcircuit.py:135
-#: ../eyes/resistor_iv.py:138 ../eyes/RLCdischarge.py:117
+#: ../eyes/resistor_iv.py:139 ../eyes/RLCdischarge.py:117
 #: ../eyes/RLcircuit.py:130 ../eyes/rodpend.py:160
 #: ../eyes/temp-controller.py:194 ../eyes/transistor.py:148
 msgid "CLEAR"
@@ -652,13 +652,13 @@ msgstr ""
 
 #: ../eyes/alpha.py:190 ../eyes/amfm.py:89 ../eyes/calibrate.py:179
 #: ../eyes/cro.py:161 ../eyes/diode_iv.py:136 ../eyes/explore.py:553
-#: ../eyes/freq-response.py:134 ../eyes/gravity_tof2.py:122
+#: ../eyes/freq-response.py:135 ../eyes/gravity_tof2.py:122
 #: ../eyes/gravity_tof.py:98 ../eyes/induction.py:123
 #: ../eyes/interference-sound.py:162 ../eyes/janagana.py:83
 #: ../eyes-junior/ac-circuit.py:214 ../eyes-junior/amfm.py:98
 #: ../eyes-junior/change-pvs.py:30 ../eyes-junior/croplus.py:770
 #: ../eyes-junior/diode_iv.py:136 ../eyes-junior/driven-pendulum.py:29
-#: ../eyes-junior/freq-response.py:162 ../eyes-junior/induction.py:133
+#: ../eyes-junior/freq-response.py:163 ../eyes-junior/induction.py:133
 #: ../eyes-junior/interference-sound.py:166 ../eyes-junior/logger.py:178
 #: ../eyes-junior/Motion-Sensor-GUI.py:158 ../eyes-junior/pendulum.py:181
 #: ../eyes-junior/pt100.py:255 ../eyes-junior/RCcircuit.py:141
@@ -667,7 +667,7 @@ msgstr ""
 #: ../eyes-junior/stroboscope.py:29 ../eyes-junior/transistor.py:157
 #: ../eyes-junior/velocity-sound.py:129 ../eyes/LED_iv.py:152
 #: ../eyes/logger.py:169 ../eyes/pendulum.py:134 ../eyes/phototransistor.py:113
-#: ../eyes/pt100.py:222 ../eyes/RCcircuit.py:126 ../eyes/resistor_iv.py:136
+#: ../eyes/pt100.py:222 ../eyes/RCcircuit.py:126 ../eyes/resistor_iv.py:137
 #: ../eyes/RLCdischarge.py:113 ../eyes/RLcircuit.py:150 ../eyes/rodpend.py:185
 #: ../eyes/sound.py:130 ../eyes/temp-controller.py:204
 #: ../eyes/transistor.py:146 ../eyes/usound_tof.py:37
@@ -872,7 +872,7 @@ msgstr ""
 #: ../eyes-junior/transistor.py:135 ../eyes/LED_iv.py:40 ../eyes/LED_iv.py:81
 #: ../eyes/LED_iv.py:137 ../eyes/phototransistor.py:73
 #: ../eyes/phototransistor.py:99 ../eyes/RCcircuit.py:105
-#: ../eyes/resistor_iv.py:86 ../eyes/resistor_iv.py:121
+#: ../eyes/resistor_iv.py:87 ../eyes/resistor_iv.py:122
 #: ../eyes/RLCdischarge.py:93 ../eyes/RLcircuit.py:111 ../eyes/transistor.py:97
 #: ../eyes/transistor.py:124
 msgid "mA"
@@ -888,7 +888,7 @@ msgstr ""
 #: ../eyes-junior/RLcircuit.py:96 ../eyes-junior/sound-burst.py:91
 #: ../eyes-junior/transistor.py:106 ../eyes-junior/velocity-sound.py:88
 #: ../eyes/LED_iv.py:81 ../eyes/phototransistor.py:73 ../eyes/RCcircuit.py:81
-#: ../eyes/resistor_iv.py:85 ../eyes/RLCdischarge.py:69 ../eyes/RLcircuit.py:87
+#: ../eyes/resistor_iv.py:86 ../eyes/RLCdischarge.py:69 ../eyes/RLcircuit.py:87
 #: ../eyes/sound.py:87 ../eyes/transistor.py:97 ../eyes/velocity-sound.py:85
 msgid "Volts"
 msgstr ""
@@ -899,15 +899,15 @@ msgstr ""
 msgid "Diode IV Curve"
 msgstr ""
 
-#: ../eyes/diode_iv.py:87 ../eyes/freq-response.py:99 ../eyes/induction.py:96
+#: ../eyes/diode_iv.py:87 ../eyes/freq-response.py:100 ../eyes/induction.py:96
 #: ../eyes/interference-sound.py:95 ../eyes-junior/diode_iv.py:91
-#: ../eyes-junior/freq-response.py:128 ../eyes-junior/induction.py:107
+#: ../eyes-junior/freq-response.py:129 ../eyes-junior/induction.py:107
 #: ../eyes-junior/interference-sound.py:102 ../eyes-junior/RCcircuit.py:91
 #: ../eyes-junior/RLCdischarge.py:74 ../eyes-junior/RLcircuit.py:92
 #: ../eyes-junior/sound-burst.py:105 ../eyes-junior/transistor.py:116
 #: ../eyes-junior/velocity-sound.py:84 ../eyes/LED_iv.py:91
 #: ../eyes/phototransistor.py:83 ../eyes/RCcircuit.py:77
-#: ../eyes/resistor_iv.py:102 ../eyes/RLCdischarge.py:65
+#: ../eyes/resistor_iv.py:103 ../eyes/RLCdischarge.py:65
 #: ../eyes/RLcircuit.py:83 ../eyes/sound.py:83 ../eyes/transistor.py:107
 #: ../eyes/velocity-sound.py:81
 msgid "Data saved to file "
@@ -922,22 +922,22 @@ msgstr ""
 msgid "ZENER"
 msgstr ""
 
-#: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:126
-#: ../eyes-junior/diode_iv.py:129 ../eyes-junior/freq-response.py:154
+#: ../eyes/diode_iv.py:129 ../eyes/freq-response.py:127
+#: ../eyes-junior/diode_iv.py:129 ../eyes-junior/freq-response.py:155
 #: ../eyes-junior/logger.py:171 ../eyes-junior/Motion-Sensor-GUI.py:152
 #: ../eyes-junior/pendulum.py:175 ../eyes-junior/pt100.py:240
 #: ../eyes-junior/rodpend.py:141 ../eyes-junior/transistor.py:150
 #: ../eyes/LED_iv.py:145 ../eyes/logger.py:162 ../eyes/pendulum.py:128
 #: ../eyes/phototransistor.py:106 ../eyes/pt100.py:216
-#: ../eyes/resistor_iv.py:128 ../eyes/rodpend.py:162
+#: ../eyes/resistor_iv.py:129 ../eyes/rodpend.py:162
 #: ../eyes/temp-controller.py:198 ../eyes/transistor.py:139
 msgid "SAVE to"
 msgstr ""
 
-#: ../eyes/diode_iv.py:140 ../eyes/freq-response.py:138
-#: ../eyes-junior/diode_iv.py:140 ../eyes-junior/freq-response.py:166
+#: ../eyes/diode_iv.py:140 ../eyes/freq-response.py:139
+#: ../eyes-junior/diode_iv.py:140 ../eyes-junior/freq-response.py:167
 #: ../eyes-junior/transistor.py:161 ../eyes/LED_iv.py:156
-#: ../eyes/phototransistor.py:117 ../eyes/resistor_iv.py:140
+#: ../eyes/phototransistor.py:117 ../eyes/resistor_iv.py:141
 #: ../eyes/transistor.py:150
 msgid "Grace"
 msgstr ""
@@ -948,7 +948,7 @@ msgstr ""
 #: ../eyes-junior/pt100.py:260 ../eyes-junior/rodpend.py:157
 #: ../eyes-junior/transistor.py:168 ../eyes/LED_iv.py:163 ../eyes/logger.py:174
 #: ../eyes/pendulum.py:139 ../eyes/phototransistor.py:124 ../eyes/pt100.py:236
-#: ../eyes/resistor_iv.py:145 ../eyes/rodpend.py:190
+#: ../eyes/resistor_iv.py:146 ../eyes/rodpend.py:190
 #: ../eyes/temp-controller.py:210 ../eyes/transistor.py:157
 msgid "Message"
 msgstr ""
@@ -1381,45 +1381,45 @@ msgstr ""
 msgid "Fo = %5.0f Hz"
 msgstr ""
 
-#: ../eyes/freq-response.py:82 ../eyes-junior/freq-response.py:96
-#: ../eyes-junior/freq-response.py:111
+#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:96
+#: ../eyes-junior/freq-response.py:112
 msgid "Frequency"
 msgstr ""
 
-#: ../eyes/freq-response.py:83 ../eyes-junior/freq-response.py:97
-#: ../eyes-junior/freq-response.py:112
+#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:97
+#: ../eyes-junior/freq-response.py:113
 msgid "Amplitude"
 msgstr ""
 
-#: ../eyes/freq-response.py:84 ../eyes-junior/freq-response.py:95
-#: ../eyes-junior/freq-response.py:113
+#: ../eyes/freq-response.py:85 ../eyes-junior/freq-response.py:95
+#: ../eyes-junior/freq-response.py:114
 msgid "Frequency response curve"
 msgstr ""
 
-#: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:120
-#: ../eyes-junior/freq-response.py:147
+#: ../eyes/freq-response.py:120 ../eyes-junior/croplus.py:120
+#: ../eyes-junior/freq-response.py:148
 msgid "Freq"
 msgstr ""
 
-#: ../eyes/freq-response.py:119 ../eyes-junior/croplus.py:120
-#: ../eyes-junior/freq-response.py:147
+#: ../eyes/freq-response.py:120 ../eyes-junior/croplus.py:120
+#: ../eyes-junior/freq-response.py:148
 msgid "Amp"
 msgstr ""
 
-#: ../eyes/freq-response.py:132 ../eyes-junior/freq-response.py:160
+#: ../eyes/freq-response.py:133 ../eyes-junior/freq-response.py:161
 msgid "Fmax = "
 msgstr ""
 
-#: ../eyes/freq-response.py:143 ../eyes-junior/freq-response.py:171
+#: ../eyes/freq-response.py:144 ../eyes-junior/freq-response.py:172
 msgid ""
 "Connect Piezo from SQR1 to GND. Microphone to 16,15 & 31. Wire from 13 to 26"
 msgstr ""
 
-#: ../eyes/freq-response.py:146 ../eyes-junior/freq-response.py:174
+#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:175
 msgid "Frequency Response Curve"
 msgstr ""
 
-#: ../eyes/freq-response.py:147 ../eyes-junior/freq-response.py:175
+#: ../eyes/freq-response.py:148 ../eyes-junior/freq-response.py:176
 msgid "Audio Frequency response Curve"
 msgstr ""
 
@@ -2790,19 +2790,19 @@ msgstr ""
 msgid "R = %5.0f Ohm"
 msgstr ""
 
-#: ../eyes/resistor_iv.py:87
+#: ../eyes/resistor_iv.py:88
 msgid "Resistor VI curve"
 msgstr ""
 
-#: ../eyes/resistor_iv.py:134
+#: ../eyes/resistor_iv.py:135
 msgid "R = "
 msgstr ""
 
-#: ../eyes/resistor_iv.py:148
+#: ../eyes/resistor_iv.py:149
 msgid "Resistor IV char. Connections"
 msgstr ""
 
-#: ../eyes/resistor_iv.py:149
+#: ../eyes/resistor_iv.py:150
 msgid "EYES: Resistor IV characteristics"
 msgstr ""
 

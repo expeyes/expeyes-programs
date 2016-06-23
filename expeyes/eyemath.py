@@ -35,8 +35,8 @@ def fft(ya, si):
 	v = array(ya)
 	tr = abs(numpy.fft.fft(v))/np
 	frq = numpy.fft.fftfreq(np, si * 1.0e-3)
-	x = frq.reshape(2,np/2)
-	y = tr.reshape(2,np/2)
+	x = frq.reshape(2,int(np/2))
+	y = tr.reshape(2,int(np/2))
 	return x[0], y[0]    
 
 def find_frequency(x,y):		# Returns the fundamental frequency using FFT

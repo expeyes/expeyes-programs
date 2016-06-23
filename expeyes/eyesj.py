@@ -241,7 +241,7 @@ class Eyesjun:
     def get_version(self):
         """
         reads the version number from the device
-        @return a bytes
+        @return a str
         """
         self.sendByte(GETVERSION)
         res = self.fd.read(1)
@@ -249,6 +249,8 @@ class Eyesjun:
             self.msg = warningWithResult(_('GETVERSION ERROR'), ver)
             return
         ver = self.fd.read(5)
+        if sys.version_info.major == 3:
+            ver=ver.decode("utf-8")
         return ver
 
     """------------------------EEPROM---------------------"""
@@ -1553,7 +1555,6 @@ class Eyesjun:
         for xy in data:
             for k in range(len(xy[0])):
                 f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
-                f.write('\n')
         f.close()
 
     def grace(self, data, xlab = '', ylab = '', title = ''):
@@ -1562,6 +1563,7 @@ class Eyesjun:
         '''
         try:
             import pygrace
+            global pg
             pg = pygrace.grace()
             for xy in data:
                 pg.plot(xy[0],xy[1])
@@ -1570,8 +1572,10 @@ class Eyesjun:
             pg.ylabel(ylab)
             pg.title(title)
             return True
-        except:
+        except Exception as ex:
+            #print("Exception -> {}".format(ex))
             return False
+
 
 
 # Local Variables:

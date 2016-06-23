@@ -185,6 +185,7 @@ class MCA:
 		'''
 		try:
 			import pygrace
+                        global pg
 			pg = pygrace.grace()
 			for xy in data:
 				pg.plot(xy[0],xy[1])

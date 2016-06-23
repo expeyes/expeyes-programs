@@ -104,6 +104,7 @@ def plotdata(pref="qtiplot"):		# Send the data to XmGrace or QtiPlot
 			import pygrace
 		except:
 			return
+                global pg
 		pg = pygrace.grace()
 		for dat in history:
 			pg.plot(dat[0],dat[1])

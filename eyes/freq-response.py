@@ -75,6 +75,7 @@ def xmgrace():		# Send the data to Xmgrace
 		import pygrace
 	except:
 		return
+        global pg
 	pg = pygrace.grace()
 	for dat in history:
 		pg.plot(dat[0],dat[1])

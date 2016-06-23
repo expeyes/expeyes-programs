@@ -20,8 +20,8 @@ License : GNU GPL version 3
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     <!-- Custom styles for this page -->
     <link href="css/jumbotron-narrow.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/javascript/jquery/jquery.min.js"></script>
+    <script src="/javascript/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/ie-emulation-modes-warning.js"></script>
     <!-- CDN Files-->
     <!--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">

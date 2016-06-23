@@ -1,14 +1,14 @@
-#!C:\Python27\python.exe
+#!/usr/bin/python
 """
 CGI script for reading status of input pins of expEYES Junior connected to server
 Copyright 2016,  Authors : Manoj.S.Nair(manojsnair007@gmail.com), Jishnu R(jishnu47@gmail.com), Rakesh K M(rakeshkm2203@gmail.com) [Amrita School of Engineering, Amritapuri Campus, Kollam 690525, Kerala]
 License : GNU GPL version 3
 """
 import sys,os,json
-sys.path.insert(0,"C:\\Python27\\expeyes-3.0.0\\expeyes-3.0.0\\eyes-junior")#path to eyes-junior folder
+
 import expeyes.eyesj as eyes
 from contextlib import contextmanager
-@contextmanager)# prevent header crash because of connection errors etc
+@contextmanager # prevent header crash because of connection errors etc
 def suppress_stdout():
     with open(os.devnull, "w") as devnull:
         old_stdout = sys.stdout

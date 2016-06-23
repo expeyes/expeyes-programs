@@ -109,7 +109,7 @@ class Logger:
 					s = '%5.3f  %5.3f\n'%(self.chinfo[ch][1][0][k], self.chinfo[ch][1][1][k])
 					f.write(s)
 				f.write('\n')
-		msg.config(text = _('Data Saved'))
+		self.msg(_('Data Saved'))
 
 	def clear(self):
 		if self.running == True:
