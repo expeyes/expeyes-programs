@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 '''
 EYES for Young Engineers and Scientists -Junior (EYES Junior 1.0)
 Python library to communicate to the PIC24FV32KA302 uC running 'eyesj.c'
@@ -1576,29 +1575,6 @@ class Eyesjun:
         except Exception as ex:
             #print("Exception -> {}".format(ex))
             return False
-
-    def qtiplot(self, data=None, xlab = '', ylab = '', title = ''):
-        """
-        Launches Qtiplot in a subprocess, and feeds it with data
-        @param data [ [x1,y1], [x2,y2],....] where x and y are vectors
-        """
-        if data == None:
-            data=[[[0.1,0.2,0.3,0.4,0.5],[0.6,0.7,0.8,0.9,1.0]]]
-        from subprocess import Popen, PIPE
-        cmd=("qtiplot", "-x", "/usr/share/expeyes/qtiplot_script.py")
-        global qtiplot
-        qtiplot=Popen(cmd,
-                      stdin=PIPE, stdout=PIPE, stderr=PIPE,
-                      bufsize=1)
-        plotFood=""
-        for table in data:
-            plotFood+="X Y\n"
-            for i in range(len(table[0])):
-                plotFood+="{} {}\n".format(table[0][i], table[1][i])
-        qtiplot.stdin.write(
-            plotFood.encode("latin-1")
-        ) # qtiplot wants latin-1 this way
-        qtiplot.stdin.close()  # sends EOF
 
 
 

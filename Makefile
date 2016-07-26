@@ -1,5 +1,8 @@
 DESTDIR =
-SUBDIRS = $(shell ls -d doc bin firmware po clib/expeyes-clib microhope microhope/microhope-doc 2>/dev/null)
+SUBDIRS = $(shell ls -d bin po firmware clib/expeyes-clib microhope \
+            microhope/po microhope/microhope-doc 2>/dev/null)
+SUBDIRS_INDEP = doc
+
 all:
 	python setup.py build
 	python3 setup.py build
@@ -12,6 +15,11 @@ all:
 	done
 	# make the bootloader hex file
 	make -C microhope/firmware atmega32
+
+all_indep:
+	for d in $(SUBDIRS_INDEP); do \
+	  make -C $$d all; \
+	done
 
 install:
 	# for python-expeyes
@@ -59,14 +67,19 @@ install:
 	# for expeyes-clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
+install_indep:
+	for d in $(SUBDIRS_INDEP); do \
+	  make -C $$d install DESTDIR=$(DESTDIR); \
+	done
+
 
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
-	for d in $(SUBDIRS); do \
+	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || make -C $$d distclean || make -C $$d clean; \
 	done
 	# clean the bootloader hex file
 	make -C microhope/firmware clean
 
 
-.PHONY: all install clean
+.PHONY: all all_indep install install_indep clean

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-06-23 17:08+0200\n"
-"PO-Revision-Date: 2016-03-23 15:32+0100\n"
+"POT-Creation-Date: 2016-07-25 16:46+0200\n"
+"PO-Revision-Date: 2016-07-25 16:46+0200\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,8 +31,8 @@ msgstr "Graphique EYES"
 #: ../eyes-junior/ac-circuit.py:66 ../eyes-junior/ac-circuit.py:144
 #: ../eyes-junior/ac-circuit.py:187 ../eyes-junior/amfm.py:57
 #: ../eyes-junior/amfm.py:77 ../eyes-junior/amfm.py:78
-#: ../eyes-junior/croplus.py:157 ../eyes-junior/croplus.py:416
-#: ../eyes-junior/croplus.py:651 ../eyes-junior/induction.py:121
+#: ../eyes-junior/croplus.py:161 ../eyes-junior/croplus.py:420
+#: ../eyes-junior/croplus.py:655 ../eyes-junior/induction.py:121
 #: ../eyes-junior/interference-sound.py:64
 #: ../eyes-junior/interference-sound.py:117 ../eyes-junior/RCcircuit.py:112
 #: ../eyes-junior/RLCdischarge.py:95 ../eyes-junior/RLcircuit.py:113
@@ -50,8 +50,8 @@ msgstr "ms"
 #: ../eyes/interference-sound.py:52 ../eyes/interference-sound.py:112
 #: ../eyes-junior/ac-circuit.py:66 ../eyes-junior/ac-circuit.py:144
 #: ../eyes-junior/ac-circuit.py:187 ../eyes-junior/calibrate.py:174
-#: ../eyes-junior/diode_iv.py:122 ../eyes-junior/induction.py:121
-#: ../eyes-junior/interference-sound.py:64
+#: ../eyes-junior/croplus.py:123 ../eyes-junior/diode_iv.py:122
+#: ../eyes-junior/induction.py:121 ../eyes-junior/interference-sound.py:64
 #: ../eyes-junior/interference-sound.py:117 ../eyes-junior/RCcircuit.py:112
 #: ../eyes-junior/RCcircuit.py:118 ../eyes-junior/RLCdischarge.py:95
 #: ../eyes-junior/RLCdischarge.py:101 ../eyes-junior/RLcircuit.py:113
@@ -653,7 +653,7 @@ msgstr "Enregistrer l'histogramme dans"
 #: ../eyes/gravity_tof.py:98 ../eyes/induction.py:123
 #: ../eyes/interference-sound.py:162 ../eyes/janagana.py:83
 #: ../eyes-junior/ac-circuit.py:214 ../eyes-junior/amfm.py:98
-#: ../eyes-junior/change-pvs.py:30 ../eyes-junior/croplus.py:770
+#: ../eyes-junior/change-pvs.py:30 ../eyes-junior/croplus.py:774
 #: ../eyes-junior/diode_iv.py:136 ../eyes-junior/driven-pendulum.py:29
 #: ../eyes-junior/freq-response.py:163 ../eyes-junior/induction.py:133
 #: ../eyes-junior/interference-sound.py:166 ../eyes-junior/logger.py:178
@@ -802,7 +802,7 @@ msgid "IMPROPER USE MAY SPOIL THE CALIBRATION"
 msgstr "UN USAGE IMPROPRE PEUT DÉFAIRE LA CALIBRATION"
 
 #: ../eyes/calibrate.py:172 ../eyes/explore.py:597
-#: ../eyes-junior/croplus.py:810 ../eyes-junior/pt100.py:252
+#: ../eyes-junior/croplus.py:814 ../eyes-junior/pt100.py:252
 #: ../eyes/pt100.py:231
 msgid "Calibrate"
 msgstr "Calibrer"
@@ -853,7 +853,7 @@ msgid "mS/div"
 msgstr "ms/div"
 
 #: ../eyes/cro.py:132 ../eyes-junior/ac-circuit.py:199
-#: ../eyes-junior/croplus.py:632
+#: ../eyes-junior/croplus.py:636
 msgid "Volt/div"
 msgstr "V/div"
 
@@ -1220,7 +1220,7 @@ msgstr ""
 "32. Sortie de signal sinusoïdal. Fréquence proche de 90 Hz. La tension "
 "oscille entre -4 V et +4 V."
 
-#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:767
+#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:771
 msgid "EXPERIMENTS"
 msgstr "EXPÉRIENCES"
 
@@ -1243,7 +1243,7 @@ msgid "Traces saved to explore.dat"
 msgstr "Données enregistrées dans \"explore.dat\""
 
 #: ../eyes/explore.py:240 ../eyes-junior/ac-circuit.py:155
-#: ../eyes-junior/croplus.py:554
+#: ../eyes-junior/croplus.py:558
 msgid "Could not find Xmgrace or Pygrace. Install them"
 msgstr "XmGrace ou Pygrace introuvables. Installez-les"
 
@@ -1321,24 +1321,24 @@ msgstr "XM"
 msgid "Resistor IV"
 msgstr "Courbe U-I de résistances"
 
-#: ../eyes/explore.py:576 ../eyes-junior/croplus.py:792
+#: ../eyes/explore.py:576 ../eyes-junior/croplus.py:796
 msgid "RC Circuit"
 msgstr "Circuit RC"
 
-#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:793
+#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:797
 msgid "RL Circuit"
 msgstr "Circuit RL"
 
-#: ../eyes/explore.py:578 ../eyes-junior/croplus.py:794
+#: ../eyes/explore.py:578 ../eyes-junior/croplus.py:798
 #: ../eyes/RLCdischarge.py:127
 msgid "RLC Discharge"
 msgstr "Décharge RLC"
 
-#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:795
+#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:799
 msgid "EM Induction"
 msgstr "Induction électro-magnétique"
 
-#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:796
+#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:800
 msgid "Diode IV"
 msgstr "Courbe I-U d'une diode"
 
@@ -1346,21 +1346,21 @@ msgstr "Courbe I-U d'une diode"
 msgid "LED IV"
 msgstr "Courbe I-U d'une DEL"
 
-#: ../eyes/explore.py:582 ../eyes-junior/croplus.py:797
+#: ../eyes/explore.py:582 ../eyes-junior/croplus.py:801
 msgid "Transistor CE"
 msgstr "Transistor en émetteur commun"
 
-#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:799
+#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:803
 msgid "Frequency Response"
 msgstr "Réponse en fréquence"
 
-#: ../eyes/explore.py:584 ../eyes-junior/croplus.py:800
+#: ../eyes/explore.py:584 ../eyes-junior/croplus.py:804
 #: ../eyes-junior/velocity-sound.py:138 ../eyes/usound_tof.py:41
 #: ../eyes/velocity-sound.py:140
 msgid "Velocity of Sound"
 msgstr "Vitesse du son"
 
-#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:801
+#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:805
 msgid "Interference of Sound"
 msgstr "Interférences sonores"
 
@@ -1368,7 +1368,7 @@ msgstr "Interférences sonores"
 msgid "Photo-Transistor CE"
 msgstr "Photo-transistor en émetteur commun"
 
-#: ../eyes/explore.py:587 ../eyes-junior/croplus.py:804
+#: ../eyes/explore.py:587 ../eyes-junior/croplus.py:808
 msgid "Rod Pendulum"
 msgstr "Pendule pesant"
 
@@ -1376,7 +1376,7 @@ msgstr "Pendule pesant"
 msgid "Gravity TOF"
 msgstr "Gravité par temps de vol (TDV)"
 
-#: ../eyes/explore.py:589 ../eyes-junior/croplus.py:805
+#: ../eyes/explore.py:589 ../eyes-junior/croplus.py:809
 msgid "Pendulum Wavefrorm"
 msgstr "Signal du pendule"
 
@@ -1384,7 +1384,7 @@ msgstr "Signal du pendule"
 msgid "40 kHz Piezo TOF"
 msgstr "TDV piézo 40 kHz"
 
-#: ../eyes/explore.py:591 ../eyes-junior/croplus.py:806
+#: ../eyes/explore.py:591 ../eyes-junior/croplus.py:810
 msgid "PT100 Sensor"
 msgstr "Capteur PT100"
 
@@ -1392,7 +1392,7 @@ msgstr "Capteur PT100"
 msgid "Temp Comptroller"
 msgstr "Contôleur de température"
 
-#: ../eyes/explore.py:593 ../eyes-junior/croplus.py:808
+#: ../eyes/explore.py:593 ../eyes-junior/croplus.py:812
 msgid "Data Logger"
 msgstr "Enregistreur de données"
 
@@ -1400,7 +1400,7 @@ msgstr "Enregistreur de données"
 msgid "CRO"
 msgstr "Oscilloscope"
 
-#: ../eyes/explore.py:595 ../eyes-junior/croplus.py:798
+#: ../eyes/explore.py:595 ../eyes-junior/croplus.py:802
 msgid "AM and FM"
 msgstr "AM et FM"
 
@@ -1412,7 +1412,7 @@ msgstr "Musique"
 msgid "Finished "
 msgstr "Terminé "
 
-#: ../eyes/explore.py:614 ../eyes-junior/croplus.py:819
+#: ../eyes/explore.py:614 ../eyes-junior/croplus.py:823
 msgid "Finished \""
 msgstr "Terminé \""
 
@@ -1709,12 +1709,12 @@ msgstr "Échec de modélisation de la courbe. Essayez de changer l'échelle X"
 msgid "Capture Error. Check input voltage levels."
 msgstr "Erreur de capture. Vérifiez les niveaux de tension d'entrée."
 
-#: ../eyes-junior/ac-circuit.py:150 ../eyes-junior/croplus.py:546
+#: ../eyes-junior/ac-circuit.py:150 ../eyes-junior/croplus.py:550
 #, python-format
 msgid "Traces saved to %s"
 msgstr "Courbes enregistrées dans %s"
 
-#: ../eyes-junior/ac-circuit.py:157 ../eyes-junior/croplus.py:556
+#: ../eyes-junior/ac-circuit.py:157 ../eyes-junior/croplus.py:560
 msgid "Traces send to Xmgrace"
 msgstr "Courbes envoyées à Xmgrace"
 
@@ -1731,11 +1731,11 @@ msgstr ""
 msgid "Wrong Input"
 msgstr "Entrée incorrecte"
 
-#: ../eyes-junior/ac-circuit.py:191 ../eyes-junior/croplus.py:627
+#: ../eyes-junior/ac-circuit.py:191 ../eyes-junior/croplus.py:631
 msgid "mSec/div"
 msgstr "ms/div"
 
-#: ../eyes-junior/ac-circuit.py:206 ../eyes-junior/croplus.py:748
+#: ../eyes-junior/ac-circuit.py:206 ../eyes-junior/croplus.py:752
 msgid "Save Traces to"
 msgstr "Enr. courbes sous"
 
@@ -1793,7 +1793,7 @@ msgstr "Calculer ZL, ZC et l'angle"
 msgid "Study of AC Circuit"
 msgstr "Étude de circuit en alternatif"
 
-#: ../eyes-junior/ac-circuit.py:276 ../eyes-junior/croplus.py:791
+#: ../eyes-junior/ac-circuit.py:276 ../eyes-junior/croplus.py:795
 msgid "Study of AC Circuits"
 msgstr "Étude de circuits en alternatif"
 
@@ -2067,18 +2067,27 @@ msgstr ""
 msgid "Fourier Transform,power spectrum"
 msgstr "Transformée de Fourier, spectre de puissance"
 
-#: ../eyes-junior/croplus.py:121
-#, python-format
-msgid "%s Fourier transform done, Data saved to \"fft.dat\""
-msgstr ""
-"Transformée de Fourier de %s terminée, données enregistrées dans \"FFT.dat\"."
+#: ../eyes-junior/croplus.py:122
+msgid "Original signal resampled"
+msgstr "Signal d'origine rééchantillonné"
 
-#: ../eyes-junior/croplus.py:170
+#: ../eyes-junior/croplus.py:123
+msgid "ms"
+msgstr "msg"
+
+#: ../eyes-junior/croplus.py:124
+#, python-format
+msgid "%s Fourier transform done, Data saved to \"cro.dat\" and \"fft.dat\""
+msgstr ""
+"Transformée de Fourier de %s terminée, données enregistrées dans \"cro.dat\" "
+"et \"fft.dat\"."
+
+#: ../eyes-junior/croplus.py:174
 #, python-format
 msgid "%4s : Freq = %5.3f. Duty Cycle = %5.1f %%"
 msgstr "%4s : Fréq = %5.3f. Rapport cyclique = %5.1f %%"
 
-#: ../eyes-junior/croplus.py:172 ../eyes-junior/croplus.py:195
+#: ../eyes-junior/croplus.py:176 ../eyes-junior/croplus.py:199
 #, python-format
 msgid ""
 "%4s\n"
@@ -2089,12 +2098,12 @@ msgstr ""
 "%5.3f Hz\n"
 "%5.1f %%"
 
-#: ../eyes-junior/croplus.py:175
+#: ../eyes-junior/croplus.py:179
 #, python-format
 msgid "No squarewave detected on %4s"
 msgstr "Pas de signal carré détecté sur %4s"
 
-#: ../eyes-junior/croplus.py:192
+#: ../eyes-junior/croplus.py:196
 #, python-format
 msgid ""
 "%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | Phase difference = %5.1f "
@@ -2102,69 +2111,69 @@ msgid ""
 msgstr ""
 "%s: %5.3f V, %5.2f Hz | %s: %5.2f V, %5.3f Hz | différence de phase = %5.1f °"
 
-#: ../eyes-junior/croplus.py:199
+#: ../eyes-junior/croplus.py:203
 msgid "Fitting of data failed. Try with Xmgrace"
 msgstr "Modélisation des données ratée. Essayez avec Xmgrace"
 
-#: ../eyes-junior/croplus.py:201
+#: ../eyes-junior/croplus.py:205
 msgid "Selected channel and the next one should have data"
 msgstr "Selectionnez un canal et le suivant aura des données"
 
-#: ../eyes-junior/croplus.py:208
+#: ../eyes-junior/croplus.py:212
 msgid "Invalid Action"
 msgstr "Action invalide"
 
-#: ../eyes-junior/croplus.py:215
+#: ../eyes-junior/croplus.py:219
 #, python-format
 msgid "Assigned Data Input %4s to Channel %s"
 msgstr "Affecté l'entrée %4s au Canal %s"
 
-#: ../eyes-junior/croplus.py:221
+#: ../eyes-junior/croplus.py:225
 #, python-format
 msgid "%4s effective on Output %s"
 msgstr "%4s affectée à la sortie %s"
 
-#: ../eyes-junior/croplus.py:226
+#: ../eyes-junior/croplus.py:230
 #, python-format
 msgid "%4s effective on Input %s"
 msgstr "%4s affectée à l'entrée %s"
 
-#: ../eyes-junior/croplus.py:243 ../eyes-junior/croplus.py:249
-#: ../eyes-junior/croplus.py:256
+#: ../eyes-junior/croplus.py:247 ../eyes-junior/croplus.py:253
+#: ../eyes-junior/croplus.py:260
 #, python-format
 msgid "Channel %s is Empty"
 msgstr "Le canal %s est vide"
 
-#: ../eyes-junior/croplus.py:254
+#: ../eyes-junior/croplus.py:258
 #, python-format
 msgid "Disabled fitting %s"
 msgstr "Modélisation de %s désactivée"
 
-#: ../eyes-junior/croplus.py:262
+#: ../eyes-junior/croplus.py:266
 #, python-format
 msgid "Voltage at %s = %5.3f V"
 msgstr "Tension à %s = %5.3f V"
 
-#: ../eyes-junior/croplus.py:263
+#: ../eyes-junior/croplus.py:267
 #, python-format
 msgid "%3s: %5.3f V"
 msgstr "%3s: %5.3f V"
 
-#: ../eyes-junior/croplus.py:266
+#: ../eyes-junior/croplus.py:270
 #, python-format
 msgid " (Logic Level = %d)"
 msgstr "(Niveau logique = %d)"
 
-#: ../eyes-junior/croplus.py:270
+#: ../eyes-junior/croplus.py:274
 msgid "Invalid selection"
 msgstr "Sélection invalide"
 
-#: ../eyes-junior/croplus.py:282
+#: ../eyes-junior/croplus.py:286
 #, python-format
 msgid "%4s is an Output"
 msgstr "%4s est une sortie"
 
-#: ../eyes-junior/croplus.py:285
+#: ../eyes-junior/croplus.py:289
 #, python-format
 msgid ""
 "Selected Data Input %4s. For Trace, Drag this to CH1 .. CH4. To print value "
@@ -2173,242 +2182,242 @@ msgstr ""
 "Entrée %4s sélectionnée. Pour la tracer, tirer-glisser sur CH1 .. CH4. Pour "
 "une mesure, relâcher le bouton."
 
-#: ../eyes-junior/croplus.py:291
+#: ../eyes-junior/croplus.py:295
 #, python-format
 msgid "Selected %4s. Drag cursor to the OD1 or CSS Output"
 msgstr "Sélectionné %4s. Tirer-glisser sur la sortie OD1 ou CSS"
 
-#: ../eyes-junior/croplus.py:295
+#: ../eyes-junior/croplus.py:299
 #, python-format
 msgid "Selected %4s. Drag cursor to desired Data Input"
 msgstr "Sélectionné %4s. Tirer-glisser ver l'entrée désirée"
 
-#: ../eyes-junior/croplus.py:299
+#: ../eyes-junior/croplus.py:303
 #, python-format
 msgid "Selected %4s. Drag cursor to NML FIT or DEL"
 msgstr "Sélectionné %4s. Tirer-glisser sur NML, FIT, ou DEL"
 
-#: ../eyes-junior/croplus.py:394
+#: ../eyes-junior/croplus.py:398
 msgid "Communication Error. Check input voltage levels."
 msgstr "Erreur de communication. Vérifiez les niveaux de tension d'entrée."
 
-#: ../eyes-junior/croplus.py:406
+#: ../eyes-junior/croplus.py:410
 #, python-format
 msgid "%5.2f V, %5.1f Hz"
 msgstr "%5.2f V, %5.1f Hz"
 
-#: ../eyes-junior/croplus.py:425
+#: ../eyes-junior/croplus.py:429
 msgid "ONE "
 msgstr "UN COUP"
 
-#: ../eyes-junior/croplus.py:426
+#: ../eyes-junior/croplus.py:430
 msgid "Press SCAN Button to do a single Capture"
 msgstr "Cliquez le bouton SCAN pour une capture monocoup"
 
-#: ../eyes-junior/croplus.py:428 ../eyes-junior/croplus.py:757
+#: ../eyes-junior/croplus.py:432 ../eyes-junior/croplus.py:761
 msgid "LOOP"
 msgstr "BOUCLE"
 
-#: ../eyes-junior/croplus.py:434
+#: ../eyes-junior/croplus.py:438
 #, python-format
 msgid "Captured %d points in %d usecs"
 msgstr "Capturé %d points en %d µs"
 
-#: ../eyes-junior/croplus.py:436
+#: ../eyes-junior/croplus.py:440
 msgid "Use this only in Single scan mode"
 msgstr "À utiliser seulement en mode SCAN monocoup"
 
-#: ../eyes-junior/croplus.py:443
+#: ../eyes-junior/croplus.py:447
 msgid "Enter a value between 0 to +5 volts"
 msgstr "Entrer une valeur entre 0 et +5 V"
 
-#: ../eyes-junior/croplus.py:445
+#: ../eyes-junior/croplus.py:449
 #, python-format
 msgid "PVS set to %5.3f volts"
 msgstr "PVS réglé à %5.3f V"
 
-#: ../eyes-junior/croplus.py:446
+#: ../eyes-junior/croplus.py:450
 #, python-format
 msgid "PVS: %5.3f V"
 msgstr "PVS : %5.3f V"
 
-#: ../eyes-junior/croplus.py:448
+#: ../eyes-junior/croplus.py:452
 msgid "Enter voltage between -5 and +5 volts"
 msgstr "Entrer une tension entre -5 et +5 V"
 
-#: ../eyes-junior/croplus.py:454 ../eyes-junior/croplus.py:505
+#: ../eyes-junior/croplus.py:458 ../eyes-junior/croplus.py:509
 msgid "SQR1 set to LOW"
 msgstr "SQR1 réglé à BAS"
 
-#: ../eyes-junior/croplus.py:460 ../eyes-junior/croplus.py:476
-#: ../eyes-junior/croplus.py:494
+#: ../eyes-junior/croplus.py:464 ../eyes-junior/croplus.py:480
+#: ../eyes-junior/croplus.py:498
 msgid "Enter a value between .7 to 200000 Hz"
 msgstr "Entrer une valeur entre 0,7 et 20000 Hz"
 
-#: ../eyes-junior/croplus.py:462
+#: ../eyes-junior/croplus.py:466
 #, python-format
 msgid "SQR1 set to %5.1f Hertz"
 msgstr "SQR1 réglé à %5.1f Hz"
 
-#: ../eyes-junior/croplus.py:464 ../eyes-junior/croplus.py:480
+#: ../eyes-junior/croplus.py:468 ../eyes-junior/croplus.py:484
 msgid "Enter valid frequency, in Hertz"
 msgstr "Entrer une fréquence valide, en Hz"
 
-#: ../eyes-junior/croplus.py:470
+#: ../eyes-junior/croplus.py:474
 msgid "SQR2 set to LOW"
 msgstr "SQR2 réglé à BAS"
 
-#: ../eyes-junior/croplus.py:478
+#: ../eyes-junior/croplus.py:482
 #, python-format
 msgid "SQR2 set to %5.1f Hertz"
 msgstr "SQR2 réglé à %5.1f Hz"
 
-#: ../eyes-junior/croplus.py:487
+#: ../eyes-junior/croplus.py:491
 msgid "SQR1 and SQR2 set to LOW"
 msgstr "SQR1 et SQR2 réglés à BAS"
 
-#: ../eyes-junior/croplus.py:496
+#: ../eyes-junior/croplus.py:500
 #, python-format
 msgid "SQR1 and SQR2 set to %5.1f Hertz, Shift is %5.2f %% of Period"
 msgstr "SQR1 et SQR2 réglés à %5.1f Hz, le décalage est %5.2f %% de la période"
 
-#: ../eyes-junior/croplus.py:498
+#: ../eyes-junior/croplus.py:502
 msgid "Enter valid frequency in Hertz and phase shift in percentage"
 msgstr ""
 "Entrer une fréquence valide en Hz et un décalage de phase en pourcentage"
 
-#: ../eyes-junior/croplus.py:508
+#: ../eyes-junior/croplus.py:512
 #, python-format
 msgid "SQR1 set to %5.1f"
 msgstr "SQR1 réglé à %5.1f"
 
-#: ../eyes-junior/croplus.py:519
+#: ../eyes-junior/croplus.py:523
 msgid "Starting Capacitance Measurement.."
 msgstr "Commence à mesurer la capacité.."
 
-#: ../eyes-junior/croplus.py:522
+#: ../eyes-junior/croplus.py:526
 msgid "Error: Capacitance too high or short to ground"
 msgstr "Erreur : capacité trop grande ou court-circuit à la masse"
 
-#: ../eyes-junior/croplus.py:524 ../eyes-junior/croplus.py:528
+#: ../eyes-junior/croplus.py:528 ../eyes-junior/croplus.py:532
 #, python-format
 msgid "IN1: %6.1f pF"
 msgstr "IN1 : %6.1f pF"
 
-#: ../eyes-junior/croplus.py:526
+#: ../eyes-junior/croplus.py:530
 msgid "IN1 Not Calibrated."
 msgstr "IN1 non calibré."
 
-#: ../eyes-junior/croplus.py:536
+#: ../eyes-junior/croplus.py:540
 #, python-format
 msgid "Resistance from SEN to GND = %6.0f Ohm"
 msgstr "Résistance de SEN à GND = %6.0f Ohm"
 
-#: ../eyes-junior/croplus.py:537
+#: ../eyes-junior/croplus.py:541
 #, python-format
 msgid "%5.0f Ohm"
 msgstr "%5.0f Ohm"
 
-#: ../eyes-junior/croplus.py:581
+#: ../eyes-junior/croplus.py:585
 msgid "expEYES Junior NOT found. Bad connection or another program using it"
 msgstr ""
 "expEYES Junior PAS trouvé. Mauvaise connexion, ou blocage par un autre "
 "programme"
 
-#: ../eyes-junior/croplus.py:584
+#: ../eyes-junior/croplus.py:588
 #, python-format
 msgid "Four Channel CRO+ found expEYES-Junior on %s"
 msgstr "Oscillo 4 canaux expEYES-Junior trouvé sur %s"
 
-#: ../eyes-junior/croplus.py:622
+#: ../eyes-junior/croplus.py:626
 msgid "Move UP"
 msgstr "Monter"
 
-#: ../eyes-junior/croplus.py:622
+#: ../eyes-junior/croplus.py:626
 msgid "CENTER"
 msgstr "Centrer"
 
-#: ../eyes-junior/croplus.py:622
+#: ../eyes-junior/croplus.py:626
 msgid "Move DOWN"
 msgstr "Descendre"
 
-#: ../eyes-junior/croplus.py:638
+#: ../eyes-junior/croplus.py:642
 msgid "Trig level"
 msgstr "Seuil (trigger)"
 
-#: ../eyes-junior/croplus.py:674
+#: ../eyes-junior/croplus.py:678
 msgid "Setting Squarewaves"
 msgstr "Réglage des signaux carrés"
 
-#: ../eyes-junior/croplus.py:680
+#: ../eyes-junior/croplus.py:684
 msgid "Hz. dphi="
 msgstr "Hz. dϕ ="
 
-#: ../eyes-junior/croplus.py:693
+#: ../eyes-junior/croplus.py:697
 msgid "BOTH"
 msgstr "1&2"
 
-#: ../eyes-junior/croplus.py:701
+#: ../eyes-junior/croplus.py:705
 msgid "Set PVS ="
 msgstr "Régler PVS ="
 
-#: ../eyes-junior/croplus.py:712
+#: ../eyes-junior/croplus.py:716
 msgid "Set State"
 msgstr "Régler l'état"
 
-#: ../eyes-junior/croplus.py:723
+#: ../eyes-junior/croplus.py:727
 msgid "Measure C on IN1"
 msgstr "Mesure de C sur IN1"
 
-#: ../eyes-junior/croplus.py:724
+#: ../eyes-junior/croplus.py:728
 msgid "Measure R on SEN"
 msgstr "Mesure de R sur SEN"
 
-#: ../eyes-junior/croplus.py:760
+#: ../eyes-junior/croplus.py:764
 msgid "SCAN"
 msgstr "SCAN"
 
-#: ../eyes-junior/croplus.py:762
+#: ../eyes-junior/croplus.py:766
 msgid "XMG"
 msgstr "XMG"
 
-#: ../eyes-junior/croplus.py:777
+#: ../eyes-junior/croplus.py:781
 msgid "Search Hardware"
 msgstr "Chercher le matériel"
 
-#: ../eyes-junior/croplus.py:781
+#: ../eyes-junior/croplus.py:785
 msgid ""
 "Could not open expEYES Junior. Bad connection or another program using it"
 msgstr ""
 "expEYES Junior n'a pas pu être ouvert. Mauvaise connexion ou blocage par un "
 "autre programme"
 
-#: ../eyes-junior/croplus.py:785
+#: ../eyes-junior/croplus.py:789
 #, python-format
 msgid "CRO Plus found expEYES-Junior on %s (firmware: %s)"
 msgstr "CRO PLus a trouvé expEYES-Junior sur %s (microcode : %s)"
 
-#: ../eyes-junior/croplus.py:789
+#: ../eyes-junior/croplus.py:793
 msgid "Select Experiment"
 msgstr "Choisir l'expérience"
 
-#: ../eyes-junior/croplus.py:790
+#: ../eyes-junior/croplus.py:794
 msgid "Control PVS"
 msgstr "Contôle de PVS"
 
-#: ../eyes-junior/croplus.py:802
+#: ../eyes-junior/croplus.py:806
 msgid "Capture Burst of Sound"
 msgstr "Capture d'impulsion sonore"
 
-#: ../eyes-junior/croplus.py:803 ../eyes-junior/driven-pendulum.py:30
+#: ../eyes-junior/croplus.py:807 ../eyes-junior/driven-pendulum.py:30
 msgid "Driven Pendulum"
 msgstr "Pendule excité"
 
-#: ../eyes-junior/croplus.py:807
+#: ../eyes-junior/croplus.py:811
 msgid "Stroboscope"
 msgstr "Stroboscope"
 
-#: ../eyes-junior/croplus.py:809
+#: ../eyes-junior/croplus.py:813
 msgid "HY-SRF05 Echo module"
 msgstr "Module d'écholocation HY-SRF05"
 
@@ -3659,6 +3668,11 @@ msgstr "µHOPE init()"
 #: ../microhope/mh-ide.py:808
 msgid "creating microhope environment"
 msgstr "Création d'un environnement microHope"
+
+#~ msgid "%s Fourier transform done, Data saved to \"fft.dat\""
+#~ msgstr ""
+#~ "Transformée de Fourier de %s terminée, données enregistrées dans \"FFT.dat"
+#~ "\"."
 
 #, fuzzy
 #~ msgid "Calibrted Reference. Vref =%5.0f"

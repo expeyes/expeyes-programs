@@ -118,8 +118,12 @@ def show_ftr(ch):
         eyeplot.plot(xa*1000,ya,
                      title = _('Fourier Transform,power spectrum'),
                      xl = _('Freq'), yl = _('Amp'))
-        msg(_('%s Fourier transform done, Data saved to "fft.dat"')
+        eyeplot.plot(t,v,
+                     title = _('Original signal resampled'),
+                     xl = _('ms'), yl = _('V'))
+        msg(_('%s Fourier transform done, Data saved to "cro.dat" and "fft.dat"')
             % (channels[seltag]))
+        p.save([[t,v]], 'cro.dat')
         p.save([[xa,ya]],'fft.dat')
 
 def msg(s, col='blue'):

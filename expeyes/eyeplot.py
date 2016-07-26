@@ -17,12 +17,12 @@ if sys.version_info.major==3:
 else:
         from Tkinter import *
 
-AXWIDTH = 30   # width of the axis display canvas
-AYWIDTH = 50   # width of the axis display canvas
-NUMDIV  =5
-NGRID1	= 10
-NGRID2  = 10
-BGCOL	  = 'white'
+AXWIDTH   = 30   # width of the axis display canvas
+AYWIDTH   = 50   # width of the axis display canvas
+NUMDIV    =5
+NGRID1    = 10
+NGRID2    = 10
+BGCOL     = 'white'
 PLOTBGCOL = 'white'
 LINEWIDTH = 1.5
 LINECOL   = ['black', 'red', 'blue', 'magenta', 'cyan', 'green', 'yellow', 'orange','gray', 'gray2']
@@ -43,7 +43,7 @@ class graph:
     pad = 0
     bordcol = 'grey'     # Border color
     gridcol = 'grey'     # Grid color
-    bgcolor = '#dbdbdb'  # background color for all 
+    bgcolor = '#dbdbdb'  # background color for all
     plotbg  = 'ivory'    # Plot window background color
     textcolor = 'blue'
     traces = []
@@ -56,15 +56,15 @@ class graph:
     xlabel = _('mSec')			# Default axis lables
     ylabel = 'V'
     markers = []
-       
+
     def __init__(self, parent, width=400., height=300.,color = 'white', labels = True, bip=True):
         self.parent = parent
         self.labels = labels
-        self.SCX = width 
+        self.SCX = width
         self.SCY = height
         self.plotbg = color
         self.bipolar = bip
-        
+
         if labels == False:
             f = Frame(self.parent, bg = 'black', borderwidth = self.border, relief = FLAT)
             f.pack(side=TOP, anchor = S)
@@ -130,13 +130,13 @@ class graph:
             x.append(k[0])
             y.append(k[1])
         return x,y
-    
+
     """--------------------------------------------------"""
 
     def setWorld(self, x1, y1, x2, y2, xlabel, ylabel):
         '''
         Calculates the scale factors for world to screen coordinate
-        transformation. 
+        transformation.
         '''
         self.xlabel = xlabel
         self.ylabel = ylabel
@@ -145,7 +145,7 @@ class graph:
         self.xmax = float(x2)
         self.ymax = float(y2)
         self.xscale = (self.xmax - self.xmin) / (self.SCX)
-        self.yscale = (self.ymax - self.ymin) / (self.SCY)   
+        self.yscale = (self.ymax - self.ymin) / (self.SCY)
         self.mark_labels()
         if self.labels == True:
             return
@@ -236,13 +236,13 @@ class graph:
         x = self.xmin + dx
         print (self.ymin)
         if self.bipolar == True:
-            ip = self.w2s((self.xmax/2,self.xmax/2),(self.ymin,self.ymax))  
+            ip = self.w2s((self.xmax/2,self.xmax/2),(self.ymin,self.ymax))
             self.canvas.create_line(ip, fill=self.gridcol, width=LINEWIDTH)
-            ip = self.w2s((self.xmin,self.xmax),(self.ymax/2,self.ymax/2))  
+            ip = self.w2s((self.xmin,self.xmax),(self.ymax/2,self.ymax/2))
             self.canvas.create_line(ip, fill=self.gridcol, width=LINEWIDTH)
-		
+
             while x < self.xmax:
-                ip = self.w2s((x,x),(self.ymin,self.ymax))  
+                ip = self.w2s((x,x),(self.ymin,self.ymax))
                 self.canvas.create_line(ip, fill=self.gridcol, dash= (1,int(dy/NGRID2)-1), width=LINEWIDTH)
                 x = x +dx
         y = self.ymin + dy
@@ -272,13 +272,13 @@ class graph:
             while n > 10:
                 n = n/10
                 div = div + 1
-            res = (int(n)+1)* 10**div		
+            res = (int(n)+1)* 10**div
             return sign * float(res)
         elif n <= 10:
             while n < 1:
                 n = n*10
                 div = div + 1
-            res = (int(n)+1)	
+            res = (int(n)+1)
         return sign * float(res) / 10**div
 
     def auto_scale(self, x,y):
@@ -327,41 +327,41 @@ class graph:
         for t in self.traces:
             self.canvas.delete(t)
         self.traces = []
-        
+
     """---------------------- graph class end -------------------"""
 
-    def plot(x,y,title = None, xl = None, yl = None):
-        # plot the x,y coordinate list to a new , non-blocking, window.
-        if title==None:
-            title=_('EYES plot')
-        if xl==None:
-            xl=_('mS')
-        if yl==None:
-            yl=_('V')
-        w = Tk()
-        w.title(title)
-        g = graph(w, width=600, height=400)
-        g.xlabel = xl
-        g.ylabel = yl
-        g.auto_scale(x,y)
-        g.line(x,y)
-        return g
+def plot(x,y,title = None, xl = None, yl = None):
+    # plot the x,y coordinate list to a new , non-blocking, window.
+    if title==None:
+        title=_('EYES plot')
+    if xl==None:
+        xl=_('mS')
+    if yl==None:
+        yl=_('V')
+    w = Tk()
+    w.title(title)
+    g = graph(w, width=600, height=400)
+    g.xlabel = xl
+    g.ylabel = yl
+    g.auto_scale(x,y)
+    g.line(x,y)
+    return g
 
 
     """------ popup window to displaying image ----------"""
-    
+
 def abs_path():	   # Returns the absolute path of the python program
     name = sys.argv[0]
     dirname = os.path.dirname(name)
     print (dirname)
     if dirname != '':
-        return os.path.dirname(name) + os.sep 
+        return os.path.dirname(name) + os.sep
     else:
         return '.' + os.sep
 
 img = None
 def pop_image(sch, title = _('Schematic')):
-    global img   	
+    global img
     try:
         import Image, ImageTk, tkFont
         top = Toplevel()
