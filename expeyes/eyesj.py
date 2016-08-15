@@ -233,6 +233,7 @@ class Eyesjun:
         @parameter ival an integer lesser than 65536
         """
         delay=0.005       # This delay is for MCP2200 + uC
+        ival=int(ival)
         self.fd.write(chr(ival & 255))
         time.sleep(delay)
         self.fd.write(chr(ival >> 8))
