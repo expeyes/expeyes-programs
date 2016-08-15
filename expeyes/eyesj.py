@@ -589,6 +589,7 @@ class Eyesjun:
         @param src a channel number for the source
         @param dst a channel number for the destination
         '''
+        ncycle=1 # default value denoting an error
         if cmd == MULTIR2R:
             if src not in [0,3,4,5,6,7]:
                 print (_('Pin should be digital input capable: 0,3,4,5,6 or 7'))
