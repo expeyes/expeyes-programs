@@ -1,5 +1,0 @@
-pushd /usr/share/expeyes/firmware
-./set_fuse.sh
-./upload.sh mca
-python mca-test.py
-
