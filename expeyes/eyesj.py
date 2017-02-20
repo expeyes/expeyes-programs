@@ -134,7 +134,7 @@ APULSELT     = chr(8)
 BUFSIZE      = 1800       # status + adcinfo + 1800 data
 
 #Serial devices to search for EYES hardware.  
-linux_list = ['/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2', '/dev/ttyACM3', '/dev/ttyAMA0']  
+linux_list = ['/dev/ttyACM0','/dev/ttyACM1','/dev/ttyACM2','/dev/ttyUSB0', '/dev/ttyUSB1','/dev/ttyACM3', '/dev/ttyAMA0']  
 
 def open(dev = None):
     '''
@@ -148,7 +148,7 @@ def open(dev = None):
     print (_('Could not find EYES Junior hardware'))
     print (_('Check the connections.'))
 
-BAUDRATE = 115200                 # Serial communication
+BAUDRATE = 500000 #115200			# Serial communication
 
 class Eyesjun:
     fd = None                     # init should fill this
@@ -171,6 +171,7 @@ class Eyesjun:
         TODO : Supporting more than one EYES on a PC to be done. The question is how to find out 
         whether a port is already open or not, without doing any transactions to it.
         """
+
         if os.name == 'nt':       # for Windows machines, search COM1 to COM255
             device_list = []
             for k in range(1,255):
@@ -191,6 +192,15 @@ class Eyesjun:
                 handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3) #8,1,no parity
             except:
                 continue
+
+            #For Ubuntu 13.10 and above, sometimes opening fails.
+            #Strange, but closing and re-opening with
+            #another baudrate solves the problems.
+            #The following 4 lines added for that
+            handle.close()
+            handle = serial.Serial(dev, 38400, stopbits=1, timeout = 0.3)   # open with 38400
+            handle.close()
+            handle = serial.Serial(dev, BAUDRATE, stopbits=1, timeout = 0.3) #back to 115200
             
             self.msg = _('Port %s is existing ') %dev
             if handle.isOpen() != True:
@@ -213,11 +223,12 @@ class Eyesjun:
                 return                  # Successful return
             else:                       # If it is not our device close the file
                 handle.close()
-            print (self.msg)
+            #print (self.msg)
             print (_('No EYES Junior hardware detected'))
             self.fd = None
         return
-    #---------------------------------------------------------------------------
+    
+#---------------------------------------------------------------------------
     def sendByte(self, bval):
         """
         sends one byte to the interface
@@ -225,7 +236,6 @@ class Eyesjun:
         """
         self.fd.write(bval)
         time.sleep(0.005) # This delay is for MCP2200 + uC
-        return
     
     def sendInt(self,ival):
         """
@@ -258,10 +268,10 @@ class Eyesjun:
     """------------------------EEPROM---------------------"""
     def eeprom_write(self, addr, data):
         """
-        writes a few bytes to the EEPROM
+        writes a 16 bit number to the EEPROM
         @param addr a small integer
         @param byte an integer (16 bits)
-        @return 1 (number of written words)
+        @return 1 (number of written words) or None
         """
         self.sendByte(WREEPROM)
         self.sendByte(chr(addr))
@@ -275,9 +285,9 @@ class Eyesjun:
 
     def eeprom_read(self, addr):
         """
-        read data from the EEPROM
+        read a 16 bit number from the EEPROM
         @param addr a small integer (8bit)
-        @return an integer value (16 bits)
+        @return an integer value (16 bits) or None on error
         """
         self.sendByte(RDEEPROM)
         self.sendByte(chr(addr))
@@ -291,7 +301,13 @@ class Eyesjun:
         else:
             return ord(res[0]) | (ord(res[1]) << 8)
 
-    def store_float(self, addr, data): # store a floating point number to EEPROM
+    def store_float(self, addr, data):
+        '''
+        Writes a floating point number to EEPROM. 
+        @param addr a small integer
+        @param data a floating point number
+        @return None or 1
+        '''
         ss = struct.pack('f', data)
         if sys.version_info.major == 3:
             lo = ss[0] | (ss[1] << 8)
@@ -306,7 +322,14 @@ class Eyesjun:
         return 1
 
     def restore_float(self, addr): # restore a floating point number from EEPROM
+        '''
+        Reads a floating point number from EEPROM. 
+        @param addr a small integer
+        @return a float value, or None on error
+        '''
         lo = self.eeprom_read(addr)
+        if lo == None:
+            return None
         hi = self.eeprom_read(addr+1)
         data = (hi << 16) | lo
         ss = struct.pack('I', data)
@@ -320,8 +343,23 @@ class Eyesjun:
     ASOC = 8      # Socket cap IN1
     ACCF = 10     # Capacitance error factor
     ARP  = 12     # Pullup Resistance 
+    AREF = 14     # Reference voltage
+
+    def storeCF_ref(self, ref):
+        '''
+        Stores the calibration factor of REF to EEPROM. 
+        @param ref the value of the reference voltage
+        @return None or 1
+        '''
+        if self.store_float(self.AREF, ref) == None:
+            return None
+        return 1
+
 
     def storeCF_a1a2(self, m1,c1,m2,c2): # slope & intercept for A1 and A2
+        '''
+        Stores the four calibration factors, of A1&A2, to EEPROM. Returns None or 4
+        '''
         if self.store_float(self.AM1, m1) == None:
             return None
         self.store_float(self.AC1, c1)
@@ -330,27 +368,54 @@ class Eyesjun:
         return 4                         # Number of items written
 
     def storeCF_cap(self, soc, ccf):     #Socket capacitance and error factor
+        '''
+        Stores the two calibration factors of IN1 to EEPROM. Returns None or 2
+        '''
         if self.store_float(self.ASOC, soc) == None:
             return None
         self.store_float(self.ACCF, ccf)
         return 2
 
     def storeCF_sen(self, r):            # pullup resistor value
+        '''
+        Stores the calibration factor of SEN to EEPROM. Returns None or 1
+        '''
         if self.store_float(self.ARP, r) == None:
             return None
         return 1
 
-    def load_calibration(self):
+    def load_calibration(self):        # calibration factors from EEPROM
+        try:
+            if int(self.version[2]) >= 2:
+                v = self.restore_float(self.AREF)
+                if 4.930 < v < 5.060:
+                    self.refval = v
+                else:
+                    print _('Invalid Reference value, using 5.000V'), v
+        except:
+            print _('Could not load Reference voltage')
+
+        self.DACMAX = self.refval  # DAC upper limit
+        self.DACM = 4095.0/self.refval
+
+        # Recalculate scale factors as per the stored reference voltage
+        self.m12 = [self.refval/4095] + [2*self.refval/4095]*2 + [self.refval/4095]*10
+        self.m8 =  [self.refval/255]  + [2*self.refval/255] *2 + [self.refval/255] *10
+        self.c = [0.0] + [-self.refval]*2 + [0.0]*10
+        #print self.m12[1], self.m12[2]
+        #print self.c[1], self.c[2]
+
         try:
             m1 = self.restore_float(self.AM1)
             c1 = self.restore_float(self.AC1)
             m2 = self.restore_float(self.AM2)
             c2 = self.restore_float(self.AC2)
-            m = 10.0/4095
-            c = -5.0
-            dm = m * 0.02            # maximum 2% deviation
-            dc = 5 * 0.02
-            # print (m1,c1,m2,c2, dm, dc)
+            #print (m1,c1,m2,c2, self.refval/4095)
+            m = 2*self.refval/4095
+            c = -self.refval
+            #print m,c
+            dm = m * 0.05            # maximum 5% deviation
+            dc = 5 * 0.05
             if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:
                 self.m12[1] = m1
                 self.c[1] = c1
@@ -367,7 +432,7 @@ class Eyesjun:
         try:
             soc = self.restore_float(self.ASOC)
             ccf = self.restore_float(self.ACCF)
-            if (.8 < ccf < 1.2) and (20 < soc < 50):
+            if (.7 < ccf < 1.3) and (20 < soc < 50):
                 self.cap_calib = ccf
                 self.socket_cap = soc
                 #print (_('IN1 Calibration :'), ccf, soc)
@@ -378,7 +443,7 @@ class Eyesjun:
 
         try:
             r = self.restore_float(self.ARP)
-            if 4950 < r < 5250:
+            if 4930 < r < 5250:
                 self.sen_pullup = r
                 #print (_('SEN Pullup :'), r)
             else:
@@ -390,7 +455,8 @@ class Eyesjun:
     #------------------------- Infrared comm. ----------------
     def irsend1(self, d1):
         """
-        send one byte by IR
+        Sends one byte of data over SQR1, using Infrared transmission protocol
+        Reception tested using a program running on ATmega32.(refer to microHOPE)
         @param d1 a small integer (8bit)
         """
         self.sendByte(IRSEND1)
@@ -404,7 +470,8 @@ class Eyesjun:
 
     def irsend4(self, d1,d2,d3,d4):
         """
-        send four bytes by IR
+        Sends 4 bytes over SQR1, using Infrared transmission protocol used in TVs etc.
+        Need to be tested properly.
         @param d1 a small integer (8bit)
         @param d2 a small integer (8bit)
         @param d3 a small integer (8bit)
@@ -422,7 +489,7 @@ class Eyesjun:
             return
         return 1
 
-    #--------------------------------------CTMU -------------
+#--------------------------------------CTMU -------------
     ctmui = [550, 0.55, 5.5, 55.0]
     def nano_delay(self, i):
         '''
@@ -483,11 +550,10 @@ class Eyesjun:
 
     def measure_cap_raw(self, ctmin = 10):
         '''
-        Measures the capacitance connected between IN1 and GND. Stray
-        capacitance should be subtracted from the measured
-        value. Measurement is done by charging the capacitor with 5.5 uA
-        for a given time interval. Any error in the value of current
-        is corrected by calibrating.
+        Measures the capacitance connected between IN1 and GND. Stray capacitance 
+        should be subtracted from the measured value. Measurement is done by charging 
+        the capacitor with 5.5 uA for a given time interval. Any error in the value of
+        current is corrected by calibrating.
         '''
         for ctime in range(ctmin, 1000, 10):
             v = self.measure_cv(3, ctime, 5.5)   # 5.5 uA range is chosen
@@ -515,7 +581,7 @@ class Eyesjun:
         '''
         v = self.get_voltage(5)
         if .1 < v < 4.9:
-            return 1.0 * self.sen_pullup * v /(5-v)
+            return self.sen_pullup * v /(self.refval-v)
         else:
             self.msg = _('Resistance NOT in 100 Ohm to 100 kOhm range')
             print (_('Resistance NOT in 100 Ohm to 100 kOhm range'))
@@ -524,8 +590,7 @@ class Eyesjun:
     def set_current(self, ch, i): # channel 3 or 4, 0 means stop CTMU
         '''
         Sets CTMU current 'i' on a channel 'ch' and returns the voltage measured
-        across the load. Allowed values of current are .55, 5.5, 55 and
-        550 uAmps.
+        across the load. Allowed values of current are .55, 5.5, 55 and 550 uAmps.
         @param ch channel number
         @param i value of the current
         '''
@@ -561,9 +626,9 @@ class Eyesjun:
 
     def read_temp(self):
         '''
-        Reads the temperature of uC, currently of no use. Have to see
-        whether this can be used for correcting the drift of the 5V
-        regulator with temperature.
+        Reads the temperature of uC, currently of no use.
+        Have to see whether this can be used for correcting
+        the drift of the 5V regulator with temperature.
         '''
         self.sendByte(READTEMP)
         res = self.fd.read(1)
@@ -583,13 +648,12 @@ class Eyesjun:
     def tim_helper(self, cmd, src, dst):
         '''
         Helper function for all Time measurement calls. Command,
-        Source and destination pins are imputs.  Returns time in
-        microseconds, -1 on error.
+        Source and destination pins are inputs.
+        Returns time in  microseconds, -1 on error.
         @param cmd a bytes of length 1
         @param src a channel number for the source
         @param dst a channel number for the destination
         '''
-        ncycle=1 # default value denoting an error
         if cmd == MULTIR2R:
             if src not in [0,3,4,5,6,7]:
                 print (_('Pin should be digital input capable: 0,3,4,5,6 or 7'))
@@ -636,32 +700,37 @@ class Eyesjun:
 
     def f2ftime(self, pin1, pin2):
         '''
-        Time between two falling edges. The pins must be distinct. For same pin, use multi_r2rtime
+        Time between two falling edges. The pins must be distinct.
+        For same pin, use multi_r2rtime
         '''
         return self.tim_helper(F2FTIME, pin1, pin2)
 
     def r2ftime(self, pin1, pin2):
         '''
-        Time between a rising edge to a falling edge. The pins could be same or distinct.
+        Time between a rising edge to a falling edge. 
+        The pins could be same or distinct.
         '''
         return self.tim_helper(R2FTIME, pin1, pin2)
 
     def f2rtime(self, pin1, pin2):
         '''
-        Time between a falling edge to a rising edge. The pins could be same or distinct.
+        Time between a falling edge to a rising edge. 
+        The pins could be same or distinct.
         '''
         return self.tim_helper(F2RTIME, pin1, pin2)
 
     def multi_r2rtime(self, pin, skip=0):
         '''
-        Time between rising edges, could skip desired number of edges in between. (pin, 9) will give time required for
+        Time between rising edges, could skip desired number of edges in between.
+        (pin, 9) will give time required for
         10 cycles of a squarewave, increases resolution.
         '''
         return self.tim_helper(MULTIR2R, pin, skip)
 
     def get_frequency(self, pin):
         '''
-        This function measures the frequency of an external 0 to 5V PULSE on digital inputs, by calling multi_r2rtime().
+        This function measures the frequency of an external 0 to 5V PULSE
+        on digital inputs, by calling multi_r2rtime().
         '''
         t = self.multi_r2rtime(pin)
         if t < 0:
@@ -729,8 +798,8 @@ class Eyesjun:
     """------------------------- Digital I/O-----------------------------"""
     def set_state(self, pin, state):
         '''
-        Sets the status of Digital outputs SQR1, SQR2, OD1 or CCS. It
-        will work on SQR1 & SQR2 only if the frequency is set to zero.
+        Sets the status of Digital outputs SQR1, SQR2, OD1 or CCS.
+        It will work on SQR1 & SQR2 only if the frequency is set to zero.
         @param pin pin number
         @param state a value 0 or 1
         '''
@@ -773,7 +842,6 @@ class Eyesjun:
             return 
         res = self.fd.read(2)
         raw = struct.unpack('H', res)          # 16 bit data in byte array
-        print('%x'%raw)
         return raw[0]
 
     """------- Square Wave Generation & Measuring the Frequency ----------"""
@@ -802,35 +870,40 @@ class Eyesjun:
 
     def set_sqr1_pwm(self, dc, resol=14):        # Duty cycle, resolution 14 bits (f = 488Hz) by default
         '''
-        Sets 488 Hz PWM on SQR1. Duty cycle is specified in percentage. The third argument, PWM resolution, is 
+        Sets 488 Hz PWM on SQR1. Duty cycle is specified in percentage.
+        The third argument, PWM resolution, is 
         14 bits by default. Decreasing this by one doubles the frequency.
         '''
         return self.set_pwm(0,dc,resol)
 
     def set_sqr2_pwm(self, dc, resol = 14):    
         '''
-        Sets 488 Hz PWM on SQR2. Duty cycle is specified in percentage. The third argument, PWM resolution, is 
+        Sets 488 Hz PWM on SQR2. Duty cycle is specified in percentage.
+        The third argument, PWM resolution, is 
         14 bits by default. Decreasing this by one doubles the frequency.
         '''
         return self.set_pwm(1,dc,resol)
 
     def set_sqr1_dc(self, volt):            
         '''
-        PWM DAC on SQR1. Resolution is 10 bits (f = 7.8 kHz) by default. External Filter is required to get the DC
+        PWM DAC on SQR1. Resolution is 10 bits (f = 7.8 kHz) by default.
+        External Filter is required to get the DC
         The voltage can be set from 0 to 5 volts.
         '''
-        return 1.0*self.set_pwm(0, volt * 20.0, 10)/20  # 100% means 5 volts., 10 bit resolution, 8kHz 
+        return self.set_pwm(0, volt * 20.0, 10)/20  # 100% => 5V, 10 bit res, 8kHz
 
     def set_sqr2_dc(self, volt):    
         '''
-        PWM DAC on SQR2. Resolution is 10 bits (f = 7.8 kHz) by default. External Filter is required to get the DC
+        PWM DAC on SQR2. Resolution is 10 bits (f = 7.8 kHz) by default.
+        External Filter is required to get the DC
         The voltage can be set from 0 to 5 volts.
         '''
-        return 1.0*self.set_pwm(1, volt * 20.0, 10)/20   #5V correspods to 100%
+        return self.set_pwm(1, volt * 20.0, 10)/20   #5V correspods to 100%
 
     def set_osc(self, chan, freq):        # Freq in Hertz, osc 1 or 2
         '''
-        Sets the output frequency of the SQR1 (chan=8) or SQR2 (chan = 9). The function returns actual freqency set.
+        Sets the output frequency of the SQR1 (chan=8) or SQR2 (chan = 9).
+        The function returns actual freqency set.
         '''
         if chan != 8 and chan != 9:
             self.msg = _('Invalid channel number')
@@ -849,7 +922,7 @@ class Eyesjun:
             for k in range(4):             # Find the optimum scaling, OCR value
                 if per < mtvals[k]*50000:
                     TCKPS = k
-                    OCRS = 1.0*per/mtvals[k]
+                    OCRS = per/mtvals[k]
                     OCRS = int(OCRS+0.5)
                     freq = 1./(mtvals[k]*OCRS)
                     #print(freq,'--', k, OCRS, 1./(mtvals[k]*OCRS), TCKPS)
@@ -871,21 +944,24 @@ class Eyesjun:
 
     def set_sqr1(self, freq):
         '''
-        Sets the frequency of SQR1 (between .7Hz and 200kHz). All intermediate values are not possible.
+        Sets the frequency of SQR1 (between .7Hz and 200kHz).
+        All intermediate values are not possible.
         Returns the actual value set.
         '''
         return self.set_osc(8, freq)
 
     def set_sqr2(self, freq):
         '''
-        Sets the frequency of SQR2 (between .7Hz and 200kHz). All intermediate values are not possible.
+        Sets the frequency of SQR2 (between .7Hz and 200kHz).
+        All intermediate values are not possible.
         Returns the actual value set.
         '''
         return self.set_osc(9, freq)
 
     def set_sqrs(self, freq, diff=0):        # Freq in Hertz, phase difference in % of T
         '''
-        Sets the output frequency of both SQR1 & SQR2. The function returns actual value set. The second argument is the
+        Sets the output frequency of both SQR1 & SQR2.
+        The function returns actual value set. The second argument is the
         phase difference between them  in percentage.
         '''
         if freq == 0:         # Disable both Square waves
@@ -908,7 +984,7 @@ class Eyesjun:
         for k in range(4):                # Find the optimum scaling, OCR value
             if per < mtvals[k]*50000:
                 TCKPS = k
-                OCRS = 1.0*per/mtvals[k]
+                OCRS = per/mtvals[k]
                 OCRS = int(OCRS+0.5)
                 freq = 1./(mtvals[k]*OCRS)
                 #print(freq,'--', k, OCRS, 1./(mtvals[k]*OCRS))
@@ -917,7 +993,7 @@ class Eyesjun:
             self.msg = _('Invalid Freqency')
             print(_('Invalid Freqency'))
             return 
-        TG = int(1.0*diff*OCRS/100 +0.5)
+        TG = int(diff*OCRS/100 +0.5)
         if TG == 0: TG = 1        # Need to examine this
         #print('TCKPS ', TCKPS, 'ocrs ', OCRS, TG)
 
@@ -952,7 +1028,7 @@ class Eyesjun:
 
     def read_adc(self, ch):   # Sleep mode conversion
         '''
-        Reads the specified ADC channel, Low level routine.
+        Reads the specified ADC channel, returns a number from 0 to 4095. Low level routine.
         @param ch channel number
         @return a value between 0 ans 4095
         '''
@@ -975,7 +1051,7 @@ class Eyesjun:
 
     def set_voltage(self, v):
         '''
-        Sets the PVS output. range is from -5 to + 5 volts. Reads the actual value to apply correction. 
+        Sets the PVS output. range is from 0 to + 5 volts. Reads the actual value to apply correction. 
         Returns the voltage readback of the voltage at PVS.
         '''
         if v < 0 or v > 5.0:
@@ -990,13 +1066,13 @@ class Eyesjun:
             err = goal - isv
             #print('iv & isv err', iv, isv, err    , k)
             if abs(err) <= 1: break
-            iv = iv + int(err/2)                # Even if it exceeds 4095, write_dac() will fix it
+            iv = iv + err//2                # Even if it exceeds 4095, write_dac() will fix it
         sv = self.get_voltage(12)               # The voltage actually set
         return sv
 
-    def set_adcref(self, option):
+    def set_adcref(self, option):  # 0 => Vdd, else external +Vref option
         '''
-        Sets the ADC reference option. Vdd ot external +Vref
+        Sets the ADC reference option. Vdd or external +Vref
         @param option 0 means Vdd, else means external +Vref
         @return option's value
         '''
@@ -1011,7 +1087,7 @@ class Eyesjun:
 
     def read_adcNS(self, ch):   # No Sleep mode conversion
         '''
-        Reads the specified ADC channel, Low level routine.
+        Reads the specified ADC channel, returns a number from 0 to 4095. Low level routine.
         @param ch channel number
         @return a value from 0 to 4095.
         '''
@@ -1043,7 +1119,6 @@ class Eyesjun:
             print(_('Argument error'))
             return
         iv = self.read_adc(ch)
-        #print('get_v: iv = ', iv)
         v = self.m12[ch] * iv + self.c[ch]
         return v
 
@@ -1098,7 +1173,7 @@ class Eyesjun:
         return (time.time(), self.get_voltageNS(ch))
 
 
-    def capture(self, ch, ns, tg):
+    def capture(self, ch, ns, tg):                # datasize is 1 byte
         '''
         makes a capture of data from the ADC with 8 bits precision.
         @param ch channel number,
@@ -1109,7 +1184,6 @@ class Eyesjun:
         if tg < 4:                  # Minimum time required
             self.msg = _('Minimum Timegap is 4 us')
             return
-        ns=int(ns)
         self.sendByte(CAPTURE)
         self.sendByte(chr(ch))
         self.sendInt(ns)
@@ -1136,7 +1210,7 @@ class Eyesjun:
         return ta,va
 
 
-    def capture_hr(self, ch, ns, tg):
+    def capture_hr(self, ch, ns, tg):                # datasize is 2 byte
         '''
         Captures data in high resolution (2 bytes, with 12 significant bits)
         @param ch channel number
@@ -1147,7 +1221,6 @@ class Eyesjun:
         if tg < 4:
             self.msg = _('Minimum Timegap is 4 us')
             return
-        ns=int(ns)
         self.sendByte(CAPTURE_HR)
         self.sendByte(chr(ch))
         self.sendInt(ns)
@@ -1174,7 +1247,7 @@ class Eyesjun:
         return ta,va
 
 
-    def capture2(self, cha, chb, ns, tg):
+    def capture2(self, cha, chb, ns, tg):                # 2 channels, datasize is 1 byte
         '''
         Captures from 2 channels, data precision is 8 bits
         @param cha first channel
@@ -1186,7 +1259,6 @@ class Eyesjun:
         if tg < 8:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
-        ns=int(ns)
         self.sendByte(CAPTURE2)
         self.sendByte(chr(cha))
         self.sendByte(chr(chb))
@@ -1216,7 +1288,7 @@ class Eyesjun:
             vba.append(raw[2*i +1] * self.m8[chb] + self.c[chb])
         return taa,vaa,tba,vba
 
-    def capture2_hr(self, cha, chb, ns, tg):
+    def capture2_hr(self, cha, chb, ns, tg):        # 2 channels, datasize is 2 byte
         '''
         Captures from 2 channels, data precision is 12 bits
         @param cha first channel
@@ -1228,7 +1300,6 @@ class Eyesjun:
         if tg < 8:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
-        ns=int(ns)
         self.sendByte(CAPTURE2_HR)
         self.sendByte(chr(cha))
         self.sendByte(chr(chb))
@@ -1258,7 +1329,7 @@ class Eyesjun:
             vba.append(raw[2*i +1] * self.m12[chb] + self.c[chb])
         return taa,vaa,tba,vba
 
-    def capture3(self, ch1, ch2, ch3, ns, tg):
+    def capture3(self, ch1, ch2, ch3, ns, tg):                # 3 channels, datasize is 2 byte
         '''
         Captures from 2 channels, data precision is 12 bits
         @param ch1 first channel
@@ -1272,7 +1343,6 @@ class Eyesjun:
             self.msg = _('Minimum Timegap is (4*number of channels)usec')
             return
         ch12 = (ch2 << 4) | ch1      # first two channels packed in 1 byte
-        ns=int(ns)
         self.sendByte(CAPTURE3)
         self.sendByte(chr(ch12))
         self.sendByte(chr(ch3))
@@ -1308,7 +1378,7 @@ class Eyesjun:
         return taa,vaa, tba,vba, tca,vca
 
 
-    def capture4(self, ch1, ch2, ch3, ch4, ns, tg):
+    def capture4(self, ch1, ch2, ch3, ch4, ns, tg):                # 4 channels, datasize is 1 byte
         '''
         Captures from 2 channels, data precision is 12 bits
         @param ch1 first channel
@@ -1324,7 +1394,6 @@ class Eyesjun:
             return
         ch12 = (ch2 << 4) | ch1        # first two channels packed in 1 byte
         ch34 = (ch4 << 4) | ch3        # other two channels packed in 1 byte
-        ns=int(ns)
         self.sendByte(CAPTURE4)
         self.sendByte(chr(ch12))
         self.sendByte(chr(ch34))
@@ -1482,7 +1551,7 @@ class Eyesjun:
         '''
         Sets the 'pulse_width' parameter for pulse2rtime() command. 
         Also used by usound_time() and the elable_pulse_high/low() functions
-        @param width an integer value (microseconds
+        @param width an integer value (microseconds)
         @return the value of width
         '''
         if width < 1 or width > 500:
@@ -1539,14 +1608,14 @@ class Eyesjun:
         vsum = 0.0
         for v in va:
             vsum += v**2
-        v = 1.0*vsum / len(va)
+        v = vsum / len(va)
         return math.sqrt(v)
 
     def mean(self,va):
         vsum = 0.0
         for v in va:
             vsum += v
-        v = 1.0*vsum / len(va)
+        v = vsum / len(va)
         return v
 
     def save(self, data, filename = 'plot.dat'):
@@ -1558,6 +1627,7 @@ class Eyesjun:
         for xy in data:
             for k in range(len(xy[0])):
                 f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
+                f.write('\n')
         f.close()
 
     def grace(self, data, xlab = '', ylab = '', title = ''):
@@ -1575,8 +1645,7 @@ class Eyesjun:
             pg.ylabel(ylab)
             pg.title(title)
             return True
-        except Exception as ex:
-            #print("Exception -> {}".format(ex))
+        except:
             return False
 
     def qtiplot(self, data=None, xlab = '', ylab = '', title = ''):
