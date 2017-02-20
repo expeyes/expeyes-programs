@@ -391,9 +391,9 @@ class Eyesjun:
                 if 4.930 < v < 5.060:
                     self.refval = v
                 else:
-                    print _('Invalid Reference value, using 5.000V'), v
+                    print (_('Invalid Reference value, using 5.000V'), v)
         except:
-            print _('Could not load Reference voltage')
+            print (_('Could not load Reference voltage'))
 
         self.DACMAX = self.refval  # DAC upper limit
         self.DACM = 4095.0/self.refval
@@ -402,8 +402,8 @@ class Eyesjun:
         self.m12 = [self.refval/4095] + [2*self.refval/4095]*2 + [self.refval/4095]*10
         self.m8 =  [self.refval/255]  + [2*self.refval/255] *2 + [self.refval/255] *10
         self.c = [0.0] + [-self.refval]*2 + [0.0]*10
-        #print self.m12[1], self.m12[2]
-        #print self.c[1], self.c[2]
+        #print (self.m12[1], self.m12[2])
+        #print (self.c[1], self.c[2])
 
         try:
             m1 = self.restore_float(self.AM1)
@@ -413,7 +413,7 @@ class Eyesjun:
             #print (m1,c1,m2,c2, self.refval/4095)
             m = 2*self.refval/4095
             c = -self.refval
-            #print m,c
+            #print (m,c)
             dm = m * 0.05            # maximum 5% deviation
             dc = 5 * 0.05
             if abs(m1-m) < dm and abs(m2-m) < dm and abs(c1-c) < dc and abs(c2-c) < dc:

@@ -1,3 +1,5 @@
+from __future__ import print_function
+
 import struct,time
 Byte =     struct.Struct("B") # size 1
 ShortInt = struct.Struct("H") # size 2
@@ -55,7 +57,7 @@ class HX711():
 		lsb = self.H.__getInt__()
 		self.H.__get_ack__()
 		if lsb&0x100:
-			print 'sensor busy'
+			print (_('sensor busy'))
 		val = (msb<<8)|(lsb&0xFF)
 		val = float(int32((val<<8)&0xFFFFFFFF)>>8)/self.scale
 		self.scale = [128,32,64][index]
@@ -66,4 +68,4 @@ if __name__ == "__main__":
 	I=eyes17.open()
 	while 1:
 		time.sleep(0.1)
-		print I.HX711.read('A64')
+		print (I.HX711.read('A64'))
