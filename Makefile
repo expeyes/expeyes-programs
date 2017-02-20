@@ -36,11 +36,14 @@ install:
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes
 	install -d $(DESTDIR)/usr/share/expeyes
-	cp -a eyes eyes-junior $(DESTDIR)/usr/share/expeyes
+	cp -a eyes eyes-junior eyes-17 $(DESTDIR)/usr/share/expeyes
+	# icons
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-logo.png \
 	  $(DESTDIR)/usr/share/icons/expeyes.png
 	install -m 644 pixmaps/expeyes-junior-icon.png \
+	  $(DESTDIR)/usr/share/icons
+	install -m 644 pixmaps/eyes17-logo.png \
 	  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-progman-jr-doc.png \
 	  $(DESTDIR)/usr/share/icons
@@ -48,9 +51,11 @@ install:
 	  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/nuclear-icon.png \
 	  $(DESTDIR)/usr/share/icons
+	# desktop files
 	install -d $(DESTDIR)/usr/share/applications
 	install -m 644 desktop/expeyes.desktop \
 	  desktop/expeyes-junior.desktop desktop/Phoenix-ASM.desktop \
+	  desktop/expeyes-17.desktop \
 	  $(DESTDIR)/usr/share/applications
 	make -C po install DESTDIR=$(DESTDIR)
 	# for expeyes-doc-common

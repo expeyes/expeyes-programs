@@ -2,12 +2,16 @@ DESTDIR=
 DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
 XP     = xsltproc --nonet --param man.charmap.use.subset "0"
 
-all: expeyes.1 expeyes-junior.1 expeyes-doc.1 expeyes-progman-jr-doc.1
+all: expeyes.1 expeyes-junior.1 expeyes-17.1 \
+  expeyes-doc.1 expeyes-progman-jr-doc.1
 
 expeyes.1: expeyes-man.xml
 	$(XP) $(DB2MAN) $<
 
 expeyes-junior.1: expeyes-junior-man.xml
+	$(XP) $(DB2MAN) $<
+
+expeyes-17.1: expeyes-17-man.xml
 	$(XP) $(DB2MAN) $<
 
 expeyes-doc.1: expeyes-doc.xml
