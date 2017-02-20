@@ -2,14 +2,13 @@
 Version=5.0.0
 Type=Application
 
-Exec=python /usr/share/expeyes/eyes-17/scope17.py
+Exec=/usr/bin/expeyes-17
 Icon=eyes17-logo.png
 
 Name=ExpEYES-17
 Comment=EXPEYES-17
 
-Categories=ExpEYES;Education;Science;Other;	
-MimeType=application/x-python
+Categories=GNOME;Application;Education;Science;
 
 Terminal=false
 NoDisplay=false
