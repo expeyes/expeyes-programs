@@ -27,12 +27,14 @@ install:
 	install -d $(DESTDIR)/usr/share/man/man1
 	gzip -c9 expeyes.1 > $(DESTDIR)/usr/share/man/man1/expeyes.1.gz
 	gzip -c9 expeyes-junior.1 > $(DESTDIR)/usr/share/man/man1/expeyes-junior.1.gz
+	gzip -c9 expeyes-17.1 > $(DESTDIR)/usr/share/man/man1/expeyes-17.1.gz
 	gzip -c9 expeyes-doc.1 > $(DESTDIR)/usr/share/man/man1/expeyes-doc.1.gz
 	ln -s expeyes-doc.1.gz $(DESTDIR)/usr/share/man/man1/expeyes-junior-doc.1.gz
 	gzip -c9 expeyes-progman-jr-doc.1 > $(DESTDIR)/usr/share/man/man1/expeyes-progman-jr-doc.1.gz
 	install -d $(DESTDIR)/usr/bin
 	install -m 755 expeyes $(DESTDIR)/usr/bin
 	install -m 755 expeyes-junior $(DESTDIR)/usr/bin
+	install -m 755 expeyes-17 $(DESTDIR)/usr/bin
 	install -m 755 expeyes-doc $(DESTDIR)/usr/bin
 	install -m 755 expeyes-progman-jr-doc $(DESTDIR)/usr/bin
 	ln -s expeyes-doc $(DESTDIR)/usr/bin/expeyes-junior-doc

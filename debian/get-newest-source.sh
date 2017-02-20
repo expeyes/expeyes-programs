@@ -27,7 +27,10 @@ for f in $(find . -type l); do
 done
 
 # remove sourceless javascript files
-find expeyes-web -name "*.min.js" | xargs rm -f
+find expeyes-web -name "*.min.js" -o -name "bootstrap.js" | xargs rm -f
+
+# remove build and dist subdirs for the firmware
+rm -rf ExpEYES17/Firmware/EJV2_15DEC/build ExpEYES17/Firmware/EJV2_15DEC/dist
 
 mkdir doc
 cd doc
