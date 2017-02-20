@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0.1
+Type=Application
+
+Exec=python /usr/share/expeyes/eyes-junior/croplus.py
+Icon=expeyes-junior-icon.png
+
+Name=ExpEYES Junior
+Comment=EXPEYES Junior
+
+Categories=ExpEYES;Education;Science;Other;	
+MimeType=application/x-python
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false

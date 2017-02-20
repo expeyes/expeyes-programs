@@ -1,0 +1,16 @@
+[Desktop Entry]
+Version=1.0.1
+Type=Application
+
+Exec=python /usr/share/expeyes/eyes/explore.py
+Icon=expeyes-logo.png
+
+Name=ExpEYES
+Comment=EXPEYES
+
+Categories=ExpEYES;Education;Science;Other;	
+MimeType=application/x-python
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false
