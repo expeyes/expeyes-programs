@@ -1,0 +1,208 @@
+Source: expeyes
+Section: science
+Priority: extra
+Maintainer: Georges Khaznadar <georgesk@debian.org>
+Build-Depends: debhelper (>= 9.0.0), quilt, python3-all, python-all,
+ gcc-avr, binutils-avr, avr-libc (>=1:1.8.0+Atmel3.5.0),
+ pkg-config, libgtk2.0-dev, x11proto-randr-dev (>= 1.5.0)
+Build-Depends-Indep: lyx, texlive-latex-base, texlive-latex-extra, texlive-generic-recommended,
+ lmodern, imagemagick
+X-Python-Version: >= 2.5
+X-Python3-Version: >= 3.2
+Standards-Version: 3.9.8
+Homepage: http://expeyes.in/
+
+Package: expeyes
+Architecture: all
+Depends: python, python3, ${misc:Depends},
+ python-expeyes (= ${source:Version}),
+ python3-pil.imagetk, python-pil.imagetk,
+ tix,
+ python3-tk, python-tk, 
+Recommends: python-numpy, python-scipy, python3-numpy, python3-scipy,
+ expeyes-web
+Description: hardware & software framework for developing science experiments
+ This package provides high level interfaces for making science experiments
+ with an ExpEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+Package: libej0
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Recommends: expeyes
+Description: hardware & software framework for developing science experiments
+ This package provides a library usable to drive an expEYES box, and is
+ necessary to run clib-based software which addresses this box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration.
+
+Package: libej-dev
+Architecture: any
+Depends: ${misc:Depends},
+ libej0 (>= ${source:Version}), libej0 (<< ${source:Version}.1~)
+Section: libdevel
+Description: hardware & software framework for developing science experiments
+ This package provides headers and links to develop software in C language
+ addressing an expEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration.
+
+Package: expeyes-clib
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, libej0
+Recommends: expeyes
+Description: hardware & software framework for developing science experiments
+ This package provides interfaces written in C language for making
+ science experiments with an ExpEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. This package provides approximately
+ the same features than the package expeyes, but its sources are in C language.
+
+Package: expeyes-firmware-dev
+Architecture: all
+Section: devel
+Depends: ${misc:Depends}
+Recommends: gcc-avr, binutils-avr, uisp
+Description: hardware & software framework for developing science experiments
+ This package provides high level interfaces for making science experiments
+ with an ExpEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+
+Package: python-expeyes
+Section: python
+Architecture: all
+Depends: python, python3, ${misc:Depends},
+ python3-scipy, python3-serial, python3-usb,
+ python-scipy, python-serial, python-usb,
+ python-pygrace(>=0.5),python3-pygrace(>=0.5)
+Provides: python3-expeyes
+Recommends: qtiplot, udev, expeyes-doc-en|expeyes-doc
+Description: Python library for expeyes
+ This package provides low level interfaces for making science experiments
+ with an ExpEYES box. The library allows one to develop new programs easily
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+Package: expeyes-web
+Section: web
+Architecture: all
+Depends: python, python3, ${misc:Depends},
+ python-expeyes, libjs-jquery, libjs-bootstrap
+Description: Web interface for expEYES-Junior
+ This package allows you to access remotely to a server which drives an
+ expEYES-Jr box. This extends the power of expEYES.
+
+Package: expeyes-doc-en
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}, expeyes-doc-common
+Provides: expeyes-doc
+Replaces: expeyes-doc (<< 1.0.3)
+Description: User manual for expeyes library, in English language
+ This package provides a full documentation to use the library python-expeyes,
+ which enables to program new experiments using an ExpEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+
+Package: expeyes-doc-fr
+Section: doc
+Architecture: all
+Depends: ${misc:Depends}, expeyes-doc-common
+Provides: expeyes-doc
+Replaces: expeyes-doc (<< 1.0.3)
+Description: User manual for expeyes library, French translation
+ This package provides a full documentation to use the library python-expeyes,
+ which enables to program new experiments using an ExpEYES box.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+Package: expeyes-doc-common
+Section: doc
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, evince
+Description: Common files related to the User manual for expeyes library
+ This package provides icons and desktop entries to launch a viewer with
+ the documentation for expEYES.
+ .
+ ExpEYES is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. Analog
+ voltages are measured with 0.025% resolution and time intervals with
+ one microsecond. This project is based on Free and Open Source
+ software, mostly written in Python programming language. The hardware
+ design is also open.
+
+Package: microhope
+Architecture: any
+Depends: ${python:Depends}, ${misc:Depends}, ${shlibs:Depends},
+ expeyes, python-tk, avr-libc, avrdude, gnome-icon-theme,
+ python-wxgtk3.0
+Recommends: gnome-human-icon-theme
+Description: hardware & software framework to learn microcontrollers
+ This package provides a set of example programs to drive an ATmega32
+ microcontroller, together with a tutorial explaining how to compile
+ them, upload them to the microcontroller, and how to make simple and
+ more complicated modifications. It is meant to be used with the
+ "microhope" board which makes it easy to upload code to the microcontroller
+ through a USB link.
+ .
+ In addition to examples there is a library to drive all of the peripherals
+ available on the "microhope" board: LED, LCD display, ADC connected to
+ sensors.
+ .
+ A Graphic User Interface is provided too.

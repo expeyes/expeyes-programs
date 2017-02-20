@@ -1,0 +1,11 @@
+microhope/mh-ide.py usr/share/microhope
+microhope/src/microhope usr/share/microhope
+microhope/firmware usr/share/microhope
+microhope/desktop/*.desktop usr/share/applications
+microhope/pixmaps/*.png usr/share/microhope/pixmaps
+microhope/microhope-doc/microhope-??.pdf usr/share/microhope/doc
+microhope/create-microhope-env usr/bin
+microhope/microhope usr/bin
+microhope/microhope-doc/microhope-doc usr/bin
+usr/bin/uhope usr/bin
+microhope/pixmaps/mh-logo.png usr/share/pixmaps

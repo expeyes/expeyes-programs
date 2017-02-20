@@ -1,0 +1,59 @@
+This work was packaged for Debian by:
+
+    Georges Khaznadar <georgesk@ofset.org> on Sat, 16 Apr 2011 17:37:18 +0200
+
+It was downloaded from:
+
+    http://expeyes.in/sites/default/files/debs/expeyes-1.0.0.tgz
+
+Upstream Author:
+
+    Ajith Kumar B.P <bpajith@gmail.com>
+
+Copyright:
+
+    Copyright (C) 2010-2011 Ajith Kumar B.P
+
+License:
+
+    GPL version 3, see "/usr/share/common-licenses/GPL-3"
+
+The file janagana.py is authored by Jithin B.P. <jithinbp@gmail.com>
+and is licensed under GPL version 3, see "/usr/share/common-licenses/GPL-3"
+
+The file microhope/uhope.c is (c) 2014 Ambar Chatterjee <drambar@gmail.com>
+and is licensed under GPL version 3, see "/usr/share/common-licenses/GPL-3"
+
+The files microhope/firmware/* are (c) 2003, Jason P. Kyle
+and is licensed under GPL version 2 or later, 
+see "/usr/share/common-licenses/GPL-2"
+
+User Manual:
+
+The User Manual has been received by a private e-mail from the author, as
+a .lyx file.
+
+Copyright:
+
+	Copyright (C) 2010-2011 Ajith Kumar B.P
+
+Its license is:
+    GFDL 1.3, without invariant sections.
+    see "/usr/share/common-licenses/GFDL-1.3"
+
+The French translation of the manual is:
+
+    Copyright (c) 2011 Georges Khaznadar <georgesk@ofset.org>
+
+and is licensed under the GFDL 1.3, without invariant sections.
+see "/usr/share/common-licenses/GFDL-1.3"
+
+see the file README.source about the process used to make the translation.
+
+The Debian packaging is:
+
+    Copyright (C) 2011 Georges Khaznadar <georgesk@ofset.org>
+
+and is licensed under the GPL version 3,
+see "/usr/share/common-licenses/GPL-3".
+

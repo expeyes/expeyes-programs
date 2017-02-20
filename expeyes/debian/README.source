@@ -1,0 +1,27 @@
+expeyes for Debian
+------------------
+
+The source package was taken from 
+http://expeyes.in/sites/default/files/debs/expeyes-2.0.0.tgz
+
+As it unfolds into a directory EYES, this directory has been renamed to
+exepeyes-2.0.0
+
+Then files *.pyc in this directory have been erased.
+
+The directory doc/ has been added, to contain the source of the User
+Manual, in .lyx format; this file has been received by a private e-mail 
+from its author. From the version 1.0.2, the source of the manual is
+available at http://expeyes.in/sites/default/files/eyedocs.tgz, so this
+tarball has been uncompressed in doc/en/, and the file eyes-v2.lyx has been
+renamed to its original filename eyes.lyx
+
+The source and the images of the French user manual were harvested from
+http://scideralle-hosting.citic74.net/uici/index.php/ExpEYES with the
+help of the program uicilibris (a Debian package is available), and
+reshaped slightly for their compilation by pdflatex.
+
+Other modifications are managed with quilt, see the file
+/usr/share/doc/quilt/README.source about the usage of quilt.
+
+ -- Georges Khaznadar <georgesk@ofset.org>, Sun,  6 Nov 2011 16:47:09 +0100

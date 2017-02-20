@@ -1,0 +1,40 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+# Sample debian/rules that uses debhelper.
+# This file was originally written by Joey Hess and Craig Small.
+# As a special exception, when this file is copied by dh-make into a
+# dh-make output file, you may use that output file without restriction.
+# This special exception was added by Craig Small in version 0.37 of dh-make.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+DEB_BUILD_MAINT_OPTIONS=reproducible=-timeless
+
+LD_LIBRARY_PATH += debian/libexpeyes1/usr/lib
+export DEB_BUILD_HARDENING=1
+
+%:
+	dh $@ --with python2,python3
+
+HOME = $(CURDIR)/debian/build
+override_dh_auto_build-arch:
+	mkdir $(CURDIR)/debian/build
+	make all HOME=$(HOME)
+	rm -rf $(CURDIR)/debian/build
+
+override_dh_auto_build-indep:
+	make all_indep
+
+override_dh_auto_clean:
+	dh_auto_clean
+	rm -rf $(HOME)
+
+override_dh_install:
+	make install_indep DESTDIR=$(CURDIR)/debian/tmp
+	dh_install
+	make -C po install DESTDIR=$(CURDIR)/debian/expeyes
+	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
+	# prevents lintian error about PYCACHE
+	rm -rf $(CURDIR)/debian/python-expeyes/usr/lib/python3/dist-packages/expeyes/__pycache__
+	rm -rf $(CURDIR)/debian/expeyes/usr/share/expeyes/eyes/__pycache__

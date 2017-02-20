@@ -1,0 +1,6 @@
+version=3
+
+opts=dversionmangle=s/expeyes-\(.*\)\+dfsg.*/v\1/ \
+https://github.com/expeyes/expeyes-programs/tags \
+   /expeyes/expeyes-programs/archive/[Vv](.*)\.tar\.gz \
+ debian /bin/sh debian/get-newest-source.sh

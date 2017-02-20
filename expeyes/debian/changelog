@@ -1,0 +1,599 @@
+expeyes (4.2.1+dfsg-1) unstable; urgency=medium
+
+  * fixed a message in logger.py
+  * fixed an error with get_version()
+  * modified eyesj.py to prevent extra newlines in data files and work with the
+    new python-pygrace packages
+  * made pygrace.grace() objects persistent in any program which uses them
+  * added dependencies on versioned python{3?}-pygrace packages and
+    build-dependencies on x11proto-randr-dev (>= 1.5.0)
+  * fixed a deprecation warning in eyemath.py
+  * fixed an indentation error in eyeplot.py, removed whitespaces in end
+    of lines
+  * reindented eyes.py, mca.py resistor-iv.py, freq-response.py and
+    eyemath.py with spaces
+  * separated rules for arch and indep targets
+  * added a new file to save when a FFT is launched from croplus.py
+
+ -- Georges Khaznadar <georgesk@debian.org>  Thu, 23 Jun 2016 17:07:27 +0200
+
+expeyes (4.1.1+dfsg-3) unstable; urgency=medium
+
+  * fixed extra empty lines written in data files
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 22 Jun 2016 11:16:26 +0200
+
+expeyes (4.1.1+dfsg-2) unstable; urgency=medium
+
+  * changed the dependencies of expeyes, to avoid the dependencies
+    on python:any and python3-any, which prevent the package to be
+    accepted in testing.
+  * fixed missing dependencies for expeyes-web
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 20 May 2016 08:09:32 +0200
+
+expeyes (4.1.1+dfsg-1) unstable; urgency=medium
+
+  * new upstream release, which adds a web interface
+  * added a new output package named expeyes-web
+  * added a recommends: clause : expeyes => expeyes-web
+  * updated Standards-Version: 3.9.8
+  * removed sourceless javascript files from the source
+  * changed the download script to remove those files automatically in
+    the future
+  * modified index.php to use javascript files provided by packages.
+  * patched the CGI scripts to work with Debian.
+  * added dependencies on libjs-jquery and libjs-bootstrap
+  * created a sample file to make a web service via a virtual host
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 18 May 2016 15:08:21 +0200
+
+expeyes (4.0.0-1) unstable; urgency=medium
+
+  * upgraded to the new upstream version
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 23 Mar 2016 12:01:22 +0100
+
+expeyes (3.4.2-1) unstable; urgency=medium
+
+  * upgraded to the new upstream version
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 15 Jan 2016 19:02:35 +0100
+
+expeyes (3.4.1-3) unstable; urgency=medium
+
+  * changed the build-dependency on libc-avr to a versioned one,
+    to ensure the existence of the file crtatmega32.o
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 22 Dec 2015 16:39:26 +0100
+
+expeyes (3.4.1-2) unstable; urgency=medium
+
+  * added "DEB_BUILD_MAINT_OPTIONS=reproducible=-timeless" in d/rules
+  * changed the dependency on qti-plot to a recommendation.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 14 Nov 2015 12:34:40 +0100
+
+expeyes (3.4.1-1) unstable; urgency=medium
+
+  * added dependencies for python3-based packages where dependencies on
+    python packages were there, and ...
+  * added a "Provides: python3-expeyes" clause, as the same code can work with
+    both Python and Python3. Closes: #799203
+  * removed the recommends clause on udev which is part of base packages now.
+  * replaces the build-dependency on python3-dev by a dependency on
+    python3-all. Closes: #799202
+  * upgraded to the new upstream version, which adds support for 'srfechotime'
+  * removed debian/*.menu since desktop files are installed to access
+     applications
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 21 Oct 2015 10:28:40 +0200
+
+expeyes (3.4.0-1) unstable; urgency=medium
+
+  * upgraded to the new version: this empowers the library with Python3 for
+    expeyes-junior, and the new command "expeyes-junior" will use now Python3
+    as engine.
+  * updated Makefile, d/control, d/rules and d/python-expeyes.install to take
+     python3 in account
+
+ -- Georges Khaznadar <georgesk@debian.org>  Thu, 23 Apr 2015 14:11:17 +0200
+
+expeyes (3.3.2-1) unstable; urgency=medium
+
+  * upgraded to the new version available in Github.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 11 Feb 2015 16:52:52 +0100
+
+expeyes (3.3.1-2) UNRELEASED; urgency=medium
+
+  * integerated a patch from Arun Jayan, to modify his presentation excerpt
+    as author, and to fix the path to the bootloader.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 09 Feb 2015 19:59:40 +0100
+
+expeyes (3.3.1-1) unstable; urgency=medium
+
+  * upgraded to the new version available in Github. Closes: #772362
+  * updated Standards-Version to 3.9.7
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 06 Dec 2014 20:21:22 +0100
+
+expeyes (3.3.0-1) unstable; urgency=medium
+
+  * upgraded to the new version available in Github
+  * updated Standards-Version to 3.9.6
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 05 Nov 2014 17:48:03 +0100
+
+expeyes (3.2.0-4) UNRELEASED; urgency=medium
+
+  * included a new src/microhope dir sent by Arun Jayan; removed files
+    which were redundant.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 05 Nov 2014 16:20:57 +0100
+
+expeyes (3.2.0-3) unstable; urgency=medium
+
+  * added gnome-human-icon-theme in Recommends:, this is necessary with
+    Ubuntu.
+  * modified the install script to put a copy of mh-logo.png into
+    /usr/share/pixmaps
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 04 Nov 2014 19:14:09 +0100
+
+expeyes (3.2.0-2) unstable; urgency=medium
+
+  * applied a patch sent by Arun Jayan, which changes the default
+    application linked by the file microhope-avr.desktop
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 03 Nov 2014 19:40:52 +0100
+
+expeyes (3.2.0-1) unstable; urgency=medium
+
+  * upgraded to the newest upstream version. Closes: #759955
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 07 Sep 2014 19:59:25 +0200
+
+expeyes (3.1.10-2) unstable; urgency=medium
+
+  * assigned the HOME environment var to some existing directory to prevent
+    Lyx from using sbuild-nonexistent during sbuild runs. Closes: #759955
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 02 Sep 2014 23:29:12 +0200
+
+expeyes (3.1.10-1) unstable; urgency=medium
+
+  * modified mh-ide.py : added i18n and French l10n
+  * removed obsoleted build-dependency on hardening-wrapper
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 29 Aug 2014 11:16:17 +0200
+
+expeyes (3.1.9-1) UNRELEASED; urgency=medium
+
+  * upgraded to the new upstream version, which modifies the program mh-ide.py
+  * added dependencies from microhope to gnome-icon-theme, python-wxgtk3.0
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 29 Aug 2014 08:16:17 +0200
+
+expeyes (3.1.8-3) unstable; urgency=medium
+
+  * replaced the dependency on python-imaging-tk by
+    python-pil.imagetk|python-imaging-tk as this package has become virtual.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 22 Aug 2014 13:51:05 +0200
+
+expeyes (3.1.8-2) unstable; urgency=medium
+
+  * removed the straight dependency on python-pygrace; it is downgraded
+    to a Suggests: clause. Closes: #742338
+  * added a dependency on qtiplot
+  * modified one file to use qtiplot as the plotting/analyzing utility
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 22 Mar 2014 18:25:44 +0100
+
+expeyes (3.1.8-1) unstable; urgency=medium
+
+  * included the PDF files in the source package, still keeping their source
+    and the Makefile to build them. Closes: #741794
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 17 Mar 2014 00:26:10 +0100
+
+expeyes (3.1.7-1) unstable; urgency=medium
+
+  * upgraded to the newest upstream version.
+    - better management of user files when there is no previous environment
+      set
+    - smoother access to the documentation
+    - i18n and French l10n
+  * versioned the dependency of exepeyes on python-expeyes
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 04 Mar 2014 18:43:19 +0100
+
+expeyes (3.1.6-2) unstable; urgency=medium
+
+  * given the management of /etc/udev/rules.d to dpkg. Closes: #739788
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 24 Feb 2014 13:40:16 +0100
+
+expeyes (3.1.6-1) unstable; urgency=medium
+
+  * updated to the newest upstream version.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 14 Feb 2014 17:56:04 +0100
+
+expeyes (3.1.5-3) unstable; urgency=medium
+
+  * removed the dependency on udev, replaced by a Recommends: clause;
+    changed the postinstallation routine to make if succeed even if udev
+    is not there. Closes: #737864.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 09 Feb 2014 16:03:46 +0100
+
+expeyes (3.1.5-2) unstable; urgency=medium
+
+  * added latest Ambar's improvements : some status will be displaied in
+    the widow's title.
+  * created a new mechanism to build PDF files once only : if a file
+    keep-expeyes-pdf exists in the top dir, the are not erased between two
+    builds. So I need to do one debuild, register binary files in
+    d/sources/include-binaries and run pdebuild. Closes: #736118
+    .
+    This can be considered as a workaround: the build on i386 architecture
+    with the same source package fails in Debian's compile farm and succeeds
+    in Ubuntu's one.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 24 Jan 2014 22:56:26 +0100
+
+expeyes (3.1.5-1) unstable; urgency=medium
+
+  * upgraded to the new upstream release. This adds features to support
+    ASM examples.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 18 Jan 2014 09:16:08 +0100
+
+expeyes (3.1.4-2) unstable; urgency=medium
+
+  * moved the examples of microhope and tuned create-microhope-env
+    accordingly
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 17 Jan 2014 19:29:26 +0100
+
+expeyes (3.1.4-1) unstable; urgency=medium
+
+  * upgraded to the new upstream release
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 13 Jan 2014 20:47:07 +0100
+
+expeyes (3.1.2-1) unstable; urgency=medium
+
+  * upgraded to the latest upstream release, which adds:
+    - Ambar Chatterjee's uhope.c program,
+    - a manpage for the program uhope
+  * changed the target for the package microhope: it must be "any" ; modified
+    the dependencies.
+  * added a build-dependency on hardening-wrapper, and "hardened" the Makefile
+    for uhope
+  * adjusted the file d/copyright
+  * replaced microhope by uhope as the primary IDE.
+  * replaced deprecated constructs for AVR-gcc
+  * added build-dependencies on pkg-config and libgtk2.0-dev
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 11 Jan 2014 23:53:40 +0100
+
+expeyes (3.1.1-2) unstable; urgency=medium
+
+  * applied some fixes made available by Ajith Kumar to the User Manual
+    for MicroHope.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 06 Jan 2014 11:35:52 +0100
+
+expeyes (3.1.1-1) unstable; urgency=medium
+
+  * Upgraded to the newest upstream version. This fixes many issues like
+    errors in one source files and sourceless binaries coming with the
+    package.
+  * Simplified the postinst/postrm scripts
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 04 Jan 2014 17:12:25 +0100
+
+expeyes (3.1.0-1) unstable; urgency=medium
+
+  * upgraded to the newest upstream version. This provides a new set of
+    commands, for the program "microhope"
+  * added the binary package "microhope" to the list of packages defined
+    in debian/control. Microhope depends on the package "expeyes", due to
+    the necessary configuration for udev, which expeyes provides upon
+    post-installation.
+  * added a command "create-microhope-env" which provides microhope example
+    files and libraries to the end user in her own space, and its manpage.
+  * added a command "microhope" to launch the IDE, and its manpage.
+  * added a command "microhope-doc" to browse the documentation, and
+    its manpage.
+  * updated the desktop files to take in account the new commands
+  * upgraded Standards-Version to 3.9.5
+  * internationalized and localized the IDE for French language.
+  * added an "About" section in the IDE's menus
+  * added a logo file mh-logo.svg and its export to a pixmap, adjusted the file
+    debian/source/include-binaries to mention the pixmap
+  * added a build-dependency: texlive-generic-recommended
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 03 Jan 2014 12:03:23 +0100
+
+expeyes (3.0.5-2) unstable; urgency=low
+
+  * checked that the package can be built in a fresh Sid chroot, with the
+    utility pdebuild. Closes: #728635
+  * fixed errors in an application used to monitor a pendulum's dynamic.
+  * improved this application, so it autodetects the begin of launching
+    of a pendulum and autostarts.
+  * fixed an error in eyesmath.py which prevented sometimes a fit of
+    a damped sinusoide to succeed.
+  * added an option in the fit_dsine function to allow time data to be
+    in seconds rather than in milliseconds.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 18 Nov 2013 14:54:51 +0100
+
+expeyes (3.0.5-1) unstable; urgency=low
+
+  * Upgraded to the newest version, which provides programmer's manual
+  * Changed the watch file to stick to github's data, added a script
+    debian/get-newest-source.sh to automate updates (just use uscan)
+  * Upgraded Standards-Version to 3.9.4
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 26 Oct 2013 15:10:17 +0200
+
+expeyes (3.0.4-1) unstable; urgency=low
+
+  * merged abdul's contribution at github; this adds a compatibility
+    with MAC OSX.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 06 Feb 2013 18:03:17 +0100
+
+expeyes (3.0.3-1) unstable; urgency=low
+
+  * added a new device description to input into rules.d for udev, by the
+    means of debian/postinst
+  * fixed a few double translations in python source files.
+  * included updates from Ajith Kumar in eyes/explore.py,
+    eyes-junior/ac-circuit.py, eyes-junior/calibrate.py,
+    eyes-junior/croplus.py, eyes-junior/transistor.py
+  * added the file nuclear-icon.png given by Ajith Kumar and mofified the
+    install script accordingly
+  * added the desktop file Phoenix-ASM.desktop and updated the install script
+    accordingly
+
+ -- Georges Khaznadar <georgesk@debian.org>  Thu, 13 Dec 2012 14:05:47 +0100
+
+expeyes (3.0.2-1) unstable; urgency=low
+
+  * included new upstream code.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sat, 10 Nov 2012 19:19:22 +0100
+
+expeyes (3.0.1-2) unstable; urgency=low
+
+  * added verifications of the existence of /etc/ini.d/udev in postinst
+    and postrm scripts. Closes: #691123
+  * moved a few build-dependencies out of build-depends-indep.
+    Closes: #691045
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 23 Oct 2012 12:13:03 +0200
+
+expeyes (3.0.1-1) unstable; urgency=low
+
+  * removed the creation of $(DESTDIR) from Makefile. Either we use
+    Debian/ubuntu, and this line is useless, or we do not use them,
+    and this line is useless too, since $(DESTDIR) is a void string.
+  * made libej-dev arch:any since it contains the architecture-specific
+    file libej.a. Thank you Luca Flavigna for the explanation.
+  * upgraded to the new upstream version. This removes one useless line
+    from Makefile, and adds a new feature for users: easy measurement of
+    resistances.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sun, 23 Sep 2012 14:54:34 +0200
+
+expeyes (3.0.0-2) unstable; urgency=low
+
+  * fixed a small issue with the input capacitance, following a hint from
+    Ajith Kumar. The modification is in the file expeyes/eyesj.py
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Thu, 20 Sep 2012 19:14:00 +0200
+
+expeyes (3.0.0-1) unstable; urgency=low
+
+  * fixed packaging issues: assigned the static library to the -dev
+    package and removed the .la file.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sat, 08 Sep 2012 11:30:54 +0200
+
+expeyes (2.9.1-1) unstable; urgency=low
+
+  * changed a few pics, which were sent by Ajith Kumar
+  * integrated all previous patches in the source package, synced with
+    github's repository
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Thu, 06 Sep 2012 19:39:00 +0200
+
+expeyes (2.9.0-3) unstable; urgency=low
+
+  * put desktop files and icons in the right binary package for documentation,
+    which implies the creation of the package expeyes-doc-common as a
+    dependency for every package providing expeyes-doc
+  * created a command and its manpage to launch the viewer with user manuals
+  * fixed a bug which precluded the installation of fr-eyesj.pdf
+  * modified X-Python-Version: downgraded it to Python 2.5 as every Python
+    source should be valid for Python2.5
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 28 Aug 2012 09:28:01 +0200
+
+expeyes (2.9.0-2) unstable; urgency=low
+
+  * added desktop files and icons for the documentation
+  * added Ajith Kumar's fix for a divide by zero error in eyesj.py
+  * modified the Makefile to let it run even if the doc directory is missing
+  * fixed the Makefile to let it compile files differently for Python in
+    debian and non-debian environments
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Mon, 20 Aug 2012 16:34:45 +0200
+
+expeyes (2.9.0-1) unstable; urgency=low
+
+  * upgraded to the newest upstream version. This adds support for
+    expeyes-junior boxes, in Python and C language.
+  * defined new binary packages: expeyes-clib, a collection of short
+    programs written in C language based on libej0; libej0, a C library
+    to drive expeyes-junior, and libej-dev which provides development
+    files.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sun, 05 Aug 2012 19:49:52 +0200
+
+expeyes (2.0.0-5) unstable; urgency=low
+
+  * modified postrm to purge the file /etc/udev/rules.d/99-phoenix.rules
+    Closes: #681754
+  * updated Standards-Version, and debhelper version dependency
+  * added one more file to delete for the clean target in rules
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 17 Jul 2012 13:50:10 +0200
+
+expeyes (2.0.0-4) unstable; urgency=low
+
+  * Modified postinst to fix a problem with permissions, thanks to
+    Ajith Kumar's e-mail.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Fri, 13 Jul 2012 19:47:50 +0200
+
+expeyes (2.0.0-3) unstable; urgency=low
+
+  * Made the modification kindly suggested by Johann Felix Soden,
+    Closes: #669264
+  * modified slightly fr.po
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Wed, 18 Apr 2012 17:22:57 +0000
+
+expeyes (2.0.0-2) unstable; urgency=low
+
+  * fixed the problem with restarting udev. Closes: #659779
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 14 Feb 2012 19:16:58 +0000
+
+expeyes (2.0.0-1) unstable; urgency=low
+
+  * upgraded to the newest upstream version
+  * refreshed the i18n patch
+  * internationalized two new files.
+  * imported the new French user manual from
+    http://scideralle-hosting.citic74.net/uici/index.php/ExpEYES
+    with the halp of uicilibris; modified the Makefile for its processing.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sun, 06 Nov 2011 17:23:28 +0100
+
+expeyes (1.0.3-6) unstable; urgency=low
+
+  * applied Matthias Klose's patch. Closes: #641962
+    the details of this patch are:
+    - Do not build-depend on python-all when not building for all python
+      versions. LP: #831395.
+    - Do not hard-code python2.6
+    - Call dh --with python2 (already fixed in 1.0.3-5)
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sun, 18 Sep 2011 14:03:22 +0200
+
+expeyes (1.0.3-5) unstable; urgency=low
+
+  * rescaled pics/eyes.png and fixed its encoding: it was a JPEG file
+  * use --with python2 in debian/rules
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sat, 10 Sep 2011 23:46:17 +0200
+
+expeyes (1.0.3-4) unstable; urgency=low
+
+  * added dependencies: python-serial, python-usb, tix and a few recommends:
+  * forced the install of python files in /usr, to fix the bug with
+    dh_usrlocal. Closes: #633550
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Fri, 15 Jul 2011 15:22:43 +0200
+
+expeyes (1.0.3-3) unstable; urgency=low
+
+  * fixed inconsistent links to images in the French doc.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Thu, 12 May 2011 23:23:52 +0200
+
+expeyes (1.0.3-2) unstable; urgency=low
+
+  * added expeyes-doc (<< 1.0.3) in Conflicts:, in order to make
+    expeyes-doc-xx installable.
+    Closes: #625472, #625271
+  * made imagemagick a build-dependency.
+    Closes: #625185
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Wed, 04 May 2011 07:22:18 +0200
+
+expeyes (1.0.3-1) unstable; urgency=low
+
+  * upgraded the English user manual from the new source version at
+    http://expeyes.in/sites/default/files/eyedocs.tgz
+  * updated the French version of the manual.
+  * fixed some typos in the English version of the manual
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Mon, 02 May 2011 01:26:19 +0200
+
+expeyes (1.0.2-1) unstable; urgency=low
+
+  * upgraded to new upstream contents: downloaded
+    http://expeyes.in/sites/default/files/debs/expeyes-1.0.2.tgz
+    and moved the directory EYES into expeyes-1.0.2; also merged
+    the source of the English manual into the upstream source.
+    The binary file firmware/eyes.hex has been removed from the source package,
+    it is rebuilt at compile time.
+  * added the build-dependencies for firmware/eyes.hex
+  * targetted a new binary package to contain the firmware development stuff
+  * added clean, build and install rules for the subdirectory firmware/
+  * split the document manuals into different localized packages, each one
+    providing expeyes-doc
+  * made the Makefiles less verbose during the compilation of user manuals.
+  * fixed a few phrases in the French user manual
+  * updated the build-dependencies for the user manuals
+  * fixed the watch file
+  * upgraded the English user manual from the new source version at
+    http://expeyes.in/sites/default/files/eyedocs.tgz
+  * updated the French version of the manual.
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Sun, 01 May 2011 20:04:28 +0200
+
+expeyes (1.0.1-2) unstable; urgency=low
+
+  * modified the manual source to enforce the usage of lmodern fonts
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Wed, 20 Apr 2011 01:26:38 +0200
+
+expeyes (1.0.1-1) unstable; urgency=low
+
+  * Upgraded to the new upstream release which has been communicated
+    by a private e-mail
+  * removed the files *grace* from the upstream package since they should
+    belong to the package python-pygrace, which is already part of Debian.
+  * added the support for i18n
+  * localized the programs for French
+  * created a script to localize the documentation in synchronisation
+    with the programs
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 19 Apr 2011 23:12:22 +0200
+
+expeyes (1.0.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #623022)
+  * stripped out *.pyc files from the source archive, renamed the main
+    directory of this archive to exepeyes-1.0.0, removed files which are
+    part of the package python-pygrace
+  * modified most of the python files, to use a common python library
+    named expeyes and its submodules eyes, eyemath, eyeplot
+  * added a command to launch the explorer, with the name "expeyes", and
+    a short manpage for it.
+  * scheduled the creation of the file /lib/udev/rules.d/99-phoenix.rules
+  * added an icon and a desktop entry
+  * translated the user manual to French
+
+ -- Georges Khaznadar <georgesk@ofset.org>  Tue, 19 Apr 2011 02:25:09 +0200
