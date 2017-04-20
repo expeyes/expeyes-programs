@@ -73,7 +73,7 @@ class Handler():
 		connect to a port, and check for the right version
 		'''
 		
-		if platform.system()!="Windows":   #Do this check only on Unix
+		if platform.system() not in ["Windows","Darwin"]:   #Do this check only on Unix
 			try:
 				import socket
 				self.blockingSocket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
