@@ -1,5 +1,10 @@
-from Tkinter import *
-import expeyes.eyes17, expeyes.eyeplot17 as eyeplot
+import expeyes.eyes17, expeyes.eyeplot17 as eyeplot, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
+
 p=expeyes.eyes17.open()
 
 import gettext
@@ -17,7 +22,7 @@ Label(text=_('Use Slider to change SQR1 from 1 to 50 Hz')).pack(side=TOP)
 Sqr1 = Scale(w,command = set_freq, orient=HORIZONTAL, length=220, showvalue=True, from_ = 1, to=50, resolution=.1)
 Sqr1.pack(side=TOP)
 Button(text=_('QUIT'), command=sys.exit).pack(side=TOP)
-eyeplot.pop_image('pics/driven-pend.png', _('Driven Pendulum'))
-w.title(_('EYES Junior: Driven Pendulum'))
+eyeplot.pop_help('driven-pendulum', _('Driven Pendulum'))
+w.title(_('Driven Pendulum'))
 w.mainloop()
 

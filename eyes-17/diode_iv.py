@@ -11,6 +11,11 @@ _ = gettext.gettext
 
 from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 TIMER = 10
 WIDTH  = 600   # width of drawing canvas
@@ -50,9 +55,7 @@ def update():					# Called periodically by the Tk toolkit
 	vs = p.set_pv1(VSET)	
 	time.sleep(0.001)	
 	va = p.get_voltage('A1')		# voltage across the diode
-	print va
 	i = (vs-va)/1.0 	 		   # in mA, R= 1k
-	print vs,va, i
 	data[0].append(va)
 	data[1].append(i)
 	VSET += STEP
@@ -141,7 +144,8 @@ mf.pack(side=TOP,  fill = BOTH, expand = 1)
 msg = Label(mf,text=_('Message'), fg = 'blue')
 msg.pack(side=LEFT)
 
-eyeplot.pop_image('pics/diode-iv.png', _('Diode IV Characteristic'))
-root.title(_('EYES: Diode IV characteristics'))
+t = _('Diode IV Characteristic')
+eyeplot.pop_help('diode_iv', t)
+root.title(t)
 root.mainloop()
 

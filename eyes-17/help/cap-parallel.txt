@@ -1,0 +1,3 @@
+Connect the capacitors one by one from IN1 to Ground( any black terminal)
+Measure the value by clicking on "Capacitance on IN1"
+Do the same using more than one capacitors in parallel

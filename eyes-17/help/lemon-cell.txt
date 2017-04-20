@@ -1,0 +1,3 @@
+Make a lomon cell and connect as shown in the figure, measure the voltage at A1.
+Connect the 1K resistor and measure the voltage again. The voltage drops because
+of the internal resistance of the cell.

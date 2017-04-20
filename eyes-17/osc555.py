@@ -10,9 +10,13 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, numpy as np
-import time, os, commands, math
+import time, os, sys, math
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 bgcol = 'ivory'
 
@@ -27,7 +31,7 @@ NC = 1				# Number of channels
 MINDEL = 2	
 delay = MINDEL		# Time interval between samples
 CMERR = False
-data = [ [[],[]],[[],[]],[[],[]] ]  # 3 [t,v] lists
+data = [ [[],[]],[[],[]] ]  # 2 [t,v] lists
 timeScales = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0,100.0]
 
 def msg(s, col='blue'):
@@ -67,20 +71,15 @@ def update():
 		CMERR = False 
 		msg('')
 	try:
-		data[0][0], data[0][1], data[1][0], data[1][1] = p.capture2(NP,delay)
-		data[2][0] = data[0][0]
-		data[2][1] = np.zeros(NP)
-		data[2][1] = data[0][1] - data[1][1]
-
+		data[0][0], data[0][1],data[1][0], data[1][1] = p.capture2(NP,delay)
 		g.delete_lines()
 		g.line(data[0][0], data[0][1],0)
 		g.line(data[1][0], data[1][1],1)
-		#g.line(data[1][0], data[0][1]-data[1][1],2)
 	except:
 		msg(_('Capture Error. Check input voltage levels.'),'red')
 		CMERR = True
 	
-	root.after(10,update)
+	root.after(TIMER,update)
 
 def set_vertical(w):
 	global delay, NP, NC, VPERDIV
@@ -104,7 +103,7 @@ def xmgrace():
 def show_freq():
 	T = p.multi_r2rtime('IN2')
 	if T < 0:
-		msg(_('Error, check connections'),'red')
+		msg(_('Error, check IN2 input connection'),'red')
 		return
 	hi = p.r2ftime('IN2','IN2')
 	s = 'Frequency %8.1f Hz : Duty Cycle = %5.1f %%'%(1/T, hi*100/T)
@@ -156,8 +155,9 @@ msgwin = Label(mf,text = _('Connect 555 output to A1, and IN2'), fg = 'blue')
 msgwin.pack(side=LEFT)#, anchor = SW)
 
 p.set_sqr1(1000,20)
-eyeplot.pop_image('pics/osc555.png', _('IC555 Oscillator'))
-root.title(_('IC555 Astable multi-vibrator'))
+t = _('IC555 Astable multi-vibrator')
+eyeplot.pop_help('osc555', t)
+root.title(t)
 root.after(10,update)
 root.mainloop()
 

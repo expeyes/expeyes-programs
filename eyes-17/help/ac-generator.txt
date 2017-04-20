@@ -1,0 +1,5 @@
+A rotating magnet causes a rotating magnetic field also.
+Placing a coil in that field will induce a periodic voltage across it.
+Use the DC motor to rotate the magnet. The coils are provided with ExpEYES.
+The frequency of the induced AC will be the number of rotations per second of the magnet.
+The phase difference between the two signal depends upon the angle between the axes of the coils

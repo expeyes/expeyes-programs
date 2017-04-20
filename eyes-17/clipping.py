@@ -1,8 +1,8 @@
 '''
-expEYES Junior CRO+ program
+Eyes17 Diode Clipping
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
-Date : Apr-2012
+Date : Mar-2017
 '''
 
 import gettext
@@ -10,9 +10,13 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, numpy as np
-import time, os, commands, math
+import time, os, sys, math
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 bgcol = 'ivory'
 
@@ -106,12 +110,12 @@ Quit.pack(side=LEFT, anchor=N)
 
 mf = Frame(f)
 mf.pack(side=TOP,  fill = BOTH, expand = 1)
-msgwin = Label(mf,text = _(''), fg = 'blue')
+msgwin = Label(mf,text = '', fg = 'blue')
 msgwin.pack(side=LEFT)#, anchor = SW)
 
-eyeplot.pop_image('pics/clipping.png', _('Diode Clipping'))
+eyeplot.pop_help('clipping', _('Diode Clipping'))
 root.title(_('Diode Clipping'))
-root.after(10,update)
+root.after(TIMER,update)
 root.mainloop()
 
 

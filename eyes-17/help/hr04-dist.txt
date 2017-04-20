@@ -1,0 +1,2 @@
+Make the connections and keep a flat object in front of the sensor.
+Press the START button to record the distance, as a function of time.

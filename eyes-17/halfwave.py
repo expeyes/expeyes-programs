@@ -10,9 +10,13 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, numpy as np
-import time, os, commands, math
+import time, os, sys, math
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 bgcol = 'ivory'
 
@@ -172,9 +176,10 @@ msgwin = Label(mf,text = _('Connect WG to A1, Diode from A1 to A2.'), fg = 'blue
 msgwin.pack(side=LEFT)#, anchor = SW)
 
 set_frequency(1)
-eyeplot.pop_image('pics/halfwave.png', _('Halfwave Rectifier'))
-root.title(_('Halfwave Rectifier'))
-root.after(10,update)
+t = _('Halfwave Rectifier')
+eyeplot.pop_help('halfwave', t)
+root.title(t)
+root.after(TIMER,update)
 root.mainloop()
 
 

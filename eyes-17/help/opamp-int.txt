@@ -1,0 +1,3 @@
+Use a 0.1 uF capacitor.
+Try different frequencies. 
+Try Sine and triangular wave outputs.

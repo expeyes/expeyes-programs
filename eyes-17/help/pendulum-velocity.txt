@@ -1,0 +1,4 @@
+A pendulum is attached to the axis of a DC motor, that acts as a generator.
+The induced DC voltage is proportional to the angular velocity.
+The 100 Ohm resistor between Rg and Ground, amplifies the signal given to A3, 100 times
+Oscillate the pendulum and press START button to record the data.

@@ -18,7 +18,7 @@ plt.ion()
 plt.show()
 
 t,v = dev.capture1('A1', NP, TG)   
-print t[-1]
+#print t[-1]
 line, = plt.plot(t,v)
 
 t,v,tt,vv = dev.capture2( NP, TG)   

@@ -8,8 +8,12 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time, sys, math
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 WIDTH  = 600   # width of drawing canvas
 HEIGHT = 400   # height    
@@ -138,8 +142,8 @@ mf.pack(side=TOP)
 msgwin = Label(mf,text=_('Message'), fg = 'blue')
 msgwin.pack(side=LEFT, anchor = S, fill=BOTH, expand=1)
 
-
-eyeplot.pop_image('pics/sr04-dist.png', _('Distance by SR04 Echo module'))
-root.title(_('Distance by Ultrasound Echo, SR04'))
+t = _('Distance by Ultrasound Echo, SR04')
+eyeplot.pop_help('sr04-dist', t)
+root.title(t)
 root.mainloop()
 

@@ -1,0 +1,4 @@
+Make connections as shown in the figure.
+Change the frequency of WG and listen to the sound.
+The sound is very high at some frequency. This is due to the resonance of the
+Piezo disk.

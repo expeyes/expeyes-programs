@@ -3,13 +3,18 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
+
 import gettext
 gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time, math, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 TIMER = 100
 WIDTH  = 500   # width of drawing canvas
@@ -122,8 +127,8 @@ mf = Frame(root)				# Message Frame below command frame.
 mf.pack(side=TOP, anchor = SW)
 msgwin = Label(mf,text = _('Messages'), fg = 'blue')
 msgwin.pack(side=LEFT, anchor = SW)
-
-eyeplot.pop_image('pics/induction.png', _('Electromagnetic Induction'))
-root.title(_('EYESJUN: Electromagnetic Induction'))
+t = _('Electromagnetic Induction')
+eyeplot.pop_help('induction', t)
+root.title(t)
 root.mainloop()
 

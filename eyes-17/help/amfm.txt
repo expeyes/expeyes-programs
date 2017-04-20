@@ -1,0 +1,3 @@
+You require an external Amplitude modulated  signal to do this experiment.
+The program captures the data and it can also show the power spectrum.
+the side bands will be visible in the spectrum of an AM input.

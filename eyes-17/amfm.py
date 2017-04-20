@@ -9,8 +9,12 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
-import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time
+import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 WIDTH  = 600   # width of drawing canvas
 HEIGHT = 400   # height 
@@ -28,9 +32,6 @@ class amfm:
 			fr,tr = eyemath.fft(xy[1], self.delay * self.NC * 0.001)
 			transform.append([fr,tr])
 		eyeplot.grace(transform, xlab=_('freq'), ylab=_('relative power'))
-		#eyeplot.plot(fr,tr)
-		#p.save(transform, 'power-spec.dat')
-		#msgwin.config(text=_('Fourier Power Spectrum Saved to power-spec.dat.'))
 
 	def capture(self):
 		self.chanmask = A0.get() | (A1.get() << 1)
@@ -121,7 +122,7 @@ mf = Frame(root)				# Message Frame below command frame.
 mf.pack(side=TOP, anchor = SW)
 msgwin = Label(mf,text = _('Messages'), fg = 'blue')
 msgwin.pack(side=LEFT, anchor = SW)
-eyeplot.pop_image('pics/am.png', _('Amplitude Modulation'))
+eyeplot.pop_help('amfm', _('Amplitude Modulation'))
 root.title(_('Amplitude Modulation'))
 root.mainloop()
 

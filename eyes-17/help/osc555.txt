@@ -1,0 +1,2 @@
+Make connections and view the trace.
+Measure the frequency and duty cycle using the "Frequency" button.

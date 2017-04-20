@@ -1,0 +1,4 @@
+The output of SQ1 changes between 0 and 5 volts, as shown by the output A1.
+That means it has an average of 2.5 volts, that is the DC part
+After passing through a capacitor the voltage changes from -2.5 to +2.5 volts.
+The DC part is blocked by the capacitor.

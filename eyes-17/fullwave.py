@@ -10,9 +10,13 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, numpy as np
-import time, os, commands, math
+import time, os, sys, math
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 bgcol = 'ivory'
 
@@ -165,13 +169,13 @@ Quit.pack(side=LEFT, anchor=N)
 
 mf = Frame(f)
 mf.pack(side=TOP,  fill = BOTH, expand = 1)
-msgwin = Label(mf,text = _(''), fg = 'blue')
+msgwin = Label(mf,text = '', fg = 'blue')
 msgwin.pack(side=LEFT)
 
-set_frequency(1)
-eyeplot.pop_image('pics/fullwave.png', _('Fullwave Rectifier'))
-root.title(_('Fullwave Rectifier'))
-root.after(10,update)
+t =  _('Fullwave Rectifier')
+eyeplot.pop_help('fullwave',t)
+root.title(t)
+root.after(TIMER,update)
 root.mainloop()
 
 

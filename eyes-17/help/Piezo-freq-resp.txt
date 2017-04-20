@@ -1,0 +1,4 @@
+make the connections. Keep the mic facing the buzzer, 4 to5 cm apart.
+Press start button.
+The amplitude of the microphone output is plotted as a function of frequency.
+The Piezo disc given with ExpEYES kit resonated around 3.5 kHz

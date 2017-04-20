@@ -9,9 +9,13 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, numpy as np
-import time, math
+import time, math, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 TIMER = 10
 WIDTH  = 800        # width of drawing canvas
@@ -172,7 +176,8 @@ mf.pack(side=TOP, anchor = SW)
 msgwin = Label(mf,text = _('Messages'), fg = 'blue')
 msgwin.pack(side=LEFT, anchor = SW)
 
-eyeplot.pop_image('pics/sound-inter.png', _('Sound Interference'))
-root.title(_('EYES: Interference of Sound'))
+t = _('Sound beats')
+eyeplot.pop_help('sound-beats', t)
+root.title(t)
 root.mainloop()
 

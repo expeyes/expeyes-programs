@@ -9,8 +9,12 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
 import expeyes.eyes17 as eyes, expeyes.eyeplot17 as eyeplot, expeyes.eyemath17 as eyemath, time, sys
+VER = sys.version[0]
+if VER == '3':
+	from tkinter import *
+else:
+	from Tkinter import *
 
 TIMER = 10
 WIDTH  = 600   # width of drawing canvas
@@ -45,7 +49,6 @@ def verify_fit(y,y1):
 		sum += abs((y[k] - y1[k])/y[k])
 	err = sum/len(y)
 	if err > .5:
-		print 'Err = ', err
 		return False
 	else:
 		return True
@@ -76,14 +79,12 @@ def update():				# Called periodically by the Tk toolkit
 					continue
 				data[0].append(fr)
 				data[1].append(abs(fb[1][0]/fa[1][0]))
-				print fr,fa[1][2], fb[1][2], (fa[1][2]-fb[1][2])
 				data[2].append(.5+(fa[1][2]-fb[1][2])/6.28)
 				goodFit = True
 				break
 				
 	FREQ += STEP
 	if goodFit == False:		# Failed at this data point
-		print 'Failed at F = ', fr
 		root.after(TIMER, update)
 		return
 
@@ -152,7 +153,7 @@ mf.pack(side=TOP,  fill = BOTH, expand = 1)
 msg = Label(mf,text=_('Message'), fg = 'blue')
 msg.pack(side=LEFT)
 
-eyeplot.pop_image('pics/diode-iv.png', _('Diode IV Characteristic'))
+eyeplot.pop_image('filter.png', _('Filter frequency response'))
 root.title(_('EYES: Bode Plot'))
 root.mainloop()
 
