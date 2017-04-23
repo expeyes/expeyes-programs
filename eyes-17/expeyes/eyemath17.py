@@ -1,4 +1,3 @@
-# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 '''
 expEYES data analysis library using numpy and scipy
 Author  : Ajith Kumar B.P, bpajith@gmail.com

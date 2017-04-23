@@ -1,4 +1,3 @@
-# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 '''
 Adapted into Python from Adafruit's oled.cpp
 Original license text:

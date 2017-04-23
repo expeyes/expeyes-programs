@@ -1,4 +1,3 @@
-# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 import time,importlib
 import numpy as np
