@@ -1,4 +1,5 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
+
 # MF522 - Software stack to access the MF522 RFID reader via the SEELablet
 #
 # Copyright (C) 2015 by Jithin B.P. <jithinbp@gmail.com>

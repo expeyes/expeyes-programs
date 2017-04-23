@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 # eyes17 - software stack to support the eyesj2.
 #
 # Copyright (C) 2016 by Jithin B.P. <jithinbp@gmail.com>
@@ -81,7 +81,7 @@ class Interface():
 	def __init__(self,timeout=1.0,**kwargs):
 		self.verbose=kwargs.get('verbose',False)
 		self.initialArgs = kwargs
-		self.generic_name = 'eyesj2'
+		self.generic_name = 'ExpEYES17'
 		self.timebase = 40
 		self.MAX_SAMPLES = CP.MAX_SAMPLES
 		self.samples=self.MAX_SAMPLES
@@ -127,14 +127,14 @@ class Interface():
 			self.connected = False
 			print(self.errmsg)#raise RuntimeError(msg)
 		
-		#try:
-		self.__runInitSequence__(**kwargs)
-		'''
+		try:
+			self.__runInitSequence__(**kwargs)
+
 		except Exception as ex:
 			self.errmsg = "failed to run init sequence. Check device connections\n"+str(ex)
 			self.connected = False
 			print(self.errmsg)#raise RuntimeError(msg)
-		'''
+
 	def __runInitSequence__(self,**kwargs):
 		self.aboutArray=[]
 		from .Peripherals import I2C,PWMDAC
@@ -155,8 +155,6 @@ class Interface():
 		self.digital_outputs=['OD1','CCS','SQR1','SQR2']
 		self.allDigitalChannels = self.digital_inputs
 		self.gains = {}
-		if self.version_number<=2.0:
-			self.__write_data_address__(0x0E1C,4) #Enable pull down resistor on IN2 
 		for a in gainPGAs:
 			self.gains[a] = 0
 
@@ -167,6 +165,8 @@ class Interface():
 		#self.I2C.pullSCLLow(5000)        
 		self.hexid=''    
 		if self.H.connected:
+			if self.version_number<=2.0:
+				self.__write_data_address__(0x0E1C,4) #Enable pull down resistor on IN2 
 			for a in self.gains: self.set_gain(a,self.gains[a],True) #Force load gain
 			self.load_equation('sine')
 			self.hexid=hex(self.device_id())
@@ -749,7 +749,7 @@ class Interface():
 
 				self.achans[0].set_params(channel=channel_one_input,length=samples,timebase=self.timebase,resolution=10,source=self.analogInputSources[channel_one_input])
 				self.H.__sendByte__(CP.CAPTURE_ONE)        #read 1 channel
-				self.H.__sendByte__(CHOSA|triggerornot)     #channelk number
+				self.H.__sendByte__(CHOSA|triggerornot)     #channel number
 
 			elif(num==2):
 				if(self.timebase<1.75):self.timebase=int(1.75*8)/8.
@@ -772,7 +772,6 @@ class Interface():
 					chans=['NONE','A2','A3','MIC']
 					self.achans[a].set_params(channel=chans[a],length=samples,timebase=self.timebase,\
 					resolution=10,source=self.analogInputSources[chans[a]])
-					#print (a,chans[a],samples,self.timebase)
 				
 				self.H.__sendByte__(CP.CAPTURE_FOUR)           #read 4 channels
 				self.H.__sendByte__(CHOSA|triggerornot)        #channel number
@@ -1161,7 +1160,7 @@ class Interface():
 			g = self.analogRanges.get(voltage_range)
 			return self.set_gain( channel, g)
 		else:
-			print ('not a valid range. try : ',ranges.keys())
+			print ('not a valid range. try : ',self.analogRanges.keys())
 			return None
 
 	def __calcCHOSA__(self,name):
@@ -2051,7 +2050,7 @@ class Interface():
 		CT=10
 		CR=1
 		MAX_CR=3
-		MAX_CT=50000
+		MAX_CT=40000
 		CC=True #Constant current mode
 		iterations = 0
 		start_time=time.time()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 from . import commands_proto as CP
 import numpy as np 
@@ -7,6 +8,8 @@ import time,inspect
 class I2C():
 	"""
 	Methods to interact with the I2C port.
+
+
 
 	.. code-block:: python
 

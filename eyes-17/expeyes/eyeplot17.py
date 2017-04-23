@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 '''
 Plotting libray, using Tkinter for expEYES
 Author  : Ajith Kumar B.P, bpajith@gmail.com
@@ -315,37 +316,23 @@ class graph:
 		for t in self.traces:
 			self.canvas.delete(t)
 		self.traces = []
-
-#------------------------------- graph class end ---------------------------
-
-class CreateToolTip(object):
-	'''
-	create a tooltip for a given widget
-	'''
-	def __init__(self, widget, text='widget info'):
-		self.widget = widget
-		self.text = text
-		self.widget.bind("<Enter>", self.enter)
-		self.widget.bind("<Leave>", self.close)
 		
-	def enter(self, event=None):
-		x = y = 0
-		x, y, cx, cy = self.widget.bbox("insert")
-		x += self.widget.winfo_rootx() + 25
-		y += self.widget.winfo_rooty() + 20
-		# creates a toplevel window
-		self.tw = Toplevel(self.widget)
-		# Leaves only the label and removes the app window
-		self.tw.wm_overrideredirect(True)
-		self.tw.wm_geometry("+%d+%d" % (x, y))
-		label = Label(self.tw, text=self.text, justify='left', bg='lightgreen',
-			relief='solid', borderwidth=1,    font=("helvetica", "9"),wraplength=100)
-		label.pack(ipadx=1)
-	
-	def close(self, event=None):
-		if self.tw:
-			self.tw.destroy()
-
+	def pop_help(self,sch, title = _('Schematic')):	# Help for scope based experiments
+		if self.helpwin != None: self.helpwin.destroy()
+		top = Toplevel()
+		top.title(sch)
+		photo = PhotoImage(file= abs_path()+'pics/'+sch+'.png')
+		photo_label = Label(top,image=photo)
+		photo_label.pack(side=TOP)             
+		photo_label.image = photo      
+		text = Text(top,height=5, fg='blue')
+		text.pack(side=TOP, fill = BOTH, expand = 1)
+		f = open(abs_path()+'help/'+sch+'.txt', 'r')
+		s = f.read()
+		text.insert(END, s)
+		self.helpwin = top
+		
+#------------------------------- graph class end ---------------------------
 
 def plot(x,y,title = None, xl = None, yl = None, col = 'black', drawYlab=True):
 	# plot the x,y coordinate list to a new , non-blocking, window.
@@ -366,45 +353,26 @@ def plot(x,y,title = None, xl = None, yl = None, col = 'black', drawYlab=True):
 
 
 #------------- popup window to displaying image -----------------
-'''
+def abs_path():		   # Returns the absolute path of the python program
+	name = sys.argv[0]
+	dirname = os.path.dirname(name)
+	#print dirname
+	if dirname != '':
+		return os.path.dirname(name) + os.sep 
+	else:
+		return '.' + os.sep
+
+img = None
+
+
 def pop_image(sch, title = _('Schematic')):
 	top = Toplevel()
 	top.title(title)
-	try:
-		fn = os.path.join(os.path.dirname(sys.argv[0]), 'pics', sch)
-		photo = PhotoImage(file=fn)
-		photo_label = Label(top,image=photo)
-		photo_label.pack()             
-		photo_label.image = photo      
-	except:
-		Label(top, text = _('Failed to load schematic')).pack()
-'''
-
-def pop_help(name, title = _('Schematic')):	# Help for scope based experiments
-	top = Toplevel()
-	top.title(title)
-	try:
-		fn = os.path.join(os.path.dirname(sys.argv[0]), 'pics', name+'.png')
-		photo = PhotoImage(file=fn)
-		photo_label = Label(top,image=photo)
-		photo_label.pack(side=TOP)             
-		photo_label.image = photo      
-	except:
-		top.title(_('Failed to load PNG Image'))
-		return top
-
-	try:
-		text = Text(top,height=5, fg='blue',font=("Helvetica", 14))
-		text.pack(side=TOP, fill = BOTH, expand = 1)
-		fn = os.path.join(os.path.dirname(sys.argv[0]), 'help', name+'.txt')	
-		f = open(fn, 'r')
-		s = f.read()
-		text.insert(END, s)
-		return top
-	except:
-		Label(top, text = _('No help file found'),font=("Helvetica", 20)).pack()
-		return top
-
+	photo = PhotoImage(file= abs_path()+sch)
+	photo_label = Label(top,image=photo)
+	photo_label.pack()             
+	photo_label.image = photo      
+	
 		
 def grace(data, xlab = '', ylab = '', title = ''):
 	'''

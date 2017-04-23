@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 class ComplementaryFilter:
 	def __init__(self,):
 		self.pitch=0

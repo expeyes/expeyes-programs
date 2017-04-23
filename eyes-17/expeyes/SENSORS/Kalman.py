@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 class KalmanFilter(object):
 	'''
 	Credits:http://scottlobdell.me/2014/08/kalman-filtering-python-reading-sensor-input/

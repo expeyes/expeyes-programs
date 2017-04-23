@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import math,sys,time, struct
 
 # allows to pack numeric values into byte strings
@@ -190,6 +191,7 @@ TEN_BIT    = Byte.pack(10)
 TWELVE_BIT = Byte.pack(12)
 
 
+
 def applySIPrefix(value, unit='',precision=2 ):
 		neg = False
 		if value < 0.:
@@ -214,5 +216,7 @@ def applySIPrefix(value, unit='',precision=2 ):
 		if abs(si_level) > prefix_levels:
 			raise ValueError("Exponent out range of available prefixes.")
 		return '%.*f %s%s' % (precision, value,PREFIXES[si_level + prefix_levels],unit)
+
+
 
 

@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 sensors={
 0x0:['Could be MLX90614. Try 0x5A'],
 0x13:['VCNL4000'],
