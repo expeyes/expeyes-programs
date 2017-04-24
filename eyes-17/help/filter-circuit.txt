@@ -1,0 +1,2 @@
+Calculate L, C and R so that the resonance is below 3000 Hz
+Try parallel and series LC combinations.

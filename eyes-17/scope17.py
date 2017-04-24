@@ -98,7 +98,7 @@ def connect():
 		s = _('Scope17: on expEYES-17 hardware')
 		root.title(s)
 		msg(s)
-		root.after(TIMER,update)
+	root.after(TIMER,update)
 
 def draw_ylabels():
 	global VAlabels
@@ -270,7 +270,7 @@ def set_timebase(w):
 
 
 def update():
-	global delay, NP, NC, VPERDIV, chan4, CMERR, loopCounter
+	global delay, NP, NC, VPERDIV, chan4, CMERR, loopCounter,p
 	if Looping.get() == 0:
 		return
 	chword = 0
@@ -360,7 +360,7 @@ def update():
 				SENres.config(text=_('Resistance on SEN = Out of range'))
 			
 	except:
-		msg(_('Capture or data fitting error occured.'),'red')
+		msg(_('Communication / Analysis error occurred. Reconnect required'),'red')
 		CMERR = True
 	
 	root.after(TIMER,update)
@@ -927,7 +927,8 @@ def run_expt(expt):
 	global p, HelpWin
 	if HelpWin != None: HelpWin.destroy()
 	if expt == '': return
-	p.H.disconnect()		# Free the device from this program, the child will open it
+	try:p.H.disconnect()		# Free the device from this program, the child will open it
+	except:pass
 	fn = os.path.join(os.path.dirname(sys.argv[0]), expt+'.py')
 	cmd = sys.executable + ' ' + fn
 	os.system(cmd)
@@ -940,10 +941,6 @@ def disp_help(h):
 	if HelpWin != None: HelpWin.destroy()
 	HelpWin = eyeplot.pop_help(h[1],h[0])
 	
-dummyEntry = [            # A dummy entry to reconnect the device 
-[_('Reconnect'),'connect']
-]
-
 electronicsExpts = [ 
 [_('Halfwave Rectifier'),'halfwave'],
 [_('Fullwave Rectifier'),'fullwave'],
@@ -973,6 +970,7 @@ electricalExpts = [
 [_('RC Transient response'),'RCtransient'],
 [_('RL Transient response'),'RLtransient'],
 [_('RLC transient response'),'RLCtransient'],
+[_('Frequency Response of Filter Circuit'),'filter-circuit'],
 [_('EM Induction'),'induction']
 ]
 
@@ -1019,10 +1017,24 @@ schoolExpts = [
 menubar = Menu(root)				# menubar will populated later
 
 reconnMenu = Menu(menubar, tearoff=0)
-for ex in dummyEntry:
-	reconnMenu.add_command(label=ex[0], command = lambda expt=ex[1] :run_expt(expt))
+
+
+def reconnect():
+	global p
+	try:p.H.disconnect()
+	except:pass
+	p=eyes.open()
+	if p.connected:
+		p.set_wave(1000)
+reconnMenu.add_command(label='Reconnect', command = reconnect)
 reconnMenu.add_command(label='Exit', command = sys.exit)
+
+
+
+
 menubar.add_cascade(label="EYES17", menu=reconnMenu)
+
+
 
 
 electronicsMenu = Menu(menubar, tearoff=0)
