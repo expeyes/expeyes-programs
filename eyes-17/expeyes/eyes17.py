@@ -119,11 +119,12 @@ class Interface():
 		try:
 			#self.H = packet_handler.Handler(**kwargs)
 			self.version = self.H.version_string
-			self.version_number = float(self.version[-3:])
+			try:self.version_number = float(self.version[-3:])
+			except:pass
 			status = self.H.status 
 			self.__print__(self.version,len(self.version))
 		except Exception as ex:
-			self.errmsg = "failed to Connect. Please check connections/arguments\n"+ex.message
+			self.errmsg = "failed to Connect. Please check connections/arguments\n"
 			self.connected = False
 			print(self.errmsg)#raise RuntimeError(msg)
 		
@@ -155,6 +156,8 @@ class Interface():
 		self.digital_outputs=['OD1','CCS','SQR1','SQR2']
 		self.allDigitalChannels = self.digital_inputs
 		self.gains = {}
+		if self.version_number<=2.0 and self.connected:
+			self.__write_data_address__(0x0E1C,4) #Enable pull down resistor on IN2 
 		for a in gainPGAs:
 			self.gains[a] = 0
 
@@ -165,8 +168,6 @@ class Interface():
 		#self.I2C.pullSCLLow(5000)        
 		self.hexid=''    
 		if self.H.connected:
-			if self.version_number<=2.0:
-				self.__write_data_address__(0x0E1C,4) #Enable pull down resistor on IN2 
 			for a in self.gains: self.set_gain(a,self.gains[a],True) #Force load gain
 			self.load_equation('sine')
 			self.hexid=hex(self.device_id())
@@ -2050,7 +2051,7 @@ class Interface():
 		CT=10
 		CR=1
 		MAX_CR=3
-		MAX_CT=40000
+		MAX_CT=45000
 		CC=True #Constant current mode
 		iterations = 0
 		start_time=time.time()
@@ -2992,7 +2993,7 @@ if __name__ == "__main__":
 	I.get_voltage('A1')
 	""")
 	
-	I=open(verbose = False)
+	I=open(verbose = True)
 	#print (I.analogInputSources['A1'].calibrationCorrection)
 	#I.capture_traces(1,1000,1,'A1')
 	

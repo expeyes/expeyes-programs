@@ -291,6 +291,14 @@ def update():
 
 		
 		g.delete_lines()		# Remove existing lines
+
+		if chword == 3 and modeindex == 1:         # Draw XY plot of A1 vs A2 also
+			g.setWorld(-5*VPERDIV, -5*VPERDIV, 5*VPERDIV, 5*VPERDIV, 'V','V')
+			g.line(chan4[0][VDATA], chan4[1][VDATA], 3); 
+		elif chword == 3 and modeindex == 2:         # Draw XY plot of A1 vs A1-A2 also
+			g.setWorld(-5*VPERDIV, -5*VPERDIV, 5*VPERDIV, 5*VPERDIV, 'V','V')
+			g.line(chan4[0][VDATA]-chan4[1][VDATA], chan4[1][VDATA], 3); 
+		
 		if chword & 1:
 			Vrange = rangevals12[chan4[0][RANGE]]
 			g.setWorld(0,-Vrange, NP * delay * 0.001, Vrange,_(xlabel),'V')	
@@ -513,13 +521,14 @@ def set_pv2_text(w):
 		PV2scale.set(int(x))
 
 
-AWGMIN = 5
+AWGMIN = 1
 AWGMAX = 5000
 AWGval = 150
 Waves = ['sine', 'tria', 'SQR2']
 Wgains = ['80 mV', '1 V', '3 V']
 waveindex = 0
 wgainindex = 2
+
 	
 def set_wave():
 	global AWGval, waveindex
@@ -775,6 +784,18 @@ def set_trigger(w):
 	trigval = Trig.get()		# returns a number between 0 to 1000
 	select_trig(trigindex)
 
+Modes = ['Normal', 'XY', 'X dY']
+modeindex = 0
+def pop_modemenu(event):
+	poped = True
+	menuMode.post(ModSel.winfo_rootx(),ModSel.winfo_rooty()) 
+
+def select_mode(index):
+	global modeindex
+	ModSel.config(text=  Modes[index])
+	modeindex = index
+	
+
 #---------------------- Oscilloscope Channels -----------------------------
 
 f = Frame(rf)			# Analog Channel A1 and range selection
@@ -860,12 +881,16 @@ timebase = Scale(f,command = set_timebase, orient=HORIZONTAL, length=SLIDER, sho
 	from_ = 0, to=9, resolution=1)
 timebase.grid(row=1, column=2)
 timebase.set(4)
-
 Label(f,text = _('mS/div')).grid(row=1, column=3)	
-Loop = Checkbutton(f, text=_('LOOP'), variable = Looping, command = scope_mode)
-Loop.grid(row=1, column=4)
-eyeplot.CreateToolTip(Loop,_('Update traces in a loop or Freeze'))
-Looping.set('1')
+
+ModSel = Button(f,text = _('Normal'),borderwidth=1,pady=1)
+ModSel.bind("<ButtonRelease-1>", pop_modemenu) 
+ModSel.grid(row=1, column=4)
+eyeplot.CreateToolTip(WGsel,_('Select the Plot mode'))
+menuMode = Menu(ModSel, tearoff=0)
+for k in range(len(Modes)):
+	menuMode.add_command(label=Modes[k], background= 'ivory', command = lambda index=k :select_mode(index))
+
 
 l=Label(f,text = _('Trig Level'))
 l.grid(row=2, column=1)
@@ -909,6 +934,10 @@ eyeplot.CreateToolTip(Grace,_('Show the traces in Xmgrace program'))
 Frame(rf,width=120, height=5).pack()    # Spacer
 f = Frame(rf)			
 f.pack(side=TOP, anchor = SW)
+Loop = Checkbutton(f, text=_('LOOP'), variable = Looping, command = scope_mode)
+Loop.pack(side=LEFT, anchor = SW)
+eyeplot.CreateToolTip(Loop,_('Update traces in a loop or Freeze'))
+Looping.set('1')
 Dphi = Label(f,text = '', fg='blue')
 Dphi.pack(side=LEFT, anchor = SW)
 
@@ -1081,4 +1110,7 @@ menubar.add_cascade(label="SchoolLevel", menu=schoolMenu)
 root.config(menu=menubar)
 draw_ylabels()
 root.protocol("WM_DELETE_WINDOW", sys.exit)
+if p != None:
+	p.select_range('A1', 4)
+	p.select_range('A2', 4)
 root.mainloop()
