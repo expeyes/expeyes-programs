@@ -387,11 +387,21 @@ def pop_help(name, title = _('Schematic')):	# Help for scope based experiments
 		fn = os.path.join(os.path.dirname(sys.argv[0]), 'pics', name+'.png')
 		photo = PhotoImage(file=fn)
 		photo_label = Label(top,image=photo)
-		photo_label.pack(side=TOP)             
-		photo_label.image = photo      
+		photo_label.pack(side=TOP)
+		photo_label.image = photo
 	except:
-		top.title(_('Failed to load PNG Image'))
-		return top
+		try:
+			import PIL.Image
+			import PIL.ImageTk
+			fn = os.path.join(os.path.dirname(sys.argv[0]), 'pics', name+'.png')
+			im = PIL.Image.open(fn)
+			photo = PIL.ImageTk.PhotoImage(im)
+			photo_label = Label(top,image=photo)
+			photo_label.pack(side=TOP)             
+			photo_label.image = photo      
+		except:
+			top.title(_('Failed to load PNG Image'))
+			return top
 
 	try:
 		text = Text(top,height=5, fg='blue',font=("Helvetica", 14))

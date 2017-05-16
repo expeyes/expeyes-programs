@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 import numpy as np
 gains=[1,2,4,5,8,10,16,32,1/11.]

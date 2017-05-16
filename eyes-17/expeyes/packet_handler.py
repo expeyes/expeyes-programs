@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 import time
 
@@ -36,7 +37,6 @@ class Handler():
 					self.portname=a
 					self.fd,self.version_string,self.connected=self.connectToPort(self.portname)			
 					if self.connected:return
-					#print(a+' .yes.',version)
 				except :
 					pass
 			if not self.connected:
@@ -73,7 +73,7 @@ class Handler():
 		connect to a port, and check for the right version
 		'''
 		
-		if platform.system()!="Windows":   #Do this check only on Unix
+		if platform.system() not in ["Windows","Darwin"]:   #Do this check only on Unix
 			try:
 				import socket
 				self.blockingSocket = socket.socket(socket.AF_UNIX, socket.SOCK_STREAM)
