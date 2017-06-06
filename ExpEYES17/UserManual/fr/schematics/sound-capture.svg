@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="sound-capture" width="100%" height="100%"  viewBox="-6 -6 886 294">
+<desc>
+XCircuit Version 3.7
+File "sound-capture.ps" Page 1
+</desc>
+<g stroke="black">
+<g transform="matrix(   1    0   -0    1 512 128)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Source of Sound</tspan>
+</text></g>
+<g transform="matrix(   1    0   -0    1  32 240)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
+</text></g>
+<path d="M16,192 L16,256 128,256 128,192 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M128,48 L128,112 32,112 32,48 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix(   1    0   -0    1  48  96)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">MIC</tspan>
+</text></g>
+<g transform="matrix(   1    0   -0    1 288 224)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Mic</tspan>
+</text></g>
+<path d="M304,112 L304,176 352,176 352,112 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M304,128 C240,48 176,160 128,80 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M304,160 C176,224 176,160 128,224 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix(   1    0   -0    1 512 176)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Whistle, buzzer etc</tspan>
+</text></g>
+<path d="M512,80 L512,208 864,208 864,80 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M492,120 C482,125 479,125 464,128 C479,131 482,131 492,136 C490,130 490,126 492,120 " fill="#000000" stroke="none" />
+<path d="M492,136 C482,141 479,141 464,144 C479,147 482,147 492,152 C490,146 490,142 492,136 " fill="#000000" stroke="none" />
+<path d="M0,0 L0,288 880,288 880,0 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+</g>
+</svg>

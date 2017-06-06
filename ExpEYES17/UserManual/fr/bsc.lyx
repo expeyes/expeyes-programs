@@ -1,0 +1,445 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 2cm
+\rightmargin 2cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Computer Interfaced Science Experiments for B.Sc Physics Syllabus
+\end_layout
+
+\begin_layout Standard
+In science, theory and experiment are equally important.
+ If experiments could be conducted on the topics that are covered in the
+ theory classes, it would enhance the learning process.
+ Most of the time this is not done due to lack of required equipment.
+ Science experiments generally involve measuring/controlling physical parameters
+ like temperature, pressure, velocity, acceleration, force, voltage, current
+ etc.
+ If the measured physical property is changing rapidly, the measurements
+ need to be automated and a computer becomes a useful tool.
+ For example, understanding the variation of AC mains voltage with time
+ requires measuring it after every millisecond.
+ Inter-University Accelerator Centre, a particle accelerator laboratory
+ under UGC, has been involved in developing low cost equipment that can
+ be interfaced to a computer to perform experiments.
+ The expEYES kit is designed to support a wide range of experiments, from
+ school to post graduate level.
+ It also acts as a test equipment for experiments in electricity and electronics
+ .
+ Its simple and open architecture allows the users to develop new experiments,
+ without getting into the details of electronics or computer programming.
+ Details are available at http://expeyes.in
+\end_layout
+
+\begin_layout Standard
+There are around fifty experiments documented in the user's manual of expEYES,
+ but only a brief description of each activity is given.
+ This document selects five experiments and present them in a form suitable
+ to be included as a laboratory experiment at B.Sc level.
+ Introducing a couple of them also gives the students an opportunity to
+ get familiar with the equipment and perform many other experiments and
+ demonstrations if they like.
+\end_layout
+
+\begin_layout Section
+Response of LCR circuits to a sinusoidal AC voltage
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ajith/EXPEYES/EJUN/DOC/forBSc/ac-response.jpg
+	lyxscale 20
+	width 7cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/ajith/EXPEYES/EJUN/DOC/forBSc/rl-response.jpg
+	lyxscale 15
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Schematic of applying a 150 Hz sine wave to (a) C and R in series (b) L
+ and R in series.
+ Applied waveform is monitored on channel 1 and the voltage across the resistor
+ on channel 2.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:RC-Series-circuit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ajith/EXPEYES/EJUN/DOC/forBSc/ac-response.png
+	lyxscale 50
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Response of RC circuit to an applied sinusoidal voltage
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Response-of-RC"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/ajith/EXPEYES/EJUN/DOC/forBSc/lc-phaseshift.png
+	lyxscale 50
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Response of RL circuit to an applied sinusoidal voltage
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Response-of-RL"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The theory of AC circuits is introduced in the 
+\begin_inset Formula $12{}^{th}$
+\end_inset
+
+ standard and later at BSc level in more detail.
+ How the amplitude and phase of an applied sinusoidal voltage vary across
+ the circuit elements like resistors, capacitors and inductors are analyzed
+ mathematically.
+ Conducting this experiment and comparing the results with theory will enhance
+ the understanding of the student considerably but it has not been done
+ so far, mainly due to the difficulties in measuring amplitude and phase
+ accurately.
+ The expEYES kit can do this very easily.
+ 
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RC-Series-circuit"
+
+\end_inset
+
+(a) shows the RC circuit connections, crocodile clips are used for changing
+ the components easily.
+ The sinewave output is applied to a capacitor and resistor connected in
+ series.
+ The applied voltage is viewed on channel 1 (A1) and the voltage across
+ the resistor is viewed on channel 2 (A2).
+ The instantaneous values of the voltage across the capacotor is obtained
+ by subtraction.
+\end_layout
+
+\begin_layout Standard
+Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Response-of-RC"
+
+\end_inset
+
+ shows the applied sine wave, voltage across the capacitor and the voltage
+ across the resistor.
+ The phase of the voltage across the resistor is same as that of the phase
+ of the current though the circuit.
+ It can be seen that the voltage across the capacitor is leading the current
+ by 90 deg.
+ The applied voltage and measured voltages across R and C are displayed.
+ The voltage phase shift across the capacitor also is measured and displayed.
+ 
+\end_layout
+
+\begin_layout Standard
+As per the theory, the phase difference of the voltage across the capacitor
+ in an RC circuit is given by the relation
+\begin_inset Formula 
+\[
+\phi=\arctan\left(\frac{Z_{c}}{R}\right),where\, Z_{c}=\frac{1}{2\pi fC}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For f=150.7 Hz, C = 0.1
+\begin_inset Formula $\mu F$
+\end_inset
+
+ and R = 1k
+\begin_inset Formula $\Omega$
+\end_inset
+
+, Zc = 1056 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ and 
+\begin_inset Formula $\phi=46.6^{0}$
+\end_inset
+
+.
+ The measured value is 
+\begin_inset Formula $46.8^{0}$
+\end_inset
+
+.
+ A calculator is provided inside the GUI program to evaluate this, it could
+ also be done using the Python program listed below
+\end_layout
+
+\begin_layout LyX-Code
+from math import *
+\end_layout
+
+\begin_layout LyX-Code
+C = 1.e-6
+\end_layout
+
+\begin_layout LyX-Code
+R = 1000
+\end_layout
+
+\begin_layout LyX-Code
+f = 150.7
+\end_layout
+
+\begin_layout LyX-Code
+zc = 1./(2*pi*f*C)
+\end_layout
+
+\begin_layout LyX-Code
+phi = atan(zc/R)
+\end_layout
+
+\begin_layout LyX-Code
+print phi * 180 / pi  # convert to degrees
+\end_layout
+
+\begin_layout Standard
+Since the procedure will be repeated for different R and C values, it would
+ be useful to modify the program to read the R and C values from the user.
+\end_layout
+
+\begin_layout Standard
+Circuits with Inductors and resistors also can be studied in this manner.
+ Some limitations of the equipment should be kept in mind while choosing
+ the values.
+ The AC source can provide only 5 mA of current, implies that the resistance
+ should be more than 1k.
+ To give measurable phase shift with this value of resistance, the inductance
+ should be at least 100 mH.
+ A 132 mH inductor (having 584 
+\begin_inset Formula $\Omega$
+\end_inset
+
+ coil resistance) in series with a 1k resistor, as shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:RC-Series-circuit"
+
+\end_inset
+
+(b), we have used the inductor included in the expEYES kit.
+ The measured and calculated values are shown in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Response-of-RL"
+
+\end_inset
+
+ along with the graphs.
+ In this case, we are not measuring the voltage across the inductance alone
+ since it also has some resistance.
+\end_layout
+
+\begin_layout Subsubsection*
+Possible plans for experiments
+\end_layout
+
+\begin_layout Standard
+This experiment can be done with:
+\end_layout
+
+\begin_layout Itemize
+different values of R and C combinations, to compare measured values with
+ theory.
+\end_layout
+
+\begin_layout Itemize
+For finding the value of an unknown capacitor/inductor, by measuring the
+ phase shift with a known R.
+ 
+\end_layout
+
+\begin_layout Itemize
+Use an external AC source to study the phase and amplitude at different
+ frequencies
+\end_layout
+
+\begin_layout Itemize
+Use L and C in series to observe resonance, zero phase shift when 
+\begin_inset Formula $\omega L=\frac{1}{\omega C}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The coils of tangent galvanometer etc., already available in the college
+ laboratories, could be used for this experiment or the students could make
+ inductor coils with known dimensions and measure their inductance to compare
+ with the theoretical results.
+\end_layout
+
+\end_body
+\end_document
