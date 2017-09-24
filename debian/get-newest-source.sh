@@ -26,6 +26,10 @@ done
 # remove sourceless javascript files
 find expeyes-web -name "*.min.js" | xargs rm -f
 
+# remove compiled files
+find ExpEYES17/Firmware/EJV2_15DEC/ -name "*.o" | xargs rm -f
+find ExpEYES17/Firmware/EJV2_15DEC/ -name "*.elf" | xargs rm -f
+
 mkdir doc
 cd doc
 wget https://github.com/expeyes/expeyes-doc/archive/master.zip
