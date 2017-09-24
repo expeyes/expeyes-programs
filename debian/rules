@@ -36,5 +36,6 @@ override_dh_install:
 	make -C po install DESTDIR=$(CURDIR)/debian/expeyes
 	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
 	# prevents lintian error about PYCACHE
-	rm -rf $(CURDIR)/debian/python-expeyes/usr/lib/python3/dist-packages/expeyes/__pycache__
-	rm -rf $(CURDIR)/debian/expeyes/usr/share/expeyes/eyes/__pycache__
+	for p in python-expeyes eyes17; do \
+	  find $(CURDIR)/debian/$$p/ -type d -name __pycache__| xargs rm -rf; \
+	done

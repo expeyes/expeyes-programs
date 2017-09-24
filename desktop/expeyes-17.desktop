@@ -2,7 +2,7 @@
 Version=5.0.0
 Type=Application
 
-Exec=/usr/bin/expeyes-17
+Exec=/usr/bin/eyes17
 Icon=eyes17-logo.png
 
 Name=ExpEYES-17

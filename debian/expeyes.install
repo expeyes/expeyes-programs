@@ -1,10 +1,8 @@
-usr/bin/expeyes
-usr/bin/expeyes-junior
-usr/share/expeyes/eyes-junior
-usr/share/expeyes/eyes
-usr/share/applications/expeyes.desktop
-usr/share/applications/expeyes-junior.desktop
-usr/share/icons/expeyes.png
-usr/share/icons/expeyes-junior-icon.png
-usr/share/man/man1/expeyes.1.gz
-usr/share/man/man1/expeyes-junior.1.gz
+bin/expeyes                     usr/bin/
+bin/expeyes-junior		usr/bin/
+eyes-junior			usr/share/expeyes/
+eyes				usr/share/expeyes/
+desktop/expeyes.desktop 	usr/share/applications/
+desktop/expeyes-junior.desktop	usr/share/applications/
+pixmaps/expeyes-logo.png 		usr/share/icons
+pixmaps/expeyes-junior-icon.png usr/share/icons

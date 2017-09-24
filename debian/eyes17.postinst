@@ -1,5 +1,5 @@
 #!/bin/sh
-# postinst script for expeyes
+# postinst script for eyes17
 #
 # see: dh_installdeb(1)
 
@@ -22,10 +22,8 @@ case "$1" in
     configure)
 	## this was not managed properly by debian/rules:
 	if which py3compile >/dev/null 2>&1; then
-	    py3compile -p python-expeyes 
+	    py3compile -p eyes17
 	fi
-	# reload udev since we install /lib/udev/rules.d/99-phoenix.rules
-	service udev reload
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

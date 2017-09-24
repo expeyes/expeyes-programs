@@ -1,9 +1,7 @@
-usr/share/applications/*doc.desktop
-usr/share/icons/*doc.png
-usr/share/icons/*doc.svg
-usr/bin/expeyes-doc
-usr/bin/expeyes-junior-doc
-usr/bin/expeyes-progman-jr-doc
-usr/share/man/man1/expeyes-doc.1.gz
-usr/share/man/man1/expeyes-junior-doc.1.gz
-usr/share/man/man1/expeyes-progman-jr-doc.1.gz
+desktop/*doc.desktop         usr/share/applications
+pixmaps/*doc.png	     usr/share/icons
+pixmaps/*doc.svg	     usr/share/icons
+bin/expeyes-doc		     usr/bin
+#bin/expeyes-junior-doc	     usr/bin
+bin/expeyes-progman-jr-doc   usr/bin
+

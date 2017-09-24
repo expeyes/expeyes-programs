@@ -2,7 +2,8 @@ DESTDIR =
 SOURCES = $(shell ls *.lyx)
 PDFS    = $(patsubst %.lyx, %.pdf, $(SOURCES))
 TEXS    = $(patsubst %.lyx, %.tex, $(SOURCES))
-WARNING=LaTeX Warning: Label(s) may have changed. Rerun
+WARNING = LaTeX Warning: Label(s) may have changed. Rerun
+DOCDIR = $(DESTDIR)/usr/share/microhope/doc
 
 DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
 XP     = xsltproc --nonet --param man.charmap.use.subset "0"
@@ -27,7 +28,8 @@ microhope-en.pdf: $(PDFS)
 	cp microhope.pdf $@
 
 install: all
-	install -m 644 microhope-en.pdf  $(DESTDIR)
+	mkdir -p $(DOCDIR)
+	install -m 644 microhope-en.pdf  $(DOCDIR)/
 
 %.pdf: %.lyx
 	@echo -n "Exporting $< to a LaTeX file ... "

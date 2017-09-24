@@ -38,7 +38,7 @@ Description: hardware & software framework for developing science experiments
 Package: eyes17
 Architecture: all
 Depends: python, python3, ${misc:Depends},
- python-expeyes (= ${source:Version}),
+ python-expeyes (= ${source:Version}), python-qgis
 Recommends: python-numpy, python-scipy, python3-numpy, python3-scipy,
  expeyes-web
 Description: hardware & software framework for developing science experiments
