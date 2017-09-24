@@ -28,7 +28,7 @@ debian/tmp/
 debian/expeyes-doc-common/
 debian/microhope/
 debian/expeyes-doc-*/
-
+debian/eyes17/
 
 # autoconf generated files
 Makefile.in
