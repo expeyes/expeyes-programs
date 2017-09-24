@@ -1,3 +1,0 @@
-Connect the resistors one by one from SEN to Ground( any black terminal)
-The value will be displayed in the "Measurements & Control Section"
-Do the same using more than one resistors in parallel

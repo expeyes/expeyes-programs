@@ -1,5 +1,0 @@
-Connect the wires  as shown in the figure.
-Set PV1 to 2 volts. 
-Graph of DC will be a horizontal line.
-AC changes with time, measure the time for one cycle
-and calculate the frequency from that

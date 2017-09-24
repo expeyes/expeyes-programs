@@ -1,3 +1,0 @@
-Make the connetions, on a breadboard.
-Set SQ1 to 1000 Hz, watch both A1 and A2
-Change the frequecy.

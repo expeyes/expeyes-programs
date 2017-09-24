@@ -1,4 +1,0 @@
-The PT100 sensor is connected from the 1.1mA constant current source to ground.
-The voltage across PT100 is monitored using A3.
-The 1K resistor from Rg to Ground, amplifies the signal connected to A3 by 11 times
-The temperature and time ranges can be selected before starting to record the data.

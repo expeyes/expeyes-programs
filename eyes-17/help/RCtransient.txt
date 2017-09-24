@@ -1,2 +1,0 @@
-A voltage step is applied to the capacitor via the resistor.
-The resulting voltage across the capacitor is captured and plotted.

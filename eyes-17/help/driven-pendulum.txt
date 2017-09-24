@@ -1,3 +1,0 @@
-Make a pendulum using a folded piece of paper and two button magnets.
-Adjust the frequency of SQ1 to find out the resonsnce frequency of the pendulum.
-The amplitude becomes very large at this frequency.

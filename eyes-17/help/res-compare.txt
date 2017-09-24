@@ -1,3 +1,0 @@
-Connect the resistors as shown in the figure.
-Current through the circuits is I = PV1 / (R1 + R2)
-As per Ohm's law, voltage at A1 will be I x R1

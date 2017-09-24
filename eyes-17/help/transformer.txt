@@ -1,3 +1,0 @@
-The two coils provided with ExpEYES are used. Keep the coils close and parallel.
-Insert some ferromagnetic marerial through the coils to increase the
-voltage induced on the secondary coil.

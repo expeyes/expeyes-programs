@@ -1,3 +1,0 @@
-Make connections, use 1N4148 to start with, and press START. 
-Press FIT to fit the data with the equation of the PN junction.
-Use different color LED and repeat the experiment.

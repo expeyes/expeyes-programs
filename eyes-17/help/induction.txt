@@ -1,3 +1,0 @@
-Connect the coil. Insert a paper tube to guide the magnet through the coil.
-Press 'Start scanning" and drop the magnet. It may take several tries to get a trace,
-because the scanning and movement of the magnet need to coinside, to get the trace

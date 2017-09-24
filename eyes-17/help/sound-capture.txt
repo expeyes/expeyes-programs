@@ -1,3 +1,0 @@
-Make connections. Enable the channel MIC.
-Make sound using instruments like flute, or a whistle.
-Adjust the time base to view clear traces.

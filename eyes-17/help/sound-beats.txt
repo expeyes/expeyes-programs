@@ -1,3 +1,0 @@
-Make the connections. Keep the mic facing the buzzers, 4 to5 cm apart.
-Enable WG and SQ1, one by one and observe the signal by pressing START.
-Enable both WG and SQ1 and START again. STOP before Enable ot Disable sources.
