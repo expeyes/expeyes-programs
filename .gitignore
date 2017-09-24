@@ -1,5 +1,21 @@
 doc
 *~
+*.bak
+
+# python generated files
 *.pyc
 __pyshared__/
+
+# lyx generated files
 *-lyxformat-*.lyx
+
+# debian packaging temporaries
+debian/*.log
+debian/.debhelper/
+
+# autoconf generated files
+*.guess
+*.sub
+
+# po generated files
+messages.pot
