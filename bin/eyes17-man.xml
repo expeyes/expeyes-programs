@@ -56,9 +56,9 @@ man(1), man(7), http://www.tldp.org/HOWTO/Man-Page/
   <!ENTITY dhsection   "1">
   <!-- TITLE should be something like "User commands" or similar (see
        http://www.tldp.org/HOWTO/Man-Page/q2.html). -->
-  <!ENTITY dhtitle     "expeyes-17 User Manual">
-  <!ENTITY dhucpackage "EXPEYES-17">
-  <!ENTITY dhpackage   "expeyes-17">
+  <!ENTITY dhtitle     "eyes17 User Manual">
+  <!ENTITY dhucpackage "EYES17">
+  <!ENTITY dhpackage   "eyes17">
 ]>
 
 <refentry>
@@ -110,7 +110,7 @@ man(1), man(7), http://www.tldp.org/HOWTO/Man-Page/
     interactively most features of the expeyes-17 box.
     </para>
     <para>
-      Expeyes-17 is from the PHOENIX project of Inter-University Accelerator
+      Eyes17 is from the PHOENIX project of Inter-University Accelerator
       Centre, New Delhi. It is a hardware &amp; software framework for
       developing science experiments, demonstrations and projects and learn
       science and engineering by exploration. Capable of doing real time
@@ -118,15 +118,11 @@ man(1), man(7), http://www.tldp.org/HOWTO/Man-Page/
       voltages are measured with 0.025% resolution and time intervals with
       one microsecond. This project is based on Free and Open Source
       software, mostly written in Python programming language. The hardware
-      design is also open.
-    </para>      
-  </refsect1>
-  <refsect1 id="see_also">
-    <title>SEE ALSO</title>
-    <para>You can find a user manual in the directory 
-    <command>/usr/share/expeyes/doc/</command> as a PDF file called
-    <command>xx-eyesj.pdf</command>, where xx refers to a language
-    (for example, xx=en).
+      design is also open. When compared with previous ExpEYES boxes
+      (Expeyes, Expeyes-Junior), ExpEYES-17 is richer in various features:
+      multiple soft input ranges, more flexible wave generator, better time
+      resolution, better voltage resolution, supports seamlessly cheap I2C
+      sensors.
     </para>      
   </refsect1>
 </refentry>
