@@ -1,10 +1,32 @@
-expeyes (4.9.91+dfsg-1) unstable; urgency=medium
+expeyes (4.9.95-1) unstable; urgency=medium
 
-  * New upstream release (which features expeyes-17)
-  * modified the script to get new sources: do not take in account
-    the debian subdirectory
+  * upgraded to the newest upstream version, which adds support
+    for expeyes17.
 
- -- Georges Khaznadar <georgesk@debian.org>  Mon, 20 Feb 2017 22:57:26 +0100
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 24 Sep 2017 16:02:10 +0200
+
+expeyes (4.2.1+dfsg-4) unstable; urgency=medium
+
+  * added an instruction to create a missing directory.
+    Closes: #876536
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 24 Sep 2017 15:06:46 +0200
+
+expeyes (4.2.1+dfsg-3) unstable; urgency=medium
+
+  * Modified the postinst routine for expeyes-web. Closes: #876124
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 19 Sep 2017 18:09:32 +0200
+
+expeyes (4.2.1+dfsg-2) unstable; urgency=medium
+
+  * improved the integration of expeyes-web: added templates to
+    configure the web server's base URL, the link to the school's Homepage.
+  * translated the new debconf templates to French.
+  * replaced an uglified JS file in the source by a symlink in the binary
+    package expeyes-web, and wrote a lintian override.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 17 Sep 2017 16:50:21 +0200
 
 expeyes (4.2.1+dfsg-1) unstable; urgency=medium
 

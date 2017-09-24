@@ -1,0 +1,79 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the expeyes package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: expeyes\n"
+"Report-Msgid-Bugs-To: expeyes@packages.debian.org\n"
+"POT-Creation-Date: 2017-09-17 17:25+0200\n"
+"PO-Revision-Date: 2017-09-17 17:26+0200\n"
+"Last-Translator: Georges Khaznadar <georgesk@debian.org>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "List of web servers to reconfigure automatically:"
+msgstr "Liste de serveurs web à reconfigurer automatiquement :"
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "Expeyes-Web currently supports Apache2."
+msgstr "Expeyes-Web ne supporte qu'Apache2 actuellement."
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "If no web service is installed, choose \"none\"."
+msgstr "Si aucun serveur web ne doit être configuré, choisir \"none\"."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid "This should be the URL of the Expeyes service:"
+msgstr "Ce devrait être l'URL du service Expeyes :"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your server's IP address."
+msgstr ""
+"Choisissez un nom de domaine complètement qualifié et assurez-vous que ce "
+"nom sera résolu par les serveurs DNS en l'adresse IP de votre serveur."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid "This should be the URL reachable by the \"Home\" link:"
+msgstr "Ce devrait être l'URL pointée par le lien \"Home\" :"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"The main page featured by the Expeyes service has a few active buttons in "
+"its top. The \"Home\" button can be a link to a schools welcome page."
+msgstr ""
+"La page d'accueil que fournit le service Expeyes a quelques boutons actifs "
+"tout en haut. Le bouton \"Home\" peut être un lien vers la page d'accueil "
+"d'une école."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your school server's IP address."
+msgstr ""
+"Choisissez un nom de domaine complètement qualifié et assurez-vous que ce "
+"nom sera résolu par les serveurs DNS en l'adresse IP du service web de votre "
+"école."

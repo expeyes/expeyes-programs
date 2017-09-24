@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the expeyes package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: expeyes\n"
+"Report-Msgid-Bugs-To: expeyes@packages.debian.org\n"
+"POT-Creation-Date: 2017-09-17 17:25+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "List of web servers to reconfigure automatically:"
+msgstr ""
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "Expeyes-Web currently supports Apache2."
+msgstr ""
+
+#. Type: multiselect
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "If no web service is installed, choose \"none\"."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid "This should be the URL of the Expeyes service:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your server's IP address."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid "This should be the URL reachable by the \"Home\" link:"
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"The main page featured by the Expeyes service has a few active buttons in "
+"its top. The \"Home\" button can be a link to a schools welcome page."
+msgstr ""
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your school server's IP address."
+msgstr ""

@@ -1,0 +1,4 @@
+# Upstream distributes it like this, repacking would be overkill though, so
+# tell lintian to not complain, since the uglified JS file is replaced by
+# a symlink to debian's bootstrap.js
+expeyes source: source-is-missing expeyes-web/htdocs/js/bootstrap.js line length is 516 characters (>512)

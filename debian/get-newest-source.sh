@@ -15,9 +15,6 @@ mv tmp/expeyes-programs-$version $newdir
 rmdir tmp
 
 cd $newdir
-# do not include the debian subdirectory
-rm -rf debian
-
 # remove symlinks pointing outside the source tree
 # fix for a lintian error.
 for f in $(find . -type l); do 
@@ -27,10 +24,7 @@ for f in $(find . -type l); do
 done
 
 # remove sourceless javascript files
-find expeyes-web -name "*.min.js" -o -name "bootstrap.js" | xargs rm -f
-
-# remove build and dist subdirs for the firmware
-rm -rf ExpEYES17/Firmware/EJV2_15DEC/build ExpEYES17/Firmware/EJV2_15DEC/dist
+find expeyes-web -name "*.min.js" | xargs rm -f
 
 mkdir doc
 cd doc
