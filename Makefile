@@ -1,6 +1,6 @@
 DESTDIR =
-SUBDIRS = $(shell ls -d bin po firmware clib/expeyes-clib microhope \
-            microhope/po microhope/microhope-doc 2>/dev/null)
+SUBDIRS = bin po firmware clib/expeyes-clib microhope \
+          microhope/po microhope/microhope-doc
 SUBDIRS_INDEP = doc expeyes-web
 
 all:
@@ -36,7 +36,7 @@ install:
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes
 	install -d $(DESTDIR)/usr/share/expeyes
-	cp -a eyes eyes-junior eyes-17 $(DESTDIR)/usr/share/expeyes
+	cp -a eyes eyes-junior eyes17 $(DESTDIR)/usr/share/expeyes
 	# icons
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-logo.png \
