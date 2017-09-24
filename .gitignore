@@ -12,8 +12,11 @@ build/
 
 # debian packaging temporaries
 debian/*.log
+debian/*.substvars
+debian/*.debhelper
 debian/.debhelper/
 debian/debhelper-build-stamp
+debian/files
 debian/expeyes-clib/
 debian/expeyes-firmware-dev/
 debian/expeyes-web/
@@ -22,6 +25,9 @@ debian/libej-dev/
 debian/libej0/
 debian/python-expeyes/
 debian/tmp/
+debian/expeyes-doc-common/
+debian/microhope/
+debian/expeyes-doc-*/
 
 
 # autoconf generated files
