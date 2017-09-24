@@ -1,3 +1,5 @@
 doc
 *~
 *.pyc
+__pyshared__/
+*-lyxformat-*.lyx
