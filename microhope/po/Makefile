@@ -13,7 +13,11 @@ $(POFILES): messages.pot
 	msgfmt $< -o $@
 
 messages.pot: $(SRCFILES)
-	xgettext --keyword=N_ --keyword=_ -o $@ $(SRCFILES) --join-existing
+	if [ -f $@ ]; then \
+	  xgettext --keyword=N_ --keyword=_ -o $@ $(SRCFILES) --join-existing; \
+	else \
+	  xgettext --keyword=N_ --keyword=_ -o $@ $(SRCFILES); \
+	fi
 
 clean:
 	rm -f *~ *.mo

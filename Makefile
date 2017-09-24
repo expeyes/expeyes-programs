@@ -7,6 +7,9 @@ all:
 	python setup.py build
 	python3 setup.py build
 	for d in $(SUBDIRS); do \
+	  if [ -f $$d/configure.ac ]; then \
+	    (cd $$d; autoreconf --install;) \
+	  fi; \
 	  if [ -x $$d/configure ]; then \
 	    (cd $$d; ./configure -prefix=/usr; make all;) \
 	  else \
@@ -85,6 +88,10 @@ clean:
 	done
 	# clean the bootloader hex file
 	make -C microhope/firmware clean
+	# clean the autconf generated files
+	for f in  Makefile.in aclocal.m4 config.guess config.sub configure ltmain.sh m4/libtool.m4 m4/ltoptions.m4 m4/ltversion.m4 src/Makefile.in; do \
+	  rm -f clib/expeyes-clib/$$f; \
+	done
 
 
 .PHONY: all all_indep install install_indep clean
