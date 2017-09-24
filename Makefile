@@ -1,7 +1,7 @@
 DESTDIR =
 SUBDIRS = $(shell ls -d bin po firmware clib/expeyes-clib microhope \
             microhope/po microhope/microhope-doc 2>/dev/null)
-SUBDIRS_INDEP = doc
+SUBDIRS_INDEP = doc expeyes-web
 
 all:
 	python setup.py build

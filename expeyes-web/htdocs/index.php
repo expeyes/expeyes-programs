@@ -67,7 +67,7 @@ License : GNU GPL version 3
       <div class="header clearfix">
         <nav>
           <ul class="nav nav-pills pull-right">
-            <li role="presentation"><a href="http://www.amrita.edu">Home</a></li>
+            <li role="presentation"><a href="http://school.example.com">Home</a></li>
             <li role="presentation" class="active"><a href="#">Experiments</a></li>
             <li role="presentation"><a href="#">Account</a></li>
             <li role="presentation"><a href="#">Logout</a></li>
