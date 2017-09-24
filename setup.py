@@ -9,6 +9,9 @@ setup (name='expeyes',
       author_email='bpajith@gmail.com',
       url='http://expeyes.in/',
       license='GPLv3',
-      packages=['expeyes'],
-      package_dir={'expeyes': "expeyes"},
+      packages=['expeyes','eyes17'],
+      package_dir={
+          'expeyes': 'expeyes',
+          'eyes17':  'eyes17/eyes17',
+      },
 )
