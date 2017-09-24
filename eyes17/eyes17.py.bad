@@ -1,0 +1,224 @@
+try:
+	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, QStatusBar, QLabel
+	from PyQt5.QtGui import QPalette, QColor
+	from PyQt5.QtWebKitWidgets import QWebView
+	from PyQt5.QtCore import QUrl
+except:
+	from PyQt4.QtCore import Qt, QTimer, QUrl
+	from PyQt4.QtGui import QPalette, QColor, QMainWindow, QApplication, QCheckBox, QStatusBar, QLabel
+	from PyQt4.QtWebKit import QWebView
+	
+import sys, os, importlib, utils
+import pyqtgraph as pg
+
+
+schoolExpts = [ 
+["Resistance measurement", 'res-measure'],
+["Resistors in Series", 'res-series'],
+["Resistors in Parallel", 'res-parallel'],
+["Capacitance measurement", 'cap-measure'],
+["Capacitors in Series", 'cap-series'],
+["Capacitors in Parallel", 'cap-parallel'],
+["Resistance by Ohm's law", 'res-compare'],
+['Resistance of Human body', 'res-body'],
+['Direct and Alternating Currents', 'ac-dc'],
+['Separating AC and DC', 'acdc-separating'],
+['Lemon Cell', 'lemon-cell'],
+['Simple AC generator', 'ac-generator'],
+['Transformer', 'transformer'],
+['Resistance of Water', 'res-water'],
+['Sound Generator', 'sound-generator'],
+['Light Dependent Resistor', 'ldr'],
+['Capturing Sound', 'sound-capture'],
+['Stroboscope', 'stroboscope'],
+['Driven Pendulum resonance','driven-pendulum']
+]
+
+
+testEquipment = [ 
+['Oscilloscope','scope'],
+['Monitor and Control', 'mon-con']
+]
+
+electronicsExpts = [ 
+['Diode IV Char.','diode_iv'],
+['NPN Output Char.','npn_ce_out'],
+#['AM and FM', 'amfm']
+]
+
+electronicsExptsScope = [ 
+['Oscilloscope','scope'],
+['Halfwave Rectifier','halfwave'],
+['Fullwave Rectifier','fullwave'],
+['Diode Clipping','clipping'],
+['Diode Clamping','clamping'],
+['IC555 Multivibrator','osc555'],
+['Inverting Amplifier','opamp-inv'],
+['Non-Inverting Amplifier','opamp-noninv'],
+['Integrator using Op-Amp','opamp-int'],
+['Logic Gates','and-gate'],
+['Clock Divider Circuit','clock-divider']
+]
+
+electricalExpts = [ 
+['RC Steady state response','RCsteadystate'],
+['RLC Steady state response','RLCsteadystate'],
+['RC Transient response','RCtransient'],
+['RL Transient response','RLtransient'],
+['RLC transient response','RLCtransient'],
+['Frequency Response of Filter Circuit','filter-circuit'],
+['Electromagnetic Induction','induction']
+]
+
+soundExpts = [
+['Frequency Response of Piezo Buzzer','sound-freq-resp'],
+['Velocity of Sound' , 'sound-velocity'],
+['Sound beats' , 'sound-beats']
+]
+
+mechanicsExpts = [
+['Rod Pendulum with Light barrier' , 'rod-pendulum'],
+['Pendulum Wavefrorm','pendulum-velocity'],
+['Distance by HY-SRF04 Echo module', 'sr04-dist']
+]
+
+otherExpts = [ 
+['Temperatue, PT100 Sensor', 'pt100'],
+['Data Logger', 'logger']
+]
+
+#---------------------------------------------------------------------
+class helpWin(QWebView):
+	def __init__(self, name = ''):
+		QWebView.__init__(self)
+		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
+		self.load(QUrl.fromLocalFile(fn))
+		self.setWindowTitle(name[0])
+		self.show()
+
+
+class MainWindow(QMainWindow):
+	WIDTH = 950
+	HEIGHT = 600
+	expName = ''
+	hlpName = ''
+	hwin = None
+	created = {}  # dictionary
+	activeExp = None
+	
+	def closeEvent(self, e):
+		if self.hwin != None:
+			self.hwin.close()
+
+	def __init__(self):
+		QMainWindow.__init__(self)
+		self.makeMenu()
+		self.setMinimumSize(self.WIDTH, self.HEIGHT)
+
+		palette = QPalette()								# background color
+		palette.setColor(QPalette.Background, QColor("#99ccff"))
+		self.setPalette(palette)	
+		
+		self.helpCB = QCheckBox('Show PopUp Help Window')
+		self.helpCB.stateChanged.connect(self.showHelp)
+		self.statusBar = QStatusBar()
+		self.setStatusBar(self.statusBar)
+		self.statusBar.addWidget(self.helpCB)
+		
+		#self.errLab = QLabel('')
+		#self.statusBar.addWidget(self.errLab)
+		
+		self.callExpt(testEquipment[0])			# Start the scope by default
+	
+	
+	def callExpt(self, e):
+		ne = e[1]
+		explib = importlib.import_module(ne)
+		print ne
+
+		if self.activeExp == ne:
+			print 'Same'
+			return
+
+		if self.activeExp != None:
+			self.created[self.activeExp].timer.stop()
+			self.created[self.activeExp].hide()
+
+		if ne in self.created:
+			print 'show', self.created[ne]
+			self.setCentralWidget(self.created[ne])
+			self.created[ne].show()
+		else:
+			self.created.update({ne : explib.Expt(p)})
+			print 'New', self.created[ne] 
+			self.setWindowTitle(e[0])
+			self.setCentralWidget(self.created[ne])
+			self.activeExp = ne
+			self.expName = e[1]
+			self.hlpName = e[1]
+			self.title = e[0]
+			#self.showHelp()
+	
+	def showHelp(self):
+		if self.helpCB.isChecked() == True:
+			if self.hwin == None: self.hwin = helpWin((self.title,self.hlpName))
+			self.hwin.show()
+		else:
+			if self.hwin != None: self.hwin.hide()
+
+	def scope_help(self,e):
+		if self.expName != 'scope': self.callExpt(electronicsExptsScope[0])
+		self.hwin = None
+		self.hlpName = e[1]
+		self.title = e[0]
+		self.showHelp()
+		
+	def makeMenu(self):
+		bar = self.menuBar()
+
+		mb = bar.addMenu("Device")
+		mb.addAction('Reconnect', self.reconnect)
+
+		em = bar.addMenu("School Expts")
+		for e in schoolExpts:
+			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
+
+		em = bar.addMenu("Electronics")
+		for e in electronicsExptsScope:
+			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
+			
+		for e in electronicsExpts:
+			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+		
+		em = bar.addMenu("Electrical")
+		for e in electricalExpts:
+			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+
+		em = bar.addMenu("Sound")
+		for e in soundExpts:
+			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+
+		em = bar.addMenu("Mechanics")
+		for e in mechanicsExpts:
+			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+
+	def reconnect(self):
+		global p
+		try:
+			p.H.disconnect()
+		except:
+			pass
+		p=eyes.open()
+		if p != None: p.set_wave(1000)
+		self.expWidget.p = p
+
+		
+# Program starts here
+import expeyes.eyes17 as eyes
+p = eyes.open()
+if p != None: p.set_sine(1000)
+
+app = QApplication(sys.argv)
+mw = MainWindow()
+mw.show()
+sys.exit(app.exec_())

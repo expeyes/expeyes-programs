@@ -1,0 +1,92 @@
+<html>
+  <head> 
+  </head>
+  <body><font face="Times" size="2"> </font>
+    <ul>
+      <li><font color="black" face="verdana" size="2">
+          <p>The Oscilloscope program mainly functions as a four channel DSO to
+            view inputs A1, A2,A3 and MIC. </p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>Adjust the x-axis limit of the graph, using the Timebase Slider,
+            generally to view several cycles of the waveform.</p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>If the waveform is not stable, select the proper trigger source. If
+            needed adjust the Trigger level.</p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>The traces can be saved to a file, in text format. It is possible
+            to take the Fourier transform and view the frequency spectrum of the
+            input waveform.</p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>This scope program also has control/monitor widgets on the right
+            side panel to access most of the ExpEYES features.</p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>The inputs A1, A2, A3 and the resistance connected to SEN are
+            measured and displayed every second. But these readings are
+            meaningless when AC inputs are connected. </p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">
+          <p>For sinusoidal AC inputs, enable the Check-Button in front of the
+            channel widget to view the Peak voltage and frequency.</p>
+        </font></li>
+      <li><font color="black" face="verdana" size="2">The ExpEYES Input/Output
+          terminals are briefly described below.<br>
+        </font></li>
+    </ul>
+    <ul>
+    </ul>
+    <font color="black" face="verdana" size="2">
+      <p><img src="images/scope-outputs.png" alt=""> <br>
+        Output Terminals</p>
+      <ul>
+        <li><strong>CCS:</strong> 1.1mA Constant Current Source. On/Off using
+          Check-Button Enable CCS.</li>
+        <li><strong>PV1:</strong> Progrmmable Voltage, +/5 volts range. Can be
+          set using the Slider or Text-Entry widget</li>
+        <li><strong>PV2:</strong> Similar to PV1, but ranges from -3.3V to +3.3V</li>
+        <li><strong>SQ1:</strong> Square Wave Generator, swings from 0 to 5V.
+          Frequency can be set from 1Hz to 5kHz</li>
+        <li><strong>SQ2:</strong> Same as SQ1, but available as an option of WG.
+          is used</li>
+        <li><strong>OD1:</strong> Digital Output, voltage can be set to 0 or 5
+          volts</li>
+        <li><strong>WG:</strong> Waveform Generator. Frequency from 1Hz to 5kHz.
+          Amplitude can be set to 3V, 1V or 80mV. Can be set to Sine, Triangular
+          or Square. In Square mode the output is on SQ2, with 0 to 5V swing.</li>
+        <li><strong>-WG:</strong> Inverted output of WG</li>
+      </ul>
+      <p><img src="images/scope-inputs.png" alt=""> <br>
+        Input Terminals</p>
+      <ul>
+        <li><strong>IN1:</strong> Input for measuring Capacitance. Push-Button
+          provided for measurement.</li>
+        <li><strong>IN2:</strong> Input for measuring frequency of digital
+          signals, swinging between 0 and (3 to 5) volts. Push-Button provided
+          for measurement.</li>
+        <li><strong>SEN:</strong> Input for measuring resistance. This point is
+          internally connected to 3.3 volts via a 5.1k resistor</li>
+        <li><strong>A1:</strong> Voltage measurement point, functions as
+          voltmeter and oscilloscope. Maximum Input range +/-16 volts, range is
+          selectable from pull down menu. AC/DC mode selection by slider switch
+          on the box.</li>
+        <li><strong>A2:</strong> Same as A1, but no AC coupled mode</li>
+        <li><strong>A3:</strong> Voltage measurement in +/-3.3 volt range. Small
+          signals can be amplified by connecting a resistance from Rg to Ground</li>
+        <li><strong>MIC:</strong> Condenser microphone input, output appears as
+          the fourth channel of the oscilloscope</li>
+        <li><strong>Rg:</strong> Gain resistor for A3. Gain = 1 + Rext/10000.
+          For example connecting a 1k resistor gives a gain of 11</li>
+      </ul>
+      <p>The inputs A1, A2, A3 and the resistance connected to SEN are measured
+        and displayed every second. But these readings are meaningless when AC
+        inputs are connected. For sinusoidal AC inputs, enable the Check-Button
+        in front of the channel widget.</p>
+      <ul>
+      </ul>
+    </font>
+  </body>
+</html>

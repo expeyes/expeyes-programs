@@ -1,0 +1,5 @@
+print  get_voltage('A1')
+print  get_voltage('A2')
+print  get_voltage('A3')
+print  get_voltage('MIC')
+print  get_voltage('SEN')
