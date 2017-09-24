@@ -39,7 +39,6 @@ libtool
 
 
 # po generated files
-messages.pot
 *.mo
 
 # gcc generated files
