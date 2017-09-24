@@ -5,6 +5,7 @@ doc
 # python generated files
 *.pyc
 __pyshared__/
+build/
 
 # lyx generated files
 *-lyxformat-*.lyx
@@ -12,10 +13,33 @@ __pyshared__/
 # debian packaging temporaries
 debian/*.log
 debian/.debhelper/
+debian/debhelper-build-stamp
+debian/expeyes-clib/
+debian/expeyes-firmware-dev/
+debian/expeyes-web/
+debian/expeyes/
+debian/libej-dev/
+debian/libej0/
+debian/python-expeyes/
+debian/tmp/
+
 
 # autoconf generated files
-*.guess
-*.sub
+Makefile.in
+*.m4
+configure*
+config.*
+libtool
+
 
 # po generated files
 messages.pot
+*.mo
+
+# gcc generated files
+.deps/
+.libs/
+*.o
+*.lo
+*.la
+
