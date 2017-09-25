@@ -52,7 +52,6 @@ class Expt(QWidget):
 	MINV = -4.0
 	MAXV = 4.0
 	sources = ['A1','A2','A3', 'MIC']
-	#chancols = ['black', 'red', 'blue','magenta']
 	chanpens = ['y','g','r','m','c']     #pqtgraph pen colors
 
 	tbvals = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]	# allowed mS/div values
@@ -125,8 +124,14 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('Timebase'))
 		l.setMaximumWidth(60)
 		H.addWidget(l)
-		self.TBslider = utils.slider(0, 8, self.TBval, 150, self.set_timebase)
+		self.TBslider = utils.slider(0, 8, self.TBval, 80, self.set_timebase)
 		H.addWidget(self.TBslider)
+		self.Pause = QCheckBox('Pause Plotting')
+		self.Pause.setMaximumWidth(120)
+		H.addWidget(self.Pause)
+		#self.VLC.stateChanged.connect(self.action_vlc)
+
+
 		right.addLayout(H)
 
 		H = QHBoxLayout()
@@ -142,6 +147,9 @@ class Expt(QWidget):
 		H.addWidget(l)
 		right.addLayout(H)	
 		
+		self.VLC = QCheckBox('Monitor LC junction (with A3)')
+		right.addWidget(self.VLC)
+		self.VLC.stateChanged.connect(self.action_vlc)
 	
 		H = QHBoxLayout()
 		self.SaveButton = QPushButton(self.tr("Save Data to"))
@@ -152,9 +160,6 @@ class Expt(QWidget):
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
-		self.VLC = QCheckBox('Monitor LC junction (with A3)')
-		right.addWidget(self.VLC)
-		self.VLC.stateChanged.connect(self.action_vlc)
 		
 		l = QLabel(text='')
 		right.addWidget(l)
@@ -228,6 +233,7 @@ class Expt(QWidget):
 			return True
 
 	def update(self):
+		if self.Pause.isChecked() == True: return
 		try:
 			if self.VLC.isChecked() == True:
 				self.timeData[0], self.voltData[0],\
@@ -293,7 +299,9 @@ class Expt(QWidget):
 		if self.VLC.isChecked() == True:
 			self.Results[5] = 'Vc (A3-A1) = %5.2f V'%(self.Amplitude[3])
 			self.Results[6] = 'Vl (A2-A3) = %5.2f V'%(self.Amplitude[4])
-
+		else:
+			self.Results[5] = ''
+			self.Results[6] = ''
 
 		for k in range(5):
 			self.pwin.removeItem(self.resLabs[k])
@@ -301,12 +309,11 @@ class Expt(QWidget):
 			self.resLabs[k].setPos(0, -4 +0.3*k)
 			self.pwin.addItem(self.resLabs[k])
 
-		if self.VLC.isChecked() == True:
-			for k in range(5,7):
-				self.pwin.removeItem(self.resLabs[k])
-				self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k])
-				self.resLabs[k].setPos(0, 4 -0.3*(k-5))
-				self.pwin.addItem(self.resLabs[k])
+		for k in range(5,7):
+			self.pwin.removeItem(self.resLabs[k])
+			self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k])
+			self.resLabs[k].setPos(0, 4 -0.3*(k-5))
+			self.pwin.addItem(self.resLabs[k])
 
 
 		if self.fitFine[0] == 1 and self.fitFine[1] == 1 and self.fitFine[2] == 1:

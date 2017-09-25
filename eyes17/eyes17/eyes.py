@@ -30,8 +30,6 @@ import sys
 import numpy as np
 from . import eyemath17
 
-if sys.version[0] == '3': import builtins
-
 def open(**kwargs):
     '''
     If hardware is found, returns an instance of 'Interface', else returns None.
@@ -116,6 +114,7 @@ class Interface():
 		self.version = 'not connected'
 
 		#--------------------------Initialize communication handler, and subclasses-----------------
+		self.timestamp = None
 		self.H = packet_handler.Handler(**kwargs)
 		self.version_number = 1.0
 		try:
@@ -207,7 +206,6 @@ class Interface():
 			#Load constants for ADC and DAC
 			polynomials = self.read_bulk_flash(self.ADC_POLYNOMIALS_LOCATION,2048)
 			polyDict={}
-			self.timestamp = None
 			if polynomials[:7]=='ExpEYES':
 				intro = polynomials.partition("\n")[0]
 				parts = intro.partition('``')
@@ -531,7 +529,8 @@ class Interface():
 				else:self.H.__sendInt__(pwd)
 				time.sleep(pwd*1e-6)
 
-			if 'SET_STATE' in args:self.set_state(**kwargs)
+			if 'SET_STATE' in args:
+				self.set_state(**kwargs)
 			self.H.__get_ack__()
 
 
@@ -660,7 +659,7 @@ class Interface():
 			msg = "Incorrect Number of Bytes Received\n"
 			raise RuntimeError(msg)
 
-		return self.buff[:samples]
+		return self.buff[:int(samples)]
 
 	def capture_traces(self,num,samples,tg,channel_one_input='A1',CH123SA=0,**kwargs):
 		"""
@@ -741,7 +740,8 @@ class Interface():
 		CHOSA = self.analogInputSources[channel_one_input].CHOSA
 
 		if self.version_number<=2.0 and (num==3 or num==4):  #Firmware bug in versions <= 2.0 for capture_four
-			self.H.fd.write('\02\04%c\02\00\16\00'%(CHOSA))
+			cmds = '\02\04%c\02\00\16\00'%(CHOSA)
+			self.H.fd.write(cmds.encode())
 			self.H.fd.read(1)
 
 		try:
@@ -988,7 +988,7 @@ class Interface():
 
 		try:
 			for a in range(int(samples)): self.buff[a] = CP.ShortInt.unpack(data[a*2:a*2+2])[0]
-			self.achans[channel_number-1].yaxis = self.achans[channel_number-1].fix_value(self.buff[:samples])
+			self.achans[channel_number-1].yaxis = self.achans[channel_number-1].fix_value(self.buff[:int(samples)])
 		except Exception as ex:
 			msg = "Incorrect Number of bytes received.\n"
 			raise RuntimeError(msg)
@@ -1022,7 +1022,7 @@ class Interface():
 			data = self.H.fd.read(int(samples*2))        #reading int by int sometimes causes a communication error. this works better.
 			self.H.__get_ack__()
 			for a in range(int(samples)): self.buff[a] = CP.ShortInt.unpack(data[a*2:a*2+2])[0]
-			self.achans[channel_number-1].yaxis = self.achans[channel_number-1].fix_value(self.buff[:samples])
+			self.achans[channel_number-1].yaxis = self.achans[channel_number-1].fix_value(self.buff[:int(samples)])
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
@@ -1270,8 +1270,8 @@ class Interface():
 			if source.__conservativeInRangeRaw__(rawval,10):
 				return  val
 			else:
-				self.__print__('Out of Range ',val,'Gain:',source.gainEnabled)
-				return np.NaN
+				print('Out of Range ',val,'Gain:',source.gainEnabled)
+				return val#np.NaN
 		else:
 			return  val
 
@@ -1810,24 +1810,30 @@ class Interface():
 
 	def tim_helper(self, cmd, src, dst,timeout = 2.5):
 		'''
-		Helper function for all Time measurement calls. Command, 
-		Source and destination pins are inputs.
+		Helper function for all Time measurement calls.
+		
+		cmd == 'multi_r2r':
+		  src = input pin
+		  dst = number of edges to detect. dst E {1,2,3,4,8,12,16,32,48}
+		cmd in ['r2r','r2f','f2r','f2f']
+		  Command, Source and destination pins are inputs.
+		
 		Returns time in microseconds, -1 on error.
 		'''
-		allowed_skips = [0,1,2,4,8,12,16,32,48]
+		allowed_edges = [1,2,3,4,8,12,16,32,48]
 
 		if cmd == 'multi_r2r':
 			if src not in self.digital_inputs:
 				print ('Pin should be digital input capable: 0,3,4,5,6 or 7')
 				self.msg = ('Pin should be digital input capable: 0,3,4,5,6 or 7')
 				return -1
-			if dst not in allowed_skips:
-				self.msg = ('skips allowed : %s'%allowed_skips)
-				print ('skip not in %s'%allowed_skips)
+			if dst not in allowed_edges:
+				self.msg = ('edges allowed : %s'%allowed_edges)
+				print ('edge count not in %s'%allowed_edges)
 				return -1
-			if dst in [0,1,2]:
+			if dst in [1,2,3]:
 				edge = 'rising'
-				count = dst+2
+				count = dst+1
 			elif dst in [4,8,12]:
 				edge = '4xrising'
 				count = [4,8,12].index(dst)+2
@@ -1916,13 +1922,13 @@ class Interface():
 		'''
 		return self.tim_helper('f2r', pin1, pin2)
 
-	def multi_r2rtime(self, pin, skip=0,timeout=1.0):
+	def multi_r2rtime(self, pin, edges=1,timeout=1.0):
 		'''
-		Time between rising edges, could skip desired number of edges in between.
-		(pin, 9) will give time required for
-		10 cycles of a squarewave, increases resolution.
+		Time between rising edges. You can specify the number of edges to count.
+		(pin, 3) will give time required for 3 cycles of the input. Increases measurement resolution.
+		valid edges = [1,2,3,4,8,12,16,32,48]
 		'''
-		return self.tim_helper('multi_r2r', pin, skip,timeout)
+		return self.tim_helper('multi_r2r', pin, edges,timeout)
 
 	def set2rtime(self, pin1, pin2):
 		'''
@@ -2417,7 +2423,8 @@ class Interface():
 		if prescaler==4:
 			self.__print__('out of range')
 			return 0
-			
+
+
 		try:
 			self.H.__sendByte__(CP.WAVEGEN)
 			self.H.__sendByte__(CP.SET_SINE1)
@@ -2430,6 +2437,8 @@ class Interface():
 				#print ('switching back to sine..')
 				time.sleep(0.3)   
 				self.WaveMode = 'sine'
+
+
 			return val
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
@@ -2586,7 +2595,7 @@ class Interface():
 		"""
 		if freq < 4:              
 			return self.set_sqr1_slow(freq, duty_cycle)
-		
+
 		if freq==0:
 			self.set_state(SQR1=1)
 			return 0

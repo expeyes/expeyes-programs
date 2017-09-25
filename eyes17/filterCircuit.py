@@ -20,10 +20,13 @@ class Expt(QWidget):
 	RPWIDTH = 300
 	RPGAP = 4
 	running = False
+	MINDEL = 1			# minimum time between samples, in usecs
+	MAXDEL = 1000
 	
 	FMIN = 200
 	FMAX = 4900
 	FREQ = FMIN
+	NSTEP = 100
 	STEP = 10          # 10 hz
 	GMIN = 0.0		# filter amplitude Gain
 	GMAX = 3.0
@@ -88,6 +91,14 @@ class Expt(QWidget):
 		H.addWidget(l)
 		right.addLayout(H)
 		 
+		H = QHBoxLayout()
+		l = QLabel(text=self.tr('Number of Steps ='))
+		l.setMaximumWidth(120)
+		H.addWidget(l)
+		self.NSTEPtext = utils.lineEdit(60, self.NSTEP, 6, None)
+		H.addWidget(self.NSTEPtext)
+		right.addLayout(H)
+
 		b = QPushButton(self.tr("Start"))
 		right.addWidget(b)
 		b.clicked.connect(self.start)		
@@ -149,24 +160,31 @@ class Expt(QWidget):
 			return 
 
 		time.sleep(0.02)	
-		TG = 1.e6/self.FREQ/50   # 50 points per wave
-		TG = int(TG)//2 * 2
+		self.TG = 1.e6/self.FREQ/50   # 50 points per wave
+		self.TG = int(self.TG)//2 * 2
 		NP = 500
 		MAXTIME = 200000.  # .2 seconds
-		if NP * TG > MAXTIME:
-			NP = int(MAXTIME/TG)
+		if NP * self.TG > MAXTIME:
+			NP = int(MAXTIME/self.TG)
 		if NP % 2: NP += 1  # make it an even number
 		self.msg('Frequency = %5.0f Hz'%fr)
+		if self.TG < self.MINDEL:
+			self.TG = self.MINDEL
+		elif self.TG > self.MAXDEL:
+			self.TG = self.MAXDEL
 
 		goodFit = False
 		for k in range(3):                  # try 3 times
 			try:
-				t,v, tt,vv = self.p.capture2(NP, int(TG))	
+				t,v, tt,vv = self.p.capture2(NP, int(self.TG))	
 			except:
 				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 				return 
-		
-			fa = em.fit_sine(t,v)
+			try:
+				fa = em.fit_sine(t,v)
+			except:
+				self.msg('Fit failed')
+				fa = None
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:        #compare trace with the fitted curve
 					continue
@@ -206,19 +224,23 @@ class Expt(QWidget):
 		try:
 			self.FMIN = float(self.AWGstart.text())
 			self.FMAX = float(self.AWGstop.text())
+			self.NSTEP = float(self.NSTEPtext.text())
 		except:
 			self.msg('Invalid Frequency limis')
 			return
 		
 		self.pwin.setXRange(self.FMIN, self.FMAX)
 		self.pwin.setYRange(self.GMIN, self.GMAX)
+		self.STEP = (self.FMAX - self.FMIN)/ self.NSTEP
+
 		try:	
 			self.p.select_range('A1',4)
 			self.p.select_range('A2',4)
 		except:
 			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 			return 
-		
+
+
 		self.running = True
 		self.data = [ [], [] ]
 		self.FREQ = self.FMIN

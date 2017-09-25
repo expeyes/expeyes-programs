@@ -1,3 +1,6 @@
+#import eyes17.eyes          # uncomment these two lines while running stand-alone
+#p = eyes17.eyes.open()
+
 # Connect WG to A1
 
 from pylab import *
@@ -5,9 +8,9 @@ from pylab import *
 def f1(x):                         #
 	return sin(x) + sin(3*x)/3
 	
-load_equation(f1, [-pi,pi])
-set_wave(400)
+p.load_equation(f1, [-pi,pi])
+p.set_wave(400)
 
-x,y = capture1('A1', 500,10)
+x,y = p.capture1('A1', 500,10)
 plot(x,y)
 show()

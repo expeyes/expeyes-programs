@@ -23,7 +23,7 @@ class Expt(QWidget):
 	AWGmin = 1
 	AWGmax = 5000
 	AWGval = 1000
-	SQ1min = 0
+	SQ1min = 4
 	SQ1max = 5000
 	SQ1val = 1000
 	PV1min = -5.0
@@ -73,7 +73,8 @@ class Expt(QWidget):
 	
 	sources = ['A1','A2','A3', 'MIC']
 	chancols = ['yellow', 'green', 'red','magenta']
-	chanpens = ['y','g','r','m']     #pqtgraph pen colors
+	resCols = ['w','y','g','r','m']
+	
 
 	tbvals = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]	# allowed mS/div values
 	NP = 500			# Number of samples
@@ -85,26 +86,48 @@ class Expt(QWidget):
 	Trigindex = 0
 	Triglevel = 0
 	scaleCols = [(200,200,0),(0,200,0),(200,200,200), (200,0,200)]
+	
+	MAXRES = 5
+	resLabs     = [None]*MAXRES
+	Results     = [None]*MAXRES
 
+	def cross_hair(self):
+		if self.Cross.isChecked() == False:
+			self.pwin.vLine.setPos(-1)
+			self.pwin.hLine.setPos(-17)
 
 	def updateTV(self, evt):
+		if self.p == None: return
 		pos = evt[0]  			## using signal proxy turns original arguments into a tuple
 		if self.pwin.sceneBoundingRect().contains(pos):
 			mousePoint = self.pwin.vb.mapSceneToView(pos)
 			xval = mousePoint.x()
-			if self.timeData[0] != None:
-				t = self.timeData[0]
-				index = 0
-				for k in range(len(t)-1):
-					if t[k] < xval < t[k+1]:
-						index = k
-				s = '%6.2fmS '%t[index]
-				for k in range(self.MAXCHAN):
-					if self.chanStatus[k] == 1:
-						s += '| %s:%6.2fV '%(self.sources[k],self.voltData[k][index])
-				self.valueLabel.setPos(5*self.tbvals[self.TBval], 16)
-				self.valueLabel.setText(s)
 
+			if self.Cross.isChecked() == True:
+				self.pwin.vLine.setPos(mousePoint.x())
+				self.pwin.hLine.setPos(mousePoint.y())
+
+			for k in range(self.MAXRES):
+				self.pwin.removeItem(self.resLabs[k])
+			
+			t = self.timeData[0]
+			index = 0
+			for k in range(len(t)-1):		# find out Time at the cursor position
+				if t[k] < xval < t[k+1]:
+					index = k
+			
+			self.resLabs[0] = pg.TextItem(text= 'Time: %6.2fmS '%t[index], color= self.resCols[0])
+			self.resLabs[0].setPos(0, -11)
+			self.pwin.addItem(self.resLabs[0])
+			
+			for k in range(self.MAXCHAN):
+				if self.chanStatus[k] == 1:
+					self.Results[k+1] = '%s:%6.2fV '%(self.sources[k],self.voltData[k][index])
+					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resCols[k+1])
+					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
+					self.pwin.addItem(self.resLabs[k+1])
+
+			
 	def set_offset(self, ch):
 		self.offValues[ch] = self.offSliders[ch].value()
 		
@@ -126,21 +149,32 @@ class Expt(QWidget):
 			self.offSliders[ch] = utils.sliderVert(-4, 4, 0, 40, None)
 			left.addWidget(self.offSliders[ch])
 			self.offSliders[ch].valueChanged.connect(partial (self.set_offset,ch))
-			#self.offSliders[ch].setStyleSheet("background-color: %s;"%self.chancols[ch])
-			self.offSliders[ch].setStyleSheet("border: 2px solid %s;"%self.chancols[ch])
-		
+			self.offSliders[ch].setStyleSheet("border: 1px solid %s;"%self.chancols[ch])
+					
+		#pg.setConfigOption('background', 'w')
+
 		win = pg.GraphicsWindow()
 		self.pwin = win.addPlot()
 		self.pwin.proxy = pg.SignalProxy(self.pwin.scene().sigMouseMoved, rateLimit=60, slot=self.updateTV)				
 		self.pwin.showGrid(x=True, y=True)						# with grid
+		
 
 		for k in range(self.MAXCHAN):							# pg textItem to show the voltage scales
 			self.scaleLabs[k] = pg.TextItem(text='')
 
-		self.valueLabel = pg.TextItem(text='', color = 'w')
-		self.valueLabel.setPos(5*self.tbvals[self.TBval], 16)
-		self.pwin.addItem(self.valueLabel)
-
+		for k in range(self.MAXRES):						# pg textItem to show the Results
+			self.resLabs[k] = pg.TextItem()
+			self.pwin.addItem(self.resLabs[k])
+		
+		vLine = pg.InfiniteLine(angle=90, movable=False, pen = 'w')
+		self.pwin.addItem(vLine, ignoreBounds=True)
+		self.pwin.vLine=vLine
+		self.pwin.vLine.setPos(-1)
+		hLine = pg.InfiniteLine(angle=0, movable=False, pen = 'w')
+		self.pwin.addItem(hLine, ignoreBounds=True)
+		self.pwin.hLine=hLine
+		self.pwin.hLine.setPos(-17)
+		
 		ax = self.pwin.getAxis('bottom')
 		ax.setLabel('Time (mS)')	
 		ax = self.pwin.getAxis('left')
@@ -153,9 +187,10 @@ class Expt(QWidget):
 		self.pwin.setYRange(-16, 16)
 		self.pwin.hideButtons()									# Do not show the 'A' button of pg
 
+		self.pens = utils.makePens()
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.chanpens[ch])
-			self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = 'r')
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.pens[ch])
+		self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = 'c')
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
@@ -234,27 +269,34 @@ class Expt(QWidget):
 		
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('WG'))
-		l.setMaximumWidth(25)
+		l.setMaximumWidth(30)
 		H.addWidget(l)
 		self.AWGslider = utils.slider(self.AWGmin, self.AWGmax, self.AWGval,100,self.awg_slider)
 		H.addWidget(self.AWGslider)
 		self.AWGtext = utils.lineEdit(100, self.AWGval, 6, self.awg_text)
 		H.addWidget(self.AWGtext)
 		l = QLabel(text=self.tr('Hz'))
-		l.setMaximumWidth(20)
+		l.setMaximumWidth(40)
+		l.setMinimumWidth(40)
 		H.addWidget(l)
 		right.addLayout(H)
 		
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('SQ1'))
-		l.setMaximumWidth(25)
+		l.setMaximumWidth(30)
+		l.setMinimumWidth(30)
 		H.addWidget(l)
 		self.SQ1slider = utils.slider(self.SQ1min, self.SQ1max, self.SQ1val,100,self.sq1_slider)
 		H.addWidget(self.SQ1slider)
-		self.SQ1text = utils.lineEdit(100, self.SQ1val, 6, self.sq1_text)
+		self.SQ1text = utils.lineEdit(60, self.SQ1val, 6, self.sq1_text)
 		H.addWidget(self.SQ1text)
 		l = QLabel(text=self.tr('Hz'))
-		l.setMaximumWidth(20)
+		l.setMaximumWidth(15)
+		H.addWidget(l)
+		self.SQ1DCtext = utils.lineEdit(30, 50, 6, self.sq1_dc)
+		H.addWidget(self.SQ1DCtext)
+		l = QLabel(text=self.tr('%'))
+		l.setMaximumWidth(15)
 		H.addWidget(l)
 		right.addLayout(H)
 
@@ -268,8 +310,9 @@ class Expt(QWidget):
 		
 		self.PV1text = utils.lineEdit(100, self.PV1val, 6, self.pv1_text)
 		H.addWidget(self.PV1text)
-		l = QLabel(text=self.tr('V'))
-		l.setMaximumWidth(20)
+		l = QLabel(text=self.tr('Volt'))
+		l.setMaximumWidth(40)
+		l.setMinimumWidth(40)
 		H.addWidget(l)
 		right.addLayout(H)
 
@@ -283,8 +326,9 @@ class Expt(QWidget):
 		
 		self.PV2text = utils.lineEdit(100, self.PV2val, 6, self.pv2_text)
 		H.addWidget(self.PV2text)
-		l = QLabel(text=self.tr('V'))
-		l.setMaximumWidth(20)
+		l = QLabel(text=self.tr('Volt'))
+		l.setMaximumWidth(40)
+		l.setMinimumWidth(40)
 		H.addWidget(l)
 		right.addLayout(H)
 		
@@ -296,10 +340,17 @@ class Expt(QWidget):
 		for ch in range(4):
 			H = QHBoxLayout()
 			H.setAlignment(Qt.AlignLeft)
-			self.chanSelCB[ch] = QCheckBox(self.tr(self.sources[ch]))
+
+			self.chanSelCB[ch] = QCheckBox()
+			#self.chanSelCB[ch].setStyleSheet("background-color:%s;"%self.chancols[ch]) 
 			self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
-			self.chanSelCB[ch].setMinimumWidth(self.LABW)
 			H.addWidget(self.chanSelCB[ch])
+
+			l = QLabel(text=self.tr('<font color="%s">%s'%(self.chancols[ch],self.sources[ch])))		
+			l.setMaximumWidth(30)
+			l.setMinimumWidth(30)
+			H.addWidget(l)
+			
 			self.rangeSelPB[ch] = QPushButton('4 V')
 			self.rangeSelPB[ch].setMaximumWidth(60)
 			menu = QMenu()
@@ -365,6 +416,10 @@ class Expt(QWidget):
 		right.addLayout(H)
 		
 		H = QHBoxLayout()
+		self.Cross = QCheckBox(self.tr("Cross hair"))
+		self.Cross.stateChanged.connect(self.cross_hair)
+		H.addWidget(self.Cross)
+
 		self.Freeze = QCheckBox(self.tr("Freeze"))
 		H.addWidget(self.Freeze)
 		self.Diff = QCheckBox(self.tr('A1-A2'))
@@ -475,7 +530,7 @@ class Expt(QWidget):
 	def select_channel(self, ch):
 		if self.chanSelCB[ch].isChecked() == True:
 			self.chanStatus[ch] = 1
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen=self.chanpens[ch])
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen=self.pens[ch])
 		else:
 			self.chanStatus[ch] = 0
 			self.pwin.removeItem(self.traceWidget[ch])
@@ -519,7 +574,7 @@ class Expt(QWidget):
 					xa *= 1000
 					peak = self.peak_index(xa,ya)
 					ypos = np.max(ya)
-					pop = pg.plot(xa,ya, pen = self.chanpens[ch])
+					pop = pg.plot(xa,ya, pen = self.pens[ch])
 					pop.showGrid(x=True, y=True)
 					txt = pg.TextItem(text='Fundamental frequency = %5.1f Hz'%peak, color = 'w')
 					txt.setPos(peak, ypos)
@@ -625,6 +680,16 @@ class Expt(QWidget):
 			except:
 				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 				
+	def sq1_dc(self, text):
+		try:
+			val = float(text)
+		except:
+			return
+		if 1 <= val <= 99:
+			self.dutyCycle = val
+			s = self.SQ1text.text()
+			self.sq1_text(s)
+
 	def sq1_text(self, text):
 		try:
 			val = float(text)
@@ -634,7 +699,7 @@ class Expt(QWidget):
 			self.SQ1val = val
 			self.SQ1slider.setValue(self.SQ1val)
 			try:
-				res = self.p.set_sqr1(val)
+				res = self.p.set_sqr1(val, self.dutyCycle)
 				self.msg('sqr1 set to %5.1f'%res)
 			except:
 				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		

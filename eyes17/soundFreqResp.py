@@ -174,7 +174,6 @@ class Expt(QWidget):
 			try:
 				t,v   = self.p.capture1('MIC', NP, TG)	
 			except:
-				print 'Err'
 				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')
 				return		
 			fa = em.fit_sine(t,v)
@@ -232,7 +231,6 @@ class Expt(QWidget):
 		nstep = (self.FMAX - self.FMIN)/self.STEP
 		tgap = self.totalTime*1000/nstep
 		mt = nstep * self.MINTIMER /1000 + 1
-		print tgap, mt
 		
 		if tgap > self.MINTIMER:
 			self.TIMER = tgap	

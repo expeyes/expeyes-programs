@@ -1,5 +1,6 @@
-print  get_voltage('A1')
-print  get_voltage('A2')
-print  get_voltage('A3')
-print  get_voltage('MIC')
-print  get_voltage('SEN')
+#import eyes17.eyes          # uncomment these two lines while running stand-alone
+#p = eyes17.eyes.open()
+
+print p.get_voltage('A1')
+print p.get_voltage('A2')
+print p.get_voltage('A3')

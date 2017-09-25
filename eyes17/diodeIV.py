@@ -21,10 +21,10 @@ class Expt(QWidget):
 	RPGAP = 4
 	running = False
 	
-	VMIN = -5
+	VMIN = 0
 	VMAX = 5
 	VSET = VMIN
-	IMIN = -5
+	IMIN = 0
 	IMAX = 5
 	STEP = 0.050           # 50 mV
 	data = [ [], [] ]
@@ -64,7 +64,7 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.stop)		
 		
-		b = QPushButton(self.tr("Analyze last Trace"))
+		b = QPushButton(self.tr("FIT with I=Io* exp(qV/nkT)"))
 		right.addWidget(b)
 		b.clicked.connect(self.fit_curve)		
 
@@ -148,8 +148,11 @@ class Expt(QWidget):
 		if self.running == True: return
 		if self.zener.isChecked() == True:
 			self.VMIN = -5
+			self.IMIN = -5
 		else:
 			self.VMIN = 0
+			self.IMIN = 0
+			
 		self.pwin.setXRange(self.VMIN, self.VMAX)
 		self.pwin.setYRange(self.IMIN, self.IMAX)
 		try:

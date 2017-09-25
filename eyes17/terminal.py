@@ -14,7 +14,7 @@ class embeddedTerminal(QWidget):
         self._start_process(
             'xterm',
             ['-into', str(self.terminal.winId()),
-             '-e', 'tmux', 'new', '-s', 'my_session']
+             '-e', 'ls', 'new', '-s', 'my_session']
         )
         button = QPushButton('List files')
         layout.addWidget(button)

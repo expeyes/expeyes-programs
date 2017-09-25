@@ -12,6 +12,16 @@ else:
 	
 print("Qt version:", QT_VERSION_STR)
 
+import pyqtgraph as pg
+
+penCols = ['y','g','r','m','c']     #pqtgraph pen colors
+def makePens():
+	pens = []
+	for p in penCols:
+		x=pg.mkPen(p, width=1)#, style=Qt.DashLine) 
+		pens.append(x)
+	return pens
+
 class slider(QSlider):
 	def __init__(self, minval, maxval, setval, maxw, cback):
 		QSlider.__init__(self,Qt.Horizontal)
@@ -22,6 +32,8 @@ class slider(QSlider):
 		self.setSingleStep(1)
 		self.setPageStep(1)
 		if cback != None: self.valueChanged.connect(cback)
+		#self.setStyleSheet("handle: width 10px;")
+
 
 class sliderVert(QSlider):
 	def __init__(self, minval, maxval, setval, maxw, cback):
