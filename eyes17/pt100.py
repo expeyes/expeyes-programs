@@ -56,9 +56,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Temparature (C)')
+		ax.setLabel(self.tr('Temparature (C)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.TPMIN, self.TPMAX)
@@ -177,7 +177,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'pt100.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('pt100.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -238,7 +238,7 @@ class Expt(QWidget):
 				v = self.p.get_voltage('A3')  		# Read A3
 				sum += v
 			v = sum/NT
-			self.A3val.setText('%5.3f V'%v)
+			self.A3val.setText(self.tr('%5.3f V'%v))
 		except:
 			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 			return 

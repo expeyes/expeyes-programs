@@ -63,9 +63,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage')
+		ax.setLabel(self.tr('Voltage'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(0, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -83,7 +83,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'sound-velocity.txt', 20, None )
+		self.Filename = utils.lineEdit(150, self.tr('sound-velocity.txt'), 20, None )
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -111,7 +111,7 @@ class Expt(QWidget):
 		H.addWidget(l)
 		right.addLayout(H)
 
-		self.enable = QCheckBox('Enable Measurements')
+		self.enable = QCheckBox(self.tr('Enable Measurements'))
 		right.addWidget(self.enable)
 		self.enable.stateChanged.connect(self.control)
 
@@ -171,7 +171,7 @@ class Expt(QWidget):
 				pb = fb[1][2] * 180/em.pi
 				pdiff = pa-pb
 				if fb[1][0] < 0: pdiff = 180 - pdiff
-				self.Res.setText('Phase Shift = %5.1f deg'%(pdiff))
+				self.Res.setText(self.tr('Phase Shift = %5.1f deg'%(pdiff)))
 		except:
 			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')			
 	

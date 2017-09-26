@@ -50,9 +50,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Current through R (mA)')	
+		ax.setLabel(self.tr('Current through R (mA)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage across R(Volts)')
+		ax.setLabel(self.tr('Voltage across R(Volts)'))
 		self.pwin.disableAutoRange()
 		self.IMIN = self.VMIN / self.Res
 		self.IMAX = self.VMAX / self.Res
@@ -115,7 +115,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'iv.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('iv.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -164,9 +164,9 @@ class Expt(QWidget):
 		self.p.set_pv1(val)
 		a1 = self.p.get_voltage('A1')
 		volt = val- a1
-		self.Voltage.setText('Voltage = %5.3f V'%volt)
+		self.Voltage.setText(self.tr('Voltage = %5.3f V'%volt))
 		i = a1/res *1000
-		self.Current.setText('Current = %5.3f mA'%i)
+		self.Current.setText(self.tr('Current = %5.3f mA'%i))
 	
 	
 	def fit_curve(self):

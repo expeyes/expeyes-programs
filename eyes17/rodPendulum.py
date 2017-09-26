@@ -3,12 +3,12 @@ import sys, time, utils, math
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton 
+	QCheckBox, QPushButton, QTextEdit
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QTextEdit
 	
 import pyqtgraph as pg
 import numpy as np
@@ -39,9 +39,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Trials')	
+		ax.setLabel(self.tr('Trials'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Time Period (mSec)')
+		ax.setLabel(self.tr('Time Period (mSec)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.NMIN, self.NMAX)
 		self.pwin.setYRange(self.TMIN, self.TMAX)
@@ -66,12 +66,14 @@ class Expt(QWidget):
 		b = QPushButton(self.tr("Stop"))
 		right.addWidget(b)
 		b.clicked.connect(self.stop)		
+
 		'''
 		b = QPushButton(self.tr("Analyze last Trace"))
 		right.addWidget(b)
 		b.clicked.connect(self.fit_curve)		
 		'''
-		b = QPushButton(self.tr("Clear Traces"))
+
+		b = QPushButton(self.tr("Clear Data and Traces"))
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
@@ -80,9 +82,18 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'rod-pendulum.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('rod-pendulum.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
+					
+		H = QHBoxLayout()
+		self.Results = QTextEdit()	
+		self.Results.setMaximumWidth(self.RPWIDTH-10)
+		H.addWidget(self.Results)
+		right.addLayout(H)
+	
+					
+
 
 		#------------------------end of right panel ----------------
 		
@@ -135,8 +146,10 @@ class Expt(QWidget):
 			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 		
 		if T < 0:
-			self.msg('<font color="red">Timeout Error')
-			return
+			s = 'Timeout'
+		else:
+			s ='%f'%T
+		self.Results.append(self.tr(s))
 
 		T *= 1000			#seconds  to milliseconds
 		self.data[0].append(self.index)
@@ -195,6 +208,7 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
+		self.Results.setText('')
 		self.msg('Cleared Traces and Data')
 		
 	def save_data(self):

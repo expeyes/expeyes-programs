@@ -116,13 +116,13 @@ class Expt(QWidget):
 				if t[k] < xval < t[k+1]:
 					index = k
 			
-			self.resLabs[0] = pg.TextItem(text= 'Time: %6.2fmS '%t[index], color= self.resCols[0])
+			self.resLabs[0] = pg.TextItem(text= self.tr('Time: %6.2fmS '%t[index]), color= self.resCols[0])
 			self.resLabs[0].setPos(0, -11)
 			self.pwin.addItem(self.resLabs[0])
 			
 			for k in range(self.MAXCHAN):
 				if self.chanStatus[k] == 1:
-					self.Results[k+1] = '%s:%6.2fV '%(self.sources[k],self.voltData[k][index])
+					self.Results[k+1] = self.tr('%s:%6.2fV '%(self.sources[k],self.voltData[k][index]))
 					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resCols[k+1])
 					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
@@ -176,10 +176,10 @@ class Expt(QWidget):
 		self.pwin.hLine.setPos(-17)
 		
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
 		ax.setStyle(showValues=False)
-		ax.setLabel('Voltage')
+		ax.setLabel(self.tr('Voltage'))
 		
 		self.set_timebase(self.TBval)
 		self.pwin.disableAutoRange()
@@ -362,7 +362,7 @@ class Expt(QWidget):
 					menu.addAction(self.Ranges34[k], lambda index=(ch,k): self.select_range(index))
 			self.rangeSelPB[ch].setMenu(menu)
 			H.addWidget(self.rangeSelPB[ch])
-			self.fitSelCB[ch] = QCheckBox(self.tr(""))
+			self.fitSelCB[ch] = QCheckBox('')
 			self.fitSelCB[ch].setMaximumWidth(30)
 			H.addWidget(self.fitSelCB[ch])
 			self.fitResLab[ch] = QLabel('') 
@@ -390,7 +390,7 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('On'))
 		l.setMaximumWidth(30)
 		H.addWidget(l)	
-		self.Trigbutton = QPushButton('A1')
+		self.Trigbutton = QPushButton(self.tr('A1'))
 		self.Trigbutton.setMaximumWidth(50)
 		menu = QMenu()
 		for k in range(len(self.sources)):
@@ -405,7 +405,7 @@ class Expt(QWidget):
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
 			
-		self.Filename = utils.lineEdit(100, 'scope.txt', 20, None)
+		self.Filename = utils.lineEdit(100, self.tr('scope.txt'), 20, None)
 		H.addWidget(self.Filename)
 		
 		self.FFT = QPushButton(self.tr("FFT"))
@@ -479,7 +479,7 @@ class Expt(QWidget):
 						self.Amplitude[ch] = abs(fa[1][0])
 						self.Frequency[ch] = fa[1][1]*1000
 						self.Phase[ch] = fa[1][2] * 180/em.pi
-						s = '%5.2f V, %5.1f Hz'%(self.Amplitude[ch],self.Frequency[ch])
+						s = self.tr('%5.2f V, %5.1f Hz'%(self.Amplitude[ch],self.Frequency[ch]))
 						self.fitResLab[ch].setText(s)
 				else:
 					self.fitResLab[ch].setText('')
@@ -503,9 +503,9 @@ class Expt(QWidget):
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-					self.RES.setText('<font color="blue">%5.0f Ohm'%(res))
+					self.RES.setText(self.tr('<font color="blue">%5.0f Ohm'%(res)))
 				else:
-					self.RES.setText('<100Ohm  or  >100k')
+					self.RES.setText(self.tr('<100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
 				self.p.select_range('A2', self.rangeVals[1])
 			except:
@@ -556,9 +556,6 @@ class Expt(QWidget):
 	
 
 	def show_fft(self):
-		#self.popwin = pg.PlotWidget()				# pyqtgraph window
-		#self.popwin.showGrid(x=True, y=True)						# with grid
-		#self.popwin.setWindowTitle('Frequency Spectrum')
 		for ch in range(4):
 			if self.chanStatus[ch] == 1:
 				fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
@@ -576,10 +573,10 @@ class Expt(QWidget):
 					ypos = np.max(ya)
 					pop = pg.plot(xa,ya, pen = self.pens[ch])
 					pop.showGrid(x=True, y=True)
-					txt = pg.TextItem(text='Fundamental frequency = %5.1f Hz'%peak, color = 'w')
+					txt = pg.TextItem(text=self.tr('Fundamental frequency = %5.1f Hz'%peak), color = 'w')
 					txt.setPos(peak, ypos)
 					pop.addItem(txt)
-					pop.setWindowTitle('Frequency Spectrum')
+					pop.setWindowTitle(self.tr('Frequency Spectrum'))
 				else:
 					self.msg('FFT Error')
 						
@@ -779,7 +776,7 @@ class Expt(QWidget):
 			if cap == None:
 				self.msg('Capacitance too high or short to ground')
 			else:
-				self.CAP.setText('<font color="blue">%6.1f pF'%cap)
+				self.CAP.setText(self.tr('<font color="blue">%6.1f pF'%cap))
 		except:
 			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
 
@@ -792,9 +789,9 @@ class Expt(QWidget):
 		if fr > 0:	
 			T = 1./fr
 			dc = hi*100/T
-			self.IN2.setText('<font color="blue">%5.1fHz %4.1f%%'%(fr,dc))
+			self.IN2.setText(self.tr('<font color="blue">%5.1fHz %4.1f%%'%(fr,dc)))
 		else:
-			self.IN2.setText('<font color="blue">No signal')
+			self.IN2.setText(self.tr('<font color="blue">No signal'))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

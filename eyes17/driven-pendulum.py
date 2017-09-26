@@ -35,8 +35,8 @@ class Expt(QWidget):
 		font.setPointSize(16)
 		self.Edit.setFont(font)
 
-		s='This program sets SQ1 to high resolution mode. WG will be disabled.\
-Frequency can be changed from 0.1 Hz to 50Hz'
+		s=tr('This program sets SQ1 to high resolution mode. WG will be disabled.\
+Frequency can be changed from 0.1 Hz to 50Hz')
 		self.Edit.setText(s)	
 	
 		H = QHBoxLayout()

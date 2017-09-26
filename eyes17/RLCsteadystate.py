@@ -81,9 +81,9 @@ class Expt(QWidget):
 		for k in range(self.MAXCHAN):						# pg textItem to show the voltage scales
 			self.scaleLabs.append(pg.TextItem(text=''))
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage')
+		ax.setLabel(self.tr('Voltage'))
 
 		self.set_timebase(self.TBval)
 		self.pwin.disableAutoRange()
@@ -156,7 +156,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'RCs-data.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('RCs-data.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -196,7 +196,7 @@ class Expt(QWidget):
 		right.addLayout(H)	
 		
 				
-		b=QPushButton('Calculate XL, XC and Fo')
+		b=QPushButton(self.tr('Calculate XL, XC and Fo'))
 		b.clicked.connect(self.calc)		
 		right.addWidget(b)
 		self.uResult =QLabel(text='')
@@ -267,7 +267,7 @@ class Expt(QWidget):
 				self.Phase[ch] = fa[1][2] * 180/em.pi
 				self.fitFine[ch] = 1
 			else:
-				self.err('Data Analysis Error')
+				self.msg('Data Analysis Error')
 				return
 		phaseDiff = (self.Phase[0] - self.Phase[1])
 	
@@ -285,20 +285,20 @@ class Expt(QWidget):
 					self.Phase[ch] = fa[1][2] * 180/em.pi
 					self.fitFine[ch] = 1
 				else:
-					self.err('Data Analysis Error')
+					self.msg('Data Analysis Error')
 					return			
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = 'F = %5.1f Hz'%(self.Frequency[0])
-		self.Results[1] = 'Vtotal (A1) = %5.2f V'%(self.Amplitude[0])
-		self.Results[2] = 'Vr (A2) = %5.2f V'%(self.Amplitude[1])
-		self.Results[3] = 'Vlc (A2-A1) = %5.2f V'%(self.Amplitude[2])
-		self.Results[4] = 'Phase Diff = %5.1f deg'%phaseDiff
+		self.Results[0] = self.tr('F = %5.1f Hz'%(self.Frequency[0]))
+		self.Results[1] = self.tr('Vtotal (A1) = %5.2f V'%(self.Amplitude[0]))
+		self.Results[2] = self.tr('Vr (A2) = %5.2f V'%(self.Amplitude[1]))
+		self.Results[3] = self.tr('Vlc (A2-A1) = %5.2f V'%(self.Amplitude[2]))
+		self.Results[4] = self.tr('Phase Diff = %5.1f deg'%phaseDiff)
 
 		if self.VLC.isChecked() == True:
-			self.Results[5] = 'Vc (A3-A1) = %5.2f V'%(self.Amplitude[3])
-			self.Results[6] = 'Vl (A2-A3) = %5.2f V'%(self.Amplitude[4])
+			self.Results[5] = self.tr('Vc (A3-A1) = %5.2f V'%(self.Amplitude[3]))
+			self.Results[6] = self.tr('Vl (A2-A3) = %5.2f V'%(self.Amplitude[4]))
 		else:
 			self.Results[5] = ''
 			self.Results[6] = ''
@@ -374,12 +374,12 @@ class Expt(QWidget):
 			if L != 0 and C != 0:
 				f0 = 1./(2*np.pi*np.sqrt(L*C))
 				s = 'Xc = %5.1f     Xl = %5.1f    phi = %5.1f deg\nFo = %5.1f Hz'%(Xc, Xl, dphi,f0)
-				self.uResult.setText(s)
+				self.uResult.setText(self.tr(s))
 			else:
 				s = 'Xc = %5.1f  Xl = %5.1f  phi = %5.1f deg'%(Xc, Xl, dphi)
-				self.uResult.setText(s)				
+				self.uResult.setText(self.tr(s))				
 		except:
-			self.uResult.setText('Invalid Input in some field')
+			self.uResult.setText(self.tr('Invalid Input in some field'))
 	
 	def save_data(self):
 		fn = self.Filename.text()

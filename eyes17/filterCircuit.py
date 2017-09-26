@@ -51,9 +51,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Frequency (Hz)')	
+		ax.setLabel(self.tr('Frequency (Hz)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Amplitude Gain')
+		ax.setLabel(self.tr('Amplitude Gain'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.FMIN, self.FMAX)
 		self.pwin.setYRange(self.GMIN, self.GMAX)
@@ -116,7 +116,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'filter-data.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('filter-data.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 

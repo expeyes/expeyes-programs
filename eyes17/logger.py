@@ -54,9 +54,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage(V)')
+		ax.setLabel(self.tr('Voltage(V)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -122,7 +122,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'logger.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('logger.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 

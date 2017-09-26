@@ -50,9 +50,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage (V)')
+		ax.setLabel(self.tr('Voltage (V)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -68,7 +68,7 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('Select Range of A1'))
 		l.setMaximumWidth(150)
 		H.addWidget(l)
-		self.rangeSelPB = QPushButton('4 V')
+		self.rangeSelPB = QPushButton(self.tr('4 V'))
 		self.rangeSelPB.setMaximumWidth(60)
 		menu = QMenu()
 		for k in range(len(self.Ranges12)):
@@ -90,7 +90,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'induction.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('induction.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 

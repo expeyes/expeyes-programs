@@ -50,9 +50,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Frequency (Hz)')	
+		ax.setLabel(self.tr('Frequency (Hz)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Amplitude (V)')
+		ax.setLabel(self.tr('Amplitude (V)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.FMIN, self.FMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -112,7 +112,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'Piezo-freq-resp.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('freq-resp.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -180,7 +180,7 @@ class Expt(QWidget):
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:        #compare trace with the fitted curve
 					continue
-				self.updateLabel.setText('Frequency = %5.0f Hz V = %5.3f'%(fr,abs(fa[1][0])))
+				self.updateLabel.setText(self.tr('Frequency = %5.0f Hz V = %5.3f'%(fr,abs(fa[1][0]))))
 				self.data[0].append(fr)
 				self.data[1].append(abs(fa[1][0]))
 				goodFit = True

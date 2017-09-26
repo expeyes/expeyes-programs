@@ -63,9 +63,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Time (mS)')	
+		ax.setLabel(self.tr('Time (mS)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage')
+		ax.setLabel(self.tr('Voltage'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(0, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -137,7 +137,7 @@ shows the actual frequency set.\n'))
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'sound-beats.txt', 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('sound-beats.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -148,7 +148,6 @@ shows the actual frequency set.\n'))
 
 		H = QHBoxLayout()
 		self.Res = QLabel(text=self.tr(''))
-		#Res.setMaximumWidth(60)
 		H.addWidget(self.Res)
 		right.addLayout(H)
 		
@@ -175,7 +174,7 @@ shows the actual frequency set.\n'))
 	def show_fft(self):
 		self.popwin = pg.PlotWidget()				# pyqtgraph window
 		self.popwin.showGrid(x=True, y=True)						# with grid
-		self.popwin.setWindowTitle('Frequency Spectrum')
+		self.popwin.setWindowTitle(self.tr('Frequency Spectrum'))
 		try:
 			xa,ya = em.fft(self.voltData[0], self.timeData[0][1]-self.timeData[0][0])
 			self.popwin.plot(xa*1000,ya, pen = 'w')					

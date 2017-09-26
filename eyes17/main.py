@@ -132,7 +132,7 @@ class helpWin(QWebView):
 		QWebView.__init__(self)
 		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		self.load(QUrl.fromLocalFile(fn))
-		self.setWindowTitle('Help: '+name[0])
+		self.setWindowTitle(self.tr('Help: ')+ name[0])
 		self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
@@ -161,7 +161,7 @@ class MainWindow(QMainWindow):
 		palette.setColor(QPalette.Background, QColor("#88bbcc")) #("#99ccff"))
 		self.setPalette(palette)	
 
-		self.helpCB = QCheckBox('Show PopUp Help Window')
+		self.helpCB = QCheckBox(self.tr('Show PopUp Help Window'))
 		self.helpCB.stateChanged.connect(self.showHelp)
 
 		self.statusBar = QStatusBar()
@@ -199,7 +199,7 @@ class MainWindow(QMainWindow):
 				self.expName = 'scope'
 			except:
 				self.expName = ''
-				self.setWindowTitle('Failed to load scope')
+				self.setWindowTitle(self.tr('Failed to load scope'))
 		self.hwin = None
 		self.title = e[0]
 		self.showHelp()
@@ -222,7 +222,7 @@ class MainWindow(QMainWindow):
 			self.showHelp()
 		except:
 			self.expName = ''
-			self.setWindowTitle('Failed to load %s'%e[0])
+			self.setWindowTitle(self.tr('Failed to load %s'%e[0]))
 
 	def runCode(self, e):
 		if self.expName != 'editor':
@@ -234,41 +234,41 @@ class MainWindow(QMainWindow):
 	def makeMenu(self):
 		bar = self.menuBar()
 
-		mb = bar.addMenu("Device")
+		mb = bar.addMenu(self.tr("Device"))
 		mb.addAction('Reconnect', self.reconnect)
 
-		em = bar.addMenu("School Expts")
+		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
 			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
 
-		em = bar.addMenu("Electronics")
+		em = bar.addMenu(self.tr("Electronics"))
 		for e in electronicsExptsScope:
 			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
 			
 		for e in electronicsExpts:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 		
-		em = bar.addMenu("Electrical")
+		em = bar.addMenu(self.tr("Electrical"))
 		for e in electricalExpts:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 
-		em = bar.addMenu("Sound")
+		em = bar.addMenu(self.tr("Sound"))
 		for e in soundExpts:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 
-		em = bar.addMenu("Mechanics")
+		em = bar.addMenu(self.tr("Mechanics"))
 		for e in mechanicsExpts:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 
-		em = bar.addMenu("Other Expts")
+		em = bar.addMenu(self.tr("Other Expts"))
 		for e in otherExpts:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 
-		em = bar.addMenu("I2C Modules")
+		em = bar.addMenu(self.tr("I2C Modules"))
 		for e in modulesI2C:
 			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
 
-		em = bar.addMenu("PythonCode")
+		em = bar.addMenu(self.tr("PythonCode"))
 		for e in pythonCodes:
 			em.addAction(e[0],  lambda item=e: self.runCode(item))	
 

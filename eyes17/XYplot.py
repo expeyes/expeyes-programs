@@ -61,9 +61,9 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel('Voltage  A1')	
+		ax.setLabel(self.tr('Voltage  A1'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel('Voltage (A2)')
+		ax.setLabel(self.tr('Voltage (A2)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -81,7 +81,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, 'XYplot.txt', 20, None )
+		self.Filename = utils.lineEdit(150, self.tr('XYplot.txt'), 20, None )
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 
@@ -109,7 +109,7 @@ class Expt(QWidget):
 		H.addWidget(l)
 		right.addLayout(H)
 
-		self.Diffmode = QCheckBox('show (A1-A2) Vs A2')
+		self.Diffmode = QCheckBox(self.tr('show (A1-A2) Vs A2'))
 		right.addWidget(self.Diffmode)
 		self.Diffmode.stateChanged.connect(self.diff_mode)
 
@@ -147,9 +147,9 @@ class Expt(QWidget):
 	def diff_mode(self):
 		ax = self.pwin.getAxis('left')
 		if self.Diffmode.isChecked() == False:
-			ax.setLabel('Voltage (A1-A2)')
+			ax.setLabel(self.tr('Voltage (A1-A2)'))
 		else:		
-			ax.setLabel('Voltage (A2)')
+			ax.setLabel(self.tr('Voltage (A2)'))
 				
 	def update(self):
 		try:
@@ -167,8 +167,8 @@ class Expt(QWidget):
 		fa = em.fit_sine(tvs[0], self.Data[0])
 		fb = em.fit_sine(tvs[0], self.Data[1])
 		if fa != None and fb != None:
-			self.Xmax.setText('Xmax = %5.3f V'%fa[1][0])
-			self.Ymax.setText('Ymax = %5.3f V'%fb[1][0])
+			self.Xmax.setText(self.tr('Xmax = %5.3f V'%fa[1][0]))
+			self.Ymax.setText(self.tr('Ymax = %5.3f V'%fb[1][0]))
 		else:
 			self.Xmax.setText('')
 			self.Ymax.setText('')
