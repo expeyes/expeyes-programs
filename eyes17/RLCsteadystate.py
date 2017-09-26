@@ -161,8 +161,6 @@ class Expt(QWidget):
 		right.addLayout(H)
 
 		
-		l = QLabel(text='')
-		right.addWidget(l)
 		l = QLabel(text=self.tr('<font color="blue">Impedance Calculator'))
 		right.addWidget(l)
 
