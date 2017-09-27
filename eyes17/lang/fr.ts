@@ -6,7 +6,7 @@
     <message>
         <location filename="../driven-pendulum.py" line="40"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
-        <translation>Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
+        <translation type="obsolete">Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
     </message>
 </context>
 <context>
@@ -57,7 +57,7 @@
         <translation>diode_iv.txt</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="45"/>
+        <location filename="../driven-pendulum.py" line="47"/>
         <source>Set SQ1</source>
         <translation>Régler SQ1</translation>
     </message>
@@ -942,6 +942,11 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <source>Vz</source>
         <translation>Vz</translation>
     </message>
+    <message>
+        <location filename="../driven-pendulum.py" line="42"/>
+        <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
+        <translation>Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
+    </message>
 </context>
 <context>
     <name>HelloButton</name>
@@ -954,67 +959,67 @@ Affichage de l&apos;ensemble de fréquences actuel.
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="166"/>
+        <location filename="../main.py" line="168"/>
         <source>Show PopUp Help Window</source>
         <translation>Montrer la fenêtre d&apos;aide</translation>
     </message>
     <message>
-        <location filename="../main.py" line="205"/>
+        <location filename="../main.py" line="207"/>
         <source>Failed to load scope</source>
         <translation>Échec de chargement de l&apos;oscillo</translation>
     </message>
     <message>
-        <location filename="../main.py" line="229"/>
+        <location filename="../main.py" line="231"/>
         <source>Failed to load %s</source>
         <translation>Échec de chargement de %S</translation>
     </message>
     <message>
-        <location filename="../main.py" line="241"/>
+        <location filename="../main.py" line="243"/>
         <source>Device</source>
         <translation>Périphérique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="244"/>
+        <location filename="../main.py" line="246"/>
         <source>School Expts</source>
         <translation>Exp. scolaires</translation>
     </message>
     <message>
-        <location filename="../main.py" line="248"/>
+        <location filename="../main.py" line="250"/>
         <source>Electronics</source>
         <translation>Électronique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="255"/>
+        <location filename="../main.py" line="257"/>
         <source>Electrical</source>
         <translation>Électricité</translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="261"/>
         <source>Sound</source>
         <translation>Son</translation>
     </message>
     <message>
-        <location filename="../main.py" line="263"/>
+        <location filename="../main.py" line="265"/>
         <source>Mechanics</source>
         <translation>Mécanique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="267"/>
+        <location filename="../main.py" line="269"/>
         <source>Other Expts</source>
         <translation>Autres expériences</translation>
     </message>
     <message>
-        <location filename="../main.py" line="271"/>
+        <location filename="../main.py" line="273"/>
         <source>I2C Modules</source>
         <translation>Modules I2C</translation>
     </message>
     <message>
-        <location filename="../main.py" line="275"/>
+        <location filename="../main.py" line="277"/>
         <source>PythonCode</source>
         <translation>Code Python</translation>
     </message>
     <message>
-        <location filename="../main.py" line="242"/>
+        <location filename="../main.py" line="244"/>
         <source>Reconnect</source>
         <translation>Reconnexion</translation>
     </message>
@@ -1030,7 +1035,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="135"/>
+        <location filename="../main.py" line="137"/>
         <source>Help: %s</source>
         <translation>Aide : %s</translation>
     </message>

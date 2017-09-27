@@ -1,12 +1,14 @@
 #from __future__ import print_function
-import os, sys, time, utils, inspect
+import os, sys, time, utils, inspect, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QFont
+	from PyQt5.QtCore import Qt, QTimer, QFont, \
+                QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, \
+                QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QFont, QApplication, QWidget,\
 	QTextEdit, QLabel, QVBoxLayout, QPushButton,QHBoxLayout, QFileDialog
 	
@@ -35,7 +37,7 @@ class Expt(QWidget):
 		font.setPointSize(16)
 		self.Edit.setFont(font)
 
-		s=tr('This program sets SQ1 to high resolution mode. WG will be disabled.\
+		s=self.tr('This program sets SQ1 to high resolution mode. WG will be disabled.\
 Frequency can be changed from 0.1 Hz to 50Hz')
 		self.Edit.setText(s)	
 	
@@ -48,7 +50,7 @@ Frequency can be changed from 0.1 Hz to 50Hz')
 		H.addWidget(self.SQ1slider)
 		full.addLayout(H)
 
-		self.msgwin = QLabel(text=self.tr(''))
+		self.msgwin = QLabel(text='')
 		self.msgwin.setStyleSheet('background-color: white')
 		full.addWidget(self.msgwin)
 				
@@ -74,6 +76,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
