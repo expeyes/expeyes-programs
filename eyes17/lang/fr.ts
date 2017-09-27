@@ -947,6 +947,16 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
     </message>
+    <message>
+        <location filename="../soundBeats.py" line="112"/>
+        <source>Enable WG</source>
+        <translation>Activer WG</translation>
+    </message>
+    <message>
+        <location filename="../soundBeats.py" line="116"/>
+        <source>Enable SQ1</source>
+        <translation>activer SQ1</translation>
+    </message>
 </context>
 <context>
     <name>HelloButton</name>

@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
 	QCheckBox, QVBoxLayout, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 	
@@ -109,15 +109,15 @@ class Expt(QWidget):
 shows the actual frequency set.\n'))
 		right.addWidget(l)	
 
-		self.AWG = QCheckBox('Enable WG')
+		self.AWG = QCheckBox(self.tr('Enable WG'))
 		right.addWidget(self.AWG)
 		self.AWG.stateChanged.connect(self.control)
 
-		self.SQ1 = QCheckBox('Enable SQ1')
+		self.SQ1 = QCheckBox(self.tr('Enable SQ1'))
 		right.addWidget(self.SQ1)
 		self.SQ1.stateChanged.connect(self.control)
 
-		self.enable = QCheckBox('Enable Measurements')
+		self.enable = QCheckBox(self.tr('Enable Measurements'))
 		right.addWidget(self.enable)
 		self.enable.stateChanged.connect(self.control)
 
@@ -147,7 +147,7 @@ shows the actual frequency set.\n'))
 
 
 		H = QHBoxLayout()
-		self.Res = QLabel(text=self.tr(''))
+		self.Res = QLabel(text='')
 		H.addWidget(self.Res)
 		right.addLayout(H)
 		
@@ -265,7 +265,7 @@ shows the actual frequency set.\n'))
 			self.AWGtext.setText(str(val))
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
@@ -274,6 +274,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
