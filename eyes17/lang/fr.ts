@@ -908,6 +908,14 @@ Affichage de l&apos;ensemble de fréquences actuel.
     </message>
 </context>
 <context>
+    <name>HelloButton</name>
+    <message>
+        <location filename="../hello.py" line="18"/>
+        <source>Hello</source>
+        <translation type="obsolete">Bonjour</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <location filename="../main.py" line="166"/>
@@ -973,6 +981,17 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <location filename="../main.py" line="242"/>
         <source>Reconnect</source>
         <translation>Reconnexion</translation>
+    </message>
+</context>
+<context>
+    <name>QLineEdit</name>
+</context>
+<context>
+    <name>hello</name>
+    <message>
+        <location filename="../translate.py" line="81"/>
+        <source>Hello</source>
+        <translation type="obsolete">Bonjour</translation>
     </message>
 </context>
 <context>

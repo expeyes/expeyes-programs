@@ -7,7 +7,7 @@ PYLUPDATE ?= pylupdate4
 all: $(QM_FILES)
 
 $(QM_FILES): $(TS_FILES)
-	lrelease eyes17.pro
+	lrelease-qt4 eyes17.pro
 
 $(TS_FILES): eyes17.pro
 	$(PYLUPDATE) eyes17.pro
