@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
 	QCheckBox, QVBoxLayout, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 	
@@ -114,12 +114,12 @@ class Expt(QWidget):
 		self.Diffmode.stateChanged.connect(self.diff_mode)
 
 		H = QHBoxLayout()
-		self.Xmax = QLabel(text=self.tr(''))
+		self.Xmax = QLabel(text='')
 		H.addWidget(self.Xmax)
 		right.addLayout(H)
 		
 		H = QHBoxLayout()
-		self.Ymax = QLabel(text=self.tr(''))
+		self.Ymax = QLabel(text='')
 		H.addWidget(self.Ymax)
 		right.addLayout(H)
 
@@ -167,8 +167,8 @@ class Expt(QWidget):
 		fa = em.fit_sine(tvs[0], self.Data[0])
 		fb = em.fit_sine(tvs[0], self.Data[1])
 		if fa != None and fb != None:
-			self.Xmax.setText(self.tr('Xmax = %5.3f V'%fa[1][0]))
-			self.Ymax.setText(self.tr('Ymax = %5.3f V'%fb[1][0]))
+			self.Xmax.setText(str(self.tr('Xmax = %5.3f V')) %fa[1][0])
+			self.Ymax.setText(str(self.tr('Ymax = %5.3f V')) %fb[1][0])
 		else:
 			self.Xmax.setText('')
 			self.Ymax.setText('')
@@ -229,6 +229,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
