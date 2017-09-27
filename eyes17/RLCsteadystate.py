@@ -1,11 +1,11 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton,QCheckBox
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 
@@ -286,15 +286,15 @@ class Expt(QWidget):
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = self.tr('F = %5.1f Hz') %(self.Frequency[0])
-		self.Results[1] = self.tr('Vtotal (A1) = %5.2f V') %(self.Amplitude[0])
-		self.Results[2] = self.tr('Vr (A2) = %5.2f V') %(self.Amplitude[1])
-		self.Results[3] = self.tr('Vlc (A2-A1) = %5.2f V') %(self.Amplitude[2])
-		self.Results[4] = self.tr('Phase Diff = %5.1f deg') %phaseDiff
+		self.Results[0] = str(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
+		self.Results[1] = str(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
+		self.Results[2] = str(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
+		self.Results[3] = str(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
+		self.Results[4] = str(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[5] = self.tr('Vc (A3-A1) = %5.2f V') %(self.Amplitude[3])
-			self.Results[6] = self.tr('Vl (A2-A3) = %5.2f V') %(self.Amplitude[4])
+			self.Results[5] = str(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
+			self.Results[6] = str(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
 		else:
 			self.Results[5] = ''
 			self.Results[6] = ''
@@ -383,7 +383,7 @@ class Expt(QWidget):
 		for ch in range(self.MAXCHAN):
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg(self.tr('Traces saved to %s') %fn)
+		self.msg(str(self.tr('Traces saved to %s')) %fn)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -399,7 +399,7 @@ class Expt(QWidget):
 	def set_wave(self):
 		if 1:
 			res = self.p.set_sine(self.AWGval)
-			self.msg(self.tr('AWG set to %6.2f Hz') %res)
+			self.msg(str(self.tr('AWG set to %6.2f Hz')) %res)
 			T5 = 2000./res
 			for k in range(len(self.tbvals)): 
 				tmax = 10* self.tbvals[k]
@@ -435,6 +435,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
