@@ -156,7 +156,7 @@ class Expt(QWidget):
 				v = self.p.get_voltage('A2')
 				Vind = self.p.get_voltage('A1')     # voltage across the Inductor
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')
+				self.comerr()
 				return	
 			if v > 4.0:					# Means user has connected OD1 to A2
 				vtotal = v
@@ -177,7 +177,7 @@ class Expt(QWidget):
 			time.sleep(self.tbvals[self.TBval]*0.01)
 			t,v = self.p.capture_action('A1',self.NP, self.TG,'SET_HIGH')
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return		
 		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
 		self.history.append((t,v))
@@ -189,7 +189,7 @@ class Expt(QWidget):
 			time.sleep(self.tbvals[self.TBval]*0.01)
 			t,v = self.p.capture_action('A1',self.NP, self.TG,'SET_LOW')
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
 		self.history.append((t,v))
@@ -220,6 +220,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

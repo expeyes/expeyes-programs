@@ -164,7 +164,7 @@ class Expt(QWidget):
 			time.sleep(self.tbvals[self.TBval]*0.01)
 			t,v = self.p.capture_action('A1',self.NP, self.TG,'SET_HIGH')
 		except:
-			self.msg('Hardware Error. Try Device->Reconnect from the Device menu')
+			self.comerr()
 			return 
 
 		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
@@ -177,7 +177,7 @@ class Expt(QWidget):
 			time.sleep(self.tbvals[self.TBval]*0.01)
 			t,v = self.p.capture_action('A1',self.NP, self.TG,'SET_LOW')
 		except:
-			self.msg('Hardware Error. Try Device->Reconnect from the Device menu')
+			self.comerr()
 			return 
 
 		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
@@ -211,7 +211,7 @@ class Expt(QWidget):
 			res = self.p.set_sine(self.AWGval)
 			self.msg('AWG set to %6.2f Hz'%res)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 
 	def awg_text(self, text):
@@ -233,6 +233,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

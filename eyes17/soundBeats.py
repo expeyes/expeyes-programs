@@ -199,7 +199,7 @@ shows the actual frequency set.\n'))
 				else:
 					self.p.set_sqr1(0)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 				
 	def update(self):
 		if self.enable.isChecked() == False:
@@ -209,7 +209,7 @@ shows the actual frequency set.\n'))
 			self.traceWidget[0].setData(self.timeData[0], self.voltData[0])	
 			self.measured = True 	
 		except:
-			self.msg('<font color="red">Capture or fit Error, Try reconnect')		
+			self.comerr()
 
 	def save_data(self):
 		if self.measured == False: 
@@ -251,7 +251,7 @@ shows the actual frequency set.\n'))
 			res = self.p.set_sine(self.AWGval)
 			self.msg('AWG set to %6.2f Hz'%res)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def awg_text(self, text):
 		val = float(text)
@@ -266,7 +266,9 @@ shows the actual frequency set.\n'))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
-		
+
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

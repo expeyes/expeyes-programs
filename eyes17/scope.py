@@ -346,7 +346,8 @@ class Expt(QWidget):
 			self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
 
-			l = QLabel(text=self.tr('<font color="%s">%s'%(self.chancols[ch],self.sources[ch])))		
+			l = QLabel(text='<font color="%s">'%self.chancols[ch] +self.tr('%s'%self.sources[ch]))		
+
 			l.setMaximumWidth(30)
 			l.setMinimumWidth(30)
 			H.addWidget(l)
@@ -462,7 +463,7 @@ class Expt(QWidget):
 			elif self.chanStatus[0] == 1: 		# only A1 selected
 				self.timeData[0], self.voltData[0] = self.p.capture1('A1', self.NP, self.TG)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 			
 		for ch in range(4):
@@ -495,7 +496,7 @@ class Expt(QWidget):
 					try:
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
 					except:
-						self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+						self.comerr()
 
 					self.voltMeters[ch].setText(self.tr('%5.3f V'%(v)))
 				else:
@@ -503,13 +504,13 @@ class Expt(QWidget):
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-					self.RES.setText(self.tr('<font color="blue">%5.0f Ohm'%(res)))
+					self.RES.setText('<font color="blue">' + self.tr('%5.0f Ohm'%(res)))
 				else:
 					self.RES.setText(self.tr('<100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
 				self.p.select_range('A2', self.rangeVals[1])
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 		# End of update
 
 
@@ -545,7 +546,7 @@ class Expt(QWidget):
 			try:
 				self.p.select_range(self.sources[ch], self.RangeVals12[index])
 			except:
-				self.msg('<font color="red">Capture or fit Error, Try reconnect')
+				self.comerr()
 				return		
 		else:
 			self.rangeTexts[ch] = self.Ranges34[index]
@@ -565,7 +566,7 @@ class Expt(QWidget):
 					try:
 						t,v = self.p.capture1(self.sources[ch], 3000, dt)
 					except:
-						self.msg('<font color="red">FFT ErrCommunication Error. Try Reconnect from the Device menu')		
+						self.comerr()
 
 					xa,ya = em.fft(v,dt)
 					xa *= 1000
@@ -607,14 +608,14 @@ class Expt(QWidget):
 		try:
 			self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def set_trigger(self, tr):
 		self.Triglevel = tr * 0.001		# convert to volts
 		try:
 			self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -641,7 +642,7 @@ class Expt(QWidget):
 				self.p.set_pv1(val)
 				self.PV1slider.setValue(int(val*1000))
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 
 	def pv1_slider(self, pos):
 		val = float(pos)/1000.0
@@ -651,7 +652,7 @@ class Expt(QWidget):
 			try:
 				self.p.set_pv1(val)
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 
 	def pv2_text(self, text):
 		try:
@@ -665,7 +666,7 @@ class Expt(QWidget):
 				self.p.set_pv2(val)
 				self.PV2slider.setValue(int(val*1000))
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 				
 	def pv2_slider(self, pos):
 		val = float(pos)/1000.0
@@ -675,7 +676,7 @@ class Expt(QWidget):
 			try:
 				self.p.set_pv2(val)
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 				
 	def sq1_dc(self, text):
 		try:
@@ -699,7 +700,7 @@ class Expt(QWidget):
 				res = self.p.set_sqr1(val, self.dutyCycle)
 				self.msg('sqr1 set to %5.1f'%res)
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 
 	def sq1_slider(self, val):
 		if self.SQ1min <= val <= self.SQ1max:
@@ -708,7 +709,7 @@ class Expt(QWidget):
 			try:
 				self.p.set_sqr1(val)
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 				
 	def select_wgain(self,index):
 		self.Wgain.setText(self.Wgains[index])
@@ -716,7 +717,7 @@ class Expt(QWidget):
 		try:
 			self.p.set_sine_amp(index)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def set_wave(self):
 		try:
@@ -727,7 +728,7 @@ class Expt(QWidget):
 				self.p.set_sqr2(self.AWGval)
 				self.msg('Output Changed from WG to SQ2')
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def select_wave(self,index):
 		self.Wshape.setText(self.Waves[index])
@@ -758,7 +759,7 @@ class Expt(QWidget):
 			else:
 				self.p.set_state(OD1=0)      
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
    
 	def control_ccs(self):
 		try:
@@ -768,7 +769,7 @@ class Expt(QWidget):
 			else:
 				self.p.set_state(CCS=0)      
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			
 	def measure_cap(self):
 		try:
@@ -776,26 +777,28 @@ class Expt(QWidget):
 			if cap == None:
 				self.msg('Capacitance too high or short to ground')
 			else:
-				self.CAP.setText(self.tr('<font color="blue">%6.1f pF'%cap))
+				self.CAP.setText('<font color="blue">' + self.tr('%6.1f pF'%cap))
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def measure_freq(self):
 		try:
 			fr = self.p.get_freq()
 			hi = self.p.r2ftime('IN2','IN2')
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')	
+			self.comerr()
 		if fr > 0:	
 			T = 1./fr
 			dc = hi*100/T
-			self.IN2.setText(self.tr('<font color="blue">%5.1fHz %4.1f%%'%(fr,dc)))
+			self.IN2.setText('<font color="blue">' + self.tr('%5.1fHz %4.1f%%'%(fr,dc)))
 		else:
-			self.IN2.setText(self.tr('<font color="blue">No signal'))
+			self.IN2.setText('<font color="blue">' + self.tr('No signal'))
 		
-	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+	def msg(self, m, col = 'blue'):
+		self.msgwin.setText('<font color="%s">'%col + self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

@@ -156,7 +156,7 @@ class Expt(QWidget):
 		try:	
 			fr=self.p.set_sine(self.FREQ)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 
 		time.sleep(0.02)	
@@ -178,7 +178,7 @@ class Expt(QWidget):
 			try:
 				t,v, tt,vv = self.p.capture2(NP, int(self.TG))	
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 				return 
 			try:
 				fa = em.fit_sine(t,v)
@@ -237,7 +237,7 @@ class Expt(QWidget):
 			self.p.select_range('A1',4)
 			self.p.select_range('A2',4)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 
 
@@ -277,6 +277,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

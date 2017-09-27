@@ -97,7 +97,7 @@ class Expt(QWidget):
 			self.chanSelCB[ch] = QCheckBox()
 			#self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
-			l = QLabel(text=self.tr('<font color="%s">%s'%(self.chancols[ch],self.sources[ch])))		
+			l = QLabel(text='<font color="%s">'%self.chancols[ch] +self.tr('%s'%self.sources[ch]))		
 			l.setMaximumWidth(30)
 			l.setMinimumWidth(30)
 			H.addWidget(l)
@@ -159,13 +159,16 @@ class Expt(QWidget):
 
 		self.timeData.append(elapsed)
 		
-		for ch in range(self.MAXCHAN):
-			if self.selected[ch] == True:
-				v = self.p.get_voltage(self.sources[ch])
-				self.voltData[ch].append(v)
-				if len(self.timeData) > 1:
-					self.traces[ch].setData(self.timeData, self.voltData[ch])
-	
+		try:
+			for ch in range(self.MAXCHAN):
+				if self.selected[ch] == True:
+					v = self.p.get_voltage(self.sources[ch])
+					self.voltData[ch].append(v)
+					if len(self.timeData) > 1:
+						self.traces[ch].setData(self.timeData, self.voltData[ch])
+		except:
+			self.comerr()
+			
 		if elapsed > self.TMAX:
 			self.running = False
 			self.msg('Data logger plot completed')
@@ -229,6 +232,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

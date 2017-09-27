@@ -62,12 +62,13 @@ Frequency can be changed from 0.1 Hz to 50Hz')
 			res = self.p.set_sqr1(val*0.01)
 			self.msg('sqr1 set to %5.1f Hz'%res)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
-			
-			
+			self.comerr()
+					
 	def msg(self, m):
 		self.msgwin.setText(self.tr(str(m)))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes
