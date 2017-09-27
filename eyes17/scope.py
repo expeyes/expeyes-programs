@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QCheckBox,\
 	QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu
 
@@ -465,11 +465,7 @@ class Expt(QWidget):
 			elif self.chanStatus[0] == 1: 		# only A1 selected
 				self.timeData[0], self.voltData[0] = self.p.capture1('A1', self.NP, self.TG)
 		except:
-<<<<<<< HEAD
-			self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))		
-=======
 			self.comerr()
->>>>>>> fd61b3e91991df4774b28571b57351702e4b620b
 			return
 			
 		for ch in range(4):
@@ -502,11 +498,7 @@ class Expt(QWidget):
 					try:
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
 					except:
-<<<<<<< HEAD
-						self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))
-=======
 						self.comerr()
->>>>>>> fd61b3e91991df4774b28571b57351702e4b620b
 
 					self.voltMeters[ch].setText(self.tr('%5.3f V')%(v))
 				else:
@@ -514,21 +506,13 @@ class Expt(QWidget):
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-<<<<<<< HEAD
 					self.RES.setText('<font color="blue">'+self.tr('%5.0f Ohm')%(res))
-=======
-					self.RES.setText('<font color="blue">' + self.tr('%5.0f Ohm'%(res)))
->>>>>>> fd61b3e91991df4774b28571b57351702e4b620b
 				else:
 					self.RES.setText(self.tr('<100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
 				self.p.select_range('A2', self.rangeVals[1])
 			except:
-<<<<<<< HEAD
-				self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))
-=======
 				self.comerr()
->>>>>>> fd61b3e91991df4774b28571b57351702e4b620b
 		# End of update
 
 
@@ -822,6 +806,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
