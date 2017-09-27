@@ -192,7 +192,7 @@ class Expt(QWidget):
 		self.msg('Traces saved to %s'%fn)
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 
 if __name__ == '__main__':
