@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -171,7 +172,7 @@
         <translation>logger.txt</translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="54"/>
+        <location filename="../MPU6050.py" line="64"/>
         <source>Value</source>
         <translation>Valeur</translation>
     </message>
@@ -181,17 +182,17 @@
         <translation>Durée</translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="82"/>
+        <location filename="../MPU6050.py" line="92"/>
         <source>Read every</source>
         <translation>Lire toutes les</translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="87"/>
+        <location filename="../MPU6050.py" line="97"/>
         <source>mS</source>
         <translation>ms</translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="109"/>
+        <location filename="../MPU6050.py" line="119"/>
         <source>MPU6050.txt</source>
         <translation>MPU6050.txt</translation>
     </message>
@@ -331,7 +332,7 @@
         <translation>pt100.txt</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="511"/>
+        <location filename="../scope.py" line="503"/>
         <source>%5.3f V</source>
         <translation>%5.3f V</translation>
     </message>
@@ -626,17 +627,17 @@
         <translation>A1-A2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="489"/>
+        <location filename="../scope.py" line="485"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation>%5.2f V, %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="523"/>
+        <location filename="../scope.py" line="511"/>
         <source>&lt;100Ohm  or  &gt;100k</source>
         <translation>&lt; 100Ohm  ou  &gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="595"/>
+        <location filename="../scope.py" line="579"/>
         <source>Fundamental frequency = %5.1f Hz</source>
         <translation>Fréquence fondamentale = %5.1 Hz</translation>
     </message>
@@ -646,12 +647,12 @@
         <translation>Spectre de fréquence</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="798"/>
+        <location filename="../scope.py" line="782"/>
         <source>%6.1f pF</source>
         <translation>%6.1f pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="811"/>
+        <location filename="../scope.py" line="795"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1f Hz %4.1f%%</translation>
     </message>
@@ -799,15 +800,15 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../scope.py" line="528"/>
         <source>Communication Error. Try Reconnect from the Device menu</source>
-        <translation>Erreur de communication. Tentez une reconnexion depuis le menu de périphériques</translation>
+        <translation type="obsolete">Erreur de communication. Tentez une reconnexion depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="480"/>
+        <location filename="../scope.py" line="476"/>
         <source>%s input is clipped. Increase range</source>
         <translation>L&apos;entrée %s est saturée. Augmentez le calibre</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="520"/>
+        <location filename="../scope.py" line="509"/>
         <source>%5.0f Ohm</source>
         <translation>%5.0f Ohm</translation>
     </message>
@@ -817,7 +818,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de capture ou de FIT. Tentez une reconnexion</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="574"/>
+        <location filename="../scope.py" line="558"/>
         <source>Range of %s set to %s</source>
         <translation>Calibre de %s réglé à %s</translation>
     </message>
@@ -827,37 +828,37 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication FFT. Reconnecter depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="600"/>
+        <location filename="../scope.py" line="584"/>
         <source>FFT Error</source>
         <translation>Erreur de FFT</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="619"/>
+        <location filename="../scope.py" line="603"/>
         <source>Traces saved to %s</source>
         <translation>Traces enregistrées dans %s</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="719"/>
+        <location filename="../scope.py" line="703"/>
         <source>sqr1 set to %5.1f</source>
         <translation>SQ1 réglé à %5.1f</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="744"/>
+        <location filename="../scope.py" line="728"/>
         <source>AWG set to %6.2f Hz</source>
         <translation>AWG réglé à %6.2f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="747"/>
+        <location filename="../scope.py" line="731"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>Sortie changée de WG à SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="796"/>
+        <location filename="../scope.py" line="780"/>
         <source>Capacitance too high or short to ground</source>
         <translation>Capacité excessive ou court-circuit à la masse</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="813"/>
+        <location filename="../scope.py" line="797"/>
         <source>No signal</source>
         <translation>Pas de signal</translation>
     </message>
@@ -905,6 +906,41 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <location filename="../XYplot.py" line="225"/>
         <source>Error. Try Device-&gt;Reconnect</source>
         <translation>Erreur. Tentez Périphérique -&gt; Reconnexion</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="41"/>
+        <source>Ax</source>
+        <translation>Ax</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="42"/>
+        <source>Ay</source>
+        <translation>Ay</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="43"/>
+        <source>Az</source>
+        <translation>Az</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="44"/>
+        <source>Temperature</source>
+        <translation>Température</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="45"/>
+        <source>Vx</source>
+        <translation>Vx</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="46"/>
+        <source>Vy</source>
+        <translation>Vy</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="47"/>
+        <source>Vz</source>
+        <translation>Vz</translation>
     </message>
 </context>
 <context>
@@ -982,9 +1018,6 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <source>Reconnect</source>
         <translation>Reconnexion</translation>
     </message>
-</context>
-<context>
-    <name>QLineEdit</name>
 </context>
 <context>
     <name>hello</name>
