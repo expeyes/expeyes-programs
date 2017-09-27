@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
 	QCheckBox, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 
@@ -94,7 +94,7 @@ class Expt(QWidget):
 		
 		full = QVBoxLayout()
 		full.addLayout(top)
-		self.msgwin = QLabel(text=self.tr(''))
+		self.msgwin = QLabel(text='')
 		full.addWidget(self.msgwin)
 				
 		self.setLayout(full)
@@ -192,7 +192,7 @@ class Expt(QWidget):
 		self.msg('Traces saved to %s'%fn)
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
@@ -201,6 +201,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
