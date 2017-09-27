@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
 	QCheckBox, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 	
@@ -127,7 +127,7 @@ class Expt(QWidget):
 		right.addWidget(self.PV1slider)
 
 		H = QHBoxLayout()
-		self.Voltage = QLabel(self.tr('Voltage = %5.3f'%self.PV1min))
+		self.Voltage = QLabel(str(self.tr('Voltage = %5.3f')) %self.PV1min)
 		H.addWidget(self.Voltage)
 		right.addLayout(H)
 
@@ -144,7 +144,7 @@ class Expt(QWidget):
 		
 		full = QVBoxLayout()
 		full.addLayout(top)
-		self.msgwin = QLabel(text=self.tr(''))
+		self.msgwin = QLabel(text='')
 		full.addWidget(self.msgwin)
 				
 		self.setLayout(full)
@@ -164,9 +164,9 @@ class Expt(QWidget):
 		self.p.set_pv1(val)
 		a1 = self.p.get_voltage('A1')
 		volt = val- a1
-		self.Voltage.setText(self.tr('Voltage = %5.3f V'%volt))
+		self.Voltage.setText(str(self.tr('Voltage = %5.3f V')) %volt)
 		i = a1/res *1000
-		self.Current.setText(self.tr('Current = %5.3f mA'%i))
+		self.Current.setText(str(self.tr('Current = %5.3f mA')) %i)
 	
 	
 	def fit_curve(self):
@@ -273,7 +273,7 @@ class Expt(QWidget):
 		self.msg('Traces saved to %s'%fn)
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
@@ -282,6 +282,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
