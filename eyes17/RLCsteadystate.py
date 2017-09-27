@@ -161,7 +161,7 @@ class Expt(QWidget):
 		right.addLayout(H)
 
 		
-		l = QLabel(text=self.tr('<font color="blue">Impedance Calculator'))
+		l = QLabel(text='<font color="blue">'+self.tr('Impedance Calculator'))
 		right.addWidget(l)
 
 		
@@ -225,7 +225,7 @@ class Expt(QWidget):
 			sum += abs((y[k] - y1[k])/y[k])
 		err = sum/len(y)
 		if err/sum > 0.01:
-			self.msg('Curve fitting result rejected')
+			self.msg(self.tr('Curve fitting result rejected'))
 			return False
 		else:
 			return True
@@ -249,7 +249,7 @@ class Expt(QWidget):
 				self.timeData[2] = self.timeData[0]			
 				self.voltData[2] = self.voltData[0] - self.voltData[1]   # voltage across LC
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))	
 			return
 
 		for ch in range(3):
@@ -265,7 +265,7 @@ class Expt(QWidget):
 				self.Phase[ch] = fa[1][2] * 180/em.pi
 				self.fitFine[ch] = 1
 			else:
-				self.msg('Data Analysis Error')
+				self.msg(self.tr('Data Analysis Error'))
 				return
 		phaseDiff = (self.Phase[0] - self.Phase[1])
 	
@@ -283,20 +283,20 @@ class Expt(QWidget):
 					self.Phase[ch] = fa[1][2] * 180/em.pi
 					self.fitFine[ch] = 1
 				else:
-					self.msg('Data Analysis Error')
+					self.msg(self.tr('Data Analysis Error'))
 					return			
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = self.tr('F = %5.1f Hz'%(self.Frequency[0]))
-		self.Results[1] = self.tr('Vtotal (A1) = %5.2f V'%(self.Amplitude[0]))
-		self.Results[2] = self.tr('Vr (A2) = %5.2f V'%(self.Amplitude[1]))
-		self.Results[3] = self.tr('Vlc (A2-A1) = %5.2f V'%(self.Amplitude[2]))
-		self.Results[4] = self.tr('Phase Diff = %5.1f deg'%phaseDiff)
+		self.Results[0] = self.tr('F = %5.1f Hz') %(self.Frequency[0])
+		self.Results[1] = self.tr('Vtotal (A1) = %5.2f V') %(self.Amplitude[0])
+		self.Results[2] = self.tr('Vr (A2) = %5.2f V') %(self.Amplitude[1])
+		self.Results[3] = self.tr('Vlc (A2-A1) = %5.2f V') %(self.Amplitude[2])
+		self.Results[4] = self.tr('Phase Diff = %5.1f deg') %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[5] = self.tr('Vc (A3-A1) = %5.2f V'%(self.Amplitude[3]))
-			self.Results[6] = self.tr('Vl (A2-A3) = %5.2f V'%(self.Amplitude[4]))
+			self.Results[5] = self.tr('Vc (A3-A1) = %5.2f V') %(self.Amplitude[3])
+			self.Results[6] = self.tr('Vl (A2-A3) = %5.2f V') %(self.Amplitude[4])
 		else:
 			self.Results[5] = ''
 			self.Results[6] = ''
@@ -385,7 +385,7 @@ class Expt(QWidget):
 		for ch in range(self.MAXCHAN):
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to %s') %fn)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -401,7 +401,7 @@ class Expt(QWidget):
 	def set_wave(self):
 		if 1:
 			res = self.p.set_sine(self.AWGval)
-			self.msg('AWG set to %6.2f Hz'%res)
+			self.msg(self.tr('AWG set to %6.2f Hz') %res)
 			T5 = 2000./res
 			for k in range(len(self.tbvals)): 
 				tmax = 10* self.tbvals[k]
@@ -411,7 +411,7 @@ class Expt(QWidget):
 					self.set_timebase(k)
 					break
 		else:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))
 			return
 
 	def awg_text(self, text):
@@ -428,7 +428,7 @@ class Expt(QWidget):
 			self.set_wave()
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 
 if __name__ == '__main__':

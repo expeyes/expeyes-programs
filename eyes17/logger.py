@@ -97,7 +97,7 @@ class Expt(QWidget):
 			self.chanSelCB[ch] = QCheckBox()
 			#self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
-			l = QLabel(text=self.tr('<font color="%s">%s'%(self.chancols[ch],self.sources[ch])))		
+			l = QLabel(text='<font color="%s">%s' %(self.chancols[ch],self.sources[ch]))
 			l.setMaximumWidth(30)
 			l.setMinimumWidth(30)
 			H.addWidget(l)
@@ -168,7 +168,7 @@ class Expt(QWidget):
 	
 		if elapsed > self.TMAX:
 			self.running = False
-			self.msg('Data logger plot completed')
+			self.msg(self.tr('Data logger plot completed'))
 			return
 
 
@@ -177,7 +177,7 @@ class Expt(QWidget):
 		try:
 			self.TMAX = float(self.TMAXtext.text())
 		except:
-			self.msg('Invalid Duration')
+			self.msg(self.tr('Invalid Duration'))
 			return
 			
 		try:
@@ -186,7 +186,7 @@ class Expt(QWidget):
 			self.timer.stop()
 			self.timer.start(self.TIMER)
 		except:
-			self.msg('Invalid time interval between reads')
+			self.msg(self.tr('Invalid time interval between reads'))
 			return
 
 		for ch in range(self.MAXCHAN):
@@ -202,12 +202,12 @@ class Expt(QWidget):
 		for ch in range(self.MAXCHAN):
 			self.traces[ch].setData([0,0],[0,0], pen = self.resCols[ch])
 		self.running = True
-		self.msg('Started Measurements')
+		self.msg(self.tr('Started Measurements'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		if self.running == True: return
@@ -215,7 +215,7 @@ class Expt(QWidget):
 			self.traces[ch].setData([0,0],[0,0], pen = self.resCols[ch])
 		self.timeData = []
 		self.voltData =  [[] for x in range(self.MAXCHAN)]
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		fn = self.Filename.text()
@@ -224,10 +224,10 @@ class Expt(QWidget):
 			if self.chanSelCB[ch].isChecked() == True:
 				dat.append( [self.timeData, self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to %s') %fn)
 				
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 
 if __name__ == '__main__':
