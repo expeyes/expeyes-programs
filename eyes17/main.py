@@ -1,12 +1,14 @@
-import sys, time, utils, math, importlib, os, platform
+import sys, time, utils, math, importlib, os, platform, os.path
 
 if utils.PQT5 == True:
 	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, QStatusBar, QLabel,QDesktopWidget
 	from PyQt5.QtGui import QPalette, QColor
 	from PyQt5.QtWebKitWidgets import QWebView
-	from PyQt5.QtCore import QUrl, QSize
+	from PyQt5.QtCore import QUrl, QSize, \
+                QTranslator, QLocale, QLibraryInfo
 else:
-	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize
+	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
+                QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QFont, QMainWindow, QApplication, QCheckBox,\
 	QStatusBar, QLabel,QDesktopWidget
 	from PyQt4.QtWebKit import QWebView,QWebSettings
@@ -132,7 +134,7 @@ class helpWin(QWebView):
 		QWebView.__init__(self)
 		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		self.load(QUrl.fromLocalFile(fn))
-		self.setWindowTitle(self.tr('Help: %s'%name[0]))
+		self.setWindowTitle(str(self.tr('Help: %s')) %name[0])
 		self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
@@ -222,7 +224,7 @@ class MainWindow(QMainWindow):
 			self.showHelp()
 		except:
 			self.expName = ''
-			self.setWindowTitle(self.tr('Failed to load %s'%e[0]))
+			self.setWindowTitle(str(self.tr('Failed to load %s')) %e[0])
 
 	def runCode(self, e):
 		if self.expName != 'editor':
@@ -297,5 +299,16 @@ if p != None:
 	p.set_state(OD1=0)
 
 app = QApplication(sys.argv)
+        
+# translation stuff
+lang=QLocale.system().name()
+t=QTranslator()
+t.load("lang/"+lang, os.path.dirname(__file__))
+app.installTranslator(t)
+t1=QTranslator()
+t1.load("qt_"+lang,
+        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+app.installTranslator(t1)
+        
 mw = MainWindow()
 sys.exit(app.exec_())
