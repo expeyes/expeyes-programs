@@ -94,7 +94,7 @@ class Expt(QWidget):
 		b.clicked.connect(self.start)		
 		
 		H = QHBoxLayout()
-		self.updateLabel = QLabel(text=self.tr(''))
+		self.updateLabel = QLabel(text='')
 		self.updateLabel.setMaximumWidth(200)
 		H.addWidget(self.updateLabel)
 		right.addLayout(H)
@@ -124,7 +124,7 @@ class Expt(QWidget):
 		
 		full = QVBoxLayout()
 		full.addLayout(top)
-		self.msgwin = QLabel(text=self.tr(''))
+		self.msgwin = QLabel(text='')
 		full.addWidget(self.msgwin)
 				
 		self.setLayout(full)
@@ -180,7 +180,7 @@ class Expt(QWidget):
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:        #compare trace with the fitted curve
 					continue
-				self.updateLabel.setText(self.tr('Frequency = %5.0f Hz V = %5.3f'%(fr,abs(fa[1][0]))))
+				self.updateLabel.setText(str(self.tr('Frequency = %5.0f Hz V = %5.3f')) %(fr,abs(fa[1][0])))
 				self.data[0].append(fr)
 				self.data[1].append(abs(fa[1][0]))
 				goodFit = True
@@ -280,7 +280,7 @@ class Expt(QWidget):
 		self.msg('Traces saved to %s'%fn)
 		
 	def msg(self, m):
-		self.msgwin.setText(self.tr(m))
+		self.msgwin.setText(m)
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))

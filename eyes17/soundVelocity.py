@@ -1,12 +1,12 @@
-import sys, time, utils, math
+import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
 	QCheckBox, QVBoxLayout, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QTimer
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 	
@@ -116,7 +116,7 @@ class Expt(QWidget):
 		self.enable.stateChanged.connect(self.control)
 
 		H = QHBoxLayout()
-		self.Res = QLabel(text=self.tr(''))
+		self.Res = QLabel(text='')
 		#Res.setMaximumWidth(60)
 		H.addWidget(self.Res)
 		right.addLayout(H)
@@ -171,7 +171,7 @@ class Expt(QWidget):
 				pb = fb[1][2] * 180/em.pi
 				pdiff = pa-pb
 				if fb[1][0] < 0: pdiff = 180 - pdiff
-				self.Res.setText(self.tr('Phase Shift = %5.1f deg'%(pdiff)))
+				self.Res.setText(str(self.tr('Phase Shift = %5.1f deg')) %(pdiff))
 		except:
 			self.comerr()
 	
@@ -227,6 +227,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
+        
+        # translation stuff
+        lang=QLocale.system().name()
+        t=QTranslator()
+        t.load("lang/"+lang, os.path.dirname(__file__))
+        app.installTranslator(t)
+        t1=QTranslator()
+        t1.load("qt_"+lang,
+                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+        app.installTranslator(t1)
+        
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
