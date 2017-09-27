@@ -240,7 +240,7 @@ class Expt(QWidget):
 			v = sum/NT
 			self.A3val.setText(self.tr('%5.3f V'%v))
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 			
 	def update(self):
@@ -254,7 +254,7 @@ class Expt(QWidget):
 				sum += v
 			v = sum/NT
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 
 		if len(self.data[0]) == 0:
@@ -350,6 +350,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

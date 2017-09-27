@@ -159,12 +159,10 @@ class Expt(QWidget):
 		self.Filename = utils.lineEdit(150, self.tr('RCs-data.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
-
 		
 		l = QLabel(text='<font color="blue">'+self.tr('Impedance Calculator'))
 		right.addWidget(l)
 
-		
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('F (in Hz)'))
 		l.setMaximumWidth(50)
@@ -249,7 +247,7 @@ class Expt(QWidget):
 				self.timeData[2] = self.timeData[0]			
 				self.voltData[2] = self.voltData[0] - self.voltData[1]   # voltage across LC
 		except:
-			self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))	
+			self.comerr()
 			return
 
 		for ch in range(3):
@@ -411,7 +409,7 @@ class Expt(QWidget):
 					self.set_timebase(k)
 					break
 		else:
-			self.msg('<font color="red">'+self.tr('Communication Error. Try Reconnect from the Device menu'))
+			self.comerr()
 			return
 
 	def awg_text(self, text):
@@ -430,6 +428,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(m)
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

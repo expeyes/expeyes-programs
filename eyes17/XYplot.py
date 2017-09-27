@@ -162,7 +162,7 @@ class Expt(QWidget):
 			for ch in range(self.MAXCHAN):
 				self.traceWidget[ch].setData(self.Data[0], self.Data[1])		
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')	
+			self.comerr()
 			
 		fa = em.fit_sine(tvs[0], self.Data[0])
 		fb = em.fit_sine(tvs[0], self.Data[1])
@@ -193,7 +193,7 @@ class Expt(QWidget):
 			res = self.p.set_sine(self.AWGval)
 			self.msg('AWG set to %6.2f Hz'%res)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		T = 1.0e6/res
 		self.NP = 500
@@ -220,7 +220,10 @@ class Expt(QWidget):
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
-		
+
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
+				
 
 if __name__ == '__main__':
 	import eyes17.eyes

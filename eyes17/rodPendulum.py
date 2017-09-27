@@ -138,12 +138,12 @@ class Expt(QWidget):
 		if self.running == False:
 			return
 		if self.p == None:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		try:
 			T = self.p.multi_r2rtime('SEN', 1)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 		
 		if T < 0:
 			s = 'Timeout'
@@ -167,7 +167,7 @@ class Expt(QWidget):
 
 	def start(self):
 		if self.p == None:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		
 		if self.running == True: return
@@ -180,7 +180,7 @@ class Expt(QWidget):
 		try:
 			self.p.set_sqr1(0)						# Light the LED
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.mcomerr()
 		
 		self.pwin.setXRange(self.NMIN, self.NMAX)
 		self.pwin.setYRange(self.TMIN, self.TMAX)
@@ -201,7 +201,7 @@ class Expt(QWidget):
 			self.p.set_sqr1(-1)						# trurn off the LED
 			self.msg('User Stopped')
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def clear(self):
 		for k in self.traces:
@@ -222,6 +222,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

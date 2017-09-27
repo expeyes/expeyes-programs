@@ -132,7 +132,7 @@ class helpWin(QWebView):
 		QWebView.__init__(self)
 		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		self.load(QUrl.fromLocalFile(fn))
-		self.setWindowTitle(self.tr('Help: ')+ name[0])
+		self.setWindowTitle(self.tr('Help: %s'%name[0]))
 		self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
@@ -213,7 +213,7 @@ class MainWindow(QMainWindow):
 			self.hwin = None
 			self.expWidget= None 			    # Let python delete it
 			w = explib.Expt(p) 
-			self.setWindowTitle(e[0])
+			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
 			self.expName = e[1]
@@ -235,7 +235,7 @@ class MainWindow(QMainWindow):
 		bar = self.menuBar()
 
 		mb = bar.addMenu(self.tr("Device"))
-		mb.addAction('Reconnect', self.reconnect)
+		mb.addAction(self.tr('Reconnect'), self.reconnect)
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:

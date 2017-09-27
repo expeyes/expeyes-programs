@@ -154,7 +154,7 @@ class Expt(QWidget):
 		try:	
 			fr=self.p.set_sine(self.FREQ)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		time.sleep(0.02)	
 		TG = 1.e6/self.FREQ/50   # 50 points per wave
@@ -174,7 +174,7 @@ class Expt(QWidget):
 			try:
 				t,v   = self.p.capture1('MIC', NP, TG)	
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')
+				self.comerr()
 				return		
 			fa = em.fit_sine(t,v)
 			if fa != None:
@@ -200,7 +200,7 @@ class Expt(QWidget):
 				self.p.set_sine(0)
 				self.msg('Completed in %5.1f Seconds'%elapsed)
 			except:
-				self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+				self.comerr()
 			return
 
 		if self.index > 1:			  # Draw the line
@@ -213,7 +213,7 @@ class Expt(QWidget):
 		try:
 			self.p.select_range('A1',4)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return
 		try:
 			self.FMIN = float(self.AWGstart.text())
@@ -262,7 +262,7 @@ class Expt(QWidget):
 		try:
 			self.p.set_sine(0)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 
 	def clear(self):
 		for k in self.traces:
@@ -282,6 +282,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

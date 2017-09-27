@@ -118,7 +118,7 @@ class Expt(QWidget):
 		try:
 			self.p.select_range('A1', self.RangeVals12[index])
 		except:
-			self.msg('<font color="red">Select range Error Error, Try reconnect')
+			self.comerr()
 			return		
 		self.rangeSelPB.setText(self.rangeText)
 		self.VMAX = self.RangeVals12[index]
@@ -131,7 +131,7 @@ class Expt(QWidget):
 		try:
 			t, v = self.p.capture1('A1',self.NP, self.TG)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 		
 		self.noise = abs(np.max(v)-np.min(v))
@@ -147,7 +147,7 @@ class Expt(QWidget):
 		try:
 			t,v = self.p.capture1('A1', self.NP, self.TG)		
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 		tmin = np.argmin(v) 
 		tmax = np.argmax(v) 
@@ -179,6 +179,8 @@ class Expt(QWidget):
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes
