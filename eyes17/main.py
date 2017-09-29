@@ -123,8 +123,8 @@ pythonCodes = [
 ['Clipping with Diode', 'clipping'],
 ['Clamping with Diode', 'clamping'],
 ['Fullwave Rectifier', 'fullwave'],
-['Fourier Transform', 'FourierTransform'],
-
+['NPN Ib vs IC plot', 'npnTransferChar'],
+['Fourier Transform', 'FourierTransform']
 ]
 
 
