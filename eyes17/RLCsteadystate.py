@@ -223,7 +223,7 @@ class Expt(QWidget):
 			sum += abs((y[k] - y1[k])/y[k])
 		err = sum/len(y)
 		if err/sum > 0.01:
-			self.msg(self.tr('Curve fitting result rejected'))
+			self.msg('Curve fitting result rejected')
 			return False
 		else:
 			return True
@@ -263,7 +263,7 @@ class Expt(QWidget):
 				self.Phase[ch] = fa[1][2] * 180/em.pi
 				self.fitFine[ch] = 1
 			else:
-				self.msg(self.tr('Data Analysis Error'))
+				self.msg('Data Analysis Error')
 				return
 		phaseDiff = (self.Phase[0] - self.Phase[1])
 	
@@ -281,7 +281,7 @@ class Expt(QWidget):
 					self.Phase[ch] = fa[1][2] * 180/em.pi
 					self.fitFine[ch] = 1
 				else:
-					self.msg(self.tr('Data Analysis Error'))
+					self.msg('Data Analysis Error')
 					return			
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
@@ -383,7 +383,7 @@ class Expt(QWidget):
 		for ch in range(self.MAXCHAN):
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg(str(self.tr('Traces saved to %s')) %fn)
+		self.msg('Traces saved to %s'%fn)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -399,7 +399,7 @@ class Expt(QWidget):
 	def set_wave(self):
 		if 1:
 			res = self.p.set_sine(self.AWGval)
-			self.msg(str(self.tr('AWG set to %6.2f Hz')) %res)
+			self.msg('AWG set to %6.2f Hz'%res)
 			T5 = 2000./res
 			for k in range(len(self.tbvals)): 
 				tmax = 10* self.tbvals[k]
@@ -426,7 +426,7 @@ class Expt(QWidget):
 			self.set_wave()
 		
 	def msg(self, m):
-		self.msgwin.setText(m)
+		self.msgwin.setText(self.tr(m))
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))

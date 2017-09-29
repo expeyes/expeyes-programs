@@ -127,7 +127,7 @@ class Expt(QWidget):
 			time.sleep(0.001)	
 			va = self.p.get_voltage('A1')		# voltage across the diode
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 		
 		i = (vs-va)/1.0 	 		   # in mA, R= 1k
@@ -158,7 +158,7 @@ class Expt(QWidget):
 		try:
 			self.p.select_range('A1',4)
 		except:
-			self.msg('<font color="red">Communication Error. Try Reconnect from the Device menu')		
+			self.comerr()
 			return 
 
 		self.running = True
@@ -192,8 +192,10 @@ class Expt(QWidget):
 		self.msg('Traces saved to %s'%fn)
 		
 	def msg(self, m):
-		self.msgwin.setText(m)
+		self.msgwin.setText(self.tr(m))
 		
+	def comerr(self):
+		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
 
 if __name__ == '__main__':
 	import eyes17.eyes

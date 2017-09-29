@@ -67,7 +67,7 @@ Frequency can be changed from 0.1 Hz to 50Hz')
 			self.comerr()
 					
 	def msg(self, m):
-		self.msgwin.setText(self.tr(str(m)))
+		self.msgwin.setText(self.tr(m))
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))

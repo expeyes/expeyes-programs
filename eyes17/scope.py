@@ -486,7 +486,7 @@ class Expt(QWidget):
 						self.fitResLab[ch].setText(s)
 				else:
 					self.fitResLab[ch].setText('')
-					#self.msg(self.tr('Curve fitting Failed'))		
+
 		if self.Diff.isChecked() == True and self.chanStatus[0] == 1 and self.chanStatus[1] == 1:
 			r = 16./self.rangeVals[0]
 			self.diffTraceW.setData(self.timeData[0], (self.voltData[0]-self.voltData[1])*r)
@@ -555,7 +555,7 @@ class Expt(QWidget):
 			self.rangeVals[ch] = self.RangeVals34[index]
 		self.rangeSelPB[ch].setText(self.rangeTexts[ch])
 		self.showRange(ch)
-		self.msg(str(self.tr('Range of %s set to %s')) %(self.sources[ch],self.rangeTexts[ch]))
+		self.msg('Range of %s set to %s'%(self.sources[ch],self.rangeTexts[ch]))
 	
 
 	def show_fft(self):
@@ -581,7 +581,7 @@ class Expt(QWidget):
 					pop.addItem(txt)
 					pop.setWindowTitle(self.tr('Frequency Spectrum'))
 				else:
-					self.msg(self.tr('FFT Error'))
+					self.msg('FFT Error')
 						
 						
 	def peak_index(self, xa, ya):
@@ -600,7 +600,7 @@ class Expt(QWidget):
 			if self.chanStatus[ch] == 1:
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg(str(self.tr('Traces saved to %s')) %fn)
+		self.msg('Traces saved to %s'%fn)
 
 
 	def select_trig_source(self, index):
@@ -700,7 +700,7 @@ class Expt(QWidget):
 			self.SQ1slider.setValue(self.SQ1val)
 			try:
 				res = self.p.set_sqr1(val, self.dutyCycle)
-				self.msg(str(self.tr('sqr1 set to %5.1f')) %res)
+				self.msg('sqr1 set to %5.1f'%res)
 			except:
 				self.comerr()
 
@@ -725,10 +725,10 @@ class Expt(QWidget):
 		try:
 			if self.waveindex <= 1:
 				res = self.p.set_wave(self.AWGval, self.Waves[self.waveindex])
-				self.msg(str(self.tr('AWG set to %6.2f Hz')) %res)
+				self.msg('AWG set to %6.2f Hz'%res)
 			else:
 				self.p.set_sqr2(self.AWGval)
-				self.msg(self.tr('Output Changed from WG to SQ2'))
+				self.msg('Output Changed from WG to SQ2')
 		except:
 			self.comerr()
 
@@ -777,9 +777,9 @@ class Expt(QWidget):
 		try:
 			cap = self.p.get_capacitance() * 1.e12
 			if cap == None:
-				self.msg(self.tr('Capacitance too high or short to ground'))
+				self.msg('Capacitance too high or short to ground')
 			else:
-				self.CAP.setText('<font color="blue">'+str(self.tr('%6.1f pF')) %cap)
+				self.CAP.setText('<font color="blue">'+ self.tr('%6.1f pF'%cap))
 		except:
 			self.comerr()
 
@@ -797,7 +797,7 @@ class Expt(QWidget):
 			self.IN2.setText('<font color="blue">'+self.tr('No signal'))
 		
 	def msg(self, m):
-		self.msgwin.setText(m)
+		self.msgwin.setText(self.tr(m))
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))

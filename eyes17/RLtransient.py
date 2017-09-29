@@ -218,7 +218,7 @@ class Expt(QWidget):
 			self.TG = self.MAXDEL
 		
 	def msg(self, m):
-		self.msgwin.setText(m)
+		self.msgwin.setText(self.tr(m))
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))

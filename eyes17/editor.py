@@ -92,7 +92,7 @@ class Expt(QWidget):
 		self.timer.stop()
 			
 	def msg(self, m):
-		self.msgwin.setText(m)
+		self.msgwin.setText(self.tr(m))
 		
 
 if __name__ == '__main__':
