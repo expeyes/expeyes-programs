@@ -1,3 +1,4 @@
+from __future__ import print_function
 import time,sys
 
 class ADS1248:
@@ -81,7 +82,7 @@ class ADS1248:
 		val<<=8
 		val |= self.send8(0xFF)
 		self.stop()
-		print val
+		print (val)
 		time.sleep(0.1)
 
 

@@ -476,8 +476,8 @@ class MF522:
 
 
 if __name__ == "__main__":
-	from expeyes import eyes17
-	I= eyes17.open()
+    from expeyes import eyes17
+    I= eyes17.open()
     A = MF522(I,'CS1')
     ret =  A.getStatus()
     print (ret,hex(ret),bin(ret))
