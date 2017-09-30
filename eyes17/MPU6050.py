@@ -2,13 +2,13 @@ import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, \
-                QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
+	        QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
 	QCheckBox, QPushButton 
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, \
-                QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
+	        QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
 	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
 
@@ -38,14 +38,14 @@ class Expt(QWidget):
 	timeVal = []
 	
 	sensorNames = [
-                QT_TRANSLATE_NOOP('Expt','Ax'),
-                QT_TRANSLATE_NOOP('Expt','Ay'),
-                QT_TRANSLATE_NOOP('Expt','Az'),
-                QT_TRANSLATE_NOOP('Expt','Temperature'),
-                QT_TRANSLATE_NOOP('Expt','Vx'),
-                QT_TRANSLATE_NOOP('Expt','Vy'),
-                QT_TRANSLATE_NOOP('Expt','Vz')
-        ]
+	        QT_TRANSLATE_NOOP('Expt','Ax'),
+	        QT_TRANSLATE_NOOP('Expt','Ay'),
+	        QT_TRANSLATE_NOOP('Expt','Az'),
+	        QT_TRANSLATE_NOOP('Expt','Temperature'),
+	        QT_TRANSLATE_NOOP('Expt','Vx'),
+	        QT_TRANSLATE_NOOP('Expt','Vy'),
+	        QT_TRANSLATE_NOOP('Expt','Vz')
+	]
 	sensorSelectCB = [None]*MAXCHAN
 	sensorFlags = [False]*MAXCHAN
 	dataTraces = [None]*MAXCHAN
@@ -195,7 +195,7 @@ class Expt(QWidget):
 				break			
 
 		for k in range(self.MAXCHAN):
-			self.dataVals[k] = []               # Clear data and traces
+			self.dataVals[k] = []	       # Clear data and traces
 			self.dataTraces[k].setData([0,0],[0,0])
 			if self.sensorSelectCB[k].isChecked() == True:
 				self.sensorFlags[k] = True
@@ -217,7 +217,7 @@ class Expt(QWidget):
 	def clear(self):
 		self.timeVal = []
 		for k in range(self.MAXCHAN):
-			self.dataVals[k] = []               # Clear data and traces
+			self.dataVals[k] = []	       # Clear data and traces
 			self.dataTraces[k].setData([0,0],[0,0])
 		self.msg('Cleared Traces and Data')
 		
@@ -244,17 +244,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
-        
-        # translation stuff
-        lang=QLocale.system().name()
-        t=QTranslator()
-        t.load("lang/"+lang, os.path.dirname(__file__))
-        app.installTranslator(t)
-        t1=QTranslator()
-        t1.load("qt_"+lang,
-                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        app.installTranslator(t1)
-        
+
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())

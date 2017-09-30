@@ -117,9 +117,9 @@ class Expt(QWidget):
 					index = k
 			
 			self.resLabs[0] = pg.TextItem(
-                                text= str(self.tr('Time: %6.2fmS ')) %t[index],
-                                color= self.resCols[0]
-                        )
+	                        text= str(self.tr('Time: %6.2fmS ')) %t[index],
+	                        color= self.resCols[0]
+	                )
 			self.resLabs[0].setPos(0, -11)
 			self.pwin.addItem(self.resLabs[0])
 			
@@ -806,17 +806,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
-        
-        # translation stuff
-        lang=QLocale.system().name()
-        t=QTranslator()
-        t.load("lang/"+lang, os.path.dirname(__file__))
-        app.installTranslator(t)
-        t1=QTranslator()
-        t1.load("qt_"+lang,
-                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        app.installTranslator(t1)
-        
+
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())

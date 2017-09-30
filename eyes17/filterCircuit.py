@@ -27,7 +27,7 @@ class Expt(QWidget):
 	FMAX = 4900
 	FREQ = FMIN
 	NSTEP = 100
-	STEP = 10          # 10 hz
+	STEP = 10	  # 10 hz
 	GMIN = 0.0		# filter amplitude Gain
 	GMAX = 3.0
 	Rload = 560.0
@@ -174,7 +174,7 @@ class Expt(QWidget):
 			self.TG = self.MAXDEL
 
 		goodFit = False
-		for k in range(3):                  # try 3 times
+		for k in range(3):	          # try 3 times
 			try:
 				t,v, tt,vv = self.p.capture2(NP, int(self.TG))	
 			except:
@@ -186,7 +186,7 @@ class Expt(QWidget):
 				self.msg('Fit failed')
 				fa = None
 			if fa != None:
-				if self.verify_fit(v,fa[0]) == False:        #compare trace with the fitted curve
+				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
 					continue
 				fb = em.fit_sine(tt,vv)
 				if fb != None:
@@ -284,17 +284,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
-        
-        # translation stuff
-        lang=QLocale.system().name()
-        t=QTranslator()
-        t.load("lang/"+lang, os.path.dirname(__file__))
-        app.installTranslator(t)
-        t1=QTranslator()
-        t1.load("qt_"+lang,
-                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        app.installTranslator(t1)
-        
+
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())

@@ -5,10 +5,10 @@ if utils.PQT5 == True:
 	from PyQt5.QtGui import QPalette, QColor
 	from PyQt5.QtWebKitWidgets import QWebView
 	from PyQt5.QtCore import QUrl, QSize, \
-                QTranslator, QLocale, QLibraryInfo
+	        QTranslator, QLocale, QLibraryInfo
 else:
 	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
-                QTranslator, QLocale, QLibraryInfo
+	        QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QFont, QMainWindow, QApplication, QCheckBox,\
 	QStatusBar, QLabel,QDesktopWidget
 	from PyQt4.QtWebKit import QWebView,QWebSettings
@@ -299,7 +299,7 @@ if p != None:
 	p.set_state(OD1=0)
 
 app = QApplication(sys.argv)
-        
+
 # translation stuff
 lang=QLocale.system().name()
 t=QTranslator()
@@ -307,8 +307,8 @@ t.load("lang/"+lang, os.path.dirname(__file__))
 app.installTranslator(t)
 t1=QTranslator()
 t1.load("qt_"+lang,
-        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 app.installTranslator(t1)
-        
+
 mw = MainWindow()
 sys.exit(app.exec_())
