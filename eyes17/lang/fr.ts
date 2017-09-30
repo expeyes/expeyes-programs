@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
 <context>
     <name>@default</name>
     <message>
@@ -62,12 +61,12 @@
         <translation>Régler SQ1</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="41"/>
+        <location filename="../editor.py" line="43"/>
         <source>Execute Code</source>
         <translation>Exécuter le code</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="44"/>
+        <location filename="../editor.py" line="46"/>
         <source>Save Code</source>
         <translation>Enregistrer le code</translation>
     </message>
@@ -147,17 +146,17 @@
         <translation>Tension (V)</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="138"/>
+        <location filename="../pt100.py" line="140"/>
         <source>Total Duration</source>
         <translation>Durée totale</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="154"/>
+        <location filename="../pt100.py" line="156"/>
         <source>Seconds</source>
         <translation>secondes</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="149"/>
+        <location filename="../pt100.py" line="151"/>
         <source>Measure every</source>
         <translation>Mesurer toutes les</translation>
     </message>
@@ -212,7 +211,7 @@
         <translation>tran-VI.txt</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="167"/>
+        <location filename="../pt100.py" line="169"/>
         <source>Analyze last Trace</source>
         <translation>Analyser la dernière trace</translation>
     </message>
@@ -272,62 +271,62 @@
         <translation>Courant = %5.3f mA</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="61"/>
+        <location filename="../pt100.py" line="63"/>
         <source>Temparature (C)</source>
         <translation>Température (°C)</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="72"/>
+        <location filename="../pt100.py" line="74"/>
         <source>Measure A3</source>
         <translation>Mesurer A3</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="82"/>
+        <location filename="../pt100.py" line="84"/>
         <source>A3 Gain</source>
         <translation>Gain de A3</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="87"/>
+        <location filename="../pt100.py" line="89"/>
         <source>1+10k/Rg</source>
         <translation>1+10k/R_g</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="93"/>
+        <location filename="../pt100.py" line="95"/>
         <source>A3 Offset</source>
         <translation>Décalage (offset) de A3</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="98"/>
+        <location filename="../pt100.py" line="100"/>
         <source>mV </source>
         <translation>mV </translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="104"/>
+        <location filename="../pt100.py" line="106"/>
         <source>CCS Value</source>
         <translation>Valeur de CSS</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="109"/>
+        <location filename="../pt100.py" line="111"/>
         <source>mA</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="116"/>
+        <location filename="../pt100.py" line="118"/>
         <source>Lowest Temp</source>
         <translation>Temp inf</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="132"/>
+        <location filename="../pt100.py" line="134"/>
         <source>deg C</source>
         <translation>°C</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="127"/>
+        <location filename="../pt100.py" line="129"/>
         <source>Highest Temp</source>
         <translation>Temp sup</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="180"/>
+        <location filename="../pt100.py" line="182"/>
         <source>pt100.txt</source>
         <translation>pt100.txt</translation>
     </message>
@@ -820,7 +819,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../scope.py" line="558"/>
         <source>Range of %s set to %s</source>
-        <translation>Calibre de %s réglé à %s</translation>
+        <translation type="obsolete">Calibre de %s réglé à %s</translation>
     </message>
     <message>
         <location filename="../scope.py" line="571"/>
@@ -830,32 +829,32 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../scope.py" line="584"/>
         <source>FFT Error</source>
-        <translation>Erreur de FFT</translation>
+        <translation type="obsolete">Erreur de FFT</translation>
     </message>
     <message>
         <location filename="../scope.py" line="603"/>
         <source>Traces saved to %s</source>
-        <translation>Traces enregistrées dans %s</translation>
+        <translation type="obsolete">Traces enregistrées dans %s</translation>
     </message>
     <message>
         <location filename="../scope.py" line="703"/>
         <source>sqr1 set to %5.1f</source>
-        <translation>SQ1 réglé à %5.1f</translation>
+        <translation type="obsolete">SQ1 réglé à %5.1f</translation>
     </message>
     <message>
         <location filename="../scope.py" line="728"/>
         <source>AWG set to %6.2f Hz</source>
-        <translation>AWG réglé à %6.2f Hz</translation>
+        <translation type="obsolete">AWG réglé à %6.2f Hz</translation>
     </message>
     <message>
         <location filename="../scope.py" line="731"/>
         <source>Output Changed from WG to SQ2</source>
-        <translation>Sortie changée de WG à SQ2</translation>
+        <translation type="obsolete">Sortie changée de WG à SQ2</translation>
     </message>
     <message>
         <location filename="../scope.py" line="780"/>
         <source>Capacitance too high or short to ground</source>
-        <translation>Capacité excessive ou court-circuit à la masse</translation>
+        <translation type="obsolete">Capacité excessive ou court-circuit à la masse</translation>
     </message>
     <message>
         <location filename="../scope.py" line="797"/>
@@ -865,42 +864,42 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../logger.py" line="174"/>
         <source>Data logger plot completed</source>
-        <translation>Graphique de l&apos;enregistreur terminé</translation>
+        <translation type="obsolete">Graphique de l&apos;enregistreur terminé</translation>
     </message>
     <message>
         <location filename="../logger.py" line="183"/>
         <source>Invalid Duration</source>
-        <translation>Durée invalide</translation>
+        <translation type="obsolete">Durée invalide</translation>
     </message>
     <message>
         <location filename="../logger.py" line="192"/>
         <source>Invalid time interval between reads</source>
-        <translation>Intervalle de temps entre lectures invalide</translation>
+        <translation type="obsolete">Intervalle de temps entre lectures invalide</translation>
     </message>
     <message>
         <location filename="../logger.py" line="208"/>
         <source>Started Measurements</source>
-        <translation>Démarré les mesures</translation>
+        <translation type="obsolete">Démarré les mesures</translation>
     </message>
     <message>
         <location filename="../logger.py" line="213"/>
         <source>User Stopped</source>
-        <translation>L&apos;utilisateur a arrêté</translation>
+        <translation type="obsolete">L&apos;utilisateur a arrêté</translation>
     </message>
     <message>
         <location filename="../logger.py" line="221"/>
         <source>Cleared Traces and Data</source>
-        <translation>Effacé les traces et les données</translation>
+        <translation type="obsolete">Effacé les traces et les données</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="226"/>
         <source>Curve fitting result rejected</source>
-        <translation>Résultat du FIT rejetés</translation>
+        <translation type="obsolete">Résultat du FIT rejetés</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="284"/>
         <source>Data Analysis Error</source>
-        <translation>Erreur d&apos;analyse de données</translation>
+        <translation type="obsolete">Erreur d&apos;analyse de données</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="225"/>
