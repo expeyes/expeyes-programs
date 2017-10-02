@@ -86,8 +86,8 @@ class AD9833:
 
 
 if __name__ == "__main__":
-	from expeyes import eyes17
-	I= eyes17.open()
+    from expeyes import eyes17
+    I= eyes17.open()
     A = AD9833(I=I)
     A.set_waveform_mode(A.DDS_SINE)
     A.set_frequency(3600,0)

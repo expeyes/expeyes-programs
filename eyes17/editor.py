@@ -3,12 +3,12 @@ import os, sys, time, utils, inspect, os.path
 
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QFont, \
-                QTranslator, QLocale, QLibraryInfo
+	        QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, \
-                QTranslator, QLocale, QLibraryInfo
+	        QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QFont, QApplication, QWidget,\
 	QTextEdit, QLabel, QVBoxLayout, QPushButton,QHBoxLayout, QFileDialog
 	
@@ -99,17 +99,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
-        
-        # translation stuff
-        lang=QLocale.system().name()
-        t=QTranslator()
-        t.load("lang/"+lang, os.path.dirname(__file__))
-        app.installTranslator(t)
-        t1=QTranslator()
-        t1.load("qt_"+lang,
-                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        app.installTranslator(t1)
-        
+
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())

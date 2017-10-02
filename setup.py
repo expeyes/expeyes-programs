@@ -9,9 +9,10 @@ setup (name='expeyes',
       author_email='bpajith@gmail.com',
       url='http://expeyes.in/',
       license='GPLv3',
-      packages=['expeyes','eyes17'],
+      packages=['expeyes','eyes17','eyes17.SENSORS'],
       package_dir={
-          'expeyes': 'expeyes',
-          'eyes17':  'eyes17/eyes17',
+          'expeyes':        'expeyes',
+          'eyes17':         'eyes17/eyes17',
+          'eyes17.SENSORS': 'eyes17/eyes17/SENSORS',
       },
 )

@@ -28,7 +28,7 @@ class Expt(QWidget):
 	FMIN = 1000
 	FMAX = 4000
 	FREQ = FMIN
-	STEP = 20         
+	STEP = 20
 	VMIN = 0		# filter amplitude Gain
 	VMAX = 4.0
 	data = [ [], [] ]
@@ -170,7 +170,7 @@ class Expt(QWidget):
 		if NP % 2: NP += 1  # make it an even number
 		
 		goodFit = False
-		for k in range(3):                  # try 3 times
+		for k in range(3):	          # try 3 times
 			try:
 				t,v   = self.p.capture1('MIC', NP, TG)	
 			except:
@@ -178,7 +178,7 @@ class Expt(QWidget):
 				return		
 			fa = em.fit_sine(t,v)
 			if fa != None:
-				if self.verify_fit(v,fa[0]) == False:        #compare trace with the fitted curve
+				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
 					continue
 				self.updateLabel.setText(str(self.tr('Frequency = %5.0f Hz V = %5.3f')) %(fr,abs(fa[1][0])))
 				self.data[0].append(fr)
@@ -292,17 +292,17 @@ if __name__ == '__main__':
 	import eyes17.eyes
 	dev = eyes17.eyes.open()
 	app = QApplication(sys.argv)
-        
-        # translation stuff
-        lang=QLocale.system().name()
-        t=QTranslator()
-        t.load("lang/"+lang, os.path.dirname(__file__))
-        app.installTranslator(t)
-        t1=QTranslator()
-        t1.load("qt_"+lang,
-                QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-        app.installTranslator(t1)
-        
+
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())

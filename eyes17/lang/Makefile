@@ -18,7 +18,7 @@ eyes17.pro: $(SOURCES)
 	echo "TRANSLATIONS = $(TS_FILES)"  >> $@
 
 clean:
-	rm -f *~ $(MO_FILES)
+	rm -f *~ $(QM_FILES) eyes17.pro
 
 install:
 

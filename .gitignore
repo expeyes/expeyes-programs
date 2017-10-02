@@ -36,6 +36,8 @@ Makefile.in
 configure*
 config.*
 libtool
+ltmain.sh
+m4/
 
 
 # po generated files
