@@ -166,10 +166,6 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.stop)		
 		
-		b = QPushButton(self.tr("Analyze last Trace"))
-		right.addWidget(b)
-		b.clicked.connect(self.fit_curve)		
-
 		b = QPushButton(self.tr("Clear Traces"))
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
@@ -203,22 +199,6 @@ class Expt(QWidget):
 
 		#----------------------------- end of init ---------------
 	
-	def fit_curve(self):
-		if self.running == True or self.data[0]==[]:
-			return
-
-		if (len(self.data[0])%2) == 1:			# make it an even size, for fitting
-			self.data[0] = self.data[0][:-1]
-			self.data[1] = self.data[1][:-1]
-			
-		fa = em.fit_exp(self.data[0], self.data[1])   # fit exponential reduction
-		if fa != None:
-			pa = fa[1]
-			self.traces.append(self.pwin.plot(self.data[0], fa[0], pen = 'w'))
-			self.msg('Data Fitted with T = T0 * exp(-at). T0= %5.2f  a = %5.3f'%(pa[1], pa[2]))
-		else:
-			self.msg('Analysis failed. Could not fit data')
-
 
 	def v2t(self, v):					# Convert Voltage to Temperature for PT100
 		v = v - self.Offset* 0.001      # Convert Offset to volts
@@ -272,7 +252,7 @@ class Expt(QWidget):
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			self.msg('Time Vs Temperature plot completed')
+			self.msg(self.tr('Time Vs Temperature plot completed'))
 			return
 		if self.index > 1:			  # Draw the line
 			self.currentTrace.setData(self.data[0], self.data[1])
@@ -285,7 +265,7 @@ class Expt(QWidget):
 			self.TMAX = float(self.TMAXtext.text())
 			self.TPMAX = float(self.TPMAXtext.text())
 		except:
-			self.msg('Invalid Duration')
+			self.msg(self.tr('Invalid Duration'))
 			return
 			
 		try:
@@ -294,27 +274,27 @@ class Expt(QWidget):
 			self.timer.stop()
 			self.timer.start(self.TIMER)
 		except:
-			self.msg('Invalid time interval between reads')
+			self.msg(self.tr('Invalid time interval between reads'))
 			return
 
 		try:
 			self.TPMIN = float(self.TPMINtext.text())
 			self.TPMAX = float(self.TPMAXtext.text())
 		except:
-			self.msg('Invalid temperature limit')
+			self.msg(self.tr('Invalid temperature limit'))
 			return
 			
 		try:
 			self.Offset = float(self.OFFSETtext.text())
 			self.Gain = float(self.GAINtext.text())
 		except:
-			self.msg('Invalid Offset or Gain')
+			self.msg(self.tr('Invalid Offset or Gain'))
 			return
 
 		try:
 			self.CCval = float(self.CCtext.text())
 		except:
-			self.msg('Invalid CCS input')
+			self.msg(self.tr('Invalid CCS input'))
 			return
 		
 		self.pwin.setXRange(self.TMIN, self.TMAX)
@@ -324,14 +304,14 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('Started Measurements')
+		self.msg(self.tr('Started Measurements'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		if self.running == True: return
@@ -339,15 +319,15 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

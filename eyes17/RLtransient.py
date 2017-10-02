@@ -142,12 +142,12 @@ class Expt(QWidget):
 		try:
 			Rext = float(self.Rextext.text())
 		except:
-			self.msg('Enter a valid Resistance')
+			self.msg(self.tr('Enter a valid Resistance'))
 			return
 		if self.history != []:
 			fa = em.fit_exp(self.history[-1][0], self.history[-1][1])
 		else:
-			self.msg('No data to analyze.')
+			self.msg(self.tr('No data to analyze.'))
 			return
 		if fa != None:
 			try:
@@ -166,10 +166,13 @@ class Expt(QWidget):
 			Rind = Vind/i
 			pa = fa[1]
 			par1 = abs(1.0 / pa[1])
-			self.msg('L/R = %5.3f mSec : Rind = %5.0f Ohm : L = %5.1f mH'%(par1, Rind, (Rext+Rind)*par1))
+			ss1 = '%5.3f'%par1
+			ss2 = '%5.0f'%Rind
+			ss3 = '%5.1f'%((Rext+Rind)*par1)
+			self.msg(self.tr('L/R = ') + ss1 + self.tr(' mSec : Rind = ') + ss2 + self.tr(' Ohm : L = ') + ss3 +  self.tr(' mH'))
 			self.traces.append(self.pwin.plot(self.history[-1][0], fa[0], pen = self.trial*2))
 		else:
-			self.msg('Failed to fit the curve with V=Vo*exp(-t*L/R)')
+			self.msg(self.tr('Failed to fit the curve with V=Vo*exp(-t*L/R)'))
 	
 	def charge(self):
 		try:
@@ -204,7 +207,7 @@ class Expt(QWidget):
 	def save_data(self):
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

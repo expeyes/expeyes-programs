@@ -178,7 +178,8 @@ class Expt(QWidget):
 		ybar = np.mean(data)
 		b = np.sum(data*(x-xbar)) / np.sum(x*(x-xbar))
 		a = ybar - xbar * b
-		self.msg('Slope of the Line (dV/dI) = %5.0f'%(b*1000))
+		ss = '%5.0f'%(b*1000)
+		self.msg(self.tr('Slope of the Line (dV/dI) = ') + ss)
 	
 				
 	def update(self):
@@ -230,7 +231,7 @@ class Expt(QWidget):
 			self.VMIN = float(self.PVmin.text())
 			self.VMAX = float(self.PVmax.text())
 		except:
-			self.msg('Err')
+			self.msg(self.tr('Err'))
 			return
 		
 		self.IMIN = self.VMIN / self.Res
@@ -243,7 +244,7 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('Started')
+		self.msg(self.tr('Started'))
 		self.manual()
 
 	def stop(self):
@@ -254,7 +255,7 @@ class Expt(QWidget):
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 		self.manual()
 		
 	def clear(self):
@@ -262,15 +263,15 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

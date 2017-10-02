@@ -137,7 +137,8 @@ class Expt(QWidget):
 		self.noise = abs(np.max(v)-np.min(v))
 		self.running = True
 		data = [ [], [] ]
-		self.msg('Noise = %5.3f V. Drop the Magnet until a trace is captured'%self.noise)
+		ss = '%5.3f'%self.noise
+		self.msg(self.tr('Noise = ') + ss + self.tr(' V. Drop the Magnet until a trace is captured'))
 		self.baseTrace.setData(t,v)
 		self.pencol += 2
 	
@@ -152,9 +153,11 @@ class Expt(QWidget):
 		tmin = np.argmin(v) 
 		tmax = np.argmax(v) 
 		span = abs(v[tmax] - v[tmin])
-		self.msg('Induced voltage %5.3f V'%span)
+		ss = '%5.3f'%span
+		self.msg(self.tr('Induced voltage ') + ss)
 		if abs(span - self.noise) > 0.5 and tmin > 0.1 * self.NP and tmax < 0.9 * self.NP: 
-			self.msg('Detected voltage above threshold. Peak voltages %5.3f and %5.3f'%(v[tmin], v[tmax]))
+			ss = '%5.3f  %5.3f'%(v[tmin], v[tmax])
+			self.msg(self.tr('Detected voltage above threshold. Peak voltages: ') + ss)
 			self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
 			self.history.append((t,v))
 			self.trial += 1
@@ -166,15 +169,15 @@ class Expt(QWidget):
 		self.history = []
 		self.trial = 0
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

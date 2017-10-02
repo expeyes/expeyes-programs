@@ -124,9 +124,11 @@ class Expt(QWidget):
 		if fa != None:
 			pa = fa[1]
 			self.traces.append(self.pwin.plot(self.data[0], fa[0], pen = 'w'))
-			self.msg('Frequency of Oscillation = %5.2f Hz. Damping Factor = %5.3f'%(pa[1], pa[4]))
+			ss1 = '%5.2f'%pa[1]
+			ss2 = '%5.3f'%pa[4]
+			self.msg(self.tr('Frequency of Oscillation = ') + ss1 + self.tr(' Hz. Damping Factor = ') + ss2)	
 		else:
-			self.msg('Analysis failed. Could not fit data')
+			self.msg(self.tr('Analysis failed. Could not fit data'))
 				
 	def update(self):
 		if self.running == False:
@@ -149,7 +151,7 @@ class Expt(QWidget):
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			self.msg('Time Vs Angular velocity plot completed')
+			self.msg(self.tr('Time Vs Angular velocity plot completed'))
 			return
 		if self.index > 1:			  # Draw the line
 			self.currentTrace.setData(self.data[0], self.data[1])
@@ -161,7 +163,7 @@ class Expt(QWidget):
 		try:
 			val = float(self.TMAXtext.text())
 		except:
-			self.msg('Invalid Duration')
+			self.msg(self.tr('Invalid Duration'))
 			return
 		self.TMAX = val
 		self.pwin.setXRange(self.TMIN, self.TMAX)
@@ -171,30 +173,30 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('Started Measurements')
+		self.msg(self.tr('Started Measurements'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
 
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn) )
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
