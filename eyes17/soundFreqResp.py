@@ -198,7 +198,8 @@ class Expt(QWidget):
 			self.traces.append(self.currentTrace)
 			try:
 				self.p.set_sine(0)
-				self.msg('Completed in %5.1f Seconds'%elapsed)
+				ss = '%5.1f'%elapsed
+				self.msg(self.tr('Completed in ') + ss + self.tr(' Seconds'))
 			except:
 				self.comerr()
 			return
@@ -219,13 +220,13 @@ class Expt(QWidget):
 			self.FMIN = float(self.AWGstart.text())
 			self.FMAX = float(self.AWGstop.text())
 		except:
-			self.msg('Invalid Frequency limis')
+			self.msg(self.tr('Invalid Frequency limits'))
 			return
 			
 		try:
 			self.totalTime = float(self.totalTimeW.text())
 		except:
-			self.msg('Invalid Time interval')
+			self.msg(self.tr('Invalid Time interval'))
 			return
 
 		nstep = (self.FMAX - self.FMIN)/self.STEP
@@ -237,7 +238,8 @@ class Expt(QWidget):
 			self.timer.stop()
 			self.timer.start(self.TIMER)
 		else:
-			self.msg('Increase time interval to %4.0f, or Reduce frequency span'%mt)
+			ss = '%4.0f'%mt
+			self.msg(self.tr('Increase time interval to ') + ss + self.tr(' or Reduce frequency span'))
 			return
 			
 		self.pwin.setXRange(self.FMIN, self.FMAX)
@@ -248,8 +250,8 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('From %5.0f to %5.0f Hz. %5.0f mS at each step'%(self.FMIN, self.FMAX,tgap))
-
+		ss = '%4.0f'%tgap
+		self.msg(ss + self.tr(' mS at each step'))
 		self.startTime = time.time()
 
 
@@ -258,7 +260,7 @@ class Expt(QWidget):
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 		try:
 			self.p.set_sine(0)
 		except:
@@ -269,15 +271,16 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Completed Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		ss = str(fn)
+		self.msg(self.tr('Traces saved to ') + ss)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

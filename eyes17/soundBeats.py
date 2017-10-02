@@ -179,7 +179,7 @@ shows the actual frequency set.\n'))
 			xa,ya = em.fft(self.voltData[0], self.timeData[0][1]-self.timeData[0][0])
 			self.popwin.plot(xa*1000,ya, pen = 'w')					
 		except:
-			self.msg('FFT err')
+			self.msg(self.tr('FFT err'))
 		self.popwin.show()
 
 	def control(self):
@@ -219,7 +219,8 @@ shows the actual frequency set.\n'))
 		for ch in range(1):
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg('Trace saved to %s'%fn)
+		ss = str(fn)
+		self.msg(self.tr('Trace saved to ') + ss)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -232,6 +233,7 @@ shows the actual frequency set.\n'))
 		elif self.TG > self.MAXDEL:
 			self.TG = self.MAXDEL
 
+	
 	def sq1_text(self, text):
 		try:
 			val = float(text)
@@ -245,13 +247,6 @@ shows the actual frequency set.\n'))
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
 			self.SQ1text.setText(str(val))
-
-	def set_wave(self):
-		try:
-			res = self.p.set_sine(self.AWGval)
-			self.msg('AWG set to %6.2f Hz'%res)
-		except:
-			self.comerr()
 
 	def awg_text(self, text):
 		val = float(text)
