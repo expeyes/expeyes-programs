@@ -4,12 +4,15 @@ Priority: extra
 Maintainer: Georges Khaznadar <georgesk@debian.org>
 Build-Depends: debhelper (>= 9.0.0), quilt, python3-all, python-all,
  gcc-avr, binutils-avr, avr-libc (>=1:1.8.0+Atmel3.5.0),
- pkg-config, libgtk2.0-dev, x11proto-randr-dev (>= 1.5.0)
-Build-Depends-Indep: lyx, texlive-latex-base, texlive-latex-extra, texlive-generic-recommended,
+ pkg-config, libgtk2.0-dev, x11proto-randr-dev (>= 1.5.0),
+ pyqt4-dev-tools, qt4-linguist-tools
+# the following build-dependency is necessary for microhope
+Build-Depends-Indep: lyx,
+ texlive-latex-base, texlive-latex-extra, texlive-generic-recommended,
  lmodern, imagemagick
 X-Python-Version: >= 2.5
 X-Python3-Version: >= 3.2
-Standards-Version: 3.9.8
+Standards-Version: 4.1.0
 Homepage: http://expeyes.in/
 
 Package: expeyes
@@ -121,8 +124,8 @@ Package: python-expeyes
 Section: python
 Architecture: all
 Depends: python, python3, ${misc:Depends},
- python3-scipy, python3-serial, python3-usb,
- python-scipy, python-serial, python-usb,
+ python3-scipy, python3-serial,
+ python-scipy, python-serial,
  python-pygrace(>=0.5),python3-pygrace(>=0.5)
 Provides: python3-expeyes
 Recommends: qtiplot, udev, expeyes-doc-en|expeyes-doc
@@ -148,65 +151,6 @@ Depends: python, python3, ${misc:Depends},
 Description: Web interface for expEYES-Junior
  This package allows you to access remotely to a server which drives an
  expEYES-Jr box. This extends the power of expEYES.
-
-Package: expeyes-doc-en
-Section: doc
-Architecture: all
-Depends: ${misc:Depends}, expeyes-doc-common
-Provides: expeyes-doc
-Replaces: expeyes-doc (<< 1.0.3)
-Description: User manual for expeyes library, in English language
- This package provides a full documentation to use the library python-expeyes,
- which enables to program new experiments using an ExpEYES box.
- .
- ExpEYES is from the PHOENIX project of Inter-University Accelerator
- Centre, New Delhi. It is a hardware & software framework for
- developing science experiments, demonstrations and projects and learn
- science and engineering by exploration. Capable of doing real time
- measurements and analysing the data in different ways. Analog
- voltages are measured with 0.025% resolution and time intervals with
- one microsecond. This project is based on Free and Open Source
- software, mostly written in Python programming language. The hardware
- design is also open.
-
-
-Package: expeyes-doc-fr
-Section: doc
-Architecture: all
-Depends: ${misc:Depends}, expeyes-doc-common
-Provides: expeyes-doc
-Replaces: expeyes-doc (<< 1.0.3)
-Description: User manual for expeyes library, French translation
- This package provides a full documentation to use the library python-expeyes,
- which enables to program new experiments using an ExpEYES box.
- .
- ExpEYES is from the PHOENIX project of Inter-University Accelerator
- Centre, New Delhi. It is a hardware & software framework for
- developing science experiments, demonstrations and projects and learn
- science and engineering by exploration. Capable of doing real time
- measurements and analysing the data in different ways. Analog
- voltages are measured with 0.025% resolution and time intervals with
- one microsecond. This project is based on Free and Open Source
- software, mostly written in Python programming language. The hardware
- design is also open.
-
-Package: expeyes-doc-common
-Section: doc
-Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}, evince
-Description: Common files related to the User manual for expeyes library
- This package provides icons and desktop entries to launch a viewer with
- the documentation for expEYES.
- .
- ExpEYES is from the PHOENIX project of Inter-University Accelerator
- Centre, New Delhi. It is a hardware & software framework for
- developing science experiments, demonstrations and projects and learn
- science and engineering by exploration. Capable of doing real time
- measurements and analysing the data in different ways. Analog
- voltages are measured with 0.025% resolution and time intervals with
- one microsecond. This project is based on Free and Open Source
- software, mostly written in Python programming language. The hardware
- design is also open.
 
 Package: microhope
 Architecture: any

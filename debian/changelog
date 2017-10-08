@@ -1,9 +1,24 @@
-expeyes (4.9.95-1) unstable; urgency=medium
+expeyes (4.3.1+dfsg-1) unstable; urgency=medium
 
-  * upgraded to the newest upstream version, which adds support
-    for expeyes17.
+  * New upstream release, which add support for eyes17.
+  * separated the generation of *-doc* packages: another
+    source package will be created. Changed the dependencies accordingly.
+  * added the "Package: eyes17" entry in debian/control
+  * modified those .install files  and created .manpages ...
+    - expeyes.install expeyes.manpages
+    - eyes17.install eyes17.manpages
+    - python-expeyes.install
+  * removed an obsoleted part from python-expeyes.postinst
+  * new .post* files: eyes17.postinst
+  * new .pre* files: eyes17.prerm
+  * changed slightly d/rules to take in account eyes17
+  * removed obsolete debian patches
+  * added pt.po given by traduz@debianpt.org. Closes: #877107
+  * fixed get-newest-source.sh: the debian/ subdirectory must not be
+    taken from "upstream". Other changes in the file were made to erase
+    sourceless files in the directory ExpEYES17/Firmware/
 
- -- Georges Khaznadar <georgesk@debian.org>  Sun, 24 Sep 2017 16:02:10 +0200
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 30 Sep 2017 11:54:33 +0200
 
 expeyes (4.2.1+dfsg-4) unstable; urgency=medium
 

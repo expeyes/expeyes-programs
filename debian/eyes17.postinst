@@ -35,6 +35,7 @@ esac
 ## this was not managed properly by debian/rules:
 if which py3compile >/dev/null 2>&1; then
     py3compile -p eyes17
+    py3compile /usr/share/eyes17
 fi
 
 # dh_installdeb will replace this with shell code automatically

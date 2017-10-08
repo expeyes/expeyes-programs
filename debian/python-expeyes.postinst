@@ -35,7 +35,7 @@ esac
 
 ## this was not managed properly by debian/rules:
 if which py3compile >/dev/null 2>&1; then
-    py3compile -p python-expeyes 
+	py3compile -p python-expeyes 
 fi
 
 # dh_installdeb will replace this with shell code automatically
