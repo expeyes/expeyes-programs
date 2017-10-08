@@ -555,7 +555,9 @@ class Expt(QWidget):
 			self.rangeVals[ch] = self.RangeVals34[index]
 		self.rangeSelPB[ch].setText(self.rangeTexts[ch])
 		self.showRange(ch)
-		self.msg('Range of %s set to %s'%(self.sources[ch],self.rangeTexts[ch]))
+		ss1 = '%s'%self.sources[ch]
+		ss2 = '%s'%self.rangeTexts[ch]
+		self.msg(self.tr('Range of') + ss1 + self.tr(' set to ') + ss2)
 	
 
 	def show_fft(self):
@@ -581,7 +583,7 @@ class Expt(QWidget):
 					pop.addItem(txt)
 					pop.setWindowTitle(self.tr('Frequency Spectrum'))
 				else:
-					self.msg('FFT Error')
+					self.msg(self.tr('FFT Error'))
 						
 						
 	def peak_index(self, xa, ya):
@@ -600,7 +602,8 @@ class Expt(QWidget):
 			if self.chanStatus[ch] == 1:
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg('Traces saved to %s'%fn)
+		ss = str(fn)
+		self.msg(self.tr('Traces saved to ') + ss)
 
 
 	def select_trig_source(self, index):
@@ -700,7 +703,8 @@ class Expt(QWidget):
 			self.SQ1slider.setValue(self.SQ1val)
 			try:
 				res = self.p.set_sqr1(val, self.dutyCycle)
-				self.msg('sqr1 set to %5.1f'%res)
+				ss = '%5.1f'%res
+				self.msg(self.tr('sqr1 set to ') + ss)
 			except:
 				self.comerr()
 
@@ -725,10 +729,11 @@ class Expt(QWidget):
 		try:
 			if self.waveindex <= 1:
 				res = self.p.set_wave(self.AWGval, self.Waves[self.waveindex])
-				self.msg('AWG set to %6.2f Hz'%res)
+				ss = '%6.2f'%res
+				self.msg(self.tr('AWG set to ') + ss + self.tr(' Hz'))
 			else:
 				self.p.set_sqr2(self.AWGval)
-				self.msg('Output Changed from WG to SQ2')
+				self.msg(self.tr('Output Changed from WG to SQ2'))
 		except:
 			self.comerr()
 
@@ -777,9 +782,10 @@ class Expt(QWidget):
 		try:
 			cap = self.p.get_capacitance() * 1.e12
 			if cap == None:
-				self.msg('Capacitance too high or short to ground')
+				self.msg(self.tr('Capacitance too high or short to ground'))
 			else:
-				self.CAP.setText('<font color="blue">'+ self.tr('%6.1f pF'%cap))
+				ss = '%6.1f'%cap
+				self.CAP.setText('<font color="blue">'+ ss +self.tr(' pF'))
 		except:
 			self.comerr()
 

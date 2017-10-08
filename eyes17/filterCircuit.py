@@ -63,6 +63,7 @@ class Expt(QWidget):
 		right.setAlignment(Qt.AlignTop)
 		right.setSpacing(self.RPGAP)
 
+		'''
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('Rload ='))
 		l.setMaximumWidth(50)
@@ -73,7 +74,7 @@ class Expt(QWidget):
 		l.setMaximumWidth(40)
 		H.addWidget(l)
 		right.addLayout(H)
-
+		'''
 
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('From'))
@@ -167,7 +168,8 @@ class Expt(QWidget):
 		if NP * self.TG > MAXTIME:
 			NP = int(MAXTIME/self.TG)
 		if NP % 2: NP += 1  # make it an even number
-		self.msg('Frequency = %5.0f Hz'%fr)
+		ss = '%5.1f'%fr
+		self.msg(self.tr('Frequency = ') + ss + self.tr(' Hz'))
 		if self.TG < self.MINDEL:
 			self.TG = self.MINDEL
 		elif self.TG > self.MAXDEL:
@@ -183,7 +185,7 @@ class Expt(QWidget):
 			try:
 				fa = em.fit_sine(t,v)
 			except:
-				self.msg('Fit failed')
+				self.msg(self.tr('Fit failed'))
 				fa = None
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
@@ -202,15 +204,15 @@ class Expt(QWidget):
 					break
 		
 		self.FREQ += self.STEP
-		if goodFit == False:
-			return
+		#if goodFit == False: return
 
 		if self.FREQ > self.FMAX:
+			print 'Done'
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
 			im = self.gainMax/self.Rload * 1000
-			self.msg('Completed. Peak voltage = %5.3f\t Peak Current %5.0fmA at %5.0f Hz.'%(self.gainMax,im,self.peakFreq))
+			self.msg(self.tr('completed'))
 			return
 
 		if self.index > 1:			  # Draw the line
@@ -226,7 +228,7 @@ class Expt(QWidget):
 			self.FMAX = float(self.AWGstop.text())
 			self.NSTEP = float(self.NSTEPtext.text())
 		except:
-			self.msg('Invalid Frequency limis')
+			self.msg(self.tr('Invalid Frequency limits'))
 			return
 		
 		self.pwin.setXRange(self.FMIN, self.FMAX)
@@ -248,7 +250,7 @@ class Expt(QWidget):
 		self.index = 0
 		self.pencol += 2
 		self.gainMax = 0.0
-		self.msg('Started')
+		self.msg(self.tr('Started'))
 
 
 	def stop(self):
@@ -257,22 +259,22 @@ class Expt(QWidget):
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
 		im = self.gainMax/self.Rload * 1000
-		self.msg('Stopped. Peak voltage = %5.3f\t Peak Current %5.0fmA at %5.0f Hz.'%(self.gainMax,im,self.peakFreq))
+		self.msg(self.tr('user Stopped'))
 
 	def clear(self):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

@@ -69,7 +69,7 @@ class Expt(QWidget):
 		f = open(fn,'w')
 		f.write(s)
 		f.close()
-		self.msg('Code saved to %s'%fn)
+		self.msg(self.tr('Code saved to ') + str(fn))
 
 	def runCode(self):
 		self.msg('')

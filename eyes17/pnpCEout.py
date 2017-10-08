@@ -124,7 +124,7 @@ class Expt(QWidget):
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			self.msg('Completed plotting I-V')
+			self.msg(self.tr('Completed plotting I-V'))
 
 			l = pg.TextItem(text=self.ibtxt, color= self.pencol)
 			l.setPos(va,i)
@@ -144,10 +144,10 @@ class Expt(QWidget):
 		try:
 			vbset = float(text)
 			if vbset > -0.5 or vbset < -3.0:
-				self.msg('Base valtage shold be from -0.5 to -3')
+				self.msg(self.tr('Base valtage shold be from -0.5 to -3'))
 				return
 		except:
-			self.msg('Invalid Base valtage, shold be from -0.5 to -3')
+			self.msg(self.tr('Invalid Base valtage, shold be from -0.5 to -3'))
 			return
 				
 		try:
@@ -167,14 +167,14 @@ class Expt(QWidget):
 		self.VSET = self.VMIN
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
-		self.msg('Started. Vb = %5.3f Ib = %5.1f uA'%(vb,ibase))
+		self.msg(self.tr('Started'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		for k in self.legends:
@@ -183,15 +183,15 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn) )
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

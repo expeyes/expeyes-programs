@@ -39,8 +39,6 @@ class Expt(QWidget):
 	Data    = [ [], [] ]
 	traceWidget = [None]
 	
-	measured = False
-	
 	sources = ['A1','A2','A3', 'MIC']
 	chanpens = ['y','g','w','m']     #pqtgraph pen colors
 
@@ -174,14 +172,13 @@ class Expt(QWidget):
 			self.Ymax.setText('')
 	
 	def save_data(self):
-		if self.measured == False: 
-			return
 		fn = self.Filename.text()
 		dat = []
 		for ch in range(2):
-				dat.append( [self.timeData[ch], self.voltData[ch] ])
+				dat.append( [self.Data[0], self.Data[1] ])
 		self.p.save(dat,fn)
-		self.msg('Traces saved to %s'%fn)
+		ss = self.tr(str(fn))
+		self.msg(self.tr('Traces saved to ') + ss)
 			
 	def set_range(self, index):
 		x = self.xvals[index]
@@ -191,14 +188,14 @@ class Expt(QWidget):
 	def set_wave(self):
 		try:	
 			res = self.p.set_sine(self.AWGval)
-			self.msg('AWG set to %6.2f Hz'%res)
+			ss = '%6.2f'%res
+			self.msg(self.tr('AWG set to ') + ss + self.tr(' Hz'))
 		except:
 			self.comerr()
 			return
 		T = 1.0e6/res
 		self.NP = 500
 		self.TG = int(1+T/self.NP)
-		#print T,self.NP, self.TG
 		if self.TG < self.MINDEL:
 			self.TG = self.MINDEL
 		elif self.TG > self.MAXDEL:

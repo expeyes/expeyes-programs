@@ -115,9 +115,11 @@ class Expt(QWidget):
 			a1 = f[1][1]
 			T = 300.0		# Room temp in Kelvin
 			n = q/(a1*k*T)
-			self.msg('Fitted with Diode Equation : Io = %5.2e mA , Ideality factor = %5.2f'%(Io,n))
+			ss1 = '%5.2e'%Io
+			ss2 = '%5.2f'%n
+			self.msg(self.tr('Fitted with Diode Equation : Io = ') +ss1 + self.tr(' mA , Ideality factor = ') + ss2)
 		else:
-			self.msg('Analysis failed. Could not fit data')
+			self.msg(self.tr('Analysis failed. Could not fit data'))
 				
 	def update(self):
 		if self.running == False:
@@ -138,7 +140,7 @@ class Expt(QWidget):
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			self.msg('Completed plotting I-V')
+			self.msg(self.tr('Completed plotting I-V'))
 			return
 		if self.index > 1:			  # Draw the line
 			self.currentTrace.setData(self.data[0], self.data[1])
@@ -167,29 +169,31 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('Started')
+		self.msg(self.tr('Started'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
+		self.data = [ [], [] ]
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		ss = str(fn)
+		self.msg(self.tr('Traces saved to ') + ss)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

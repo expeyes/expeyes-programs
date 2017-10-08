@@ -156,7 +156,7 @@ class Expt(QWidget):
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('RCs-data.txt'), 20, None)
+		self.Filename = utils.lineEdit(150, self.tr('RLCs-data.txt'), 20, None)
 		H.addWidget(self.Filename)
 		right.addLayout(H)
 		
@@ -223,7 +223,7 @@ class Expt(QWidget):
 			sum += abs((y[k] - y1[k])/y[k])
 		err = sum/len(y)
 		if err/sum > 0.01:
-			self.msg('Curve fitting result rejected')
+			self.msg(self.tr('Curve fitting result rejected'))
 			return False
 		else:
 			return True
@@ -263,7 +263,7 @@ class Expt(QWidget):
 				self.Phase[ch] = fa[1][2] * 180/em.pi
 				self.fitFine[ch] = 1
 			else:
-				self.msg('Data Analysis Error')
+				self.msg(self.tr('Data Analysis Error'))
 				return
 		phaseDiff = (self.Phase[0] - self.Phase[1])
 	
@@ -281,7 +281,7 @@ class Expt(QWidget):
 					self.Phase[ch] = fa[1][2] * 180/em.pi
 					self.fitFine[ch] = 1
 				else:
-					self.msg('Data Analysis Error')
+					self.msg(self.tr('Data Analysis Error'))
 					return			
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
@@ -380,10 +380,15 @@ class Expt(QWidget):
 	def save_data(self):
 		fn = self.Filename.text()
 		dat = []
-		for ch in range(self.MAXCHAN):
+		if self.VLC.isChecked() == True:
+			nc = 5
+		else:
+			nc = 3
+		
+		for ch in range(nc):
 				dat.append( [self.timeData[ch], self.voltData[ch] ])
 		self.p.save(dat,fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') +str(fn))
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -399,7 +404,8 @@ class Expt(QWidget):
 	def set_wave(self):
 		if 1:
 			res = self.p.set_sine(self.AWGval)
-			self.msg('AWG set to %6.2f Hz'%res)
+			ss = '%6.2f'%res
+			self.msg(self.tr('AWG set to ') + ss + self.tr(' Hz'))
 			T5 = 2000./res
 			for k in range(len(self.tbvals)): 
 				tmax = 10* self.tbvals[k]

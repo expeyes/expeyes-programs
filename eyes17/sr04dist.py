@@ -129,15 +129,16 @@ class Expt(QWidget):
 				y = y[:-1]
 			fa = em.fit_dsine(np.array(x), np.array(y), 1000)# ./self.guessTP)  #Need to fix eyemath, expects kHz
 		else:
-			self.msg('No data to analyze.')
+			self.msg(self.tr('No data to analyze.'))
 			return
 			
 		if fa != None:
 			pa = fa[1]
-			self.msg('Sine Fit Result: Frequency = %5.2f Hz'%(pa[1]))
+			ss = '%5.2f'%pa[1]
+			self.msg(self.tr('Sine Fit Result: Frequency ') + ss + self.tr( 'Hz'))
 			self.traces.append(self.pwin.plot(x, fa[0], pen = 'w'))
 		else:
-			self.msg('Failed to fit the curve')
+			self.msg(self.tr('Failed to fit the curve'))
 		
 				
 	def update(self):
@@ -162,7 +163,7 @@ class Expt(QWidget):
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			self.msg('Time vs Distance plot completed')
+			self.msg(self.tr('Time vs Distance plot completed'))
 			return
 		if self.index > 1:			  # Draw the line
 			self.currentTrace.setData(self.data[0], self.data[1])
@@ -177,7 +178,7 @@ class Expt(QWidget):
 		try:
 			self.TMAX = float(self.TMAXtext.text())
 		except:
-			self.msg('Invalid Duration')
+			self.msg(self.tr('Invalid Duration'))
 			return
 		try:
 			val = float(self.DMAXtext.text())
@@ -197,29 +198,30 @@ class Expt(QWidget):
 		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
 		self.index = 0
 		self.pencol += 2
-		self.msg('Started Measurements')
+		self.msg(self.tr('Started Measurements'))
 
 	def stop(self):
 		if self.running == False: return
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
 		self.pencol = 2
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		ss = str(fn)
+		self.msg(self.tr('Traces saved to ')+ss)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

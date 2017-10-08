@@ -143,7 +143,7 @@ class Expt(QWidget):
 		if self.history != []:
 			fa = em.fit_exp(self.history[-1][0], self.history[-1][1])
 		else:
-			self.msg('No data to analyze.')
+			self.msg(self.tr('No data to analyze.'))
 			return
 		try:
 			rval = float(self.Rval.text())/1000  # convert to kOhms
@@ -154,9 +154,10 @@ class Expt(QWidget):
 			pa = fa[1]
 			rc = abs(1.0 / pa[1])
 			self.traces.append(self.pwin.plot(self.history[-1][0], fa[0], pen = self.trial*2))
-			self.msg('Fitted data with V=Vo*exp(-t/RC). RC = %5.2f mSec C = %5.1f uF'%(rc,rc/rval))
+			ss = '%5.1f'%rc
+			self.msg(self.tr('Fitted data with V=Vo*exp(-t/RC). RC = ') + ss + self.tr(' mSec'))
 		else:
-			self.msg('Failed to fit the curve with V=Vo*exp(-t/RC)')
+			self.msg(self.tr('Failed to fit the curve with V=Vo*exp(-t/RC)'))
 	
 	def charge(self):
 		try:
@@ -189,11 +190,12 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.trial = 2
+		self.msg(self.tr('Cleared Data and Traces'))
 
 	def save_data(self):
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -209,7 +211,8 @@ class Expt(QWidget):
 	def set_wave(self):
 		try:
 			res = self.p.set_sine(self.AWGval)
-			self.msg('AWG set to %6.2f Hz'%res)
+			ss = '%6.2f'%res
+			self.msg(self.tr('AWG set to ') + ss + self.tr(' Hz'))
 		except:
 			self.comerr()
 			return 

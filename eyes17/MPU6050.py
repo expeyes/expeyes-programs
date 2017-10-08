@@ -148,7 +148,7 @@ class Expt(QWidget):
 		try:	
 			senData = self.sensor.getRaw()
 		except:
-			self.comerr()
+			self.msg(self.tr('I2C device communication error'))
 			return 
 		
 		#print senData
@@ -166,7 +166,7 @@ class Expt(QWidget):
 
 		if elapsed > self.TMAX:
 			self.running = False
-			self.msg('MPU6050 data plot completed')
+			self.msg(self.tr('MPU6050 data plot completed'))
 			return
 
 		if len(self.timeVal) > 1:			  # Draw the traces
@@ -181,7 +181,7 @@ class Expt(QWidget):
 			self.TMAX = float(self.TMAXtext.text())
 			self.TGAP = float(self.TGAPtext.text())
 		except:
-			self.msg('Invalid Duration or Time between reads (> 10 mSec)')
+			self.msg(self.tr('Invalid Duration or Time between reads (> 10 mSec)'))
 			return
 			
 		self.timer.stop()
@@ -206,24 +206,24 @@ class Expt(QWidget):
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		#self.pwin.setYRange(self.VMIN, self.VMAX)
 		self.running = True
-		self.msg('Started Measurements')
+		self.msg(self.tr('Started Measurements'))
 		
 
 
 	def stop(self):
 		self.running = False
-		self.msg('User Stopped')
+		self.msg(self.tr('User Stopped'))
 
 	def clear(self):
 		self.timeVal = []
 		for k in range(self.MAXCHAN):
 			self.dataVals[k] = []	       # Clear data and traces
 			self.dataTraces[k].setData([0,0],[0,0])
-		self.msg('Cleared Traces and Data')
+		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.timeVal == []:
-			self.msg('No Traces available for saving')
+			self.msg(self.tr('No Traces available for saving'))
 			return
 		fn = self.Filename.text()
 
@@ -232,7 +232,7 @@ class Expt(QWidget):
 			if self.sensorFlags[k] == True:
 				data.append([self.timeVal, self.dataVals[k]])
 		self.p.save(data, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

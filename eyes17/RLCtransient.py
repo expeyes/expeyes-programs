@@ -141,17 +141,19 @@ class Expt(QWidget):
 		if self.history != []:
 			fa = em.fit_dsine(self.history[-1][0], self.history[-1][1],0)
 		else:
-			self.msg('No data to analyze.')
+			self.msg(self.tr('No data to analyze.'))
 			return
 			
 		if fa != None:
 			pa = fa[1]
 			rc = 1.0 / pa[1]
 			damping = pa[4] / (2*math.pi*pa[1]) # unitless damping factor
-			self.msg('Resonant Frequency = %5.2f kHz Damping factor= %5.3f'%(pa[1], damping))
+			ss1 = '%5.2f'%pa[1]
+			ss2 = '%5.3f'%damping
+			self.msg(self.tr('Resonant Frequency = ') + ss1 + self.tr(' kHz Damping factor= ') + ss2)
 			self.traces.append(self.pwin.plot(self.history[-1][0], fa[0], pen = self.trial*2))
 		else:
-			self.msg('Failed to fit the curve')
+			self.msg(self.tr('Failed to fit the curve'))
 	
 	def charge(self):
 		try:
@@ -184,12 +186,13 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.trial = 2
+		self.msg(self.tr('Cleared Traces and Data'))
 
 
 	def save_data(self):
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg('Traces saved to %s'%fn)
+		self.msg(self.tr('Traces saved to ') + str(fn))
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

@@ -62,7 +62,8 @@ Frequency can be changed from 0.1 Hz to 50Hz')
 	def sq1_slider(self, val):
 		try:
 			res = self.p.set_sqr1(val*0.01)
-			self.msg('sqr1 set to %5.1f Hz'%res)
+			ss = '%5.1f'%res
+			self.msg(self.tr('sqr1 set to ') + ss + self.tr(' Hz'))
 		except:
 			self.comerr()
 					
