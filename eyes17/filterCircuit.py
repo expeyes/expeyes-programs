@@ -1,3 +1,4 @@
+from __future__ import print_function
 import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
@@ -207,7 +208,7 @@ class Expt(QWidget):
 		#if goodFit == False: return
 
 		if self.FREQ > self.FMAX:
-			print 'Done'
+			print ('Done')
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)

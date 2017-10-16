@@ -33,7 +33,7 @@ install: all
 
 %.pdf: %.lyx
 	@echo -n "Exporting $< to a LaTeX file ... "
-	@lyx -e latex $< >/dev/null 2>&1
+	@lyx -e latex -userdir . $< >/dev/null 2>&1
 	@echo Done.
 	@echo -n "Running PDFLaTeX"
 	@ok=0; lyxfile=$<; \
@@ -50,7 +50,7 @@ install: all
 
 clean:
 	[ -f ../../keep-expeyes-tex ] || rm -f *.tex
-	rm -f *~ *.aux *.log *.toc *.lof
+	rm -rf *~ *.aux *.log *.toc *.lof *.lst cache lyxrc.*
 
 distclean: clean
 	[ -e ../../keep-expeyes-docs  ] || rm -f $(PDFS) microhope-*.pdf

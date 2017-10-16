@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -46,7 +47,7 @@
         <translation>Effacer les traces</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="80"/>
+        <location filename="../XYplot.py" line="78"/>
         <source>Save Data to</source>
         <translation>Enregistrer les données sous</translation>
     </message>
@@ -83,7 +84,7 @@
     <message>
         <location filename="../filterCircuit.py" line="67"/>
         <source>Rload =</source>
-        <translation>R_charge =</translation>
+        <translation type="obsolete">R_charge =</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="107"/>
@@ -101,17 +102,17 @@
         <translation>à</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="96"/>
+        <location filename="../XYplot.py" line="94"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="95"/>
+        <location filename="../filterCircuit.py" line="96"/>
         <source>Number of Steps =</source>
         <translation>Nombre d&apos;étapes</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="119"/>
+        <location filename="../filterCircuit.py" line="120"/>
         <source>filter-data.txt</source>
         <translation>filter-data.txt</translation>
     </message>
@@ -211,7 +212,7 @@
         <translation>tran-VI.txt</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="169"/>
+        <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
         <translation>Analyser la dernière trace</translation>
     </message>
@@ -326,7 +327,7 @@
         <translation>Temp sup</translation>
     </message>
     <message>
-        <location filename="../pt100.py" line="182"/>
+        <location filename="../pt100.py" line="178"/>
         <source>pt100.txt</source>
         <translation>pt100.txt</translation>
     </message>
@@ -381,19 +382,19 @@
         <translation>Résistance =</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="135"/>
+        <location filename="../XYplot.py" line="133"/>
         <source>messages</source>
         <translation>messages</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="89"/>
+        <location filename="../XYplot.py" line="87"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="159"/>
-        <source>RCs-data.txt</source>
-        <translation>RCs-data.txt</translation>
+        <source>RLCs-data.txt</source>
+        <translation>RLCs-data.txt</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="163"/>
@@ -636,7 +637,7 @@
         <translation>&lt; 100Ohm  ou  &gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="579"/>
+        <location filename="../scope.py" line="581"/>
         <source>Fundamental frequency = %5.1f Hz</source>
         <translation>Fréquence fondamentale = %5.1 Hz</translation>
     </message>
@@ -648,10 +649,10 @@
     <message>
         <location filename="../scope.py" line="782"/>
         <source>%6.1f pF</source>
-        <translation>%6.1f pF</translation>
+        <translation type="obsolete">%6.1f pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="795"/>
+        <location filename="../scope.py" line="801"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1f Hz %4.1f%%</translation>
     </message>
@@ -709,7 +710,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../soundVelocity.py" line="174"/>
         <source>Phase Shift = %5.1f deg</source>
-        <translation>Déphasage = %5.1f °</translation>
+        <translation type="obsolete">Déphasage = %5.1f °</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="44"/>
@@ -752,47 +753,47 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>sr04-data.txt</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="64"/>
+        <location filename="../XYplot.py" line="62"/>
         <source>Voltage  A1</source>
         <translation>Tension A1</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="152"/>
+        <location filename="../XYplot.py" line="150"/>
         <source>Voltage (A2)</source>
         <translation>Tension (A2)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="84"/>
+        <location filename="../XYplot.py" line="82"/>
         <source>XYplot.txt</source>
         <translation>XYplot.txt</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="102"/>
+        <location filename="../XYplot.py" line="100"/>
         <source>Voltage range</source>
         <translation>Calibre (tension)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="107"/>
+        <location filename="../XYplot.py" line="105"/>
         <source>Volts</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="112"/>
+        <location filename="../XYplot.py" line="110"/>
         <source>show (A1-A2) Vs A2</source>
         <translation>montrer (A1-A2) en fonction de A2</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="150"/>
+        <location filename="../XYplot.py" line="148"/>
         <source>Voltage (A1-A2)</source>
         <translation>Tension (A1-A2)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="170"/>
+        <location filename="../XYplot.py" line="168"/>
         <source>Xmax = %5.3f V</source>
         <translation>Xmax = %5.3f V</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="171"/>
+        <location filename="../XYplot.py" line="169"/>
         <source>Ymax = %5.3f V</source>
         <translation></translation>
     </message>
@@ -827,14 +828,14 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication FFT. Reconnecter depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="584"/>
+        <location filename="../scope.py" line="586"/>
         <source>FFT Error</source>
-        <translation type="obsolete">Erreur de FFT</translation>
+        <translation>Erreur de FFT</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="603"/>
+        <location filename="../npnCEout.py" line="192"/>
         <source>Traces saved to %s</source>
-        <translation type="obsolete">Traces enregistrées dans %s</translation>
+        <translation>Traces enregistrées dans %s</translation>
     </message>
     <message>
         <location filename="../scope.py" line="703"/>
@@ -847,62 +848,62 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">AWG réglé à %6.2f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="731"/>
+        <location filename="../scope.py" line="736"/>
         <source>Output Changed from WG to SQ2</source>
-        <translation type="obsolete">Sortie changée de WG à SQ2</translation>
+        <translation>Sortie changée de WG à SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="780"/>
+        <location filename="../scope.py" line="785"/>
         <source>Capacitance too high or short to ground</source>
-        <translation type="obsolete">Capacité excessive ou court-circuit à la masse</translation>
+        <translation>Capacité excessive ou court-circuit à la masse</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="797"/>
+        <location filename="../scope.py" line="803"/>
         <source>No signal</source>
         <translation>Pas de signal</translation>
     </message>
     <message>
         <location filename="../logger.py" line="174"/>
         <source>Data logger plot completed</source>
-        <translation type="obsolete">Graphique de l&apos;enregistreur terminé</translation>
+        <translation>Graphique de l&apos;enregistreur terminé</translation>
     </message>
     <message>
-        <location filename="../logger.py" line="183"/>
+        <location filename="../sr04dist.py" line="181"/>
         <source>Invalid Duration</source>
-        <translation type="obsolete">Durée invalide</translation>
+        <translation>Durée invalide</translation>
     </message>
     <message>
-        <location filename="../logger.py" line="192"/>
+        <location filename="../pt100.py" line="277"/>
         <source>Invalid time interval between reads</source>
-        <translation type="obsolete">Intervalle de temps entre lectures invalide</translation>
+        <translation>Intervalle de temps entre lectures invalide</translation>
     </message>
     <message>
-        <location filename="../logger.py" line="208"/>
+        <location filename="../sr04dist.py" line="201"/>
         <source>Started Measurements</source>
-        <translation type="obsolete">Démarré les mesures</translation>
+        <translation>Démarré les mesures</translation>
     </message>
     <message>
-        <location filename="../logger.py" line="213"/>
+        <location filename="../sr04dist.py" line="208"/>
         <source>User Stopped</source>
-        <translation type="obsolete">L&apos;utilisateur a arrêté</translation>
+        <translation>L&apos;utilisateur a arrêté</translation>
     </message>
     <message>
-        <location filename="../logger.py" line="221"/>
+        <location filename="../sr04dist.py" line="215"/>
         <source>Cleared Traces and Data</source>
-        <translation type="obsolete">Effacé les traces et les données</translation>
+        <translation>Effacé les traces et les données</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="226"/>
         <source>Curve fitting result rejected</source>
-        <translation type="obsolete">Résultat du FIT rejetés</translation>
+        <translation>Résultat du FIT rejetés</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="284"/>
         <source>Data Analysis Error</source>
-        <translation type="obsolete">Erreur d&apos;analyse de données</translation>
+        <translation>Erreur d&apos;analyse de données</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="225"/>
+        <location filename="../XYplot.py" line="222"/>
         <source>Error. Try Device-&gt;Reconnect</source>
         <translation>Erreur. Tentez Périphérique -&gt; Reconnexion</translation>
     </message>
@@ -955,6 +956,336 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <location filename="../soundBeats.py" line="116"/>
         <source>Enable SQ1</source>
         <translation>activer SQ1</translation>
+    </message>
+    <message>
+        <location filename="../diodeIV.py" line="120"/>
+        <source>Fitted with Diode Equation : Io = </source>
+        <translation>Fait un FIT pour la diode, équation : Io = </translation>
+    </message>
+    <message>
+        <location filename="../diodeIV.py" line="120"/>
+        <source> mA , Ideality factor = </source>
+        <translation> mA, facteur d&apos;idéalité = </translation>
+    </message>
+    <message>
+        <location filename="../rodPendulum.py" line="136"/>
+        <source>Analysis failed. Could not fit data</source>
+        <translation>Échec de l&apos;analyse. Fit des données impossible</translation>
+    </message>
+    <message>
+        <location filename="../pnpCEout.py" line="127"/>
+        <source>Completed plotting I-V</source>
+        <translation>Graphique I U terminé</translation>
+    </message>
+    <message>
+        <location filename="../pnpCEout.py" line="170"/>
+        <source>Started</source>
+        <translation>Démarré</translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="219"/>
+        <source>No Traces available for saving</source>
+        <translation>Pas de trace disponible à sauvegarder</translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="181"/>
+        <source>Traces saved to </source>
+        <translation>Traces enregistrées sous </translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="707"/>
+        <source>sqr1 set to </source>
+        <translation>SQR1 réglé à </translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="192"/>
+        <source> Hz</source>
+        <translation> Hz</translation>
+    </message>
+    <message>
+        <location filename="../editor.py" line="74"/>
+        <source>Code saved to </source>
+        <translation>Code enregistré sous </translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="172"/>
+        <source>Frequency = </source>
+        <translation>Fréquence = </translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="188"/>
+        <source>Fit failed</source>
+        <translation>Échec du FIT</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="215"/>
+        <source>completed</source>
+        <translation>terminé</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="223"/>
+        <source>Invalid Frequency limits</source>
+        <translation>Limites de fréquence non valides</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="262"/>
+        <source>user Stopped</source>
+        <translation>L&apos;utilisateur a arrêté</translation>
+    </message>
+    <message>
+        <location filename="../induction.py" line="141"/>
+        <source>Noise = </source>
+        <translation>Bruit = </translation>
+    </message>
+    <message>
+        <location filename="../induction.py" line="141"/>
+        <source> V. Drop the Magnet until a trace is captured</source>
+        <translation> V. Laisser tomber l&apos;aimant jusqu&apos;à ce qu&apos;une trace soit capturée</translation>
+    </message>
+    <message>
+        <location filename="../induction.py" line="157"/>
+        <source>Induced voltage </source>
+        <translation>Tension induite </translation>
+    </message>
+    <message>
+        <location filename="../induction.py" line="160"/>
+        <source>Detected voltage above threshold. Peak voltages: </source>
+        <translation>Tension détectée plus haute que le seuil. Tension de crête : </translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="151"/>
+        <source>I2C device communication error</source>
+        <translation>Erreur de communication I2C</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="169"/>
+        <source>MPU6050 data plot completed</source>
+        <translation>Données du MPU6050 tracées</translation>
+    </message>
+    <message>
+        <location filename="../MPU6050.py" line="184"/>
+        <source>Invalid Duration or Time between reads (&gt; 10 mSec)</source>
+        <translation>Durée non valide entre les échantillons (&gt; 10 ms)</translation>
+    </message>
+    <message>
+        <location filename="../npnCEout.py" line="145"/>
+        <source>Base valtage shold be from .5 to 3</source>
+        <translation>La tension de base devrait être entre 5 et 3</translation>
+    </message>
+    <message>
+        <location filename="../npnCEout.py" line="148"/>
+        <source>Invalid Base valtage, shold be from .5 to 3</source>
+        <translation>Tension de base non valide ; elle doit être entre 5 et 3</translation>
+    </message>
+    <message>
+        <location filename="../rodPendulum.py" line="134"/>
+        <source>Frequency of Oscillation = </source>
+        <translation>Fréquence de l&apos;oscillation  = </translation>
+    </message>
+    <message>
+        <location filename="../rodPendulum.py" line="134"/>
+        <source> Hz. Damping Factor = </source>
+        <translation> Hz. Facteur d&apos;amortissement = </translation>
+    </message>
+    <message>
+        <location filename="../pendulumVelocity.py" line="154"/>
+        <source>Time Vs Angular velocity plot completed</source>
+        <translation>Graphique temps/vitesse angulaire tracé</translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="182"/>
+        <source>Slope of the Line (dV/dI) = </source>
+        <translation>Pente de la ligne (dV/dt) = </translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="234"/>
+        <source>Err</source>
+        <translation>Err</translation>
+    </message>
+    <message>
+        <location filename="../pnpCEout.py" line="147"/>
+        <source>Base valtage shold be from -0.5 to -3</source>
+        <translation>La tension de base devrait être entre -0,5 et -3</translation>
+    </message>
+    <message>
+        <location filename="../pnpCEout.py" line="150"/>
+        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
+        <translation>Tension de base invalide, elle devrait être entre -0,5 et -3</translation>
+    </message>
+    <message>
+        <location filename="../pt100.py" line="255"/>
+        <source>Time Vs Temperature plot completed</source>
+        <translation>Graphique temps/température tracé</translation>
+    </message>
+    <message>
+        <location filename="../pt100.py" line="284"/>
+        <source>Invalid temperature limit</source>
+        <translation>Limite de température non valide</translation>
+    </message>
+    <message>
+        <location filename="../pt100.py" line="291"/>
+        <source>Invalid Offset or Gain</source>
+        <translation>Décalage ou gain non valides</translation>
+    </message>
+    <message>
+        <location filename="../pt100.py" line="297"/>
+        <source>Invalid CCS input</source>
+        <translation>Valeur non valide pour CCS</translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="132"/>
+        <source>No data to analyze.</source>
+        <translation>Pas de données à analyser.</translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="158"/>
+        <source>Fitted data with V=Vo*exp(-t/RC). RC = </source>
+        <translation>FIT des données avec V=Vo*exp(-t/RC). RC = </translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="158"/>
+        <source> mSec</source>
+        <translation> ms</translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="160"/>
+        <source>Failed to fit the curve with V=Vo*exp(-t/RC)</source>
+        <translation>Échec du fit avec V=Vo*exp(-t/RC)</translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="193"/>
+        <source>Cleared Data and Traces</source>
+        <translation>Effacé les données et les traces</translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="192"/>
+        <source>AWG set to </source>
+        <translation>AWG réglé à </translation>
+    </message>
+    <message>
+        <location filename="../RLCtransient.py" line="153"/>
+        <source>Resonant Frequency = </source>
+        <translation>Fréquence de résonance = </translation>
+    </message>
+    <message>
+        <location filename="../RLCtransient.py" line="153"/>
+        <source> kHz Damping factor= </source>
+        <translation> kHz, facteur d&apos;amortissement = </translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="141"/>
+        <source>Failed to fit the curve</source>
+        <translation>Échec du FIT de la courbe</translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="145"/>
+        <source>Enter a valid Resistance</source>
+        <translation>Entrer une résistance valide</translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="172"/>
+        <source>L/R = </source>
+        <translation>L/R = </translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="172"/>
+        <source> mSec : Rind = </source>
+        <translation> ms ; Rind = </translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="172"/>
+        <source> Ohm : L = </source>
+        <translation> Ohm : L = </translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="172"/>
+        <source> mH</source>
+        <translation> mH</translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="175"/>
+        <source>Failed to fit the curve with V=Vo*exp(-t*L/R)</source>
+        <translation>Échec du fit avec V=Vo*exp(-t*L/R)</translation>
+    </message>
+    <message>
+        <location filename="../rodPendulum.py" line="163"/>
+        <source>Completed</source>
+        <translation>Terminé</translation>
+    </message>
+    <message>
+        <location filename="../rodPendulum.py" line="179"/>
+        <source>Invalid Number</source>
+        <translation>Nombre non valide</translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="560"/>
+        <source>Range of</source>
+        <translation>Intervalle de</translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="560"/>
+        <source> set to </source>
+        <translation> réglé à </translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="788"/>
+        <source> pF</source>
+        <translation> pF</translation>
+    </message>
+    <message>
+        <location filename="../soundBeats.py" line="182"/>
+        <source>FFT err</source>
+        <translation>err FFT</translation>
+    </message>
+    <message>
+        <location filename="../soundBeats.py" line="223"/>
+        <source>Trace saved to </source>
+        <translation>Traces enregistrées sous </translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="202"/>
+        <source>Completed in </source>
+        <translation>Terminé en </translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="202"/>
+        <source> Seconds</source>
+        <translation> s</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="229"/>
+        <source>Invalid Time interval</source>
+        <translation>Intervalle de temps non valide</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="242"/>
+        <source>Increase time interval to </source>
+        <translation>Augmenter l&apos;intervalle de temps à </translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="242"/>
+        <source> or Reduce frequency span</source>
+        <translation> ou réduire l&apos;intervalle de fréquence</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="254"/>
+        <source> mS at each step</source>
+        <translation> ms à chaque étape</translation>
+    </message>
+    <message>
+        <location filename="../soundVelocity.py" line="177"/>
+        <source>Phase Shift = </source>
+        <translation>Déphasage = </translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="138"/>
+        <source>Sine Fit Result: Frequency </source>
+        <translation>FIT sinusoïdal : fréquence </translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="166"/>
+        <source>Time vs Distance plot completed</source>
+        <translation>Graphique temps/distance tracé</translation>
     </message>
 </context>
 <context>
