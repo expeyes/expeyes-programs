@@ -6,8 +6,6 @@ VERSION = 99        # uC return this when GETVER is send
 GETVER = 1
 READB  = 2   		# Codes for the uC communication
 WRITEB = 3        
-SETBIT = 4
-CLRBIT = 5
 
 # Register addresses of ATmega32 micro-controller
 ADCL   = 0X24       # ADC data
@@ -103,16 +101,6 @@ def getReg(port):
 	fd.write(chr(port))
 	val = fd.read()
 	return ord(val)
-
-def setBits(reg, bitpos):
-	fd.write(chr(SETBIT))
-	fd.write(chr(reg))
-	fd.write(chr(bitpos))
-
-def clrBits(reg, bitpos):
-	fd.write(chr(CLRBIT))
-	fd.write(chr(reg))
-	fd.write(chr(bitpos))
 
 #-----------------------------------------------------------------
 

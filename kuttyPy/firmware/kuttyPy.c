@@ -12,8 +12,6 @@ A program to read/write the microcontroller registers from Python running on PC
 
 #define READB     2
 #define WRITEB    3
-#define SETBIT    4
-#define CLRBIT    5
 
 int main (void)
 {
