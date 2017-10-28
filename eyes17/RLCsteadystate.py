@@ -377,17 +377,19 @@ class Expt(QWidget):
 			self.uResult.setText(self.tr('Invalid Input in some field'))
 	
 	def save_data(self):
-		fn = self.Filename.text()
-		dat = []
-		if self.VLC.isChecked() == True:
-			nc = 5
-		else:
-			nc = 3
-		
-		for ch in range(nc):
-				dat.append( [self.timeData[ch], self.voltData[ch] ])
-		self.p.save(dat,fn)
-		self.msg(self.tr('Traces saved to ') +str(fn))
+		self.timer.stop()
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			if self.VLC.isChecked() == True:
+				nc = 5
+			else:
+				nc = 3
+			for ch in range(nc):
+					dat.append( [self.timeData[ch], self.voltData[ch] ])
+			self.p.save(dat,fn)
+			self.msg(self.tr('Traces saved to ') +str(fn))
+		self.timer.start(self.TIMER)		
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
