@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton 
+	QCheckBox, QPushButton, QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 	
 import pyqtgraph as pg
 import numpy as np
@@ -40,12 +40,13 @@ class Expt(QWidget):
 	currentTrace = None
 	traces = []
 	history = []		# Data store	
-	sources = ['A1','A2','A3', 'MIC']
-	pencol = 2
+	#sources = ['A1','A2','A3', 'MIC']
+	trial = 0
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 
+		self.traceCols = utils.makeTraceColors()
 		
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
@@ -110,18 +111,12 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('iv.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 		self.Manual = QLabel(self.tr("Change Voltage"))
 		right.addWidget(self.Manual)
-		#l.setMaximumWidth(15)
 
 		self.PV1slider = utils.slider(0, 30, 0, 250, self.pv1_slider)
 		right.addWidget(self.PV1slider)
@@ -241,9 +236,9 @@ class Expt(QWidget):
 		self.running = True
 		self.data = [ [], [] ]
 		self.VSET = self.VMIN
-		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
+		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.traceCols[self.trial%5])
 		self.index = 0
-		self.pencol += 2
+		self.trial += 1
 		self.msg(self.tr('Started'))
 		self.manual()
 
@@ -262,16 +257,17 @@ class Expt(QWidget):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
-		self.pencol = 2
+		self.trial = 0
 		self.msg(self.tr('Cleared Traces and Data'))
-		
+
 	def save_data(self):
 		if self.history == []:
-			self.msg(self.tr('No Traces available for saving'))
+			self.msg(self.tr('No data to save'))
 			return
-		fn = self.Filename.text()
-		self.p.save(self.history, fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			self.p.save(self.history, fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

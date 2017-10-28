@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton , QMenu
+	QCheckBox, QPushButton , QMenu, QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QMenu
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QMenu, QFileDialog
 	
 import pyqtgraph as pg
 import numpy as np
@@ -33,7 +33,6 @@ class Expt(QWidget):
 	traces = []
 	history = []		# Data store	
 	sources = ['A1','A2','A3', 'MIC']
-	pencol = 2
 	Ranges12 = ['16 V', '8 V','4 V', '2.5 V', '1 V', '.5V']	# Voltage ranges for A1 and A2
 	RangeVals12 = [16., 8., 4., 2.5, 1., 0.5]
 	rangeVal   = 4			# selected value of range
@@ -47,6 +46,8 @@ class Expt(QWidget):
 		except:
 			pass		
 
+		self.traceCols = utils.makeTraceColors()
+
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
@@ -57,7 +58,7 @@ class Expt(QWidget):
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
-		self.baseTrace = self.pwin.plot([0,0],[0,0], pen = 'w')
+		self.baseTrace = self.pwin.plot([0,0],[0,0], pen = self.traceCols[-1])
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
@@ -85,14 +86,9 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('induction.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 		#------------------------end of right panel ----------------
 		
@@ -140,7 +136,6 @@ class Expt(QWidget):
 		ss = '%5.3f'%self.noise
 		self.msg(self.tr('Noise = ') + ss + self.tr(' V. Drop the Magnet until a trace is captured'))
 		self.baseTrace.setData(t,v)
-		self.pencol += 2
 	
 	def update(self):
 		if self.running == False:
@@ -158,7 +153,7 @@ class Expt(QWidget):
 		if abs(span - self.noise) > 0.5 and tmin > 0.1 * self.NP and tmax < 0.9 * self.NP: 
 			ss = '%5.3f  %5.3f'%(v[tmin], v[tmax])
 			self.msg(self.tr('Detected voltage above threshold. Peak voltages: ') + ss)
-			self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
+			self.traces.append(self.pwin.plot(t,v, pen = self.traceCols[self.trial%5]))
 			self.history.append((t,v))
 			self.trial += 1
 			self.running = False
@@ -168,16 +163,16 @@ class Expt(QWidget):
 		for k in self.traces: self.pwin.removeItem(k)
 		self.history = []
 		self.trial = 0
-		self.pencol = 2
 		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg(self.tr('No Traces available for saving'))
+			self.msg(self.tr('No data to save'))
 			return
-		fn = self.Filename.text()
-		self.p.save(self.history, fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			self.p.save(self.history, fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

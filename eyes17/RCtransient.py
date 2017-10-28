@@ -2,12 +2,12 @@ import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton 
+	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QFileDialog
 
 import pyqtgraph as pg
 import numpy as np
@@ -41,7 +41,7 @@ class Expt(QWidget):
 	traceWidget = [None]*MAXCHAN
 	history = []		# Data store	
 	traces = []
-	trial = 2
+	trial = 0
 
 	sources = ['A1','A2','A3', 'MIC']
 	chanpens = ['y','g','w','m']     #pqtgraph pen colors
@@ -54,6 +54,7 @@ class Expt(QWidget):
 			self.p.select_range('A1',8.0)
 		except:
 			pass		
+		self.traceCols = utils.makeTraceColors()
 			
 		self.history = []
 		self.traces = []
@@ -80,15 +81,6 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('mS/div'))
 		l.setMaximumWidth(60)
 		H.addWidget(l)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
-		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('RCtransient.txt'), 20, None )
-		H.addWidget(self.Filename)
 		right.addLayout(H)
 		
 		b = QPushButton(self.tr("0 -> 5V step on OD1"))
@@ -117,6 +109,10 @@ class Expt(QWidget):
 		l.setMaximumWidth(30)
 		H.addWidget(l)
 		right.addLayout(H)
+
+		self.SaveButton = QPushButton(self.tr("Save Data"))
+		self.SaveButton.clicked.connect(self.save_data)		
+		right.addWidget(self.SaveButton)
 
 		
 		#------------------------end of right panel ----------------
@@ -153,7 +149,8 @@ class Expt(QWidget):
 		if fa != None:
 			pa = fa[1]
 			rc = abs(1.0 / pa[1])
-			self.traces.append(self.pwin.plot(self.history[-1][0], fa[0], pen = self.trial*2))
+			self.traces.append(self.pwin.plot(self.history[-1][0], fa[0], pen = self.traceCols[self.trial%5]))
+			self.trial += 1
 			ss = '%5.1f'%rc
 			self.msg(self.tr('Fitted data with V=Vo*exp(-t/RC). RC = ') + ss + self.tr(' mSec'))
 		else:
@@ -168,7 +165,7 @@ class Expt(QWidget):
 			self.comerr()
 			return 
 
-		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
+		self.traces.append(self.pwin.plot(t,v, pen = self.traceCols[self.trial%5]))
 		self.history.append((t,v))
 		self.trial += 1
 
@@ -181,7 +178,7 @@ class Expt(QWidget):
 			self.comerr()
 			return 
 
-		self.traces.append(self.pwin.plot(t,v, pen = self.trial*2))
+		self.traces.append(self.pwin.plot(t,v, pen = self.traceCols[self.trial%5]))
 		self.history.append((t,v))
 		self.trial += 1
 
@@ -189,13 +186,17 @@ class Expt(QWidget):
 		for k in self.traces:
 			self.pwin.removeItem(k)
 		self.history = []
-		self.trial = 2
+		self.trial = 0
 		self.msg(self.tr('Cleared Data and Traces'))
 
 	def save_data(self):
-		fn = self.Filename.text()
-		self.p.save(self.history, fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		if self.history == []:
+			self.msg(self.tr('No data to save'))
+			return
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			self.p.save(self.history, fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))				
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

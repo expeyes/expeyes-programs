@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton 
+	QCheckBox, QVBoxLayout, QPushButton , QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 	
 import pyqtgraph as pg
 import numpy as np
@@ -48,12 +48,12 @@ class Expt(QWidget):
 	measured = False
 	sources = ['A1','A2','A3', 'MIC']
 	chanpens = ['y','g','w','m']     #pqtgraph pen colors
-
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 
-
+		self.traceCols = utils.makeTraceColors()
+		
 		try:
 			self.p.configure_trigger(0, 'A1', 0)
 			self.p.select_range('A1',4.0)
@@ -72,7 +72,7 @@ class Expt(QWidget):
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.chanpens[ch])
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
@@ -132,14 +132,9 @@ shows the actual frequency set.\n'))
 		H.addWidget(l)
 		right.addLayout(H)
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('sound-beats.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 		self.FFT = QPushButton(self.tr("Frequency Spectrum"))
 		right.addWidget(self.FFT)
@@ -177,7 +172,7 @@ shows the actual frequency set.\n'))
 		self.popwin.setWindowTitle(self.tr('Frequency Spectrum'))
 		try:
 			xa,ya = em.fft(self.voltData[0], self.timeData[0][1]-self.timeData[0][0])
-			self.popwin.plot(xa*1000,ya, pen = 'w')					
+			self.popwin.plot(xa*1000,ya, pen = self.traceCols[1])
 		except:
 			self.msg(self.tr('FFT err'))
 		self.popwin.show()
@@ -212,15 +207,20 @@ shows the actual frequency set.\n'))
 			self.comerr()
 
 	def save_data(self):
-		if self.measured == False: 
+		if self.enable.isChecked() == True:
+			self.msg(self.tr('Disable before Saving'))
 			return
-		fn = self.Filename.text()
-		dat = []
-		for ch in range(1):
-				dat.append( [self.timeData[ch], self.voltData[ch] ])
-		self.p.save(dat,fn)
-		ss = str(fn)
-		self.msg(self.tr('Trace saved to ') + ss)
+		if self.measured == False: 
+			self.msg(self.tr('No data to save'))
+			return
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			for ch in range(1):
+					dat.append( [self.timeData[ch], self.voltData[ch] ])
+			self.p.save(dat,fn)
+			ss = str(fn)
+			self.msg(self.tr('Trace saved to ') + ss)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

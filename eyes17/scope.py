@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QCheckBox,\
-	QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu
+	QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu
+	QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
 
 import sys, time, utils
 import pyqtgraph as pg
@@ -71,10 +71,7 @@ class Expt(QWidget):
 	voltMeterCB = [None]*3
 	valueLabel = None
 	
-	sources = ['A1','A2','A3', 'MIC']
-	chancols = ['yellow', 'green', 'red','magenta']
-	resCols = ['w','y','g','r','m']
-	
+	sources = ['A1','A2','A3', 'MIC']	
 
 	tbvals = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]	# allowed mS/div values
 	NP = 500			# Number of samples
@@ -85,7 +82,6 @@ class Expt(QWidget):
 	TBval = 1			# timebase list index
 	Trigindex = 0
 	Triglevel = 0
-	scaleCols = [(200,200,0),(0,200,0),(200,200,200), (200,0,200)]
 	
 	MAXRES = 5
 	resLabs     = [None]*MAXRES
@@ -118,7 +114,7 @@ class Expt(QWidget):
 			
 			self.resLabs[0] = pg.TextItem(
 	                        text= str(self.tr('Time: %6.2fmS ')) %t[index],
-	                        color= self.resCols[0]
+	                        color= self.resultCols[0]
 	                )
 			self.resLabs[0].setPos(0, -11)
 			self.pwin.addItem(self.resLabs[0])
@@ -126,7 +122,7 @@ class Expt(QWidget):
 			for k in range(self.MAXCHAN):
 				if self.chanStatus[k] == 1:
 					self.Results[k+1] = str(self.tr('%s:%6.2fV ')) %(self.sources[k],self.voltData[k][index])
-					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resCols[k+1])
+					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resultCols[k])
 					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
 
@@ -136,7 +132,11 @@ class Expt(QWidget):
 		
 	def __init__(self, device=None):
 		QWidget.__init__(self)
-		self.p = device											# connection to the device hardware 
+
+		self.resultCols = utils.makeResultColors()
+		self.traceCols = utils.makeTraceColors()
+		self.htmlColors = utils.makeHtmlColors()
+		self.p = device						# connection to the device hardware 
 		try:
 			self.p.select_range('A1',4.0)
 			self.p.select_range('A2',4.0)	
@@ -152,9 +152,8 @@ class Expt(QWidget):
 			self.offSliders[ch] = utils.sliderVert(-4, 4, 0, 40, None)
 			left.addWidget(self.offSliders[ch])
 			self.offSliders[ch].valueChanged.connect(partial (self.set_offset,ch))
-			self.offSliders[ch].setStyleSheet("border: 1px solid %s;"%self.chancols[ch])
-					
-		#pg.setConfigOption('background', 'w')
+			self.offSliders[ch].setStyleSheet("border: 1px solid %s;"%self.htmlColors[ch])
+		
 
 		win = pg.GraphicsWindow()
 		self.pwin = win.addPlot()
@@ -190,20 +189,17 @@ class Expt(QWidget):
 		self.pwin.setYRange(-16, 16)
 		self.pwin.hideButtons()									# Do not show the 'A' button of pg
 
-		self.pens = utils.makePens()
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.pens[ch])
-		self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = 'c')
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
+		self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = self.traceCols[-1])
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
-		right.setSpacing(self.RPVspacing)
-		
-	
-		l = QLabel(text=self.tr('DC Voltages at A1, A2 and A3'))
+		right.setSpacing(self.RPVspacing)		
+
+		l = QLabel(text= '<font color="red">' +self.tr('DC Voltages at A1, A2 and A3'))
 		l.setMinimumWidth(self.RPWIDTH)
 		right.addWidget(l)
-
 
 		H = QHBoxLayout()
 		for k in range(3):
@@ -336,20 +332,17 @@ class Expt(QWidget):
 		right.addLayout(H)
 		
 		#--------------------------Scope Controls---------------------
-		l = QLabel(self.tr('Oscilloscope Channels, Range and Analysis '))
-		l.setStyleSheet("background-color:#99ccdd;")  #99ccff
+		l = QLabel('<font color="red">' +self.tr('Oscilloscope Channels, Range and Analysis '))
 		right.addWidget(l)
 
 		for ch in range(4):
 			H = QHBoxLayout()
 			H.setAlignment(Qt.AlignLeft)
-
 			self.chanSelCB[ch] = QCheckBox()
-			#self.chanSelCB[ch].setStyleSheet("background-color:%s;"%self.chancols[ch]) 
 			self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
 
-			l = QLabel(text='<font color="%s">%s'%(self.chancols[ch],self.sources[ch]))		
+			l = QLabel(text='<font color="%s">%s'%(self.htmlColors[ch],self.sources[ch]))		
 			l.setMaximumWidth(30)
 			l.setMinimumWidth(30)
 			H.addWidget(l)
@@ -377,7 +370,7 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('Timebase'))
 		l.setMaximumWidth(60)
 		H.addWidget(l)
-		self.TBslider = utils.slider(0, 8, self.TBval, 150, self.set_timebase)
+		self.TBslider = utils.slider(0, 8, self.TBval, 180, self.set_timebase)
 		H.addWidget(self.TBslider)
 		l = QLabel(text=self.tr('mS/div'))
 		l.setMaximumWidth(60)
@@ -403,16 +396,16 @@ class Expt(QWidget):
 		right.addLayout(H)
 
 		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save to"))
-		self.SaveButton.setMaximumWidth(80)
+		self.SaveButton = QPushButton(self.tr("Save Traces"))
+		#self.SaveButton.setMaximumWidth(80)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
 			
-		self.Filename = utils.lineEdit(100, self.tr('scope.txt'), 20, None)
-		H.addWidget(self.Filename)
+		#self.Filename = utils.lineEdit(100, self.tr('scope.txt'), 20, None)
+		#H.addWidget(self.Filename)
 		
-		self.FFT = QPushButton(self.tr("FFT"))
-		self.FFT.setMaximumWidth(50)
+		self.FFT = QPushButton(self.tr("Fourier Transform"))
+		#self.FFT.setMaximumWidth(50)
 		H.addWidget(self.FFT)
 		self.FFT.clicked.connect(self.show_fft)		
 	
@@ -489,7 +482,7 @@ class Expt(QWidget):
 
 		if self.Diff.isChecked() == True and self.chanStatus[0] == 1 and self.chanStatus[1] == 1:
 			r = 16./self.rangeVals[0]
-			self.diffTraceW.setData(self.timeData[0], (self.voltData[0]-self.voltData[1])*r)
+			self.diffTraceW.setData(self.timeData[0], r*(self.voltData[0]-self.voltData[1]))
 
 		self.loopCounter += 1
 		if self.loopCounter % 5 == 0:
@@ -525,7 +518,7 @@ class Expt(QWidget):
 		self.pwin.removeItem(self.scaleLabs[ch])
 		if self.chanStatus[ch] == 0: 
 			return
-		self.scaleLabs[ch] = pg.TextItem(text=self.rangeTexts[ch],	color= self.scaleCols[ch],  angle=315)
+		self.scaleLabs[ch] = pg.TextItem(text=self.rangeTexts[ch],	color= self.resultCols[ch],  angle=315)
 		self.scaleLabs[ch].setPos(ch*spacing/3, 15.5)
 		#self.scaleLabs[ch].setText('hello')
 		self.pwin.addItem(self.scaleLabs[ch])
@@ -533,7 +526,7 @@ class Expt(QWidget):
 	def select_channel(self, ch):
 		if self.chanSelCB[ch].isChecked() == True:
 			self.chanStatus[ch] = 1
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen=self.pens[ch])
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen=self.traceCols[ch])
 		else:
 			self.chanStatus[ch] = 0
 			self.pwin.removeItem(self.traceWidget[ch])
@@ -594,16 +587,19 @@ class Expt(QWidget):
 				peak = ya[k]
 				peak_index = xa[k]
 		return peak_index
-
+		
 	def save_data(self):
-		fn = self.Filename.text()
-		dat = []
-		for ch in range(4):
-			if self.chanStatus[ch] == 1:
-				dat.append( [self.timeData[ch], self.voltData[ch] ])
-		self.p.save(dat,fn)
-		ss = str(fn)
-		self.msg(self.tr('Traces saved to ') + ss)
+		self.timer.stop()
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			for ch in range(4):
+				if self.chanStatus[ch] == 1:
+					dat.append( [self.timeData[ch], self.voltData[ch] ])
+			self.p.save(dat,fn)
+			ss = str(fn)
+			self.msg(self.tr('Traces saved to ') + ss)
+		self.timer.start(self.TIMER)
 
 
 	def select_trig_source(self, index):

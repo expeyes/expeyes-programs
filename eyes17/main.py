@@ -160,7 +160,7 @@ class MainWindow(QMainWindow):
 		self._x = 100
 		self._y = 10
 		palette = QPalette()								# background color
-		palette.setColor(QPalette.Background, QColor("#88bbcc")) #("#99ccff"))
+		palette.setColor(QPalette.Background, QColor(61,168,165)) #("#99ccff")) "#88bbcc"
 		self.setPalette(palette)	
 
 		self.helpCB = QCheckBox(self.tr('Show PopUp Help Window'))

@@ -4,13 +4,13 @@ if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, \
 	        QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton 
+	QCheckBox, QPushButton , QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, \
 	        QTranslator, QLocale, QLibraryInfo, QT_TRANSLATE_NOOP
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 
 import pyqtgraph as pg
 import numpy as np
@@ -111,14 +111,9 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('MPU6050.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 
 		#------------------------end of right panel ----------------		
@@ -225,14 +220,14 @@ class Expt(QWidget):
 		if self.timeVal == []:
 			self.msg(self.tr('No Traces available for saving'))
 			return
-		fn = self.Filename.text()
-
-		data = []
-		for k in range(self.MAXCHAN):
-			if self.sensorFlags[k] == True:
-				data.append([self.timeVal, self.dataVals[k]])
-		self.p.save(data, fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			data = []
+			for k in range(self.MAXCHAN):
+				if self.sensorFlags[k] == True:
+					data.append([self.timeVal, self.dataVals[k]])
+			self.p.save(data, fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

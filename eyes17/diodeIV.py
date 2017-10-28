@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton 
+	QCheckBox, QPushButton, QFileDialog 
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 	
 import pyqtgraph as pg
 import numpy as np
@@ -32,11 +32,12 @@ class Expt(QWidget):
 	traces = []
 	history = []		# Data store	
 	sources = ['A1','A2','A3', 'MIC']
-	pencol = 2
+	trial = 0
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 
+		self.traceCols = utils.makeTraceColors()
 		
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
@@ -72,14 +73,9 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('diode_iv.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 		#------------------------end of right panel ----------------
 		
@@ -107,8 +103,8 @@ class Expt(QWidget):
 			return
 		f = em.fit_exp(self.data[0], self.data[1])
 		if f != None:
-			#self.pencol += 2
-			self.traces.append(self.pwin.plot(self.data[0], f[0], pen = 'w'))
+			self.traces.append(self.pwin.plot(self.data[0], f[0], pen = self.traceCols[self.trial%5]))
+			self.trial += 1
 			k = 1.38e-23    # Boltzmann const
 			q = 1.6e-19     # unit charge
 			Io = f[1][0]
@@ -118,6 +114,7 @@ class Expt(QWidget):
 			ss1 = '%5.2e'%Io
 			ss2 = '%5.2f'%n
 			self.msg(self.tr('Fitted with Diode Equation : Io = ') +ss1 + self.tr(' mA , Ideality factor = ') + ss2)
+			self.history.append((self.data[0], f[0]))			
 		else:
 			self.msg(self.tr('Analysis failed. Could not fit data'))
 				
@@ -166,9 +163,9 @@ class Expt(QWidget):
 		self.running = True
 		self.data = [ [], [] ]
 		self.VSET = self.VMIN
-		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.pencol)
+		self.currentTrace = self.pwin.plot([0,0],[0,0], pen = self.traceCols[self.trial%5])
 		self.index = 0
-		self.pencol += 2
+		self.trial += 1
 		self.msg(self.tr('Started'))
 
 	def stop(self):
@@ -183,17 +180,17 @@ class Expt(QWidget):
 			self.pwin.removeItem(k)
 		self.history = []
 		self.data = [ [], [] ]
-		self.pencol = 2
+		self.trial = 0
 		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
 		if self.history == []:
-			self.msg(self.tr('No Traces available for saving'))
+			self.msg(self.tr('No data to save'))
 			return
-		fn = self.Filename.text()
-		self.p.save(self.history, fn)
-		ss = str(fn)
-		self.msg(self.tr('Traces saved to ') + ss)
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			self.p.save(self.history, fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

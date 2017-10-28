@@ -28,6 +28,19 @@ penCols2  = ['#000000','b','r','m','g']     #pqtgraph pen colors
 htmlcols  = ['yellow', 'green', 'red','magenta','cyan']
 htmlcols2 = ['black', 'blue', 'red','magenta','cyan']
 
+def makeFitTraceColors():
+	pens = []
+	if forprint == True:
+		pg.setConfigOption('background', (227, 241, 209))
+		for p in penCols2:
+			x=pg.mkPen(p, width=1, style=Qt.DotLine)
+			pens.append(x)
+	else:
+		for p in penCols:
+			x=pg.mkPen(p, width=1, style=Qt.DotLine)
+			pens.append(x)
+	return pens	
+		
 def makeTraceColors():
 	pens = []
 	if forprint == True:
@@ -40,7 +53,6 @@ def makeTraceColors():
 			x=pg.mkPen(p, width=1)
 			pens.append(x)
 	return pens	
-		
 	
 def makeResultColors():
 	if forprint == True:

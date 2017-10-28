@@ -3,12 +3,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton 
+	QCheckBox, QVBoxLayout, QPushButton , QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 	
 import pyqtgraph as pg
 import numpy as np
@@ -43,16 +43,14 @@ class Expt(QWidget):
 	#history = []		# Data store	
 	measured = False
 	
-	sources = ['A1','A2','A3', 'MIC']
-	chanpens = ['y','g','w','m']     #pqtgraph pen colors
-
 	NP = 500			# Number of samples
 	TG = 1				# Number of channels
+	trial = 0
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 
-
+		self.traceCols = utils.makeTraceColors()
 		try:
 			self.p.configure_trigger(0, 'A1', 0)
 			self.p.select_range('A1',4.0)
@@ -72,20 +70,12 @@ class Expt(QWidget):
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.chanpens[ch])
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
 		right.setSpacing(self.RPGAP)				
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
-		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('sound-velocity.txt'), 20, None )
-		H.addWidget(self.Filename)
-		right.addLayout(H)
 
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('WG'))
@@ -114,6 +104,10 @@ class Expt(QWidget):
 		self.enable = QCheckBox(self.tr('Enable Measurements'))
 		right.addWidget(self.enable)
 		self.enable.stateChanged.connect(self.control)
+
+		self.SaveButton = QPushButton(self.tr("Save Data"))
+		self.SaveButton.clicked.connect(self.save_data)		
+		right.addWidget(self.SaveButton)
 
 		H = QHBoxLayout()
 		self.Res = QLabel(text='')
@@ -176,16 +170,22 @@ class Expt(QWidget):
 			ss = '%5.1f'%pdiff
 			self.Res.setText(self.tr('Phase Shift = ') + ss + self.tr(' Hz'))
 	
+			
 	def save_data(self):
-		if self.measured == False: 
+		if self.enable.isChecked() == True:
+			self.msg(self.tr('Disable before Saving'))
 			return
-		fn = self.Filename.text()
-		dat = []
-		for ch in range(2):
-				dat.append( [self.timeData[ch], self.voltData[ch] ])
-		self.p.save(dat,fn)
-		ss = str(fn)
-		self.msg(self.tr('Traces saved to ') + ss)
+		if self.measured == False: 
+			self.msg(self.tr('No data to save'))
+			return
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			for ch in range(2):
+					dat.append( [self.timeData[ch], self.voltData[ch] ])
+			self.p.save(dat,fn)
+			ss = str(fn)
+			self.msg(self.tr('Trace saved to ') + ss)			
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

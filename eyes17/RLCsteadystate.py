@@ -2,12 +2,12 @@ import sys, time, utils, math, os.path
 
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton,QCheckBox
+	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton,QCheckBox, QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 
 import sys, time, utils, math
 import pyqtgraph as pg
@@ -51,8 +51,8 @@ class Expt(QWidget):
 	Results     = [None]*MAXRES
 	MINV = -4.0
 	MAXV = 4.0
-	sources = ['A1','A2','A3', 'MIC']
-	chanpens = ['y','g','r','m','c']     #pqtgraph pen colors
+	#sources = ['A1','A2','A3', 'MIC']
+	#chanpens = ['y','g','r','m','c']     #pqtgraph pen colors
 
 	tbvals = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]	# allowed mS/div values
 	NP = 500			# Number of samples
@@ -63,7 +63,7 @@ class Expt(QWidget):
 	TBval = 4			# timebase list index
 	Trigindex = 0
 	Triglevel = 0
-	resCols = ['w','y','g','r','w','m','c']
+	#resCols = ['w','y','g','r','w','m','c']
 
 	def __init__(self, device=None):
 		QWidget.__init__(self)
@@ -75,6 +75,10 @@ class Expt(QWidget):
 			self.p.set_sine(self.AWGval)
 		except:
 			pass	
+
+		self.traceCols = utils.makeTraceColors()
+		self.traceColsFit = utils.makeFitTraceColors()
+		self.resCols = utils.makeResultColors()
 		
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
@@ -92,9 +96,9 @@ class Expt(QWidget):
 		self.pwin.hideButtons()									# Do not show the 'A' button of pg
 
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.chanpens[ch])
-			x=pg.mkPen(self.chanpens[ch], width=.5, style=Qt.DashLine) 
-			self.traceWidgetF[ch] = self.pwin.plot([0,0],[0,0], pen = x)
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
+			#x=pg.mkPen(self.chanpens[ch], width=.5, style=Qt.DashLine) 
+			self.traceWidgetF[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceColsFit[ch])
 
 		right = QVBoxLayout()									# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
@@ -102,9 +106,9 @@ class Expt(QWidget):
 
 		# Phasor plot window
 		self.ppwin = pg.PlotWidget()						# pyqtgraph window
-		self.ppwin.setMaximumWidth(300)
-		self.ppwin.setMaximumHeight(300)
-		self.ppwin.setMinimumHeight(300)
+		self.ppwin.setMaximumWidth(250)
+		self.ppwin.setMaximumHeight(250)
+		self.ppwin.setMinimumHeight(250)
 		self.ppwin.disableAutoRange()
 		self.ppwin.setXRange(-0.03,3)
 		self.ppwin.setYRange(-3,3)
@@ -112,28 +116,22 @@ class Expt(QWidget):
 		right.addWidget(self.ppwin)
 
 		for ch in range(5):
-			x=pg.mkPen(self.chanpens[ch], width=2) 
-			self.phasorTraces[ch] = self.ppwin.plot([0,0],[0,0], width=3, pen = x)
+			#x=pg.mkPen(self.chanpens[ch], width=2) 
+			self.phasorTraces[ch] = self.ppwin.plot([0,0],[0,0], width=3, pen = self.traceCols[ch])
 
 		#Results
 		for k in range(self.MAXRES):						# pg textItem to show the Results
 			self.resLabs[k] = pg.TextItem()
 			self.pwin.addItem(self.resLabs[k])
-		
+
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('Timebase'))
 		l.setMaximumWidth(60)
 		H.addWidget(l)
-		self.TBslider = utils.slider(0, 8, self.TBval, 80, self.set_timebase)
+		self.TBslider = utils.slider(0, 8, self.TBval, 200, self.set_timebase)
 		H.addWidget(self.TBslider)
-		self.Pause = QCheckBox('Pause Plotting')
-		self.Pause.setMaximumWidth(120)
-		H.addWidget(self.Pause)
-		#self.VLC.stateChanged.connect(self.action_vlc)
-
-
 		right.addLayout(H)
-
+		
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('WG'))
 		l.setMaximumWidth(25)
@@ -147,18 +145,18 @@ class Expt(QWidget):
 		H.addWidget(l)
 		right.addLayout(H)	
 		
-		self.VLC = QCheckBox('Monitor LC junction (with A3)')
-		right.addWidget(self.VLC)
-		self.VLC.stateChanged.connect(self.action_vlc)
-	
 		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
-		self.SaveButton.setMaximumWidth(90)
-		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('RLCs-data.txt'), 20, None)
-		H.addWidget(self.Filename)
+		self.VLC = QCheckBox('Show Vl and Vc')
+		H.addWidget(self.VLC)
+		self.VLC.stateChanged.connect(self.action_vlc)
+		self.Pause = QCheckBox('Freeze')
+		self.Pause.setMaximumWidth(120)
+		H.addWidget(self.Pause)
 		right.addLayout(H)
+
+		self.SaveButton = QPushButton(self.tr("Save Data"))
+		self.SaveButton.clicked.connect(self.save_data)		
+		right.addWidget(self.SaveButton)		
 		
 		l = QLabel(text='<font color="blue">'+self.tr('Impedance Calculator'))
 		right.addWidget(l)
@@ -286,31 +284,32 @@ class Expt(QWidget):
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = str(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
-		self.Results[1] = str(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
-		self.Results[2] = str(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
-		self.Results[3] = str(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
-		self.Results[4] = str(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
+		self.Results[0] = str(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
+		self.Results[1] = str(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
+		self.Results[2] = str(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
+
+		self.Results[5] = str(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
+		self.Results[6] = str(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[5] = str(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
-			self.Results[6] = str(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
+			self.Results[3] = str(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
+			self.Results[4] = str(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
 		else:
-			self.Results[5] = ''
-			self.Results[6] = ''
+			self.Results[3] = ''
+			self.Results[4] = ''
 
 		for k in range(5):
 			self.pwin.removeItem(self.resLabs[k])
-			self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k])
+			self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k%5])
 			self.resLabs[k].setPos(0, -4 +0.3*k)
 			self.pwin.addItem(self.resLabs[k])
-
+		
 		for k in range(5,7):
 			self.pwin.removeItem(self.resLabs[k])
-			self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k])
+			self.resLabs[k] = pg.TextItem(text=self.Results[k],	color= self.resCols[k%5])
 			self.resLabs[k].setPos(0, 4 -0.3*(k-5))
 			self.pwin.addItem(self.resLabs[k])
-
+		
 
 		if self.fitFine[0] == 1 and self.fitFine[1] == 1 and self.fitFine[2] == 1:
 			self.draw_phasor()

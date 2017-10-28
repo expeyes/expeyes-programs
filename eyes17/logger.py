@@ -10,12 +10,12 @@ import sys, time, utils, math, os.path
 if utils.PQT5 == True:
 	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton 
+	QCheckBox, QPushButton , QFileDialog
 	from PyQt5.QtGui import QPalette, QColor
 else:
 	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
 	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
 
 import pyqtgraph as pg
 import numpy as np
@@ -42,14 +42,17 @@ class Expt(QWidget):
 	history = []		# Data store	
 
 	sources = ['A1','A2','A3', 'SEN']
-	chancols = ['yellow', 'green', 'red','magenta']
-	resCols = ['y','g','r','m']
-
-	pencol = 2
+	traceCols = []
+	#resultCols = []
+	htmlColors = []
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 		
+
+		self.resultCols = utils.makeResultColors()
+		self.traceCols = utils.makeTraceColors()
+		self.htmlColors = utils.makeHtmlColors()
 		
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
@@ -63,7 +66,7 @@ class Expt(QWidget):
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		for ch in range(self.MAXCHAN):
-			self.traces[ch] = self.pwin.plot([0,0],[0,0], pen = self.resCols[ch])
+			self.traces[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
 	
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
@@ -97,7 +100,7 @@ class Expt(QWidget):
 			self.chanSelCB[ch] = QCheckBox()
 			#self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
-			l = QLabel(text='<font color="%s">%s' %(self.chancols[ch],self.sources[ch]))
+			l = QLabel(text='<font color="%s">%s' %(self.htmlColors[ch],self.sources[ch]))
 			l.setMaximumWidth(30)
 			l.setMinimumWidth(30)
 			H.addWidget(l)
@@ -117,14 +120,9 @@ class Expt(QWidget):
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
 
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save to"))
-		self.SaveButton.setMaximumWidth(90)
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('logger.txt'), 20, None)
-		H.addWidget(self.Filename)
-		right.addLayout(H)
+		right.addWidget(self.SaveButton)
 
 		#------------------------end of right panel ----------------
 		
@@ -203,7 +201,7 @@ class Expt(QWidget):
 		self.timeData = []
 		self.voltData =  [[] for x in range(self.MAXCHAN)]
 		for ch in range(self.MAXCHAN):
-			self.traces[ch].setData([0,0],[0,0], pen = self.resCols[ch])
+			self.traces[ch].setData([0,0],[0,0], pen = self.traceCols[ch])
 		self.running = True
 		self.msg(self.tr('Started Measurements'))
 
@@ -215,19 +213,20 @@ class Expt(QWidget):
 	def clear(self):
 		if self.running == True: return
 		for ch in range(self.MAXCHAN):
-			self.traces[ch].setData([0,0],[0,0], pen = self.resCols[ch])
+			self.traces[ch].setData([0,0],[0,0], pen = self.traceCols[ch])
 		self.timeData = []
 		self.voltData =  [[] for x in range(self.MAXCHAN)]
 		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):
-		fn = self.Filename.text()
-		dat = []
-		for ch in range(self.MAXCHAN):
-			if self.chanSelCB[ch].isChecked() == True:
-				dat.append( [self.timeData, self.voltData[ch] ])
-		self.p.save(dat,fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			for ch in range(self.MAXCHAN):
+				if self.chanSelCB[ch].isChecked() == True:
+					dat.append( [self.timeData, self.voltData[ch] ])
+			self.p.save(dat,fn)
+			self.msg(self.tr('Traces saved to ') + str(fn))
 				
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
