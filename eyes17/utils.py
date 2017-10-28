@@ -9,18 +9,51 @@ if PQT5 == True:
 else:
 	from PyQt4.QtCore import Qt, QT_VERSION_STR
 	from PyQt4.QtGui import QSlider, QLineEdit
+
 	
 print("Qt version:", QT_VERSION_STR)
 
 import pyqtgraph as pg
 
-penCols = ['y','g','r','m','c']     #pqtgraph pen colors
-def makePens():
+#forprint = True             # Edit this line to change color scheme
+
+try:
+	open('white.mode','r')
+	forprint = True             # Edit this line to change color scheme
+except:
+	forprint = False
+
+penCols   = ['y','g','r','m','c']     #pqtgraph pen colors
+penCols2  = ['#000000','b','r','m','g']     #pqtgraph pen colors
+htmlcols  = ['yellow', 'green', 'red','magenta','cyan']
+htmlcols2 = ['black', 'blue', 'red','magenta','cyan']
+
+def makeTraceColors():
 	pens = []
-	for p in penCols:
-		x=pg.mkPen(p, width=1)#, style=Qt.DashLine) 
-		pens.append(x)
-	return pens
+	if forprint == True:
+		pg.setConfigOption('background', (227, 241, 209))
+		for p in penCols2:
+			x=pg.mkPen(p, width=2)
+			pens.append(x)
+	else:
+		for p in penCols:
+			x=pg.mkPen(p, width=1)
+			pens.append(x)
+	return pens	
+		
+	
+def makeResultColors():
+	if forprint == True:
+		return penCols2
+	else:
+		return penCols
+		
+def makeHtmlColors():
+	if forprint == True:
+		return htmlcols2
+	else:
+		return htmlcols
+	
 
 class slider(QSlider):
 	def __init__(self, minval, maxval, setval, maxw, cback):
@@ -54,5 +87,6 @@ class lineEdit(QLineEdit):
 		#self.setValidator(QDoubleValidator(0.9,9.99,2))
 		if cback != None: self.textChanged.connect(cback)
 		self.setMaxLength(maxsize)
+		self.setStyleSheet("border: 1px solid white;")
 		
 
