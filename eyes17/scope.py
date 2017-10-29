@@ -776,12 +776,21 @@ class Expt(QWidget):
 			
 	def measure_cap(self):
 		try:
-			cap = self.p.get_capacitance() * 1.e12
+			cap = self.p.get_capacitance()
+			print cap
 			if cap == None:
 				self.msg(self.tr('Capacitance too high or short to ground'))
 			else:
-				ss = '%6.1f'%cap
-				self.CAP.setText('<font color="blue">'+ ss +self.tr(' pF'))
+				if cap < 1.0e-9:
+					ss = '%6.1f'%(cap*1e12)
+					self.CAP.setText('<font color="blue">'+ ss +self.tr(' pF'))
+					print ss
+				elif cap < 1.0e-6:
+					ss = '%6.1f'%(cap*1e9)
+					self.CAP.setText('<font color="blue">'+ ss +self.tr(' nF'))
+				elif cap < 1.0e-3:
+					ss = '%6.1f'%(cap*1e6)
+					self.CAP.setText('<font color="blue">'+ ss +self.tr(' uF'))
 		except:
 			self.comerr()
 
