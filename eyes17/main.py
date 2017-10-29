@@ -142,8 +142,8 @@ class helpWin(QWebView):
 
 
 class MainWindow(QMainWindow):
-	WIDTH = 900
-	HEIGHT = 550
+	WIDTH = 950
+	HEIGHT = 600
 	expWidget = None
 	expName = ''
 	hlpName = ''
@@ -156,7 +156,8 @@ class MainWindow(QMainWindow):
 	def __init__(self):
 		QMainWindow.__init__(self)
 		self.makeMenu()
-		self.setMinimumSize(self.WIDTH, self.HEIGHT)
+		self.setMinimumSize(self.WIDTH-100, self.HEIGHT-50)
+		self.resize(self.WIDTH,self.HEIGHT)
 		self._x = 100
 		self._y = 10
 		palette = QPalette()								# background color
