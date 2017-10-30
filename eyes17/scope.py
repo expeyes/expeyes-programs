@@ -776,7 +776,6 @@ class Expt(QWidget):
 	def measure_cap(self):
 		try:
 			cap = self.p.get_capacitance()
-			print cap
 			if cap == None:
 				self.msg(self.tr('Capacitance too high or short to ground'))
 			else:

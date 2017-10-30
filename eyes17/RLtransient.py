@@ -179,7 +179,6 @@ class Expt(QWidget):
 		except:
 			self.comerr()
 			return		
-		print self.trial%5
 		self.traces.append(self.pwin.plot(t,v, pen = self.traceCols[self.trial%5]))
 		self.history.append((t,v))
 		self.trial += 1
