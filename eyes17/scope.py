@@ -569,7 +569,7 @@ class Expt(QWidget):
 					xa *= 1000
 					peak = self.peak_index(xa,ya)
 					ypos = np.max(ya)
-					pop = pg.plot(xa,ya, pen = self.pens[ch])
+					pop = pg.plot(xa,ya, pen = self.traceCols[ch])
 					pop.showGrid(x=True, y=True)
 					txt = pg.TextItem(text=str(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
 					txt.setPos(peak, ypos)
