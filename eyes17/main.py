@@ -164,8 +164,9 @@ class MainWindow(QMainWindow):
 		palette.setColor(QPalette.Background, QColor(61,168,165)) #("#99ccff")) "#88bbcc"
 		self.setPalette(palette)	
 
-		self.helpCB = QCheckBox(self.tr('Show PopUp Help Window'))
+		self.helpCB = QCheckBox(self.tr('Enable PopUp Help Window'))
 		self.helpCB.stateChanged.connect(self.showHelp)
+		#self.helpCB.setStyleSheet('background-color: white')
 
 		self.statusBar = QStatusBar()
 		self.setStatusBar(self.statusBar)

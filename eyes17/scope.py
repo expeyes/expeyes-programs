@@ -23,7 +23,7 @@ class Expt(QWidget):
 	AWGmin = 1
 	AWGmax = 5000
 	AWGval = 1000
-	SQ1min = 4
+	SQ1min = 0
 	SQ1max = 5000
 	SQ1val = 1000
 	PV1min = -5.0
@@ -698,6 +698,7 @@ class Expt(QWidget):
 			self.SQ1val = val
 			self.SQ1slider.setValue(self.SQ1val)
 			try:
+				if 0 <= val < 4 : val = 0
 				res = self.p.set_sqr1(val, self.dutyCycle)
 				ss = '%5.1f'%res
 				self.msg(self.tr('sqr1 set to ') + ss)
