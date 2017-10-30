@@ -782,7 +782,6 @@ class Expt(QWidget):
 				if cap < 1.0e-9:
 					ss = '%6.1f'%(cap*1e12)
 					self.CAP.setText('<font color="blue">'+ ss +self.tr(' pF'))
-					print ss
 				elif cap < 1.0e-6:
 					ss = '%6.1f'%(cap*1e9)
 					self.CAP.setText('<font color="blue">'+ ss +self.tr(' nF'))
