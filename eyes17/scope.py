@@ -82,7 +82,7 @@ class Expt(QWidget):
 	TBval = 1			# timebase list index
 	Trigindex = 0
 	Triglevel = 0
-	
+	dutyCycle = 50
 	MAXRES = 5
 	resLabs     = [None]*MAXRES
 	Results     = [None]*MAXRES
@@ -708,10 +708,8 @@ class Expt(QWidget):
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
 			self.SQ1text.setText(str(val))
-			try:
-				self.p.set_sqr1(val)
-			except:
-				self.comerr()
+			s = self.SQ1text.text()
+			self.sq1_text(s)
 				
 	def select_wgain(self,index):
 		self.Wgain.setText(self.Wgains[index])
