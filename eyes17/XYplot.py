@@ -39,8 +39,6 @@ class Expt(QWidget):
 	Data    = [ [], [] ]
 	traceWidget = [None]
 	
-	sources = ['A1','A2','A3', 'MIC']
-	chanpens = ['y','g','w','m']     #pqtgraph pen colors
 
 	NP = 500			# Number of samples
 	TG = 10				# Number of channels
@@ -56,6 +54,8 @@ class Expt(QWidget):
 		except:
 			pass
 
+		self.traceCols = utils.makeTraceColors()
+
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
@@ -68,7 +68,7 @@ class Expt(QWidget):
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.chanpens[ch])
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)

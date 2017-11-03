@@ -141,7 +141,7 @@ class Expt(QWidget):
 			self.comerr()
 			return
 		try:
-			T = self.p.multi_r2rtime('SEN', 1)
+			T = self.p.multi_r2rtime('SEN', 2)
 		except:
 			self.comerr()
 		
@@ -154,7 +154,7 @@ class Expt(QWidget):
 		T *= 1000			#seconds  to milliseconds
 		self.data[0].append(self.index)
 		self.data[1].append(T)
-		if self.index > self.NMAX:
+		if self.index >= self.NMAX:
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
