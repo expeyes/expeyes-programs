@@ -1,17 +1,9 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 #from __future__ import print_function
-import os, sys, time, utils, inspect, os.path
+import os, sys, time, inspect, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QFont, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QFont, QApplication, QWidget,\
-	QTextEdit, QLabel, QVBoxLayout, QPushButton,QHBoxLayout, QFileDialog
-	
+from QtVersion import *
+
 class ListStream:
 	data = ':'
 	def __init__(self):
@@ -27,13 +19,16 @@ class Expt(QWidget):
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
-		self.p = device										# connection to the device hardware 		
-
-		#self.functionList['print']= self.msg				# for redirecting print
+		self.p = device
+		# connection to the device hardware
+		#self.functionList['print']= self.msg
+		# for redirecting print
 
 		self.functionList['p'] = self.p
 
-		self.Edit = QTextEdit()	
+		from pythonSyntax import PythonHighlighter
+		self.Edit = QTextEdit()
+		self.highlighter=PythonHighlighter(self.Edit.document())
 		full = QVBoxLayout()
 		full.addWidget(self.Edit)
 		
@@ -113,4 +108,3 @@ if __name__ == '__main__':
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
-	

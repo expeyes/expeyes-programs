@@ -1,17 +1,24 @@
 import sys, os
 
-PQT5 = False
+PQT5=False # Qt4 by default
+if sys.version_info.major==3:
+        # there is no QtWebKit support for python3 & Qt4
+        PQT5=True
+else:
+        import QtVersion
+        PQT5= QtVersion.PQT5
 
 if PQT5 == True:
-	from PyQt5.QtCore import Qt, QT_VERSION_STR
-	from PyQt5.QtWidgets import QSlider, QLineEdit
-	from PyQt5.QtWebKitWidgets import QWebView
+	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
+	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, \
+                QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, \
+                QPushButton, QMenu, QFileDialog, QSlider, QLineEdit
+	from PyQt5.QtGui import QPalette, QColor
 else:
-	from PyQt4.QtCore import Qt, QT_VERSION_STR
-	from PyQt4.QtGui import QSlider, QLineEdit
-
-	
-print("Qt version:", QT_VERSION_STR)
+	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
+	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
+	        QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, \
+                QPushButton, QMenu, QFileDialog, QSlider, QLineEdit
 
 import pyqtgraph as pg
 

@@ -1,14 +1,7 @@
-import sys, time, utils, math, os.path
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
+import sys, time, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QCheckBox,\
-	QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
+from QtVersion import *
 
 import sys, time, utils
 import pyqtgraph as pg
@@ -113,9 +106,9 @@ class Expt(QWidget):
 					index = k
 			
 			self.resLabs[0] = pg.TextItem(
-	                        text= str(self.tr('Time: %6.2fmS ')) %t[index],
-	                        color= self.resultCols[0]
-	                )
+				text= str(self.tr('Time: %6.2fmS ')) %t[index],
+				color= self.resultCols[0]
+			)
 			self.resLabs[0].setPos(0, -11)
 			self.pwin.addItem(self.resLabs[0])
 			
@@ -822,7 +815,7 @@ if __name__ == '__main__':
 	app.installTranslator(t)
 	t1=QTranslator()
 	t1.load("qt_"+lang,
-	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 	app.installTranslator(t1)
 
 	mw = Expt(dev)
