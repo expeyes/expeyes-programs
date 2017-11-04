@@ -10,25 +10,6 @@ LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
-LIBS:proto1
 LIBS:microhope-cache
 EELAYER 25 0
 EELAYER END
@@ -111,7 +92,7 @@ F 3 "" H 2950 4900 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L LED D2
+L LED-RESCUE-microhope D2
 U 1 1 52786D0B
 P 3750 4700
 F 0 "D2" H 3750 4800 50  0000 C CNN
@@ -513,7 +494,7 @@ F 3 "" H 3550 4700 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L LED D1
+L LED-RESCUE-microhope D1
 U 1 1 527880C3
 P 4750 1000
 F 0 "D1" H 4750 1100 50  0000 C CNN

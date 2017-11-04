@@ -1,11 +1,24 @@
 #from __future__ import print_function
-import os, sys, time, utils, inspect, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QFont, \
+import sys, os, time, inspect, os.path
+
+PQT5=False # use Qt4 by default
+
+utilsPaths=["../../eyes17", "/usr/share/eyes17"]
+for path in utilsPaths:
+        # consider utils.py first in development environment, then in
+        # installed package, when this file may exist
+        if os.path.exists(path):
+                sys.path = [path] + sys.path
+                import utils
+                PQT5=utils.PQT5
+                break
+
+if PQT5 == True:
+	from PyQt5.QtCore import Qt, QTimer, \
 	        QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
-	from PyQt5.QtGui import QPalette, QColor
+	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout, QPushButton
+	from PyQt5.QtGui import QPalette, QColor, QFont
 else:
 	from PyQt4.QtCore import Qt, QTimer, \
 	        QTranslator, QLocale, QLibraryInfo

@@ -1311,7 +1311,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../main.py" line="231"/>
         <source>Failed to load %s</source>
-        <translation>Échec de chargement de %S</translation>
+        <translation>Échec de chargement de %s</translation>
     </message>
     <message>
         <location filename="../main.py" line="243"/>
