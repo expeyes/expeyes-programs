@@ -1,24 +1,6 @@
 import sys, os
 
-PQT5=False # Qt4 by default
-if sys.version_info.major==3:
-        # there is no QtWebKit support for python3 & Qt4
-        PQT5=True
-else:
-        import QtVersion
-        PQT5= QtVersion.PQT5
-
-if PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, \
-                QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, \
-                QPushButton, QMenu, QFileDialog, QSlider, QLineEdit
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	        QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, \
-                QPushButton, QMenu, QFileDialog, QSlider, QLineEdit
+from QtVersion import *
 
 import pyqtgraph as pg
 
@@ -102,7 +84,7 @@ class lineEdit(QLineEdit):
 	def __init__(self, width, val, maxsize, cback):
 		QLineEdit.__init__(self)
 		self.setFixedWidth(width)
-		self.setText(str(val))
+		self.setText(unicode(val))
 		#self.setValidator(QDoubleValidator(0.9,9.99,2))
 		if cback != None: self.textChanged.connect(cback)
 		self.setMaxLength(maxsize)

@@ -3,6 +3,11 @@
 """
 Copyright (c) 2017 DavidBoddie <https://wiki.python.org/moin/DavidBoddie>
 HomePage: https://wiki.python.org/moin/PyQt/Python%20syntax%20highlighting
+
+Adapted by Georges Khaznadar <georgesk@debian.org> in 2017:
+  use the modules from PyQt4 or PyQt5, depending on choices defined in
+  the local module QtVersion
+
 License:
 the Modified BSD License
 

@@ -4,9 +4,6 @@ import sys, time, math, importlib, os, platform, os.path
 from QtVersion import *
 showVersions()
 
-if sys.version_info.major==3:
-	unicode=str
-	
 import pyqtgraph as pg
 
 pf = platform.platform()

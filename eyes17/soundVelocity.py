@@ -1,14 +1,7 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton , QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
+from QtVersion import *
 	
 import pyqtgraph as pg
 import numpy as np
@@ -160,9 +153,17 @@ class Expt(QWidget):
 		except:
 			self.comerr()
 			
-		fa = em.fit_sine(self.timeData[0], self.voltData[0])
+		try:
+			fa = em.fit_sine(self.timeData[0], self.voltData[0])
+		except Exception as err:
+			print('fit_sine error:', err)
+			fa=None
 		if fa != None:	
-			fb = em.fit_sine(self.timeData[1], self.voltData[1])
+			try:
+				fb = em.fit_sine(self.timeData[1], self.voltData[1])
+			except Exception as err:
+				print('fit_sine error:', err)
+				fb=None
 			pa = fa[1][2] * 180/em.pi
 			pb = fb[1][2] * 180/em.pi
 			pdiff = pa-pb
@@ -184,7 +185,7 @@ class Expt(QWidget):
 			for ch in range(2):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = str(fn)
+			ss = unicode(fn)
 			self.msg(self.tr('Trace saved to ') + ss)			
 			
 	def set_timebase(self, tb):
@@ -217,7 +218,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(str(val))
+			self.AWGtext.setText(unicode(val))
 			self.set_wave()
 		
 	def msg(self, m):

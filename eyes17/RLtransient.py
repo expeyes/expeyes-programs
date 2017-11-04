@@ -1,14 +1,8 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget, QMainWindow,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton
-	
+from QtVersion import *
+
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -224,7 +218,7 @@ class Expt(QWidget):
 	def save_data(self):
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg(self.tr('Traces saved to ') + str(fn))
+		self.msg(self.tr('Traces saved to ') + unicode(fn))
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
