@@ -37,8 +37,7 @@ POSSIBILITY OF SUCH DAMAGE.
 
 import sys
 
-from PyQt5.QtCore import QRegExp
-from PyQt5.QtGui import QColor, QTextCharFormat, QFont, QSyntaxHighlighter
+from QtVersion import *
 
 def format(color, style=''):
     """Return a QTextCharFormat with the given attributes.

@@ -27,18 +27,20 @@ if PQT5 == True:
 	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QDesktopWidget, QWidget, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit
-	from PyQt5.QtGui import QPalette, QColor, QFont
+	from PyQt5.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
+		QSyntaxHighlighter
 	from PyQt5.QtWebKitWidgets import QWebView
 	from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
-		QTranslator, QLocale, QLibraryInfo
+		QTranslator, QLocale, QLibraryInfo, QRegExp
 	from PyQt5.Qt import QT_VERSION_STR
 else:
 	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
-		QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QFont, QMainWindow, \
-		QApplication, QCheckBox, \
+		QTranslator, QLocale, QLibraryInfo, QRegExp
+	from PyQt4.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
+		QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QDesktopWidget, QWidget, \
-		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit
+		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
+		QSyntaxHighlighter
 	from PyQt4.QtWebKit import QWebView,QWebSettings
 	from PyQt4.Qt import QT_VERSION_STR
 
