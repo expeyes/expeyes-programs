@@ -1,5 +1,6 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path
+import sys, time, math, importlib, os, platform, os.path, configparser
+from utils import cnf
 
 from QtVersion import *
 showVersions()
@@ -15,107 +16,107 @@ if 'Windows' in pf:
 	import sr04dist, utils, logger, XYplot
 
 schoolExpts = [ 
-["Voltage measurement", 'measure-dc'],
-["Resistance measurement", 'res-measure'],
-["Resistors in Series", 'res-series'],
-["Resistors in Parallel", 'res-parallel'],
-["Capacitance measurement", 'cap-measure'],
-["Capacitors in Series", 'cap-series'],
-["Capacitors in Parallel", 'cap-parallel'],
-["Resistance by Ohm's law", 'res-compare'],
-['Direct and Alternating Currents', 'ac-dc'],
-['AC mains pickup', 'line-pickup'],
-['Separating AC and DC', 'acdc-separating'],
-['Conducting Human body', 'conducting-human'],
-['Resistance of Human body', 'res-body'],
-['Light Dependent Resistor', 'ldr'],
-['Lemon Cell', 'lemon-cell'],
-['Simple AC generator', 'ac-generator'],
-['Transformer', 'transformer'],
-['Resistance of Water', 'res-water'],
-['Generating Sound', 'sound-generator'],
-['Digitizing Sound', 'sound-capture'],
-['Stroboscope', 'stroboscope'],
+[QT_TRANSLATE_NOOP('Expt',"Voltage measurement"), 'measure-dc'],
+[QT_TRANSLATE_NOOP('Expt',"Resistance measurement"), 'res-measure'],
+[QT_TRANSLATE_NOOP('Expt',"Resistors in Series"), 'res-series'],
+[QT_TRANSLATE_NOOP('Expt',"Resistors in Parallel"), 'res-parallel'],
+[QT_TRANSLATE_NOOP('Expt',"Capacitance measurement"), 'cap-measure'],
+[QT_TRANSLATE_NOOP('Expt',"Capacitors in Series"), 'cap-series'],
+[QT_TRANSLATE_NOOP('Expt',"Capacitors in Parallel"), 'cap-parallel'],
+[QT_TRANSLATE_NOOP('Expt',"Resistance by Ohm's law"), 'res-compare'],
+[QT_TRANSLATE_NOOP('Expt','Direct and Alternating Currents'), 'ac-dc'],
+[QT_TRANSLATE_NOOP('Expt','AC mains pickup'), 'line-pickup'],
+[QT_TRANSLATE_NOOP('Expt','Separating AC and DC'), 'acdc-separating'],
+[QT_TRANSLATE_NOOP('Expt','Conducting Human body'), 'conducting-human'],
+[QT_TRANSLATE_NOOP('Expt','Resistance of Human body'), 'res-body'],
+[QT_TRANSLATE_NOOP('Expt','Light Dependent Resistor'), 'ldr'],
+[QT_TRANSLATE_NOOP('Expt','Lemon Cell'), 'lemon-cell'],
+[QT_TRANSLATE_NOOP('Expt','Simple AC generator'), 'ac-generator'],
+[QT_TRANSLATE_NOOP('Expt','Transformer'), 'transformer'],
+[QT_TRANSLATE_NOOP('Expt','Resistance of Water'), 'res-water'],
+[QT_TRANSLATE_NOOP('Expt','Generating Sound'), 'sound-generator'],
+[QT_TRANSLATE_NOOP('Expt','Digitizing Sound'), 'sound-capture'],
+[QT_TRANSLATE_NOOP('Expt','Stroboscope'), 'stroboscope'],
 ]
 
 
 testEquipment = [ 
-['Oscilloscope','scope']
-#['Monitor and Control', 'mon-con']
+[QT_TRANSLATE_NOOP('Expt','Oscilloscope'),'scope']
+#[QT_TRANSLATE_NOOP('Expt','Monitor and Control'), 'mon-con']
 ]
 
 
 electronicsExpts = [ 
-['Diode Characteristics','diodeIV'],
-['NPN Output Characteristics','npnCEout'],
-['PNP Output Characteristics','pnpCEout'],
-#['AM and FM', 'amfm']
+[QT_TRANSLATE_NOOP('Expt','Diode Characteristics'),'diodeIV'],
+[QT_TRANSLATE_NOOP('Expt','NPN Output Characteristics'),'npnCEout'],
+[QT_TRANSLATE_NOOP('Expt','PNP Output Characteristics'),'pnpCEout'],
+#[QT_TRANSLATE_NOOP('Expt','AM and FM'), 'amfm']
 ]
 
 electronicsExptsScope = [ 
-['Oscilloscope','scope'],
-['Halfwave Rectifier','halfwave'],
-['Fullwave Rectifier','fullwave'],
-['Diode Clipping','clipping'],
-['Diode Clamping','clamping'],
-['IC555 Multivibrator','osc555'],
-['Inverting Amplifier','opamp-inv'],
-['Non-Inverting Amplifier','opamp-noninv'],
-['Integrator using Op-Amp','opamp-int'],
-['Logic Gates','logic-gates'],
-['Clock Divider Circuit','clock-divider']
+[QT_TRANSLATE_NOOP('Expt','Oscilloscope'),'scope'],
+[QT_TRANSLATE_NOOP('Expt','Halfwave Rectifier'),'halfwave'],
+[QT_TRANSLATE_NOOP('Expt','Fullwave Rectifier'),'fullwave'],
+[QT_TRANSLATE_NOOP('Expt','Diode Clipping'),'clipping'],
+[QT_TRANSLATE_NOOP('Expt','Diode Clamping'),'clamping'],
+[QT_TRANSLATE_NOOP('Expt','IC555 Multivibrator'),'osc555'],
+[QT_TRANSLATE_NOOP('Expt','Inverting Amplifier'),'opamp-inv'],
+[QT_TRANSLATE_NOOP('Expt','Non-Inverting Amplifier'),'opamp-noninv'],
+[QT_TRANSLATE_NOOP('Expt','Integrator using Op-Amp'),'opamp-int'],
+[QT_TRANSLATE_NOOP('Expt','Logic Gates'),'logic-gates'],
+[QT_TRANSLATE_NOOP('Expt','Clock Divider Circuit'),'clock-divider']
 ]
 
 electricalExpts = [ 
-['Plot I-V Curve','plotIV'],
-['XY Plotting','XYplot'],
-['RLC Steady state response','RLCsteadystate'],
-['RC Transient response','RCtransient'],
-['RL Transient response','RLtransient'],
-['RLC transient response','RLCtransient'],
-['Frequency Response of Filter Circuit','filterCircuit'],
-['Electromagnetic Induction','induction']
+[QT_TRANSLATE_NOOP('Expt','Plot I-V Curve'),'plotIV'],
+[QT_TRANSLATE_NOOP('Expt','XY Plotting'),'XYplot'],
+[QT_TRANSLATE_NOOP('Expt','RLC Steady state response'),'RLCsteadystate'],
+[QT_TRANSLATE_NOOP('Expt','RC Transient response'),'RCtransient'],
+[QT_TRANSLATE_NOOP('Expt','RL Transient response'),'RLtransient'],
+[QT_TRANSLATE_NOOP('Expt','RLC transient response'),'RLCtransient'],
+[QT_TRANSLATE_NOOP('Expt','Frequency Response of Filter Circuit'),'filterCircuit'],
+[QT_TRANSLATE_NOOP('Expt','Electromagnetic Induction'),'induction']
 ]
 
 soundExpts = [
-['Frequency Response of Piezo Buzzer','soundFreqResp'],
-['Velocity of Sound' , 'soundVelocity'],
-['Sound beats' , 'soundBeats']
+[QT_TRANSLATE_NOOP('Expt','Frequency Response of Piezo Buzzer'),'soundFreqResp'],
+[QT_TRANSLATE_NOOP('Expt','Velocity of Sound'), 'soundVelocity'],
+[QT_TRANSLATE_NOOP('Expt','Sound beats'), 'soundBeats']
 ]
 
 mechanicsExpts = [
-['Rod Pendulum with Light barrier' , 'rodPendulum'],
-['Pendulum Wavefrorm','pendulumVelocity'],
-['Driven Pendulum resonance','driven-pendulum'],
-['Distance by HY-SRF04 Echo module', 'sr04dist']
+[QT_TRANSLATE_NOOP('Expt','Rod Pendulum with Light barrier'), 'rodPendulum'],
+[QT_TRANSLATE_NOOP('Expt','Pendulum Wavefrorm'),'pendulumVelocity'],
+[QT_TRANSLATE_NOOP('Expt','Driven Pendulum resonance'),'driven-pendulum'],
+[QT_TRANSLATE_NOOP('Expt','Distance by HY-SRF04 Echo module'), 'sr04dist']
 ]
 
 otherExpts = [ 
-['Temperatue, PT100 Sensor', 'pt100'],
-['Data Logger', 'logger']
+[QT_TRANSLATE_NOOP('Expt','Temperatue, PT100 Sensor'), 'pt100'],
+[QT_TRANSLATE_NOOP('Expt','Data Logger'), 'logger']
 ]
 
 modulesI2C = [ 
-['MPU-6050 Acccn, Velocity and Temp', 'MPU6050'],
+[QT_TRANSLATE_NOOP('Expt','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
 ]
 
 pythonCodes = [ 
-['Read Inputs',  'readInputs'],
-['Set DC Voltages', 'setVoltages'],
-['Capture Single Input', 'capture1'],
-['Capture Two Inputs', 'capture2'],
-['Capture Four Inputs', 'capture4'],
-['Triangular Waveform', 'triangularWave'],
-['Arbitrary Waveform', 'waveforms'],
-['Waveform Table', 'table'],
-['RC Transient', 'RCtransient'],
-['RL Transient', 'RLtransient'],
-['RC Integration', 'RCintegration'],
-['Clipping with Diode', 'clipping'],
-['Clamping with Diode', 'clamping'],
-['Fullwave Rectifier', 'fullwave'],
-['NPN Ib vs IC plot', 'npnTransferChar'],
-['Fourier Transform', 'FourierTransform']
+[QT_TRANSLATE_NOOP('Expt','Read Inputs'),  'readInputs'],
+[QT_TRANSLATE_NOOP('Expt','Set DC Voltages'), 'setVoltages'],
+[QT_TRANSLATE_NOOP('Expt','Capture Single Input'), 'capture1'],
+[QT_TRANSLATE_NOOP('Expt','Capture Two Inputs'), 'capture2'],
+[QT_TRANSLATE_NOOP('Expt','Capture Four Inputs'), 'capture4'],
+[QT_TRANSLATE_NOOP('Expt','Triangular Waveform'), 'triangularWave'],
+[QT_TRANSLATE_NOOP('Expt','Arbitrary Waveform'), 'waveforms'],
+[QT_TRANSLATE_NOOP('Expt','Waveform Table'), 'table'],
+[QT_TRANSLATE_NOOP('Expt','RC Transient'), 'RCtransient'],
+[QT_TRANSLATE_NOOP('Expt','RL Transient'), 'RLtransient'],
+[QT_TRANSLATE_NOOP('Expt','RC Integration'), 'RCintegration'],
+[QT_TRANSLATE_NOOP('Expt','Clipping with Diode'), 'clipping'],
+[QT_TRANSLATE_NOOP('Expt','Clamping with Diode'), 'clamping'],
+[QT_TRANSLATE_NOOP('Expt','Fullwave Rectifier'), 'fullwave'],
+[QT_TRANSLATE_NOOP('Expt','NPN Ib vs IC plot'), 'npnTransferChar'],
+[QT_TRANSLATE_NOOP('Expt','Fourier Transform'), 'FourierTransform']
 ]
 
 
@@ -226,12 +227,44 @@ class MainWindow(QMainWindow):
 			self.callExpt( ('Python Coding', 'editor'))
 		self.expWidget.mycode = e[1]
 		self.expWidget.update()
+
+	def setConfig(self,section, key, value):
+		"""
+		Sets some part of eyes17's configuration
+		@param section a section of the configuration file cnf, for
+		example: 'ScreenTheme'
+		@param key for example: 'Background'
+		@param value the text to assign to the key, for example: 'dark'
+		"""
+		config = configparser.ConfigParser()
+		config.read(cnf)
+		config[section][key] = value
+		with open(cnf,"w") as out: config.write(out)
+		return
 	
 	def setWBG(self):
-		os.mknod('white.mode')
+		"""
+		sets a light background for the scope's screen
+		"""	
+		self.setConfig('ScreenTheme', 'Background', 'light')
+		QMessageBox.warning(
+			self,
+			self.tr('No immediate application'),
+			self.tr("Please restart the application to lighten the screen's background")
+		)
+		return
 		
 	def setBBG(self):
-		os.remove('white.mode')
+		"""
+		sets a dark background for the scope's screen
+		"""	
+		self.setConfig('ScreenTheme', 'Background', 'dark')
+		QMessageBox.warning(
+			self,
+			self.tr('No immediate application'),
+			self.tr("Please restart the application to darken the screen's background.")
+		)
+		return
 	
 	def makeMenu(self):
 		bar = self.menuBar()
@@ -243,38 +276,38 @@ class MainWindow(QMainWindow):
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
-			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
 
 		em = bar.addMenu(self.tr("Electronics"))
 		for e in electronicsExptsScope:
-			em.addAction(e[0],  lambda item=e: self.scope_help(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
 			
 		for e in electronicsExpts:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 		
 		em = bar.addMenu(self.tr("Electrical"))
 		for e in electricalExpts:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 
 		em = bar.addMenu(self.tr("Sound"))
 		for e in soundExpts:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 
 		em = bar.addMenu(self.tr("Mechanics"))
 		for e in mechanicsExpts:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 
 		em = bar.addMenu(self.tr("Other Expts"))
 		for e in otherExpts:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 
 		em = bar.addMenu(self.tr("I2C Modules"))
 		for e in modulesI2C:
-			em.addAction(e[0],  lambda item=e: self.callExpt(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 
 		em = bar.addMenu(self.tr("PythonCode"))
 		for e in pythonCodes:
-			em.addAction(e[0],  lambda item=e: self.runCode(item))	
+			em.addAction(self.tr(e[0]),  lambda item=e: self.runCode(item))	
 
 
 	def reconnect(self):

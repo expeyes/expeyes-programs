@@ -28,22 +28,24 @@ if (os.getenv("QT_VERSION") and os.getenv("QT_VERSION").startswith("5")) or \
 	PQT5=True
 
 if PQT5 == True:
-	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
-		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
-		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit
 	from PyQt5.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
 		QSyntaxHighlighter
-	from PyQt5.QtWebKitWidgets import QWebView
+	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
+		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
+		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
+		QMessageBox
+	from PyQt5.QtWebKitWidgets import QWebView, QWebSettings
 	from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
 	from PyQt5.Qt import QT_VERSION_STR
 else:
 	from PyQt4.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
-		QMainWindow, QApplication, QCheckBox, \
+		QSyntaxHighlighter
+	from PyQt4.QtGui import QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
-		QSyntaxHighlighter
-	from PyQt4.QtWebKit import QWebView,QWebSettings
+		QMessageBox
+	from PyQt4.QtWebKit import QWebView, QWebSettings
 	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
 	from PyQt4.Qt import QT_VERSION_STR
