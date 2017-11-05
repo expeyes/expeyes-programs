@@ -34,7 +34,7 @@ if PQT5 == True:
 		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
 		QMessageBox
-	from PyQt5.QtWebKitWidgets import QWebView, QWebSettings
+	from PyQt5.QtWebKitWidgets import QWebView
 	from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
 	from PyQt5.Qt import QT_VERSION_STR
