@@ -16,107 +16,107 @@ if 'Windows' in pf:
 	import sr04dist, utils, logger, XYplot
 
 schoolExpts = [ 
-[QT_TRANSLATE_NOOP('Expt',"Voltage measurement"), 'measure-dc'],
-[QT_TRANSLATE_NOOP('Expt',"Resistance measurement"), 'res-measure'],
-[QT_TRANSLATE_NOOP('Expt',"Resistors in Series"), 'res-series'],
-[QT_TRANSLATE_NOOP('Expt',"Resistors in Parallel"), 'res-parallel'],
-[QT_TRANSLATE_NOOP('Expt',"Capacitance measurement"), 'cap-measure'],
-[QT_TRANSLATE_NOOP('Expt',"Capacitors in Series"), 'cap-series'],
-[QT_TRANSLATE_NOOP('Expt',"Capacitors in Parallel"), 'cap-parallel'],
-[QT_TRANSLATE_NOOP('Expt',"Resistance by Ohm's law"), 'res-compare'],
-[QT_TRANSLATE_NOOP('Expt','Direct and Alternating Currents'), 'ac-dc'],
-[QT_TRANSLATE_NOOP('Expt','AC mains pickup'), 'line-pickup'],
-[QT_TRANSLATE_NOOP('Expt','Separating AC and DC'), 'acdc-separating'],
-[QT_TRANSLATE_NOOP('Expt','Conducting Human body'), 'conducting-human'],
-[QT_TRANSLATE_NOOP('Expt','Resistance of Human body'), 'res-body'],
-[QT_TRANSLATE_NOOP('Expt','Light Dependent Resistor'), 'ldr'],
-[QT_TRANSLATE_NOOP('Expt','Lemon Cell'), 'lemon-cell'],
-[QT_TRANSLATE_NOOP('Expt','Simple AC generator'), 'ac-generator'],
-[QT_TRANSLATE_NOOP('Expt','Transformer'), 'transformer'],
-[QT_TRANSLATE_NOOP('Expt','Resistance of Water'), 'res-water'],
-[QT_TRANSLATE_NOOP('Expt','Generating Sound'), 'sound-generator'],
-[QT_TRANSLATE_NOOP('Expt','Digitizing Sound'), 'sound-capture'],
-[QT_TRANSLATE_NOOP('Expt','Stroboscope'), 'stroboscope'],
+[QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), 'measure-dc'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistance measurement"), 'res-measure'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Series"), 'res-series'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Parallel"), 'res-parallel'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitance measurement"), 'cap-measure'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Series"), 'cap-series'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Parallel"), 'cap-parallel'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistance by Ohm's law"), 'res-compare'],
+[QT_TRANSLATE_NOOP('MainWindow','Direct and Alternating Currents'), 'ac-dc'],
+[QT_TRANSLATE_NOOP('MainWindow','AC mains pickup'), 'line-pickup'],
+[QT_TRANSLATE_NOOP('MainWindow','Separating AC and DC'), 'acdc-separating'],
+[QT_TRANSLATE_NOOP('MainWindow','Conducting Human body'), 'conducting-human'],
+[QT_TRANSLATE_NOOP('MainWindow','Resistance of Human body'), 'res-body'],
+[QT_TRANSLATE_NOOP('MainWindow','Light Dependent Resistor'), 'ldr'],
+[QT_TRANSLATE_NOOP('MainWindow','Lemon Cell'), 'lemon-cell'],
+[QT_TRANSLATE_NOOP('MainWindow','Simple AC generator'), 'ac-generator'],
+[QT_TRANSLATE_NOOP('MainWindow','Transformer'), 'transformer'],
+[QT_TRANSLATE_NOOP('MainWindow','Resistance of Water'), 'res-water'],
+[QT_TRANSLATE_NOOP('MainWindow','Generating Sound'), 'sound-generator'],
+[QT_TRANSLATE_NOOP('MainWindow','Digitizing Sound'), 'sound-capture'],
+[QT_TRANSLATE_NOOP('MainWindow','Stroboscope'), 'stroboscope'],
 ]
 
 
 testEquipment = [ 
-[QT_TRANSLATE_NOOP('Expt','Oscilloscope'),'scope']
-#[QT_TRANSLATE_NOOP('Expt','Monitor and Control'), 'mon-con']
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope']
+#[QT_TRANSLATE_NOOP('MainWindow','Monitor and Control'), 'mon-con']
 ]
 
 
 electronicsExpts = [ 
-[QT_TRANSLATE_NOOP('Expt','Diode Characteristics'),'diodeIV'],
-[QT_TRANSLATE_NOOP('Expt','NPN Output Characteristics'),'npnCEout'],
-[QT_TRANSLATE_NOOP('Expt','PNP Output Characteristics'),'pnpCEout'],
-#[QT_TRANSLATE_NOOP('Expt','AM and FM'), 'amfm']
+[QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),'diodeIV'],
+[QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),'npnCEout'],
+[QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),'pnpCEout'],
+#[QT_TRANSLATE_NOOP('MainWindow','AM and FM'), 'amfm']
 ]
 
 electronicsExptsScope = [ 
-[QT_TRANSLATE_NOOP('Expt','Oscilloscope'),'scope'],
-[QT_TRANSLATE_NOOP('Expt','Halfwave Rectifier'),'halfwave'],
-[QT_TRANSLATE_NOOP('Expt','Fullwave Rectifier'),'fullwave'],
-[QT_TRANSLATE_NOOP('Expt','Diode Clipping'),'clipping'],
-[QT_TRANSLATE_NOOP('Expt','Diode Clamping'),'clamping'],
-[QT_TRANSLATE_NOOP('Expt','IC555 Multivibrator'),'osc555'],
-[QT_TRANSLATE_NOOP('Expt','Inverting Amplifier'),'opamp-inv'],
-[QT_TRANSLATE_NOOP('Expt','Non-Inverting Amplifier'),'opamp-noninv'],
-[QT_TRANSLATE_NOOP('Expt','Integrator using Op-Amp'),'opamp-int'],
-[QT_TRANSLATE_NOOP('Expt','Logic Gates'),'logic-gates'],
-[QT_TRANSLATE_NOOP('Expt','Clock Divider Circuit'),'clock-divider']
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope'],
+[QT_TRANSLATE_NOOP('MainWindow','Halfwave Rectifier'),'halfwave'],
+[QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'),'fullwave'],
+[QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),'clipping'],
+[QT_TRANSLATE_NOOP('MainWindow','Diode Clamping'),'clamping'],
+[QT_TRANSLATE_NOOP('MainWindow','IC555 Multivibrator'),'osc555'],
+[QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),'opamp-inv'],
+[QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),'opamp-noninv'],
+[QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),'opamp-int'],
+[QT_TRANSLATE_NOOP('MainWindow','Logic Gates'),'logic-gates'],
+[QT_TRANSLATE_NOOP('MainWindow','Clock Divider Circuit'),'clock-divider']
 ]
 
 electricalExpts = [ 
-[QT_TRANSLATE_NOOP('Expt','Plot I-V Curve'),'plotIV'],
-[QT_TRANSLATE_NOOP('Expt','XY Plotting'),'XYplot'],
-[QT_TRANSLATE_NOOP('Expt','RLC Steady state response'),'RLCsteadystate'],
-[QT_TRANSLATE_NOOP('Expt','RC Transient response'),'RCtransient'],
-[QT_TRANSLATE_NOOP('Expt','RL Transient response'),'RLtransient'],
-[QT_TRANSLATE_NOOP('Expt','RLC transient response'),'RLCtransient'],
-[QT_TRANSLATE_NOOP('Expt','Frequency Response of Filter Circuit'),'filterCircuit'],
-[QT_TRANSLATE_NOOP('Expt','Electromagnetic Induction'),'induction']
+[QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),'plotIV'],
+[QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),'XYplot'],
+[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),'RLCsteadystate'],
+[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),'RCtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),'RLtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),'RLCtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),'filterCircuit'],
+[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),'induction']
 ]
 
 soundExpts = [
-[QT_TRANSLATE_NOOP('Expt','Frequency Response of Piezo Buzzer'),'soundFreqResp'],
-[QT_TRANSLATE_NOOP('Expt','Velocity of Sound'), 'soundVelocity'],
-[QT_TRANSLATE_NOOP('Expt','Sound beats'), 'soundBeats']
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Piezo Buzzer'),'soundFreqResp'],
+[QT_TRANSLATE_NOOP('MainWindow','Velocity of Sound'), 'soundVelocity'],
+[QT_TRANSLATE_NOOP('MainWindow','Sound beats'), 'soundBeats']
 ]
 
 mechanicsExpts = [
-[QT_TRANSLATE_NOOP('Expt','Rod Pendulum with Light barrier'), 'rodPendulum'],
-[QT_TRANSLATE_NOOP('Expt','Pendulum Wavefrorm'),'pendulumVelocity'],
-[QT_TRANSLATE_NOOP('Expt','Driven Pendulum resonance'),'driven-pendulum'],
-[QT_TRANSLATE_NOOP('Expt','Distance by HY-SRF04 Echo module'), 'sr04dist']
+[QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum with Light barrier'), 'rodPendulum'],
+[QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),'pendulumVelocity'],
+[QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),'driven-pendulum'],
+[QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), 'sr04dist']
 ]
 
 otherExpts = [ 
-[QT_TRANSLATE_NOOP('Expt','Temperatue, PT100 Sensor'), 'pt100'],
-[QT_TRANSLATE_NOOP('Expt','Data Logger'), 'logger']
+[QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), 'pt100'],
+[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger']
 ]
 
 modulesI2C = [ 
-[QT_TRANSLATE_NOOP('Expt','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
+[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
 ]
 
 pythonCodes = [ 
-[QT_TRANSLATE_NOOP('Expt','Read Inputs'),  'readInputs'],
-[QT_TRANSLATE_NOOP('Expt','Set DC Voltages'), 'setVoltages'],
-[QT_TRANSLATE_NOOP('Expt','Capture Single Input'), 'capture1'],
-[QT_TRANSLATE_NOOP('Expt','Capture Two Inputs'), 'capture2'],
-[QT_TRANSLATE_NOOP('Expt','Capture Four Inputs'), 'capture4'],
-[QT_TRANSLATE_NOOP('Expt','Triangular Waveform'), 'triangularWave'],
-[QT_TRANSLATE_NOOP('Expt','Arbitrary Waveform'), 'waveforms'],
-[QT_TRANSLATE_NOOP('Expt','Waveform Table'), 'table'],
-[QT_TRANSLATE_NOOP('Expt','RC Transient'), 'RCtransient'],
-[QT_TRANSLATE_NOOP('Expt','RL Transient'), 'RLtransient'],
-[QT_TRANSLATE_NOOP('Expt','RC Integration'), 'RCintegration'],
-[QT_TRANSLATE_NOOP('Expt','Clipping with Diode'), 'clipping'],
-[QT_TRANSLATE_NOOP('Expt','Clamping with Diode'), 'clamping'],
-[QT_TRANSLATE_NOOP('Expt','Fullwave Rectifier'), 'fullwave'],
-[QT_TRANSLATE_NOOP('Expt','NPN Ib vs IC plot'), 'npnTransferChar'],
-[QT_TRANSLATE_NOOP('Expt','Fourier Transform'), 'FourierTransform']
+[QT_TRANSLATE_NOOP('MainWindow','Read Inputs'),  'readInputs'],
+[QT_TRANSLATE_NOOP('MainWindow','Set DC Voltages'), 'setVoltages'],
+[QT_TRANSLATE_NOOP('MainWindow','Capture Single Input'), 'capture1'],
+[QT_TRANSLATE_NOOP('MainWindow','Capture Two Inputs'), 'capture2'],
+[QT_TRANSLATE_NOOP('MainWindow','Capture Four Inputs'), 'capture4'],
+[QT_TRANSLATE_NOOP('MainWindow','Triangular Waveform'), 'triangularWave'],
+[QT_TRANSLATE_NOOP('MainWindow','Arbitrary Waveform'), 'waveforms'],
+[QT_TRANSLATE_NOOP('MainWindow','Waveform Table'), 'table'],
+[QT_TRANSLATE_NOOP('MainWindow','RC Transient'), 'RCtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RL Transient'), 'RLtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RC Integration'), 'RCintegration'],
+[QT_TRANSLATE_NOOP('MainWindow','Clipping with Diode'), 'clipping'],
+[QT_TRANSLATE_NOOP('MainWindow','Clamping with Diode'), 'clamping'],
+[QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'), 'fullwave'],
+[QT_TRANSLATE_NOOP('MainWindow','NPN Ib vs IC plot'), 'npnTransferChar'],
+[QT_TRANSLATE_NOOP('MainWindow','Fourier Transform'), 'FourierTransform']
 ]
 
 

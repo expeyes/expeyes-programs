@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -1329,6 +1330,447 @@ Affichage de l&apos;ensemble de fréquences actuel.
     <message>
         <location filename="../main.py" line="19"/>
         <source>Voltage measurement</source>
+        <translation type="obsolete">Mesure de tension</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="20"/>
+        <source>Resistance measurement</source>
+        <translation type="obsolete">Mesure de résistance</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="21"/>
+        <source>Resistors in Series</source>
+        <translation type="obsolete">Résistances en série</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="22"/>
+        <source>Resistors in Parallel</source>
+        <translation type="obsolete">Résistances en parallèle</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="23"/>
+        <source>Capacitance measurement</source>
+        <translation type="obsolete">Mesure de capacité</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="24"/>
+        <source>Capacitors in Series</source>
+        <translation type="obsolete">Condensateurs en série</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="25"/>
+        <source>Capacitors in Parallel</source>
+        <translation type="obsolete">Condensateurs en parallèle</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="26"/>
+        <source>Resistance by Ohm&apos;s law</source>
+        <translation type="obsolete">Résistance par la loi d&apos;Ohm</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="27"/>
+        <source>Direct and Alternating Currents</source>
+        <translation type="obsolete">Courants continu et alternatif</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="28"/>
+        <source>AC mains pickup</source>
+        <translation type="obsolete">Influence de la tension du secteur</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="29"/>
+        <source>Separating AC and DC</source>
+        <translation type="obsolete">Séparation du continue et de l&apos;alternatif</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="30"/>
+        <source>Conducting Human body</source>
+        <translation type="obsolete">Conductance du corps humain</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="31"/>
+        <source>Resistance of Human body</source>
+        <translation type="obsolete">Résistance du corps humain</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="32"/>
+        <source>Light Dependent Resistor</source>
+        <translation type="obsolete">Photorésistance</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="33"/>
+        <source>Lemon Cell</source>
+        <translation type="obsolete">Pile au citron</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="34"/>
+        <source>Simple AC generator</source>
+        <translation type="obsolete">Générateur alternatif simple</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="35"/>
+        <source>Transformer</source>
+        <translation type="obsolete">Transformateur</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="36"/>
+        <source>Resistance of Water</source>
+        <translation type="obsolete">Résistance de l&apos;eau</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="37"/>
+        <source>Generating Sound</source>
+        <translation type="obsolete">Générer un son</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="38"/>
+        <source>Digitizing Sound</source>
+        <translation type="obsolete">Numériser un son</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="39"/>
+        <source>Stroboscope</source>
+        <translation type="obsolete">Stroboscope</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="57"/>
+        <source>Oscilloscope</source>
+        <translation type="obsolete">Oscilloscope</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="50"/>
+        <source>Diode Characteristics</source>
+        <translation type="obsolete">Caractéristique d&apos;une diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="51"/>
+        <source>NPN Output Characteristics</source>
+        <translation type="obsolete">Caractéristique d&apos;un transistor NPN</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="52"/>
+        <source>PNP Output Characteristics</source>
+        <translation type="obsolete">Caractéristique d&apos;un transistor PNP</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="58"/>
+        <source>Halfwave Rectifier</source>
+        <translation type="obsolete">Redressement demi-onde</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="117"/>
+        <source>Fullwave Rectifier</source>
+        <translation type="obsolete">Redressement complet</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="60"/>
+        <source>Diode Clipping</source>
+        <translation type="obsolete">Écrêtage à l&apos;aide d&apos;une diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="61"/>
+        <source>Diode Clamping</source>
+        <translation type="obsolete">Décalage de tension à l&apos;aide d&apos;une diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="62"/>
+        <source>IC555 Multivibrator</source>
+        <translation type="obsolete">Multivibrateur IC555</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="63"/>
+        <source>Inverting Amplifier</source>
+        <translation type="obsolete">Amplificateur inverseur</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="64"/>
+        <source>Non-Inverting Amplifier</source>
+        <translation type="obsolete">Amplificateur non-inverseur</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="65"/>
+        <source>Integrator using Op-Amp</source>
+        <translation type="obsolete">Intégrateur à base d&apos;ampli. op</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="66"/>
+        <source>Logic Gates</source>
+        <translation type="obsolete">Portes logiques</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="67"/>
+        <source>Clock Divider Circuit</source>
+        <translation type="obsolete">Circuit diviseur d&apos;horloge</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="71"/>
+        <source>Plot I-V Curve</source>
+        <translation type="obsolete">Tracé d&apos;une courbe courant-tension</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="72"/>
+        <source>XY Plotting</source>
+        <translation type="obsolete">Tracé XY</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="73"/>
+        <source>RLC Steady state response</source>
+        <translation type="obsolete">Circuit RLC en régime permanent</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="74"/>
+        <source>RC Transient response</source>
+        <translation type="obsolete">Circuit RC en régime transitoire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="75"/>
+        <source>RL Transient response</source>
+        <translation type="obsolete">Circuit RL en régime transitoire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="76"/>
+        <source>RLC transient response</source>
+        <translation type="obsolete">Circuit RLC en régime transitoire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="77"/>
+        <source>Frequency Response of Filter Circuit</source>
+        <translation type="obsolete">Réponse en fréquence d&apos;un circuit de filtrage</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="78"/>
+        <source>Electromagnetic Induction</source>
+        <translation type="obsolete">Induction électromagnétique</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="82"/>
+        <source>Frequency Response of Piezo Buzzer</source>
+        <translation type="obsolete">Réponse en fréquence d&apos;un buzzer piézo</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="83"/>
+        <source>Velocity of Sound</source>
+        <translation type="obsolete">Vitesse du son</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="84"/>
+        <source>Sound beats</source>
+        <translation type="obsolete">Battements sonores</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="88"/>
+        <source>Rod Pendulum with Light barrier</source>
+        <translation type="obsolete">Pendule à barre avec une détecteur lumineux</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="89"/>
+        <source>Pendulum Wavefrorm</source>
+        <translation type="obsolete">Signal d&apos;un pendule</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="90"/>
+        <source>Driven Pendulum resonance</source>
+        <translation type="obsolete">Résonance d&apos;un pendule entretenu</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="91"/>
+        <source>Distance by HY-SRF04 Echo module</source>
+        <translation type="obsolete">Distance à l&apos;aide d&apos;un module d&apos;écho SFR04</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="95"/>
+        <source>Temperatue, PT100 Sensor</source>
+        <translation type="obsolete">Température, sonde Pt100</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="96"/>
+        <source>Data Logger</source>
+        <translation type="obsolete">Enregistreur de données</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="100"/>
+        <source>MPU-6050 Acccn, Velocity and Temp</source>
+        <translation type="obsolete">MPU-6050 : Acccn, Vit. et Temp</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="104"/>
+        <source>Read Inputs</source>
+        <translation type="obsolete">Lire les entrées</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="105"/>
+        <source>Set DC Voltages</source>
+        <translation type="obsolete">Régler les tensions continues</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="106"/>
+        <source>Capture Single Input</source>
+        <translation type="obsolete">Capturer une seule entrée</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="107"/>
+        <source>Capture Two Inputs</source>
+        <translation type="obsolete">Capturer deux entrées</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="108"/>
+        <source>Capture Four Inputs</source>
+        <translation type="obsolete">Capturer quatre entrées</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="109"/>
+        <source>Triangular Waveform</source>
+        <translation type="obsolete">Signal triangulaire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="110"/>
+        <source>Arbitrary Waveform</source>
+        <translation type="obsolete">Signal arbitraire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="111"/>
+        <source>Waveform Table</source>
+        <translation type="obsolete">Table d&apos;ondes</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="112"/>
+        <source>RC Transient</source>
+        <translation type="obsolete">RC en régime transitoire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="113"/>
+        <source>RL Transient</source>
+        <translation type="obsolete">RL en régime transitoire</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="114"/>
+        <source>RC Integration</source>
+        <translation type="obsolete">Intégration RC</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="115"/>
+        <source>Clipping with Diode</source>
+        <translation type="obsolete">Écrêtage à diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="116"/>
+        <source>Clamping with Diode</source>
+        <translation type="obsolete">Décaleur à diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="118"/>
+        <source>NPN Ib vs IC plot</source>
+        <translation type="obsolete">Tracé Ib vs Ic (NPN)</translation>
+    </message>
+</context>
+<context>
+    <name>HelloButton</name>
+    <message>
+        <location filename="../hello.py" line="18"/>
+        <source>Hello</source>
+        <translation type="obsolete">Bonjour</translation>
+    </message>
+</context>
+<context>
+    <name>MainWindow</name>
+    <message>
+        <location filename="../main.py" line="168"/>
+        <source>Show PopUp Help Window</source>
+        <translation type="obsolete">Montrer la fenêtre d&apos;aide</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="201"/>
+        <source>Failed to load scope</source>
+        <translation>Échec de chargement de l&apos;oscillo</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="226"/>
+        <source>Failed to load %s</source>
+        <translation>Échec de chargement de %s</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="276"/>
+        <source>Device</source>
+        <translation>Périphérique</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="281"/>
+        <source>School Expts</source>
+        <translation>Exp. scolaires</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="285"/>
+        <source>Electronics</source>
+        <translation>Électronique</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="292"/>
+        <source>Electrical</source>
+        <translation>Électricité</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="296"/>
+        <source>Sound</source>
+        <translation>Son</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="300"/>
+        <source>Mechanics</source>
+        <translation>Mécanique</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="304"/>
+        <source>Other Expts</source>
+        <translation>Autres expériences</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="308"/>
+        <source>I2C Modules</source>
+        <translation>Modules I2C</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="312"/>
+        <source>PythonCode</source>
+        <translation>Code Python</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="277"/>
+        <source>Reconnect</source>
+        <translation>Reconnexion</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="161"/>
+        <source>Enable PopUp Help Window</source>
+        <translation>Active la fenêtre d&apos;aide surgissante</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="278"/>
+        <source>LightBackGround next time</source>
+        <translation>Fond clair (après redémarrage)</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="279"/>
+        <source>DarkBackGround next time</source>
+        <translation>Fond sombre (après redémarrage)</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="266"/>
+        <source>No immediate application</source>
+        <translation>L&apos;application n&apos;est pas immédiate</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="254"/>
+        <source>Please restart the application to lighten the screen&apos;s background</source>
+        <translation>Veuillez relancer l&apos;application pour éclaircir le fond d&apos;écran</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="266"/>
+        <source>Please restart the application to darken the screen&apos;s background.</source>
+        <translation>Veuillez relancer l&apos;application pour assombrir le fond d&apos;écran.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="19"/>
+        <source>Voltage measurement</source>
         <translation>Mesure de tension</translation>
     </message>
     <message>
@@ -1661,111 +2103,10 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <source>NPN Ib vs IC plot</source>
         <translation>Tracé Ib vs Ic (NPN)</translation>
     </message>
-</context>
-<context>
-    <name>HelloButton</name>
     <message>
-        <location filename="../hello.py" line="18"/>
-        <source>Hello</source>
-        <translation type="obsolete">Bonjour</translation>
-    </message>
-</context>
-<context>
-    <name>MainWindow</name>
-    <message>
-        <location filename="../main.py" line="168"/>
-        <source>Show PopUp Help Window</source>
-        <translation type="obsolete">Montrer la fenêtre d&apos;aide</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="201"/>
-        <source>Failed to load scope</source>
-        <translation>Échec de chargement de l&apos;oscillo</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="226"/>
-        <source>Failed to load %s</source>
-        <translation>Échec de chargement de %s</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="276"/>
-        <source>Device</source>
-        <translation>Périphérique</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="281"/>
-        <source>School Expts</source>
-        <translation>Exp. scolaires</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="285"/>
-        <source>Electronics</source>
-        <translation>Électronique</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="292"/>
-        <source>Electrical</source>
-        <translation>Électricité</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="296"/>
-        <source>Sound</source>
-        <translation>Son</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="300"/>
-        <source>Mechanics</source>
-        <translation>Mécanique</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="304"/>
-        <source>Other Expts</source>
-        <translation>Autres expériences</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="308"/>
-        <source>I2C Modules</source>
-        <translation>Modules I2C</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="312"/>
-        <source>PythonCode</source>
-        <translation>Code Python</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="277"/>
-        <source>Reconnect</source>
-        <translation>Reconnexion</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="161"/>
-        <source>Enable PopUp Help Window</source>
-        <translation>Active la fenêtre d&apos;aide surgissante</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="278"/>
-        <source>LightBackGround next time</source>
-        <translation>Fond clair (après redémarrage)</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="279"/>
-        <source>DarkBackGround next time</source>
-        <translation>Fond sombre (après redémarrage)</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="266"/>
-        <source>No immediate application</source>
-        <translation>L&apos;application n&apos;est pas immédiate</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="254"/>
-        <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation>Veuillez relancer l&apos;application pour éclaircir le fond d&apos;écran</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="266"/>
-        <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation>Veuillez relancer l&apos;application pour assombrir le fond d&apos;écran.</translation>
+        <location filename="../main.py" line="119"/>
+        <source>Fourier Transform</source>
+        <translation>Transformée de Fourier</translation>
     </message>
 </context>
 <context>
