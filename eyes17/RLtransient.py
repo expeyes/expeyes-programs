@@ -140,9 +140,7 @@ class Expt(QWidget):
 				minval = ya[k]
 				minIndex = k
 		if minIndex > 1: minIndex -= 1
-		print minIndex
 		if (minIndex % 2) != 0: minIndex +=1    #odd number not good
-		print minIndex
 		return minIndex
 		
 	def fit_curve(self):
@@ -155,7 +153,6 @@ class Expt(QWidget):
 			sp = self.getSP(self.history[-1][1])
 			ta = self.history[-1][0][sp:]
 			va = self.history[-1][1][sp:]
-			print len(ta), len(va)
 			fa = em.fit_exp(ta,va)
 		else:
 			self.msg(self.tr('No data to analyze.'))

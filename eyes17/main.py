@@ -10,7 +10,7 @@ pf = platform.platform()
 print (pf)	
 if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
-	import plotIV, pnpCEout, pt100, RCsteadystate, RCtransient, RLCsteadystate, RLCtransient
+	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
 	import sr04dist, utils, logger, XYplot
 
@@ -227,12 +227,19 @@ class MainWindow(QMainWindow):
 		self.expWidget.mycode = e[1]
 		self.expWidget.update()
 	
+	def setWBG(self):
+		os.mknod('white.mode')
 		
+	def setBBG(self):
+		os.remove('white.mode')
+	
 	def makeMenu(self):
 		bar = self.menuBar()
 
 		mb = bar.addMenu(self.tr("Device"))
 		mb.addAction(self.tr('Reconnect'), self.reconnect)
+		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
+		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
