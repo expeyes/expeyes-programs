@@ -1,14 +1,7 @@
-import sys, time, utils, math, os.path
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
+import sys, time, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication, QWidget, QMainWindow, QCheckBox,\
-	QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QCheckBox, QStatusBar, QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QMenu, QFileDialog
+from QtVersion import *
 
 import sys, time, utils
 import pyqtgraph as pg
@@ -113,15 +106,15 @@ class Expt(QWidget):
 					index = k
 			
 			self.resLabs[0] = pg.TextItem(
-	                        text= str(self.tr('Time: %6.2fmS ')) %t[index],
-	                        color= self.resultCols[0]
-	                )
+				text= unicode(self.tr('Time: %6.2fmS ')) %t[index],
+				color= self.resultCols[0]
+			)
 			self.resLabs[0].setPos(0, -11)
 			self.pwin.addItem(self.resLabs[0])
 			
 			for k in range(self.MAXCHAN):
 				if self.chanStatus[k] == 1:
-					self.Results[k+1] = str(self.tr('%s:%6.2fV ')) %(self.sources[k],self.voltData[k][index])
+					self.Results[k+1] = unicode(self.tr('%s:%6.2fV ')) %(self.sources[k],self.voltData[k][index])
 					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resultCols[k])
 					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
@@ -466,16 +459,20 @@ class Expt(QWidget):
 				r = 16./self.rangeVals[ch]
 				self.traceWidget[ch].setData(self.timeData[ch], self.voltData[ch] * r + 4*self.offValues[ch] )
 				if np.max(self.voltData[ch]) > self.rangeVals[ch]:
-					self.msg(str(self.tr('%s input is clipped. Increase range')) %self.sources[ch])
+					self.msg(unicode(self.tr('%s input is clipped. Increase range')) %self.sources[ch])
 
 				if self.fitSelCB[ch].isChecked() == True:
-					fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+					try:
+						fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+					except Exception as err:
+						print('fit_sine error:', err)
+						fa=None
 					if fa != None:
 						self.voltDataFit[ch] = fa[0]
 						self.Amplitude[ch] = abs(fa[1][0])
 						self.Frequency[ch] = fa[1][1]*1000
 						self.Phase[ch] = fa[1][2] * 180/em.pi
-						s = str(self.tr('%5.2f V, %5.1f Hz')) %(self.Amplitude[ch],self.Frequency[ch])
+						s = unicode(self.tr('%5.2f V, %5.1f Hz')) %(self.Amplitude[ch],self.Frequency[ch])
 						self.fitResLab[ch].setText(s)
 				else:
 					self.fitResLab[ch].setText('')
@@ -493,13 +490,13 @@ class Expt(QWidget):
 					except:
 						self.comerr()
 
-					self.voltMeters[ch].setText(str(self.tr('%5.3f V')) %(v))
+					self.voltMeters[ch].setText(unicode(self.tr('%5.3f V')) %(v))
 				else:
 					self.voltMeters[ch].setText(self.tr(''))			
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-					self.RES.setText('<font color="blue">'+str(self.tr('%5.0f Ohm')) %(res))
+					self.RES.setText('<font color="blue">'+unicode(self.tr('%5.0f Ohm')) %(res))
 				else:
 					self.RES.setText(self.tr('<100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
@@ -556,7 +553,11 @@ class Expt(QWidget):
 	def show_fft(self):
 		for ch in range(4):
 			if self.chanStatus[ch] == 1:
-				fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+				try:	
+					fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+				except Exception as err:
+					print('fit_sine error:', err)
+					fa=None
 				if fa != None:
 					fr = fa[1][1]*1000			# frequency in Hz
 					dt = int(1.e6/ (20 * fr))	# dt in usecs, 20 samples per cycle
@@ -571,7 +572,7 @@ class Expt(QWidget):
 					ypos = np.max(ya)
 					pop = pg.plot(xa,ya, pen = self.traceCols[ch])
 					pop.showGrid(x=True, y=True)
-					txt = pg.TextItem(text=str(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+					txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
 					txt.setPos(peak, ypos)
 					pop.addItem(txt)
 					pop.setWindowTitle(self.tr('Frequency Spectrum'))
@@ -597,7 +598,7 @@ class Expt(QWidget):
 				if self.chanStatus[ch] == 1:
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = str(fn)
+			ss = unicode(fn)
 			self.msg(self.tr('Traces saved to ') + ss)
 		self.timer.start(self.TIMER)
 
@@ -649,7 +650,7 @@ class Expt(QWidget):
 		val = float(pos)/1000.0
 		if self.PV1min <= val <= self.PV1max:
 			self.PV1val = val
-			self.PV1text.setText(str(val))
+			self.PV1text.setText(unicode(val))
 			try:
 				self.p.set_pv1(val)
 			except:
@@ -673,7 +674,7 @@ class Expt(QWidget):
 		val = float(pos)/1000.0
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
-			self.PV2text.setText(str(val))
+			self.PV2text.setText(unicode(val))
 			try:
 				self.p.set_pv2(val)
 			except:
@@ -708,7 +709,7 @@ class Expt(QWidget):
 	def sq1_slider(self, val):
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
-			self.SQ1text.setText(str(val))
+			self.SQ1text.setText(unicode(val))
 			s = self.SQ1text.text()
 			self.sq1_text(s)
 				
@@ -750,7 +751,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(str(val))
+			self.AWGtext.setText(unicode(val))
 			self.set_wave()
 
 	def control_od1(self):
@@ -800,9 +801,9 @@ class Expt(QWidget):
 		if fr > 0:	
 			T = 1./fr
 			dc = hi*100/T
-			self.IN2.setText('<font color="blue">'+str(self.tr('%5.1fHz %4.1f%%')) %(fr,dc))
+			self.IN2.setText(u'<font color="blue">'+unicode(self.tr('%5.1fHz %4.1f%%')) %(fr,dc))
 		else:
-			self.IN2.setText('<font color="blue">'+self.tr('No signal'))
+			self.IN2.setText(u'<font color="blue">'+self.tr('No signal'))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
@@ -822,7 +823,7 @@ if __name__ == '__main__':
 	app.installTranslator(t)
 	t1=QTranslator()
 	t1.load("qt_"+lang,
-	        QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 	app.installTranslator(t1)
 
 	mw = Expt(dev)

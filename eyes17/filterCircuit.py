@@ -1,16 +1,9 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton, QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
-	
+from QtVersion import *
+
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -191,7 +184,11 @@ class Expt(QWidget):
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
 					continue
-				fb = em.fit_sine(tt,vv)
+				try:
+					fb = em.fit_sine(tt,vv)
+				except:
+					self.msg(self.tr('Fit failed'))
+					fb = None
 				if fb != None:
 					if self.verify_fit(vv,fb[0]) == False:     
 						continue
@@ -280,7 +277,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + str(fn))
+			self.msg(self.tr('Traces saved to ') + unicode(fn))
 
 		
 	def msg(self, m):

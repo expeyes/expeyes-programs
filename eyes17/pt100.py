@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 '''
 Code for science experiments using expEYES-17 interface
 Author  : Ajith Kumar B.P, bpajith@gmail.com
@@ -7,17 +8,7 @@ License : GNU GPL version 3
 
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton, QFileDialog 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
+from QtVersion import *
 
 import pyqtgraph as pg
 import numpy as np
@@ -215,7 +206,7 @@ class Expt(QWidget):
 				v = self.p.get_voltage('A3')  		# Read A3
 				sum += v
 			v = sum/NT
-			self.A3val.setText(str(self.tr('%5.3f V')) %v)
+			self.A3val.setText(unicode(self.tr('%5.3f V')) %v)
 		except:
 			self.comerr()
 			return 
@@ -323,7 +314,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + str(fn))				
+			self.msg(self.tr('Traces saved to ') + unicode(fn))				
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

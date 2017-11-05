@@ -1,15 +1,8 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton , QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
-	
+from QtVersion import *
+
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -171,12 +164,16 @@ class Expt(QWidget):
 				t,v   = self.p.capture1('MIC', NP, TG)	
 			except:
 				self.comerr()
-				return		
-			fa = em.fit_sine(t,v)
+				return
+			try:
+				fa = em.fit_sine(t,v)
+			except Exception as err:
+				print('fit_sine error:', err)
+				fa=None
 			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
 					continue
-				self.updateLabel.setText(str(self.tr('Frequency = %5.0f Hz V = %5.3f')) %(fr,abs(fa[1][0])))
+				self.updateLabel.setText(unicode(self.tr('Frequency = %5.0f Hz V = %5.3f')) %(fr,abs(fa[1][0])))
 				self.data[0].append(fr)
 				self.data[1].append(abs(fa[1][0]))
 				goodFit = True
@@ -280,7 +277,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			ss = str(fn)
+			ss = unicode(fn)
 			self.msg(self.tr('Traces saved to ') + ss)
 
 	def msg(self, m):

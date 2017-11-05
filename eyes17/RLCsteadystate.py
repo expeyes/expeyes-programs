@@ -1,13 +1,7 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout, QPushButton,QCheckBox, QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
+from QtVersion import *
 
 import sys, time, utils, math
 import pyqtgraph as pg
@@ -250,7 +244,10 @@ class Expt(QWidget):
 
 		for ch in range(3):
 			self.traceWidget[ch].setData(self.timeData[ch], self.voltData[ch])
-			fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+			try:
+				fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+			except Exception as err:
+				print("fit_sine error:", err)	
 			if fa != None:
 				self.traceWidgetF[ch].setData(self.timeData[ch], fa[0])
 				if self.verify_fit(self.voltData[ch], fa[0]) == False:
@@ -268,7 +265,10 @@ class Expt(QWidget):
 		if self.VLC.isChecked() == True:
 			for ch in range(3,5):
 				self.traceWidget[ch].setData(self.timeData[ch], self.voltData[ch])
-				fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+				try:
+					fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+				except Exception as err:
+					print("fit_sine error:", err)	
 				if fa != None:
 					self.traceWidgetF[ch].setData(self.timeData[ch], fa[0])
 					if self.verify_fit(self.voltData[ch], fa[0]) == False:
@@ -284,16 +284,16 @@ class Expt(QWidget):
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = str(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
-		self.Results[1] = str(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
-		self.Results[2] = str(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
+		self.Results[0] = unicode(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
+		self.Results[1] = unicode(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
+		self.Results[2] = unicode(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
 
-		self.Results[5] = str(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
-		self.Results[6] = str(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
+		self.Results[5] = unicode(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
+		self.Results[6] = unicode(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[3] = str(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
-			self.Results[4] = str(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
+			self.Results[3] = unicode(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
+			self.Results[4] = unicode(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
 		else:
 			self.Results[3] = ''
 			self.Results[4] = ''
@@ -388,7 +388,7 @@ class Expt(QWidget):
 			for ch in range(nc):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			self.msg(self.tr('Traces saved to ') +str(fn))
+			self.msg(self.tr('Traces saved to ') +unicode(fn))
 		self.timer.start(self.TIMER)		
 			
 	def set_timebase(self, tb):
@@ -429,7 +429,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(str(val))
+			self.AWGtext.setText(unicode(val))
 			self.set_wave()
 		
 	def msg(self, m):

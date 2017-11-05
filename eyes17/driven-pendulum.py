@@ -1,17 +1,8 @@
 #from __future__ import print_function
 import os, sys, time, utils, inspect, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QFont, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QFont, QApplication, QWidget,\
-	QTextEdit, QLabel, QVBoxLayout, QPushButton,QHBoxLayout, QFileDialog
-	
+from QtVersion import *
+
 class ListStream:
     def __init__(self):
             self.data = ''

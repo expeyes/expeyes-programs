@@ -1,27 +1,34 @@
-import sys, os
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
+import sys, os, os.path, configparser
 
-PQT5 = False
-
-if PQT5 == True:
-	from PyQt5.QtCore import Qt, QT_VERSION_STR
-	from PyQt5.QtWidgets import QSlider, QLineEdit
-	from PyQt5.QtWebKitWidgets import QWebView
-else:
-	from PyQt4.QtCore import Qt, QT_VERSION_STR
-	from PyQt4.QtGui import QSlider, QLineEdit
-
-	
-print("Qt version:", QT_VERSION_STR)
+from QtVersion import *
 
 import pyqtgraph as pg
 
-#forprint = True             # Edit this line to change color scheme
+# path to the configuration file
+cnf = os.path.expanduser("~/.config/eyes17/eyes17.ini")
 
-try:
-	open('white.mode','r')
-	forprint = True             # Edit this line to change color scheme
-except:
-	forprint = False
+################ create default configuration if necessary ############
+for d in ("~/.config", "~/.config/eyes17"):
+	# create a path to the configuration file
+	e=os.path.expanduser(d)
+	if not os.path.exists(e): os.mkdir(e)
+if not os.path.exists(cnf):
+	# push a default configuration
+	defaultConfiguration="""\
+# config file for eyes17
+# do not edit by hand, it is managed by the application
+[DEFAULT]
+
+[ScreenTheme]
+Background = dark
+"""
+	with open(cnf,"w") as out: out.write(defaultConfiguration)
+#######################################################################
+
+config = configparser.ConfigParser()
+config.read(cnf)
+forprint = "dark" not in config['ScreenTheme']['Background']
 
 penCols   = ['y','g','r','m','c']     #pqtgraph pen colors
 penCols2  = ['#000000','b','r','m','g']     #pqtgraph pen colors
@@ -95,7 +102,7 @@ class lineEdit(QLineEdit):
 	def __init__(self, width, val, maxsize, cback):
 		QLineEdit.__init__(self)
 		self.setFixedWidth(width)
-		self.setText(str(val))
+		self.setText(unicode(val))
 		#self.setValidator(QDoubleValidator(0.9,9.99,2))
 		if cback != None: self.textChanged.connect(cback)
 		self.setMaxLength(maxsize)
