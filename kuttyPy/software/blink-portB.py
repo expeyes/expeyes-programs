@@ -4,11 +4,11 @@
 import time
 from kuttyPy import *
 
-setReg(DDRD,255)
+setReg(DDRB,255)
 
 while 1:
-	setReg(PORTD, 255)
+	setReg(PORTB, 255)
 	time.sleep(1)
-	setReg(PORTD, 0)
+	setReg(PORTB, 0)
 	time.sleep(1)
 

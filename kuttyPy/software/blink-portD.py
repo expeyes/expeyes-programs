@@ -1,5 +1,5 @@
 
-#Connect LEDs from PB0..PB7 to Ground via 5k resistors.
+#Connect LEDs from PD0..PD7 to Ground via 5k resistors.
 
 import time
 from kuttyPy import *
