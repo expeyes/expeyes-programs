@@ -1,15 +1,8 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton , QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
-	
+from QtVersion import *
+
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -219,7 +212,7 @@ shows the actual frequency set.\n'))
 			for ch in range(1):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = str(fn)
+			ss = unicode(fn)
 			self.msg(self.tr('Trace saved to ') + ss)
 			
 	def set_timebase(self, tb):
@@ -246,7 +239,7 @@ shows the actual frequency set.\n'))
 	def sq1_slider(self, val):
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
-			self.SQ1text.setText(str(val))
+			self.SQ1text.setText(unicode(val))
 
 	def awg_text(self, text):
 		val = float(text)
@@ -257,7 +250,7 @@ shows the actual frequency set.\n'))
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(str(val))
+			self.AWGtext.setText(unicode(val))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

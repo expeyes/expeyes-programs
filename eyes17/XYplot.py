@@ -1,14 +1,7 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout,\
-	QCheckBox, QVBoxLayout, QPushButton 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox
+from QtVersion import *
 	
 import pyqtgraph as pg
 import numpy as np
@@ -161,12 +154,17 @@ class Expt(QWidget):
 				self.traceWidget[ch].setData(self.Data[0], self.Data[1])		
 		except:
 			self.comerr()
-			
-		fa = em.fit_sine(tvs[0], self.Data[0])
-		fb = em.fit_sine(tvs[0], self.Data[1])
+
+		try:	
+			fa = em.fit_sine(tvs[0], self.Data[0])
+			fb = em.fit_sine(tvs[0], self.Data[1])
+		except Exception as err:
+			fa=None
+			fb=None
+			print("fit_sine error:", err)
 		if fa != None and fb != None:
-			self.Xmax.setText(str(self.tr('Xmax = %5.3f V')) %fa[1][0])
-			self.Ymax.setText(str(self.tr('Ymax = %5.3f V')) %fb[1][0])
+			self.Xmax.setText(unicode(self.tr('Xmax = %5.3f V')) %fa[1][0])
+			self.Ymax.setText(unicode(self.tr('Ymax = %5.3f V')) %fb[1][0])
 		else:
 			self.Xmax.setText('')
 			self.Ymax.setText('')
@@ -177,7 +175,7 @@ class Expt(QWidget):
 		for ch in range(2):
 				dat.append( [self.Data[0], self.Data[1] ])
 		self.p.save(dat,fn)
-		ss = self.tr(str(fn))
+		ss = self.tr(unicode(fn))
 		self.msg(self.tr('Traces saved to ') + ss)
 			
 	def set_range(self, index):
@@ -212,7 +210,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(str(val))
+			self.AWGtext.setText(unicode(val))
 			self.set_wave()
 		
 	def msg(self, m):

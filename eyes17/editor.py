@@ -1,17 +1,9 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 #from __future__ import print_function
-import os, sys, time, utils, inspect, os.path
+import os, sys, time, inspect, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QFont, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QTextEdit, QVBoxLayout,QHBoxLayout 
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, \
-	        QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QFont, QApplication, QWidget,\
-	QTextEdit, QLabel, QVBoxLayout, QPushButton,QHBoxLayout, QFileDialog
-	
+from QtVersion import *
+
 class ListStream:
 	data = ':'
 	def __init__(self):
@@ -27,13 +19,16 @@ class Expt(QWidget):
 	
 	def __init__(self, device=None):
 		QWidget.__init__(self)
-		self.p = device										# connection to the device hardware 		
-
-		#self.functionList['print']= self.msg				# for redirecting print
+		self.p = device
+		# connection to the device hardware
+		#self.functionList['print']= self.msg
+		# for redirecting print
 
 		self.functionList['p'] = self.p
 
-		self.Edit = QTextEdit()	
+		from pythonSyntax import PythonHighlighter
+		self.Edit = QTextEdit()
+		self.highlighter=PythonHighlighter(self.Edit.document())
 		full = QVBoxLayout()
 		full.addWidget(self.Edit)
 		
@@ -65,16 +60,16 @@ class Expt(QWidget):
 
 	def saveCode(self):
 		fn = QFileDialog.getSaveFileName()
-		s =str(self.Edit.toPlainText())		
+		s =unicode(self.Edit.toPlainText())		
 		f = open(fn,'w')
 		f.write(s)
 		f.close()
-		self.msg(self.tr('Code saved to ') + str(fn))
+		self.msg(self.tr('Code saved to ') + unicode(fn))
 
 	def runCode(self):
 		self.msg('')
 		sys.stdout = x = ListStream()
-		s =str(self.Edit.toPlainText())		
+		s =unicode(self.Edit.toPlainText())		
 		self.msg('')
 		try:
 			submitted = compile(s.encode(), '<string>', mode='exec')
@@ -82,7 +77,7 @@ class Expt(QWidget):
 			sys.stdout = sys.__stdout__
 			self.msg(x.data)
 		except Exception as e:
-			self.msg('<font color="red">' + 'Err:' + str(e))
+			self.msg(u'<font color="red">' + u'Err:' + unicode(e))
 		
 	def update(self):
 		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'code', self.mycode+'.py')
@@ -113,4 +108,3 @@ if __name__ == '__main__':
 	mw = Expt(dev)
 	mw.show()
 	sys.exit(app.exec_())
-	

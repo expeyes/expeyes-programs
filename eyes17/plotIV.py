@@ -1,15 +1,8 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton, QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
-	
+from QtVersion import *
+
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -122,7 +115,7 @@ class Expt(QWidget):
 		right.addWidget(self.PV1slider)
 
 		H = QHBoxLayout()
-		self.Voltage = QLabel(str(self.tr('Voltage = %5.3f')) %self.PV1min)
+		self.Voltage = QLabel(unicode(self.tr('Voltage = %5.3f')) %self.PV1min)
 		H.addWidget(self.Voltage)
 		right.addLayout(H)
 
@@ -159,9 +152,9 @@ class Expt(QWidget):
 		self.p.set_pv1(val)
 		a1 = self.p.get_voltage('A1')
 		volt = val- a1
-		self.Voltage.setText(str(self.tr('Voltage = %5.3f V')) %volt)
+		self.Voltage.setText(unicode(self.tr('Voltage = %5.3f V')) %volt)
 		i = a1/res *1000
-		self.Current.setText(str(self.tr('Current = %5.3f mA')) %i)
+		self.Current.setText(unicode(self.tr('Current = %5.3f mA')) %i)
 	
 	
 	def fit_curve(self):
@@ -267,7 +260,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + str(fn))
+			self.msg(self.tr('Traces saved to ') + unicode(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

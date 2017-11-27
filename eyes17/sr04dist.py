@@ -1,14 +1,7 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, utils, math, os.path
 
-if utils.PQT5 == True:
-	from PyQt5.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt5.QtWidgets import QApplication,QWidget, QLabel, QHBoxLayout, QVBoxLayout,\
-	QCheckBox, QPushButton , QFileDialog
-	from PyQt5.QtGui import QPalette, QColor
-else:
-	from PyQt4.QtCore import Qt, QTimer, QTranslator, QLocale, QLibraryInfo
-	from PyQt4.QtGui import QPalette, QColor, QApplication, QWidget,\
-	QLabel, QHBoxLayout, QVBoxLayout, QPushButton, QCheckBox, QFileDialog
+from QtVersion import *
 	
 import pyqtgraph as pg
 import numpy as np
@@ -221,7 +214,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + str(fn))
+			self.msg(self.tr('Traces saved to ') + unicode(fn))
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
