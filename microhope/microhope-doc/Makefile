@@ -8,7 +8,10 @@ DOCDIR = $(DESTDIR)/usr/share/microhope/doc
 DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
 XP     = xsltproc --nonet --param man.charmap.use.subset "0"
 
-all: microhope-en.pdf
+all: touch-existing-pdf microhope-en.pdf
+
+touch-existing-pdf:
+	for f in *.pdf; do touch $$f; done
 
 manpages: ../create-microhope-env.1 ../microhope.1 microhope-doc.1 ../uhope.1
 
@@ -56,4 +59,4 @@ distclean: clean
 	[ -e ../../keep-expeyes-docs  ] || rm -f $(PDFS) microhope-*.pdf
 	rm -f pics/*.eps
 
-.PHONY: clean distclean all manpages install
+.PHONY: clean distclean all manpages install touch-existing-pdf
