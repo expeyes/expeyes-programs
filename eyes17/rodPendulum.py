@@ -194,6 +194,7 @@ class Expt(QWidget):
 
 		try:
 			self.p.set_sqr1(0)						# Light the LED
+			T = self.p.multi_r2rtime('SEN', 2)		# Timeout in first call ??
 		except:
 			self.mcomerr()
 		
@@ -207,8 +208,6 @@ class Expt(QWidget):
 		self.p.set_sqr1(0)
 		self.msg(self.tr('Started Measurements'))
 		
-		self.p.set_sqr1(4)
-
 
 	def stop(self):
 		if self.running == False: return
