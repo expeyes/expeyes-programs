@@ -82,6 +82,16 @@ class Expt(QWidget):
 		self.SaveButton.clicked.connect(self.save_data)		
 		right.addWidget(self.SaveButton)
 
+
+		l = QLabel(text=self.tr('\nSet SQ1 Frequency\nFor Driven Pendulum Expt.'))
+		right.addWidget(l)
+
+		self.SQ1slider = utils.slider(10, 1000, 100, 1000,self.sq1_slider)
+		right.addWidget(self.SQ1slider)
+
+		self.Freq = QLabel('')
+		right.addWidget(self.Freq)
+
 		#------------------------end of right panel ----------------
 		
 		top = QHBoxLayout()
@@ -102,6 +112,16 @@ class Expt(QWidget):
 
 		#----------------------------- end of init ---------------
 	
+	def sq1_slider(self, val):
+		try:
+			res = self.p.set_sqr1(val*0.01)
+			ss = '%5.2f'%res
+			self.msg(self.tr('sqr1 set to ') + ss + self.tr(' Hz'))
+			self.Freq.setText(ss)
+		except:
+			self.comerr()
+			
+				
 	def fit_curve(self):
 		if self.running == True or self.data[0]==[]:
 			return
