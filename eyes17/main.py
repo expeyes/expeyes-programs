@@ -60,6 +60,7 @@ electronicsExptsScope = [
 [QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),'clipping'],
 [QT_TRANSLATE_NOOP('MainWindow','Diode Clamping'),'clamping'],
 [QT_TRANSLATE_NOOP('MainWindow','IC555 Multivibrator'),'osc555'],
+[QT_TRANSLATE_NOOP('MainWindow','Transistor Amplifier (CE)'),'npnCEamp'],
 [QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),'opamp-inv'],
 [QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),'opamp-noninv'],
 [QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),'opamp-int'],
@@ -116,11 +117,13 @@ pythonCodes = [
 [QT_TRANSLATE_NOOP('MainWindow','Clamping with Diode'), 'clamping'],
 [QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'), 'fullwave'],
 [QT_TRANSLATE_NOOP('MainWindow','NPN Ib vs IC plot'), 'npnTransferChar'],
-[QT_TRANSLATE_NOOP('MainWindow','Fourier Transform'), 'FourierTransform']
+[QT_TRANSLATE_NOOP('MainWindow','Fourier Transform'), 'FourierTransform'],
+[QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum'), 'rodpend']
 ]
 
 
 #---------------------------------------------------------------------
+		
 class helpWin(QWebView):
 	def __init__(self, name = ''):
 		QWebView.__init__(self)
@@ -168,7 +171,8 @@ class MainWindow(QMainWindow):
 		self.screen = QDesktopWidget().screenGeometry()
 		self.show()
 		self.move(20, 20)
-
+		
+		
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
@@ -317,11 +321,11 @@ class MainWindow(QMainWindow):
 		except:
 			pass
 		p=eyes.open()
-		if p != None: 
-			p.select_range('A1',4)
 		self.expWidget.p = p
 		self.expWidget.msg('')
-
+		if p != None: 
+			if self.expName == 'scope':
+				self.expWidget.recover()
 		
 # Program starts here
 import eyes17.eyes as eyes

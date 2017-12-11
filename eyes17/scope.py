@@ -18,7 +18,7 @@ class Expt(QWidget):
 	AWGval = 1000
 	SQ1min = 0
 	SQ1max = 5000
-	SQ1val = 1000
+	SQ1val = 0
 	PV1min = -5.0
 	PV1max = 5.0
 	PV1val = 0.0
@@ -80,6 +80,13 @@ class Expt(QWidget):
 	resLabs     = [None]*MAXRES
 	Results     = [None]*MAXRES
 
+	def recover(self):		# Recover the settings before it got disconnected
+		self.control_od1()
+		self.select_wave(self.waveindex)
+		self.p.set_wave(self.AWGval)
+		self.select_wgain(self.wgainindex)
+		self.set_trigger(self.Triglevel*1000)
+		
 	def cross_hair(self):
 		if self.Cross.isChecked() == False:
 			self.pwin.vLine.setPos(-1)

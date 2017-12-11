@@ -45,6 +45,39 @@ class Expt(QWidget):
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
 		right.setSpacing(self.RPGAP)
+
+		'''
+		b = QPushButton(self.tr("Analyze last Trace"))
+		right.addWidget(b)
+		b.clicked.connect(self.fit_curve)		
+		'''
+		
+		H = QHBoxLayout()
+		l = QLabel(text=self.tr('Pendulum length'))
+		l.setMaximumWidth(110)
+		H.addWidget(l)
+		self.PLENtext = utils.lineEdit(40, self.NMAX, 6, None)
+		H.addWidget(self.PLENtext)
+		l = QLabel(text=self.tr('cm'))
+		l.setMaximumWidth(20)
+		H.addWidget(l)
+		right.addLayout(H)
+
+		b = QPushButton(self.tr("Clear Data and Traces"))
+		right.addWidget(b)
+		b.clicked.connect(self.clear)		
+
+		self.SaveButton = QPushButton(self.tr("Save Data"))
+		self.SaveButton.clicked.connect(self.save_data)		
+		right.addWidget(self.SaveButton)
+
+		b = QPushButton(self.tr("Start"))
+		right.addWidget(b)
+		b.clicked.connect(self.start)		
+		
+		b = QPushButton(self.tr("Stop"))
+		right.addWidget(b)
+		b.clicked.connect(self.stop)		
 					
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('Number of trials'))
@@ -54,37 +87,16 @@ class Expt(QWidget):
 		H.addWidget(self.NMAXtext)
 		right.addLayout(H)
 
-		b = QPushButton(self.tr("Start"))
-		right.addWidget(b)
-		b.clicked.connect(self.start)		
-		
-		b = QPushButton(self.tr("Stop"))
-		right.addWidget(b)
-		b.clicked.connect(self.stop)		
-
-		'''
-		b = QPushButton(self.tr("Analyze last Trace"))
-		right.addWidget(b)
-		b.clicked.connect(self.fit_curve)		
-		'''
-
-		b = QPushButton(self.tr("Clear Data and Traces"))
-		right.addWidget(b)
-		b.clicked.connect(self.clear)		
-
-		self.SaveButton = QPushButton(self.tr("Save Data"))
-		self.SaveButton.clicked.connect(self.save_data)		
-		right.addWidget(self.SaveButton)
-					
 		H = QHBoxLayout()
 		self.Results = QTextEdit()	
-		self.Results.setMaximumWidth(self.RPWIDTH-10)
+		self.Results.setMaximumWidth(self.RPWIDTH/2-5)
 		H.addWidget(self.Results)
+		self.gResults = QTextEdit()	
+		self.gResults.setMaximumWidth(self.RPWIDTH/2-5)
+		H.addWidget(self.gResults)
 		right.addLayout(H)
 	
 					
-
-
 		#------------------------end of right panel ----------------
 		
 		top = QHBoxLayout()
@@ -139,11 +151,14 @@ class Expt(QWidget):
 			self.comerr()
 		
 		if T < 0:
-			s = 'Timeout'
+			s = self.tr('Timeout')
+			gs = '--'
 		else:
 			s ='%f'%T
+			gs = '%5.0f'%(8*math.pi**2*self.PLEN/3/T**2)
 		self.Results.append(self.tr(s))
-
+		self.gResults.append(self.tr(gs))
+ 
 		T *= 1000			#seconds  to milliseconds
 		self.data[0].append(self.index)
 		self.data[1].append(T)
@@ -167,9 +182,16 @@ class Expt(QWidget):
 		try:
 			val = float(self.NMAXtext.text())
 		except:
-			self.msg(self.tr('Invalid Number'))
+			self.msg(self.tr('Invalid Number of trials'))
 			return
 		self.NMAX = val
+		try:
+			val = float(self.PLENtext.text())
+		except:
+			self.msg(self.tr('Invalid Length'))
+			return
+		self.PLEN = val
+
 		try:
 			self.p.set_sqr1(0)						# Light the LED
 		except:
@@ -184,6 +206,9 @@ class Expt(QWidget):
 		self.trial += 1
 		self.p.set_sqr1(0)
 		self.msg(self.tr('Started Measurements'))
+		
+		self.p.set_sqr1(4)
+
 
 	def stop(self):
 		if self.running == False: return
@@ -202,6 +227,7 @@ class Expt(QWidget):
 		self.history = []
 		self.trial = 0
 		self.Results.setText('')
+		self.gResults.setText('')
 		self.msg(self.tr('Cleared Traces and Data'))
 		
 	def save_data(self):

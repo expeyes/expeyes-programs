@@ -52,7 +52,7 @@ class Expt(QWidget):
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
 		self.pwin.showGrid(x=True, y=True)					# with grid
 		ax = self.pwin.getAxis('bottom')
-		ax.setLabel(self.tr('Voltage  A1'))	
+		ax.setLabel(self.tr('Voltage  A2'))	
 		ax = self.pwin.getAxis('left')
 		ax.setLabel(self.tr('Voltage (A2)'))
 		self.pwin.disableAutoRange()
@@ -137,7 +137,7 @@ class Expt(QWidget):
 				
 	def diff_mode(self):
 		ax = self.pwin.getAxis('left')
-		if self.Diffmode.isChecked() == False:
+		if self.Diffmode.isChecked() == True:
 			ax.setLabel(self.tr('Voltage (A1-A2)'))
 		else:		
 			ax.setLabel(self.tr('Voltage (A2)'))
@@ -154,7 +154,10 @@ class Expt(QWidget):
 				self.traceWidget[ch].setData(self.Data[0], self.Data[1])		
 		except:
 			self.comerr()
-
+			self.Xmax.setText('')
+			self.Ymax.setText('')
+			return
+			
 		try:	
 			fa = em.fit_sine(tvs[0], self.Data[0])
 			fb = em.fit_sine(tvs[0], self.Data[1])
