@@ -33,7 +33,7 @@ if PQT5 == True:
 	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
-		QMessageBox
+		QMessageBox, QFileDialog
 	try:	# New versions of PyQt5 has removed QtWebkit. Insted use QWebEngineView
 		from PyQt5.QtWebKitWidgets import QWebView
 	except:
@@ -48,7 +48,7 @@ else:
 	from PyQt4.QtGui import QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
-		QMessageBox
+		QMessageBox, QFileDialog
 	from PyQt4.QtWebKit import QWebView, QWebSettings
 	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
