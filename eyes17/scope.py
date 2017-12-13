@@ -80,6 +80,8 @@ class Expt(QWidget):
 	resLabs     = [None]*MAXRES
 	Results     = [None]*MAXRES
 
+		
+
 	def recover(self):		# Recover the settings before it got disconnected
 		self.control_od1()
 		self.select_wave(self.waveindex)
@@ -607,6 +609,7 @@ class Expt(QWidget):
 			self.p.save(dat,fn)
 			ss = unicode(fn)
 			self.msg(self.tr('Traces saved to ') + ss)
+		self.save_image()
 		self.timer.start(self.TIMER)
 
 
