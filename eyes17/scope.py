@@ -609,7 +609,6 @@ class Expt(QWidget):
 			self.p.save(dat,fn)
 			ss = unicode(fn)
 			self.msg(self.tr('Traces saved to ') + ss)
-		self.save_image()
 		self.timer.start(self.TIMER)
 
 
