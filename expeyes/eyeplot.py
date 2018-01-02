@@ -383,22 +383,19 @@ def pop_image(sch, title = _('Schematic')):
         pass
 
 import subprocess
+import tempfile
 class ExtPlotter:
     """
     this class will call an external program to plot an x-y curve,
     with given data, labels for the axis, and title.
     """
-    import sys
-    language="python%d" % sys.version_info.major
 
-    test={
-        "grace":
-        lambda: subprocess.call("%s -c 'import pygrace' 2>/dev/null" %ExtPlotter.language, shell=True),
-        "qtiplot":
-        lambda: subprocess.call("test -x /usr/bin/qtiplot", shell=True),
-        "libreoffice":
-        lambda: subprocess.call("test -x /usr/bin/soffice", shell=True),
+    appDic={
+        "grace": "/usr/bin/grace",
+        "qtiplot": "/usr/bin/qtiplot",
+        "libreoffice": "/usr/bin/soffice",
     }
+    
     def __init__(self, preferred= ("qtiplot", "grace", "libreoffice",)):
         """
         initializes the plotting engine which will be used
@@ -408,13 +405,14 @@ class ExtPlotter:
             preferred=tuple(preferred)
         self.engine=None
         for p in preferred:
-            if self.test[p]()==0:
+            cmd="test -x {app}".format(app=self.appDic[p])
+            if subprocess.call(cmd, shell=True)==0:
                 self.engine=p
                 break
         if not self.engine:
             print("""\
 Error: you should at least install one plotter package.
-Possible packages are: pyton-pygrace, python3-pygrace, qtiplot, libreoffice.
+Possible packages are: grace, qtiplot, libreoffice.
 """)
         else:
             print("external plotter in use: ", self.engine)
@@ -433,18 +431,29 @@ Possible packages are: pyton-pygrace, python3-pygrace, qtiplot, libreoffice.
         if not self.engine:
             return False, None
         elif self.engine=="grace":
-            from pygrace.grace_plot import gracePlot
-            pg=gracePlot(bufsize=1)
-            if 1: #try:
-                for xy in data:
-                    pg.plot(xy[0],xy[1])
-                    pg.hold(1)                # Do not erase the old data
-                pg.xlabel(xLabel)
-                pg.ylabel(yLabel)
-                pg.title(title)
-                return True, pg
-            #except:
-            #    return False
+            cmd="focus g0\nwith g0\n"
+            for i,xy in enumerate(data):
+                cmd+="g0.s{i} on\ng0.s{i} type xy\ng0.s{i} line color {j}\n".format(i=i, j=(i+1)%8)
+                for (x,y) in zip(xy[0], xy[1]):
+                    cmd+="g0.s{i} point {x},{y}\n".format(i=i, x=x, y=y)
+            cmd+="""\
+with g0
+autoscale
+with g0
+redraw
+with g0
+xaxis label "{xLabel}"
+with g0
+yaxis label "{yLabel}"
+with g0
+title "{title}"
+with g0
+redraw
+""".format(xLabel=xLabel, yLabel=yLabel, title=title)
+            p=subprocess.Popen("(xmgrace -batch -)", shell=True, stdin=subprocess.PIPE)
+            p.stdin.write(cmd.encode('ascii'))
+            p.communicate()
+            return True
         elif self.engine=="qtiplot":
             print(self.engine, "not yet implemented as a plot engine")
         elif self.engine=="libreoffice":

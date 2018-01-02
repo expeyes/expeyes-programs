@@ -1564,8 +1564,7 @@ class Eyesjun:
         '''
         from expeyes.eyeplot import ExtPlotter
         ep=ExtPlotter(("grace",))
-        status, plotterObject = \
-            ep.plot(data, xLabel=xlab, yLabel=ylab, title=title)
+        status=ep.plot(data, xLabel=xlab, yLabel=ylab, title=title)
         return status
 
     def qtiplot(self, data=None, xlab = '', ylab = '', title = ''):
