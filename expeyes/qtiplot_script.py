@@ -13,6 +13,7 @@ while l:
         l=sys.stdin.readline().strip()
 	if l:
 		data.append(separators.split(l))
+                print data[-1]
 	
 cols=max([len(l) for l in data])
 
@@ -28,12 +29,10 @@ for l in data:
 		col+=1
 	row+=1
 
-curveArgs=tuple([t]+names+[Layer.LineSymbols])
-
 g = newGraph()
 l=g.activeLayer()
-l.insertCurve(*curveArgs)
+
+for i in range(1, cols):
+        l.insertCurve(t, names[0], names[i], Layer.LineSymbols)
 
 l.setTitle(dt.strftime("%Y-%m-%d %H:%M:%S"))
-
-l.insertCurve(t, "Time", "Time", Layer.LineSymbols)

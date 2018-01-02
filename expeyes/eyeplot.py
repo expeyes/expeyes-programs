@@ -477,7 +477,12 @@ redraw
         @param data [ [x1,y1], [x2,y2],....] where x and y are vectors
         """
         data=self.data
-        data=[[[0.1,0.2,0.3,0.4,0.5],[0.6,0.7,0.8,0.9,1.0]]]
+        data=[[[0,1,2,3],[0,1,4,9]]]
+        #### simulating two series of data
+        x= [x for x in data[0][0]]
+        y=[1+2*y for y in data[0][1]]
+        data.append([x,y])
+        ##################################
         from subprocess import Popen, PIPE
         #cmd=("qtiplot", "-x", "/usr/share/expeyes/qtiplot_script.py")
         cmd=("qtiplot", "-x", "/home/georgesk/developpement/expeyes/expeyes/expeyes/qtiplot_script.py")
@@ -485,10 +490,13 @@ redraw
         qtiplot=Popen(cmd,
                       stdin=PIPE, stdout=PIPE, stderr=PIPE,
                       bufsize=1)
-        plotFood="Time Voltage\n"
-        for table in data:
-            for i in range(len(table[0])):
-                plotFood+="{} {}\n".format(table[0][i], table[1][i])
+        plotFood="Time Voltage Voltage2\n"
+        ### we must send data[0][0] ax X values, then data[j][1] as Yj values
+        for i in range(len(data[0][0])):
+            dataLine=[str(data[0][0][i])]
+            for j in range(len(data)):
+                dataLine.append(str(data[j][1][i]))
+            plotFood+=" ".join(dataLine)+"\n"
         qtiplot.stdin.write(
             plotFood.encode("latin-1")
         )
