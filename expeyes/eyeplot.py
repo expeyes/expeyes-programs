@@ -393,7 +393,7 @@ class ExtPlotter:
     appDic={
         "grace": "/usr/bin/grace",
         "qtiplot": "/usr/bin/qtiplot",
-        "libreoffice": "/usr/bin/soffice",
+        "libreoffice": "/usr/bin/odflint",
     }
     
     def __init__(self, preferred= ("qtiplot", "grace", "libreoffice",)):
@@ -412,7 +412,7 @@ class ExtPlotter:
         if not self.engine:
             print("""\
 Error: you should at least install one plotter package.
-Possible packages are: grace, qtiplot, libreoffice.
+Possible packages are: grace, qtiplot, python-odf-tools (for LibreOffice).
 """)
         else:
             print("external plotter in use: ", self.engine)
