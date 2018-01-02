@@ -439,7 +439,9 @@ Possible packages are: grace, qtiplot, libreoffice.
             th.start()
             return True
         elif self.engine=="qtiplot":
-            print(self.engine, "not yet implemented as a plot engine")
+            th=threading.Thread(target=self.qtiPlot, daemon=True)
+            th.start()
+            return True
         elif self.engine=="libreoffice":
             print(self.engine, "not yet implemented as a plot engine")
         return False
@@ -468,6 +470,29 @@ redraw
         p.stdin.write(cmd.encode('ascii'))
         p.communicate()
         return
+
+    def qtiPlot(self):
+        """
+        Launches Qtiplot in a subprocess, and feeds it with data
+        @param data [ [x1,y1], [x2,y2],....] where x and y are vectors
+        """
+        data=self.data
+        data=[[[0.1,0.2,0.3,0.4,0.5],[0.6,0.7,0.8,0.9,1.0]]]
+        from subprocess import Popen, PIPE
+        #cmd=("qtiplot", "-x", "/usr/share/expeyes/qtiplot_script.py")
+        cmd=("qtiplot", "-x", "/home/georgesk/developpement/expeyes/expeyes/expeyes/qtiplot_script.py")
+        global qtiplot
+        qtiplot=Popen(cmd,
+                      stdin=PIPE, stdout=PIPE, stderr=PIPE,
+                      bufsize=1)
+        plotFood="col1 col2\n"
+        for table in data:
+            for i in range(len(table[0])):
+                plotFood+="{} {}\n".format(table[0][i], table[1][i])
+        qtiplot.stdin.write(
+            plotFood.encode("latin-1")
+        ) # qtiplot wants latin-1 this way
+        qtiplot.communicate()
 
 
 # Local Variables:
