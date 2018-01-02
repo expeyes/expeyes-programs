@@ -382,8 +382,8 @@ def pop_image(sch, title = _('Schematic')):
     except:
         pass
 
-import subprocess
-import tempfile
+import subprocess, threading
+
 class ExtPlotter:
     """
     this class will call an external program to plot an x-y curve,
@@ -428,15 +428,29 @@ Possible packages are: grace, qtiplot, libreoffice.
         @return status, and an object which will force evaluation if necessary
         (Python is a lazy evaluator)
         """
+        self.data=data
+        self.xLabel=xLabel
+        self.yLabel=yLabel
+        self.title=title
         if not self.engine:
             return False, None
         elif self.engine=="grace":
-            cmd="focus g0\nwith g0\n"
-            for i,xy in enumerate(data):
-                cmd+="g0.s{i} on\ng0.s{i} type xy\ng0.s{i} line color {j}\n".format(i=i, j=(i+1)%8)
-                for (x,y) in zip(xy[0], xy[1]):
-                    cmd+="g0.s{i} point {x},{y}\n".format(i=i, x=x, y=y)
-            cmd+="""\
+            th=threading.Thread(target=self.gracePlot, daemon=True)
+            th.start()
+            return True
+        elif self.engine=="qtiplot":
+            print(self.engine, "not yet implemented as a plot engine")
+        elif self.engine=="libreoffice":
+            print(self.engine, "not yet implemented as a plot engine")
+        return False
+
+    def gracePlot(self):
+        cmd="focus g0\nwith g0\n"
+        for i,xy in enumerate(self.data):
+            cmd+="g0.s{i} on\ng0.s{i} type xy\ng0.s{i} line color {j}\n".format(i=i, j=(i+1)%8)
+            for (x,y) in zip(xy[0], xy[1]):
+                cmd+="g0.s{i} point {x},{y}\n".format(i=i, x=x, y=y)
+        cmd+="""\
 with g0
 autoscale
 with g0
@@ -449,16 +463,11 @@ with g0
 title "{title}"
 with g0
 redraw
-""".format(xLabel=xLabel, yLabel=yLabel, title=title)
-            p=subprocess.Popen("(xmgrace -batch -)", shell=True, stdin=subprocess.PIPE)
-            p.stdin.write(cmd.encode('ascii'))
-            p.communicate()
-            return True
-        elif self.engine=="qtiplot":
-            print(self.engine, "not yet implemented as a plot engine")
-        elif self.engine=="libreoffice":
-            print(self.engine, "not yet implemented as a plot engine")
-        return False
+""".format(xLabel=self.xLabel, yLabel=self.yLabel, title=self.title)
+        p=subprocess.Popen("(xmgrace -batch -)", shell=True, stdin=subprocess.PIPE)
+        p.stdin.write(cmd.encode('ascii'))
+        p.communicate()
+        return
 
 
 # Local Variables:
