@@ -28,11 +28,11 @@ for l in data:
 		col+=1
 	row+=1
 
-colTuple=tuple(names)
+curveArgs=tuple(names)
 
 g = newGraph()
 l=g.activeLayer()
-l.insertCurve(t, "col1", "col2", Layer.LineSymbols)
+l.insertCurve(t, names[0], names[1], Layer.LineSymbols)
 
 l.setTitle(dt.strftime("%Y-%m-%d %H:%M:%S"))
 

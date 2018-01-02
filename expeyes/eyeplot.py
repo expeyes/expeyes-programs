@@ -485,13 +485,13 @@ redraw
         qtiplot=Popen(cmd,
                       stdin=PIPE, stdout=PIPE, stderr=PIPE,
                       bufsize=1)
-        plotFood="col1 col2\n"
+        plotFood="Time Voltage\n"
         for table in data:
             for i in range(len(table[0])):
                 plotFood+="{} {}\n".format(table[0][i], table[1][i])
         qtiplot.stdin.write(
             plotFood.encode("latin-1")
-        ) # qtiplot wants latin-1 this way
+        )
         qtiplot.communicate()
 
 
