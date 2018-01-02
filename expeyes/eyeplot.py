@@ -484,7 +484,10 @@ redraw
         qtiplot=Popen(cmd,
                       stdin=PIPE, stdout=PIPE, stderr=PIPE,
                       bufsize=1)
+        ### send first the names of columns
         plotFood="T %s\n" % " ".join(["V%s" %(j+1) for j in range(len(data))])
+        ### then send title, xLabel and yLabeljoined by "!"
+        plotFood+="!".join([self.title, self.xLabel, self.yLabel])+"\n"
         ### we must send data[0][0] ax X values, then data[j][1] as Yj values
         for i in range(len(data[0][0])):
             dataLine=[str(data[0][0][i])]
