@@ -33,6 +33,6 @@ g = newGraph()
 l=g.activeLayer()
 
 for i in range(1, cols):
-        l.insertCurve(t, names[0], names[i], Layer.LineSymbols)
+        l.insertCurve(t, names[0], names[i], Layer.LineSymbols, color=2)
 
 l.setTitle(dt.strftime("%Y-%m-%d %H:%M:%S"))
