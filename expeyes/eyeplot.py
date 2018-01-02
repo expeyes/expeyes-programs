@@ -1,6 +1,11 @@
 '''
 Plotting libray, using Tkinter for expEYES
 Author  : Ajith Kumar B.P, bpajith@gmail.com
+
+ExtPlotter class, based on pygrace or other
+available plottig tools :
+Author: Georges Khaznadar <geogesk@debian.org> [2018]
+
 License : GNU GPL version 3
 '''
 from __future__ import print_function
@@ -376,6 +381,76 @@ def pop_image(sch, title = _('Schematic')):
 
     except:
         pass
+
+import subprocess
+class ExtPlotter:
+    """
+    this class will call an external program to plot an x-y curve,
+    with given data, labels for the axis, and title.
+    """
+    import sys
+    language="python%d" % sys.version_info.major
+
+    test={
+        "grace":
+        lambda: subprocess.call("%s -c 'import pygrace' 2>/dev/null" %ExtPlotter.language, shell=True),
+        "qtiplot":
+        lambda: subprocess.call("test -x /usr/bin/qtiplot", shell=True),
+        "libreoffice":
+        lambda: subprocess.call("test -x /usr/bin/soffice", shell=True),
+    }
+    def __init__(self, preferred= ("qtiplot", "grace", "libreoffice",)):
+        """
+        initializes the plotting engine which will be used
+        @param preferred an iterable of plotting flavours
+        """
+        if type(preferred)==str:
+            preferred=tuple(preferred)
+        self.engine=None
+        for p in preferred:
+            if self.test[p]()==0:
+                self.engine=p
+                break
+        if not self.engine:
+            print("""\
+Error: you should at least install one plotter package.
+Possible packages are: pyton-pygrace, python3-pygrace, qtiplot, libreoffice.
+""")
+        else:
+            print("external plotter in use: ", self.engine)
+        return
+
+    def plot(self, data, xLabel="", yLabel="", title=""):
+        """
+        Calls the plotting utility
+        @param data an iterable of doublets (vector of floats, vector of floats)
+        @param xLabel a label for x-axis
+        @param yLabel a label for y-axis
+        @param title a title for the plot
+        @return status, and an object which will force evaluation if necessary
+        (Python is a lazy evaluator)
+        """
+        if not self.engine:
+            return False, None
+        elif self.engine=="grace":
+            from pygrace.grace_plot import gracePlot
+            pg=gracePlot(bufsize=1)
+            if 1: #try:
+                for xy in data:
+                    pg.plot(xy[0],xy[1])
+                    pg.hold(1)                # Do not erase the old data
+                pg.xlabel(xLabel)
+                pg.ylabel(yLabel)
+                pg.title(title)
+                return True, pg
+            #except:
+            #    return False
+        elif self.engine=="qtiplot":
+            print(self.engine, "not yet implemented as a plot engine")
+        elif self.engine=="libreoffice":
+            print(self.engine, "not yet implemented as a plot engine")
+        return False
+
 
 # Local Variables:
 # python-indent: 4

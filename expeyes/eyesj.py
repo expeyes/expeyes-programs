@@ -1562,20 +1562,11 @@ class Eyesjun:
         '''
         Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
         '''
-        try:
-            import pygrace
-            global pg
-            pg = pygrace.grace()
-            for xy in data:
-                pg.plot(xy[0],xy[1])
-                pg.hold(1)                # Do not erase the old data
-            pg.xlabel(xlab)
-            pg.ylabel(ylab)
-            pg.title(title)
-            return True
-        except Exception as ex:
-            #print("Exception -> {}".format(ex))
-            return False
+        from expeyes.eyeplot import ExtPlotter
+        ep=ExtPlotter(("grace",))
+        status, plotterObject = \
+            ep.plot(data, xLabel=xlab, yLabel=ylab, title=title)
+        return status
 
     def qtiplot(self, data=None, xlab = '', ylab = '', title = ''):
         """
