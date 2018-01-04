@@ -22,7 +22,7 @@ messages.pot: $(SOURCES)
 	fi
 
 clean:
-	rm -f messages.pot *.mo *~
+	rm -f *.mo *~
 
 install: all
 	for l in $(LANG); do \
