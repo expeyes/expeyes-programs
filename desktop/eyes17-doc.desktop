@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=0.9.0
+Type=Application
+
+Exec=eyes17-doc
+Icon=eyes17-doc
+
+Name=EYES17 Manual
+
+Comment=EYES17 User Manual
+Categories=Electronics;Education;Science;
+
+Terminal=false
+NoDisplay=false
+StartupNotify=false
