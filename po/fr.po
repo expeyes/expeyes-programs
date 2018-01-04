@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 16:18+0200\n"
+"POT-Creation-Date: 2018-01-04 14:09+0100\n"
 "PO-Revision-Date: 2017-02-21 00:13+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
@@ -10,16 +10,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "#Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: ../expeyes/eyeplot.py:56
+#: ../expeyes/eyeplot.py:56 ../expeyes/eyeplot.py:61
 msgid "mSec"
 msgstr "ms"
 
 #: ../expeyes/eyeplot.py:158 ../expeyes/eyeplot.py:163
+#: ../expeyes/eyeplot.py:168
 #, python-format
 msgid "%3.2f %s/div"
 msgstr "%3.2f %s/div"
 
-#: ../expeyes/eyeplot.py:336
+#: ../expeyes/eyeplot.py:336 ../expeyes/eyeplot.py:341
 msgid "EYES plot"
 msgstr "Graphique EYES"
 
@@ -38,7 +39,7 @@ msgstr "Graphique EYES"
 #: ../eyes-junior/RLCdischarge.py:95 ../eyes-junior/RLcircuit.py:113
 #: ../eyes-junior/sound-burst.py:122 ../eyes-junior/velocity-sound.py:99
 #: ../eyes/RCcircuit.py:98 ../eyes/RLCdischarge.py:86 ../eyes/RLcircuit.py:104
-#: ../eyes/sound.py:98 ../eyes/velocity-sound.py:98
+#: ../eyes/sound.py:98 ../eyes/velocity-sound.py:98 ../expeyes/eyeplot.py:343
 msgid "mS"
 msgstr "ms"
 
@@ -62,11 +63,12 @@ msgstr "ms"
 #: ../eyes/RLCdischarge.py:86 ../eyes/RLCdischarge.py:93
 #: ../eyes/RLcircuit.py:104 ../eyes/RLcircuit.py:111 ../eyes/sound.py:98
 #: ../eyes/transistor.py:124 ../eyes/transistor.py:135
-#: ../eyes/velocity-sound.py:98
+#: ../eyes/velocity-sound.py:98 ../expeyes/eyeplot.py:345
 msgid "V"
 msgstr "V"
 
 #: ../expeyes/eyeplot.py:363 ../expeyes/eyeplot.py:369
+#: ../expeyes/eyeplot.py:368 ../expeyes/eyeplot.py:374
 msgid "Schematic"
 msgstr "Schéma"
 
