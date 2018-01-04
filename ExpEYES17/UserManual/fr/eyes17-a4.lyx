@@ -3149,23 +3149,25 @@ Les ondes sonores créent des variations de pression dans le milieu qu'elles
 \end_layout
 
 \begin_layout Standard
-This chapter explains several electronics experiments.
- Most of them are done using the oscilloscope GUI.
- Some of them like Diode and Transistor characteristics have a dedicated
- GUI.
+Ce chapitre explique plusieurs expériences d'électronique.
+ La plupart d'entre elles sont faites avec l'interface utilisateur oscilloscope.
+ Certaines d'entre elles comme les caractéristiques d'une diode ou d'un
+ transistor ont leur interface utlisateur dédiée.
 \end_layout
 
 \begin_layout Section
-Half wave rectifier using PN junction
+Rederessement demi-onde à l'aide d'une jonction PN
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Learn the working of a PN junction diode as a rectifier.
- RC filtering to reduce the ripple (the AC component).
+Étudier le fonctionnement d'une diode à jonction PN comme redresseur.
+ Filtrage RC pour réduire les variations de tension (la composante alternative).
 \end_layout
 
 \begin_layout Standard
@@ -3192,19 +3194,28 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connexions et observer les sorties
 \end_layout
 
 \begin_layout Itemize
-Connect a 1k load resistor, note the difference in amplitude
+Connecter une résistance de charge de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+, noter le changement d'amplitude
 \end_layout
 
 \begin_layout Itemize
-Connect a 1uF capacitor, and see the filtering effect.
+Connecter un condensateur de 
+\begin_inset Formula $1~\text{µF},$
+\end_inset
+
+ et observer l'effet de filtrage.
 \end_layout
 
 \begin_layout Itemize
-Try different values load resistors and filter capacitors
+Essayer plusieurs valeurs de résistances de charge et de condensateurs de
+ filtrage.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3212,48 +3223,75 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The negative half is removed by the diode as shown in figure.
- Also notice that the voltage in the positive half is reduced by around
- 0.7 volts, the voltage drop across a silicon diode.
- A load resistor is required for the proper operation of the circuit, it
- could be more than 1k
-\begin_inset Formula $\Omega$
+La partie négative est ôtée par la diode comme montré sur la figure.
+ Noter aussi que la tension est diminuée de quelques 0,7
+\begin_inset space ~
 \end_inset
 
- but do NOT use very low values since our AC source can drive only up to
- 5 mA current.
+V dans la moitié positive, c'est la chute de tension aux bornes de la diode
+ silicium, quand le courant y passe.
+ Une résistance de charge est nécessaire pour que le circuit fonctionne
+ correctement, on peut utliser plus de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+, mais NE PAS utiliser de valeurs plus faibles, comme la source courant
+ alternatif ne peut pas fournir un courant de plus de 
+\begin_inset Formula $5~mA$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-We can see that the capacitor charges up and then during the missing cycle
- it maintains the voltage.
- The remaining AC component is called the ripple in the DC.
+On peut voir que le condensateur se charge puis qu'il maintient la tension
+ pendant la partie manquante du cycle.
+ 
 \end_layout
 
 \begin_layout Standard
-Can we use very large capacitance to reduce the ripple ?
+Peut-on utiliser des condensateurs de grande capacité pour réduire la fluctuatio
+n de tension
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
-During what part of the cycle does current flow through the diode ?
+Durant quelle partie du cycle le courant trvarse-t-il la diode
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
-Amount of peak current is decided by what ?
+Qu'est qui conditionne la valeur du courant crête
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Section
-Fullwave rectifier using PN junctions
+Redressement double alternance avec des jonctions PN
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Make a full wave rectifier, using two diodes.
- Two AC waveforms, differing by 180 degree in phase as required.
- WG and WG bar provide the same.
+Réaliser un redresseur double alternance, à l'aide de deux diodes.
+ Il faut deux signaux alternatifs, déphasés de 180 degrés.
+ Ceux-ci sont fournis par WG et 
+\begin_inset Formula $\overline{WG}.$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3279,15 +3317,19 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections
+Faire les connexions
 \end_layout
 
 \begin_layout Itemize
-Enable A1, A2 and A3
+Activer A1, A2 et A3
 \end_layout
 
 \begin_layout Itemize
-Set WG to 200Hz and adjust timebase to view 4 to 5 cycles
+Régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz et ajuster la base de temps pour voir 4 ou 5 cycles.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3295,27 +3337,35 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Adding capacitors to reduce the ripple is left as an exercise to the user.
- This experiment is only to demonstrate the working of a full wave rectifier,
- it cannot provide more than few milli amperes of current.
- 
+On laisse comme exercice à l'utilisateur de réduire la fluctuation de tension
+ à l'aide d'un condensateur.
+ Cette expérience est seulement là pour montrer le fonctionnement d'une
+ redressement double alternance, il ne peut pas produire beaucoup plus que
+ quelques milliampères de courant.
 \end_layout
 
 \begin_layout Standard
-Why full-wave rectifier is superior to half-wave rectifier ?
+En quoi un redressement double alternance est-il supérieur à un redressement
+ simple alternance
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Section
-Clipping using PN junction diode
+Écrêtage à l'aide d'une diode à jonction PN
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Demostrate clipping of an AC signal at different levels, using a PN junction
- diode
+Démontrer l'écrêtage d'un signal alternatif à différents niveaux, à l'aide
+ d'une diode à jonction PN.
 \end_layout
 
 \begin_layout Standard
@@ -3342,11 +3392,11 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connection et observer les sorties.
 \end_layout
 
 \begin_layout Itemize
-Change PV1 and note the difference in the output
+Changer PV1 et observer le changement dans les sorties
 \end_layout
 
 \begin_layout Paragraph*
@@ -3354,20 +3404,23 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The clipping level is decided by the applied DC voltage and the diode drop.
+Le niveau d'écrêtage est conditionné par la tension coninue appliquée et
+ par la chute de tension de la diode.
 \end_layout
 
 \begin_layout Section
-Clamping using PN junction diode
+Décalage à l'aide d'un diode à jonction PN
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Demostrate clamping of an AC signal at different levels, using a PN junction
- diode
+Démontrer le décalage d'un signal alternatif à différents niveaux, à l'aide
+ d'une diode à jonction PN
 \end_layout
 
 \begin_layout Standard
@@ -3394,11 +3447,11 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connection et observer les sorties.
 \end_layout
 
 \begin_layout Itemize
-Change PV1 and note the difference in the output
+Changer PV1 et observer le changement dans les sorties
 \end_layout
 
 \begin_layout Paragraph*
@@ -3406,20 +3459,23 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The clamping level is decided by the applied DC voltage and the diode drop.
+Le niveau de décalage est conditionné par la tension coninue appliquée et
+ par la chute de tension de la diode.
 \end_layout
 
 \begin_layout Section
-IC555 Oscillator
+Oscillateur à IC555
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Wire an astable multivibrator circuit using IC555, measure the frequency
- and duty cycle of the output.
+Cabler un circuit de multivibrateur astable à l'aide d'un IC555, mesurer
+ la fréquence et le rapport cyclique de la sortie.
 \end_layout
 
 \begin_layout Standard
@@ -3442,17 +3498,17 @@ Wire an astable multivibrator circuit using IC555, measure the frequency
 \end_layout
 
 \begin_layout Standard
-Circuit is shown in figure.
- The frequency is given by 
+Le circuit est prsenté sur la figure.
+ La fréquence est données par 
 \begin_inset Formula $f=1/\left(\ln2\times C\times\left(R_{1}+2R_{2}\right)\right)$
 \end_inset
 
 .
- The HIGH time is given by 
+ La durée HAUTE est donnée par 
 \begin_inset Formula $\ln2\times C\times\left(R_{1}+R_{2}\right)$
 \end_inset
 
- and LOW time by 
+ et la durée BASSE par 
 \begin_inset Formula $\ln2\times C\times R_{2}$
 \end_inset
 
@@ -3464,15 +3520,15 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections
+Faire les connexions
 \end_layout
 
 \begin_layout Itemize
-measure frequency and duty cycle.
+mesurer la fréquence et le rapport cyclique.
 \end_layout
 
 \begin_layout Itemize
-Repeat by changing the value of R1
+Recommencer en changeant les valeurs de R1
 \end_layout
 
 \begin_layout Paragraph*
@@ -3480,21 +3536,23 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The output waveform is shown in figure.
- Change the value of resistors or the capacitor, and compare the frequency
- and duty cycle with the calculated values.
+Le signal de sortie est montré sur la figure.
+ Changer la valeur des résistances et du condensateur, puis comparer la
+ fréquence et le rapport cyclique avec les valeurs calculées.
 \end_layout
 
 \begin_layout Section
-Inverting Amplifier
+Amplificateur inverseur
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Wire an Inverting amplifier using an Op-Amp and test it.
+Câbler un amplificateur inverseur à l'aide d'un ampli-op et le tester.
 \end_layout
 
 \begin_layout Standard
@@ -3513,23 +3571,35 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set WG amplitude to 80 mV and frequency to 1000 Hz
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2 and their analysis option
+Activer A1 et A2 avec option d'analyse
 \end_layout
 
 \begin_layout Itemize
-Select 1V range for both A1 and A2 
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connexions et observer la sortie
 \end_layout
 
 \begin_layout Itemize
-Change gain by changing the resistor values.
+Changer le gain en modifiant les valeurs des résistances.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3537,20 +3607,22 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The amplitude gain and and the phase difference can be observed from the
- results.
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
 \end_layout
 
 \begin_layout Section
-Non-Inverting Amplifier
+Amplificateur non-inverseur
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Wire an Inverting amplifier using an Op-Amp and test it.
+Câbler un amplificateur non-inverseur à l'aide d'un ampli-op et le tester.
 \end_layout
 
 \begin_layout Standard
@@ -3569,23 +3641,35 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set WG amplitude to 80 mV and frequency to 1000 Hz
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2 and their analysis option
+Activer A1 et A2 avec option d'analyse
 \end_layout
 
 \begin_layout Itemize
-Select 1V range for both A1 and A2 
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connexions et observer la sortie
 \end_layout
 
 \begin_layout Itemize
-Change gain by changing the resistor values.
+Changer le gain en modifiant les valeurs des résistances.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3593,20 +3677,22 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The amplitude gain and and the phase correlation can be observed from the
- results.
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
 \end_layout
 
 \begin_layout Section
-Op-Amp Ingrator
+Intégrateur à ampli-op
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Wire an Inverting amplifier using an Op-Amp and test it.
+Câbler un intégrateur à ampli-op et le tester.
 \end_layout
 
 \begin_layout Standard
@@ -3625,23 +3711,35 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set WG amplitude to 80 mV and frequency to 1000 Hz
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2 and their analysis option
+Activer A1 et A2 avec option d'analyse
 \end_layout
 
 \begin_layout Itemize
-Select 1V range for both A1 and A2 
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
 \end_layout
 
 \begin_layout Itemize
-Make connections and observe the output
+Faire les connexions et observer la sortie
 \end_layout
 
 \begin_layout Itemize
-Change gain by changing the resistor values.
+Changer le gain en modifiant les valeurs des résistances.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3649,21 +3747,23 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The amplitude gain and and the phase correlation can be observed from the
- results.
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
 \end_layout
 
 \begin_layout Section
-Logic gates
+Portes logiques
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Study of logic gates using SQ1 and PV1 as inputs, using TTL logic ICs 7408
- and 7432.
+Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
+ des circuits intégrés de portes logiques TTL 7408 and 7432.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3681,24 +3781,44 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Enable A1, A2 ands A3.
- Set input range on A1 and A2 to 8V
+Activer A1, A2 et A3.
+ Régler le calibre pour A1 et A2 à 8
+\begin_inset space ~
+\end_inset
+
+V
 \end_layout
 
 \begin_layout Itemize
-Set SQ1 to 200 Hz and adjust timebase to view several cycles
+Régler SQ1 à 200
+\begin_inset space ~
+\end_inset
+
+Hz et ajuster la base de temps pour voir plusieurs cycles
 \end_layout
 
 \begin_layout Itemize
-Select SQ2 from the WG wave shape, set WG to 200 Hz
+régler SQ2 depuis la forme de signal de WG, régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Itemize
-Repeat using the OR gate, 7432
+Recommencer avec la porte OU, 7432
 \end_layout
 
 \begin_layout Itemize
-The 1k resistor is required to give the 5 volt signal to A3 input
+La résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ est nécessaire pour connecter un signal de 5
+\begin_inset space ~
+\end_inset
+
+V à l'entrée A3.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3706,20 +3826,23 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The working of the logic gate will be evident from the 3 waveforms.
- You may shift traces vertically to separate them for clarity.
+Le fonctionnement de la porte logique sera évident à partir des trois signaux.
+ On peut décaler les traces verticalement pour les séparer et les rendre
+ plus claires.
 \end_layout
 
 \begin_layout Section
-Clock Divider
+Diviseur d'horloge
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Study of a clock divider, using a D flip-flop (TTL family, 7474).
+Étudier un diviseur d'horloge, à l'aide d'une bascule D (famille TTL, 7474).
 \end_layout
 
 \begin_layout Paragraph*
@@ -3737,11 +3860,19 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2, set range to 8 volts fullscale
+Activer A1 et A2, Régler leurs clibres à 8
+\begin_inset space ~
+\end_inset
+
+V
 \end_layout
 
 \begin_layout Itemize
-Set SQ1 to 500 Hz
+Régler SQ1 à 500
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Paragraph*
@@ -3749,11 +3880,15 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The output toggles at every rising edge of the input, resulting in a division
- of frequency by two.
- The output is a symmetric squarewave, irrespective of the duty cycle of
- the input pulse.
- The HIGH output of the TTL IC is around 4 volts only.
+La sortie est basculée à chaque front montant sur l'entrée, si bien que
+ la fréquence est divisée par deux.
+ Le signal de sortie est un signal carré symétrique, même si le signal d'entrée
+ a un rapport cyclique différent.
+ La tension de sortie HAUTE d'un circuit intégré TTL est proche de 4
+\begin_inset space ~
+\end_inset
+
+V seulement.
 \end_layout
 
 \begin_layout Standard
@@ -3786,8 +3921,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-A clock divider circuit, using a D-flipflop.
- Outputs for two different types of input are shown
+Un circuit diviseur d'horloge, à l'aide d'une bascule D.
+ Les sorties pour deux types différents de signal d'entrée sont montrées
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:A-clock-divider-1"
@@ -3808,16 +3944,18 @@ name "fig:A-clock-divider-1"
 \end_layout
 
 \begin_layout Section
-Diode I-V characteristics
+Caractéistique U-I d'une diode
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Draw the I-V Characteristic of diode and compare the result with the theory.
- 
+Tracer la caractéristique U-I d'une diode et comparer les résultats avec
+ a théorie.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3844,19 +3982,19 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections
+Faire els connexions
 \end_layout
 
 \begin_layout Itemize
-Click on START to draw the characteristic curve.
+Cliquer sur DÉMARRER pour tracer la courbe caractéristique.
 \end_layout
 
 \begin_layout Itemize
-Analyse the data
+Analyser les données
 \end_layout
 
 \begin_layout Itemize
-Plot the IV of LEDs
+Tracer les courbes U-I de DELs
 \end_layout
 
 \begin_layout Paragraph*
@@ -3864,92 +4002,91 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The IV characteristic of an ideal PN junction diode is given by equation
+La caractéristique U-I d'une jonction PN idéale est donnée par l'équation
  
-\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{kT}}-1\right)$
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qU}{kT}}-1\right)$
 \end_inset
 
-, where 
+, où 
 \begin_inset Formula $I_{0}$
 \end_inset
 
- is the reverse saturation current, 
+ est le courant de saturation inverse, 
 \begin_inset Formula $q$
 \end_inset
 
- the charge of electron, 
+ la charge de l'électron, 
 \begin_inset Formula $k$
 \end_inset
 
- the Boltzmann constant, 
+ la constante de Boltzmann, 
 \begin_inset Formula $T$
 \end_inset
 
- the temperature in Kelvin.
- For a practical, non-ideal, diode, the equation is 
-\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{nkT}}-1\right)$
+ la température en Kelvin.
+ Pour une diode réelle, non-idéale, l'équation est 
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qU}{nkT}}-1\right)$
 \end_inset
 
-, where 
+, où 
 \begin_inset Formula $n$
 \end_inset
 
- is the ideality factor, that is 
+ est le facteur d'idéalité, qui vaut 
 \begin_inset Formula $1$
 \end_inset
 
- for an ideal diode.
- For practical diodes it varies from 1 to 2.
- We have used a IN4148 silicon diode.
- The value of n for 1N4148 is around 2.
- We have calculated the value of 
+ pour une diode idéale.
+ Pour des diodes réelles il varie entre 1 et 2.
+ On a utilisé une diode au silicium 1N4148.
+ La valeur de n pour 1N4148 est proche de 2.
+ On a calculé la valeur de 
 \begin_inset Formula $n$
 \end_inset
 
- by fitting the experimental data with the equation.
+ en modélisant les valeurs expérimentales par l'équation.
  
 \end_layout
 
 \begin_layout Standard
-The voltage at which LED starts emitting light depends on its wavelength
- and Planck's constant.
- Energy of a photon is given by 
+La tension à laquelle une DELcommence à émettre de la lumière dépend de
+ sa longueur d'onde et de la constante de Planck.
+ L'énergie d'un photon est donnée par 
 \begin_inset Formula $E=h\nu=hc/\lambda$
 \end_inset
 
- .
- This energy is equal to the energy of an electron that overcomes the junction
- barrier and is given by 
+.
+ Cette énergie est égale au travail d'un électron qui franchit un seuil
+ de potentiel, qui est donné par 
 \begin_inset Formula $E=eV_{0}$
 \end_inset
 
 .
- So Planck's constant 
+ Donc la constante de Planck est 
 \begin_inset Formula $h=eV_{0}\lambda/c$
 \end_inset
 
- , where 
+ , où 
 \begin_inset Formula $\lambda$
 \end_inset
 
- is the wavelength of light from the LED, 
+ est la longueur d'onde de la DEL, 
 \begin_inset Formula $e$
 \end_inset
 
- the charge of electron and 
+ la charge de l'électron et 
 \begin_inset Formula $c$
 \end_inset
 
- the velocity of light.
- 
+ la vitesse de la lumière.
 \end_layout
 
 \begin_layout Standard
-Repeat the experiment by heating the diode to different temperatures.
+Recommencer cette expérience en chaufabt la diode à différentes températures.
 \end_layout
 
 \begin_layout Section
-Transistor Output characteristics (CE)
+Caractéristique de la sortie (CE) d'un transistor
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Transistor-CE-Characteristic"
@@ -3960,12 +4097,18 @@ name "sec:Transistor-CE-Characteristic"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Plot the output characteristic curve of a transistor.
- Collector is connected to PV1 through a 1K resistor.
+Tracer la courbe caractéristique de sortie d'un transistor.
+ Le collecteur est connecté à PV1 à travers une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -3990,12 +4133,15 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set base voltage to the 1 volt and START.
- 
+Régler la tension de base à 1
+\begin_inset space ~
+\end_inset
+
+V et DÉMARRER.
 \end_layout
 
 \begin_layout Itemize
-Repeat for different base currents.
+Recommencer pour diverses valeurs du courant de base.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4003,41 +4149,52 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The characteristic curves for different base currents are shown in figure.
- The collector current is obtained from the voltage difference across the
- 1k resistor.
- 
-\end_layout
-
-\begin_layout Standard
-The base current is set by setting the voltage at one end of the 100 k
-\begin_inset Formula $\Omega$
-\end_inset
-
- resistor, the other end is connected to the transistor base.
- The value of base current is calculated by, 
-\begin_inset Formula $I_{b}=\frac{V_{pv2}-V_{A2}}{100\times10^{3}}\times10^{6}\mu A$
+Les courbes caractéristiques pour différentes valeurs du courant de base
+ sont montrées sur la figure.
+ Le courant de collecteur est obtenu à partir de la différence de potentiel
+ aux bornes de la résistance de 
+\begin_inset Formula $1~k\Omega$
 \end_inset
 
 .
- If A2 is not connected, the code assumes 0.6 volts at the base to calculate
- the base current.
- 
-\end_layout
-
-\begin_layout Section
-Opto-electric signal transmission 
 \end_layout
 
 \begin_layout Standard
+Le courant de la base dépend du réglage de la source de tension à l'extrémité
+ dune résistance de 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+, l'autre extrémité étant connectée à la base.
+ La valeur du courant de baqse est calculée par 
+\begin_inset Formula $I_{b}=\frac{U_{pv2}-U_{A2}}{100\times10^{3}}\times10^{6}\mu A$
+\end_inset
+
+.
+ Si A2 n'est pas connectée, le code considère une valeur de 0,6
+\begin_inset space ~
+\end_inset
+
+V pour la base afin de calculer le courant dans celle-ci.
+\end_layout
+
+\begin_layout Section
+Transmission d'un signal Opto-électrique
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Demonstrate the transmission of signals using light.
- An LED is powered by a 1kHz signal and the light is made to fall on a photo-tra
-nsistor.
- 
+Démontrer la transmission de signaux à l'aide de lumière.
+ Une DEL est alimentée par un signal de fréquence 1
+\begin_inset space ~
+\end_inset
+
+kHz et on dirige sa lumière vers un photo-transistor.
 \end_layout
 
 \begin_layout Standard
@@ -4064,11 +4221,15 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Keep the LED facing the photo-transistor and set SQR1 to 1000Hz
+Placer la DEL en face du photo-transistor et régler SQ1 à 
+\begin_inset Formula $1000 Hz$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Repeat the experiment by changing the frequency.
+Recommencer l'expérience en changeant la fréquence.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4076,21 +4237,37 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The SEN input is internally connected to 5 volts through a 5.1k resistor.
- The output of the photo-transistor at 1kHz is shown in figure.
- The square trace is the voltage across the LED.
- When the LED is ON, photo-transistor conducts and the voltage across the
- collector drops to .2 volts.
- When the LED is OFF the photo-transistor goes into cut off mode and the
- collector shows almost the supply voltage.
- The rise and fall times of the photo-transistor seem to be different.
- Find the upper limit of the frequency that the given photo-transistor can
- respond.
+L'entrée SEN est connectée à 5
+\begin_inset space ~
+\end_inset
+
+V à travers une résistance de 
+\begin_inset Formula $5,1~k\Omega$
+\end_inset
+
+.
+ La sortie du phototransistor crée un signal de fréquence 
+\begin_inset Formula $1 kHz$
+\end_inset
+
+ comme montré sur la figure.
+ Le signal carré est la tension qui alimente la DEL.
+ Quand la DEL est allumée, le photo-transistor est conducteur et la tension
+ au collecteur tombe à 
+\begin_inset Formula $0,2 V$
+\end_inset
+
+.
+ Quand la DEL est éteinte le transistor passe en mode isolant et le collector
+ remonte à la tension de l'alimentation.
+ Les temps de montée et de descente du photo-transistor semblent être différents.
+ Trouver la limite haute en fréquence à laquelle le photo-transistor est
+ capable de répondre.
 \end_layout
 
 \begin_layout Standard
-Repeat this experiment with a Fiber Optic cable to guide the light from
- LED to the photo-transistor.
+Recommencer cette expérience avec une fibre optique pour guider la lumière
+ depuis la DEL jusqu'au phot-transistor.
 \end_layout
 
 \begin_layout Chapter
