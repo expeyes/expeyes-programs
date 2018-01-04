@@ -1,7 +1,9 @@
-#LyX 2.0 created this file. For more info see http://www.lyx.org/
-\lyxformat 413
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
 \begin_document
 \begin_header
+\save_transient_properties true
+\origin unavailable
 \textclass book
 \begin_preamble
 \usepackage{wrapfig}
@@ -14,16 +16,16 @@
 \language_package default
 \inputencoding auto
 \fontencoding global
-\font_roman default
-\font_sans default
-\font_typewriter default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
 \font_osf false
-\font_sf_scale 100
-\font_tt_scale 100
-
+\font_sf_scale 100 100
+\font_tt_scale 100 100
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -34,15 +36,24 @@
 \use_hyperref false
 \papersize a4paper
 \use_geometry true
-\use_amsmath 1
-\use_esint 0
-\use_mhchem 1
-\use_mathdots 1
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
 \cite_engine basic
+\cite_engine_type default
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
+\justification true
 \use_refstyle 0
 \index Index
 \shortcut idx
@@ -449,7 +460,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 The ExpEYES17 top panel showing the external connections.
@@ -1019,7 +1030,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 The scope17 screen showing two traces
@@ -2083,6 +2094,10 @@ Objective
 Demonstrate mutual induction using two coils, supplied with ExpEYES.
  One coil, the primary, is connected between WG and Ground.
  The axes of the coils are aligned and a ferrite core is inserted.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2175,6 +2190,10 @@ Objective
 Measure the resistance of ionic solutions, using both DC and AC voltages.
  We have used normal tap water.
  Try measuring the resistance using a multimeter first.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3003,7 +3022,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset Caption
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
 A clock divider circuit, using a D-flipflop.
@@ -3793,6 +3812,10 @@ RC circuits can integrate or differentiate a voltage waveform with respect
  to time.
  A square wave is integrated to get a triangular wave and differentiated
  to get spikes at the transitions.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4344,6 +4367,10 @@ Measure the period of oscillations of a rod pendulum using a light barrier
  to swing between an LED and photo-transistor, connected to expEYES.
  The LED and photo-transistor are mounted on a U-shaped bracket as shown
  in figure.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4412,6 +4439,10 @@ To study the nature of oscillations of a pendulum.
  a function of time.
  But using a DC motor as a sensor, we can measure the angular velocity as
  a function of time.
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4627,6 +4658,10 @@ Record the temperature of a liquid by using a Platinum Resistance Thermometer.
 
 .
  
+\begin_inset Separator latexpar
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5181,7 +5216,7 @@ The output of this code is given below.
 
 \begin_layout LyX-Code
 \begin_inset Graphics
-	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/sine.png
+	filename pics/sine.png
 	lyxscale 50
 	height 4cm
 
@@ -5244,7 +5279,7 @@ The output of this code is given below.
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/halfwave.png
+	filename pics/halfwave.png
 	lyxscale 60
 	height 4cm
 
@@ -5252,7 +5287,7 @@ The output of this code is given below.
 
  
 \begin_inset Graphics
-	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/capture4.png
+	filename pics/capture4.png
 	lyxscale 60
 	height 4cm
 
@@ -5411,7 +5446,7 @@ show()
 
 \begin_layout LyX-Code
 \begin_inset Graphics
-	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/loadEquation.png
+	filename pics/loadEquation.png
 	lyxscale 60
 	height 4cm
 
@@ -5419,7 +5454,7 @@ show()
 
   
 \begin_inset Graphics
-	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/loadTable.png
+	filename pics/loadTable.png
 	lyxscale 60
 	height 4cm
 
