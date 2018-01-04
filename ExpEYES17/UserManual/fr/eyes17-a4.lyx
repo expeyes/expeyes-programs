@@ -4271,28 +4271,29 @@ Recommencer cette expérience avec une fibre optique pour guider la lumière
 \end_layout
 
 \begin_layout Chapter
-Electricity and Magnetism
+Électricité et magnétisme
 \end_layout
 
 \begin_layout Standard
-This section mainly contains experiments on the steady state and transient
- response of LCR circuit elements.
- the experimental results with the theory.
- It also gives an experiment of electromagnetic induction.
+Ce chapitre contient principalement des expériences sur le comportement
+ en régime stationnaire et en régime transitoire pour des dipôles LCR.
+ Il confronte les résultats expérimentaux avec la théorie.
+ Il donne aussi une expérience sur l'induction électromagnétique.
 \end_layout
 
 \begin_layout Section
-RLC circuits, steady state response
+Circuits RLC, réponse en régime stationnaire
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Study the effect of series LCR elements in an AC circuit.
- Three different combinations can be studied.
- 
+Étudier le comportement de dipôle RLC dans un circuit en courant alternatif.
+ Trois combinaisons différentes peuvent être étudiées.
 \end_layout
 
 \begin_layout Standard
@@ -4327,29 +4328,41 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections one by one, as per the drawing
+Faire les connexions une par une, selon les schémas
 \end_layout
 
 \begin_layout Itemize
-Note down the amplitude and phase measurements, in each case
+Prendre note des mesures d'amplitude et de phase, dans chaque cas
 \end_layout
 
 \begin_layout Itemize
-Repeat the measurements by changing the frequency.
+RRecommencer les mesures en changeant la fréquence.
 \end_layout
 
 \begin_layout Itemize
-For RLC series circuit, the junction of L and C is monitored by A3
+Pour le circuit série RLC, la jonction entre L et C est surveillées par
+ A3
 \end_layout
 
 \begin_layout Itemize
-For resonance select C = 1uF, L = 10mH and F= 1600 Hz, adjust F to make
- phase shift zero
+Pour la résonance, sélectionner 
+\begin_inset Formula $C=1 µF$
+\end_inset
+
+, L = 
+\begin_inset Formula $10 mH$
+\end_inset
+
+ and f = 
+\begin_inset Formula $1600 Hz$
+\end_inset
+
+, ajuster f pour obtenir un déphasage nul
 \end_layout
 
 \begin_layout Itemize
-The total voltage across L and C together goes almost to zero, the voltage
- across them are out of phase at resonance
+La tension totale aux bornes de L et C s'approche de zéro, les tensions
+ de chacun sont déphasées à la résonance
 \end_layout
 
 \begin_layout Paragraph*
@@ -4357,25 +4370,29 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The applied AC voltage is measured on A1 and the voltage across the resistor
- on A2.
- Subtracting the instantaneous values of A2 from A1 gives the combined voltage
- across the inductor and capacitor.
- We need to use an inductor with negligible resistance for good results.
- The phase difference between current and voltage is given by 
-\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{X_{c}-X_{L}}{X_{R}}\right)$
+La tension alternative de la source est en A1 et la tension aux bornes de
+ la résistance en A2.
+ Si on soustrait les valeurs instantanées de A2 de A1 on obtient la tension
+ totale aux bornes de L et C.
+ IL faut utiliser un bobinage avec une résistance négligeable pour de bons
+ résultats.
+ Le déphasage entre courant et tension est donnée par 
+\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{Z_{c}-Z_{L}}{Z_{R}}\right)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-The total voltage, voltage across R and the voltage across LC are shown
- in figure.
- The phasor diagram shows the phase angle between the current and the voltage.
- The inductance used in this experiment is around 10mH, having a resistance
- of 
-\begin_inset Formula $20\Omega$
+La tension totale, la tension aux bornes de R et la tension aux bornes de
+ LC sont montrées dans la figure.
+ Le diagramme de phase montre le déphasage entre courant et tension.
+ Le bobinage utilisé dans l'expérience a une inductance d'environ 
+\begin_inset Formula $10 mH$
+\end_inset
+
+ et une résistance de 
+\begin_inset Formula $20~\Omega$
 \end_inset
 
 .
@@ -4383,19 +4400,23 @@ The total voltage, voltage across R and the voltage across LC are shown
 \end_layout
 
 \begin_layout Standard
-At 1600 Hz, 
+À 
+\begin_inset Formula $1600 Hz$
+\end_inset
+
+, 
 \begin_inset Formula $X_{c}\approx X_{L}$
 \end_inset
 
- and the voltage across LC is decided by the resistance of the inductor.
- At the resonant frequency, the voltage drop across LC will be minimum,
- decided by the resistance of the inductor.
- The input A3 is connected between L and C, so that the individual voltage
- drop across L and C can be displayed.
+ et la tension aux bornes de LC est déterminée par la résistance du bobinage.
+ À la fréquence de résonance, la tension aux bornes de LC sera minimale,
+ déterminée par la résistance du bobinage.
+ L'entrée A3 est connectée entre L et C, si bien que les tensions individuelles
+ de L et C peuvent être présentées.
 \end_layout
 
 \begin_layout Section
-Transient Response of RC circuits
+Réponse de circuits RC en régime transitoire
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Capacitor-charging-&"
@@ -4406,13 +4427,15 @@ name "sec:Capacitor-charging-&"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Plot the voltage across a capacitor, when it is charged by applying a voltage
- step through a resistor.
- Calculate the value of the capacitance from the graph.
+Tracer l'évolution de la tension aux bornes d'un condensateur, quand il
+ est chargé en appliquant un échemon de tension à travers une résistance.
+ Calculer la valeur de la capacité d'après la courbe.
 \end_layout
 
 \begin_layout Standard
@@ -4438,61 +4461,43 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
+Dan le menu 
+\begin_inset Quotes fld
 \end_inset
 
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RC Transient response}
-\end_layout
-
+Électricité
+\begin_inset Quotes frd
 \end_inset
 
+, choisir le sous-menu 
+\begin_inset Quotes fld
+\end_inset
 
+Circuit RC en régime transitoire
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur 
+\shape italic
+Échelon 0->5V et Échelon
 \shape default
  
-\end_layout
-
-\begin_layout Itemize
-Click on 
 \shape italic
-0->5V STEP
+5->0V 
 \shape default
- and 
-\shape italic
-5->0V step
-\shape default
- Buttons to plot the graphs
+pour afficher les graphiques
 \end_layout
 
 \begin_layout Itemize
-Adjust the horizontal scale, if required, and repeat.
+Ajuster l'échelle horizontale si nécessaire, et recommencer.
 \end_layout
 
 \begin_layout Itemize
-Calculate RC time constant.
+Calculer la constante de temps RC.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4500,27 +4505,30 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Applying a 0 to 5V step makes the voltage across the capacitor to rise exponenti
-ally as shown in the figure.
- By fitting the discharge curve with 
-\begin_inset Formula $V(t)=V_{0}e^{-\frac{t}{RC}}$
+Quand on applique un échelon de 0 à 5
+\begin_inset space ~
 \end_inset
 
- ,we can extract the RC time constant and find the values of capacitance
- from it.
- 
+V, la tension aux bornes du condensateur s'approche exponentiellement de
+ 5V comme montré sur la figure.
+ En modélisant la coubre de décharge par 
+\begin_inset Formula $U(t)=U_{0}e^{-\frac{t}{RC}}$
+\end_inset
+
+ , on peut extraire la constante de temps RC et s'en servir pour trouver
+ la valeur de la capacité.
 \end_layout
 
 \begin_layout Standard
-The voltage across a capacitor is exponential only when it is charged trough
- a linear element, a resistor for example.
- When charged from a constant current source, the voltage shows linear increase,
- because 
-\begin_inset Formula $Q=It=CV$
+Le tension aux bornes d'un condensateur ne varie exponentiellement que quand
+ on le charge au travers d'un dipôle linéaire, une résistance par exemple.
+ Si on le charge à l'aide d'une source de courant constant, la tension change
+ linéairement, puisque 
+\begin_inset Formula $Q=It=CU$
 \end_inset
 
- , and voltage increases linearly with time as 
-\begin_inset Formula $V=\left(\frac{I}{C}\right)t$
+ , et la tension croît linéairement avec le temps comme 
+\begin_inset Formula $U=\left(\frac{I}{C}\right)t$
 \end_inset
 
  .
