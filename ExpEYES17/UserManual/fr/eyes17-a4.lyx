@@ -2809,9 +2809,9 @@ Objectif
 \end_layout
 
 \begin_layout Standard
-Demonstrate mutual induction using two coils, supplied with ExpEYES.
- One coil, the primary, is connected between WG and Ground.
- The axes of the coils are aligned and a ferrite core is inserted.
+Démontrer l'induction mutuelle entre deux bobinages, fournis avec ExpEYES.
+ Un des bobinages, le primaire, est connecté entre WD et GND.
+ On aligne les axes des deux bobinages et on insère un noyau de ferrite.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2841,23 +2841,27 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make connections as shown in the figure
+Faire les connections comme montré sur la figure
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2
+Activer A1 et A2
 \end_layout
 
 \begin_layout Itemize
-Set WG to 500 Hz
+Régler WG à 
+\begin_inset Formula $500 Hz$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Bring the coils close and watch the voltage on A2.
+Approcher les bobinages l'un de l'autre et observer la tension en A2.
 \end_layout
 
 \begin_layout Itemize
-Try inserting an ion core
+Essayer d'insérer un noyau en ferrite
 \end_layout
 
 \begin_layout Paragraph*
@@ -2865,49 +2869,47 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The applied waveform and the induced waveform are shown in figure.
- A changing magnetic filed is causing the induced voltage.
- In the previous two experiments, the changing magnetic field was created
- by the movement of permanent magnets.
- In the present case the changing magnetic field is created by a time varying
- current.
+Le signal appliqué et le signal induit sont présentés sur la figure.
+ Un champ magnétique oscillant est la cause de la tension induite.
+ Dans les deux expériences précédentes, le champ magnétique oscillant était
+ créé par le mouvement d'aimants permanents.
+ Dans le cas présent, il est créé par un courant variable dans le temps.
 \end_layout
 
 \begin_layout Standard
-Try doing this experiment using a squarewave.
- Connect a 1k
-\begin_inset Formula $\Omega$
+Essayer de faire cette expérience avec un signal carré.
+ Connecter une résistance de 
+\begin_inset Formula $1~k\Omega$
 \end_inset
 
- resistor across secondary coil to reduce ringing.
+ aux bornes du bobinage secondaire pour réduire les oscillation de résonance.
 \end_layout
 
 \begin_layout Standard
-The concept of Alternating Current is introduced by plotting the voltage
- as a function of time.
- The behavior of circuits elements like capacitors and inductors in AC and
- DC circuits are explored, by measuring parameters like amplitude, frequency
- and phase.
- Converting electrical signals into sound and back is demonstrated.
- 
-\end_layout
-
-\begin_layout Standard
-For each experiment, make connections as per the diagram given.
+Le concept de courant alternatif est introduit en affichant la tension en
+ fonction du temps.
+ On explore le comportement de dipôles tels que les condensateurs et les
+ bobinages en courant continu et alternatif, en mesurant des paramètres
+ tels que l'amplitude, la fréquence et la phase.
+ La conversion de signaux électriques en son et l'inverse est démontré.
+ Pour chaque expérience, on réalise les connexions selon le diagramme donné.
 \end_layout
 
 \begin_layout Section
-Resistance of water, using AC
+Résistance de l'eau, en courant alternatif
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Measure the resistance of ionic solutions, using both DC and AC voltages.
- We have used normal tap water.
- Try measuring the resistance using a multimeter first.
+Mesurer la résistance de solutions ioniques, en utlisant des signaux continu
+ et alternatif.
+ On utilise de l'eau ordinaire du robinet.
+ Essayer de meurer la résistance au préalable à l'aide d'un multimètre.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2938,15 +2940,19 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-R1 should be comparable to R, start with 10k.
+R1 est censé être comparable avec R, On commence avec 
+\begin_inset Formula $10~k\Omega$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2
+Activer A1 et A2
 \end_layout
 
 \begin_layout Itemize
-Calculate the resistance as explained in section 
+Calculer la résistance comme expliqué à la section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Measure-resistance-by-comparison"
@@ -2961,26 +2967,40 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Observed values are shown in the table.
- The DC and AC resistances seems to be very different.
- With DC, the resistance of the liquid changes with time, due to electrolysis
- and bubble formation.
- The resistance does not depend much on the distance between the electrodes,
- the area of the electrode is having some effect.
- The resistance depends on the ion concentration and presence of impurities
- in the water used.
+Les valeurs observées sont montrées dans le tableau.
+ Les résistances en continu et en alternatif semblent très différentes.
+ En courant continu, la résistance du liquide change au cours du temps,
+ à cause d'une électrolyse et de la formation de bulles.
+ La résistance dépend peu de la distance entre électrodes, c'est la surface
+ de l'électrode qui a le plus d'effet.
+ La résistance d
+\begin_inset Quotes frd
+\end_inset
+
+pend de la contration en ions et à la présence d'impuretés dans l'eau.
 \end_layout
 
 \begin_layout Standard
-Try changing the distance between electrodes.
- Try adding some common salt and repeat the measurements.
- Why is the behavior different for AC and DC ? What are the charge carriers
- responsible for the flow of electricity through solutions ? Is there any
- chemical reaction taking place ?
+Essayer de changer la distance entre électrodes.
+ Essayer d'ajouter un sel ordinaire et recommencer les mesures.
+ Pourquoi le comportement est-il différence en courant continu ou alternatif
+\begin_inset space ~
+\end_inset
+
+? Quels sont les porteurs de charges responsables du flux d'électricité
+ à travers les solutions
+\begin_inset space ~
+\end_inset
+
+? Y a-t-il une réaction chimique qui se produit
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Section
-Generating sound
+Générer un son
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Generating Sound "
@@ -2991,13 +3011,16 @@ name "sec:Generating Sound "
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Generate sound from electrical signals, using a Piezo-electric buzzer.
- Digitize sound and measure its frequency.
- Use the Piezo buzzer or any other source of sound like a tuning fork.
+Générer un son avec des signaux électriques, à l'aide d'un buzzer piézo-électriq
+ue.
+ Numériser un son et mesurer sa fréquence? Utiliser un buzzer piézo ou toute
+ autre source sonore comme un diapason.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3015,11 +3038,15 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Enable A1, and its analysis
+Activer A1, et son analyse
 \end_layout
 
 \begin_layout Itemize
-Set WG to 1000Hz, change it and listen to the sound.
+Régler WG à 
+\begin_inset Formula $1000~Hz$
+\end_inset
+
+, puis changer et écouter le son
 \end_layout
 
 \begin_layout Paragraph*
@@ -3027,15 +3054,19 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-When you change the frequency of the voltage that excites the Piezo, both
- the frequency and the intesity of the sound changes.
- The intensity is maximum near 3500 Hz, due to resonance.
- The resonant frequency of the Piezo buzzer is decided by its size and mechanica
-l properties.
+Quand on change la fréquence du signal qui excite le piézo, la fréquence
+ et l'intensité du son changent toutes les deux.
+ L'intensité est maximale près de 
+\begin_inset Formula $3500~Hz$
+\end_inset
+
+, à cause de la résonance.
+ La fréquence de résonance d'un buzzer piézo dépend de sa taille et de ses
+ propriétés mécaniques.
 \end_layout
 
 \begin_layout Section
-Digtizing sound
+Numériser un son
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Digtizing-sound"
@@ -3046,12 +3077,14 @@ name "sec:Digtizing-sound"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Digitize sound signals from a microphone, and measure its frequency.
- Use the Piezo buzzer or any other source of sound like a tuning fork.
+Numériser des signaux sonores d'un microphone, et mesurer leur fréquence.
+ Utiliser le bueer piézo ou toute autre source sonore comme un diapason.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3069,19 +3102,28 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and MIC , with analysis
+Activer A1 et MIC, ainsi que leurs analyses
 \end_layout
 
 \begin_layout Itemize
-Position the buzzer facing the microphone
+POsitionner le microphone face au buzzer
 \end_layout
 
 \begin_layout Itemize
-Set WG to 1000Hz, change it and watch the MIC output
+Régler WG à 
+\begin_inset Formula $1000$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Hz, puis le modifier et observer la sortie MIC
 \end_layout
 
 \begin_layout Itemize
-Use a whistle instead of the buzzer and find out the frequency of MIC output.
+Utiliser un sifflet à la place du buzzer et trouver sa fréquence à l'aide
+ de la sortie MIC.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3089,20 +3131,21 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The driving signal and the microphone output is shown in figure
+Le signal du générateur et la sortie du microphone sont montrés dans la
+ figure
 \end_layout
 
 \begin_layout Standard
-Sound waves create pressure variations in the medium through which it travel.
- The microphone generates a voltage proportional to the pressure.
- The voltage variations are in tune with the pressure variations.
- You can consider the microphone as a pressure sensor, but working only
- for time varying pressures.
- 
+Les ondes sonores créent des variations de pression dans le milieu qu'elles
+ traversent.
+ Le microphone crée une tension proportionnelle aux variations de pression.
+ Les variations de tension sont à l'unisson des variations de pression.
+ On peut comparer le microphone à un capteur de pression, mais qui fonctionne
+ seulement pour les variations de pression.
 \end_layout
 
 \begin_layout Chapter
-Electronics
+Électronique
 \end_layout
 
 \begin_layout Standard
