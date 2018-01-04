@@ -27,17 +27,11 @@ File "diode_iv.ps" Page 1
 <path d="M368,64 C369,64 432,128 368,160 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M208,160 C209,160 272,112 240,64 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M64,160 C48,128 16,112 80,64 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1  16 192)" fill="#000000" >
+<g transform="matrix(   1    0   -0    1  32 192)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">PV1</tspan>
 </text></g>
-<g transform="matrix(   1    0   -0    1 176 192)" fill="#000000" >
+<g transform="matrix(   1    0   -0    1 192 192)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 304 176)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0"></tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 352 176)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0"></tspan>
 </text></g>
 <g transform="matrix(   1    0   -0    1 304 192)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>

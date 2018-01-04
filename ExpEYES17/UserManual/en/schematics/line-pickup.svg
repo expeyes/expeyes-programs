@@ -8,7 +8,7 @@ File "line-pickup.ps" Page 1
 </desc>
 <g stroke="black">
 <g transform="matrix(   1    0   -0    1  16 112)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A3</tspan>
 </text></g>
 <path d="M0,64 L0,128 80,128 80,64 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M80,96 C304,32 576,176 480,0 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />

@@ -26,14 +26,14 @@
 
 \graphics default
 \default_output_format default
-\output_sync 1
+\output_sync 0
 \bibtex_command default
 \index_command default
 \paperfontsize default
 \spacing single
 \use_hyperref false
 \papersize a4paper
-\use_geometry false
+\use_geometry true
 \use_amsmath 1
 \use_esint 0
 \use_mhchem 1
@@ -403,12 +403,7 @@ reference "fig:The-ExpEYES-toppanel"
  the 3.3V reference used, it is 50ppm per degree celcius.
  The gain and offset errors are eliminated by initial calibration, using
  a 16bit ADC.
- The time interval and frequency measurement accuracy is decided by the
- 12.000 MHz crystal.
-\end_layout
-
-\begin_layout Standard
-Even though our primary objective is to do experiments, you are advised
+ Even though our primary objective is to do experiments, you are advised
  to read through the brief description of the equipment given below.
  The device can be also used as a test equipment for electrical and electronics
  engineering experiments.
@@ -714,12 +709,11 @@ Accessory Set
 \end_layout
 
 \begin_layout Standard
-Some accessories are provided with expEYES, a photograph is given on back
- cover of the manual.
+Some accessories are provided with expEYES.
 \end_layout
 
 \begin_layout Itemize
-Wires with pin on both ends (4)
+Pieces of wires, with pin and with crocodile clip.
 \end_layout
 
 \begin_layout Itemize
@@ -811,12 +805,11 @@ Software Installation
 \end_layout
 
 \begin_layout Standard
-ExpEYES can run on any computer having a Python Interpreter and a Python
- module to access the Serial port.
+ExpEYES can run on any computer having a Python Interpreter and required
+ modules.
  The USB interface is handled by a device driver program that presents the
- USB port as a Serial port to the application programs.
- The communication the expEYES is done using a library written in Python
- programming language.
+ USB port as a Serial port to the Python programs.
+ The communication the expEYES is done using a library written in Python.
  Programs with GUI have been written for many experiments.
  Eyes17 software require the following packages
 \end_layout
@@ -834,7 +827,11 @@ python-scipy
 \end_layout
 
 \begin_layout Itemize
-python-tk
+python-qt4
+\end_layout
+
+\begin_layout Itemize
+python-pyqtgraph
 \end_layout
 
 \begin_layout Subsubsection*
@@ -844,9 +841,9 @@ Any GNU/Linux distributions
 \begin_layout Standard
 Download 
 \series bold
-eyes17-1.0.0.zip
+eyes17-x.x.x.zip
 \series default
- (or any later version) from 
+ (the latest version) from 
 \series bold
 http://expeyes.in
 \series default
@@ -859,7 +856,7 @@ $ sudo sh postinst       # set user write permission
 \end_layout
 
 \begin_layout LyX-Code
-$ python scope17.py
+$ python main.py
 \end_layout
 
 \begin_layout Standard
@@ -867,9 +864,7 @@ You will get error messages for any missing packages that are required for
  expeyes.
  Install them one by one and try again.
  Python programs required for several experiments are in the same directory,
- they are called by 'scope.py', when you select from the menu.
- When any of these programs are selected, the 'scope17' program waits until
- you quit the currently selected program.
+ they are called by 'main.py'.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -879,9 +874,9 @@ Debian or Ubuntu GNU/Linux distributions
 \begin_layout Standard
 Download 
 \series bold
-eyes17-1.0.0.deb
+eyes17-x.x.x.deb
 \series default
- , or any higher version, from the software section of 
+ ( the latest version) from the software section of 
 \series bold
 http://expeyes.in
 \series default
@@ -889,14 +884,18 @@ http://expeyes.in
 \end_layout
 
 \begin_layout Standard
-$ sudo gdebi eyes17-1.0.0.deb
+$ sudo gdebi eyes17-x.x.x.deb 
 \end_layout
 
 \begin_layout Standard
-The package 'eyes17' requires the package 'expeyes' , that is already in
- the Debian and Ubuntu repositories.
- If your computer is connected to Internet, gdebi will automatically install
- all the required packages.
+while connected to Internet
+\end_layout
+
+\begin_layout Standard
+The package 'eyes17' (later than version 3) does not depend on the earlier
+ versions of ExpEYES, like expeyes junior.
+ During installation gdebi will automatically dowload and install all the
+ required packages.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -922,7 +921,7 @@ Applications->Education
 \end_layout
 
 \begin_layout LyX-Code
-$ python /usr/share/expeyes/eyes17/scope17.py
+$ python /usr/share/expeyes/eyes17/main.py
 \end_layout
 
 \begin_layout Subsubsection*
@@ -930,13 +929,20 @@ On MSWindows
 \end_layout
 
 \begin_layout Standard
-Even though expEYES is Free Software and is developed using Free and Open
- software, it runs on non-free platforms also.
- To run it on MSWindows, you need to install
+The first thing to do is to install the driver software for the USB to serial
+ converter IC MCP2200, available on Microchip website (also given on expeyes
+ website).
+ After installing this the device will appear as a COM port, that can be
+ verified from the device manager of MSWindows.
+ After this there are two options.
 \end_layout
 
-\begin_layout Enumerate
-MCP2200 drivers
+\begin_layout Standard
+A zip file containing all the necessary things for ExpEYES is available
+ on the website, named eyes17win.zip.
+ Unzip this file and run main.py from that.
+ By using this method you will not able to write your own Python code to
+ access expeyes, for that you need to install the following
 \end_layout
 
 \begin_layout Enumerate
@@ -948,7 +954,11 @@ python-serial
 \end_layout
 
 \begin_layout Enumerate
-python-tk, 
+python-qt4
+\end_layout
+
+\begin_layout Enumerate
+python-pyqtgraph, 
 \end_layout
 
 \begin_layout Enumerate
@@ -959,20 +969,17 @@ python-numpy
 python-scipy
 \end_layout
 
-\begin_layout Enumerate
-eyes17-1.0.0.zip (or a higher version)
-\end_layout
-
 \begin_layout Standard
-Unzip the file 
+Download the eyes17-x.x.x.zip ( take latest version) from the website.
+ Unzipping the files will create a directory 
 \series bold
-eyes17.zip
+named eyes17
 \series default
-, and double click on 
+, run 
 \series bold
-scope17.py
+main.py
 \series default
- inside the newly created directory.
+ from that.
 \end_layout
 
 \begin_layout Section
@@ -990,9 +997,7 @@ reference "fig:The-scope17-screen"
 \end_inset
 
 .
- GUI for diffrent experiments can be selected from the menu.
- The main window will become inactive when an experiment is selected and
- running.
+ Various experiments can be selected from the menu.
 \end_layout
 
 \begin_layout Standard
@@ -1005,6 +1010,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename pics/scope17.png
+	lyxscale 60
 	width 11cm
 
 \end_inset
@@ -1036,14 +1042,12 @@ name "fig:The-scope17-screen"
 
 \end_layout
 
-\begin_layout Subsubsection*
-The Plot Window
-\end_layout
-
 \begin_layout Standard
-The plot window functions like a low frequency four channel oscilloscope.
- The maximum sampling rate is 1 Megasamples/channel/second only.
- A brief description of this GUI program is given below.
+The main window looks like a low frequency four channel oscilloscope, with
+ some extra features, on the right side panel.
+ Applications for various experiments can be selected from the pulldown
+ menu.
+ A brief description of the oscilloscope program is given below.
 \end_layout
 
 \begin_layout Itemize
@@ -1061,17 +1065,6 @@ There is another checkbox, to enable mathematical fitting of the data using
 \end_inset
 
  to show the amplitude and frequency.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-Selecting both A1 and A2 and enabling the analysis options will display
- the phase difference.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -1082,7 +1075,7 @@ The horizontal scale (time base) can be changed by a slider, from .5 mS fullscal
 \begin_layout Itemize
 The Checkbutton 
 \series bold
-LOOP
+Freeze
 \series default
 , allows to pause and resume the oscilloscope operation.
 \end_layout
@@ -1101,15 +1094,6 @@ SaveTo
 \end_layout
 
 \begin_layout Itemize
-The 
-\series bold
-Grace
-\series default
- button opens the program xmgrace and transfers the data for the enabled
- channels to it.
-\end_layout
-
-\begin_layout Itemize
 Clicking on 
 \series bold
 FFT
@@ -1124,7 +1108,8 @@ In addition to the Oscilloscope, there are several measurement/control options
 \end_layout
 
 \begin_layout Itemize
-The voltages at the inputs A1, A2 and A3 are sampled every second and displayed.
+If selected, the voltages at the inputs A1, A2 and A3 are sampled every
+ second and displayed.
 \end_layout
 
 \begin_layout Itemize
@@ -1160,29 +1145,17 @@ The shape of the waveform can be selected using the menubutton, default
 \begin_layout Itemize
 Frequency of the Waveform generator WG can be set using the slider or the
  text entry window.
- You need to press the 
-\series bold
-<Enter>
-\series default
- key to get the input accepted.
  The two input methods follow each other, changing the slider will change
  the text field and entering data using text field will set the slider to
  that value.
- The frequency will be set to the nearest possible value and the text field
- will be updated accordingly.
+ The frequency will be set to the nearest possible value and it will be
+ displayed in the message window at the bottom.
  The amplitude of WG output can be set to 3 volts, 1 volt or 80 mV.
 \end_layout
 
 \begin_layout Itemize
-The shape of the waveform can be selected using the menubutton, default
- shape is sine.
- It can be changed to triangular.
- When the square wave option is selected, the output is shifted to SQ2.
- You cannot have sine/triangular and SQ2 at the same time.
-\end_layout
-
-\begin_layout Itemize
 SQ1 can be set using the same method as explained above.
+ The duty cycle can be set between 1% to 99%, default is 50%.
 \end_layout
 
 \begin_layout Itemize
@@ -1202,104 +1175,39 @@ Before proceeding with the experiments, let us do some simple exercises
  to become familiar with expEYES-17.
  Connect the device a USB port and start the ExpEYES-17 program from the
  menu 'Applications->Education'.
+ Enable the 'Popup Help' option and select the first few items from the
+ school menu.
 \end_layout
 
-\begin_layout Subsection
-Generate & measure voltages
+\begin_layout Standard
+The following chapters are organized according to the pulldown menus of
+ the eyes17 program, each chapter containing the experiments under the correspon
+ding menu; like School level, Eelectronics, Eelectrical etc.
+ To perform the expeiment, select it from the menu.
+ Online help is available for every experiment, making this manual almost
+ redundant.
 \end_layout
 
-\begin_layout Itemize
-Connect PV1 to A1
-\end_layout
-
-\begin_layout Itemize
-Set PV1 to some voltage
-\end_layout
-
-\begin_layout Itemize
-Read the voltage present at A1.
-\end_layout
-
-\begin_layout Subsection
-Observe voltage waveforms
-\end_layout
-
-\begin_layout Itemize
-Connect WG to A1 and enable A1.
-\end_layout
-
-\begin_layout Itemize
-Select input range of 4V full scale.
-\end_layout
-
-\begin_layout Itemize
-Set frequency to to 1000 Hz and view the wave form.
-\end_layout
-
-\begin_layout Itemize
-Adjust Time base to view 4 or 5 cycles.
-\end_layout
-
-\begin_layout Itemize
-Change frequency using the slider.
-\end_layout
-
-\begin_layout Itemize
-Enable the checkbox on the right side, to display amplitude and frequency.
-\end_layout
-
-\begin_layout Itemize
-Increase the number of cycles on screen to improve the fitting accuracy.
-\end_layout
-
-\begin_layout Subsection
-Frequency Measurement
-\end_layout
-
-\begin_layout Itemize
-Connect SQ1 to IN2
-\end_layout
-
-\begin_layout Itemize
-Set SQ1 to 1000 Hz
-\end_layout
-
-\begin_layout Itemize
-Click on the button 'Frequency on IN2'
-\end_layout
-
-\begin_layout Subsection
-Capacitance Measurement
-\end_layout
-
-\begin_layout Itemize
-Connect the capacitor from IN1 to Ground
-\end_layout
-
-\begin_layout Itemize
-Click on the button 'Capacitance on IN1'
+\begin_layout Standard
+The screen shots given in this document are not from the GUI program, because
+ the black background images are difficult to print.
+ The plots are generated by separate code.
 \end_layout
 
 \begin_layout Chapter
-Activities - Level 1
+School Level Experiments
 \end_layout
 
 \begin_layout Standard
-In this chapter we will discuss the experiments and demonstrations without
- much data analysis.
- We start with the simple task of measuring the voltage of a dry-cell.
- Current and resistance are introduced next, followed by resistances changing
- with temperature and light.
+This chapter will discuss the experiments and demonstrations without much
+ data analysis, experiments given in the menu SchoolExpts.
+ Simple tasks like measuring voltage, resistance, capacitance etc.
+ will be done followed by resistances changing with temperature or light.
  The concept of Alternating Current is introduced by plotting the voltage
  as a function of time.
- The behavior of circuits elements like capacitors and inductors in AC and
- DC circuits are explored, by measuring parameters like amplitude, frequency
- and phase.
- 
-\end_layout
-
-\begin_layout Standard
-For each experiment, make connections as per the diagram given.
+ Generating and digitizing sound will be covered.
+ When an experiment is selected, the corresponding help window will popup,
+ if enabled.
 \end_layout
 
 \begin_layout Section
@@ -1319,7 +1227,7 @@ Learn to measure voltage using expEYES and get some idea about the concept
 \begin_layout Standard
 \begin_inset Graphics
 	filename schematics/measure-dc.svg
-	height 0.8cm
+	height 1cm
 
 \end_inset
 
@@ -1360,7 +1268,7 @@ Will it show correct voltage if GND is not connected ?
 \end_layout
 
 \begin_layout Section
-Voltage, current & resistance
+Measuring Resistance
 \end_layout
 
 \begin_layout Paragraph*
@@ -1368,211 +1276,26 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Learn about Current, Resistance and Ohm's law, using a couple of resistors.
- The voltage across a conductor is directly proportional to current flowing
- through it.
- The constant of proportionality is the Resistance.
- This is known as Ohm's Law, expressed mathematically as
-\begin_inset Formula 
-\[
-V\varpropto I\,\,\,;\,\,\,\, V=IR\,\,\,\, or\,\,\, R=\frac{V}{I}
-\]
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/res-compare.svg
-	height 4cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Set PV1 to some voltage, say 3 volts
-\end_layout
-
-\begin_layout Itemize
-Observe the voltage at A1 displayed.
-\end_layout
-
-\begin_layout Itemize
-Repeat for different values of PV1.
- 
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The current is given by 
-\begin_inset Formula $I=\frac{V_{PV1}}{R1+R2}$
-\end_inset
-
- .
- Voltage at A1 should be 
-\begin_inset Formula $I\times R1$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Section
-Constant Current Source
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Calibrating-Current-Source"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-The 1.1mA constant current source also can be used for studying Ohm's law,
- by connecting different values of resistors to CCS and measure the voltage
- across them.
- Connecting a 1k resistor from CCS to GND will develop a voltage of 
-\begin_inset Formula $V=0.0011\times1000=1.1V$
-\end_inset
-
- .
- Try the same using other values (Do not use values more than 2.2k)
-\end_layout
-
-\begin_layout Standard
-Actual output of the constant current source may vary slightly from the
- specified 1.1mA, due to the component tolerances.
- The currrent can be measured by connecting an ammeter from CCS to GND,
- or by connecting a known resistance to CCS and measuring the voltage across
- it.
- The resistor should be in 100
+ExpEYES has a terminal marked 
+\series bold
+SEN
+\series default
+, that can be used for measuring resistances in the range of 100
 \begin_inset Formula $\Omega$
 \end_inset
 
- to 2.2
+ to 100 
 \begin_inset Formula $k\Omega$
 \end_inset
 
- range.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/ccs-calib.svg
-	lyxscale 70
-	height 1.2cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Enable CCS, using the toggle button on the GUI.
-\end_layout
-
-\begin_layout Itemize
-Read A1
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The measured voltage at A1 divided by 1000 gives the current from CCS.
- For better accuracy, the measured value should be used in experiments using
- CCS.
-\end_layout
-
-\begin_layout Section
-Resistances in series
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Finding the effective resistance of a series combination of resistors, 
+.
+ You can also study the series and parallel combination of resistors.
+ Effective resistance of a series combination of resistors, 
 \begin_inset Formula $R=R1+R2+\cdots$
 \end_inset
 
-, using the SEN input.
- A 
-\begin_inset Formula $560\Omega$
-\end_inset
-
- and a
-\begin_inset Formula $1k\Omega$
-\end_inset
-
- resistors are used.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/res-series.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Connect R1, R2 alone and then both
-\end_layout
-
-\begin_layout Itemize
-Note down the resistance for each case
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-It can be seen that it is the effective resistance is the sum of the individual
- values, within the measurement error.
-\end_layout
-
-\begin_layout Section
-Resistances in parallel
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Find the effective resistance of parallel combination of resistors, given
- by 
+ .
+ For parallel combination it is given by 
 \begin_inset Formula $\frac{1}{R}=\frac{1}{R1}+\frac{1}{R2}+\cdots$
 \end_inset
 
@@ -1581,8 +1304,22 @@ Find the effective resistance of parallel combination of resistors, given
 
 \begin_layout Standard
 \begin_inset Graphics
+	filename schematics/res-measure.svg
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename schematics/res-series.svg
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
 	filename schematics/res-parallel.svg
-	height 3cm
+	height 2cm
 
 \end_inset
 
@@ -1590,27 +1327,23 @@ Find the effective resistance of parallel combination of resistors, given
 \end_layout
 
 \begin_layout Paragraph*
-Procedure 
+Procedure
 \end_layout
 
 \begin_layout Itemize
-Connect the resistors one by one from SEN to Ground and measure the values.
+Connect the resistor between SEN and any Ground terminal
 \end_layout
 
 \begin_layout Itemize
-Repeat the same with two resistors connected in parallel.
+Observe the value shown on the right side panel
 \end_layout
 
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The effective resistance should be compared with the theory.
+\begin_layout Itemize
+Try series and parallel combinations
 \end_layout
 
 \begin_layout Section
-Voltage of a lemon cell 
+Measuring Capacitance
 \end_layout
 
 \begin_layout Paragraph*
@@ -1618,14 +1351,28 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Make a voltage source by inserting Zinc and Copper plates into a lemon.
- Explore the current driving capability and internal resistance.
+Measuring capacitance and explore the series and parallel combinations of
+ capacitors.
 \end_layout
 
 \begin_layout Paragraph*
 \begin_inset Graphics
-	filename schematics/lemon-cell.svg
-	height 4cm
+	filename schematics/cap-measure.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename schematics/cap-series.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename schematics/cap-parallel.svg
+	height 2cm
 
 \end_inset
 
@@ -1637,11 +1384,24 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-Click on A1 to measure voltage
+Connect the capacitor between IN1 and Ground.
 \end_layout
 
 \begin_layout Itemize
-Measure the voltage with and without the 1k resistor
+Click on 
+\begin_inset Quotes eld
+\end_inset
+
+Capacitance on IN1
+\begin_inset Quotes erd
+\end_inset
+
+ .
+ Should not touch the capacitor while measuring
+\end_layout
+
+\begin_layout Itemize
+Repeat the measurement for Series and parallel combinations
 \end_layout
 
 \begin_layout Paragraph*
@@ -1649,22 +1409,18 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Voltage across the Copper and Zinc terminals is nearly .9 volts.
- Connecting the resistor reduces it to 0.33 volts.
- When connected, current will start flowing through the resistor.
- But why is the voltage going down ?
-\end_layout
+We have used 100pF capacitors in this activity.
+ For parallel combination, the effective capacitance is given by 
+\begin_inset Formula $C=C1+C2+\cdots$
+\end_inset
 
-\begin_layout Standard
-What is the internal resistance of the cell ?
-\end_layout
+ , and for series combination by 
+\begin_inset Formula $\frac{1}{C}=\frac{1}{C1}+\frac{1}{C2}+\cdots$
+\end_inset
 
-\begin_layout Standard
-Current is the flow of charges and it has to complete the path.
- That means, current has to flow through the cell also.
- Depending on the internal resistance of the cell, part of the voltage gets
- dropped inside the cell itself.
- Does the same happen with a new dry-cell ?
+ .
+ You can make the capacitors by pasting thin metal foils on both sides of
+ insulators like paper, polythene or glass.
 \end_layout
 
 \begin_layout Section
@@ -1692,7 +1448,7 @@ Learn to apply Ohm's law to find the value of an unknown resistance by comparing
  .
  If same amount of current is flowing through two different resistors, the
  ratio of voltages will be the same as the ratio of resistances, 
-\begin_inset Formula $I=\frac{V_{A1}}{R1}=\frac{V_{PV1}-V_{A1}}{R2}$
+\begin_inset Formula $I=\frac{V_{A1}}{R2}=\frac{V_{PV1}-V_{A1}}{R1}$
 \end_inset
 
 .
@@ -1713,7 +1469,7 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-Connect the unknown resistor R from PVS to A1.
+Connect the unknown resistor R from PV1 to A1.
 \end_layout
 
 \begin_layout Itemize
@@ -1721,7 +1477,7 @@ Connect 1
 \begin_inset Formula $k\Omega$
 \end_inset
 
- (R1) from A1 to Ground.
+ (R2) from A1 to Ground.
 \end_layout
 
 \begin_layout Itemize
@@ -1729,7 +1485,21 @@ Set PV1 to 4 volts.
 \end_layout
 
 \begin_layout Itemize
-Measure voltage at A1
+Measure voltage at A1.
+ Calculate the current 
+\begin_inset Formula $I=\frac{V_{A1}}{R2}$
+\end_inset
+
+ .
+ Value of 
+\begin_inset Formula $R1=\frac{V_{PV1}-V_{A1}}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Select Electrical->Plot I-V curve from the menu to get an I-V plot
 \end_layout
 
 \begin_layout Paragraph*
@@ -1757,6 +1527,288 @@ We will use this method later to measure the resistance of solutions, using
 \end_layout
 
 \begin_layout Section
+Direct and Alternating Currents
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Introduce the concept of time dependent voltages, using a V(t) graph.
+ Compare the graph of DC and AC.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/ac-dc.svg
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Set PV1 to 2 volts and Set WG to 200 Hz
+\end_layout
+
+\begin_layout Itemize
+Enable analyse on A1, to measure amplitude and frequency.
+\end_layout
+
+\begin_layout Itemize
+Enable A2
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+In the plot if voltage is not changing, it is pure DC.
+ If the voltage is changing with time, it has an AC component.
+ if the average voltage is zero, it is pure DC.
+ In the second plot, the voltage is changing from zero to file volts, is
+ it AC, DC or something else ???
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/ac-dc.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/sqr-wave.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+AC mains pickup
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Learn about the AC mains supply.
+ Explore the phenomenon of propagation of AC through free space.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/line-pickup.svg
+	lyxscale 70
+	height 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Connect a long wire to A3
+\end_layout
+
+\begin_layout Itemize
+Take one end of the wire near the AC mains line, without touching any mains
+ supply.
+\end_layout
+
+\begin_layout Itemize
+Enable A3, and it's analysis.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The power line pickup is shown below, there are five cycles in 100 milliseconds.
+ Without making any connection, how are we getting the AC voltage from the
+ mains supply ? Why the voltage increaes when you touch the end of the wire
+ connected to A1 by hand.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/pickup.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Separating DC & AC components
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:DC-&-AC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Separating AC and DC components of a voltage waveform using a capacitor.
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/acdc-separating.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/acdc-sep-screen.png
+	lyxscale 50
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Set SQR1 to 500 Hz
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2
+\end_layout
+
+\begin_layout Itemize
+Adjust the horizontal scale to see several cycles.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The observed waveforms with and without the series capacitor are shown in
+ figure.
+ The voltage is swinging between 0 and 5 volts.
+ After passing through the capacitor the voltage swings from -2.5 volts to
+ +2.5 volts.
+\end_layout
+
+\begin_layout Standard
+What will you get if you subtract a 2.5 from the y-coordinate of every point
+ of the first graph? That is what the capacitor did.
+ It did not allow the DC part to pass through.
+ This original square wave can be considered as a 2.5V AC superimposed on
+ a 2.5V DC.
+\end_layout
+
+\begin_layout Standard
+You may need to connect a resistor from A2 to GND to see a waveform swinging
+ between -2.5 to +2.5 volts.
+ Remove the resistor and observe the result.
+ 
+\end_layout
+
+\begin_layout Section
+Human body as a conductor
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Touching the AC mains is fatal to us because our body is a conductor.
+ We can explore this using low voltage signals.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/conducting-human.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/conducting-human-screen.png
+	lyxscale 50
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Set WG to 200 Hz.
+\end_layout
+
+\begin_layout Itemize
+Enable A1, A2 with analysis enabled.
+\end_layout
+
+\begin_layout Itemize
+Conenct WG and A1, with a wire
+\end_layout
+
+\begin_layout Itemize
+Connect WG and A2 through your body and note voltages
+\end_layout
+
+\begin_layout Itemize
+Repeat it using a 3 volt DC signal from PV1.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The observed peak voltage will be less than 3volts, due to the resistance
+ of the body.
+ There could be some ripple due to the 50Hz AC pickup.
+ This can be eliminated by performing the experiment far away from power
+ lines, using a laptop.
+\end_layout
+
+\begin_layout Section
 Resistance of human body
 \end_layout
 
@@ -1765,7 +1817,8 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Get some idea about the resistance of the skin and how it varies.
+Measure the resistance of human body by comparing it with a known resistor.
+ We start with a DC input from PV1 and then using the AC signal from WG.
 \end_layout
 
 \begin_layout Standard
@@ -1811,17 +1864,10 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The observed waveform is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Square-wave"
-
-\end_inset
-
-(b).
- Voltage at A2 is 3V.
- The ripple in the output is due to the 50Hz AC pickup, can be eliminated
- by performing the experiment far away from power lines, using a laptop.
+The DC measurements are affected more by the electrical noise.
+ The AC resistance should be less than the DC resistance.
+ The resistance is due to our skin and AC can pass through this, like it
+ passes through a capacitor.
 \end_layout
 
 \begin_layout Section
@@ -1884,7 +1930,7 @@ The resistance vary from 1k
 \end_layout
 
 \begin_layout Section
-Measuring Capacitance
+Voltage of a lemon cell 
 \end_layout
 
 \begin_layout Paragraph*
@@ -1892,13 +1938,13 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Measuring capacitance and explore the series and parallel combinations of
- capacitors.
+Make a voltage source by inserting Zinc and Copper plates into a lemon.
+ Explore the current driving capability and internal resistance.
 \end_layout
 
 \begin_layout Paragraph*
 \begin_inset Graphics
-	filename schematics/cap-measure.svg
+	filename schematics/lemon-cell.svg
 	height 3cm
 
 \end_inset
@@ -1911,19 +1957,11 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-Click on 
-\begin_inset Quotes eld
-\end_inset
-
-Capacitance on IN1
-\begin_inset Quotes erd
-\end_inset
-
-
+Click on A1 to measure voltage
 \end_layout
 
 \begin_layout Itemize
-Repeat the measurement for different combinations
+Measure the voltage with and without the 1k resistor
 \end_layout
 
 \begin_layout Paragraph*
@@ -1931,22 +1969,33 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-We have used 100pF capacitors in this activity.
- For parallel combination, the effective capacitance is given by 
-\begin_inset Formula $C=C1+C2+\cdots$
-\end_inset
+Voltage across the Copper and Zinc terminals is nearly .9 volts.
+ Connecting the resistor reduces it to 0.33 volts.
+ When connected, current will start flowing through the resistor.
+ But why is the voltage going down ?
+\end_layout
 
- , and for series combination by 
-\begin_inset Formula $\frac{1}{C}=\frac{1}{C1}+\frac{1}{C2}+\cdots$
-\end_inset
+\begin_layout Standard
+What is the internal resistance of the cell ?
+\end_layout
 
- .
- You can make the capacitors by pasting thin metal foils on both sides of
- insulators like paper, polythene or glass.
+\begin_layout Standard
+Current is the flow of charges and it has to complete the path.
+ That means, current has to flow through the cell also.
+ Depending on the internal resistance of the cell, part of the voltage gets
+ dropped inside the cell itself.
+ Does the same happen with a new dry-cell ?
 \end_layout
 
 \begin_layout Section
-Measuring Dielectric Constant
+A simple AC generator
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:A-simple-AC"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -1954,61 +2003,52 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Measure the dielectric constant of materials like glass, paper, polyester
- etc., by making a capacitor.
- Capacitance 
-\begin_inset Formula $C=\epsilon_{0}k\frac{A}{d}$
+Measure the frequency and amplitude of the voltage induced across a solenoid
+ coil by a rotating magnet.
+ Use the 10 mm x 10 mm magnet and the 3000T coils that comes with the kit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/ac-generator.svg
+	lyxscale 60
+	height 3cm
+
 \end_inset
 
-, where 
-\begin_inset Formula $\epsilon_{0}$
+ 
+\begin_inset Graphics
+	filename pics/ac-gen-screen.png
+	lyxscale 60
+	height 4cm
+
 \end_inset
 
- is the permittivity of free space, 
-\begin_inset Formula $k$
-\end_inset
 
- the dielectric constant , 
-\begin_inset Formula $A$
-\end_inset
-
- the overlapping area of plates and 
-\begin_inset Formula $d$
-\end_inset
-
- the separation between them.
- We have used a 13 cm x 10.6 cm piece of window glass having 4 mm thickness
- to make a capacitor by pasting metal foil on both sides.
 \end_layout
 
 \begin_layout Paragraph*
-Procedure 
+Procedure
 \end_layout
 
 \begin_layout Itemize
-Connect the capacitor from IN1 to ground.
- 
+Mount the magnet horizontally and power the DC motor from a 1.5 volts cell
 \end_layout
 
 \begin_layout Itemize
-Click on the Button 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Measure C on IN1}
-\end_layout
-
-\end_inset
-
-
+Enable A1 and A2, with analysis option
 \end_layout
 
 \begin_layout Itemize
-Repeat without connecting anything to IN1
+Set timebase to 100 mS full scale
+\end_layout
+
+\begin_layout Itemize
+Bring the coil near the magnet (not to touch it), watch the induced voltage
+\end_layout
+
+\begin_layout Itemize
+Repeat the experiment using 2 coils.
 \end_layout
 
 \begin_layout Paragraph*
@@ -2016,25 +2056,97 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The measured capacitance is 255 pF.
- The stray capacitance is measured after removing the wire from IN1 and
- it is 30pF, means C = 225pF.
- 
-\begin_inset Formula $k=\frac{Cd}{\epsilon_{0}A}=\frac{225e-12\times0.004}{8.854e-12\times.13\times.106}=7.38$
-\end_inset
-
-.
- Touching the capacitor during the measurement gives wrong results.
- 
+The voltage output is shown in figure.
+ The phase difference between the two voltages depends on the angle between
+ the axes of the two coils.
 \end_layout
 
 \begin_layout Standard
-Using two parallel metal plates, the dielectric constant of liquids also
- can be measured.
+Bring a shorted coil near the magnet to observe the change in frequency.
+ The shorted coil is drawing energy from the generator and the speed get
+ reduced.
+ The magnetic field in this generator is very weak.
+ The resistance of the coil is very high and trying to draw any current
+ from it will drop most of the voltage across the coil itself.
+ 
 \end_layout
 
-\begin_layout Chapter
-Activities - Level 2
+\begin_layout Section
+AC Transformer
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Demonstrate mutual induction using two coils, supplied with ExpEYES.
+ One coil, the primary, is connected between WG and Ground.
+ The axes of the coils are aligned and a ferrite core is inserted.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename schematics/transformer.svg
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/transformer-screen.png
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Make connections as shown in the figure
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2
+\end_layout
+
+\begin_layout Itemize
+Set WG to 500 Hz
+\end_layout
+
+\begin_layout Itemize
+Bring the coils close and watch the voltage on A2.
+\end_layout
+
+\begin_layout Itemize
+Try inserting an ion core
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The applied waveform and the induced waveform are shown in figure.
+ A changing magnetic filed is causing the induced voltage.
+ In the previous two experiments, the changing magnetic field was created
+ by the movement of permanent magnets.
+ In the present case the changing magnetic field is created by a time varying
+ current.
+\end_layout
+
+\begin_layout Standard
+Try doing this experiment using a squarewave.
+ Connect a 1k
+\begin_inset Formula $\Omega$
+\end_inset
+
+ resistor across secondary coil to reduce ringing.
 \end_layout
 
 \begin_layout Standard
@@ -2052,7 +2164,7 @@ For each experiment, make connections as per the diagram given.
 \end_layout
 
 \begin_layout Section
-Direct and Alternating Currents
+Resistance of water, using AC
 \end_layout
 
 \begin_layout Paragraph*
@@ -2060,58 +2172,24 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Introduce the concept of time dependent voltages, using a V(t) graph.
- Compare the graph of DC and AC.
- 
+Measure the resistance of ionic solutions, using both DC and AC voltages.
+ We have used normal tap water.
+ Try measuring the resistance using a multimeter first.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename pics/ac-dc.png
-	lyxscale 50
-	width 5cm
+	filename schematics/res-water.svg
+	height 3cm
 
 \end_inset
 
  
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Plotting Voltage Vs Time.
- Graph of DC and AC.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Plotting-ACandDC"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
-	filename schematics/ac-dc.svg
-	height 1cm
+	filename pics/water-conduct.png
+	lyxscale 50
+	height 3cm
 
 \end_inset
 
@@ -2119,19 +2197,26 @@ name "fig:Plotting-ACandDC"
 \end_layout
 
 \begin_layout Paragraph*
-Procedure 
+Procedure
 \end_layout
 
 \begin_layout Itemize
-Set PVS to 2 volts
+R1 should be comparable to R, start with 10k.
 \end_layout
 
 \begin_layout Itemize
-Set WG to 200 Hz
+Enable A1 and A2
 \end_layout
 
 \begin_layout Itemize
-Enable analyse on CH1, to measure amplitude and frequency.
+Calculate the resistance as explained in section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Measure-resistance-by-comparison"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -2139,113 +2224,22 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Plotting-ACandDC"
-
-\end_inset
-
-(a) shows that the graph of DC is horizontal line and for AC it changes
- direction and magnitude with time.
- The voltage is changing with time.
- It goes to both negative and positive around 200 cycles per second.
- This voltage waveform is generated by using electronic circuits.
-\end_layout
-
-\begin_layout Section
-AC mains pickup
-\end_layout
-
-\begin_layout Paragraph*
-Objective
+Observed values are shown in the table.
+ The DC and AC resistances seems to be very different.
+ With DC, the resistance of the liquid changes with time, due to electrolysis
+ and bubble formation.
+ The resistance does not depend much on the distance between the electrodes,
+ the area of the electrode is having some effect.
+ The resistance depends on the ion concentration and presence of impurities
+ in the water used.
 \end_layout
 
 \begin_layout Standard
-Learn about the AC mains supply.
- Explore the phenomenon of propagation of AC through free space.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/pickup.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-AC mains pickup 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AC Pickup"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/line-pickup.svg
-	height 1.5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure 
-\end_layout
-
-\begin_layout Itemize
-Connect a long wire to A1
-\end_layout
-
-\begin_layout Itemize
-Enable A1, and it's analysis.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The power line pickup is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AC Pickup"
-
-\end_inset
-
-.
- Without making any connection, how are we getting the AC voltage from the
- mains supply ? Why the voltage increaes when you touch the end of the wire
- connected to A1 by hand.
+Try changing the distance between electrodes.
+ Try adding some common salt and repeat the measurements.
+ Why is the behavior different for AC and DC ? What are the charge carriers
+ responsible for the flow of electricity through solutions ? Is there any
+ chemical reaction taking place ?
 \end_layout
 
 \begin_layout Section
@@ -2370,1976 +2364,15 @@ Sound waves create pressure variations in the medium through which it travel.
  
 \end_layout
 
-\begin_layout Section
-DC & AC components of a voltage
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:DC-&-AC"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Separating AC and DC components of a voltage waveform using a capacitor.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/acdc-sep-screen.png
-	lyxscale 40
-	width 6cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/body-resistance.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) A 0 to 5V square wave, with DC component blocked (b) Measuring electrical
- resistance of human body
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Square-wave"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/acdc-separating.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Set SQR1 to 500 Hz
-\end_layout
-
-\begin_layout Itemize
-Assign SQR1 to CH1 and A2 to CH2
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale to see several cycles.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The observed waveforms with and without the series capacitor are shown in
- figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Square-wave"
-
-\end_inset
-
-.
- The voltage is swinging between 0 and 5 volts.
- After passing through the capacitor the voltage swings from -2.5 volts to
- +2.5 volts.
-\end_layout
-
-\begin_layout Standard
-What will you get if you subtract a 2.5 from the y-coordinate of every point
- of the first graph? That is what the capacitor did.
- It did not allow the DC part to pass through.
- This original square wave can be considered as a 2.5V AC superimposed on
- a 2.5V DC.
-\end_layout
-
-\begin_layout Standard
-You may need to connect a resistor from A2 to GND to see a waveform swinging
- between -2.5 to +2.5 volts.
- Remove the resistor and observe the result.
- 
-\end_layout
-
-\begin_layout Section
-Conductivity of water, using DC & AC
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Measure the resistance of ionic solutions, using both DC and AC voltages.
- We have used normal tap water.
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-R1 should be comparable to R, start with 10k.
-\end_layout
-
-\begin_layout Itemize
-Assign A1 to CH1 and A2 to CH2, enable analysis on both
-\end_layout
-
-\begin_layout Itemize
-Calculate the resistance as explained in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Measure-resistance-by-comparison"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Repeat using a DC voltage, PV1 instead of SINE
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename schematics/res-water.svg
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/water-conduct.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Conductivity of water.
- (b)Total voltage applied and the voltage across the 10k resistor.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Conductivity-of-water."
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Observed values are shown in the table.
- The DC and AC resistances seems to be very different.
- With DC, the resistance of the liquid changes with time, due to electrolysis
- and bubble formation.
- The resistance does not depend much on the distance between the electrodes,
- the area of the electrode is having some effect.
- The resistance depends on the ion concentration and presence of impurities
- in the water used.
-\end_layout
-
-\begin_layout Standard
-Try changing the distance between electrodes.
- Try adding some common salt and repeat the measurements.
- Why is the behavior different for AC and DC ? What are the charge carriers
- responsible for the flow of electricity through solutions ? Is there any
- chemical reaction taking place ?
-\end_layout
-
-\begin_layout Section
-A simple AC generator
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:A-simple-AC"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Measure the frequency and amplitude of the voltage induced across a solenoid
- coil by a rotating magnet.
- Use the 10 mm x 10 mm magnet and the 3000T coils that comes with the kit.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename schematics/ac-generator.svg
-	height 4cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/ac-gen-screen.png
-	lyxscale 40
-	width 4cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Wiring schematic and voltage output of the AC generator, with coils placed
- on opposite sides of the rotating magnet.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AC generator output"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Mount the magnet horizontally and power the DC motor from a 1.5 volts cell
-\end_layout
-
-\begin_layout Itemize
-Hold the coil perpendicular to the axis of rotation of the motor, close
- to the magnet.
- Be careful not to touch it.
-\end_layout
-
-\begin_layout Itemize
-Enable A1 and A2, with analysis option
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The voltage output is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AC generator output"
-
-\end_inset
-
-.
- The phase difference between the two voltages depends on the angle between
- the axes of the two coils.
-\end_layout
-
-\begin_layout Standard
-Bring a shorted coil near the magnet to observe the change in frequency.
- The shorted coil is drawing energy from the generator and the speed get
- reduced.
- The magnetic field in this generator is very weak.
- The resistance of the coil is very high and trying to draw any current
- from it will drop most of the voltage across the coil itself.
- 
-\end_layout
-
-\begin_layout Section
-Making an Electromagnet
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-To demonstrate the equivalence of a bar magnet and a current carrying solenoid
- coil.
- 
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Connect the 3000T coil from OD1 to GND
-\end_layout
-
-\begin_layout Itemize
-Suspend the cylindrical magnet in front of the coil
-\end_layout
-
-\begin_layout Itemize
-Enable Check button OD1 to make it 5 volts
-\end_layout
-
-\begin_layout Itemize
-Repeat by reversing the coil connections
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-When OD1 is set to 5 volts, the magnet will be either repelled or attracted
- depending on the direction of the current and the pole of the magnet near
- the coil.
- The direction of force can be reversed by changing any one of them.
-\end_layout
-
-\begin_layout Section
-AC Transformer
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Demonstrate mutual induction using two coils, supplied with ExpEYES.
- One coil, the primary, is connected between WG and Ground.
- The axes of the coils are aligned and a ferrite core is inserted.
-\end_layout
-
-\begin_layout Standard
-\align left
-\begin_inset Graphics
-	filename schematics/transformer.svg
-	height 4cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Enable A1 and A2
-\end_layout
-
-\begin_layout Itemize
-Set WG to 500 Hz
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The applied waveform and the induced waveform are shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Voltage-induced-on"
-
-\end_inset
-
-(2).
- A changing magnetic filed is causing the induced voltage.
- In the previous two experiments, the changing magnetic field was created
- by the movement of permanent magnets.
- In the present case the changing magnetic field is created by a time varying
- current.
-\end_layout
-
-\begin_layout Standard
-Try doing this experiment using a squarewave.
- Connect a 1k
-\begin_inset Formula $\Omega$
-\end_inset
-
- resistor across secondary coil to reduce ringing.
-\end_layout
-
-\begin_layout Section
-RC Integration & Differentiation 
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-RC circuits can integrate or differentiate a voltage waveform with respect
- to time.
- A square wave is integrated to get a triangular wave and differentiated
- to get spikes at the transitions.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RCinteg.svg
-	height 3cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename schematics/RCdiff.svg
-	height 3cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Set SQ1 to 1kHz (T = 1mS), R=1k and C = 1uF
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale to view more than 4 cycles.
-\end_layout
-
-\begin_layout Itemize
-Repeat the same for RC differentiator, at 100Hz.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/rc-integ1khz.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pics/rc-diff100Hz.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a)1kHz Squarewave after RC Integrator (b) 100Hz after RC Differentiator
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:RC-int-diff"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Integration observed at 1kHz and differentiation at 100Hz are shown in figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:RC-int-diff"
-
-\end_inset
-
-, using an RC value of 1 milliseconds.
- When the time period becomes comparable with the RC value, the output waveform
- is triangular.
- The differentiation can only be shown at lower frequency since capturing
- the narrow spike requires a fast oscilloscope.
-\end_layout
-
-\begin_layout Section
-Fourier Analysis
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Fourier-Transform-**"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Learn about Fourier Transform of a signal.
- Time and Frequency domain representations.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/fourier.svg
-	height 1cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Enable A1 and A2, select 8 volt scale
-\end_layout
-
-\begin_layout Itemize
-Set both WG and SQ1 to 500Hz
-\end_layout
-
-\begin_layout Itemize
-Adjust timebase to view around 10 cycles
-\end_layout
-
-\begin_layout Itemize
-Press the FFT button
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/ft-sine.pg
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/ft-square.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Frequency spectrum of (a)Sine wave.
- (b) Squarewave
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Frequency-spectrum-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In the Fourier transform plot, frequency is on the x-axis and the y-axis
- shows the relative strength of each frequency components of the signal.
- This is called the frequency domain representation
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://en.wikipedia.org/wiki/Fourier_transform
-\end_layout
-
-\end_inset
-
-.
- For the sine wave there is only one dominant peak, the smaller ones are
- a measure of distortion of the sine wave.
- 
-\end_layout
-
-\begin_layout Standard
-A square wave function can be represented as 
-\begin_inset Formula $f(\theta)=sin(\theta)+\frac{sin(3\theta)}{3}+\frac{sin(5\theta)}{5}+\cdots$
-\end_inset
-
-.
- In the Fourier transform of a square wave of frequency 
-\begin_inset Formula $f$
-\end_inset
-
- , there will be a 
-\begin_inset Formula $3f$
-\end_inset
-
- component (having an amplitude of one third of 
-\begin_inset Formula $f$
-\end_inset
-
- ), 
-\begin_inset Formula $5f$
-\end_inset
-
- component (amplitude one fifth) etc.
- as shown in the figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Frequency-spectrum-of"
-
-\end_inset
-
-(b).
- Note the peak at 0 Hz, due to the DC component.
- To remove that put A1 in the AC coupled mode, using the switch on the box.
-\end_layout
-
-\begin_layout Chapter
-Electricity & Magnetism
-\end_layout
-
-\begin_layout Standard
-The previous sections were mostly demonstration.
- From this section onwards the user is expected to compare the experimental
- results with the theory.
-\end_layout
-
-\begin_layout Section
-RC circuits, steady state response
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Explore the effect of a series capacitor in AC circuits, under steady state
- conditions.
- Impedance of a Capacitor 
-\begin_inset Formula $X_{c}=\frac{1}{2\pi fC}$
-\end_inset
-
- , where 
-\begin_inset Formula $f$
-\end_inset
-
- is the frequency in Hertz and 
-\begin_inset Formula $C$
-\end_inset
-
- is the capacitance in Farads.
- 
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RCsteadystate.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RC steady state response}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale to view more than 4 cycles.
-\end_layout
-
-\begin_layout Itemize
-Note down the amplitude and phase measurements,
-\end_layout
-
-\begin_layout Itemize
-Repeat the measurements by changing the frequency.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The voltage waveform before and after the capacitor are shown in figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AC-Phase-in-RC"
-
-\end_inset
-
-(a).
- The phase shift across the capacitor is given by 
-\begin_inset Formula $\theta=atan\left(\frac{X_{c}}{R}\right)$
-\end_inset
-
- , where 
-\begin_inset Formula $X_{c}=\frac{1}{2\pi fC}$
-\end_inset
-
- is the impedance of the capacitor and 
-\begin_inset Formula $X_{R}$
-\end_inset
-
- is the resistance.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/rc-phaseshift.png
-	lyxscale 40
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-AC applied to an RC series circuit 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AC-Phase-in-RC"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-RL circuits, steady state response
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Measure the AC voltage phase shift in an RL circuit.
- Impedance of an Inductor 
-\begin_inset Formula $X_{L}=2\pi fL$
-\end_inset
-
- , where 
-\begin_inset Formula $f$
-\end_inset
-
- is the frequency in Hertz and L is the inductance in Henry.
- In an LC circuit, the phase lag across the inductor is given by the equation
- 
-\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{X_{L}}{X_{R}}\right)$
-\end_inset
-
-, where R is the resistance in Ohms.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RLsteadystate.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RL steady state response}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale to view more than 4 cycles.
-\end_layout
-
-\begin_layout Itemize
-Repeat for different frequencies.
-\end_layout
-
-\begin_layout Itemize
-Insert an iron or ferrite core to the coil, to observe the effect of ferromagnet
-ic materials.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/rl-phaseshift.png
-	lyxscale 40
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-AC applied to an RL series circuit 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AC-Phase-in-RL"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-Waveforms for the 125 mH inductor is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AC-Phase-in-RL"
-
-\end_inset
-
-.
- The phase shift is given by 
-\begin_inset Formula $\bigtriangleup\Phi=\arctan\left(\frac{X_{L}}{X_{R}}\right)$
-\end_inset
-
- where 
-\begin_inset Formula $X_{L}=2\pi fL$
-\end_inset
-
-.
- The resistance of the inductor also should be included while calculating
- the phase shift.
- 
-\end_layout
-
-\begin_layout Standard
-Insert an iron or ferrite core to the coil and observe the effect of ferromagnet
-ic materials.
- 
-\end_layout
-
-\begin_layout Section
-RLC circuits, steady state response
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Study the effect of series LCR elements in an AC circuit.
- The total applied AC voltage is measured on A1 and the voltage across the
- resistor on A2.
- Subtracting the instantaneous values of A2 from A1 gives the combined voltage
- across the inductor and capacitor.
- We need to use an inductor with negligible resistance for good results.
- The phase difference between current and voltage is given by 
-\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{X_{c}-X_{L}}{X_{R}}\right)$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RLCsteadystate.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Connect 1uF, 10mH and 1K as shown in the figure
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RLC steady state response}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Measure the phase shift for different frequencies
-\end_layout
-
-\begin_layout Itemize
-Around 1600 Hz, series resonance is observed
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The total voltage, voltage across R and the voltage across LC are shown
- in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:AC-response-of"
-
-\end_inset
-
-.
- The phasor diagram shows the phase angle between the current and the voltage.
- The inductance used in this experiment is around 10mH, having a resistance
- of 
-\begin_inset Formula $20\Omega$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-At 1600 Hz, 
-\begin_inset Formula $X_{c}\approx X_{L}$
-\end_inset
-
- and the voltage across LC is decided by the resistance of the inductor.
- At the resonant frequency, the voltage drop across LC will be minimum,
- decided by the resistance of the inductor.
- The input A3 is connected between L and C, so that the individual voltage
- drop across L and C can be displayed.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/series-resonance.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-AC response of series RLC circuit
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:AC-response-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Transient Response of RC circuits
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Capacitor-charging-&"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Plot the voltage across a capacitor, when it is charged by applying a voltage
- step through a resistor.
- Calculate the value of the capacitance from the graph.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RCtransient.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RC Transient response}
-\end_layout
-
-\end_inset
-
-
-\shape default
- 
-\end_layout
-
-\begin_layout Itemize
-Click on 
-\shape italic
-0->5V STEP
-\shape default
- and 
-\shape italic
-5->0V step
-\shape default
- Buttons to plot the graphs
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale, if required, and repeat.
-\end_layout
-
-\begin_layout Itemize
-Calculate RC time constant.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/RC-curves.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Transient response of RC circuit.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Transient-RC"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Applying a 0 to 5V step makes the voltage across the capacitor to rise exponenti
-ally as shown in the figure
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Transient-RC"
-
-\end_inset
-
-(a).
- By fitting the discharge curve with 
-\begin_inset Formula $V(t)=V_{0}e^{-\frac{t}{RC}}$
-\end_inset
-
- ,we can extract the RC time constant and find the values of capacitance
- from it.
- 
-\end_layout
-
-\begin_layout Standard
-The voltage across a capacitor is exponential only when it is charged trough
- a linear element, a resistor for example.
- When charged from a constant current source, the voltage shows linear increase,
- as shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Transient-RC"
-
-\end_inset
-
-(b), because 
-\begin_inset Formula $Q=It=CV$
-\end_inset
-
- , and voltage increases linearly with time as 
-\begin_inset Formula $V=\left(\frac{I}{C}\right)t$
-\end_inset
-
- .
-\end_layout
-
-\begin_layout Section
-Transient Response of RL circuits
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Explore the nature of current and voltage when a voltage step is applied
- to resistor and inductor in series.
- By measuring the voltage across the inductor as a function of time, we
- can calculate its inductance.
-\end_layout
-
-\begin_layout Standard
-In an RL circuit 
-\begin_inset Formula $V=IR+L\frac{dI}{dt}$
-\end_inset
-
- and solving this will give 
-\begin_inset Formula $I=I_{0}e^{-\frac{R}{L}t}$
-\end_inset
-
-.
- The coefficient of the exponential term R/L can be extracted from the graph
- of voltage across the inductor.
- The resistance of the inductor coil should be included in the calculations,
- 
-\begin_inset Formula $R=R_{ext}+R_{L}$
-\end_inset
-
-.
- 
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://nptel.iitm.ac.in/courses/Webcourse-contents/IIT-KANPUR/esc102/node14.html
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RLtransient.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Inductor is the 3000 Turn coil
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RL Transient response}
-\end_layout
-
-\end_inset
-
-
-\shape default
- 
-\end_layout
-
-\begin_layout Itemize
-Click on 
-\shape italic
-0->5V STEP
-\shape default
- and 
-\shape italic
-5->0V step
-\shape default
- Buttons to plot the graphs
-\end_layout
-
-\begin_layout Itemize
-Adjust the horizontal scale, if required, and repeat.
-\end_layout
-
-\begin_layout Itemize
-Calculate the value of inductance
-\end_layout
-
-\begin_layout Itemize
-Insert an iron core into the inductor and repeat
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/RL-curves.png
-	lyxscale 40
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Transient response of RL circuit
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Transient-RL"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The transient response of the inductor is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Transient-RC"
-
-\end_inset
-
-.
- The exponential curve is fitted to extract the L/R value.
- The resistance of the coil is measured by comparing it with the known external
- resistance under DC conditions.
- A2 is connected to OD1 for a more accurate measurement of the coil resistance.
-\end_layout
-
-\begin_layout Standard
-The applied voltages are above zero, but the graph went to negative voltages.
- Why ?
-\end_layout
-
-\begin_layout Standard
-What was the current before doing the 5->0 step ? What is back EMF ?
-\end_layout
-
-\begin_layout Standard
-Repeat with two coils in series, by (a) placing them far away (b) placing
- one over the other and (c) after changing the orientation.
- The effect of mutual inductance can be seen.
-\end_layout
-
-\begin_layout Section
-Transient response of LCR circuits
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Step-Response-ofRLC"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Explore the oscillatory nature of L and C in series.
- Resonant frequency of series LC circuit is given by 
-\begin_inset Formula $\omega_{0}=\frac{1}{2\pi\sqrt{LC}}$
-\end_inset
-
-.
- The damping factor is 
-\begin_inset Formula $\frac{R}{2}\sqrt{\frac{C}{L}}$
-\end_inset
-
-, and it is equal to 1 for critical damping.
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-http://en.wikiversity.org/wiki/RLC_circuit
-\end_layout
-
-\end_inset
-
- Depending upon the value of C/L and R, the response could be under-damped,
- critically-damped or over-damped.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/RLCtransient.svg
-	height 3cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/RLC-curves.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Transient response of LCR circuit, Under-damped 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:LCR Transient-response"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure 
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{RLC Transient response}
-\end_layout
-
-\end_inset
-
-
-\shape default
- 
-\end_layout
-
-\begin_layout Itemize
-Click on 5->0V STEP.
- Adjust x-axis and repeat if required.
-\end_layout
-
-\begin_layout Itemize
-FIT the graph to find the resonant frequency & Damping.
-\end_layout
-
-\begin_layout Itemize
-Repeat with a resistor bwtween OD1 and the inductor.
-\end_layout
-
-\begin_layout Itemize
-Repeat the experiment with different values of L, C and R
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-We have used the 3000 turn coil and a 0.1uF capacitor.
- The voltage across the capacitor after a 5 to 0V step is shown in figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:LCR Transient-response"
-
-\end_inset
-
- .The measured resonant frequency tallies with 
-\begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{1}{LC}}$
-\end_inset
-
- , within the component tolerance values.
-\end_layout
-
-\begin_layout Section
-Electromagnetic induction
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Explore the voltage induced across a coil by a changing magnetic field,
- by dropping a small cylindrical magnet into a coil.
- Use a tube to guide the magnet through the coil.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/induction.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electrical}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{EM Induction}
-\end_layout
-
-\end_inset
-
-
-\shape default
- 
-\end_layout
-
-\begin_layout Itemize
-Click on Start Scanning.
- A horizontal trace should appear
-\end_layout
-
-\begin_layout Itemize
-Drop the magnet through the coil, until a trace is caught.
-\end_layout
-
-\begin_layout Itemize
-Repeat the process by changing the parameters like magnet strength, speed
- etc.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/induction-screen.png
-	lyxscale 40
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/transformer-screen.png
-	lyxscale 40
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a)Voltage induced on a coil by a moving magnet.(b)Mutual Induction between
- two coils, the applied and induced voltages are shown 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Voltage-induced-on"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The result is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Voltage-induced-on"
-
-\end_inset
-
-(a).
- The amplitude increases with the speed of the magnet.
- From the graph, we can find the time taken by the magnet to travel through
- the coil.
-\end_layout
-
-\begin_layout Standard
-The second peak is bigger than the first peak.
- Why ? Where will be the magnet at the zero crossing of the induced voltage?
- Drop the magnet from different heights and plot the voltage vs square root
- of the height.
-\end_layout
-
 \begin_layout Chapter
 Electronics
 \end_layout
 
 \begin_layout Standard
-The non-linear elements like diodes and transistors are studied by drawing
- their characteristic curves and making simple circuits to demonstrate their
- functioning.
- Photo-transistor is used for transparency measurements, optical signal
- transmission and for timing mechanical movements.
- Amplitude and Frequency modulation are explored.
- A bread board is required to carry out some of the experiments described
- in this section.
+This chapter explains several electronics experiments.
+ Most of them are done using the oscilloscope GUI.
+ Some of them like Diode and Transistor characteristics have a dedicated
+ GUI.
 \end_layout
 
 \begin_layout Section
@@ -4351,55 +2384,23 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Learn the working of a PN junction diode.
- Making DC from a sinusoidal AC.
- Filtering to reduce the AC component.
+Learn the working of a PN junction diode as a rectifier.
+ RC filtering to reduce the ripple (the AC component).
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename pics/half-wave-screen.png
+	filename schematics/halfwave.svg
 	lyxscale 50
-	width 5cm
+	height 3cm
 
 \end_inset
 
  
 \begin_inset Graphics
-	filename pics/half-wave-filter-screen.png
+	filename pics/halfwave.png
 	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) Half wave rectifier input and output.(b) With capacitor filter.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Diode-rectifier"
-
-\end_inset
-
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
+	height 4cm
 
 \end_inset
 
@@ -4410,56 +2411,16 @@ name "fig:Diode-rectifier"
 Procedure 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/halfwave.svg
-	height 3cm
-
-\end_inset
-
-e
+\begin_layout Itemize
+Make connections and observe the output
 \end_layout
 
 \begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electronics}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Halfwave Rectifier}
-\end_layout
-
-\end_inset
-
-
-\shape default
- 
+Connect a 1k load resistor, note the difference in amplitude
 \end_layout
 
 \begin_layout Itemize
-Observe the output without R and C
+Connect a 1uF capacitor, and see the filtering effect.
 \end_layout
 
 \begin_layout Itemize
@@ -4471,14 +2432,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The negative half is removed by the diode as shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Diode-rectifier"
-
-\end_inset
-
-(a).
+The negative half is removed by the diode as shown in figure.
  Also notice that the voltage in the positive half is reduced by around
  0.7 volts, the voltage drop across a silicon diode.
  A load resistor is required for the proper operation of the circuit, it
@@ -4491,15 +2445,7 @@ reference "fig:Diode-rectifier"
 \end_layout
 
 \begin_layout Standard
-The effect of a capacitor is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Diode-rectifier"
-
-\end_inset
-
-(b).
- We can see that the capacitor charges up and then during the missing cycle
+We can see that the capacitor charges up and then during the missing cycle
  it maintains the voltage.
  The remaining AC component is called the ripple in the DC.
 \end_layout
@@ -4537,6 +2483,14 @@ Make a full wave rectifier, using two diodes.
 
 \end_inset
 
+ 
+\begin_inset Graphics
+	filename pics/fullwave.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
 
 \end_layout
 
@@ -4545,41 +2499,15 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electronics}
+Make connections
 \end_layout
 
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Fullwave Rectifier}
+\begin_layout Itemize
+Enable A1, A2 and A3
 \end_layout
 
-\end_inset
-
-
-\shape default
- 
+\begin_layout Itemize
+Set WG to 200Hz and adjust timebase to view 4 to 5 cycles
 \end_layout
 
 \begin_layout Paragraph*
@@ -4598,7 +2526,7 @@ Why full-wave rectifier is superior to half-wave rectifier ?
 \end_layout
 
 \begin_layout Section
-Diode I-V characteristics
+Clipping using PN junction diode
 \end_layout
 
 \begin_layout Paragraph*
@@ -4606,109 +2534,39 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Draw the I-V Characteristic of diode and compare the result with the theory.
- The IV characteristic of an ideal PN junction diode is given by equation
- 
-\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{kT}}-1\right)$
-\end_inset
-
-, where 
-\begin_inset Formula $I_{0}$
-\end_inset
-
- is the reverse saturation current, 
-\begin_inset Formula $q$
-\end_inset
-
- the charge of electron, 
-\begin_inset Formula $k$
-\end_inset
-
- the Boltzmann constant, 
-\begin_inset Formula $T$
-\end_inset
-
- the temperature in Kelvin.
- For a practical, non-ideal, diode, the equation is 
-\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{nkT}}-1\right)$
-\end_inset
-
-, where 
-\begin_inset Formula $n$
-\end_inset
-
- is the ideality factor, that is 
-\begin_inset Formula $1$
-\end_inset
-
- for an ideal diode.
- For practical diodes it varies from 1 to 2.
- We have used a IN4148 silicon diode.
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
+Demostrate clipping of an AC signal at different levels, using a PN junction
+ diode
 \end_layout
 
 \begin_layout Standard
-\align left
 \begin_inset Graphics
-	filename schematics/diode_iv.svg
+	filename schematics/clipping.svg
+	lyxscale 50
 	height 3cm
 
 \end_inset
 
- e
-\end_layout
-
-\begin_layout Itemize
-From 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electronics}
-\end_layout
-
-\end_inset
-
-
-\shape default
- , select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Diode IV Char.}
-\end_layout
-
-\end_inset
-
-
-\shape default
  
+\begin_inset Graphics
+	filename pics/clipping.png
+	lyxscale 60
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
 \end_layout
 
 \begin_layout Itemize
-Click on START to draw the characteristic curve.
+Make connections and observe the output
 \end_layout
 
 \begin_layout Itemize
-Click on FIT to calculate the Diode Ideality factor.
-\end_layout
-
-\begin_layout Itemize
-Plot the IV of LEDs
+Change PV1 and note the difference in the output
 \end_layout
 
 \begin_layout Paragraph*
@@ -4716,148 +2574,11 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/diode-iv-screen.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/led-iv-screen.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-I-V characteristic of (a) Silicon diode (b) several LEDs
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:I-V-characteristic-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The curves obtained are shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:I-V-characteristic-of"
-
-\end_inset
-
-(a).
- The value of n for 1N4148 is around 2.
- We have calculated the value of 
-\begin_inset Formula $n$
-\end_inset
-
- by fitting the experimental data with the equation
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-If the FIT is not successful, transfer data to 
-\shape italic
-xmGrace
-\shape default
- and use the option Data->Transformations->Nonlinear curve fitting with
- equation y=a0*exp(a1*x).
- 
-\end_layout
-
-\end_inset
-
-.
- Figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:I-V-characteristic-of"
-
-\end_inset
-
-(b) shows the IV curves of few LEDs, of different wavelengths.
- 
-\end_layout
-
-\begin_layout Standard
-The voltage at which LED starts emitting light depends on its wavelength
- and Planck's constant.
- Energy of a photon is given by 
-\begin_inset Formula $E=h\nu=hc/\lambda$
-\end_inset
-
- .
- This energy is equal to the energy of an electron that overcomes the junction
- barrier and is given by 
-\begin_inset Formula $E=eV_{0}$
-\end_inset
-
-.
- So Planck's constant 
-\begin_inset Formula $h=eV_{0}\lambda/c$
-\end_inset
-
- , where 
-\begin_inset Formula $\lambda$
-\end_inset
-
- is the wavelength of light from the LED, 
-\begin_inset Formula $e$
-\end_inset
-
- the charge of electron and 
-\begin_inset Formula $c$
-\end_inset
-
- the velocity of light.
- 
-\end_layout
-
-\begin_layout Standard
-Repeat the experiment by heating the diode to different temperatures.
+The clipping level is decided by the applied DC voltage and the diode drop.
 \end_layout
 
 \begin_layout Section
-Transistor CE characteristics
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Transistor-CE-Characteristic"
-
-\end_inset
-
-
+Clamping using PN junction diode
 \end_layout
 
 \begin_layout Paragraph*
@@ -4865,59 +2586,23 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Plot the CE characteristic curve of a transistor.
- Collector is connected to PV1 through a 1K resistor.
- The base current is set by applying a voltage through a 100
-\begin_inset Formula $k\Omega$
-\end_inset
-
- resistor.
- 
+Demostrate clamping of an AC signal at different levels, using a PN junction
+ diode
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename schematics/transistor_out.svg
-	height 4cm
+	filename schematics/clamping.svg
+	lyxscale 50
+	height 3cm
 
 \end_inset
 
  
 \begin_inset Graphics
-	filename pics/transistor-ce.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Transistor common emitter characteristics
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Transistor-common-emitter"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
+	filename pics/clamping.png
+	lyxscale 60
+	height 5cm
 
 \end_inset
 
@@ -4925,48 +2610,15 @@ name "fig:Transistor-common-emitter"
 \end_layout
 
 \begin_layout Paragraph*
-Procedure
+Procedure 
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electronics}
-\end_layout
-
-\end_inset
-
- open 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{NPN Output Char}
-\end_layout
-
-\end_inset
-
-
+Make connections and observe the output
 \end_layout
 
 \begin_layout Itemize
-Set PV2 to the 1 volt and START.
- 
-\end_layout
-
-\begin_layout Itemize
-Repeat for different base currents.
+Change PV1 and note the difference in the output
 \end_layout
 
 \begin_layout Paragraph*
@@ -4974,135 +2626,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The characteristic curves for different base currents are shown in figure
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Transistor-common-emitter"
-
-\end_inset
-
-.
- The collector current is obtained from the voltage difference across the
- 1k resistor.
- 
-\end_layout
-
-\begin_layout Standard
-The base current is set by setting the voltage at one end of the 100 k
-\begin_inset Formula $\Omega$
-\end_inset
-
- resistor, the other end is connected to the transistor base.
- The value of base current is calculated by, 
-\begin_inset Formula $I_{b}=\frac{V_{bias}-0.6}{100\times10^{3}}\times10^{6}\mu A$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Opto-electric signal transmission 
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Demonstrate the transmission of signals using light.
- An LED is powered by a 1kHz signal and the light is made to fall on a photo-tra
-nsistor.
- The SEN input is internally connected to 5 volts through a 5.1k resistor.
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Keep the LED facing the photo-transistor and set SQR1 to 1000Hz
-\end_layout
-
-\begin_layout Itemize
-Repeat the experiment by changing the frequency.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename schematics/light-barrier.svg
-	height 4cm
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pics/opto-electric-transmission.png
-	lyxscale 50
-	height 4cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) Photo-transistor and LED connections.(b) Voltages across the LED and
- the photo-transistor.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Phototransistor output"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-The output of the photo-transistor at 1kHz is shown in figure
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Phototransistor output"
-
-\end_inset
-
-.
- The square trace is the voltage across the LED.
- When the LED is ON, photo-transistor conducts and the voltage across the
- collector drops to .2 volts.
- When the LED is OFF the photo-transistor goes into cut off mode and the
- collector shows almost the supply voltage.
- The rise and fall times of the photo-transistor seem to be different.
-\end_layout
-
-\begin_layout Standard
-Repeat this experiment with a Fiber Optic cable to guide the light from
- LED to the photo-transistor.
+The clamping level is decided by the applied DC voltage and the diode drop.
 \end_layout
 
 \begin_layout Section
@@ -5114,17 +2638,15 @@ Objective
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
+Wire an astable multivibrator circuit using IC555, measure the frequency
+ and duty cycle of the output.
+\end_layout
 
-\begin_layout Plain Layout
-\align center
+\begin_layout Standard
 \begin_inset Graphics
 	filename schematics/osc555.svg
 	lyxscale 50
-	width 5cm
+	height 3cm
 
 \end_inset
 
@@ -5132,32 +2654,7 @@ status open
 \begin_inset Graphics
 	filename pics/ic555-screen.png
 	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-IC555 astable multi-vibrator.
- (a) schematic (b) Output waveform
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:IC555-astable-multi-vibrator."
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
+	height 3cm
 
 \end_inset
 
@@ -5165,17 +2662,7 @@ name "fig:IC555-astable-multi-vibrator."
 \end_layout
 
 \begin_layout Standard
-Make an astable multivibrator using IC555 and measure its frequency and
- duty cycle.
- Circuit is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:IC555-astable-multi-vibrator."
-
-\end_inset
-
-(a).
- The 5 volt supply for IC555 is taken from OD1, by setting it HIGH.
+Circuit is shown in figure.
  The frequency is given by 
 \begin_inset Formula $f=1/\left(\ln2\times C\times\left(R_{1}+2R_{2}\right)\right)$
 \end_inset
@@ -5197,35 +2684,7 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Electronics}
-\end_layout
-
-\end_inset
-
- open 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{IC555 Multivibrator}
-\end_layout
-
-\end_inset
-
-
+Make connections
 \end_layout
 
 \begin_layout Itemize
@@ -5241,16 +2700,177 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The output waveform is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:IC555-astable-multi-vibrator."
+The output waveform is shown in figure.
+ Change the value of resistors or the capacitor, and compare the frequency
+ and duty cycle with the calculated values.
+\end_layout
+
+\begin_layout Section
+Inverting Amplifier
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Wire an Inverting amplifier using an Op-Amp and test it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/opamp-inv.svg
+	lyxscale 50
+	height 3cm
 
 \end_inset
 
-(b).
- The HIGH and LOW times can be measured by using r2ftime(3,3) and f2rtime(3,3)
- functions.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Set WG amplitude to 80 mV and frequency to 1000 Hz
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2 and their analysis option
+\end_layout
+
+\begin_layout Itemize
+Select 1V range for both A1 and A2 
+\end_layout
+
+\begin_layout Itemize
+Make connections and observe the output
+\end_layout
+
+\begin_layout Itemize
+Change gain by changing the resistor values.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The amplitude gain and and the phase difference can be observed from the
+ results.
+\end_layout
+
+\begin_layout Section
+Non-Inverting Amplifier
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Wire an Inverting amplifier using an Op-Amp and test it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/opamp-noninv.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Set WG amplitude to 80 mV and frequency to 1000 Hz
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2 and their analysis option
+\end_layout
+
+\begin_layout Itemize
+Select 1V range for both A1 and A2 
+\end_layout
+
+\begin_layout Itemize
+Make connections and observe the output
+\end_layout
+
+\begin_layout Itemize
+Change gain by changing the resistor values.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The amplitude gain and and the phase correlation can be observed from the
+ results.
+\end_layout
+
+\begin_layout Section
+Op-Amp Ingrator
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Wire an Inverting amplifier using an Op-Amp and test it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/opamp-int.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Set WG amplitude to 80 mV and frequency to 1000 Hz
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2 and their analysis option
+\end_layout
+
+\begin_layout Itemize
+Select 1V range for both A1 and A2 
+\end_layout
+
+\begin_layout Itemize
+Make connections and observe the output
+\end_layout
+
+\begin_layout Itemize
+Change gain by changing the resistor values.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The amplitude gain and and the phase correlation can be observed from the
+ results.
 \end_layout
 
 \begin_layout Section
@@ -5272,8 +2892,8 @@ Procedure
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename schematics/and-gate.svg
-	height 4cm
+	filename schematics/logic-gates.svg
+	height 3cm
 
 \end_inset
 
@@ -5281,19 +2901,24 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2
+Enable A1, A2 ands A3.
+ Set input range on A1 and A2 to 8V
 \end_layout
 
 \begin_layout Itemize
-Set SQ1 to 100 Hz and adjust timebase to view several cycles
+Set SQ1 to 200 Hz and adjust timebase to view several cycles
 \end_layout
 
 \begin_layout Itemize
-Increase the value of PV1,until A2 shows the square wave
+Select SQ2 from the WG wave shape, set WG to 200 Hz
 \end_layout
 
 \begin_layout Itemize
 Repeat using the OR gate, 7432
+\end_layout
+
+\begin_layout Itemize
+The 1k resistor is required to give the 5 volt signal to A3 input
 \end_layout
 
 \begin_layout Paragraph*
@@ -5301,7 +2926,8 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The minimum voltage required for a TTL logic HIGH can be determined.
+The working of the logic gate will be evident from the 3 waveforms.
+ You may shift traces vertically to separate them for clarity.
 \end_layout
 
 \begin_layout Section
@@ -5401,6 +3027,1026 @@ name "fig:A-clock-divider-1"
 
 \end_layout
 
+\begin_layout Section
+Diode I-V characteristics
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Draw the I-V Characteristic of diode and compare the result with the theory.
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename schematics/diode_iv.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/diode-iv-screen.png
+	lyxscale 50
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Make connections
+\end_layout
+
+\begin_layout Itemize
+Click on START to draw the characteristic curve.
+\end_layout
+
+\begin_layout Itemize
+Analyse the data
+\end_layout
+
+\begin_layout Itemize
+Plot the IV of LEDs
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The IV characteristic of an ideal PN junction diode is given by equation
+ 
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{kT}}-1\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $I_{0}$
+\end_inset
+
+ is the reverse saturation current, 
+\begin_inset Formula $q$
+\end_inset
+
+ the charge of electron, 
+\begin_inset Formula $k$
+\end_inset
+
+ the Boltzmann constant, 
+\begin_inset Formula $T$
+\end_inset
+
+ the temperature in Kelvin.
+ For a practical, non-ideal, diode, the equation is 
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qV}{nkT}}-1\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $n$
+\end_inset
+
+ is the ideality factor, that is 
+\begin_inset Formula $1$
+\end_inset
+
+ for an ideal diode.
+ For practical diodes it varies from 1 to 2.
+ We have used a IN4148 silicon diode.
+ The value of n for 1N4148 is around 2.
+ We have calculated the value of 
+\begin_inset Formula $n$
+\end_inset
+
+ by fitting the experimental data with the equation.
+ 
+\end_layout
+
+\begin_layout Standard
+The voltage at which LED starts emitting light depends on its wavelength
+ and Planck's constant.
+ Energy of a photon is given by 
+\begin_inset Formula $E=h\nu=hc/\lambda$
+\end_inset
+
+ .
+ This energy is equal to the energy of an electron that overcomes the junction
+ barrier and is given by 
+\begin_inset Formula $E=eV_{0}$
+\end_inset
+
+.
+ So Planck's constant 
+\begin_inset Formula $h=eV_{0}\lambda/c$
+\end_inset
+
+ , where 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ is the wavelength of light from the LED, 
+\begin_inset Formula $e$
+\end_inset
+
+ the charge of electron and 
+\begin_inset Formula $c$
+\end_inset
+
+ the velocity of light.
+ 
+\end_layout
+
+\begin_layout Standard
+Repeat the experiment by heating the diode to different temperatures.
+\end_layout
+
+\begin_layout Section
+Transistor Output characteristics (CE)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Transistor-CE-Characteristic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Plot the output characteristic curve of a transistor.
+ Collector is connected to PV1 through a 1K resistor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/transistor_out.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/transistor-ce.png
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Set base voltage to the 1 volt and START.
+ 
+\end_layout
+
+\begin_layout Itemize
+Repeat for different base currents.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The characteristic curves for different base currents are shown in figure.
+ The collector current is obtained from the voltage difference across the
+ 1k resistor.
+ 
+\end_layout
+
+\begin_layout Standard
+The base current is set by setting the voltage at one end of the 100 k
+\begin_inset Formula $\Omega$
+\end_inset
+
+ resistor, the other end is connected to the transistor base.
+ The value of base current is calculated by, 
+\begin_inset Formula $I_{b}=\frac{V_{pv2}-V_{A2}}{100\times10^{3}}\times10^{6}\mu A$
+\end_inset
+
+.
+ If A2 is not connected, the code assumes 0.6 volts at the base to calculate
+ the base current.
+ 
+\end_layout
+
+\begin_layout Section
+Opto-electric signal transmission 
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Demonstrate the transmission of signals using light.
+ An LED is powered by a 1kHz signal and the light is made to fall on a photo-tra
+nsistor.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/opto-electric.svg
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/opto-electric-transmission.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Keep the LED facing the photo-transistor and set SQR1 to 1000Hz
+\end_layout
+
+\begin_layout Itemize
+Repeat the experiment by changing the frequency.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The SEN input is internally connected to 5 volts through a 5.1k resistor.
+ The output of the photo-transistor at 1kHz is shown in figure.
+ The square trace is the voltage across the LED.
+ When the LED is ON, photo-transistor conducts and the voltage across the
+ collector drops to .2 volts.
+ When the LED is OFF the photo-transistor goes into cut off mode and the
+ collector shows almost the supply voltage.
+ The rise and fall times of the photo-transistor seem to be different.
+ Find the upper limit of the frequency that the given photo-transistor can
+ respond.
+\end_layout
+
+\begin_layout Standard
+Repeat this experiment with a Fiber Optic cable to guide the light from
+ LED to the photo-transistor.
+\end_layout
+
+\begin_layout Chapter
+Electricity and Magnetism
+\end_layout
+
+\begin_layout Standard
+This section mainly contains experiments on the steady state and transient
+ response of LCR circuit elements.
+ the experimental results with the theory.
+ It also gives an experiment of electromagnetic induction.
+\end_layout
+
+\begin_layout Section
+RLC circuits, steady state response
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Study the effect of series LCR elements in an AC circuit.
+ Three different combinations can be studied.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/RCsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename schematics/RLsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename schematics/RLCsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Make connections one by one, as per the drawing
+\end_layout
+
+\begin_layout Itemize
+Note down the amplitude and phase measurements, in each case
+\end_layout
+
+\begin_layout Itemize
+Repeat the measurements by changing the frequency.
+\end_layout
+
+\begin_layout Itemize
+For RLC series circuit, the junction of L and C is monitored by A3
+\end_layout
+
+\begin_layout Itemize
+For resonance select C = 1uF, L = 10mH and F= 1600 Hz, adjust F to make
+ phase shift zero
+\end_layout
+
+\begin_layout Itemize
+The total voltage across L and C together goes almost to zero, the voltage
+ across them are out of phase at resonance
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The applied AC voltage is measured on A1 and the voltage across the resistor
+ on A2.
+ Subtracting the instantaneous values of A2 from A1 gives the combined voltage
+ across the inductor and capacitor.
+ We need to use an inductor with negligible resistance for good results.
+ The phase difference between current and voltage is given by 
+\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{X_{c}-X_{L}}{X_{R}}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The total voltage, voltage across R and the voltage across LC are shown
+ in figure.
+ The phasor diagram shows the phase angle between the current and the voltage.
+ The inductance used in this experiment is around 10mH, having a resistance
+ of 
+\begin_inset Formula $20\Omega$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+At 1600 Hz, 
+\begin_inset Formula $X_{c}\approx X_{L}$
+\end_inset
+
+ and the voltage across LC is decided by the resistance of the inductor.
+ At the resonant frequency, the voltage drop across LC will be minimum,
+ decided by the resistance of the inductor.
+ The input A3 is connected between L and C, so that the individual voltage
+ drop across L and C can be displayed.
+\end_layout
+
+\begin_layout Section
+Transient Response of RC circuits
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Capacitor-charging-&"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Plot the voltage across a capacitor, when it is charged by applying a voltage
+ step through a resistor.
+ Calculate the value of the capacitance from the graph.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/RCtransient.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/RCtransient.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+From 
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+menuitem{Electrical}
+\end_layout
+
+\end_inset
+
+
+\shape default
+ , select 
+\shape italic
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+menuitem{RC Transient response}
+\end_layout
+
+\end_inset
+
+
+\shape default
+ 
+\end_layout
+
+\begin_layout Itemize
+Click on 
+\shape italic
+0->5V STEP
+\shape default
+ and 
+\shape italic
+5->0V step
+\shape default
+ Buttons to plot the graphs
+\end_layout
+
+\begin_layout Itemize
+Adjust the horizontal scale, if required, and repeat.
+\end_layout
+
+\begin_layout Itemize
+Calculate RC time constant.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Applying a 0 to 5V step makes the voltage across the capacitor to rise exponenti
+ally as shown in the figure.
+ By fitting the discharge curve with 
+\begin_inset Formula $V(t)=V_{0}e^{-\frac{t}{RC}}$
+\end_inset
+
+ ,we can extract the RC time constant and find the values of capacitance
+ from it.
+ 
+\end_layout
+
+\begin_layout Standard
+The voltage across a capacitor is exponential only when it is charged trough
+ a linear element, a resistor for example.
+ When charged from a constant current source, the voltage shows linear increase,
+ because 
+\begin_inset Formula $Q=It=CV$
+\end_inset
+
+ , and voltage increases linearly with time as 
+\begin_inset Formula $V=\left(\frac{I}{C}\right)t$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Section
+Transient Response of RL circuits
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Explore the nature of current and voltage when a voltage step is applied
+ to resistor and inductor in series.
+ By measuring the voltage across the inductor as a function of time, we
+ can calculate its inductance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/RLtransient.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/RLtransient.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In an RL circuit 
+\begin_inset Formula $V=IR+L\frac{dI}{dt}$
+\end_inset
+
+ and solving this will give 
+\begin_inset Formula $I=I_{0}e^{-\frac{R}{L}t}$
+\end_inset
+
+.
+ The coefficient of the exponential term R/L can be extracted from the graph
+ of voltage across the inductor.
+ The resistance of the inductor coil should be included in the calculations,
+\begin_inset Formula $R=R_{ext}+R_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Inductor is the 3000 Turn coil
+\end_layout
+
+\begin_layout Itemize
+Click on 
+\shape italic
+0->5V STEP
+\shape default
+ and 
+\shape italic
+5->0V step
+\shape default
+ Buttons to plot the graphs
+\end_layout
+
+\begin_layout Itemize
+Adjust the horizontal scale, if required, and repeat.
+\end_layout
+
+\begin_layout Itemize
+Calculate the value of inductance
+\end_layout
+
+\begin_layout Itemize
+Insert an iron core into the inductor and repeat
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The transient response of the RL circuit is shown in figure.
+ The exponential curve is fitted to extract the L/R value.
+ The resistance of the coil is measured by comparing it with the known external
+ resistance under DC conditions.
+ A2 is connected to OD1 for a more accurate measurement of the coil resistance.
+\end_layout
+
+\begin_layout Standard
+The applied voltages are above zero, but the graph went to negative voltages.
+ Why ?
+\end_layout
+
+\begin_layout Standard
+What was the current before doing the 5->0 step ? What is back EMF ?
+\end_layout
+
+\begin_layout Standard
+Repeat with two coils in series, by (a) placing them far away (b) placing
+ one over the other and (c) after changing the orientation.
+ The effect of mutual inductance can be seen.
+\end_layout
+
+\begin_layout Section
+Transient response of LCR circuits
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Step-Response-ofRLC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Explore the oscillatory nature of L and C in series.
+ Resonant frequency of series LC circuit is given by 
+\begin_inset Formula $\omega_{0}=\frac{1}{2\pi\sqrt{LC}}$
+\end_inset
+
+.
+ The damping factor is 
+\begin_inset Formula $\frac{R}{2}\sqrt{\frac{C}{L}}$
+\end_inset
+
+, and it is equal to 1 for critical damping.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://en.wikiversity.org/wiki/RLC_circuit
+\end_layout
+
+\end_inset
+
+ Depending upon the value of C/L and R, the response could be under-damped,
+ critically-damped or over-damped.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/RLCtransient.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/RLC-curves.png
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure 
+\end_layout
+
+\begin_layout Itemize
+Start with the coil and 0.1 uF capacitor
+\end_layout
+
+\begin_layout Itemize
+Click on 5->0V STEP.
+ Adjust x-axis and repeat if required.
+\end_layout
+
+\begin_layout Itemize
+FIT the graph to find the resonant frequency & Damping.
+\end_layout
+
+\begin_layout Itemize
+Repeat with a resistor between OD1 and the inductor.
+\end_layout
+
+\begin_layout Itemize
+Repeat the experiment with different values of L, C and R
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+We have used the 3000 turn coil and a 0.1uF capacitor.
+ The voltage across the capacitor after a 5 to 0V step is shown in figure.
+ The measured resonant frequency tallies with 
+\begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{1}{LC}}$
+\end_inset
+
+ , within the component tolerance values.
+\end_layout
+
+\begin_layout Section
+RC Integration & Differentiation 
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+RC circuits can integrate or differentiate a voltage waveform with respect
+ to time.
+ A square wave is integrated to get a triangular wave and differentiated
+ to get spikes at the transitions.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename schematics/RCintegration.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename schematics/RCsteadystate.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Select WG triangular wave option
+\end_layout
+
+\begin_layout Itemize
+Set WG to 500Hz (T = 1mS), R=1k and C = 1uF
+\end_layout
+
+\begin_layout Itemize
+Adjust the horizontal scale to view more than 4 cycles.
+\end_layout
+
+\begin_layout Itemize
+Repeat the same for RC differentiator, at 50Hz.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Integration of a triangular waveform gives parabolic shape and differentiation
+ gives a square shape.
+ The differentiation can only be shown at lower frequency.
+ Try these for other wave shapes, for example a squarewave.
+ Integrating a square wave should give a triangular wave.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/RCintegration.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/RCdifferentiation.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Fourier Analysis
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Fourier-Transform-**"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Learn about Fourier Transform of a signal.
+ Time and Frequency domain representations.
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Connect SQ1 to A1 and WG to A2.
+ Put A1 in AC coupled mode (slide switch on the box)
+\end_layout
+
+\begin_layout Itemize
+Enable A1 and A2, select 4 volt scale
+\end_layout
+
+\begin_layout Itemize
+Set both WG and SQ1 to 500Hz
+\end_layout
+
+\begin_layout Itemize
+Press the FFT button
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+In the Fourier transform plot, frequency is on the x-axis and the y-axis
+ shows the relative strength of the frequency components of the signal.
+ This is called the frequency domain representation
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://en.wikipedia.org/wiki/Fourier_transform
+\end_layout
+
+\end_inset
+
+.
+ For the sine wave there is only one dominant peak, the smaller ones are
+ a measure of distortion of the sine wave.
+ 
+\end_layout
+
+\begin_layout Standard
+A square wave function can be represented as 
+\begin_inset Formula $f(\theta)=sin(\theta)+\frac{sin(3\theta)}{3}+\frac{sin(5\theta)}{5}+\cdots$
+\end_inset
+
+.
+ In the Fourier transform of a square wave of frequency 
+\begin_inset Formula $f$
+\end_inset
+
+ , there will be a 
+\begin_inset Formula $3f$
+\end_inset
+
+ component (having an amplitude of one third of 
+\begin_inset Formula $f$
+\end_inset
+
+ ), 
+\begin_inset Formula $5f$
+\end_inset
+
+ component (amplitude one fifth) etc.
+ as shown in the figure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/sqwaveFFT.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/sinewaveFFT.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Electromagnetic induction
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+Explore the voltage induced across a coil by a changing magnetic field,
+ by dropping a small cylindrical magnet into a coil.
+ Use a tube to guide the magnet through the coil.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/induction.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/induction-screen.png
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Click on Start Scanning.
+ A horizontal trace should appear
+\end_layout
+
+\begin_layout Itemize
+Drop the magnet through the coil, until a trace is caught.
+\end_layout
+
+\begin_layout Itemize
+Repeat the process by changing the parameters like magnet strength, speed
+ etc.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion 
+\end_layout
+
+\begin_layout Standard
+The result is shown in figure.
+ The amplitude increases with the speed of the magnet.
+ From the graph, we can find the time taken by the magnet to travel through
+ the coil.
+\end_layout
+
+\begin_layout Standard
+The second peak is bigger than the first peak.
+ Why ? Where will be the magnet at the zero crossing of the induced voltage?
+ Drop the magnet from different heights and plot the voltage vs square root
+ of the height.
+\end_layout
+
 \begin_layout Chapter
 Sound
 \end_layout
@@ -5417,61 +4063,6 @@ Pressure variations, about an equilibrium pressure, transmitted through
  like amplitude and frequency.
  Velocity of sound is measured by observing the phase shift of digitized
  sound with distance.
-\end_layout
-
-\begin_layout Section
-Frequency of sound
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Sound Frequency"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Digitize sound and measure its frequency.
- Use the Piezo buzzer or any other source of sound like a tuning fork.
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/sound-capture.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Enable MIC input
-\end_layout
-
-\begin_layout Itemize
-Enable FIT to measure the frequency
-\end_layout
-
-\begin_layout Itemize
-Press the button FFT to get the frequency spectrum
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The Fourier transform will provide information about the frequency components
- of the captured sound.
 \end_layout
 
 \begin_layout Section
@@ -5495,50 +4086,17 @@ Plot the frequency response curve of the Piezo disk by scanning through
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
+\begin_inset Graphics
+	filename schematics/sound-capture.svg
+	lyxscale 70
+	height 3cm
 
-\begin_layout Plain Layout
-\align center
+\end_inset
+
+ 
 \begin_inset Graphics
 	filename pics/piezo-freq-resp.png
 	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Frequency response curve of the Piezo disc
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Digitized-sound"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/Piezo-freq-resp.svg
 	height 3cm
 
 \end_inset
@@ -5548,38 +4106,6 @@ name "fig:Digitized-sound"
 
 \begin_layout Paragraph*
 Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound}
-\end_layout
-
-\end_inset
-
- select 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Frequency response of Piezo buzzer}
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Itemize
@@ -5595,15 +4121,8 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The Frequency Vs Amplitude plot is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Digitized-sound"
-
-\end_inset
-
-(b).
- The amplitude is maximum around 3700 Hz.
+The Frequency Vs Amplitude plot is shown in figure.
+ The amplitude is maximum around 3500 Hz.
 \end_layout
 
 \begin_layout Section
@@ -5653,59 +4172,17 @@ We can display the pressure variation at any point with respect to the variation
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
 	filename pics/sound_waves.png
-	lyxscale 50
-	width 5cm
+	lyxscale 70
+	height 3cm
 
 \end_inset
 
  
 \begin_inset Graphics
-	filename pics/velocity-sound.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a)Propagation of sound waves, variation of microphone output with pressure.
- (b) Output of microphone
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Sound-waves"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
 	filename schematics/sound-velocity.svg
+	lyxscale 70
 	height 3cm
 
 \end_inset
@@ -5715,38 +4192,6 @@ name "fig:Sound-waves"
 
 \begin_layout Paragraph*
 Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound}
-\end_layout
-
-\end_inset
-
- start 
-\shape italic
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Velocity of Sound}
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Itemize
@@ -5815,59 +4260,9 @@ Study the interference of sound from two individual sources.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/inter-sound.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/beats-ftran.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) Sum of sound having two nearby frequencies (b) Fourier transform showing
- the frequency components.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:SoundBeats"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Graphics
 	filename schematics/sound-beats.svg
+	lyxscale 70
 	height 3cm
 
 \end_inset
@@ -5880,41 +4275,20 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound}
-\end_layout
-
-\end_inset
-
- start 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound beats}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
 Set WG to 3500 Hz and SQ1 to 3600 Hz
 \end_layout
 
 \begin_layout Itemize
-Adjust positions of Piezo buzzers, from the mic, to get clear beat pattern.
+Enable WG and SQ1 separately to check the MIC output
+\end_layout
+
+\begin_layout Itemize
+Adjust positions of Piezo buzzers, from the mic, to get almost same amplitude
+ with both
+\end_layout
+
+\begin_layout Itemize
+Select both of them to get the beat pattern
 \end_layout
 
 \begin_layout Itemize
@@ -5926,159 +4300,14 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-From figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:SoundBeats"
-
-\end_inset
-
-(a) it can be seen how the low frequency envelope is created.
+From figure it can be seen how the low frequency envelope is created.
  Distance between two minimum pressure points., of the envelope, corresponds
  to the beat wavelength.
- The Fourier transform of the output is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:SoundBeats"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Section
-Forced Oscillations of Piezo-electric crystal
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-Study the behavior of a Piezo-electric disc at low excitation frequencies,
- using a square wave.
- 
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/Piezo-AM.svg
-	height 0.8cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound}
-\end_layout
-
-\end_inset
-
- start 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Sound beats}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Tick only SQ1, set it to 100 Hz 
-\end_layout
-
-\begin_layout Itemize
-Press START to capture mic output
-\end_layout
-
-\begin_layout Itemize
-Press FFT to view the frequency components
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The resonant frequency of the Piezo crystal is around 3600 Hz.
- Driven by a square wave, the piezo gets a kick on every rising and falling
- edge, and it undergoes several cycles of oscillations at its natural resonant
- frequency.
- The Fourier transform shows a peak at the resonant frequency and side band
- 200 Hz separated from the peak.
- It may be interesting to repeat this study using a variable frequency sine
- wave instead of the square wave.
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/piezo-drive100Hz.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/piezo-drive100hz-fft.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Sound output from Piezo, driven by 100Hz square wave and the Fourier transform
- of the output.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
+ The Fourier transform of the output is shown in figure .
 \end_layout
 
 \begin_layout Chapter
-Mechanics, Optics & Heat
+Mechanics & Heat
 \end_layout
 
 \begin_layout Standard
@@ -6088,7 +4317,7 @@ Resonance phenomena is studied using a driven pendulum.
 \end_layout
 
 \begin_layout Section
-Distance Measurement, by ultrasound echo
+Acceleration due to gravity using Rod pendulum
 \end_layout
 
 \begin_layout Paragraph*
@@ -6096,61 +4325,57 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Measure distance by measuring the time taken by 40kHz pulse train to echo
- from a hard surface.
+Measure the period of oscillations of a rod pendulum using a light barrier
+ and calculate the value of acceleration due to gravity.
+ Period of oscillation of a uniform rod about one end is given by 
+\begin_inset Formula $T=2\pi\sqrt{\frac{2\ell}{3g}}$
+\end_inset
+
+, where 
+\begin_inset Formula $\ell$
+\end_inset
+
+ is the length and 
+\begin_inset Formula $g$
+\end_inset
+
+ is the acceleration due to gravity.
+ The pendulum (T-shaped, a knife edge attached to a 6mm dia rod) is made
+ to swing between an LED and photo-transistor, connected to expEYES.
+ The LED and photo-transistor are mounted on a U-shaped bracket as shown
+ in figure.
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename schematics/rod-pendulum.svg
+	lyxscale 60
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/light-barrier-photo.jpg
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*
 Procedure
 \end_layout
 
-\begin_layout Standard
-\begin_inset Graphics
-	filename schematics/sr04-dist.svg
-	height 3cm
-
-\end_inset
-
-
+\begin_layout Itemize
+Oscillate the pendulum and click on START
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Mechanics}
-\end_layout
-
-\end_inset
-
- select 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Distance by HY-SR04}
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Itemize
-Keep a flat surface, like a cardboard sheet, around 10 cm from the echo
- module
-\end_layout
-
-\begin_layout Itemize
-Press START
+Repeat with different pendulum lengths.
 \end_layout
 
 \begin_layout Paragraph*
@@ -6158,10 +4383,87 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The distance is calculated from the time taken by a burst of sound to echo
- from the surface kept in front of the module.
- The distance can be measred as function of time, enabling to calculate
- velocity, acceleration etc.
+The time period is measured 50 times, using a 14.6cm rod pendulum, and the
+ average value is 0.627 seconds.
+ The calculated value of 'g' is 977.4 
+\begin_inset Formula $cm/sec^{2}$
+\end_inset
+
+, slightly different from the actual value due to the following reasons.
+ The length is measured from the knife edge to the bottom and used in the
+ formula.
+ But there is a small mass projecting above the knife edge that is not included
+ in the calculation.
+ Another reason is that the pendulum may not be exactly vertical in the
+ resting position.
+\end_layout
+
+\begin_layout Section
+Angular Velocity of Pendulum
+\end_layout
+
+\begin_layout Paragraph*
+Objective
+\end_layout
+
+\begin_layout Standard
+To study the nature of oscillations of a pendulum.
+ An angle encoder is required for measuring the angular displacement as
+ a function of time.
+ But using a DC motor as a sensor, we can measure the angular velocity as
+ a function of time.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/pendulum-screen.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procedure
+\end_layout
+
+\begin_layout Itemize
+Attach some sort of rigid pendulum to the axis of the motor.
+\end_layout
+
+\begin_layout Itemize
+Connect the motor between A3 and GND
+\end_layout
+
+\begin_layout Itemize
+Connect 100Ohm resistor from Rg to Ground
+\end_layout
+
+\begin_layout Itemize
+Oscillate the pendulum and START digitizing
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+The observed waveform is shown in figure.
+ Fitting it with equation 
+\begin_inset Formula $A=A_{0}sin\left(\omega t+\theta\right)*\exp\left(-dt\right)+C$
+\end_inset
+
+, using Grace gave an angular frequency of 10 Hz.
+\end_layout
+
+\begin_layout Standard
+The pendulum should be made with a heavy bob and a light weight rod connecting
+ it to the axis of the motor.
+ In this case, the DC motor acts like a generator and the voltage is proportiona
+l to the instantaneous angular velocity.
 \end_layout
 
 \begin_layout Section
@@ -6174,7 +4476,24 @@ Objective
 
 \begin_layout Standard
 Demonstrate the resonance of a driven pendulum.
- .
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/driven-pendulum.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/resonance-pendulum.jpg
+	height 3cm
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph*
@@ -6183,54 +4502,20 @@ Procedure
 
 \begin_layout Standard
 Make a pendulum using two button magnets and a piece of paper.
- Suspend it and place the 3000T coil near that, as shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:LED-&-photo-transistor."
-
-\end_inset
-
-(a).
+ Suspend it and place the 3000T coil near that, as shown in figure.
  
 \end_layout
 
 \begin_layout Itemize
-Connect the coil between SQR1 and ground
+Connect the coil between SQ1 and ground
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Mechanics}
-\end_layout
-
-\end_inset
-
- select 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Driven Pendulum}
-\end_layout
-
-\end_inset
-
- 
+Calculate the resonant frequency from the length of the pendulum
 \end_layout
 
 \begin_layout Itemize
-Scan the frequency upwards starting from 1Hz, very slowly.
- 
+Scan the frequency around the expected resonance frequency
 \end_layout
 
 \begin_layout Paragraph*
@@ -6263,71 +4548,10 @@ When SQ1 reaches the resonant frequency of the pendulum, the amplitude goes
 \begin_layout Standard
 Repeat the experiment by changing the length of the pendulum.
  
-\begin_inset Foot
-status collapsed
-
-\begin_layout Plain Layout
-SQR1 cannot go below 0.7 Hz
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
-Acceleration due to gravity using Rod pendulum
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/resonance-pendulum.jpg
-	lyxscale 50
-	width 4cm
-
-\end_inset
-
- 
-\begin_inset Graphics
-	filename pics/light-barrier-photo.jpg
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) Driven pendulum setup.
- (b) LED & photo-transistor mounted on a bracket.
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:LED-&-photo-transistor."
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+Distance Measurement, by ultrasound echo
 \end_layout
 
 \begin_layout Paragraph*
@@ -6335,32 +4559,8 @@ Objective
 \end_layout
 
 \begin_layout Standard
-Measure the period of oscillations of a rod pendulum using a light barrier
- and calculate the value of acceleration due to gravity.
- Period of oscillation of a uniform rod about one end is given by 
-\begin_inset Formula $T=2\pi\sqrt{\frac{2\ell}{3g}}$
-\end_inset
-
-, where 
-\begin_inset Formula $\ell$
-\end_inset
-
- is the length and 
-\begin_inset Formula $g$
-\end_inset
-
- is the acceleration due to gravity.
- The pendulum (T-shaped, a knife edge attached to a 6mm dia rod) is made
- to swing between an LED and photo-transistor, connected to expEYES.
- The LED and photo-transistor are mounted on a U-shaped bracket as shown
- in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:LED-&-photo-transistor."
-
-\end_inset
-
-(b).
+Measure distance by measuring the time taken by 40kHz pulse train to echo
+ from a hard surface.
 \end_layout
 
 \begin_layout Paragraph*
@@ -6368,10 +4568,10 @@ Procedure
 \end_layout
 
 \begin_layout Standard
-\align left
 \begin_inset Graphics
-	filename schematics/light-barrier.svg
-	height 2cm
+	filename schematics/sr04-dist.svg
+	lyxscale 70
+	height 3cm
 
 \end_inset
 
@@ -6379,41 +4579,16 @@ Procedure
 \end_layout
 
 \begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{EXPERIMENTS}
-\end_layout
-
-\end_inset
-
- Start 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Rod Pendulum}
-\end_layout
-
-\end_inset
-
- 
+Keep a flat surface, like a cardboard sheet, around 10 cm from the echo
+ module
 \end_layout
 
 \begin_layout Itemize
-Oscillate the pendulum and click on START
+Press START
 \end_layout
 
 \begin_layout Itemize
-Repeat with different pendulum lengths.
+Change the distance with time
 \end_layout
 
 \begin_layout Paragraph*
@@ -6421,158 +4596,10 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The time period is measured 50 times, using a 14.6cm rod pendulum, and the
- average value is 0.627 seconds.
- The calculated value of 'g' is 977.4 
-\begin_inset Formula $cm/sec^{2}$
-\end_inset
-
-, slightly different from the actual value due to the following reasons.
- The length is measured from the knife edge to the bottom and used in the
- formula.
- But there is a small mass projecting above the knife edge that is not included
- in the calculation.
- Another reason is that the pendulum may not be exactly vertical in the
- resting position.
-\end_layout
-
-\begin_layout Section
-Oscillations of a pendulum
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-To study the nature of oscillations of a pendulum.
- An angle encoder is required for measuring the angular displacement as
- a function of time.
- But using a DC motor as a sensor, we can measure the angular velocity as
- a function of time.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/pendulum-screen.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Pendulum oscillations digitized
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Pendulum-oscillations-digitized"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-Attach some sort of rigid pendulum to the axis of the motor.
-\end_layout
-
-\begin_layout Itemize
-Connect the motor between A3 and GND
-\end_layout
-
-\begin_layout Itemize
-Connect 1k resistor from Rg to Ground
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Mechanics}
-\end_layout
-
-\end_inset
-
- start 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Pendulum Waveform}
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Oscillate the pendulum and START digitizing
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-The observed waveform is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Pendulum-oscillations-digitized"
-
-\end_inset
-
-(b).
- Fitting it with equation 
-\begin_inset Formula $A=A_{0}sin\left(\omega t+\theta\right)*\exp\left(-dt\right)+C$
-\end_inset
-
-, using Grace gave an angular frequency of 10 Hz.
-\end_layout
-
-\begin_layout Standard
-The pendulum should be made with a heavy bob and a light weight rod connecting
- it to the axis of the motor.
- In this case, the DC motor acts like a generator and the voltage is proportiona
-l to the instantaneous angular velocity.
+The distance is calculated from the time taken by a burst of sound to echo
+ from the surface kept in front of the module.
+ The distance can be measred as function of time, enabling to calculate
+ velocity, acceleration etc.
 \end_layout
 
 \begin_layout Section
@@ -6602,79 +4629,61 @@ Record the temperature of a liquid by using a Platinum Resistance Thermometer.
  
 \end_layout
 
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename schematics/pt100.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/pt100-screen.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph*
 Procedure
+\end_layout
+
+\begin_layout Itemize
+Enter the Gain, Offset error and the Current from CCS
+\end_layout
+
+\begin_layout Itemize
+Select the temperature range and time intervals
+\end_layout
+
+\begin_layout Itemize
+Select the required parameters and press START
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Cooling curve of water is shown in figure 
 \end_layout
 
 \begin_layout Standard
 To measure the resistance of the PT100 element, we connect it from the CCS
  to ground and measure the voltage across it.
- The actual current of CCS should be measured as explained in section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Calibrating-Current-Source"
-
-\end_inset
-
-.
+ The actual current of CCS should be measured using an ammeter or by measuring
+ the voltage frop across an known resistor.
  The input to A3 is amplified 11 times by connecting 1kOhm resistor from
  Rg to Ground.
 \end_layout
 
 \begin_layout Standard
-\align left
-\begin_inset Graphics
-	filename schematics/pt100.svg
-	height 3cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Misc Expts}
-\end_layout
-
-\end_inset
-
- start 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Temperature, PT100 Sensor}
-\end_layout
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Itemize
-Enter the measured current value.
- 
-\end_layout
-
-\begin_layout Itemize
-Select the required parameters and press START 
-\begin_inset Foot
-status open
-
-\begin_layout Plain Layout
- The resistance of PT100 is
+The resistance of PT100 is
 \begin_inset Formula $100\Omega$
 \end_inset
 
@@ -6696,214 +4705,8 @@ status open
  Change the gain field entry accordingly.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename pics/pt100-screen.png
-	lyxscale 50
-	width 5cm
-
-\end_inset
-
-
-\begin_inset Graphics
-	filename pics/water-cooling.png
-	width 5cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Cooling of water.
- (a) Screen shot of the program.
- (b) Graphs for clear water and coloured water
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Cooling-curve-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Cooling curve of water is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Cooling-curve-of"
-
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
-Instead of measuring the current and calculating the actual amplifier gain,
- one can follow a calibration procedure to obtain good results.
- This procedure assumes a linear variation of resistance with temperature.
- To do calibration, place the sensor in ice and click on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Freezing Point}
-\end_layout
-
-\end_inset
-
-.
- Immerse the sensor in boiling water and click on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Boiling Point}
-\end_layout
-
-\end_inset
-
-.
- After that click on 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Calibrate}
-\end_layout
-
-\end_inset
-
-.
- Once the calibration is done the temperature is calculated using the calibratio
-n constants.
-\end_layout
-
-\begin_layout Section
-Stroboscope
-\end_layout
-
-\begin_layout Paragraph*
-Objective
-\end_layout
-
-\begin_layout Standard
-An object executing periodic motion will appear stationary when it is illuminate
-d with a light pulse of the same frequency, since the object is illuminated
- every time only when it reaches the same point.
- If the frequencies are slightly different, it will appear to move with
- the difference in frequency.
-\end_layout
-
-\begin_layout Paragraph*
-Procedure
-\end_layout
-
-\begin_layout Itemize
-From 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Misc Expts}
-\end_layout
-
-\end_inset
-
- select 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-menuitem{Stroboscope}
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Itemize
-Connect the White LED from SQ1 to GND
-\end_layout
-
-\begin_layout Itemize
-Power the motor by a battery and illuminate it with the LED
-\end_layout
-
-\begin_layout Itemize
-Adjust SQ1 to make the motor appear stationary.
-\end_layout
-
-\begin_layout Paragraph*
-Discussion
-\end_layout
-
-\begin_layout Standard
-As you adjust SQ1, the movement of the disc on the axis of the motor appears
- to slow down and then at some point reverses the direction of motion.
- Note down the frequency at the direction reversal.
-\end_layout
-
-\begin_layout Standard
-When viewed in a pulsed light source of frequency 11 Hz, a motor rotating
- clockwise at 10 rotations per second will look like rotating anti-clockwise
- once a second.
- During stopping and starting, the ceiling fans sometimes looks like rotating
- backwards, in the light of fluorescent tubes.
-\end_layout
-
-\begin_layout Standard
-How is the RPM of a car engine adjusted ?
-\end_layout
-
 \begin_layout Chapter
-Coding expEYES in Python
+Coding expEYES-17 in Python
 \end_layout
 
 \begin_layout Standard
@@ -6913,477 +4716,764 @@ The GUI programs described in the previous sections are meant for a fixed
  of expEYES from software.
  Important function calls used for communicating with the device is given
  below.
- For more details, refer to the 
-\emph on
-Programmer's manual
-\emph default
-.
+ 
 \end_layout
 
-\begin_layout Section
-Installing the Python Libraries
+\begin_layout Paragraph*
+Establish Connection
 \end_layout
 
 \begin_layout Standard
-The expEYES-17 package consists of three files (eyes17.py, eyeplot17.py and
- eyemath17.py) inside a subdirectory named expeyes.
- This subdirectory should be inside your PYTHON LIBRARY PATH ( or inside
- your working directory).
- On Debian based GNU/Linux systems, this will be done by installing the
- expeyes-5.x.x.deb file.
- On other systems unzip the file expeyes-5.x.x.zip and follow the instructions
- in the README file.
-\end_layout
-
-\begin_layout Section
-Hardware Communication
-\end_layout
-
-\begin_layout Standard
-Start the Python interpreter in the interactive mode.
- Type the following two lines to load the library and establish connection
- to the device.
-\end_layout
-
-\begin_layout LyX-Code
->>>import expeyes.eyes17
-\end_layout
-
-\begin_layout LyX-Code
->>>p=expeyes.eyes17.open()
-\end_layout
-
-\begin_layout Standard
-If you get an error message, check the connections, close other programs
- already using expEYES.
- Only one program can use expEYES at a time.
- We will start by setting and measuring some voltages.
-\end_layout
-
-\begin_layout LyX-Code
->>>p.set_pv1(3.0)   # set PV1 to 3 volts
-\end_layout
-
-\begin_layout Standard
-Connect PV1 to A1 using a piece of wire, and measure the voltage at A1
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.get_voltage('A1')   
-\end_layout
-
-\begin_layout Standard
-It should print a 3 volts, within the limits of error.
- You can try the same using PV2, A2 etc.
-\end_layout
-
-\begin_layout Standard
-Now, let us explore AC signals.
- Connect WG to A1 and try:
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.set_sine(100)   # set WG to 100 Hz (or closest possible) sine
- wave
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.get_voltage('A1')
-\end_layout
-
-\begin_layout Standard
-You will get different results every time you issue the command (use cursor
- and backspace keys to edit previous commands).
- Since the voltage is changing with time, it makes better sense to measure
- this voltage for some duration and plot it.
- We will import the 
-\end_layout
-
-\begin_layout Standard
+To access the EYES17 hardware, the python modules for eyes17 must be installed.
+ They should be inside a directory named eyes17, that could be in your home
+ directory or on the Python PATH.
 
 \series bold
-matplotlib
-\series default
- library for plotting, capture the sine wave and plot it.
+ Every program should start with the following 2 lines
 \end_layout
 
 \begin_layout LyX-Code
->>>from pylab import *
+import eyes17.eyes
 \end_layout
 
 \begin_layout LyX-Code
->>>ion()   # set pylab interactive mode
-\end_layout
-
-\begin_layout LyX-Code
->>>t,v = p.capture1('A1',300,100)     # 300 points, 100 usec between two
- points
-\end_layout
-
-\begin_layout LyX-Code
->>>plot(t,v)
+p = eyes17.eyes.open()
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
+The variable p is the software object, representing the hardware.
+ 
+\end_layout
 
-\begin_layout Plain Layout
-\align center
+\begin_layout Standard
+The following sections explains the Python function calls to access the
+ eyes17 hardware.
+ Each function call will be explained with an example usage.
+\end_layout
+
+\begin_layout Paragraph
+set_pv1(v), set_pv2(v)
+\end_layout
+
+\begin_layout Standard
+Sets the DC voltages at PV1 and PV2.
+ PV1 range is -5 to 5.
+ PV2 range is -3.3 to 3.3.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_pv1(4) 
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_pv2(2)
+\end_layout
+
+\begin_layout Standard
+The value set is printed.
+ Measure the voltages using a meter.
+\end_layout
+
+\begin_layout Paragraph
+get_voltage(input) 
+\end_layout
+
+\begin_layout Standard
+Returns the voltage at the specified input.
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A1')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A2')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A3')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('MIC')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('SEN')
+\end_layout
+
+\begin_layout Standard
+Connect PV1 to A1 and use the set_pv1() and get_voltage together.
+ This function sets the input range by trial 
+\end_layout
+
+\begin_layout Standard
+and error, depending on the input signal.
+\end_layout
+
+\begin_layout Paragraph*
+get_voltage_time(input) 
+\end_layout
+
+\begin_layout Standard
+Returns a tuple, containing the computer's time stamp and the voltage at
+ the specified input 
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage_time('A1')
+\end_layout
+
+\begin_layout Paragraph*
+get_resistance() 
+\end_layout
+
+\begin_layout Standard
+Returns the value of resistance connected to SEN, it should be between 100
+ Ohm and 100k for reasonable accuracy.
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_resistance()
+\end_layout
+
+\begin_layout Paragraph*
+get_capacitance() 
+\end_layout
+
+\begin_layout Standard
+Returns the value of capacitance connected to IN1 (works well in pF ranges)
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_capacitance()
+\end_layout
+
+\begin_layout Paragraph*
+get_version()
+\end_layout
+
+\begin_layout Standard
+Returns the version number of the Firmware
+\end_layout
+
+\begin_layout Standard
+print p.get_version()
+\end_layout
+
+\begin_layout Paragraph*
+get_temperature()
+\end_layout
+
+\begin_layout Standard
+Returns the temperature of the processor inside eyes17
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_temperature()
+\end_layout
+
+\begin_layout Paragraph*
+set_state(OUPUT=value)
+\end_layout
+
+\begin_layout Standard
+Sets the output of OD1, SQ1 etc.
+ Connect OD1 to A1 and run
+\end_layout
+
+\begin_layout LyX-Code
+p.set_state(OD1=1) 
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A1')
+\end_layout
+
+\begin_layout Paragraph*
+set_sine(frequency)
+\end_layout
+
+\begin_layout Standard
+Generates the sinewave of requested frequency on WG (range from 5Hz to 5000Hz).
+ All intermediate values are not possible, function returns the actual value
+ set.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sine(502)
+\end_layout
+
+\begin_layout Standard
+502.00803
+\end_layout
+
+\begin_layout Paragraph*
+set_sine_amp(amplitude)
+\end_layout
+
+\begin_layout Standard
+The amplitude can be set to 3 pre-defined values of the peak voltage ( 0->
+ 80mV, 1-> 1V, 2-> 3V)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout Standard
+Sets the amplitude to 3 volts peak.
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1(frequency)
+\end_layout
+
+\begin_layout Standard
+Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All intermediate
+ values are not possible, function returns the actual value set.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1(15030)
+\end_layout
+
+\begin_layout Standard
+15030.53
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1_slow(frequency)
+\end_layout
+
+\begin_layout Standard
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All intermediate
+ values are not possible, function returns the actual value set.
+ Resolution is high but WG is disabled when SQ1 is operated in this mode.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1_slow(0.5)
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr2(frequency)
+\end_layout
+
+\begin_layout Standard
+Similar to set_sqr1() but SQ2 is not available along with WG, only one at
+ a time.
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1(frequency, dutyCyle)
+\end_layout
+
+\begin_layout Standard
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All intermediate
+ values are not possible, function returns the actual value set.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1(1000, 30)          # 1000Hz with 30% duty cycle
+\end_layout
+
+\begin_layout Paragraph*
+get_freq(input)
+\end_layout
+
+\begin_layout Standard
+Measures the frequency of a square wave on the input, IN2 or SEN.
+ Connect SQ1 to IN2 and run the code
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000)
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_freq('IN2')
+\end_layout
+
+\begin_layout Paragraph*
+duty_cycle(input)
+\end_layout
+
+\begin_layout Standard
+Measures the duty cycle a square wave on the input, IN2 or SEN.
+ Connect SQ1 to IN2 and run the code
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000, 30)
+\end_layout
+
+\begin_layout LyX-Code
+print p.duty_cycle('IN2')
+\end_layout
+
+\begin_layout Paragraph*
+r2ftime(input1, input2)
+\end_layout
+
+\begin_layout Standard
+Measures the time interval between a rising edge on input1 to another one
+ on input2, the inputs can be the same also.
+ This can be tested using a square wave.
+\end_layout
+
+\begin_layout Standard
+Connect SQ1 to IN2 and run
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000, 30)
+\end_layout
+
+\begin_layout LyX-Code
+print p.r2ftime('IN2', 'IN2')
+\end_layout
+
+\begin_layout Standard
+0.0003
+\end_layout
+
+\begin_layout Standard
+The 1kHz square wave with 30% duty cycle has a Period of one millisecond
+ and stays HIGH for .3 milliseconds.
+\end_layout
+
+\begin_layout Paragraph*
+multi_r2rtime(input, numCycles)
+\end_layout
+
+\begin_layout Standard
+Measures the time interval between rising edges on input1.
+ Time between 2 edges is one cycle.
+ Number of cycles to be measured also can be specified, default value is
+ 1.
+ The allowed values are 1,2,4,8,12,16,32 and 48.
+ This can be tested using a square wave.
+\end_layout
+
+\begin_layout Standard
+Connect SQ1 to IN2 and run
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000)
+\end_layout
+
+\begin_layout LyX-Code
+print p.multi_r2rtime('IN2', 8)
+\end_layout
+
+\begin_layout Standard
+0.008
+\end_layout
+
+\begin_layout Paragraph*
+select_range(channel, range)
+\end_layout
+
+\begin_layout Standard
+The input range of A1 and A2 can be set from 
+\begin_inset Formula $\pm0.5V$
+\end_inset
+
+ to 
+\begin_inset Formula $\pm16V$
+\end_inset
+
+ fullscale, using the programmable gain amplifiers.
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)         # 4volt maximum
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 8)         # 8 volt maximum
+\end_layout
+
+\begin_layout Paragraph*
+select_range(channel, range)
+\end_layout
+
+\begin_layout Standard
+The input range of A1 and A2 can be set from 
+\begin_inset Formula $\pm0.5V$
+\end_inset
+
+ to 
+\begin_inset Formula $\pm16V$
+\end_inset
+
+ fullscale, using the programmable gain amplifiers.
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)         # 4volt maximum
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 8)         # 8 volt maximum
+\end_layout
+
+\begin_layout Paragraph*
+capture1(Input, Number of samples, time interval)
+\end_layout
+
+\begin_layout Standard
+Digitizes the specified input.
+ The number of samples could be upto 10000.
+ The time gap between two consecutive samples id given in microseconds (range
+ 2 to 1000 usec).
+\end_layout
+
+\begin_layout LyX-Code
+print p.capture1('A1', 5, 5)
+\end_layout
+
+\begin_layout Standard
+will print two arrays of time and voltage.
+ 
+\end_layout
+
+\begin_layout Standard
+We need to plot the graph of the output for a better understanding.
+ This can be done using the matplotlib module, imported using the pylab
+ interface.
+ Connect WG to A1 with a wire and run;
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+t,v = p.capture1('A1', 300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(t,v)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Standard
+The output of this code is given below.
+\end_layout
+
+\begin_layout LyX-Code
 \begin_inset Graphics
-	filename pics/pylab-sine.png
+	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/sine.png
 	lyxscale 50
-	width 5cm
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-Input waveform captured and plotted using pylab
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Input-waveform-captured"
+	height 4cm
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Paragraph*
+capture2(Number of samples, time interval)
 \end_layout
 
 \begin_layout Standard
-We have sampled the voltage on A1 300 times with a delay of 100 micro seconds
- between two consecutive readings, i.e.
- the voltage is captured for total 30 milliseconds.
+Digitizes the inputs A1 and A2 together.
+ The number of samples could be upto 10000.
+ The time gap between two consecutive samples id given in microseconds (range
+ 2 to 1000 usec).
 \end_layout
 
 \begin_layout Standard
-The graph will popup in a new window, as shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Input-waveform-captured"
-
-\end_inset
-
-(a).
- For measuring with higher resolution (12 bits), you may use capture_hr().
+Connect WG to A1 and a diode from A1 to A2.
+ Run the code below
 \end_layout
 
 \begin_layout LyX-Code
->>>t,v = p.capture1_hr('A1',300,100) 
+from pylab import *
 \end_layout
 
 \begin_layout LyX-Code
->>>plot(t,v)
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+t,v,tt,vv = p.capture2(300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(t,v)
+\end_layout
+
+\begin_layout LyX-Code
+plot(tt,vv)
+\end_layout
+
+\begin_layout LyX-Code
+show()
 \end_layout
 
 \begin_layout Standard
-Now let us connect a rectifier diode from A1 to A2 and capture both the
- inputs simultaneously.
-\end_layout
-
-\begin_layout LyX-Code
->>>t,v,tt,vv = p.capture2(300,100)    # capture2 gets data from A1 and A2
-\end_layout
-
-\begin_layout LyX-Code
->>>plot(t,v)
-\end_layout
-
-\begin_layout LyX-Code
->>>plot(tt,vv)
+The output of this code is given below.
 \end_layout
 
 \begin_layout Standard
-The out put is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:(a)Phase-shift-of"
-
-\end_inset
-
-(a).
- The last line plots a Lissajous figure as shown in figure
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:(a)Phase-shift-of"
-
-\end_inset
-
-(b).
- There are more than one ellipse, one over the other, since we captured
- more than one cycle.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename pics/pylab-sine-phase.png
-	lyxscale 50
-	width 5cm
+	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/halfwave.png
+	lyxscale 60
+	height 4cm
 
 \end_inset
 
  
 \begin_inset Graphics
-	filename pics/lissaj.png
-	lyxscale 50
-	width 5cm
+	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/capture4.png
+	lyxscale 60
+	height 4cm
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a)Phase shift of sine wave across a capacitor.
- (b) Lissajous plot of the voltages
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:(a)Phase-shift-of"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+\begin_layout Paragraph*
+capture4(Number of samples, time interval)
 \end_layout
 
 \begin_layout Standard
-In some experiments, the captured voltage may be generated by some other
- actions like changing a voltage level.
- This is done by implementing capture modifiers.
- This can be easily demonstrated by capturing the voltage across a capacitor,
- just after applying a voltage step to it through a resistor.
- Connect 1k resistor from OD1 to A1, a 1uF capacitor from A1 to GND, and
- run;
+Digitizes the inputs A1,A2,A3 and MIC together.
+ The number of samples could be upto 10000.
+ The time gap between two consecutive samples id given in microseconds (range
+ 2 to 1000 usec).
+\end_layout
+
+\begin_layout Standard
+Connect WG to A3 and run the code given below.
+ Result is shown above.
 \end_layout
 
 \begin_layout LyX-Code
->>>p.set_state(1)        # OD1 5 volts
+from pylab import *
 \end_layout
 
 \begin_layout LyX-Code
->>>t,v=p.capture1_action('A1',300,20,'SET_LOW')  # OD1->0 before capture
- 
+p.set_sine_amp(2)
 \end_layout
 
 \begin_layout LyX-Code
->>>plot(t,v)
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+res = p.capture4(300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(res[4],res[5])        # A3
+\end_layout
+
+\begin_layout LyX-Code
+plot(res[6],res[7])        # MIC
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Paragraph*
+set_wave(frequency, wavetype)
 \end_layout
 
 \begin_layout Standard
-The result is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:(a)-PWM-waveform"
-
-\end_inset
-
-(a).
+If wavetype is not specified, it generates the waveform using the existing
+ wave table.
+ If wavetype is specified ('sine' or 'tria')
 \end_layout
 
 \begin_layout Standard
-The outputs SQR1 and SQR2 can generate square waves ranging from .7Hz to
- 200kHz, function returns the actual frequency set.
- They can also be programmed to generate Pulse Width Modulated (PWM) waveforms,
- at some fixed frequencies.
+corresponding wavetable is loaded.
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(1000, 'sine')
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(100)       # Sets 100Hz using the existing table
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,50)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(100, 'tria')  # Sets triagular wave table and generates 100Hz
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,50)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Paragraph*
+load_equation(function, span)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
+Makes the wave table using the quation.
+ Connect WG to A1 and run the code below.
+ The output also is shown below.
+\end_layout
 
-\begin_layout Plain Layout
-\align center
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def f1(x):
+\end_layout
+
+\begin_layout LyX-Code
+    return sin(x) + sin(3*x)/3 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+p.load_equation(f1, [-pi,pi])
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(400)
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout LyX-Code
 \begin_inset Graphics
-	filename pics/pylab-cap-discharge.png
-	lyxscale 50
-	width 5cm
+	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/loadEquation.png
+	lyxscale 60
+	height 4cm
 
 \end_inset
 
- 
+  
 \begin_inset Graphics
-	filename pics/pylab-pwm.png
-	lyxscale 50
-	width 5cm
+	filename /home/ajith/Phoenix-Project/EYES17/DOC/ProgManual/pics/loadTable.png
+	lyxscale 60
+	height 4cm
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption
-
-\begin_layout Plain Layout
-(a) Capacitor discharge (b) PWM waveform
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:(a)-PWM-waveform"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.set_sqr1(1000,30)    # 30% duty cycle, 1 kHz
-\end_layout
-
-\begin_layout LyX-Code
->>>t,v=p.capture1('A1', 300,20)   # get the wave form
-\end_layout
-
-\begin_layout LyX-Code
->>>plot(t,v)
+\begin_layout Paragraph*
+load_table(function, span)
 \end_layout
 
 \begin_layout Standard
-The result is shown in figure 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:(a)-PWM-waveform"
+The wave table can be loaded with a 512 element array.
+ Connect WG to A1 and run the code below.
+ After taking the absolute value, the table starts with 256, goes down to
+ zero and then goes upto 255, tracing a triagular wave.
+ The tableoutput also is shown above.
+\end_layout
 
-\end_inset
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
 
-(b).
- 
+\begin_layout LyX-Code
+x = arange(-256, 256)
+\end_layout
+
+\begin_layout LyX-Code
+x = abs(x)
+\end_layout
+
+\begin_layout LyX-Code
+p.load_table(x)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(400)
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
 \end_layout
 
 \begin_layout Standard
-expEYES can measure time interval between voltage transitions at the digital
- inputs.
- The results returned are in microseconds.
- Connect SQR1 to IN2 and try:
-\end_layout
 
-\begin_layout LyX-Code
->>>print p.set_sqr1(1000)            # 1kHz square wave
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.r2ftime('IN2','IN2')      # rising to falling
-\end_layout
-
-\begin_layout LyX-Code
-500
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.multi_r2rtime('IN2',1)   # two rising edge 
-\end_layout
-
-\begin_layout LyX-Code
-1000
-\end_layout
-
-\begin_layout LyX-Code
->>>print p.get_freq(3)
-\end_layout
-
-\begin_layout LyX-Code
-1000
-\end_layout
-
-\begin_layout Standard
-Try to set square waves of different frequencies and measure them.
-\end_layout
-
-\begin_layout Standard
-From a captured waveform, we can measure the amplitude and frequency by
- curve fitting.
- The results are accurate with a sine wave input but frequency measurement
- works with other shapes also.
- Connect SINE to A1 and try:
-\end_layout
-
-\begin_layout LyX-Code
->>>import expeyes.eyemath as em
-\end_layout
-
-\begin_layout LyX-Code
->>>t,v= p.capture_hr(1, 400,50)
-\end_layout
-
-\begin_layout LyX-Code
->>>vfit, par = em.fit_sine(t,v)
-\end_layout
-
-\begin_layout LyX-Code
->>>print par[0], par[1]*1000   # Amplitude & Frequency
-\end_layout
-
-\begin_layout Standard
-The peak voltage and the frequency will be printed.
-\end_layout
-
-\begin_layout Standard
-For more information read the Programmer's manual.
- You can get a brief description of all the functions by giving the command
-\end_layout
-
-\begin_layout LyX-Code
->>>help(expeyes.eyesj)
-\end_layout
-
-\begin_layout Standard
-Once you learn Python language, it will be easier to read through the source
- code 
-\shape italic
-eyesj.py
-\shape default
- to understand the working of the program.
- 
-\end_layout
-
-\begin_layout LyX-Code
-If you find mistakes, send a mail to ajith@iuac.res.in
 \end_layout
 
 \end_body

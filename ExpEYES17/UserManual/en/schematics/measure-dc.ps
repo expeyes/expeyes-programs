@@ -1,9 +1,9 @@
 %!PS-Adobe-3.0 EPSF-3.0
 %%Title: measure-dc.ps
-%%Creator: XCircuit v3.7 rev26
-%%CreationDate: Mon Jul 16 07:59:49 2012
+%%Creator: XCircuit v3.7 rev55
+%%CreationDate: Thu Sep 14 07:48:22 2017
 %%Pages: 1
-%%BoundingBox: 68 68 238 100
+%%BoundingBox: 68 68 232 172
 %%DocumentNeededResources: font Helvetica 
 %%EndComments
 %%BeginProlog
@@ -124,7 +124,7 @@
   currentlinewidth mul setlinewidth /style exch def style 2048 and 0 gt
   clipped 1 and 0 eq and {clip newpath /clipped clipped 1 add def} {
   style 1 and 0 gt not {closepath} if
-  style 1024 and 0 gt {2 setlinecap} if
+  style 1024 and 0 gt {2 setlinecap 0 setlinejoin} if
   style 2 and 0 gt {currentlinewidth 4 mul dup 2 array astore 0 setdash} if
   style 4 and 0 gt {0.5 currentlinewidth 4 mul 2 array astore 0 setdash} if
   gsave style 16 and 0 gt { style 224 and -5 bitshift style 256 and 0 gt {
@@ -156,7 +156,7 @@
 /polyc   { {lineto} repeat } bind def
 /beginpath { gsave moveto } bind def
 /endpath { setstyles } bind def
-/bop	 { 1 setlinecap 0 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
+/bop	 { 1 setlinecap 2 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
 	/clipped 0 def} def
 /psinsertion {/PSobj save def /showpage {} def /setpagedevice {pop} def bop
 	rotate translate dup scale} def
@@ -179,17 +179,18 @@
 %%PageOrientation: Portrait
 /pgsave save def bop
 1.0000 inchscale
-2.6000 setlinewidth 624 -272 translate
+2.6000 setlinewidth 704 -192 translate
 
-0 1.000 -272 528 -272 464 -128 464 -128 528 4 polygon
-0 1.000 -128 512 -128 480 -112 480 -112 512 4 polygon
-0 1.000 -432 528 -432 464 -320 464 -320 528 4 polygon
-(A1) {/Helvetica cf} 2 16 0 1.000 -64 480 label
-0 1.000 -80 528 -80 464 0 464 0 528 4 polygon
-1 1.000 -80 496 -112 496 2 polygon
-1 1.000 -272 496 -320 496 2 polygon
-(cell) {/Helvetica cf} 2 16 0 1.000 -224 480 label
-(GND) {/Helvetica cf} 2 16 0 1.000 -416 480 label
+0 1.000 -496 624 -496 560 -384 560 -384 624 4 polygon
+(GND) {/Helvetica cf} 2 16 0 1.000 -480 576 label
+(A1) {/Helvetica cf} 2 16 0 1.000 -224 576 label
+0 1.000 -240 608 -240 560 -160 560 -160 608 4 polygon
+0 1.000 -512 640 -512 384 -96 384 -96 640 4 polygon
+0 1.000 -400 496 -400 416 -256 416 -256 496 4 polygon
+0 1.000 -256 464 -256 448 -240 448 -240 464 4 polygon
+1 1.000 -224 464 -176 480 -192 560 -240 464 spline
+1 1.000 -384 464 -496 480 -448 560 -400 464 spline
+(Cell) {/Helvetica cf} 2 16 0 1.000 -368 448 label
 pgsave restore showpage
 
 %%Trailer
