@@ -4481,7 +4481,7 @@ Circuit RC en régime transitoire
 \end_layout
 
 \begin_layout Itemize
-Cliquer sur 
+Cliquer sur les boutons 
 \shape italic
 Échelon 0->5V et Échelon
 \shape default
@@ -4535,18 +4535,20 @@ Le tension aux bornes d'un condensateur ne varie exponentiellement que quand
 \end_layout
 
 \begin_layout Section
-Transient Response of RL circuits
+Réponse transitoire de circuits RL
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Explore the nature of current and voltage when a voltage step is applied
- to resistor and inductor in series.
- By measuring the voltage across the inductor as a function of time, we
- can calculate its inductance.
+Explorer la nature du courant et de la tension quand un échelon de tension
+ est appliqué à une résistance et un bobinage en série.
+ En mesurant la tension en fonction du temps aux bornes du bobinage, on
+ peut calculer son inductance.
 \end_layout
 
 \begin_layout Standard
@@ -4569,18 +4571,18 @@ Explore the nature of current and voltage when a voltage step is applied
 \end_layout
 
 \begin_layout Standard
-In an RL circuit 
-\begin_inset Formula $V=IR+L\frac{dI}{dt}$
+Dans un circuit RL 
+\begin_inset Formula $U=RI+L\frac{dI}{dt}$
 \end_inset
 
- and solving this will give 
+ , équation qui se réout en 
 \begin_inset Formula $I=I_{0}e^{-\frac{R}{L}t}$
 \end_inset
 
 .
- The coefficient of the exponential term R/L can be extracted from the graph
- of voltage across the inductor.
- The resistance of the inductor coil should be included in the calculations,
+ Le coefficient du terme exponentiel R/L peut être déduit du graphique de
+ la tension aux bornes du bobinage.
+ La résistance du bobinage doit être incluse dans les calculs, 
 \begin_inset Formula $R=R_{ext}+R_{L}$
 \end_inset
 
@@ -4592,31 +4594,31 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Inductor is the 3000 Turn coil
+Le bobinage est la bobine de 3000 tours
 \end_layout
 
 \begin_layout Itemize
-Click on 
+Cliquer sur les boutons 
 \shape italic
-0->5V STEP
+Échelon 0->5V et Échelon
 \shape default
- and 
+ 
 \shape italic
-5->0V step
+5->0V 
 \shape default
- Buttons to plot the graphs
+pour afficher les graphiques
 \end_layout
 
 \begin_layout Itemize
-Adjust the horizontal scale, if required, and repeat.
+Ajuster l'échelle horizontale, si nécessaire, et recommencer.
 \end_layout
 
 \begin_layout Itemize
-Calculate the value of inductance
+Calculer la valeur de l'inductance
 \end_layout
 
 \begin_layout Itemize
-Insert an iron core into the inductor and repeat
+Insérer un noyau en fer dans le bobinage et recommencer
 \end_layout
 
 \begin_layout Paragraph*
@@ -4624,30 +4626,48 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The transient response of the RL circuit is shown in figure.
- The exponential curve is fitted to extract the L/R value.
- The resistance of the coil is measured by comparing it with the known external
- resistance under DC conditions.
- A2 is connected to OD1 for a more accurate measurement of the coil resistance.
+La réponse transitoire du circuit RL est montrée sur la figure.
+ La courbe exponentielle est modélisée pour extraire la valeur de L/R.
+ La résistance de la bobine est mesurée en la comparant avec la résistance
+ externe connue, en courant continu.
+ A2 est connecté à OD1 pour une mesure plus précise de la résistance du
+ bobinage.
 \end_layout
 
 \begin_layout Standard
-The applied voltages are above zero, but the graph went to negative voltages.
- Why ?
+Les tensions appliquées sont positives, mais le graphique va vers des tensions
+ négatives, pourquoi
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
-What was the current before doing the 5->0 step ? What is back EMF ?
+Quel était le courant avant le début de l'échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V
+\begin_inset space ~
+\end_inset
+
+? Quelle est la force contre-électromotrice (fcem)
+\begin_inset space ~
+\end_inset
+
+?
 \end_layout
 
 \begin_layout Standard
-Repeat with two coils in series, by (a) placing them far away (b) placing
- one over the other and (c) after changing the orientation.
- The effect of mutual inductance can be seen.
+Recommencer avec deux bobinages en série, (a) en les plaçant l'un loin de
+ l'autre, (b) en les plaçant l'un sur l'autre, (c) après changement d'orientatio
+n de l'un des deux.
+ On peut voir l'effet de l'induction mutuelle.
 \end_layout
 
 \begin_layout Section
-Transient response of LCR circuits
+Réponse transitoire de circuit RLC
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Step-Response-ofRLC"
@@ -4658,21 +4678,23 @@ name "sec:Step-Response-ofRLC"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Explore the oscillatory nature of L and C in series.
- Resonant frequency of series LC circuit is given by 
+Explorer la nature oscillatoire de la mise en série de L et C.
+ La pulsation de résonance d'un circuit LC série est donnée par 
 \begin_inset Formula $\omega_{0}=\frac{1}{2\pi\sqrt{LC}}$
 \end_inset
 
 .
- The damping factor is 
+ Le facteur d'amortissement est 
 \begin_inset Formula $\frac{R}{2}\sqrt{\frac{C}{L}}$
 \end_inset
 
-, and it is equal to 1 for critical damping.
+, et il vaut 1 pour l'amortissement critique.
 \begin_inset Foot
 status collapsed
 
@@ -4682,9 +4704,8 @@ http://en.wikiversity.org/wiki/RLC_circuit
 
 \end_inset
 
- Depending upon the value of C/L and R, the response could be under-damped,
- critically-damped or over-damped.
- 
+ Selon les valeurs de C/L et R, la réponse peut être sous-amortie, amortie
+ de façon critique ou sur-amortie.
 \end_layout
 
 \begin_layout Standard
@@ -4711,24 +4732,33 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Start with the coil and 0.1 uF capacitor
+Commencer avec le bobinage et un condensateur de 
+\begin_inset Formula $0,1~\text{µF}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Click on 5->0V STEP.
- Adjust x-axis and repeat if required.
+Cliquer sur Échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V.
+ Ajuster l'axes des abscisses et recommencer si nécessaire.
 \end_layout
 
 \begin_layout Itemize
-FIT the graph to find the resonant frequency & Damping.
+Ajuster le graphique (FIT) pour trouver la fréquence de résonance et l'amortisse
+ment.
 \end_layout
 
 \begin_layout Itemize
-Repeat with a resistor between OD1 and the inductor.
+Recommencer avec une résistance entre OD1 et le bobinage.
 \end_layout
 
 \begin_layout Itemize
-Repeat the experiment with different values of L, C and R
+Recommencer l'expérience avec diverses valeurs de R, L et C.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4736,28 +4766,38 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-We have used the 3000 turn coil and a 0.1uF capacitor.
- The voltage across the capacitor after a 5 to 0V step is shown in figure.
- The measured resonant frequency tallies with 
+On a utilisé le bobinage de 3000 tours et le condensateur de 
+\begin_inset Formula $0,1~\text{µF}.$
+\end_inset
+
+La tension aux bornes du condensateur est montrée sur la figure après un
+ échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V.
+ La fréquence de résonance mesurée est conforme à 
 \begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{1}{LC}}$
 \end_inset
 
- , within the component tolerance values.
+ , compte tenu de la tolérance sur les valeurs des composants.
 \end_layout
 
 \begin_layout Section
-RC Integration & Differentiation 
+Différenciation et intégration RC
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-RC circuits can integrate or differentiate a voltage waveform with respect
- to time.
- A square wave is integrated to get a triangular wave and differentiated
- to get spikes at the transitions.
+Les circuits RC peuvent intégrer ou différencier un signal de tension par
+ rapport au temps.
+ Si on intègre un signal carré on obtient un signal triangulaire et si on
+ différencie on obtient des pics aux transitions.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -4793,19 +4833,35 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Select WG triangular wave option
+Sélectionner l'option signal triangulaire pour WG
 \end_layout
 
 \begin_layout Itemize
-Set WG to 500Hz (T = 1mS), R=1k and C = 1uF
+Régler WG à 500
+\begin_inset space ~
+\end_inset
+
+Hz (T = 2ms), 
+\begin_inset Formula $R=1 k\Omega$
+\end_inset
+
+ et 
+\begin_inset Formula $C=1~\text{µF}$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Adjust the horizontal scale to view more than 4 cycles.
+Ajuster l'échelle horizontale pour voir plus de quatre cycles.
 \end_layout
 
 \begin_layout Itemize
-Repeat the same for RC differentiator, at 50Hz.
+Recommencer la même chose pour le différenciateur RC, à 
+\begin_inset Formula $50 Hz$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4813,11 +4869,11 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Integration of a triangular waveform gives parabolic shape and differentiation
- gives a square shape.
- The differentiation can only be shown at lower frequency.
- Try these for other wave shapes, for example a squarewave.
- Integrating a square wave should give a triangular wave.
+L'intégration d'un signal trianguaire donne une forme parabolique et la
+ différenciation donne une forme carrée.
+ La différenciation ne peut être montrée qu'à basse fréquence.
+ Essayer cela pour d'autres formes de signaux, par exemple signal carré.
+ Si on intègre un signal carré on est censé obtenir un signal triangulaire.
 \end_layout
 
 \begin_layout Standard
@@ -4840,7 +4896,7 @@ Integration of a triangular waveform gives parabolic shape and differentiation
 \end_layout
 
 \begin_layout Section
-Fourier Analysis
+Analayse de Fourier
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Fourier-Transform-**"
@@ -4851,12 +4907,14 @@ name "sec:Fourier-Transform-**"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Learn about Fourier Transform of a signal.
- Time and Frequency domain representations.
+Étudier la transformée de Fourier d'un signal.
+ Représentations temporelle et fréquentielle d'un signal.
 \end_layout
 
 \begin_layout Paragraph*
@@ -4864,20 +4922,29 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Connect SQ1 to A1 and WG to A2.
- Put A1 in AC coupled mode (slide switch on the box)
+Connecter SQ1 à A1 et WG à A2.
+ Mettre A1 en mode couplage alternatif (interrupteur à glissière sur le
+ boîtier)
 \end_layout
 
 \begin_layout Itemize
-Enable A1 and A2, select 4 volt scale
+Activer A1 et A2, sélectionner le calibre 4
+\begin_inset space ~
+\end_inset
+
+V
 \end_layout
 
 \begin_layout Itemize
-Set both WG and SQ1 to 500Hz
+Régler WG et SQ1 à 500
+\begin_inset space ~
+\end_inset
+
+Hz
 \end_layout
 
 \begin_layout Itemize
-Press the FFT button
+Cliquer sur le bouton FFT
 \end_layout
 
 \begin_layout Paragraph*
@@ -4885,9 +4952,10 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-In the Fourier transform plot, frequency is on the x-axis and the y-axis
- shows the relative strength of the frequency components of the signal.
- This is called the frequency domain representation
+Dans le graphique de la transformée de Fourier, la fréquence est sur l'axe
+ x et l'axe y montre l'intensité relative des composants fréquentiels du
+ signal.
+ On appelle ça la représentation fréquentielle
 \begin_inset Foot
 status collapsed
 
@@ -4898,35 +4966,34 @@ http://en.wikipedia.org/wiki/Fourier_transform
 \end_inset
 
 .
- For the sine wave there is only one dominant peak, the smaller ones are
- a measure of distortion of the sine wave.
- 
+ Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
+ plus petits sont une mesure de la distorsion du signal sinusoïdal.
 \end_layout
 
 \begin_layout Standard
-A square wave function can be represented as 
+Un signal carré peut être représenté comme 
 \begin_inset Formula $f(\theta)=sin(\theta)+\frac{sin(3\theta)}{3}+\frac{sin(5\theta)}{5}+\cdots$
 \end_inset
 
 .
- In the Fourier transform of a square wave of frequency 
+ Dans la transformée de Fourier d'un signal carré de fréquence 
 \begin_inset Formula $f$
 \end_inset
 
- , there will be a 
+ , il y aura un composant 
 \begin_inset Formula $3f$
 \end_inset
 
- component (having an amplitude of one third of 
+ (dont l'amplitude est le tiers du composant 
 \begin_inset Formula $f$
 \end_inset
 
- ), 
+ ), un composant 
 \begin_inset Formula $5f$
 \end_inset
 
- component (amplitude one fifth) etc.
- as shown in the figure.
+ (amplitude un cinquième), etc.
+ comme montré sur la figure.
 \end_layout
 
 \begin_layout Standard
@@ -4949,17 +5016,19 @@ A square wave function can be represented as
 \end_layout
 
 \begin_layout Section
-Electromagnetic induction
+Induction électromagnétique
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Explore the voltage induced across a coil by a changing magnetic field,
- by dropping a small cylindrical magnet into a coil.
- Use a tube to guide the magnet through the coil.
+Explorer la tension induite aux bornes d'un bobinage par un champ magnétique
+ variable, en laissant tomber un petit aimant cylindrique à travers le bobinage.
+ On utilise un tube pour guider l'aimant à travers le bobinage.
 \end_layout
 
 \begin_layout Standard
@@ -4985,39 +5054,56 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Click on Start Scanning.
- A horizontal trace should appear
+Cliquer sur 
+\begin_inset Quotes fld
+\end_inset
+
+Démarrer le scan
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Un trace horizontale devrait apparaître
 \end_layout
 
 \begin_layout Itemize
-Drop the magnet through the coil, until a trace is caught.
+Laisser tomber l'aimant à travers la bobine, jusqu'à ce qu'on capture une
+ trace.
 \end_layout
 
 \begin_layout Itemize
-Repeat the process by changing the parameters like magnet strength, speed
- etc.
+Recommencer le processus en changeant des paramètres comme la force de l'aimant,
+ la vitesse, etc.
 \end_layout
 
 \begin_layout Paragraph*
-Discussion 
+Discussion
 \end_layout
 
 \begin_layout Standard
-The result is shown in figure.
- The amplitude increases with the speed of the magnet.
- From the graph, we can find the time taken by the magnet to travel through
- the coil.
+Le résultat est montré sur la figure.
+ L'amplitude augmente avec la vitesse de l'aimant.
+ D'après le graphique, on peut déterminer le temps que met l'aimant à traverser
+ le bobinage.
 \end_layout
 
 \begin_layout Standard
-The second peak is bigger than the first peak.
- Why ? Where will be the magnet at the zero crossing of the induced voltage?
- Drop the magnet from different heights and plot the voltage vs square root
- of the height.
+Le deuxième pic est plus grand que le premier.
+ Pourquoi
+\begin_inset space ~
+\end_inset
+
+? À quel endroit est censé se trouver l'aimant quand la tension induite
+ passe par zéro
+\begin_inset space ~
+\end_inset
+
+? Laisser tomber l'aimant depuis différentes hauteurs et faire un graphique
+ de la tension crête en fonction de la racine carrée de la hauteur de chute.
 \end_layout
 
 \begin_layout Chapter
-Sound
+Le son
 \end_layout
 
 \begin_layout Standard
