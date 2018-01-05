@@ -5933,30 +5933,48 @@ gain
 \end_layout
 
 \begin_layout Chapter
-Coding expEYES-17 in Python
+Coder en Python pour expEYES-17
 \end_layout
 
 \begin_layout Standard
-The GUI programs described in the previous sections are meant for a fixed
- set of experiments.
- To develop new experiments, one should know how to access the features
- of expEYES from software.
- Important function calls used for communicating with the device is given
- below.
- 
+Les programmes à interface graphique décrit dans les chapitres précédents
+ sont prévus pour un ensemble fini d'expériences.
+ Pour développer de nouvelles expériences, on doit savoir comment accéder
+ aux fonctionnalités d'expEYES par logiciel.
+ Les appels de fonctions importants pour communiquer avec l'appreil sont
+ donnés ci-dessous.
 \end_layout
 
 \begin_layout Paragraph*
-Establish Connection
+Établir la Connexion
 \end_layout
 
 \begin_layout Standard
-To access the EYES17 hardware, the python modules for eyes17 must be installed.
- They should be inside a directory named eyes17, that could be in your home
- directory or on the Python PATH.
+Pour accéder au matériel de EYES17, les modules Python pour 
+\family typewriter
+eyes17
+\family default
+ doivent être installés.
+ Il sont censés se trouver dans un répertoire nommé 
+\family typewriter
+eyes17
+\family default
+, qui pourrait être dans votre répertoire personnel ou sur le 
+\begin_inset Quotes fld
+\end_inset
 
+Python PATH
+\begin_inset Quotes frd
+\end_inset
+
+.
+ 
 \series bold
- Every program should start with the following 2 lines
+Tout programme doit commencer par les deux lignes suivantes
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -5968,14 +5986,17 @@ p = eyes17.eyes.open()
 \end_layout
 
 \begin_layout Standard
-The variable p is the software object, representing the hardware.
- 
+La variable 
+\family typewriter
+p
+\family default
+ est l'objet logiciel qui représente le matériel.
 \end_layout
 
 \begin_layout Standard
-The following sections explains the Python function calls to access the
- eyes17 hardware.
- Each function call will be explained with an example usage.
+Les sections suivantes expliquent les appels de fonctions Python pour accéder
+ au matériel EYES17.
+ Chaque appel de fonction est expliquer avec un exemple d'utilisation.
 \end_layout
 
 \begin_layout Paragraph
@@ -5983,9 +6004,9 @@ set_pv1(v), set_pv2(v)
 \end_layout
 
 \begin_layout Standard
-Sets the DC voltages at PV1 and PV2.
- PV1 range is -5 to 5.
- PV2 range is -3.3 to 3.3.
+Règle la tension continue en PV1 et PV2.
+ L'intervalle pour PV1 est de -5 à 5.
+ L'intervalle pour PV2 est de -3,3 à 3,3.
 \end_layout
 
 \begin_layout LyX-Code
@@ -5993,12 +6014,12 @@ print p.set_pv1(4)
 \end_layout
 
 \begin_layout LyX-Code
-print p.set_pv2(2)
+print p.set_pv2(2.1)
 \end_layout
 
 \begin_layout Standard
-The value set is printed.
- Measure the voltages using a meter.
+La valeur assignée à la sortie est affichée.
+ Mesurer les tensions avec un volmètre.
 \end_layout
 
 \begin_layout Paragraph
@@ -6006,7 +6027,7 @@ get_voltage(input)
 \end_layout
 
 \begin_layout Standard
-Returns the voltage at the specified input.
+Renvoie la tension de l'entrée spécifiée.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6030,21 +6051,26 @@ print p.get_voltage('SEN')
 \end_layout
 
 \begin_layout Standard
-Connect PV1 to A1 and use the set_pv1() and get_voltage together.
- This function sets the input range by trial 
-\end_layout
-
-\begin_layout Standard
-and error, depending on the input signal.
+Connecter PV1 à A1, et utiliser 
+\family typewriter
+set_pv1()
+\family default
+ et 
+\family typewriter
+get_voltage('A1')
+\family default
+ ensemble.
+ Cette fonction ajuste le calibre d'entrée par essais et erreurs, selon
+ la valeur du signal d'entrée.
 \end_layout
 
 \begin_layout Paragraph*
-get_voltage_time(input) 
+get_voltage_time(input)
 \end_layout
 
 \begin_layout Standard
-Returns a tuple, containing the computer's time stamp and the voltage at
- the specified input 
+Renvoie un tuple, qui contient le timbre à date de l'ordinateur et la tension
+ à l'entrée spécifiée.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6052,12 +6078,20 @@ print p.get_voltage_time('A1')
 \end_layout
 
 \begin_layout Paragraph*
-get_resistance() 
+get_resistance()
 \end_layout
 
 \begin_layout Standard
-Returns the value of resistance connected to SEN, it should be between 100
- Ohm and 100k for reasonable accuracy.
+Renvoie la valeur de la résistance connectée à SEN, qui devrait être entre
+ 
+\begin_inset Formula $100~\Omega$
+\end_inset
+
+ et 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+ pour une précision raisonnable.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6069,7 +6103,12 @@ get_capacitance()
 \end_layout
 
 \begin_layout Standard
-Returns the value of capacitance connected to IN1 (works well in pF ranges)
+Renvoie la valeur de la capacité connectée en IN1 (fonctionne bien dans
+ le domaine du 
+\begin_inset Formula $pF$
+\end_inset
+
+)
 \end_layout
 
 \begin_layout LyX-Code
@@ -6081,10 +6120,12 @@ get_version()
 \end_layout
 
 \begin_layout Standard
-Returns the version number of the Firmware
+Renvoie la version du firmware.
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 print p.get_version()
 \end_layout
 
@@ -6093,7 +6134,7 @@ get_temperature()
 \end_layout
 
 \begin_layout Standard
-Returns the temperature of the processor inside eyes17
+Renvoie la température du processeur à l'intérieur de EYES17
 \end_layout
 
 \begin_layout LyX-Code
@@ -6105,8 +6146,12 @@ set_state(OUPUT=value)
 \end_layout
 
 \begin_layout Standard
-Sets the output of OD1, SQ1 etc.
- Connect OD1 to A1 and run
+Règle l'état logique de la sortie OD1, SQ1, etc.
+ Connecter OD1 à A1 et lancer
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6122,9 +6167,18 @@ set_sine(frequency)
 \end_layout
 
 \begin_layout Standard
-Generates the sinewave of requested frequency on WG (range from 5Hz to 5000Hz).
- All intermediate values are not possible, function returns the actual value
- set.
+Génère le signal sinusoïdal de la fréquence demandée sur WG (intervalle
+ de 5
+\begin_inset space ~
+\end_inset
+
+Kz à 5000
+\begin_inset space ~
+\end_inset
+
+Hz).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6132,6 +6186,8 @@ print p.set_sine(502)
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 502.00803
 \end_layout
 
@@ -6140,8 +6196,20 @@ set_sine_amp(amplitude)
 \end_layout
 
 \begin_layout Standard
-The amplitude can be set to 3 pre-defined values of the peak voltage ( 0->
- 80mV, 1-> 1V, 2-> 3V)
+L'amplitude peut être réglée à trois valeurs prédéfinies de tension crête(0
+ pour avoir 
+\begin_inset Formula $80 mV$
+\end_inset
+
+, 1 pour avoir 
+\begin_inset Formula $1 V$
+\end_inset
+
+, 3 pour avoir 
+\begin_inset Formula $3 V$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout LyX-Code
@@ -6149,7 +6217,11 @@ p.set_sine_amp(2)
 \end_layout
 
 \begin_layout Standard
-Sets the amplitude to 3 volts peak.
+Règle l'amplitude à 
+\begin_inset Formula $3 V$
+\end_inset
+
+ crête.
 \end_layout
 
 \begin_layout Paragraph*
@@ -6157,8 +6229,17 @@ set_sqr1(frequency)
 \end_layout
 
 \begin_layout Standard
-Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All intermediate
- values are not possible, function returns the actual value set.
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $4 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6166,6 +6247,8 @@ print p.set_sqr1(15030)
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 15030.53
 \end_layout
 
@@ -6174,9 +6257,19 @@ set_sqr1_slow(frequency)
 \end_layout
 
 \begin_layout Standard
-Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All intermediate
- values are not possible, function returns the actual value set.
- Resolution is high but WG is disabled when SQ1 is operated in this mode.
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $0,1 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
+ La résolution est fine mais WG est désactivé quand on commande SQ1 de cette
+ façon.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6188,8 +6281,8 @@ set_sqr2(frequency)
 \end_layout
 
 \begin_layout Standard
-Similar to set_sqr1() but SQ2 is not available along with WG, only one at
- a time.
+Similaire à set_sqr1() mais SQ2 n'est pas disponible en même temps que WG,
+ une seule des deux sorties est utilisable à la fois.
 \end_layout
 
 \begin_layout Paragraph*
@@ -6197,12 +6290,21 @@ set_sqr1(frequency, dutyCyle)
 \end_layout
 
 \begin_layout Standard
-Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All intermediate
- values are not possible, function returns the actual value set.
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $0,1 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
 \end_layout
 
 \begin_layout LyX-Code
-print p.set_sqr1(1000, 30)          # 1000Hz with 30% duty cycle
+print p.set_sqr1(1000, 30)        # 1000 Hz, rapport cyclique 30%
 \end_layout
 
 \begin_layout Paragraph*
@@ -6210,8 +6312,12 @@ get_freq(input)
 \end_layout
 
 \begin_layout Standard
-Measures the frequency of a square wave on the input, IN2 or SEN.
- Connect SQ1 to IN2 and run the code
+Mesure la fréquence d'un signal carré sur l'entrée, IN2 ou SEN.
+ Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6227,8 +6333,12 @@ duty_cycle(input)
 \end_layout
 
 \begin_layout Standard
-Measures the duty cycle a square wave on the input, IN2 or SEN.
- Connect SQ1 to IN2 and run the code
+Mesure le rapport cyclique d'un signal carré , IN2 ou SEN.
+ Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6244,13 +6354,18 @@ r2ftime(input1, input2)
 \end_layout
 
 \begin_layout Standard
-Measures the time interval between a rising edge on input1 to another one
- on input2, the inputs can be the same also.
- This can be tested using a square wave.
+Mesure l'intervalle de temps entre un front montant sur input1 jusqu'à un
+ front descendant sur input2, les entrées peuvent éventuellement être les
+ mêmes.
+ On peut l'utiliser pour tester un signal carré.
 \end_layout
 
 \begin_layout Standard
-Connect SQ1 to IN2 and run
+Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6262,12 +6377,25 @@ print p.r2ftime('IN2', 'IN2')
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 0.0003
 \end_layout
 
 \begin_layout Standard
-The 1kHz square wave with 30% duty cycle has a Period of one millisecond
- and stays HIGH for .3 milliseconds.
+Le signal carré à 
+\begin_inset Formula $1 kHz$
+\end_inset
+
+ avec un rapport cyclique de 30% a une période de 
+\begin_inset Formula $1 ms$
+\end_inset
+
+ et reste à l'état HAUT durant 
+\begin_inset Formula $0,3 ms$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Paragraph*
@@ -6275,16 +6403,24 @@ multi_r2rtime(input, numCycles)
 \end_layout
 
 \begin_layout Standard
-Measures the time interval between rising edges on input1.
- Time between 2 edges is one cycle.
- Number of cycles to be measured also can be specified, default value is
+Mesure l'intervalle de temps entre deux fronts montants de l'entrée 
+\family typewriter
+input
+\family default
+.
+ La durée entre deux fronts montants est un cycle.
+ On peut spécifier le nombre cycles à mesurer, la valeur par défaut étant
  1.
- The allowed values are 1,2,4,8,12,16,32 and 48.
- This can be tested using a square wave.
+ Les valeurs autorisées sont 1,2,4,8,12,16,32 et 48.
+ On peut tester ça avec un signal carré.
 \end_layout
 
 \begin_layout Standard
-Connect SQ1 to IN2 and run
+Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6296,6 +6432,8 @@ print p.multi_r2rtime('IN2', 8)
 \end_layout
 
 \begin_layout Standard
+
+\family typewriter
 0.008
 \end_layout
 
@@ -6304,43 +6442,19 @@ select_range(channel, range)
 \end_layout
 
 \begin_layout Standard
-The input range of A1 and A2 can be set from 
-\begin_inset Formula $\pm0.5V$
+Les calibres pour A1 et A2 peuvent être réglés depuis 
+\begin_inset Formula $\pm0.5~V$
 \end_inset
 
- to 
-\begin_inset Formula $\pm16V$
+ jusqu'à 
+\begin_inset Formula $\pm16~V$
 \end_inset
 
- fullscale, using the programmable gain amplifiers.
+, à l'aide d'amplificateurs à gain programmable.
 \end_layout
 
 \begin_layout LyX-Code
-p.select_range('A1', 4)         # 4volt maximum
-\end_layout
-
-\begin_layout LyX-Code
-p.select_range('A1', 8)         # 8 volt maximum
-\end_layout
-
-\begin_layout Paragraph*
-select_range(channel, range)
-\end_layout
-
-\begin_layout Standard
-The input range of A1 and A2 can be set from 
-\begin_inset Formula $\pm0.5V$
-\end_inset
-
- to 
-\begin_inset Formula $\pm16V$
-\end_inset
-
- fullscale, using the programmable gain amplifiers.
-\end_layout
-
-\begin_layout LyX-Code
-p.select_range('A1', 4)         # 4volt maximum
+p.select_range('A1', 4)         # 4 volt maximum
 \end_layout
 
 \begin_layout LyX-Code
@@ -6352,10 +6466,14 @@ capture1(Input, Number of samples, time interval)
 \end_layout
 
 \begin_layout Standard
-Digitizes the specified input.
- The number of samples could be upto 10000.
- The time gap between two consecutive samples id given in microseconds (range
- 2 to 1000 usec).
+Numérise l'entrée spécifiée.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 2 à 1000
+\begin_inset space ~
+\end_inset
+
+µs).
 \end_layout
 
 \begin_layout LyX-Code
@@ -6363,15 +6481,25 @@ print p.capture1('A1', 5, 5)
 \end_layout
 
 \begin_layout Standard
-will print two arrays of time and voltage.
- 
+affichera deux tableaux de dates et de tensions.
 \end_layout
 
 \begin_layout Standard
-We need to plot the graph of the output for a better understanding.
- This can be done using the matplotlib module, imported using the pylab
- interface.
- Connect WG to A1 with a wire and run;
+Quand on a besoin de créer un graphique de la rension de sortie pour une
+ meilleure compréhension, on peut le faire à l'aide du module 
+\family typewriter
+matplotlib
+\family default
+, importé grâce à l'interface 
+\family typewriter
+pylab
+\family default
+.
+ Connecter WG à A1 à l'aide d'un fil et lancer
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6403,7 +6531,7 @@ show()
 \end_layout
 
 \begin_layout Standard
-The output of this code is given below.
+Le résultat de ce code est donné ci-dessous.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6422,15 +6550,23 @@ capture2(Number of samples, time interval)
 \end_layout
 
 \begin_layout Standard
-Digitizes the inputs A1 and A2 together.
- The number of samples could be upto 10000.
- The time gap between two consecutive samples id given in microseconds (range
- 2 to 1000 usec).
+Numérise les entrées A1 et A2 simultanément.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 2 à 1000
+\begin_inset space ~
+\end_inset
+
+µs).
 \end_layout
 
 \begin_layout Standard
-Connect WG to A1 and a diode from A1 to A2.
- Run the code below
+Connecter WG à A1, et une diode entre A1 et A2.
+ Lancer le code ci-dessous
+\begin_inset space ~
+\end_inset
+
+:
 \end_layout
 
 \begin_layout LyX-Code
@@ -6466,7 +6602,7 @@ show()
 \end_layout
 
 \begin_layout Standard
-The output of this code is given below.
+Le résultat de ce code est donné ci-dessous.
 \end_layout
 
 \begin_layout Standard
@@ -6493,15 +6629,19 @@ capture4(Number of samples, time interval)
 \end_layout
 
 \begin_layout Standard
-Digitizes the inputs A1,A2,A3 and MIC together.
- The number of samples could be upto 10000.
- The time gap between two consecutive samples id given in microseconds (range
- 2 to 1000 usec).
+Numérise les entrées A1, A2, A3 et MIC simultanément.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 2 à 1000
+\begin_inset space ~
+\end_inset
+
+µs).
 \end_layout
 
 \begin_layout Standard
-Connect WG to A3 and run the code given below.
- Result is shown above.
+Connecter WG à A3 et lancer le code donné ci-dessous.
+ Le résultat est montré ci-dessus.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6541,13 +6681,25 @@ set_wave(frequency, wavetype)
 \end_layout
 
 \begin_layout Standard
-If wavetype is not specified, it generates the waveform using the existing
- wave table.
- If wavetype is specified ('sine' or 'tria')
-\end_layout
-
-\begin_layout Standard
-corresponding wavetable is loaded.
+Si le paramètre 
+\family typewriter
+wavetype
+\family default
+ n'est pas spécifié, cela génère un signal en utilisant la table d'onde
+ existante.
+ Si 
+\family typewriter
+wavetype
+\family default
+ est spécifié (
+\family typewriter
+'sine'
+\family default
+ ou 
+\family typewriter
+'tria'
+\family default
+), la table d'onde correspondante est chargée.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6591,9 +6743,9 @@ load_equation(function, span)
 \end_layout
 
 \begin_layout Standard
-Makes the wave table using the quation.
- Connect WG to A1 and run the code below.
- The output also is shown below.
+Crée la table d'onde en utilisant l'équation.
+ Connecter WG à A1 et lancer le code ci-dessous.
+ Le résultat est montré plus bas.
 \end_layout
 
 \begin_layout LyX-Code
@@ -6660,11 +6812,11 @@ load_table(function, span)
 \end_layout
 
 \begin_layout Standard
-The wave table can be loaded with a 512 element array.
- Connect WG to A1 and run the code below.
- After taking the absolute value, the table starts with 256, goes down to
- zero and then goes upto 255, tracing a triagular wave.
- The tableoutput also is shown above.
+On peut aussi charger la table d'onde avec un tableau de 512 éléments.
+ Connecter WG à A1 et lancer le code ci-dessous.
+ Après l'opération de valeur absolue, la table commence par 256, puis descend
+ jusqu'à 0 et enfin remonte jusqu'à 255, ce qui trace un signal triangulaire.
+ Le résultat dû à ce tableau est montré ci-dessus.
 \end_layout
 
 \begin_layout LyX-Code
