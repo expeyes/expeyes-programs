@@ -456,7 +456,7 @@ V utilisée, elle varie de 50
 \begin_inset space ~
 \end_inset
 
-ppm par degé Celsius.
+ppm par degré Celsius.
  Les erreurs de gain et d'offset sont éliminées par une calibration initiale,
  à l'aide du convertisseur analogique-numérique 16 bits.
 \end_layout
@@ -540,7 +540,7 @@ name "fig:The-ExpEYES-toppanel"
 \end_layout
 
 \begin_layout Subsection
-External connections
+Connexions externes
 \end_layout
 
 \begin_layout Standard
@@ -604,7 +604,7 @@ V à +5
 \end_inset
 
 V.
- La resolution est 12 bits, ce qui implique une résolution en tension d'environ
+ La résolution est 12 bits, ce qui implique une résolution en tension d'environ
  
 \begin_inset Formula $2,5~mV$
 \end_inset
@@ -627,7 +627,7 @@ V à +3,3
 \end_inset
 
 V.
- La resolution est 12 bits.
+ La résolution est 12 bits.
 \end_layout
 
 \begin_layout Paragraph*
@@ -639,11 +639,11 @@ La sortie oscille entre 0 et 5
 \begin_inset space ~
 \end_inset
 
-V et la fréquence peut être ajustée entre
+V et la fréquence peut être ajustée entre 10
 \begin_inset space ~
 \end_inset
 
-Hz et 100 
+Hz et 100
 \begin_inset space ~
 \end_inset
 
@@ -824,7 +824,7 @@ Entrées analogiques
 \end_layout
 
 \begin_layout Standard
-Celes-ci peuvent mesurer des tensions dans l'intervalle
+Celles-ci peuvent mesurer des tensions dans l'intervalle
 \begin_inset Formula $\pm16~V$
 \end_inset
 
@@ -934,7 +934,7 @@ Kit d'accessoires
 \end_layout
 
 \begin_layout Standard
-Quelques accessoires osnt livrés avec expEYES.
+Quelques accessoires sont livrés avec expEYES.
 \end_layout
 
 \begin_layout Itemize
@@ -992,7 +992,7 @@ Aimants permanents
 \begin_inset space ~
 \end_inset
 
-: (a) diametre et longueur 10
+: (a) diamètre et longueur 10
 \begin_inset space ~
 \end_inset
 
@@ -1008,7 +1008,7 @@ mm (c) aimants de taille bouton(2)
 \end_layout
 
 \begin_layout Itemize
-DELS 5
+DELs 5
 \begin_inset space ~
 \end_inset
 
@@ -1096,7 +1096,7 @@ photorésistance (LDR )
 \end_layout
 
 \begin_layout Itemize
-Deux diodes silicium (1N4148) et une diode zéner de 
+Deux diodes silicium (1N4148) et une diode Zéner de 
 \begin_inset Formula $3,3~V$
 \end_inset
 
@@ -1206,7 +1206,7 @@ main.py
 \end_layout
 
 \begin_layout Subsubsection*
-Distributions GNU/LInux Debian ou Ubuntu
+Distributions GNU/Linux Debian ou Ubuntu
 \end_layout
 
 \begin_layout Standard
@@ -1471,8 +1471,8 @@ name "fig:The-scope17-screen"
 
 \begin_layout Standard
 La fenêtre principale apparaît comme un oscilloscope à basse fréquence avec
- quatre acanaux, et plusieurs fonctionnalités en plus, à droite de l'écran.
- DOn peut sélectionner des applications pour plusieurs expériences du menu
+ quatre canaux, et plusieurs fonctionnalités en plus, à droite de l'écran.
+ On peut sélectionner des applications pour plusieurs expériences du menu
  de la barre supérieure.
  Une brève description du programme d'oscilloscope est donnée ci-dessous.
 \end_layout
@@ -1539,7 +1539,7 @@ FFT
 \end_layout
 
 \begin_layout Standard
-En plus de l'Oscilloscope, il y a plusieurs options de contrôle/mesure disponibl
+En plus de l'oscilloscope, il y a plusieurs options de contrôle/mesure disponibl
 es dans l'interface utilisateur, qui sont expliqués ci-dessous
 \begin_inset space ~
 \end_inset
@@ -1586,7 +1586,7 @@ On peut choisir la forme du générateur de signal WG à l'aide d'un bouton
 \begin_layout Itemize
 On peut ajuster la fréquence du signal de WG à l'aide du curseur ou avec
  l'entrée texte.
- Les deux méthodes de saisie sont asservies l'une à l'aure
+ Les deux méthodes de saisie sont asservies l'une à l'autre
 \begin_inset space ~
 \end_inset
 
@@ -1707,7 +1707,7 @@ Expériences scolaires
 \end_layout
 
 \begin_layout Standard
-Dans ce chapitre on discutera des expériences et démonstrations sans beacoup
+Dans ce chapitre on discutera des expériences et démonstrations sans beaucoup
  d'analyse des données, qui sont comprises dans le menu 
 \begin_inset Quotes fld
 \end_inset
@@ -1967,7 +1967,7 @@ pF pour cette activité.
 \end_inset
 
  .
- On peut créer des condensateurs en collant de fines feuilles de matal sur
+ On peut créer des condensateurs en collant de fines feuilles de métal sur
  les deux faces d'un isolant comme le papier, le polystyrène ou le verre.
 \end_layout
 
@@ -1991,7 +1991,7 @@ Objectif
 \begin_layout Standard
 Apprendre à appliquer la loi d'Ohm pour trouver le valeur d'une résistance
  inconnue par comparaison avec une résistance connue.
- La tension aux bornes d'une réistance est donnée par 
+ La tension aux bornes d'une résistance est donnée par 
 \begin_inset Formula $U=RI$
 \end_inset
 
@@ -2027,7 +2027,7 @@ Connecter
 \begin_inset Formula $1~k\Omega$
 \end_inset
 
- (R2) entre A1 et Ground.
+ (R2) entre A1 et GND.
 \end_layout
 
 \begin_layout Itemize
@@ -2069,7 +2069,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Quelle est la limtation de cette méthode
+Quelle est la limitation de cette méthode
 \begin_inset space ~
 \end_inset
 
@@ -2103,7 +2103,7 @@ On utilisera cette méthode plus tard pour mesurer la résistance de solutions,
 \end_layout
 
 \begin_layout Section
-Direct and Alternating Currents
+Courants continu et alternatif
 \end_layout
 
 \begin_layout Standard
@@ -2113,9 +2113,13 @@ Objectif
 \end_layout
 
 \begin_layout Standard
-Introduce the concept of time dependent voltages, using a V(t) graph.
- Compare the graph of DC and AC.
- 
+Introduire le concept de tensions variables dans le temps, à l'aide d'un
+ graphique 
+\begin_inset Formula $U(t)$
+\end_inset
+
+.
+ Comparer les graphiques de continu et d'alternatif.
 \end_layout
 
 \begin_layout Standard
@@ -2161,7 +2165,7 @@ Dans le graphique, si la courbe de tension ne change pas (si elle est horizontal
 e), c'est du courant continu pur.
  Si la tension change avec le temps, il y a une composante alternative.
  Si la tension moyenne est nulle, alors c'est de l'alternatif pur.
- Dans le deuxième graphique, la tension varien entre zéro et cinq volt
+ Dans le deuxième graphique, la tension varie entre zéro et cinq volt
 \begin_inset space ~
 \end_inset
 
@@ -2192,7 +2196,7 @@ e), c'est du courant continu pur.
 \end_layout
 
 \begin_layout Section
-Sinal d'antenne alternatif dû au secteur
+Signal d'antenne alternatif dû au secteur
 \end_layout
 
 \begin_layout Standard
@@ -2335,7 +2339,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Les signaux observés avec et sans le condensteur en série sont affichés
+Les signaux observés avec et sans le condensateur en série sont affichés
  sur la figure.
  La tension oscille entre 0 et 5
 \begin_inset space ~
@@ -2403,7 +2407,7 @@ Objectif
 \begin_layout Standard
 Toucher un fil du secteur est fatal parce que notre corps est un conducteur
  électrique.
- On peut explorer clea à l'aide de signaux de faible tension.
+ On peut explorer cela à l'aide de signaux de faible tension.
 \end_layout
 
 \begin_layout Standard
@@ -2461,7 +2465,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-La tension cre observée est de moins de 3
+La tension crête observée est de moins de 3
 \begin_inset space ~
 \end_inset
 
@@ -2483,7 +2487,7 @@ Objectif
 \end_layout
 
 \begin_layout Standard
-Mesurer la résistance électrique du corps jumain en la comparant à une résistanc
+Mesurer la résistance électrique du corps humain en la comparant à une résistanc
 e connue.
  On commence avec un signal continu issu de PV1 puis on continue avec un
  signal alternatif issu de WG.
@@ -2591,15 +2595,11 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-La résistance varie de 1
-\begin_inset space ~
+La résistance varie de 
+\begin_inset Formula $1~k\Omega$
 \end_inset
 
-k
-\begin_inset Formula $\Omega$
-\end_inset
-
-à environ 
+ à environ 
 \begin_inset Formula $100~k\Omega$
 \end_inset
 
@@ -2690,7 +2690,7 @@ Le courant est le flux de charges et il doit faire le tour complet.
  Ce la signifie que le courant doit traverser la pile aussi.
  Selon la résistance interne de la pile, une part de la tension est perdue
  à l'intérieur même de la pile.
- Est-ce que la meêm chose se produit avec une pile du commerce neuve
+ Est-ce que la même chose se produit avec une pile du commerce neuve
 \begin_inset space ~
 \end_inset
 
@@ -2773,7 +2773,7 @@ ms pleine échelle
 \end_layout
 
 \begin_layout Itemize
-Approcher le bobinage de l'aimant (sans le toucher), et obesrver la tension
+Approcher le bobinage de l'aimant (sans le toucher), et observer la tension
  induite
 \end_layout
 
@@ -2906,10 +2906,10 @@ Objectif
 \end_layout
 
 \begin_layout Standard
-Mesurer la résistance de solutions ioniques, en utlisant des signaux continu
+Mesurer la résistance de solutions ioniques, en utilisant des signaux continu
  et alternatif.
  On utilise de l'eau ordinaire du robinet.
- Essayer de meurer la résistance au préalable à l'aide d'un multimètre.
+ Essayer de mesurer la résistance au préalable à l'aide d'un multimètre.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -2973,11 +2973,8 @@ Les valeurs observées sont montrées dans le tableau.
  à cause d'une électrolyse et de la formation de bulles.
  La résistance dépend peu de la distance entre électrodes, c'est la surface
  de l'électrode qui a le plus d'effet.
- La résistance d
-\begin_inset Quotes frd
-\end_inset
-
-pend de la contration en ions et à la présence d'impuretés dans l'eau.
+ La résistance dépend de la concentration en ions et à la présence d'impuretés
+ dans l'eau.
 \end_layout
 
 \begin_layout Standard
@@ -3084,7 +3081,7 @@ Objectif
 
 \begin_layout Standard
 Numériser des signaux sonores d'un microphone, et mesurer leur fréquence.
- Utiliser le bueer piézo ou toute autre source sonore comme un diapason.
+ Utiliser le buzzer piézo ou toute autre source sonore comme un diapason.
 \end_layout
 
 \begin_layout Paragraph*
@@ -3106,7 +3103,7 @@ Activer A1 et MIC, ainsi que leurs analyses
 \end_layout
 
 \begin_layout Itemize
-POsitionner le microphone face au buzzer
+Positionner le microphone face au buzzer
 \end_layout
 
 \begin_layout Itemize
@@ -3152,11 +3149,11 @@ Les ondes sonores créent des variations de pression dans le milieu qu'elles
 Ce chapitre explique plusieurs expériences d'électronique.
  La plupart d'entre elles sont faites avec l'interface utilisateur oscilloscope.
  Certaines d'entre elles comme les caractéristiques d'une diode ou d'un
- transistor ont leur interface utlisateur dédiée.
+ transistor ont leur interface utilisateur dédiée.
 \end_layout
 
 \begin_layout Section
-Rederessement demi-onde à l'aide d'une jonction PN
+Redressement demi-onde à l'aide d'une jonction PN
 \end_layout
 
 \begin_layout Standard
@@ -3231,7 +3228,7 @@ La partie négative est ôtée par la diode comme montré sur la figure.
 V dans la moitié positive, c'est la chute de tension aux bornes de la diode
  silicium, quand le courant y passe.
  Une résistance de charge est nécessaire pour que le circuit fonctionne
- correctement, on peut utliser plus de 
+ correctement, on peut utiliser plus de 
 \begin_inset Formula $1~k\Omega$
 \end_inset
 
@@ -3259,7 +3256,7 @@ n de tension
 \end_layout
 
 \begin_layout Standard
-Durant quelle partie du cycle le courant trvarse-t-il la diode
+Durant quelle partie du cycle le courant traverse-t-il la diode
 \begin_inset space ~
 \end_inset
 
@@ -3392,7 +3389,7 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Faire les connection et observer les sorties.
+Faire les connexions et observer les sorties.
 \end_layout
 
 \begin_layout Itemize
@@ -3404,7 +3401,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Le niveau d'écrêtage est conditionné par la tension coninue appliquée et
+Le niveau d'écrêtage est conditionné par la tension continue appliquée et
  par la chute de tension de la diode.
 \end_layout
 
@@ -3447,7 +3444,7 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Faire les connection et observer les sorties.
+Faire les connexions et observer les sorties.
 \end_layout
 
 \begin_layout Itemize
@@ -3459,8 +3456,8 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Le niveau de décalage est conditionné par la tension coninue appliquée et
- par la chute de tension de la diode.
+Le niveau de décalage est conditionné par la tension continue appliquée
+ et par la chute de tension de la diode.
 \end_layout
 
 \begin_layout Section
@@ -3474,7 +3471,7 @@ Objectif
 \end_layout
 
 \begin_layout Standard
-Cabler un circuit de multivibrateur astable à l'aide d'un IC555, mesurer
+Câbler un circuit de multivibrateur astable à l'aide d'un IC555, mesurer
  la fréquence et le rapport cyclique de la sortie.
 \end_layout
 
@@ -3498,7 +3495,7 @@ Cabler un circuit de multivibrateur astable à l'aide d'un IC555, mesurer
 \end_layout
 
 \begin_layout Standard
-Le circuit est prsenté sur la figure.
+Le circuit est présenté sur la figure.
  La fréquence est données par 
 \begin_inset Formula $f=1/\left(\ln2\times C\times\left(R_{1}+2R_{2}\right)\right)$
 \end_inset
@@ -3860,7 +3857,7 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Activer A1 et A2, Régler leurs clibres à 8
+Activer A1 et A2, Régler leurs calibres à 8
 \begin_inset space ~
 \end_inset
 
@@ -3944,7 +3941,7 @@ name "fig:A-clock-divider-1"
 \end_layout
 
 \begin_layout Section
-Caractéistique U-I d'une diode
+Caractéristique U-I d'une diode
 \end_layout
 
 \begin_layout Standard
@@ -3982,7 +3979,7 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Faire els connexions
+Faire les connexions
 \end_layout
 
 \begin_layout Itemize
@@ -4039,7 +4036,11 @@ La caractéristique U-I d'une jonction PN idéale est donnée par l'équation
  pour une diode idéale.
  Pour des diodes réelles il varie entre 1 et 2.
  On a utilisé une diode au silicium 1N4148.
- La valeur de n pour 1N4148 est proche de 2.
+ La valeur de 
+\begin_inset Formula $n$
+\end_inset
+
+ pour 1N4148 est proche de 2.
  On a calculé la valeur de 
 \begin_inset Formula $n$
 \end_inset
@@ -4049,7 +4050,7 @@ La caractéristique U-I d'une jonction PN idéale est donnée par l'équation
 \end_layout
 
 \begin_layout Standard
-La tension à laquelle une DELcommence à émettre de la lumière dépend de
+La tension à laquelle une DEL commence à émettre de la lumière dépend de
  sa longueur d'onde et de la constante de Planck.
  L'énergie d'un photon est donnée par 
 \begin_inset Formula $E=h\nu=hc/\lambda$
@@ -4082,7 +4083,7 @@ La tension à laquelle une DELcommence à émettre de la lumière dépend de
 \end_layout
 
 \begin_layout Standard
-Recommencer cette expérience en chaufabt la diode à différentes températures.
+Recommencer cette expérience en chauffant la diode à différentes températures.
 \end_layout
 
 \begin_layout Section
@@ -4166,7 +4167,7 @@ Le courant de la base dépend du réglage de la source de tension à l'extrémit
 \end_inset
 
 , l'autre extrémité étant connectée à la base.
- La valeur du courant de baqse est calculée par 
+ La valeur du courant de base est calculée par 
 \begin_inset Formula $I_{b}=\frac{U_{pv2}-U_{A2}}{100\times10^{3}}\times10^{6}\mu A$
 \end_inset
 
@@ -4246,7 +4247,7 @@ V à travers une résistance de
 \end_inset
 
 .
- La sortie du phototransistor crée un signal de fréquence 
+ La sortie du photo-transistor crée un signal de fréquence 
 \begin_inset Formula $1 kHz$
 \end_inset
 
@@ -4258,7 +4259,7 @@ V à travers une résistance de
 \end_inset
 
 .
- Quand la DEL est éteinte le transistor passe en mode isolant et le collector
+ Quand la DEL est éteinte le transistor passe en mode isolant et le collecteur
  remonte à la tension de l'alimentation.
  Les temps de montée et de descente du photo-transistor semblent être différents.
  Trouver la limite haute en fréquence à laquelle le photo-transistor est
@@ -4267,7 +4268,7 @@ V à travers une résistance de
 
 \begin_layout Standard
 Recommencer cette expérience avec une fibre optique pour guider la lumière
- depuis la DEL jusqu'au phot-transistor.
+ depuis la DEL jusqu'au photo-transistor.
 \end_layout
 
 \begin_layout Chapter
@@ -4336,7 +4337,7 @@ Prendre note des mesures d'amplitude et de phase, dans chaque cas
 \end_layout
 
 \begin_layout Itemize
-RRecommencer les mesures en changeant la fréquence.
+Recommencer les mesures en changeant la fréquence.
 \end_layout
 
 \begin_layout Itemize
@@ -4434,7 +4435,7 @@ Objectif
 
 \begin_layout Standard
 Tracer l'évolution de la tension aux bornes d'un condensateur, quand il
- est chargé en appliquant un échemon de tension à travers une résistance.
+ est chargé en appliquant un échelon de tension à travers une résistance.
  Calculer la valeur de la capacité d'après la courbe.
 \end_layout
 
@@ -4511,7 +4512,7 @@ Quand on applique un échelon de 0 à 5
 
 V, la tension aux bornes du condensateur s'approche exponentiellement de
  5V comme montré sur la figure.
- En modélisant la coubre de décharge par 
+ En modélisant la courbe de décharge par 
 \begin_inset Formula $U(t)=U_{0}e^{-\frac{t}{RC}}$
 \end_inset
 
@@ -4575,7 +4576,7 @@ Dans un circuit RL
 \begin_inset Formula $U=RI+L\frac{dI}{dt}$
 \end_inset
 
- , équation qui se réout en 
+ , équation qui se résout en 
 \begin_inset Formula $I=I_{0}e^{-\frac{R}{L}t}$
 \end_inset
 
@@ -4745,7 +4746,7 @@ Cliquer sur Échelon 5->0
 \end_inset
 
 V.
- Ajuster l'axes des abscisses et recommencer si nécessaire.
+ Ajuster l'axe des abscisses et recommencer si nécessaire.
 \end_layout
 
 \begin_layout Itemize
@@ -4841,7 +4842,11 @@ Régler WG à 500
 \begin_inset space ~
 \end_inset
 
-Hz (T = 2ms), 
+Hz (
+\begin_inset Formula $T=2~ms$
+\end_inset
+
+), 
 \begin_inset Formula $R=1 k\Omega$
 \end_inset
 
@@ -4869,7 +4874,7 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-L'intégration d'un signal trianguaire donne une forme parabolique et la
+L'intégration d'un signal triangulaire donne une forme parabolique et la
  différenciation donne une forme carrée.
  La différenciation ne peut être montrée qu'à basse fréquence.
  Essayer cela pour d'autres formes de signaux, par exemple signal carré.
@@ -4896,7 +4901,7 @@ L'intégration d'un signal trianguaire donne une forme parabolique et la
 \end_layout
 
 \begin_layout Section
-Analayse de Fourier
+Analyse de Fourier
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Fourier-Transform-**"
@@ -5230,7 +5235,11 @@ ation avec la variation au point de départ.
  La phase de la sortie du microphone change quand on modifie sa distance
  au piézo.
  Quand on le déplace d'une longueur d'onde, la phase change de 360°.
- Si la phase change de X degrés pour un changemend de la distance de 
+ Si la phase change de 
+\begin_inset Formula $X$
+\end_inset
+
+ degrés pour un changement de la distance de 
 \begin_inset Formula $\triangle D$
 \end_inset
 
@@ -5376,7 +5385,7 @@ Objectif
 
 \begin_layout Standard
 Étudier les interférences sonores de deux sources individuelles.
- Deux buzzerq piézo sont alimentés par deux sources indépendantes, et le
+ Deux buzzers piézo sont alimentés par deux sources indépendantes, et le
  son est envoyé vers un microphone.
 \end_layout
 
@@ -5443,7 +5452,7 @@ Mécanique et thermophysique
 Les phénomènes de résonance sont étudiés avec le pendule forcé.
  On mesure la valeur de l'accélération due à la pesanteur à l'aide d'un
  pendule.
- On étudie le refroisissement d'un liquide à l'aide d'une sonde PT100.
+ On étudie le refroidissement d'un liquide à l'aide d'une sonde PT100.
 \end_layout
 
 \begin_layout Section
@@ -5468,19 +5477,25 @@ Mesurer la période des oscillations d'un pendule pesant à l'aide d'une barriè
 \begin_inset Formula $\ell$
 \end_inset
 
- est la longueu et 
+ est la longueur et 
 \begin_inset Formula $g$
 \end_inset
 
  est l'accélération de la pesanteur.
- Le pendule (en forme de T, un bord de couteau fixé à une tige de diamètre
- 6
+ Le pendule (en forme de 
+\begin_inset Formula $T$
+\end_inset
+
+, un bord de couteau fixé à une tige de diamètre 6
 \begin_inset space ~
 \end_inset
 
 mm) est mis à osciller entre une DEL et un photo-transistor, connectés à
- xpEYES.
- La DEL et le photo-transistor sont montés sur un support en forme de U
+ ExpEYES.
+ La DEL et le photo-transistor sont montés sur un support en forme de 
+\begin_inset Formula $U$
+\end_inset
+
  comme le montre la figure.
 \begin_inset Separator latexpar
 \end_inset
@@ -5614,7 +5629,7 @@ Connecter une résistance de
 \end_layout
 
 \begin_layout Itemize
-Mettre le pendul en oscillation et DÉMARRER la numérisation
+Mettre le pendule en oscillation et DÉMARRER la numérisation
 \end_layout
 
 \begin_layout Paragraph*
@@ -5707,7 +5722,7 @@ Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude augmente
 \begin_inset space ~
 \end_inset
 
-cm (du centre des aimants à l'axe de rotation) a résoné à environ 
+cm (du centre des aimants à l'axe de rotation) a résonné à environ 
 \begin_inset Formula $2,5 Hz$
 \end_inset
 
@@ -5875,7 +5890,7 @@ Un graphique de refroidissement de l'eau d'un récipient est montré sur la
 \begin_layout Standard
 Pour mesurer la résistance d'un élément PT100, on le connecte entre CSS
  et GND et on mesure la tension à ses bornes.
- Il est possible de mesurer la valeur exacte de CSS à l'aide d'un mulimètre
+ Il est possible de mesurer la valeur exacte de CSS à l'aide d'un multimètre
  ou en mesurant la tension aux bornes d'une résistance connue.
  L'entrée de A3 est amplifiée 11
 \begin_inset space ~
@@ -5914,7 +5929,7 @@ La résistance d'une sonde PT100 est
 
  dans la tension d'entrée, donc un changement de température de moins de
  3]C ne serait pas toujours détecté.
- On utilise un aplificateur non-inverseur pour augmenter la résolution.
+ On utilise un amplificateur non-inverseur pour augmenter la résolution.
  Le gain de cet amplificateur doit être tel que la température maximale
  mesurée donne une tension de sortie inférieure à 3,3
 \begin_inset space ~
@@ -5941,7 +5956,7 @@ Les programmes à interface graphique décrit dans les chapitres précédents
  sont prévus pour un ensemble fini d'expériences.
  Pour développer de nouvelles expériences, on doit savoir comment accéder
  aux fonctionnalités d'expEYES par logiciel.
- Les appels de fonctions importants pour communiquer avec l'appreil sont
+ Les appels de fonctions importants pour communiquer avec l'appareil sont
  donnés ci-dessous.
 \end_layout
 
@@ -6019,7 +6034,7 @@ print p.set_pv2(2.1)
 
 \begin_layout Standard
 La valeur assignée à la sortie est affichée.
- Mesurer les tensions avec un volmètre.
+ Mesurer les tensions avec un voltmètre.
 \end_layout
 
 \begin_layout Paragraph
@@ -6168,15 +6183,15 @@ set_sine(frequency)
 
 \begin_layout Standard
 Génère le signal sinusoïdal de la fréquence demandée sur WG (intervalle
- de 5
-\begin_inset space ~
+ de 
+\begin_inset Formula $5 Hz$
 \end_inset
 
-Kz à 5000
-\begin_inset space ~
+ à 
+\begin_inset Formula $5000 Hz$
 \end_inset
 
-Hz).
+).
  Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
  la valeur effectivement adoptée.
 \end_layout
@@ -6469,11 +6484,15 @@ capture1(Input, Number of samples, time interval)
 Numérise l'entrée spécifiée.
  Le nombre d'échantillons peut aller jusqu'à 10000.
  La durée entre deux échantillons consécutifs est donnée en microseconde
- (intervalle de 2 à 1000
-\begin_inset space ~
+ (intervalle de 
+\begin_inset Formula $2$
 \end_inset
 
-µs).
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout LyX-Code
@@ -6485,7 +6504,7 @@ affichera deux tableaux de dates et de tensions.
 \end_layout
 
 \begin_layout Standard
-Quand on a besoin de créer un graphique de la rension de sortie pour une
+Quand on a besoin de créer un graphique de la tension de sortie pour une
  meilleure compréhension, on peut le faire à l'aide du module 
 \family typewriter
 matplotlib
@@ -6553,11 +6572,15 @@ capture2(Number of samples, time interval)
 Numérise les entrées A1 et A2 simultanément.
  Le nombre d'échantillons peut aller jusqu'à 10000.
  La durée entre deux échantillons consécutifs est donnée en microseconde
- (intervalle de 2 à 1000
-\begin_inset space ~
+ (intervalle de 
+\begin_inset Formula $2$
 \end_inset
 
-µs).
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -6632,11 +6655,15 @@ capture4(Number of samples, time interval)
 Numérise les entrées A1, A2, A3 et MIC simultanément.
  Le nombre d'échantillons peut aller jusqu'à 10000.
  La durée entre deux échantillons consécutifs est donnée en microseconde
- (intervalle de 2 à 1000
-\begin_inset space ~
+ (intervalle de 
+\begin_inset Formula $2$
 \end_inset
 
-µs).
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -6711,7 +6738,8 @@ p.set_wave(1000, 'sine')
 \end_layout
 
 \begin_layout LyX-Code
-p.set_wave(100)       # Sets 100Hz using the existing table
+p.set_wave(100)       # fréq.
+ 100Hz avec la table existante
 \end_layout
 
 \begin_layout LyX-Code
@@ -6723,7 +6751,7 @@ plot(x,y)
 \end_layout
 
 \begin_layout LyX-Code
-p.set_wave(100, 'tria')  # Sets triagular wave table and generates 100Hz
+p.set_wave(100, 'tria')  # table d'onde triangulaire et 100 Hz
 \end_layout
 
 \begin_layout LyX-Code
