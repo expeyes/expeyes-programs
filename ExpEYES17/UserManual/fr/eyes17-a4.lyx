@@ -5107,21 +5107,29 @@ Le son
 \end_layout
 
 \begin_layout Standard
-Pressure variations, about an equilibrium pressure, transmitted through
- a medium is called sound.
- They are longitudinal waves.
- Moving a sheet of paper back and forth in air can generate these kind of
- pressure waves, like the paper cone of a loudspeaker.
- When the frequency is within 20 to 20000Hz range, we can hear the sound.
- In this chapter, we will generate sound from electrical signals, detect
- them using the built-in microphone (a pressure sensor) and study the properties
- like amplitude and frequency.
- Velocity of sound is measured by observing the phase shift of digitized
- sound with distance.
+Les variations de pression, de part et d'autres d'une pression d'équilibre,
+ transmises par un milieu s'appellent un son.
+ Ce sont des ondes longitudinales.
+ Si on déplace une feuille de papier d'avant en arrière dans l'air on peut
+ générer ce type d'ondes de pression, comme avec le cône en papier d'un
+ haut-parleur.
+ Quand la fréquence est dans l'intervalle de 20 à 20000
+\begin_inset space ~
+\end_inset
+
+Hz, on peut entre le son.
+ Dans ce chapitre, on va générer du son à partir de signaux électriques,
+ le détecter à l'aide du microphone (un capteur de pression
+\begin_inset space ~
+\end_inset
+
+!) et étudier des propriétés telles que l'amplitude et la fréquence.
+ La vitesse du son est mesurée en observant le déphasage d'un son numérisé,
+ avec la distance.
 \end_layout
 
 \begin_layout Section
-Frequency response of Piezo
+Réponse en fréquence d'un piézo
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Resonance-frequency-of"
@@ -5132,12 +5140,14 @@ name "sec:Resonance-frequency-of"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Plot the frequency response curve of the Piezo disk by scanning through
- the frequency and measuring the amplitude of the microphone output.
+Faire le graphique de la courbe de réponse d'un disque piézo en scannant
+ la fréquence et en mesurant l'amplitude à la sortie du microphone.
 \end_layout
 
 \begin_layout Standard
@@ -5164,11 +5174,11 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Make the connections and keep the Mic and the Buzzer facing each other
+Faire les connexions et fixer le buzzer et le microphone face à face
 \end_layout
 
 \begin_layout Itemize
-Press START button
+Cliquer sur le bouton DÉMARRER
 \end_layout
 
 \begin_layout Paragraph*
@@ -5176,69 +5186,112 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The Frequency Vs Amplitude plot is shown in figure.
- The amplitude is maximum around 3500 Hz.
+Le graphique de l'amplitude en fonction de la fréquence est montré sur la
+ figure.
+ L'amplitude est maximale près de 3500
+\begin_inset space ~
+\end_inset
+
+Hz.
 \end_layout
 
 \begin_layout Section
-Velocity of sound
+Vitesse du son
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Calculate the velocity of sound by measuring the pressure variation with
+Calculer la vitesse du son en mesurant les variation de pression selon la
  distance.
- Sound travels as a series of compressions and rarefactions.
- Figure 
+\end_layout
+
+\begin_layout Standard
+Le son voyage comme une série de compressions et d'expansions.
+ La figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Sound-waves"
 
 \end_inset
 
-(a) shows the High and Low pressure regions along the direction of travel,
- along with output of a pressure sensor at corresponding positions.
+(a) montre les régions de haute et basse pression le long de la direction
+ de propagation, en même temps que la sortie d'un capteur de pression aux
+ positions correspondantes.
 \end_layout
 
 \begin_layout Standard
-We can display the pressure variation at any point with respect to the variation
- at the starting point.
- The phase of the microphone output changes as you change its distance from
- the Piezo.
- Moving by one wavelength changes the phase by 360 degrees.
- If the phase changes by 
-\begin_inset Formula $X$
-\end_inset
-
- degrees for 
+On peut faire un graphique des variations de pression à tout point en synchronis
+ation avec la variation au point de départ.
+ La phase de la sortie du microphone change quand on modifie sa distance
+ au piézo.
+ Quand on le déplace d'une longueur d'onde, la phase change de 360°.
+ Si la phase change de X degrés pour un changemend de la distance de 
 \begin_inset Formula $\triangle D$
 \end_inset
 
- cm change in distance, the wavelength is given by 
+, la longueur d'onde est donnée par 
 \begin_inset Formula $\lambda=\frac{360\times\triangle D}{X}$
 \end_inset
 
- .
- The velocity of sound can be calculated by multiplying the frequency with
- this.
+.
+ On obtient la vitesse du son en multipliant cela par la fréquence.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+(a)
 \begin_inset Graphics
-	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/sound_waves.png
+	filename pics/sound_waves.png
 	lyxscale 70
 	height 3cm
 
 \end_inset
 
- 
+ (b) 
 \begin_inset Graphics
-	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sound-velocity.svg
+	filename schematics/sound-velocity.svg
 	lyxscale 70
 	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+(a) compressions et expansions le long de la direction de propagation d'un
+ son.
+ (b) schéma de montage
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sound-waves"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \end_inset
 
@@ -5250,7 +5303,8 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set frequency to resonant maximum by measuring the frequency response 
+Régler la fréquence au maximum de résonance en mesurant la réponse en amplitude
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Resonance-frequency-of"
@@ -5261,20 +5315,23 @@ reference "sec:Resonance-frequency-of"
 \end_layout
 
 \begin_layout Itemize
-Keep the Piezo facing the microphone, on the same axis
+Fixer le piézo face au microphone, le long d'un axe
 \end_layout
 
 \begin_layout Itemize
-Enable measurement
+Activer la mesure
 \end_layout
 
 \begin_layout Itemize
-Adjust the distance to make both the traces in Phase
+Ajuster la distance pour que les deux traces soient en phase
 \end_layout
 
 \begin_layout Itemize
-Change the distance to make them 180 degree out of phase, that distance
- is half wave length.
+Modifier la distance pour les déphaser de 180°
+\begin_inset space ~
+\end_inset
+
+; cette distance est la demi-longueur d'onde.
 \end_layout
 
 \begin_layout Paragraph*
@@ -5282,19 +5339,26 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-At 3500 Hz, for a 2 cm change in distance the phase changed from 176 to
- 102.
- Using the equation, 
-\begin_inset Formula $v=f\times\frac{360\times\triangle D}{X}=3500\times\frac{360\times2}{(176-102)}=34054$
+À 3500
+\begin_inset space ~
 \end_inset
 
- cm/sec.
- It is important to keep the mic and the Piezo disc on the same axis, for
- accurate results.
+Hz, un changement de distance de 2
+\begin_inset space ~
+\end_inset
+
+cm provoque un changement de phase de 176° à 102°.
+ À l'aide de l'équation, 
+\begin_inset Formula $v=f\times\frac{360\times\triangle D}{X}=3500\times\frac{360\times2}{(176-102)}=34054~cm\cdot s^{-1}$
+\end_inset
+
+.
+ Il est important de conserver le microphone et le disque piézo sur le même
+ axe pour des résultats précis.
 \end_layout
 
 \begin_layout Section
-Sound beats
+Battements sonores
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Interference-of-sound"
@@ -5305,13 +5369,15 @@ name "sec:Interference-of-sound"
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Study the interference of sound from two individual sources.
- Two Piezo buzzers are powered by two different sources, and the sound is
- directed towards the microphone.
+Étudier les interférences sonores de deux sources individuelles.
+ Deux buzzerq piézo sont alimentés par deux sources indépendantes, et le
+ son est envoyé vers un microphone.
 \end_layout
 
 \begin_layout Standard
@@ -5330,24 +5396,32 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Set WG to 3500 Hz and SQ1 to 3600 Hz
+Régler WG à 
+\begin_inset Formula $3500 Hz$
+\end_inset
+
+ et SQ1 à 
+\begin_inset Formula $3600 Hz$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
-Enable WG and SQ1 separately to check the MIC output
+Activer WG et SQ1 séparément pour vérifier la sortie MIC
 \end_layout
 
 \begin_layout Itemize
-Adjust positions of Piezo buzzers, from the mic, to get almost same amplitude
- with both
+Ajuster la position des buzzers piézo, par rapport au microphone, pour obtenir
+ pratiquement la même amplitude avec chacun
 \end_layout
 
 \begin_layout Itemize
-Select both of them to get the beat pattern
+Activer les deux en même temps pour obtenir la figure de battement
 \end_layout
 
 \begin_layout Itemize
-Press FFT to view the frequency spectrum
+Cliquer sur FFT pour voir les spectre fréquentiel
 \end_layout
 
 \begin_layout Paragraph*
@@ -5355,10 +5429,10 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-From figure it can be seen how the low frequency envelope is created.
- Distance between two minimum pressure points., of the envelope, corresponds
- to the beat wavelength.
- The Fourier transform of the output is shown in figure .
+Sur la figure on peut voir comment l'enveloppe de basse fréquence apparaît.
+ La durée entre deux instants de pression minimale, sur l'enveloppe, correspond
+ à la demi-fréquence des battements.
+ La transformée de Fourier est montrée sur la figure.
 \end_layout
 
 \begin_layout Chapter
