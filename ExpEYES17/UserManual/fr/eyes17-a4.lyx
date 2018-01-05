@@ -5436,43 +5436,52 @@ Sur la figure on peut voir comment l'enveloppe de basse fréquence apparaît.
 \end_layout
 
 \begin_layout Chapter
-Mechanics & Heat
+Mécanique et thermophysique
 \end_layout
 
 \begin_layout Standard
-Resonance phenomena is studied using a driven pendulum.
- Value of acceleration due to gravity is measured using a pendulum.
- Cooling of a liquid is studied using a PT100 sensor.
+Les phénomènes de résonance sont étudiés avec le pendule forcé.
+ On mesure la valeur de l'accélération due à la pesanteur à l'aide d'un
+ pendule.
+ On étudie le refroisissement d'un liquide à l'aide d'une sonde PT100.
 \end_layout
 
 \begin_layout Section
-Acceleration due to gravity using Rod pendulum
+Accélération de la pesanteur à l'aide d'un pendule pesant
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Measure the period of oscillations of a rod pendulum using a light barrier
- and calculate the value of acceleration due to gravity.
- Period of oscillation of a uniform rod about one end is given by 
+Mesurer la période des oscillations d'un pendule pesant à l'aide d'une barrière
+ photo-électrique et calculer l'accélération de la pesanteur.
+ La période des oscillations d'une tige uniforme autour d'une de ses extrémités
+ est donnée par 
 \begin_inset Formula $T=2\pi\sqrt{\frac{2\ell}{3g}}$
 \end_inset
 
-, where 
+, où 
 \begin_inset Formula $\ell$
 \end_inset
 
- is the length and 
+ est la longueu et 
 \begin_inset Formula $g$
 \end_inset
 
- is the acceleration due to gravity.
- The pendulum (T-shaped, a knife edge attached to a 6mm dia rod) is made
- to swing between an LED and photo-transistor, connected to expEYES.
- The LED and photo-transistor are mounted on a U-shaped bracket as shown
- in figure.
+ est l'accélération de la pesanteur.
+ Le pendule (en forme de T, un bord de couteau fixé à une tige de diamètre
+ 6
+\begin_inset space ~
+\end_inset
+
+mm) est mis à osciller entre une DEL et un photo-transistor, connectés à
+ xpEYES.
+ La DEL et le photo-transistor sont montés sur un support en forme de U
+ comme le montre la figure.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -5504,11 +5513,11 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Oscillate the pendulum and click on START
+Mettre le pendule en oscillation et cliquer sur DÉMARRER
 \end_layout
 
 \begin_layout Itemize
-Repeat with different pendulum lengths.
+Recommencer avec diverses longueurs de pendule.
 \end_layout
 
 \begin_layout Paragraph*
@@ -5516,35 +5525,56 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The time period is measured 50 times, using a 14.6cm rod pendulum, and the
- average value is 0.627 seconds.
- The calculated value of 'g' is 977.4 
-\begin_inset Formula $cm/sec^{2}$
+La période est mesurée 50
+\begin_inset space ~
 \end_inset
 
-, slightly different from the actual value due to the following reasons.
- The length is measured from the knife edge to the bottom and used in the
- formula.
- But there is a small mass projecting above the knife edge that is not included
- in the calculation.
- Another reason is that the pendulum may not be exactly vertical in the
- resting position.
+fois, à l'aide d'un pendule pesant de 
+\begin_inset Formula $14,6 cm$
+\end_inset
+
+, et la valeur moyenne est 
+\begin_inset Formula $0.627 s$
+\end_inset
+
+.
+ La valeur calculée de 
+\begin_inset Formula $g$
+\end_inset
+
+ est 
+\begin_inset Formula $977,4~cm\cdot s^{-2}$
+\end_inset
+
+, légèrement différente de la valeur réelle pour les raisons suivantes
+\begin_inset space ~
+\end_inset
+
+: La longueur est mesurée depuis le bord du couteau jusqu'au bas de la tige
+ et utilisée dans la formule.
+ Mais il y a un peu de masse présente au-dessus du fil du couteau qui n'est
+ pas comprise dans le calcul.
+ Une autre raison peut être que le pendule n'est peut-être pas exactement
+ vertical dans la position de repos.
 \end_layout
 
 \begin_layout Section
-Angular Velocity of Pendulum
+Vitesse angulaire d'un pendule
 \end_layout
 
 \begin_layout Standard
-Objectif
+\begin_inset Formula $Objectif$
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-To study the nature of oscillations of a pendulum.
- An angle encoder is required for measuring the angular displacement as
- a function of time.
- But using a DC motor as a sensor, we can measure the angular velocity as
- a function of time.
+Étudier la nature des oscillations d'un pendule.
+ Un encodeur angulaire est nécessaire pour mesurer le déplacement angulaire
+ en fonction du temps.
+ Mais en utilisant un moteur à courant continu comme capteur, on peut mesurer
+ la vitesse angulaire en fonction du temps.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -5568,19 +5598,23 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Attach some sort of rigid pendulum to the axis of the motor.
+Attacher un quelconque de pendule rigide à l'axe du moteur.
 \end_layout
 
 \begin_layout Itemize
-Connect the motor between A3 and GND
+Connecter le moteur entre A3 et GND
 \end_layout
 
 \begin_layout Itemize
-Connect 100Ohm resistor from Rg to Ground
+Connecter une résistance de 
+\begin_inset Formula $100~\Omega$
+\end_inset
+
+ entre Rg et GND
 \end_layout
 
 \begin_layout Itemize
-Oscillate the pendulum and START digitizing
+Mettre le pendul en oscillation et DÉMARRER la numérisation
 \end_layout
 
 \begin_layout Paragraph*
@@ -5588,32 +5622,37 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The observed waveform is shown in figure.
- Fitting it with equation 
+Le signal obtenu est montré sur la figure.
+ Quand on le modélise par une équation 
 \begin_inset Formula $A=A_{0}sin\left(\omega t+\theta\right)*\exp\left(-dt\right)+C$
 \end_inset
 
-, using Grace gave an angular frequency of 10 Hz.
+, à l'aide de Grace, on a obtenu une fréquence angulaire de 
+\begin_inset Formula $10 Hz$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-The pendulum should be made with a heavy bob and a light weight rod connecting
- it to the axis of the motor.
- In this case, the DC motor acts like a generator and the voltage is proportiona
-l to the instantaneous angular velocity.
+Il convient de réaliser le pendule avec une masselotte assez lourde et une
+ tige légère qui la relie à l'axe du moteur.
+ Dans ce cas, le moteur à courant continu se comporte en générateur et la
+ tension est proportionnelle à la vitesse angulaire.
 \end_layout
 
 \begin_layout Section
-Resonance of a driven pendulum
+Résonance d'un pendule forcé
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Demonstrate the resonance of a driven pendulum.
- 
+Démontrer la résonance d'un pendule forcé.
 \end_layout
 
 \begin_layout Standard
@@ -5638,21 +5677,24 @@ Procédure
 \end_layout
 
 \begin_layout Standard
-Make a pendulum using two button magnets and a piece of paper.
- Suspend it and place the 3000T coil near that, as shown in figure.
- 
+Réaliser un pendule avec deux aimants boutons et un morceau de papier.
+ Le suspendre et placer la bobine de 3000
+\begin_inset space ~
+\end_inset
+
+tours à proximité, comme montré sur la figure.
 \end_layout
 
 \begin_layout Itemize
-Connect the coil between SQ1 and ground
+Connecter la bobine entre SQ1 et GND
 \end_layout
 
 \begin_layout Itemize
-Calculate the resonant frequency from the length of the pendulum
+Calculer la fréquence de résonance d'après la longueur du pendule
 \end_layout
 
 \begin_layout Itemize
-Scan the frequency around the expected resonance frequency
+Scanner la fréquence au voisinage de la fréquence de résonance attendue
 \end_layout
 
 \begin_layout Paragraph*
@@ -5660,44 +5702,52 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-When SQ1 reaches the resonant frequency of the pendulum, the amplitude goes
- up due to resonance.
- A 4 cm (from the center of the magnet to the axis of oscillation) long
- pendulum resonated at around 2.5 Hz, almost tallying with its calculated
- natural frequency.
- The resonant frequency of the pendulum is given by 
+Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude augmente.
+ Un pendule long de 4
+\begin_inset space ~
+\end_inset
+
+cm (du centre des aimants à l'axe de rotation) a résoné à environ 
+\begin_inset Formula $2,5 Hz$
+\end_inset
+
+, presque conformément à la fréquence naturelle calculée.
+ La fréquence de résonance est donnée par 
 \begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{g}{\ell}}$
 \end_inset
 
-, where 
+, où 
 \begin_inset Formula $\ell$
 \end_inset
 
- is the distance from the center of the magnet to the point of suspension
- and 
+ est la distance du centre de l'aimant au point de suspension et 
 \begin_inset Formula $g$
 \end_inset
 
- is the acceleration due to gravity.
- 
+ est l'accélération de la pesanteur.
 \end_layout
 
 \begin_layout Standard
-Repeat the experiment by changing the length of the pendulum.
- 
+Recommencer l'expérience en modifiant la longueur du pendule.
 \end_layout
 
 \begin_layout Section
-Distance Measurement, by ultrasound echo
+Mesure de distance, par écho ultrasonore
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Measure distance by measuring the time taken by 40kHz pulse train to echo
- from a hard surface.
+Mesurer une distance en mesurant le temps que prend une salve de fréquence
+ 
+\begin_inset Formula $40 kHz$
+\end_inset
+
+ à faire un écho contre une surface dure.
 \end_layout
 
 \begin_layout Paragraph*
@@ -5716,16 +5766,19 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Keep a flat surface, like a cardboard sheet, around 10 cm from the echo
- module
+Placer uns surface dire, comme un carton, à quelques 10
+\begin_inset space ~
+\end_inset
+
+cm du module d'écho
 \end_layout
 
 \begin_layout Itemize
-Press START
+Cliquer sur DÉMARRER
 \end_layout
 
 \begin_layout Itemize
-Change the distance with time
+Changer la distance
 \end_layout
 
 \begin_layout Paragraph*
@@ -5733,33 +5786,37 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-The distance is calculated from the time taken by a burst of sound to echo
- from the surface kept in front of the module.
- The distance can be measred as function of time, enabling to calculate
- velocity, acceleration etc.
+La distance est calculée à partir du temps que met une salve sonore à parcourir
+ aller-retour (en écho) la distance qui sépare le module de la surface réfléchis
+sante.
+ On peut mesurer la distance en fonction du temps, ce qui permet de calculer
+ vitesse, accélération, etc.
 \end_layout
 
 \begin_layout Section
-Temperature measurement using PT100
+Mesure de température à l'aide d'une sonde PT100
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Objectif
 \end_layout
 
 \begin_layout Standard
-Record the temperature of a liquid by using a Platinum Resistance Thermometer.
- Resistance of a PT100 element is related to the temperature by the equation
- 
+Enregistrer la température d'un liquide à l'aide d'un thermomètre à résistance
+ de platine.
+ La résistance d'un module PT100 est dépendante de la température par la
+ relation 
 \begin_inset Formula $R_{T}=R_{0}\left[1+AT+BT^{2}\right]$
 \end_inset
 
-, where 
-\begin_inset Formula $A=3.9083e-3$
+, où 
+\begin_inset Formula $A=3,9083\times10^{-3}$
 \end_inset
 
- and 
-\begin_inset Formula $B=-5.775e-7$
+et 
+\begin_inset Formula $B=-5,775\times10^{-7}$
 \end_inset
 
 .
@@ -5795,15 +5852,15 @@ Procédure
 \end_layout
 
 \begin_layout Itemize
-Enter the Gain, Offset error and the Current from CCS
+Entrer le gain l'erreur d'offset et la valeur du courant de CSS
 \end_layout
 
 \begin_layout Itemize
-Select the temperature range and time intervals
+Sélectionner l'intervalle de température et les intervalles de temps
 \end_layout
 
 \begin_layout Itemize
-Select the required parameters and press START
+Sélectionner les paramètres requis et cliquer sur DÉMARRER
 \end_layout
 
 \begin_layout Paragraph*
@@ -5811,39 +5868,68 @@ Discussion
 \end_layout
 
 \begin_layout Standard
-Cooling curve of water is shown in figure 
+Un graphique de refroidissement de l'eau d'un récipient est montré sur la
+ figure.
 \end_layout
 
 \begin_layout Standard
-To measure the resistance of the PT100 element, we connect it from the CCS
- to ground and measure the voltage across it.
- The actual current of CCS should be measured using an ammeter or by measuring
- the voltage frop across an known resistor.
- The input to A3 is amplified 11 times by connecting 1kOhm resistor from
- Rg to Ground.
+Pour mesurer la résistance d'un élément PT100, on le connecte entre CSS
+ et GND et on mesure la tension à ses bornes.
+ Il est possible de mesurer la valeur exacte de CSS à l'aide d'un mulimètre
+ ou en mesurant la tension aux bornes d'une résistance connue.
+ L'entrée de A3 est amplifiée 11
+\begin_inset space ~
+\end_inset
+
+fois en connectant une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ entre Rg et GND.
 \end_layout
 
 \begin_layout Standard
-The resistance of PT100 is
+La résistance d'une sonde PT100 est 
 \begin_inset Formula $100\Omega$
 \end_inset
 
- at 
+ à 
 \begin_inset Formula $0^{0}C$
 \end_inset
 
- .
- It changes nearly 
-\begin_inset Formula $0.4\Omega/C$
+.
+ Elle change pratiquement de 
+\begin_inset Formula $0.4\Omega/\text{°}C$
 \end_inset
 
- , changing the voltage by 0.4 milli volts.
- The 12 bit ADC output changes by 1 LSB for 1.22 mV change in input voltage,
- hence any temperature change less than 3 degrees will not be detected.
- Use an external non-inverting amplifier to increase the resolution.
- The gain of the amplifier should be such that the maximum temperature measured
- should give an output less than 3.3 volts.
- Change the gain field entry accordingly.
+ , modifiant la tension de 
+\begin_inset Formula $0,4 mV$
+\end_inset
+
+.
+ La sortie du convertisseur analogique numérique change d'un bit de poids
+ faible pour un changement de 
+\begin_inset Formula $1,22 mV$
+\end_inset
+
+ dans la tension d'entrée, donc un changement de température de moins de
+ 3]C ne serait pas toujours détecté.
+ On utilise un aplificateur non-inverseur pour augmenter la résolution.
+ Le gain de cet amplificateur doit être tel que la température maximale
+ mesurée donne une tension de sortie inférieure à 3,3
+\begin_inset space ~
+\end_inset
+
+V.
+ Modifier le champ 
+\begin_inset Quotes fld
+\end_inset
+
+gain
+\begin_inset Quotes frd
+\end_inset
+
+ selon.
 \end_layout
 
 \begin_layout Chapter
