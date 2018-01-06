@@ -1,0 +1,32 @@
+.. 2.8
+   
+Le corps humain comme conducteur
+--------------------------------
+
+**Objectif**
+
+Toucher un fil du secteur est fatal parce que notre corps est un
+conducteur électrique. On peut explorer cela à l’aide de signaux de
+faible tension.
+
+.. image:: schematics/conducting-human.svg
+	   :width: 300px
+.. image:: pics/conducting-human-screen.png
+	   :width: 300px
+
+**Procédure**
+
+-  Régler WG à 200 Hz.
+-  Activer A1, A2 avec leurs analyses.
+-  Connecter WG et A1, avec un fil
+-  Connecter WG et A2 avec son corps et noter les tensions
+-  Recommencer à l’aide d’un signal de 3 V continu issu de PV1.
+
+**Discussion**
+
+La tension crête observée est de moins de 3 V, à cause de la résistance
+du corps humain. Il peut y avoir un peu de perturbation due au signaux à
+50 Hz du secteur captés par effet d’antenne. On peut éliminer cela en
+travaillant loin des lignes d’alimentation du secteur, à l’aide d’un
+ordinateur portable.
+

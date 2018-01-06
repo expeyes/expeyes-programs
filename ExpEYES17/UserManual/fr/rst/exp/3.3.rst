@@ -1,0 +1,25 @@
+.. 3.3
+   
+Écrêtage à l’aide d’une diode à jonction PN
+-------------------------------------------
+
+**Objectif**
+
+Démontrer l’écrêtage d’un signal alternatif à différents niveaux, à
+l’aide d’une diode à jonction PN.
+
+.. image:: schematics/clipping.svg
+	   :width: 300px
+.. image:: pics/clipping.png
+	   :width: 300px
+
+**Procédure**
+
+-  Faire les connexions et observer les sorties.
+-  Changer PV1 et observer le changement dans les sorties
+
+**Discussion**
+
+Le niveau d’écrêtage est conditionné par la tension continue appliquée
+et par la chute de tension de la diode.
+

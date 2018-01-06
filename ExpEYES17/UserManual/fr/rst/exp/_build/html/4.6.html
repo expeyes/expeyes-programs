@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Analyse de Fourier &#8212; documentation eyes17 1.0</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="top" title="documentation eyes17 1.0" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="analyse-de-fourier">
+<h1>Analyse de Fourier<a class="headerlink" href="#analyse-de-fourier" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong>Objectif</strong></p>
+<p>Étudier la transformée de Fourier d’un signal. Représentations
+temporelle et fréquentielle d’un signal.</p>
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li>Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif
+(interrupteur à glissière sur le boîtier)</li>
+<li>Activer A1 et A2, sélectionner le calibre 4&nbsp;V</li>
+<li>Régler WG et SQ1 à 500&nbsp;Hz</li>
+<li>Cliquer sur le bouton FFT</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Dans le graphique de la transformée de Fourier, la fréquence est sur
+l’axe x et l’axe y montre l’intensité relative des composants
+fréquentiels du signal. On appelle ça la représentation
+fréquentielle (<a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_transform">http://en.wikipedia.org/wiki/Fourier_transform</a>).
+Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
+plus petits sont une mesure de la distorsion du signal sinusoïdal.</p>
+<p>Un signal carré peut être représenté comme
+<img class="math" src="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png" alt="f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯"/>.
+Dans la transformée de Fourier d’un signal carré de fréquence <em>f</em> , il y
+aura un composant <em>3&nbsp;f</em> (dont l’amplitude est le tiers du composant <em>f</em>),
+un composant <em>5&nbsp;f</em> (amplitude un cinquième), etc. comme montré sur
+la figure.</p>
+<a class="reference internal image-reference" href="_images/sqwaveFFT.png"><img alt="_images/sqwaveFFT.png" src="_images/sqwaveFFT.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/sinewaveFFT.png"><img alt="_images/sinewaveFFT.png" src="_images/sinewaveFFT.png" style="width: 300px;" /></a>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/4.6.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, GK.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/4.6.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

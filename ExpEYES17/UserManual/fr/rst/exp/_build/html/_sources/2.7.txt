@@ -1,0 +1,37 @@
+.. 2.7
+   
+Séparation des composantes continue et alternative
+--------------------------------------------------
+
+**Objectif**
+
+Séparer les composantes alternative et continue d’un signal à l’aide
+d’un condensateur.
+
+**Procédure**
+
+.. image:: schematics/acdc-separating.svg
+	   :width: 300px
+.. image:: pics/acdc-sep-screen.png
+	   :width: 300px
+
+-  Régler SQR1 à 500 Hz
+-  Activer A1 et A2
+-  Ajuster l’échelle horizontale pour observer plusieurs cycles.
+
+**Discussion**
+
+Les signaux observés avec et sans le condensateur en série sont affichés
+sur la figure. La tension oscille entre 0 et 5 V. Après traversée d’un
+condensateur, la tension oscille entre -2,5 V et +2,5 V.
+
+Qu’obtient-on si on soustrait 2,5 V de l’ordonnée de chaque point du
+premier graphique ? C’est ce que le condensateur a fait. Il n’a pas
+autorisé la composante continue à passer. On peut considérer que le
+signal original consiste en une tension alternative d’amplitude 2,5 V
+superposée à un signal continue de +2,5 V.
+
+Il faut éventuellement connecter une résistance entre A2 et GND pour
+observer le signal oscillant entre -2,5 V et +2,5 V. Retirer la
+résistance et observer le signal.
+

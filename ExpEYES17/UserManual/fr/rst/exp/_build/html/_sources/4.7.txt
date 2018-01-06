@@ -1,0 +1,37 @@
+.. 4.7
+   
+Induction électromagnétique
+---------------------------
+
+**Objectif**
+
+Explorer la tension induite aux bornes d’un bobinage par un champ
+magnétique variable, en laissant tomber un petit aimant cylindrique à
+travers le bobinage. On utilise un tube pour guider l’aimant à travers
+le bobinage.
+
+.. image:: schematics/induction.svg
+	   :width: 300px
+.. image:: pics/induction-screen.png
+	   :width: 300px
+
+**Procédure**
+
+-  Cliquer sur « Démarrer le scan ». Un trace horizontale devrait
+   apparaître
+-  Laisser tomber l’aimant à travers la bobine, jusqu’à ce qu’on capture
+   une trace.
+-  Recommencer le processus en changeant des paramètres comme la force
+   de l’aimant, la vitesse, etc.
+
+**Discussion**
+
+Le résultat est montré sur la figure. L’amplitude augmente avec la
+vitesse de l’aimant. D’après le graphique, on peut déterminer le temps
+que met l’aimant à traverser le bobinage.
+
+Le deuxième pic est plus grand que le premier. Pourquoi ? À quel endroit
+est censé se trouver l’aimant quand la tension induite passe par zéro ?
+Laisser tomber l’aimant depuis différentes hauteurs et faire un
+graphique de la tension crête en fonction de la racine carrée de la
+hauteur de chute.

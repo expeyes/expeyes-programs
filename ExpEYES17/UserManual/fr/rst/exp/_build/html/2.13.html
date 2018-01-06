@@ -1,0 +1,128 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Transformateur de courant alternatif &#8212; documentation eyes17 1.0</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="top" title="documentation eyes17 1.0" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="transformateur-de-courant-alternatif">
+<h1>Transformateur de courant alternatif<a class="headerlink" href="#transformateur-de-courant-alternatif" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong>Objectif</strong></p>
+<p>Démontrer l’induction mutuelle entre deux bobinages, fournis avec
+ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
+aligne les axes des deux bobinages et on insère un noyau de
+ferrite.</p>
+<a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/transformer-screen.png"><img alt="_images/transformer-screen.png" src="_images/transformer-screen.png" style="width: 300px;" /></a>
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li>Faire les connections comme montré sur la figure</li>
+<li>Activer A1 et A2</li>
+<li>Régler WG à <img class="math" src="_images/math/def704035f18cc44643a5bf64441776f350438a0.png" alt="500~Hz"/></li>
+<li>Approcher les bobinages l’un de l’autre et observer la tension en A2.</li>
+<li>Essayer d’insérer un noyau en ferrite</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Le signal appliqué et le signal induit sont présentés sur la figure. Un
+champ magnétique oscillant est la cause de la tension induite. Dans les
+deux expériences précédentes, le champ magnétique oscillant était créé
+par le mouvement d’aimants permanents. Dans le cas présent, il est créé
+par un courant variable dans le temps.</p>
+<p>Essayer de faire cette expérience avec un signal carré. Connecter une
+résistance de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> aux bornes du bobinage secondaire pour réduire
+les oscillation de résonance.</p>
+<p>Le concept de courant alternatif est introduit en affichant la tension
+en fonction du temps. On explore le comportement de dipôles tels que les
+condensateurs et les bobinages en courant continu et alternatif, en
+mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
+La conversion de signaux électriques en son et l’inverse est démontré.
+Pour chaque expérience, on réalise les connexions selon le diagramme
+donné.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/2.13.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, GK.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.9</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/2.13.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
