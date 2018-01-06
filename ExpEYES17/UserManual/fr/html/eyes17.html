@@ -1,0 +1,2901 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="generator" content="http://www.nongnu.org/elyxer/"/>
+<meta name="create-date" content="2018-01-05"/>
+<link rel="stylesheet" href="http://elyxer.nongnu.org/lyx.css" type="text/css" media="all"/>
+<title>Converted document</title>
+</head>
+<body>
+<div id="globalWrapper">
+<div class="Unindented">
+
+</div>
+<div class="Indented">
+<div class="vspace" style="height: 0.2in;">
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+<span class="giant">expEYES-17</span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+<img class="embedded" src="pics/eyes17-nb.jpg" alt="Figure pics/eyes17-nb.jpg" style="width: 6cm; max-width: 4160px; height: auto; max-height: 2340px;"/>
+
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+<span class="large">Manuel Utilisateur </span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+<span class="largest">Expériences pour<br/>
+ Jeunes Ingénieurs et Scientifiques</span>
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+http://expeyes.in
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+du
+</div>
+
+</div>
+<div class="Indented">
+<div class="center">
+Projet PHOENIX<br/>
+Inter-University Accelerator Centre <br/>
+(centre de recherche de l’UGC)<br/>
+New Delhi 110 067<br/>
+www.iuac.res.in
+</div>
+
+</div>
+<div class="Indented">
+<p><br/>
+</p>
+
+</div>
+<div class="Indented">
+
+</div>
+<div class="Indented">
+Préface
+</div>
+<div class="Indented">
+Le projet PHOENIX (<span class="versalitas">Physics with Home-made Equipment &amp; Innovative Experiments</span> : Physique avec un matériel « maison » &amp; des expériences innovantes) a démarré en 2004 au <span class="versalitas">Inter-University Accelerator Centre</span> avec l’objectif d’améliorer l’enseignement des sciences dans les Universités Indiennes. Le développement de matériel de laboratoire à bas coût et la formation des enseignants sont les deux activités principales de ce projet.
+</div>
+<div class="Indented">
+<span class="versalitas">expEYES-17</span> est une version avancée du <span class="versalitas">expEYES</span> publié plus tôt. Il est conçu pour être un outil d’apprentissage par l’exploration, valide pour les classes de lycée et au-dessus. Nous avons essayé d’optimiser la conception pour la rendre simple, flexible, robuste et bon marché. Le prix bas le rend accessible aux individus et nous espérons voir des étudiants réaliser des expériences en dehors des quatre murs du laboratoire, qui ferme à la sonnerie de la cloche.
+</div>
+<div class="Indented">
+Ce logiciel est publié sous les licences <span class="versalitas">GNU General Public License</span> et <span class="versalitas">CERN Open Hardware Licence</span>. Le projet a avancé grâce aux participations actives et contributions de la communauté des utilisateurs et de plusieurs autres personnes en dehors de l’<span class="versalitas">IUAC</span>. Nous remercions le Dr D Kanjilal pour les étapes nécessaires à l’élaboration de cette nouvelle version à partir du travail de son développeur, Jithin B P, de CSpark Research.
+</div>
+<div class="Indented">
+Le manuel utilisateur de <span class="versalitas">expEYES-17</span> est distribué sous la licence <span class="versalitas">GNU Free Documentation</span>.
+</div>
+<div class="Indented">
+Ajith Kumar B.P.          (ajith@iuac.res.in)   http://expeyes.in
+</div>
+<div class="Indented">
+V V V Satyanarayana
+</div>
+<div class="Indented">
+<p><br/>
+</p>
+<span class="unknown">\pagenumbering</span>arabic<div class="fulltoc">
+<div class="tocheader">
+Table des matières
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Chapter-1">Chapitre 1: Pour commencer</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-1.1">Section 1.1: Introduction </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.2">Section 1.2: Le matériel</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.2.1">SousSection 1.2.1: Connexions externes</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--1">SousSousSection: Les sorties :</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--2">SousSousSection: Tension programmable (PV1) : </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--3">SousSousSection: Entrées :</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--4">SousSousSection: Interface pour les capteurs I2C : </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--5">SousSousSection: Alimentation<span class="formula"></span>  :</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsection-1.2.2">SousSection 1.2.2: Kit d’accessoires</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.3">Section 1.3: Installation du logiciel</a>
+</div>
+<div class="tocindent">
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--6">SousSousSection: Pour toute distribution GNU/Linux :</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--7">SousSousSection: Distributions GNU/Linux Debian ou Ubuntu</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--8">SousSousSection: Le CD vif expEYES / La clé USB vive</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Subsubsection--9">SousSousSection: Sous MSWindows</a>
+</div>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.4">Section 1.4: Le programme graphique principal</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-1.5">Section 1.5: Se familiariser avec ExpEYES17</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-2">Chapitre 2: Expériences scolaires</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-2.1">Section 2.1: Mesurer une tension</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.2">Section 2.2: Mesurer une Résistance</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.3">Section 2.3: Mesurer une Capacité</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.4">Section 2.4: Mesurer des résistances par comparaison</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.5">Section 2.5: Courants continu et alternatif</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.6">Section 2.6: Signal d’antenne alternatif dû au secteur</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.7">Section 2.7: Séparation des composantes continue et alternative</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.8">Section 2.8: Le corps humain comme conducteur</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.9">Section 2.9: Résistance électrique du corps humain</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.10">Section 2.10: Photorésistances</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.11">Section 2.11: Tension d’une pile-citron </a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.12">Section 2.12: Un générateur alternatif simple</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.13">Section 2.13: Transformateur de courant alternatif</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.14">Section 2.14: Résistance de l’eau, en courant alternatif</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.15">Section 2.15: Générer un son</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-2.16">Section 2.16: Numériser un son</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-3">Chapitre 3: Électronique</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-3.1">Section 3.1: Redressement demi-onde à l’aide d’une jonction PN</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.2">Section 3.2: Redressement double alternance avec des jonctions PN</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.3">Section 3.3: Écrêtage à l’aide d’une diode à jonction PN</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.4">Section 3.4: Décalage à l’aide d’un diode à jonction PN</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.5">Section 3.5: Oscillateur à IC555</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.6">Section 3.6: Amplificateur inverseur</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.7">Section 3.7: Amplificateur non-inverseur</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.8">Section 3.8: Intégrateur à ampli-op</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.9">Section 3.9: Portes logiques</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.10">Section 3.10: Diviseur d’horloge</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.11">Section 3.11: Caractéristique U-I d’une diode</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.12">Section 3.12: Caractéristique de la sortie (CE) d’un transistor</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-3.13">Section 3.13: Transmission d’un signal Opto-électrique</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-4">Chapitre 4: Électricité et magnétisme</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-4.1">Section 4.1: Circuits RLC, réponse en régime stationnaire</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.2">Section 4.2: Réponse de circuits RC en régime transitoire</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.3">Section 4.3: Réponse transitoire de circuits RL</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.4">Section 4.4: Réponse transitoire de circuit RLC</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.5">Section 4.5: Différenciation et intégration RC</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.6">Section 4.6: Analyse de Fourier</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-4.7">Section 4.7: Induction électromagnétique</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-5">Chapitre 5: Le son</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-5.1">Section 5.1: Réponse en fréquence d’un piézo</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-5.2">Section 5.2: Vitesse du son</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-5.3">Section 5.3: Battements sonores</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-6">Chapitre 6: Mécanique et thermophysique</a>
+</div>
+<div class="tocindent">
+<div class="toc">
+<a class="Link" href="#toc-Section-6.1">Section 6.1: Accélération de la pesanteur à l’aide d’un pendule pesant</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-6.2">Section 6.2: Vitesse angulaire d’un pendule</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-6.3">Section 6.3: Résonance d’un pendule forcé</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-6.4">Section 6.4: Mesure de distance, par écho ultrasonore</a>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Section-6.5">Section 6.5: Mesure de température à l’aide d’une sonde PT100</a>
+</div>
+</div>
+<div class="toc">
+<a class="Link" href="#toc-Chapter-7">Chapitre 7: Coder en Python pour expEYES-17</a>
+</div>
+</div>
+
+</div>
+
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-1">1</a> Pour commencer
+</h1>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.1">1.1</a> Introduction 
+</h2>
+<div class="Unindented">
+La science est l’étude du monde physique par des observations systématiques et des expériences. Une bonne éducation scientifique est essentielle pour cultiver une société où le raisonnement et la pensée logique prévalent au lieu de la superstition et des croyances irrationnelles. L’éducation scientifique est aussi essentielle pour former suffisamment de techniciens, d’ingénieurs et de scientifiques pour l’économie du monde moderne. On admet largement que l’expérience personnelle issue d’expérimentations et d’observations réalisées soit par les étudiants, soit par des enseignants à titre de démonstration, soit essentielle à la pédagogie de la science. Cependant, presque partout la science est enseignée en grande partie à partir de livres de cours sans donner d’importance à l’expérimentation, en partie à cause du manque d’équipements. Sans surprise, la plupart des étudiants échouent à corréler leurs connaissance acquise en classe aux problèmes rencontrés dans la vie quotidienne. On peut jusqu’à un certain point corriger cela en enseignant la science à l’aide de questionnements et d’expériences.
+</div>
+<div class="Indented">
+L’avènement des ordinateurs personnels et leur banalisation a ouvert une nouvelle voie pour faire des expériences de laboratoire. L’ajout d’un peu de matériel à un ordinateur ordinaire peut le convertir en un laboratoire de sciences. Réaliser des mesures rapides avec une bonne précision autorise l’étude une large palette de phénomènes. Les expériences scientifiques impliquent en général la mesure et le contrôle de certains paramètres physiques comme la température, la pression, la vitesse, l’accélération, la force, la tension, le courant, etc. Si la grandeur physique étudiée évolue rapidement, il faut automatiser la mesure et un ordinateur devient utile. Par exemple, comprendre la variation de la tension alternative du secteur nécessite de la mesurer à chaque milliseconde.
+</div>
+<div class="Indented">
+La possibilité de réaliser des expériences avec une précision raisonnable ouvre aussi la possibilité d’une éducation scientifique orientée sur la recherche. Les étudiants peuvent comparer les données expérimentales avec des modèles mathématiques et examiner les lois fondamentales qui régissent de nombreux phénomènes. Le kit expEYES ( expEriments for Young Engineers &amp; Scientists) est conçu pour permettre une grande variété d’expériences, de l’école à l’université. Il est aussi utilisable comme un équipement de test pour des ingénieurs en électronique ou des bricoleurs. L’architecture simple et ouverte d’expEYES permet aux utilisateurs de développer de nouvelles expériences, sans rentrer dans les détails de l’électronique et de la programmation d’ordinateurs. Ce manuel utilisateur décrit <i>expEYES-17</i> avec plusieurs expériences, et il y a aussi un manuel du programmeur.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.2">1.2</a> Le matériel
+</h2>
+<div class="Unindented">
+ExpEYES-17 est interfacé et alimenté grâce au port USB de l’ordinateur. Pour y connecter des signaux externes, il a plusieurs entrées/sorties, situées de chaque côté, comme montré sur la figure <a class="Reference" href="#fig:The-ExpEYES-toppanel">1.1↓</a>. Il peut surveiller et contrôler des tensions à ses connexions. Pour mesurer d’autres paramètres (tels que la température, la pression, etc.), on a besoin de les convertir en signaux électriques à l’aide de capteurs adéquats.
+</div>
+<div class="Indented">
+La précision des mesures de tension est conditionnée par la stabilité de la référence à 3,3 V utilisée, elle varie de 50 ppm par degré Celsius. Les erreurs de gain et d’offset sont éliminées par une calibration initiale, à l’aide du convertisseur analogique-numérique 16 bits.
+</div>
+<div class="Indented">
+Bien que notre premier objectif soit de faire des expériences, nous vous conseillons de lire la brève description du matériel ci-dessous. L’appareil peut être aussi utilisé comme matériel de test pour des expériences d’électricité et d’électronique.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--1"></a><i>IMPORTANT : </i>
+</div>
+<div class="Unindented">
+<i>Les tensions extérieures connectées à <i></i></i>ExpEYES17 doivent être comprises dans les limites autorisées. Les entrées A1 et A2 doivent être dans l’intervalle <span class="formula">±16</span> volts et les entrées IN1 and IN2 doivent être dans l’intervalle de 0 à 3,3 V. Des tension excessives peuvent provoquer des dommages permanents. Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs de tensions.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="fig:The-ExpEYES-toppanel"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="eyes17-panel.jpg" alt="Figure eyes17-panel.jpg" style="width: 10cm; max-width: 968px; height: auto; max-height: 534px;"/>
+
+</div>
+<div class="caption">
+Figure 1.1 La face avant d’ExpEYES17 avec les connexions externes sur le dessus. 
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.2.1">1.2.1</a> Connexions externes
+</h3>
+<div class="Unindented">
+Les fonctions des connexions externes sont expliquées brièvement ci-dessous. Toutes les bornes de couleur noire sont des masses (0 V), toutes les autres tensions sont mesurées par rapport à elles.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--1"></a>Les sorties :
+</h4>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--2"></a>Source de courant constant (CCS) : 
+</div>
+<div class="Unindented">
+La source de courant constant peut être activée ou désactivée (ON et OFF) sous contrôle logiciel.La valeur nominale est 1,1 mA mais peut varier d’une unité à l’autre, à cause de la tolérance des composants. Pour mesurer sa valeur exacte, connecter un ampèremètre entre CCS et GND. Une autre méthode consiste à connecter une résistance connue (~<span class="formula">1<i>k</i>Ω</span>) et mesurer la différence de potentiel à ses bornes. La résistance de charge doit être inférieure à <span class="formula">3<i>k</i>Ω</span> pour cette source de courant.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--2"></a>Tension programmable (PV1) : 
+</h4>
+<div class="Unindented">
+Elle peut être réglée, par logiciel, à toute valeur comprise dans l’intervalle de -5 V à +5 V. La résolution est 12 bits, ce qui implique une résolution en tension d’environ <span class="formula">2, 5<i>mV</i></span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--3"></a>Tension programmable (PV2) : 
+</div>
+<div class="Unindented">
+Elle peut être réglée, par logiciel, à toute valeur comprise dans l’intervalle de -3,3 V à +3,3 V. La résolution est 12 bits.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--4"></a>Signal carré SQ1: 
+</div>
+<div class="Unindented">
+La sortie oscille entre 0 et 5 V et la fréquence peut être ajustée entre 10 Hz et 100 kHz. Toutes les valeurs intermédiaires de fréquence ne sont pas possibles. On peut programmer le rapport cyclique. Quand on règle la fréquence à 0 Hz provoque un état HAUT à la sortie, et si on la règle à -1 Hz, la sortie passe à l’état BAS ; dans les deux cas la génération de signal carré est désactivée. La sortie SQR1 comporte une <b>résistance série</b> de <b><i><span class="formula">100Ω</span> </i></b>intégrée si bien qu’elle peut commander des DELs directement.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--5"></a>Signal carré SQ2: 
+</div>
+<div class="Unindented">
+La sortie oscille entre 0 et 5 V et la fréquence peut être ajustée entre Hz et 100  kHz. Toutes les valeurs intermédiaires de fréquence ne sont pas possibles. On peut programmer le rapport cyclique. La sortie SQR2 n’est pas disponible quand on active WG.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--6"></a>Sortie numérique (OD1) :
+</div>
+<div class="Unindented">
+La tension en OD1 peut être réglée à 0 ou 5 V, par logiciel.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--7"></a>Signal Sinusoïdal/Triangulaire WG: 
+</div>
+<div class="Unindented">
+Sa fréquence peut être ajustée entre 5 Hz et 5 kHz. La valeur crête peut être réglées à 3 V, 1,0 V ou 80 mV. La forme du signal est programmable. À l’aide de l’interface utilisateur on peut sélectionner une forme sinusoïdale ou triangulaire. <span class="formula"><span class="overline"><i>WG</i></span></span> est le signal de WG, inversé..
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--3"></a>Entrées :
+</h4>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--8"></a>Mesure de capacité en IN1 :
+</div>
+<div class="Unindented">
+On peut mesurer la valeur d’un condensateur connecté entre IN1 et GND. Ça marche mieux pour de petites valeurs de capacité, jusqu’à 10 nF, les résultats sont moins précis au-delà.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--9"></a>Fréquencemètre en IN2 :
+</div>
+<div class="Unindented">
+Celui-ci est capable de mesurer des fréquences jusqu’à plusieurs MHz.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--10"></a>Capteur de résistance (SEN) :
+</div>
+<div class="Unindented">
+Cette entrée est surtout conçue pour des capteurs comme des photorésistances (LDR), des thermistances, des photo-transistors, etc. L’entrée SEN est connectée en interne à 3,3 V à travers une résistance de <span class="formula">5, 1<i>k</i>Ω</span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--11"></a>Entrées analogiques<span class="formula">±16<i>V</i></span>, A1 &amp; A2 : 
+</div>
+<div class="Unindented">
+Celles-ci peuvent mesurer des tensions dans l’intervalle<span class="formula">±16<i>V</i></span>. On peut choisir le calibre de 0,5 V à 16 V en pleine échelle. On peut visualiser la tension de ces entrées en fonction du temps, ce qui donne une fonction d’oscilloscope pour basses fréquences. La plus grande vitesse d’échantillonnage est 1 Méch/s pour un seul canal. Chacune des entrées a une impédance de <span class="formula">1<i>M</i>Ω</span> .
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--12"></a>Entrée analogique<span class="formula">±3.3<i>V</i></span> A3 : 
+</div>
+<div class="Unindented">
+Celle-ci peut mesurer une tension dans l’intervalle<span class="formula">±3.3<i>V</i></span>. On peut amplifier cette entrée en connectant une résistance entre Rg et GND, gain =<span class="formula">1 + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>Rg</i></span><span class="ignored">)/(</span><span class="denominator">10000</span><span class="ignored">)</span></span></span>. Cela permet d’afficher des signaux de très petite amplitude. L’impédance de l’entrée A3 est <span class="formula">10<i>M</i>Ω</span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--13"></a>Entrée Microphone MIC :
+</div>
+<div class="Unindented">
+Un microphone à condensateur peut être connecté à cette borne afin de capturer le signal à la sortie.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--4"></a>Interface pour les capteurs I2C : 
+</h4>
+<div class="Unindented">
+Les quatre connexions (+5 V, GND, SCL et SDA) situées sur la bande de connexions Berg supporte les capteurs de la famille I2C. Le logiciel peut reconnaître un grand nombre de capteurs I2C disponibles dans le commerce.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--5"></a>Alimentation<span class="formula">±6<i>V</i> ⁄ 10<i>mA</i></span>  :
+</h4>
+<div class="Unindented">
+Les bornes VR+ et VR- sont des alimentations régulées. Elles fournissent peut de courant, mais assez pour alimenter un ampli-op.
+</div>
+<h3 class="Subsection">
+<a class="toc" name="toc-Subsection-1.2.2">1.2.2</a> Kit d’accessoires
+</h3>
+<div class="Unindented">
+Quelques accessoires sont livrés avec expEYES.
+</div>
+<ul>
+<li>
+Fils électriques, avec une borne rigide mâle et avec une pince crocodile.
+</li>
+<li>
+Microphone à condensateur avec ses fils.
+</li>
+<li>
+Bobine d’induction (2) : du fil isolé 44SWG enroulé dans une bobine de diamètre 1 cm. Environ 3000 tours (il peut y avoir quelques tours de plus). On peut utiliser ces bobines pour étudier l’inductance, l’induction électromagnétique, etc.
+</li>
+<li>
+Disque piézo-électrique (2) : sa fréquence de résonance est d’environ 3500 Hz. Il peut être alimenté par la sortie WG ou SQR1. Le disque est enfermé dans une coquille en plastique formant une cavité, qui augmente l’amplitude du son produit.
+</li>
+<li>
+Moteur CC : doit être alimenté par une tension continue de moins de 3 V.
+</li>
+<li>
+Aimants permanents : (a) diamètre et longueur 10 mm (b) diamètre 5 mm et longueur 10 mm (c) aimants de taille bouton(2)
+</li>
+<li>
+DELs 5 mm : rouge, bleue, verte, blanche.
+</li>
+<li>
+Condensateurs : 100 pF, 0.1 µF , 1 µF et 22 µF
+</li>
+<li>
+Inductances : 10 mH / <span class="formula">20Ω</span>,
+</li>
+<li>
+Résistances : <span class="formula">560Ω</span>, <span class="formula">1<i>k</i>Ω</span>, <span class="formula">2, 2<i>k</i>Ω</span> , <span class="formula">10<i>k</i>Ω</span> , <span class="formula">51<i>k</i>Ω</span> et <span class="formula">100<i>k</i>Ω</span>
+</li>
+<li>
+photorésistance (LDR )
+</li>
+<li>
+Deux diodes silicium (1N4148) et une diode Zéner de <span class="formula">3, 3<i>V</i></span>
+</li>
+<li>
+Transistor NPN (2N2222)
+</li>
+
+</ul>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.3">1.3</a> Installation du logiciel
+</h2>
+<div class="Unindented">
+ExpEYES peut fonctionner sur tout ordinateur disposant d’un interpréteur Python et d’un module Python pour accéder au port série. L’interface USB est prise en charge par le programme pilote qui présente le port USB comme un port RS232 aux programmes d’applications. La communication avec le boîtier expEYES est réalisée à l’aide d’une bibliothèque écrite en langage Python.
+</div>
+<div class="Indented">
+Des programmes avec une interface utilisateur graphique ont été écrits pour de nombreuses expériences. Le logiciel Eyes17 dépend des paquets logiciels suivants :
+</div>
+<ul>
+<li>
+<tt>python3-serial</tt>
+</li>
+<li>
+<tt>python3-numpy</tt>
+</li>
+<li>
+<tt>python3-scipy</tt>
+</li>
+<li>
+<tt>python3-qt5</tt>
+</li>
+<li>
+<tt>python3-pyqtgraph</tt>
+</li>
+
+</ul>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--6"></a>Pour toute distribution GNU/Linux :
+</h4>
+<div class="Unindented">
+Télécharger <b>eyes17-x.x.x.zip</b> (la dernière version) depuis <b>http://expeyes.in</b> et dézipper ce fichier, puis aller dans le nouveau dossier. Taper les commandes :
+</div>
+<pre class="LyX-Code">
+$ sudo sh postinst       # donne la permission d’accès à tous
+$ python main.py
+</pre>
+<div class="Unindented">
+Vous aurez des messages d’erreur pour tout paquet manquant qui pourrait être nécessaire à expeyes. Installer ces paquets et réessayer. Les programmes Python nécessaires pour de nombreuses expériences sont dans le même répertoire, ils sont appelés par ’<tt>main.py</tt>’.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--7"></a>Distributions GNU/Linux Debian ou Ubuntu
+</h4>
+<div class="Unindented">
+Télécharger <b>eyes17-x.x.x.deb</b> (la dernière version) depuis la zone de téléchargement de <b>http://expeyes.in</b> et l’installer à l’aide de la commande :
+</div>
+<div class="Indented">
+<tt>$ sudo gdebi eyes17-x.x.x.deb</tt> 
+</div>
+<div class="Indented">
+alors qu’on est connecté à Internet
+</div>
+<div class="Indented">
+Le paquet ’<tt>eyes17</tt>’ (de version supérieure à 3) ne dépend pas de versions antérieures d’ExpEYES, comme expeyes-junior. Pendant l’installation <tt>gdebi</tt> téléchargera automatiquement et installera les paquets requis.
+</div>
+<div class="Indented">
+<b>N.B. :</b> on peut aussi utiliser la commande :
+</div>
+<div class="Indented">
+$ sudo apt install eyes17
+</div>
+<div class="Indented">
+alors qu’on est connecté à Internet ; le paquet eyes17 disponible dans la distribution (actuellement dans debian/buster ou ubuntu/bionic) ainsi que toutes ses dépendances sera téléchargé et installé.
+</div>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--8"></a>Le CD vif expEYES / La clé USB vive
+</h4>
+<div class="Unindented">
+L’image ISO qui offre le support pour eyes17 est disponible ICI pour téléchargement. Créer un DVD ou une clé USB démarrables à l’aide cette image ISO (télécharger rufus depuis https://rufus.akeo.ie pour faire ça sous MSWindows)
+</div>
+<div class="Indented">
+Éteindre le PC et brancher la clé USB ou insérer le CD vif, puis démarrer l’ordinateur. Entrer dans le BIOS durant la phase de démarrage, et faire en sorte que le CD ou la clé USB soit prise en compte comme premier média de démarrage. Redémarrer en enregistrant ce réglage. Un bureau apparaîtra et on peut lancer expEYES-17 depuis le menu <b>Applications-&gt;Éducation</b>-&gt;ExpEYES-17. On peut aussi le lancer depuis un terminal à l’aide de la commande :
+</div>
+<pre class="LyX-Code">
+$ python /usr/share/expeyes/eyes17/main.py
+</pre>
+<h4 class="Subsubsection-">
+<a class="toc" name="toc-Subsubsection--9"></a>Sous MSWindows
+</h4>
+<div class="Unindented">
+Il faut tout d’abord installer le logiciel pilote pour le convertisseur USB Série MCP2200, disponible sur le site de Microchip (et aussi disponible sur le site expeyes). Après installation de ce pilote apparaîtra un port COM, qu’on peut tester à l’aide du gestionnaire de périphériques de MSWindows. Ensuite il y a deux options.
+</div>
+<div class="Indented">
+Un fichier zip contenant toutes les choses nécessaires pour ExpEYES est disponible sur le site expeyes, sous le nom <tt>eyes17win.zip</tt>. Télécharger et dézipper ce fichier puis lancer ’<tt>main.py</tt>’ à partir de là. En utilisant cette méthode, on ne pourra pas écrire soi-même de code Python pour accéder à expeyes ; pour ce faire il faut installer comme suit :
+</div>
+<ol>
+<li>
+<tt>Python version 2.x</tt>
+</li>
+<li>
+<tt>python-serial</tt>
+</li>
+<li>
+<tt>python-qt4</tt>
+</li>
+<li>
+<tt>python-pyqtgraph</tt>
+</li>
+<li>
+<tt>python-numpy</tt>
+</li>
+<li>
+<tt>python-scipy</tt>
+</li>
+
+</ol>
+<div class="Unindented">
+Télécharger le fichier <tt>eyes17-x.x.x.zip</tt> (la dernière version) depuis le site web. En dézippant ce fichier on obtient un dossier nommé<b> <tt>eyes17</tt></b>, lancer <tt><b>main.py</b></tt> depuis là.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.4">1.4</a> Le programme graphique principal
+</h2>
+<div class="Unindented">
+Démarrer Applications-&gt;Éducation-&gt;ExpEYES-17 depuis le menu. Un écran d’oscilloscope à quatre canaux avec de nombreuses fonctionnalités en plus, s’ouvrir comme affiché sur la figure <a class="Reference" href="#fig:The-scope17-screen">1.2↓</a>. On peut choisir de nombreuses expériences depuis le menu.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="fig:The-scope17-screen"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="scope17.png" alt="Figure scope17.png" style="width: 11cm; max-width: 1167px; height: auto; max-height: 690px;"/>
+
+</div>
+<div class="caption">
+Figure 1.2 L’écran scope17 affichant deux traces
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Indented">
+La fenêtre principale apparaît comme un oscilloscope à basse fréquence avec quatre canaux, et plusieurs fonctionnalités en plus, à droite de l’écran. On peut sélectionner des applications pour plusieurs expériences du menu de la barre supérieure. Une brève description du programme d’oscilloscope est donnée ci-dessous.
+</div>
+<ul>
+<li>
+On peut activer chacune des quatre entrées (A1, A2, A3 ou MIC) en utilisant sa case à cocher. On peut sélectionner les calibres en cliquant sur le bouton à menu à droite de la case à cocher. Le calibre voulu se choisit dans le menu surgissant.
+</li>
+<li>
+Il y a une autre case à cocher pour activer l’ajustement mathématique des données à l’aide d’un modèle<span class="formula"><i>V</i> = <i>V</i><sub>0</sub>sin<span class="symbol">(</span>2<i>π</i><i>ft</i> + <i>θ</i><span class="symbol">)</span> + <i>C</i></span> pour afficher l’amplitude et la fréquence.
+</li>
+<li>
+L’échelle horizontales (la base de temps) peut être réglées par un curseur, depuis 0,5 ms pleine échelle jusqu’à 500 ms pleine échelle.
+</li>
+<li>
+Le bouton à cocher <b>Geler</b>, permet de faire une pause ou de revenir à la marche normale de l’oscilloscope.
+</li>
+<li>
+Le niveau de synchronisation (trigger) peut être réglé grâce à un curseur, et il y a un bouton à menu pour sélectionner la source de synchronisation.
+</li>
+<li>
+Pour enregistrer les traces dans un fichier, éditer le nom de fichier voulu est cliquer le bouton <b>Enregistrer sous</b>.
+</li>
+<li>
+Quand on clique sur <b>FFT</b> les spectres de fréquence des canaux sélectionnés sont affichés dans des fenêtres surgissantes.
+</li>
+
+</ul>
+<div class="Unindented">
+En plus de l’oscilloscope, il y a plusieurs options de contrôle/mesure disponibles dans l’interface utilisateur, qui sont expliqués ci-dessous :
+</div>
+<ul>
+<li>
+Si on les sélectionne, les tensions présentes aux entrées A1, A2 et A3 sont échantillonnées chaque seconde et affichées.
+</li>
+<li>
+La résistance connectée entre SEN et GND est mesurée et affiché chaque seconde.
+</li>
+<li>
+Si on clique <b>Capacité en IN1</b>, on mesure la valeur du condensateur connecté entre IN1 et GND.
+</li>
+<li>
+Si on clique <b>Fréquence en IN2</b>, on mesure la fréquence d’une source externe (au standard TTL) connectée à IN2
+</li>
+<li>
+On peut choisir la forme du générateur de signal WG à l’aide d’un bouton de menu, la forme par défaut étant sinusoïdale. On peut changer en triangulaire. Quand l’option de signal carré est choisie, la sortie est déplacée sur SQ2. On ne peut pas utiliser un signal sinusoïdal/triangulaire et utiliser SQ2 en même temps.
+</li>
+<li>
+On peut ajuster la fréquence du signal de WG à l’aide du curseur ou avec l’entrée texte. Les deux méthodes de saisie sont asservies l’une à l’autre : quand on bouge le curseur le texte est modifié, et quand on saisit un texte le curseur s’ajuste. La fréquence s’ajuste à la plus proche valeur possible et elle est affichée dans la fenêtre de message dessous. L’amplitude de la sortie WG peut être réglée à 3 V, 1 V ou 80 mV.
+</li>
+<li>
+On peut régler SQ1 en utilisant la même méthode que ci-dessus. Le rapport cyclique peut être réglé entre 1% et 99%, sa valeur par défaut est 50%.
+</li>
+<li>
+Les deux sorties de tension programmables PV1 et PV2 sont aussi réglées d’une façon similaire.
+</li>
+<li>
+Des boutons à cocher sont fournis pour contrôler OD1 et CCS.
+</li>
+
+</ul>
+<h2 class="Section">
+<a class="toc" name="toc-Section-1.5">1.5</a> Se familiariser avec ExpEYES17
+</h2>
+<div class="Unindented">
+Avant de commencer les expériences, faisons quelques exercices simples pour nous familiariser avec expEYES-17. Démarrez votre ordinateur avec le CDROM vif, connectez l’appareil à un port USB et démarrez le programme EYES-17 depuis le menu «Applications-&gt;Science». Activez l’option «fenêtre d’aide surgissante» et sélectionnez les quelques premier items du menu «Exp. scolaires».
+</div>
+<div class="Indented">
+Les chapitre suivants sont structurés selon les menus du programme eyes17, chaque chapitre contenant les expériences disponibles sous le menu correspondant, comme «Exp. scolaires», «Électronique», «Électricité», etc. Pour réaliser l’expérience, on la sélectionne dans le menu. Une aide en ligne est disponible pour chaque expérience, de façon redondante avec ce manuel.
+</div>
+<div class="Indented">
+Les copies d’écran fournies dans ce document ne viennent pas de l’interface utilisateur, parce que les images avec un fond noir posent problème quand on les imprime. Les graphiques sont générés par un code indépendant.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-2">2</a> Expériences scolaires
+</h1>
+<div class="Unindented">
+Dans ce chapitre on discutera des expériences et démonstrations sans beaucoup d’analyse des données, qui sont comprises dans le menu «Expériences scolaires». Des tâches simples comme mesurer une tension, une résistance, une capacité, etc. seront faites en utilisant des résistances variant avec la température ou la lumière. Le concept de courant alternatif est introduit en traçant la courbe d’une tension en fonction du temps. La génération et la numérisation d’un son seront pris en compte. Quand une expérience est sélectionnée, la fenêtre d’aide correspondante surgit, si on l’y a autorisée.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.1">2.1</a> Mesurer une tension
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Apprendre à mesurer une tension à l’aide d’expEYES et avoir une petite idée du concept de masse électrique (GND). Il faut une pile et deux fils électriques.
+</div>
+<div class="Indented">
+<img class="embedded" src="measure-dc.png" alt="Figure measure-dc.png" style="width: auto; max-width: 422px; height: 1cm; max-height: 262px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--14"></a>Procédure
+</div>
+<ul>
+<li>
+Observer la tension affichée pour A1.
+</li>
+<li>
+Recommencer en inversant les connexions à la pile. connections.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--15"></a>Discussion
+</div>
+<div class="Unindented">
+La valeur des tensions mesurées est +1,5 V et elle devient -1,5 V après retournement des connexions.
+</div>
+<div class="Indented">
+On mesure la différence de potentiel entre deux points. L’un d’entre eux peut être considéré comme zéro volt, ou potentiel de la masse (GND, la terre). La tension qu’affiche expEYES est une mesure de la tension relative aux bornes de masse, marquées GND. On a connecté la borne négative de la pile à GND. La borne positive est à +1,5 V relativement à la borne de masse. <i>Est-ce que la tension correcte sera affichée si on ne connecte pas GND ?</i>
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.2">2.2</a> Mesurer une Résistance
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+ExpEYES a une borne marquée <b>SEN</b>, qu’on peut utiliser pour mesurer des résistances dans l’intervalle de <span class="formula">100Ω</span> à <span class="formula">100<i>k</i>Ω</span>. On peut aussi étudier des associations en série ou en parallèle de résistances. La résistance effective d’une association en série est <span class="formula"><i>R</i> = <i>R</i>1 + <i>R</i>2 + ⋯</span> . Pour une association en parallèle, elle est donnée par <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>R</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>R</i>1</span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>R</i>2</span><span class="ignored">)</span></span> + ⋯</span>
+</div>
+<div class="Indented">
+<img class="embedded" src="res-measure.png" alt="Figure res-measure.png" style="width: auto; max-width: 438px; height: 2cm; max-height: 230px;"/>
+<img class="embedded" src="res-series.png" alt="Figure res-series.png" style="width: auto; max-width: 438px; height: 2cm; max-height: 230px;"/>
+<img class="embedded" src="res-parallel.png" alt="Figure res-parallel.png" style="width: auto; max-width: 438px; height: 2cm; max-height: 230px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--16"></a>Procédure
+</div>
+<ul>
+<li>
+Connecter la résistance entre SEN une borne GND
+</li>
+<li>
+Observer la valeur afficher dans le panneau de droite
+</li>
+<li>
+Essayer des associations en série et en parallèle
+</li>
+
+</ul>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.3">2.3</a> Mesurer une Capacité
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer des capacités et examiner les associations en série et en parallèle de condensateurs.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--17"></a><img class="embedded" src="cap-measure.png" alt="Figure cap-measure.png" style="width: auto; max-width: 422px; height: 2cm; max-height: 278px;"/>
+ <img class="embedded" src="cap-series.png" alt="Figure cap-series.png" style="width: auto; max-width: 422px; height: 2cm; max-height: 278px;"/>
+ <img class="embedded" src="cap-parallel.png" alt="Figure cap-parallel.png" style="width: auto; max-width: 422px; height: 2cm; max-height: 278px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--18"></a>Procédure 
+</div>
+<ul>
+<li>
+Connecter le condensateur entre IN1 and GND.
+</li>
+<li>
+Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le condensateur pendant la mesure.
+</li>
+<li>
+Répéter les mesures pour des associations de condensateurs en série et en parallèle.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--19"></a>Discussion
+</div>
+<div class="Unindented">
+On a utilisé des condensateurs de 100 pF pour cette activité. Pour les combinaisons en parallèle, la capacité effective est données par <span class="formula"><i>C</i> = <i>C</i>1 + <i>C</i>2 + ⋯</span> , et pour les associations en série, par <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>C</i></span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>C</i>1</span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>C</i>2</span><span class="ignored">)</span></span> + ⋯</span> . On peut créer des condensateurs en collant de fines feuilles de métal sur les deux faces d’un isolant comme le papier, le polystyrène ou le verre.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.4">2.4</a> Mesurer des résistances par comparaison<a class="Label" name="sec:Measure-resistance-by-comparison"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Apprendre à appliquer la loi d’Ohm pour trouver le valeur d’une résistance inconnue par comparaison avec une résistance connue. La tension aux bornes d’une résistance est donnée par <span class="formula"><i>U</i> = <i>RI</i></span>. Si la même valeur de courant parcourt deux résistances différentes, alors le rapport des tensions sera le même que le rapport des résistances,<span class="formula"><i>I</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>U</i><sub><i>A</i>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i>2</span><span class="ignored">)</span></span> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>U</i><sub><i>PV</i>1</sub> − <i>U</i><sub><i>A</i>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i>1</span><span class="ignored">)</span></span></span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--20"></a><img class="embedded" src="res-compare.png" alt="Figure res-compare.png" style="width: auto; max-width: 614px; height: 3cm; max-height: 262px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--21"></a>Procédure 
+</div>
+<ul>
+<li>
+Connecter la résistance inconnue R entre PV1 et A1.
+</li>
+<li>
+Connecter <span class="formula">1<i>k</i>Ω</span> (R2) entre A1 et GND.
+</li>
+<li>
+Régler PV1 à 4 V.
+</li>
+<li>
+Mesurer la tension en A1. Calculer le courant <span class="formula"><i>I</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>U</i><sub><i>A</i>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>R</i>2</span><span class="ignored">)</span></span></span> . Valeur de <span class="formula"><i>R</i>1 = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>U</i><sub><i>PV</i>1</sub> − <i>U</i><sub><i>A</i>1</sub></span><span class="ignored">)/(</span><span class="denominator"><i>I</i></span><span class="ignored">)</span></span></span>.
+</li>
+<li>
+Sélectionner «Électricité-&gt;Tracé d’une courbe courant-tension» dans le menu pour obtenir une courbe I-U.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--22"></a>Discussion
+</div>
+<div class="Unindented">
+Quelle est la limitation de cette méthode ? Comment choisir la résistance de référence ? Si on suppose que la valeur inconnue est en <span class="formula"><i>M</i>Ω</span>, quelle serait la chute de tension aux bornes d’une résistance de référence de <span class="formula">1<i>k</i>Ω</span> ? Notre mesure de tension a une résolution de <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">4095</span><span class="ignored">)</span></span></span>.
+</div>
+<div class="Indented">
+On utilisera cette méthode plus tard pour mesurer la résistance de solutions, à l’aide de courant alternatif.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.5">2.5</a> Courants continu et alternatif
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Introduire le concept de tensions variables dans le temps, à l’aide d’un graphique <span class="formula"><i>U</i>(<i>t</i>)</span>. Comparer les graphiques de continu et d’alternatif.
+</div>
+<div class="Indented">
+<img class="embedded" src="schematics/ac-dc.png" alt="Figure schematics/ac-dc.png" style="width: auto; max-width: 614px; height: 1cm; max-height: 70px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--23"></a>Procédure 
+</div>
+<ul>
+<li>
+Régler PV1 à 2 V et régler WG à 200 Hz
+</li>
+<li>
+Activer l’analyse sur A1, afin de mesurer l’amplitude et la fréquence.
+</li>
+<li>
+Activer A2
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--24"></a>Discussion
+</div>
+<div class="Unindented">
+Dans le graphique, si la courbe de tension ne change pas (si elle est horizontale), c’est du courant continu pur. Si la tension change avec le temps, il y a une composante alternative. Si la tension moyenne est nulle, alors c’est de l’alternatif pur. Dans le deuxième graphique, la tension varie entre zéro et cinq volt ; est-ce du courant alternatif, continu, ou quelque chose d’autre ?
+</div>
+<div class="Indented">
+<img class="embedded" src="ac-dc.png" alt="Figure ac-dc.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+ <img class="embedded" src="sqr-wave.png" alt="Figure sqr-wave.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.6">2.6</a> Signal d’antenne alternatif dû au secteur
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier l’alimentation du secteur en courant alternatif. Explorer le phénomène de propagation de tensions alternatives à travers l’espace.
+</div>
+<div class="Indented">
+<img class="embedded" src="line-pickup.png" alt="Figure line-pickup.png" style="width: auto; max-width: 816px; height: 1.5cm; max-height: 134px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--25"></a>Procédure 
+</div>
+<ul>
+<li>
+Connecter un long fil en A3
+</li>
+<li>
+Approcher une extrémité du fil près d’une ligne d’alimentation du secteur, sans toucher aucune source de tension.
+</li>
+<li>
+Activer A3, et son analyse.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--26"></a>Discussion
+</div>
+<div class="Unindented">
+Le signal d’antenne du secteur est affiché ci-dessous, il y a cinq cycles en 100 ms. Sans faire aucune connexion, comment se fait-il qu’on reçoive un signal de tension alternative depuis le secteur ? Pourquoi la tension augmente-t-elle quand on touche le fil connecté en A1 avec la main ?
+</div>
+<div class="Indented">
+<img class="embedded" src="pickup.png" alt="Figure pickup.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.7">2.7</a> Séparation des composantes continue et alternative<a class="Label" name="sec:DC-&-AC"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Séparer les composantes alternative et continue d’un signal à l’aide d’un condensateur.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--27"></a>Procédure 
+</div>
+<div class="Unindented">
+<img class="embedded" src="acdc-separating.png" alt="Figure acdc-separating.png" style="width: auto; max-width: 470px; height: 3cm; max-height: 374px;"/>
+ <img class="embedded" src="acdc-sep-screen.png" alt="Figure acdc-sep-screen.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+
+</div>
+<ul>
+<li>
+Régler SQR1 à 500 Hz
+</li>
+<li>
+Activer A1 et A2
+</li>
+<li>
+Ajuster l’échelle horizontale pour observer plusieurs cycles.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--28"></a>Discussion
+</div>
+<div class="Unindented">
+Les signaux observés avec et sans le condensateur en série sont affichés sur la figure. La tension oscille entre 0 et 5 V. Après traversée d’un condensateur, la tension oscille entre -2,5 V et +2,5 V.
+</div>
+<div class="Indented">
+Qu’obtient-on si on soustrait 2,5 V de l’ordonnée de chaque point du premier graphique ? C’est ce que le condensateur a fait. Il n’a pas autorisé la composante continue à passer. On peut considérer que le signal original consiste en une tension alternative d’amplitude 2,5 V superposée à un signal continue de +2,5 V.
+</div>
+<div class="Indented">
+Il faut éventuellement connecter une résistance entre A2 et GND pour observer le signal oscillant entre -2,5 V et +2,5 V. Retirer la résistance et observer le signal.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.8">2.8</a> Le corps humain comme conducteur
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Toucher un fil du secteur est fatal parce que notre corps est un conducteur électrique. On peut explorer cela à l’aide de signaux de faible tension.
+</div>
+<div class="Indented">
+<img class="embedded" src="conducting-human.png" alt="Figure conducting-human.png" style="width: auto; max-width: 502px; height: 2cm; max-height: 358px;"/>
+ <img class="embedded" src="conducting-human-screen.png" alt="Figure conducting-human-screen.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--29"></a>Procédure
+</div>
+<ul>
+<li>
+Régler WG à 200 Hz.
+</li>
+<li>
+Activer A1, A2 avec leurs analyses.
+</li>
+<li>
+Connecter WG et A1, avec un fil
+</li>
+<li>
+Connecter WG et A2 avec son corps et noter les tensions
+</li>
+<li>
+Recommencer à l’aide d’un signal de 3 V continu issu de PV1.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--30"></a>Discussion
+</div>
+<div class="Unindented">
+La tension crête observée est de moins de 3 V, à cause de la résistance du corps humain. Il peut y avoir un peu de perturbation due au signaux à 50 Hz du secteur captés par effet d’antenne. On peut éliminer cela en travaillant loin des lignes d’alimentation du secteur, à l’aide d’un ordinateur portable.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.9">2.9</a> Résistance électrique du corps humain
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer la résistance électrique du corps humain en la comparant à une résistance connue. On commence avec un signal continu issu de PV1 puis on continue avec un signal alternatif issu de WG.
+</div>
+<div class="Indented">
+<img class="embedded" src="res-body.png" alt="Figure res-body.png" style="width: auto; max-width: 614px; height: 3cm; max-height: 358px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--31"></a>Procédure
+</div>
+<ul>
+<li>
+Régler PV1 à 3 V
+</li>
+<li>
+Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
+</li>
+<li>
+Calculer la résistance de son corps comme expliqué à la section <a class="Reference" href="#sec:Measure-resistance-by-comparison">2.4↑</a>
+</li>
+<li>
+Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer les analyses de A1 et A2 afin de mesurer les tensions.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--32"></a>Discussion
+</div>
+<div class="Unindented">
+Les mesures en courant continu sont plus affectées par les bruits électriques. La résistance en courant alternatif est censée être inférieure à la résistance en courant continu. La résistance est due à notre peau, le courant électrique peut y passer comme il passe à travers un condensateur.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.10">2.10</a> Photorésistances
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et sa variation en fonction de la distance à la source.
+</div>
+<div class="Indented">
+<img class="embedded" src="ldr.png" alt="Figure ldr.png" style="width: auto; max-width: 646px; height: 4cm; max-height: 310px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--33"></a>Procédure 
+</div>
+<ul>
+<li>
+Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
+</li>
+<li>
+Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée afficher des variations
+</li>
+<li>
+Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--34"></a>Discussion
+</div>
+<div class="Unindented">
+La résistance varie de <span class="formula">1<i>k</i>Ω</span> à environ <span class="formula">100<i>k</i>Ω</span> selon l’intensité de la lumière qui l’éclaire. La tension est proportionnelle à la résistance (si le courant est constant). La résistance diminue quand l’éclairage augmente. Si on utilise une source de lumière ponctuelle, la résistance est censée augmenter comme le carré de la distance entre la photorésistance et la source lumière.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.11">2.11</a> Tension d’une pile-citron 
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Créer une source de tension en insérant des plaques de zinc et cuivre dans un citron. Explorer les possibilités de fournir du courant et la résistance interne.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--35"></a><img class="embedded" src="lemon-cell.png" alt="Figure lemon-cell.png" style="width: auto; max-width: 566px; height: 3cm; max-height: 406px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--36"></a>Procédure 
+</div>
+<ul>
+<li>
+Cliquer sur A1 pour mesurer la tension
+</li>
+<li>
+Mesurer la tension avec et sans une résistance de <span class="formula">1<i>k</i>Ω</span>.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--37"></a>Discussion
+</div>
+<div class="Unindented">
+La tension entre le zinc et le cuivre est d’environ 0,9 V. Quand on connecte la résistance, elle diminue à quelques 0,33 V. Quand on connecte la pile, le courant commence à circuler à travers la résistance. Mais pourquoi la tension diminue-t-elle ?
+</div>
+<div class="Indented">
+Quelle est la résistance interne de la pile ?
+</div>
+<div class="Indented">
+Le courant est le flux de charges et il doit faire le tour complet. Ce la signifie que le courant doit traverser la pile aussi. Selon la résistance interne de la pile, une part de la tension est perdue à l’intérieur même de la pile. Est-ce que la même chose se produit avec une pile du commerce neuve ?
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.12">2.12</a> Un générateur alternatif simple<a class="Label" name="sec:A-simple-AC"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer la fréquence et l’amplitude d’une tension induite aux bornes d’un bobinage par un aimant en rotation. On utilise l’aimant de <span class="formula">10<i>mm</i> × 10<i>mm</i></span> et la bobine de 3000 tours qui sont dans le kit.
+</div>
+<div class="Indented">
+<img class="embedded" src="ac-generator.png" alt="Figure ac-generator.png" style="width: auto; max-width: 838px; height: 3cm; max-height: 438px;"/>
+ <img class="embedded" src="ac-gen-screen.png" alt="Figure ac-gen-screen.png" style="width: auto; max-width: 662px; height: 4cm; max-height: 434px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--38"></a>Procédure
+</div>
+<ul>
+<li>
+Fixer l’aimant couché sur l’axe du moteur et alimenter ce moteur avec une pile de 1,5 V
+</li>
+<li>
+Activer A1 et A2, avec option d’analyse
+</li>
+<li>
+Régler la base de temps sur 100 ms pleine échelle
+</li>
+<li>
+Approcher le bobinage de l’aimant (sans le toucher), et observer la tension induite
+</li>
+<li>
+Recommencer l’expérience avec deux bobinages.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--39"></a>Discussion
+</div>
+<div class="Unindented">
+La tension obtenue est affichée dans la figure. La différence de phase entre les deux signaux dépend de l’angle entre les axes des deux bobinages.
+</div>
+<div class="Indented">
+Approcher un bobinage court-circuité près de l’aimant et observer le changement de fréquence. Le bobinage court-circuité prend de l’énergie du générateur et la vitesse en est diminuée.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.13">2.13</a> Transformateur de courant alternatif
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Démontrer l’induction mutuelle entre deux bobinages, fournis avec ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On aligne les axes des deux bobinages et on insère un noyau de ferrite.\begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="left">
+<img class="embedded" src="transformer.png" alt="Figure transformer.png" style="width: auto; max-width: 422px; height: 4cm; max-height: 390px;"/>
+ <img class="embedded" src="transformer-screen.png" alt="Figure transformer-screen.png" style="width: auto; max-width: 663px; height: 4cm; max-height: 433px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--40"></a>Procédure
+</div>
+<ul>
+<li>
+Faire les connections comme montré sur la figure
+</li>
+<li>
+Activer A1 et A2
+</li>
+<li>
+Régler WG à <span class="formula">500<i>Hz</i></span>
+</li>
+<li>
+Approcher les bobinages l’un de l’autre et observer la tension en A2.
+</li>
+<li>
+Essayer d’insérer un noyau en ferrite
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--41"></a>Discussion
+</div>
+<div class="Unindented">
+Le signal appliqué et le signal induit sont présentés sur la figure. Un champ magnétique oscillant est la cause de la tension induite. Dans les deux expériences précédentes, le champ magnétique oscillant était créé par le mouvement d’aimants permanents. Dans le cas présent, il est créé par un courant variable dans le temps.
+</div>
+<div class="Indented">
+Essayer de faire cette expérience avec un signal carré. Connecter une résistance de <span class="formula">1<i>k</i>Ω</span> aux bornes du bobinage secondaire pour réduire les oscillation de résonance.
+</div>
+<div class="Indented">
+Le concept de courant alternatif est introduit en affichant la tension en fonction du temps. On explore le comportement de dipôles tels que les condensateurs et les bobinages en courant continu et alternatif, en mesurant des paramètres tels que l’amplitude, la fréquence et la phase. La conversion de signaux électriques en son et l’inverse est démontré. Pour chaque expérience, on réalise les connexions selon le diagramme donné.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.14">2.14</a> Résistance de l’eau, en courant alternatif
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer la résistance de solutions ioniques, en utilisant des signaux continu et alternatif. On utilise de l’eau ordinaire du robinet. Essayer de mesurer la résistance au préalable à l’aide d’un multimètre.\begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="center">
+<img class="embedded" src="res-water.png" alt="Figure res-water.png" style="width: auto; max-width: 598px; height: 3cm; max-height: 310px;"/>
+ <img class="embedded" src="water-conduct.png" alt="Figure water-conduct.png" style="width: auto; max-width: 659px; height: 3cm; max-height: 433px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--42"></a>Procédure
+</div>
+<ul>
+<li>
+R1 est censé être comparable avec R, On commence avec <span class="formula">10<i>k</i>Ω</span>.
+</li>
+<li>
+Activer A1 et A2
+</li>
+<li>
+Calculer la résistance comme expliqué à la section <a class="Reference" href="#sec:Measure-resistance-by-comparison">2.4↑</a>
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--43"></a>Discussion
+</div>
+<div class="Unindented">
+Les valeurs observées sont montrées dans le tableau. Les résistances en continu et en alternatif semblent très différentes. En courant continu, la résistance du liquide change au cours du temps, à cause d’une électrolyse et de la formation de bulles. La résistance dépend peu de la distance entre électrodes, c’est la surface de l’électrode qui a le plus d’effet. La résistance dépend de la concentration en ions et à la présence d’impuretés dans l’eau.
+</div>
+<div class="Indented">
+Essayer de changer la distance entre électrodes. Essayer d’ajouter un sel ordinaire et recommencer les mesures. Pourquoi le comportement est-il différence en courant continu ou alternatif ? Quels sont les porteurs de charges responsables du flux d’électricité à travers les solutions ? Y a-t-il une réaction chimique qui se produit ?
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.15">2.15</a> Générer un son<a class="Label" name="sec:Generating Sound "> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Générer un son avec des signaux électriques, à l’aide d’un buzzer piézo-électrique. Numériser un son et mesurer sa fréquence? Utiliser un buzzer piézo ou toute autre source sonore comme un diapason.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--44"></a>Procédure
+</div>
+<div class="Unindented">
+<img class="embedded" src="sound-generator.png" alt="Figure sound-generator.png" style="width: auto; max-width: 422px; height: 3cm; max-height: 246px;"/>
+
+</div>
+<ul>
+<li>
+Activer A1, et son analyse
+</li>
+<li>
+Régler WG à <span class="formula">1000<i>Hz</i></span>, puis changer et écouter le son
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--45"></a>Discussion
+</div>
+<div class="Unindented">
+Quand on change la fréquence du signal qui excite le piézo, la fréquence et l’intensité du son changent toutes les deux. L’intensité est maximale près de <span class="formula">3500<i>Hz</i></span>, à cause de la résonance. La fréquence de résonance d’un buzzer piézo dépend de sa taille et de ses propriétés mécaniques.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-2.16">2.16</a> Numériser un son<a class="Label" name="sec:Digtizing-sound"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Numériser des signaux sonores d’un microphone, et mesurer leur fréquence. Utiliser le buzzer piézo ou toute autre source sonore comme un diapason.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--46"></a>Procédure
+</div>
+<div class="Unindented">
+<img class="embedded" src="sound-capture.png" alt="Figure sound-capture.png" style="width: auto; max-width: 886px; height: 3cm; max-height: 294px;"/>
+
+</div>
+<ul>
+<li>
+Activer A1 et MIC, ainsi que leurs analyses
+</li>
+<li>
+Positionner le microphone face au buzzer
+</li>
+<li>
+Régler WG à <span class="formula">1000</span> Hz, puis le modifier et observer la sortie MIC
+</li>
+<li>
+Utiliser un sifflet à la place du buzzer et trouver sa fréquence à l’aide de la sortie MIC.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--47"></a>Discussion
+</div>
+<div class="Unindented">
+Le signal du générateur et la sortie du microphone sont montrés dans la figure
+</div>
+<div class="Indented">
+Les ondes sonores créent des variations de pression dans le milieu qu’elles traversent. Le microphone crée une tension proportionnelle aux variations de pression. Les variations de tension sont à l’unisson des variations de pression. On peut comparer le microphone à un capteur de pression, mais qui fonctionne seulement pour les variations de pression.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-3">3</a> Électronique
+</h1>
+<div class="Unindented">
+Ce chapitre explique plusieurs expériences d’électronique. La plupart d’entre elles sont faites avec l’interface utilisateur oscilloscope. Certaines d’entre elles comme les caractéristiques d’une diode ou d’un transistor ont leur interface utilisateur dédiée.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.1">3.1</a> Redressement demi-onde à l’aide d’une jonction PN
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier le fonctionnement d’une diode à jonction PN comme redresseur. Filtrage RC pour réduire les variations de tension (la composante alternative).
+</div>
+<div class="Indented">
+<img class="embedded" src="halfwave.png" alt="Figure halfwave.png" style="width: auto; max-width: 534px; height: 3cm; max-height: 342px;"/>
+ <img class="embedded" src="halfwave.png" alt="Figure halfwave.png" style="width: auto; max-width: 534px; height: 4cm; max-height: 342px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--48"></a>Procédure 
+</div>
+<ul>
+<li>
+Faire les connexions et observer les sorties
+</li>
+<li>
+Connecter une résistance de charge de <span class="formula">1<i>k</i>Ω</span>, noter le changement d’amplitude
+</li>
+<li>
+Connecter un condensateur de <span class="formula">1<span class="text"> µF</span>, </span> et observer l’effet de filtrage.
+</li>
+<li>
+Essayer plusieurs valeurs de résistances de charge et de condensateurs de filtrage.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--49"></a>Discussion
+</div>
+<div class="Unindented">
+La partie négative est ôtée par la diode comme montré sur la figure. Noter aussi que la tension est diminuée de quelques 0,7 V dans la moitié positive, c’est la chute de tension aux bornes de la diode silicium, quand le courant y passe. Une résistance de charge est nécessaire pour que le circuit fonctionne correctement, on peut utiliser plus de <span class="formula">1<i>k</i>Ω</span>, mais NE PAS utiliser de valeurs plus faibles, comme la source courant alternatif ne peut pas fournir un courant de plus de <span class="formula">5<i>mA</i></span>.
+</div>
+<div class="Indented">
+On peut voir que le condensateur se charge puis qu’il maintient la tension pendant la partie manquante du cycle. 
+</div>
+<div class="Indented">
+Peut-on utiliser des condensateurs de grande capacité pour réduire la fluctuation de tension ?
+</div>
+<div class="Indented">
+Durant quelle partie du cycle le courant traverse-t-il la diode ?
+</div>
+<div class="Indented">
+Qu’est qui conditionne la valeur du courant crête ?
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.2">3.2</a> Redressement double alternance avec des jonctions PN
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Réaliser un redresseur double alternance, à l’aide de deux diodes. Il faut deux signaux alternatifs, déphasés de 180 degrés. Ceux-ci sont fournis par WG et <span class="formula"><span class="overline"><i>WG</i></span>.</span>
+</div>
+<div class="Indented">
+<img class="embedded" src="fullwave.png" alt="Figure fullwave.png" style="width: auto; max-width: 534px; height: 4cm; max-height: 406px;"/>
+ <img class="embedded" src="fullwave.png" alt="Figure fullwave.png" style="width: auto; max-width: 534px; height: 4cm; max-height: 406px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--50"></a>Procédure 
+</div>
+<ul>
+<li>
+Faire les connexions
+</li>
+<li>
+Activer A1, A2 et A3
+</li>
+<li>
+Régler WG à 200 Hz et ajuster la base de temps pour voir 4 ou 5 cycles.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--51"></a>Discussion
+</div>
+<div class="Unindented">
+On laisse comme exercice à l’utilisateur de réduire la fluctuation de tension à l’aide d’un condensateur. Cette expérience est seulement là pour montrer le fonctionnement d’une redressement double alternance, il ne peut pas produire beaucoup plus que quelques milliampères de courant.
+</div>
+<div class="Indented">
+En quoi un redressement double alternance est-il supérieur à un redressement simple alternance ?
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.3">3.3</a> Écrêtage à l’aide d’une diode à jonction PN
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Démontrer l’écrêtage d’un signal alternatif à différents niveaux, à l’aide d’une diode à jonction PN.
+</div>
+<div class="Indented">
+<img class="embedded" src="clipping.png" alt="Figure clipping.png" style="width: auto; max-width: 518px; height: 3cm; max-height: 262px;"/>
+ <img class="embedded" src="clipping.png" alt="Figure clipping.png" style="width: auto; max-width: 518px; height: 5cm; max-height: 262px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--52"></a>Procédure 
+</div>
+<ul>
+<li>
+Faire les connexions et observer les sorties.
+</li>
+<li>
+Changer PV1 et observer le changement dans les sorties
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--53"></a>Discussion
+</div>
+<div class="Unindented">
+Le niveau d’écrêtage est conditionné par la tension continue appliquée et par la chute de tension de la diode.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.4">3.4</a> Décalage à l’aide d’un diode à jonction PN
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Démontrer le décalage d’un signal alternatif à différents niveaux, à l’aide d’une diode à jonction PN
+</div>
+<div class="Indented">
+<img class="embedded" src="clamping.png" alt="Figure clamping.png" style="width: auto; max-width: 518px; height: 3cm; max-height: 326px;"/>
+ <img class="embedded" src="clamping.png" alt="Figure clamping.png" style="width: auto; max-width: 518px; height: 5cm; max-height: 326px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--54"></a>Procédure 
+</div>
+<ul>
+<li>
+Faire les connexions et observer les sorties.
+</li>
+<li>
+Changer PV1 et observer le changement dans les sorties
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--55"></a>Discussion
+</div>
+<div class="Unindented">
+Le niveau de décalage est conditionné par la tension continue appliquée et par la chute de tension de la diode.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.5">3.5</a> Oscillateur à IC555
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Câbler un circuit de multivibrateur astable à l’aide d’un IC555, mesurer la fréquence et le rapport cyclique de la sortie.
+</div>
+<div class="Indented">
+<img class="embedded" src="osc555.png" alt="Figure osc555.png" style="width: auto; max-width: 710px; height: 3cm; max-height: 524px;"/>
+ <img class="embedded" src="ic555-screen.png" alt="Figure ic555-screen.png" style="width: auto; max-width: 660px; height: 3cm; max-height: 453px;"/>
+
+</div>
+<div class="Indented">
+Le circuit est présenté sur la figure. La fréquence est données par <span class="formula"><i>f</i> = 1 ⁄ <span class="symbol">(</span>ln2 × <i>C</i> × <span class="symbol">(</span><i>R</i><sub>1</sub> + 2<i>R</i><sub>2</sub><span class="symbol">)</span><span class="symbol">)</span></span>. La durée HAUTE est donnée par <span class="formula">ln2 × <i>C</i> × <span class="symbol">(</span><i>R</i><sub>1</sub> + <i>R</i><sub>2</sub><span class="symbol">)</span></span> et la durée BASSE par <span class="formula">ln2 × <i>C</i> × <i>R</i><sub>2</sub></span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--56"></a>Procédure
+</div>
+<ul>
+<li>
+Faire les connexions
+</li>
+<li>
+mesurer la fréquence et le rapport cyclique.
+</li>
+<li>
+Recommencer en changeant les valeurs de R1
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--57"></a>Discussion
+</div>
+<div class="Unindented">
+Le signal de sortie est montré sur la figure. Changer la valeur des résistances et du condensateur, puis comparer la fréquence et le rapport cyclique avec les valeurs calculées.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.6">3.6</a> Amplificateur inverseur
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Câbler un amplificateur inverseur à l’aide d’un ampli-op et le tester.
+</div>
+<div class="Indented">
+<img class="embedded" src="opamp-inv.png" alt="Figure opamp-inv.png" style="width: auto; max-width: 678px; height: 3cm; max-height: 464px;"/>
+ 
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--58"></a>Procédure 
+</div>
+<ul>
+<li>
+Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
+</li>
+<li>
+Activer A1 et A2 avec option d’analyse
+</li>
+<li>
+Sélectionner le calibre 1 V pour A1 et A2 
+</li>
+<li>
+Faire les connexions et observer la sortie
+</li>
+<li>
+Changer le gain en modifiant les valeurs des résistances.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--59"></a>Discussion
+</div>
+<div class="Unindented">
+On peut observer le gain par l’amplitude, mais aussi le déphasage dans les résultats.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.7">3.7</a> Amplificateur non-inverseur
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Câbler un amplificateur non-inverseur à l’aide d’un ampli-op et le tester.
+</div>
+<div class="Indented">
+<img class="embedded" src="opamp-noninv.png" alt="Figure opamp-noninv.png" style="width: auto; max-width: 694px; height: 3cm; max-height: 502px;"/>
+ 
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--60"></a>Procédure 
+</div>
+<ul>
+<li>
+Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
+</li>
+<li>
+Activer A1 et A2 avec option d’analyse
+</li>
+<li>
+Sélectionner le calibre 1 V pour A1 et A2 
+</li>
+<li>
+Faire les connexions et observer la sortie
+</li>
+<li>
+Changer le gain en modifiant les valeurs des résistances.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--61"></a>Discussion
+</div>
+<div class="Unindented">
+On peut observer le gain par l’amplitude, mais aussi le déphasage dans les résultats.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.8">3.8</a> Intégrateur à ampli-op
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Câbler un intégrateur à ampli-op et le tester.
+</div>
+<div class="Indented">
+<img class="embedded" src="opamp-int.png" alt="Figure opamp-int.png" style="width: auto; max-width: 774px; height: 3cm; max-height: 614px;"/>
+ 
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--62"></a>Procédure 
+</div>
+<ul>
+<li>
+Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
+</li>
+<li>
+Activer A1 et A2 avec option d’analyse
+</li>
+<li>
+Sélectionner le calibre 1 V pour A1 et A2 
+</li>
+<li>
+Faire les connexions et observer la sortie
+</li>
+<li>
+Changer le gain en modifiant les valeurs des résistances.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--63"></a>Discussion
+</div>
+<div class="Unindented">
+On peut observer le gain par l’amplitude, mais aussi le déphasage dans les résultats.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.9">3.9</a> Portes logiques
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec des circuits intégrés de portes logiques TTL 7408 and 7432.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--64"></a>Procédure
+</div>
+<div class="Unindented">
+<img class="embedded" src="logic-gates.png" alt="Figure logic-gates.png" style="width: auto; max-width: 646px; height: 3cm; max-height: 438px;"/>
+ 
+</div>
+<ul>
+<li>
+Activer A1, A2 et A3. Régler le calibre pour A1 et A2 à 8 V
+</li>
+<li>
+Régler SQ1 à 200 Hz et ajuster la base de temps pour voir plusieurs cycles
+</li>
+<li>
+régler SQ2 depuis la forme de signal de WG, régler WG à 200 Hz
+</li>
+<li>
+Recommencer avec la porte OU, 7432
+</li>
+<li>
+La résistance de <span class="formula">1<i>k</i>Ω</span> est nécessaire pour connecter un signal de 5 V à l’entrée A3.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--65"></a>Discussion
+</div>
+<div class="Unindented">
+Le fonctionnement de la porte logique sera évident à partir des trois signaux. On peut décaler les traces verticalement pour les séparer et les rendre plus claires.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.10">3.10</a> Diviseur d’horloge
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier un diviseur d’horloge, à l’aide d’une bascule D (famille TTL, 7474).
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--66"></a>Procédure
+</div>
+<div class="Unindented">
+<img class="embedded" src="clock-divider.png" alt="Figure clock-divider.png" style="width: auto; max-width: 582px; height: 4cm; max-height: 502px;"/>
+
+</div>
+<ul>
+<li>
+Activer A1 et A2, Régler leurs calibres à 8 V
+</li>
+<li>
+Régler SQ1 à 500 Hz
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--67"></a>Discussion
+</div>
+<div class="Unindented">
+La sortie est basculée à chaque front montant sur l’entrée, si bien que la fréquence est divisée par deux. Le signal de sortie est un signal carré symétrique, même si le signal d’entrée a un rapport cyclique différent. La tension de sortie HAUTE d’un circuit intégré TTL est proche de 4 V seulement.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="fig:A-clock-divider-1"> </a><div class="figure">
+<div class="center">
+<img class="embedded" src="clock-divider.png" alt="Figure clock-divider.png" style="width: 5cm; max-width: 582px; height: auto; max-height: 502px;"/>
+ <img class="embedded" src="clock-divider2.png" alt="Figure clock-divider2.png" style="width: 5cm; max-width: 660px; height: auto; max-height: 432px;"/>
+
+</div>
+<div class="caption">
+Figure 3.1 Un circuit diviseur d’horloge, à l’aide d’une bascule D. Les sorties pour deux types différents de signal d’entrée sont montrées  
+</div>
+
+</div>
+
+</div>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.11">3.11</a> Caractéristique U-I d’une diode
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Tracer la caractéristique U-I d’une diode et comparer les résultats avec a théorie.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--68"></a>Procédure
+</div>
+<div class="Unindented">
+<div class="left">
+<img class="embedded" src="diode_iv.png" alt="Figure diode_iv.png" style="width: auto; max-width: 438px; height: 2cm; max-height: 230px;"/>
+ <img class="embedded" src="diode-iv-screen.png" alt="Figure diode-iv-screen.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+
+</div>
+
+</div>
+<ul>
+<li>
+Faire les connexions
+</li>
+<li>
+Cliquer sur DÉMARRER pour tracer la courbe caractéristique.
+</li>
+<li>
+Analyser les données
+</li>
+<li>
+Tracer les courbes U-I de DELs
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--69"></a>Discussion
+</div>
+<div class="Unindented">
+La caractéristique U-I d’une jonction PN idéale est donnée par l’équation <span class="formula"><i>I</i> = <i>I</i><sub>0</sub><span class="symbol">(</span><i>e</i><sup><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>qU</i></span><span class="ignored">)/(</span><span class="denominator"><i>kT</i></span><span class="ignored">)</span></span></sup> − 1<span class="symbol">)</span></span>, où <span class="formula"><i>I</i><sub>0</sub></span> est le courant de saturation inverse, <span class="formula"><i>q</i></span> la charge de l’électron, <span class="formula"><i>k</i></span> la constante de Boltzmann, <span class="formula"><i>T</i></span> la température en Kelvin. Pour une diode réelle, non-idéale, l’équation est <span class="formula"><i>I</i> = <i>I</i><sub>0</sub><span class="symbol">(</span><i>e</i><sup><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>qU</i></span><span class="ignored">)/(</span><span class="denominator"><i>nkT</i></span><span class="ignored">)</span></span></sup> − 1<span class="symbol">)</span></span>, où <span class="formula"><i>n</i></span> est le facteur d’idéalité, qui vaut <span class="formula">1</span> pour une diode idéale. Pour des diodes réelles il varie entre 1 et 2. On a utilisé une diode au silicium 1N4148. La valeur de <span class="formula"><i>n</i></span> pour 1N4148 est proche de 2. On a calculé la valeur de <span class="formula"><i>n</i></span> en modélisant les valeurs expérimentales par l’équation. 
+</div>
+<div class="Indented">
+La tension à laquelle une DEL commence à émettre de la lumière dépend de sa longueur d’onde et de la constante de Planck. L’énergie d’un photon est donnée par <span class="formula"><i>E</i> = <i>h</i><i>ν</i> = <i>hc</i> ⁄ <i>λ</i></span>. Cette énergie est égale au travail d’un électron qui franchit un seuil de potentiel, qui est donné par <span class="formula"><i>E</i> = <i>eV</i><sub>0</sub></span>. Donc la constante de Planck est <span class="formula"><i>h</i> = <i>eV</i><sub>0</sub><i>λ</i> ⁄ <i>c</i></span> , où <span class="formula"><i>λ</i></span> est la longueur d’onde de la DEL, <span class="formula"><i>e</i></span> la charge de l’électron et <span class="formula"><i>c</i></span> la vitesse de la lumière.
+</div>
+<div class="Indented">
+Recommencer cette expérience en chauffant la diode à différentes températures.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.12">3.12</a> Caractéristique de la sortie (CE) d’un transistor<a class="Label" name="sec:Transistor-CE-Characteristic"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Tracer la courbe caractéristique de sortie d’un transistor. Le collecteur est connecté à PV1 à travers une résistance de <span class="formula">1<i>k</i>Ω</span>.
+</div>
+<div class="Indented">
+<img class="embedded" src="transistor_out.png" alt="Figure transistor_out.png" style="width: auto; max-width: 566px; height: 3cm; max-height: 454px;"/>
+ <img class="embedded" src="transistor-ce.png" alt="Figure transistor-ce.png" style="width: auto; max-width: 664px; height: 4cm; max-height: 489px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--70"></a>Procédure
+</div>
+<ul>
+<li>
+Régler la tension de base à 1 V et DÉMARRER.
+</li>
+<li>
+Recommencer pour diverses valeurs du courant de base.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--71"></a>Discussion
+</div>
+<div class="Unindented">
+Les courbes caractéristiques pour différentes valeurs du courant de base sont montrées sur la figure. Le courant de collecteur est obtenu à partir de la différence de potentiel aux bornes de la résistance de <span class="formula">1<i>k</i>Ω</span>.
+</div>
+<div class="Indented">
+Le courant de la base dépend du réglage de la source de tension à l’extrémité dune résistance de <span class="formula">100<i>k</i>Ω</span>, l’autre extrémité étant connectée à la base. La valeur du courant de base est calculée par <span class="formula"><i>I</i><sub><i>b</i></sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>U</i><sub><i>pv</i>2</sub> − <i>U</i><sub><i>A</i>2</sub></span><span class="ignored">)/(</span><span class="denominator">100 × 10<sup>3</sup></span><span class="ignored">)</span></span> × 10<sup>6</sup><i>μ</i><i>A</i></span>. Si A2 n’est pas connectée, le code considère une valeur de 0,6 V pour la base afin de calculer le courant dans celle-ci.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-3.13">3.13</a> Transmission d’un signal Opto-électrique
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Démontrer la transmission de signaux à l’aide de lumière. Une DEL est alimentée par un signal de fréquence 1 kHz et on dirige sa lumière vers un photo-transistor.
+</div>
+<div class="Indented">
+<img class="embedded" src="opto-electric.png" alt="Figure opto-electric.png" style="width: auto; max-width: 742px; height: 3cm; max-height: 438px;"/>
+ <img class="embedded" src="opto-electric-transmission.png" alt="Figure opto-electric-transmission.png" style="width: auto; max-width: 659px; height: 5cm; max-height: 433px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--72"></a>Procédure
+</div>
+<ul>
+<li>
+Placer la DEL en face du photo-transistor et régler SQ1 à <span class="formula">1000<i>Hz</i></span>
+</li>
+<li>
+Recommencer l’expérience en changeant la fréquence.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--73"></a>Discussion
+</div>
+<div class="Unindented">
+L’entrée SEN est connectée à 5 V à travers une résistance de <span class="formula">5, 1<i>k</i>Ω</span>. La sortie du photo-transistor crée un signal de fréquence <span class="formula">1<i>kHz</i></span> comme montré sur la figure. Le signal carré est la tension qui alimente la DEL. Quand la DEL est allumée, le photo-transistor est conducteur et la tension au collecteur tombe à <span class="formula">0, 2<i>V</i></span>. Quand la DEL est éteinte le transistor passe en mode isolant et le collecteur remonte à la tension de l’alimentation. Les temps de montée et de descente du photo-transistor semblent être différents. Trouver la limite haute en fréquence à laquelle le photo-transistor est capable de répondre.
+</div>
+<div class="Indented">
+Recommencer cette expérience avec une fibre optique pour guider la lumière depuis la DEL jusqu’au photo-transistor.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-4">4</a> Électricité et magnétisme
+</h1>
+<div class="Unindented">
+Ce chapitre contient principalement des expériences sur le comportement en régime stationnaire et en régime transitoire pour des dipôles LCR. Il confronte les résultats expérimentaux avec la théorie. Il donne aussi une expérience sur l’induction électromagnétique.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.1">4.1</a> Circuits RLC, réponse en régime stationnaire
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier le comportement de dipôle RLC dans un circuit en courant alternatif. Trois combinaisons différentes peuvent être étudiées.
+</div>
+<div class="Indented">
+<img class="embedded" src="RCsteadystate.png" alt="Figure RCsteadystate.png" style="width: auto; max-width: 566px; height: 2cm; max-height: 294px;"/>
+ <img class="embedded" src="RLsteadystate.png" alt="Figure RLsteadystate.png" style="width: auto; max-width: 566px; height: 2cm; max-height: 294px;"/>
+<img class="embedded" src="RLCsteadystate.png" alt="Figure RLCsteadystate.png" style="width: auto; max-width: 598px; height: 2cm; max-height: 390px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--74"></a>Procédure
+</div>
+<ul>
+<li>
+Faire les connexions une par une, selon les schémas
+</li>
+<li>
+Prendre note des mesures d’amplitude et de phase, dans chaque cas
+</li>
+<li>
+Recommencer les mesures en changeant la fréquence.
+</li>
+<li>
+Pour le circuit série RLC, la jonction entre L et C est surveillées par A3
+</li>
+<li>
+Pour la résonance, sélectionner <span class="formula"><i>C</i> = 1<i>µF</i></span>, L = <span class="formula">10<i>mH</i></span> and f = <span class="formula">1600<i>Hz</i></span>, ajuster f pour obtenir un déphasage nul
+</li>
+<li>
+La tension totale aux bornes de L et C s’approche de zéro, les tensions de chacun sont déphasées à la résonance
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--75"></a>Discussion
+</div>
+<div class="Unindented">
+La tension alternative de la source est en A1 et la tension aux bornes de la résistance en A2. Si on soustrait les valeurs instantanées de A2 de A1 on obtient la tension totale aux bornes de L et C. IL faut utiliser un bobinage avec une résistance négligeable pour de bons résultats. Le déphasage entre courant et tension est donnée par <span class="formula">△Φ = arctan<span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>Z</i><sub><i>c</i></sub> − <i>Z</i><sub><i>L</i></sub></span><span class="ignored">)/(</span><span class="denominator"><i>Z</i><sub><i>R</i></sub></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span></span>.
+</div>
+<div class="Indented">
+La tension totale, la tension aux bornes de R et la tension aux bornes de LC sont montrées dans la figure. Le diagramme de phase montre le déphasage entre courant et tension. Le bobinage utilisé dans l’expérience a une inductance d’environ <span class="formula">10<i>mH</i></span> et une résistance de <span class="formula">20Ω</span>. 
+</div>
+<div class="Indented">
+À <span class="formula">1600<i>Hz</i></span>, <span class="formula"><i>X</i><sub><i>c</i></sub> ≈ <i>X</i><sub><i>L</i></sub></span> et la tension aux bornes de LC est déterminée par la résistance du bobinage. À la fréquence de résonance, la tension aux bornes de LC sera minimale, déterminée par la résistance du bobinage. L’entrée A3 est connectée entre L et C, si bien que les tensions individuelles de L et C peuvent être présentées.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.2">4.2</a> Réponse de circuits RC en régime transitoire<a class="Label" name="sec:Capacitor-charging-&"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Tracer l’évolution de la tension aux bornes d’un condensateur, quand il est chargé en appliquant un échelon de tension à travers une résistance. Calculer la valeur de la capacité d’après la courbe.
+</div>
+<div class="Indented">
+<img class="embedded" src="RCtransient.png" alt="Figure RCtransient.png" style="width: auto; max-width: 550px; height: 3cm; max-height: 310px;"/>
+ <img class="embedded" src="RCtransient.png" alt="Figure RCtransient.png" style="width: auto; max-width: 550px; height: 5cm; max-height: 310px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--76"></a>Procédure
+</div>
+<ul>
+<li>
+Dan le menu «Électricité», choisir le sous-menu «Circuit RC en régime transitoire».
+</li>
+<li>
+Cliquer sur les boutons <i>Échelon 0-&gt;5V et Échelon</i> <i>5-&gt;0V </i>pour afficher les graphiques
+</li>
+<li>
+Ajuster l’échelle horizontale si nécessaire, et recommencer.
+</li>
+<li>
+Calculer la constante de temps RC.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--77"></a>Discussion
+</div>
+<div class="Unindented">
+Quand on applique un échelon de 0 à 5 V, la tension aux bornes du condensateur s’approche exponentiellement de 5V comme montré sur la figure. En modélisant la courbe de décharge par <span class="formula"><i>U</i>(<i>t</i>) = <i>U</i><sub>0</sub><i>e</i><sup> − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>t</i></span><span class="ignored">)/(</span><span class="denominator"><i>RC</i></span><span class="ignored">)</span></span></sup></span> , on peut extraire la constante de temps RC et s’en servir pour trouver la valeur de la capacité.
+</div>
+<div class="Indented">
+Le tension aux bornes d’un condensateur ne varie exponentiellement que quand on le charge au travers d’un dipôle linéaire, une résistance par exemple. Si on le charge à l’aide d’une source de courant constant, la tension change linéairement, puisque <span class="formula"><i>Q</i> = <i>It</i> = <i>CU</i></span> , et la tension croît linéairement avec le temps comme <span class="formula"><i>U</i> = <span class="array"><span class="arrayrow"><span class="bracket align-left">⎛</span></span><span class="arrayrow"><span class="bracket align-left">⎝</span></span></span><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>I</i></span><span class="ignored">)/(</span><span class="denominator"><i>C</i></span><span class="ignored">)</span></span><span class="array"><span class="arrayrow"><span class="bracket align-right">⎞</span></span><span class="arrayrow"><span class="bracket align-right">⎠</span></span></span><i>t</i></span> .
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.3">4.3</a> Réponse transitoire de circuits RL
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Explorer la nature du courant et de la tension quand un échelon de tension est appliqué à une résistance et un bobinage en série. En mesurant la tension en fonction du temps aux bornes du bobinage, on peut calculer son inductance.
+</div>
+<div class="Indented">
+<img class="embedded" src="RLtransient.png" alt="Figure RLtransient.png" style="width: auto; max-width: 598px; height: 3cm; max-height: 390px;"/>
+ <img class="embedded" src="RLtransient.png" alt="Figure RLtransient.png" style="width: auto; max-width: 598px; height: 4cm; max-height: 390px;"/>
+
+</div>
+<div class="Indented">
+Dans un circuit RL <span class="formula"><i>U</i> = <i>RI</i> + <i>L</i><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>dI</i></span><span class="ignored">)/(</span><span class="denominator"><i>dt</i></span><span class="ignored">)</span></span></span> , équation qui se résout en <span class="formula"><i>I</i> = <i>I</i><sub>0</sub><i>e</i><sup> − <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>R</i></span><span class="ignored">)/(</span><span class="denominator"><i>L</i></span><span class="ignored">)</span></span><i>t</i></sup></span>. Le coefficient du terme exponentiel R/L peut être déduit du graphique de la tension aux bornes du bobinage. La résistance du bobinage doit être incluse dans les calculs, <span class="formula"><i>R</i> = <i>R</i><sub><i>ext</i></sub> + <i>R</i><sub><i>L</i></sub></span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--78"></a>Procédure
+</div>
+<ul>
+<li>
+Le bobinage est la bobine de 3000 tours
+</li>
+<li>
+Cliquer sur les boutons <i>Échelon 0-&gt;5V et Échelon</i> <i>5-&gt;0V </i>pour afficher les graphiques
+</li>
+<li>
+Ajuster l’échelle horizontale, si nécessaire, et recommencer.
+</li>
+<li>
+Calculer la valeur de l’inductance
+</li>
+<li>
+Insérer un noyau en fer dans le bobinage et recommencer
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--79"></a>Discussion
+</div>
+<div class="Unindented">
+La réponse transitoire du circuit RL est montrée sur la figure. La courbe exponentielle est modélisée pour extraire la valeur de L/R. La résistance de la bobine est mesurée en la comparant avec la résistance externe connue, en courant continu. A2 est connecté à OD1 pour une mesure plus précise de la résistance du bobinage.
+</div>
+<div class="Indented">
+Les tensions appliquées sont positives, mais le graphique va vers des tensions négatives, pourquoi ?
+</div>
+<div class="Indented">
+Quel était le courant avant le début de l’échelon 5-&gt;0 V ? Quelle est la force contre-électromotrice (fcem) ?
+</div>
+<div class="Indented">
+Recommencer avec deux bobinages en série, (a) en les plaçant l’un loin de l’autre, (b) en les plaçant l’un sur l’autre, (c) après changement d’orientation de l’un des deux. On peut voir l’effet de l’induction mutuelle.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.4">4.4</a> Réponse transitoire de circuit RLC<a class="Label" name="sec:Step-Response-ofRLC"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Explorer la nature oscillatoire de la mise en série de L et C. La pulsation de résonance d’un circuit LC série est donnée par <span class="formula"><i>ω</i><sub>0</sub> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><i>LC</i></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span>. Le facteur d’amortissement est <span class="formula"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>R</i></span><span class="ignored">)/(</span><span class="denominator">2</span><span class="ignored">)</span></span><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>C</i></span><span class="ignored">)/(</span><span class="denominator"><i>L</i></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span>, et il vaut 1 pour l’amortissement critique.<span class="FootOuter"><span class="SupFootMarker"> [A] </span><span class="HoverFoot"><span class="SupFootMarker"> [A] </span>http://en.wikiversity.org/wiki/RLC_circuit</span></span> Selon les valeurs de C/L et R, la réponse peut être sous-amortie, amortie de façon critique ou sur-amortie.
+</div>
+<div class="Indented">
+<img class="embedded" src="RLCtransient.png" alt="Figure RLCtransient.png" style="width: auto; max-width: 550px; height: 3cm; max-height: 310px;"/>
+ <img class="embedded" src="RLC-curves.png" alt="Figure RLC-curves.png" style="width: auto; max-width: 601px; height: 3cm; max-height: 438px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--80"></a>Procédure 
+</div>
+<ul>
+<li>
+Commencer avec le bobinage et un condensateur de <span class="formula">0, 1<span class="text"> µF</span></span>
+</li>
+<li>
+Cliquer sur Échelon 5-&gt;0 V. Ajuster l’axe des abscisses et recommencer si nécessaire.
+</li>
+<li>
+Ajuster le graphique (FIT) pour trouver la fréquence de résonance et l’amortissement.
+</li>
+<li>
+Recommencer avec une résistance entre OD1 et le bobinage.
+</li>
+<li>
+Recommencer l’expérience avec diverses valeurs de R, L et C.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--81"></a>Discussion
+</div>
+<div class="Unindented">
+On a utilisé le bobinage de 3000 tours et le condensateur de <span class="formula">0, 1<span class="text"> µF</span>.</span>La tension aux bornes du condensateur est montrée sur la figure après un échelon 5-&gt;0 V. La fréquence de résonance mesurée est conforme à <span class="formula"><i>f</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i></span><span class="ignored">)</span></span><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator"><i>LC</i></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span> , compte tenu de la tolérance sur les valeurs des composants.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.5">4.5</a> Différenciation et intégration RC
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Les circuits RC peuvent intégrer ou différencier un signal de tension par rapport au temps. Si on intègre un signal carré on obtient un signal triangulaire et si on différencie on obtient des pics aux transitions.\begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="center">
+<img class="embedded" src="RCintegration.png" alt="Figure RCintegration.png" style="width: auto; max-width: 566px; height: 3cm; max-height: 294px;"/>
+ <img class="embedded" src="RCsteadystate.png" alt="Figure RCsteadystate.png" style="width: auto; max-width: 566px; height: 3cm; max-height: 294px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--82"></a>Procédure
+</div>
+<ul>
+<li>
+Sélectionner l’option signal triangulaire pour WG
+</li>
+<li>
+Régler WG à 500 Hz (<span class="formula"><i>T</i> = 2<i>ms</i></span>), <span class="formula"><i>R</i> = 1<i>k</i>Ω</span> et <span class="formula"><i>C</i> = 1<span class="text"> µF</span></span>
+</li>
+<li>
+Ajuster l’échelle horizontale pour voir plus de quatre cycles.
+</li>
+<li>
+Recommencer la même chose pour le différenciateur RC, à <span class="formula">50<i>Hz</i></span>.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--83"></a>Discussion
+</div>
+<div class="Unindented">
+L’intégration d’un signal triangulaire donne une forme parabolique et la différenciation donne une forme carrée. La différenciation ne peut être montrée qu’à basse fréquence. Essayer cela pour d’autres formes de signaux, par exemple signal carré. Si on intègre un signal carré on est censé obtenir un signal triangulaire.
+</div>
+<div class="Indented">
+<img class="embedded" src="RCintegration.png" alt="Figure RCintegration.png" style="width: auto; max-width: 566px; height: 4cm; max-height: 294px;"/>
+ <img class="embedded" src="RCdifferentiation.png" alt="Figure RCdifferentiation.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.6">4.6</a> Analyse de Fourier<a class="Label" name="sec:Fourier-Transform-**"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier la transformée de Fourier d’un signal. Représentations temporelle et fréquentielle d’un signal.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--84"></a>Procédure
+</div>
+<ul>
+<li>
+Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif (interrupteur à glissière sur le boîtier)
+</li>
+<li>
+Activer A1 et A2, sélectionner le calibre 4 V
+</li>
+<li>
+Régler WG et SQ1 à 500 Hz
+</li>
+<li>
+Cliquer sur le bouton FFT
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--85"></a>Discussion
+</div>
+<div class="Unindented">
+Dans le graphique de la transformée de Fourier, la fréquence est sur l’axe x et l’axe y montre l’intensité relative des composants fréquentiels du signal. On appelle ça la représentation fréquentielle<span class="FootOuter"><span class="SupFootMarker"> [B] </span><span class="HoverFoot"><span class="SupFootMarker"> [B] </span>http://en.wikipedia.org/wiki/Fourier_transform</span></span>. Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics plus petits sont une mesure de la distorsion du signal sinusoïdal.
+</div>
+<div class="Indented">
+Un signal carré peut être représenté comme <span class="formula"><i>f</i>(<i>θ</i>) = <i>sin</i>(<i>θ</i>) + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>sin</i>(3<i>θ</i>)</span><span class="ignored">)/(</span><span class="denominator">3</span><span class="ignored">)</span></span> + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>sin</i>(5<i>θ</i>)</span><span class="ignored">)/(</span><span class="denominator">5</span><span class="ignored">)</span></span> + ⋯</span>. Dans la transformée de Fourier d’un signal carré de fréquence <span class="formula"><i>f</i></span> , il y aura un composant <span class="formula">3<i>f</i></span> (dont l’amplitude est le tiers du composant <span class="formula"><i>f</i></span> ), un composant <span class="formula">5<i>f</i></span> (amplitude un cinquième), etc. comme montré sur la figure.
+</div>
+<div class="Indented">
+<img class="embedded" src="sqwaveFFT.png" alt="Figure sqwaveFFT.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+ <img class="embedded" src="sinewaveFFT.png" alt="Figure sinewaveFFT.png" style="width: auto; max-width: 640px; height: 5cm; max-height: 542px;"/>
+
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-4.7">4.7</a> Induction électromagnétique
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Explorer la tension induite aux bornes d’un bobinage par un champ magnétique variable, en laissant tomber un petit aimant cylindrique à travers le bobinage. On utilise un tube pour guider l’aimant à travers le bobinage.
+</div>
+<div class="Indented">
+<img class="embedded" src="induction.png" alt="Figure induction.png" style="width: auto; max-width: 360px; height: 3cm; max-height: 262px;"/>
+ <img class="embedded" src="induction-screen.png" alt="Figure induction-screen.png" style="width: auto; max-width: 580px; height: 3cm; max-height: 475px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--86"></a>Procédure
+</div>
+<ul>
+<li>
+Cliquer sur «Démarrer le scan». Un trace horizontale devrait apparaître
+</li>
+<li>
+Laisser tomber l’aimant à travers la bobine, jusqu’à ce qu’on capture une trace.
+</li>
+<li>
+Recommencer le processus en changeant des paramètres comme la force de l’aimant, la vitesse, etc.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--87"></a>Discussion
+</div>
+<div class="Unindented">
+Le résultat est montré sur la figure. L’amplitude augmente avec la vitesse de l’aimant. D’après le graphique, on peut déterminer le temps que met l’aimant à traverser le bobinage.
+</div>
+<div class="Indented">
+Le deuxième pic est plus grand que le premier. Pourquoi ? À quel endroit est censé se trouver l’aimant quand la tension induite passe par zéro ? Laisser tomber l’aimant depuis différentes hauteurs et faire un graphique de la tension crête en fonction de la racine carrée de la hauteur de chute.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-5">5</a> Le son
+</h1>
+<div class="Unindented">
+Les variations de pression, de part et d’autres d’une pression d’équilibre, transmises par un milieu s’appellent un son. Ce sont des ondes longitudinales. Si on déplace une feuille de papier d’avant en arrière dans l’air on peut générer ce type d’ondes de pression, comme avec le cône en papier d’un haut-parleur. Quand la fréquence est dans l’intervalle de 20 à 20000 Hz, on peut entre le son. Dans ce chapitre, on va générer du son à partir de signaux électriques, le détecter à l’aide du microphone (un capteur de pression !) et étudier des propriétés telles que l’amplitude et la fréquence. La vitesse du son est mesurée en observant le déphasage d’un son numérisé, avec la distance.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-5.1">5.1</a> Réponse en fréquence d’un piézo<a class="Label" name="sec:Resonance-frequency-of"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Faire le graphique de la courbe de réponse d’un disque piézo en scannant la fréquence et en mesurant l’amplitude à la sortie du microphone.
+</div>
+<div class="Indented">
+<img class="embedded" src="sound-capture.png" alt="Figure sound-capture.png" style="width: auto; max-width: 886px; height: 3cm; max-height: 294px;"/>
+ <img class="embedded" src="piezo-freq-resp.png" alt="Figure piezo-freq-resp.png" style="width: auto; max-width: 661px; height: 3cm; max-height: 444px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--88"></a>Procédure
+</div>
+<ul>
+<li>
+Faire les connexions et fixer le buzzer et le microphone face à face
+</li>
+<li>
+Cliquer sur le bouton DÉMARRER
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--89"></a>Discussion
+</div>
+<div class="Unindented">
+Le graphique de l’amplitude en fonction de la fréquence est montré sur la figure. L’amplitude est maximale près de 3500 Hz.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-5.2">5.2</a> Vitesse du son
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Calculer la vitesse du son en mesurant les variation de pression selon la distance.
+</div>
+<div class="Indented">
+Le son voyage comme une série de compressions et d’expansions. La figure <a class="Reference" href="#fig:Sound-waves">5.1↓</a>(a) montre les régions de haute et basse pression le long de la direction de propagation, en même temps que la sortie d’un capteur de pression aux positions correspondantes.
+</div>
+<div class="Indented">
+On peut faire un graphique des variations de pression à tout point en synchronisation avec la variation au point de départ. La phase de la sortie du microphone change quand on modifie sa distance au piézo. Quand on le déplace d’une longueur d’onde, la phase change de 360°. Si la phase change de <span class="formula"><i>X</i></span> degrés pour un changement de la distance de <span class="formula">△<i>D</i></span>, la longueur d’onde est donnée par <span class="formula"><i>λ</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">360 × △<i>D</i></span><span class="ignored">)/(</span><span class="denominator"><i>X</i></span><span class="ignored">)</span></span></span>. On obtient la vitesse du son en multipliant cela par la fréquence.
+</div>
+<div class="Indented">
+<div class="float">
+<a class="Label" name="fig:Sound-waves"> </a><div class="figure">
+(a)<img class="embedded" src="pics/sound_waves.png" alt="Figure pics/sound_waves.png" style="width: auto; max-width: 548px; height: 3cm; max-height: 290px;"/>
+ (b) <img class="embedded" src="schematics/sound-velocity.png" alt="Figure schematics/sound-velocity.png" style="width: auto; max-width: 710px; height: 3cm; max-height: 310px;"/>
+<div class="caption">
+Figure 5.1 (a) compressions et expansions le long de la direction de propagation d’un son. (b) schéma de montage
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--90"></a>Procédure
+</div>
+<ul>
+<li>
+Régler la fréquence au maximum de résonance en mesurant la réponse en amplitude <a class="Reference" href="#sec:Resonance-frequency-of">5.1↑</a>
+</li>
+<li>
+Fixer le piézo face au microphone, le long d’un axe
+</li>
+<li>
+Activer la mesure
+</li>
+<li>
+Ajuster la distance pour que les deux traces soient en phase
+</li>
+<li>
+Modifier la distance pour les déphaser de 180° ; cette distance est la demi-longueur d’onde.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--91"></a>Discussion
+</div>
+<div class="Unindented">
+À 3500 Hz, un changement de distance de 2 cm provoque un changement de phase de 176° à 102°. À l’aide de l’équation, <span class="formula"><i>v</i> = <i>f</i> × <span class="fraction"><span class="ignored">(</span><span class="numerator">360 × △<i>D</i></span><span class="ignored">)/(</span><span class="denominator"><i>X</i></span><span class="ignored">)</span></span> = 3500 × <span class="fraction"><span class="ignored">(</span><span class="numerator">360 × 2</span><span class="ignored">)/(</span><span class="denominator">(176 − 102)</span><span class="ignored">)</span></span> = 34054<i>cm</i>⋅<i>s</i><sup> − 1</sup></span>. Il est important de conserver le microphone et le disque piézo sur le même axe pour des résultats précis.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-5.3">5.3</a> Battements sonores<a class="Label" name="sec:Interference-of-sound"> </a>
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Étudier les interférences sonores de deux sources individuelles. Deux buzzers piézo sont alimentés par deux sources indépendantes, et le son est envoyé vers un microphone.
+</div>
+<div class="Indented">
+<img class="embedded" src="sound-beats.png" alt="Figure sound-beats.png" style="width: auto; max-width: 790px; height: 3cm; max-height: 278px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--92"></a>Procédure
+</div>
+<ul>
+<li>
+Régler WG à <span class="formula">3500<i>Hz</i></span> et SQ1 à <span class="formula">3600<i>Hz</i></span>
+</li>
+<li>
+Activer WG et SQ1 séparément pour vérifier la sortie MIC
+</li>
+<li>
+Ajuster la position des buzzers piézo, par rapport au microphone, pour obtenir pratiquement la même amplitude avec chacun
+</li>
+<li>
+Activer les deux en même temps pour obtenir la figure de battement
+</li>
+<li>
+Cliquer sur FFT pour voir les spectre fréquentiel
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--93"></a>Discussion
+</div>
+<div class="Unindented">
+Sur la figure on peut voir comment l’enveloppe de basse fréquence apparaît. La durée entre deux instants de pression minimale, sur l’enveloppe, correspond à la demi-fréquence des battements. La transformée de Fourier est montrée sur la figure.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-6">6</a> Mécanique et thermophysique
+</h1>
+<div class="Unindented">
+Les phénomènes de résonance sont étudiés avec le pendule forcé. On mesure la valeur de l’accélération due à la pesanteur à l’aide d’un pendule. On étudie le refroidissement d’un liquide à l’aide d’une sonde PT100.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-6.1">6.1</a> Accélération de la pesanteur à l’aide d’un pendule pesant
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer la période des oscillations d’un pendule pesant à l’aide d’une barrière photo-électrique et calculer l’accélération de la pesanteur. La période des oscillations d’une tige uniforme autour d’une de ses extrémités est donnée par <span class="formula"><i>T</i> = 2<i>π</i><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="fraction"><span class="ignored">(</span><span class="numerator">2ℓ</span><span class="ignored">)/(</span><span class="denominator">3<i>g</i></span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span>, où <span class="formula">ℓ</span> est la longueur et <span class="formula"><i>g</i></span> est l’accélération de la pesanteur. Le pendule (en forme de <span class="formula"><i>T</i></span>, un bord de couteau fixé à une tige de diamètre 6 mm) est mis à osciller entre une DEL et un photo-transistor, connectés à ExpEYES. La DEL et le photo-transistor sont montés sur un support en forme de <span class="formula"><i>U</i></span> comme le montre la figure.\begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="left">
+<img class="embedded" src="rod-pendulum.png" alt="Figure rod-pendulum.png" style="width: auto; max-width: 742px; height: 2cm; max-height: 438px;"/>
+ <img class="embedded" src="light-barrier-photo.jpg" alt="Figure light-barrier-photo.jpg" style="width: 5cm; max-width: 465px; height: auto; max-height: 304px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--94"></a>Procédure
+</div>
+<ul>
+<li>
+Mettre le pendule en oscillation et cliquer sur DÉMARRER
+</li>
+<li>
+Recommencer avec diverses longueurs de pendule.
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--95"></a>Discussion
+</div>
+<div class="Unindented">
+La période est mesurée 50 fois, à l’aide d’un pendule pesant de <span class="formula">14, 6<i>cm</i></span>, et la valeur moyenne est <span class="formula">0.627<i>s</i></span>. La valeur calculée de <span class="formula"><i>g</i></span> est <span class="formula">977, 4<i>cm</i>⋅<i>s</i><sup> − 2</sup></span>, légèrement différente de la valeur réelle pour les raisons suivantes : La longueur est mesurée depuis le bord du couteau jusqu’au bas de la tige et utilisée dans la formule. Mais il y a un peu de masse présente au-dessus du fil du couteau qui n’est pas comprise dans le calcul. Une autre raison peut être que le pendule n’est peut-être pas exactement vertical dans la position de repos.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-6.2">6.2</a> Vitesse angulaire d’un pendule
+</h2>
+<div class="Unindented">
+<span class="formula"><i>Objectif</i></span>
+</div>
+<div class="Indented">
+Étudier la nature des oscillations d’un pendule. Un encodeur angulaire est nécessaire pour mesurer le déplacement angulaire en fonction du temps. Mais en utilisant un moteur à courant continu comme capteur, on peut mesurer la vitesse angulaire en fonction du temps.\begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="center">
+<img class="embedded" src="pendulum-screen.png" alt="Figure pendulum-screen.png" style="width: 5cm; max-width: 664px; height: auto; max-height: 510px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--96"></a>Procédure
+</div>
+<ul>
+<li>
+Attacher un quelconque de pendule rigide à l’axe du moteur.
+</li>
+<li>
+Connecter le moteur entre A3 et GND
+</li>
+<li>
+Connecter une résistance de <span class="formula">100Ω</span> entre Rg et GND
+</li>
+<li>
+Mettre le pendule en oscillation et DÉMARRER la numérisation
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--97"></a>Discussion
+</div>
+<div class="Unindented">
+Le signal obtenu est montré sur la figure. Quand on le modélise par une équation <span class="formula"><i>A</i> = <i>A</i><sub>0</sub><i>sin</i><span class="symbol">(</span><i>ω</i><i>t</i> + <i>θ</i><span class="symbol">)</span>*exp<span class="symbol">(</span> − <i>dt</i><span class="symbol">)</span> + <i>C</i></span>, à l’aide de Grace, on a obtenu une fréquence angulaire de <span class="formula">10<i>Hz</i></span>.
+</div>
+<div class="Indented">
+Il convient de réaliser le pendule avec une masselotte assez lourde et une tige légère qui la relie à l’axe du moteur. Dans ce cas, le moteur à courant continu se comporte en générateur et la tension est proportionnelle à la vitesse angulaire.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-6.3">6.3</a> Résonance d’un pendule forcé
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Démontrer la résonance d’un pendule forcé.
+</div>
+<div class="Indented">
+<img class="embedded" src="driven-pendulum.png" alt="Figure driven-pendulum.png" style="width: auto; max-width: 534px; height: 3cm; max-height: 230px;"/>
+ <img class="embedded" src="resonance-pendulum.jpg" alt="Figure resonance-pendulum.jpg" style="width: auto; max-width: 300px; height: 3cm; max-height: 254px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--98"></a>Procédure
+</div>
+<div class="Unindented">
+Réaliser un pendule avec deux aimants boutons et un morceau de papier. Le suspendre et placer la bobine de 3000 tours à proximité, comme montré sur la figure.
+</div>
+<ul>
+<li>
+Connecter la bobine entre SQ1 et GND
+</li>
+<li>
+Calculer la fréquence de résonance d’après la longueur du pendule
+</li>
+<li>
+Scanner la fréquence au voisinage de la fréquence de résonance attendue
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--99"></a>Discussion
+</div>
+<div class="Unindented">
+Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude augmente. Un pendule long de 4 cm (du centre des aimants à l’axe de rotation) a résonné à environ <span class="formula">2, 5<i>Hz</i></span>, presque conformément à la fréquence naturelle calculée. La fréquence de résonance est donnée par <span class="formula"><i>f</i> = <span class="fraction"><span class="ignored">(</span><span class="numerator">1</span><span class="ignored">)/(</span><span class="denominator">2<i>π</i></span><span class="ignored">)</span></span><span class="sqrt"><span class="radical">√</span><span class="ignored">(</span><span class="root"><span class="fraction"><span class="ignored">(</span><span class="numerator"><i>g</i></span><span class="ignored">)/(</span><span class="denominator">ℓ</span><span class="ignored">)</span></span></span><span class="ignored">)</span></span></span>, où <span class="formula">ℓ</span> est la distance du centre de l’aimant au point de suspension et <span class="formula"><i>g</i></span> est l’accélération de la pesanteur.
+</div>
+<div class="Indented">
+Recommencer l’expérience en modifiant la longueur du pendule.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-6.4">6.4</a> Mesure de distance, par écho ultrasonore
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Mesurer une distance en mesurant le temps que prend une salve de fréquence <span class="formula">40<i>kHz</i></span> à faire un écho contre une surface dure.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--100"></a>Procédure
+</div>
+<div class="Unindented">
+<img class="embedded" src="sr04-dist.png" alt="Figure sr04-dist.png" style="width: auto; max-width: 566px; height: 3cm; max-height: 342px;"/>
+
+</div>
+<ul>
+<li>
+Placer uns surface dire, comme un carton, à quelques 10 cm du module d’écho
+</li>
+<li>
+Cliquer sur DÉMARRER
+</li>
+<li>
+Changer la distance
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--101"></a>Discussion
+</div>
+<div class="Unindented">
+La distance est calculée à partir du temps que met une salve sonore à parcourir aller-retour (en écho) la distance qui sépare le module de la surface réfléchissante. On peut mesurer la distance en fonction du temps, ce qui permet de calculer vitesse, accélération, etc.
+</div>
+<h2 class="Section">
+<a class="toc" name="toc-Section-6.5">6.5</a> Mesure de température à l’aide d’une sonde PT100
+</h2>
+<div class="Unindented">
+<b>Objectif</b>
+</div>
+<div class="Indented">
+Enregistrer la température d’un liquide à l’aide d’un thermomètre à résistance de platine. La résistance d’un module PT100 est dépendante de la température par la relation <span class="formula"><i>R</i><sub><i>T</i></sub> = <i>R</i><sub>0</sub><span class="symbol">[</span>1 + <i>AT</i> + <i>BT</i><sup>2</sup><span class="symbol">]</span></span>, où <span class="formula"><i>A</i> = 3, 9083 × 10<sup> − 3</sup></span>et <span class="formula"><i>B</i> =  − 5, 775 × 10<sup> − 7</sup></span>. \begin_inset Separator latexpar\end_inset
+</div>
+<div class="Indented">
+<div class="left">
+<img class="embedded" src="pt100.png" alt="Figure pt100.png" style="width: auto; max-width: 502px; height: 3cm; max-height: 438px;"/>
+ <img class="embedded" src="pt100-screen.png" alt="Figure pt100-screen.png" style="width: 5cm; max-width: 668px; height: auto; max-height: 522px;"/>
+
+</div>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--102"></a>Procédure
+</div>
+<ul>
+<li>
+Entrer le gain l’erreur d’offset et la valeur du courant de CSS
+</li>
+<li>
+Sélectionner l’intervalle de température et les intervalles de temps
+</li>
+<li>
+Sélectionner les paramètres requis et cliquer sur DÉMARRER
+</li>
+
+</ul>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--103"></a>Discussion
+</div>
+<div class="Unindented">
+Un graphique de refroidissement de l’eau d’un récipient est montré sur la figure.
+</div>
+<div class="Indented">
+Pour mesurer la résistance d’un élément PT100, on le connecte entre CSS et GND et on mesure la tension à ses bornes. Il est possible de mesurer la valeur exacte de CSS à l’aide d’un multimètre ou en mesurant la tension aux bornes d’une résistance connue. L’entrée de A3 est amplifiée 11 fois en connectant une résistance de <span class="formula">1<i>k</i>Ω</span> entre Rg et GND.
+</div>
+<div class="Indented">
+La résistance d’une sonde PT100 est <span class="formula">100Ω</span> à <span class="formula">0<sup>0</sup><i>C</i></span>. Elle change pratiquement de <span class="formula">0.4Ω ⁄ <span class="text"> °</span><i>C</i></span> , modifiant la tension de <span class="formula">0, 4<i>mV</i></span>. La sortie du convertisseur analogique numérique change d’un bit de poids faible pour un changement de <span class="formula">1, 22<i>mV</i></span> dans la tension d’entrée, donc un changement de température de moins de 3]C ne serait pas toujours détecté. On utilise un amplificateur non-inverseur pour augmenter la résolution. Le gain de cet amplificateur doit être tel que la température maximale mesurée donne une tension de sortie inférieure à 3,3 V. Modifier le champ «gain» selon.
+</div>
+<h1 class="Chapter">
+<a class="toc" name="toc-Chapter-7">7</a> Coder en Python pour expEYES-17
+</h1>
+<div class="Unindented">
+Les programmes à interface graphique décrit dans les chapitres précédents sont prévus pour un ensemble fini d’expériences. Pour développer de nouvelles expériences, on doit savoir comment accéder aux fonctionnalités d’expEYES par logiciel. Les appels de fonctions importants pour communiquer avec l’appareil sont donnés ci-dessous.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--104"></a>Établir la Connexion
+</div>
+<div class="Unindented">
+Pour accéder au matériel de EYES17, les modules Python pour <tt>eyes17</tt> doivent être installés. Il sont censés se trouver dans un répertoire nommé <tt>eyes17</tt>, qui pourrait être dans votre répertoire personnel ou sur le «Python PATH». <b>Tout programme doit commencer par les deux lignes suivantes :</b>
+</div>
+<pre class="LyX-Code">
+import eyes17.eyes
+p = eyes17.eyes.open()
+</pre>
+<div class="Unindented">
+La variable <tt>p</tt> est l’objet logiciel qui représente le matériel.
+</div>
+<div class="Indented">
+Les sections suivantes expliquent les appels de fonctions Python pour accéder au matériel EYES17. Chaque appel de fonction est expliquer avec un exemple d’utilisation.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-1"></a>set_pv1(v), set_pv2(v)
+</div>
+<div class="Unindented">
+Règle la tension continue en PV1 et PV2. L’intervalle pour PV1 est de -5 à 5. L’intervalle pour PV2 est de -3,3 à 3,3.
+</div>
+<pre class="LyX-Code">
+print p.set_pv1(4) 
+print p.set_pv2(2.1)
+</pre>
+<div class="Unindented">
+La valeur assignée à la sortie est affichée. Mesurer les tensions avec un voltmètre.
+</div>
+<div class="Paragraph">
+<a class="toc" name="toc-Paragraph-2"></a>get_voltage(input) 
+</div>
+<div class="Unindented">
+Renvoie la tension de l’entrée spécifiée.
+</div>
+<pre class="LyX-Code">
+print p.get_voltage(’A1’)
+print p.get_voltage(’A2’)
+print p.get_voltage(’A3’)
+print p.get_voltage(’MIC’)
+print p.get_voltage(’SEN’)
+</pre>
+<div class="Unindented">
+Connecter PV1 à A1, et utiliser <tt>set_pv1()</tt> et <tt>get_voltage(’A1’)</tt> ensemble. Cette fonction ajuste le calibre d’entrée par essais et erreurs, selon la valeur du signal d’entrée.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--105"></a>get_voltage_time(input)
+</div>
+<div class="Unindented">
+Renvoie un tuple, qui contient le timbre à date de l’ordinateur et la tension à l’entrée spécifiée.
+</div>
+<pre class="LyX-Code">
+print p.get_voltage_time(’A1’)
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--106"></a>get_resistance()
+</div>
+<div class="Unindented">
+Renvoie la valeur de la résistance connectée à SEN, qui devrait être entre <span class="formula">100Ω</span> et <span class="formula">100<i>k</i>Ω</span> pour une précision raisonnable.
+</div>
+<pre class="LyX-Code">
+print p.get_resistance()
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--107"></a>get_capacitance() 
+</div>
+<div class="Unindented">
+Renvoie la valeur de la capacité connectée en IN1 (fonctionne bien dans le domaine du <span class="formula"><i>pF</i></span>)
+</div>
+<pre class="LyX-Code">
+print p.get_capacitance()
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--108"></a>get_version()
+</div>
+<div class="Unindented">
+Renvoie la version du firmware.
+</div>
+<div class="Indented">
+<tt>print p.get_version()</tt>
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--109"></a>get_temperature()
+</div>
+<div class="Unindented">
+Renvoie la température du processeur à l’intérieur de EYES17
+</div>
+<pre class="LyX-Code">
+print p.get_temperature()
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--110"></a>set_state(OUPUT=value)
+</div>
+<div class="Unindented">
+Règle l’état logique de la sortie OD1, SQ1, etc. Connecter OD1 à A1 et lancer :
+</div>
+<pre class="LyX-Code">
+p.set_state(OD1=1) 
+print p.get_voltage(’A1’)
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--111"></a>set_sine(frequency)
+</div>
+<div class="Unindented">
+Génère le signal sinusoïdal de la fréquence demandée sur WG (intervalle de <span class="formula">5<i>Hz</i></span> à <span class="formula">5000<i>Hz</i></span>). Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie la valeur effectivement adoptée.
+</div>
+<pre class="LyX-Code">
+print p.set_sine(502)
+</pre>
+<div class="Unindented">
+<tt>502.00803</tt>
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--112"></a>set_sine_amp(amplitude)
+</div>
+<div class="Unindented">
+L’amplitude peut être réglée à trois valeurs prédéfinies de tension crête(0 pour avoir <span class="formula">80<i>mV</i></span>, 1 pour avoir <span class="formula">1<i>V</i></span>, 3 pour avoir <span class="formula">3<i>V</i></span>).
+</div>
+<pre class="LyX-Code">
+p.set_sine_amp(2)
+</pre>
+<div class="Unindented">
+Règle l’amplitude à <span class="formula">3<i>V</i></span> crête.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--113"></a>set_sqr1(frequency)
+</div>
+<div class="Unindented">
+Règle la fréquence de la sortie SQ1 (intervalle de <span class="formula">4<i>Hz</i></span> à <span class="formula">1<i>MHz</i></span>). Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie la valeur effectivement adoptée.
+</div>
+<pre class="LyX-Code">
+print p.set_sqr1(15030)
+</pre>
+<div class="Unindented">
+<tt>15030.53</tt>
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--114"></a>set_sqr1_slow(frequency)
+</div>
+<div class="Unindented">
+Règle la fréquence de la sortie SQ1 (intervalle de <span class="formula">0, 1<i>Hz</i></span> à <span class="formula">1<i>MHz</i></span>). Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie la valeur effectivement adoptée. La résolution est fine mais WG est désactivé quand on commande SQ1 de cette façon.
+</div>
+<pre class="LyX-Code">
+print p.set_sqr1_slow(0.5)
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--115"></a>set_sqr2(frequency)
+</div>
+<div class="Unindented">
+Similaire à set_sqr1() mais SQ2 n’est pas disponible en même temps que WG, une seule des deux sorties est utilisable à la fois.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--116"></a>set_sqr1(frequency, dutyCyle)
+</div>
+<div class="Unindented">
+Règle la fréquence de la sortie SQ1 (intervalle de <span class="formula">0, 1<i>Hz</i></span> à <span class="formula">1<i>MHz</i></span>). Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie la valeur effectivement adoptée.
+</div>
+<pre class="LyX-Code">
+print p.set_sqr1(1000, 30)        # 1000 Hz, rapport cyclique 30%
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--117"></a>get_freq(input)
+</div>
+<div class="Unindented">
+Mesure la fréquence d’un signal carré sur l’entrée, IN2 ou SEN. Connecter SQ1 à IN2 et lancer le code :
+</div>
+<pre class="LyX-Code">
+p.set_sqr1(1000)
+print p.get_freq(’IN2’)
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--118"></a>duty_cycle(input)
+</div>
+<div class="Unindented">
+Mesure le rapport cyclique d’un signal carré , IN2 ou SEN. Connecter SQ1 à IN2 et lancer le code :
+</div>
+<pre class="LyX-Code">
+p.set_sqr1(1000, 30)
+print p.duty_cycle(’IN2’)
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--119"></a>r2ftime(input1, input2)
+</div>
+<div class="Unindented">
+Mesure l’intervalle de temps entre un front montant sur input1 jusqu’à un front descendant sur input2, les entrées peuvent éventuellement être les mêmes. On peut l’utiliser pour tester un signal carré.
+</div>
+<div class="Indented">
+Connecter SQ1 à IN2 et lancer le code :
+</div>
+<pre class="LyX-Code">
+p.set_sqr1(1000, 30)
+print p.r2ftime(’IN2’, ’IN2’)
+</pre>
+<div class="Unindented">
+<tt>0.0003</tt>
+</div>
+<div class="Indented">
+Le signal carré à <span class="formula">1<i>kHz</i></span> avec un rapport cyclique de 30% a une période de <span class="formula">1<i>ms</i></span> et reste à l’état HAUT durant <span class="formula">0, 3<i>ms</i></span>.
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--120"></a>multi_r2rtime(input, numCycles)
+</div>
+<div class="Unindented">
+Mesure l’intervalle de temps entre deux fronts montants de l’entrée <tt>input</tt>. La durée entre deux fronts montants est un cycle. On peut spécifier le nombre cycles à mesurer, la valeur par défaut étant 1. Les valeurs autorisées sont 1,2,4,8,12,16,32 et 48. On peut tester ça avec un signal carré.
+</div>
+<div class="Indented">
+Connecter SQ1 à IN2 et lancer le code :
+</div>
+<pre class="LyX-Code">
+p.set_sqr1(1000)
+print p.multi_r2rtime(’IN2’, 8)
+</pre>
+<div class="Unindented">
+<tt>0.008</tt>
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--121"></a>select_range(channel, range)
+</div>
+<div class="Unindented">
+Les calibres pour A1 et A2 peuvent être réglés depuis <span class="formula">±0.5<i>V</i></span> jusqu’à <span class="formula">±16<i>V</i></span>, à l’aide d’amplificateurs à gain programmable.
+</div>
+<pre class="LyX-Code">
+p.select_range(’A1’, 4)         # 4 volt maximum
+p.select_range(’A1’, 8)         # 8 volt maximum
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--122"></a>capture1(Input, Number of samples, time interval)
+</div>
+<div class="Unindented">
+Numérise l’entrée spécifiée. Le nombre d’échantillons peut aller jusqu’à 10000. La durée entre deux échantillons consécutifs est donnée en microseconde (intervalle de <span class="formula">2</span> à <span class="formula">1000<i>µs</i></span>).
+</div>
+<pre class="LyX-Code">
+print p.capture1(’A1’, 5, 5)
+</pre>
+<div class="Unindented">
+affichera deux tableaux de dates et de tensions.
+</div>
+<div class="Indented">
+Quand on a besoin de créer un graphique de la tension de sortie pour une meilleure compréhension, on peut le faire à l’aide du module <tt>matplotlib</tt>, importé grâce à l’interface <tt>pylab</tt>. Connecter WG à A1 à l’aide d’un fil et lancer :
+</div>
+<pre class="LyX-Code">
+from pylab import *
+p.set_sine_amp(2)
+p.set_sine(1000)
+p.select_range(’A1’, 4)
+t,v = p.capture1(’A1’, 300, 10)
+plot(t,v)
+show()
+</pre>
+<div class="Unindented">
+Le résultat de ce code est donné ci-dessous.
+</div>
+<pre class="LyX-Code">
+<img class="embedded" src="pics/sine.png" alt="Figure pics/sine.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--123"></a>capture2(Number of samples, time interval)
+</div>
+<div class="Unindented">
+Numérise les entrées A1 et A2 simultanément. Le nombre d’échantillons peut aller jusqu’à 10000. La durée entre deux échantillons consécutifs est donnée en microseconde (intervalle de <span class="formula">2</span> à <span class="formula">1000<i>µs</i></span>).
+</div>
+<div class="Indented">
+Connecter WG à A1, et une diode entre A1 et A2. Lancer le code ci-dessous :
+</div>
+<pre class="LyX-Code">
+from pylab import *
+p.set_sine_amp(2)
+p.set_sine(1000)
+p.select_range(’A1’, 4)
+t,v,tt,vv = p.capture2(300, 10)
+plot(t,v)
+plot(tt,vv)
+show()
+</pre>
+<div class="Unindented">
+Le résultat de ce code est donné ci-dessous.
+</div>
+<div class="Indented">
+<img class="embedded" src="pics/halfwave.png" alt="Figure pics/halfwave.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+ <img class="embedded" src="pics/capture4.png" alt="Figure pics/capture4.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+
+</div>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--124"></a>capture4(Number of samples, time interval)
+</div>
+<div class="Unindented">
+Numérise les entrées A1, A2, A3 et MIC simultanément. Le nombre d’échantillons peut aller jusqu’à 10000. La durée entre deux échantillons consécutifs est donnée en microseconde (intervalle de <span class="formula">2</span> à <span class="formula">1000<i>µs</i></span>).
+</div>
+<div class="Indented">
+Connecter WG à A3 et lancer le code donné ci-dessous. Le résultat est montré ci-dessus.
+</div>
+<pre class="LyX-Code">
+from pylab import *
+p.set_sine_amp(2)
+p.set_sine(1000)
+p.select_range(’A1’, 4)
+res = p.capture4(300, 10)
+plot(res[4],res[5])        # A3
+plot(res[6],res[7])        # MIC
+show()
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--125"></a>set_wave(frequency, wavetype)
+</div>
+<div class="Unindented">
+Si le paramètre <tt>wavetype</tt> n’est pas spécifié, cela génère un signal en utilisant la table d’onde existante. Si <tt>wavetype</tt> est spécifié (<tt>’sine’</tt> ou <tt>’tria’</tt>), la table d’onde correspondante est chargée.
+</div>
+<pre class="LyX-Code">
+from pylab import *
+p.set_wave(1000, ’sine’)
+p.set_wave(100)       # fréq. 100Hz avec la table existante
+x,y = p.capture1(’A1’, 500,50)
+plot(x,y)
+p.set_wave(100, ’tria’)  # table d’onde triangulaire et 100 Hz
+x,y = p.capture1(’A1’, 500,50)
+plot(x,y)
+show()
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--126"></a>load_equation(function, span)
+</div>
+<div class="Unindented">
+Crée la table d’onde en utilisant l’équation. Connecter WG à A1 et lancer le code ci-dessous. Le résultat est montré plus bas.
+</div>
+<pre class="LyX-Code">
+from pylab import *
+
+def f1(x):
+    return sin(x) + sin(3*x)/3 
+
+p.load_equation(f1, [-pi,pi])
+p.set_wave(400)
+x,y = p.capture1(’A1’, 500,10)
+plot(x,y)
+show()
+<img class="embedded" src="pics/loadEquation.png" alt="Figure pics/loadEquation.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+  <img class="embedded" src="pics/loadTable.png" alt="Figure pics/loadTable.png" style="width: auto; max-width: 640px; height: 4cm; max-height: 542px;"/>
+
+</pre>
+<div class="Paragraph-">
+<a class="toc" name="toc-Paragraph--127"></a>load_table(function, span)
+</div>
+<div class="Unindented">
+On peut aussi charger la table d’onde avec un tableau de 512 éléments. Connecter WG à A1 et lancer le code ci-dessous. Après l’opération de valeur absolue, la table commence par 256, puis descend jusqu’à 0 et enfin remonte jusqu’à 255, ce qui trace un signal triangulaire. Le résultat dû à ce tableau est montré ci-dessus.
+</div>
+<pre class="LyX-Code">
+from pylab import *
+x = arange(-256, 256)
+x = abs(x)
+p.load_table(x)
+p.set_wave(400)
+x,y = p.capture1(’A1’, 500,10)
+plot(x,y)
+show()
+</pre>
+
+<hr class="footer"/>
+<div class="footer" id="generated-by">
+Document generated by <a href="http://elyxer.nongnu.org/">eLyXer 1.2.5 (2013-03-10)</a> le <span class="create-date">2018-01-05T23:03:49.856574</span>
+</div>
+</div>
+</body>
+</html>
