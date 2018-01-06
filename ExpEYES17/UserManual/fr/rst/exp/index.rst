@@ -3,10 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation de EYES17
-***********************
+Le manuel de l'utilisateur d'expEYES17
+**************************************
 Cette documentation est calquée sur le fonctionnement du logiciel ``eyes17``
 
+	 
 Expériences « scolaires »
 *************************
 

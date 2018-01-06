@@ -137,6 +137,13 @@ latex:
 .PHONY: latexpdf
 latexpdf:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo copying a few files
+	cp cover/coverpage.pdf $(BUILDDIR)/latex
+	@echo modifying the title page
+	cd $(BUILDDIR)/latex; \
+	  sed -i '/\\usepackage{sphinx}/a\
+\\usepackage{pdfpages}' eyes17.tex; \
+	  sed -i 's/\\maketitle/\\includepdf{coverpage.pdf}/' eyes17.tex;
 	@echo launching prettyLaTeX.py
 	python3 prettyLaTeX.py $(BUILDDIR)/latex eyes17.tex
 	@echo generating PDF images in the LaTeX directory
