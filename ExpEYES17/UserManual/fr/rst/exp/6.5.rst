@@ -1,6 +1,7 @@
 .. 6.5
    
 Mesure de température à l’aide d’une sonde PT100
+------------------------------------------------
 
 **Objectif**
 

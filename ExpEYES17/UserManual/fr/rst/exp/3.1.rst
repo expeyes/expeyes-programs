@@ -1,6 +1,7 @@
 .. 3.1
    
 Redressement demi-onde à l’aide d’une jonction PN
+-------------------------------------------------
 
 **Objectif**
 
