@@ -1,47 +1,215 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="res-body" width="100%" height="100%"  viewBox="-6 -6 614 358">
-<desc>
+   id="res-body"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 614 358"
+   sodipodi:docname="res-body.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/res-body.png"
+   inkscape:export-xdpi="47.213116"
+   inkscape:export-ydpi="47.213116"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata83">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs81" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1668"
+     inkscape:window-height="1013"
+     id="namedview79"
+     showgrid="false"
+     inkscape:zoom="1.7491857"
+     inkscape:cx="307"
+     inkscape:cy="179"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="res-body" />
+  <desc
+     id="desc2">
 XCircuit Version 3.7
-File "res-body.ps" Page 1
+File &quot;res-body.ps&quot; Page 1
 </desc>
-<g stroke="black">
-<g transform="matrix(   1    0   -0    1  48  64)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 256  64)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A2</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 496  64)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
-</text></g>
-<path d="M352,192 L380,192 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M480,192 L452,192 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M452,192 L446,178 434,206 422,178 410,206 398,178 386,206 380,192 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M16,176 L16,240 112,240 112,176 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M32,16 L32,80 112,80 112,16 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M240,16 L240,80 320,80 320,16 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M480,16 L480,80 592,80 592,16 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 368 256)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">100K</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1  32 224)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">PV1</tspan>
-</text></g>
-<ellipse cx="496" cy="192" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<ellipse cx="336" cy="192" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M0,0 L0,352 608,352 608,0 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M112,208 C128,208 144,272 160,272 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M320,192 C336,192 256,224 272,272 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1  96 304)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">hand</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 224 304)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">hand</tspan>
-</text></g>
-<path d="M112,208 C128,208 192,112 112,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M320,192 C336,192 224,160 272,80 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M496,176 C512,176 560,160 544,80 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-</g>
+  <text
+     font-size="40"
+     id="text6"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="51.360626"
+     y="62.580002">
+    <tspan
+       x="51.360626"
+       y="62.580002"
+       id="tspan4">A1</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text12"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="256.08063"
+     y="62.580002">
+    <tspan
+       x="256.08063"
+       y="62.580002"
+       id="tspan10">A2</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text18"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="491.78"
+     y="62.580002">
+    <tspan
+       x="491.78"
+       y="62.580002"
+       id="tspan16">GND</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path22"
+     d="m 352,192 h 28" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path24"
+     d="M 480,192 H 452" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path26"
+     d="m 452,192 -6,-14 -12,28 -12,-28 -12,28 -12,-28 -12,28 -6,-14" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path28"
+     d="m 16,176 v 64 h 96 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path30"
+     d="m 32,16 v 64 h 80 V 16 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path32"
+     d="m 240,16 v 64 h 80 V 16 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path34"
+     d="M 480,16 V 80 H 592 V 16 Z" />
+  <text
+     font-size="40"
+     id="text38"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="356"
+     y="252">
+    <tspan
+       x="356"
+       y="252"
+       id="tspan36">100 kΩ</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text44"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="28.52125"
+     y="222.58">
+    <tspan
+       x="28.52125"
+       y="222.58"
+       id="tspan42">PV1</tspan>
+  </text>
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse48"
+     cy="192"
+     cx="496" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse50"
+     cy="192"
+     cx="336" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path52"
+     d="M 0,0 V 352 H 608 V 0 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path54"
+     d="m 112,208 c 16,0 37.71695,29.12663 36.56611,64"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path56"
+     d="m 320,192 c 16,0 -50.85102,33.71508 -48,80"
+     sodipodi:nodetypes="cc" />
+  <text
+     font-size="40"
+     id="text60"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="108"
+     y="305.24039">
+    <tspan
+       x="108"
+       y="305.24039"
+       id="tspan58">main</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path70"
+     d="m 112,208 c 16,0 80,-96 0,-160" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path72"
+     d="m 320,192 c 16,0 -96,-32 -48,-112" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path74"
+     d="m 496,176 c 16,0 64,-16 48,-96" />
+  <text
+     font-size="40"
+     id="text60-3"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="233.5632"
+     y="305.24039">
+    <tspan
+       x="233.5632"
+       y="305.24039"
+       id="tspan58-6">main</tspan>
+  </text>
 </svg>

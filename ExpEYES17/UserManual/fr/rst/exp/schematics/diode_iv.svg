@@ -1,40 +1,201 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="diode_iv" width="100%" height="100%"  viewBox="-6 -6 438 230">
-<desc>
+   id="diode_iv"
+   width="436"
+   height="228"
+   viewBox="-6 -6 436 228"
+   sodipodi:docname="diode_iv.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/diode_iv.png"
+   inkscape:export-xdpi="66.359444"
+   inkscape:export-ydpi="66.359444"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata69">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs67" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1668"
+     inkscape:window-height="1013"
+     id="namedview65"
+     showgrid="false"
+     fit-margin-top="1"
+     fit-margin-left="1"
+     fit-margin-right="1"
+     fit-margin-bottom="1"
+     inkscape:zoom="2.3990826"
+     inkscape:cx="218"
+     inkscape:cy="114"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="diode_iv" />
+  <desc
+     id="desc2">
 XCircuit Version 3.7
-File "diode_iv.ps" Page 1
+File &quot;diode_iv.ps&quot; Page 1
 </desc>
-<g stroke="black">
-<path d="M96,48 L124,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M224,48 L196,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M196,48 L190,34 178,62 166,34 154,62 142,34 130,62 124,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 144  96)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">1K</tspan>
-</text></g>
-<ellipse cx="240" cy="48" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M176,160 L176,208 240,208 240,160 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M304,160 L304,208 400,208 400,160 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M0,0 L0,224 432,224 432,0 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<ellipse cx="368" cy="48" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<ellipse cx="80" cy="48" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M288,30 L320,48 288,66 z" fill="#000000" stroke="none" />
-<path d="M256,48 L288,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M352,48 L320,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M320,30 L320,66 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M16,160 L16,208 112,208 112,160 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M368,64 C369,64 432,128 368,160 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M208,160 C209,160 272,112 240,64 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M64,160 C48,128 16,112 80,64 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1  32 192)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">PV1</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 192 192)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 304 192)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
-</text></g>
-</g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path22"
+     d="M -4,-4 V 220 H 428 V -4 Z" />
+  <g
+     id="g132"
+     transform="translate(3.999999,-10.99288)">
+    <path
+       d="m 96,48 h 28"
+       id="path4"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="M 224,48 H 196"
+       id="path6"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="M 196,48 190,34 178,62 166,34 154,62 142,34 130,62 124,48"
+       id="path8"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <text
+       y="102.28107"
+       x="118.87572"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text12"
+       font-size="40">
+      <tspan
+         id="tspan10"
+         y="102.28107"
+         x="118.87572">1 kΩ</tspan>
+    </text>
+    <circle
+       cx="240"
+       cy="48"
+       id="ellipse16"
+       r="16"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 176,160 v 48 h 64 v -48 z"
+       id="path18"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 304,160 v 48 h 96 v -48 z"
+       id="path20"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <circle
+       cx="368"
+       cy="48"
+       id="ellipse24"
+       r="16"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <circle
+       cx="80"
+       cy="48"
+       id="ellipse26"
+       r="16"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 288,30 32,18 -32,18 z"
+       id="path28"
+       inkscape:connector-curvature="0"
+       style="fill:#000000;stroke:none" />
+    <path
+       d="m 256,48 h 32"
+       id="path30"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="M 352,48 H 320"
+       id="path32"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="M 320,30 V 66"
+       id="path34"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 16,160 v 48 h 96 v -48 z"
+       id="path36"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       sodipodi:nodetypes="cc"
+       d="m 368,64 c 15.48313,15.049917 18.77629,74.04971 0,96"
+       id="path38"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 208,160 c 1,0 64,-48 32,-96"
+       id="path40"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       sodipodi:nodetypes="cc"
+       d="M 64,160 C 52.606119,126.32505 60.804971,94.413002 80,64"
+       id="path42"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <text
+       y="198.58"
+       x="28.52125"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text46"
+       font-size="40">
+      <tspan
+         id="tspan44"
+         y="198.58"
+         x="28.52125">PV1</tspan>
+    </text>
+    <text
+       y="198.58"
+       x="187.36063"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text52"
+       font-size="40">
+      <tspan
+         id="tspan50"
+         y="198.58"
+         x="187.36063">A1</tspan>
+    </text>
+    <text
+       y="198.58"
+       x="307.78"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text58"
+       font-size="40">
+      <tspan
+         id="tspan56"
+         y="198.58"
+         x="307.78">GND</tspan>
+    </text>
+  </g>
 </svg>

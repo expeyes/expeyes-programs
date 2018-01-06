@@ -1,243 +1,256 @@
-%!PS-Adobe-3.0 EPSF-3.0
-%%Title: RLsteadystate.ps
-%%Creator: XCircuit v3.7 rev55
-%%CreationDate: Thu Sep 14 14:52:00 2017
+%!PS-Adobe-3.0
+%%Creator: cairo 1.14.8 (http://cairographics.org)
+%%CreationDate: Sat Jan  6 15:16:33 2018
 %%Pages: 1
-%%BoundingBox: 68 68 286 184
-%%DocumentNeededResources: font Helvetica Times-Roman 
+%%DocumentData: Clean7Bit
+%%LanguageLevel: 2
+%%DocumentMedia: 150x78mm 425 221 0 () ()
+%%BoundingBox: 3 -1 425 218
 %%EndComments
 %%BeginProlog
-%
-%  PostScript prolog for output from xcircuit
-%  Version: 3.7
-%
-%  Electrical circuit (and otherwise general) drawing program
-%
-%  Written by Tim Edwards 8/5/93--11/1/10  (tim.edwards@multigig.com)
-%  The Johns Hopkins University (1993-2004)
-%  MultiGiG, Inc. (2004-present)
-%
-%%BeginResource: procset XCIRCproc 3.7 2
-%
-% supporting definitions --- these are the primary xcircuit types.
-
-/XCIRCsave save def
-/topmat matrix currentmatrix def
-
-/fontslant { /slant exch def [1 0 slant 1 0 0] 
-    exch findfont exch makefont dup length dict /ndict exch def
-    { 1 index /FID ne { ndict 3 1 roll put } { pop pop } ifelse } forall
-    ndict definefont pop} def
-/ul { dup type /stringtype eq showflag 1 eq and { gsave 
-   currentpoint topmat setmatrix 0 0 moveto 2 index stringwidth pop (_)
-   false charpath flattenpath pathbbox grestore exch pop 1 index
-   sub setlinewidth exch pop currentpoint 3 -1 roll add moveto 0
-   rlineto stroke moveto } if } def
-/ol { dup type /stringtype eq showflag 1 eq and { gsave gsave
-   currentpoint topmat setmatrix 2 index stringwidth pop 3 index
-   true charpath flattenpath pathbbox grestore exch pop
-   exch pop topmat setmatrix (_) true charpath pathbbox grestore
-   exch pop 1 index sub setlinewidth exch pop currentpoint
-   exch 4 1 roll exch sub add moveto pop 0 rlineto stroke
-   moveto } if } def
-/stW { gsave currentpoint newpath moveto true charpath flattenpath
-	pathbbox pop exch pop sub grestore } def
-/Ts {mark Tabs aload pop counttomark 1 add array astore /Tabs exch def Tabs
-	0 currentpoint pop put} def
-/Tbn {mark Tabs aload pop counttomark dup 2 add 1 roll cleartomark 1 sub} def
-/Tb { 0 1 Tbn {Tabs exch get dup currentpoint pop lt
-	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
-/Tf { Tbn -1 0 {Tabs exch get dup currentpoint pop gt
-	{currentpoint exch pop moveto exit} {pop} ifelse } for } def
-/qS { (aa) stW (a a) stW sub 4 div 0 Kn } def
-/hS { qS qS } def
-/pspc 0 def
-/cf0 { scalefont setfont } bind def
-/Kn { dup kY add /kY exch def rmoveto } bind def
-/ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
-	0.33 mul neg Kn} def
-/Ss { /fscale fscale 0.67 mul def currentfont 0.67 cf0 0 fscale0 fscale mul
-	0.67 mul Kn } def
-/ns { 0 kY neg Kn /kY 0 def /fscale 1.0 def xfont0 1.0 cf0 } def
-/CR { ns 0 /Bline Bline fscale0 neg add def Bline moveto } def
-/cf { dup type /realtype ne {1.0} if exch findfont exch kY 0 eq
-	{ 40 mul dup /fscale0 exch def cf0 /xfont0 currentfont def}
-	{fscale0 mul fscale mul cf0} ifelse } def
-/ctmk { counttomark dup 2 add -1 roll pop } bind def
-/label { gsave translate 0 0 moveto dup scale neg /rotval exch def
-	/just exch def just 384 and 0 gt {/mshow {pop} def} {/mshow {show}
-	def} ifelse just 16 and 0 gt {gsave rotval rotate 0 1 dtransform
-	gsave pagemat setmatrix idtransform exch grestore 1 0 dtransform
-	gsave pagemat setmatrix idtransform exch grestore dup abs 1e-9 lt
-	{pop mul 0 gt} {3 1 roll pop pop 0 lt} ifelse grestore {-1 /rotval
-	rotval neg def /just just dup 3 and 1 ne {3 xor} if def} {1} ifelse
-	exch -1e-9 lt {-1 /rotval rotval neg def /just just dup 12 and
-	4 ne {12 xor} if def} {1} ifelse scale } if /showflag 0 def
-	/fspc pspc def /Bline 0 def /Tabs 0 array def /fscale 1.0 def
-	/kY 0 def gsave dup 1 add copy 0 exch 1 0 dtransform exch atan rotate
-	{exch dup type /stringtype eq {true charpath flattenpath} {dup type
-	/arraytype eq {exec} {12 string cvs true charpath flattenpath} ifelse}
-	ifelse} repeat pop pathbbox grestore 3 -1 roll pop 3 1 roll just
-	1 and 0 gt {just 2 and 0 gt {exch pop neg fspc sub} {exch sub 0.5
-	mul neg} ifelse} {pop neg fspc add} ifelse exch Bline exch just 4
-	and 0 gt {just 8 and 0 gt {exch pop neg fspc sub} {add 0.5 mul neg}
-	ifelse} {pop neg fspc add} ifelse rotval rotate Kn currentpoint
-	translate /showflag 1 def /Bline 0 def /Tabs 0 array def /fscale
-	1.0 def /kY 0 def {dup type /stringtype eq {mshow} {dup type
-	/arraytype eq {exec} {12 string cvs mshow} ifelse} ifelse} repeat
-	grestore endclip} def
-/pinlabel { 4 index 32 and 0 ne hlevel 0 eq or { /pspc 10 def label
-	/pspc 0 def } { pop pop pop pop pop {pop} repeat } ifelse } def
-/pinglobal { pinlabel } def
-/infolabel { pinlabel } def
-/graphic { gsave 4 index cvx exec /DataSource get resetfile translate 0 0
-	moveto neg rotate dup scale cvx exec image grestore endclip} def
-
-/scb { setrgbcolor } bind def  /sce { defColor aload pop scb } bind def
-/cRedef {/defColor currentcolor 3 array astore def} def
-/begingate {dup type /dicttype ne {1 dict} if begin	% default params
-	dup type /dicttype ne {1 dict} if begin		% instanced params
-	/hlevel hlevel 1 add def /defColor currentcolor sce 3 array astore
-	def gsave sce translate 0 0 moveto neg rotate dup type /nametype
-	eq not { dup abs currentlinewidth exch div setlinewidth } { pop }
-	ifelse dup abs scale clipped 1 and 1 eq {/clipped clipped 1 add def}
-	if} bind def
-/endgate { /hlevel hlevel 1 sub def grestore defColor aload pop cRedef
-	scb end end endclip} bind def
-
-/hlevel 0 def
-/endclip {clipped 1 and 1 eq {grestore /clipped clipped 1 sub def} if} def
-/tmpa [1 0 0 1 0 0] def
-/gar {8 8 true tmpa {<c0 c0 00 00 0c 0c 00 00>} imagemask} bind
-{8 8 true tmpa {<30 70 60 02 03 07 06 20>} imagemask} bind
-{8 8 true tmpa {<0c 1e 1e 0c c0 e1 e1 c0>} imagemask} bind
-{8 8 true tmpa {<0f 0f 0f 0f f0 f0 f0 f0>} imagemask} bind
-{8 8 true tmpa {<3f f3 e1 e1 f3 3f 1e 1e>} imagemask} bind
-{8 8 true tmpa {<df cf 8f 9f fd fc f8 f9>} imagemask} bind
-{8 8 true tmpa {<ff 3f 3f ff ff f3 f3 ff>} imagemask} bind 7 array astore def
-/ppaint { gsave clip tmpa dup setmatrix pathbbox neg exch neg 4 2 roll
-  neg 4 -1 roll 2 copy gt {exch} if 8 div ceiling 8 mul 4 2 roll neg 2 copy
-  gt {exch} if 8 div ceiling 8 mul 3 -1 roll -8 5 -1 roll
-  { 3 index exch 5 exch put dup -8 3 index { 3 index
-  exch 4 exch put 3 index exec } for } for pop pop pop pop grestore } bind def
-/setstyles {
-  currentlinewidth mul setlinewidth /style exch def style 2048 and 0 gt
-  clipped 1 and 0 eq and {clip newpath /clipped clipped 1 add def} {
-  style 1 and 0 gt not {closepath} if
-  style 1024 and 0 gt {2 setlinecap 0 setlinejoin} if
-  style 2 and 0 gt {currentlinewidth 4 mul dup 2 array astore 0 setdash} if
-  style 4 and 0 gt {0.5 currentlinewidth 4 mul 2 array astore 0 setdash} if
-  gsave style 16 and 0 gt { style 224 and -5 bitshift style 256 and 0 gt {
-  7 exch sub 8 div dup 1 exch sub currentrgbcolor 3 array astore
-  {3 copy mul add 4 1 roll pop} forall pop pop setrgbcolor eofill}
-  {dup 7 lt {gar exch get ppaint} {pop eofill} ifelse} ifelse}
-  {style 256 and 0 gt {1 setgray eofill} if} ifelse grestore style 8 and 0 gt 
-  style 512 eq or {newpath} {stroke} ifelse grestore endclip} ifelse} def     
-
-/addtoy {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll add
-	4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
-/addtoy1 {1 exch addtoy pop} def
-/addtoy3 {3 exch addtoy pop} def
-/addtoy4 {4 exch addtoy pop} def
-/addtox {exch dup dup 2 mul 3 add 1 roll -1 1 { 4 1 roll dup 4 1 roll 3 -1 roll
-	add exch 4 -1 roll 2 mul 1 add index 2 mul 2 add 2 roll} for pop} def
-/addtox1 {1 exch addtox pop} def
-/addtox3 {3 exch addtox pop} def
-/addtox4 {4 exch addtox pop} def
-/polygon { gsave /num exch def moveto num 1 sub {lineto} repeat setstyles } def
-/xcarc   { gsave newpath arc setstyles } def
-/elb { matrix currentmatrix 7 -1 roll 7 -1 roll translate 5 1 roll 4 -1 roll
-	3 index div 1 scale } def
-/ele { 0 4 1 roll 0 4 1 roll } bind def
-/ellipse { gsave elb newpath ele arc setmatrix setstyles } def
-/pellip  { elb ele arc setmatrix } def
-/nellip  { elb ele arcn setmatrix } def
-/spline  { gsave moveto curveto setstyles } def
-/polyc   { {lineto} repeat } bind def
-/beginpath { gsave moveto } bind def
-/endpath { setstyles } bind def
-/bop	 { 1 setlinecap 2 setlinejoin 6 setmiterlimit 0 0 0 scb cRedef
-	/clipped 0 def} def
-/psinsertion {/PSobj save def /showpage {} def /setpagedevice {pop} def bop
-	rotate translate dup scale} def
-/end_insert {PSobj restore} def
-/setpagemat {/pagemat matrix currentmatrix def} def
-/inchscale  {setpagemat 0.375 mul dup scale} def
-/cmscale    {setpagemat 0.35433071 mul dup scale} def
-
-%%EndResource
+/languagelevel where
+{ pop languagelevel } { 1 } ifelse
+2 lt { /Helvetica findfont 12 scalefont setfont 50 500 moveto
+  (This print job requires a PostScript Language Level 2 printer.) show
+  showpage quit } if
+/q { gsave } bind def
+/Q { grestore } bind def
+/cm { 6 array astore concat } bind def
+/w { setlinewidth } bind def
+/J { setlinecap } bind def
+/j { setlinejoin } bind def
+/M { setmiterlimit } bind def
+/d { setdash } bind def
+/m { moveto } bind def
+/l { lineto } bind def
+/c { curveto } bind def
+/h { closepath } bind def
+/re { exch dup neg 3 1 roll 5 3 roll moveto 0 rlineto
+      0 exch rlineto 0 rlineto closepath } bind def
+/S { stroke } bind def
+/f { fill } bind def
+/f* { eofill } bind def
+/n { newpath } bind def
+/W { clip } bind def
+/W* { eoclip } bind def
+/BT { } bind def
+/ET { } bind def
+/pdfmark where { pop globaldict /?pdfmark /exec load put }
+    { globaldict begin /?pdfmark /pop load def /pdfmark
+    /cleartomark load def end } ifelse
+/BDC { mark 3 1 roll /BDC pdfmark } bind def
+/EMC { mark /EMC pdfmark } bind def
+/cairo_store_point { /cairo_point_y exch def /cairo_point_x exch def } def
+/Tj { show currentpoint cairo_store_point } bind def
+/TJ {
+  {
+    dup
+    type /stringtype eq
+    { show } { -0.001 mul 0 cairo_font_matrix dtransform rmoveto } ifelse
+  } forall
+  currentpoint cairo_store_point
+} bind def
+/cairo_selectfont { cairo_font_matrix aload pop pop pop 0 0 6 array astore
+    cairo_font exch selectfont cairo_point_x cairo_point_y moveto } bind def
+/Tf { pop /cairo_font exch def /cairo_font_matrix where
+      { pop cairo_selectfont } if } bind def
+/Td { matrix translate cairo_font_matrix matrix concatmatrix dup
+      /cairo_font_matrix exch def dup 4 get exch 5 get cairo_store_point
+      /cairo_font where { pop cairo_selectfont } if } bind def
+/Tm { 2 copy 8 2 roll 6 array astore /cairo_font_matrix exch def
+      cairo_store_point /cairo_font where { pop cairo_selectfont } if } bind def
+/g { setgray } bind def
+/rg { setrgbcolor } bind def
+/d1 { setcachedevice } bind def
+/cairo_set_page_size {
+  % Change paper size, but only if different from previous paper size otherwise
+  % duplex fails. PLRM specifies a tolerance of 5 pts when matching paper size
+  % so we use the same when checking if the size changes.
+  /setpagedevice where {
+    pop currentpagedevice
+    /PageSize known {
+      2 copy
+      currentpagedevice /PageSize get aload pop
+      exch 4 1 roll
+      sub abs 5 gt
+      3 1 roll
+      sub abs 5 gt
+      or
+    } {
+      true
+    } ifelse
+    {
+      2 array astore
+      2 dict begin
+        /PageSize exch def
+        /ImagingBBox null def
+      currentdict end
+      setpagedevice
+    } {
+      pop pop
+    } ifelse
+  } {
+    pop
+  } ifelse
+} def
 %%EndProlog
-
-% XCircuit output starts here.
-
 %%BeginSetup
-
-/analog::resistor {
-begingate
-1 1.000 0 64 0 36 2 polygon
-1 1.000 0 -64 0 -36 2 polygon
-1 1.000 0 -36 14 -30 -14 -18 14 -6 -14 6 14 18 -14 30 0 36 8 polygon
-1.000 0.000 0.000 scb
-(r.1) {/Times-Roman cf} 2 9 0 1.000 0 64 pinlabel
-(r.2) {/Times-Roman cf} 2 13 0 1.000 0 -64 pinlabel
-0.180 0.545 0.341 scb
-(spice:R%i %pr.1 %pr.2 1.0K) {/Times-Roman cf} 2 0 0 1.000 -208 -160 infolabel
-(sim:r %pr.1 %pr.2) {/Times-Roman cf} 2 0 0 1.000 -208 -208 infolabel
-endgate
-} def
-
-/analog::inductor {
-begingate
-1 1.000 20 -22 20 -38 0 -42 0 -18 spline
-1 1.000 -20 -14 -20 -26 0 -22 0 -18 spline
-1 1.000 20 38 20 22 0 18 0 42 spline
-1 1.000 20 18 20 2 0 -2 0 22 spline
-1 1.000 20 -2 20 -18 0 -22 0 2 spline
-1 1.000 -20 26 -20 14 0 18 0 22 spline
-1 1.000 -20 6 -20 -6 0 -2 0 2 spline
-1 1.000 0 -42 0 -64 2 polygon
-1 1.000 0 42 0 64 2 polygon
-1.000 0.000 0.000 scb
-(l.1) {/Times-Roman cf} 2 9 0 1.000 0 64 pinlabel
-(l.2) {/Times-Roman cf} 2 13 0 1.000 0 -64 pinlabel
-0.180 0.545 0.341 scb
-(spice:L%i %pl.1 %pl.2 1.0U) {/Times-Roman cf} 2 0 0 1.000 -208 -160 infolabel
-(sim:l %pl.1 %pl.2) {/Times-Roman cf} 2 0 0 1.000 -208 -208 infolabel
-endgate
-} def
-
-
+%%BeginResource: font f-0-0
+%!FontType1-1.1 f-0-0 1.0
+11 dict begin
+/FontName /f-0-0 def
+/PaintType 0 def
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0] readonly def
+/FontBBox {0 -18 929 747                                     } readonly def
+/Encoding 256 array
+0 1 255 {1 index exch /.notdef put} for
+dup 49 /one put
+dup 50 /two put
+dup 65 /A put
+dup 68 /D put
+dup 71 /G put
+dup 76 /L put
+dup 78 /N put
+dup 82 /R put
+dup 87 /W put
+readonly def
+currentdict end
+currentfile eexec
+f983ef0097ece636fb4a96c74d26ab84185f6dfa4a16a7a1c27bbe3f1156aea698df336d20b467
+b10e7f33846656653c5ac6962759d3056cbdb3190bac614b984bf5a132dc418192443014ba63de
+800d392b6fea026574bb2535fd7bb5338f35bf15a88ea328fdaa49670c7852e3d060f3c5d6b07f
+2ef6d0f22646c5d18e19a2ae3ee120390f6dd96f76dcf1e127de5e9299077a00c17c0d71e36e5b
+9d5ec58fceda57739a6a4214d4b79d6c48d2784b60c320323c7acddddf34db833cac0cf109f799
+69d114a330d372e5c978a66acc84e3fe5557f6240856a013ffaa0199444e5c5036f775eba4a5c5
+8cde66cf604b9aca2178431127b8a1ff7ed633a65c04600af5f573483112251caca7670b56325c
+dedbcd3a2fcc3d5b01771869c6979972f9896b238fe17fc314037c7e13f3518be396235714c987
+145db5e1c293669c3a0a0cbbc22a3cde08b52a02e1c8aa990e39e07c42f3d16c8508bb8137aa44
+33b3e49be4aefe9dccc218f60682084176266679a02fefb81a2e696191de0e20e2f6e9035b502b
+4bb4f56f344ccefd5545c02fe6730f8e5e1bfe991366a88f6e05a49414b2bfc71eb0dbf7bd0754
+1a24172de3b361d6516095f667b2370edb5bf54d35cc061a5e56efe1eddf11490315f52fcd588d
+366ae4c45e26f97a2b13bd27f3afd50390bff5c8bc648dc228cf4f1a00659cbbb9419801ed1277
+2e389cca793b9f53e2a3897b7ca669639c2c1c08a87647d705ef956c61719b3c1e9b8d07a7519d
+cc7caf5497bd6bcde9943f4c19bcbebae98795af397738b5a5010aa1520a6e71d61acdaa5dc6f8
+6334012916497442bfc60956f6c01efd6a78511ea0339545f5eefe157a7cd9d07e395f9bfe2b52
+ff587700315dcd9183798d2d39acb631236101ce6dfbc5624347511d73b90da3c5475734610831
+71898d5d273217fad881d289f92849efe0780ff6e782d87df7dbd555585aa9c729b695f00da209
+f06f87bd8096a1a620f1f937b7354c6f2d4fdbad0be2156e72c04f8876134e5b5dcaf85569c2f0
+bb9f6020d35bcd7d8ca569176a198a3cf5570cd4b1ce0bdd13f9d9d6aa768e695b95626befe219
+9e26cd68b5249b4b5d2a5266833d5a928c0e0f8ffe73b33d6e6921061c6a4784d911fba29cb7f3
+4886cdcab144a8665435d50b46d1636e70819ea60c3229269c46760784b976fb9f09939bc60bb4
+6e062fcea226e643e4ecbbdc3f7fb21d85a0ae6546a5ba06aa558eb0478ae66375283782dcf1a9
+994e7bb441e5251981ffb9c81cea71c84bdf501d49caba71e249f43c6c8ccd4047e02c3d0adf26
+0f3bd2d5a496e2c60fa4def5a91c692517d8af5981eb84432951faab072f40eba482c0d08fc79c
+28839eba265723b5d914a4dac84d3300202fab28d0c93fcab3bbd4320e27b13c8b1a6aef6ca06a
+50005032abb503ee6caf0bf56b089f3c75356f2cab3e405138056797f296d4fdde9db3ef25eafa
+ae9e8b644276d106e37026b4056952bc47e35f9c901667125903f4d04103401ec4d70fc2123131
+b25036b56fb0dd5f85651a9f23d9edc5c5ba4aaca5a59a26b0254a45e1de6d1baf9e694e796fb3
+ae4fdcea845f79a1192d0fd0a6185f6ac7802a8393db906fa5e65ecbd0cafcde601de2b6754c73
+c4c8100a4bb2fa4a87791f9c4739773f3d64defacbf6d394b090968cd197a1271796f26e98d7a1
+29aa60dc271779aa660e08d6d5203992113a65cdce35cfe243c6c80b7631b96e85ce364a1b50ba
+7521e70000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+%%EndResource
 %%EndSetup
-
-%%Page: RLsteadystate 1
-%%PageOrientation: Portrait
-/pgsave save def bop
-% 2.00 16.00 gridspace
-1.0000 inchscale
-2.6000 setlinewidth 544 -432 translate
-
-(R) {/Helvetica cf} 2 16 0 1.000 80 832 label
-1 1.000 0 800 16 0.000 360.000 xcarc
-0 1.000 -32 688 -32 640 32 640 32 688 4 polygon
-0 1.000 96 688 96 640 192 640 192 688 4 polygon
-0 1.000 -352 912 -352 624 208 624 208 912 4 polygon
-1 1.000 160 800 16 0.000 360.000 xcarc
-1 1.000 1 784 -48 720 0 688 0 784 spline
-1.000 90 80 800 analog::resistor
-0 1.000 -320 688 -320 640 -224 640 -224 688 4 polygon
-(WG) {/Helvetica cf} 2 16 0 1.000 -304 656 label
-1 1.000 -160 800 16 0.000 360.000 xcarc
-0 1.000 -176 688 -176 640 -112 640 -112 688 4 polygon
-(L) {/Helvetica cf} 2 16 0 1.000 -96 848 label
-1 1.000 161 784 96 720 144 688 160 784 spline
-1 1.000 -240 736 -304 768 -176 800 -272 688 spline
-1 1.000 -143 688 -192 752 -160 784 -144 688 spline
-1.000 90 -80 800 analog::inductor
-(A1) {/Helvetica cf} 2 16 0 1.000 -176 656 label
-(A2) {/Helvetica cf} 2 16 0 1.000 -32 656 label
-(GND) {/Helvetica cf} 2 16 0 1.000 96 656 label
-pgsave restore showpage
-
+%%Page: 1 1
+%%BeginPageSetup
+%%PageMedia: 150x78mm
+%%PageBoundingBox: 3 -1 425 218
+425 221 cairo_set_page_size
+%%EndPageSetup
+q 3 -1 422 219 rectclip q
+0 g
+BT
+30 0 0 30 328.5 156 Tm
+/f-0-0 1 Tf
+(R)Tj
+ET
+1.5 w
+1 J
+2 j
+[] 0.0 d
+4 M q 1 0 0 -1 0 220.5 cm
+280.5 88.5 m 280.5 95.129 275.129 100.5 268.5 100.5 c 261.871 100.5 256.5
+ 95.129 256.5 88.5 c 256.5 81.871 261.871 76.5 268.5 76.5 c 275.129 76.5
+ 280.5 81.871 280.5 88.5 c h
+280.5 88.5 m S Q
+q 1 0 0 -1 0 220.5 cm
+244.5 172.5 48 36 re S Q
+q 1 0 0 -1 0 220.5 cm
+340.5 172.5 72 36 re S Q
+q 1 0 0 -1 0 220.5 cm
+4.5 4.5 420 216 re S Q
+q 1 0 0 -1 0 220.5 cm
+400.5 88.5 m 400.5 95.129 395.129 100.5 388.5 100.5 c 381.871 100.5 376.5
+ 95.129 376.5 88.5 c 376.5 81.871 381.871 76.5 388.5 76.5 c 395.129 76.5
+ 400.5 81.871 400.5 88.5 c h
+400.5 88.5 m S Q
+q 1 0 0 -1 0 220.5 cm
+268.5 100.5 m 269.25 100.5 232.5 148.5 268.5 172.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+376.5 88.5 m 355.5 88.5 l S Q
+q 1 0 0 -1 0 220.5 cm
+280.5 88.5 m 301.5 88.5 l S Q
+q 1 0 0 -1 0 220.5 cm
+301.5 88.5 m 306 99 l 315 78 l 324 99 l 333 78 l 342 99 l 351 78 l 355.5
+ 88.5 l S Q
+q 1 0 0 -1 0 220.5 cm
+28.5 172.5 72 36 re S Q
+BT
+30 0 0 30 39.677579 19.06501 Tm
+/f-0-0 1 Tf
+[(W)20(G)]TJ
+ET
+q 1 0 0 -1 0 220.5 cm
+160.5 88.5 m 160.5 95.129 155.129 100.5 148.5 100.5 c 141.871 100.5 136.5
+ 95.129 136.5 88.5 c 136.5 81.871 141.871 76.5 148.5 76.5 c 155.129 76.5
+ 160.5 81.871 160.5 88.5 c h
+160.5 88.5 m S Q
+q 1 0 0 -1 0 220.5 cm
+136.5 172.5 48 36 re S Q
+BT
+30 0 0 30 196.5 168 Tm
+/f-0-0 1 Tf
+(L)Tj
+ET
+q 1 0 0 -1 0 220.5 cm
+388.5 100.5 m 389.25 100.5 340.5 148.5 376.5 172.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+64.5 172.5 m 88.5 136.5 40.5 112.5 136.5 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+160.5 172.5 m 161.25 172.5 124.5 124.5 148.5 100.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+195 88.5 m 192 103.5 180 103.5 177 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+195 88.5 m 198 73.5 189 73.5 192 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+240 88.5 m 237 103.5 225 103.5 222 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+225 88.5 m 222 103.5 210 103.5 207 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+210 88.5 m 207 103.5 195 103.5 192 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+225 88.5 m 228 73.5 219 73.5 222 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+210 88.5 m 213 73.5 204 73.5 207 88.5 c S Q
+q 1 0 0 -1 0 220.5 cm
+177 88.5 m 160.5 88.5 l S Q
+q 1 0 0 -1 0 220.5 cm
+240 88.5 m 256.5 88.5 l S Q
+BT
+30 0 0 30 145.02047 19.06501 Tm
+/f-0-0 1 Tf
+[(A1)-2295(A2)-1870(GND)]TJ
+ET
+Q Q
+showpage
 %%Trailer
-XCIRCsave restore
 %%EOF

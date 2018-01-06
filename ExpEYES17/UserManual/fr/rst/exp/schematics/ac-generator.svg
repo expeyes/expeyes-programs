@@ -1,71 +1,314 @@
-<svg xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
-   id="ac-generator" width="100%" height="100%"  viewBox="-6 -6 838 438">
-<desc>
+   id="ac-generator"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 838 438"
+   sodipodi:docname="ac-generator.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/ac-generator.png"
+   inkscape:export-xdpi="34.532375"
+   inkscape:export-ydpi="34.532375">
+  <metadata
+     id="metadata131">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs129" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1447"
+     inkscape:window-height="857"
+     id="namedview127"
+     showgrid="false"
+     inkscape:zoom="1.0131265"
+     inkscape:cx="419"
+     inkscape:cy="219"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="ac-generator" />
+  <desc
+     id="desc2">
 XCircuit Version 3.7
-File "ac-generator.ps" Page 1
+File &quot;ac-generator.ps&quot; Page 1
 </desc>
-<g stroke="black">
-<g transform="matrix(   1    0   -0    1 400 272)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">DC</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 352 320)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">MOTOR</tspan>
-</text></g>
-<path d="M336,224 L336,336 496,336 496,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M400,192 L400,224 432,224 432,192 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M368,128 L368,192 464,192 464,128 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M394,160 A22,16 0 0,0 438,160 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M405,164 C396,158 394,155 384,144 C389,158 390,161 391,172 C395,168 399,166 405,164 " fill="#000000" stroke="none" />
-<g transform="matrix(   1    0   -0    1 352 112)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Magnet</tspan>
-</text></g>
-<path d="M512,112 L512,128 592,128 592,112 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M512,176 L512,192 592,192 592,176 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 512 224)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Coil</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 720  96)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
-</text></g>
-<path d="M704,48 L704,112 800,112 800,48 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 720 272)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
-</text></g>
-<path d="M704,224 L704,288 816,288 816,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 352  80)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Rotating</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1  48 352)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">1.5V</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1  32 400)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">CELL</tspan>
-</text></g>
-<path d="M32,320 L32,416 144,416 144,320 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M32,48 L32,112 128,112 128,48 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M240,112 L240,128 320,128 320,112 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M240,176 L240,192 320,192 320,176 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 240 224)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">Coil</tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1 176 176)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0"></tspan>
-</text></g>
-<g transform="matrix(   1    0   -0    1  48  96)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A2</tspan>
-</text></g>
-<path d="M592,112 C608,112 624,48 704,80 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M592,192 C608,192 640,272 704,256 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M16,176 L16,240 128,240 128,176 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1  32 224)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
-</text></g>
-<path d="M240,192 C256,192 144,240 128,208 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M240,112 C256,112 176,48 128,80 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M384,336 C400,336 384,400 144,352 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M448,336 C464,336 464,432 144,384 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M0,0 L0,432 832,432 832,0 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-</g>
+  <text
+     font-size="40"
+     id="text6"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="386.01312"
+     y="314.54654">
+    <tspan
+       x="386.01312"
+       y="314.54654"
+       id="tspan4">c.c.</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text12"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="352.9628"
+     y="273.71262">
+    <tspan
+       x="352.9628"
+       y="273.71262"
+       id="tspan10">Moteur</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path16"
+     d="M 336,224 V 336 H 496 V 224 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path18"
+     d="m 400,192 v 32 h 32 v -32 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path20"
+     d="m 368,128 v 64 h 96 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path22"
+     d="m 394,160 a 22,16 0 0 0 44,0" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path24"
+     d="m 405,164 c -9,-6 -11,-9 -21,-20 5,14 6,17 7,28 4,-4 8,-6 14,-8" />
+  <text
+     font-size="40"
+     id="text28"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="353.30981"
+     y="52.777386">
+    <tspan
+       x="353.30981"
+       y="52.777386"
+       id="tspan26">Aimant</tspan>
+    <tspan
+       x="353.30981"
+       y="52.777386"
+       id="tspan239" />
+    <tspan
+       x="353.30981"
+       y="52.777386"
+       id="tspan241" />
+    <tspan
+       x="353.30981"
+       y="52.777386"
+       id="tspan243" />
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path32"
+     d="m 512,112 v 16 h 80 v -16 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path34"
+     d="m 512,176 v 16 h 80 v -16 z" />
+  <text
+     font-size="40"
+     id="text44"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="720"
+     y="96">
+    <tspan
+       x="720"
+       y="96"
+       id="tspan42">A1</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path48"
+     d="m 704,48 v 64 h 96 V 48 Z" />
+  <text
+     font-size="40"
+     id="text52"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="720"
+     y="272">
+    <tspan
+       x="720"
+       y="272"
+       id="tspan50">GND</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path56"
+     d="m 704,224 v 64 h 112 v -64 z" />
+  <text
+     font-size="40"
+     id="text66"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="39.700626"
+     y="403.32626">
+    <tspan
+       x="39.700626"
+       y="403.32626"
+       id="tspan64">1,5 V</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text72"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="53.654373"
+     y="357.55713">
+    <tspan
+       x="53.654373"
+       y="357.55713"
+       id="tspan70">Pile</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path76"
+     d="m 32,320 v 96 h 112 v -96 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path78"
+     d="m 32,48 v 64 h 96 V 48 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path80"
+     d="m 240,112 v 16 h 80 v -16 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path82"
+     d="m 240,176 v 16 h 80 v -16 z" />
+  <text
+     font-size="40"
+     id="text86"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="208.41461"
+     y="250.65018">
+    <tspan
+       x="208.41461"
+       y="250.65018"
+       id="tspan84">Bobine</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text92"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="176"
+     y="176">
+    <tspan
+       x="176"
+       y="176"
+       id="tspan90" />
+  </text>
+  <text
+     font-size="40"
+     id="text98"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="48"
+     y="96">
+    <tspan
+       x="48"
+       y="96"
+       id="tspan96">A2</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path102"
+     d="m 592,112 c 16,0 32,-64 112,-32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path104"
+     d="m 592,192 c 16,0 48,80 112,64" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path106"
+     d="m 16,176 v 64 h 112 v -64 z" />
+  <text
+     font-size="40"
+     id="text110"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="32"
+     y="224">
+    <tspan
+       x="32"
+       y="224"
+       id="tspan108">GND</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path114"
+     d="m 240,192 c 16,0 -96,48 -112,16" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path116"
+     d="M 240,112 C 256,112 176,48 128,80" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path118"
+     d="m 384,336 c 16,0 0,64 -240,16" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path120"
+     d="m 448,336 c 16,0 16,96 -304,48" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path122"
+     d="M 0,0 V 432 H 832 V 0 Z" />
+  <text
+     font-size="40"
+     id="text86-3"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="501.46027"
+     y="250.65018">
+    <tspan
+       x="501.46027"
+       y="250.65018"
+       id="tspan84-6">Bobine</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text28-7"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="342.43231"
+     y="97.853615">tournant</text>
 </svg>
