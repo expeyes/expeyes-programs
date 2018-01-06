@@ -137,6 +137,21 @@ latex:
 .PHONY: latexpdf
 latexpdf:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	@echo replacing .svg extensions by .pdf for included graphics
+	cd $(BUILDDIR)/latex; \
+	  sed 's/\.svg/.pdf/' eyes17.tex > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex
+	@echo I must remove nasty unicodes U+2005 -> " " and U+2212 -> "-", etc.
+	cd $(BUILDDIR)/latex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("\u2005"," ",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("\u2003"," ",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("\u200a"," ",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("\u22ef","\\dots",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("\u2212","-",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex;\
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("↑","",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex; \
+	  cat eyes17.tex | python3 -c 'import re,sys; t=sys.stdin.read(); sys.stdout.write(re.sub("↓","",t))' > eyes17.tex.tmp && mv eyes17.tex.tmp eyes17.tex;
+	@echo generating PDF images in the LaTeX directory
+	cd $(BUILDDIR)/latex; \
+	  for f in *.svg; do rsvg-convert -f pdf $$f -o $$(echo $$f| sed 's/svg$$/pdf/'); done
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
