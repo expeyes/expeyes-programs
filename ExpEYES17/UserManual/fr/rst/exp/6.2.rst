@@ -3,7 +3,7 @@
 Vitesse angulaire d’un pendule
 ------------------------------
 
-*Objectif*
+**Objectif**
 
 Étudier la nature des oscillations d’un pendule. Un encodeur angulaire
 est nécessaire pour mesurer le déplacement angulaire en fonction du
