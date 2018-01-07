@@ -3,7 +3,7 @@ Le matériel
 
 ExpEYES-17 est interfacé et alimenté grâce au port USB de l'ordinateur.
 Pour y connecter des signaux externes, il a plusieurs entrées/sorties,
-situées de chaque côté, comme montré sur la figure \ref{fig:The-ExpEYES-toppanel}.
+situées de chaque côté, comme montré sur la figure :ref:`fig-e17`.
 Il peut surveiller et contrôler des tensions à ses connexions. Pour
 mesurer d'autres paramètres (tels que la température, la pression,
 etc.), on a besoin de les convertir en signaux électriques à l'aide
@@ -25,10 +25,13 @@ expériences d'électricité et d'électronique.
 :math:`\pm16`
 *volts et les entrées IN1 and IN2 doivent être dans l'intervalle de 0 à 3,3 V. Des tension excessives peuvent provoquer des dommages permanents. Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs de tensions.*
 
+.. _fig-e17:
 .. figure:: pics/eyes17-panel.*
-    :width: 500px
+   :width: 500px
 
-    La face avant d'ExpEYES17 avec les connexions externes sur le dessus.
+   ExpEYES17
+   
+   La face avant d'ExpEYES17 avec les connexions externes sur le dessus.
 
 Connexions externes
 -------------------
@@ -74,7 +77,7 @@ ne sont pas possibles. On peut programmer le rapport cyclique. Quand
 on règle la fréquence à 0 Hz provoque un état HAUT à la sortie, et
 si on la règle à -1 Hz, la sortie passe à l'état BAS ; dans les
 deux cas la génération de signal carré est désactivée. La sortie SQR1
-comporte une \textbf{résistance série} de :math:`100\Omega`
+comporte une **résistance série** de :math:`100~\Omega`
 intégrée si bien qu'elle peut commander des DELs directement.
 
 Signal carré SQ2:
@@ -121,7 +124,7 @@ Cette entrée est surtout conçue pour des capteurs comme des photorésistances
 (LDR), des thermistances, des photo-transistors, etc. L'entrée SEN
 est connectée en interne à 3,3 V à travers une résistance de :math:`5,1~k\Omega`.
 
-Entrées analogiques:math:`\pm16V`, A1 \& A2 :
+Entrées analogiques:math:`\pm16V`, A1 & A2 :
 """""""""""""""""""""""""""""""""""""""""""""
 
 Celles-ci peuvent mesurer des tensions dans l'intervalle :math:`\pm16~V`.
@@ -179,13 +182,13 @@ Quelques accessoires sont livrés avec expEYES.
   *  Aimants permanents : (a) diamètre et longueur 10 mm (b) diamètre
      5 mm et longueur 10 mm (c) aimants de taille bouton(2)
   *  DELs 5 mm : rouge, bleue, verte, blanche.
-  *  Condensateurs : 100 pF, 0.1 \textmu F , 1 \textmu F et 22 \textmu F
+  *  Condensateurs : 100 pF, 0.1 µF , 1 µF et 22 µF
   *  Inductances : 10 mH / :math:`20~\Omega`,
   *  Résistances :
      :math:`560~\Omega`, :math:`1~k\Omega`, :math:`2,2~k\Omega` ,
      :math:`10~k\Omega`,
      :math:`51~k\Omega` et :math:`100~k\Omega`
   *  photorésistance (LDR )
-  *  Deux diodes silicium (1N4148) et une diode Zéner de :math:`3,3~V`
-  *  Transistor NPN (2N2222)
+  *  Deux diodes silicium (``1N4148``) et une diode Zéner de :math:`3,3~V`
+  *  Transistor NPN (``2N2222``)
 
