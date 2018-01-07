@@ -8,7 +8,7 @@ EPUB = exp/_build/epub/eyes17.epub
 QT5HTML = qt5HTML/index.html
 
 SOURCES = $(shell ls exp/*.rst) exp/conf.py exp/Makefile \
-  exp/cover/coverpage.pdf exp/cover/preamble.pdf
+  exp/cover/coverpage.pdf exp/cover/preface.pdf
 
 all: $(PDF) $(HTML) $(EPUB)
 
