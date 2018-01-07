@@ -1,18 +1,17 @@
 .. eyes17 documentation master file, created by
    sphinx-quickstart on Sat Jan  6 00:43:37 2018.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+
 
 Pour commencer
 **************
 .. toctree::
    :maxdepth: 2
 
-   intro
-   materiel
-   logiciel
-   gui
-   familiariser
+   1.1
+   1.2
+   1.3
+   1.4
+   1.5
 	 
 Expériences « scolaires »
 *************************
@@ -92,3 +91,11 @@ Expériences de mécanique
    6.3
    6.4
    6.5
+
+Coder en Python pour expEYES-17
+*******************************
+
+.. toctree::
+   :maxdepth: 2
+
+   7.1
