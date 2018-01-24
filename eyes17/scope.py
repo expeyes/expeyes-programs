@@ -85,6 +85,9 @@ class Expt(QWidget):
 	def recover(self):		# Recover the settings before it got disconnected
 		try:
 			self.control_od1()
+			self.pv1_text('0')
+			self.pv2_text('0')
+			self.p.set_sqr1(self.SQ1val, self.dutyCycle)
 			self.select_wave(self.waveindex)
 			self.p.set_wave(self.AWGval)
 			self.select_wgain(self.wgainindex)
