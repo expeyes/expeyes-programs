@@ -83,11 +83,20 @@ class Expt(QWidget):
 		
 
 	def recover(self):		# Recover the settings before it got disconnected
-		self.control_od1()
-		self.select_wave(self.waveindex)
-		self.p.set_wave(self.AWGval)
-		self.select_wgain(self.wgainindex)
-		self.set_trigger(self.Triglevel*1000)
+		try:
+			self.control_od1()
+			self.select_wave(self.waveindex)
+			self.p.set_wave(self.AWGval)
+			self.select_wgain(self.wgainindex)
+			self.set_trigger(self.Triglevel*1000)
+			self.p.set_sine(self.AWGval)
+			self.p.configure_trigger(0, 'A1', 0)
+			self.select_range((0,2))
+			self.select_range((1,2))
+			self.select_range((2,0))
+			self.select_range((3,0))
+		except:
+			pass
 		
 	def cross_hair(self):
 		if self.Cross.isChecked() == False:
@@ -135,17 +144,12 @@ class Expt(QWidget):
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 
+		print ('init scope', device)
+		
 		self.resultCols = utils.makeResultColors()
 		self.traceCols = utils.makeTraceColors()
 		self.htmlColors = utils.makeHtmlColors()
 		self.p = device						# connection to the device hardware 
-		try:
-			self.p.select_range('A1',4.0)
-			self.p.select_range('A2',4.0)	
-			self.p.set_sine(self.AWGval)
-			self.p.configure_trigger(0, 'A1', 0)
-		except:
-			pass		
 			
 		self.chanStatus = [1,0,0,0]			# PyQt problem. chanStatus somehow getting preserved ???		
 
@@ -260,7 +264,7 @@ class Expt(QWidget):
 		l = QLabel(text=self.tr('Amplitude'))
 		H.addWidget(l)
 
-		self.Wgain = QPushButton('3 V')
+		self.Wgain = QPushButton(self.Wgains[self.wgainindex])
 		menu = QMenu()
 		for k in range(len(self.Wgains)):
 			menu.addAction(self.Wgains[k], lambda index=k: self.select_wgain(index))
@@ -442,6 +446,8 @@ class Expt(QWidget):
 		self.timer = QTimer()
 		self.timer.timeout.connect(self.update)
 		self.timer.start(self.TIMER)
+
+		self.recover()
 		#----------------------------- end of init ---------------
 	
 	
