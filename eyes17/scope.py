@@ -143,8 +143,6 @@ class Expt(QWidget):
 		
 	def __init__(self, device=None):
 		QWidget.__init__(self)
-
-		print ('init scope', device)
 		
 		self.resultCols = utils.makeResultColors()
 		self.traceCols = utils.makeTraceColors()
