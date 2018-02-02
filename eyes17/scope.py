@@ -631,7 +631,10 @@ class Expt(QWidget):
 	def set_trigger(self, tr):
 		self.Triglevel = tr * 0.001		# convert to volts
 		try:
-			self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel)
+			if self.TBval > 3:
+				self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel,resolution=10,prescaler=5)
+			else:
+				self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel)
 		except:
 			self.comerr()
 			
