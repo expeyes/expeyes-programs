@@ -92,7 +92,7 @@ class Handler():
 			fd.read(1000)
 			fd.flush()
 			fd.setTimeout(1.0)
-		fd = self.switchBaud(fd,portname) # change if raspberrypi detected
+		#fd = self.switchBaud(fd,portname) # change if raspberrypi detected
 		version= self.get_version(fd)
 		if version[:len(self.expected_version)]==self.expected_version:
 			return fd,version,True

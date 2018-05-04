@@ -2988,8 +2988,11 @@ class Interface():
 		Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
 		'''
 		if data == None: return
-		import __builtin__					# Need to do this since 'eyes.py' redefines 'open'
-		f = __builtin__.open(filename,'w')
+		import builtins		# Need to do this since 'eyes.py' redefines 'open'
+		if type(filename) == tuple:
+			filename = filename[0]
+		print (filename)
+		f = builtins.open(filename,'w')
 		for xy in data:
 			for k in range(len(xy[0])):
 				f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))

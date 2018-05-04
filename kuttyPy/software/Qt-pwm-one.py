@@ -14,7 +14,7 @@ class mwin(QWidget):
 		sl = QSlider(Qt.Horizontal)
 		sl.setMinimum(0)
 	
-		sl.setMaximum(65535)	
+		sl.setMaximum(1023)	
 		sl.setValue(0)
 		sl.valueChanged.connect(self.set_pwm)		
 
@@ -24,6 +24,7 @@ class mwin(QWidget):
 		self.init_pwm()
 	
 	def set_pwm(self, val):
+		print val
 		setReg (OCR1AH , (val>>8)&0x3)   #Output Compare register values
 		setReg (OCR1AL , val&0xFF)   #Output Compare register values
 		
