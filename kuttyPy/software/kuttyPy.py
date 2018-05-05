@@ -91,7 +91,7 @@ def connectKP(s):  	 # Establish connection to ATmega32 connected to USB port
 		fd = serial.Serial(s, 38400, stopbits=1, timeout = 1.0)
 		if fd == None: 
 			return None
-		fd.setRTS(level=0)				# Set the RTS LED ON
+		fd.setRTS(0)				# Set the RTS LED ON
 		fd.flush()
 		fd.write(chr(GETVER))			# Look for kuttyPy signature
 		res = fd.read()

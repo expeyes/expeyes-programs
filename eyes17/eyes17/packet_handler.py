@@ -86,12 +86,13 @@ class Handler():
 		fd = serial.Serial(portname, 9600, stopbits=1, timeout = 0.02)
 		fd.read(100);fd.close()
 		fd = serial.Serial(portname, self.BAUD, stopbits=1, timeout = 1.0)
+		fd.write_timeout = 0.1
 		if(fd.inWaiting()):
 			fd.setTimeout(0.1)
 			fd.read(1000)
 			fd.flush()
 			fd.setTimeout(1.0)
-		fd = self.switchBaud(fd,portname) # change if raspberrypi detected
+		#fd = self.switchBaud(fd,portname) # change if raspberrypi detected
 		version= self.get_version(fd)
 		if version[:len(self.expected_version)]==self.expected_version:
 			return fd,version,True
