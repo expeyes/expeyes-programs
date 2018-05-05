@@ -30,6 +30,9 @@ import sys
 import numpy as np
 from . import eyemath17
 
+# Need to do this since 'eyes.py' redefines 'open'
+fileOpen=open
+
 def open(**kwargs):
     '''
     If hardware is found, returns an instance of 'Interface', else returns None.
@@ -2988,8 +2991,8 @@ class Interface():
 		Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
 		'''
 		if data == None: return
-		import __builtin__					# Need to do this since 'eyes.py' redefines 'open'
-		f = __builtin__.open(filename,'w')
+		# Need to do this since 'eyes.py' redefines 'open'
+		f = fileOpen.open(filename,'w')
 		for xy in data:
 			for k in range(len(xy[0])):
 				f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
