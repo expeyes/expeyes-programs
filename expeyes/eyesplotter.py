@@ -4,16 +4,20 @@ expEYES utility to display plots and export them to other applications
 Author  : Georges Khaznadar <georgesk@debian.org>
 License : GNU GPL version 3
 """
-def _(s):
-    return s
 
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
 import pyqtgraph as pg
 import numpy as np
 
+_translate = QCoreApplication. translate
+
 def grace(data=[], xlabel="", ylabel=""):
+    print("DEBUG: should call xmgrace")
     return
+
 def qtiplot(data=[], xlabel="", ylabel=""):
+    print("DEBUG: should call qtiplot")
     return
 
 class PlotWindow(QWidget):
@@ -22,8 +26,12 @@ class PlotWindow(QWidget):
     plotting applications
     """
     exportModes={
-        "grace": (_("Grace"), _("Fast old-fashioned plotter/analyzer"), grace),
-        "qtiplot": (_("Qtiplot"), _("Modern plotter/analyzer"), qtiplot),
+        "grace": (_translate("eyesplotter","Grace"),
+                  _translate("eyesplotter","Fast old-fashioned plotter/analyzer"),
+                  grace),
+        "qtiplot": (_translate("eyesplotter","Qtiplot"),
+                    _translate("eyesplotter","Modern plotter/analyzer"),
+                    qtiplot),
         }
     def __init__(self, parent=None,
                  xdata=[], ydata=[], xlabel="", ylabel="",
@@ -60,12 +68,15 @@ class PlotWindow(QWidget):
         # plot goes on top, spanning all columns
         layout.addWidget(plotWidget, 0, 0, 1,(1+len(self.exportModes)))  
 
-        l= QLabel(_("Exports"))
+        l= QLabel(_translate("eyesplotter","Exports"))
         layout.addWidget(l, 1, 0)
         col=1
         for exp in self.exportModes:
-            btn=QPushButton(self.exportModes[exp][0])
+            label, toolTip, procedure = self.exportModes[exp]
+            btn=QPushButton(label)
+            btn.setToolTip(toolTip)
             layout.addWidget(btn, 1, col)
+            btn.clicked.connect(procedure)  
             col +=1
         return
         
