@@ -21,7 +21,7 @@ class PlotWindow(QWidget):
         "grace": (_("Grace"), _("Fast old-fashioned plotter/analyzer"), grace),
         "qtiplot": (_("Qtiplot"), _("Modern plotter/analyzer"), qtiplot),
         }
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, xdata=[], ydata=[], xlabel="", ylabel="", title=""):
         QWidget.__init__(self, parent)
         layout = QGridLayout()
         self.setLayout(layout)
@@ -33,15 +33,19 @@ class PlotWindow(QWidget):
             btn=QPushButton(self.exportModes[exp][0])
             layout.addWidget(btn, line, 0)
             line +=1
-        plot = pg.PlotWidget()
+        plotWidget = pg.PlotWidget(title="Three plot curves")
+        for i in range(3):
+            plotWidget.plot(x, y[i], pen=(i,3))
         # plot goes on right side, spanning neighbouring rows
-        layout.addWidget(plot, 0, 1, (1+len(self.exportModes)), 1)  
+        layout.addWidget(plotWidget, 0, 1, (1+len(self.exportModes)), 1)  
         return
         
 
 if __name__=="__main__":
     app = QApplication([])
-    w = PlotWindow()
+    x = np.arange(1000)
+    y = np.random.normal(size=(3, 1000))
+    w = PlotWindow(xdata=x, ydata=y, xlabel="", ylabel="", title="Three plot curves")
     w.show()
     app.exec_()
     
