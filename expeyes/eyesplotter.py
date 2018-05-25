@@ -66,8 +66,10 @@ t.setColData(1, {xdata})
 l=newGraph().activeLayer()
 l.setTitle("<font color = blue>{title}</font>")
 {TemplatedCurve}
-l.setAxisTitle(0, "{ylabel}")
-l.setAxisTitle(2, "{xlabel}")
+l.setAxisTitle(Layer.Left, "{ylabel}")
+l.setAxisTitle(Layer.Bottom, "{xlabel}")
+l.enableAxisLabels(Layer.Right, False)
+l.enableAxisLabels(Layer.Top, False)
 """
     ydataTemplate="t.setColData({col}, {ydata})"
     curveTemplate="""\
@@ -117,7 +119,6 @@ l.setCurveLineColor({curveCount}, {color})
         xlabel=xlabel,
         ylabel=ylabel,
     )
-    print("GRRRR", script)
     temp=NamedTemporaryFile(mode="w", prefix="qti_", delete=False)
     temp.write(script)
     temp.close()
@@ -209,9 +210,12 @@ class PlotWindow(QWidget):
 
 if __name__=="__main__":
     app = QApplication([])
-    x = np.arange(10)
-    y = np.random.normal(size=(2, 10))
-    w = PlotWindow(xdata=x, ydata=y, xlabel="", ylabel="", title="Two plot curves")
+    x = np.arange(1000)
+    y = np.random.normal(size=(2, 1000))
+    w = PlotWindow(xdata=x, ydata=y,
+                   xlabel="The pretty abscissa",
+                   ylabel="The amazing ordinate",
+                   title="Two plot curves")
     w.show()
     app.exec_()
     
