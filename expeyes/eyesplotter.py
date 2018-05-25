@@ -46,11 +46,10 @@ class Exporter:
         return
 
 def grace(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: should call xmgrace")
+    print("DEBUG: xmgrace export still not implemented")
     return []
 
 def qtiplot(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: calling qtiplot with title", title)
     from subprocess import call
     from tempfile import NamedTemporaryFile
     rows=len(xdata)
@@ -191,11 +190,8 @@ class PlotWindow(QWidget):
 
         l= QLabel(_translate("eyesplotter","Export to"))
         layout.addWidget(l, 1, 0)
-        col=1
-        for exp in Exporter.List:
-            btn=ExportButton(self, exp)
-            layout.addWidget(btn, 1, col)
-            col +=1
+        for col, exp in enumerate(Exporter.List, start=1):
+            layout.addWidget(ExportButton(self, exp), 1, col)
         return
 
 
