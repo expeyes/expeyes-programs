@@ -70,7 +70,10 @@ l.setAxisTitle(0, "{ylabel}")
 l.setAxisTitle(2, "{xlabel}")
 """
     ydataTemplate="t.setColData({col}, {ydata})"
-    curveTemplate="c{num}=l.insertCurve(t, '1', '{num}', Layer.Line, {color}, -1)"
+    curveTemplate="""\
+c{num}=l.insertCurve(t, '1', '{num}', Layer.Line, 0, -1)
+l.setCurveLineColor({curveCount}, {color})
+"""
 
     rows=len(xdata)
     xdata=str(list(xdata))
@@ -84,6 +87,7 @@ l.setAxisTitle(2, "{xlabel}")
         TemplatedCurve=curveTemplate.format(
             num=2,
             color=0,
+            curveCount=0,
         )
     else:
         for i in range(ydata.shape[0]):
@@ -103,6 +107,7 @@ l.setAxisTitle(2, "{xlabel}")
                     curveTemplate.format(
                         num=2+i,
                         color=i,
+                        curveCount=i
                     ))
             TemplatedCurve="\n".join(c)
     script=qtiScript.format(
@@ -112,6 +117,7 @@ l.setAxisTitle(2, "{xlabel}")
         xlabel=xlabel,
         ylabel=ylabel,
     )
+    print("GRRRR", script)
     temp=NamedTemporaryFile(mode="w", prefix="qti_", delete=False)
     temp.write(script)
     temp.close()
@@ -203,8 +209,8 @@ class PlotWindow(QWidget):
 
 if __name__=="__main__":
     app = QApplication([])
-    x = np.arange(1000)
-    y = np.random.normal(size=(2, 1000))
+    x = np.arange(10)
+    y = np.random.normal(size=(2, 10))
     w = PlotWindow(xdata=x, ydata=y, xlabel="", ylabel="", title="Two plot curves")
     w.show()
     app.exec_()
