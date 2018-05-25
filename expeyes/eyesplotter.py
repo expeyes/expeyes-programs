@@ -12,19 +12,89 @@ import numpy as np
 
 _translate = QCoreApplication. translate
 
-def grace(data=[], xlabel="", ylabel=""):
-    print("DEBUG: should call xmgrace")
-    return
+qtiScript="""\
+t = newTable("Table1", {rows}, {cols})
+t.setColData(1, {xdata})
+{templatedYdata}
+l=newGraph().activeLayer()
+l.setTitle("<font color = blue>{title}</font>")
+{TemplatedCurve}
+l.setAxisTitle(0, "{ylabel}")
+l.setAxisTitle(2, "{xlabel}")
+"""
 
-def qtiplot(data=[], xlabel="", ylabel=""):
-    print("DEBUG: should call qtiplot")
-    return
+ydataTemplate="t.setColData({col}, {ydata})"
+
+curveTemplate="c{num}=l.insertCurve(t, '1', '{num}', Layer.Line, {color}, -1)"
 
 class PlotWindow(QWidget):
     """
     Implements a quick plot window, which can export its data to a few other 
     plotting applications
     """
+    def grace(self):
+        print("DEBUG: should call xmgrace")
+        return
+
+    def qtiplot(self):
+        print("DEBUG: calling qtiplot with title", self.title)
+        from subprocess import call
+        from tempfile import NamedTemporaryFile
+        rows=len(self.xdata)
+        xdata=str(list(self.xdata))
+        if len(self.ydata.shape)==1:
+            #simple plot
+            cols=2
+            templatedYdata=ydataTemplate.format(
+                col=2,
+                ydata=str(list(self.ydata)),
+            )
+            TemplatedCurve=curveTemplate.format(
+                num=2,
+                color=0,
+            )
+        else:
+            for i in range(self.ydata.shape[0]):
+                #multiple plots
+                cols=self.ydata.shape[0]+1
+                yd=[]
+                for i in range(cols-1):
+                    yd.append(
+                        ydataTemplate.format(
+                            col=2+i,
+                            ydata=str(list(self.ydata[i])),
+                        ))
+                templatedYdata="\n".join(yd)
+                c=[]
+                for i in range(cols-1):
+                    c.append(
+                        curveTemplate.format(
+                            num=2+i,
+                            color=i,
+                        ))
+                TemplatedCurve="\n".join(c)
+        script=qtiScript.format(
+            rows=rows, cols=cols, xdata=xdata,
+            templatedYdata=templatedYdata, TemplatedCurve=TemplatedCurve,
+            title=self.title,
+            xlabel=self.xlabel,
+            ylabel=self.ylabel,
+        )
+        temp=NamedTemporaryFile(mode="w", prefix="qti_", delete=False)
+        print("GRRRR\n", script)
+        temp.write(script)
+        temp.close()
+        self.tmpFiles.append(temp)
+        call("(qtiplot --execute {temp}&)".format(temp=temp.name), shell=True)
+        return
+
+    def closeEvent(self, event):
+        from os import unlink
+        QWidget.closeEvent(self, event)
+        for temp in self.tmpFiles:
+            unlink(temp.name)
+        return
+        
     exportModes={
         "grace": (_translate("eyesplotter","Grace"),
                   _translate("eyesplotter","Fast old-fashioned plotter/analyzer"),
@@ -48,11 +118,12 @@ class PlotWindow(QWidget):
         @param title a title for the plot
         """
         QWidget.__init__(self, parent)
-        self.xdata=xdata
-        self.ydata=ydata
+        self.xdata=np.array(xdata)
+        self.ydata=np.array(ydata)
         self.xlabel=xlabel
         self.ylabel=ylabel
         self.title=title
+        self.tmpFiles=[]
 
         layout = QGridLayout()
         self.setLayout(layout)
@@ -68,7 +139,7 @@ class PlotWindow(QWidget):
         # plot goes on top, spanning all columns
         layout.addWidget(plotWidget, 0, 0, 1,(1+len(self.exportModes)))  
 
-        l= QLabel(_translate("eyesplotter","Exports"))
+        l= QLabel(_translate("eyesplotter","Export to"))
         layout.addWidget(l, 1, 0)
         col=1
         for exp in self.exportModes:
@@ -76,10 +147,12 @@ class PlotWindow(QWidget):
             btn=QPushButton(label)
             btn.setToolTip(toolTip)
             layout.addWidget(btn, 1, col)
-            btn.clicked.connect(procedure)  
+            btn.clicked.connect(lambda: procedure(self))  
             col +=1
         return
-        
+
+
+
 
 if __name__=="__main__":
     app = QApplication([])
