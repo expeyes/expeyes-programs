@@ -83,12 +83,12 @@ def exporter(packages, label, tooltip):
     _translate("eyesplotter","Export to a fast old-timer plotter/analyzer")
 )
 def grace(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: xmgrace export still not implemented?")
     commands="""\
 world xmin {xmin}
 world xmax {xmax}
 world ymax {ymax}
 world ymin {ymin}
+autoticks
 s0 on
 """.format(xmin=np.amin(xdata), xmax=np.amax(xdata),
            ymin=np.amin(ydata), ymax=np.amax(ydata))
