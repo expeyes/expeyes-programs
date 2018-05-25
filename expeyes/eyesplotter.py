@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 """
 expEYES utility to display plots and export them to other applications
+
+There is a short overhead when this package is imported, since it seeks
+which other packages are installed in order to export plots to other
+applications.
+
 Author  : © 2018 Georges Khaznadar <georgesk@debian.org>
 License : GNU GPL version 3
 """
@@ -11,7 +16,12 @@ import pyqtgraph as pg
 import numpy as np
 from subprocess import call
 from tempfile import NamedTemporaryFile
-    
+import apt, re, time
+
+## to export to libreoffice-calc
+from odf.opendocument import OpenDocumentSpreadsheet
+from odf.text import P
+from odf.table import Table, TableColumn, TableRow, TableCell
 
 _translate = QCoreApplication. translate
 
@@ -21,7 +31,7 @@ class Exporter:
         """
         Creates an exporter instance and register it in Exporter.List
         @param func a function with the profile:
-        title, xlabel, ylabel, xdata, ydata -> list of files
+        title, xlabel, ylabel, xdata, ydata -> [NamedTemporaryFile ...]
         which calls an application in the background and returns a
         list of temporary files to erase.
         @param label a short description
@@ -33,30 +43,83 @@ class Exporter:
         Exporter.List.append(self)
         return
 
+_cache=apt.Cache()
+
 ## define a decorator
-def exporter(label, tooltip):
+def exporter(packages, label, tooltip):
     """
     this decorator allows to change a function with profile:
-    title, xlabel, ylabel, xdata, ydata -> list of files
+    title, xlabel, ylabel, xdata, ydata -> [NamedTemporaryFile ...]
     to an Exporter instance, automatically registered in Exporter.List
+    @param packages a string with package names (dependencies), to test
+    whether the export needs to be created
     @param label a short description
     @param tooltip a longer description
     """
     def mkExporter(func):
         return Exporter(func,label,tooltip)
+    def mkNull(func):
+        return
+    for package in re.split(r'[ \t,;]+', packages):
+        if package not in _cache or not _cache[package].is_installed:
+            return mkNull
     return mkExporter
 
 @exporter(
+    "python3-pygrace",
     _translate("eyesplotter","Grace"),
-    _translate("eyesplotter","Fast old-fashioned plotter/analyzer")
+    _translate("eyesplotter","Export to a fast old-timer plotter/analyzer")
 )
 def grace(title, xlabel, ylabel, xdata, ydata):
     print("DEBUG: xmgrace export still not implemented")
     return []
 
 @exporter(
+    "python3-odf, libreoffice-calc",
+    _translate("eyesplotter","Calc"),
+    _translate("eyesplotter","Export to LibreOffice Calc spreadsheet")
+)
+def calc(title, xlabel, ylabel, xdata, ydata):
+    outfile = NamedTemporaryFile(
+        mode='wb', 
+        suffix='.ods',
+        prefix='eyesCalc_',
+        delete=False)
+    doc=OpenDocumentSpreadsheet()
+    table = Table(name="ExpEYES {0}".format(time.strftime("%Y-%m-%d %Hh%Mm%Ss")))
+    doc.spreadsheet.addElement(table)
+    ## add rows into the table
+    for i in range(len(xdata)):
+        tr = TableRow()
+        table.addElement(tr)
+        if len(ydata.shape)==1:
+            # single y data
+            tr.addElement(TableCell(valuetype="float", value=str(xdata[i])))
+            tr.addElement(TableCell(valuetype="float", value=str(ydata[i])))
+        else:
+            # multiple y data
+            tr.addElement(TableCell(valuetype="float", value=str(xdata[i])))
+            for j in range(ydata.shape[0]):
+                tr.addElement(TableCell(valuetype="float", value=str(ydata[j][i])))
+    doc.save(outfile)
+    outfile.close()
+    call("(localc {}&)".format(outfile.name), shell=True)
+    return [outfile]
+                
+
+@exporter(
+    "scidavis",
+    _translate("eyesplotter","Scidavis"),
+    _translate("eyesplotter","Export to Scidavis plotter/analyzer")
+)
+def scidavis(title, xlabel, ylabel, xdata, ydata):
+    print("DEBUG: Scidavis export still not implemented")
+    return []
+
+@exporter(
+    "qtiplot",
     _translate("eyesplotter","Qtiplot"),
-    _translate("eyesplotter","Modern plotter/analyzer")
+    _translate("eyesplotter","Export to a fancy plotter/analyzer")
 )
 def qtiplot(title, xlabel, ylabel, xdata, ydata):
     qtiScript="""\
@@ -119,7 +182,7 @@ l.setCurveLineColor({curveCount}, {color})
         xlabel=xlabel,
         ylabel=ylabel,
     )
-    temp=NamedTemporaryFile(mode="w", prefix="qti_", delete=False)
+    temp=NamedTemporaryFile(mode="w", prefix="eyesQqti_", delete=False)
     temp.write(script)
     temp.close()
     call("(qtiplot --execute {temp}&)".format(temp=temp.name), shell=True)
@@ -178,6 +241,7 @@ class PlotWindow(QWidget):
         @param title a title for the plot
         """
         QWidget.__init__(self, parent)
+        self.setWindowTitle(_translate("eyesplotter","ExpEYES plotter"))
         self.xdata=np.array(xdata)
         self.ydata=np.array(ydata)
         self.xlabel=xlabel
