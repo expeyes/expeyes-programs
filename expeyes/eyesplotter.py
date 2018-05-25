@@ -9,10 +9,57 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 import pyqtgraph as pg
 import numpy as np
+from subprocess import call
+from tempfile import NamedTemporaryFile
+    
 
 _translate = QCoreApplication. translate
 
-qtiScript="""\
+class Exporter:
+    List=[]
+    def __init__(self, func, label, tooltip=""):
+        """
+        Creates an exporter instance and register it in Exporter.List
+        @param func a function with the profile:
+        title, xlabel, ylabel, xdata, ydata -> list of files
+        which calls an application in the background and returns a
+        list of temporary files to erase.
+        @param label a short description
+        @param tooltip a longer description
+        """
+        self.func=func
+        self.label=label
+        self.tooltip=tooltip
+        Exporter.List.append(self)
+        return
+
+## define a decorator
+def exporter(label, tooltip):
+    """
+    this decorator allows to change a function with profile:
+    title, xlabel, ylabel, xdata, ydata -> list of files
+    to an Exporter instance, automatically registered in Exporter.List
+    @param label a short description
+    @param tooltip a longer description
+    """
+    def mkExporter(func):
+        return Exporter(func,label,tooltip)
+    return mkExporter
+
+@exporter(
+    _translate("eyesplotter","Grace"),
+    _translate("eyesplotter","Fast old-fashioned plotter/analyzer")
+)
+def grace(title, xlabel, ylabel, xdata, ydata):
+    print("DEBUG: xmgrace export still not implemented")
+    return []
+
+@exporter(
+    _translate("eyesplotter","Qtiplot"),
+    _translate("eyesplotter","Modern plotter/analyzer")
+)
+def qtiplot(title, xlabel, ylabel, xdata, ydata):
+    qtiScript="""\
 t = newTable("Table1", {rows}, {cols})
 t.setColData(1, {xdata})
 {templatedYdata}
@@ -22,36 +69,9 @@ l.setTitle("<font color = blue>{title}</font>")
 l.setAxisTitle(0, "{ylabel}")
 l.setAxisTitle(2, "{xlabel}")
 """
+    ydataTemplate="t.setColData({col}, {ydata})"
+    curveTemplate="c{num}=l.insertCurve(t, '1', '{num}', Layer.Line, {color}, -1)"
 
-ydataTemplate="t.setColData({col}, {ydata})"
-
-curveTemplate="c{num}=l.insertCurve(t, '1', '{num}', Layer.Line, {color}, -1)"
-
-class Exporter:
-    List=[]
-    def __init__(self, expFunc, label, tooltip=""):
-        """
-        Creates an exporter instance and register it in Exporter.List
-        @param expFunc a function with the profile:
-        title, xlabel, ylabel, xdata, ydata -> list of files
-        which calls an application in the background and returns a
-        list of temporary files to erase.
-        @param label a short description
-        @param tooltip a longer description
-        """
-        self.func=expFunc
-        self.label=label
-        self.tooltip=tooltip
-        Exporter.List.append(self)
-        return
-
-def grace(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: xmgrace export still not implemented")
-    return []
-
-def qtiplot(title, xlabel, ylabel, xdata, ydata):
-    from subprocess import call
-    from tempfile import NamedTemporaryFile
     rows=len(xdata)
     xdata=str(list(xdata))
     if len(ydata.shape)==1:
@@ -123,22 +143,6 @@ class ExportButton(QPushButton):
                                   self.pw.xlabel, self.pw.ylabel,
                                   self.pw.xdata, self.pw.ydata)
         return
-
-
-"""
-The supported export modes. Instances are created but not forgotten, since
-they are appended to Exporter.List immediately
-"""
-Exporter(
-    qtiplot,
-    _translate("eyesplotter","Qtiplot"),
-    _translate("eyesplotter","Modern plotter/analyzer")
-)
-Exporter(
-    grace,
-    _translate("eyesplotter","Grace"),
-    _translate("eyesplotter","Fast old-fashioned plotter/analyzer")
-)    
 
 class PlotWindow(QWidget):
     """
