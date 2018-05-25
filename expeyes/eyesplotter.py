@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 expEYES utility to display plots and export them to other applications
-Author  : Georges Khaznadar <georgesk@debian.org>
+Author  : © 2018 Georges Khaznadar <georgesk@debian.org>
 License : GNU GPL version 3
 """
 
@@ -81,7 +81,6 @@ class PlotWindow(QWidget):
             ylabel=self.ylabel,
         )
         temp=NamedTemporaryFile(mode="w", prefix="qti_", delete=False)
-        print("GRRRR\n", script)
         temp.write(script)
         temp.close()
         self.tmpFiles.append(temp)
@@ -94,14 +93,22 @@ class PlotWindow(QWidget):
         for temp in self.tmpFiles:
             unlink(temp.name)
         return
-        
+
+    """
+    dictionary of supported export modes.
+
+    the keys must be the name of a method in PlotWindow, which
+    will inherit self.xdata and the like to launch an external application
+    in the background and plot there the same as in the PlotWindow.
+
+    Every key is associated with a tuple of strings, for a button label
+    and its toolTip.
+    """
     exportModes={
-        "grace": (_translate("eyesplotter","Grace"),
-                  _translate("eyesplotter","Fast old-fashioned plotter/analyzer"),
-                  grace),
         "qtiplot": (_translate("eyesplotter","Qtiplot"),
-                    _translate("eyesplotter","Modern plotter/analyzer"),
-                    qtiplot),
+                    _translate("eyesplotter","Modern plotter/analyzer")),
+        "grace": (_translate("eyesplotter","Grace"),
+                  _translate("eyesplotter","Fast old-fashioned plotter/analyzer")),
         }
     def __init__(self, parent=None,
                  xdata=[], ydata=[], xlabel="", ylabel="",
@@ -143,11 +150,12 @@ class PlotWindow(QWidget):
         layout.addWidget(l, 1, 0)
         col=1
         for exp in self.exportModes:
-            label, toolTip, procedure = self.exportModes[exp]
+            label, toolTip = self.exportModes[exp]
+            procedure=getattr(self, exp)
             btn=QPushButton(label)
             btn.setToolTip(toolTip)
             layout.addWidget(btn, 1, col)
-            btn.clicked.connect(lambda: procedure(self))  
+            btn.clicked.connect(procedure)  
             col +=1
         return
 
