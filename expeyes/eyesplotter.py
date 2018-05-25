@@ -14,16 +14,28 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 import pyqtgraph as pg
 import numpy as np
-from subprocess import call
+from subprocess import call, Popen, PIPE
 from tempfile import NamedTemporaryFile
 import apt, re, time
 
-## to export to libreoffice-calc
-from odf.opendocument import OpenDocumentSpreadsheet
-from odf.text import P
-from odf.table import Table, TableColumn, TableRow, TableCell
 
 _translate = QCoreApplication. translate
+
+class Worker(QRunnable):
+    """
+    a class to embed a function call into a thread
+    """
+    def __init__(self, func, *args, **kwargs):
+        QRunnable.__init__(self)
+        self.func = func
+        self.args = args
+        self.kwargs = kwargs
+        return
+    
+    @pyqtSlot()
+    def run(self):
+        self.func(*self.args, **self.kwargs)
+        return
 
 class Exporter:
     List=[]
@@ -71,8 +83,33 @@ def exporter(packages, label, tooltip):
     _translate("eyesplotter","Export to a fast old-timer plotter/analyzer")
 )
 def grace(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: xmgrace export still not implemented")
-    return []
+    print("DEBUG: xmgrace export still not implemented?")
+    commands="""\
+world xmin {xmin}
+world xmax {xmax}
+world ymax {ymax}
+world ymin {ymin}
+s0 on
+""".format(xmin=np.amin(xdata), xmax=np.amax(xdata),
+           ymin=np.amin(ydata), ymax=np.amax(ydata))
+    if len(ydata.shape)==1:
+        # single y data
+        for i in range(len(xdata)):
+            commands+='g0.s0 point %s, %s\n' % (xdata[i], ydata[i])
+    else:
+        for j in range(1, ydata.shape[0]+1):
+            commands+='s%d on\n' %j
+        for i in range(len(xdata)):
+            for j in range(ydata.shape[0]):
+                commands+='g0.s%d point %s, %s\n' % (j+1, xdata[i], ydata[j][i])
+    outfile = NamedTemporaryFile(
+        mode='w', 
+        prefix='eyesGrace_',
+        delete=False)
+    outfile.write(commands)
+    outfile.close()
+    call("(cat {} | xmgrace -dpipe - &)".format(outfile.name), shell =True)
+    return [outfile]
 
 @exporter(
     "python3-odf, libreoffice-calc",
@@ -80,6 +117,10 @@ def grace(title, xlabel, ylabel, xdata, ydata):
     _translate("eyesplotter","Export to LibreOffice Calc spreadsheet")
 )
 def calc(title, xlabel, ylabel, xdata, ydata):
+    from odf.opendocument import OpenDocumentSpreadsheet
+    from odf.text import P
+    from odf.table import Table, TableColumn, TableRow, TableCell
+    
     outfile = NamedTemporaryFile(
         mode='wb', 
         suffix='.ods',
