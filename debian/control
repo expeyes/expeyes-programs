@@ -2,17 +2,13 @@ Source: expeyes
 Section: science
 Priority: extra
 Maintainer: Georges Khaznadar <georgesk@debian.org>
-Build-Depends: debhelper (>= 9.0.0), quilt, python3-all, python-all,
+Build-Depends: debhelper (>= 10), quilt, python3-all, python-all,
  gcc-avr, binutils-avr, avr-libc (>=1:1.8.0+Atmel3.5.0),
  pkg-config, libgtk2.0-dev, x11proto-randr-dev (>= 1.5.0),
  pyqt4-dev-tools, qt4-linguist-tools
-# the following build-dependency is necessary for microhope
-Build-Depends-Indep: lyx,
- texlive-latex-base, texlive-latex-extra, texlive-generic-recommended,
- lmodern, imagemagick
 X-Python-Version: >= 2.5
 X-Python3-Version: >= 3.2
-Standards-Version: 4.1.0
+Standards-Version: 4.1.4
 Homepage: http://expeyes.in/
 
 Package: expeyes
@@ -20,10 +16,10 @@ Architecture: all
 Depends: python, python3, ${misc:Depends},
  python-expeyes (= ${source:Version}),
  python3-pil.imagetk, python-pil.imagetk,
- tix,
- python3-tk, python-tk, 
+ tix,  python3-tk, python-tk, udev
 Recommends: python-numpy, python-scipy, python3-numpy, python3-scipy,
- expeyes-web
+ expeyes-web, qtiplot, python-pygrace(>=0.5),python3-pygrace(>=0.5),
+ expeyes-doc-en|expeyes-doc
 Description: hardware & software framework for developing science experiments
  This package provides high level interfaces for making science experiments
  with an ExpEYES box.
@@ -41,9 +37,11 @@ Description: hardware & software framework for developing science experiments
 Package: eyes17
 Architecture: all
 Depends: python, python3, ${misc:Depends},
- python-expeyes (= ${source:Version}), python-qgis
+ python-expeyes (= ${source:Version}), python-qgis,
+ python3-pyqtgraph, python3-pyqt5,
+ python-configparser
 Recommends: python-numpy, python-scipy, python3-numpy, python3-scipy,
- expeyes-web
+ python3-pyqt5.qtwebengine
 Description: hardware & software framework for developing science experiments
  This package provides high level interfaces for making science experiments
  with an ExpEYES-17 box.
@@ -124,11 +122,10 @@ Package: python-expeyes
 Section: python
 Architecture: all
 Depends: python, python3, ${misc:Depends},
- python3-scipy, python3-serial,
- python-scipy, python-serial,
- python-pygrace(>=0.5),python3-pygrace(>=0.5)
+ python3-scipy, python3-serial (>= 2.6),
+ python-scipy, python-serial (>= 2.6)
 Provides: python3-expeyes
-Recommends: qtiplot, udev, expeyes-doc-en|expeyes-doc
+Recommends: udev
 Description: Python library for expeyes
  This package provides low level interfaces for making science experiments
  with an ExpEYES box. The library allows one to develop new programs easily

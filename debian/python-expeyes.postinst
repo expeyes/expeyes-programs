@@ -21,7 +21,8 @@ set -e
 case "$1" in
     configure)
 	# reload udev since we install /lib/udev/rules.d/99-phoenix.rules
-	service udev reload
+	ln -sf /lib/udev/rules.d/99-phoenix.rules /etc/udev/rules.d/
+	service udev reload | true
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

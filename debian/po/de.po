@@ -1,0 +1,79 @@
+# German debconf translation of the expeyes package.
+# Copyright (C) 2010-2011 Ajith Kumar B.P.
+# This file is distributed under the same license as the expeyes package.
+# Copyright of this file © 2017 Chris Leick <c.leick@vollbio.de>.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: expeyes 4.2.1\n"
+"Report-Msgid-Bugs-To: expeyes@packages.debian.org\n"
+"POT-Creation-Date: 2017-09-20 14:27+0000\n"
+"PO-Revision-Date: 2017-09-26 19:55+0100\n"
+"Last-Translator: Chris Leick <c.leick@vollbio.de>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "List of web servers to reconfigure automatically:"
+msgstr "Liste der Webserver, die automatisch neu konfiguriert werden sollen:"
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "Expeyes-Web currently supports Apache2."
+msgstr "Expeyes-Web unterstützt derzeit Apache2."
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "If no web service is installed, choose \"none\"."
+msgstr "Falls kein Web-Dienst installiert ist, wählen Sie »none«."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid "This should be the URL of the Expeyes service:"
+msgstr "Dies sollte der URL des Expeyes-Dienstes sein:"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your server's IP address."
+msgstr ""
+"Wählen Sie einen vollqualifizierten Domain-Namen und stellen Sie sicher, dass "
+"dieser Name durch DNS-Server zu der IP-Adresse Ihres Servers aufgelöst wird."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid "This should be the URL reachable by the \"Home\" link:"
+msgstr "Dies sollte der URL sein, der durch den Link »Home« erreichbar ist:"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"The main page featured by the Expeyes service has a few active buttons in "
+"its top. The \"Home\" button can be a link to a schools welcome page."
+msgstr ""
+"Die Hauptseite, die vom Expeyes-Dienst angeboten wird, hat oben einige aktive "
+"Knöpfe. Der Knopf »Home« kann ein Link auf die Willkommensseite der Schule "
+"sein."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your school server's IP address."
+msgstr ""
+"Wählen Sie einen vollqualifizierten Domain-Namen und stellen Sie sicher, dass "
+"dieser Name durch DNS-Server zu der IP-Adresse Ihrer Schule aufgelöst wird."

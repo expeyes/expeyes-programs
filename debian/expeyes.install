@@ -6,3 +6,4 @@ desktop/expeyes.desktop 	usr/share/applications/
 desktop/expeyes-junior.desktop	usr/share/applications/
 pixmaps/expeyes-logo.png 		usr/share/icons
 pixmaps/expeyes-junior-icon.png usr/share/icons
+expeyes/qtiplot_script.py	usr/share/expeyes

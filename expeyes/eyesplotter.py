@@ -78,7 +78,7 @@ def exporter(packages, label, tooltip):
     return mkExporter
 
 @exporter(
-    "python3-pygrace",
+    "grace",
     _translate("eyesplotter","Grace"),
     _translate("eyesplotter","Export to a fast old-timer plotter/analyzer")
 )
@@ -154,8 +154,29 @@ def calc(title, xlabel, ylabel, xdata, ydata):
     _translate("eyesplotter","Export to Scidavis plotter/analyzer")
 )
 def scidavis(title, xlabel, ylabel, xdata, ydata):
-    print("DEBUG: Scidavis export still not implemented")
-    return []
+    outfile = NamedTemporaryFile(
+        mode='w', 
+        suffix='.ascii',
+        prefix='eyesDavis_',
+        delete=False)
+    if len(ydata.shape)==1:
+        #simple plot
+        outfile.write("x;y\n")
+        for i in range(len(xdata)):
+            outfile.write("{};{}\n".format(xdata[i], ydata[i]))
+    else:
+        # multiple plot
+        labels=["x"]+["y{}".format(j+1) for j in range(ydata.shape[0])]
+        labels=";".join(labels)+"\n"
+        outfile.write(labels)
+        for i in range(len(xdata)):
+            data=[str(xdata[i])]+[str(ydata[j][i]) for j in range(ydata.shape[0])]
+            data=";".join(data)+"\n"
+            outfile.write(data)
+    outfile.close()
+    call("(scidavis {temp}&)".format(temp=outfile.name), shell=True)
+    return [outfile]
+
 
 @exporter(
     "qtiplot",

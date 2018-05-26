@@ -30,12 +30,18 @@ override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf $(HOME)
 
+DocDir = $(CURDIR)/debian/eyes17/usr/share/expeyes/doc
+DocDirSource = $(CURDIR)/ExpEYES17/UserManual
+
 override_dh_install:
 	make install_indep DESTDIR=$(CURDIR)/debian/tmp
 	dh_install
 	make -C po install DESTDIR=$(CURDIR)/debian/expeyes
 	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
 	# prevents lintian error about PYCACHE
-	for p in python-expeyes eyes17; do \
-	  find $(CURDIR)/debian/$$p/ -type d -name __pycache__| xargs rm -rf; \
+	find $(CURDIR)/debian/ -type d -name __pycache__| xargs rm -rf;
+	# install the documentation for eyes17
+	mkdir -p $(DocDir)
+	for l in en fr; do \
+	  cp $(DocDirSource)/$${l}/eyes17-a4.pdf $(DocDir)/$${l}-eyes17.pdf; \
 	done
