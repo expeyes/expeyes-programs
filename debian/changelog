@@ -1,3 +1,127 @@
+expeyes (4.3.7+dfsg-2) unstable; urgency=medium
+
+  * added debian/po/ru.po, thanks to Lev Lamberov.
+    Closes: #898163
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 08 May 2018 19:28:34 +0200
+
+expeyes (4.3.7+dfsg-1) unstable; urgency=medium
+
+  * New upstream release: to fix an issue with file saving, due to
+    changes of __builtin__ since python2
+  * Upgraded Standards-Version: 4.1.4
+  * added ExpEYES17/UserManual/fr/eyes17-a4.pdf in d/source/include-binaries
+  * modified the installation rules for the PDF documents of eyes17
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 05 May 2018 12:12:17 +0200
+
+expeyes (4.3.6+dfsg-6) unstable; urgency=medium
+
+  * yet another modification of debian/rules, in order to prevent
+    the shell command to return False.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 14 Jan 2018 19:04:02 +0100
+
+expeyes (4.3.6+dfsg-5) unstable; urgency=medium
+
+  * another modification of debian/rules, as probably compilations in
+    the debian compile farm do not like some repeated actions.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 14 Jan 2018 14:15:29 +0100
+
+expeyes (4.3.6+dfsg-4) unstable; urgency=medium
+
+  * simplified debian/rules, to allow the package to be compiled on
+    other architectures
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 13 Jan 2018 18:52:57 +0100
+
+expeyes (4.3.6+dfsg-3) unstable; urgency=medium
+
+  * downgraded Depends to Recommends: for python3-pyqt5.qtwebengine; this
+    should not harm since this package interests only users with i386 or
+    amd64 architectures, and that they use to get recommended packages.
+    Then, it should prevent unsatifiable dependencies for other platforms.
+  * upgraded Standards-Version: 4.1.3
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 13 Jan 2018 17:12:26 +0100
+
+expeyes (4.3.6+dfsg-2) unstable; urgency=medium
+
+  * fixed 99-phoenix.rules, thanks to Ajith Kumar's remarks.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Thu, 04 Jan 2018 12:44:35 +0100
+
+expeyes (4.3.6+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * modified the dependency chain: the recommendation of
+    expeyes-doc-en|expeyes-doc comes now from the package expeyes
+    rather from python-expeyes.
+  * modified the set of files installed with eyes17, to include
+    the user manual.
+  * added expeyes/qtiplot_script.py in debian/ expeyes.install
+  * fixed debian/copyright
+
+ -- Georges Khaznadar <georgesk@debian.org>  Thu, 04 Jan 2018 10:55:33 +0100
+
+expeyes (4.3.5+dfsg-2) unstable; urgency=medium
+
+  * added more dependencies for eyes17, thanks to Ajith's Kumar
+    feedback.
+  * remove the recommendation eyes17 -> expeyes-web
+  * created a symlink /etc/udev/rules.d/99-phoenix.rules =>
+    /lib/udev/rules.d/99-phoenix.rules in python-expeyes.postinst,
+    checked that this symlink is removed by  by the postrm script.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 03 Jan 2018 22:41:27 +0100
+
+expeyes (4.3.5+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * changed the Recommends relations, to make weak dependencies
+    from expeyes to xmgrace, rather than from python-expeyes.
+  * enforced the dependency python*-serial (>= 2.6)
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 16 Dec 2017 19:32:45 +0100
+
+expeyes (4.3.4+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * removed the build-indep dependencies since the package keeps the
+    PDF files for microhope alongside with sources
+  * upgraded Standards-Version: 4.1.2; debhelper (>= 10)
+  * modified bin/eyes17 to use python3 and Qt5 by default
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sat, 09 Dec 2017 16:40:24 +0100
+
+expeyes (4.3.3+dfsg-1) unstable; urgency=medium
+
+  * New upstream release
+  * signaled the license of eyes17/pythonSyntax.py, and rewritten
+    debian/copyright to the new format
+  * moved python*-pygrace from dependencies to recommendations.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 29 Oct 2017 20:29:23 +0100
+
+expeyes (4.3.2+dfsg-2) unstable; urgency=medium
+
+  * added a dependency python-expeyes -> udev
+  * modified the postinst file for python-expeyes to prevent piupart's
+    failure (udev cannot be started in a chroot)
+
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 24 Oct 2017 18:06:29 +0200
+
+expeyes (4.3.2+dfsg-1) unstable; urgency=medium
+
+  * New upstream release, which adds more translations
+  * removed unused dependencies on python*-usb: Closes: #773202
+  * Keep pdf precompiled file in the source package (the PDF comes
+    with its source in LyX format). Closes: #878751
+  * added the German translation: Closes: #877323
+
+ -- Georges Khaznadar <georgesk@debian.org>  Sun, 08 Oct 2017 19:56:07 +0200
+
 expeyes (4.3.1+dfsg-1) unstable; urgency=medium
 
   * New upstream release, which add support for eyes17.

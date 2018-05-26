@@ -1,59 +1,62 @@
-This work was packaged for Debian by:
+Format: http://dep.debian.net/deps/dep5
+Upstream-Name: expeyes
+Source: http://expeyes.in/sites/default/files/debs/expeyes-1.0.0.tgz
 
-    Georges Khaznadar <georgesk@ofset.org> on Sat, 16 Apr 2011 17:37:18 +0200
+Files: *
+Copyright: 2010-2018 Ajith Kumar B.P <bpajith@gmail.com>
+License: GPL-3
 
-It was downloaded from:
+Files: po/fr.po microhope/po/fr.po eyes17/lang/fr.ts
+Copyright: 2010-2017 Georges Khaznadar <georgesk@debian.org>
+License: GPL-3
 
-    http://expeyes.in/sites/default/files/debs/expeyes-1.0.0.tgz
+Files: debian/*
+Copyright: 2010-2018 Georges Khaznadar <georgesk@debian.org>
+License: GPL-3
 
-Upstream Author:
+Files: eyes17/pythonSyntax.py
+Copyright: 2017 DavidBoddie <https://wiki.python.org/moin/DavidBoddie>
+License: Modified-BSD-License
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+    (1) Redistributions of source code must retain the above copyright
+    notice, this list of conditions and the following disclaimer. 
+ .
+    (2) Redistributions in binary form must reproduce the above copyright
+    notice, this list of conditions and the following disclaimer in
+    the documentation and/or other materials provided with the
+    distribution.  
+ .
+    (3)The name of the author may not be used to
+    endorse or promote products derived from this software without
+    specific prior written permission.
+ .
+ THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ DISCLAIMED. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT,
+ INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+ HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+ STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
+ IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ POSSIBILITY OF SUCH DAMAGE.
 
-    Ajith Kumar B.P <bpajith@gmail.com>
-
-Copyright:
-
-    Copyright (C) 2010-2011 Ajith Kumar B.P
-
-License:
-
-    GPL version 3, see "/usr/share/common-licenses/GPL-3"
-
-The file janagana.py is authored by Jithin B.P. <jithinbp@gmail.com>
-and is licensed under GPL version 3, see "/usr/share/common-licenses/GPL-3"
-
-The file microhope/uhope.c is (c) 2014 Ambar Chatterjee <drambar@gmail.com>
-and is licensed under GPL version 3, see "/usr/share/common-licenses/GPL-3"
-
-The files microhope/firmware/* are (c) 2003, Jason P. Kyle
-and is licensed under GPL version 2 or later, 
-see "/usr/share/common-licenses/GPL-2"
-
-User Manual:
-
-The User Manual has been received by a private e-mail from the author, as
-a .lyx file.
-
-Copyright:
-
-	Copyright (C) 2010-2011 Ajith Kumar B.P
-
-Its license is:
-    GFDL 1.3, without invariant sections.
-    see "/usr/share/common-licenses/GFDL-1.3"
-
-The French translation of the manual is:
-
-    Copyright (c) 2011 Georges Khaznadar <georgesk@ofset.org>
-
-and is licensed under the GFDL 1.3, without invariant sections.
-see "/usr/share/common-licenses/GFDL-1.3"
-
-see the file README.source about the process used to make the translation.
-
-The Debian packaging is:
-
-    Copyright (C) 2011 Georges Khaznadar <georgesk@ofset.org>
-
-and is licensed under the GPL version 3,
-see "/usr/share/common-licenses/GPL-3".
-
+License: GPL-3
+ This package is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation as version 3 of the License.
+ .
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ You should have received a copy of the GNU General Public License
+ along with this program. If not, see <http://www.gnu.org/licenses/>
+ .
+ On Debian systems, the complete text of the GNU General
+ Public License version 3 can be found in "/usr/share/common-licenses/GPL-3".

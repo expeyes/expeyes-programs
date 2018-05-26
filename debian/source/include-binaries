@@ -1,16 +1,4 @@
-# those files do not come from upstream package,
-# they are built during a first run of debuild and not deleted
-# when the file keep-expeyes-pdf exists in the top dir
-
-doc/en/Docs-jr/eyesj.pdf
-doc/en/Progman-jr/eyesj-progman.pdf
-doc/en/Docs/eyes.pdf
-doc/fr/Docs-jr/eyesj.pdf
-doc/fr/Progman-jr/eyesj-progman.pdf
-doc/fr/Docs/eyes.pdf
-microhope/microhope-doc/microhope-en.pdf
+# these files are built from sources provided in the package
 microhope/microhope-doc/microhope.pdf
-microhope/microhope-doc/pics/minimum_circuit-eps-converted-to.pdf
-
-# that file is an illustration provided privately by Ambar
-microhope/pixmaps/mh-logo.png
+microhope/microhope-doc/microhope-en.pdf
+ExpEYES17/UserManual/fr/eyes17-a4.pdf
