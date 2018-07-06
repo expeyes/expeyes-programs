@@ -32,7 +32,10 @@ def check(args):
 
 def convert1(doc):
     """
-    modifies in-place the DOM object to simplify it
+    Modifies in-place the DOM object to simplify it. Keeps only the
+    encoding in the element <head>, and the element <div> of the body
+    which has an attribute role="main". Also, finds anchors with a text
+    like "¶" and removes them.
     :param: doc an xml.dom instance
     """
     head=doc.getElementsByTagName("head")[0]
