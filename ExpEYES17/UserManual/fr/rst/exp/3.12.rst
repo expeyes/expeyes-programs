@@ -26,7 +26,7 @@ partir de la différence de potentiel aux bornes de la résistance de
 :math:`1~k\Omega`.
 
 Le courant de la base dépend du réglage de la source de tension à
-l’extrémité dune résistance de :math:`100~k\Omega`, l’autre extrémité étant
+l’extrémité d'une résistance de :math:`100~k\Omega`, l’autre extrémité étant
 connectée à la base. La valeur du courant de base est calculée par
 :math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
 Si A2 n’est pas connectée, le code considère une valeur de 0,6 V pour la
