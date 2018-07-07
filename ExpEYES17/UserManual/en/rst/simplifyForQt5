@@ -1,0 +1,111 @@
+#!/usr/bin/python3
+
+import argparse, sys, os, os.path, xml.dom.minidom, xml.dom
+
+def check(args):
+    """
+    Checks that the program can work
+    :param: args a Namespace
+    :return: True if ok, and a message (str) used when there is an error
+    """
+    msg=[]
+    if not args.indir:
+        msg.append("the input directory is missing")
+    else:
+        indir=args.indir[0]
+    if not args.outdir:
+        msg.append("the output directory is missing")
+    else:
+        outdir=args.outdir[0]
+    if not msg: # no error so far
+        if not os.path.exists(indir):
+            msg.append("the input directory {} does not exist".format(indir))
+        try:
+            os.makedirs(outdir, exist_ok=True)
+        except:
+            msg.append("the output directory {} cannot be opened".format(outdir))
+        if indir==outdir:
+            msg.append("the input and ouptput directories must be different")
+    if msg:
+        return False, "Error: "+", ".join(msg)
+    return True, "ok"
+
+def convert1(doc):
+    """
+    Modifies in-place the DOM object to simplify it. Keeps only the
+    encoding in the element <head>, and the element <div> of the body
+    which has an attribute role="main". Also, finds anchors with a text
+    like "¶" and removes them.
+    :param: doc an xml.dom instance
+    """
+    head=doc.getElementsByTagName("head")[0]
+    
+    ########## Keep only the encoding in the head element ############
+    m=head.getElementsByTagName("meta")
+    m=[met for met in m if met.getAttribute("content")=="text/html; charset=utf-8"]
+    for node in reversed(head.childNodes):
+        if node != m[0]:
+            head.removeChild(node)
+    ##################################################################
+    
+    body=doc.getElementsByTagName("body")[0]
+    
+    ########## keep only the div with role="main" in the body ########
+    main=[ div for div in body.getElementsByTagName("div") if \
+          div.getAttribute("role")=="main"][0]
+    mainXML=main.toxml()
+    for node in reversed(body.childNodes):
+        body.removeChild(node)
+    newDoc=xml.dom.minidom.parseString(mainXML).documentElement
+    ### find anchors with a text like "¶" and remove them
+    anchors=newDoc.getElementsByTagName("a")
+    permalinks=[]
+    for a in reversed(anchors):
+        for n in a.childNodes:
+            if n.nodeType==3 and n.data=="¶": # 3=TEXT_NODE
+                permalinks.append(a)
+    for p in permalinks:
+        p.parentNode.removeChild(p)
+    body.appendChild(newDoc)
+    ##################################################################
+
+    return
+
+def convertfiles(indir, outdir):
+    """
+    parses HTML files found in indir, then symplifies them and writes them to
+    outdir
+    :param: indir an existing directory
+    :param: outdir an existing directory, different from the other one
+    """
+    for root, dirs, files in os.walk(indir):
+        target=root.replace(indir, outdir)
+        os.makedirs(target, exist_ok=True)
+        for f in files:
+            if f.endswith(".html"):
+                with open(os.path.join(root,f),"r") as iFile, \
+                    open(os.path.join(target,f),"w") as oFile:
+                    doc=xml.dom.minidom.parse(iFile)
+                    convert1(doc)
+                    oFile.write(doc.toxml())
+            else:
+                with open(os.path.join(root,f),"br") as iFile, \
+                    open(os.path.join(target,f),"bw") as oFile:
+                    oFile.write(iFile.read())
+    return
+    
+    
+if __name__=="__main__":
+    parser = argparse.ArgumentParser(
+        description='''Removes useless HTML components from input files and
+leaves all the necessary for Qt5's HTML display'''
+    )
+    parser.add_argument('--indir', nargs=1, help='input directory')
+    parser.add_argument('--outdir', nargs=1, help='output directory')
+    args = parser.parse_args(sys.argv[1:])
+    ok, message = check (args)
+    if not ok:
+        print(message)
+        parser.print_help()
+    else:
+        convertfiles(args.indir[0], args.outdir[0])
