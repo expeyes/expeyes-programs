@@ -426,3 +426,25 @@ epub_exclude_files = ['search.html']
 # If false, no index is generated.
 #
 # epub_use_index = True
+
+###################################################################"
+#  figure_language_filename
+#
+#  The filename format for language-specific figures. The default value is
+#  {root}.{language}{ext}. It will be expanded to dirname/filename.en.png from
+#  .. image:: dirname/filename.png. The available format tokens are:
+#
+#        {root} - the filename, including any path component, without the
+#                 file extension, e.g. dirname/filename
+#        {path} - the directory path component of the filename, with a
+#                 trailing slash if non-empty, e.g. dirname/
+#        {basename} - the filename without the directory path or file
+#                 extension components, e.g. filename
+#        {ext}  - the file extension, e.g. .png
+#        {language} - the translation language, e.g. en
+#
+#  For example, setting this to {path}{language}/{basename}{ext}
+#  will expand to dirname/en/filename.png instead.
+
+# figure_language_filename = "{root}.{language}{ext}"
+figure_language_filename = "{path}{language}/{basename}{ext}"
