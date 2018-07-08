@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="sound-velocity"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 710 310"
+   sodipodi:docname="sound-velocity.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/sound-velocity.png"
+   inkscape:export-xdpi="40.793201"
+   inkscape:export-ydpi="40.793201"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata87">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs85" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1668"
+     inkscape:window-height="1013"
+     id="namedview83"
+     showgrid="false"
+     inkscape:zoom="1.5126761"
+     inkscape:cx="355"
+     inkscape:cy="155"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="sound-velocity" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;sound-velocity.ps&quot; Page 1
+</desc>
+  <text
+     font-size="40"
+     id="text6"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="38.903439"
+     y="174.58">
+    <tspan
+       x="38.903439"
+       y="174.58"
+       id="tspan4">WG</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text18"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="27.780001"
+     y="254.58">
+    <tspan
+       x="27.780001"
+       y="254.58"
+       id="tspan16">GND</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text24"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="602.73346"
+     y="174.58">
+    <tspan
+       x="602.73346"
+       y="174.58"
+       id="tspan22">MIC</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path28"
+     d="m 592,128 v 64 h 96 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path30"
+     d="m 448,176 v 64 h 80 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path32"
+     d="m 128,208 v 64 H 16 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path34"
+     d="M 176,160 V 288 H 320 V 160 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="m 16,128 v 64 h 112 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path38"
+     d="m 128,240 h 16 v -16 h 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path40"
+     d="m 128,160 h 16 v 32 h 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path42"
+     d="m 464,176 v 64" />
+  <text
+     font-size="40"
+     id="text46"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="595.78003"
+     y="254.58">
+    <tspan
+       x="595.78003"
+       y="254.58"
+       id="tspan44">GND</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50"
+     d="m 688,208 v 64 h -96 v -64 z" />
+  <text
+     font-size="40"
+     id="text54"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="372"
+     y="278">
+    <tspan
+       x="372"
+       y="278"
+       id="tspan52">Microphone</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path58"
+     d="m 528,192 h 32 v -32 h 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path60"
+     d="m 528,224 h 32 v 16 h 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path62"
+     d="m 32,32 v 64 h 96 V 32 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path64"
+     d="M 144,160 V 64 h -16" />
+  <text
+     font-size="40"
+     id="text68"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="59.360626"
+     y="78.580002">
+    <tspan
+       x="59.360626"
+       y="78.580002"
+       id="tspan66">A1</tspan>
+  </text>
+  <g
+     id="g147"
+     transform="translate(-7.625,6.2129529)">
+    <text
+       y="207.08008"
+       x="192"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text12"
+       font-size="40">
+      <tspan
+         id="tspan10"
+         y="207.08008"
+         x="192">Buzzer</tspan>
+    </text>
+    <text
+       y="257.05402"
+       x="191.52"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text74"
+       font-size="40">
+      <tspan
+         id="tspan72"
+         y="257.05402"
+         x="191.52">Piézo</tspan>
+    </text>
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path78"
+     d="M 0,304 V 0 h 704 v 304 z" />
+</svg>
