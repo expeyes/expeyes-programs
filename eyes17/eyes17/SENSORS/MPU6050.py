@@ -1,5 +1,5 @@
 from numpy import int16,std
-from Kalman import KalmanFilter
+from .Kalman import KalmanFilter
 
 def connect(route,**args):
 	return MPU6050(route,**args)
