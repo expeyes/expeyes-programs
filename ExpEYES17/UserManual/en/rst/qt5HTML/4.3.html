@@ -1,0 +1,41 @@
+<?xml version="1.0" ?><!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head><body><div class="body" role="main">
+            
+  <div class="section" id="transient-response-of-rl-circuits">
+<h1>Transient Response of RL circuits</h1>
+<p><strong>Objective</strong></p>
+<p>Explore the nature of current and voltage when a voltage step is applied
+to resistor and inductor in series. By measuring the voltage across the
+inductor as a function of time, we can calculate its inductance.</p>
+<a class="reference internal image-reference" href="_images/RLtransient.svg"><img alt="_images/RLtransient.svg" src="_images/RLtransient.svg" width="300px"/></a>
+<a class="reference internal image-reference" href="_images/RLtransient.png"><img alt="_images/RLtransient.png" src="_images/RLtransient.png" style="width: 300px;"/></a>
+<p>In an RL circuit <img alt="V = RI + L(dI/dt)" class="math" src="_images/math/baceda9639037b3ae02ea5c44c19c7f348a170ff.png"/> and solving this will give
+<img alt="I = I_0 \times e^{− (R/L)t}" class="math" src="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png"/>. The coefficient of the exponential term R/L
+can be extracted from the graph of voltage across the inductor. The
+resistance of the inductor coil should be included in the
+calculations, <img alt="R = R_{ext} + R*_L" class="math" src="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png"/>.</p>
+<p><strong>Procedure</strong></p>
+<ul class="simple">
+<li>Inductor is the 3000 Turn coil</li>
+<li>Click on <em>0-&gt;5V STEP</em> and <em>5-&gt;0V step</em> Buttons to plot the graphs</li>
+<li>Adjust the horizontal scale, if required, and repeat.</li>
+<li>Calculate the value of inductance</li>
+<li>Insert an iron core into the inductor and repeat</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The transient response of the RL circuit is shown in figure. The
+exponential curve is fitted to extract the L/R value. The resistance of
+the coil is measured by comparing it with the known external resistance
+under DC conditions. A2 is connected to OD1 for a more accurate
+measurement of the coil resistance.</p>
+<p>The applied voltages are above zero, but the graph went to negative
+voltages. Why ?</p>
+<p>What was the current before doing the 5-&gt;0 step ? What is back EMF ?</p>
+<p>Repeat with two coils in series, by (a) placing them far away (b)
+placing one over the other and (c) after changing the orientation. The
+effect of mutual inductance can be seen.</p>
+</div>
+
+
+          </div></body>
+</html>
