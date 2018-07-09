@@ -1,0 +1,137 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Circuits RLC, réponse en régime stationnaire &#8212; Documentation eyes17 1.0</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Réponse de circuits RC en régime transitoire" href="4.2.html" />
+    <link rel="prev" title="Transmission d’un signal Opto-électrique" href="3.13.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="4.2.html" title="Réponse de circuits RC en régime transitoire"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="3.13.html" title="Transmission d’un signal Opto-électrique"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="3.13.html"
+                        title="Chapitre précédent">Transmission d’un signal Opto-électrique</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="4.2.html"
+                        title="Chapitre suivant">Réponse de circuits RC en régime transitoire</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/4.1.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="circuits-rlc-reponse-en-regime-stationnaire">
+<h1>Circuits RLC, réponse en régime stationnaire<a class="headerlink" href="#circuits-rlc-reponse-en-regime-stationnaire" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong>Objectif</strong></p>
+<p>Étudier le comportement de dipôle RLC dans un circuit en courant
+alternatif. Trois combinaisons différentes peuvent être étudiées.</p>
+<a class="reference internal image-reference" href="_images/RCsteadystate.svg"><img alt="_images/RCsteadystate.svg" src="_images/RCsteadystate.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/RLsteadystate.svg"><img alt="_images/RLsteadystate.svg" src="_images/RLsteadystate.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/RLCsteadystate.svg"><img alt="_images/RLCsteadystate.svg" src="_images/RLCsteadystate.svg" width="300px" /></a>
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li>Faire les connexions une par une, selon les schémas</li>
+<li>Prendre note des mesures d’amplitude et de phase, dans chaque cas</li>
+<li>Recommencer les mesures en changeant la fréquence.</li>
+<li>Pour le circuit série RLC, la jonction entre L et C est surveillées
+par A3</li>
+<li>Pour la résonance, sélectionner <img class="math" src="_images/math/b05927222a41f6c8ad2f56c0f804dbf4408e5eca.png" alt="C = 1~\mu F"/>,
+<img class="math" src="_images/math/44ebff0ba36796cd9ee2d865afe267446cd829af.png" alt="L = 10~mH"/> et <img class="math" src="_images/math/784456a8c31411ca3eff7e37f5e975650d0a431b.png" alt="f = 1600~Hz"/>, ajuster f pour obtenir un déphasage nul</li>
+<li>La tension totale aux bornes de L et C s’approche de zéro, les
+tensions de chacun sont déphasées à la résonance</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>La tension alternative de la source est en A1 et la tension aux bornes
+de la résistance en A2. Si on soustrait les valeurs instantanées de A2
+de A1 on obtient la tension totale aux bornes de L et C. IL faut
+utiliser un bobinage avec une résistance négligeable pour de bons
+résultats. Le déphasage entre courant et tension est donnée par
+<img class="math" src="_images/math/32c6feec0319127b528251271c6dfcd1ba89c729.png" alt="\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)"/>.</p>
+<p>La tension totale, la tension aux bornes de R et la tension aux bornes
+de LC sont montrées dans la figure. Le diagramme de phase montre le
+déphasage entre courant et tension. Le bobinage utilisé dans
+l’expérience a une inductance d’environ <img class="math" src="_images/math/e875fe84f3a05092166fd86c322d059029f8bd83.png" alt="10~mH"/> et une résistance de
+<img class="math" src="_images/math/27c350f59fabf785d06cf5392a0cf465f09d4822.png" alt="20~\Omega"/>.</p>
+<p>À <img class="math" src="_images/math/d5861bf84832a2930266db81cdf58c7b36074961.png" alt="1600~Hz"/>, <img class="math" src="_images/math/12d1ba9013d1beefc9aac439a55d0784e432f3a6.png" alt="Z_C \simeq Z_L"/> et la tension aux bornes
+de LC est déterminée par la résistance du bobinage. À la fréquence de
+résonance, la tension aux bornes de LC sera minimale, déterminée par la
+résistance du bobinage. L’entrée A3 est connectée entre L et C, si bien
+que les tensions individuelles de L et C peuvent être présentées.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="4.2.html" title="Réponse de circuits RC en régime transitoire"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="3.13.html" title="Transmission d’un signal Opto-électrique"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, GK.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mesure de température à l’aide d’une sonde PT100</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="mesure-de-temperature-a-laide-dune-sonde-pt100">
+<h1>Mesure de température à l’aide d’une sonde PT100</h1>
+<p><strong>Objectif</strong></p>
+<p>Enregistrer la température d’un liquide à l’aide d’un thermomètre à
+résistance de platine. La résistance d’un module PT100 est dépendante de
+la température par la relation
+<img class="math" src="_images/math/fa7c31e0f5de02e1d335ca390907a3c6b583549c.png" alt="R(T) = R_0 (1 + AT + BT^2)"/>, où
+<img class="math" src="_images/math/53a20f2a00696f557838673af1af95b5c27bee90.png" alt="A = 3,9083 \times 10^{−3}"/> et <img class="math" src="_images/math/614f03160a972cd6580c2ba31802bd61e72d1c35.png" alt="B =  − 5,775 \times 10^{−7}"/>.</p>
+<img alt="_images/pt100.svg" src="_images/pt100.svg" width="300px" /><img alt="_images/pt100-screen.png" src="_images/pt100-screen.png" style="width: 300px;" />
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li><p>Entrer le gain l’erreur d’offset et la valeur du courant de CSS</p></li>
+<li><p>Sélectionner l’intervalle de température et les intervalles de temps</p></li>
+<li><p>Sélectionner les paramètres requis et cliquer sur DÉMARRER</p></li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Un graphique de refroidissement de l’eau d’un récipient est montré sur
+la figure.</p>
+<p>Pour mesurer la résistance d’un élément PT100, on le connecte entre CSS
+et GND et on mesure la tension à ses bornes. Il est possible de mesurer
+la valeur exacte de CSS à l’aide d’un multimètre ou en mesurant la
+tension aux bornes d’une résistance connue. L’entrée de A3 est amplifiée
+11 fois en connectant une résistance de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> entre Rg et GND.</p>
+<p>La résistance d’une sonde PT100 est <img class="math" src="_images/math/c869bead85121f53b9909b1c317716d79cc49146.png" alt="1000~\Omega"/> à <img class="math" src="_images/math/d88860a7696731c22c4a53793ac1f4c64a3e0bc6.png" alt="0^\circ C"/>. Elle change
+pratiquement de <img class="math" src="_images/math/ea6f6f13b9f5b09ee6f4887642cd59215a15fc2d.png" alt="0,4~\Omega /^\circ C"/>, modifiant la tension de
+<img class="math" src="_images/math/512ccf9984795afbd18794dc027782b1fadb27e9.png" alt="0, 4~mV"/>. La
+sortie du convertisseur analogique numérique change d’un bit de poids
+faible pour un changement de <img class="math" src="_images/math/fede4649a130b0403092403f4cc5b793ba204ceb.png" alt="1,22~mV"/> dans la tension d’entrée, donc
+un changement de température de moins de 3°C ne serait pas toujours
+détecté. On utilise un amplificateur non-inverseur pour augmenter la
+résolution. Le gain de cet amplificateur doit être tel que la
+température maximale mesurée donne une tension de sortie inférieure à
+3,3 V. Modifier le champ « gain » selon.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Angular Velocity of Pendulum</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="angular-velocity-of-pendulum">
+<h1>Angular Velocity of Pendulum</h1>
+<p><strong>Objective</strong></p>
+<p>To study the nature of oscillations of a pendulum. An angle encoder is
+required for measuring the angular displacement as a function of time.
+But using a DC motor as a sensor, we can measure the angular velocity as
+a function of time.begin_inset Separator latexparend_inset</p>
+<img alt="_images/pendulum-screen.png" src="_images/pendulum-screen.png" style="width: 300px;" />
+<p><strong>Procedure</strong></p>
+<ul class="simple">
+<li><p>Attach some sort of rigid pendulum to the axis of the motor.</p></li>
+<li><p>Connect the motor between A3 and GND</p></li>
+<li><p>Connect <img class="math" src="_images/math/36dfc0dd6f490d35fa65c29d9013ee762dc718f1.png" alt="100~\Omega"/> resistor from Rg to Ground</p></li>
+<li><p>Oscillate the pendulum and START digitizing</p></li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The observed waveform is shown in figure. Fitting it with equation
+<img class="math" src="_images/math/e946e1280d32b04f12e80a6895ab7ec16b024585.png" alt="A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C"/>, using Grace gave an
+angular frequency of <img class="math" src="_images/math/bd74ebf2bdb0b97a186886bae79a6000148b8195.png" alt="10~Hz"/>.</p>
+<p>The pendulum should be made with a heavy bob and a light weight rod
+connecting it to the axis of the motor. In this case, the DC motor acts
+like a generator and the voltage is proportional to the instantaneous
+angular velocity.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

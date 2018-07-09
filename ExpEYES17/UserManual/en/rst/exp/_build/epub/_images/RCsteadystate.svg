@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="RCsteadystate" width="100%" height="100%"  viewBox="-6 -6 566 294">
+<desc>
+XCircuit Version 3.7
+File "RCsteadystate.ps" Page 1
+</desc>
+<g stroke="black">
+<g transform="matrix(   1    0   -0    1 432  80)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">R</tspan>
+</text></g>
+<ellipse cx="352" cy="112" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M208,112 L266,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M336,112 L278,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M278,80 L278,144 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M266,80 L266,144 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M320,224 L320,272 384,272 384,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M448,224 L448,272 544,272 544,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M0,0 L0,288 560,288 560,0 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<ellipse cx="512" cy="112" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M352,128 C353,128 304,192 352,224 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M496,112 L468,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M368,112 L396,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M396,112 L402,126 414,98 426,126 438,98 450,126 462,98 468,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M32,224 L32,272 128,272 128,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<ellipse cx="192" cy="112" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M176,224 L176,272 240,272 240,224 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix(   1    0   -0    1 256  64)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">C</tspan>
+</text></g>
+<path d="M512,128 C513,128 448,192 496,224 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M80,224 C112,176 48,144 176,112 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M208,224 C209,224 160,160 192,128 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix(   1    0   -0    1  48 256)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">WG</tspan>
+</text></g>
+<g transform="matrix(   1    0   -0    1 192 256)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A1</tspan>
+</text></g>
+<g transform="matrix(   1    0   -0    1 320 256)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">A2</tspan>
+</text></g>
+<g transform="matrix(   1    0   -0    1 448 256)" fill="#000000" >
+<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
+</text></g>
+</g>
+</svg>

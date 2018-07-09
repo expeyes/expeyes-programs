@@ -1,0 +1,27 @@
+.. 2.2
+   
+Mesurer une Résistance
+----------------------
+
+**Objectif**
+
+ExpEYES a une borne marquée **SEN**, qu’on peut utiliser pour mesurer
+des résistances dans l’intervalle de :math:`100~\Omega` à :math:`100~k\Omega`. On peut aussi
+étudier des associations en série ou en parallèle de résistances. La
+résistance effective d’une association en série est
+:math:`R = R_1 + R_2 + ⋯`. Pour une association en parallèle, elle
+est donnée par :math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+
+.. image:: ./schematics/res-measure.svg
+   :width: 300px	   
+.. image:: ./schematics/res-series.svg
+   :width: 300px	   
+.. image:: ./schematics/res-parallel.svg
+   :width: 300px
+
+**Procédure**
+
+-  Connecter la résistance entre SEN une borne GND
+-  Observer la valeur afficher dans le panneau de droite
+-  Essayer des associations en série et en parallèle
+

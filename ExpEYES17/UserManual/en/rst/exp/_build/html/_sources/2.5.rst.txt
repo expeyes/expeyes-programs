@@ -1,0 +1,30 @@
+.. 2.5
+
+Direct and Alternating Currents
+===============================
+
+**Objective**
+
+Introduce the concept of time dependent voltages, using a V(t) graph.
+Compare the graph of DC and AC.
+
+.. image:: schematics/ac-dc.svg
+	   :width: 300px
+
+**Procedure**
+
+-  Set PV1 to 2 volts and Set WG to 200 Hz
+-  Enable analyse on A1, to measure amplitude and frequency.
+-  Enable A2
+
+**Discussion**
+
+In the plot if voltage is not changing, it is pure DC. If the voltage is
+changing with time, it has an AC component. if the average voltage is
+zero, it is pure DC. In the second plot, the voltage is changing from
+zero to file volts, is it AC, DC or something else ???
+
+.. image:: pics/ac-dc.png
+	   :width: 300px
+.. image:: pics/sqr-wave.png
+	   :width: 300px

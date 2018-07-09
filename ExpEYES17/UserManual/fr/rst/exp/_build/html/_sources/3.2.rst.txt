@@ -1,0 +1,33 @@
+.. 3.2
+   
+Redressement double alternance avec des jonctions PN
+----------------------------------------------------
+
+**Objectif**
+
+Réaliser un redresseur double alternance, à l’aide de deux diodes. Il
+faut deux signaux alternatifs, déphasés de 180 degrés. Ceux-ci sont
+fournis par WG et :math:`\overline{WG}`.
+
+.. image:: schematics/fullwave.svg
+	   :width: 300px
+.. image:: pics/fullwave.png
+	   :width: 300px
+
+**Procédure**
+
+-  Faire les connexions
+-  Activer A1, A2 et A3
+-  Régler WG à 200 Hz et ajuster la base de temps pour voir 4 ou 5
+   cycles.
+
+**Discussion**
+
+On laisse comme exercice à l’utilisateur de réduire la fluctuation de
+tension à l’aide d’un condensateur. Cette expérience est seulement là
+pour montrer le fonctionnement d’une redressement double alternance, il
+ne peut pas produire beaucoup plus que quelques milliampères de courant.
+
+En quoi un redressement double alternance est-il supérieur à un
+redressement simple alternance ?
+

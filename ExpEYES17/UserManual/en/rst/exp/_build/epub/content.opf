@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en"
+ unique-identifier="unknown"
+ prefix="ibooks: http://vocabulary.itunes.apple.com/rdf/ibooks/vocabulary-extensions-1.0/">
+  <metadata xmlns:opf="http://www.idpf.org/2007/opf"
+        xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:language>en</dc:language>
+    <dc:title>eyes17</dc:title>
+    <dc:description>unknown</dc:description>
+    <dc:creator>Jithin B.P.</dc:creator>
+    <dc:contributor>unknown</dc:contributor>
+    <dc:publisher>Jithin B.P.</dc:publisher>
+    <dc:rights>2018, Jithin B.P.</dc:rights>
+    <dc:identifier id="unknown">unknown</dc:identifier>
+    <dc:date>2018-07-09T18:39:51Z</dc:date>
+    <meta property="dcterms:modified">2018-07-09T18:39:51Z</meta>
+    <meta property="ibooks:version">1.0</meta>
+    <meta property="ibooks:specified-fonts">true</meta>
+    <meta property="ibooks:binding">true</meta>
+    <meta property="ibooks:scroll-axis">vertical</meta>
+  </metadata>
+  <manifest>
+    <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml" />
+    <item id="nav" href="nav.xhtml" media-type="application/xhtml+xml" properties="nav"/>
+    <item id="epub-0" href="1.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-1" href="1.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-2" href="1.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-3" href="1.4.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-4" href="1.5.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-5" href="2.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-6" href="2.10.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-7" href="2.11.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-8" href="2.12.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-9" href="2.13.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-10" href="2.14.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-11" href="2.15.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-12" href="2.16.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-13" href="2.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-14" href="2.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-15" href="2.4.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-16" href="2.5.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-17" href="2.6.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-18" href="2.7.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-19" href="2.8.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-20" href="2.9.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-21" href="3.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-22" href="3.10.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-23" href="3.11.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-24" href="3.12.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-25" href="3.13.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-26" href="3.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-27" href="3.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-28" href="3.4.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-29" href="3.5.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-30" href="3.6.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-31" href="3.7.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-32" href="3.8.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-33" href="3.9.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-34" href="4.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-35" href="4.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-36" href="4.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-37" href="4.4.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-38" href="4.5.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-39" href="4.6.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-40" href="4.7.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-41" href="5.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-42" href="5.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-43" href="5.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-44" href="6.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-45" href="6.2.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-46" href="6.3.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-47" href="6.4.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-48" href="6.5.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-49" href="7.1.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-50" href="genindex.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-51" href="index.xhtml" media-type="application/xhtml+xml" />
+    <item id="epub-52" href="_images/RCdifferentiation.png" media-type="image/png" />
+    <item id="epub-53" href="_images/RCintegration.png" media-type="image/png" />
+    <item id="epub-54" href="_images/RCintegration.svg" media-type="image/svg+xml" />
+    <item id="epub-55" href="_images/RCsteadystate.svg" media-type="image/svg+xml" />
+    <item id="epub-56" href="_images/RCtransient.png" media-type="image/png" />
+    <item id="epub-57" href="_images/RCtransient.svg" media-type="image/svg+xml" />
+    <item id="epub-58" href="_images/RLC-curves.png" media-type="image/png" />
+    <item id="epub-59" href="_images/RLCsteadystate.svg" media-type="image/svg+xml" />
+    <item id="epub-60" href="_images/RLCtransient.svg" media-type="image/svg+xml" />
+    <item id="epub-61" href="_images/RLsteadystate.svg" media-type="image/svg+xml" />
+    <item id="epub-62" href="_images/RLtransient.png" media-type="image/png" />
+    <item id="epub-63" href="_images/RLtransient.svg" media-type="image/svg+xml" />
+    <item id="epub-64" href="_images/ac-dc.png" media-type="image/png" />
+    <item id="epub-65" href="_images/ac-dc.svg" media-type="image/svg+xml" />
+    <item id="epub-66" href="_images/ac-gen-screen.png" media-type="image/png" />
+    <item id="epub-67" href="_images/ac-generator.svg" media-type="image/svg+xml" />
+    <item id="epub-68" href="_images/acdc-sep-screen.png" media-type="image/png" />
+    <item id="epub-69" href="_images/acdc-separating.svg" media-type="image/svg+xml" />
+    <item id="epub-70" href="_images/cap-measure.svg" media-type="image/svg+xml" />
+    <item id="epub-71" href="_images/cap-parallel.svg" media-type="image/svg+xml" />
+    <item id="epub-72" href="_images/cap-series.svg" media-type="image/svg+xml" />
+    <item id="epub-73" href="_images/capture4.png" media-type="image/png" />
+    <item id="epub-74" href="_images/clamping.png" media-type="image/png" />
+    <item id="epub-75" href="_images/clamping.svg" media-type="image/svg+xml" />
+    <item id="epub-76" href="_images/clipping.png" media-type="image/png" />
+    <item id="epub-77" href="_images/clipping.svg" media-type="image/svg+xml" />
+    <item id="epub-78" href="_images/clock-divider.png" media-type="image/png" />
+    <item id="epub-79" href="_images/clock-divider.svg" media-type="image/svg+xml" />
+    <item id="epub-80" href="_images/clock-divider2.png" media-type="image/png" />
+    <item id="epub-81" href="_images/conducting-human-screen.png" media-type="image/png" />
+    <item id="epub-82" href="_images/conducting-human.svg" media-type="image/svg+xml" />
+    <item id="epub-83" href="_images/diode-iv-screen.png" media-type="image/png" />
+    <item id="epub-84" href="_images/diode_iv.svg" media-type="image/svg+xml" />
+    <item id="epub-85" href="_images/driven-pendulum.svg" media-type="image/svg+xml" />
+    <item id="epub-86" href="_images/eyes17-panel.jpg" media-type="image/jpeg" />
+    <item id="epub-87" href="_images/fullwave.png" media-type="image/png" />
+    <item id="epub-88" href="_images/fullwave.svg" media-type="image/svg+xml" />
+    <item id="epub-89" href="_images/halfwave.png" media-type="image/png" />
+    <item id="epub-90" href="_images/halfwave.svg" media-type="image/svg+xml" />
+    <item id="epub-91" href="_images/ic555-screen.png" media-type="image/png" />
+    <item id="epub-92" href="_images/induction-screen.png" media-type="image/png" />
+    <item id="epub-93" href="_images/induction.svg" media-type="image/svg+xml" />
+    <item id="epub-94" href="_images/ldr.svg" media-type="image/svg+xml" />
+    <item id="epub-95" href="_images/lemon-cell.svg" media-type="image/svg+xml" />
+    <item id="epub-96" href="_images/light-barrier-photo.jpg" media-type="image/jpeg" />
+    <item id="epub-97" href="_images/line-pickup.svg" media-type="image/svg+xml" />
+    <item id="epub-98" href="_images/logic-gates.svg" media-type="image/svg+xml" />
+    <item id="epub-99" href="_images/measure-dc.svg" media-type="image/svg+xml" />
+    <item id="epub-100" href="_images/opamp-int.svg" media-type="image/svg+xml" />
+    <item id="epub-101" href="_images/opamp-inv.svg" media-type="image/svg+xml" />
+    <item id="epub-102" href="_images/opamp-noninv.svg" media-type="image/svg+xml" />
+    <item id="epub-103" href="_images/opto-electric-transmission.png" media-type="image/png" />
+    <item id="epub-104" href="_images/opto-electric.svg" media-type="image/svg+xml" />
+    <item id="epub-105" href="_images/osc555.svg" media-type="image/svg+xml" />
+    <item id="epub-106" href="_images/pendulum-screen.png" media-type="image/png" />
+    <item id="epub-107" href="_images/pickup.png" media-type="image/png" />
+    <item id="epub-108" href="_images/piezo-freq-resp.png" media-type="image/png" />
+    <item id="epub-109" href="_images/pt100-screen.png" media-type="image/png" />
+    <item id="epub-110" href="_images/pt100.svg" media-type="image/svg+xml" />
+    <item id="epub-111" href="_images/res-body.svg" media-type="image/svg+xml" />
+    <item id="epub-112" href="_images/res-compare.svg" media-type="image/svg+xml" />
+    <item id="epub-113" href="_images/res-measure.svg" media-type="image/svg+xml" />
+    <item id="epub-114" href="_images/res-parallel.svg" media-type="image/svg+xml" />
+    <item id="epub-115" href="_images/res-series.svg" media-type="image/svg+xml" />
+    <item id="epub-116" href="_images/res-water.svg" media-type="image/svg+xml" />
+    <item id="epub-117" href="_images/resonance-pendulum.jpg" media-type="image/jpeg" />
+    <item id="epub-118" href="_images/rod-pendulum.svg" media-type="image/svg+xml" />
+    <item id="epub-119" href="_images/scope17.png" media-type="image/png" />
+    <item id="epub-120" href="_images/sinewaveFFT.png" media-type="image/png" />
+    <item id="epub-121" href="_images/sound-beats.svg" media-type="image/svg+xml" />
+    <item id="epub-122" href="_images/sound-capture.svg" media-type="image/svg+xml" />
+    <item id="epub-123" href="_images/sound-generator.svg" media-type="image/svg+xml" />
+    <item id="epub-124" href="_images/sound-velocity.svg" media-type="image/svg+xml" />
+    <item id="epub-125" href="_images/sound_waves.png" media-type="image/png" />
+    <item id="epub-126" href="_images/sqr-wave.png" media-type="image/png" />
+    <item id="epub-127" href="_images/sqwaveFFT.png" media-type="image/png" />
+    <item id="epub-128" href="_images/sr04-dist.svg" media-type="image/svg+xml" />
+    <item id="epub-129" href="_images/transformer-screen.png" media-type="image/png" />
+    <item id="epub-130" href="_images/transformer.svg" media-type="image/svg+xml" />
+    <item id="epub-131" href="_images/transistor-ce.png" media-type="image/png" />
+    <item id="epub-132" href="_images/transistor_out.svg" media-type="image/svg+xml" />
+    <item id="epub-133" href="_images/water-conduct.png" media-type="image/png" />
+    <item id="epub-134" href="_images/math/06685ed182ad883eb62ae69773b4ad8c53a467e6.png" media-type="image/png" />
+    <item id="epub-135" href="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" media-type="image/png" />
+    <item id="epub-136" href="_images/math/13419c81a695554fc8440c9ec12986cced8a0b4c.png" media-type="image/png" />
+    <item id="epub-137" href="_images/math/1f2504b3b9356a19bca33fe878056102889cf4e9.png" media-type="image/png" />
+    <item id="epub-138" href="_images/math/20f067cba8e14b3e40ff45e5db0b8ec90def74c5.png" media-type="image/png" />
+    <item id="epub-139" href="_images/math/2201dc802084bb28c4d086972d749820916bfaa6.png" media-type="image/png" />
+    <item id="epub-140" href="_images/math/27c350f59fabf785d06cf5392a0cf465f09d4822.png" media-type="image/png" />
+    <item id="epub-141" href="_images/math/280e8649ccff07c13fba08ce258abc19f3dbf5fb.png" media-type="image/png" />
+    <item id="epub-142" href="_images/math/2df6d73140b918ff471271bf0d299332148bb9b5.png" media-type="image/png" />
+    <item id="epub-143" href="_images/math/307b3725cbb03398131f9ca542d79aff4933195f.png" media-type="image/png" />
+    <item id="epub-144" href="_images/math/31e38a0e1b9c9ec5ab63164d3677a7df90458e56.png" media-type="image/png" />
+    <item id="epub-145" href="_images/math/367f724ead30fda4a28e49b089ab80a2592dbfff.png" media-type="image/png" />
+    <item id="epub-146" href="_images/math/369e726a33a407097256a98b33850484fdaf8f1f.png" media-type="image/png" />
+    <item id="epub-147" href="_images/math/36dfc0dd6f490d35fa65c29d9013ee762dc718f1.png" media-type="image/png" />
+    <item id="epub-148" href="_images/math/39d09511d6ffd909e706b64ab124c7c865c0a19c.png" media-type="image/png" />
+    <item id="epub-149" href="_images/math/3cc5ca2b9feab7f8284dd849160615767efc46de.png" media-type="image/png" />
+    <item id="epub-150" href="_images/math/44ebff0ba36796cd9ee2d865afe267446cd829af.png" media-type="image/png" />
+    <item id="epub-151" href="_images/math/450e4e23bca999c7ef8d807d3d4f3d5f859b4617.png" media-type="image/png" />
+    <item id="epub-152" href="_images/math/455309425a1c121db3b191eff4f0ea851271a7f6.png" media-type="image/png" />
+    <item id="epub-153" href="_images/math/46b8bc674cc9e8cb7c5a4be8ebd673b599092808.png" media-type="image/png" />
+    <item id="epub-154" href="_images/math/46d0c0b0a1c375061957ed1ee45ec0f79096bca2.png" media-type="image/png" />
+    <item id="epub-155" href="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" media-type="image/png" />
+    <item id="epub-156" href="_images/math/512ccf9984795afbd18794dc027782b1fadb27e9.png" media-type="image/png" />
+    <item id="epub-157" href="_images/math/53a20f2a00696f557838673af1af95b5c27bee90.png" media-type="image/png" />
+    <item id="epub-158" href="_images/math/5b710c6ba84e84c8a17030c5217102ae168d1e02.png" media-type="image/png" />
+    <item id="epub-159" href="_images/math/5fa6dae3139f4001dba49ec211de3e9053548dec.png" media-type="image/png" />
+    <item id="epub-160" href="_images/math/60a5f57cb425f62765c576e48ba2fc4c6a528fc8.png" media-type="image/png" />
+    <item id="epub-161" href="_images/math/614f03160a972cd6580c2ba31802bd61e72d1c35.png" media-type="image/png" />
+    <item id="epub-162" href="_images/math/620a3ce6403ec82f1347af9985bc03f7a9382f4a.png" media-type="image/png" />
+    <item id="epub-163" href="_images/math/64f8687bfd678e99fcc62e8cbdefcc0b004ec5df.png" media-type="image/png" />
+    <item id="epub-164" href="_images/math/67878c991bc01fe63fea24670915286f5daa006c.png" media-type="image/png" />
+    <item id="epub-165" href="_images/math/71e0510df4df44cfb1644b4503bf0c84a2326101.png" media-type="image/png" />
+    <item id="epub-166" href="_images/math/747baa849ddf46b5a4d2e10666b6ae1c7a95ee05.png" media-type="image/png" />
+    <item id="epub-167" href="_images/math/76f1d8ace30435987c01a00ca53a71cba1f40e6c.png" media-type="image/png" />
+    <item id="epub-168" href="_images/math/784456a8c31411ca3eff7e37f5e975650d0a431b.png" media-type="image/png" />
+    <item id="epub-169" href="_images/math/78a06cf7a34f39fde71fbba0d5539baae7c72d4e.png" media-type="image/png" />
+    <item id="epub-170" href="_images/math/7d26a58f053a6006d66fbdf8066d0cedad85a45e.png" media-type="image/png" />
+    <item id="epub-171" href="_images/math/82162ef1e74838867e821869332f61839d9eae14.png" media-type="image/png" />
+    <item id="epub-172" href="_images/math/83b243116fc4ea50c8c083f6da6696cdf9d7d82d.png" media-type="image/png" />
+    <item id="epub-173" href="_images/math/855050f8e6ce09f0c2716ded698e80a83b3436b3.png" media-type="image/png" />
+    <item id="epub-174" href="_images/math/8b012ca7c938d1fd6615b4c5cbc027507d0e446c.png" media-type="image/png" />
+    <item id="epub-175" href="_images/math/915fd7cd68c421452813aebcc3d1c277c26ff6f7.png" media-type="image/png" />
+    <item id="epub-176" href="_images/math/980e85ae6f65381d828acd36825fa84852ff1a96.png" media-type="image/png" />
+    <item id="epub-177" href="_images/math/9b0fd5debc52dcb41d25a9b4c3cb380c6179b12f.png" media-type="image/png" />
+    <item id="epub-178" href="_images/math/a0eb8bb4c0140d5f48a9a9a465080164dd0099e3.png" media-type="image/png" />
+    <item id="epub-179" href="_images/math/a129681a2164895f179b5dad647243f7b4151c92.png" media-type="image/png" />
+    <item id="epub-180" href="_images/math/a3cea16b8decb2f89c05eba1adf1898a81269d6c.png" media-type="image/png" />
+    <item id="epub-181" href="_images/math/a8045cf7990709a0503df23e7cac7cf9fdfac062.png" media-type="image/png" />
+    <item id="epub-182" href="_images/math/ae12a24f88803b5895632e4848d87d46483c492c.png" media-type="image/png" />
+    <item id="epub-183" href="_images/math/b05927222a41f6c8ad2f56c0f804dbf4408e5eca.png" media-type="image/png" />
+    <item id="epub-184" href="_images/math/b163e19d6fdfb9ba198369e1de79999a184e1950.png" media-type="image/png" />
+    <item id="epub-185" href="_images/math/b1a48943c2c92e1fda4acc96b15e087f23130e3b.png" media-type="image/png" />
+    <item id="epub-186" href="_images/math/b359488b993294ebbc2c7b30ab8f749dcbc6826d.png" media-type="image/png" />
+    <item id="epub-187" href="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png" media-type="image/png" />
+    <item id="epub-188" href="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png" media-type="image/png" />
+    <item id="epub-189" href="_images/math/baceda9639037b3ae02ea5c44c19c7f348a170ff.png" media-type="image/png" />
+    <item id="epub-190" href="_images/math/bbc2ff13bad8d262b9cc56f16a664ff4871beaf1.png" media-type="image/png" />
+    <item id="epub-191" href="_images/math/bd74ebf2bdb0b97a186886bae79a6000148b8195.png" media-type="image/png" />
+    <item id="epub-192" href="_images/math/bdd9c17025e88b5613f699c22ece47ac2849070e.png" media-type="image/png" />
+    <item id="epub-193" href="_images/math/c294892b3f57729b1c4b51a3ca05d0febc42df0b.png" media-type="image/png" />
+    <item id="epub-194" href="_images/math/c775188f4c995141fc7ee6f0336595dc12d2c761.png" media-type="image/png" />
+    <item id="epub-195" href="_images/math/c869bead85121f53b9909b1c317716d79cc49146.png" media-type="image/png" />
+    <item id="epub-196" href="_images/math/ca36dbc6d5158cb79f5591a51c67f087043c8c29.png" media-type="image/png" />
+    <item id="epub-197" href="_images/math/cb5b37a5c7554c8d40382767410bb1e280407b75.png" media-type="image/png" />
+    <item id="epub-198" href="_images/math/d09cee760dc43b03cbf1e345e22363826a4eda80.png" media-type="image/png" />
+    <item id="epub-199" href="_images/math/d5861bf84832a2930266db81cdf58c7b36074961.png" media-type="image/png" />
+    <item id="epub-200" href="_images/math/d88860a7696731c22c4a53793ac1f4c64a3e0bc6.png" media-type="image/png" />
+    <item id="epub-201" href="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" media-type="image/png" />
+    <item id="epub-202" href="_images/math/e13f2c6096f050e0c7cdbd867b87777a190fe77c.png" media-type="image/png" />
+    <item id="epub-203" href="_images/math/e875fe84f3a05092166fd86c322d059029f8bd83.png" media-type="image/png" />
+    <item id="epub-204" href="_images/math/e946e1280d32b04f12e80a6895ab7ec16b024585.png" media-type="image/png" />
+    <item id="epub-205" href="_images/math/ea6f6f13b9f5b09ee6f4887642cd59215a15fc2d.png" media-type="image/png" />
+    <item id="epub-206" href="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png" media-type="image/png" />
+    <item id="epub-207" href="_images/math/f23ac950c94d19d1f7cf10fd58be02d8447bcaee.png" media-type="image/png" />
+    <item id="epub-208" href="_images/math/f259596ec478838a19c37c38f45cfc3602ca4791.png" media-type="image/png" />
+    <item id="epub-209" href="_images/math/f2d283a2071f9d043c9e0b0f794a8880fa0d3ce9.png" media-type="image/png" />
+    <item id="epub-210" href="_images/math/f567e0a9af74f077f8f58295d60a30e7d14dc776.png" media-type="image/png" />
+    <item id="epub-211" href="_images/math/fa7c31e0f5de02e1d335ca390907a3c6b583549c.png" media-type="image/png" />
+    <item id="epub-212" href="_images/math/fdfa6216fdf0e24c028b65c6e6c4cd7a99258dc7.png" media-type="image/png" />
+    <item id="epub-213" href="_images/math/fede4649a130b0403092403f4cc5b793ba204ceb.png" media-type="image/png" />
+    <item id="epub-214" href="_images/math/ff184117dc8012c2a6f1936486f04c832380d1e2.png" media-type="image/png" />
+    <item id="epub-215" href="_static/ajax-loader.gif" media-type="image/gif" />
+    <item id="epub-216" href="_static/basic.css" media-type="text/css" />
+    <item id="epub-217" href="_static/comment-bright.png" media-type="image/png" />
+    <item id="epub-218" href="_static/comment-close.png" media-type="image/png" />
+    <item id="epub-219" href="_static/comment.png" media-type="image/png" />
+    <item id="epub-220" href="_static/down-pressed.png" media-type="image/png" />
+    <item id="epub-221" href="_static/down.png" media-type="image/png" />
+    <item id="epub-222" href="_static/epub.css" media-type="text/css" />
+    <item id="epub-223" href="_static/file.png" media-type="image/png" />
+    <item id="epub-224" href="_static/minus.png" media-type="image/png" />
+    <item id="epub-225" href="_static/plus.png" media-type="image/png" />
+    <item id="epub-226" href="_static/pygments.css" media-type="text/css" />
+    <item id="epub-227" href="_static/up-pressed.png" media-type="image/png" />
+    <item id="epub-228" href="_static/up.png" media-type="image/png" />
+  </manifest>
+  <spine toc="ncx" page-progression-direction="ltr">
+    <itemref idref="epub-51" />
+    <itemref idref="epub-0" />
+    <itemref idref="epub-1" />
+    <itemref idref="epub-2" />
+    <itemref idref="epub-3" />
+    <itemref idref="epub-4" />
+    <itemref idref="epub-5" />
+    <itemref idref="epub-13" />
+    <itemref idref="epub-14" />
+    <itemref idref="epub-15" />
+    <itemref idref="epub-16" />
+    <itemref idref="epub-17" />
+    <itemref idref="epub-18" />
+    <itemref idref="epub-19" />
+    <itemref idref="epub-20" />
+    <itemref idref="epub-6" />
+    <itemref idref="epub-7" />
+    <itemref idref="epub-8" />
+    <itemref idref="epub-9" />
+    <itemref idref="epub-10" />
+    <itemref idref="epub-11" />
+    <itemref idref="epub-12" />
+    <itemref idref="epub-21" />
+    <itemref idref="epub-26" />
+    <itemref idref="epub-27" />
+    <itemref idref="epub-28" />
+    <itemref idref="epub-29" />
+    <itemref idref="epub-30" />
+    <itemref idref="epub-31" />
+    <itemref idref="epub-32" />
+    <itemref idref="epub-33" />
+    <itemref idref="epub-22" />
+    <itemref idref="epub-23" />
+    <itemref idref="epub-24" />
+    <itemref idref="epub-25" />
+    <itemref idref="epub-34" />
+    <itemref idref="epub-35" />
+    <itemref idref="epub-36" />
+    <itemref idref="epub-37" />
+    <itemref idref="epub-38" />
+    <itemref idref="epub-39" />
+    <itemref idref="epub-40" />
+    <itemref idref="epub-41" />
+    <itemref idref="epub-42" />
+    <itemref idref="epub-43" />
+    <itemref idref="epub-44" />
+    <itemref idref="epub-45" />
+    <itemref idref="epub-46" />
+    <itemref idref="epub-47" />
+    <itemref idref="epub-48" />
+    <itemref idref="epub-49" />
+    <itemref idref="epub-50" />
+  </spine>
+  <guide>
+    <reference type="toc" title="Table of Contents" href="index.xhtml" />
+  </guide>
+</package>
