@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 
 import sys, os, os.path
 from subprocess import call
@@ -19,7 +19,7 @@ elif lc_all and lc_all[0:2] != preferred:
 if len(sys.argv)>1:
     preferred=sys.argv[1]
 
-filename=os.path.join('/usr/share/expeyes/doc', preferred+'-'+pdfTail)
+filename=os.path.join('/usr/share/eyes17/doc', preferred, pdfTail)
 if not os.path.exists(filename):
-    filename=os.path.join('/usr/share/expeyes/doc', 'en-'+pdfTail)
+    filename=os.path.join('/usr/share/eyes17/doc/en', pdfTail)
 call('evince '+filename, shell=True)
