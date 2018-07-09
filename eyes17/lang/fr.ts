@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -633,7 +634,7 @@
     <message>
         <location filename="../scope.py" line="591"/>
         <source>Fundamental frequency = %5.1f Hz</source>
-        <translation>Fréquence fondamentale = %5.1 Hz</translation>
+        <translation>Fréquence fondamentale = %5.1f Hz</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="165"/>
@@ -2144,7 +2145,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../main.py" line="63"/>
         <source>Transistor Amplifier (CE)</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplificateur à transistor (CE)</translation>
     </message>
 </context>
 <context>
