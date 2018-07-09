@@ -72,12 +72,12 @@ if __name__=="__main__":
     buildDir=sys.argv[1]
     texFile=sys.argv[2]
     t=""
-    with open(buildDir+"/"+texFile) as infile:
+    with open(buildDir+"/"+texFile, encoding="utf-8") as infile:
         t=infile.read()
     for f in filters:
         t=f(t, verbose=True)
     
-    with open(buildDir+"/"+texFile+".tmp","w") as outfile:
+    with open(buildDir+"/"+texFile+".tmp","w", encoding="utf-8") as outfile:
          outfile.write(t)
          
     os.rename(buildDir+"/"+texFile+".tmp", buildDir+"/"+texFile)

@@ -83,8 +83,8 @@ def convertfiles(indir, outdir):
         os.makedirs(target, exist_ok=True)
         for f in files:
             if f.endswith(".html"):
-                with open(os.path.join(root,f),"r") as iFile, \
-                    open(os.path.join(target,f),"w") as oFile:
+                with open(os.path.join(root,f),"r", encoding="utf-8") as iFile, \
+                    open(os.path.join(target,f),"w", encoding="utf-8") as oFile:
                     doc=xml.dom.minidom.parse(iFile)
                     convert1(doc)
                     oFile.write(doc.toxml())
