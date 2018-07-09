@@ -159,16 +159,14 @@ class helpWin(QWebView):
 		for directory in [
 			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', lang[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
 			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', lang, 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
-			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files
-			os.path.join("/usr/share/eyes17/rst[:2]", lang), # packaged environment, restructured text files
+			os.path.join("/usr/share/eyes17/rst", lang[:2]), # packaged environment, restructured text files
 			os.path.join("/usr/share/eyes17/rst", lang), # packaged environment, restructured text files (complete LANG code)
 			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
+			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
 		]:
 			for f in htmlFiles:
 				target=	os.path.join(directory,f)
-				print("GRRRR trying", target)
 				if os.path.exists(target):
-					print("GRRRR found target help file:", target)	
 					return target	
 		return None
 
