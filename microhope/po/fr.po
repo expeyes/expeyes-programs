@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Microhope 3.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-09-24 20:19+0200\n"
+"POT-Creation-Date: 2017-09-24 16:49+0200\n"
 "PO-Revision-Date: 2015-02-11 16:42+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@debian.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -277,7 +277,7 @@ msgstr ""
 "Voir la licence GNU General Public License www.gnu.org/licenses\n"
 "pour plus de détails.\n"
 
-#: ../uhope.c:748 ../uhope.c:869 ../mh-ide.py:255
+#: ../uhope.c:748 ../uhope.c:869 ../mh-ide.py:253 ../mh-ide.py:255
 msgid "About"
 msgstr "À propos"
 
@@ -457,404 +457,423 @@ msgstr "uhope - un environnement Linux pour Microhope"
 msgid "Building menus failed"
 msgstr "Échec à la construction des menus"
 
-#: ../mh-ide.py:51 ../mh-ide.py:55
+#: ../mh-ide.py:49 ../mh-ide.py:53 ../mh-ide.py:51 ../mh-ide.py:55
 msgid "Not connected"
 msgstr "Non connecté"
 
-#: ../mh-ide.py:52
+#: ../mh-ide.py:50 ../mh-ide.py:52
 msgid "atmega32"
 msgstr "atmega32"
 
-#: ../mh-ide.py:55 ../mh-ide.py:286 ../mh-ide.py:297 ../mh-ide.py:314
-#: ../mh-ide.py:363 ../mh-ide.py:374 ../mh-ide.py:382 ../mh-ide.py:458
-#: ../mh-ide.py:466 ../mh-ide.py:496 ../mh-ide.py:500 ../mh-ide.py:544
-#: ../mh-ide.py:554 ../mh-ide.py:571 ../mh-ide.py:583 ../mh-ide.py:601
-#: ../mh-ide.py:608 ../mh-ide.py:619 ../mh-ide.py:630 ../mh-ide.py:641
-#: ../mh-ide.py:652 ../mh-ide.py:663 ../mh-ide.py:674 ../mh-ide.py:685
-#: ../mh-ide.py:696 ../mh-ide.py:707 ../mh-ide.py:718 ../mh-ide.py:729
-#: ../mh-ide.py:740 ../mh-ide.py:751 ../mh-ide.py:762 ../mh-ide.py:773
-#: ../mh-ide.py:784 ../mh-ide.py:795
+#: ../mh-ide.py:53 ../mh-ide.py:284 ../mh-ide.py:295 ../mh-ide.py:312
+#: ../mh-ide.py:361 ../mh-ide.py:372 ../mh-ide.py:380 ../mh-ide.py:456
+#: ../mh-ide.py:464 ../mh-ide.py:494 ../mh-ide.py:498 ../mh-ide.py:542
+#: ../mh-ide.py:552 ../mh-ide.py:569 ../mh-ide.py:581 ../mh-ide.py:599
+#: ../mh-ide.py:606 ../mh-ide.py:617 ../mh-ide.py:628 ../mh-ide.py:639
+#: ../mh-ide.py:650 ../mh-ide.py:661 ../mh-ide.py:672 ../mh-ide.py:683
+#: ../mh-ide.py:694 ../mh-ide.py:705 ../mh-ide.py:716 ../mh-ide.py:727
+#: ../mh-ide.py:738 ../mh-ide.py:749 ../mh-ide.py:760 ../mh-ide.py:771
+#: ../mh-ide.py:782 ../mh-ide.py:793 ../mh-ide.py:55 ../mh-ide.py:286
+#: ../mh-ide.py:297 ../mh-ide.py:314 ../mh-ide.py:363 ../mh-ide.py:374
+#: ../mh-ide.py:382 ../mh-ide.py:458 ../mh-ide.py:466 ../mh-ide.py:496
+#: ../mh-ide.py:500 ../mh-ide.py:544 ../mh-ide.py:554 ../mh-ide.py:571
+#: ../mh-ide.py:583 ../mh-ide.py:601 ../mh-ide.py:608 ../mh-ide.py:619
+#: ../mh-ide.py:630 ../mh-ide.py:641 ../mh-ide.py:652 ../mh-ide.py:663
+#: ../mh-ide.py:674 ../mh-ide.py:685 ../mh-ide.py:696 ../mh-ide.py:707
+#: ../mh-ide.py:718 ../mh-ide.py:729 ../mh-ide.py:740 ../mh-ide.py:751
+#: ../mh-ide.py:762 ../mh-ide.py:773 ../mh-ide.py:784 ../mh-ide.py:795
 msgid "uHOPE :: File --> "
 msgstr "µHOPE :: Fichier --> "
 
-#: ../mh-ide.py:55 ../mh-ide.py:511 ../mh-ide.py:513
+#: ../mh-ide.py:53 ../mh-ide.py:509 ../mh-ide.py:511 ../mh-ide.py:55
+#: ../mh-ide.py:513
 msgid "Not selected"
 msgstr "Non sélectionné"
 
-#: ../mh-ide.py:55 ../mh-ide.py:262 ../mh-ide.py:264 ../mh-ide.py:286
+#: ../mh-ide.py:53 ../mh-ide.py:260 ../mh-ide.py:262 ../mh-ide.py:284
+#: ../mh-ide.py:295 ../mh-ide.py:312 ../mh-ide.py:456 ../mh-ide.py:464
+#: ../mh-ide.py:494 ../mh-ide.py:498 ../mh-ide.py:542 ../mh-ide.py:552
+#: ../mh-ide.py:569 ../mh-ide.py:581 ../mh-ide.py:604 ../mh-ide.py:606
+#: ../mh-ide.py:617 ../mh-ide.py:628 ../mh-ide.py:639 ../mh-ide.py:650
+#: ../mh-ide.py:661 ../mh-ide.py:672 ../mh-ide.py:683 ../mh-ide.py:694
+#: ../mh-ide.py:705 ../mh-ide.py:716 ../mh-ide.py:727 ../mh-ide.py:738
+#: ../mh-ide.py:749 ../mh-ide.py:760 ../mh-ide.py:771 ../mh-ide.py:782
+#: ../mh-ide.py:793 ../mh-ide.py:55 ../mh-ide.py:264 ../mh-ide.py:286
 #: ../mh-ide.py:297 ../mh-ide.py:314 ../mh-ide.py:458 ../mh-ide.py:466
 #: ../mh-ide.py:496 ../mh-ide.py:500 ../mh-ide.py:544 ../mh-ide.py:554
-#: ../mh-ide.py:571 ../mh-ide.py:583 ../mh-ide.py:606 ../mh-ide.py:608
-#: ../mh-ide.py:619 ../mh-ide.py:630 ../mh-ide.py:641 ../mh-ide.py:652
-#: ../mh-ide.py:663 ../mh-ide.py:674 ../mh-ide.py:685 ../mh-ide.py:696
-#: ../mh-ide.py:707 ../mh-ide.py:718 ../mh-ide.py:729 ../mh-ide.py:740
-#: ../mh-ide.py:751 ../mh-ide.py:762 ../mh-ide.py:773 ../mh-ide.py:784
-#: ../mh-ide.py:795
+#: ../mh-ide.py:571 ../mh-ide.py:583 ../mh-ide.py:608 ../mh-ide.py:619
+#: ../mh-ide.py:630 ../mh-ide.py:641 ../mh-ide.py:652 ../mh-ide.py:663
+#: ../mh-ide.py:674 ../mh-ide.py:685 ../mh-ide.py:696 ../mh-ide.py:707
+#: ../mh-ide.py:718 ../mh-ide.py:729 ../mh-ide.py:740 ../mh-ide.py:751
+#: ../mh-ide.py:762 ../mh-ide.py:773 ../mh-ide.py:784 ../mh-ide.py:795
 msgid "\t\tDevice -->"
 msgstr "\t\tPériph. -->"
 
-#: ../mh-ide.py:66
+#: ../mh-ide.py:64 ../mh-ide.py:66
 msgid "&New\tCtrl+N"
 msgstr "&Nouveau\tCtrl+N"
 
-#: ../mh-ide.py:66
+#: ../mh-ide.py:64 ../mh-ide.py:66
 msgid "Create a new Document"
 msgstr "Créer un nouveau document"
 
-#: ../mh-ide.py:68
+#: ../mh-ide.py:66 ../mh-ide.py:68
 msgid "&Open\tCtrl+O"
 msgstr "&Ouvrir\tCtrl+O"
 
-#: ../mh-ide.py:68 ../mh-ide.py:222
+#: ../mh-ide.py:66 ../mh-ide.py:220 ../mh-ide.py:68 ../mh-ide.py:222
 msgid "Open a file"
 msgstr "Ouvrir un fichier"
 
-#: ../mh-ide.py:71
+#: ../mh-ide.py:69 ../mh-ide.py:71
 msgid "Blinks a LED on PB0"
 msgstr "Fait clignoter une DEL sur PB0"
 
-#: ../mh-ide.py:72
+#: ../mh-ide.py:70 ../mh-ide.py:72
 msgid "Reads ADC channel 0 and diplays the result on the LCD"
 msgstr "Lit le canal 0 ADC et affche le résultat sur l'écran LCD"
 
-#: ../mh-ide.py:73
+#: ../mh-ide.py:71 ../mh-ide.py:73
 msgid "Reads ADC channel 0 and diplays the result on the LCD in loop"
 msgstr "Lit le canal 0 ADC et affche le résultat sur l'écran LCD en boucle"
 
-#: ../mh-ide.py:74
+#: ../mh-ide.py:72 ../mh-ide.py:74
 msgid "ADC -version 2"
 msgstr "ADC -version 2"
 
-#: ../mh-ide.py:75
+#: ../mh-ide.py:73 ../mh-ide.py:75
 msgid "ADC -version 3"
 msgstr "ADC -version 3"
 
-#: ../mh-ide.py:76
+#: ../mh-ide.py:74 ../mh-ide.py:76
 msgid "Copies a PORTA and display it on PORTB"
 msgstr "Copie un PORTA et l'affiche sur PORTB"
 
-#: ../mh-ide.py:77
+#: ../mh-ide.py:75 ../mh-ide.py:77
 msgid "Copy 2"
 msgstr "Copier 2"
 
-#: ../mh-ide.py:78
+#: ../mh-ide.py:76 ../mh-ide.py:78
 msgid "Copy 3"
 msgstr "Copier 3"
 
-#: ../mh-ide.py:81
+#: ../mh-ide.py:79 ../mh-ide.py:81
 msgid "PWM-tc0 version 1"
 msgstr "PWM-tc0 version 1"
 
-#: ../mh-ide.py:82
+#: ../mh-ide.py:80 ../mh-ide.py:82
 msgid "H-Bridge Controlling motor"
 msgstr "Controle de moteur en pont-H"
 
-#: ../mh-ide.py:83
+#: ../mh-ide.py:81 ../mh-ide.py:83
 msgid "PWM tc0 version 2"
 msgstr "PWM tc0 version 2"
 
-#: ../mh-ide.py:84
+#: ../mh-ide.py:82 ../mh-ide.py:84
 msgid "To make microHOPE as small CRO"
 msgstr "faire un petit oscillo avec µHOPE"
 
-#: ../mh-ide.py:85
+#: ../mh-ide.py:83 ../mh-ide.py:85
 msgid "To make microHOPE as small CRO (version 2)"
 msgstr "faire un petit oscillo avec µHOPE (version 2)"
 
-#: ../mh-ide.py:86
+#: ../mh-ide.py:84 ../mh-ide.py:86
 msgid "Print message in LCD"
 msgstr "Afficher un message à l'écran LCD"
 
-#: ../mh-ide.py:87
+#: ../mh-ide.py:85 ../mh-ide.py:87
 msgid "Blinking messages in LCD"
 msgstr "Afficher des messages clignotants sur l'écran LCD"
 
-#: ../mh-ide.py:88
+#: ../mh-ide.py:86 ../mh-ide.py:88
 msgid "Examples"
 msgstr "Exemples"
 
-#: ../mh-ide.py:89
+#: ../mh-ide.py:87 ../mh-ide.py:89
 msgid "&Save\tCtrl+S"
 msgstr "Enregistrer\tCtrl+S"
 
-#: ../mh-ide.py:89 ../mh-ide.py:223
+#: ../mh-ide.py:87 ../mh-ide.py:221 ../mh-ide.py:89 ../mh-ide.py:223
 msgid "Save the current file"
 msgstr "Enregistrer le fichier courant"
 
-#: ../mh-ide.py:90
+#: ../mh-ide.py:88 ../mh-ide.py:90
 msgid "&SaveAs\tShift+Ctrl+S"
 msgstr "Enregistrer sous...\tShift+Ctrl+S"
 
-#: ../mh-ide.py:90
+#: ../mh-ide.py:88 ../mh-ide.py:90
 msgid "Save the current file with a different name"
 msgstr "Enregistrer le fichier courant sous un nouveau nom"
 
-#: ../mh-ide.py:92
+#: ../mh-ide.py:90 ../mh-ide.py:92
 msgid "&Init()\tCtrl+I"
 msgstr "&Init()\tCtrl+I"
 
-#: ../mh-ide.py:92
+#: ../mh-ide.py:90 ../mh-ide.py:92
 msgid "Initialize microhope working directory"
 msgstr "Initialiser le répertoire personnel µHOPE"
 
-#: ../mh-ide.py:93
+#: ../mh-ide.py:91 ../mh-ide.py:93
 msgid "&Exit\tCtrl+Q"
 msgstr "&Quitter\tCtrl+Q"
 
-#: ../mh-ide.py:93
+#: ../mh-ide.py:91 ../mh-ide.py:93
 msgid "Quit the programme"
 msgstr "Quitter le programme"
 
-#: ../mh-ide.py:119
+#: ../mh-ide.py:117 ../mh-ide.py:119
 msgid "&Undo\tCtrl+Z"
 msgstr "&Défaire\tCtrl+Z"
 
-#: ../mh-ide.py:120
+#: ../mh-ide.py:118 ../mh-ide.py:120
 msgid "&Redo\tCtrl+Y"
 msgstr "&Refaire\tCtrl+Y"
 
-#: ../mh-ide.py:122
+#: ../mh-ide.py:120 ../mh-ide.py:122
 msgid "&Cut\tCtrl+X"
 msgstr "&Couper\tCtrl+X"
 
-#: ../mh-ide.py:122 ../mh-ide.py:228
+#: ../mh-ide.py:120 ../mh-ide.py:226 ../mh-ide.py:122 ../mh-ide.py:228
 msgid "Cut the selection"
 msgstr "Couper le texte sélectionné"
 
-#: ../mh-ide.py:123
+#: ../mh-ide.py:121 ../mh-ide.py:123
 msgid "&Copy\tCtrl+C"
 msgstr "&Copier\tCtrl+C"
 
-#: ../mh-ide.py:123 ../mh-ide.py:229
+#: ../mh-ide.py:121 ../mh-ide.py:227 ../mh-ide.py:123 ../mh-ide.py:229
 msgid "Copy the selection"
 msgstr "Copier le texte sélectionné"
 
-#: ../mh-ide.py:124
+#: ../mh-ide.py:122 ../mh-ide.py:124
 msgid "&Paste\tCtrl+P"
 msgstr "&Coller\tCtrl+P"
 
-#: ../mh-ide.py:124 ../mh-ide.py:230
+#: ../mh-ide.py:122 ../mh-ide.py:228 ../mh-ide.py:124 ../mh-ide.py:230
 msgid "Paste the clipboard"
 msgstr "Coller le presse-papier"
 
-#: ../mh-ide.py:125
+#: ../mh-ide.py:123 ../mh-ide.py:125
 msgid "&Delete"
 msgstr "Supprimer"
 
-#: ../mh-ide.py:125
+#: ../mh-ide.py:123 ../mh-ide.py:125
 msgid "Deleted the selected text"
 msgstr "Supprimer le texte sélectionné"
 
-#: ../mh-ide.py:127
+#: ../mh-ide.py:125 ../mh-ide.py:127
 msgid "&Select All\tCtrl+A"
 msgstr "Tout sélectionner\tCtrl+A"
 
-#: ../mh-ide.py:127
+#: ../mh-ide.py:125 ../mh-ide.py:127
 msgid "select the entire document"
 msgstr "Sélectionner le document complet"
 
-#: ../mh-ide.py:137
+#: ../mh-ide.py:135 ../mh-ide.py:137
 msgid "&Statusbar"
 msgstr "Barre de &statut"
 
-#: ../mh-ide.py:137
+#: ../mh-ide.py:135 ../mh-ide.py:137
 msgid "Show or hide the statusbar in the current window"
 msgstr "Montrer ou cacher la barre de statut dans la fenêtre courante"
 
-#: ../mh-ide.py:143
+#: ../mh-ide.py:141 ../mh-ide.py:143
 msgid "Black on white(default)"
 msgstr "Noir sur blanc (par défaut)"
 
-#: ../mh-ide.py:144
+#: ../mh-ide.py:142 ../mh-ide.py:144
 msgid "White on Black"
 msgstr "Blanc sur noir"
 
-#: ../mh-ide.py:145
+#: ../mh-ide.py:143 ../mh-ide.py:145
 msgid "Theme"
 msgstr "Thème"
 
-#: ../mh-ide.py:147
+#: ../mh-ide.py:145 ../mh-ide.py:147
 msgid "Default"
 msgstr "Par défaut"
 
-#: ../mh-ide.py:159
+#: ../mh-ide.py:157 ../mh-ide.py:159
 msgid "Large"
 msgstr "Grand"
 
-#: ../mh-ide.py:160
+#: ../mh-ide.py:158 ../mh-ide.py:160
 msgid "Font Size"
 msgstr "Taille de police"
 
-#: ../mh-ide.py:179
+#: ../mh-ide.py:177 ../mh-ide.py:179
 msgid "Detect Board\tCtrl+B"
 msgstr "Détecter la carte\tCtrl+B"
 
-#: ../mh-ide.py:179
+#: ../mh-ide.py:177 ../mh-ide.py:179
 msgid "Detect the hardware"
 msgstr "Détecter le matériel"
 
-#: ../mh-ide.py:181
+#: ../mh-ide.py:179 ../mh-ide.py:181
 msgid "Set Bootloader"
 msgstr "Mettre en place le bootloader"
 
-#: ../mh-ide.py:181
+#: ../mh-ide.py:179 ../mh-ide.py:181
 msgid "For setting the mcu by uploading the bootloader"
 msgstr "Initialiser le MCU en chargeant le bootloader"
 
-#: ../mh-ide.py:182
+#: ../mh-ide.py:180 ../mh-ide.py:182
 msgid "Soft RST"
 msgstr "RST logiciel"
 
-#: ../mh-ide.py:182
+#: ../mh-ide.py:180 ../mh-ide.py:182
 msgid "Software RESET"
 msgstr "RESET logiciel"
 
-#: ../mh-ide.py:189
+#: ../mh-ide.py:187 ../mh-ide.py:189
 msgid "Compile\tCtrl+K"
 msgstr "Compiler\tCtrl+K"
 
-#: ../mh-ide.py:189
+#: ../mh-ide.py:187 ../mh-ide.py:189
 msgid "To Compile the program"
 msgstr "Compiler le programme"
 
-#: ../mh-ide.py:190
+#: ../mh-ide.py:188 ../mh-ide.py:190
 msgid "Assemble\tCtrl+J"
 msgstr "Assembler\tCtrl+J"
 
-#: ../mh-ide.py:190
+#: ../mh-ide.py:188 ../mh-ide.py:190
 msgid "To Assemble the program"
 msgstr "Assembler le programme"
 
-#: ../mh-ide.py:192
+#: ../mh-ide.py:190 ../mh-ide.py:192
 msgid "Uplod\tCtrl+L"
 msgstr "Charger\tCtrl+L"
 
-#: ../mh-ide.py:192
+#: ../mh-ide.py:190 ../mh-ide.py:192
 msgid "To upload the program to mcu"
 msgstr "Charger le programme dans le MCU"
 
-#: ../mh-ide.py:193
+#: ../mh-ide.py:191 ../mh-ide.py:193
 msgid "Upload via USBASP"
 msgstr "Charger via USBASP"
 
-#: ../mh-ide.py:193
+#: ../mh-ide.py:191 ../mh-ide.py:193
 msgid "Upload program via USBASP"
 msgstr "Charger le programme via USBASP"
 
-#: ../mh-ide.py:200
+#: ../mh-ide.py:198 ../mh-ide.py:200
 msgid "&Help\tShift+Ctrl+H"
 msgstr "&Aide\tShift+Ctrl+H"
 
-#: ../mh-ide.py:201
+#: ../mh-ide.py:199 ../mh-ide.py:201
 msgid "&About"
 msgstr "À propos"
 
-#: ../mh-ide.py:202
+#: ../mh-ide.py:200 ../mh-ide.py:202
 msgid "&Author"
 msgstr "&Auteur"
 
-#: ../mh-ide.py:221
+#: ../mh-ide.py:219 ../mh-ide.py:221
 msgid "Create a new document"
 msgstr "Créer un nouveau document"
 
-#: ../mh-ide.py:225
+#: ../mh-ide.py:223 ../mh-ide.py:225
 msgid "Undo the last action"
 msgstr "Défaire la dernière action"
 
-#: ../mh-ide.py:226
+#: ../mh-ide.py:224 ../mh-ide.py:226
 msgid "Redo the last undone action"
 msgstr "Refaire la dernière action défaite"
 
-#: ../mh-ide.py:232
+#: ../mh-ide.py:230 ../mh-ide.py:232
 msgid "To compile the current programe"
 msgstr "Compiler le programme courant"
 
-#: ../mh-ide.py:233
+#: ../mh-ide.py:231 ../mh-ide.py:233
 msgid "To upload the pgm to mh"
 msgstr "Charger le programme dans µHOPE"
 
-#: ../mh-ide.py:234
+#: ../mh-ide.py:232 ../mh-ide.py:234
 msgid "To detect microhope hardware"
 msgstr "Détecter le matériel de microhope"
 
-#: ../mh-ide.py:236
+#: ../mh-ide.py:234 ../mh-ide.py:236
 msgid "Help for microHOPE"
 msgstr "Aide pour microHOPE"
 
-#: ../mh-ide.py:250
+#: ../mh-ide.py:248 ../mh-ide.py:250
 msgid "File"
 msgstr "Fichier"
 
-#: ../mh-ide.py:251
+#: ../mh-ide.py:249 ../mh-ide.py:251
 msgid "Edit"
 msgstr "Éditer"
 
-#: ../mh-ide.py:252
+#: ../mh-ide.py:250 ../mh-ide.py:252
 msgid "View"
 msgstr "Voir"
 
-#: ../mh-ide.py:253
+#: ../mh-ide.py:251 ../mh-ide.py:253
 msgid "Device"
 msgstr "Interface"
 
-#: ../mh-ide.py:254
+#: ../mh-ide.py:252 ../mh-ide.py:254
 msgid "Build"
 msgstr "Compiler"
 
-#: ../mh-ide.py:262
+#: ../mh-ide.py:260 ../mh-ide.py:262
 msgid "uHOPE :: File -->New File.c *"
 msgstr "µHOPE :: Fichier --> Nouveau Fichier.c *"
 
-#: ../mh-ide.py:264
+#: ../mh-ide.py:262 ../mh-ide.py:264
 msgid "uHOPE :: File -->"
 msgstr "µHOPE :: Fichier -->"
 
-#: ../mh-ide.py:271
+#: ../mh-ide.py:269 ../mh-ide.py:271
 #, python-brace-format
 msgid "line ={line}\t\tcolumn={column}"
 msgstr "ligne = {line}\t\tcolonne = {column}"
 
-#: ../mh-ide.py:277 ../mh-ide.py:306
+#: ../mh-ide.py:275 ../mh-ide.py:304 ../mh-ide.py:277 ../mh-ide.py:306
 msgid "Choose a file"
 msgstr "Choisir un fichier"
 
-#: ../mh-ide.py:322
+#: ../mh-ide.py:320 ../mh-ide.py:322
 msgid "Save before exiting ?"
 msgstr "Enregistrer avant de quitter ?"
 
-#: ../mh-ide.py:332
+#: ../mh-ide.py:330 ../mh-ide.py:332
 msgid "Are you sure ?"
 msgstr "Êtes-vous sûr ?"
 
-#: ../mh-ide.py:354
+#: ../mh-ide.py:352 ../mh-ide.py:354
 msgid "Save before opening New File ?"
 msgstr "Enregistrer avant d'ouvrir un Nouveau Fichier ?"
 
-#: ../mh-ide.py:361 ../mh-ide.py:372 ../mh-ide.py:380
+#: ../mh-ide.py:359 ../mh-ide.py:370 ../mh-ide.py:378 ../mh-ide.py:361
+#: ../mh-ide.py:372 ../mh-ide.py:380
 msgid "New file"
 msgstr "Nouveau Fichier"
 
-#: ../mh-ide.py:363 ../mh-ide.py:374 ../mh-ide.py:382
+#: ../mh-ide.py:361 ../mh-ide.py:372 ../mh-ide.py:380 ../mh-ide.py:363
+#: ../mh-ide.py:374 ../mh-ide.py:382
 msgid ".c\t\tDevice -->"
 msgstr ".c\t\tPériph. -->"
 
-#: ../mh-ide.py:434 ../mh-ide.py:438 ../mh-ide.py:442
+#: ../mh-ide.py:432 ../mh-ide.py:436 ../mh-ide.py:440 ../mh-ide.py:434
+#: ../mh-ide.py:438 ../mh-ide.py:442
 msgid "uHOPE :: Status"
 msgstr "µHOPE :: Statut"
 
-#: ../mh-ide.py:447 ../mh-ide.py:533
+#: ../mh-ide.py:445 ../mh-ide.py:531 ../mh-ide.py:447 ../mh-ide.py:533
 msgid "Filename not selected ."
 msgstr "Fichier non sélectionné."
 
-#: ../mh-ide.py:457
+#: ../mh-ide.py:455 ../mh-ide.py:457
 msgid "Compilation Error :\n"
 msgstr "Erreur de compilation :\n"
 
-#: ../mh-ide.py:465
+#: ../mh-ide.py:463 ../mh-ide.py:465
 msgid "Compilation Done"
 msgstr "Compilation terminée"
 
-#: ../mh-ide.py:469
+#: ../mh-ide.py:467 ../mh-ide.py:469
 msgid ""
 "Device not selected\n"
 "Please select a device"
@@ -862,11 +881,11 @@ msgstr ""
 "Préphérique non sélectionné\n"
 "Veuillez choisir un périphérique"
 
-#: ../mh-ide.py:495
+#: ../mh-ide.py:493 ../mh-ide.py:495
 msgid "Upload Error:\n"
 msgstr "Erreur de chargement :\n"
 
-#: ../mh-ide.py:495
+#: ../mh-ide.py:493 ../mh-ide.py:495
 msgid ""
 "\n"
 "Try pressing microHOPE Reset button just before Uploading"
@@ -874,11 +893,11 @@ msgstr ""
 "\n"
 "Essayez d'appuyer sur le bouton RESET de µHOPE juste avant de charger"
 
-#: ../mh-ide.py:499
+#: ../mh-ide.py:497 ../mh-ide.py:499
 msgid "Upload Completed\n"
 msgstr "Chargement terminé\n"
 
-#: ../mh-ide.py:502
+#: ../mh-ide.py:500 ../mh-ide.py:502
 msgid ""
 "Steps:\n"
 "1.Write a program on editor / Open a programe C or Assembler files\n"
@@ -909,34 +928,30 @@ msgstr ""
 "microhope est recopier dans le répertoire personnel.\n"
 "Il contient des programmes d'exemple, les biblothèques de µH, etc."
 
-#: ../mh-ide.py:502
+#: ../mh-ide.py:500 ../mh-ide.py:502
 msgid "microHOPE-Help"
 msgstr "µHOPE-Aide"
 
-#: ../mh-ide.py:506
+#: ../mh-ide.py:504 ../mh-ide.py:506
 msgid ""
-"Arun Jayan\n"
-"arunjayan32@gmail.com\n"
-"FOSSR -College Of Engineering,Poonjar\n"
-"\n"
-"https://github.com/ArunJayan"
+"Author :Arun Jayan\n"
+"arun.jayan.j@ieee.org\n"
+"GNU USERS NETWORK"
 msgstr ""
-"Arun Jayan\n"
-"arunjayan32@gmail.com\n"
-"FOSSR -College Of Engineering,Poonjar\n"
-"\n"
-"https://github.com/ArunJayan"
+"Auteur : Arun Jayan\n"
+"arun.jayan.j@ieee.org\n"
+"GNU USERS NETWORK"
 
-#: ../mh-ide.py:506
+#: ../mh-ide.py:504 ../mh-ide.py:506
 msgid "Author of IDE"
 msgstr "Auteur de l'environnement graphique"
 
-#: ../mh-ide.py:514
+#: ../mh-ide.py:512 ../mh-ide.py:514
 #, python-brace-format
 msgid "uHOPE :: File -> {file} & Device -> {dev}"
 msgstr "µHOPE :: Fichier-> {file} & Périph. -> {dev}"
 
-#: ../mh-ide.py:517
+#: ../mh-ide.py:515 ../mh-ide.py:517
 msgid ""
 "microHOPE is a developement Board using Atmega32\n"
 "Created by :Dr.Ajith Kumar B P\n"
@@ -948,23 +963,23 @@ msgstr ""
 "\t\t\t\t IUAC,New Delhi\n"
 "\t\t\t\t http://www.expeyes.in/microhope"
 
-#: ../mh-ide.py:517
+#: ../mh-ide.py:515 ../mh-ide.py:517
 msgid "About uHOPE"
 msgstr "À propos de µHOPE"
 
-#: ../mh-ide.py:543
+#: ../mh-ide.py:541 ../mh-ide.py:543
 msgid "Assembler Error :\n"
 msgstr "Erreur de l'assembleur :\n"
 
-#: ../mh-ide.py:553
+#: ../mh-ide.py:551 ../mh-ide.py:553
 msgid "Assembing Done"
 msgstr "Assemblage terminé"
 
-#: ../mh-ide.py:556
+#: ../mh-ide.py:554 ../mh-ide.py:556
 msgid "Setting up MicroHOPE bootloader via USBASP....."
 msgstr "Mise en place du bootloader de µHOPE via USBASP..."
 
-#: ../mh-ide.py:557
+#: ../mh-ide.py:555 ../mh-ide.py:557
 msgid ""
 "Setting up MicroHOPE bootloader via USBASP.... \n"
 "It will take few seconds"
@@ -972,47 +987,47 @@ msgstr ""
 "Mise en place du bootloader de µHOPE via USBASP...\n"
 "Cela va durer quelques secondes"
 
-#: ../mh-ide.py:561
+#: ../mh-ide.py:559 ../mh-ide.py:561
 msgid "Error: Check Connections...."
 msgstr "Erreur : vérifier les connexions..."
 
-#: ../mh-ide.py:567
+#: ../mh-ide.py:565 ../mh-ide.py:567
 msgid "Error: Setting up fuses"
 msgstr "Erreur : mise en place de fuses"
 
-#: ../mh-ide.py:570
+#: ../mh-ide.py:568 ../mh-ide.py:570
 msgid "Upload Completed"
 msgstr "Chargement terminé"
 
-#: ../mh-ide.py:573
+#: ../mh-ide.py:571 ../mh-ide.py:573
 msgid "Uploading through USBASP ...."
 msgstr "Chargement via USBASP..."
 
-#: ../mh-ide.py:578
+#: ../mh-ide.py:576 ../mh-ide.py:578
 msgid "Check connections of USBASP"
 msgstr "Vérifier les connexions d'USBASP"
 
-#: ../mh-ide.py:582
+#: ../mh-ide.py:580 ../mh-ide.py:582
 msgid "Uploading via USBASP completed....."
 msgstr "Chargement via USBASP terminé..."
 
-#: ../mh-ide.py:597
+#: ../mh-ide.py:595 ../mh-ide.py:597
 msgid "microHOPE hardware not found?"
 msgstr "Matériel µHOPE non trouvé ?"
 
-#: ../mh-ide.py:599 ../mh-ide.py:606
+#: ../mh-ide.py:597 ../mh-ide.py:604 ../mh-ide.py:599 ../mh-ide.py:606
 msgid "uHOPE :: File --> New File"
 msgstr "µHOPE :: Fichier --> Nouveau Fichier"
 
-#: ../mh-ide.py:599 ../mh-ide.py:601
+#: ../mh-ide.py:597 ../mh-ide.py:599 ../mh-ide.py:601
 msgid "\t\tDevice --> Not Connected"
 msgstr "\t\tPériphérique --> Non connecté"
 
-#: ../mh-ide.py:609
+#: ../mh-ide.py:607 ../mh-ide.py:609
 msgid "Device is found at "
 msgstr "Périphérique trouvé à "
 
-#: ../mh-ide.py:803
+#: ../mh-ide.py:801 ../mh-ide.py:803
 msgid ""
 "Create microHope environment\n"
 "Do you want to create your own microHope environment?\n"
@@ -1030,22 +1045,27 @@ msgstr ""
 "\n"
 "Si des versions précédentes s'y trouvaient, leurs contenus seront écrasés."
 
-#: ../mh-ide.py:803
+#: ../mh-ide.py:801 ../mh-ide.py:803
 msgid "uHOPE init()"
 msgstr "µHOPE() init()"
 
-#: ../mh-ide.py:808
+#: ../mh-ide.py:806 ../mh-ide.py:808
 msgid "creating microhope environment"
 msgstr "Création de l'environnement pour microHOPE"
 
-#~ msgid ""
-#~ "Author :Arun Jayan\n"
-#~ "arun.jayan.j@ieee.org\n"
-#~ "GNU USERS NETWORK"
-#~ msgstr ""
-#~ "Auteur : Arun Jayan\n"
-#~ "arun.jayan.j@ieee.org\n"
-#~ "GNU USERS NETWORK"
+#: ../mh-ide.py:506
+msgid ""
+"Arun Jayan\n"
+"arunjayan32@gmail.com\n"
+"FOSSR -College Of Engineering,Poonjar\n"
+"\n"
+"https://github.com/ArunJayan"
+msgstr ""
+"Arun Jayan\n"
+"arunjayan32@gmail.com\n"
+"FOSSR -College Of Engineering,Poonjar\n"
+"\n"
+"https://github.com/ArunJayan"
 
 #, fuzzy
 #~| msgid "uhope - A Linux Shell for Microhope"
