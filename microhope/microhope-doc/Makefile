@@ -11,7 +11,7 @@ XP     = xsltproc --nonet --param man.charmap.use.subset "0"
 all: touch-existing-pdf microhope-en.pdf
 
 touch-existing-pdf:
-	for f in *.pdf; do touch $$f; done
+	for f in $$(ls *.pdf); do touch $$f; done
 
 manpages: ../create-microhope-env.1 ../microhope.1 microhope-doc.1 ../uhope.1
 
