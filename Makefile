@@ -74,6 +74,8 @@ install:
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
 	# for expeyes-clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
+	# for eyes17 (documentation and help files)
+	make -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
 
 install_indep:
 	for d in $(SUBDIRS_INDEP); do \
