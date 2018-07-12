@@ -1,0 +1,27 @@
+.. 6.4
+   
+Mesure de distance, par écho ultrasonore
+----------------------------------------
+
+**Objectif**
+
+Mesurer une distance en mesurant le temps que prend une salve de
+fréquence :math:`40~kHz` à faire un écho contre une surface dure.
+
+**Procédure**
+
+.. image:: schematics/sr04-dist.svg
+	   :width: 300px
+
+-  Placer uns surface dure, comme un carton, à quelques 10 cm du module
+   d’écho
+-  Cliquer sur DÉMARRER
+-  Changer la distance
+
+**Discussion**
+
+La distance est calculée à partir du temps que met une salve sonore à
+parcourir aller-retour (en écho) la distance qui sépare le module de la
+surface réfléchissante. On peut mesurer la distance en fonction du
+temps, ce qui permet de calculer vitesse, accélération, etc.
+

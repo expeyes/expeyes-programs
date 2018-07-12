@@ -1,0 +1,32 @@
+.. 6.2
+
+Angular Velocity of Pendulum
+============================
+
+**Objective**
+
+To study the nature of oscillations of a pendulum. An angle encoder is
+required for measuring the angular displacement as a function of time.
+But using a DC motor as a sensor, we can measure the angular velocity as
+a function of time.\begin_inset Separator latexpar\end_inset
+
+.. image:: pics/pendulum-screen.png
+	   :width: 300px
+
+**Procedure**
+
+-  Attach some sort of rigid pendulum to the axis of the motor.
+-  Connect the motor between A3 and GND
+-  Connect :math:`100~\Omega` resistor from Rg to Ground
+-  Oscillate the pendulum and START digitizing
+
+**Discussion**
+
+The observed waveform is shown in figure. Fitting it with equation
+:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, using Grace gave an
+angular frequency of :math:`10~Hz`.
+
+The pendulum should be made with a heavy bob and a light weight rod
+connecting it to the axis of the motor. In this case, the DC motor acts
+like a generator and the voltage is proportional to the instantaneous
+angular velocity.

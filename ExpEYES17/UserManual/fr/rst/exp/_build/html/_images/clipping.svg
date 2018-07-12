@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="clipping"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 518 262"
+   sodipodi:docname="clipping.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/clipping.png"
+   inkscape:export-xdpi="56.031128"
+   inkscape:export-ydpi="56.031128">
+  <metadata
+     id="metadata85">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs83" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1668"
+     inkscape:window-height="1013"
+     id="namedview81"
+     showgrid="false"
+     inkscape:zoom="2.019305"
+     inkscape:cx="259"
+     inkscape:cy="131"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="clipping" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;clipping.ps&quot; Page 1
+</desc>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path4"
+     d="m 144,80 h 28" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path6"
+     d="M 272,80 H 244" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path8"
+     d="M 244,80 238,66 226,94 214,66 202,94 190,66 178,94 172,80" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path10"
+     d="m 128,192 v 48 h 64 v -48 z" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse12"
+     cy="80"
+     cx="288" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path14"
+     d="m 256,192 v 48 h 64 v -48 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path16"
+     d="m 384,192 v 48 h 96 v -48 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path18"
+     d="M 0,0 V 256 H 512 V 0 Z" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse20"
+     cy="80"
+     cx="416" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse22"
+     cy="80"
+     cx="128" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path24"
+     d="m 288,96 c 1,0 -48,64 0,96" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path26"
+     d="m 336,62 32,18 -32,18 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path28"
+     d="m 304,80 h 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path30"
+     d="M 400,80 H 368" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path32"
+     d="M 368,62 V 98" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path34"
+     d="m 16,192 v 48 h 96 v -48 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="M 64,192 C 65,192 32,96 112,80" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path38"
+     d="m 160,192 c 1,0 -48,-48 -32,-96" />
+  <text
+     font-size="40"
+     id="text42"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="154.36328"
+     y="50.971321">
+    <tspan
+       x="154.36328"
+       y="50.971321"
+       id="tspan40">10 kΩ</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path46"
+     d="m 432,192 c 1,0 32,-64 -16,-96" />
+  <text
+     font-size="40"
+     id="text50"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="30.903437"
+     y="230.58">
+    <tspan
+       x="30.903437"
+       y="230.58"
+       id="tspan48">WG</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text56"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="139.36063"
+     y="230.58">
+    <tspan
+       x="139.36063"
+       y="230.58"
+       id="tspan54">A1</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text62"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="264.08063"
+     y="230.58">
+    <tspan
+       x="264.08063"
+       y="230.58"
+       id="tspan60">A2</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text68"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="400"
+     y="224">
+    <tspan
+       x="400"
+       y="224"
+       id="tspan66" />
+  </text>
+  <text
+     font-size="40"
+     id="text74"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="396.52124"
+     y="230.58">
+    <tspan
+       x="396.52124"
+       y="230.58"
+       id="tspan72">PV1</tspan>
+  </text>
+</svg>

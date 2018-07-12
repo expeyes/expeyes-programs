@@ -1,0 +1,122 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Separating DC &amp; AC components &#8212; eyes17 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Human body as a conductor" href="2.8.html" />
+    <link rel="prev" title="AC mains pickup" href="2.6.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="2.8.html" title="Human body as a conductor"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="2.6.html" title="AC mains pickup"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="2.6.html"
+                        title="previous chapter">AC mains pickup</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="2.8.html"
+                        title="next chapter">Human body as a conductor</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/2.7.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="separating-dc-ac-components">
+<h1>Separating DC &amp; AC components<a class="headerlink" href="#separating-dc-ac-components" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objective</strong></p>
+<p>Separating AC and DC components of a voltage waveform using a capacitor.</p>
+<p><strong>Procedure</strong></p>
+<a class="reference internal image-reference" href="_images/acdc-separating.svg"><img alt="_images/acdc-separating.svg" src="_images/acdc-separating.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/acdc-sep-screen.png"><img alt="_images/acdc-sep-screen.png" src="_images/acdc-sep-screen.png" style="width: 300px;" /></a>
+<ul class="simple">
+<li>Set SQR1 to 500 Hz</li>
+<li>Enable A1 and A2</li>
+<li>Adjust the horizontal scale to see several cycles.</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The observed waveforms with and without the series capacitor are shown
+in figure. The voltage is swinging between 0 and 5 volts. After passing
+through the capacitor the voltage swings from -2.5 volts to +2.5 volts.</p>
+<p>What will you get if you subtract a 2.5 from the y-coordinate of every
+point of the first graph? That is what the capacitor did. It did not
+allow the DC part to pass through. This original square wave can be
+considered as a 2.5V AC superimposed on a 2.5V DC.</p>
+<p>You may need to connect a resistor from A2 to GND to see a waveform
+swinging between -2.5 to +2.5 volts. Remove the resistor and observe the
+result.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="2.8.html" title="Human body as a conductor"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="2.6.html" title="AC mains pickup"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Jithin B.P..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+.. 4.4
+   
+Réponse transitoire de circuit RLC
+----------------------------------
+
+**Objectif**
+
+Explorer la nature oscillatoire de la mise en série de L et C. La
+fréquence de résonance d’un circuit LC série est donnée par
+:math:`f_0 = 1/(2\pi\sqrt{LC})`. Le facteur d’amortissement
+est :math:`R/(2\sqrt{LC})`, et il vaut 1 pour
+l’amortissement
+critique (http://en.wikiversity.org/wiki/RLC\_circuit). Selon les
+valeurs de C/L et R, la réponse peut être sous-amortie, amortie de façon
+critique ou sur-amortie.
+
+.. image:: schematics/RLCtransient.svg
+	   :width: 300px
+.. image:: pics/RLC-curves.png
+	   :width: 300px
+
+**Procédure**
+
+-  Commencer avec le bobinage et un condensateur de :math:`0,1~\mu F`
+-  Cliquer sur *Échelon 5->0 V*. Ajuster l’axe des abscisses et
+   recommencer si nécessaire.
+-  Ajuster le graphique (FIT) pour trouver la fréquence de résonance et
+   l’amortissement.
+-  Recommencer avec une résistance entre OD1 et le bobinage.
+-  Recommencer l’expérience avec diverses valeurs de R, L et C.
+
+**Discussion**
+
+On a utilisé le bobinage de 3000 tours et le condensateur de :math:`0,1~\mu F`.La
+tension aux bornes du condensateur est montrée sur la figure après un
+échelon 5->0 V. La fréquence de résonance mesurée est conforme à
+:math:`f = 1/(2\pi\sqrt{LC})`, compte tenu de la tolérance sur
+les valeurs des composants.

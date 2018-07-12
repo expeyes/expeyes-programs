@@ -1,0 +1,35 @@
+.. 4.2
+
+Transient Response of RC circuits
+=================================
+
+**Objective**
+
+Plot the voltage across a capacitor, when it is charged by applying a
+voltage step through a resistor. Calculate the value of the capacitance
+from the graph.
+
+.. image:: schematics/RCtransient.svg
+	   :width: 300px
+.. image:: pics/RCtransient.png
+	   :width: 300px
+
+**Procedure**
+
+-  From **\\emphElectrical** , select **\\emphRCTransientresponse**
+-  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
+-  Adjust the horizontal scale, if required, and repeat.
+-  Calculate RC time constant.
+
+**Discussion**
+
+Applying a 0 to 5V step makes the voltage across the capacitor to rise
+exponentially as shown in the figure. By fitting the discharge curve
+with :math:`U(t) = U_0 \times e^{− t/RC}`, we can extract the RC time
+constant and find the values of capacitance from it.
+
+The voltage across a capacitor is exponential only when it is charged
+trough a linear element, a resistor for example. When charged from a
+constant current source, the voltage shows linear increase, because
+:math:`Q = It = CV` , and voltage increases linearly with time as
+:math:`V = (I/C) \times t`.

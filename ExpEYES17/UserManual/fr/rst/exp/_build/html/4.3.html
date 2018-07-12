@@ -1,0 +1,138 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Réponse transitoire de circuits RL &#8212; Documentation eyes17 1.0</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Réponse transitoire de circuit RLC" href="4.4.html" />
+    <link rel="prev" title="Réponse de circuits RC en régime transitoire" href="4.2.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="4.4.html" title="Réponse transitoire de circuit RLC"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="4.2.html" title="Réponse de circuits RC en régime transitoire"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="4.2.html"
+                        title="Chapitre précédent">Réponse de circuits RC en régime transitoire</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="4.4.html"
+                        title="Chapitre suivant">Réponse transitoire de circuit RLC</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/4.3.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reponse-transitoire-de-circuits-rl">
+<h1>Réponse transitoire de circuits RL<a class="headerlink" href="#reponse-transitoire-de-circuits-rl" title="Lien permanent vers ce titre">¶</a></h1>
+<p><strong>Objectif</strong></p>
+<p>Explorer la nature du courant et de la tension quand un échelon de
+tension est appliqué à une résistance et un bobinage en série. En
+mesurant la tension en fonction du temps aux bornes du bobinage, on peut
+calculer son inductance.</p>
+<a class="reference internal image-reference" href="_images/RLtransient.svg"><img alt="_images/RLtransient.svg" src="_images/RLtransient.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/RLtransient.png"><img alt="_images/RLtransient.png" src="_images/RLtransient.png" style="width: 300px;" /></a>
+<p>Dans un circuit RL, <img class="math" src="_images/math/9f56540eb0da866353f38e2d23a05783810103f3.png" alt="U = RI + L(dI/dt)"/> , équation
+qui se résout en
+<img class="math" src="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png" alt="I = I_0 \times e^{− (R/L)t}"/>. Le
+coefficient du terme exponentiel R/L peut être déduit du graphique de la
+tension aux bornes du bobinage. La résistance du bobinage doit être
+incluse dans les calculs, <img class="math" src="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png" alt="R = R_{ext} + R*_L"/>.</p>
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li>Le bobinage est la bobine de 3000 tours</li>
+<li>Cliquer sur les boutons <em>Échelon 0-&gt;5V</em> et <em>Échelon 5-&gt;0V</em> pour
+afficher les graphiques</li>
+<li>Ajuster l’échelle horizontale, si nécessaire, et recommencer.</li>
+<li>Calculer la valeur de l’inductance</li>
+<li>Insérer un noyau en fer dans le bobinage et recommencer</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>La réponse transitoire du circuit RL est montrée sur la figure. La
+courbe exponentielle est modélisée pour extraire la valeur de L/R. La
+résistance de la bobine est mesurée en la comparant avec la résistance
+externe connue, en courant continu. A2 est connecté à OD1 pour une
+mesure plus précise de la résistance du bobinage.</p>
+<p>Les tensions appliquées sont positives, mais le graphique va vers des
+tensions négatives, pourquoi&nbsp;?</p>
+<p>Quel était le courant avant le début de l’échelon 5-&gt;0&nbsp;V&nbsp;? Quelle est la
+force contre-électromotrice (<em>fcem</em>)&nbsp;?</p>
+<p>Recommencer avec deux bobinages en série, (a) en les plaçant l’un loin
+de l’autre, (b) en les plaçant l’un sur l’autre, (c) après changement
+d’orientation de l’un des deux. On peut voir l’effet de l’induction
+mutuelle.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="4.4.html" title="Réponse transitoire de circuit RLC"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="4.2.html" title="Réponse de circuits RC en régime transitoire"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, GK.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+    </div>
+  </body>
+</html>

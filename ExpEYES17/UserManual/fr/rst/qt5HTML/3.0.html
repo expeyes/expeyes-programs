@@ -1,0 +1,85 @@
+<?xml version="1.0" ?><!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head><body><div class="body" role="main">
+            
+  <div class="section" id="oscilloscope-a-quatre-canaux-et-plus">
+<h1>Oscilloscope à quatre canaux, et plus</h1>
+<p>Eyes17 est livré avec une application dont l’interface utilisateur par défaut
+est un oscilloscope à quatre canaux amélioré.</p>
+<ul class="simple">
+<li><a class="reference external" href="https://www.youtube.com/channel/UCIHUjpPn9wf1aHElqLn1RJQ">Lien vers des vidéos YouTube</a></li>
+<li>Le programme d’oscilloscope à quatre canaux fonctionne à peu de choses
+près comme un oscilloscope avec des entrées nommées
+A1, A2, A3 and MIC.</li>
+<li>Ajuster la sensibilté en X de l’écran, à l’aide du curseur de Base de Temps,
+en général pour observer plusieurs périodes du signal.</li>
+<li>Si le signal n’est pas stable choisir la source appropriée pour la fonction
+«trigger». Si nécessaire ajuster le seuil du «trigger».</li>
+<li>On peut enregistrer les traces dans un fichier, à un format texte. On peut
+prendre la transformée de Fourier et visualiser le spectre de fréquence
+du signal d’entrée.</li>
+<li>Le programme d’oscilloscope a aussi de widgets de contrôle sur le panneau
+de droite pour accéder à la plupart des fonctionnalités d’ExpEYES.</li>
+<li>Les entrées A1, A2, A3 et les résistances connectées à SEN sont
+mesurées et leurs valeurs affichées chaque seconde. Mais ces affichages
+n’ont pas de sens quand on connected des sources alternatives.</li>
+<li>Pour les entrées en courant alternatif, on peut cocher les cases à droite
+du widget de canal pour lire la tension de crête et la fréquence.</li>
+<li>Les branchements d’entrée/sortie d’ExpEYES sont brièvement décrits
+ci-dessous.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="./images/scope-outputs.png"><img alt="./images/scope-outputs.png" src="./images/scope-outputs.png" style="width: 300px;"/></a>
+</div>
+<div class="section" id="branchements-de-sortie">
+<h2>Branchements de sortie</h2>
+<ul class="simple">
+<li><strong>CCS:</strong> source courant constant de <img alt="1.1\ mA" class="math" src="_images/math/24f4ab6d4515be48d2743231bd07e0da82252bde.png"/>, on l’active et on la
+désactive à l’aide du bouton à cocher CCS.</li>
+<li><strong>PV1:</strong> Tension programmable, dans l’intervalle <img alt="\pm 5\ V" class="math" src="_images/math/3b7a582390aa358c825f0016c9aca6c33de8c610.png"/>. On peut
+la régler à l’aide du curseur ou à l’aide d’une entrée texte.</li>
+<li><strong>PV2:</strong> comparable à PV1, mais pour l’intervalle <img alt="- 3.3\ V" class="math" src="_images/math/deceeaf1a45dc57b379bd2d8de5850cf3f6a9470.png"/> à <img alt="+ 3.3\ V" class="math" src="_images/math/727042c5547738459bc946466cbf1815408b97e2.png"/></li>
+<li><strong>SQ1:</strong> Générateur de signal carré, variant entre <img alt="0" class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png"/> et <img alt="5\ V" class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png"/>.
+La fréquence est réglable de <img alt="1\ Hz" class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png"/> à <img alt="5\ kHz" class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png"/>.</li>
+<li><strong>SQ2:</strong> comme SQ1, mais disponible comme une option de WG.</li>
+<li><strong>OD1:</strong> Sortie numérique, sa tension peut être <img alt="0" class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png"/> ou <img alt="5\ V" class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png"/>.</li>
+<li><strong>WG:</strong> Générateur de basse fréquence. La fréquence est entre <img alt="1\ Hz" class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png"/>
+et <img alt="5\ kHz" class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png"/>. On peut régler l’amplitude à <img alt="3\ V" class="math" src="_images/math/0bd5eb9989b969c47903e39dfbf07fe2096bba32.png"/>, <img alt="1\ V" class="math" src="_images/math/b3e216320b7c8be2cbc21be0d6b5b7902b40e30c.png"/>
+ou <img alt="80\ mV" class="math" src="_images/math/040a5395dcdf611ae7fed108966b47ee6ab99fa1.png"/>.
+Le signal peut être sinusoïdal, triangulaire ou carré. En mode signal
+carré, la sortie est sur SQ2, avec une excursion de <img alt="0" class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png"/> à <img alt="5\ V" class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png"/>.</li>
+<li><strong>-WG:</strong> Sortie de WG inversée.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="./images/scope-inputs.png"><img alt="./images/scope-inputs.png" src="./images/scope-inputs.png" style="width: 300px;"/></a>
+</div>
+</div>
+<div class="section" id="branchements-d-entree">
+<h2>Branchements d’entrée</h2>
+<ul class="simple">
+<li><strong>IN1:</strong> Entrée pour mesurer la capacité d’un condensateur. Un
+bouton-poussoir permet de lancer la mesure.</li>
+<li><strong>IN2:</strong> Entrée pour mesurer la fréquence de signaux numériques, qui
+varient entre <img alt="0" class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png"/> et <img alt="3" class="math" src="_images/math/18acc1fa0d022fd729f0749ddc5f669917d3fb15.png"/> à <img alt="5\ V" class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png"/>.
+Un bouton-poussoir permet de lancer la mesure.</li>
+<li><strong>SEN:</strong> Entrée pour mesurer la résistance. Ce point est rappelé en interne
+à <img alt="3.3\ V" class="math" src="_images/math/9210342930929ea814930262304b16d0c79a28ad.png"/> via une résistance de  <img alt="5.1\ k\Omega" class="math" src="_images/math/cdb1157e4d667f56a60f2e4950e769a7622f773c.png"/>.</li>
+<li><strong>A1:</strong> Entrée de mesure de tension, fonctionne comme voltmètre ou comme
+oscilloscope. Le calibre maximal est <img alt="\pm\ 16\ V" class="math" src="_images/math/3270edf84f06fcd268711a855a3f328399202056.png"/>, on choisit
+le calibre depuis un menu déroulant. On peut choisir le mode de couplage
+continu/alternatif à l’aide d’un contact à glissière sur le boîtier.</li>
+<li><strong>A2:</strong> Identique à A1, mais sans couplage alternatif.</li>
+<li><strong>A3:</strong> Entrée de mesure de tension pour <img alt="\pm\ 3.3\ V" class="math" src="_images/math/8f7e1f73995959fe74248d103c2cf3e7eb4fff40.png"/>. On peut
+amplifier les signaux faibles en connectant une résistance entre Rg et
+GND.</li>
+<li><strong>MIC:</strong> Entrée à microphone (à condensateur), son signal apparaît comme
+le canal quatre de l’oscilloscope.</li>
+<li><strong>Rg:</strong> Résistance de gain pour A3. <img alt="Gain = 1 + \frac{R_{g}}{100}" class="math" src="_images/math/0017517a0909fa2113c728609ce038ef0ddd8a64.png"/>.
+Par exemple, si on connecte une résistance de <img alt="1\ k\Omega" class="math" src="_images/math/c881340f4a0fff8f9e62b5ed86ad9d3eeff919f7.png"/> on obtient
+un gain de <img alt="11" class="math" src="_images/math/67763ee8e4752b3b94c82605090336c07af1d3d5.png"/>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div></body>
+</html>

@@ -1,0 +1,29 @@
+.. 2.8
+
+Human body as a conductor
+=========================
+
+**Objective**
+
+Touching the AC mains is fatal to us because our body is a conductor. We
+can explore this using low voltage signals.
+
+.. image:: schematics/conducting-human.svg
+	   :width: 300px
+.. image:: pics/conducting-human-screen.png
+	   :width: 300px
+
+**Procedure**
+
+-  Set WG to 200 Hz.
+-  Enable A1, A2 with analysis enabled.
+-  Conenct WG and A1, with a wire
+-  Connect WG and A2 through your body and note voltages
+-  Repeat it using a 3 volt DC signal from PV1.
+
+**Discussion**
+
+The observed peak voltage will be less than 3volts, due to the
+resistance of the body. There could be some ripple due to the 50Hz AC
+pickup. This can be eliminated by performing the experiment far away
+from power lines, using a laptop.

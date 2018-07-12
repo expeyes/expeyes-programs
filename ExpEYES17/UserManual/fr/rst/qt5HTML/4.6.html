@@ -1,0 +1,36 @@
+<?xml version="1.0" ?><!DOCTYPE html  PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN'  'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'><html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/></head><body><div class="body" role="main">
+            
+  <div class="section" id="analyse-de-fourier">
+<h1>Analyse de Fourier</h1>
+<p><strong>Objectif</strong></p>
+<p>Étudier la transformée de Fourier d’un signal. Représentations
+temporelle et fréquentielle d’un signal.</p>
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li>Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif
+(interrupteur à glissière sur le boîtier)</li>
+<li>Activer A1 et A2, sélectionner le calibre 4V</li>
+<li>Régler WG et SQ1 à 500Hz</li>
+<li>Cliquer sur le bouton FFT</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Dans le graphique de la transformée de Fourier, la fréquence est sur
+l’axe x et l’axe y montre l’intensité relative des composants
+fréquentiels du signal. On appelle ça la représentation
+fréquentielle (<a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_transform">http://en.wikipedia.org/wiki/Fourier_transform</a>).
+Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
+plus petits sont une mesure de la distorsion du signal sinusoïdal.</p>
+<p>Un signal carré peut être représenté comme
+<img alt="f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯" class="math" src="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png"/>.
+Dans la transformée de Fourier d’un signal carré de fréquence <em>f</em> , il y
+aura un composant <em>3f</em> (dont l’amplitude est le tiers du composant <em>f</em>),
+un composant <em>5f</em> (amplitude un cinquième), etc. comme montré sur
+la figure.</p>
+<a class="reference internal image-reference" href="_images/sqwaveFFT.png"><img alt="_images/sqwaveFFT.png" src="_images/sqwaveFFT.png" style="width: 300px;"/></a>
+<a class="reference internal image-reference" href="_images/sinewaveFFT.png"><img alt="_images/sinewaveFFT.png" src="_images/sinewaveFFT.png" style="width: 300px;"/></a>
+</div>
+
+
+          </div></body>
+</html>

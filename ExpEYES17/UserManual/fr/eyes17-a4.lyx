@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -26,6 +26,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 1
@@ -55,6 +57,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -69,7 +72,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 2
 \paperpagestyle plain
@@ -1633,29 +1639,29 @@ Avant de commencer les expériences, faisons quelques exercices simples pour
  nous familiariser avec expEYES-17.
  Démarrez votre ordinateur avec le CDROM vif, connectez l'appareil à un
  port USB et démarrez le programme EYES-17 depuis le menu 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Applications->Science
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
  Activez l'option 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 fenêtre d'aide surgissante
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  et sélectionnez les quelques premier items du menu 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Exp.
  scolaires
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1665,28 +1671,28 @@ Exp.
 Les chapitre suivants sont structurés selon les menus du programme eyes17,
  chaque chapitre contenant les expériences disponibles sous le menu correspondan
 t, comme 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Exp.
  scolaires
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Électronique
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Électricité
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , etc.
@@ -1709,11 +1715,11 @@ Expériences scolaires
 \begin_layout Standard
 Dans ce chapitre on discutera des expériences et démonstrations sans beaucoup
  d'analyse des données, qui sont comprises dans le menu 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Expériences scolaires
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -1931,11 +1937,11 @@ Connecter le condensateur entre IN1 and GND.
 
 \begin_layout Itemize
 Cliquer sur 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Capacité en IN1
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  .
@@ -2054,11 +2060,11 @@ Mesurer la tension en A1.
 
 \begin_layout Itemize
 Sélectionner 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Électricité->Tracé d'une courbe courant-tension
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  dans le menu pour obtenir une courbe I-U.
@@ -4463,19 +4469,19 @@ Procédure
 
 \begin_layout Itemize
 Dan le menu 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Électricité
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 , choisir le sous-menu 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Circuit RC en régime transitoire
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -5060,11 +5066,11 @@ Procédure
 
 \begin_layout Itemize
 Cliquer sur 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Démarrer le scan
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
@@ -5937,11 +5943,11 @@ La résistance d'une sonde PT100 est
 
 V.
  Modifier le champ 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 gain
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
  selon.
@@ -5975,11 +5981,11 @@ eyes17
 eyes17
 \family default
 , qui pourrait être dans votre répertoire personnel ou sur le 
-\begin_inset Quotes fld
+\begin_inset Quotes cld
 \end_inset
 
 Python PATH
-\begin_inset Quotes frd
+\begin_inset Quotes crd
 \end_inset
 
 .
