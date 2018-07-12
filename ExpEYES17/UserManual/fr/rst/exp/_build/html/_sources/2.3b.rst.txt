@@ -12,7 +12,7 @@ Mesurer la capacité de condensateurs en parallèle
 **Procédure pour deux condensateurs**
 
 -  Connecter les deux condensateurs entre IN1 and GND.
--   Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
+-  Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
    condensateur pendant la mesure.
 
 **Discussion**
