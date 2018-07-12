@@ -157,10 +157,10 @@ class helpWin(QWebView):
 		"""
 		htmlFiles=[f+".html" for f in proposed_files]
 		for directory in [
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', lang[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', lang, 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
-			os.path.join("/usr/share/eyes17/rst", lang[:2]), # packaged environment, restructured text files
-			os.path.join("/usr/share/eyes17/rst", lang), # packaged environment, restructured text files (complete LANG code)
+			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
+			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
+			os.path.join("/usr/share/eyes17/rst", str(lang)[:2]), # packaged environment, restructured text files
+			os.path.join("/usr/share/eyes17/rst", str(lang)), # packaged environment, restructured text files (complete LANG code)
 			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
 			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
 		]:
