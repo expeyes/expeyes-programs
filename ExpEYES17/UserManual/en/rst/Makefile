@@ -7,6 +7,9 @@ HTML = exp/_build/html/index.html
 EPUB = exp/_build/epub/eyes17.epub
 QT5HTML = qt5HTML/index.html
 PREBUILD = exp/_static/.keeper
+RSTFILES = $(shell ls exp/*.rst)
+THIS_LANG = $(shell basename $$(realpath ..))
+SVGFILES = $(shell ls exp/schematics/$(THIS_LANG)/*.svg)
 
 SOURCES = $(shell ls exp/*.rst) exp/conf.py exp/Makefile \
   exp/cover/coverpage.pdf exp/cover/preface.pdf
@@ -30,7 +33,32 @@ $(HTML): $(SOURCES)
 $(EPUB): $(SOURCES)
 	make -C exp epub
 
-$(QT5HTML): $(HTML)
+$(QT5HTML): $(SOURCES) $(HTML) 
 	./simplifyForQt5 --indir=exp/_build/html --outdir=qt5HTML
 
-.PHONY: all force distclean
+progress:
+	@echo "=================== Progress log for the language $(THIS_LANG) ==================="
+	@echo -n "New files to translate: "
+	@for f in ../../schematics/en/*.svg; do \
+	  g=exp/schematics/$(THIS_LANG)/$$(basename $$f); \
+	  if [ ! -f $$g ]; then echo -n "$$(basename $$f)  "; fi; \
+	done;
+	@for f in ../../en/rst/exp/*.rst ; do \
+	  g=exp/$$(basename $$f); \
+	  if [ ! -f $$g ]; then echo -n "$$(basename $$f)  "; fi; \
+	done;
+	@echo "[end]"
+	@echo -n "Files to update: "
+	@make --quiet progress_update
+	@echo "[end]"
+	@echo "========================================================================="
+
+progress_update: $(RSTFILES) $(SVGFILES)
+
+exp/%.rst: ../../en/rst/exp/%.rst
+	@echo -n "$$(basename $@) "
+
+exp/schematics/$(THIS_LANG)/%.svg: ../../schematics/en/%.svg
+	@echo -n "$$(basename $@) "
+
+.PHONY: all force distclean progress progress_update

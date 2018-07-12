@@ -1,9 +1,9 @@
 DESTDIR = 
-LANGUAGES = $(shell find . -type d -mindepth 1 -maxdepth 1 | grep -Ev 'pics|schematics' | tr -d './')
+LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev 'pics|schematics|images' | tr -d './')
 
 RST_SUBDIRS = $(shell ls -d */rst)
 
-all:
+all: progress
 	for d in $(RST_SUBDIRS); do make -C $$d; done
 
 clean:
@@ -17,3 +17,12 @@ install:
 	    $(DESTDIR)/usr/share/eyes17/doc/$$l; \
 	  cp -a $$l/rst/qt5HTML/* $(DESTDIR)/usr/share/eyes17/rst/$$l; \
 	done
+
+progress:
+	@for l in $(LANGUAGES); do \
+	  if [ $$l != "en" ]; then \
+	    make --quiet -C $$l/rst progress; \
+	  fi; \
+	done
+
+.PHONY: all clean install progress

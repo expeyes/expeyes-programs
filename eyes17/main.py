@@ -18,11 +18,11 @@ if 'Windows' in pf:
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
 [QT_TRANSLATE_NOOP('MainWindow',"Resistance measurement"), ('2.2','res-measure')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Series"), ('2.2','res-series')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Parallel"), ('2.2','res-parallel')],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Series"), ('2.2a','res-series')],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Parallel"), ('2.2b','res-parallel')],
 [QT_TRANSLATE_NOOP('MainWindow',"Capacitance measurement"), ('2.3','cap-measure')],
-[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Series"), ('2.3','cap-series')],
-[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Parallel"), ('2.3','cap-parallel')],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Series"), ('2.3a','cap-series')],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Parallel"), ('2.3b','cap-parallel')],
 [QT_TRANSLATE_NOOP('MainWindow',"Resistance by Ohm's law"), ('2.4','res-compare')],
 [QT_TRANSLATE_NOOP('MainWindow','Direct and Alternating Currents'), ('2.5','ac-dc')],
 [QT_TRANSLATE_NOOP('MainWindow','AC mains pickup'), ('2.6','line-pickup')],
@@ -36,12 +36,12 @@ schoolExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Resistance of Water'), ('2.14','res-water')],
 [QT_TRANSLATE_NOOP('MainWindow','Generating Sound'), ('2.15','sound-generator')],
 [QT_TRANSLATE_NOOP('MainWindow','Digitizing Sound'), ('2.16','sound-capture')],
-[QT_TRANSLATE_NOOP('MainWindow','Stroboscope'), 'stroboscope'],
+[QT_TRANSLATE_NOOP('MainWindow','Stroboscope'), ('2.17','stroboscope')],
 ]
 
 
 testEquipment = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope']
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),('3.0', 'scope')]
 #[QT_TRANSLATE_NOOP('MainWindow','Monitor and Control'), 'mon-con']
 ]
 
@@ -54,7 +54,7 @@ electronicsExpts = [
 ]
 
 electronicsExptsScope = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope'],
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),('3.0', 'scope')],
 [QT_TRANSLATE_NOOP('MainWindow','Halfwave Rectifier'),('3.1','halfwave')],
 [QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'),('3.2','fullwave')],
 [QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),('3.3','clipping')],
@@ -136,6 +136,7 @@ class helpWin(QWebView):
 		hit during the search defines the file to open.
 		"""
 		QWebView.__init__(self)
+		print("GRRRR, type(name[1])", type(name[1]), name[1])
 		if type(name[1]) is str:
 			fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		else:
@@ -156,14 +157,16 @@ class helpWin(QWebView):
 		:return: the first occurence of a matching file, else None
 		"""
 		htmlFiles=[f+".html" for f in proposed_files]
-		for directory in [
+		dirs = [
 			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
 			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
 			os.path.join("/usr/share/eyes17/rst", str(lang)[:2]), # packaged environment, restructured text files
 			os.path.join("/usr/share/eyes17/rst", str(lang)), # packaged environment, restructured text files (complete LANG code)
 			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
 			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
-		]:
+		]
+		print("GRRRR dirs=", dirs)
+		for directory in dirs:
 			for f in htmlFiles:
 				target=	os.path.join(directory,f)
 				if os.path.exists(target):

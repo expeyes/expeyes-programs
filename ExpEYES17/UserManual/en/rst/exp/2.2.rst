@@ -6,20 +6,13 @@ Measuring Resistance
 **Objective**
 
 ExpEYES has a terminal marked **SEN**, that can be used for measuring
-resistances in the range of :math:`100~\Omega` to :math:`100~k\Omega`. You can also study the
-series and parallel combination of resistors. Effective resistance of a
-series combination of resistors, :math:`R = R_1 + R_2 + ⋯`. For parallel
-combination it is given by :math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+resistances in the range of :math:`100~\Omega` to :math:`100~k\Omega`.
+You can also study the series and parallel combination of resistors.
 
 .. image:: ./schematics/res-measure.svg
    :width: 300px	   
-.. image:: ./schematics/res-series.svg
-   :width: 300px	   
-.. image:: ./schematics/res-parallel.svg
-   :width: 300px
 
 **Procedure**
 
 -  Connect the resistor between SEN and any Ground terminal
 -  Observe the value shown on the right side panel
--  Try series and parallel combinations

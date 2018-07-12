@@ -1,7 +1,6 @@
 .. eyes17 documentation master file, created by
    sphinx-quickstart on Sat Jan  6 00:43:37 2018.
 
-
 Getting Started
 ***************
 
@@ -31,7 +30,11 @@ enabled.
 
    2.1
    2.2
+   2.2a
+   2.2b
    2.3
+   2.3a
+   2.3b
    2.4
    2.5
    2.6
@@ -45,6 +48,7 @@ enabled.
    2.14
    2.15
    2.16
+   2.17
 
 Electronics
 ***********
@@ -56,6 +60,7 @@ characteristics have a dedicated GUI.
 .. toctree::
    :maxdepth: 2
 
+   3.0
    3.1
    3.2
    3.3

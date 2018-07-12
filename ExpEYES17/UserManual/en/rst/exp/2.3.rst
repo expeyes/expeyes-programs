@@ -5,14 +5,9 @@ Measuring Capacitance
 
 **Objective**
 
-Measuring capacitance and explore the series and parallel combinations
-of capacitors.
+Measuring a capacitance.
 
 .. image:: schematics/cap-measure.svg
-	   :width: 300px
-.. image:: schematics/cap-series.svg
-	   :width: 300px
-.. image:: schematics/cap-parallel.svg
 	   :width: 300px
 
 **Procedure**
@@ -20,12 +15,10 @@ of capacitors.
 -  Connect the capacitor between IN1 and Ground.
 -  Click on “Capacitance on IN1” . Should not touch the capacitor while
    measuring
--  Repeat the measurement for Series and parallel combinations
 
 **Discussion**
 
-We have used :math:`100~pF` capacitors in this activity. For parallel
-combination, the effective capacitance is given by :math:`C = C_1 + C_2 + ⋯`
-, and for series combination by :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.
+We have used :math:`100~pF` capacitors in this activity.
+
 You can make the capacitors by pasting thin metal foils on both sides of
 insulators like paper, polythene or glass.

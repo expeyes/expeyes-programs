@@ -1,12 +1,3 @@
-separate file 2.2.rst in three components, for resistors, res-series,
-   res-parallel
-separate file 2.3.rst in three components, for cap-measure,
-   cap-series, cap-parallel
-make a file 2.17 for stroboscope
-
-make a summary of 1.2.rst as file 3.0.rst, in order to implement help
-   for the topic 'scope'
-
 make a file between 3.5 and 3.6 for the topic Transistor Amplifier
    (CE)
 
