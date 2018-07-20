@@ -2,12 +2,12 @@ DESTDIR =
 TS_FILES = $(shell ls *.ts)
 QM_FILES = $(patsubst %.ts, %.qm, $(TS_FILES))
 SOURCES = $(shell ls ../*py ../code/*.py)
-PYLUPDATE ?= pylupdate4
+PYLUPDATE ?= pylupdate5
 
 all: $(QM_FILES)
 
 $(QM_FILES): $(TS_FILES)
-	lrelease-qt4 eyes17.pro
+	lrelease eyes17.pro
 
 $(TS_FILES): eyes17.pro
 	$(PYLUPDATE) eyes17.pro
