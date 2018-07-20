@@ -2,3 +2,12 @@
 # tell lintian to not complain, since the uglified JS file is replaced by
 # a symlink to debian's bootstrap.js
 expeyes source: source-is-missing expeyes-web/htdocs/js/bootstrap.js line length is 516 characters (>512)
+
+# The ugly JS files ExpEYES17/UserManual/.../_static/translations.js
+# is the result of a run of sphinx-build; besides, it is human-readable
+# and there is no obfuscation, just a very long line of translations,
+# as announced by the file name.
+expeyes source: source-is-missing ExpEYES17/UserManual/fr/rst/qt5HTML/_static/translations.js line length is 4307 characters (>512)
+expeyes source: source-is-missing ExpEYES17/UserManual/fr/rst/exp/_build/epub/_static/translations.js line length is 4307 characters (>512)
+expeyes source: source-is-missing ExpEYES17/UserManual/fr/rst/exp/_build/html/_static/translations.js line length is 4307 characters (>512)
+

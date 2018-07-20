@@ -1,3 +1,31 @@
+expeyes (4.4.3+dfsg-2) unstable; urgency=medium
+
+  * removed any dependency on python2
+  * applied Boyuan Yang's patch. Closes: #904090
+  * applied a patch from Ajith Kumar, which add examples for eyes17,
+    in Python language.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 20 Jul 2018 17:39:12 +0200
+
+expeyes (4.4.3+dfsg-1) unstable; urgency=medium
+
+  * added Frans Spiesschaert's nl.po file. Closes: #898869
+  * new upstream release.
+  * added the dependency eyes17 -> python3-pyqt5.qtwebkit, removed
+    the dependency eyes17 -> python-qgis.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Fri, 13 Jul 2018 14:17:26 +0200
+
+expeyes (4.4.2+dfsg-1) unstable; urgency=medium
+
+  * upgraded to upstream new version
+  * applied the patch from Adriano Rafael. Closes: #903356
+  * upgraded Standards-Version to 4.1.5
+  * modified the way to install eyes17 documentation and help files
+  * fixed lintian warnings/errors
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 09 Jul 2018 13:32:47 +0200
+
 expeyes (4.3.7+dfsg-2) unstable; urgency=medium
 
   * added debian/po/ru.po, thanks to Lev Lamberov.

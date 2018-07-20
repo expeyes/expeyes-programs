@@ -14,8 +14,10 @@ DEB_BUILD_MAINT_OPTIONS=reproducible=-timeless
 LD_LIBRARY_PATH += debian/libexpeyes1/usr/lib
 export DEB_BUILD_HARDENING=1
 
+export QT_SELECT := 5
+
 %:
-	dh $@ --with python2,python3
+	dh $@ --with python3
 
 HOME = $(CURDIR)/debian/build
 override_dh_auto_build-arch:
@@ -40,8 +42,3 @@ override_dh_install:
 	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
 	# prevents lintian error about PYCACHE
 	find $(CURDIR)/debian/ -type d -name __pycache__| xargs rm -rf;
-	# install the documentation for eyes17
-	mkdir -p $(DocDir)
-	for l in en fr; do \
-	  cp $(DocDirSource)/$${l}/eyes17-a4.pdf $(DocDir)/$${l}-eyes17.pdf; \
-	done

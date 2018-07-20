@@ -1,0 +1,80 @@
+# Dutch translation of expeyes debconf messages
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the expeyes package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Frans Spiesschaert <Frans.Spiesschaert@yucom.be>, 2017, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: expeyes 4.3.6+dfsg-6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-05-04 15:20+0000\n"
+"PO-Revision-Date: 2018-05-04 22:58+0200\n"
+"Last-Translator: Frans Spiesschaert <Frans.Spiesschaert@yucom.be>\n"
+"Language-Team: Debian Dutch l10n Team <debian-l10n-dutch@lists.debian.org>\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Gtranslator 2.91.7\n"
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "List of web servers to reconfigure automatically:"
+msgstr "Lijst van automatisch te herconfigureren webservers:"
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "Expeyes-Web currently supports Apache2."
+msgstr "Momenteel ondersteunt Expeyes-Web Apache2."
+
+#. Type: select
+#. Description
+#: ../expeyes-web.templates:1001
+msgid "If no web service is installed, choose \"none\"."
+msgstr "Indien geen webdienst geïnstalleerd is, kiest u \"none\"."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid "This should be the URL of the Expeyes service:"
+msgstr "Dit moet de URL van de Expeyes-dienst zijn:"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:2001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your server's IP address."
+msgstr ""
+"Kies een volledige unieke domeinnaam en vergewis u ervan dat DNS-servers "
+"deze naam kunnen omzetten naar het IP-adres van uw server."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid "This should be the URL reachable by the \"Home\" link:"
+msgstr "Dit moet de URL zijn waar u via de link \"Home\" naartoe kunt gaan:"
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"The main page featured by the Expeyes service has a few active buttons in "
+"its top. The \"Home\" button can be a link to a schools welcome page."
+msgstr ""
+"De startpagina van de Expeyes-dienst heeft bovenaan enkele actieve knoppen. "
+"De knop \"Home\" kan een link naar de welkomstpagina van een school zijn."
+
+#. Type: string
+#. Description
+#: ../expeyes-web.templates:3001
+msgid ""
+"Choose some fully qualified domain name, and make sure that this name will "
+"be resolved by DNS servers to your school server's IP address."
+msgstr ""
+"Kies een volledige unieke domeinnaam en vergewis u ervan dat DNS-servers "
+"deze naam kunnen omzetten naar het IP-adres van de server van uw school."
