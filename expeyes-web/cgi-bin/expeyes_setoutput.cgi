@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 CGI script for setting status for output pins of expEYES Junior connected to server
 Copyright 2016,  Authors : , Jishnu R(jishnu47@gmail.com), Rakesh K M(rakeshkm2203@gmail.com), Manoj.S.Nair(manojsnair007@gmail.com) [Amrita School of Engineering, Amritapuri Campus, Kollam 690525, Kerala]

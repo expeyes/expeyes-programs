@@ -136,7 +136,6 @@ class helpWin(QWebView):
 		hit during the search defines the file to open.
 		"""
 		QWebView.__init__(self)
-		print("GRRRR, type(name[1])", type(name[1]), name[1])
 		if type(name[1]) is str:
 			fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		else:
@@ -165,7 +164,6 @@ class helpWin(QWebView):
 			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
 			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
 		]
-		print("GRRRR dirs=", dirs)
 		for directory in dirs:
 			for f in htmlFiles:
 				target=	os.path.join(directory,f)
