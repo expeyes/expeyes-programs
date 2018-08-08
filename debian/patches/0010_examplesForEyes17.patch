@@ -271,20 +271,21 @@ Index: expeyes/eyes17/examples/digoutputs.py
 ===================================================================
 --- /dev/null
 +++ expeyes/eyes17/examples/digoutputs.py
-@@ -0,0 +1,13 @@
+@@ -0,0 +1,14 @@
 +'''
 +Connect OD1 to A1
 +'''
 +
++from __future__ import print_function
 +import eyes17.eyes
 +p = eyes17.eyes.open()
 +
 +#connect OD1 to A1
 +p.set_state(OD1 = 1 )        # set OD1 to HIGH
-+print p.get_voltage('A1')
++print (p.get_voltage('A1'))
 +
 +p.set_state(OD1 = 0 )        # set OD1 to HIGH
-+print p.get_voltage('A1')
++print (p.get_voltage('A1'))
 Index: expeyes/eyes17/examples/diodeIV.py
 ===================================================================
 --- /dev/null
@@ -359,37 +360,39 @@ Index: expeyes/eyes17/examples/measure_RandC.py
 ===================================================================
 --- /dev/null
 +++ expeyes/eyes17/examples/measure_RandC.py
-@@ -0,0 +1,13 @@
+@@ -0,0 +1,14 @@
 +'''
 +Measures capacitance in the range of pico Farads
 +'''
 +
++from __future__ import print_function
 +import eyes17.eyes
 +p = eyes17.eyes.open()
 +
 +#connect Capacitor from IN1 to GND
-+print p.get_capacitance()
++print (p.get_capacitance())
 +
 +#connect an LDR  from SEN to GND
-+print p.get_resistance()
++print (p.get_resistance())
 +
 Index: expeyes/eyes17/examples/multi_r2rtime.py
 ===================================================================
 --- /dev/null
 +++ expeyes/eyes17/examples/multi_r2rtime.py
-@@ -0,0 +1,12 @@
+@@ -0,0 +1,13 @@
 +'''
 +multi_r2rtime(input, ncycles) returns the microseconds elapsed between two rising edges.
 +ncycles is the number of cycles to be measured.
 +'''
 +
++from __future__ import print_function
 +import eyes17.eyes
 +p = eyes17.eyes.open()
 +
 +p.set_sqr1(1000)               # set 1kHz on  SQR1
 +t = p.multi_r2rtime('IN2')    # 6 is the readback of SQR1. Time of 10 cycles
 +
-+print t, 'Frequency = ', (1.0/t)
++print (t, 'Frequency = ', (1.0/t))
 Index: expeyes/eyes17/examples/npnTransferChar.py
 ===================================================================
 --- /dev/null
@@ -422,22 +425,23 @@ Index: expeyes/eyes17/examples/r2ftime.py
 ===================================================================
 --- /dev/null
 +++ expeyes/eyes17/examples/r2ftime.py
-@@ -0,0 +1,15 @@
+@@ -0,0 +1,16 @@
 +'''
 +r2ftime(in1, in2) returns the microseconds elapsed from a rising edge on input1 to a falling edge of input2,
 +they could be the same
 +'''
 +
++from __future__ import print_function
 +import eyes17.eyes
 +p = eyes17.eyes.open()
 +
 +p.set_sqr1(1000,30)        # set 1kHz squarewave, 30% duty cycle
 +
-+print p.r2ftime('IN2', 'IN2')
++print (p.r2ftime('IN2', 'IN2'))
 +
 +p.set_sqr1(1000,60)        # set 1kHz squarewave, 60% duty cycle
 +
-+print p.r2ftime('IN2', 'IN2')
++print (p.r2ftime('IN2', 'IN2'))
 Index: expeyes/eyes17/examples/readInputs.py
 ===================================================================
 --- /dev/null

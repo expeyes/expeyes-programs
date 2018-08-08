@@ -4,6 +4,7 @@ expeyes (4.4.3+dfsg-2) unstable; urgency=medium
   * applied Boyuan Yang's patch. Closes: #904090
   * applied a patch from Ajith Kumar, which add examples for eyes17,
     in Python language.
+  * added a build dependency on qt5-qmake
 
  -- Georges Khaznadar <georgesk@debian.org>  Fri, 20 Jul 2018 17:39:12 +0200
 
