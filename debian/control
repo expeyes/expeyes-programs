@@ -123,8 +123,9 @@ Package: python3-expeyes
 Section: python
 Architecture: all
 Depends: python3, ${misc:Depends}, ${python3:Depends},
- python3-scipy, python3-serial (>= 2.6)
-Recommends: udev
+ python3-scipy, python3-serial (>= 2.6), udev
+Conflicts: python-expeyes
+Replaces: python-expeyes
 Description: Python3 library for expeyes
  This package provides low level interfaces for making science experiments
  with an ExpEYES box. The library allows one to develop new programs easily

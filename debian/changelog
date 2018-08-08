@@ -1,3 +1,17 @@
+expeyes (4.4.3+dfsg-4) unstable; urgency=medium
+
+  * fixed the postinst script for python3-expeyes.
+    Closes: #904514
+
+ -- Georges Khaznadar <georgesk@debian.org>  Wed, 08 Aug 2018 10:00:49 +0200
+
+expeyes (4.4.3+dfsg-3) unstable; urgency=medium
+
+  * promoted the recommendation python3-expeyes <- udev to a dependency.
+    Closes: #904514
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 30 Jul 2018 05:03:44 +0200
+
 expeyes (4.4.3+dfsg-2) unstable; urgency=medium
 
   * removed any dependency on python2
@@ -5,6 +19,7 @@ expeyes (4.4.3+dfsg-2) unstable; urgency=medium
   * applied a patch from Ajith Kumar, which add examples for eyes17,
     in Python language.
   * added a build dependency on qt5-qmake
+  * removed debug messages emitted by eyes17/main.py
 
  -- Georges Khaznadar <georgesk@debian.org>  Fri, 20 Jul 2018 17:39:12 +0200
 

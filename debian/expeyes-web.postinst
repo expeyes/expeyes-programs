@@ -23,7 +23,7 @@ case "$1" in
     configure)
 	# make cgi scripts executable and compile them
 	chmod +x /usr/share/expeyes-web/cgi-bin/*.cgi
-	python3 py_compile /usr/share/expeyes-web/cgi-bin/*.cgi
+	python3 -m py_compile /usr/share/expeyes-web/cgi-bin/*.cgi
 	# reconfigure the webserver if necessary
 	db_get expeyes-web/reconfigure-webserver || true
 	webserver="$RET"

@@ -4,7 +4,6 @@ SUBDIRS = bin po firmware clib/expeyes-clib microhope \
 SUBDIRS_INDEP = expeyes-web eyes17/lang
 
 all:
-	python setup.py build
 	python3 setup.py build
 	for d in $(SUBDIRS); do \
 	  if [ -f $$d/configure.ac ]; then \
@@ -25,14 +24,11 @@ all_indep:
 	done
 
 install:
-	# for python-expeyes
+	# for python3-expeyes
 	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
-	  python setup.py install --install-layout=deb \
-	         --root=$(DESTDIR)/ --prefix=/usr; \
 	  python3 setup.py install --install-layout=deb \
 	         --root=$(DESTDIR)/ --prefix=/usr; \
 	else \
-	  python setup.py install --root=$(DESTDIR)/ --prefix=/usr; \
 	  python3 setup.py install --root=$(DESTDIR)/ --prefix=/usr; \
 	fi
 	install -d $(DESTDIR)/lib/udev/rules.d/
