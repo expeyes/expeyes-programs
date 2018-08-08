@@ -2994,14 +2994,16 @@ class Interface():
 		# Need to do this since 'eyes.py' redefines 'open'
 		if type(filename) == tuple:
 			filename = filename[0]
-		print (filename)
-		f = fileOpen(filename,'w')
-		for xy in data:
-			for k in range(len(xy[0])):
-				f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
-			f.write('\n')
-		f.close()
-		
+		# Do not save when filename == "", which can happen if one
+		# cancels the file save dialog
+		if filename:
+			f = fileOpen(filename,'w')
+			for xy in data:
+				for k in range(len(xy[0])):
+					f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
+				f.write('\n')
+			f.close()
+		return
 
 if __name__ == "__main__":
 	print("""this is not an executable file
