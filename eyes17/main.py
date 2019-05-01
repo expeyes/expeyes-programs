@@ -16,84 +16,85 @@ if 'Windows' in pf:
 	import sr04dist, utils, logger, XYplot
 
 schoolExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistance measurement"), ('2.2','res-measure')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Series"), ('2.2a','res-series')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Parallel"), ('2.2b','res-parallel')],
-[QT_TRANSLATE_NOOP('MainWindow',"Capacitance measurement"), ('2.3','cap-measure')],
-[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Series"), ('2.3a','cap-series')],
-[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Parallel"), ('2.3b','cap-parallel')],
-[QT_TRANSLATE_NOOP('MainWindow',"Resistance by Ohm's law"), ('2.4','res-compare')],
-[QT_TRANSLATE_NOOP('MainWindow','Direct and Alternating Currents'), ('2.5','ac-dc')],
-[QT_TRANSLATE_NOOP('MainWindow','AC mains pickup'), ('2.6','line-pickup')],
-[QT_TRANSLATE_NOOP('MainWindow','Separating AC and DC'), ('2.7','acdc-separating')],
-[QT_TRANSLATE_NOOP('MainWindow','Conducting Human body'), ('2.8','conducting-human')],
-[QT_TRANSLATE_NOOP('MainWindow','Resistance of Human body'), ('2.9','res-body')],
-[QT_TRANSLATE_NOOP('MainWindow','Light Dependent Resistor'), ('2.10','ldr')],
-[QT_TRANSLATE_NOOP('MainWindow','Lemon Cell'), ('2.11','lemon-cell')],
-[QT_TRANSLATE_NOOP('MainWindow','Simple AC generator'), ('2.12','ac-generator')],
-[QT_TRANSLATE_NOOP('MainWindow','Transformer'), ('2.13','transformer')],
-[QT_TRANSLATE_NOOP('MainWindow','Resistance of Water'), ('2.14','res-water')],
-[QT_TRANSLATE_NOOP('MainWindow','Generating Sound'), ('2.15','sound-generator')],
-[QT_TRANSLATE_NOOP('MainWindow','Digitizing Sound'), ('2.16','sound-capture')],
-[QT_TRANSLATE_NOOP('MainWindow','Stroboscope'), ('2.17','stroboscope')],
+[QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), 'measure-dc'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistance measurement"), 'res-measure'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Series"), 'res-series'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistors in Parallel"), 'res-parallel'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitance measurement"), 'cap-measure'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Series"), 'cap-series'],
+[QT_TRANSLATE_NOOP('MainWindow',"Capacitors in Parallel"), 'cap-parallel'],
+[QT_TRANSLATE_NOOP('MainWindow',"Resistance by Ohm's law"), 'res-compare'],
+[QT_TRANSLATE_NOOP('MainWindow','Direct and Alternating Currents'), 'ac-dc'],
+[QT_TRANSLATE_NOOP('MainWindow','AC mains pickup'), 'line-pickup'],
+[QT_TRANSLATE_NOOP('MainWindow','Separating AC and DC'), 'acdc-separating'],
+[QT_TRANSLATE_NOOP('MainWindow','Conducting Human body'), 'conducting-human'],
+[QT_TRANSLATE_NOOP('MainWindow','Resistance of Human body'), 'res-body'],
+[QT_TRANSLATE_NOOP('MainWindow','Light Dependent Resistor'), 'ldr'],
+[QT_TRANSLATE_NOOP('MainWindow','Lemon Cell'), 'lemon-cell'],
+[QT_TRANSLATE_NOOP('MainWindow','Simple AC generator'), 'ac-generator'],
+[QT_TRANSLATE_NOOP('MainWindow','Transformer'), 'transformer'],
+[QT_TRANSLATE_NOOP('MainWindow','Resistance of Water'), 'res-water'],
+[QT_TRANSLATE_NOOP('MainWindow','Generating Sound'), 'sound-generator'],
+[QT_TRANSLATE_NOOP('MainWindow','Digitizing Sound'), 'sound-capture'],
+[QT_TRANSLATE_NOOP('MainWindow','Stroboscope'), 'stroboscope'],
 ]
 
 
 testEquipment = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),('3.0', 'scope')]
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope']
 #[QT_TRANSLATE_NOOP('MainWindow','Monitor and Control'), 'mon-con']
 ]
 
 
 electronicsExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),('3.11','diodeIV')],
-[QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),('3.12','npnCEout')],
+[QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),'diodeIV'],
+[QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),'npnCEout'],
 [QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),'pnpCEout'],
 #[QT_TRANSLATE_NOOP('MainWindow','AM and FM'), 'amfm']
 ]
 
 electronicsExptsScope = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),('3.0', 'scope')],
-[QT_TRANSLATE_NOOP('MainWindow','Halfwave Rectifier'),('3.1','halfwave')],
-[QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'),('3.2','fullwave')],
-[QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),('3.3','clipping')],
-[QT_TRANSLATE_NOOP('MainWindow','Diode Clamping'),('3.4','clamping')],
-[QT_TRANSLATE_NOOP('MainWindow','IC555 Multivibrator'),('3.5','osc555')],
+[QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),'scope'],
+[QT_TRANSLATE_NOOP('MainWindow','Halfwave Rectifier'),'halfwave'],
+[QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'),'fullwave'],
+[QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),'clipping'],
+[QT_TRANSLATE_NOOP('MainWindow','Diode Clamping'),'clamping'],
+[QT_TRANSLATE_NOOP('MainWindow','IC555 Multivibrator'),'osc555'],
 [QT_TRANSLATE_NOOP('MainWindow','Transistor Amplifier (CE)'),'npnCEamp'],
-[QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),('3.6','opamp-inv')],
-[QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),('3.7','opamp-noninv')],
-[QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),('3.8','opamp-int')],
-[QT_TRANSLATE_NOOP('MainWindow','Logic Gates'),('3.9','logic-gates')],
-[QT_TRANSLATE_NOOP('MainWindow','Clock Divider Circuit'),('3.10','clock-divider')]
+[QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),'opamp-inv'],
+[QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),'opamp-noninv'],
+[QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),'opamp-int'],
+[QT_TRANSLATE_NOOP('MainWindow','Logic Gates'),'logic-gates'],
+[QT_TRANSLATE_NOOP('MainWindow','Clock Divider Circuit'),'clock-divider']
 ]
 
 electricalExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),'plotIV'],
 [QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),'XYplot'],
-[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),('4.1','RLCsteadystate')],
-[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),('4.2','RCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),('4.3','RLtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),('4.4','RLCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),('4.5','filterCircuit')],
-[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),('4.7','induction')]
+[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),'RLCsteadystate'],
+[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),'RCtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),'RLtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),'RLCtransient'],
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),'filterCircuit'],
+[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),'induction']
 ]
 
 soundExpts = [
-[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Piezo Buzzer'),('5.1','soundFreqResp')],
-[QT_TRANSLATE_NOOP('MainWindow','Velocity of Sound'), ('5.2','soundVelocity')],
-[QT_TRANSLATE_NOOP('MainWindow','Sound beats'), ('5.3','soundBeats')]
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Piezo Buzzer'),'soundFreqResp'],
+[QT_TRANSLATE_NOOP('MainWindow','Velocity of Sound'), 'soundVelocity'],
+[QT_TRANSLATE_NOOP('MainWindow','Sound beats'), 'soundBeats']
 ]
 
 mechanicsExpts = [
-[QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum with Light barrier'), ('6.1','rodPendulum')],
-[QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),('6.2','pendulumVelocity')],
-[QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),('6.3','driven-pendulum')],
-[QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), ('6.4','sr04dist')]
+[QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum with Light barrier'), 'rodPendulum'],
+[QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),'pendulumVelocity'],
+[QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),'driven-pendulum'],
+[QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), 'sr04dist']
 ]
 
 otherExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('6.5','pt100')],
+[QT_TRANSLATE_NOOP('MainWindow','BH Curve'),'BHCurve'],
+[QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), 'pt100'],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger']
 ]
 
@@ -126,20 +127,8 @@ pythonCodes = [
 		
 class helpWin(QWebView):
 	def __init__(self, name = ''):
-		"""
-		Class for the help window
-		:parm: name a tuple (title, HTML file indication)
-		name[1] can be either a simple string or another iterable. When it is
-		a simple string, it means that the file to open is in htm/<name>.html;
-		on the contrary, name[1] is a list of file names, without their
-		.html suffix, to be searched in a list of directories; the first
-		hit during the search defines the file to open.
-		"""
 		QWebView.__init__(self)
-		if type(name[1]) is str:
-			fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
-		else:
-			fn = self.foundFirstHelp(name[1])
+		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
 		self.setMaximumSize(QSize(500, 1200))
@@ -147,29 +136,6 @@ class helpWin(QWebView):
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
 
-	def foundFirstHelp(self, proposed_files):
-		"""
-		Check in sequence, a list of directories for a file to be found,
-		which is in the iterable proposed_files; the first match is
-		returned immediately
-		:parm: proposed_files a sequence of file names without a suffix
-		:return: the first occurence of a matching file, else None
-		"""
-		htmlFiles=[f+".html" for f in proposed_files]
-		dirs = [
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
-			os.path.join("/usr/share/eyes17/rst", str(lang)[:2]), # packaged environment, restructured text files
-			os.path.join("/usr/share/eyes17/rst", str(lang)), # packaged environment, restructured text files (complete LANG code)
-			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
-			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
-		]
-		for directory in dirs:
-			for f in htmlFiles:
-				target=	os.path.join(directory,f)
-				if os.path.exists(target):
-					return target	
-		return None
 
 class MainWindow(QMainWindow):
 	WIDTH = 950
@@ -241,13 +207,7 @@ class MainWindow(QMainWindow):
 	
 
 	def callExpt(self, e):
-		"""
-		:parm: e lst with a title and a HTML file designation; when e[1]
-		is not a string, then it is an iterable with possible HTML file names,
-		and the last file name may also be a module name.
-		"""	
-		module_name =  e[1] if type(e[1]) is str else e[1][-1]
-		explib = importlib.import_module(module_name)
+		explib = importlib.import_module(e[1])
 		try:
 			if self.expWidget != None:
 				self.expWidget.timer.stop()     # Stop the timer loop of current widget			
