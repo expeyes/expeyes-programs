@@ -1,7 +1,7 @@
 from __future__ import print_function
 from . import commands_proto as CP
 import numpy as np 
-import time,inspect
+import time,inspect,struct
 
 	
 class I2C():
@@ -309,7 +309,7 @@ class I2C():
 			data=self.H.fd.read(bytes_to_read)
 			self.H.__get_ack__()
 			try:
-				return [ord(a) for a in data]
+				return list(struct.unpack('<%dB'%len(data), data))#[ord(a) for a in data]
 			except:
 				print ('Transaction failed')
 				return False

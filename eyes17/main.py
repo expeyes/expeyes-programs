@@ -87,19 +87,21 @@ soundExpts = [
 
 mechanicsExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum with Light barrier'), 'rodPendulum'],
-[QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),'pendulumVelocity'],
+[QT_TRANSLATE_NOOP('MainWindow','Driven Rod Pendulum with Light barrier'), 'drivenRodPendulum'],
+[QT_TRANSLATE_NOOP('MainWindow','Pendulum Waveform'),'pendulumVelocity'],
 [QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),'driven-pendulum'],
 [QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), 'sr04dist']
 ]
 
 otherExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow','BH Curve'),'BHCurve'],
-[QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), 'pt100'],
+[QT_TRANSLATE_NOOP('MainWindow','Temperature, PT100 Sensor'), 'pt100'],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger']
 ]
 
 modulesI2C = [ 
-[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
+[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),'BHCurve'],
+[QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),'lightsensorlogger'],
+[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050']
 ]
 
 pythonCodes = [ 
