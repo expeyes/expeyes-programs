@@ -50,3 +50,5 @@ m4/
 *.lo
 *.la
 
+# new files, not yet stable
+ExpEYES17/UserManual/es/
