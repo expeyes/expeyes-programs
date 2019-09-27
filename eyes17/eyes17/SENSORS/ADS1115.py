@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 from numpy import int16
 import time
@@ -84,13 +85,14 @@ class ADS1115:
 	def __init__(self,I2C,**args):
 		self.ADDRESS = args.get('address',self.ADDRESS)		
 		self.I2C = I2C
+		self.I2C.config(100e3)
 		self.channel = 'UNI_0'
 		self.gain = 'GAIN_ONE'
-		self.rate = 128
+		self.rate = 32
 
 		self.setGain('GAIN_ONE')
 		self.setChannel('UNI_0')
-		self.setDataRate(128)
+		self.setDataRate(self.rate)
 		self.conversionDelay = 8
 		self.name = 'ADS1115 16-bit ADC'
 		self.params={'setGain':self.gains.keys(),'setChannel':self.type_selection.keys(),'setDataRate':self.sdr_selection.keys()}
@@ -141,10 +143,10 @@ class ADS1115:
 		#start with default values
 		config = (self.REG_CONFIG_CQUE_NONE # Disable the comparator (default val)
 		|self.REG_CONFIG_CLAT_NONLAT        # Non-latching (default val)
-		|self.REG_CONFIG_CPOL_ACTVLOW 	    #Alert/Rdy active low   (default val)
+		|self.REG_CONFIG_CPOL_ACTVLOW 	    # Alert/Rdy active low   (default val)
 		|self.REG_CONFIG_CMODE_TRAD         # Traditional comparator (default val)
-		|self.sdr_selection[self.rate]         # 1600 samples per second (default)
-		|self.REG_CONFIG_MODE_SINGLE)        # Single-shot mode (default)
+		|self.sdr_selection[self.rate]      # 1600 samples per second (default)
+		|self.REG_CONFIG_MODE_SINGLE)       # Single-shot mode (default)
 
 		#Set PGA/voltage range
 		config |= self.gains[self.gain]
@@ -156,8 +158,9 @@ class ADS1115:
 		#Set 'start single-conversion' bit
 		config |= self.REG_CONFIG_OS_SINGLE
 		self.writeRegister(self.REG_POINTER_CONFIG, config);
-		time.sleep(1./self.rate+.002) #convert to mS to S
-		return self.readRegister(self.REG_POINTER_CONVERT)*self.gain_scaling[self.gain]
+		time.sleep(1./self.rate+.002) 
+		rawval = self.readRegister(self.REG_POINTER_CONVERT)
+		return rawval*self.gain_scaling[self.gain]
 
 	def readADC_Differential(self,chan = '01'):
 		#start with default values

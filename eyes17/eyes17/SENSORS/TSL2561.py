@@ -1,3 +1,4 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 '''
 Adapted from https://github.com/janheise/TSL2561
 '''

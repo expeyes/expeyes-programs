@@ -1,12 +1,15 @@
+# -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
 from . import commands_proto as CP
 import numpy as np 
-import time,inspect,struct
+import time,inspect
 
 	
 class I2C():
 	"""
 	Methods to interact with the I2C port.
+
+
 
 	.. code-block:: python
 
@@ -309,9 +312,15 @@ class I2C():
 			data=self.H.fd.read(bytes_to_read)
 			self.H.__get_ack__()
 			try:
-				return list(struct.unpack('<%dB'%len(data), data))#[ord(a) for a in data]
-			except:
-				print ('Transaction failed')
+				#print (data)
+				#The following try block should be resolved depending on Python Version. P3-serial treats it as Byte arrays
+				try:
+					return [int(a) for a in data]
+				except:
+					return [ord(a) for a in data]
+				
+			except Exception as e:
+				print ('Transaction failed',str(e))
 				return False
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
@@ -340,7 +349,7 @@ class I2C():
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
-	def scan(self,frequency = 100000,verbose=False):
+	def scan(self,frequency = 200000,verbose=False):
 		"""
 		Scan I2C port for connected devices
 		
@@ -369,6 +378,7 @@ class I2C():
 				if verbose: print (hex(a),'\t\t',self.SENSORS.get(a,'None'))
 				n+=1
 			self.stop()
+
 		return addrs
 
 

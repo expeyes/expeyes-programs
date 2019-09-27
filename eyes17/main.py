@@ -13,7 +13,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot
+	import sr04dist, utils, logger, XYplot, i2cLogger
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), 'measure-dc'],
@@ -101,7 +101,8 @@ otherExpts = [
 modulesI2C = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),'BHCurve'],
 [QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),'lightsensorlogger'],
-[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050']
+[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
+[QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), 'i2cLogger']
 ]
 
 pythonCodes = [ 

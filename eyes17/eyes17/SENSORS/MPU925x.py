@@ -1,11 +1,11 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from numpy import int16,std
-from .Kalman import KalmanFilter
+from Kalman import KalmanFilter
 
 def connect(route,**args):
-	return MPU6050(route,**args)
+	return MPU925x(route,**args)
 
-class MPU6050():
+class MPU925x():
 	'''
 	Mandatory members:
 	GetRaw : Function called by Graphical apps. Must return values stored in a list
@@ -174,8 +174,12 @@ class MPU6050():
 
 	def initMagnetometer(self):
 		'''
-		Not valid for MPU6050 . Only for MPU9250 with integrated magnetometer
+		For MPU925x with integrated magnetometer.
+		It's called a 10 DoF sensor, but technically speaking , 
+		the 3-axis Accel , 3-Axis Gyro, temperature sensor are integrated in one IC, and the 3-axis magnetometer is implemented in a 
+		separate IC which can be accessed via an I2C passthrough.
 		
+		Therefore , in order to detect the magnetometer via an I2C scan, the passthrough must first be enabled on IC#1 (Accel,gyro,temp)
 		'''
 		self.I2C.writeBulk(self.ADDRESS,[self.INT_PIN_CFG,0x22]) #I2C passthrough
 		self.I2C.writeBulk(self.AK8963_ADDRESS,[self.AK8963_CNTL,0]) #power down mag
