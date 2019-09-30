@@ -30,6 +30,9 @@ import sys
 import numpy as np
 from . import eyemath17
 
+# Need to do this since 'eyes.py' redefines 'open'
+fileOpen=open
+
 def open(**kwargs):
     '''
     If hardware is found, returns an instance of 'Interface', else returns None.
@@ -129,13 +132,13 @@ class Interface():
 			self.connected = False
 			print(self.errmsg)#raise RuntimeError(msg)
 		
-		#try:
-		self.__runInitSequence__(**kwargs)
+		try:
+			self.__runInitSequence__(**kwargs)
 
-		#except Exception as ex:
-		#	self.errmsg = "failed to run init sequence. Check device connections\n"+str(ex)
-		#	self.connected = False
-		#	print(self.errmsg)#raise RuntimeError(msg)
+		except Exception as ex:
+			self.errmsg = "failed to run init sequence. Check device connections\n"+str(ex)
+			self.connected = False
+			print(self.errmsg)#raise RuntimeError(msg)
 
 	def __runInitSequence__(self,**kwargs):
 		self.aboutArray=[]
@@ -180,7 +183,7 @@ class Interface():
 			import struct
 			cap_and_pcs=self.read_bulk_flash(self.CAP_AND_PCS,5+8*4)  #READY+calibration_string
 			try:
-				if cap_and_pcs[:5]==b'READY':
+				if cap_and_pcs[:5]==b'READY':  #PYTHON3
 					self.__print__(cap_and_pcs,'...') 
 					scalers = list(struct.unpack('8f',cap_and_pcs[5:])) # #socket cap , C0,C1,C2,C3,PCS,SEN
 					self.SOCKET_CAPACITANCE = scalers[0]
@@ -206,60 +209,57 @@ class Interface():
 			#Load constants for ADC and DAC
 			polynomials = self.read_bulk_flash(self.ADC_POLYNOMIALS_LOCATION,2048)
 			polyDict={}
-			if polynomials[:7]==b'ExpEYES':
-				try:
-					intro = polynomials.partition(b'\n')[0]
-					parts = intro.partition(b'``')
-					if len(parts[1]):self.timestamp = parts[2].strip()
-					self.__print__('ADC calibration found: %s'%(self.timestamp))
-					
-					self.aboutArray.append(['Calibration Found'])
+			if polynomials[:7]==b'ExpEYES': #PYTHON3
+				intro = polynomials.partition(b'\n')[0] #PYTHON3
+				parts = intro.partition(b'``') #PYTHON3
+				if len(parts[1]):self.timestamp = parts[2]
+				self.__print__('ADC calibration found: %s'%(self.timestamp))
+				
+				self.aboutArray.append(['Calibration Found'])
+				self.aboutArray.append([])
+				self.calibrated = True
+				poly_sections = polynomials.split(b'STOP')  #The 2K array is split into sections containing data for ADC_INL fit, ADC_CHANNEL fit, DAC_CHANNEL fit, PCS, CAP ... #PYTHON3
+
+				adc_slopes_offsets	= poly_sections[0]
+				dac_slope_intercept = poly_sections[1]
+
+				for a in adc_slopes_offsets.split(b'>|')[1:]:#PYTHON3
+					name,cals = a.split(b'|<') #PYTHON3
+					name = name.decode() #PYTHON3
+					self.__print__( '\n','>'*20,name,'<'*20)
 					self.aboutArray.append([])
-					self.calibrated = True
-					poly_sections = polynomials.split(b'STOP')  #The 2K array is split into sections containing data for ADC_INL fit, ADC_CHANNEL fit, DAC_CHANNEL fit, PCS, CAP ...
-
-					adc_slopes_offsets	= poly_sections[0]
-					dac_slope_intercept = poly_sections[1]
-
-					for a in adc_slopes_offsets.split(b'>|')[1:]:
-						name,cals = a.split(b'|<')
-						name = name.decode()
-						self.__print__( '\n','>'*20,name,'<'*20)
-						self.aboutArray.append([])
-						self.aboutArray.append(['ADC Channel',name])
-						self.aboutArray.append(['Gain','X^2','X','C'])
-						polyDict[name]=[]
-						for b in range(len(cals)//12):
-							try:
-								poly=struct.unpack('3f',cals[b*12:(b+1)*12])
-							except:
-								self.__print__(name, ' not calibrated')
-							self.__print__( b,poly)
-							self.aboutArray.append([b]+['%.3e'%v for v in poly])
-							polyDict[name].append(poly)
-					
-					#Load calibration data (slopes and offsets) for ADC channels . X^2+X+C
-					for a in self.analogInputSources:
-						if a in polyDict:
-							self.__print__ ('loading polynomials for ',a,polyDict[a])
-							self.analogInputSources[a].loadPolynomials(polyDict[a])
-							self.analogInputSources[a].calibrationReady=True
-						self.analogInputSources[a].regenerateCalibration()
-					
-					#Load calibration data for DAC channels. X^2+X+C
-					for a in dac_slope_intercept.split(b'>|')[1:]:
-						NAME = a[:3].decode()			#Name of the DAC channel . PV1, PV2 ...
-						self.aboutArray.append([]);	self.aboutArray.append(['Calibrated :',NAME])
+					self.aboutArray.append(['ADC Channel',name])
+					self.aboutArray.append(['Gain','X^2','X','C'])
+					polyDict[name]=[]
+					for b in range(len(cals)//12):
 						try:
-							fits = struct.unpack('3f',a[5:])
-							self.__print__(NAME, ' calibrated' , fits)
+							poly=struct.unpack('3f',cals[b*12:(b+1)*12])
 						except:
-							self.__print__(NAME, ' not calibrated' , a[5:], len(a[5:]),a)
-							continue
-						self.DAC.CHANS[NAME].load_calibration_polynomial(fits)
-				except Exception as e:
-					print('failed to load calibration',e)
-					self.calibrated = False
+							self.__print__(name, ' not calibrated')
+						self.__print__( b,poly)
+						self.aboutArray.append([b]+['%.3e'%v for v in poly])
+						polyDict[name].append(poly)
+				
+				#Load calibration data (slopes and offsets) for ADC channels . X^2+X+C
+				for a in self.analogInputSources:
+					if a in polyDict:
+						self.__print__ ('loading polynomials for ',a,polyDict[a])
+						self.analogInputSources[a].loadPolynomials(polyDict[a])
+						self.analogInputSources[a].calibrationReady=True
+					self.analogInputSources[a].regenerateCalibration()
+				
+				#Load calibration data for DAC channels. X^2+X+C
+				for a in dac_slope_intercept.split(b'>|')[1:]: #PYTHON3
+					NAME = a[:3]			#Name of the DAC channel . PV1, PV2 ...
+					NAME = NAME.decode()
+					self.aboutArray.append([]);	self.aboutArray.append(['Calibrated :',NAME])
+					try:
+						fits = struct.unpack('3f',a[5:])
+						self.__print__(NAME, ' calibrated' , fits)
+					except:
+						self.__print__(NAME, ' not calibrated' , a[5:], len(a[5:]),a)
+						continue
+					self.DAC.CHANS[NAME].load_calibration_polynomial(fits)
 
 	def get_resistance(self):
 		V = self.get_average_voltage('SEN')
@@ -972,20 +972,14 @@ class Interface():
 		data=b''
 		try:
 			for i in range(int(samples/self.data_splitting)):
-				#print (i )
-				#print('sending .. ')
 				self.H.__sendByte__(CP.ADC)
 				self.H.__sendByte__(CP.GET_CAPTURE_CHANNEL)
 				self.H.__sendByte__(channel_number-1)   #starts with A0 on PIC
 				self.H.__sendInt__(self.data_splitting)
 				self.H.__sendInt__(i*self.data_splitting)
-				#print('sent.. ')
-				L = len(data)
 				data+= self.H.fd.read(int(self.data_splitting*2))        #reading int by int sometimes causes a communication error. 
-				#print (len(data) - L , ' got. asked ',int(self.data_splitting*2),' ' )
-				abyte = self.H.__get_ack__()
-				#print (abyte,'\n\n')
-			#print ('remainder..')
+				self.H.__get_ack__()
+
 			if samples%self.data_splitting:
 				self.H.__sendByte__(CP.ADC)
 				self.H.__sendByte__(CP.GET_CAPTURE_CHANNEL)
@@ -995,7 +989,6 @@ class Interface():
 				data += self.H.fd.read(int(2*(samples%self.data_splitting)))         #reading int by int may cause packets to be dropped.
 				self.H.__get_ack__()
 		except Exception as ex:
-			print('something went wrong',ex)
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
 		try:
@@ -1282,7 +1275,7 @@ class Interface():
 			if source.__conservativeInRangeRaw__(rawval,10):
 				return  val
 			else:
-				#print('Out of Range ',val,'Gain:',source.gainEnabled)
+				print('Out of Range ',val,'Gain:',source.gainEnabled)
 				return val#np.NaN
 		else:
 			return  val
@@ -2343,33 +2336,24 @@ class Interface():
 		"""
 		if(type(data)==str):data = [ord(a) for a in data]
 		if len(data)%2==1:data.append(0)
+		try:
+			#self.__print__('Dumping at',location,',',len(bytearray),' bytes into flash',bytearray[:10])
+			self.H.__sendByte__(CP.FLASH)
+			self.H.__sendByte__(CP.WRITE_BULK_FLASH)   #indicate a flash write coming through
+			self.H.__sendInt__(len(data))  #send the length
+			self.H.__sendByte__(location)
+			for n in range(len(data)):
+				self.H.__sendByte__(data[n])
+				#Printer('Bytes written: %d'%(n+1))
+			self.H.__get_ack__()
+		except Exception as ex:
+			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
-		tmp = []
-		for a in data:
-			if type(a)==str:
-				tmp.append(ord(a))
-			else:
-				tmp.append(a)
-		data = tmp
-		
-		print('Dumping at',location,',',len(data),' bytes into flash',data[:20])
-		self.H.__sendByte__(CP.FLASH)
-		self.H.__sendByte__(CP.WRITE_BULK_FLASH)   #indicate a flash write coming through
-		self.H.__sendInt__(len(data))  #send the length
-		self.H.__sendByte__(location)
-		for n in range(len(data)):
-			self.H.__sendByte__(data[n])
-			#Printer('Bytes written: %d'%(n+1))
-		self.H.__get_ack__()
+			#verification by readback
+			tmp=[ord(a) for a in self.read_bulk_flash(location,len(data))]
+			print ('Verification done',tmp == data)
+			if tmp!=data: raise Exception('Verification by readback failed')
 
-		#verification by readback
-		tmp=[a for a in self.read_bulk_flash(location,len(data))]
-		print('##################################################')
-		print ('Verification done',tmp==data)
-		if tmp!=data:
-			print('Verification by readback failed')
-			return False
-		return True
 	#-------------------------------------------------------------------------------------------------------------------#
 
 	#|===============================================WAVEGEN SECTION====================================================|   
@@ -3000,7 +2984,7 @@ class Interface():
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 	
 	def raiseException(self,ex, msg):
-			msg += '\n' + str(ex)
+			msg += '\n' + ex.message
 			#self.H.disconnect()
 			raise RuntimeError(msg)
 
@@ -3009,14 +2993,19 @@ class Interface():
 		Input data is of the form, [ [x1,y1], [x2,y2],....] where x and y are vectors
 		'''
 		if data == None: return
-		import __builtin__					# Need to do this since 'eyes.py' redefines 'open'
-		f = __builtin__.open(filename,'w')
-		for xy in data:
-			for k in range(len(xy[0])):
-				f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
-			f.write('\n')
-		f.close()
-		
+		# Need to do this since 'eyes.py' redefines 'open'
+		if type(filename) == tuple:
+			filename = filename[0]
+		# Do not save when filename == "", which can happen if one
+		# cancels the file save dialog
+		if filename:
+			f = fileOpen(filename,'w')
+			for xy in data:
+				for k in range(len(xy[0])):
+					f.write('%5.3f  %5.3f\n'%(xy[0][k], xy[1][k]))
+				f.write('\n')
+			f.close()
+		return
 
 if __name__ == "__main__":
 	print("""this is not an executable file
@@ -3026,7 +3015,6 @@ if __name__ == "__main__":
 	""")
 	
 	I=open(verbose = True)
-	print(I.read_bulk_flash(I.CAP_AND_PCS,200))
 	#print (I.analogInputSources['A1'].calibrationCorrection)
 	#I.capture_traces(1,1000,1,'A1')
 	
@@ -3040,7 +3028,6 @@ if __name__ == "__main__":
 		print ('FREQ',I.get_high_freq('IN2') , I.get_freq('IN2'),I.DoublePinEdges('IN2','IN2','rising','rising',2,4,sequential=False))
 		print (I.multi_r2rtime('IN2',48,2.0),I.r2rtime('IN2','IN2'),I.r2ftime('IN2','IN2'),I.f2rtime('IN2','IN2'),I.f2ftime('IN2','IN2'),)
 	'''
-	
 	#print (I.set2rtime('SQR1','ID1'),I.clr2ftime('SQR1','IN2'))
 
 	#I.select_range('A1',2)
