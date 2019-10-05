@@ -1,0 +1,6889 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+\usepackage{wrapfig}
+ \setlength{\intextsep}{0cm plus1cm minus1cm}
+\newcommand{\menuitem}[1]{\textbf{\emph{#1}}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 1
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 14cm
+\paperheight 14cm
+\leftmargin 1cm
+\topmargin 1cm
+\rightmargin 1cm
+\bottommargin 1.2cm
+\secnumdepth 2
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle plain
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.2in
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size giant
+expEYES-17
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/eyes17-nb.jpg
+	lyxscale 10
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size large
+Manuel Utilisateur 
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size largest
+Expériences pour
+\begin_inset Newline newline
+\end_inset
+
+ Jeunes Ingénieurs et Scientifiques
+\end_layout
+
+\begin_layout Standard
+\align center
+http://expeyes.in
+\end_layout
+
+\begin_layout Standard
+\align center
+du
+\end_layout
+
+\begin_layout Standard
+\align center
+Projet PHOENIX
+\begin_inset Newline newline
+\end_inset
+
+Inter-University Accelerator Centre 
+\begin_inset Newline newline
+\end_inset
+
+(centre de recherche de l'UGC)
+\begin_inset Newline newline
+\end_inset
+
+New Delhi 110 067
+\begin_inset Newline newline
+\end_inset
+
+www.iuac.res.in
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Préface
+\end_layout
+
+\begin_layout Standard
+Le projet PHOENIX (
+\shape smallcaps
+Physics with Home-made Equipment & Innovative Experiments
+\shape default
+
+\begin_inset space ~
+\end_inset
+
+: Physique avec un matériel «
+\begin_inset space ~
+\end_inset
+
+maison
+\begin_inset space ~
+\end_inset
+
+» & des expériences innovantes) a démarré en 2004 au 
+\shape smallcaps
+Inter-University Accelerator Centre
+\shape default
+ avec l'objectif d'améliorer l'enseignement des sciences dans les Universités
+ Indiennes.
+ Le développement de matériel de laboratoire à bas coût et la formation
+ des enseignants sont les deux activités principales de ce projet.
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+expEYES-17
+\shape default
+ est une version avancée du 
+\shape smallcaps
+expEYES
+\shape default
+ publié plus tôt.
+ Il est conçu pour être un outil d'apprentissage par l'exploration, valide
+ pour les classes de lycée et au-dessus.
+ Nous avons essayé d'optimiser la conception pour la rendre simple, flexible,
+ robuste et bon marché.
+ Le prix bas le rend accessible aux individus et nous espérons voir des
+ étudiants réaliser des expériences en dehors des quatre murs du laboratoire,
+ qui ferme à la sonnerie de la cloche.
+\end_layout
+
+\begin_layout Standard
+Ce logiciel est publié sous les licences 
+\shape smallcaps
+GNU General Public License
+\shape default
+ et 
+\shape smallcaps
+CERN Open Hardware Licence
+\shape default
+.
+ Le projet a avancé grâce aux participations actives et contributions de
+ la communauté des utilisateurs et de plusieurs autres personnes en dehors
+ de l'
+\shape smallcaps
+IUAC
+\shape default
+.
+ Nous remercions le Dr D Kanjilal pour les étapes nécessaires à l'élaboration
+ de cette nouvelle version à partir du travail de son développeur, Jithin
+ B P, de CSpark Research.
+\end_layout
+
+\begin_layout Standard
+Le manuel utilisateur de 
+\shape smallcaps
+expEYES-17
+\shape default
+ est distribué sous la licence 
+\shape smallcaps
+GNU Free Documentation
+\shape default
+.
+\end_layout
+
+\begin_layout Standard
+Ajith Kumar B.P.
+ 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+(ajith@iuac.res.in) 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+http://expeyes.in
+\end_layout
+
+\begin_layout Standard
+V V V Satyanarayana
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Pour commencer
+\end_layout
+
+\begin_layout Section
+Introduction 
+\end_layout
+
+\begin_layout Standard
+La science est l'étude du monde physique par des observations systématiques
+ et des expériences.
+ Une bonne éducation scientifique est essentielle pour cultiver une société
+ où le raisonnement et la pensée logique prévalent au lieu de la superstition
+ et des croyances irrationnelles.
+ L'éducation scientifique est aussi essentielle pour former suffisamment
+ de techniciens, d'ingénieurs et de scientifiques pour l'économie du monde
+ moderne.
+ On admet largement que l'expérience personnelle issue d'expérimentations
+ et d'observations réalisées soit par les étudiants, soit par des enseignants
+ à titre de démonstration, soit essentielle à la pédagogie de la science.
+ Cependant, presque partout la science est enseignée en grande partie à
+ partir de livres de cours sans donner d'importance à l'expérimentation,
+ en partie à cause du manque d'équipements.
+ Sans surprise, la plupart des étudiants échouent à corréler leurs connaissance
+ acquise en classe aux problèmes rencontrés dans la vie quotidienne.
+ On peut jusqu'à un certain point corriger cela en enseignant la science
+ à l'aide de questionnements et d'expériences.
+\end_layout
+
+\begin_layout Standard
+L'avènement des ordinateurs personnels et leur banalisation a ouvert une
+ nouvelle voie pour faire des expériences de laboratoire.
+ L'ajout d'un peu de matériel à un ordinateur ordinaire peut le convertir
+ en un laboratoire de sciences.
+ Réaliser des mesures rapides avec une bonne précision autorise l'étude
+ une large palette de phénomènes.
+ Les expériences scientifiques impliquent en général la mesure et le contrôle
+ de certains paramètres physiques comme la température, la pression, la
+ vitesse, l'accélération, la force, la tension, le courant, etc.
+ Si la grandeur physique étudiée évolue rapidement, il faut automatiser
+ la mesure et un ordinateur devient utile.
+ Par exemple, comprendre la variation de la tension alternative du secteur
+ nécessite de la mesurer à chaque milliseconde.
+\end_layout
+
+\begin_layout Standard
+La possibilité de réaliser des expériences avec une précision raisonnable
+ ouvre aussi la possibilité d'une éducation scientifique orientée sur la
+ recherche.
+ Les étudiants peuvent comparer les données expérimentales avec des modèles
+ mathématiques et examiner les lois fondamentales qui régissent de nombreux
+ phénomènes.
+ Le kit expEYES ( expEriments for Young Engineers & Scientists) est conçu
+ pour permettre une grande variété d'expériences, de l'école à l'université.
+ Il est aussi utilisable comme un équipement de test pour des ingénieurs
+ en électronique ou des bricoleurs.
+ L'architecture simple et ouverte d'expEYES permet aux utilisateurs de développe
+r de nouvelles expériences, sans rentrer dans les détails de l'électronique
+ et de la programmation d'ordinateurs.
+ Ce manuel utilisateur décrit 
+\shape italic
+expEYES-17
+\shape default
+ avec plusieurs expériences, et il y a aussi un manuel du programmeur.
+\end_layout
+
+\begin_layout Section
+Le matériel
+\end_layout
+
+\begin_layout Standard
+ExpEYES-17 est interfacé et alimenté grâce au port USB de l'ordinateur.
+ Pour y connecter des signaux externes, il a plusieurs entrées/sorties,
+ situées de chaque côté, comme montré sur la figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-ExpEYES-toppanel"
+
+\end_inset
+
+.
+ Il peut surveiller et contrôler des tensions à ses connexions.
+ Pour mesurer d'autres paramètres (tels que la température, la pression,
+ etc.), on a besoin de les convertir en signaux électriques à l'aide de capteurs
+ adéquats.
+\end_layout
+
+\begin_layout Standard
+La précision des mesures de tension est conditionnée par la stabilité de
+ la référence à 3,3
+\begin_inset space ~
+\end_inset
+
+V utilisée, elle varie de 50
+\begin_inset space ~
+\end_inset
+
+ppm par degré Celsius.
+ Les erreurs de gain et d'offset sont éliminées par une calibration initiale,
+ à l'aide du convertisseur analogique-numérique 16 bits.
+\end_layout
+
+\begin_layout Standard
+Bien que notre premier objectif soit de faire des expériences, nous vous
+ conseillons de lire la brève description du matériel ci-dessous.
+ L'appareil peut être aussi utilisé comme matériel de test pour des expériences
+ d'électricité et d'électronique.
+\end_layout
+
+\begin_layout Paragraph*
+
+\shape italic
+IMPORTANT : 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Les tensions extérieures connectées à 
+\shape italic
+\emph default
+ExpEYES17 doivent être comprises dans les limites autorisées.
+ Les entrées A1 et A2 doivent être dans l'intervalle 
+\begin_inset Formula $\pm16$
+\end_inset
+
+ volts et les entrées IN1 and IN2 doivent être dans l'intervalle de 0 à
+ 3,3
+\begin_inset space ~
+\end_inset
+
+V.
+ Des tension excessives peuvent provoquer des dommages permanents.
+ Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs
+ de tensions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/eyes17-panel.jpg
+	lyxscale 70
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+La face avant d'ExpEYES17 avec les connexions externes sur le dessus.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-ExpEYES-toppanel"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Connexions externes
+\end_layout
+
+\begin_layout Standard
+Les fonctions des connexions externes sont expliquées brièvement ci-dessous.
+ Toutes les bornes de couleur noire sont des masses (0
+\begin_inset space ~
+\end_inset
+
+V), toutes les autres tensions sont mesurées par rapport à elles.
+\end_layout
+
+\begin_layout Subsubsection*
+Les sorties
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Paragraph*
+Source de courant constant (CCS)
+\begin_inset space ~
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+La source de courant constant peut être activée ou désactivée (ON et OFF)
+ sous contrôle logiciel.La valeur nominale est 1,1
+\begin_inset space ~
+\end_inset
+
+mA mais peut varier d'une unité à l'autre, à cause de la tolérance des composant
+s.
+ Pour mesurer sa valeur exacte, connecter un ampèremètre entre CCS et GND.
+ Une autre méthode consiste à connecter une résistance connue (~
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+) et mesurer la différence de potentiel à ses bornes.
+ La résistance de charge doit être inférieure à 
+\begin_inset Formula $3~k\Omega$
+\end_inset
+
+ pour cette source de courant.
+\end_layout
+
+\begin_layout Subsubsection*
+Tension programmable (PV1) : 
+\end_layout
+
+\begin_layout Standard
+Elle peut être réglée, par logiciel, à toute valeur comprise dans l'intervalle
+ de -5
+\begin_inset space ~
+\end_inset
+
+V à +5
+\begin_inset space ~
+\end_inset
+
+V.
+ La résolution est 12 bits, ce qui implique une résolution en tension d'environ
+ 
+\begin_inset Formula $2,5~mV$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Tension programmable (PV2) : 
+\end_layout
+
+\begin_layout Standard
+Elle peut être réglée, par logiciel, à toute valeur comprise dans l'intervalle
+ de -3,3
+\begin_inset space ~
+\end_inset
+
+V à +3,3
+\begin_inset space ~
+\end_inset
+
+V.
+ La résolution est 12 bits.
+\end_layout
+
+\begin_layout Paragraph*
+Signal carré SQ1: 
+\end_layout
+
+\begin_layout Standard
+La sortie oscille entre 0 et 5
+\begin_inset space ~
+\end_inset
+
+V et la fréquence peut être ajustée entre 10
+\begin_inset space ~
+\end_inset
+
+Hz et 100
+\begin_inset space ~
+\end_inset
+
+kHz.
+ Toutes les valeurs intermédiaires de fréquence ne sont pas possibles.
+ On peut programmer le rapport cyclique.
+ Quand on règle la fréquence à 0
+\begin_inset space ~
+\end_inset
+
+Hz provoque un état HAUT à la sortie, et si on la règle à -1
+\begin_inset space ~
+\end_inset
+
+Hz, la sortie passe à l'état BAS
+\begin_inset space ~
+\end_inset
+
+; dans les deux cas la génération de signal carré est désactivée.
+ La sortie SQR1 comporte une 
+\series bold
+résistance série
+\series default
+ de 
+\series bold
+\shape slanted
+
+\begin_inset Formula $100\Omega$
+\end_inset
+
+ 
+\series default
+\shape default
+intégrée si bien qu'elle peut commander des DELs directement.
+\end_layout
+
+\begin_layout Paragraph*
+Signal carré SQ2: 
+\end_layout
+
+\begin_layout Standard
+La sortie oscille entre 0 et 5
+\begin_inset space ~
+\end_inset
+
+V et la fréquence peut être ajustée entre
+\begin_inset space ~
+\end_inset
+
+Hz et 100 
+\begin_inset space ~
+\end_inset
+
+kHz.
+ Toutes les valeurs intermédiaires de fréquence ne sont pas possibles.
+ On peut programmer le rapport cyclique.
+ La sortie SQR2 n'est pas disponible quand on active WG.
+\end_layout
+
+\begin_layout Paragraph*
+Sortie numérique (OD1) :
+\end_layout
+
+\begin_layout Standard
+La tension en OD1 peut être réglée à 0 ou 5
+\begin_inset space ~
+\end_inset
+
+V, par logiciel.
+\end_layout
+
+\begin_layout Paragraph*
+Signal Sinusoïdal/Triangulaire WG: 
+\end_layout
+
+\begin_layout Standard
+Sa fréquence peut être ajustée entre 5
+\begin_inset space ~
+\end_inset
+
+Hz et 5
+\begin_inset space ~
+\end_inset
+
+kHz.
+ La valeur crête peut être réglées à 3
+\begin_inset space ~
+\end_inset
+
+V, 1,0
+\begin_inset space ~
+\end_inset
+
+V ou 80
+\begin_inset space ~
+\end_inset
+
+mV.
+ La forme du signal est programmable.
+ À l'aide de l'interface utilisateur on peut sélectionner une forme sinusoïdale
+ ou triangulaire.
+ 
+\begin_inset Formula $\overline{WG}$
+\end_inset
+
+ est le signal de WG, inversé..
+\end_layout
+
+\begin_layout Subsubsection*
+Entrées
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Paragraph*
+Mesure de capacité en IN1
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+On peut mesurer la valeur d'un condensateur connecté entre IN1 et GND.
+ Ça marche mieux pour de petites valeurs de capacité, jusqu'à 10
+\begin_inset space ~
+\end_inset
+
+nF, les résultats sont moins précis au-delà.
+\end_layout
+
+\begin_layout Paragraph*
+Fréquencemètre en IN2
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Celui-ci est capable de mesurer des fréquences jusqu'à plusieurs MHz.
+\end_layout
+
+\begin_layout Paragraph*
+Capteur de résistance (SEN)
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Cette entrée est surtout conçue pour des capteurs comme des photorésistances
+ (LDR), des thermistances, des photo-transistors, etc.
+ L'entrée SEN est connectée en interne à 3,3
+\begin_inset space ~
+\end_inset
+
+V à travers une résistance de 
+\begin_inset Formula $5,1~k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Entrées analogiques
+\begin_inset Formula $\pm16V$
+\end_inset
+
+, A1 & A2
+\begin_inset space ~
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+Celles-ci peuvent mesurer des tensions dans l'intervalle
+\begin_inset Formula $\pm16~V$
+\end_inset
+
+.
+ On peut choisir le calibre de 0,5
+\begin_inset space ~
+\end_inset
+
+V à 16
+\begin_inset space ~
+\end_inset
+
+V en pleine échelle.
+ On peut visualiser la tension de ces entrées en fonction du temps, ce qui
+ donne une fonction d'oscilloscope pour basses fréquences.
+ La plus grande vitesse d'échantillonnage est 1 Méch/s pour un seul canal.
+ Chacune des entrées a une impédance de 
+\begin_inset Formula $1~M\Omega$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Paragraph*
+Entrée analogique
+\begin_inset Formula $\pm3.3V$
+\end_inset
+
+ A3
+\begin_inset space ~
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+Celle-ci peut mesurer une tension dans l'intervalle
+\begin_inset Formula $\pm3.3~V$
+\end_inset
+
+.
+ On peut amplifier cette entrée en connectant une résistance entre Rg et
+ GND, gain =
+\begin_inset Formula $1+\frac{Rg}{10000}$
+\end_inset
+
+.
+ Cela permet d'afficher des signaux de très petite amplitude.
+ L'impédance de l'entrée A3 est 
+\begin_inset Formula $10~M\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Entrée Microphone MIC
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Un microphone à condensateur peut être connecté à cette borne afin de capturer
+ le signal à la sortie.
+\end_layout
+
+\begin_layout Subsubsection*
+Interface pour les capteurs I2C
+\begin_inset space ~
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Standard
+Les quatre connexions (+5
+\begin_inset space ~
+\end_inset
+
+V, GND, SCL et SDA) situées sur la bande de connexions Berg supporte les
+ capteurs de la famille I2C.
+ Le logiciel peut reconnaître un grand nombre de capteurs I2C disponibles
+ dans le commerce.
+\end_layout
+
+\begin_layout Subsubsection*
+Alimentation
+\begin_inset Formula $\pm6~V/10~mA$
+\end_inset
+
+ 
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Les bornes VR+ et VR- sont des alimentations régulées.
+ Elles fournissent peut de courant, mais assez pour alimenter un ampli-op.
+\end_layout
+
+\begin_layout Subsection
+Kit d'accessoires
+\end_layout
+
+\begin_layout Standard
+Quelques accessoires sont livrés avec expEYES.
+\end_layout
+
+\begin_layout Itemize
+Fils électriques, avec une borne rigide mâle et avec une pince crocodile.
+\end_layout
+
+\begin_layout Itemize
+Microphone à condensateur avec ses fils.
+\end_layout
+
+\begin_layout Itemize
+Bobine d'induction (2)
+\begin_inset space ~
+\end_inset
+
+: du fil isolé 44SWG enroulé dans une bobine de diamètre 1
+\begin_inset space ~
+\end_inset
+
+cm.
+ Environ 3000 tours (il peut y avoir quelques tours de plus).
+ On peut utiliser ces bobines pour étudier l'inductance, l'induction électromagn
+étique, etc.
+\end_layout
+
+\begin_layout Itemize
+Disque piézo-électrique (2)
+\begin_inset space ~
+\end_inset
+
+: sa fréquence de résonance est d'environ 3500
+\begin_inset space ~
+\end_inset
+
+Hz.
+ Il peut être alimenté par la sortie WG ou SQR1.
+ Le disque est enfermé dans une coquille en plastique formant une cavité,
+ qui augmente l'amplitude du son produit.
+\end_layout
+
+\begin_layout Itemize
+Moteur CC
+\begin_inset space ~
+\end_inset
+
+: doit être alimenté par une tension continue de moins de 3
+\begin_inset space ~
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Itemize
+Aimants permanents
+\begin_inset space ~
+\end_inset
+
+: (a) diamètre et longueur 10
+\begin_inset space ~
+\end_inset
+
+mm (b) diamètre 5
+\begin_inset space ~
+\end_inset
+
+mm et longueur 10
+\begin_inset space ~
+\end_inset
+
+mm (c) aimants de taille bouton(2)
+\end_layout
+
+\begin_layout Itemize
+DELs 5
+\begin_inset space ~
+\end_inset
+
+mm
+\begin_inset space ~
+\end_inset
+
+: rouge, bleue, verte, blanche.
+\end_layout
+
+\begin_layout Itemize
+Condensateurs
+\begin_inset space ~
+\end_inset
+
+: 100
+\begin_inset space ~
+\end_inset
+
+pF, 0.1
+\begin_inset space ~
+\end_inset
+
+µF , 1
+\begin_inset space ~
+\end_inset
+
+µF et 22
+\begin_inset space ~
+\end_inset
+
+µF
+\end_layout
+
+\begin_layout Itemize
+Inductances
+\begin_inset space ~
+\end_inset
+
+: 10
+\begin_inset space ~
+\end_inset
+
+mH / 
+\begin_inset Formula $20~\Omega$
+\end_inset
+
+,
+\end_layout
+
+\begin_layout Itemize
+Résistances
+\begin_inset space ~
+\end_inset
+
+: 
+\begin_inset Formula $560~\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+, 
+\begin_inset Formula $2,2~k\Omega$
+\end_inset
+
+ , 
+\begin_inset Formula $10~k\Omega$
+\end_inset
+
+ , 
+\begin_inset Formula $51~k\Omega$
+\end_inset
+
+ et 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+photorésistance (LDR )
+\end_layout
+
+\begin_layout Itemize
+Deux diodes silicium (1N4148) et une diode Zéner de 
+\begin_inset Formula $3,3~V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Transistor NPN (2N2222)
+\end_layout
+
+\begin_layout Section
+Installation du logiciel
+\end_layout
+
+\begin_layout Standard
+ExpEYES peut fonctionner sur tout ordinateur disposant d'un interpréteur
+ Python et d'un module Python pour accéder au port série.
+ L'interface USB est prise en charge par le programme pilote qui présente
+ le port USB comme un port RS232 aux programmes d'applications.
+ La communication avec le boîtier expEYES est réalisée à l'aide d'une bibliothèq
+ue écrite en langage Python.
+\end_layout
+
+\begin_layout Standard
+Des programmes avec une interface utilisateur graphique ont été écrits pour
+ de nombreuses expériences.
+ Le logiciel Eyes17 dépend des paquets logiciels suivants
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+python3-serial
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+python3-numpy
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+python3-scipy
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+python3-qt5
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+python3-pyqtgraph
+\end_layout
+
+\begin_layout Subsubsection*
+Pour toute distribution GNU/Linux
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Télécharger 
+\series bold
+eyes17-x.x.x.zip
+\series default
+ (la dernière version) depuis 
+\series bold
+http://expeyes.in
+\series default
+ et dézipper ce fichier, puis aller dans le nouveau dossier.
+ Taper les commandes
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+$ sudo sh postinst       # donne la permission d'accès à tous
+\end_layout
+
+\begin_layout LyX-Code
+$ python main.py
+\end_layout
+
+\begin_layout Standard
+Vous aurez des messages d'erreur pour tout paquet manquant qui pourrait
+ être nécessaire à expeyes.
+ Installer ces paquets et réessayer.
+ Les programmes Python nécessaires pour de nombreuses expériences sont dans
+ le même répertoire, ils sont appelés par '
+\family typewriter
+main.py
+\family default
+'.
+\end_layout
+
+\begin_layout Subsubsection*
+Distributions GNU/Linux Debian ou Ubuntu
+\end_layout
+
+\begin_layout Standard
+Télécharger 
+\series bold
+eyes17-x.x.x.deb
+\series default
+ (la dernière version) depuis la zone de téléchargement de 
+\series bold
+http://expeyes.in
+\series default
+ et l'installer à l'aide de la commande
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+$ sudo gdebi eyes17-x.x.x.deb
+\family default
+ 
+\end_layout
+
+\begin_layout Standard
+alors qu'on est connecté à Internet
+\end_layout
+
+\begin_layout Standard
+Le paquet '
+\family typewriter
+eyes17
+\family default
+' (de version supérieure à 3) ne dépend pas de versions antérieures d'ExpEYES,
+ comme expeyes-junior.
+ Pendant l'installation 
+\family typewriter
+gdebi
+\family default
+ téléchargera automatiquement et installera les paquets requis.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+N.B.
+\begin_inset space ~
+\end_inset
+
+:
+\series default
+ on peut aussi utiliser la commande
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+$ sudo apt install eyes17
+\end_layout
+
+\begin_layout Standard
+alors qu'on est connecté à Internet
+\begin_inset space ~
+\end_inset
+
+; le paquet eyes17 disponible dans la distribution (actuellement dans debian/bus
+ter ou ubuntu/bionic) ainsi que toutes ses dépendances sera téléchargé et
+ installé.
+\end_layout
+
+\begin_layout Subsubsection*
+Le CD vif expEYES / La clé USB vive
+\end_layout
+
+\begin_layout Standard
+L'image ISO qui offre le support pour eyes17 est disponible ICI pour téléchargem
+ent.
+ Créer un DVD ou une clé USB démarrables à l'aide cette image ISO (télécharger
+ rufus depuis https://rufus.akeo.ie pour faire ça sous MSWindows)
+\end_layout
+
+\begin_layout Standard
+Éteindre le PC et brancher la clé USB ou insérer le CD vif, puis démarrer
+ l'ordinateur.
+ Entrer dans le BIOS durant la phase de démarrage, et faire en sorte que
+ le CD ou la clé USB soit prise en compte comme premier média de démarrage.
+ Redémarrer en enregistrant ce réglage.
+ Un bureau apparaîtra et on peut lancer expEYES-17 depuis le menu 
+\series bold
+Applications->Éducation
+\series default
+->ExpEYES-17.
+ On peut aussi le lancer depuis un terminal à l'aide de la commande
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+$ python /usr/share/expeyes/eyes17/main.py
+\end_layout
+
+\begin_layout Subsubsection*
+Sous MSWindows
+\end_layout
+
+\begin_layout Standard
+Il faut tout d'abord installer le logiciel pilote pour le convertisseur
+ USB Série MCP2200, disponible sur le site de Microchip (et aussi disponible
+ sur le site expeyes).
+ Après installation de ce pilote apparaîtra un port COM, qu'on peut tester
+ à l'aide du gestionnaire de périphériques de MSWindows.
+ Ensuite il y a deux options.
+\end_layout
+
+\begin_layout Standard
+Un fichier zip contenant toutes les choses nécessaires pour ExpEYES est
+ disponible sur le site expeyes, sous le nom 
+\family typewriter
+eyes17win.zip
+\family default
+.
+ Télécharger et dézipper ce fichier puis lancer '
+\family typewriter
+main.py
+\family default
+' à partir de là.
+ En utilisant cette méthode, on ne pourra pas écrire soi-même de code Python
+ pour accéder à expeyes
+\begin_inset space ~
+\end_inset
+
+; pour ce faire il faut installer comme suit
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+Python version 2.x
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+python-serial
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+python-qt4
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+python-pyqtgraph
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+python-numpy
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+python-scipy
+\end_layout
+
+\begin_layout Standard
+Télécharger le fichier 
+\family typewriter
+eyes17-x.x.x.zip
+\family default
+ (la dernière version) depuis le site web.
+ En dézippant ce fichier on obtient un dossier nommé
+\series bold
+ 
+\family typewriter
+eyes17
+\family default
+\series default
+, lancer 
+\family typewriter
+\series bold
+main.py
+\family default
+\series default
+ depuis là.
+\end_layout
+
+\begin_layout Section
+Le programme graphique principal
+\end_layout
+
+\begin_layout Standard
+Démarrer Applications->Éducation->ExpEYES-17 depuis le menu.
+ Un écran d'oscilloscope à quatre canaux avec de nombreuses fonctionnalités
+ en plus, s'ouvrir comme affiché sur la figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:The-scope17-screen"
+
+\end_inset
+
+.
+ On peut choisir de nombreuses expériences depuis le menu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/scope17.png
+	lyxscale 60
+	width 11cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+L'écran scope17 affichant deux traces
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:The-scope17-screen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La fenêtre principale apparaît comme un oscilloscope à basse fréquence avec
+ quatre canaux, et plusieurs fonctionnalités en plus, à droite de l'écran.
+ On peut sélectionner des applications pour plusieurs expériences du menu
+ de la barre supérieure.
+ Une brève description du programme d'oscilloscope est donnée ci-dessous.
+\end_layout
+
+\begin_layout Itemize
+On peut activer chacune des quatre entrées (A1, A2, A3 ou MIC) en utilisant
+ sa case à cocher.
+ On peut sélectionner les calibres en cliquant sur le bouton à menu à droite
+ de la case à cocher.
+ Le calibre voulu se choisit dans le menu surgissant.
+\end_layout
+
+\begin_layout Itemize
+Il y a une autre case à cocher pour activer l'ajustement mathématique des
+ données à l'aide d'un modèle
+\begin_inset Formula $V=V_{0}\sin\left(2\pi ft+\theta\right)+C$
+\end_inset
+
+ pour afficher l'amplitude et la fréquence.
+\end_layout
+
+\begin_layout Itemize
+L'échelle horizontales (la base de temps) peut être réglées par un curseur,
+ depuis 0,5
+\begin_inset space ~
+\end_inset
+
+ms pleine échelle jusqu'à 500
+\begin_inset space ~
+\end_inset
+
+ms pleine échelle.
+\end_layout
+
+\begin_layout Itemize
+Le bouton à cocher 
+\series bold
+Geler
+\series default
+, permet de faire une pause ou de revenir à la marche normale de l'oscilloscope.
+\end_layout
+
+\begin_layout Itemize
+Le niveau de synchronisation (trigger) peut être réglé grâce à un curseur,
+ et il y a un bouton à menu pour sélectionner la source de synchronisation.
+\end_layout
+
+\begin_layout Itemize
+Pour enregistrer les traces dans un fichier, éditer le nom de fichier voulu
+ est cliquer le bouton 
+\series bold
+Enregistrer sous
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Quand on clique sur 
+\series bold
+FFT
+\series default
+ les spectres de fréquence des canaux sélectionnés sont affichés dans des
+ fenêtres surgissantes.
+\end_layout
+
+\begin_layout Standard
+En plus de l'oscilloscope, il y a plusieurs options de contrôle/mesure disponibl
+es dans l'interface utilisateur, qui sont expliqués ci-dessous
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+Si on les sélectionne, les tensions présentes aux entrées A1, A2 et A3 sont
+ échantillonnées chaque seconde et affichées.
+\end_layout
+
+\begin_layout Itemize
+La résistance connectée entre SEN et GND est mesurée et affiché chaque seconde.
+\end_layout
+
+\begin_layout Itemize
+Si on clique 
+\series bold
+Capacité en IN1
+\series default
+, on mesure la valeur du condensateur connecté entre IN1 et GND.
+\end_layout
+
+\begin_layout Itemize
+Si on clique 
+\series bold
+Fréquence en IN2
+\series default
+, on mesure la fréquence d'une source externe (au standard TTL) connectée
+ à IN2
+\end_layout
+
+\begin_layout Itemize
+On peut choisir la forme du générateur de signal WG à l'aide d'un bouton
+ de menu, la forme par défaut étant sinusoïdale.
+ On peut changer en triangulaire.
+ Quand l'option de signal carré est choisie, la sortie est déplacée sur
+ SQ2.
+ On ne peut pas utiliser un signal sinusoïdal/triangulaire et utiliser SQ2
+ en même temps.
+\end_layout
+
+\begin_layout Itemize
+On peut ajuster la fréquence du signal de WG à l'aide du curseur ou avec
+ l'entrée texte.
+ Les deux méthodes de saisie sont asservies l'une à l'autre
+\begin_inset space ~
+\end_inset
+
+: quand on bouge le curseur le texte est modifié, et quand on saisit un
+ texte le curseur s'ajuste.
+ La fréquence s'ajuste à la plus proche valeur possible et elle est affichée
+ dans la fenêtre de message dessous.
+ L'amplitude de la sortie WG peut être réglée à 3
+\begin_inset space ~
+\end_inset
+
+V, 1
+\begin_inset space ~
+\end_inset
+
+V ou 80
+\begin_inset space ~
+\end_inset
+
+mV.
+\end_layout
+
+\begin_layout Itemize
+On peut régler SQ1 en utilisant la même méthode que ci-dessus.
+ Le rapport cyclique peut être réglé entre 1% et 99%, sa valeur par défaut
+ est 50%.
+\end_layout
+
+\begin_layout Itemize
+Les deux sorties de tension programmables PV1 et PV2 sont aussi réglées
+ d'une façon similaire.
+\end_layout
+
+\begin_layout Itemize
+Des boutons à cocher sont fournis pour contrôler OD1 et CCS.
+\end_layout
+
+\begin_layout Section
+Se familiariser avec ExpEYES17
+\end_layout
+
+\begin_layout Standard
+Avant de commencer les expériences, faisons quelques exercices simples pour
+ nous familiariser avec expEYES-17.
+ Démarrez votre ordinateur avec le CDROM vif, connectez l'appareil à un
+ port USB et démarrez le programme EYES-17 depuis le menu 
+\begin_inset Quotes cld
+\end_inset
+
+Applications->Science
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Activez l'option 
+\begin_inset Quotes cld
+\end_inset
+
+fenêtre d'aide surgissante
+\begin_inset Quotes crd
+\end_inset
+
+ et sélectionnez les quelques premier items du menu 
+\begin_inset Quotes cld
+\end_inset
+
+Exp.
+ scolaires
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Les chapitre suivants sont structurés selon les menus du programme eyes17,
+ chaque chapitre contenant les expériences disponibles sous le menu correspondan
+t, comme 
+\begin_inset Quotes cld
+\end_inset
+
+Exp.
+ scolaires
+\begin_inset Quotes crd
+\end_inset
+
+, 
+\begin_inset Quotes cld
+\end_inset
+
+Électronique
+\begin_inset Quotes crd
+\end_inset
+
+, 
+\begin_inset Quotes cld
+\end_inset
+
+Électricité
+\begin_inset Quotes crd
+\end_inset
+
+, etc.
+ Pour réaliser l'expérience, on la sélectionne dans le menu.
+ Une aide en ligne est disponible pour chaque expérience, de façon redondante
+ avec ce manuel.
+\end_layout
+
+\begin_layout Standard
+Les copies d'écran fournies dans ce document ne viennent pas de l'interface
+ utilisateur, parce que les images avec un fond noir posent problème quand
+ on les imprime.
+ Les graphiques sont générés par un code indépendant.
+\end_layout
+
+\begin_layout Chapter
+Expériences scolaires
+\end_layout
+
+\begin_layout Standard
+Dans ce chapitre on discutera des expériences et démonstrations sans beaucoup
+ d'analyse des données, qui sont comprises dans le menu 
+\begin_inset Quotes cld
+\end_inset
+
+Expériences scolaires
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Des tâches simples comme mesurer une tension, une résistance, une capacité,
+ etc.
+ seront faites en utilisant des résistances variant avec la température
+ ou la lumière.
+ Le concept de courant alternatif est introduit en traçant la courbe d'une
+ tension en fonction du temps.
+ La génération et la numérisation d'un son seront pris en compte.
+ Quand une expérience est sélectionnée, la fenêtre d'aide correspondante
+ surgit, si on l'y a autorisée.
+\end_layout
+
+\begin_layout Section
+Mesurer une tension
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Apprendre à mesurer une tension à l'aide d'expEYES et avoir une petite idée
+ du concept de masse électrique (GND).
+ Il faut une pile et deux fils électriques.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/measure-dc.svg
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Observer la tension affichée pour A1.
+\end_layout
+
+\begin_layout Itemize
+Recommencer en inversant les connexions à la pile.
+ connections.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La valeur des tensions mesurées est +1,5
+\begin_inset space ~
+\end_inset
+
+V et elle devient -1,5
+\begin_inset space ~
+\end_inset
+
+V après retournement des connexions.
+\end_layout
+
+\begin_layout Standard
+On mesure la différence de potentiel entre deux points.
+ L'un d'entre eux peut être considéré comme zéro volt, ou potentiel de la
+ masse (GND, la terre).
+ La tension qu'affiche expEYES est une mesure de la tension relative aux
+ bornes de masse, marquées GND.
+ On a connecté la borne négative de la pile à GND.
+ La borne positive est à +1,5
+\begin_inset space ~
+\end_inset
+
+V relativement à la borne de masse.
+ 
+\shape italic
+Est-ce que la tension correcte sera affichée si on ne connecte pas GND
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Section
+Mesurer une Résistance
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+ExpEYES a une borne marquée 
+\series bold
+SEN
+\series default
+, qu'on peut utiliser pour mesurer des résistances dans l'intervalle de
+ 
+\begin_inset Formula $100~\Omega$
+\end_inset
+
+ à 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+.
+ On peut aussi étudier des associations en série ou en parallèle de résistances.
+ La résistance effective d'une association en série est 
+\begin_inset Formula $R=R1+R2+\cdots$
+\end_inset
+
+ .
+ Pour une association en parallèle, elle est donnée par 
+\begin_inset Formula $\frac{1}{R}=\frac{1}{R1}+\frac{1}{R2}+\cdots$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-measure.svg
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-series.svg
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-parallel.svg
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Connecter la résistance entre SEN une borne GND
+\end_layout
+
+\begin_layout Itemize
+Observer la valeur afficher dans le panneau de droite
+\end_layout
+
+\begin_layout Itemize
+Essayer des associations en série et en parallèle
+\end_layout
+
+\begin_layout Section
+Mesurer une Capacité
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer des capacités et examiner les associations en série et en parallèle
+ de condensateurs.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/cap-measure.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/cap-series.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/cap-parallel.svg
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Connecter le condensateur entre IN1 and GND.
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur 
+\begin_inset Quotes cld
+\end_inset
+
+Capacité en IN1
+\begin_inset Quotes crd
+\end_inset
+
+ .
+ Il ne faut pas toucher le condensateur pendant la mesure.
+\end_layout
+
+\begin_layout Itemize
+Répéter les mesures pour des associations de condensateurs en série et en
+ parallèle.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On a utilisé des condensateurs de 100
+\begin_inset space ~
+\end_inset
+
+pF pour cette activité.
+ Pour les combinaisons en parallèle, la capacité effective est données par
+ 
+\begin_inset Formula $C=C1+C2+\cdots$
+\end_inset
+
+ , et pour les associations en série, par 
+\begin_inset Formula $\frac{1}{C}=\frac{1}{C1}+\frac{1}{C2}+\cdots$
+\end_inset
+
+ .
+ On peut créer des condensateurs en collant de fines feuilles de métal sur
+ les deux faces d'un isolant comme le papier, le polystyrène ou le verre.
+\end_layout
+
+\begin_layout Section
+Mesurer des résistances par comparaison
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Measure-resistance-by-comparison"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Apprendre à appliquer la loi d'Ohm pour trouver le valeur d'une résistance
+ inconnue par comparaison avec une résistance connue.
+ La tension aux bornes d'une résistance est donnée par 
+\begin_inset Formula $U=RI$
+\end_inset
+
+.
+ Si la même valeur de courant parcourt deux résistances différentes, alors
+ le rapport des tensions sera le même que le rapport des résistances,
+\begin_inset Formula $I=\frac{U_{A1}}{R2}=\frac{U_{PV1}-U_{A1}}{R1}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-compare.svg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Connecter la résistance inconnue R entre PV1 et A1.
+\end_layout
+
+\begin_layout Itemize
+Connecter 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ (R2) entre A1 et GND.
+\end_layout
+
+\begin_layout Itemize
+Régler PV1 à 4
+\begin_inset space ~
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Itemize
+Mesurer la tension en A1.
+ Calculer le courant 
+\begin_inset Formula $I=\frac{U_{A1}}{R2}$
+\end_inset
+
+ .
+ Valeur de 
+\begin_inset Formula $R1=\frac{U_{PV1}-U_{A1}}{I}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Sélectionner 
+\begin_inset Quotes cld
+\end_inset
+
+Électricité->Tracé d'une courbe courant-tension
+\begin_inset Quotes crd
+\end_inset
+
+ dans le menu pour obtenir une courbe I-U.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Quelle est la limitation de cette méthode
+\begin_inset space ~
+\end_inset
+
+? Comment choisir la résistance de référence
+\begin_inset space ~
+\end_inset
+
+? Si on suppose que la valeur inconnue est en 
+\begin_inset Formula $M\Omega$
+\end_inset
+
+, quelle serait la chute de tension aux bornes d'une résistance de référence
+ de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+? Notre mesure de tension a une résolution de 
+\begin_inset Formula $\frac{1}{4095}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On utilisera cette méthode plus tard pour mesurer la résistance de solutions,
+ à l'aide de courant alternatif.
+\end_layout
+
+\begin_layout Section
+Courants continu et alternatif
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Introduire le concept de tensions variables dans le temps, à l'aide d'un
+ graphique 
+\begin_inset Formula $U(t)$
+\end_inset
+
+.
+ Comparer les graphiques de continu et d'alternatif.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename schematics/ac-dc.svg
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Régler PV1 à 2
+\begin_inset space ~
+\end_inset
+
+V et régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Activer l'analyse sur A1, afin de mesurer l'amplitude et la fréquence.
+\end_layout
+
+\begin_layout Itemize
+Activer A2
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Dans le graphique, si la courbe de tension ne change pas (si elle est horizontal
+e), c'est du courant continu pur.
+ Si la tension change avec le temps, il y a une composante alternative.
+ Si la tension moyenne est nulle, alors c'est de l'alternatif pur.
+ Dans le deuxième graphique, la tension varie entre zéro et cinq volt
+\begin_inset space ~
+\end_inset
+
+; est-ce du courant alternatif, continu, ou quelque chose d'autre
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/ac-dc.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/sqr-wave.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Signal d'antenne alternatif dû au secteur
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier l'alimentation du secteur en courant alternatif.
+ Explorer le phénomène de propagation de tensions alternatives à travers
+ l'espace.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/line-pickup.svg
+	lyxscale 70
+	height 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Connecter un long fil en A3
+\end_layout
+
+\begin_layout Itemize
+Approcher une extrémité du fil près d'une ligne d'alimentation du secteur,
+ sans toucher aucune source de tension.
+\end_layout
+
+\begin_layout Itemize
+Activer A3, et son analyse.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le signal d'antenne du secteur est affiché ci-dessous, il y a cinq cycles
+ en 100
+\begin_inset space ~
+\end_inset
+
+ms.
+ Sans faire aucune connexion, comment se fait-il qu'on reçoive un signal
+ de tension alternative depuis le secteur
+\begin_inset space ~
+\end_inset
+
+? Pourquoi la tension augmente-t-elle quand on touche le fil connecté en
+ A1 avec la main
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/pickup.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Séparation des composantes continue et alternative
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:DC-&-AC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Séparer les composantes alternative et continue d'un signal à l'aide d'un
+ condensateur.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/acdc-separating.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/acdc-sep-screen.png
+	lyxscale 50
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Régler SQR1 à 500
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2
+\end_layout
+
+\begin_layout Itemize
+Ajuster l'échelle horizontale pour observer plusieurs cycles.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Les signaux observés avec et sans le condensateur en série sont affichés
+ sur la figure.
+ La tension oscille entre 0 et 5
+\begin_inset space ~
+\end_inset
+
+V.
+ Après traversée d'un condensateur, la tension oscille entre -2,5
+\begin_inset space ~
+\end_inset
+
+V et +2,5
+\begin_inset space ~
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Standard
+Qu'obtient-on si on soustrait 2,5
+\begin_inset space ~
+\end_inset
+
+V de l'ordonnée de chaque point du premier graphique
+\begin_inset space ~
+\end_inset
+
+? C'est ce que le condensateur a fait.
+ Il n'a pas autorisé la composante continue à passer.
+ On peut considérer que le signal original consiste en une tension alternative
+ d'amplitude 2,5
+\begin_inset space ~
+\end_inset
+
+V superposée à un signal continue de +2,5
+\begin_inset space ~
+\end_inset
+
+V.
+\end_layout
+
+\begin_layout Standard
+Il faut éventuellement connecter une résistance entre A2 et GND pour observer
+ le signal oscillant entre -2,5
+\begin_inset space ~
+\end_inset
+
+V et +2,5
+\begin_inset space ~
+\end_inset
+
+V.
+ Retirer la résistance et observer le signal.
+\end_layout
+
+\begin_layout Section
+Le corps humain comme conducteur
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Toucher un fil du secteur est fatal parce que notre corps est un conducteur
+ électrique.
+ On peut explorer cela à l'aide de signaux de faible tension.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/conducting-human.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/conducting-human-screen.png
+	lyxscale 50
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz.
+\end_layout
+
+\begin_layout Itemize
+Activer A1, A2 avec leurs analyses.
+\end_layout
+
+\begin_layout Itemize
+Connecter WG et A1, avec un fil
+\end_layout
+
+\begin_layout Itemize
+Connecter WG et A2 avec son corps et noter les tensions
+\end_layout
+
+\begin_layout Itemize
+Recommencer à l'aide d'un signal de 3
+\begin_inset space ~
+\end_inset
+
+V continu issu de PV1.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La tension crête observée est de moins de 3
+\begin_inset space ~
+\end_inset
+
+V, à cause de la résistance du corps humain.
+ Il peut y avoir un peu de perturbation due au signaux à 50 Hz du secteur
+ captés par effet d'antenne.
+ On peut éliminer cela en travaillant loin des lignes d'alimentation du
+ secteur, à l'aide d'un ordinateur portable.
+\end_layout
+
+\begin_layout Section
+Résistance électrique du corps humain
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer la résistance électrique du corps humain en la comparant à une résistanc
+e connue.
+ On commence avec un signal continu issu de PV1 puis on continue avec un
+ signal alternatif issu de WG.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-body.svg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Régler PV1 à 3
+\begin_inset space ~
+\end_inset
+
+V
+\end_layout
+
+\begin_layout Itemize
+Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
+\end_layout
+
+\begin_layout Itemize
+Calculer la résistance de son corps comme expliqué à la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Measure-resistance-by-comparison"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recommencer en utilisant un signal sinusoïdal au lieu de PV1.
+ Activer les analyses de A1 et A2 afin de mesurer les tensions.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Les mesures en courant continu sont plus affectées par les bruits électriques.
+ La résistance en courant alternatif est censée être inférieure à la résistance
+ en courant continu.
+ La résistance est due à notre peau, le courant électrique peut y passer
+ comme il passe à travers un condensateur.
+\end_layout
+
+\begin_layout Section
+Photorésistances
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier une photorésistance (LDR).
+ Mesurer l'intensité de la lumière et sa variation en fonction de la distance
+ à la source.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/ldr.svg
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
+\end_layout
+
+\begin_layout Itemize
+Éclairer la LDR à l'aide d'une lampe à fluorescence, A1 est censée afficher
+ des variations
+\end_layout
+
+\begin_layout Itemize
+Placer A1 en mode alternatif et mesurer la fréquence de l'oscillation
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La résistance varie de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ à environ 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+ selon l'intensité de la lumière qui l'éclaire.
+ La tension est proportionnelle à la résistance (si le courant est constant).
+ La résistance diminue quand l'éclairage augmente.
+ Si on utilise une source de lumière ponctuelle, la résistance est censée
+ augmenter comme le carré de la distance entre la photorésistance et la
+ source lumière.
+\end_layout
+
+\begin_layout Section
+Tension d'une pile-citron 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Créer une source de tension en insérant des plaques de zinc et cuivre dans
+ un citron.
+ Explorer les possibilités de fournir du courant et la résistance interne.
+\end_layout
+
+\begin_layout Paragraph*
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/lemon-cell.svg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur A1 pour mesurer la tension
+\end_layout
+
+\begin_layout Itemize
+Mesurer la tension avec et sans une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La tension entre le zinc et le cuivre est d'environ 0,9
+\begin_inset space ~
+\end_inset
+
+V.
+ Quand on connecte la résistance, elle diminue à quelques 0,33
+\begin_inset space ~
+\end_inset
+
+V.
+ Quand on connecte la pile, le courant commence à circuler à travers la
+ résistance.
+ Mais pourquoi la tension diminue-t-elle
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Quelle est la résistance interne de la pile
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Le courant est le flux de charges et il doit faire le tour complet.
+ Ce la signifie que le courant doit traverser la pile aussi.
+ Selon la résistance interne de la pile, une part de la tension est perdue
+ à l'intérieur même de la pile.
+ Est-ce que la même chose se produit avec une pile du commerce neuve
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Section
+Un générateur alternatif simple
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:A-simple-AC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer la fréquence et l'amplitude d'une tension induite aux bornes d'un
+ bobinage par un aimant en rotation.
+ On utilise l'aimant de 
+\begin_inset Formula $10~mm\times10~mm$
+\end_inset
+
+ et la bobine de 3000
+\begin_inset space ~
+\end_inset
+
+tours qui sont dans le kit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/ac-generator.svg
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/ac-gen-screen.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Fixer l'aimant couché sur l'axe du moteur et alimenter ce moteur avec une
+ pile de 1,5
+\begin_inset space ~
+\end_inset
+
+V
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2, avec option d'analyse
+\end_layout
+
+\begin_layout Itemize
+Régler la base de temps sur 100
+\begin_inset space ~
+\end_inset
+
+ms pleine échelle
+\end_layout
+
+\begin_layout Itemize
+Approcher le bobinage de l'aimant (sans le toucher), et observer la tension
+ induite
+\end_layout
+
+\begin_layout Itemize
+Recommencer l'expérience avec deux bobinages.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La tension obtenue est affichée dans la figure.
+ La différence de phase entre les deux signaux dépend de l'angle entre les
+ axes des deux bobinages.
+\end_layout
+
+\begin_layout Standard
+Approcher un bobinage court-circuité près de l'aimant et observer le changement
+ de fréquence.
+ Le bobinage court-circuité prend de l'énergie du générateur et la vitesse
+ en est diminuée.
+\end_layout
+
+\begin_layout Section
+Transformateur de courant alternatif
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Démontrer l'induction mutuelle entre deux bobinages, fournis avec ExpEYES.
+ Un des bobinages, le primaire, est connecté entre WD et GND.
+ On aligne les axes des deux bobinages et on insère un noyau de ferrite.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/transformer.svg
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/transformer-screen.png
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Faire les connections comme montré sur la figure
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 
+\begin_inset Formula $500 Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Approcher les bobinages l'un de l'autre et observer la tension en A2.
+\end_layout
+
+\begin_layout Itemize
+Essayer d'insérer un noyau en ferrite
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le signal appliqué et le signal induit sont présentés sur la figure.
+ Un champ magnétique oscillant est la cause de la tension induite.
+ Dans les deux expériences précédentes, le champ magnétique oscillant était
+ créé par le mouvement d'aimants permanents.
+ Dans le cas présent, il est créé par un courant variable dans le temps.
+\end_layout
+
+\begin_layout Standard
+Essayer de faire cette expérience avec un signal carré.
+ Connecter une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ aux bornes du bobinage secondaire pour réduire les oscillation de résonance.
+\end_layout
+
+\begin_layout Standard
+Le concept de courant alternatif est introduit en affichant la tension en
+ fonction du temps.
+ On explore le comportement de dipôles tels que les condensateurs et les
+ bobinages en courant continu et alternatif, en mesurant des paramètres
+ tels que l'amplitude, la fréquence et la phase.
+ La conversion de signaux électriques en son et l'inverse est démontré.
+ Pour chaque expérience, on réalise les connexions selon le diagramme donné.
+\end_layout
+
+\begin_layout Section
+Résistance de l'eau, en courant alternatif
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer la résistance de solutions ioniques, en utilisant des signaux continu
+ et alternatif.
+ On utilise de l'eau ordinaire du robinet.
+ Essayer de mesurer la résistance au préalable à l'aide d'un multimètre.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/res-water.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/water-conduct.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+R1 est censé être comparable avec R, On commence avec 
+\begin_inset Formula $10~k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2
+\end_layout
+
+\begin_layout Itemize
+Calculer la résistance comme expliqué à la section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Measure-resistance-by-comparison"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Les valeurs observées sont montrées dans le tableau.
+ Les résistances en continu et en alternatif semblent très différentes.
+ En courant continu, la résistance du liquide change au cours du temps,
+ à cause d'une électrolyse et de la formation de bulles.
+ La résistance dépend peu de la distance entre électrodes, c'est la surface
+ de l'électrode qui a le plus d'effet.
+ La résistance dépend de la concentration en ions et à la présence d'impuretés
+ dans l'eau.
+\end_layout
+
+\begin_layout Standard
+Essayer de changer la distance entre électrodes.
+ Essayer d'ajouter un sel ordinaire et recommencer les mesures.
+ Pourquoi le comportement est-il différence en courant continu ou alternatif
+\begin_inset space ~
+\end_inset
+
+? Quels sont les porteurs de charges responsables du flux d'électricité
+ à travers les solutions
+\begin_inset space ~
+\end_inset
+
+? Y a-t-il une réaction chimique qui se produit
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Section
+Générer un son
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Generating Sound "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Générer un son avec des signaux électriques, à l'aide d'un buzzer piézo-électriq
+ue.
+ Numériser un son et mesurer sa fréquence? Utiliser un buzzer piézo ou toute
+ autre source sonore comme un diapason.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sound-generator.svg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Activer A1, et son analyse
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 
+\begin_inset Formula $1000~Hz$
+\end_inset
+
+, puis changer et écouter le son
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Quand on change la fréquence du signal qui excite le piézo, la fréquence
+ et l'intensité du son changent toutes les deux.
+ L'intensité est maximale près de 
+\begin_inset Formula $3500~Hz$
+\end_inset
+
+, à cause de la résonance.
+ La fréquence de résonance d'un buzzer piézo dépend de sa taille et de ses
+ propriétés mécaniques.
+\end_layout
+
+\begin_layout Section
+Numériser un son
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Digtizing-sound"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Numériser des signaux sonores d'un microphone, et mesurer leur fréquence.
+ Utiliser le buzzer piézo ou toute autre source sonore comme un diapason.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sound-capture.svg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et MIC, ainsi que leurs analyses
+\end_layout
+
+\begin_layout Itemize
+Positionner le microphone face au buzzer
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 
+\begin_inset Formula $1000$
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Hz, puis le modifier et observer la sortie MIC
+\end_layout
+
+\begin_layout Itemize
+Utiliser un sifflet à la place du buzzer et trouver sa fréquence à l'aide
+ de la sortie MIC.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le signal du générateur et la sortie du microphone sont montrés dans la
+ figure
+\end_layout
+
+\begin_layout Standard
+Les ondes sonores créent des variations de pression dans le milieu qu'elles
+ traversent.
+ Le microphone crée une tension proportionnelle aux variations de pression.
+ Les variations de tension sont à l'unisson des variations de pression.
+ On peut comparer le microphone à un capteur de pression, mais qui fonctionne
+ seulement pour les variations de pression.
+\end_layout
+
+\begin_layout Chapter
+Électronique
+\end_layout
+
+\begin_layout Standard
+Ce chapitre explique plusieurs expériences d'électronique.
+ La plupart d'entre elles sont faites avec l'interface utilisateur oscilloscope.
+ Certaines d'entre elles comme les caractéristiques d'une diode ou d'un
+ transistor ont leur interface utilisateur dédiée.
+\end_layout
+
+\begin_layout Section
+Redressement demi-onde à l'aide d'une jonction PN
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier le fonctionnement d'une diode à jonction PN comme redresseur.
+ Filtrage RC pour réduire les variations de tension (la composante alternative).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/halfwave.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/halfwave.png
+	lyxscale 50
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer les sorties
+\end_layout
+
+\begin_layout Itemize
+Connecter une résistance de charge de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+, noter le changement d'amplitude
+\end_layout
+
+\begin_layout Itemize
+Connecter un condensateur de 
+\begin_inset Formula $1~\text{µF},$
+\end_inset
+
+ et observer l'effet de filtrage.
+\end_layout
+
+\begin_layout Itemize
+Essayer plusieurs valeurs de résistances de charge et de condensateurs de
+ filtrage.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La partie négative est ôtée par la diode comme montré sur la figure.
+ Noter aussi que la tension est diminuée de quelques 0,7
+\begin_inset space ~
+\end_inset
+
+V dans la moitié positive, c'est la chute de tension aux bornes de la diode
+ silicium, quand le courant y passe.
+ Une résistance de charge est nécessaire pour que le circuit fonctionne
+ correctement, on peut utiliser plus de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+, mais NE PAS utiliser de valeurs plus faibles, comme la source courant
+ alternatif ne peut pas fournir un courant de plus de 
+\begin_inset Formula $5~mA$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+On peut voir que le condensateur se charge puis qu'il maintient la tension
+ pendant la partie manquante du cycle.
+ 
+\end_layout
+
+\begin_layout Standard
+Peut-on utiliser des condensateurs de grande capacité pour réduire la fluctuatio
+n de tension
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Durant quelle partie du cycle le courant traverse-t-il la diode
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Qu'est qui conditionne la valeur du courant crête
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Section
+Redressement double alternance avec des jonctions PN
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Réaliser un redresseur double alternance, à l'aide de deux diodes.
+ Il faut deux signaux alternatifs, déphasés de 180 degrés.
+ Ceux-ci sont fournis par WG et 
+\begin_inset Formula $\overline{WG}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/fullwave.svg
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/fullwave.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions
+\end_layout
+
+\begin_layout Itemize
+Activer A1, A2 et A3
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz et ajuster la base de temps pour voir 4 ou 5 cycles.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On laisse comme exercice à l'utilisateur de réduire la fluctuation de tension
+ à l'aide d'un condensateur.
+ Cette expérience est seulement là pour montrer le fonctionnement d'une
+ redressement double alternance, il ne peut pas produire beaucoup plus que
+ quelques milliampères de courant.
+\end_layout
+
+\begin_layout Standard
+En quoi un redressement double alternance est-il supérieur à un redressement
+ simple alternance
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Section
+Écrêtage à l'aide d'une diode à jonction PN
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Démontrer l'écrêtage d'un signal alternatif à différents niveaux, à l'aide
+ d'une diode à jonction PN.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/clipping.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/clipping.png
+	lyxscale 60
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer les sorties.
+\end_layout
+
+\begin_layout Itemize
+Changer PV1 et observer le changement dans les sorties
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le niveau d'écrêtage est conditionné par la tension continue appliquée et
+ par la chute de tension de la diode.
+\end_layout
+
+\begin_layout Section
+Décalage à l'aide d'un diode à jonction PN
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Démontrer le décalage d'un signal alternatif à différents niveaux, à l'aide
+ d'une diode à jonction PN
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/clamping.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/clamping.png
+	lyxscale 60
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer les sorties.
+\end_layout
+
+\begin_layout Itemize
+Changer PV1 et observer le changement dans les sorties
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le niveau de décalage est conditionné par la tension continue appliquée
+ et par la chute de tension de la diode.
+\end_layout
+
+\begin_layout Section
+Oscillateur à IC555
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Câbler un circuit de multivibrateur astable à l'aide d'un IC555, mesurer
+ la fréquence et le rapport cyclique de la sortie.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/osc555.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/ic555-screen.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le circuit est présenté sur la figure.
+ La fréquence est données par 
+\begin_inset Formula $f=1/\left(\ln2\times C\times\left(R_{1}+2R_{2}\right)\right)$
+\end_inset
+
+.
+ La durée HAUTE est donnée par 
+\begin_inset Formula $\ln2\times C\times\left(R_{1}+R_{2}\right)$
+\end_inset
+
+ et la durée BASSE par 
+\begin_inset Formula $\ln2\times C\times R_{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions
+\end_layout
+
+\begin_layout Itemize
+mesurer la fréquence et le rapport cyclique.
+\end_layout
+
+\begin_layout Itemize
+Recommencer en changeant les valeurs de R1
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le signal de sortie est montré sur la figure.
+ Changer la valeur des résistances et du condensateur, puis comparer la
+ fréquence et le rapport cyclique avec les valeurs calculées.
+\end_layout
+
+\begin_layout Section
+Amplificateur inverseur
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Câbler un amplificateur inverseur à l'aide d'un ampli-op et le tester.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/opamp-inv.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2 avec option d'analyse
+\end_layout
+
+\begin_layout Itemize
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer la sortie
+\end_layout
+
+\begin_layout Itemize
+Changer le gain en modifiant les valeurs des résistances.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
+\end_layout
+
+\begin_layout Section
+Amplificateur non-inverseur
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Câbler un amplificateur non-inverseur à l'aide d'un ampli-op et le tester.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/opamp-noninv.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2 avec option d'analyse
+\end_layout
+
+\begin_layout Itemize
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer la sortie
+\end_layout
+
+\begin_layout Itemize
+Changer le gain en modifiant les valeurs des résistances.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
+\end_layout
+
+\begin_layout Section
+Intégrateur à ampli-op
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Câbler un intégrateur à ampli-op et le tester.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/opamp-int.svg
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Régler l'amplitude de WG à 80
+\begin_inset space ~
+\end_inset
+
+mV et la fréquence à 1000
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2 avec option d'analyse
+\end_layout
+
+\begin_layout Itemize
+Sélectionner le calibre 1
+\begin_inset space ~
+\end_inset
+
+V pour A1 et A2 
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et observer la sortie
+\end_layout
+
+\begin_layout Itemize
+Changer le gain en modifiant les valeurs des résistances.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On peut observer le gain par l'amplitude, mais aussi le déphasage dans les
+ résultats.
+\end_layout
+
+\begin_layout Section
+Portes logiques
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
+ des circuits intégrés de portes logiques TTL 7408 and 7432.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/logic-gates.svg
+	height 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Activer A1, A2 et A3.
+ Régler le calibre pour A1 et A2 à 8
+\begin_inset space ~
+\end_inset
+
+V
+\end_layout
+
+\begin_layout Itemize
+Régler SQ1 à 200
+\begin_inset space ~
+\end_inset
+
+Hz et ajuster la base de temps pour voir plusieurs cycles
+\end_layout
+
+\begin_layout Itemize
+régler SQ2 depuis la forme de signal de WG, régler WG à 200
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Recommencer avec la porte OU, 7432
+\end_layout
+
+\begin_layout Itemize
+La résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ est nécessaire pour connecter un signal de 5
+\begin_inset space ~
+\end_inset
+
+V à l'entrée A3.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le fonctionnement de la porte logique sera évident à partir des trois signaux.
+ On peut décaler les traces verticalement pour les séparer et les rendre
+ plus claires.
+\end_layout
+
+\begin_layout Section
+Diviseur d'horloge
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier un diviseur d'horloge, à l'aide d'une bascule D (famille TTL, 7474).
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/clock-divider.svg
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2, Régler leurs calibres à 8
+\begin_inset space ~
+\end_inset
+
+V
+\end_layout
+
+\begin_layout Itemize
+Régler SQ1 à 500
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La sortie est basculée à chaque front montant sur l'entrée, si bien que
+ la fréquence est divisée par deux.
+ Le signal de sortie est un signal carré symétrique, même si le signal d'entrée
+ a un rapport cyclique différent.
+ La tension de sortie HAUTE d'un circuit intégré TTL est proche de 4
+\begin_inset space ~
+\end_inset
+
+V seulement.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/clock-divider.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/clock-divider2.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Un circuit diviseur d'horloge, à l'aide d'une bascule D.
+ Les sorties pour deux types différents de signal d'entrée sont montrées
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:A-clock-divider-1"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Caractéristique U-I d'une diode
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Tracer la caractéristique U-I d'une diode et comparer les résultats avec
+ a théorie.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/diode_iv.svg
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/diode-iv-screen.png
+	lyxscale 50
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur DÉMARRER pour tracer la courbe caractéristique.
+\end_layout
+
+\begin_layout Itemize
+Analyser les données
+\end_layout
+
+\begin_layout Itemize
+Tracer les courbes U-I de DELs
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La caractéristique U-I d'une jonction PN idéale est donnée par l'équation
+ 
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qU}{kT}}-1\right)$
+\end_inset
+
+, où 
+\begin_inset Formula $I_{0}$
+\end_inset
+
+ est le courant de saturation inverse, 
+\begin_inset Formula $q$
+\end_inset
+
+ la charge de l'électron, 
+\begin_inset Formula $k$
+\end_inset
+
+ la constante de Boltzmann, 
+\begin_inset Formula $T$
+\end_inset
+
+ la température en Kelvin.
+ Pour une diode réelle, non-idéale, l'équation est 
+\begin_inset Formula $I=I_{0}\left(e^{\frac{qU}{nkT}}-1\right)$
+\end_inset
+
+, où 
+\begin_inset Formula $n$
+\end_inset
+
+ est le facteur d'idéalité, qui vaut 
+\begin_inset Formula $1$
+\end_inset
+
+ pour une diode idéale.
+ Pour des diodes réelles il varie entre 1 et 2.
+ On a utilisé une diode au silicium 1N4148.
+ La valeur de 
+\begin_inset Formula $n$
+\end_inset
+
+ pour 1N4148 est proche de 2.
+ On a calculé la valeur de 
+\begin_inset Formula $n$
+\end_inset
+
+ en modélisant les valeurs expérimentales par l'équation.
+ 
+\end_layout
+
+\begin_layout Standard
+La tension à laquelle une DEL commence à émettre de la lumière dépend de
+ sa longueur d'onde et de la constante de Planck.
+ L'énergie d'un photon est donnée par 
+\begin_inset Formula $E=h\nu=hc/\lambda$
+\end_inset
+
+.
+ Cette énergie est égale au travail d'un électron qui franchit un seuil
+ de potentiel, qui est donné par 
+\begin_inset Formula $E=eV_{0}$
+\end_inset
+
+.
+ Donc la constante de Planck est 
+\begin_inset Formula $h=eV_{0}\lambda/c$
+\end_inset
+
+ , où 
+\begin_inset Formula $\lambda$
+\end_inset
+
+ est la longueur d'onde de la DEL, 
+\begin_inset Formula $e$
+\end_inset
+
+ la charge de l'électron et 
+\begin_inset Formula $c$
+\end_inset
+
+ la vitesse de la lumière.
+\end_layout
+
+\begin_layout Standard
+Recommencer cette expérience en chauffant la diode à différentes températures.
+\end_layout
+
+\begin_layout Section
+Caractéristique de la sortie (CE) d'un transistor
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Transistor-CE-Characteristic"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Tracer la courbe caractéristique de sortie d'un transistor.
+ Le collecteur est connecté à PV1 à travers une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/transistor_out.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/transistor-ce.png
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Régler la tension de base à 1
+\begin_inset space ~
+\end_inset
+
+V et DÉMARRER.
+\end_layout
+
+\begin_layout Itemize
+Recommencer pour diverses valeurs du courant de base.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Les courbes caractéristiques pour différentes valeurs du courant de base
+ sont montrées sur la figure.
+ Le courant de collecteur est obtenu à partir de la différence de potentiel
+ aux bornes de la résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Le courant de la base dépend du réglage de la source de tension à l'extrémité
+ dune résistance de 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+, l'autre extrémité étant connectée à la base.
+ La valeur du courant de base est calculée par 
+\begin_inset Formula $I_{b}=\frac{U_{pv2}-U_{A2}}{100\times10^{3}}\times10^{6}\mu A$
+\end_inset
+
+.
+ Si A2 n'est pas connectée, le code considère une valeur de 0,6
+\begin_inset space ~
+\end_inset
+
+V pour la base afin de calculer le courant dans celle-ci.
+\end_layout
+
+\begin_layout Section
+Transmission d'un signal Opto-électrique
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Démontrer la transmission de signaux à l'aide de lumière.
+ Une DEL est alimentée par un signal de fréquence 1
+\begin_inset space ~
+\end_inset
+
+kHz et on dirige sa lumière vers un photo-transistor.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/opto-electric.svg
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/opto-electric-transmission.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Placer la DEL en face du photo-transistor et régler SQ1 à 
+\begin_inset Formula $1000 Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recommencer l'expérience en changeant la fréquence.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+L'entrée SEN est connectée à 5
+\begin_inset space ~
+\end_inset
+
+V à travers une résistance de 
+\begin_inset Formula $5,1~k\Omega$
+\end_inset
+
+.
+ La sortie du photo-transistor crée un signal de fréquence 
+\begin_inset Formula $1 kHz$
+\end_inset
+
+ comme montré sur la figure.
+ Le signal carré est la tension qui alimente la DEL.
+ Quand la DEL est allumée, le photo-transistor est conducteur et la tension
+ au collecteur tombe à 
+\begin_inset Formula $0,2 V$
+\end_inset
+
+.
+ Quand la DEL est éteinte le transistor passe en mode isolant et le collecteur
+ remonte à la tension de l'alimentation.
+ Les temps de montée et de descente du photo-transistor semblent être différents.
+ Trouver la limite haute en fréquence à laquelle le photo-transistor est
+ capable de répondre.
+\end_layout
+
+\begin_layout Standard
+Recommencer cette expérience avec une fibre optique pour guider la lumière
+ depuis la DEL jusqu'au photo-transistor.
+\end_layout
+
+\begin_layout Chapter
+Électricité et magnétisme
+\end_layout
+
+\begin_layout Standard
+Ce chapitre contient principalement des expériences sur le comportement
+ en régime stationnaire et en régime transitoire pour des dipôles LCR.
+ Il confronte les résultats expérimentaux avec la théorie.
+ Il donne aussi une expérience sur l'induction électromagnétique.
+\end_layout
+
+\begin_layout Section
+Circuits RLC, réponse en régime stationnaire
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier le comportement de dipôle RLC dans un circuit en courant alternatif.
+ Trois combinaisons différentes peuvent être étudiées.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RCsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RLsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RLCsteadystate.svg
+	lyxscale 50
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions une par une, selon les schémas
+\end_layout
+
+\begin_layout Itemize
+Prendre note des mesures d'amplitude et de phase, dans chaque cas
+\end_layout
+
+\begin_layout Itemize
+Recommencer les mesures en changeant la fréquence.
+\end_layout
+
+\begin_layout Itemize
+Pour le circuit série RLC, la jonction entre L et C est surveillées par
+ A3
+\end_layout
+
+\begin_layout Itemize
+Pour la résonance, sélectionner 
+\begin_inset Formula $C=1 µF$
+\end_inset
+
+, L = 
+\begin_inset Formula $10 mH$
+\end_inset
+
+ and f = 
+\begin_inset Formula $1600 Hz$
+\end_inset
+
+, ajuster f pour obtenir un déphasage nul
+\end_layout
+
+\begin_layout Itemize
+La tension totale aux bornes de L et C s'approche de zéro, les tensions
+ de chacun sont déphasées à la résonance
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La tension alternative de la source est en A1 et la tension aux bornes de
+ la résistance en A2.
+ Si on soustrait les valeurs instantanées de A2 de A1 on obtient la tension
+ totale aux bornes de L et C.
+ IL faut utiliser un bobinage avec une résistance négligeable pour de bons
+ résultats.
+ Le déphasage entre courant et tension est donnée par 
+\begin_inset Formula $\triangle\Phi=\arctan\left(\frac{Z_{c}-Z_{L}}{Z_{R}}\right)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La tension totale, la tension aux bornes de R et la tension aux bornes de
+ LC sont montrées dans la figure.
+ Le diagramme de phase montre le déphasage entre courant et tension.
+ Le bobinage utilisé dans l'expérience a une inductance d'environ 
+\begin_inset Formula $10 mH$
+\end_inset
+
+ et une résistance de 
+\begin_inset Formula $20~\Omega$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+À 
+\begin_inset Formula $1600 Hz$
+\end_inset
+
+, 
+\begin_inset Formula $X_{c}\approx X_{L}$
+\end_inset
+
+ et la tension aux bornes de LC est déterminée par la résistance du bobinage.
+ À la fréquence de résonance, la tension aux bornes de LC sera minimale,
+ déterminée par la résistance du bobinage.
+ L'entrée A3 est connectée entre L et C, si bien que les tensions individuelles
+ de L et C peuvent être présentées.
+\end_layout
+
+\begin_layout Section
+Réponse de circuits RC en régime transitoire
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Capacitor-charging-&"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Tracer l'évolution de la tension aux bornes d'un condensateur, quand il
+ est chargé en appliquant un échelon de tension à travers une résistance.
+ Calculer la valeur de la capacité d'après la courbe.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RCtransient.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/RCtransient.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Dan le menu 
+\begin_inset Quotes cld
+\end_inset
+
+Électricité
+\begin_inset Quotes crd
+\end_inset
+
+, choisir le sous-menu 
+\begin_inset Quotes cld
+\end_inset
+
+Circuit RC en régime transitoire
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur les boutons 
+\shape italic
+Échelon 0->5V et Échelon
+\shape default
+ 
+\shape italic
+5->0V 
+\shape default
+pour afficher les graphiques
+\end_layout
+
+\begin_layout Itemize
+Ajuster l'échelle horizontale si nécessaire, et recommencer.
+\end_layout
+
+\begin_layout Itemize
+Calculer la constante de temps RC.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Quand on applique un échelon de 0 à 5
+\begin_inset space ~
+\end_inset
+
+V, la tension aux bornes du condensateur s'approche exponentiellement de
+ 5V comme montré sur la figure.
+ En modélisant la courbe de décharge par 
+\begin_inset Formula $U(t)=U_{0}e^{-\frac{t}{RC}}$
+\end_inset
+
+ , on peut extraire la constante de temps RC et s'en servir pour trouver
+ la valeur de la capacité.
+\end_layout
+
+\begin_layout Standard
+Le tension aux bornes d'un condensateur ne varie exponentiellement que quand
+ on le charge au travers d'un dipôle linéaire, une résistance par exemple.
+ Si on le charge à l'aide d'une source de courant constant, la tension change
+ linéairement, puisque 
+\begin_inset Formula $Q=It=CU$
+\end_inset
+
+ , et la tension croît linéairement avec le temps comme 
+\begin_inset Formula $U=\left(\frac{I}{C}\right)t$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Section
+Réponse transitoire de circuits RL
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Explorer la nature du courant et de la tension quand un échelon de tension
+ est appliqué à une résistance et un bobinage en série.
+ En mesurant la tension en fonction du temps aux bornes du bobinage, on
+ peut calculer son inductance.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RLtransient.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/RLtransient.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans un circuit RL 
+\begin_inset Formula $U=RI+L\frac{dI}{dt}$
+\end_inset
+
+ , équation qui se résout en 
+\begin_inset Formula $I=I_{0}e^{-\frac{R}{L}t}$
+\end_inset
+
+.
+ Le coefficient du terme exponentiel R/L peut être déduit du graphique de
+ la tension aux bornes du bobinage.
+ La résistance du bobinage doit être incluse dans les calculs, 
+\begin_inset Formula $R=R_{ext}+R_{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Le bobinage est la bobine de 3000 tours
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur les boutons 
+\shape italic
+Échelon 0->5V et Échelon
+\shape default
+ 
+\shape italic
+5->0V 
+\shape default
+pour afficher les graphiques
+\end_layout
+
+\begin_layout Itemize
+Ajuster l'échelle horizontale, si nécessaire, et recommencer.
+\end_layout
+
+\begin_layout Itemize
+Calculer la valeur de l'inductance
+\end_layout
+
+\begin_layout Itemize
+Insérer un noyau en fer dans le bobinage et recommencer
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La réponse transitoire du circuit RL est montrée sur la figure.
+ La courbe exponentielle est modélisée pour extraire la valeur de L/R.
+ La résistance de la bobine est mesurée en la comparant avec la résistance
+ externe connue, en courant continu.
+ A2 est connecté à OD1 pour une mesure plus précise de la résistance du
+ bobinage.
+\end_layout
+
+\begin_layout Standard
+Les tensions appliquées sont positives, mais le graphique va vers des tensions
+ négatives, pourquoi
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Quel était le courant avant le début de l'échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V
+\begin_inset space ~
+\end_inset
+
+? Quelle est la force contre-électromotrice (fcem)
+\begin_inset space ~
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+Recommencer avec deux bobinages en série, (a) en les plaçant l'un loin de
+ l'autre, (b) en les plaçant l'un sur l'autre, (c) après changement d'orientatio
+n de l'un des deux.
+ On peut voir l'effet de l'induction mutuelle.
+\end_layout
+
+\begin_layout Section
+Réponse transitoire de circuit RLC
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Step-Response-ofRLC"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Explorer la nature oscillatoire de la mise en série de L et C.
+ La pulsation de résonance d'un circuit LC série est donnée par 
+\begin_inset Formula $\omega_{0}=\frac{1}{2\pi\sqrt{LC}}$
+\end_inset
+
+.
+ Le facteur d'amortissement est 
+\begin_inset Formula $\frac{R}{2}\sqrt{\frac{C}{L}}$
+\end_inset
+
+, et il vaut 1 pour l'amortissement critique.
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://en.wikiversity.org/wiki/RLC_circuit
+\end_layout
+
+\end_inset
+
+ Selon les valeurs de C/L et R, la réponse peut être sous-amortie, amortie
+ de façon critique ou sur-amortie.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RLCtransient.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/RLC-curves.png
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure 
+\end_layout
+
+\begin_layout Itemize
+Commencer avec le bobinage et un condensateur de 
+\begin_inset Formula $0,1~\text{µF}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur Échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V.
+ Ajuster l'axe des abscisses et recommencer si nécessaire.
+\end_layout
+
+\begin_layout Itemize
+Ajuster le graphique (FIT) pour trouver la fréquence de résonance et l'amortisse
+ment.
+\end_layout
+
+\begin_layout Itemize
+Recommencer avec une résistance entre OD1 et le bobinage.
+\end_layout
+
+\begin_layout Itemize
+Recommencer l'expérience avec diverses valeurs de R, L et C.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+On a utilisé le bobinage de 3000 tours et le condensateur de 
+\begin_inset Formula $0,1~\text{µF}.$
+\end_inset
+
+La tension aux bornes du condensateur est montrée sur la figure après un
+ échelon 5->0
+\begin_inset space ~
+\end_inset
+
+V.
+ La fréquence de résonance mesurée est conforme à 
+\begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{1}{LC}}$
+\end_inset
+
+ , compte tenu de la tolérance sur les valeurs des composants.
+\end_layout
+
+\begin_layout Section
+Différenciation et intégration RC
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Les circuits RC peuvent intégrer ou différencier un signal de tension par
+ rapport au temps.
+ Si on intègre un signal carré on obtient un signal triangulaire et si on
+ différencie on obtient des pics aux transitions.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RCintegration.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/RCsteadystate.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Sélectionner l'option signal triangulaire pour WG
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 500
+\begin_inset space ~
+\end_inset
+
+Hz (
+\begin_inset Formula $T=2~ms$
+\end_inset
+
+), 
+\begin_inset Formula $R=1 k\Omega$
+\end_inset
+
+ et 
+\begin_inset Formula $C=1~\text{µF}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Ajuster l'échelle horizontale pour voir plus de quatre cycles.
+\end_layout
+
+\begin_layout Itemize
+Recommencer la même chose pour le différenciateur RC, à 
+\begin_inset Formula $50 Hz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+L'intégration d'un signal triangulaire donne une forme parabolique et la
+ différenciation donne une forme carrée.
+ La différenciation ne peut être montrée qu'à basse fréquence.
+ Essayer cela pour d'autres formes de signaux, par exemple signal carré.
+ Si on intègre un signal carré on est censé obtenir un signal triangulaire.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/RCintegration.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/RCdifferentiation.png
+	lyxscale 70
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analyse de Fourier
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Fourier-Transform-**"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier la transformée de Fourier d'un signal.
+ Représentations temporelle et fréquentielle d'un signal.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Connecter SQ1 à A1 et WG à A2.
+ Mettre A1 en mode couplage alternatif (interrupteur à glissière sur le
+ boîtier)
+\end_layout
+
+\begin_layout Itemize
+Activer A1 et A2, sélectionner le calibre 4
+\begin_inset space ~
+\end_inset
+
+V
+\end_layout
+
+\begin_layout Itemize
+Régler WG et SQ1 à 500
+\begin_inset space ~
+\end_inset
+
+Hz
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur le bouton FFT
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Dans le graphique de la transformée de Fourier, la fréquence est sur l'axe
+ x et l'axe y montre l'intensité relative des composants fréquentiels du
+ signal.
+ On appelle ça la représentation fréquentielle
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+http://en.wikipedia.org/wiki/Fourier_transform
+\end_layout
+
+\end_inset
+
+.
+ Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
+ plus petits sont une mesure de la distorsion du signal sinusoïdal.
+\end_layout
+
+\begin_layout Standard
+Un signal carré peut être représenté comme 
+\begin_inset Formula $f(\theta)=sin(\theta)+\frac{sin(3\theta)}{3}+\frac{sin(5\theta)}{5}+\cdots$
+\end_inset
+
+.
+ Dans la transformée de Fourier d'un signal carré de fréquence 
+\begin_inset Formula $f$
+\end_inset
+
+ , il y aura un composant 
+\begin_inset Formula $3f$
+\end_inset
+
+ (dont l'amplitude est le tiers du composant 
+\begin_inset Formula $f$
+\end_inset
+
+ ), un composant 
+\begin_inset Formula $5f$
+\end_inset
+
+ (amplitude un cinquième), etc.
+ comme montré sur la figure.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/sqwaveFFT.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/sinewaveFFT.png
+	lyxscale 70
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Induction électromagnétique
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Explorer la tension induite aux bornes d'un bobinage par un champ magnétique
+ variable, en laissant tomber un petit aimant cylindrique à travers le bobinage.
+ On utilise un tube pour guider l'aimant à travers le bobinage.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/induction.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/induction-screen.png
+	lyxscale 60
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur 
+\begin_inset Quotes cld
+\end_inset
+
+Démarrer le scan
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Un trace horizontale devrait apparaître
+\end_layout
+
+\begin_layout Itemize
+Laisser tomber l'aimant à travers la bobine, jusqu'à ce qu'on capture une
+ trace.
+\end_layout
+
+\begin_layout Itemize
+Recommencer le processus en changeant des paramètres comme la force de l'aimant,
+ la vitesse, etc.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le résultat est montré sur la figure.
+ L'amplitude augmente avec la vitesse de l'aimant.
+ D'après le graphique, on peut déterminer le temps que met l'aimant à traverser
+ le bobinage.
+\end_layout
+
+\begin_layout Standard
+Le deuxième pic est plus grand que le premier.
+ Pourquoi
+\begin_inset space ~
+\end_inset
+
+? À quel endroit est censé se trouver l'aimant quand la tension induite
+ passe par zéro
+\begin_inset space ~
+\end_inset
+
+? Laisser tomber l'aimant depuis différentes hauteurs et faire un graphique
+ de la tension crête en fonction de la racine carrée de la hauteur de chute.
+\end_layout
+
+\begin_layout Chapter
+Le son
+\end_layout
+
+\begin_layout Standard
+Les variations de pression, de part et d'autres d'une pression d'équilibre,
+ transmises par un milieu s'appellent un son.
+ Ce sont des ondes longitudinales.
+ Si on déplace une feuille de papier d'avant en arrière dans l'air on peut
+ générer ce type d'ondes de pression, comme avec le cône en papier d'un
+ haut-parleur.
+ Quand la fréquence est dans l'intervalle de 20 à 20000
+\begin_inset space ~
+\end_inset
+
+Hz, on peut entre le son.
+ Dans ce chapitre, on va générer du son à partir de signaux électriques,
+ le détecter à l'aide du microphone (un capteur de pression
+\begin_inset space ~
+\end_inset
+
+!) et étudier des propriétés telles que l'amplitude et la fréquence.
+ La vitesse du son est mesurée en observant le déphasage d'un son numérisé,
+ avec la distance.
+\end_layout
+
+\begin_layout Section
+Réponse en fréquence d'un piézo
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Resonance-frequency-of"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Faire le graphique de la courbe de réponse d'un disque piézo en scannant
+ la fréquence et en mesurant l'amplitude à la sortie du microphone.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sound-capture.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/piezo-freq-resp.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Faire les connexions et fixer le buzzer et le microphone face à face
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur le bouton DÉMARRER
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le graphique de l'amplitude en fonction de la fréquence est montré sur la
+ figure.
+ L'amplitude est maximale près de 3500
+\begin_inset space ~
+\end_inset
+
+Hz.
+\end_layout
+
+\begin_layout Section
+Vitesse du son
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Calculer la vitesse du son en mesurant les variation de pression selon la
+ distance.
+\end_layout
+
+\begin_layout Standard
+Le son voyage comme une série de compressions et d'expansions.
+ La figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Sound-waves"
+
+\end_inset
+
+(a) montre les régions de haute et basse pression le long de la direction
+ de propagation, en même temps que la sortie d'un capteur de pression aux
+ positions correspondantes.
+\end_layout
+
+\begin_layout Standard
+On peut faire un graphique des variations de pression à tout point en synchronis
+ation avec la variation au point de départ.
+ La phase de la sortie du microphone change quand on modifie sa distance
+ au piézo.
+ Quand on le déplace d'une longueur d'onde, la phase change de 360°.
+ Si la phase change de 
+\begin_inset Formula $X$
+\end_inset
+
+ degrés pour un changement de la distance de 
+\begin_inset Formula $\triangle D$
+\end_inset
+
+, la longueur d'onde est donnée par 
+\begin_inset Formula $\lambda=\frac{360\times\triangle D}{X}$
+\end_inset
+
+.
+ On obtient la vitesse du son en multipliant cela par la fréquence.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+(a)
+\begin_inset Graphics
+	filename pics/sound_waves.png
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ (b) 
+\begin_inset Graphics
+	filename schematics/sound-velocity.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+(a) compressions et expansions le long de la direction de propagation d'un
+ son.
+ (b) schéma de montage
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Sound-waves"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Régler la fréquence au maximum de résonance en mesurant la réponse en amplitude
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Resonance-frequency-of"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Fixer le piézo face au microphone, le long d'un axe
+\end_layout
+
+\begin_layout Itemize
+Activer la mesure
+\end_layout
+
+\begin_layout Itemize
+Ajuster la distance pour que les deux traces soient en phase
+\end_layout
+
+\begin_layout Itemize
+Modifier la distance pour les déphaser de 180°
+\begin_inset space ~
+\end_inset
+
+; cette distance est la demi-longueur d'onde.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+À 3500
+\begin_inset space ~
+\end_inset
+
+Hz, un changement de distance de 2
+\begin_inset space ~
+\end_inset
+
+cm provoque un changement de phase de 176° à 102°.
+ À l'aide de l'équation, 
+\begin_inset Formula $v=f\times\frac{360\times\triangle D}{X}=3500\times\frac{360\times2}{(176-102)}=34054~cm\cdot s^{-1}$
+\end_inset
+
+.
+ Il est important de conserver le microphone et le disque piézo sur le même
+ axe pour des résultats précis.
+\end_layout
+
+\begin_layout Section
+Battements sonores
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Interference-of-sound"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Étudier les interférences sonores de deux sources individuelles.
+ Deux buzzers piézo sont alimentés par deux sources indépendantes, et le
+ son est envoyé vers un microphone.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sound-beats.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Régler WG à 
+\begin_inset Formula $3500 Hz$
+\end_inset
+
+ et SQ1 à 
+\begin_inset Formula $3600 Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Activer WG et SQ1 séparément pour vérifier la sortie MIC
+\end_layout
+
+\begin_layout Itemize
+Ajuster la position des buzzers piézo, par rapport au microphone, pour obtenir
+ pratiquement la même amplitude avec chacun
+\end_layout
+
+\begin_layout Itemize
+Activer les deux en même temps pour obtenir la figure de battement
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur FFT pour voir les spectre fréquentiel
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Sur la figure on peut voir comment l'enveloppe de basse fréquence apparaît.
+ La durée entre deux instants de pression minimale, sur l'enveloppe, correspond
+ à la demi-fréquence des battements.
+ La transformée de Fourier est montrée sur la figure.
+\end_layout
+
+\begin_layout Chapter
+Mécanique et thermophysique
+\end_layout
+
+\begin_layout Standard
+Les phénomènes de résonance sont étudiés avec le pendule forcé.
+ On mesure la valeur de l'accélération due à la pesanteur à l'aide d'un
+ pendule.
+ On étudie le refroidissement d'un liquide à l'aide d'une sonde PT100.
+\end_layout
+
+\begin_layout Section
+Accélération de la pesanteur à l'aide d'un pendule pesant
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer la période des oscillations d'un pendule pesant à l'aide d'une barrière
+ photo-électrique et calculer l'accélération de la pesanteur.
+ La période des oscillations d'une tige uniforme autour d'une de ses extrémités
+ est donnée par 
+\begin_inset Formula $T=2\pi\sqrt{\frac{2\ell}{3g}}$
+\end_inset
+
+, où 
+\begin_inset Formula $\ell$
+\end_inset
+
+ est la longueur et 
+\begin_inset Formula $g$
+\end_inset
+
+ est l'accélération de la pesanteur.
+ Le pendule (en forme de 
+\begin_inset Formula $T$
+\end_inset
+
+, un bord de couteau fixé à une tige de diamètre 6
+\begin_inset space ~
+\end_inset
+
+mm) est mis à osciller entre une DEL et un photo-transistor, connectés à
+ ExpEYES.
+ La DEL et le photo-transistor sont montés sur un support en forme de 
+\begin_inset Formula $U$
+\end_inset
+
+ comme le montre la figure.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/rod-pendulum.svg
+	lyxscale 60
+	height 2cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/light-barrier-photo.jpg
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Mettre le pendule en oscillation et cliquer sur DÉMARRER
+\end_layout
+
+\begin_layout Itemize
+Recommencer avec diverses longueurs de pendule.
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La période est mesurée 50
+\begin_inset space ~
+\end_inset
+
+fois, à l'aide d'un pendule pesant de 
+\begin_inset Formula $14,6 cm$
+\end_inset
+
+, et la valeur moyenne est 
+\begin_inset Formula $0.627 s$
+\end_inset
+
+.
+ La valeur calculée de 
+\begin_inset Formula $g$
+\end_inset
+
+ est 
+\begin_inset Formula $977,4~cm\cdot s^{-2}$
+\end_inset
+
+, légèrement différente de la valeur réelle pour les raisons suivantes
+\begin_inset space ~
+\end_inset
+
+: La longueur est mesurée depuis le bord du couteau jusqu'au bas de la tige
+ et utilisée dans la formule.
+ Mais il y a un peu de masse présente au-dessus du fil du couteau qui n'est
+ pas comprise dans le calcul.
+ Une autre raison peut être que le pendule n'est peut-être pas exactement
+ vertical dans la position de repos.
+\end_layout
+
+\begin_layout Section
+Vitesse angulaire d'un pendule
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $Objectif$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Étudier la nature des oscillations d'un pendule.
+ Un encodeur angulaire est nécessaire pour mesurer le déplacement angulaire
+ en fonction du temps.
+ Mais en utilisant un moteur à courant continu comme capteur, on peut mesurer
+ la vitesse angulaire en fonction du temps.
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/pendulum-screen.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Attacher un quelconque de pendule rigide à l'axe du moteur.
+\end_layout
+
+\begin_layout Itemize
+Connecter le moteur entre A3 et GND
+\end_layout
+
+\begin_layout Itemize
+Connecter une résistance de 
+\begin_inset Formula $100~\Omega$
+\end_inset
+
+ entre Rg et GND
+\end_layout
+
+\begin_layout Itemize
+Mettre le pendule en oscillation et DÉMARRER la numérisation
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Le signal obtenu est montré sur la figure.
+ Quand on le modélise par une équation 
+\begin_inset Formula $A=A_{0}sin\left(\omega t+\theta\right)*\exp\left(-dt\right)+C$
+\end_inset
+
+, à l'aide de Grace, on a obtenu une fréquence angulaire de 
+\begin_inset Formula $10 Hz$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Il convient de réaliser le pendule avec une masselotte assez lourde et une
+ tige légère qui la relie à l'axe du moteur.
+ Dans ce cas, le moteur à courant continu se comporte en générateur et la
+ tension est proportionnelle à la vitesse angulaire.
+\end_layout
+
+\begin_layout Section
+Résonance d'un pendule forcé
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Démontrer la résonance d'un pendule forcé.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/driven-pendulum.svg
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/resonance-pendulum.jpg
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+Réaliser un pendule avec deux aimants boutons et un morceau de papier.
+ Le suspendre et placer la bobine de 3000
+\begin_inset space ~
+\end_inset
+
+tours à proximité, comme montré sur la figure.
+\end_layout
+
+\begin_layout Itemize
+Connecter la bobine entre SQ1 et GND
+\end_layout
+
+\begin_layout Itemize
+Calculer la fréquence de résonance d'après la longueur du pendule
+\end_layout
+
+\begin_layout Itemize
+Scanner la fréquence au voisinage de la fréquence de résonance attendue
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude augmente.
+ Un pendule long de 4
+\begin_inset space ~
+\end_inset
+
+cm (du centre des aimants à l'axe de rotation) a résonné à environ 
+\begin_inset Formula $2,5 Hz$
+\end_inset
+
+, presque conformément à la fréquence naturelle calculée.
+ La fréquence de résonance est donnée par 
+\begin_inset Formula $f=\frac{1}{2\pi}\sqrt{\frac{g}{\ell}}$
+\end_inset
+
+, où 
+\begin_inset Formula $\ell$
+\end_inset
+
+ est la distance du centre de l'aimant au point de suspension et 
+\begin_inset Formula $g$
+\end_inset
+
+ est l'accélération de la pesanteur.
+\end_layout
+
+\begin_layout Standard
+Recommencer l'expérience en modifiant la longueur du pendule.
+\end_layout
+
+\begin_layout Section
+Mesure de distance, par écho ultrasonore
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Mesurer une distance en mesurant le temps que prend une salve de fréquence
+ 
+\begin_inset Formula $40 kHz$
+\end_inset
+
+ à faire un écho contre une surface dure.
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/sr04-dist.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Placer uns surface dire, comme un carton, à quelques 10
+\begin_inset space ~
+\end_inset
+
+cm du module d'écho
+\end_layout
+
+\begin_layout Itemize
+Cliquer sur DÉMARRER
+\end_layout
+
+\begin_layout Itemize
+Changer la distance
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+La distance est calculée à partir du temps que met une salve sonore à parcourir
+ aller-retour (en écho) la distance qui sépare le module de la surface réfléchis
+sante.
+ On peut mesurer la distance en fonction du temps, ce qui permet de calculer
+ vitesse, accélération, etc.
+\end_layout
+
+\begin_layout Section
+Mesure de température à l'aide d'une sonde PT100
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Objectif
+\end_layout
+
+\begin_layout Standard
+Enregistrer la température d'un liquide à l'aide d'un thermomètre à résistance
+ de platine.
+ La résistance d'un module PT100 est dépendante de la température par la
+ relation 
+\begin_inset Formula $R_{T}=R_{0}\left[1+AT+BT^{2}\right]$
+\end_inset
+
+, où 
+\begin_inset Formula $A=3,9083\times10^{-3}$
+\end_inset
+
+et 
+\begin_inset Formula $B=-5,775\times10^{-7}$
+\end_inset
+
+.
+ 
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/schematics/pt100.svg
+	lyxscale 70
+	height 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename /home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/en/pics/pt100-screen.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+Procédure
+\end_layout
+
+\begin_layout Itemize
+Entrer le gain l'erreur d'offset et la valeur du courant de CSS
+\end_layout
+
+\begin_layout Itemize
+Sélectionner l'intervalle de température et les intervalles de temps
+\end_layout
+
+\begin_layout Itemize
+Sélectionner les paramètres requis et cliquer sur DÉMARRER
+\end_layout
+
+\begin_layout Paragraph*
+Discussion
+\end_layout
+
+\begin_layout Standard
+Un graphique de refroidissement de l'eau d'un récipient est montré sur la
+ figure.
+\end_layout
+
+\begin_layout Standard
+Pour mesurer la résistance d'un élément PT100, on le connecte entre CSS
+ et GND et on mesure la tension à ses bornes.
+ Il est possible de mesurer la valeur exacte de CSS à l'aide d'un multimètre
+ ou en mesurant la tension aux bornes d'une résistance connue.
+ L'entrée de A3 est amplifiée 11
+\begin_inset space ~
+\end_inset
+
+fois en connectant une résistance de 
+\begin_inset Formula $1~k\Omega$
+\end_inset
+
+ entre Rg et GND.
+\end_layout
+
+\begin_layout Standard
+La résistance d'une sonde PT100 est 
+\begin_inset Formula $100\Omega$
+\end_inset
+
+ à 
+\begin_inset Formula $0^{0}C$
+\end_inset
+
+.
+ Elle change pratiquement de 
+\begin_inset Formula $0.4\Omega/\text{°}C$
+\end_inset
+
+ , modifiant la tension de 
+\begin_inset Formula $0,4 mV$
+\end_inset
+
+.
+ La sortie du convertisseur analogique numérique change d'un bit de poids
+ faible pour un changement de 
+\begin_inset Formula $1,22 mV$
+\end_inset
+
+ dans la tension d'entrée, donc un changement de température de moins de
+ 3]C ne serait pas toujours détecté.
+ On utilise un amplificateur non-inverseur pour augmenter la résolution.
+ Le gain de cet amplificateur doit être tel que la température maximale
+ mesurée donne une tension de sortie inférieure à 3,3
+\begin_inset space ~
+\end_inset
+
+V.
+ Modifier le champ 
+\begin_inset Quotes cld
+\end_inset
+
+gain
+\begin_inset Quotes crd
+\end_inset
+
+ selon.
+\end_layout
+
+\begin_layout Chapter
+Coder en Python pour expEYES-17
+\end_layout
+
+\begin_layout Standard
+Les programmes à interface graphique décrit dans les chapitres précédents
+ sont prévus pour un ensemble fini d'expériences.
+ Pour développer de nouvelles expériences, on doit savoir comment accéder
+ aux fonctionnalités d'expEYES par logiciel.
+ Les appels de fonctions importants pour communiquer avec l'appareil sont
+ donnés ci-dessous.
+\end_layout
+
+\begin_layout Paragraph*
+Établir la Connexion
+\end_layout
+
+\begin_layout Standard
+Pour accéder au matériel de EYES17, les modules Python pour 
+\family typewriter
+eyes17
+\family default
+ doivent être installés.
+ Il sont censés se trouver dans un répertoire nommé 
+\family typewriter
+eyes17
+\family default
+, qui pourrait être dans votre répertoire personnel ou sur le 
+\begin_inset Quotes cld
+\end_inset
+
+Python PATH
+\begin_inset Quotes crd
+\end_inset
+
+.
+ 
+\series bold
+Tout programme doit commencer par les deux lignes suivantes
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+import eyes17.eyes
+\end_layout
+
+\begin_layout LyX-Code
+p = eyes17.eyes.open()
+\end_layout
+
+\begin_layout Standard
+La variable 
+\family typewriter
+p
+\family default
+ est l'objet logiciel qui représente le matériel.
+\end_layout
+
+\begin_layout Standard
+Les sections suivantes expliquent les appels de fonctions Python pour accéder
+ au matériel EYES17.
+ Chaque appel de fonction est expliquer avec un exemple d'utilisation.
+\end_layout
+
+\begin_layout Paragraph
+set_pv1(v), set_pv2(v)
+\end_layout
+
+\begin_layout Standard
+Règle la tension continue en PV1 et PV2.
+ L'intervalle pour PV1 est de -5 à 5.
+ L'intervalle pour PV2 est de -3,3 à 3,3.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_pv1(4) 
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_pv2(2.1)
+\end_layout
+
+\begin_layout Standard
+La valeur assignée à la sortie est affichée.
+ Mesurer les tensions avec un voltmètre.
+\end_layout
+
+\begin_layout Paragraph
+get_voltage(input) 
+\end_layout
+
+\begin_layout Standard
+Renvoie la tension de l'entrée spécifiée.
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A1')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A2')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A3')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('MIC')
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('SEN')
+\end_layout
+
+\begin_layout Standard
+Connecter PV1 à A1, et utiliser 
+\family typewriter
+set_pv1()
+\family default
+ et 
+\family typewriter
+get_voltage('A1')
+\family default
+ ensemble.
+ Cette fonction ajuste le calibre d'entrée par essais et erreurs, selon
+ la valeur du signal d'entrée.
+\end_layout
+
+\begin_layout Paragraph*
+get_voltage_time(input)
+\end_layout
+
+\begin_layout Standard
+Renvoie un tuple, qui contient le timbre à date de l'ordinateur et la tension
+ à l'entrée spécifiée.
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage_time('A1')
+\end_layout
+
+\begin_layout Paragraph*
+get_resistance()
+\end_layout
+
+\begin_layout Standard
+Renvoie la valeur de la résistance connectée à SEN, qui devrait être entre
+ 
+\begin_inset Formula $100~\Omega$
+\end_inset
+
+ et 
+\begin_inset Formula $100~k\Omega$
+\end_inset
+
+ pour une précision raisonnable.
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_resistance()
+\end_layout
+
+\begin_layout Paragraph*
+get_capacitance() 
+\end_layout
+
+\begin_layout Standard
+Renvoie la valeur de la capacité connectée en IN1 (fonctionne bien dans
+ le domaine du 
+\begin_inset Formula $pF$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_capacitance()
+\end_layout
+
+\begin_layout Paragraph*
+get_version()
+\end_layout
+
+\begin_layout Standard
+Renvoie la version du firmware.
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+print p.get_version()
+\end_layout
+
+\begin_layout Paragraph*
+get_temperature()
+\end_layout
+
+\begin_layout Standard
+Renvoie la température du processeur à l'intérieur de EYES17
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_temperature()
+\end_layout
+
+\begin_layout Paragraph*
+set_state(OUPUT=value)
+\end_layout
+
+\begin_layout Standard
+Règle l'état logique de la sortie OD1, SQ1, etc.
+ Connecter OD1 à A1 et lancer
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+p.set_state(OD1=1) 
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_voltage('A1')
+\end_layout
+
+\begin_layout Paragraph*
+set_sine(frequency)
+\end_layout
+
+\begin_layout Standard
+Génère le signal sinusoïdal de la fréquence demandée sur WG (intervalle
+ de 
+\begin_inset Formula $5 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $5000 Hz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sine(502)
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+502.00803
+\end_layout
+
+\begin_layout Paragraph*
+set_sine_amp(amplitude)
+\end_layout
+
+\begin_layout Standard
+L'amplitude peut être réglée à trois valeurs prédéfinies de tension crête(0
+ pour avoir 
+\begin_inset Formula $80 mV$
+\end_inset
+
+, 1 pour avoir 
+\begin_inset Formula $1 V$
+\end_inset
+
+, 3 pour avoir 
+\begin_inset Formula $3 V$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout Standard
+Règle l'amplitude à 
+\begin_inset Formula $3 V$
+\end_inset
+
+ crête.
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1(frequency)
+\end_layout
+
+\begin_layout Standard
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $4 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1(15030)
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+15030.53
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1_slow(frequency)
+\end_layout
+
+\begin_layout Standard
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $0,1 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
+ La résolution est fine mais WG est désactivé quand on commande SQ1 de cette
+ façon.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1_slow(0.5)
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr2(frequency)
+\end_layout
+
+\begin_layout Standard
+Similaire à set_sqr1() mais SQ2 n'est pas disponible en même temps que WG,
+ une seule des deux sorties est utilisable à la fois.
+\end_layout
+
+\begin_layout Paragraph*
+set_sqr1(frequency, dutyCyle)
+\end_layout
+
+\begin_layout Standard
+Règle la fréquence de la sortie SQ1 (intervalle de 
+\begin_inset Formula $0,1 Hz$
+\end_inset
+
+ à 
+\begin_inset Formula $1 MHz$
+\end_inset
+
+).
+ Toutes les valeurs intermédiaires ne sont pas possibles, la fonction renvoie
+ la valeur effectivement adoptée.
+\end_layout
+
+\begin_layout LyX-Code
+print p.set_sqr1(1000, 30)        # 1000 Hz, rapport cyclique 30%
+\end_layout
+
+\begin_layout Paragraph*
+get_freq(input)
+\end_layout
+
+\begin_layout Standard
+Mesure la fréquence d'un signal carré sur l'entrée, IN2 ou SEN.
+ Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000)
+\end_layout
+
+\begin_layout LyX-Code
+print p.get_freq('IN2')
+\end_layout
+
+\begin_layout Paragraph*
+duty_cycle(input)
+\end_layout
+
+\begin_layout Standard
+Mesure le rapport cyclique d'un signal carré , IN2 ou SEN.
+ Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000, 30)
+\end_layout
+
+\begin_layout LyX-Code
+print p.duty_cycle('IN2')
+\end_layout
+
+\begin_layout Paragraph*
+r2ftime(input1, input2)
+\end_layout
+
+\begin_layout Standard
+Mesure l'intervalle de temps entre un front montant sur input1 jusqu'à un
+ front descendant sur input2, les entrées peuvent éventuellement être les
+ mêmes.
+ On peut l'utiliser pour tester un signal carré.
+\end_layout
+
+\begin_layout Standard
+Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000, 30)
+\end_layout
+
+\begin_layout LyX-Code
+print p.r2ftime('IN2', 'IN2')
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+0.0003
+\end_layout
+
+\begin_layout Standard
+Le signal carré à 
+\begin_inset Formula $1 kHz$
+\end_inset
+
+ avec un rapport cyclique de 30% a une période de 
+\begin_inset Formula $1 ms$
+\end_inset
+
+ et reste à l'état HAUT durant 
+\begin_inset Formula $0,3 ms$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph*
+multi_r2rtime(input, numCycles)
+\end_layout
+
+\begin_layout Standard
+Mesure l'intervalle de temps entre deux fronts montants de l'entrée 
+\family typewriter
+input
+\family default
+.
+ La durée entre deux fronts montants est un cycle.
+ On peut spécifier le nombre cycles à mesurer, la valeur par défaut étant
+ 1.
+ Les valeurs autorisées sont 1,2,4,8,12,16,32 et 48.
+ On peut tester ça avec un signal carré.
+\end_layout
+
+\begin_layout Standard
+Connecter SQ1 à IN2 et lancer le code
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sqr1(1000)
+\end_layout
+
+\begin_layout LyX-Code
+print p.multi_r2rtime('IN2', 8)
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+0.008
+\end_layout
+
+\begin_layout Paragraph*
+select_range(channel, range)
+\end_layout
+
+\begin_layout Standard
+Les calibres pour A1 et A2 peuvent être réglés depuis 
+\begin_inset Formula $\pm0.5~V$
+\end_inset
+
+ jusqu'à 
+\begin_inset Formula $\pm16~V$
+\end_inset
+
+, à l'aide d'amplificateurs à gain programmable.
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)         # 4 volt maximum
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 8)         # 8 volt maximum
+\end_layout
+
+\begin_layout Paragraph*
+capture1(Input, Number of samples, time interval)
+\end_layout
+
+\begin_layout Standard
+Numérise l'entrée spécifiée.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 
+\begin_inset Formula $2$
+\end_inset
+
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout LyX-Code
+print p.capture1('A1', 5, 5)
+\end_layout
+
+\begin_layout Standard
+affichera deux tableaux de dates et de tensions.
+\end_layout
+
+\begin_layout Standard
+Quand on a besoin de créer un graphique de la tension de sortie pour une
+ meilleure compréhension, on peut le faire à l'aide du module 
+\family typewriter
+matplotlib
+\family default
+, importé grâce à l'interface 
+\family typewriter
+pylab
+\family default
+.
+ Connecter WG à A1 à l'aide d'un fil et lancer
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+t,v = p.capture1('A1', 300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(t,v)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Standard
+Le résultat de ce code est donné ci-dessous.
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Graphics
+	filename pics/sine.png
+	lyxscale 50
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+capture2(Number of samples, time interval)
+\end_layout
+
+\begin_layout Standard
+Numérise les entrées A1 et A2 simultanément.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 
+\begin_inset Formula $2$
+\end_inset
+
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Connecter WG à A1, et une diode entre A1 et A2.
+ Lancer le code ci-dessous
+\begin_inset space ~
+\end_inset
+
+:
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+t,v,tt,vv = p.capture2(300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(t,v)
+\end_layout
+
+\begin_layout LyX-Code
+plot(tt,vv)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Standard
+Le résultat de ce code est donné ci-dessous.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename pics/halfwave.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename pics/capture4.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+capture4(Number of samples, time interval)
+\end_layout
+
+\begin_layout Standard
+Numérise les entrées A1, A2, A3 et MIC simultanément.
+ Le nombre d'échantillons peut aller jusqu'à 10000.
+ La durée entre deux échantillons consécutifs est donnée en microseconde
+ (intervalle de 
+\begin_inset Formula $2$
+\end_inset
+
+ à 
+\begin_inset Formula $1000 µs$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Connecter WG à A3 et lancer le code donné ci-dessous.
+ Le résultat est montré ci-dessus.
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine_amp(2)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_sine(1000)
+\end_layout
+
+\begin_layout LyX-Code
+p.select_range('A1', 4)
+\end_layout
+
+\begin_layout LyX-Code
+res = p.capture4(300, 10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(res[4],res[5])        # A3
+\end_layout
+
+\begin_layout LyX-Code
+plot(res[6],res[7])        # MIC
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Paragraph*
+set_wave(frequency, wavetype)
+\end_layout
+
+\begin_layout Standard
+Si le paramètre 
+\family typewriter
+wavetype
+\family default
+ n'est pas spécifié, cela génère un signal en utilisant la table d'onde
+ existante.
+ Si 
+\family typewriter
+wavetype
+\family default
+ est spécifié (
+\family typewriter
+'sine'
+\family default
+ ou 
+\family typewriter
+'tria'
+\family default
+), la table d'onde correspondante est chargée.
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(1000, 'sine')
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(100)       # fréq.
+ 100Hz avec la table existante
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,50)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(100, 'tria')  # table d'onde triangulaire et 100 Hz
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,50)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout Paragraph*
+load_equation(function, span)
+\end_layout
+
+\begin_layout Standard
+Crée la table d'onde en utilisant l'équation.
+ Connecter WG à A1 et lancer le code ci-dessous.
+ Le résultat est montré plus bas.
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+def f1(x):
+\end_layout
+
+\begin_layout LyX-Code
+    return sin(x) + sin(3*x)/3 
+\end_layout
+
+\begin_layout LyX-Code
+
+\end_layout
+
+\begin_layout LyX-Code
+p.load_equation(f1, [-pi,pi])
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(400)
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset Graphics
+	filename pics/loadEquation.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+  
+\begin_inset Graphics
+	filename pics/loadTable.png
+	lyxscale 60
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph*
+load_table(function, span)
+\end_layout
+
+\begin_layout Standard
+On peut aussi charger la table d'onde avec un tableau de 512 éléments.
+ Connecter WG à A1 et lancer le code ci-dessous.
+ Après l'opération de valeur absolue, la table commence par 256, puis descend
+ jusqu'à 0 et enfin remonte jusqu'à 255, ce qui trace un signal triangulaire.
+ Le résultat dû à ce tableau est montré ci-dessus.
+\end_layout
+
+\begin_layout LyX-Code
+from pylab import *
+\end_layout
+
+\begin_layout LyX-Code
+x = arange(-256, 256)
+\end_layout
+
+\begin_layout LyX-Code
+x = abs(x)
+\end_layout
+
+\begin_layout LyX-Code
+p.load_table(x)
+\end_layout
+
+\begin_layout LyX-Code
+p.set_wave(400)
+\end_layout
+
+\begin_layout LyX-Code
+x,y = p.capture1('A1', 500,10)
+\end_layout
+
+\begin_layout LyX-Code
+plot(x,y)
+\end_layout
+
+\begin_layout LyX-Code
+show()
+\end_layout
+
+\end_body
+\end_document

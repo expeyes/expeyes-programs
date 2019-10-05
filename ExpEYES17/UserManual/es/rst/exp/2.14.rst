@@ -1,0 +1,44 @@
+.. 2.14
+   
+Resistencia del agua, en corriente alterna
+------------------------------------------
+
+**Objetivo**
+
+Medir la resistencia de soluciones iónicas, utilizando señales continua
+y alterna. Se utiliza agua de la canilla. Intentar medir la resistencia
+previamente con un multímetro.
+
+.. image:: schematics/res-water.svg
+	   :width: 300px
+.. image:: pics/water-conduct.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  R1 es supuestamente comparable con R, se empieza con :math:`10~k\Omega`.
+-  Activar A1 y A2
+-  Calcular la resistencia come explicado en la sección
+   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+
+**Discusión**
+
+Los valores obtenidos se muestran en la tabla. Resistencias en continuo y en
+alterno parecen muy diferentes. En corriente continua,
+la resistencia del liquido cambia con el tiempo, debido a una electrólisis
+y la  formación de burbujas. La resistencia poco depende de la distancia
+entre electrodos, el mayor efecto está en la superficie del electrodo.
+La resistencia depende de la concentración de iones y de la presencia
+de impurezas en el agua.
+
+Intentar cambiar la distancia entre electrodos. Intentar agregar un
+poco de sal y repetir las medidas. ¿Por qué el comportamiento es
+diferente en continua y alterna?  ¿Cuáles son los transportistas de
+cargas responsables del paso de la electricidad a través de las
+soluciones?  ¿Hay una reacción química que se produce?
+
+
+
+
+
+

@@ -25,8 +25,8 @@ multiplying the frequency with this.
 |.. image:: schematics/sound-velocity.svg                                    |
 |	   :width: 300px                                                     |
 +----------------------------------------------------------------------------+
-|Figure 5.1 (a) compressions et expansions along the direction of sound      |
-| (b) schematics                                                             |
+|Figure 5.1 (a) compressions et expansions along the direction               |
+| of sound (b) schematics                                                    |
 +----------------------------------------------------------------------------+
 
 **Procedure**

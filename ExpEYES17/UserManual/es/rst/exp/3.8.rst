@@ -1,0 +1,26 @@
+.. 3.8
+   
+Integrado de amplificador operacional
+-------------------------------------
+
+**Objetivo**
+
+Conectar un integrado de amplificador operacional y probarlo.
+
+.. image:: schematics/opamp-int.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Ajustar la amplitud de WG en 80 mv y la frecuencia en 1000 Hz 
+-  Activar A1 y A2 con opción de análisis 
+-  Seleccionar el calibre 1 V para A1 y A2
+-  Hacer les connexions et observer la salida.
+-  Cambiar la ganancia modificando los valores de las resistencias.
+
+**Discusión**
+
+Se puede observar la ganancia por la amplitud, pero también el 
+desfase en los resultados.
+
+

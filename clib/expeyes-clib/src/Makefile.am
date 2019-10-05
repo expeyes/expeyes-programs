@@ -2,6 +2,8 @@ bin_PROGRAMS = capdemo1 capdemo2 capdemo3 capdemo4 capdemo capdemo-hr ccs-cap ba
 
 lib_LTLIBRARIES     = libej.la
 
+$(bin_PROGRAMS): $(lib_LTLIBRARIES)
+
 LDADD = -ldl #-L must be use to specify the folder for dl library
 
 AM_CFLAGS = -Wall

@@ -143,14 +143,16 @@ latexpdf:
 	cd $(BUILDDIR)/latex; \
 	  sed -i '/\\usepackage{sphinx}/a\
 \\usepackage{pdfpages}' eyes17.tex; \
-	  sed -i 's/\\maketitle/\\includepdf{coverpage.pdf}\n\\includepdf{preface.pdf}/' eyes17.tex;
+	  sed -i 's/\\sphinxmaketitle/\\includepdf{coverpage.pdf}\n\\includepdf{preface.pdf}/' eyes17.tex; \
+	  @echo French localization; \
+	  sed -i 's/\\usepackage.*{babel}/\\usepackage[french]{babel}/'  eyes17.tex;
 	@echo launching prettyLaTeX.py
 	python3 prettyLaTeX.py $(BUILDDIR)/latex eyes17.tex
 	@echo generating PDF images in the LaTeX directory
 	cd $(BUILDDIR)/latex; \
-	  for f in *.png; do g=$$(echo $$f| sed 's/png$$/pdf/'); echo "$$f ==> $$g"; convert $$f -resize 240x180 $$g; done;\
-	  for f in *.jpg; do g=$$(echo $$f| sed 's/jpg$$/pdf/'); echo "$$f ==> $$g"; convert $$f -resize 240x180 $$g; done;\
-	  for f in *.svg; do g=$$(echo $$f| sed 's/svg$$/pdf/'); echo "$$f ==> $$g"; rsvg-convert -f pdf $$f --width 240 -o $$g; done;
+	  for f in *.png; do g=$$(echo $$f| sed 's/png$$/pdf/'); echo "$$f ==> $$g"; convert $$f -resize 960x720 $$g; done;\
+	  for f in *.jpg; do g=$$(echo $$f| sed 's/jpg$$/pdf/'); echo "$$f ==> $$g"; convert $$f -resize 960x720 $$g; done;\
+	  for f in *.svg; do g=$$(echo $$f| sed 's/svg$$/pdf/'); echo "$$f ==> $$g"; rsvg-convert -f pdf $$f --width 960 -o $$g; done;
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."

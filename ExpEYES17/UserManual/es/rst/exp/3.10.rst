@@ -1,0 +1,42 @@
+.. 3.10
+   
+Divisor de reloj
+------------------
+
+**Objetivo**
+
+Estudiar un divisor de reloj con una báscula D (familia TTL,
+7474).
+
+**Procedimiento**
+
+.. image:: schematics/clock-divider.svg
+	   :width: 300px
+
+-  Activar A1 y A2, ajustar sus calibres a 8 V 
+-  Regular SQ1 en 500 Hz
+
+**Discusión**
+
+La salida cambia en cada borde ascendente en la entrada, de modo que 
+la frecuencia se divide por dos. La señal de salida es una onda cuadrada simétrica, 
+incluso si la señal de entrada tiene un ciclo de trabajo diferente. 
+El alto voltaje de salida de un TTL es cercano a 4V solamente.
+
++-------------------------------------------------------------------------+
+|.. image:: pics/clock-divider.png                                        |
+|	   :width: 300px                                                  |
+|.. image:: pics/clock-divider2.png                                       |
+|	   :width: 300px                                                  |
++-------------------------------------------------------------------------+
+| Figura 3.1 Un circuito divisor de reloj, utilizando una báscula D. Se   |
+| muestran las salidas para dos tipos diferentes de señal de entrada.     |
++-------------------------------------------------------------------------+
+
+
+
+
+
+
+
+

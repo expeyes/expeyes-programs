@@ -1,0 +1,41 @@
+.. 6.3
+   
+Resonancia de un péndulo forzado
+--------------------------------
+
+**Objetivo**
+
+Demostrar la resonancia de un péndulo forzado.
+
+.. image:: schematics/driven-pendulum.svg
+	   :width: 300px
+.. image:: pics/resonance-pendulum.jpg
+	   :width: 300px
+
+**Procedimiento**
+
+Realizar un péndulo con dos imanes de botón y un trozo 
+de papel. colgarlo y colocar la bobina de 3000 vueltas cerca, como se muestra 
+en la figura.
+
+-  Conectar la bobina entre SQ1 y GND 
+-  Calcular la frecuencia de resonancia por la longitud del péndulo 
+-  Escanear la frecuencia en las proximidades de la frecuencia de resonancia esperada
+
+**Discusión**
+
+Cuando SQ1 alcanza la frecuencia de resonancia del péndulo, su amplitud
+aumenta. Un péndulo de 4 cm de largo (desde el centro de los imanes hasta
+el eje de 
+rotación) ha resonado :math:`2,5~Hz`, casi de acuerdo con la
+frecuencia natural calculada La frecuencia de resonancia viene dada por
+:math:`f = 1/(2\pi\sqrt{g/l})`, donde :math:`l` es la distancia desde el
+centro del imán en el punto de suspensión y :math:`g` es la aceleraciòn de la 
+gravedad.
+
+Repetir el experimento cambiando la longitud del péndulo.
+
+
+
+
+

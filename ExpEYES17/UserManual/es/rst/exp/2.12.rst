@@ -1,0 +1,41 @@
+.. 2.12
+   
+Un generador alterno simple
+---------------------------
+
+**Objetivo**
+
+Medir la frecuencia y el amplitud de una tensión inducida  voltaje
+en un bobinado por un imán en rotación. Se utiliza el imán de
+:math:`10~mm\times 10~mm` y el bobinado de 3000 ciclos que vienen con
+el kit.
+
+.. image:: schematics/ac-generator.svg
+	   :width: 300px
+.. image:: pics/ac-gen-screen.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Fijar el imán acostado en el eje del motor y alimentar el motor con
+   una pila de 1.5 V.
+-  Activar A1 y A2, con opción de análisis.
+-  Fijar la base de tiempo en 100 ms escala completa.
+-  Aproximar el bobinado de imán (sin tocarlo) y observar la tensión
+   inducida.
+-  Reiterar la experiencia con dos bobinados.
+
+**Discusión**
+
+La tensión obtenida se muestra en la figura. La diferencia de fase
+entre ambas señales depende de la diferencia angular entre los ejes
+de ambos bobinados.
+
+Aproximar un bobinado en corto-circuito del imán y observar el cambio
+de frecuencia. El bobinado en corto-circuito toma energía del generador
+y la velocidad baja.
+
+
+
+
+

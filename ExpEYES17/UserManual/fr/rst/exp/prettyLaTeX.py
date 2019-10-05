@@ -36,7 +36,7 @@ def filterNastyUnicode(t,verbose=False):
 	  "\u2005": " ",
 	  "\u2003": " ",
 	  "\u200a": " ",
-	  "\u22ef": "\\dots",
+	  "\u22ef": r"\\dots",
 	  "\u2212": "-",
 	  "↑": "",
 	  "↓": "",

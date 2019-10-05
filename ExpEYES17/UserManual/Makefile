@@ -7,6 +7,9 @@ all: progress
 	for d in $(RST_SUBDIRS); do make -C $$d; done
 
 clean:
+	for d in $(RST_SUBDIRS); do make -C $$d clean; done
+
+distclean:
 	for d in $(RST_SUBDIRS); do make -C $$d distclean; done
 
 install:
@@ -25,4 +28,4 @@ progress:
 	  fi; \
 	done
 
-.PHONY: all clean install progress
+.PHONY: all clean distclean install progress

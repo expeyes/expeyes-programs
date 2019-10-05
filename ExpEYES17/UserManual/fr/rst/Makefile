@@ -20,6 +20,11 @@ $(PREBUILD):
 	mkdir -p exp/_static
 	touch $@
 
+clean:
+	rm -rf qt5HTML/_sources qt5HTML/_static/*.js
+	cd exp/_build/epub; rm -rf $$(ls | grep -v eyes17.epub)
+	cd exp/_build/latex; rm -rf $$(ls | grep -v eyes17.pdf)
+	rm -rf exp/_build/doctrees
 
 distclean:
 	rm -rf qt5HTML exp/_build exp/_static
@@ -61,4 +66,4 @@ exp/%.rst: ../../en/rst/exp/%.rst
 exp/schematics/$(THIS_LANG)/%.svg: ../../schematics/en/%.svg
 	@echo -n "$$(basename $@) "
 
-.PHONY: all force distclean progress progress_update
+.PHONY: all force clean distclean progress progress_update

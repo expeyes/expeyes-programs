@@ -82,14 +82,12 @@ install_indep:
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
-	  [ ! -f $$d/Makefile ] || make -C $$d distclean || make -C $$d clean; \
+	  [ ! -f $$d/Makefile ] || make -C $$d clean; \
 	done
 	# clean the bootloader hex file
 	make -C microhope/firmware clean
 	# clean the autconf generated files
-	for f in  Makefile.in aclocal.m4 config.guess config.sub configure ltmain.sh m4/libtool.m4 m4/ltoptions.m4 m4/ltversion.m4 src/Makefile.in; do \
-	  rm -f clib/expeyes-clib/$$f; \
-	done
+	cd clib/expeyes-clib; sh clean-all.sh
 
 
 .PHONY: all all_indep install install_indep clean

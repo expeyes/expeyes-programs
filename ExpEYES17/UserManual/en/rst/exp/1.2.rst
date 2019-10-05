@@ -172,8 +172,8 @@ Some accessories are provided with expEYES.
    shell that forms a cavity, that enhances the amplitude of sound
    produced.
 -  DC Motor : Should be powered by a DC voltage less than 3 volts.
--  Permanent Magnets : (a) 10mm dia & length (b) 5 mm dia & 10 mm length
-   (c) Button size magnets(2)
+-  Permanent Magnets : (a) 10mm dia & length (b) 5 mm dia & 10 mm length (c)
+   Button size magnets(2)
 -  5mm LEDS : RED, BLUE, GREEN, WHITE
 -  Capacitors : 100pF, 0.1uF , 1 uF & 22uF
 -  Inductor : 10 mH / 20Ω,
