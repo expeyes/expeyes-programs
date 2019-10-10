@@ -13,7 +13,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot, i2cLogger
+	import sr04dist, utils, logger, XYplot, i2cLogger, tof
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), 'measure-dc'],
@@ -90,7 +90,8 @@ mechanicsExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Driven Rod Pendulum with Light barrier'), 'drivenRodPendulum'],
 [QT_TRANSLATE_NOOP('MainWindow','Pendulum Waveform'),'pendulumVelocity'],
 [QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),'driven-pendulum'],
-[QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), 'sr04dist']
+[QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), 'sr04dist'],
+[QT_TRANSLATE_NOOP('MainWindow','Gravity by Time of Flight'), 'tof']
 ]
 
 otherExpts = [ 
