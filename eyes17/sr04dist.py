@@ -69,6 +69,7 @@ class Expt(QWidget):
 		l.setMaximumWidth(50)
 		H.addWidget(l)
 		right.addLayout(H)
+
 		
 		b = QPushButton(self.tr("Start"))
 		right.addWidget(b)
@@ -85,6 +86,11 @@ class Expt(QWidget):
 		b = QPushButton(self.tr("Clear Traces"))
 		right.addWidget(b)
 		b.clicked.connect(self.clear)		
+		self.FFT = QPushButton(self.tr("Fourier Transform"))
+		#self.FFT.setMaximumWidth(50)
+		H.addWidget(self.FFT)
+		self.FFT.clicked.connect(self.show_fft)		
+
 
 		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.clicked.connect(self.save_data)		
@@ -129,7 +135,59 @@ class Expt(QWidget):
 			self.trial += 1
 		else:
 			self.msg(self.tr('Failed to fit the curve'))
+
+
+	def show_fft(self):
+		if self.history != []:
+			x = self.history[-1][0]
+			y = self.history[-1][1]
+			if len(x) % 2 != 0:
+				x = x[:-1]
+				y = y[:-1]
+			fa = em.fit_dsine(np.array(x), np.array(y), 1000)# ./self.guessTP)  #Need to fix eyemath, expects kHz
+		else:
+			self.msg(self.tr('No data to analyze.'))
+			return
+			
+		if fa != None:
+			if len(self.data[0])%2: #odd number
+				self.data[0] = self.data[0][:-1]
+				self.data[1] = self.data[1][:-1]
+			pa = fa[1]
+			ss = '%5.2f'%pa[1]
+			self.msg(self.tr('Sine Fit Result: Frequency ') + ss + self.tr( 'Hz'))
+			self.traces.append(self.pwin.plot(x, fa[0], pen = self.traceCols[self.trial%5]))
+
+			fr = pa[1]			# frequency in Hz
+			dt = np.average(np.diff(self.data[0]))*1000 #mS
+
+			print('freq:%.2f, dt=%.2e'%(fr,dt))
+			xa,ya = em.fft(self.data[1] - np.average(self.data[1]),dt)
+			peak = self.peak_index(xa,ya)
+			ypos = np.max(ya)
+			pop = pg.plot(xa,ya, pen = self.traceCols[self.trial%5])
+			pop.showGrid(x=True, y=True)
+			txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+			txt.setPos(peak, ypos)
+			pop.addItem(txt)
+			pop.setWindowTitle(self.tr('Frequency Spectrum'))
+			self.trial += 1
+
+		else:
+			self.msg(self.tr('Failed to fit the curve'))
+
+
+
 		
+	def peak_index(self, xa, ya):
+		peak = 0
+		peak_index = 0
+		for k in range(2,len(ya)):
+			if ya[k] > peak:
+				peak = ya[k]
+				peak_index = xa[k]
+		return peak_index
+
 				
 	def update(self):
 		if self.running == False:
