@@ -61,14 +61,15 @@ class Expt(QWidget):
 			
 		
 	def measure_tof(self):
+		self.msg(self.tr('start..'))
 		res = self.p.SinglePinEdges('SEN','falling',1,OD1=0)
 		self.p.set_state(OD1=1)
-		if res == None:
-			self.msg(self.tr('Error. Try again'))
-		else:
+		try:
 			t = res[0]
 			ss = '%5.3f'%t
 			self.msg(self.tr('Time of flight =') + ss + self.tr(' Seconds'))
+		except:
+			self.msg(self.tr('Error. Try again'))
 			
 	def sq1_slider(self, val):
 		try:
