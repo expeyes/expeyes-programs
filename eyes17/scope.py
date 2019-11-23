@@ -503,10 +503,9 @@ class Expt(QWidget):
 				if self.voltMeterCB[ch].isChecked() == True:
 					try:
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
+						self.voltMeters[ch].setText(unicode(self.tr('%5.3f V')) %(v))
 					except:
 						self.comerr()
-
-					self.voltMeters[ch].setText(unicode(self.tr('%5.3f V')) %(v))
 				else:
 					self.voltMeters[ch].setText(self.tr(''))			
 			try:
