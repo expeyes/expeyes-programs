@@ -1275,7 +1275,7 @@ class Interface():
 			if source.__conservativeInRangeRaw__(rawval,10):
 				return  val
 			else:
-				print('Out of Range ',val,'Gain:',source.gainEnabled)
+				#print('Out of Range ',val,'Gain:',source.gainEnabled)
 				return val#np.NaN
 		else:
 			return  val
