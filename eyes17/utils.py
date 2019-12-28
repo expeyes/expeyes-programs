@@ -22,6 +22,8 @@ if not os.path.exists(cnf):
 
 [ScreenTheme]
 Background = dark
+language = en_IN
+
 """
 	with open(cnf,"w") as out: out.write(defaultConfiguration)
 #######################################################################

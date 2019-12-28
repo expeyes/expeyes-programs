@@ -125,6 +125,7 @@ pythonCodes = [
 [QT_TRANSLATE_NOOP('MainWindow','Fourier Transform'), 'FourierTransform'],
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum'), 'rodpend']
 ]
+languages = ['fr_FR','en_IN','ml_IN']
 
 
 #---------------------------------------------------------------------
@@ -139,6 +140,21 @@ class helpWin(QWebView):
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
+
+# translation stuff
+def translate(lang = None):
+	global app,t,t1
+	if lang is None:
+		lang=QLocale.system().name()
+	print('setting language :',lang)
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
+	return t,t1
 
 
 class MainWindow(QMainWindow):
@@ -155,6 +171,11 @@ class MainWindow(QMainWindow):
 
 	def __init__(self):
 		QMainWindow.__init__(self)
+
+		config = configparser.ConfigParser()
+		config.read(cnf)
+		self.language = translate(config['ScreenTheme']['language'])
+
 		self.makeMenu()
 		self.setMinimumSize(self.WIDTH-100, self.HEIGHT-50)
 		self.resize(self.WIDTH,self.HEIGHT)
@@ -282,6 +303,10 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('Reconnect'), self.reconnect)
 		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
 		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
+		sm = mb.addMenu(self.tr("Choose Language"))
+		for e in languages:
+			sm.addAction(e,  lambda item=e: self.setLanguage(item))	
+
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
@@ -317,6 +342,17 @@ class MainWindow(QMainWindow):
 		em = bar.addMenu(self.tr("PythonCode"))
 		for e in pythonCodes:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.runCode(item))	
+
+
+	def setLanguage(self,l):
+			self.setConfig('ScreenTheme', 'language', l)
+			self.language=translate(l)
+			QMessageBox.warning(
+				self,
+				self.tr('No immediate application'),
+				self.tr("Please restart the application to use the new language.")
+			)
+			return
 
 
 	def reconnect(self):
