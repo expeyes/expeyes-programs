@@ -1,9 +1,10 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser
 from utils import cnf
-
+from PyQt5.QtCore import pyqtSignal, QObject
 from QtVersion import *
 showVersions()
+
 
 import pyqtgraph as pg
 
@@ -13,7 +14,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot, i2cLogger
+	import sr04dist, utils, logger, XYplot, i2cLogger, tof
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
@@ -99,7 +100,7 @@ otherExpts = [
 ]
 
 modulesI2C = [ 
-[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
+[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),'BHCurve'],
 [QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),'lightsensorlogger'],
 [QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
 [QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), 'i2cLogger']
@@ -125,44 +126,38 @@ pythonCodes = [
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum'), 'rodpend']
 ]
 
-	def foundFirstHelp(self, proposed_files):
-		"""
-		Check in sequence, a list of directories for a file to be found,
-		which is in the iterable proposed_files; the first match is
-		returned immediately
-		:parm: proposed_files a sequence of file names without a suffix
-		:return: the first occurence of a matching file, else None
-		"""
-		htmlFiles=[f+".html" for f in proposed_files]
-		dirs = [
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
-			os.path.join("/usr/share/eyes17/rst", str(lang)[:2]), # packaged environment, restructured text files
-			os.path.join("/usr/share/eyes17/rst", str(lang)), # packaged environment, restructured text files (complete LANG code)
-			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
-			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
-		]
-		for directory in dirs:
-			for f in htmlFiles:
-				target=	os.path.join(directory,f)
-				if os.path.exists(target):
-					return target	
-		return None
+languages = ['fr_FR','en_IN', 'es_ES', 'ml_IN']
+
 
 #---------------------------------------------------------------------
 		
 class helpWin(QWebView):
-	def __init__(self, name = ''):
+		
+	def closeEvent(self, e):
+		"""
+		Sends a message to self.parent to tell that the checkbox for
+		the help window should be unchecked.
+		"""
+		self.parent.uncheckHelpBox.emit()
+		return
+			
+	def __init__(self, parent, name = '', lang="en"):
 		"""
 		Class for the help window
-		:parm: name a tuple (title, HTML file indication)
+		:param parent: this is the main window
+		:param name: a tuple (title, HTML file indication)
 		name[1] can be either a simple string or another iterable. When it is
 		a simple string, it means that the file to open is in htm/<name>.html;
 		on the contrary, name[1] is a list of file names, without their
 		.html suffix, to be searched in a list of directories; the first
 		hit during the search defines the file to open.
+		:param lang: the desired language
 		"""
 		QWebView.__init__(self)
+
+		self.parent=parent
+		self.lang=lang
+
 		if type(name[1]) is str:
 			fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
 		else:
@@ -184,10 +179,10 @@ class helpWin(QWebView):
 		"""
 		htmlFiles=[f+".html" for f in proposed_files]
 		dirs = [
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
-			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
-			os.path.join("/usr/share/eyes17/rst", str(lang)[:2]), # packaged environment, restructured text files
-			os.path.join("/usr/share/eyes17/rst", str(lang)), # packaged environment, restructured text files (complete LANG code)
+			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(self.lang)[:2], 'rst', 'qt5HTML'), # development environment for restructured text files
+			os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'ExpEYES17', 'UserManual', str(self.lang), 'rst', 'qt5HTML'), # development environment for restructured text files (complete LANG code)
+			os.path.join("/usr/share/eyes17/rst", str(self.lang)[:2]), # packaged environment, restructured text files
+			os.path.join("/usr/share/eyes17/rst", str(self.lang)), # packaged environment, restructured text files (complete LANG code)
 			"/usr/share/eyes17/html", # packaged environment, plain HTML files	
 			os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html'), # development environment, plain HTML files (must be last to let /usr/share/eyes17/main.py find help files in rst/**/)
 		]
@@ -206,12 +201,38 @@ class MainWindow(QMainWindow):
 	hlpName = ''
 	hwin = None
 	
+	uncheckHelpBox = pyqtSignal()
+	
 	def closeEvent(self, e):
 		if self.hwin != None:
 			self.hwin.close()
 
-	def __init__(self):
+	def __init__(self, lang):
+		"""
+		The constructor.
+		:param lang: the autodetected language, which comes from shell variables
+		"""
 		QMainWindow.__init__(self)
+
+		config = configparser.ConfigParser()
+		config.read(cnf)
+		try:
+			self.translators = self.translate(config['ScreenTheme']['language'])
+			self.lang = config['ScreenTheme']['language']
+		except:
+			self.translators = self.translate(lang)
+			self.lang=lang
+			
+		self.uncheckHelpBox.connect(self.uncheckTheHelpBox)
+
+	def uncheckTheHelpBox(self):
+		"""
+		unchecks the help checkbox
+		"""
+		self.helpCB.setChecked(False)
+		return
+
+	def init_UI(self):
 		self.makeMenu()
 		self.setMinimumSize(self.WIDTH-100, self.HEIGHT-50)
 		self.resize(self.WIDTH,self.HEIGHT)
@@ -238,8 +259,8 @@ class MainWindow(QMainWindow):
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
-			if self.hwin == None: 
-				self.hwin = helpWin((self.title,self.hlpName))
+			if self.hwin == None:
+				self.hwin = helpWin(self, (self.title,self.hlpName), self.lang)
 			self.hwin.show()
 		else:
 			if self.hwin != None: self.hwin.hide()
@@ -340,11 +361,14 @@ class MainWindow(QMainWindow):
 	
 	def makeMenu(self):
 		bar = self.menuBar()
-
+		bar.clear() # reset all menu actions
 		mb = bar.addMenu(self.tr("Device"))
 		mb.addAction(self.tr('Reconnect'), self.reconnect)
 		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
 		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
+		sm = mb.addMenu(self.tr("Choose Language"))
+		for e in languages:
+			sm.addAction(e,  lambda item=e: self.setLanguage(item))	
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
@@ -381,6 +405,11 @@ class MainWindow(QMainWindow):
 		for e in pythonCodes:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.runCode(item))	
 
+	def setLanguage(self,l):
+			self.setConfig('ScreenTheme', 'language', l)
+			self.translators=self.translate(l)
+			self.lang=l
+			return
 
 	def reconnect(self):
 		global p
@@ -395,6 +424,30 @@ class MainWindow(QMainWindow):
 			if self.expName == 'scope':
 				self.expWidget.recover()
 		
+	# translation stuff
+	def translate(self, lang = None):
+		global app,t,t1
+
+		try:
+			app.removeTranslator(t)
+			app.removeTranslator(t1)
+		except:
+			pass
+
+		if lang is None:
+			lang=QLocale.system().name()
+		t=QTranslator()
+		t.load("lang/"+lang, os.path.dirname(__file__))
+		app.installTranslator(t)
+		t1=QTranslator()
+		t1.load("qt_"+lang,
+			QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+		app.installTranslator(t1)
+		self.init_UI()
+		self.uncheckHelpBox.emit()
+		return t,t1
+
+
 # Program starts here
 import eyes17.eyes as eyes
 p = eyes.open()
@@ -417,5 +470,5 @@ t1.load("qt_"+lang,
 	QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 app.installTranslator(t1)
 
-mw = MainWindow()
+mw = MainWindow(lang)
 sys.exit(app.exec_())
