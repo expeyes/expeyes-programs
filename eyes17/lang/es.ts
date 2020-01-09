@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS><TS version="2.0" language="es" sourcelanguage="">
 <context>
     <name>@default</name>
     <message>
@@ -1693,67 +1693,67 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../BHCurve.py" line="39"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
-        <translation>Tension (V) -&gt; Courant -&gt; Champ magnétique (B)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="41"/>
         <source>Magnetic Field (H)</source>
-        <translation>Champ magnétique (H)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="61"/>
         <source>Set Zero</source>
-        <translation>Réglage du zéro</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="94"/>
         <source>MPU925x Sensor Not Found</source>
-        <translation>Capteur MPU925x non trouvé</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="121"/>
         <source>Completed plotting B-H</source>
-        <translation>Tracé B-H terminé</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="131"/>
         <source>Residual Magnetic Field: %.2f</source>
-        <translation>Champ magnétique résiduel : %.2f</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="90"/>
         <source>Set WG</source>
-        <translation>Réglage de WG</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../i2cLogger.py" line="1040"/>
         <source>Scan</source>
-        <translation>Scan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../lightsensorlogger.py" line="142"/>
         <source>TSL2561 Sensor Not Found</source>
-        <translation>Capteur TSL2561 non trouvé</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../tof.py" line="38"/>
         <source>Measure</source>
-        <translation>Mesure</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../tof.py" line="64"/>
         <source>start..</source>
-        <translation>Départ ..</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../tof.py" line="70"/>
         <source>Time of flight =</source>
-        <translation>Temps de vols =</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../tof.py" line="72"/>
         <source>Error. Try again</source>
-        <translation>Erreur : recommencez</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2214,22 +2214,22 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../main.py" line="94"/>
         <source>Gravity by Time of Flight</source>
-        <translation>Gravité par temps de vol</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="103"/>
         <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation>Hystérésis magnétique (capteur MPU925x)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="104"/>
         <source>Luminosity(TSL2561) Logger</source>
-        <translation>Enregistreur de luminosité (TSL2561)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="106"/>
         <source>General Purpose I2C Sensors</source>
-        <translation>Capteurs I2C d&apos;usage général</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="369"/>
