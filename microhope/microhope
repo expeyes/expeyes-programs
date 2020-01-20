@@ -1,2 +1,2 @@
 #! /bin/sh
-exec python /usr/share/microhope/mh-ide.py
+exec python3 /usr/share/microhope/mh-ide.py

@@ -31,7 +31,7 @@ Features implemented :
 """
 import wx
 import os
-import commands
+from subprocess import Popen, PIPE
 import time
 import serial
 import gettext
@@ -134,8 +134,7 @@ class microhope(wx.Frame):
 		self.Bind(wx.EVT_MENU,self.Delete,id = 20)
 		#view-menu #
 		viewmenu = wx.Menu()
-		self.statusbaritem = wx.MenuItem(viewmenu, 22,_("&Statusbar"),_("Show or hide the statusbar in the current window"))
-		self.statusbaritem.SetCheckable(True)
+		self.statusbaritem = wx.MenuItem(viewmenu, 22,_("&Statusbar"),_("Show or hide the statusbar in the current window"), kind=wx.ITEM_CHECK)
 		viewmenu.AppendItem(self.statusbaritem)
 		self.statusbaritem.Check()
 		wx.EVT_MENU(self, 22, self.toggle_statusbar)
@@ -450,8 +449,10 @@ class microhope(wx.Frame):
 		self.fd = self.dname+"/"+self.fname
 		self.fname_witout_extn = self.dname+"/"+os.path.splitext(self.fname)[0]
 		command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s  %s' %(self.fname_witout_extn,self.fd)
-		
-		self.result = commands.getstatusoutput(command)
+
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		
 		if self.result[0] != 0:
 			self.show_err(_('Compilation Error :\n')+self.result[1])
@@ -461,15 +462,20 @@ class microhope(wx.Frame):
 		
 		command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(self.fname_witout_extn,self.fname_witout_extn) 
 		
-		self.result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		self.show(_('Compilation Done'))
 		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
+		
 	def mhupload(self,event):
 		if self.mhdevice == '':
 			self.warning(_('Device not selected\nPlease select a device'))
 			self.devce = []
 			self.command = "ls /dev/ttyUSB*"
-			self.result = commands.getstatusoutput(self.command)
+			process=Popen(command, shell=True, stdout=PIPE)
+			_, out = process.communicate()
+			self.result = process.returncode, out
 			if self.result[0] == 0:
 				self.devce += self.result[1].split('\n')
 			if self.devce == []:
@@ -478,7 +484,9 @@ class microhope(wx.Frame):
 				self.mhdevice = self.command.split(" ")[1]
 
 			self.command = 		"ls /dev/ttyACM*"
-			self.result = commands.getstatusoutput(self.command)
+			process=Popen(command, shell=True, stdout=PIPE)
+			_, out = process.communicate()
+			self.result = process.returncode, out
 			if self.result[0] == 0:
 				self.devce += self.result[1].split('\n')
 			if self.devce == []:
@@ -490,7 +498,9 @@ class microhope(wx.Frame):
 		self.fname_witout_extn = self.dname +"/"+self.fname_witout_extn
 		
 		command= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(self.mhdevice, self.fname_witout_extn)
-		result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		result = process.returncode, out
 		if result[0] != 0:
 			self.warning(_('Upload Error:\n')+result[1]+_('\nTry pressing microHOPE Reset button just before Uploading'))
 			self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
@@ -537,7 +547,9 @@ class microhope(wx.Frame):
 		self.fname_witout_extn = self.dname+"/"+os.path.splitext(self.fname)[0]
 		command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s %s' %(self.fname_witout_extn,self.fd)
 		
-		self.result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		
 		if self.result[0] != 0:
 			self.show(_('Assembler Error :\n')+self.result[1])
@@ -547,22 +559,30 @@ class microhope(wx.Frame):
 		
 		command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(self.fname_witout_extn,self.fname_witout_extn) 
 		
-		self.result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		command = 'avr-objdump -S %s > %s.lst'%(self.fname_witout_extn,self.fname_witout_extn)
-		self.result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		self.show(_('Assembing Done'))
 		self.SetTitle(_("uHOPE :: File --> ")+self.dname+"/"+self.fname+_("\t\tDevice -->")+self.mhdevice)
 	def set_mhbootloader(self,event):
 		self.SetTitle(_("Setting up MicroHOPE bootloader via USBASP....."))
 		self.show(_("Setting up MicroHOPE bootloader via USBASP.... \nIt will take few seconds"))
 		self.command = 'avrdude -B10 -c usbasp -patmega32 -U flash:w:/usr/share/microhope/firmware/Bootloader_atmega32.hex'
-		self.result = commands.getstatusoutput(self.command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		if self.result[0] != 0 :
 			self.show(_('Error: Check Connections....'))
 			
 			return 
 		self.command = 'avrdude -B10 -c usbasp -patmega32 -U lfuse:w:0xff:m -U hfuse:w:0xda:m'
-		self.result = commands.getstatusoutput(self.command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		if self.result[0] != 0:
 			self.show(_('Error: Setting up fuses'))
 			
@@ -573,7 +593,9 @@ class microhope(wx.Frame):
 		self.show(_("Uploading through USBASP ...."))
 		self.fname_witout_extn = self.dname+"/"+os.path.splitext(self.fname)[0]
 		self.command ="avrdude -c usbasp -patmega32 -U flash:w:%s.hex"%(self.fname_witout_extn)
-		self.result = commands.getstatusoutput(self.command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		self.result = process.returncode, out
 		if self.result[0] != 0:
 			self.show(_("Check connections of USBASP"))
 			
@@ -584,12 +606,16 @@ class microhope(wx.Frame):
 
 	def detect(self,event):
 		command = "ls /dev/ttyUSB*"
-		result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		result = process.returncode, out
 		devc = []
 		if result[0] == 0:
 			devc = result[1].split('\n')
 		command = "ls /dev/ttyACM*"	
-		result = commands.getstatusoutput(command)
+		process=Popen(command, shell=True, stdout=PIPE)
+		_, out = process.communicate()
+		result = process.returncode, out
 		
 		if result[0] == 0:
 			devc = result[1].split('\n')
