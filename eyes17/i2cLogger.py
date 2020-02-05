@@ -13,10 +13,13 @@ else:
 	from PyQt4 import QtGui, QtCore
 	from PyQt4 import QtGui as QtWidgets
 
-import time, utils, math, os.path, struct
+import time, math, os.path, struct
+import utils
+
 from collections import OrderedDict
 
 from layouts import ui_dio_sensor,ui_dio_control,ui_dio_robot
+from layouts.advancedLoggerTools import LOGGER
 
 from layouts.gauge import Gauge
 import functools
@@ -525,7 +528,7 @@ class DIOROBOT(QtWidgets.QDialog,ui_dio_robot.Ui_Dialog):
 
 
 ########### I2C : SENSOR AND CONTROL LAYOUTS ##################
-
+'''
 
 class LOGGER:	
 	def __init__(self,I2C):
@@ -645,15 +648,9 @@ class LOGGER:
 		self.I2CReadBulk = I2C.readBulk
 		self.I2CScan = I2C.scan
 
-	'''
-	def I2CScan(self):
-	def I2CWriteBulk(self,address,bytestream): 
-	def I2CReadBulk(self,address,register,total): 
-	'''
+
 	class KalmanFilter(object):
-		'''
-		Credits:http://scottlobdell.me/2014/08/kalman-filtering-python-reading-sensor-input/
-		'''
+		#Credits:http://scottlobdell.me/2014/08/kalman-filtering-python-reading-sensor-input/
 		def __init__(self, var, est,initial_values): #var = process variance. est = estimated measurement var
 			self.var = np.array(var)
 			self.est = np.array(est)
@@ -710,14 +707,14 @@ class LOGGER:
 			return [(b[x*2+1]<<8)|b[x*2] for x in range(3)] #X,Y,Z
 
 	def MPU6050_all(self,disableKalman=False):
-		'''
-		returns a 7 element list. Ax,Ay,Az,T,Gx,Gy,Gz
-		returns None if communication timed out with I2C sensor
-		disableKalman can be set to True if Kalman was previously enabled.
-		'''
+		#returns a 7 element list. Ax,Ay,Az,T,Gx,Gy,Gz
+		#returns None if communication timed out with I2C sensor
+		#disableKalman can be set to True if Kalman was previously enabled.
+
 		b = self.I2CReadBulk(0x68, 0x3B ,14)
-		if b is None:return None
+		if not b:return None
 		if None not in b:
+			if len(b)!=14:return None
 			if (not self.MPU6050_kalman) or disableKalman:
 				return [ np.int16((b[x*2]<<8)|b[x*2+1]) for x in range(7) ] #Ax,Ay,Az, Temp, Gx, Gy,Gz
 			else:
@@ -735,7 +732,7 @@ class LOGGER:
 	_BMP280_PRESSURE_MAX_HPA = 1600
 	_BMP280_sea_level_pressure = 1013.25 #for calibration.. from circuitpython library
 	def BMP280_init(self):
-		b = self.I2CReadBulk(self.BMP280_ADDRESS, 0xD0 ,1)
+		b = self.I2CReadBulk(0, 0xD0 ,1)
 		if b is None:return None
 		b = b[0]
 		if b in [0x58,0x56,0x57]:
@@ -746,6 +743,7 @@ class LOGGER:
 			print('ID unknown',b)
 		# get calibration data
 		b = self.I2CReadBulk(self.BMP280_ADDRESS, 0x88 ,24) #24 bytes containing calibration data
+		print(b)
 		coeff = list(struct.unpack('<HhhHhhhhhhhh', bytes(b)))
 		coeff = [float(i) for i in coeff]
 		self._BMP280_temp_calib = coeff[:3]
@@ -910,10 +908,9 @@ class LOGGER:
 		self.I2CWriteBulk(0x39,[0x80 | 0x01, gain|timing]) #Timing register 0x01. gain[1x,16x] | timing[13mS,100mS,400mS]
 
 	def TSL2561_all(self):
-		'''
-		returns a 2 element list. total,IR
-		returns None if communication timed out with I2C sensor
-		'''
+		#returns a 2 element list. total,IR
+		#returns None if communication timed out with I2C sensor
+
 		b = self.I2CReadBulk(0x39,0x80 | 0x20 | 0x0C ,4)
 		if b is None:return None
 		if None not in b:
@@ -923,9 +920,8 @@ class LOGGER:
 		pass
 
 	def MLX90614_all(self):
-		'''
-		return a single element list.  None if failed
-		'''
+		#return a single element list.  None if failed
+
 		vals = self.I2CReadBulk(0x5A, 0x07 ,3)
 		if vals is None:return None
 		if vals:
@@ -940,9 +936,7 @@ class LOGGER:
 		pass
 
 	def MCP4725_set(self,val):
-		'''
-		Set the DAC value. 0 - 4095
-		'''
+		#Set the DAC value. 0 - 4095
 		self.I2CWriteBulk(0x62, [0x40,(val>>4)&0xFF,(val&0xF)<<4])
 
 	####################### HMC5883L MAGNETOMETER ###############
@@ -1010,10 +1004,8 @@ class LOGGER:
 	CH0_OFF_H = 0x9		#channel0 output and brightness control byte 3
 	CHAN_WIDTH = 4
 	def PCA9685_set(self,chan,angle):
-		'''
-		chan: 1-16
-		Set the servo angle for SG90: angle(0 - 180)
-		'''
+		#chan: 1-16
+		#Set the servo angle for SG90: angle(0 - 180)
 		Min = 180
 		Max = 650
 		val = int((( Max-Min ) * ( angle/180. ))+Min)
@@ -1023,7 +1015,7 @@ class LOGGER:
 		self.I2CWriteBulk(self.PCA9685_address, [self.CH0_OFF_L + self.CHAN_WIDTH * (chan - 1),val&0xFF]) #Turn off after val width 0-4095
 		self.I2CWriteBulk(self.PCA9685_address, [self.CH0_OFF_H + self.CHAN_WIDTH * (chan - 1),(val>>8)&0xFF])
 
-
+'''
 
 
 class Expt(QtWidgets.QWidget):
@@ -1061,7 +1053,9 @@ class Expt(QtWidgets.QWidget):
 		for a in self.sensorList:
 			if a[0].isVisible():
 				if a[0].currentPage == 0 or a[0].isPaused == 0: #If on logger page(1) , pause button should be unchecked
-					a[0].setValue(a[0].read())
+					v = a[0].read()
+					if v is not None:
+						a[0].setValue(v)
 
 
 

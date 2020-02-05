@@ -1,5 +1,6 @@
 #from __future__ import print_function
-import os, sys, time, utils, inspect, os.path
+import os, sys, time, inspect, os.path
+import utils
 
 from QtVersion import *
 

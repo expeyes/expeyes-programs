@@ -14,7 +14,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot, i2cLogger, tof
+	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
@@ -96,7 +96,8 @@ mechanicsExpts = [
 
 otherExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('6.5','pt100')],
-[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger']
+[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger'],
+[QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), 'advanced_logger']
 ]
 
 modulesI2C = [ 
@@ -239,7 +240,7 @@ class MainWindow(QMainWindow):
 		self._x = 100
 		self._y = 10
 		palette = QPalette()								# background color
-		palette.setColor(QPalette.Background, QColor(61,168,165)) #("#99ccff")) "#88bbcc"
+		palette.setColor(QPalette.Background, QColor(81,188,185)) #("#99ccff")) "#88bbcc"
 		self.setPalette(palette)	
 
 		self.helpCB = QCheckBox(self.tr('Enable PopUp Help Window'))
@@ -305,8 +306,12 @@ class MainWindow(QMainWindow):
 			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
-			self.expName = e[1]
-			self.hlpName = e[1]
+			if type(e[1]) == 'string':
+				self.expName = e[1]
+				self.hlpName = e[1]
+			else: #tuple. select first
+				self.expName = e[1][1]
+				self.hlpName = e[1][1]
 			self.title = e[0]
 			self.showHelp()
 		except Exception as err:
@@ -412,15 +417,23 @@ class MainWindow(QMainWindow):
 			return
 
 	def reconnect(self):
-		global p
+		global p,eyes
 		try:
 			p.H.disconnect()
 		except:
 			pass
 		p=eyes.open()
+		if self.expWidget is None:
+			explib = importlib.import_module('scope')
+			self.expWidget = explib.Expt(p) 
+			self.setCentralWidget(self.expWidget)
+			self.setWindowTitle(self.tr('Oscilloscope'))
+			self.expName = 'scope'
+
 		self.expWidget.p = p
 		self.expWidget.msg('')
 		if p != None: 
+			print('recovering...',self.expName)
 			if self.expName == 'scope':
 				self.expWidget.recover()
 		
@@ -447,28 +460,31 @@ class MainWindow(QMainWindow):
 		self.uncheckHelpBox.emit()
 		return t,t1
 
+def run():
+	# Program starts here
+	global app,p,eyes
+	import eyes17.eyes as eyes
+	p = eyes.open()
+	if p != None: 
+		p.set_sine(1000)
+		p.set_sqr1(-1)
+		p.set_pv1(0)
+		p.set_pv2(0)
+		p.set_state(OD1=0)
 
-# Program starts here
-import eyes17.eyes as eyes
-p = eyes.open()
-if p != None: 
-	p.set_sine(1000)
-	p.set_sqr1(-1)
-	p.set_pv1(0)
-	p.set_pv2(0)
-	p.set_state(OD1=0)
+	app = QApplication(sys.argv)
+	# translation stuff
+	lang=QLocale.system().name()
+	t=QTranslator()
+	t.load("lang/"+lang, os.path.dirname(__file__))
+	app.installTranslator(t)
+	t1=QTranslator()
+	t1.load("qt_"+lang,
+		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+	app.installTranslator(t1)
 
-app = QApplication(sys.argv)
+	mw = MainWindow(lang)
+	sys.exit(app.exec_())
 
-# translation stuff
-lang=QLocale.system().name()
-t=QTranslator()
-t.load("lang/"+lang, os.path.dirname(__file__))
-app.installTranslator(t)
-t1=QTranslator()
-t1.load("qt_"+lang,
-	QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-app.installTranslator(t1)
-
-mw = MainWindow(lang)
-sys.exit(app.exec_())
+if __name__ == '__main__':
+	run()

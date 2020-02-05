@@ -209,7 +209,7 @@
     <message>
         <location filename="../XYplot.py" line="194"/>
         <source> Hz</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> Hz</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="38"/>
@@ -741,7 +741,7 @@ For Driven Pendulum Expt.</source>
     <message>
         <location filename="../soundVelocity.py" line="88"/>
         <source>Timebase</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ടൈംബേസ്</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="93"/>
@@ -806,7 +806,7 @@ For Driven Pendulum Expt.</source>
     <message>
         <location filename="../XYplot.py" line="81"/>
         <source>WG</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">WG</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="156"/>
@@ -969,7 +969,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="181"/>
+        <location filename="../scope.py" line="180"/>
         <source>Device Reconnected</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1001,7 +1001,7 @@ For Driven Pendulum Expt.</source>
     <message>
         <location filename="../scope.py" line="282"/>
         <source>%s:%6.2fV </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%s:%6.2fV </translation>
     </message>
     <message>
         <location filename="../scope.py" line="338"/>
@@ -1081,7 +1081,7 @@ For Driven Pendulum Expt.</source>
     <message>
         <location filename="../soundBeats.py" line="90"/>
         <source>SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">SQ1</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="102"/>
@@ -1209,7 +1209,7 @@ shows the actual frequency set.
     <message>
         <location filename="../sr04dist.py" line="90"/>
         <source>Fourier Transform</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ഫോറിയർ ട്രാൻസ്ഫോം</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="159"/>
@@ -1397,7 +1397,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="631"/>
         <source> Volts</source>
-        <translation> Volts</translation>
+        <translation> വോൾട്</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="510"/>
@@ -1407,8 +1407,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="599"/>
         <source>symmetric</source>
-        <translatorcomment>Do not translate</translatorcomment>
-        <translation></translation>
+        <translation>symmetric</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="612"/>
@@ -1418,8 +1417,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="583"/>
         <source>symmetric volts</source>
-        <translatorcomment>do not translate</translatorcomment>
-        <translation></translation>
+        <translation>symmetric volts</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="661"/>

@@ -1,9 +1,10 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
 
 from QtVersion import *
 
-import sys, time, utils, math
+import sys, time, math
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em

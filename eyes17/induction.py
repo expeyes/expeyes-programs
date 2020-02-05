@@ -1,4 +1,5 @@
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
 
 from QtVersion import *
 

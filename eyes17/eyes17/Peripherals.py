@@ -48,7 +48,8 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_INIT)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def enable_smbus(self):
 		try:
@@ -56,7 +57,8 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_ENABLE_SMBUS)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def pullSCLLow(self,uS):
 		"""
@@ -78,7 +80,8 @@ class I2C():
 			self.H.__sendInt__(uS)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		 
 	def config(self,freq,verbose=True):
 		"""
@@ -103,7 +106,8 @@ class I2C():
 			self.H.__sendInt__(BRGVAL) 
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def start(self,address,rw):
 		"""
@@ -126,7 +130,8 @@ class I2C():
 			self.H.__sendByte__(((address<<1)|rw)&0xFF) # address
 			return self.H.__get_ack__()>>4
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def stop(self):
 		"""
@@ -139,7 +144,8 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_STOP)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def wait(self):
 		"""
@@ -152,7 +158,8 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_WAIT)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def send(self,data):
 		"""
@@ -176,7 +183,8 @@ class I2C():
 			self.H.__sendByte__(data)        #data byte
 			return self.H.__get_ack__()>>4
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		
 	def send_burst(self,data):
 		"""
@@ -200,7 +208,8 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_SEND_BURST)
 			self.H.__sendByte__(data)        #data byte
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def restart(self,address,rw):
 		"""
@@ -223,7 +232,7 @@ class I2C():
 			self.H.__sendByte__(CP.I2C_RESTART)
 			self.H.__sendByte__(((address<<1)|rw)&0xFF) # address
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
 		return self.H.__get_ack__()>>4
 
 	def simpleRead(self,addr,numbytes):
@@ -268,7 +277,8 @@ class I2C():
 			data.append(self.H.__getByte__())
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		return data
 
 	def read_repeat(self):
@@ -278,7 +288,8 @@ class I2C():
 			val=self.H.__getByte__()
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		return val
 
 	def read_end(self):
@@ -288,7 +299,8 @@ class I2C():
 			val=self.H.__getByte__()
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		return val
 
 
@@ -299,7 +311,8 @@ class I2C():
 			val=self.H.__getInt__()
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		return val
 
 	def readBulk(self,device_address,register_address,bytes_to_read):
@@ -323,7 +336,8 @@ class I2C():
 				print ('Transaction failed',str(e))
 				return False
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 		
 	def writeBulk(self,device_address,bytestream):
 		"""
@@ -347,7 +361,8 @@ class I2C():
 				self.H.__sendByte__(a)
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return False
 
 	def scan(self,frequency = 200000,verbose=False):
 		"""

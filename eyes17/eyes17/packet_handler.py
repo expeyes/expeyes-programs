@@ -85,8 +85,9 @@ class Handler():
 		
 		fd = serial.Serial(portname, 9600, stopbits=1, timeout = 0.02)
 		fd.read(100);fd.close()
-		fd = serial.Serial(portname, self.BAUD, stopbits=1, timeout = 1.0)
-		fd.write_timeout = 0.1
+		fd = serial.Serial(portname, self.BAUD, stopbits=1, timeout = 1.0,writeTimeout = 0)
+
+		self.cleanup_buffer(fd)
 		if(fd.inWaiting()):
 			fd.setTimeout(0.1)
 			fd.read(1000)
@@ -132,7 +133,7 @@ class Handler():
 		fd.write(CP.COMMON)
 		fd.write(CP.GET_VERSION)
 		x=fd.readline()
-		#print('remaining',[ord(a) for a in fd.read(10)])
+		#print('remaining',[ord(a) for a in x+fd.read(10)])
 		if len(x)>2:#remove newline character
 			x=x[:-1]
 		self.status = 0#ord(x[-1]) #last byte represents included features such as NRF, HX711 etc
@@ -167,9 +168,24 @@ class Handler():
 			self.inputQueueSize+=1
 			return 1
 		try:
-			return CP.Byte.unpack(x)[0]
+			val = CP.Byte.unpack(x)[0]
+			if val&0x3!= 1: #Success = 1, err = 2
+				self.cleanup_buffer()
+				return 0
+			else:
+				return int(val)
 		except:
-			return 3
+			self.cleanup_buffer()
+			return 0
+
+	def cleanup_buffer(self,fd=None):
+		if fd is None: fd = self.fd
+		if(fd.in_waiting):
+			fd.reset_input_buffer()
+			fd.timeout=0.1
+			fd.read(1000)
+			fd.flush()
+			fd.timeout=1.0
 
 	def __sendInt__(self,val):
 		"""

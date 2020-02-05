@@ -1,4 +1,3 @@
-sudo apt-get install qt4-linguist-tools
 sudo apt install qttools5-dev-tools
 language-pack-fr-base qt5-qmake
 

@@ -3,21 +3,23 @@ import sys, time, math, os.path
 
 from QtVersion import *
 
-import sys, time, utils
+import sys, time
+import utils
 import pyqtgraph as pg
 import numpy as np
 import eyes17.eyemath17 as em
 from functools import partial
 
+from layouts import ui_scope_layout
 
-class Expt(QWidget):
+class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 	TIMER = 50
 	loopCounter = 0
 	AWGmin = 1
 	AWGmax = 5000
 	AWGval = 1000
 	SQ1min = 0
-	SQ1max = 5000
+	SQ1max = 50000
 	SQ1val = 0
 	PV1min = -5.0
 	PV1max = 5.0
@@ -25,10 +27,6 @@ class Expt(QWidget):
 	PV2min = -3.3
 	PV2max = 3.3
 	PV2val = 0.0
-	Waves = ['sine', 'tria', 'SQR2']
-	Wgains = ['80 mV', '1V', '3V']
-	waveindex = 0
-	wgainindex = 2
 	
 	RPVspacing = 3											# Right panel Widget spacing
 	RPWIDTH = 300
@@ -52,7 +50,6 @@ class Expt(QWidget):
 	chanSelCB   = [None]*4
 	rangeSelPB  = [None]*4
 	fitSelCB    = [None]*4
-	fitResLab   = [None]*4
 	fitFlags    = [0]*4
 	Amplitude   = [0]*4
 	Frequency   = [0]*4
@@ -64,7 +61,7 @@ class Expt(QWidget):
 	voltMeterCB = [None]*3
 	valueLabel = None
 	
-	sources = ['A1','A2','A3', 'MIC']	
+	sources = ['A1','A2','A3', 'MIC','SEN','IN1','AN8']
 
 	tbvals = [0.100, 0.200, 0.500, 1.0, 2.0, 5.0, 10.0, 20.0, 50.0]	# allowed mS/div values
 	NP = 500			# Number of samples
@@ -80,13 +77,97 @@ class Expt(QWidget):
 	resLabs     = [None]*MAXRES
 	Results     = [None]*MAXRES
 
+	Wgains = ['80 mV','1V','3V']
+	wgainindex = 2
+
+	Waves = ['sine', 'tria', 'SQR2']
+	waveindex = 0
+	voltmeter=None
+	def __init__(self, device=None):
+		super(Expt, self).__init__()
+		self.setupUi(self)
+		try:
+			self.setStyleSheet(open(os.path.join(os.path.dirname(__file__),"layouts/style.qss"), "r").read())
+		except Exception as e:
+			print('stylesheet missing. ',e)
+		self.resultCols = utils.makeResultColors()
+		self.traceCols = utils.makeTraceColors()
+		self.htmlColors = utils.makeHtmlColors()
+		self.p = device						# connection to the device hardware 
+			
+		self.chanStatus = [1,0,0,0]			# PyQt problem. chanStatus somehow getting preserved ???		
+
+		self.offSliders = [self.slider1,self.slider2,self.slider3,self.slider4]
+		for ch in range(self.MAXCHAN):
+			self.offSliders[ch].valueChanged.connect(partial (self.set_offset,ch))
+			self.offSliders[ch].setStyleSheet('''QSlider::handle:vertical{background: %s;};'''%(self.htmlColors[ch]))
+		self.pwin.proxy = pg.SignalProxy(self.pwin.scene().sigMouseMoved, rateLimit=60, slot=self.updateTV)				
+		self.pwin.showGrid(x=True, y=True)						# with grid
+		
+		
+		for k in range(self.MAXCHAN):							# pg textItem to show the voltage scales
+			self.scaleLabs[k] = pg.TextItem(text='')
+
+		for k in range(self.MAXRES):						# pg textItem to show the Results
+			self.resLabs[k] = pg.TextItem()
+			self.pwin.addItem(self.resLabs[k])
+		
+		vLine = pg.InfiniteLine(angle=90, movable=False, pen = 'w')
+		self.pwin.addItem(vLine, ignoreBounds=True)
+		self.pwin.vLine=vLine
+		self.pwin.vLine.setPos(-1)
+		
+		ax = self.pwin.getAxis('bottom')
+		ax.setLabel(self.tr('Time (mS)'))	
+		ax = self.pwin.getAxis('left')
+		ax.setStyle(showValues=False)
+		ax.setLabel(self.tr('Voltage'))
+		
+		self.set_timebase(self.TBval)
+		self.pwin.disableAutoRange()
+		self.pwin.setXRange(0, self.tbvals[self.TBval]*10)
+		self.pwin.setYRange(-16, 16)
+		self.pwin.hideButtons()									# Do not show the 'A' button of pg
+
+		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
+			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
+		self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = self.traceCols[-1])
+
+		self.CAP.clicked.connect(self.measure_cap)
+
+		self.FREQ.clicked.connect(self.measure_freq)
+
+		self.OD1.stateChanged.connect(self.control_od1)
+		self.CCS.stateChanged.connect(self.control_ccs)
 		
 
+		
+		self.chanSelCB = [self.A1Box,self.A2Box,self.A3Box,self.MICBox]
+		self.rangeSelPB = [self.A1Range,self.A2Range,self.A3Range,self.MICRange]
+		self.fitSelCB = [self.A1Fit,self.A2Fit,self.A3Fit,self.MICFit]
+		self.voltMeterCB = [self.voltMeterCB1,self.voltMeterCB2,self.voltMeterCB3]
+		for ch in range(4):
+			self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
+			self.chanSelCB[ch].setStyleSheet('''border: 1px solid %s;'''%(self.htmlColors[ch])) #<font color="%s">
+			
+			self.rangeSelPB[ch].currentIndexChanged['int'].connect(partial(self.select_range,ch))
+
+		self.chanSelCB[0].setChecked(True)
+
+		self.trigBox.addItems(self.sources)
+		self.A1Map.addItems(self.sources)
+		self.recover()
+		self.timer = QTimer()
+		self.timer.timeout.connect(self.update)
+		self.timer.start(self.TIMER)
+
+
 	def recover(self):		# Recover the settings before it got disconnected
+		self.msgwin.setText('<font color="green">' + self.tr('Reconnecting...'))
 		try:
 			self.control_od1()
-			self.pv1_text('0')
-			self.pv2_text('0')
+			self.pv1_text()
+			self.pv2_text()
 			self.p.set_sqr1(self.SQ1val, self.dutyCycle)
 			self.select_wave(self.waveindex)
 			self.p.set_wave(self.AWGval)
@@ -94,32 +175,97 @@ class Expt(QWidget):
 			self.set_trigger(self.Triglevel*1000)
 			self.p.set_sine(self.AWGval)
 			self.p.configure_trigger(0, 'A1', 0)
-			self.select_range((0,2))
-			self.select_range((1,2))
-			self.select_range((2,0))
-			self.select_range((3,0))
-		except:
-			pass
+			#self.select_range((0,2))
+			#self.select_range((1,2))
+			#self.select_range((2,0))
+			#self.select_range((3,0))
+			self.msgwin.setText('<font color="green">' + self.tr('Device Reconnected'))
+			if self.p.version_number >= 5.0:
+				self.pcsFrame.show()
+				self.CCS.hide()
+			else:
+				self.pcsFrame.hide()
+				self.CCS.show()
+
+			if self.voltmeter is not None:
+				self.voltmeter.reconnect(self.p)
+			else:
+				from layouts.oscilloscope_widget import DIOINPUT
+				try:
+					self.voltmeter = DIOINPUT(self,self.p,confirmValues = None)
+				except Exception as e:
+					print('device not found',e)
+			for a,b in zip([self.WGLabel,self.SQ1Label,self.PV1Label,self.PV2Label],['WG','SQ1','PV1','PV2']):
+				a.clicked.connect(partial(self.voltmeter.launch,b))
+
+
+		except Exception as e:
+			self.msgwin.setText('<font color="red">' + self.tr('Error. Could not connect. Check cable. ') + str(e))
 		
+
+	def show_fft(self):
+		for ch in range(4):
+			if self.chanStatus[ch] == 1:
+				try:	
+					fa = em.fit_sine(self.timeData[ch],self.voltData[ch])
+				except Exception as err:
+					print('fit_sine error:', err)
+					fa=None
+				if fa != None:
+					fr = fa[1][1]*1000			# frequency in Hz
+					dt = int(1.e6/ (20 * fr))	# dt in usecs, 20 samples per cycle
+					try:
+						t,v = self.p.capture1(self.sources[ch], 3000, dt)
+					except:
+						self.comerr()
+
+					xa,ya = em.fft(v,dt)
+					xa *= 1000
+					peak = self.peak_index(xa,ya)
+					ypos = np.max(ya)
+					pop = pg.plot(xa,ya, pen = self.traceCols[ch])
+					pop.showGrid(x=True, y=True)
+					txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+					txt.setPos(peak, ypos)
+					pop.addItem(txt)
+					pop.setWindowTitle(self.tr('Frequency Spectrum'))
+				else:
+					self.msg(self.tr('FFT Error'))
+						
+						
+	def peak_index(self, xa, ya):
+		peak = 0
+		peak_index = 0
+		for k in range(2,len(ya)):
+			if ya[k] > peak:
+				peak = ya[k]
+				peak_index = xa[k]
+		return peak_index
+		
+	def save_data(self):
+		self.timer.stop()
+		fn = QFileDialog.getSaveFileName()
+		if fn != '':
+			dat = []
+			for ch in range(4):
+				if self.chanStatus[ch] == 1:
+					dat.append( [self.timeData[ch], self.voltData[ch] ])
+			self.p.save(dat,fn)
+			ss = unicode(fn)
+			self.msg(self.tr('Traces saved to ') + ss)
+		self.timer.start(self.TIMER)
+
+	def set_offset(self, ch):
+		self.offValues[ch] = self.offSliders[ch].value()
+
 	def cross_hair(self):
 		if self.Cross.isChecked() == False:
 			self.pwin.vLine.setPos(-1)
-			self.pwin.hLine.setPos(-17)
 
-	def updateTV(self, evt):
-		if self.p == None: return
-		pos = evt[0]  			## using signal proxy turns original arguments into a tuple
-		if self.pwin.sceneBoundingRect().contains(pos):
-			mousePoint = self.pwin.vb.mapSceneToView(pos)
-			xval = mousePoint.x()
 
-			if self.Cross.isChecked() == True:
-				self.pwin.vLine.setPos(mousePoint.x())
-				self.pwin.hLine.setPos(mousePoint.y())
-
+	def showVoltagesAtCursor(self,xval):
 			for k in range(self.MAXRES):
 				self.pwin.removeItem(self.resLabs[k])
-			
 			t = self.timeData[0]
 			index = 0
 			for k in range(len(t)-1):		# find out Time at the cursor position
@@ -140,319 +286,35 @@ class Expt(QWidget):
 					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
 
+	def updateTV(self, evt):
+		if self.p == None: return
+		if self.Cross.isChecked() == False:
+			self.pwin.vLine.setPos(-1)
+			return
+		pos = evt[0]  			## using signal proxy turns original arguments into a tuple
+		if self.pwin.sceneBoundingRect().contains(pos):
+			mousePoint = self.pwin.plotItem.vb.mapSceneToView(pos)
+			xval = mousePoint.x()
+			self.pwin.vLine.setPos(mousePoint.x())
+			self.showVoltagesAtCursor(xval)
+
 			
-	def set_offset(self, ch):
-		self.offValues[ch] = self.offSliders[ch].value()
 		
-	def __init__(self, device=None):
-		QWidget.__init__(self)
 		
-		self.resultCols = utils.makeResultColors()
-		self.traceCols = utils.makeTraceColors()
-		self.htmlColors = utils.makeHtmlColors()
-		self.p = device						# connection to the device hardware 
-			
-		self.chanStatus = [1,0,0,0]			# PyQt problem. chanStatus somehow getting preserved ???		
-
-		left = QVBoxLayout()				# right side vertical layout
-		for ch in range(self.MAXCHAN):
-			self.offSliders[ch] = utils.sliderVert(-4, 4, 0, 40, None)
-			left.addWidget(self.offSliders[ch])
-			self.offSliders[ch].valueChanged.connect(partial (self.set_offset,ch))
-			self.offSliders[ch].setStyleSheet("border: 1px solid %s;"%self.htmlColors[ch])
-		
-
-		win = pg.GraphicsWindow()
-		self.pwin = win.addPlot()
-		self.pwin.proxy = pg.SignalProxy(self.pwin.scene().sigMouseMoved, rateLimit=60, slot=self.updateTV)				
-		self.pwin.showGrid(x=True, y=True)						# with grid
-		
-
-		for k in range(self.MAXCHAN):							# pg textItem to show the voltage scales
-			self.scaleLabs[k] = pg.TextItem(text='')
-
-		for k in range(self.MAXRES):						# pg textItem to show the Results
-			self.resLabs[k] = pg.TextItem()
-			self.pwin.addItem(self.resLabs[k])
-		
-		vLine = pg.InfiniteLine(angle=90, movable=False, pen = 'w')
-		self.pwin.addItem(vLine, ignoreBounds=True)
-		self.pwin.vLine=vLine
-		self.pwin.vLine.setPos(-1)
-		hLine = pg.InfiniteLine(angle=0, movable=False, pen = 'w')
-		self.pwin.addItem(hLine, ignoreBounds=True)
-		self.pwin.hLine=hLine
-		self.pwin.hLine.setPos(-17)
-		
-		ax = self.pwin.getAxis('bottom')
-		ax.setLabel(self.tr('Time (mS)'))	
-		ax = self.pwin.getAxis('left')
-		ax.setStyle(showValues=False)
-		ax.setLabel(self.tr('Voltage'))
-		
-		self.set_timebase(self.TBval)
-		self.pwin.disableAutoRange()
-		self.pwin.setXRange(0, self.tbvals[self.TBval]*10)
-		self.pwin.setYRange(-16, 16)
-		self.pwin.hideButtons()									# Do not show the 'A' button of pg
-
-		for ch in range(self.MAXCHAN):							# initialize the pg trace widgets
-			self.traceWidget[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
-		self.diffTraceW = self.pwin.plot([0,0],[0,0], pen = self.traceCols[-1])
-
-		right = QVBoxLayout()							# right side vertical layout
-		right.setAlignment(Qt.AlignTop)
-		right.setSpacing(self.RPVspacing)		
-
-		l = QLabel(text= '<font color="red">' +self.tr('DC Voltages at A1, A2 and A3'))
-		l.setMinimumWidth(self.RPWIDTH)
-		right.addWidget(l)
-
-		H = QHBoxLayout()
-		for k in range(3):
-			H.setAlignment(Qt.AlignLeft)
-			self.voltMeterCB[k] = QCheckBox(self.tr(self.sources[k]))
-			H.addWidget(self.voltMeterCB[k])
-			self.voltMeters[k] = QLabel()
-			self.voltMeters[k].setMinimumWidth(50)
-			H.addWidget(self.voltMeters[k])
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('Resistance on SEN = '))
-		H.addWidget(l)
-		self.RES = QLabel()
-		H.addWidget(self.RES)
-		right.addLayout(H)
-		
-		H = QHBoxLayout()
-		b = QPushButton(self.tr("Click for Capacitance on IN1"))
-		b.setMinimumWidth(200)
-		H.addWidget(b)
-		b.clicked.connect(self.measure_cap)
-		self.CAP = QLabel('')
-		H.addWidget(self.CAP)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		b = QPushButton(self.tr("Click for Frequency on IN2"))
-		b.setMinimumWidth(200)
-		H.addWidget(b)
-		b.clicked.connect(self.measure_freq)
-		self.IN2 = QLabel('')
-		H.addWidget(self.IN2)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		self.OD1 = QCheckBox(self.tr("Enable OD1"))
-		H.addWidget(self.OD1)
-		self.OD1.stateChanged.connect(self.control_od1)
-		self.CCS = QCheckBox(self.tr("Enable CCS"))
-		H.addWidget(self.CCS)
-		self.CCS.stateChanged.connect(self.control_ccs)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('WG Shape'))
-		H.addWidget(l)
-		self.Wshape = QPushButton('sine')
-		menu = QMenu()
-		for k in range(len(self.Waves)):
-			menu.addAction(self.Waves[k], lambda index=k: self.select_wave(index))
-		self.Wshape.setMenu(menu)
-		H.addWidget(self.Wshape)
-
-		l = QLabel(text=self.tr('Amplitude'))
-		H.addWidget(l)
-
-		self.Wgain = QPushButton(self.Wgains[self.wgainindex])
-		menu = QMenu()
-		for k in range(len(self.Wgains)):
-			menu.addAction(self.Wgains[k], lambda index=k: self.select_wgain(index))
-		self.Wgain.setMenu(menu)
-		H.addWidget(self.Wgain)
-		right.addLayout(H)
-		
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('WG'))
-		l.setMaximumWidth(30)
-		H.addWidget(l)
-		self.AWGslider = utils.slider(self.AWGmin, self.AWGmax, self.AWGval,100,self.awg_slider)
-		H.addWidget(self.AWGslider)
-		self.AWGtext = utils.lineEdit(100, self.AWGval, 6, self.awg_text)
-		H.addWidget(self.AWGtext)
-		l = QLabel(text=self.tr('Hz'))
-		l.setMaximumWidth(40)
-		l.setMinimumWidth(40)
-		H.addWidget(l)
-		right.addLayout(H)
-		
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('SQ1'))
-		l.setMaximumWidth(30)
-		l.setMinimumWidth(30)
-		H.addWidget(l)
-		self.SQ1slider = utils.slider(self.SQ1min, self.SQ1max, self.SQ1val,100,self.sq1_slider)
-		H.addWidget(self.SQ1slider)
-		self.SQ1text = utils.lineEdit(60, self.SQ1val, 6, self.sq1_text)
-		H.addWidget(self.SQ1text)
-		l = QLabel(text=self.tr('Hz'))
-		l.setMaximumWidth(15)
-		H.addWidget(l)
-		self.SQ1DCtext = utils.lineEdit(30, 50, 6, self.sq1_dc)
-		H.addWidget(self.SQ1DCtext)
-		l = QLabel(text=self.tr('%'))
-		l.setMaximumWidth(15)
-		H.addWidget(l)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('PV1'))
-		l.setMaximumWidth(25)
-		H.addWidget(l)
-		
-		self.PV1slider = utils.slider(self.PV1min*1000, self.PV1max*1000, self.PV1val*1000,100,self.pv1_slider)
-		H.addWidget(self.PV1slider)
-		
-		self.PV1text = utils.lineEdit(100, self.PV1val, 6, self.pv1_text)
-		H.addWidget(self.PV1text)
-		l = QLabel(text=self.tr('Volt'))
-		l.setMaximumWidth(40)
-		l.setMinimumWidth(40)
-		H.addWidget(l)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('PV2'))
-		l.setMaximumWidth(25)
-		H.addWidget(l)
-
-		self.PV2slider = utils.slider(self.PV2min*1000, self.PV2max*1000, self.PV2val*1000,100,self.pv2_slider)
-		H.addWidget(self.PV2slider)
-		
-		self.PV2text = utils.lineEdit(100, self.PV2val, 6, self.pv2_text)
-		H.addWidget(self.PV2text)
-		l = QLabel(text=self.tr('Volt'))
-		l.setMaximumWidth(40)
-		l.setMinimumWidth(40)
-		H.addWidget(l)
-		right.addLayout(H)
-		
-		#--------------------------Scope Controls---------------------
-		l = QLabel('<font color="red">' +self.tr('Oscilloscope Channels, Range and Analysis '))
-		right.addWidget(l)
-
-		for ch in range(4):
-			H = QHBoxLayout()
-			H.setAlignment(Qt.AlignLeft)
-			self.chanSelCB[ch] = QCheckBox()
-			self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
-			H.addWidget(self.chanSelCB[ch])
-
-			l = QLabel(text='<font color="%s">%s'%(self.htmlColors[ch],self.sources[ch]))		
-			l.setMaximumWidth(30)
-			l.setMinimumWidth(30)
-			H.addWidget(l)
-			
-			self.rangeSelPB[ch] = QPushButton('4 V')
-			self.rangeSelPB[ch].setMaximumWidth(60)
-			menu = QMenu()
-			if ch <= 1:
-				for k in range(len(self.Ranges12)):
-					menu.addAction(self.Ranges12[k], lambda index=(ch,k): self.select_range(index))
-			else:	
-				for k in range(len(self.Ranges34)):
-					menu.addAction(self.Ranges34[k], lambda index=(ch,k): self.select_range(index))
-			self.rangeSelPB[ch].setMenu(menu)
-			H.addWidget(self.rangeSelPB[ch])
-			self.fitSelCB[ch] = QCheckBox('')
-			self.fitSelCB[ch].setMaximumWidth(30)
-			H.addWidget(self.fitSelCB[ch])
-			self.fitResLab[ch] = QLabel('') 
-			H.addWidget(self.fitResLab[ch])
-			right.addLayout(H)
-		self.chanSelCB[0].setChecked(True)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('Timebase'))
-		l.setMaximumWidth(60)
-		H.addWidget(l)
-		self.TBslider = utils.slider(0, 8, self.TBval, 180, self.set_timebase)
-		H.addWidget(self.TBslider)
-		l = QLabel(text=self.tr('mS/div'))
-		l.setMaximumWidth(60)
-		H.addWidget(l)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		l = QLabel(text=self.tr('Trigger'))
-		l.setMaximumWidth(60)
-		H.addWidget(l)
-		self.Trigslider = utils.slider(-3300, 3300, self.Triglevel, 150, self.set_trigger)
-		H.addWidget(self.Trigslider)
-		l = QLabel(text=self.tr('On'))
-		l.setMaximumWidth(30)
-		H.addWidget(l)	
-		self.Trigbutton = QPushButton(self.tr('A1'))
-		self.Trigbutton.setMaximumWidth(50)
-		menu = QMenu()
-		for k in range(len(self.sources)):
-			menu.addAction(self.sources[k], lambda index=k :self.select_trig_source(index))
-		self.Trigbutton.setMenu(menu)
-		H.addWidget(self.Trigbutton)
-		right.addLayout(H)
-
-		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Traces"))
-		#self.SaveButton.setMaximumWidth(80)
-		self.SaveButton.clicked.connect(self.save_data)		
-		H.addWidget(self.SaveButton)
-			
-		#self.Filename = utils.lineEdit(100, self.tr('scope.txt'), 20, None)
-		#H.addWidget(self.Filename)
-		
-		self.FFT = QPushButton(self.tr("Fourier Transform"))
-		#self.FFT.setMaximumWidth(50)
-		H.addWidget(self.FFT)
-		self.FFT.clicked.connect(self.show_fft)		
-	
-		right.addLayout(H)
-		
-		H = QHBoxLayout()
-		self.Cross = QCheckBox(self.tr("Cross hair"))
-		self.Cross.stateChanged.connect(self.cross_hair)
-		H.addWidget(self.Cross)
-
-		self.Freeze = QCheckBox(self.tr("Freeze"))
-		H.addWidget(self.Freeze)
-		self.Diff = QCheckBox(self.tr('A1-A2'))
-		H.addWidget(self.Diff)
-		self.Diff.stateChanged.connect(self.show_diff)
-		right.addLayout(H)
-
-		#------------------------end of right panel ----------------
-		
-		top = QHBoxLayout()
-		top.addLayout(left)
-		top.addWidget(win)# self.pwin)
-		top.addLayout(right)
-		
-		full = QVBoxLayout()
-		full.addLayout(top)
-		self.msgwin = QLabel(text=self.tr('messages'))
-		full.addWidget(self.msgwin)
-				
-		self.setLayout(full)
-		
-		self.timer = QTimer()
-		self.timer.timeout.connect(self.update)
-		self.timer.start(self.TIMER)
-
-		self.recover()
-		#----------------------------- end of init ---------------
-	
-	
 	def update(self):
+		if self.p is None:
+			return
+		if not self.p.connected:
+			self.comerr()
+			return
+		if self.voltmeter.isVisible() and self.voltmeter.type=='input' and self.voltmeter.autoRefresh:
+			try:
+				v = self.voltmeter.read()
+			except Exception as e:
+				self.comerr()
+				return
+			if v is not None:
+				self.voltmeter.setValue(v)
 		if self.Freeze.isChecked(): return
 
 		try:
@@ -460,12 +322,12 @@ class Expt(QWidget):
 				self.timeData[0], self.voltData[0],	\
 				self.timeData[1], self.voltData[1], \
 				self.timeData[2], self.voltData[2], \
-				self.timeData[3], self.voltData[3] = self.p.capture4(self.NP, self.TG)				
+				self.timeData[3], self.voltData[3] = self.p.capture4(self.NP, self.TG,str(self.A1Map.currentText()), trigger=self.trigEnable.isChecked())				
 			elif self.chanStatus[1] == 1:    	# channel 2 is selected  	
 				self.timeData[0], self.voltData[0], \
-				self.timeData[1], self.voltData[1] = self.p.capture2(self.NP, self.TG)
+				self.timeData[1], self.voltData[1] = self.p.capture2(self.NP, self.TG,str(self.A1Map.currentText()), trigger=self.trigEnable.isChecked())
 			elif self.chanStatus[0] == 1: 		# only A1 selected
-				self.timeData[0], self.voltData[0] = self.p.capture1('A1', self.NP, self.TG)
+				self.timeData[0], self.voltData[0] = self.p.capture1(str(self.A1Map.currentText()), self.NP, self.TG, trigger=self.trigEnable.isChecked())
 		except:
 			self.comerr()
 			return
@@ -489,13 +351,24 @@ class Expt(QWidget):
 						self.Frequency[ch] = fa[1][1]*1000
 						self.Phase[ch] = fa[1][2] * 180/em.pi
 						s = unicode(self.tr('%5.2f V, %5.1f Hz')) %(self.Amplitude[ch],self.Frequency[ch])
-						self.fitResLab[ch].setText(s)
+						self.fitSelCB[ch].setText(s)
 				else:
-					self.fitResLab[ch].setText('')
+					self.fitSelCB[ch].setText('')
 
 		if self.Diff.isChecked() == True and self.chanStatus[0] == 1 and self.chanStatus[1] == 1:
 			r = 16./self.rangeVals[0]
 			self.diffTraceW.setData(self.timeData[0], r*(self.voltData[0]-self.voltData[1]))
+
+		if self.Cross.isChecked():
+			self.showVoltagesAtCursor(self.pwin.vLine.x())
+		else:
+			for k in range(self.MAXRES):
+				try:self.pwin.removeItem(self.resLabs[k])
+				except: pass
+
+		###PCS Monitoring in version 5+
+		if self.p.version_number >= 5.0: #Current source monitoring
+			self.pcsVal.display(self.p.get_voltage('AN8'))
 
 		self.loopCounter += 1
 		if self.loopCounter % 5 == 0:
@@ -503,23 +376,24 @@ class Expt(QWidget):
 				if self.voltMeterCB[ch].isChecked() == True:
 					try:
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
-						self.voltMeters[ch].setText(unicode(self.tr('%5.3f V')) %(v))
 					except:
 						self.comerr()
+
+					self.voltMeterCB[ch].setText(unicode(self.tr('A%d %5.3f V')) %(ch,v))
 				else:
-					self.voltMeters[ch].setText(self.tr(''))			
+					self.voltMeterCB[ch].setText(self.tr('A%d'%ch))			
+
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-					self.RES.setText('<font color="blue">'+unicode(self.tr('%5.0f Ohm')) %(res))
+					self.RES.setText('Resistance: <font color="blue">'+unicode(self.tr('%5.0f Ohm')) %(res))
 				else:
-					self.RES.setText(self.tr('<100Ohm  or  >100k'))
+					self.RES.setText(self.tr('Resistance: <100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
 				self.p.select_range('A2', self.rangeVals[1])
 			except:
 				self.comerr()
 		# End of update
-
 
 	def show_diff(self):
 		if self.Diff.isChecked() == False:
@@ -544,9 +418,8 @@ class Expt(QWidget):
 			self.pwin.removeItem(self.traceWidget[ch])
 		self.showRange(ch)
 
-	def select_range(self,info):
-		ch = info[0]
-		index = info[1]
+	
+	def select_range(self,ch,index):
 		if ch <= 1:
 			self.rangeTexts[ch] = self.Ranges12[index]
 			self.rangeVals[ch] = self.RangeVals12[index]
@@ -558,7 +431,6 @@ class Expt(QWidget):
 		else:
 			self.rangeTexts[ch] = self.Ranges34[index]
 			self.rangeVals[ch] = self.RangeVals34[index]
-		self.rangeSelPB[ch].setText(self.rangeTexts[ch])
 		self.showRange(ch)
 		ss1 = '%s'%self.sources[ch]
 		ss2 = '%s'%self.rangeTexts[ch]
@@ -619,9 +491,10 @@ class Expt(QWidget):
 
 
 	def select_trig_source(self, index):
-		self.Trigindex = index
 		src = self.sources[self.Trigindex]
-		self.Trigbutton.setText(self.sources[self.Trigindex])
+		self.Trigindex = index
+		if index>3:
+			self.Trigindex = 0
 		try:
 			self.p.configure_trigger(self.Trigindex, self.sources[self.Trigindex], self.Triglevel)
 		except:
@@ -650,12 +523,11 @@ class Expt(QWidget):
 		for k in range(self.MAXCHAN):
 			self.showRange(k)
 
-	def pv1_text(self, text):
+	def pv1_text(self):
 		try:
-			val = float(text)
-		except:
+			val = float(self.PV1text.value())
+		except Exception as e:
 			return
-		val = float(text)
 		if self.PV1min <= val <= self.PV1max:
 			self.PV1val = val
 			try:
@@ -668,18 +540,17 @@ class Expt(QWidget):
 		val = float(pos)/1000.0
 		if self.PV1min <= val <= self.PV1max:
 			self.PV1val = val
-			self.PV1text.setText(unicode(val))
+			self.PV1text.setValue(val)
 			try:
 				self.p.set_pv1(val)
 			except:
 				self.comerr()
 
-	def pv2_text(self, text):
+	def pv2_text(self):
 		try:
-			val = float(text)
+			val = self.PV2text.value()
 		except:
 			return
-		val = float(text)
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
 			try:
@@ -692,47 +563,48 @@ class Expt(QWidget):
 		val = float(pos)/1000.0
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
-			self.PV2text.setText(unicode(val))
+			self.PV2text.setValue(val)
 			try:
 				self.p.set_pv2(val)
 			except:
 				self.comerr()
 				
-	def sq1_dc(self, text):
+	def sq1_dc(self):
 		try:
-			val = float(text)
+			val = self.SQ1DCtext.value()
 		except:
 			return
 		if 1 <= val <= 99:
 			self.dutyCycle = val
-			s = self.SQ1text.text()
-			self.sq1_text(s)
+			self.sq1_text()
 
-	def sq1_text(self, text):
+	def sq1_text(self):
 		try:
-			val = float(text)
-		except:
+			val = float(self.SQ1text.value())
+		except Exception as e:
+			print(e)
 			return
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
 			self.SQ1slider.setValue(self.SQ1val)
 			try:
 				if 0 <= val < 4 : val = 0
+				self.SQ1text.setValue(val)
 				res = self.p.set_sqr1(val, self.dutyCycle)
 				ss = '%5.1f'%res
 				self.msg(self.tr('sqr1 set to ') + ss)
 			except:
 				self.comerr()
+		else:
+			self.SQ1text.setValue(self.SQ1min)
 
 	def sq1_slider(self, val):
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
-			self.SQ1text.setText(unicode(val))
-			s = self.SQ1text.text()
-			self.sq1_text(s)
+			self.SQ1text.setValue(val)
+			self.sq1_text()
 				
 	def select_wgain(self,index):
-		self.Wgain.setText(self.Wgains[index])
 		self.wgainindex = index
 		try:
 			self.p.set_sine_amp(index)
@@ -748,15 +620,16 @@ class Expt(QWidget):
 			else:
 				self.p.set_sqr2(self.AWGval)
 				self.msg(self.tr('Output Changed from WG to SQ2'))
-		except:
+		except Exception as e:
+			print('what',e)
 			self.comerr()
 
 	def select_wave(self,index):
-		self.Wshape.setText(self.Waves[index])
 		self.waveindex = index
 		self.set_wave()
 
-	def awg_text(self, text):
+	def awg_text(self):
+		text = self.AWGtext.value()
 		try:
 			val = float(text)
 			if self.AWGmin <= val <= self.AWGmax:
@@ -769,7 +642,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setValue(val)
 			self.set_wave()
 
 	def control_od1(self):
@@ -800,13 +673,13 @@ class Expt(QWidget):
 			else:
 				if cap < 1.0e-9:
 					ss = '%6.1f'%(cap*1e12)
-					self.CAP.setText('<font color="blue">'+ ss +self.tr(' pF'))
+					self.CAP.setText('MEASURE CAP(IN1) '+ ss +self.tr(' pF'))
 				elif cap < 1.0e-6:
 					ss = '%6.1f'%(cap*1e9)
-					self.CAP.setText('<font color="blue">'+ ss +self.tr(' nF'))
+					self.CAP.setText('MEASURE CAP(IN1) '+ ss +self.tr(' nF'))
 				elif cap < 1.0e-3:
 					ss = '%6.1f'%(cap*1e6)
-					self.CAP.setText('<font color="blue">'+ ss +self.tr(' uF'))
+					self.CAP.setText('MEASURE CAP(IN1) '+ ss +self.tr(' uF'))
 		except:
 			self.comerr()
 
@@ -819,15 +692,19 @@ class Expt(QWidget):
 		if fr > 0:	
 			T = 1./fr
 			dc = hi*100/T
-			self.IN2.setText(u'<font color="blue">'+unicode(self.tr('%5.1fHz %4.1f%%')) %(fr,dc))
+			self.FREQ.setText(u'MEASURE FREQUENCY(IN2) '+unicode(self.tr('%5.1fHz %4.1f%%')) %(fr,dc))
 		else:
-			self.IN2.setText(u'<font color="blue">'+self.tr('No signal'))
+			self.FREQ.setText(u'MEASURE FREQUENCY(IN2) '+self.tr('No signal'))
+	
+	def show_voltmeter(self):
+		self.voltmeter.launch('Voltmeter')
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))
 		
 	def comerr(self):
 		self.msgwin.setText('<font color="red">' + self.tr('Error. Try Device->Reconnect'))
+
 
 if __name__ == '__main__':
 	import eyes17.eyes
