@@ -1,0 +1,93 @@
+QPushButton:hover{
+        background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa,     stop :   0.5 #ffbb6e, stop :   0.55 #feae42, stop :   1.0 #fedb74);
+}
+
+QPushButton {
+        border: 1px solid rgb(136, 138, 133);
+        border-radius: 0px;
+	    padding: 4px 3px;
+        background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #f5f9ff,        stop :   0.5 #c7dfff, stop :   0.55 #afd2ff, stop :   1.0 #c0dbff);
+        color: #006aff;
+        font: large "Arial";
+        height: 15;
+}
+
+
+
+
+QPushButton:pressed {
+        background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #c0dbff,  stop :   0.5 #cfd26f, stop :   0.55 #c7df6f, stop :   1.0 #f5f9ff);
+        padding-top: 2px;
+        padding-left: 3px;
+
+}
+
+
+QSlider::groove:vertical{
+    border: 1px solid #565a5e;
+    width: 10px;
+    background: #eee;
+    margin: 0px;
+    border-radius: 4px;
+}
+QSlider::handle:vertical{
+    border: 1px solid #565a5e;
+    width: 5px;
+    height: 10px;
+    border-radius: 4px;
+}
+ 
+/*---Horizontal slider---*/
+
+QSlider::groove:horizontal.symmetric{
+border: 1px solid #bbb;
+background: white;
+height: 6px;
+border-radius: 2px;
+}
+
+QSlider::sub-page:horizontal.symmetric {
+background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,   stop: 0 #66e, stop: 1 #bbf);
+background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1,   stop: 0 #bbf, stop: 1 #55f);
+border: 1px solid #666;
+height: 10px;
+border-radius: 2px;
+}
+
+QSlider::add-page:horizontal.symmetric {
+background: #fff;
+border: 1px solid #555;
+height: 7px;
+border-radius: 2px;
+}
+
+QSlider::handle:horizontal.symmetric {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,   stop:0 #eee, stop:1 #ccc);
+border: 1px solid #777;
+width: 13px;
+height:13px;
+margin-top: -2px;
+margin-bottom: -2px;
+border-radius: 4px;
+}
+
+QSlider::handle:horizontal.symmetric:hover {
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1,  stop:0 #fff, stop:1 #ddd);
+border: 1px solid #444;
+border-radius: 4px;
+}
+
+/*---overrides for PV1,2---*/
+QSlider::sub-page:horizontal.volts {
+background: qlineargradient(x1: 0, y1: 0,    x2: 0, y2: 1,  stop: 0 #66e, stop: 1 #bbf);
+background: qlineargradient(x1: 0, y1: 0.2, x2: 1, y2: 1, stop: 0 #bbf, stop: 1 #e59);
+border: 1px solid #666;
+height: 7px;
+border-radius: 2px;
+}
+
+QLCDNumber {
+color:rgb(239, 41, 41);
+background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eee, stop:1 #ccc);
+
+}
