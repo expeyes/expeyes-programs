@@ -6,7 +6,9 @@ Date    : Aug-2017
 License : GNU GPL version 3
 '''
 
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
+
 from eyes17.SENSORS import TSL2561
 
 from QtVersion import *

@@ -1,4 +1,5 @@
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
 
 from QtVersion import *
 
@@ -88,6 +89,7 @@ class Expt(QWidget):
 		self.timer.start(self.TIMER)
 		
 		self.t = MPU925x.connect(self.p.I2C)
+		self.t.initMagnetometer()
 		self.zero =0
 		if MPU925x.MPU925x.ADDRESS not in self.p.I2C.scan():
 			self.msg(self.tr('MPU925x Sensor Not Found'))
@@ -102,7 +104,8 @@ class Expt(QWidget):
 			time.sleep(0.05)	
 			X,Y,Z = self.t.getMag()		# voltage across the diode
 			Z -= self.zero
-		except:
+		except Exception as e:
+			print(e)
 			self.comerr()
 			return 
 		

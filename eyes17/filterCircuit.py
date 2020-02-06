@@ -1,6 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from __future__ import print_function
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
 
 from QtVersion import *
 

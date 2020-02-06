@@ -24,7 +24,8 @@ from . import packet_handler as packet_handler
 from collections import OrderedDict
 
 from .achan import *
-import serial,string,inspect
+import string,inspect
+import serial
 import time
 import sys
 import numpy as np
@@ -34,16 +35,36 @@ from . import eyemath17
 fileOpen=open
 
 def open(**kwargs):
-    '''
-    If hardware is found, returns an instance of 'Interface', else returns None.
-    '''
-    obj = Interface(**kwargs)
-    if obj.H.fd != None:
-        return obj
-    else:
-        print('Device opening Error')
-        return None
-        #raise RuntimeError('Could Not Connect')
+	"""Measures a set of timestamped logic level changes(Type can be selected) from one digital input
+
+	Extended description of function.
+
+	Parameters
+	----------
+	channel : str
+		The input pin to measure first logic level change . Select from ['ID1','ID2','ID3','ID4','SEN','EXT','CNTR']
+	order : {'C', 'F', 'A'}
+		Description of `order`.
+	edgeType : {'rising', 'falling', '4xrising' [default], '16xrising'}
+		The type of level change that should be recorded
+	points : int
+		Number of data points to obtain for input 1 (Max 4)
+	timeout : int
+		Timeout in seconds.  Use the timeout option if you're unsure of the input signal time period.
+		
+
+	Returns
+	-------
+	list
+		timestamp array in uS units. -1 if timed out.
+	"""
+	obj = Interface(**kwargs)
+	if obj.H.fd != None:
+		return obj
+	else:
+		print('Device opening Error')
+		return None
+		#raise RuntimeError('Could Not Connect')
     
 
 class Interface():
@@ -67,7 +88,7 @@ class Interface():
 
 	>>> import expeyes.eyes17
 	>>> I = expeyes.eyes17.open()
-	>>> self.__print__(I)
+	>>> print(I)
 	<eyes17.Interface instance at 0xb6c0cac>
 
 	Once you have instantiated this class,  its various methods will allow access to all the features built
@@ -297,7 +318,8 @@ class Interface():
 		try:
 			return self.H.get_version(self.H.fd)
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error , Function : ")
+			return None
 
 
 	#-------------------------------------------------------------------------------------------------------------------#
@@ -334,13 +356,13 @@ class Interface():
 		tg              Timegap between samples in microseconds
 		==============  ============================================================================================
 
-		.. figure:: images/capture1.png
-			:width: 11cm
+		.. figure:: images/fft.png
+			:width: 600px
 			:align: center
-			:alt: alternate text
+			:alt: FFT
 			:figclass: align-center
 			
-			A sine wave captured and plotted.
+			Fourier transforms of an octet.
 		
 		Example
 		
@@ -372,7 +394,8 @@ class Interface():
 			#self.__fetch_channel__(2)
 
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex, "Communication Error")
+			return None
 
 		x=self.achans[0].get_xaxis()
 		y=self.achans[0].get_yaxis()
@@ -422,13 +445,6 @@ class Interface():
 		TraceOneRemap   Choose the analog input for channel 1. It is connected to A1 by default. Channel 2 always reads CH2.
 		==============  =======================================================================================================
 
-		.. figure:: images/capture2.png
-			:width: 11cm
-			:align: center
-			:alt: alternate text
-			:figclass: align-center
-			
-			Two sine waves captured and plotted.
 		
 		"""
 		try:
@@ -441,7 +457,8 @@ class Interface():
 			self.__fetch_channel__(2)
 
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex,'communication error')
+			return None
 
 		x=self.achans[0].get_xaxis()
 		y=self.achans[0].get_yaxis()
@@ -463,13 +480,6 @@ class Interface():
 		TraceOneRemap   Analog input for channel 1. It is connected to A1 by default.Channel 2-4 always reads CH2-MIC
 		==============  ======================================================================================================
 
-		.. figure:: images/capture4.png
-			:width: 11cm
-			:align: center
-			:alt: alternate text
-			:figclass: align-center
-			
-			Four traces captured and plotted.
 
 		Example
 
@@ -495,7 +505,8 @@ class Interface():
 			x,y3=self.fetch_trace(3)
 			x,y4=self.fetch_trace(4)
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex,'communication error')
+			return None
 		
 		return x*1e-3,y,x*1e-3,y2,x*1e-3,y3,x*1e-3,y4     
 
@@ -541,7 +552,8 @@ class Interface():
 
 
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex,'communication error')
+			return None
 
 	def __capture_fullspeed__(self,chan,samples,tg,*args,**kwargs):
 		"""
@@ -620,7 +632,8 @@ class Interface():
 			self.H.__sendInt__(int(tg*8))       #Timegap between samples.  8MHz timer clock
 			self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print(ex,'communication error')
+			return None
 
 	def capture1_hr(self,chan,samples,tg,*args):
 		try:
@@ -685,17 +698,7 @@ class Interface():
 		=================== ============================================================================================
 
 
-		see :ref:`capture_video`
-
 		.. _adc_example:
-
-			.. figure:: images/transient.png
-				:width: 11cm
-				:align: center
-				:alt: alternate text
-				:figclass: align-center
-			
-				Transient response of an Inductor and Capacitor in series
 
 			The following example demonstrates how to use this function to record active events.
 
@@ -928,10 +931,10 @@ class Interface():
 		:return: conversion done(bool) , waiting_for_trigger(bool), samples acquired (number)
 
 		>>> I.start_capture(1,3200,2)
-		>>> self.__print__(I.oscilloscope_progress())
+		>>> print(I.oscilloscope_progress())
 		(0,46)
 		>>> time.sleep(3200*2e-6)
-		>>> self.__print__(I.oscilloscope_progress())
+		>>> print(I.oscilloscope_progress())
 		(1,3200)
 		
 		.. seealso::
@@ -989,14 +992,15 @@ class Interface():
 				data += self.H.fd.read(int(2*(samples%self.data_splitting)))         #reading int by int may cause packets to be dropped.
 				self.H.__get_ack__()
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print('com err',ex)
+			return False
 
 		try:
 			for a in range(int(samples)): self.buff[a] = CP.ShortInt.unpack(data[a*2:a*2+2])[0]
 			self.achans[channel_number-1].yaxis = self.achans[channel_number-1].fix_value(self.buff[:int(samples)])
 		except Exception as ex:
 			msg = "Incorrect Number of bytes received.\n"
-			raise RuntimeError(msg)
+			return False
 
 		return True
 
@@ -1252,11 +1256,10 @@ class Interface():
 		+------------+-----------------------------------------------------------------------------------------+
 
 
-		see :ref:`stream_video`
 
 		Example:
 		
-		>>> self.__print__(I.get_average_voltage('CH4'))
+		>>> print(I.get_average_voltage('CH4'))
 		1.002
 		
 		"""
@@ -1275,7 +1278,7 @@ class Interface():
 			if source.__conservativeInRangeRaw__(rawval,10):
 				return  val
 			else:
-				print('Out of Range ',val,'Gain:',source.gainEnabled)
+				#print('Out of Range ',val,'Gain:',source.gainEnabled)
 				return val#np.NaN
 		else:
 			return  val
@@ -1425,7 +1428,7 @@ class Interface():
 			* connect SQR1 to ID1
 			
 			>>> I.set_sqr1(4000,25)
-			>>> self.__print__(I.get_freq('ID1'))
+			>>> print(I.get_freq('ID1'))
    
 		
 		"""
@@ -1604,28 +1607,31 @@ class Interface():
 
 
 	def SinglePinEdges(self,channel,edgeType,points,timeout=1.0,**kwargs):
-		""" 
-		Measures a set of timestamped logic level changes(Type can be selected) from one digital input.
+		"""Measures a set of timestamped logic level changes(Type can be selected) from one digital input
 
-		.. tabularcolumns:: |p{3cm}|p{11cm}|
-		
-		==============  ============================================================================================
-		**Arguments** 
-		==============  ============================================================================================
-		channel        The input pin to measure first logic level change
-						 -['ID1','ID2','ID3','ID4','SEN','EXT','CNTR']
-		edgeType       The type of level change that should be recorded
-							* 'rising'
-							* 'falling'
-							* '4xrising' [default]
-							* '16xrising'
-		points			Number of data points to obtain for input 1 (Max 4)
-		timeout         Use the timeout option if you're unsure of the input signal time period.
-						returns -1 if timed out
-		==============  ============================================================================================
+		Extended description of function.
 
-		:return : time array in uS units
+		Parameters
+		----------
+		channel : str
+			The input `channel` (pin) to measure first logic level change . Select from ['ID1','ID2','ID3','ID4','SEN','EXT','CNTR']
+		order : {'C', 'F', 'A'}
+			Description of `order`.
+		edgeType : {'rising', 'falling', '4xrising' [default], '16xrising'}
+			The type of level change that should be recorded
+		points : int
+			Number of data points to obtain for input 1 (Max 4)
+		timeout : int
+			Timeout in seconds.  Use the timeout option if you're unsure of the input signal time period.
+			
+
+		Returns
+		-------
+		list
+			timestamp array in uS units. -1 if timed out.
 		"""
+		
+
 		data=0
 		if 'OD1' in kwargs:
 			data|= 0x10|(1 if kwargs.get('OD1') else 0)
@@ -1740,7 +1746,7 @@ class Interface():
 		"""
 		gets the state of the digital inputs. returns dictionary with keys 'ID1','ID2','ID3','ID4'
 
-		>>> self.__print__(get_states())
+		>>> print(get_states())
 		{'ID1': True, 'ID2': True, 'ID3': True, 'ID4': False}
 		
 		"""
@@ -1769,7 +1775,7 @@ class Interface():
 							'ID4' -> state of ID4
 		==============  ============================================================================================
 
-		>>> self.__print__(I.get_state(I.ID1))
+		>>> print(I.get_state(I.ID1))
 		False
 		
 		"""
@@ -1815,21 +1821,33 @@ class Interface():
 
 	def tim_helper(self, cmd, src, dst,timeout = 2.5):
 		'''
-		Helper function for all Time measurement calls.
-		
-		cmd == 'multi_r2r':
-		  src = input pin
-		  dst = number of edges to detect. dst E {1,2,3,4,8,12,16,32,48}
-		cmd in ['r2r','r2f','f2r','f2f']
-		  Command, Source and destination pins are inputs.
-		
-		Returns time in microseconds, -1 on error.
+
+		.. list-table:: Helper function for all Time measurement calls.
+			:widths: 25 20 55
+			:header-rows: 1
+						
+			* - Argument
+			  - Type
+			  - Description
+			* - cmd
+			  - str
+			  - Choose from 'multi_r2r','r2r','f2f',f2r','r2f','s2r','s2f','c2r','c2f',
+			* - src
+			  - str
+			  - choose from :variable:digital_inputs: ['IN2','SQR1_READ','OD1_READ','SEN'] 
+			* - dst(cmd=='multi_r2r')
+			  - int
+			  - number of edges to detect: [1,2,3,4,8,12,16,32,48] 
+			* - dst(cmd in 'r2r','f2f','r2f','f2f')
+			  - str
+			  - choose from :variable:digital_inputs: ['IN2','SQR1_READ','OD1_READ','SEN']
+				
+		Returns list of timestamps in microseconds, -1 on error.
 		'''
 		allowed_edges = [1,2,3,4,8,12,16,32,48]
 
 		if cmd == 'multi_r2r':
 			if src not in self.digital_inputs:
-				print ('Pin should be digital input capable: 0,3,4,5,6 or 7')
 				self.msg = ('Pin should be digital input capable: 0,3,4,5,6 or 7')
 				return -1
 			if dst not in allowed_edges:
@@ -1987,7 +2005,7 @@ class Interface():
 			else:
 				return None
 		except Exception as ex:
-			raise RuntimeError(" Fit Failed "+ex.message)
+			raise RuntimeError(" Fit Failed "+str(ex))
 
 	def capacitance_via_RC_discharge(self):
 		cap = self.get_capacitor_range()[1]
@@ -2957,7 +2975,8 @@ class Interface():
 			if (tmt) or A>10e5: return 0  #2.5 metre limit
 			return 100*speed_of_sound*rtime(A)/2.  #multiply by 100 to convert to cms
 		except Exception as ex:
-			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+			print('comm err',ex)
+			return None
 
 	def sr04_distance_time(self,speed_of_sound=340.):
 		'''
@@ -2984,9 +3003,20 @@ class Interface():
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 	
 	def raiseException(self,ex, msg):
-			msg += '\n' + ex.message
-			#self.H.disconnect()
-			raise RuntimeError(msg)
+		"""Summary line.
+
+		Extended description of function.
+
+		Args:
+			ex (Exception): An Exception Event
+			msg (str): Custom message
+
+		Returns:
+			Raises a RuntimeError
+		"""
+		msg += '\n' + str(ex)
+		#self.H.disconnect()
+		raise RuntimeError(msg)
 
 	def save(self, data, filename = 'plot.dat'):
 		'''
@@ -3060,7 +3090,7 @@ if __name__ == "__main__":
 
 
 	#print (I.capacitance_via_RC_discharge())
-	print (I.get_capacitance())
+	#print (I.get_capacitance())
 	#I.set_state(CCS = True)
 	#x,y,x2,y2,x3,y3 = I.capture_hr_multiple(1000,1,'A1','A2','A3')
 	#print (y,y2,y3)

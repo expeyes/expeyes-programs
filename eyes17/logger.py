@@ -5,7 +5,8 @@ Date    : Aug-2017
 License : GNU GPL version 3
 '''
 
-import sys, time, utils, math, os.path
+import sys, time, math, os.path
+import utils
 
 from QtVersion import *
 

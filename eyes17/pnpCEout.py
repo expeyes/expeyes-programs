@@ -1,6 +1,6 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, utils, math, os.path
-
+import sys, time, math, os.path
+import utils
 from QtVersion import *
 
 import pyqtgraph as pg

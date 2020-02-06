@@ -1,6 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 from numpy import int16,std
-from Kalman import KalmanFilter
+
+import struct
 
 def connect(route,**args):
 	return MPU925x(route,**args)
@@ -34,7 +35,7 @@ class MPU925x():
 		self.I2C=I2C
 		self.ADDRESS = args.get('address',self.ADDRESS)
 		self.name = 'Accel/gyro'
-		self.params={'powerUp':['Go'],'setGyroRange':[250,500,1000,2000],'setAccelRange':[2,4,8,16],'KalmanFilter':[.01,.1,1,10,100,1000,10000,'OFF']}
+		self.params={'powerUp':['Go'],'setGyroRange':[250,500,1000,2000],'setAccelRange':[2,4,8,16]}
 		self.setGyroRange(2000)
 		self.setAccelRange(16)
 		'''
@@ -44,23 +45,6 @@ class MPU925x():
 			pass
 		'''
 		self.powerUp(True)
-		self.K=None
-
-
-
-	def KalmanFilter(self,opt):
-		if opt=='OFF':
-			self.K=None
-			return
-		noise=[[]]*self.NUMPLOTS
-		for a in range(500):
-			vals=self.getRaw()
-			for b in range(self.NUMPLOTS):noise[b].append(vals[b])
-
-		self.K=[None]*7
-		for a in range(self.NUMPLOTS):
-			sd = std(noise[a])
-			self.K[a] = KalmanFilter(1./opt, sd**2)
 
 	def getVals(self,addr,bytes):
 		vals = self.I2C.readBulk(self.ADDRESS,addr,bytes) 
@@ -93,13 +77,7 @@ class MPU925x():
 				for a in range(3):raw[a] = 1.*int16(vals[a*2]<<8|vals[a*2+1])/self.ACCEL_SCALING[self.AR]
 				for a in range(4,7):raw[a] = 1.*int16(vals[a*2]<<8|vals[a*2+1])/self.GYRO_SCALING[self.GR]
 				raw[3] = int16(vals[6]<<8|vals[7])/340. + 36.53
-				if not self.K:
-					return raw
-				else:
-					for b in range(self.NUMPLOTS):
-						self.K[b].input_latest_noisy_measurement(raw[b])
-						raw[b]=self.K[b].get_latest_estimated_measurement()
-					return raw
+				return raw
 
 			else:
 				return False
@@ -142,10 +120,9 @@ class MPU925x():
 		
 		'''
 		vals=self.I2C.readBulk(self.AK8963_ADDRESS,0x03,7) #6+1 . 1(ST2) should not have bit 4 (0x8) true. It's ideally 16 . overflow bit
-		ax=int16(vals[0]<<8|vals[1])
-		ay=int16(vals[2]<<8|vals[3])
-		az=int16(vals[4]<<8|vals[5])
-		if not vals[6]&0x08:return [ax/65535.,ay/65535.,az/65535.]
+		if vals is not None:
+			ax,ay,az = struct.unpack('<hhh',bytes(vals[:6]))
+		if not vals[6]&0x08:return [ax,ay,az]
 		else: return None
 
 

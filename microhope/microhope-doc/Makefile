@@ -8,7 +8,7 @@ DOCDIR = $(DESTDIR)/usr/share/microhope/doc
 DB2MAN = /usr/share/sgml/docbook/stylesheet/xsl/docbook-xsl/manpages/docbook.xsl
 XP     = xsltproc --nonet --param man.charmap.use.subset "0"
 
-all: touch-existing-pdf microhope-en.pdf
+all:
 
 touch-existing-pdf:
 	for f in $$(ls *.pdf); do touch $$f; done
