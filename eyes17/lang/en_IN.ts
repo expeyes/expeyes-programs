@@ -1,71 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0">
+<!DOCTYPE TS>
+<TS version="2.1" language="en_IN">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Sensor Reading</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="56"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>Data Logger</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="63"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>Initialize</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="70"/>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Scale</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="110"/>
         <source>SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>SINE FIT</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="123"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pause</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="130"/>
         <source>DAMPED SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>DAMPED SINE FIT</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
         <source>Configure Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure Axis</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="75"/>
         <source>REFRESH</source>
-        <translation type="unfinished"></translation>
+        <translation>REFRESH</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="101"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation>.</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="132"/>
         <source>CONFIRM</source>
-        <translation type="unfinished"></translation>
+        <translation>CONFIRM</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="150"/>
         <source>Min </source>
-        <translation type="unfinished"></translation>
+        <translation>Min </translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="169"/>
         <source>Max </source>
-        <translation type="unfinished"></translation>
+        <translation>Max </translation>
     </message>
 </context>
 <context>
@@ -73,1014 +74,1016 @@
     <message>
         <location filename="../BHCurve.py" line="40"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="42"/>
         <source>Magnetic Field (H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Magnetic Field (H)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="75"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Start</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="79"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="62"/>
         <source>Set Zero</source>
-        <translation type="unfinished"></translation>
+        <translation>Set Zero</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="87"/>
         <source>Clear Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Traces</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="96"/>
         <source>Save Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Save Data</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="95"/>
         <source>MPU925x Sensor Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>MPU925x Sensor Not Found</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="122"/>
         <source>Completed plotting B-H</source>
-        <translation type="unfinished"></translation>
+        <translation>Completed plotting B-H</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="132"/>
         <source>Residual Magnetic Field: %.2f</source>
-        <translation type="unfinished"></translation>
+        <translation>Residual Magnetic Field: %.2f</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="159"/>
         <source>Started</source>
-        <translation type="unfinished"></translation>
+        <translation>Started</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="257"/>
         <source>User Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>User Stopped</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="264"/>
         <source>Cleared Traces and Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Cleared Traces and Data</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="271"/>
         <source>No data to save</source>
-        <translation type="unfinished"></translation>
+        <translation>No data to save</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="183"/>
         <source>Traces saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Traces saved to </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="224"/>
         <source>Error. Try Device-&gt;Reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Error. Try Device-&gt;Reconnect</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="40"/>
         <source>Voltage (V)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage (V)</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="42"/>
         <source>Current (mA)</source>
-        <translation type="unfinished"></translation>
+        <translation>Current (mA)</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="50"/>
         <source>Zener Diode</source>
-        <translation type="unfinished"></translation>
+        <translation>Zener Diode</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="61"/>
         <source>FIT with I=Io* exp(qV/nkT)</source>
-        <translation type="unfinished"></translation>
+        <translation>FIT with I=Io* exp(qV/nkT)</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
         <source>Fitted with Diode Equation : Io = </source>
-        <translation type="unfinished"></translation>
+        <translation>Fitted with Diode Equation : Io = </translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
         <source> mA , Ideality factor = </source>
-        <translation type="unfinished"></translation>
+        <translation> mA , Ideality factor = </translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="140"/>
         <source>Analysis failed. Could not fit data</source>
-        <translation type="unfinished"></translation>
+        <translation>Analysis failed. Could not fit data</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="117"/>
         <source>Completed plotting I-V</source>
-        <translation type="unfinished"></translation>
+        <translation>Completed plotting I-V</translation>
     </message>
     <message>
         <location filename="../driven-pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="84"/>
         <source>Set SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation>Set SQ1</translation>
     </message>
     <message>
         <location filename="../tof.py" line="79"/>
         <source>sqr1 set to </source>
-        <translation type="unfinished"></translation>
+        <translation>sqr1 set to </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="194"/>
         <source> Hz</source>
-        <translation type="unfinished"></translation>
+        <translation> Hz</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="38"/>
         <source>Trials</source>
-        <translation type="unfinished"></translation>
+        <translation>Trials</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="40"/>
         <source>Time Period (mSec)</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Period (mSec)</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="57"/>
         <source>Pendulum length</source>
-        <translation type="unfinished"></translation>
+        <translation>Pendulum length</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="57"/>
         <source>cm</source>
-        <translation type="unfinished"></translation>
+        <translation>cm</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="67"/>
         <source>Clear Data and Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Data and Traces</translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="91"/>
         <source>Set WG</source>
-        <translation type="unfinished"></translation>
+        <translation>Set WG</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="84"/>
         <source>Number of trials</source>
-        <translation type="unfinished"></translation>
+        <translation>Number of trials</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
         <source>Frequency of Oscillation = </source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency of Oscillation = </translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
         <source> Hz. Damping Factor = </source>
-        <translation type="unfinished"></translation>
+        <translation> Hz. Damping Factor = </translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="155"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>Timeout</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="170"/>
         <source>Completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Completed</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="186"/>
         <source>Invalid Number of trials</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Number of trials</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="192"/>
         <source>Invalid Length</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Length</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="250"/>
         <source>Started Measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>Started Measurements</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="38"/>
         <source>Time (S)</source>
-        <translation type="unfinished"></translation>
+        <translation>Time (S)</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="83"/>
         <source>Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="50"/>
         <source>Ratio =</source>
-        <translation type="unfinished"></translation>
+        <translation>Ratio =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="52"/>
         <source>Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>Occupancy =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="54"/>
         <source>Average Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>Average Occupancy =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="56"/>
         <source>Concentration =</source>
-        <translation type="unfinished"></translation>
+        <translation>Concentration =</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="127"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>messages</translation>
     </message>
     <message>
         <location filename="../editor.py" line="36"/>
         <source>Execute Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Execute Code</translation>
     </message>
     <message>
         <location filename="../editor.py" line="39"/>
         <source>Save Code</source>
-        <translation type="unfinished"></translation>
+        <translation>Save Code</translation>
     </message>
     <message>
         <location filename="../editor.py" line="67"/>
         <source>Code saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Code saved to </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="48"/>
         <source>Frequency (Hz)</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency (Hz)</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="53"/>
         <source>Amplitude Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplitude Gain</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>From</source>
-        <translation type="unfinished"></translation>
+        <translation>From</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="66"/>
         <source>to</source>
-        <translation type="unfinished"></translation>
+        <translation>to</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="88"/>
         <source>Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="93"/>
         <source>Number of Steps =</source>
-        <translation type="unfinished"></translation>
+        <translation>Number of Steps =</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="167"/>
         <source>Frequency = </source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency = </translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="191"/>
         <source>Fit failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Fit failed</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="214"/>
         <source>completed</source>
-        <translation type="unfinished"></translation>
+        <translation>completed</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="217"/>
         <source>Invalid Frequency limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Frequency limits</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="259"/>
         <source>user Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>user Stopped</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="268"/>
         <source>Measurement in progress</source>
-        <translation type="unfinished"></translation>
+        <translation>Measurement in progress</translation>
     </message>
     <message>
         <location filename="../i2cLogger.py" line="1032"/>
         <source>Scan</source>
-        <translation type="unfinished"></translation>
+        <translation>Scan</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="58"/>
         <source>Time (mS)</source>
-        <translation type="unfinished"></translation>
+        <translation>Time (mS)</translation>
     </message>
     <message>
         <location filename="../induction.py" line="62"/>
         <source>Select Range of A1</source>
-        <translation type="unfinished"></translation>
+        <translation>Select Range of A1</translation>
     </message>
     <message>
         <location filename="../induction.py" line="65"/>
         <source>4 V</source>
-        <translation type="unfinished"></translation>
+        <translation>4 V</translation>
     </message>
     <message>
         <location filename="../induction.py" line="74"/>
         <source>Start Scanning</source>
-        <translation type="unfinished"></translation>
+        <translation>Start Scanning</translation>
     </message>
     <message>
         <location filename="../induction.py" line="130"/>
         <source>Noise = </source>
-        <translation type="unfinished"></translation>
+        <translation>Noise = </translation>
     </message>
     <message>
         <location filename="../induction.py" line="130"/>
         <source> V. Drop the Magnet until a trace is captured</source>
-        <translation type="unfinished"></translation>
+        <translation> V. Drop the Magnet until a trace is captured</translation>
     </message>
     <message>
         <location filename="../induction.py" line="145"/>
         <source>Induced voltage </source>
-        <translation type="unfinished"></translation>
+        <translation>Induced voltage </translation>
     </message>
     <message>
         <location filename="../induction.py" line="148"/>
         <source>Detected voltage above threshold. Peak voltages: </source>
-        <translation type="unfinished"></translation>
+        <translation>Detected voltage above threshold. Peak voltages: </translation>
     </message>
     <message>
         <location filename="../logger.py" line="55"/>
         <source>Voltage(V)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage(V)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="132"/>
         <source>Total Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Total Duration</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="148"/>
         <source>Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>Seconds</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="143"/>
         <source>Measure every</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure every</translation>
     </message>
     <message>
         <location filename="../lightsensorlogger.py" line="144"/>
         <source>TSL2561 Sensor Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>TSL2561 Sensor Not Found</translation>
     </message>
     <message>
         <location filename="../logger.py" line="165"/>
         <source>Data logger plot completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Data logger plot completed</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="230"/>
         <source>Invalid Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Duration</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="264"/>
         <source>Invalid time interval between reads</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid time interval between reads</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="32"/>
         <source>Ax</source>
-        <translation type="unfinished"></translation>
+        <translation>Ax</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="33"/>
         <source>Ay</source>
-        <translation type="unfinished"></translation>
+        <translation>Ay</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="34"/>
         <source>Az</source>
-        <translation type="unfinished"></translation>
+        <translation>Az</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="35"/>
         <source>Temperature</source>
-        <translation type="unfinished"></translation>
+        <translation>Temperature</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="36"/>
         <source>Vx</source>
-        <translation type="unfinished"></translation>
+        <translation>Vx</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="37"/>
         <source>Vy</source>
-        <translation type="unfinished"></translation>
+        <translation>Vy</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="38"/>
         <source>Vz</source>
-        <translation type="unfinished"></translation>
+        <translation>Vz</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="55"/>
         <source>Value</source>
-        <translation type="unfinished"></translation>
+        <translation>Value</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="56"/>
         <source>Duration</source>
-        <translation type="unfinished"></translation>
+        <translation>Duration</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="83"/>
         <source>Read every</source>
-        <translation type="unfinished"></translation>
+        <translation>Read every</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="88"/>
         <source>mS</source>
-        <translation type="unfinished"></translation>
+        <translation>mS</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="137"/>
         <source>I2C device communication error</source>
-        <translation type="unfinished"></translation>
+        <translation>I2C device communication error</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="155"/>
         <source>MPU6050 data plot completed</source>
-        <translation type="unfinished"></translation>
+        <translation>MPU6050 data plot completed</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="170"/>
         <source>Invalid Duration or Time between reads (&gt; 10 mSec)</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Duration or Time between reads (&gt; 10 mSec)</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="276"/>
         <source>No Traces available for saving</source>
-        <translation type="unfinished"></translation>
+        <translation>No Traces available for saving</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="53"/>
         <source>Vbase (via 100kOhm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vbase (via 100kOhm)</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="58"/>
         <source>V</source>
-        <translation type="unfinished"></translation>
+        <translation>V</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
         <source>Base valtage shold be from .5 to 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Base valtage shold be from .5 to 3</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
         <source>Invalid Base valtage, shold be from .5 to 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Base valtage, shold be from .5 to 3</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="100"/>
         <source>Analyze last Trace</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyze last Trace</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="87"/>
         <source>
 Set SQ1 Frequency
 For Driven Pendulum Expt.</source>
-        <translation type="unfinished"></translation>
+        <translation>
+Set SQ1 Frequency
+For Driven Pendulum Expt.</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="167"/>
         <source>Time Vs Angular velocity plot completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Vs Angular velocity plot completed</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="48"/>
         <source>Current through R (mA)</source>
-        <translation type="unfinished"></translation>
+        <translation>Current through R (mA)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="50"/>
         <source>Voltage across R(Volts)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage across R(Volts)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R from A1 to Ground</source>
-        <translation type="unfinished"></translation>
+        <translation>R from A1 to Ground</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="102"/>
         <source>Ohm</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohm</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
         <source>Sweep PV1 from</source>
-        <translation type="unfinished"></translation>
+        <translation>Sweep PV1 from</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="112"/>
         <source>Change Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>Change Voltage</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="119"/>
         <source>Voltage = %5.3f</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage = %5.3f</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="124"/>
         <source>Current = 0 mA</source>
-        <translation type="unfinished"></translation>
+        <translation>Current = 0 mA</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="156"/>
         <source>Voltage = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage = %5.3f V</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="158"/>
         <source>Current = %5.3f mA</source>
-        <translation type="unfinished"></translation>
+        <translation>Current = %5.3f mA</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="171"/>
         <source>Slope of the Line (dV/dI) = </source>
-        <translation type="unfinished"></translation>
+        <translation>Slope of the Line (dV/dI) = </translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="223"/>
         <source>Err</source>
-        <translation type="unfinished"></translation>
+        <translation>Err</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
         <source>Base valtage shold be from -0.5 to -3</source>
-        <translation type="unfinished"></translation>
+        <translation>Base valtage shold be from -0.5 to -3</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
         <source>Invalid Base valtage, shold be from -0.5 to -3</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Base valtage, shold be from -0.5 to -3</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
         <source>Temparature (C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Temparature (C)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="66"/>
         <source>Measure A3</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure A3</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="76"/>
         <source>A3 Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>A3 Gain</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="81"/>
         <source>1+10k/Rg</source>
-        <translation type="unfinished"></translation>
+        <translation>1+10k/Rg</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="87"/>
         <source>A3 Offset</source>
-        <translation type="unfinished"></translation>
+        <translation>A3 Offset</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="92"/>
         <source>mV </source>
-        <translation type="unfinished"></translation>
+        <translation>mV </translation>
     </message>
     <message>
         <location filename="../pt100.py" line="98"/>
         <source>CCS Value</source>
-        <translation type="unfinished"></translation>
+        <translation>CCS Value</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="103"/>
         <source>mA</source>
-        <translation type="unfinished"></translation>
+        <translation>mA</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="110"/>
         <source>Lowest Temp</source>
-        <translation type="unfinished"></translation>
+        <translation>Lowest Temp</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="126"/>
         <source>deg C</source>
-        <translation type="unfinished"></translation>
+        <translation>deg C</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="121"/>
         <source>Highest Temp</source>
-        <translation type="unfinished"></translation>
+        <translation>Highest Temp</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="210"/>
         <source>%5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>%5.3f V</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="242"/>
         <source>Time Vs Temperature plot completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Vs Temperature plot completed</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="271"/>
         <source>Invalid temperature limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid temperature limit</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="278"/>
         <source>Invalid Offset or Gain</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Offset or Gain</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="284"/>
         <source>Invalid CCS input</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid CCS input</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="88"/>
         <source>Timebase</source>
-        <translation type="unfinished"></translation>
+        <translation>Timebase</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="93"/>
         <source>mS/div</source>
-        <translation type="unfinished"></translation>
+        <translation>mS/div</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="88"/>
         <source>0 -&gt; 5V step on OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>0 -&gt; 5V step on OD1</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="92"/>
         <source>5 -&gt; 0V step on OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>5 -&gt; 0V step on OD1</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="89"/>
         <source>Calculate RC</source>
-        <translation type="unfinished"></translation>
+        <translation>Calculate RC</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="111"/>
         <source>Clear Data &amp; Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Data &amp; Traces</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="98"/>
         <source>Resistance =</source>
-        <translation type="unfinished"></translation>
+        <translation>Resistance =</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="150"/>
         <source>No data to analyze.</source>
-        <translation type="unfinished"></translation>
+        <translation>No data to analyze.</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="150"/>
         <source>Fitted data with V=Vo*exp(-t/RC). RC = </source>
-        <translation type="unfinished"></translation>
+        <translation>Fitted data with V=Vo*exp(-t/RC). RC = </translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="150"/>
         <source> mSec</source>
-        <translation type="unfinished"></translation>
+        <translation> mSec</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="152"/>
         <source>Failed to fit the curve with V=Vo*exp(-t/RC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to fit the curve with V=Vo*exp(-t/RC)</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="185"/>
         <source>Cleared Data and Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Cleared Data and Traces</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="194"/>
         <source>AWG set to </source>
-        <translation type="unfinished"></translation>
+        <translation>AWG set to </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="81"/>
         <source>WG</source>
-        <translation type="unfinished"></translation>
+        <translation>WG</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="156"/>
         <source>Impedance Calculator</source>
-        <translation type="unfinished"></translation>
+        <translation>Impedance Calculator</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="160"/>
         <source>F (in Hz)</source>
-        <translation type="unfinished"></translation>
+        <translation>F (in Hz)</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="166"/>
         <source>R (in Ohms)</source>
-        <translation type="unfinished"></translation>
+        <translation>R (in Ohms)</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="175"/>
         <source>C (in uF)</source>
-        <translation type="unfinished"></translation>
+        <translation>C (in uF)</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="180"/>
         <source>L (in mH)</source>
-        <translation type="unfinished"></translation>
+        <translation>L (in mH)</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="188"/>
         <source>Calculate XL, XC and Fo</source>
-        <translation type="unfinished"></translation>
+        <translation>Calculate XL, XC and Fo</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="219"/>
         <source>Curve fitting result rejected</source>
-        <translation type="unfinished"></translation>
+        <translation>Curve fitting result rejected</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="283"/>
         <source>Data Analysis Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Data Analysis Error</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="288"/>
         <source>Vtotal (A1) = %5.2f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vr (A2) = %5.2f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="292"/>
         <source>F = %5.1f Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>F = %5.1f Hz</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="293"/>
         <source>Phase Diff = %5.1f deg</source>
-        <translation type="unfinished"></translation>
+        <translation>Phase Diff = %5.1f deg</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="296"/>
         <source>Vc (A3-A1) = %5.2f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vl (A2-A3) = %5.2f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="378"/>
         <source>Invalid Input in some field</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Input in some field</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="97"/>
         <source>Rext =</source>
-        <translation type="unfinished"></translation>
+        <translation>Rext =</translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="100"/>
         <source>Analyse latest Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyse latest Data</translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="108"/>
         <source>Clear Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Clear Data</translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="145"/>
         <source>Resonant Frequency = </source>
-        <translation type="unfinished"></translation>
+        <translation>Resonant Frequency = </translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="145"/>
         <source> kHz Damping factor= </source>
-        <translation type="unfinished"></translation>
+        <translation> kHz Damping factor= </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="178"/>
         <source>Failed to fit the curve</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to fit the curve</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="72"/>
         <source>Save Data to</source>
-        <translation type="unfinished"></translation>
+        <translation>Save Data to</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="73"/>
         <source>RCtransient.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>RCtransient.txt</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="107"/>
         <source>Analyse last Trace</source>
-        <translation type="unfinished"></translation>
+        <translation>Analyse last Trace</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="151"/>
         <source>Enter a valid Resistance</source>
-        <translation type="unfinished"></translation>
+        <translation>Enter a valid Resistance</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source>L/R = </source>
-        <translation type="unfinished"></translation>
+        <translation>L/R = </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source> mSec : Rind = </source>
-        <translation type="unfinished"></translation>
+        <translation> mSec : Rind = </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source> Ohm : L = </source>
-        <translation type="unfinished"></translation>
+        <translation> Ohm : L = </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source> mH</source>
-        <translation type="unfinished"></translation>
+        <translation> mH</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="184"/>
         <source>Failed to fit the curve with V=Vo*exp(-t*L/R)</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to fit the curve with V=Vo*exp(-t*L/R)</translation>
     </message>
     <message>
         <location filename="../scope.py" line="166"/>
         <source>Reconnecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Reconnecting...</translation>
     </message>
     <message>
         <location filename="../scope.py" line="182"/>
         <source>Device Reconnected</source>
-        <translation type="unfinished"></translation>
+        <translation>Device Reconnected</translation>
     </message>
     <message>
         <location filename="../scope.py" line="203"/>
         <source>Error. Could not connect. Check cable. </source>
-        <translation type="unfinished"></translation>
+        <translation>Error. Could not connect. Check cable. </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="171"/>
         <source>Fundamental frequency = %5.1f Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>Fundamental frequency = %5.1f Hz</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="174"/>
         <source>Frequency Spectrum</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency Spectrum</translation>
     </message>
     <message>
         <location filename="../scope.py" line="467"/>
         <source>FFT Error</source>
-        <translation type="unfinished"></translation>
+        <translation>FFT Error</translation>
     </message>
     <message>
         <location filename="../scope.py" line="275"/>
         <source>Time: %6.2fmS </source>
-        <translation type="unfinished"></translation>
+        <translation>Time: %6.2fmS </translation>
     </message>
     <message>
         <location filename="../scope.py" line="284"/>
         <source>%s:%6.2fV </source>
-        <translation type="unfinished"></translation>
+        <translation>%s:%6.2fV </translation>
     </message>
     <message>
         <location filename="../scope.py" line="340"/>
         <source>%s input is clipped. Increase range</source>
-        <translation type="unfinished"></translation>
+        <translation>%s input is clipped. Increase range</translation>
     </message>
     <message>
         <location filename="../scope.py" line="353"/>
         <source>%5.2f V, %5.1f Hz</source>
-        <translation type="unfinished"></translation>
+        <translation>%5.2f V, %5.1f Hz</translation>
     </message>
     <message>
         <location filename="../scope.py" line="382"/>
         <source>A%d %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>A%d %5.3f V</translation>
     </message>
     <message>
         <location filename="../scope.py" line="384"/>
         <source>A%d</source>
-        <translation type="unfinished"></translation>
+        <translation>A%d</translation>
     </message>
     <message>
         <location filename="../scope.py" line="389"/>
         <source>%5.0f Ohm</source>
-        <translation type="unfinished"></translation>
+        <translation>%5.0f Ohm</translation>
     </message>
     <message>
         <location filename="../scope.py" line="391"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
-        <translation type="unfinished"></translation>
+        <translation>Resistance: &lt;100Ohm  or  &gt;100k</translation>
     </message>
     <message>
         <location filename="../scope.py" line="437"/>
         <source>Range of</source>
-        <translation type="unfinished"></translation>
+        <translation>Range of</translation>
     </message>
     <message>
         <location filename="../scope.py" line="437"/>
         <source> set to </source>
-        <translation type="unfinished"></translation>
+        <translation> set to </translation>
     </message>
     <message>
         <location filename="../scope.py" line="622"/>
         <source>Output Changed from WG to SQ2</source>
-        <translation type="unfinished"></translation>
+        <translation>Output Changed from WG to SQ2</translation>
     </message>
     <message>
         <location filename="../scope.py" line="672"/>
         <source>Capacitance too high or short to ground</source>
-        <translation type="unfinished"></translation>
+        <translation>Capacitance too high or short to ground</translation>
     </message>
     <message>
         <location filename="../scope.py" line="676"/>
         <source> pF</source>
-        <translation type="unfinished"></translation>
+        <translation> pF</translation>
     </message>
     <message>
         <location filename="../scope.py" line="679"/>
         <source> nF</source>
-        <translation type="unfinished"></translation>
+        <translation> nF</translation>
     </message>
     <message>
         <location filename="../scope.py" line="682"/>
         <source> uF</source>
-        <translation type="unfinished"></translation>
+        <translation> uF</translation>
     </message>
     <message>
         <location filename="../scope.py" line="695"/>
         <source>%5.1fHz %4.1f%%</source>
-        <translation type="unfinished"></translation>
+        <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
         <location filename="../scope.py" line="697"/>
         <source>No signal</source>
-        <translation type="unfinished"></translation>
+        <translation>No signal</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="90"/>
         <source>SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation>SQ1</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="102"/>
@@ -1088,212 +1091,215 @@ For Driven Pendulum Expt.</source>
 only after Enable/Disable controls.
 shows the actual frequency set.
 </source>
-        <translation type="unfinished"></translation>
+        <translation>Change of Freqency effected
+only after Enable/Disable controls.
+shows the actual frequency set.
+</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="106"/>
         <source>Enable WG</source>
-        <translation type="unfinished"></translation>
+        <translation>Enable WG</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="110"/>
         <source>Enable SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation>Enable SQ1</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="98"/>
         <source>Enable Measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>Enable Measurements</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="171"/>
         <source>FFT err</source>
-        <translation type="unfinished"></translation>
+        <translation>FFT err</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="178"/>
         <source>Disable before Saving</source>
-        <translation type="unfinished"></translation>
+        <translation>Disable before Saving</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="190"/>
         <source>Trace saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>Trace saved to </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="50"/>
         <source>Amplitude (V)</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplitude (V)</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="77"/>
         <source>in</source>
-        <translation type="unfinished"></translation>
+        <translation>in</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="82"/>
         <source>seconds</source>
-        <translation type="unfinished"></translation>
+        <translation>seconds</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="177"/>
         <source>Frequency = %5.0f Hz V = %5.3f</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency = %5.0f Hz V = %5.3f</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="196"/>
         <source>Completed in </source>
-        <translation type="unfinished"></translation>
+        <translation>Completed in </translation>
     </message>
     <message>
         <location filename="../tof.py" line="71"/>
         <source> Seconds</source>
-        <translation type="unfinished"></translation>
+        <translation> Seconds</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Time interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Invalid Time interval</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="236"/>
         <source>Increase time interval to </source>
-        <translation type="unfinished"></translation>
+        <translation>Increase time interval to </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="236"/>
         <source> or Reduce frequency span</source>
-        <translation type="unfinished"></translation>
+        <translation> or Reduce frequency span</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="248"/>
         <source> mS at each step</source>
-        <translation type="unfinished"></translation>
+        <translation> mS at each step</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="173"/>
         <source>Phase Shift = </source>
-        <translation type="unfinished"></translation>
+        <translation>Phase Shift = </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="39"/>
         <source>Time (Sec)</source>
-        <translation type="unfinished"></translation>
+        <translation>Time (Sec)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="41"/>
         <source>Distance(cm)</source>
-        <translation type="unfinished"></translation>
+        <translation>Distance(cm)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="52"/>
         <source>Y-axis from 0 to</source>
-        <translation type="unfinished"></translation>
+        <translation>Y-axis from 0 to</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="64"/>
         <source>Measure during</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure during</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="69"/>
         <source>Secs</source>
-        <translation type="unfinished"></translation>
+        <translation>Secs</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="83"/>
         <source>Fit Curve using Sine</source>
-        <translation type="unfinished"></translation>
+        <translation>Fit Curve using Sine</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="90"/>
         <source>Fourier Transform</source>
-        <translation type="unfinished"></translation>
+        <translation>Fourier Transform</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="159"/>
         <source>Sine Fit Result: Frequency </source>
-        <translation type="unfinished"></translation>
+        <translation>Sine Fit Result: Frequency </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="215"/>
         <source>Time vs Distance plot completed</source>
-        <translation type="unfinished"></translation>
+        <translation>Time vs Distance plot completed</translation>
     </message>
     <message>
         <location filename="../tof.py" line="39"/>
         <source>Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure</translation>
     </message>
     <message>
         <location filename="../tof.py" line="65"/>
         <source>start..</source>
-        <translation type="unfinished"></translation>
+        <translation>start..</translation>
     </message>
     <message>
         <location filename="../tof.py" line="71"/>
         <source>Time of flight =</source>
-        <translation type="unfinished"></translation>
+        <translation>Time of flight =</translation>
     </message>
     <message>
         <location filename="../tof.py" line="73"/>
         <source>Error. Try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Error. Try again</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="56"/>
         <source>Voltage  A2</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage  A2</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="144"/>
         <source>Voltage (A2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage (A2)</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="69"/>
         <source>Voltage  A1</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage  A1</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="81"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Time</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="76"/>
         <source>XYplot.txt</source>
-        <translation type="unfinished"></translation>
+        <translation>XYplot.txt</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="94"/>
         <source>Voltage range</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage range</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="99"/>
         <source>Volts</source>
-        <translation type="unfinished"></translation>
+        <translation>Volts</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="104"/>
         <source>show (A1-A2) Vs A2</source>
-        <translation type="unfinished"></translation>
+        <translation>show (A1-A2) Vs A2</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="142"/>
         <source>Voltage (A1-A2)</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage (A1-A2)</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="170"/>
         <source>Xmax = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Xmax = %5.3f V</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="171"/>
         <source>Ymax = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ymax = %5.3f V</translation>
     </message>
 </context>
 <context>
@@ -1301,858 +1307,858 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Form</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="138"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Channels</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="182"/>
         <source>1mS</source>
-        <translation type="unfinished"></translation>
+        <translation>1mS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1089"/>
         <source>A2</source>
-        <translation type="unfinished"></translation>
+        <translation>A2</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="207"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Results</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="228"/>
         <source>Cross Check Freq</source>
-        <translation type="unfinished"></translation>
+        <translation>Cross Check Freq</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="44"/>
         <source>A2-A1</source>
-        <translation type="unfinished"></translation>
+        <translation>A2-A1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="51"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation>.</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="106"/>
         <source>Measure Voltages</source>
-        <translation type="unfinished"></translation>
+        <translation>Measure Voltages</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="274"/>
         <source>16V</source>
-        <translation type="unfinished"></translation>
+        <translation>16V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="279"/>
         <source>8V</source>
-        <translation type="unfinished"></translation>
+        <translation>8V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="428"/>
         <source>4V</source>
-        <translation type="unfinished"></translation>
+        <translation>4V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="289"/>
         <source>2.5V</source>
-        <translation type="unfinished"></translation>
+        <translation>2.5V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="996"/>
         <source>1V</source>
-        <translation type="unfinished"></translation>
+        <translation>1V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="443"/>
         <source>0.5V</source>
-        <translation type="unfinished"></translation>
+        <translation>0.5V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="358"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1101"/>
         <source>A3</source>
-        <translation type="unfinished"></translation>
+        <translation>A3</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="433"/>
         <source>2V</source>
-        <translation type="unfinished"></translation>
+        <translation>2V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="451"/>
         <source>MIC</source>
-        <translation type="unfinished"></translation>
+        <translation>MIC</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="631"/>
         <source> Volts</source>
-        <translation type="unfinished"></translation>
+        <translation> Volts</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="510"/>
         <source> %</source>
-        <translation type="unfinished"></translation>
+        <translation> %</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="599"/>
         <source>symmetric</source>
-        <translation type="unfinished"></translation>
+        <translation>symmetric</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="612"/>
         <source> Hz</source>
-        <translation type="unfinished"></translation>
+        <translation> Hz</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="583"/>
         <source>symmetric volts</source>
-        <translation type="unfinished"></translation>
+        <translation>symmetric volts</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="661"/>
         <source>SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation>SQ1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="685"/>
         <source>PV2</source>
-        <translation type="unfinished"></translation>
+        <translation>PV2</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="709"/>
         <source>WG</source>
-        <translation type="unfinished"></translation>
+        <translation>WG</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="733"/>
         <source>PV1</source>
-        <translation type="unfinished"></translation>
+        <translation>PV1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="782"/>
         <source>Current Source Voltage:</source>
-        <translation type="unfinished"></translation>
+        <translation>Current Source Voltage:</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="795"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="847"/>
         <source>Timebase</source>
-        <translation type="unfinished"></translation>
+        <translation>Timebase</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="905"/>
         <source>Trigger</source>
-        <translation type="unfinished"></translation>
+        <translation>Trigger</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="918"/>
         <source>SAVE Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>SAVE Traces</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="925"/>
         <source>CCS</source>
-        <translation type="unfinished"></translation>
+        <translation>CCS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="939"/>
         <source>Fourier Transform</source>
-        <translation type="unfinished"></translation>
+        <translation>Fourier Transform</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="959"/>
         <source>Resistance on SEN</source>
-        <translation type="unfinished"></translation>
+        <translation>Resistance on SEN</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="966"/>
         <source>Frequency (IN2):</source>
-        <translation type="unfinished"></translation>
+        <translation>Frequency (IN2):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="973"/>
         <source>OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>OD1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="991"/>
         <source>80 mV</source>
-        <translation type="unfinished"></translation>
+        <translation>80 mV</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1001"/>
         <source>3V (Amplitude)</source>
-        <translation type="unfinished"></translation>
+        <translation>3V (Amplitude)</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1010"/>
         <source>WG( Sinusoidal )</source>
-        <translation type="unfinished"></translation>
+        <translation>WG( Sinusoidal )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
         <source>WG( Triangle )</source>
-        <translation type="unfinished"></translation>
+        <translation>WG( Triangle )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1020"/>
         <source>SQ2( Square )</source>
-        <translation type="unfinished"></translation>
+        <translation>SQ2( Square )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1028"/>
         <source>Capacitance (IN1):</source>
-        <translation type="unfinished"></translation>
+        <translation>Capacitance (IN1):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1035"/>
         <source>SHOW ALL</source>
-        <translation type="unfinished"></translation>
+        <translation>SHOW ALL</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1077"/>
         <source>A1</source>
-        <translation type="unfinished"></translation>
+        <translation>A1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1218"/>
         <source>FREEZE</source>
-        <translation type="unfinished"></translation>
+        <translation>FREEZE</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1231"/>
         <source>Cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>Cursor</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="24"/>
+        <location filename="../main.py" line="20"/>
         <source>Voltage measurement</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage measurement</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="21"/>
+        <source>Resistance measurement</source>
+        <translation>Resistance measurement</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="22"/>
+        <source>Resistors in Series</source>
+        <translation>Resistors in Series</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="23"/>
+        <source>Resistors in Parallel</source>
+        <translation>Resistors in Parallel</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="24"/>
+        <source>Capacitance measurement</source>
+        <translation>Capacitance measurement</translation>
     </message>
     <message>
         <location filename="../main.py" line="25"/>
-        <source>Resistance measurement</source>
-        <translation type="unfinished"></translation>
+        <source>Capacitors in Series</source>
+        <translation>Capacitors in Series</translation>
     </message>
     <message>
         <location filename="../main.py" line="26"/>
-        <source>Resistors in Series</source>
-        <translation type="unfinished"></translation>
+        <source>Capacitors in Parallel</source>
+        <translation>Capacitors in Parallel</translation>
     </message>
     <message>
         <location filename="../main.py" line="27"/>
-        <source>Resistors in Parallel</source>
-        <translation type="unfinished"></translation>
+        <source>Resistance by Ohm&apos;s law</source>
+        <translation>Resistance by Ohm&apos;s law</translation>
     </message>
     <message>
         <location filename="../main.py" line="28"/>
-        <source>Capacitance measurement</source>
-        <translation type="unfinished"></translation>
+        <source>Direct and Alternating Currents</source>
+        <translation>Direct and Alternating Currents</translation>
     </message>
     <message>
         <location filename="../main.py" line="29"/>
-        <source>Capacitors in Series</source>
-        <translation type="unfinished"></translation>
+        <source>AC mains pickup</source>
+        <translation>AC mains pickup</translation>
     </message>
     <message>
         <location filename="../main.py" line="30"/>
-        <source>Capacitors in Parallel</source>
-        <translation type="unfinished"></translation>
+        <source>Separating AC and DC</source>
+        <translation>Separating AC and DC</translation>
     </message>
     <message>
         <location filename="../main.py" line="31"/>
-        <source>Resistance by Ohm&apos;s law</source>
-        <translation type="unfinished"></translation>
+        <source>Conducting Human body</source>
+        <translation>Conducting Human body</translation>
     </message>
     <message>
         <location filename="../main.py" line="32"/>
-        <source>Direct and Alternating Currents</source>
-        <translation type="unfinished"></translation>
+        <source>Resistance of Human body</source>
+        <translation>Resistance of Human body</translation>
     </message>
     <message>
         <location filename="../main.py" line="33"/>
-        <source>AC mains pickup</source>
-        <translation type="unfinished"></translation>
+        <source>Light Dependent Resistor</source>
+        <translation>Light Dependent Resistor</translation>
     </message>
     <message>
         <location filename="../main.py" line="34"/>
-        <source>Separating AC and DC</source>
-        <translation type="unfinished"></translation>
+        <source>Lemon Cell</source>
+        <translation>Lemon Cell</translation>
     </message>
     <message>
         <location filename="../main.py" line="35"/>
-        <source>Conducting Human body</source>
-        <translation type="unfinished"></translation>
+        <source>Simple AC generator</source>
+        <translation>Simple AC generator</translation>
     </message>
     <message>
         <location filename="../main.py" line="36"/>
-        <source>Resistance of Human body</source>
-        <translation type="unfinished"></translation>
+        <source>Transformer</source>
+        <translation>Transformer</translation>
     </message>
     <message>
         <location filename="../main.py" line="37"/>
-        <source>Light Dependent Resistor</source>
-        <translation type="unfinished"></translation>
+        <source>Resistance of Water</source>
+        <translation>Resistance of Water</translation>
     </message>
     <message>
         <location filename="../main.py" line="38"/>
-        <source>Lemon Cell</source>
-        <translation type="unfinished"></translation>
+        <source>Generating Sound</source>
+        <translation>Generating Sound</translation>
     </message>
     <message>
         <location filename="../main.py" line="39"/>
-        <source>Simple AC generator</source>
-        <translation type="unfinished"></translation>
+        <source>Digitizing Sound</source>
+        <translation>Digitizing Sound</translation>
     </message>
     <message>
         <location filename="../main.py" line="40"/>
-        <source>Transformer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="41"/>
-        <source>Resistance of Water</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="42"/>
-        <source>Generating Sound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="43"/>
-        <source>Digitizing Sound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="44"/>
         <source>Stroboscope</source>
-        <translation type="unfinished"></translation>
+        <translation>Stroboscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="438"/>
+        <location filename="../main.py" line="430"/>
         <source>Oscilloscope</source>
-        <translation type="unfinished"></translation>
+        <translation>Oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="55"/>
+        <location filename="../main.py" line="51"/>
         <source>Diode Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>Diode Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="56"/>
+        <location filename="../main.py" line="52"/>
         <source>NPN Output Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>NPN Output Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="57"/>
+        <location filename="../main.py" line="53"/>
         <source>PNP Output Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>PNP Output Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="63"/>
+        <location filename="../main.py" line="59"/>
         <source>Halfwave Rectifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="132"/>
-        <source>Fullwave Rectifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="65"/>
-        <source>Diode Clipping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="66"/>
-        <source>Diode Clamping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="67"/>
-        <source>IC555 Multivibrator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="68"/>
-        <source>Transistor Amplifier (CE)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="69"/>
-        <source>Inverting Amplifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="70"/>
-        <source>Non-Inverting Amplifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="71"/>
-        <source>Integrator using Op-Amp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="72"/>
-        <source>Logic Gates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="73"/>
-        <source>Clock Divider Circuit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="77"/>
-        <source>Plot I-V Curve</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="78"/>
-        <source>XY Plotting</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="79"/>
-        <source>RLC Steady state response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="80"/>
-        <source>RC Transient response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="81"/>
-        <source>RL Transient response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="82"/>
-        <source>RLC transient response</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="83"/>
-        <source>Frequency Response of Filter Circuit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="84"/>
-        <source>Electromagnetic Induction</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="88"/>
-        <source>Frequency Response of Piezo Buzzer</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="89"/>
-        <source>Velocity of Sound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="90"/>
-        <source>Sound beats</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="94"/>
-        <source>Rod Pendulum with Light barrier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="95"/>
-        <source>Pendulum Wavefrorm</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="96"/>
-        <source>Driven Pendulum resonance</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="97"/>
-        <source>Distance by HY-SRF04 Echo module</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="98"/>
-        <source>Gravity by Time of Flight</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="102"/>
-        <source>Temperatue, PT100 Sensor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="106"/>
-        <source>Data Logger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="107"/>
-        <source>Advanced Data Logger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="112"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="113"/>
-        <source>Luminosity(TSL2561) Logger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="114"/>
-        <source>MPU-6050 Acccn, Velocity and Temp</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="115"/>
-        <source>General Purpose I2C Sensors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="119"/>
-        <source>Read Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="120"/>
-        <source>Set DC Voltages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="121"/>
-        <source>Capture Single Input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="122"/>
-        <source>Capture Two Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="123"/>
-        <source>Capture Four Inputs</source>
-        <translation type="unfinished"></translation>
+        <translation>Halfwave Rectifier</translation>
     </message>
     <message>
         <location filename="../main.py" line="124"/>
+        <source>Fullwave Rectifier</source>
+        <translation>Fullwave Rectifier</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="61"/>
+        <source>Diode Clipping</source>
+        <translation>Diode Clipping</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="62"/>
+        <source>Diode Clamping</source>
+        <translation>Diode Clamping</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="63"/>
+        <source>IC555 Multivibrator</source>
+        <translation>IC555 Multivibrator</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="64"/>
+        <source>Transistor Amplifier (CE)</source>
+        <translation>Transistor Amplifier (CE)</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="65"/>
+        <source>Inverting Amplifier</source>
+        <translation>Inverting Amplifier</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="66"/>
+        <source>Non-Inverting Amplifier</source>
+        <translation>Non-Inverting Amplifier</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="67"/>
+        <source>Integrator using Op-Amp</source>
+        <translation>Integrator using Op-Amp</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="68"/>
+        <source>Logic Gates</source>
+        <translation>Logic Gates</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="69"/>
+        <source>Clock Divider Circuit</source>
+        <translation>Clock Divider Circuit</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="73"/>
+        <source>Plot I-V Curve</source>
+        <translation>Plot I-V Curve</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="74"/>
+        <source>XY Plotting</source>
+        <translation>XY Plotting</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="75"/>
+        <source>RLC Steady state response</source>
+        <translation>RLC Steady state response</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="76"/>
+        <source>RC Transient response</source>
+        <translation>RC Transient response</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="77"/>
+        <source>RL Transient response</source>
+        <translation>RL Transient response</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="78"/>
+        <source>RLC transient response</source>
+        <translation>RLC transient response</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="79"/>
+        <source>Frequency Response of Filter Circuit</source>
+        <translation>Frequency Response of Filter Circuit</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="80"/>
+        <source>Electromagnetic Induction</source>
+        <translation>Electromagnetic Induction</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="84"/>
+        <source>Frequency Response of Piezo Buzzer</source>
+        <translation>Frequency Response of Piezo Buzzer</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="85"/>
+        <source>Velocity of Sound</source>
+        <translation>Velocity of Sound</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="86"/>
+        <source>Sound beats</source>
+        <translation>Sound beats</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="90"/>
+        <source>Rod Pendulum with Light barrier</source>
+        <translation>Rod Pendulum with Light barrier</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="91"/>
+        <source>Pendulum Wavefrorm</source>
+        <translation>Pendulum Wavefrorm</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="92"/>
+        <source>Driven Pendulum resonance</source>
+        <translation>Driven Pendulum resonance</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="93"/>
+        <source>Distance by HY-SRF04 Echo module</source>
+        <translation>Distance by HY-SRF04 Echo module</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="94"/>
+        <source>Gravity by Time of Flight</source>
+        <translation>Gravity by Time of Flight</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="98"/>
+        <source>Temperatue, PT100 Sensor</source>
+        <translation>Temperatue, PT100 Sensor</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="99"/>
+        <source>Data Logger</source>
+        <translation>Data Logger</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="100"/>
+        <source>Advanced Data Logger</source>
+        <translation>Advanced Data Logger</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="104"/>
+        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
+        <translation>Magnetic Hysterisis (MPU925x Sensor)</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="105"/>
+        <source>Luminosity(TSL2561) Logger</source>
+        <translation>Luminosity(TSL2561) Logger</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="106"/>
+        <source>MPU-6050 Acccn, Velocity and Temp</source>
+        <translation>MPU-6050 Acccn, Velocity and Temp</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="107"/>
+        <source>General Purpose I2C Sensors</source>
+        <translation>General Purpose I2C Sensors</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="111"/>
+        <source>Read Inputs</source>
+        <translation>Read Inputs</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="112"/>
+        <source>Set DC Voltages</source>
+        <translation>Set DC Voltages</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="113"/>
+        <source>Capture Single Input</source>
+        <translation>Capture Single Input</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="114"/>
+        <source>Capture Two Inputs</source>
+        <translation>Capture Two Inputs</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="115"/>
+        <source>Capture Four Inputs</source>
+        <translation>Capture Four Inputs</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="116"/>
         <source>Triangular Waveform</source>
-        <translation type="unfinished"></translation>
+        <translation>Triangular Waveform</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="117"/>
+        <source>Arbitrary Waveform</source>
+        <translation>Arbitrary Waveform</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="118"/>
+        <source>Waveform Table</source>
+        <translation>Waveform Table</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="119"/>
+        <source>RC Transient</source>
+        <translation>RC Transient</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="120"/>
+        <source>RL Transient</source>
+        <translation>RL Transient</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="121"/>
+        <source>RC Integration</source>
+        <translation>RC Integration</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="122"/>
+        <source>Clipping with Diode</source>
+        <translation>Clipping with Diode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="123"/>
+        <source>Clamping with Diode</source>
+        <translation>Clamping with Diode</translation>
     </message>
     <message>
         <location filename="../main.py" line="125"/>
-        <source>Arbitrary Waveform</source>
-        <translation type="unfinished"></translation>
+        <source>NPN Ib vs IC plot</source>
+        <translation>NPN Ib vs IC plot</translation>
     </message>
     <message>
         <location filename="../main.py" line="126"/>
-        <source>Waveform Table</source>
-        <translation type="unfinished"></translation>
+        <source>Fourier Transform</source>
+        <translation>Fourier Transform</translation>
     </message>
     <message>
         <location filename="../main.py" line="127"/>
-        <source>RC Transient</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="128"/>
-        <source>RL Transient</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="129"/>
-        <source>RC Integration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="130"/>
-        <source>Clipping with Diode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="131"/>
-        <source>Clamping with Diode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="133"/>
-        <source>NPN Ib vs IC plot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="134"/>
-        <source>Fourier Transform</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="135"/>
         <source>Rod Pendulum</source>
-        <translation type="unfinished"></translation>
+        <translation>Rod Pendulum</translation>
     </message>
     <message>
-        <location filename="../main.py" line="254"/>
+        <location filename="../main.py" line="246"/>
         <source>Enable PopUp Help Window</source>
-        <translation type="unfinished"></translation>
+        <translation>Enable PopUp Help Window</translation>
     </message>
     <message>
-        <location filename="../main.py" line="294"/>
+        <location filename="../main.py" line="286"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="328"/>
+        <location filename="../main.py" line="320"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="368"/>
+        <location filename="../main.py" line="360"/>
         <source>No immediate application</source>
-        <translation type="unfinished"></translation>
+        <translation>No immediate application</translation>
     </message>
     <message>
-        <location filename="../main.py" line="356"/>
+        <location filename="../main.py" line="348"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished"></translation>
+        <translation>Please restart the application to lighten the screen&apos;s background</translation>
     </message>
     <message>
-        <location filename="../main.py" line="368"/>
+        <location filename="../main.py" line="360"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished"></translation>
+        <translation>Please restart the application to darken the screen&apos;s background.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="370"/>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="371"/>
+        <source>Reconnect</source>
+        <translation>Reconnect</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="372"/>
+        <source>LightBackGround next time</source>
+        <translation>LightBackGround next time</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="373"/>
+        <source>DarkBackGround next time</source>
+        <translation>DarkBackGround next time</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="374"/>
+        <source>Choose Language</source>
+        <translation>Choose Language</translation>
     </message>
     <message>
         <location filename="../main.py" line="378"/>
-        <source>Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="379"/>
-        <source>Reconnect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="380"/>
-        <source>LightBackGround next time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="381"/>
-        <source>DarkBackGround next time</source>
-        <translation type="unfinished"></translation>
+        <source>School Expts</source>
+        <translation>School Expts</translation>
     </message>
     <message>
         <location filename="../main.py" line="382"/>
-        <source>Choose Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="386"/>
-        <source>School Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="390"/>
         <source>Electronics</source>
-        <translation type="unfinished"></translation>
+        <translation>Electronics</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="389"/>
+        <source>Electrical</source>
+        <translation>Electrical</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="393"/>
+        <source>Sound</source>
+        <translation>Sound</translation>
     </message>
     <message>
         <location filename="../main.py" line="397"/>
-        <source>Electrical</source>
-        <translation type="unfinished"></translation>
+        <source>Mechanics</source>
+        <translation>Mechanics</translation>
     </message>
     <message>
         <location filename="../main.py" line="401"/>
-        <source>Sound</source>
-        <translation type="unfinished"></translation>
+        <source>Other Expts</source>
+        <translation>Other Expts</translation>
     </message>
     <message>
         <location filename="../main.py" line="405"/>
-        <source>Mechanics</source>
-        <translation type="unfinished"></translation>
+        <source>I2C Modules</source>
+        <translation>I2C Modules</translation>
     </message>
     <message>
         <location filename="../main.py" line="409"/>
-        <source>Other Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="413"/>
-        <source>I2C Modules</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="417"/>
         <source>PythonCode</source>
-        <translation type="unfinished"></translation>
+        <translation>PythonCode</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>MainWindow</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="42"/>
         <source>CHOOSE Y PARAMETER</source>
-        <translation type="unfinished"></translation>
+        <translation>CHOOSE Y PARAMETER</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="49"/>
         <source>Click the Button above to select X axis parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>Click the Button above to select X axis parameter</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="56"/>
         <source>Click the Button above to select Y axis parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>Click the Button above to select Y axis parameter</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="69"/>
         <source>CHOOSE X PARAMETER</source>
-        <translation type="unfinished"></translation>
+        <translation>CHOOSE X PARAMETER</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="107"/>
         <source>Datapoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Datapoints</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="154"/>
         <source> milliSeconds</source>
-        <translation type="unfinished"></translation>
+        <translation> milliSeconds</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="127"/>
         <source>LOG DATA</source>
-        <translation type="unfinished"></translation>
+        <translation>LOG DATA</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="134"/>
         <source>Time Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Time Interval</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="167"/>
         <source>Settling Time b/w X and Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Settling Time b/w X and Y</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="28"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>None</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="33"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="38"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="43"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="48"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="53"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="58"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation>7</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="63"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation>8</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="68"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="73"/>
         <source>10</source>
-        <translation type="unfinished"></translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="81"/>
         <source>RECORD</source>
-        <translation type="unfinished"></translation>
+        <translation>RECORD</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="91"/>
         <source>Calculate</source>
-        <translation type="unfinished"></translation>
+        <translation>Calculate</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="111"/>
         <source>Averaging Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Averaging Samples</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="118"/>
         <source>Number of samples considered for moving average in results calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Number of samples considered for moving average in results calculation</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="125"/>
         <source>Polynomial Degree</source>
-        <translation type="unfinished"></translation>
+        <translation>Polynomial Degree</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="132"/>
         <source>Degree of the polynomial used for smoothing the data</source>
-        <translation type="unfinished"></translation>
+        <translation>Degree of the polynomial used for smoothing the data</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="204"/>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline</translation>
     </message>
 </context>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="175"/>
+        <location filename="../main.py" line="167"/>
         <source>Help: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Help: %s</translation>
     </message>
 </context>
 </TS>
