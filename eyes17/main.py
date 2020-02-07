@@ -2,6 +2,7 @@
 import sys, time, math, importlib, os, platform, os.path, configparser
 from utils import cnf
 from PyQt5.QtCore import pyqtSignal, QObject
+from PyQt5.QtGui import QIcon
 from QtVersion import *
 showVersions()
 
@@ -372,9 +373,13 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
 		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
+		sm.setIcon(QIcon("images/UN_emblem_blue.svg"))
 		for e in languages:
-			sm.addAction(e,  lambda item=e: self.setLanguage(item))	
-
+			action = sm.addAction(e,  lambda item=e: self.setLanguage(item))
+			flag=f"images/{e}.svg"
+			if os.path.exists(flag):
+				action.setIcon(QIcon(flag))
+				action.setIconVisibleInMenu(True)
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
