@@ -6,6 +6,7 @@ doc
 *.pyc
 __pyshared__/
 build/
+pypi/
 
 # lyx generated files
 *-lyxformat-*.lyx

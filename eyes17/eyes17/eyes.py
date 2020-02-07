@@ -35,29 +35,6 @@ from . import eyemath17
 fileOpen=open
 
 def open(**kwargs):
-	"""Measures a set of timestamped logic level changes(Type can be selected) from one digital input
-
-	Extended description of function.
-
-	Parameters
-	----------
-	channel : str
-		The input pin to measure first logic level change . Select from ['ID1','ID2','ID3','ID4','SEN','EXT','CNTR']
-	order : {'C', 'F', 'A'}
-		Description of `order`.
-	edgeType : {'rising', 'falling', '4xrising' [default], '16xrising'}
-		The type of level change that should be recorded
-	points : int
-		Number of data points to obtain for input 1 (Max 4)
-	timeout : int
-		Timeout in seconds.  Use the timeout option if you're unsure of the input signal time period.
-		
-
-	Returns
-	-------
-	list
-		timestamp array in uS units. -1 if timed out.
-	"""
 	obj = Interface(**kwargs)
 	if obj.H.fd != None:
 		return obj
@@ -85,12 +62,7 @@ class Interface():
 	+==========+=================================================================+
 	|timeout   | serial port read timeout. default = 1s                          |
 	+----------+-----------------------------------------------------------------+
-
-	>>> import expeyes.eyes17
-	>>> I = expeyes.eyes17.open()
-	>>> print(I)
-	<eyes17.Interface instance at 0xb6c0cac>
-
+	
 	Once you have instantiated this class,  its various methods will allow access to all the features built
 	into the device.
 	"""
@@ -367,8 +339,8 @@ class Interface():
 		Example
 		
 		>>> from pylab import *
-		>>> import expeyes.eyes17
-		>>> I=expeyes.eyes17.open()
+		>>> import eyes17.eyes
+		>>> I=eyes17.eyes.open()
 		>>> x,y = I.capture1('A1',3200,1)
 		>>> plot(x,y)
 		>>> show()
@@ -3039,8 +3011,8 @@ class Interface():
 
 if __name__ == "__main__":
 	print("""this is not an executable file
-	import expeyes.eyes17
-	I=expeyes.eyes17.open()
+	import eyes17.eyes
+	I=eyes17.eyes.open()
 	I.get_voltage('A1')
 	""")
 	

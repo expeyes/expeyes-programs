@@ -556,6 +556,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			try:
 				self.p.set_pv2(val)
 				self.PV2slider.setValue(int(val*1000))
+				self.pcsVal_I.display((val+3.3)/6.6)
 			except:
 				self.comerr()
 				
@@ -564,8 +565,10 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
 			self.PV2text.setValue(val)
+			self.pcsVal_I.display((val+3.3)/6.6)
 			try:
 				self.p.set_pv2(val)
+				self.PV2text.setText(val)
 			except:
 				self.comerr()
 				
