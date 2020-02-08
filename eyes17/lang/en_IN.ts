@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="en_IN">
+<!DOCTYPE TS><TS version="2.0" language="en_IN" sourcelanguage="">
 <context>
     <name>Dialog</name>
     <message>
@@ -1046,37 +1045,37 @@ For Driven Pendulum Expt.</translation>
         <translation> set to </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="622"/>
+        <location filename="../scope.py" line="625"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>Output Changed from WG to SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="672"/>
+        <location filename="../scope.py" line="675"/>
         <source>Capacitance too high or short to ground</source>
         <translation>Capacitance too high or short to ground</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="676"/>
+        <location filename="../scope.py" line="679"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="679"/>
+        <location filename="../scope.py" line="682"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="682"/>
+        <location filename="../scope.py" line="685"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="695"/>
+        <location filename="../scope.py" line="698"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="697"/>
+        <location filename="../scope.py" line="700"/>
         <source>No signal</source>
         <translation>No signal</translation>
     </message>
@@ -1320,7 +1319,7 @@ shows the actual frequency set.
         <translation>1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1089"/>
+        <location filename="../layouts/scope_layout.ui" line="1136"/>
         <source>A2</source>
         <translation>A2</translation>
     </message>
@@ -1350,670 +1349,680 @@ shows the actual frequency set.
         <translation>Measure Voltages</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="274"/>
+        <location filename="../layouts/scope_layout.ui" line="288"/>
         <source>16V</source>
         <translation>16V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="279"/>
+        <location filename="../layouts/scope_layout.ui" line="293"/>
         <source>8V</source>
         <translation>8V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="428"/>
+        <location filename="../layouts/scope_layout.ui" line="435"/>
         <source>4V</source>
         <translation>4V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="289"/>
+        <location filename="../layouts/scope_layout.ui" line="303"/>
         <source>2.5V</source>
         <translation>2.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="996"/>
+        <location filename="../layouts/scope_layout.ui" line="1043"/>
         <source>1V</source>
         <translation>1V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="443"/>
+        <location filename="../layouts/scope_layout.ui" line="450"/>
         <source>0.5V</source>
         <translation>0.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="358"/>
+        <location filename="../layouts/scope_layout.ui" line="351"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1101"/>
+        <location filename="../layouts/scope_layout.ui" line="1148"/>
         <source>A3</source>
         <translation>A3</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="433"/>
+        <location filename="../layouts/scope_layout.ui" line="440"/>
         <source>2V</source>
         <translation>2V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="451"/>
+        <location filename="../layouts/scope_layout.ui" line="266"/>
         <source>MIC</source>
         <translation>MIC</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="631"/>
+        <location filename="../layouts/scope_layout.ui" line="699"/>
         <source> Volts</source>
         <translation> Volts</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="510"/>
+        <location filename="../layouts/scope_layout.ui" line="742"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="599"/>
+        <location filename="../layouts/scope_layout.ui" line="804"/>
         <source>symmetric</source>
         <translation>symmetric</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="612"/>
+        <location filename="../layouts/scope_layout.ui" line="860"/>
         <source> Hz</source>
         <translation> Hz</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="583"/>
+        <location filename="../layouts/scope_layout.ui" line="686"/>
         <source>symmetric volts</source>
         <translation>symmetric volts</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="661"/>
+        <location filename="../layouts/scope_layout.ui" line="729"/>
         <source>SQ1</source>
         <translation>SQ1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="685"/>
+        <location filename="../layouts/scope_layout.ui" line="785"/>
         <source>PV2</source>
         <translation>PV2</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="709"/>
+        <location filename="../layouts/scope_layout.ui" line="828"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="733"/>
+        <location filename="../layouts/scope_layout.ui" line="651"/>
         <source>PV1</source>
         <translation>PV1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="782"/>
         <source>Current Source Voltage:</source>
-        <translation>Current Source Voltage:</translation>
+        <translation type="obsolete">Current Source Voltage:</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="795"/>
+        <location filename="../layouts/scope_layout.ui" line="587"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="847"/>
+        <location filename="../layouts/scope_layout.ui" line="894"/>
         <source>Timebase</source>
         <translation>Timebase</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="905"/>
+        <location filename="../layouts/scope_layout.ui" line="952"/>
         <source>Trigger</source>
         <translation>Trigger</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="918"/>
+        <location filename="../layouts/scope_layout.ui" line="965"/>
         <source>SAVE Traces</source>
         <translation>SAVE Traces</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="925"/>
+        <location filename="../layouts/scope_layout.ui" line="972"/>
         <source>CCS</source>
         <translation>CCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="939"/>
+        <location filename="../layouts/scope_layout.ui" line="986"/>
         <source>Fourier Transform</source>
         <translation>Fourier Transform</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="959"/>
+        <location filename="../layouts/scope_layout.ui" line="1006"/>
         <source>Resistance on SEN</source>
         <translation>Resistance on SEN</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="966"/>
+        <location filename="../layouts/scope_layout.ui" line="1013"/>
         <source>Frequency (IN2):</source>
         <translation>Frequency (IN2):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="973"/>
+        <location filename="../layouts/scope_layout.ui" line="1020"/>
         <source>OD1</source>
         <translation>OD1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="991"/>
+        <location filename="../layouts/scope_layout.ui" line="1038"/>
         <source>80 mV</source>
         <translation>80 mV</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1001"/>
+        <location filename="../layouts/scope_layout.ui" line="1048"/>
         <source>3V (Amplitude)</source>
         <translation>3V (Amplitude)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1010"/>
+        <location filename="../layouts/scope_layout.ui" line="1057"/>
         <source>WG( Sinusoidal )</source>
         <translation>WG( Sinusoidal )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1015"/>
+        <location filename="../layouts/scope_layout.ui" line="1062"/>
         <source>WG( Triangle )</source>
         <translation>WG( Triangle )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1020"/>
+        <location filename="../layouts/scope_layout.ui" line="1067"/>
         <source>SQ2( Square )</source>
         <translation>SQ2( Square )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1028"/>
+        <location filename="../layouts/scope_layout.ui" line="1075"/>
         <source>Capacitance (IN1):</source>
         <translation>Capacitance (IN1):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1035"/>
+        <location filename="../layouts/scope_layout.ui" line="1082"/>
         <source>SHOW ALL</source>
         <translation>SHOW ALL</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1077"/>
+        <location filename="../layouts/scope_layout.ui" line="1124"/>
         <source>A1</source>
         <translation>A1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1218"/>
+        <location filename="../layouts/scope_layout.ui" line="1265"/>
         <source>FREEZE</source>
         <translation>FREEZE</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1231"/>
+        <location filename="../layouts/scope_layout.ui" line="1278"/>
         <source>Cursor</source>
         <translation>Cursor</translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="561"/>
+        <source>Current Source Voltage(V):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="574"/>
+        <source>Current Source (uA):</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="20"/>
+        <location filename="../main.py" line="21"/>
         <source>Voltage measurement</source>
         <translation>Voltage measurement</translation>
     </message>
     <message>
-        <location filename="../main.py" line="21"/>
+        <location filename="../main.py" line="22"/>
         <source>Resistance measurement</source>
         <translation>Resistance measurement</translation>
     </message>
     <message>
-        <location filename="../main.py" line="22"/>
+        <location filename="../main.py" line="23"/>
         <source>Resistors in Series</source>
         <translation>Resistors in Series</translation>
     </message>
     <message>
-        <location filename="../main.py" line="23"/>
+        <location filename="../main.py" line="24"/>
         <source>Resistors in Parallel</source>
         <translation>Resistors in Parallel</translation>
     </message>
     <message>
-        <location filename="../main.py" line="24"/>
+        <location filename="../main.py" line="25"/>
         <source>Capacitance measurement</source>
         <translation>Capacitance measurement</translation>
     </message>
     <message>
-        <location filename="../main.py" line="25"/>
+        <location filename="../main.py" line="26"/>
         <source>Capacitors in Series</source>
         <translation>Capacitors in Series</translation>
     </message>
     <message>
-        <location filename="../main.py" line="26"/>
+        <location filename="../main.py" line="27"/>
         <source>Capacitors in Parallel</source>
         <translation>Capacitors in Parallel</translation>
     </message>
     <message>
-        <location filename="../main.py" line="27"/>
+        <location filename="../main.py" line="28"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation>Resistance by Ohm&apos;s law</translation>
     </message>
     <message>
-        <location filename="../main.py" line="28"/>
+        <location filename="../main.py" line="29"/>
         <source>Direct and Alternating Currents</source>
         <translation>Direct and Alternating Currents</translation>
     </message>
     <message>
-        <location filename="../main.py" line="29"/>
+        <location filename="../main.py" line="30"/>
         <source>AC mains pickup</source>
         <translation>AC mains pickup</translation>
     </message>
     <message>
-        <location filename="../main.py" line="30"/>
+        <location filename="../main.py" line="31"/>
         <source>Separating AC and DC</source>
         <translation>Separating AC and DC</translation>
     </message>
     <message>
-        <location filename="../main.py" line="31"/>
+        <location filename="../main.py" line="32"/>
         <source>Conducting Human body</source>
         <translation>Conducting Human body</translation>
     </message>
     <message>
-        <location filename="../main.py" line="32"/>
+        <location filename="../main.py" line="33"/>
         <source>Resistance of Human body</source>
         <translation>Resistance of Human body</translation>
     </message>
     <message>
-        <location filename="../main.py" line="33"/>
+        <location filename="../main.py" line="34"/>
         <source>Light Dependent Resistor</source>
         <translation>Light Dependent Resistor</translation>
     </message>
     <message>
-        <location filename="../main.py" line="34"/>
+        <location filename="../main.py" line="35"/>
         <source>Lemon Cell</source>
         <translation>Lemon Cell</translation>
     </message>
     <message>
-        <location filename="../main.py" line="35"/>
+        <location filename="../main.py" line="36"/>
         <source>Simple AC generator</source>
         <translation>Simple AC generator</translation>
     </message>
     <message>
-        <location filename="../main.py" line="36"/>
+        <location filename="../main.py" line="37"/>
         <source>Transformer</source>
         <translation>Transformer</translation>
     </message>
     <message>
-        <location filename="../main.py" line="37"/>
+        <location filename="../main.py" line="38"/>
         <source>Resistance of Water</source>
         <translation>Resistance of Water</translation>
     </message>
     <message>
-        <location filename="../main.py" line="38"/>
+        <location filename="../main.py" line="39"/>
         <source>Generating Sound</source>
         <translation>Generating Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="39"/>
+        <location filename="../main.py" line="40"/>
         <source>Digitizing Sound</source>
         <translation>Digitizing Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="40"/>
+        <location filename="../main.py" line="41"/>
         <source>Stroboscope</source>
         <translation>Stroboscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="430"/>
+        <location filename="../main.py" line="435"/>
         <source>Oscilloscope</source>
         <translation>Oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="51"/>
+        <location filename="../main.py" line="52"/>
         <source>Diode Characteristics</source>
         <translation>Diode Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="52"/>
+        <location filename="../main.py" line="53"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN Output Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="53"/>
+        <location filename="../main.py" line="54"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP Output Characteristics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="59"/>
+        <location filename="../main.py" line="60"/>
         <source>Halfwave Rectifier</source>
         <translation>Halfwave Rectifier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="124"/>
+        <location filename="../main.py" line="125"/>
         <source>Fullwave Rectifier</source>
         <translation>Fullwave Rectifier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="61"/>
+        <location filename="../main.py" line="62"/>
         <source>Diode Clipping</source>
         <translation>Diode Clipping</translation>
     </message>
     <message>
-        <location filename="../main.py" line="62"/>
+        <location filename="../main.py" line="63"/>
         <source>Diode Clamping</source>
         <translation>Diode Clamping</translation>
     </message>
     <message>
-        <location filename="../main.py" line="63"/>
+        <location filename="../main.py" line="64"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555 Multivibrator</translation>
     </message>
     <message>
-        <location filename="../main.py" line="64"/>
+        <location filename="../main.py" line="65"/>
         <source>Transistor Amplifier (CE)</source>
         <translation>Transistor Amplifier (CE)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="65"/>
+        <location filename="../main.py" line="66"/>
         <source>Inverting Amplifier</source>
         <translation>Inverting Amplifier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="66"/>
+        <location filename="../main.py" line="67"/>
         <source>Non-Inverting Amplifier</source>
         <translation>Non-Inverting Amplifier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="67"/>
+        <location filename="../main.py" line="68"/>
         <source>Integrator using Op-Amp</source>
         <translation>Integrator using Op-Amp</translation>
     </message>
     <message>
-        <location filename="../main.py" line="68"/>
+        <location filename="../main.py" line="69"/>
         <source>Logic Gates</source>
         <translation>Logic Gates</translation>
     </message>
     <message>
-        <location filename="../main.py" line="69"/>
+        <location filename="../main.py" line="70"/>
         <source>Clock Divider Circuit</source>
         <translation>Clock Divider Circuit</translation>
     </message>
     <message>
-        <location filename="../main.py" line="73"/>
+        <location filename="../main.py" line="74"/>
         <source>Plot I-V Curve</source>
         <translation>Plot I-V Curve</translation>
     </message>
     <message>
-        <location filename="../main.py" line="74"/>
+        <location filename="../main.py" line="75"/>
         <source>XY Plotting</source>
         <translation>XY Plotting</translation>
     </message>
     <message>
-        <location filename="../main.py" line="75"/>
+        <location filename="../main.py" line="76"/>
         <source>RLC Steady state response</source>
         <translation>RLC Steady state response</translation>
     </message>
     <message>
-        <location filename="../main.py" line="76"/>
+        <location filename="../main.py" line="77"/>
         <source>RC Transient response</source>
         <translation>RC Transient response</translation>
     </message>
     <message>
-        <location filename="../main.py" line="77"/>
+        <location filename="../main.py" line="78"/>
         <source>RL Transient response</source>
         <translation>RL Transient response</translation>
     </message>
     <message>
-        <location filename="../main.py" line="78"/>
+        <location filename="../main.py" line="79"/>
         <source>RLC transient response</source>
         <translation>RLC transient response</translation>
     </message>
     <message>
-        <location filename="../main.py" line="79"/>
+        <location filename="../main.py" line="80"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation>Frequency Response of Filter Circuit</translation>
     </message>
     <message>
-        <location filename="../main.py" line="80"/>
+        <location filename="../main.py" line="81"/>
         <source>Electromagnetic Induction</source>
         <translation>Electromagnetic Induction</translation>
     </message>
     <message>
-        <location filename="../main.py" line="84"/>
+        <location filename="../main.py" line="85"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation>Frequency Response of Piezo Buzzer</translation>
     </message>
     <message>
-        <location filename="../main.py" line="85"/>
+        <location filename="../main.py" line="86"/>
         <source>Velocity of Sound</source>
         <translation>Velocity of Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="86"/>
+        <location filename="../main.py" line="87"/>
         <source>Sound beats</source>
         <translation>Sound beats</translation>
     </message>
     <message>
-        <location filename="../main.py" line="90"/>
+        <location filename="../main.py" line="91"/>
         <source>Rod Pendulum with Light barrier</source>
         <translation>Rod Pendulum with Light barrier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="91"/>
+        <location filename="../main.py" line="92"/>
         <source>Pendulum Wavefrorm</source>
         <translation>Pendulum Wavefrorm</translation>
     </message>
     <message>
-        <location filename="../main.py" line="92"/>
+        <location filename="../main.py" line="93"/>
         <source>Driven Pendulum resonance</source>
         <translation>Driven Pendulum resonance</translation>
     </message>
     <message>
-        <location filename="../main.py" line="93"/>
+        <location filename="../main.py" line="94"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation>Distance by HY-SRF04 Echo module</translation>
     </message>
     <message>
-        <location filename="../main.py" line="94"/>
+        <location filename="../main.py" line="95"/>
         <source>Gravity by Time of Flight</source>
         <translation>Gravity by Time of Flight</translation>
     </message>
     <message>
-        <location filename="../main.py" line="98"/>
+        <location filename="../main.py" line="99"/>
         <source>Temperatue, PT100 Sensor</source>
         <translation>Temperatue, PT100 Sensor</translation>
     </message>
     <message>
-        <location filename="../main.py" line="99"/>
+        <location filename="../main.py" line="100"/>
         <source>Data Logger</source>
         <translation>Data Logger</translation>
     </message>
     <message>
-        <location filename="../main.py" line="100"/>
+        <location filename="../main.py" line="101"/>
         <source>Advanced Data Logger</source>
         <translation>Advanced Data Logger</translation>
     </message>
     <message>
-        <location filename="../main.py" line="104"/>
+        <location filename="../main.py" line="105"/>
         <source>Magnetic Hysterisis (MPU925x Sensor)</source>
         <translation>Magnetic Hysterisis (MPU925x Sensor)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="105"/>
+        <location filename="../main.py" line="106"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation>Luminosity(TSL2561) Logger</translation>
     </message>
     <message>
-        <location filename="../main.py" line="106"/>
+        <location filename="../main.py" line="107"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050 Acccn, Velocity and Temp</translation>
     </message>
     <message>
-        <location filename="../main.py" line="107"/>
+        <location filename="../main.py" line="108"/>
         <source>General Purpose I2C Sensors</source>
         <translation>General Purpose I2C Sensors</translation>
     </message>
     <message>
-        <location filename="../main.py" line="111"/>
+        <location filename="../main.py" line="112"/>
         <source>Read Inputs</source>
         <translation>Read Inputs</translation>
     </message>
     <message>
-        <location filename="../main.py" line="112"/>
+        <location filename="../main.py" line="113"/>
         <source>Set DC Voltages</source>
         <translation>Set DC Voltages</translation>
     </message>
     <message>
-        <location filename="../main.py" line="113"/>
+        <location filename="../main.py" line="114"/>
         <source>Capture Single Input</source>
         <translation>Capture Single Input</translation>
     </message>
     <message>
-        <location filename="../main.py" line="114"/>
+        <location filename="../main.py" line="115"/>
         <source>Capture Two Inputs</source>
         <translation>Capture Two Inputs</translation>
     </message>
     <message>
-        <location filename="../main.py" line="115"/>
+        <location filename="../main.py" line="116"/>
         <source>Capture Four Inputs</source>
         <translation>Capture Four Inputs</translation>
     </message>
     <message>
-        <location filename="../main.py" line="116"/>
+        <location filename="../main.py" line="117"/>
         <source>Triangular Waveform</source>
         <translation>Triangular Waveform</translation>
     </message>
     <message>
-        <location filename="../main.py" line="117"/>
+        <location filename="../main.py" line="118"/>
         <source>Arbitrary Waveform</source>
         <translation>Arbitrary Waveform</translation>
     </message>
     <message>
-        <location filename="../main.py" line="118"/>
+        <location filename="../main.py" line="119"/>
         <source>Waveform Table</source>
         <translation>Waveform Table</translation>
     </message>
     <message>
-        <location filename="../main.py" line="119"/>
+        <location filename="../main.py" line="120"/>
         <source>RC Transient</source>
         <translation>RC Transient</translation>
     </message>
     <message>
-        <location filename="../main.py" line="120"/>
+        <location filename="../main.py" line="121"/>
         <source>RL Transient</source>
         <translation>RL Transient</translation>
     </message>
     <message>
-        <location filename="../main.py" line="121"/>
+        <location filename="../main.py" line="122"/>
         <source>RC Integration</source>
         <translation>RC Integration</translation>
     </message>
     <message>
-        <location filename="../main.py" line="122"/>
+        <location filename="../main.py" line="123"/>
         <source>Clipping with Diode</source>
         <translation>Clipping with Diode</translation>
     </message>
     <message>
-        <location filename="../main.py" line="123"/>
+        <location filename="../main.py" line="124"/>
         <source>Clamping with Diode</source>
         <translation>Clamping with Diode</translation>
     </message>
     <message>
-        <location filename="../main.py" line="125"/>
+        <location filename="../main.py" line="126"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib vs IC plot</translation>
     </message>
     <message>
-        <location filename="../main.py" line="126"/>
+        <location filename="../main.py" line="127"/>
         <source>Fourier Transform</source>
         <translation>Fourier Transform</translation>
     </message>
     <message>
-        <location filename="../main.py" line="127"/>
+        <location filename="../main.py" line="128"/>
         <source>Rod Pendulum</source>
         <translation>Rod Pendulum</translation>
     </message>
     <message>
-        <location filename="../main.py" line="246"/>
+        <location filename="../main.py" line="247"/>
         <source>Enable PopUp Help Window</source>
         <translation>Enable PopUp Help Window</translation>
     </message>
     <message>
-        <location filename="../main.py" line="286"/>
+        <location filename="../main.py" line="287"/>
         <source>Failed to load scope</source>
         <translation>Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="320"/>
+        <location filename="../main.py" line="321"/>
         <source>Failed to load %s</source>
         <translation>Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="360"/>
+        <location filename="../main.py" line="361"/>
         <source>No immediate application</source>
         <translation>No immediate application</translation>
     </message>
     <message>
-        <location filename="../main.py" line="348"/>
+        <location filename="../main.py" line="349"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation>Please restart the application to lighten the screen&apos;s background</translation>
     </message>
     <message>
-        <location filename="../main.py" line="360"/>
+        <location filename="../main.py" line="361"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation>Please restart the application to darken the screen&apos;s background.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="370"/>
+        <location filename="../main.py" line="371"/>
         <source>Device</source>
         <translation>Device</translation>
     </message>
     <message>
-        <location filename="../main.py" line="371"/>
+        <location filename="../main.py" line="372"/>
         <source>Reconnect</source>
         <translation>Reconnect</translation>
     </message>
     <message>
-        <location filename="../main.py" line="372"/>
+        <location filename="../main.py" line="373"/>
         <source>LightBackGround next time</source>
         <translation>LightBackGround next time</translation>
     </message>
     <message>
-        <location filename="../main.py" line="373"/>
+        <location filename="../main.py" line="374"/>
         <source>DarkBackGround next time</source>
         <translation>DarkBackGround next time</translation>
     </message>
     <message>
-        <location filename="../main.py" line="374"/>
+        <location filename="../main.py" line="375"/>
         <source>Choose Language</source>
         <translation>Choose Language</translation>
     </message>
     <message>
-        <location filename="../main.py" line="378"/>
+        <location filename="../main.py" line="383"/>
         <source>School Expts</source>
         <translation>School Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="382"/>
+        <location filename="../main.py" line="387"/>
         <source>Electronics</source>
         <translation>Electronics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="389"/>
+        <location filename="../main.py" line="394"/>
         <source>Electrical</source>
         <translation>Electrical</translation>
     </message>
     <message>
-        <location filename="../main.py" line="393"/>
+        <location filename="../main.py" line="398"/>
         <source>Sound</source>
         <translation>Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="397"/>
+        <location filename="../main.py" line="402"/>
         <source>Mechanics</source>
         <translation>Mechanics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="401"/>
+        <location filename="../main.py" line="406"/>
         <source>Other Expts</source>
         <translation>Other Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="405"/>
+        <location filename="../main.py" line="410"/>
         <source>I2C Modules</source>
         <translation>I2C Modules</translation>
     </message>
     <message>
-        <location filename="../main.py" line="409"/>
+        <location filename="../main.py" line="414"/>
         <source>PythonCode</source>
         <translation>PythonCode</translation>
     </message>
@@ -2156,7 +2165,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="167"/>
+        <location filename="../main.py" line="168"/>
         <source>Help: %s</source>
         <translation>Help: %s</translation>
     </message>

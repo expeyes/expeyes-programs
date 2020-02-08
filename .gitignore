@@ -53,3 +53,6 @@ m4/
 
 # quilt stuff
 .pc/
+
+# generated language files
+*.qm
