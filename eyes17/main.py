@@ -351,6 +351,7 @@ class MainWindow(QMainWindow):
 			self.tr('No immediate application'),
 			self.tr("Please restart the application to lighten the screen's background")
 		)
+		self.init_UI()
 		return
 		
 	def setBBG(self):
@@ -363,6 +364,7 @@ class MainWindow(QMainWindow):
 			self.tr('No immediate application'),
 			self.tr("Please restart the application to darken the screen's background.")
 		)
+		self.init_UI()
 		return
 	
 	def makeMenu(self):

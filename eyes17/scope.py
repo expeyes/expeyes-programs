@@ -565,12 +565,15 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
 			self.PV2text.setValue(val)
-			self.pcsVal_I.display((val+3.3)/6.6)
+			self.pcsVal_I.setText('%.2f mA'%(3.1-3*((val+3)/6)))
 			try:
 				self.p.set_pv2(val)
 				self.PV2text.setText(val)
 			except:
 				self.comerr()
+
+	def pcs_slider(self,val):
+		self.PV2slider.setValue(val)
 				
 	def sq1_dc(self):
 		try:

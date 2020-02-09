@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>857</width>
-    <height>548</height>
+    <width>788</width>
+    <height>595</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -479,7 +479,7 @@
           <property name="spacing">
            <number>1</number>
           </property>
-          <item row="4" column="0" colspan="5">
+          <item row="5" column="0" colspan="5">
            <widget class="QFrame" name="pcsFrame">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -501,24 +501,21 @@
             </property>
             <layout class="QGridLayout" name="gridLayout_6">
              <property name="leftMargin">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="topMargin">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="rightMargin">
-              <number>0</number>
+              <number>1</number>
              </property>
              <property name="bottomMargin">
+              <number>1</number>
+             </property>
+             <property name="spacing">
               <number>0</number>
              </property>
-             <property name="horizontalSpacing">
-              <number>3</number>
-             </property>
-             <property name="verticalSpacing">
-              <number>0</number>
-             </property>
-             <item row="1" column="1">
+             <item row="3" column="2">
               <widget class="QLCDNumber" name="pcsVal">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
@@ -549,7 +546,39 @@
                </property>
               </widget>
              </item>
-             <item row="1" column="0">
+             <item row="2" column="2">
+              <widget class="QLabel" name="pcsVal_I">
+               <property name="text">
+                <string>-</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QSlider" name="PCSslider">
+               <property name="minimum">
+                <number>-3300</number>
+               </property>
+               <property name="maximum">
+                <number>3300</number>
+               </property>
+               <property name="value">
+                <number>3300</number>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="invertedAppearance">
+                <bool>true</bool>
+               </property>
+               <property name="invertedControls">
+                <bool>true</bool>
+               </property>
+               <property name="class" stdset="0">
+                <string>symmetric volts</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="0" colspan="2">
               <widget class="QLabel" name="label">
                <property name="minimumSize">
                 <size>
@@ -558,51 +587,26 @@
                 </size>
                </property>
                <property name="text">
-                <string>Current Source Voltage(V):</string>
+                <string>Current Source Voltage(mV):</string>
                </property>
               </widget>
              </item>
-             <item row="0" column="0">
-              <widget class="QLabel" name="label_3">
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_2">
                <property name="minimumSize">
                 <size>
-                 <width>0</width>
-                 <height>15</height>
+                 <width>35</width>
+                 <height>0</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>35</width>
+                 <height>16777215</height>
                 </size>
                </property>
                <property name="text">
-                <string>Current Source (uA):</string>
-               </property>
-              </widget>
-             </item>
-             <item row="0" column="1">
-              <widget class="QLCDNumber" name="pcsVal_I">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="toolTip">
-                <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-               <property name="autoFillBackground">
-                <bool>false</bool>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <property name="smallDecimalPoint">
-                <bool>false</bool>
-               </property>
-               <property name="digitCount">
-                <number>4</number>
-               </property>
-               <property name="segmentStyle">
-                <enum>QLCDNumber::Flat</enum>
+                <string>PCS</string>
                </property>
               </widget>
              </item>
@@ -1297,8 +1301,8 @@
    <slot>show_fft()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>580</x>
-     <y>475</y>
+     <x>855</x>
+     <y>517</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1313,8 +1317,8 @@
    <slot>save_data()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>444</x>
-     <y>470</y>
+     <x>721</x>
+     <y>517</y>
     </hint>
     <hint type="destinationlabel">
      <x>551</x>
@@ -1329,8 +1333,8 @@
    <slot>select_wave(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>461</x>
-     <y>171</y>
+     <x>721</x>
+     <y>183</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1345,8 +1349,8 @@
    <slot>select_wgain(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>588</x>
-     <y>166</y>
+     <x>855</x>
+     <y>183</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1361,8 +1365,8 @@
    <slot>awg_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>454</x>
-     <y>199</y>
+     <x>718</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1377,8 +1381,8 @@
    <slot>awg_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>591</x>
-     <y>193</y>
+     <x>855</x>
+     <y>211</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1393,8 +1397,8 @@
    <slot>sq1_dc()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>573</x>
-     <y>234</y>
+     <x>855</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1409,8 +1413,8 @@
    <slot>sq1_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>530</x>
-     <y>234</y>
+     <x>799</x>
+     <y>238</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1425,8 +1429,8 @@
    <slot>sq1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>468</x>
-     <y>225</y>
+     <x>717</x>
+     <y>232</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1441,8 +1445,8 @@
    <slot>pv1_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>567</x>
-     <y>247</y>
+     <x>855</x>
+     <y>265</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1457,8 +1461,8 @@
    <slot>pv2_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>555</x>
-     <y>278</y>
+     <x>855</x>
+     <y>292</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1473,8 +1477,8 @@
    <slot>pv1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>457</x>
-     <y>255</y>
+     <x>718</x>
+     <y>259</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1489,8 +1493,8 @@
    <slot>pv2_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>395</x>
-     <y>277</y>
+     <x>718</x>
+     <y>286</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1505,8 +1509,8 @@
    <slot>set_timebase(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>557</x>
-     <y>426</y>
+     <x>854</x>
+     <y>458</y>
     </hint>
     <hint type="destinationlabel">
      <x>617</x>
@@ -1521,8 +1525,8 @@
    <slot>select_trig_source(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>465</x>
-     <y>454</y>
+     <x>723</x>
+     <y>489</y>
     </hint>
     <hint type="destinationlabel">
      <x>623</x>
@@ -1537,8 +1541,8 @@
    <slot>set_trigger(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>593</x>
-     <y>451</y>
+     <x>854</x>
+     <y>484</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -1553,12 +1557,28 @@
    <slot>show_voltmeter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>585</x>
-     <y>14</y>
+     <x>855</x>
+     <y>15</y>
     </hint>
     <hint type="destinationlabel">
      <x>613</x>
      <y>14</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>PCSslider</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>Form</receiver>
+   <slot>pcs_slider(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>676</x>
+     <y>308</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>872</x>
+     <y>307</y>
     </hint>
    </hints>
   </connection>
@@ -1585,5 +1605,6 @@
   <slot>select_trig_source(int)</slot>
   <slot>set_trigger(int)</slot>
   <slot>show_voltmeter()</slot>
+  <slot>pcs_slider(int)</slot>
  </slots>
 </ui>
