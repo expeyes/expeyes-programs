@@ -178,7 +178,7 @@
      </property>
      <widget class="QFrame" name="pwinview">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="Preferred">
         <horstretch>90</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -663,7 +663,7 @@
              <item row="2" column="2">
               <widget class="QLabel" name="pcsVal_I">
                <property name="text">
-                <string>..</string>
+                <string>1.65mA</string>
                </property>
               </widget>
              </item>
@@ -720,7 +720,7 @@
                 </size>
                </property>
                <property name="text">
-                <string>Current Source Voltage(mV):</string>
+                <string>Voltage across PCS(mV):</string>
                </property>
               </widget>
              </item>

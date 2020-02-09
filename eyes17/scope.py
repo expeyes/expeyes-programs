@@ -370,7 +370,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 
 		###PCS Monitoring in version 5+
 		if self.p.version_number >= 5.0: #Current source monitoring
-			self.pcsVal.display(self.p.get_voltage('AN8'))
+			self.pcsVal.display(int(self.p.get_voltage('AN8')*1e3))
 
 		self.loopCounter += 1
 		if self.loopCounter % 5 == 0:
@@ -380,10 +380,9 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
 					except:
 						self.comerr()
-
-					self.voltMeterCB[ch].setText(unicode(self.tr('A%d %5.3f V')) %(ch,v))
+					self.voltMeterCB[ch].setText(unicode(self.tr('A%d %5.3f V')) %(ch+1,v))
 				else:
-					self.voltMeterCB[ch].setText(self.tr('A%d'%ch))			
+					self.voltMeterCB[ch].setText(self.tr('A%d'%(ch+1)))			
 
 			try:
 				res = self.p.get_resistance()
