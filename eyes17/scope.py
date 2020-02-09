@@ -1,11 +1,11 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, os.path
 
+import utils
 from QtVersion import *
 
 import sys, time
-import utils
-import pyqtgraph as pg
+from utils import pg
 import numpy as np
 import eyes17.eyemath17 as em
 from functools import partial
@@ -93,6 +93,8 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		self.resultCols = utils.makeResultColors()
 		self.traceCols = utils.makeTraceColors()
 		self.htmlColors = utils.makeHtmlColors()
+		self.pwin = pg.PlotWidget(self.pwinview)
+		self.plotLayout.addWidget(self.pwin)
 		self.p = device						# connection to the device hardware 
 			
 		self.chanStatus = [1,0,0,0]			# PyQt problem. chanStatus somehow getting preserved ???		
@@ -112,7 +114,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			self.resLabs[k] = pg.TextItem()
 			self.pwin.addItem(self.resLabs[k])
 		
-		vLine = pg.InfiniteLine(angle=90, movable=False, pen = 'w')
+		vLine = pg.InfiniteLine(angle=90, movable=False, pen = 'r')
 		self.pwin.addItem(vLine, ignoreBounds=True)
 		self.pwin.vLine=vLine
 		self.pwin.vLine.setPos(-1)
@@ -565,10 +567,9 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if self.PV2min <= val <= self.PV2max:
 			self.PV2val = val
 			self.PV2text.setValue(val)
-			self.pcsVal_I.setText('%.2f mA'%(3.1-3*((val+3)/6)))
+			self.pcsVal_I.setText('%.2f mA'%(3.3-3.3*((val+3.3)/6.6)))
 			try:
 				self.p.set_pv2(val)
-				self.PV2text.setText(val)
 			except:
 				self.comerr()
 
