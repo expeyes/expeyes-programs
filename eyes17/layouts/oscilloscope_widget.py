@@ -157,9 +157,10 @@ class miniscope(QtWidgets.QWidget,ui_miniScope.Ui_Form):
 
 class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 	SLIDER_SCALING = 1000.
-	def __init__(self,parent,device,confirmValues):
+	def __init__(self,parent,device,confirmValues,**kwargs):
 		super(DIOINPUT, self).__init__(parent)
 		self.setupUi(self)
+		self.titlePrefix = kwargs.get('title','')+ ': '
 		self.confirmValues = confirmValues
 		self.subSelection.setStyleSheet("border: 3px dashed #5353ff;")
 		self.selectedGauge = None
@@ -272,7 +273,7 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 		if 'scope' in self.name: # It's an oscilloscope. make a plot instead of gauges
 			self.miniscope = miniscope(self,self.p)
 			self.gaugeLayout.addWidget(self.miniscope)
-			self.setWindowTitle('Oscilloscope with analysis')
+			self.setWindowTitle(self.titlePrefix + 'Oscilloscope with analysis')
 			self.read = self.miniscope.read
 
 		else:
@@ -310,10 +311,10 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 
 			if sensor['type'] == 'input':
 				self.read = sensor['read']
-				self.setWindowTitle('Sensor : %s'%self.name)
+				self.setWindowTitle(self.titlePrefix + 'Input : %s'%self.name)
 			else:
 				self.read = None
-				self.setWindowTitle('Output : %s'%self.name)
+				self.setWindowTitle(self.titlePrefix + 'Output : %s'%self.name)
 
 	def showval(self,index,v):
 		self.gauges[index].value = v

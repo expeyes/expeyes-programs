@@ -63,8 +63,8 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 			shortcut.activated.connect(self.shortcuts[a])
 			self.shortcutActions[a] = shortcut
 
-		self.XInput = DIOINPUT(self,self.p,confirmValues = self.setXParameters)
-		self.YInput = DIOINPUT(self,self.p,confirmValues = self.setYParameters)
+		self.XInput = DIOINPUT(self,self.p,confirmValues = self.setXParameters,title="X Axis Parameter")
+		self.YInput = DIOINPUT(self,self.p,confirmValues = self.setYParameters,title="Y Axis Parameter")
 		self.XInput.show()
 
 		self.startTime = time.time()
