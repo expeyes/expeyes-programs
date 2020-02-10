@@ -1096,6 +1096,9 @@
             <property name="pageStep">
              <number>1</number>
             </property>
+            <property name="value">
+             <number>1</number>
+            </property>
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>

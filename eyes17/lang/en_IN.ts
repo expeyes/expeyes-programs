@@ -391,7 +391,7 @@
         <translation>Measurement in progress</translation>
     </message>
     <message>
-        <location filename="../i2cLogger.py" line="1032"/>
+        <location filename="../i2cLogger.py" line="542"/>
         <source>Scan</source>
         <translation>Scan</translation>
     </message>
@@ -1319,7 +1319,7 @@ shows the actual frequency set.
         <translation>1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1291"/>
+        <location filename="../layouts/scope_layout.ui" line="1294"/>
         <source>A2</source>
         <translation>A2</translation>
     </message>
@@ -1339,7 +1339,7 @@ shows the actual frequency set.
         <translation>A2-A1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1317"/>
+        <location filename="../layouts/scope_layout.ui" line="1320"/>
         <source>.</source>
         <translation>.</translation>
     </message>
@@ -1369,7 +1369,7 @@ shows the actual frequency set.
         <translation>2.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1198"/>
+        <location filename="../layouts/scope_layout.ui" line="1201"/>
         <source>1V</source>
         <translation>1V</translation>
     </message>
@@ -1384,7 +1384,7 @@ shows the actual frequency set.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1303"/>
+        <location filename="../layouts/scope_layout.ui" line="1306"/>
         <source>A3</source>
         <translation>A3</translation>
     </message>
@@ -1459,77 +1459,77 @@ shows the actual frequency set.
         <translation>Timebase</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1107"/>
+        <location filename="../layouts/scope_layout.ui" line="1110"/>
         <source>Trigger</source>
         <translation>Trigger</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1120"/>
+        <location filename="../layouts/scope_layout.ui" line="1123"/>
         <source>SAVE Traces</source>
         <translation>SAVE Traces</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1127"/>
+        <location filename="../layouts/scope_layout.ui" line="1130"/>
         <source>CCS</source>
         <translation>CCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1141"/>
+        <location filename="../layouts/scope_layout.ui" line="1144"/>
         <source>Fourier Transform</source>
         <translation>Fourier Transform</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1161"/>
+        <location filename="../layouts/scope_layout.ui" line="1164"/>
         <source>Resistance on SEN</source>
         <translation>Resistance on SEN</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1168"/>
+        <location filename="../layouts/scope_layout.ui" line="1171"/>
         <source>Frequency (IN2):</source>
         <translation>Frequency (IN2):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1175"/>
+        <location filename="../layouts/scope_layout.ui" line="1178"/>
         <source>OD1</source>
         <translation>OD1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1193"/>
+        <location filename="../layouts/scope_layout.ui" line="1196"/>
         <source>80 mV</source>
         <translation>80 mV</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1203"/>
+        <location filename="../layouts/scope_layout.ui" line="1206"/>
         <source>3V (Amplitude)</source>
         <translation>3V (Amplitude)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1212"/>
+        <location filename="../layouts/scope_layout.ui" line="1215"/>
         <source>WG( Sinusoidal )</source>
         <translation>WG( Sinusoidal )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1217"/>
+        <location filename="../layouts/scope_layout.ui" line="1220"/>
         <source>WG( Triangle )</source>
         <translation>WG( Triangle )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1222"/>
+        <location filename="../layouts/scope_layout.ui" line="1225"/>
         <source>SQ2( Square )</source>
         <translation>SQ2( Square )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1230"/>
+        <location filename="../layouts/scope_layout.ui" line="1233"/>
         <source>Capacitance (IN1):</source>
         <translation>Capacitance (IN1):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1237"/>
+        <location filename="../layouts/scope_layout.ui" line="1240"/>
         <source>SHOW ALL</source>
         <translation>SHOW ALL</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1279"/>
+        <location filename="../layouts/scope_layout.ui" line="1282"/>
         <source>A1</source>
         <translation>A1</translation>
     </message>

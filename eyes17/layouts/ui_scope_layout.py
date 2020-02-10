@@ -438,6 +438,7 @@ class Ui_Form(object):
         self.TBslider = QtWidgets.QSlider(self.frame_6)
         self.TBslider.setMaximum(8)
         self.TBslider.setPageStep(1)
+        self.TBslider.setProperty("value", 1)
         self.TBslider.setOrientation(QtCore.Qt.Horizontal)
         self.TBslider.setTickPosition(QtWidgets.QSlider.TicksAbove)
         self.TBslider.setObjectName("TBslider")

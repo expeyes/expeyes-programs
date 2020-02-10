@@ -199,7 +199,7 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 	def refreshSensorList(self):
 		self.logger = LOGGER(self.I2C)
 		x = self.logger.I2CScan()
-		print('Responses from: ',x)
+		print('I2C Found: ',x)
 		self.sensorList = []
 		for a in x:
 			s = self.logger.sensors.get(a,None)

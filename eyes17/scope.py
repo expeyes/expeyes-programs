@@ -181,7 +181,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			#self.select_range((1,2))
 			#self.select_range((2,0))
 			#self.select_range((3,0))
-			self.msgwin.setText('<font color="green">' + self.tr('Device Reconnected'))
+			self.msgwin.setText('<font color="green">' + self.tr('Device Reconnected')+'  ,'+ self.tr('Cal:')+str(self.p.calibrated))
 			if self.p.version_number >= 5.0:
 				self.pcsFrame.show()
 				self.CCS.hide()

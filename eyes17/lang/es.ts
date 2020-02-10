@@ -399,7 +399,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../i2cLogger.py" line="1032"/>
+        <location filename="../i2cLogger.py" line="542"/>
         <source>Scan</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1322,7 +1322,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1291"/>
+        <location filename="../layouts/scope_layout.ui" line="1294"/>
         <source>A2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1342,7 +1342,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1317"/>
+        <location filename="../layouts/scope_layout.ui" line="1320"/>
         <source>.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1372,7 +1372,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1198"/>
+        <location filename="../layouts/scope_layout.ui" line="1201"/>
         <source>1V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1387,7 +1387,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1303"/>
+        <location filename="../layouts/scope_layout.ui" line="1306"/>
         <source>A3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1457,77 +1457,77 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1107"/>
+        <location filename="../layouts/scope_layout.ui" line="1110"/>
         <source>Trigger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1120"/>
+        <location filename="../layouts/scope_layout.ui" line="1123"/>
         <source>SAVE Traces</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1127"/>
+        <location filename="../layouts/scope_layout.ui" line="1130"/>
         <source>CCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1141"/>
+        <location filename="../layouts/scope_layout.ui" line="1144"/>
         <source>Fourier Transform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1161"/>
+        <location filename="../layouts/scope_layout.ui" line="1164"/>
         <source>Resistance on SEN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1168"/>
+        <location filename="../layouts/scope_layout.ui" line="1171"/>
         <source>Frequency (IN2):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1175"/>
+        <location filename="../layouts/scope_layout.ui" line="1178"/>
         <source>OD1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1193"/>
+        <location filename="../layouts/scope_layout.ui" line="1196"/>
         <source>80 mV</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1203"/>
+        <location filename="../layouts/scope_layout.ui" line="1206"/>
         <source>3V (Amplitude)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1212"/>
+        <location filename="../layouts/scope_layout.ui" line="1215"/>
         <source>WG( Sinusoidal )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1217"/>
+        <location filename="../layouts/scope_layout.ui" line="1220"/>
         <source>WG( Triangle )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1222"/>
+        <location filename="../layouts/scope_layout.ui" line="1225"/>
         <source>SQ2( Square )</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1230"/>
+        <location filename="../layouts/scope_layout.ui" line="1233"/>
         <source>Capacitance (IN1):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1237"/>
+        <location filename="../layouts/scope_layout.ui" line="1240"/>
         <source>SHOW ALL</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1279"/>
+        <location filename="../layouts/scope_layout.ui" line="1282"/>
         <source>A1</source>
         <translation type="unfinished"></translation>
     </message>
