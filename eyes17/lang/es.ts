@@ -996,7 +996,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="469"/>
+        <location filename="../scope.py" line="468"/>
         <source>FFT Error</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1021,67 +1021,67 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="384"/>
+        <location filename="../scope.py" line="383"/>
         <source>A%d %5.3f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="386"/>
+        <location filename="../scope.py" line="385"/>
         <source>A%d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="391"/>
+        <location filename="../scope.py" line="390"/>
         <source>%5.0f Ohm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="393"/>
+        <location filename="../scope.py" line="392"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="439"/>
+        <location filename="../scope.py" line="438"/>
         <source>Range of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="439"/>
+        <location filename="../scope.py" line="438"/>
         <source> set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="629"/>
+        <location filename="../scope.py" line="628"/>
         <source>Output Changed from WG to SQ2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="679"/>
+        <location filename="../scope.py" line="678"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="683"/>
+        <location filename="../scope.py" line="682"/>
         <source> pF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="686"/>
+        <location filename="../scope.py" line="685"/>
         <source> nF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="688"/>
         <source> uF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="702"/>
+        <location filename="../scope.py" line="701"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="704"/>
+        <location filename="../scope.py" line="703"/>
         <source>No signal</source>
         <translation type="unfinished"></translation>
     </message>

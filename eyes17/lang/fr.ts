@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
 <context>
     <name>@default</name>
     <message>
@@ -715,7 +714,7 @@
         <translation type="obsolete">%6.1f pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="702"/>
+        <location filename="../scope.py" line="701"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1f Hz %4.1f%%</translation>
     </message>
@@ -866,7 +865,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication. Tentez une reconnexion depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="391"/>
+        <location filename="../scope.py" line="390"/>
         <source>%5.0f Ohm</source>
         <translation>%5.0f Ω</translation>
     </message>
@@ -886,7 +885,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication FFT. Reconnecter depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="469"/>
+        <location filename="../scope.py" line="468"/>
         <source>FFT Error</source>
         <translation>Erreur de FFT</translation>
     </message>
@@ -906,17 +905,17 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">AWG réglé à %6.2f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="629"/>
+        <location filename="../scope.py" line="628"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>Sortie changée de WG à SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="679"/>
+        <location filename="../scope.py" line="678"/>
         <source>Capacitance too high or short to ground</source>
         <translation>Capacité excessive ou court-circuit à la masse</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="704"/>
+        <location filename="../scope.py" line="703"/>
         <source>No signal</source>
         <translation>Pas de signal</translation>
     </message>
@@ -1276,17 +1275,17 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Nombre non valide</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="439"/>
+        <location filename="../scope.py" line="438"/>
         <source>Range of</source>
         <translation>Intervalle de</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="439"/>
+        <location filename="../scope.py" line="438"/>
         <source> set to </source>
         <translation> réglé à </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="683"/>
+        <location filename="../scope.py" line="682"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
@@ -1376,12 +1375,12 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Transformée de Fourier</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="686"/>
+        <location filename="../scope.py" line="685"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="688"/>
         <source> uF</source>
         <translation> µF</translation>
     </message>
@@ -1840,17 +1839,17 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>Erreur de connexion. Vérifier le câble. </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="384"/>
+        <location filename="../scope.py" line="383"/>
         <source>A%d %5.3f V</source>
         <translation>A%d %5.3f V</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="386"/>
+        <location filename="../scope.py" line="385"/>
         <source>A%d</source>
         <translation>A%d</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="393"/>
+        <location filename="../scope.py" line="392"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation>Résistance : &lt; 100 Ω  ou  &gt; 100 kΩ</translation>
     </message>
