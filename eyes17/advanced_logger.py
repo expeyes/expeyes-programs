@@ -18,7 +18,7 @@ Author  : Jithin B.P, jithinbp@gmail.com
 Date    : Sep-2019
 License : GNU GPL version 3
 '''
-import sys,time
+import sys,time,configparser
 t = time.time()
 
 import utils
@@ -65,13 +65,54 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 
 		self.XInput = DIOINPUT(self,self.p,confirmValues = self.setXParameters,title="X Axis Parameter")
 		self.YInput = DIOINPUT(self,self.p,confirmValues = self.setYParameters,title="Y Axis Parameter")
-		self.XInput.show()
+		#self.XInput.show()
 
 		self.startTime = time.time()
 		self.interval = 0.1 #Seconds 
 		self.timer = QtCore.QTimer()
 		self.timer.timeout.connect(self.updateEverything)
 		self.timer.start(2)
+
+	def setConfig(self,text):
+		config = configparser.ConfigParser(allow_no_value=True)
+		config.read_string(text)
+		print('received configuration:',config)
+		if 'logging' in config:
+			if 'interval' in config['logging']:
+				self.delayBox.setValue(int(config['logging']['interval']))
+			if 'settling' in config['logging']:
+				self.settlingTimeBox.setValue(int(config['logging']['settling']))
+			if 'datapoints' in config['logging']:
+				self.datapointsBox.setValue(int(config['logging']['datapoints']))
+
+		for name,axis in zip(['x-axis','y-axis'],[self.XInput,self.YInput]):
+			if name in config:
+				if 'tool' in config[name]:
+					axis.setWindow(config[name]['tool'])
+					print(name,' set to ',config[name]['tool'])
+				if 'minimum' in config[name]:
+					axis.minValue.setValue(float(config[name]['minimum']))
+				if 'maximum' in config[name]:
+					axis.maxValue.setValue(float(config[name]['maximum']))
+				if 'meter' in config[name]:
+					index = axis.subSelection.findText(config[name]['meter'], QtCore.Qt.MatchFixedString)
+					if index >= 0:
+						 axis.subSelection.setCurrentIndex(index)
+				if 'channel' in config[name]:
+					index = axis.miniscope.A1Box.findText(config[name]['channel'], QtCore.Qt.MatchFixedString)
+					if index >= 0:
+						 axis.miniscope.A1Box.setCurrentIndex(index)
+				if 'parameter' in config[name]:
+					axis.miniscope.activeParameter = int(config[name]['parameter'])-1
+					axis.miniscope.list.setCurrentRow(axis.miniscope.activeParameter)
+					if 'cross-check-frequency' in config[name]:
+						axis.miniscope.freqCheckBox.setChecked(True)
+					else:
+						axis.miniscope.freqCheckBox.setChecked(False)
+				axis.launch()
+				axis.activateWindow()
+		self.XInput.reposition('bottom-left')		
+		self.YInput.reposition('top-left')		
 
 	def setXParameters(self,s):
 		self.xLabel.setText(s)
@@ -106,9 +147,10 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 
 	def setX(self):
 		self.XInput.launch()
-
+		self.XInput.activateWindow()
 	def setY(self):
 		self.YInput.launch()
+		self.YInput.activateWindow()
 
 	def updateEverything(self):
 		if self.logging:

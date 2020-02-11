@@ -1,7 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser
 from utils import cnf
-from PyQt5.QtCore import pyqtSignal, QObject
+from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
 from PyQt5.QtGui import QIcon
 from QtVersion import *
 showVersions()
@@ -71,14 +71,14 @@ electronicsExptsScope = [
 ]
 
 electricalExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),'plotIV'],
-[QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),'XYplot'],
-[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),('4.1','RLCsteadystate')],
-[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),('4.2','RCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),('4.3','RLtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),('4.4','RLCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),('4.5','filterCircuit')],
-[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),('4.7','induction')]
+[QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),('4.1','plotIV')],
+[QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),('4.2','XYplot')],
+[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),('4.3','RLCsteadystate')],
+[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),('4.4','RCtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),('4.5','RLtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),('4.6','RLCtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),('4.7','filterCircuit')],
+[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),('4.8','induction')]
 ]
 
 soundExpts = [
@@ -97,8 +97,8 @@ mechanicsExpts = [
 
 otherExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('6.5','pt100')],
-[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), 'logger'],
-[QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), 'advanced_logger']
+[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('6.6','logger')],
+[QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('6.7','advanced_logger')]
 ]
 
 modulesI2C = [ 
@@ -204,6 +204,8 @@ class MainWindow(QMainWindow):
 	hwin = None
 	
 	uncheckHelpBox = pyqtSignal()
+	setEditorText = pyqtSignal(str)
+	setConfigText = pyqtSignal(str)
 	
 	def closeEvent(self, e):
 		if self.hwin != None:
@@ -226,6 +228,8 @@ class MainWindow(QMainWindow):
 			self.lang=lang
 			
 		self.uncheckHelpBox.connect(self.uncheckTheHelpBox)
+		self.setEditorText.connect(self.updateEditor)
+		self.setConfigText.connect(self.updateConfig)
 
 	def uncheckTheHelpBox(self):
 		"""
@@ -257,12 +261,47 @@ class MainWindow(QMainWindow):
 		self.show()
 		self.move(20, 20)
 		
-		
+	def updateEditor(self,text):
+		if self.expName == 'editor':
+			text = text.replace('import eyes17.eyes','#import eyes17.eyes')
+			text = text.replace('p = eyes17.eyes.open()','#p = eyes17.eyes.open() #Uncomment when running script in standalone mode')
+			self.expWidget.Edit.setText(text)
+			self.activateWindow()
+
+	def updateConfig(self,text):
+		if self.expName == 'advanced_logger':
+			self.expWidget.setConfig(text)
+			self.activateWindow()
+
+	class editorHandler(QObject):
+		def __init__(self,sigEditor,sigConfig):
+			QMainWindow.__init__(self)
+			self.sigEditor = sigEditor
+			self.sigConfig = sigConfig
+
+		@pyqtSlot(str)
+		def update(self,value):
+			self.sigEditor.emit(value)
+
+		@pyqtSlot(str)
+		def config(self,value):
+			self.sigConfig.emit(value)
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
 			if self.hwin == None:
 				self.hwin = helpWin(self, (self.title,self.hlpName), self.lang)
+				if(self.hlpName in ['editor','advanced_logger']):
+					try:
+						from PyQt5.QtWebChannel import QWebChannel
+
+						self.channel = QWebChannel()
+						self.handler = self.editorHandler(self.setEditorText,self.setConfigText)
+						self.channel.registerObject('handler', self.handler)
+						self.hwin.page().setWebChannel(self.channel)
+					except Exception as e:
+						print(e)
+
 			self.hwin.show()
 		else:
 			if self.hwin != None: self.hwin.hide()
@@ -322,8 +361,9 @@ class MainWindow(QMainWindow):
 		return
 		
 	def runCode(self, e):
-		if self.expName != 'editor':
-			self.callExpt( ('Python Coding', 'editor'))
+		if self.expName != 'editor': #Moved here from some other non coding expt
+			self.hlpName = e
+			self.callExpt( ['Python Coding', (9.0,'editor')])
 		self.expWidget.mycode = e[1]
 		self.expWidget.update()
 

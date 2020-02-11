@@ -393,14 +393,25 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 		if self.initialize is not None:
 			self.initialize()
 		if setWindow is not None:
-			p=0
-			for a in self.sensors:
-				if setWindow == a['name']:
-					#self.loadSensor(a)
-					self.availableInputs.setCurrentIndex(p)
-					break
-				p+=1
+			self.setWindow(setWindow)
 		self.show()
 
+	def setWindow(self,win):
+		p=0
+		for a in self.sensors:
+			if win.lower() == a['name'].lower():
+				#self.loadSensor(a)
+				self.availableInputs.setCurrentIndex(p)
+				break
+			p+=1
 
-
+	def reposition(self,pos):
+		ph = self.parent().geometry().height()
+		px = self.parent().geometry().x()
+		py = self.parent().geometry().y()
+		dw = self.width()
+		dh = self.height()
+		if pos == 'bottom-left':  
+			self.setGeometry( px, py+ph-dh, dw, dh )		
+		elif pos == 'top-left':  
+			self.setGeometry( px, py, dw, dh )		
