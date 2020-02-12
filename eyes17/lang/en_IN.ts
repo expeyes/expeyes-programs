@@ -191,7 +191,7 @@
         <translation>Completed plotting I-V</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="34"/>
+        <location filename="../driven-pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</translation>
     </message>
@@ -201,7 +201,7 @@
         <translation>Set SQ1</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="79"/>
         <source>sqr1 set to </source>
         <translation>sqr1 set to </translation>
     </message>
@@ -316,17 +316,17 @@
         <translation>messages</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="38"/>
+        <location filename="../editor.py" line="36"/>
         <source>Execute Code</source>
         <translation>Execute Code</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="41"/>
+        <location filename="../editor.py" line="39"/>
         <source>Save Code</source>
         <translation>Save Code</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="69"/>
+        <location filename="../editor.py" line="67"/>
         <source>Code saved to </source>
         <translation>Code saved to </translation>
     </message>
@@ -850,42 +850,42 @@ For Driven Pendulum Expt.</translation>
         <translation>Data Analysis Error</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="288"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="291"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="292"/>
         <source>F = %5.1f Hz</source>
         <translation>F = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="294"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>Phase Diff = %5.1f deg</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="296"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="298"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="383"/>
+        <location filename="../RLCsteadystate.py" line="378"/>
         <source>Invalid Input in some field</source>
         <translation>Invalid Input in some field</translation>
     </message>
@@ -1151,7 +1151,7 @@ shows the actual frequency set.
         <translation>Completed in </translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="71"/>
         <source> Seconds</source>
         <translation> Seconds</translation>
     </message>
@@ -1226,22 +1226,22 @@ shows the actual frequency set.
         <translation>Time vs Distance plot completed</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="39"/>
         <source>Measure</source>
         <translation>Measure</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="65"/>
         <source>start..</source>
         <translation>start..</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="71"/>
         <source>Time of flight =</source>
         <translation>Time of flight =</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="73"/>
         <source>Error. Try again</source>
         <translation>Error. Try again</translation>
     </message>
@@ -1300,6 +1300,11 @@ shows the actual frequency set.
         <source>Ymax = %5.3f V</source>
         <translation>Ymax = %5.3f V</translation>
     </message>
+    <message>
+        <location filename="../scope.py" line="184"/>
+        <source>Cal:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Form</name>
@@ -1319,7 +1324,7 @@ shows the actual frequency set.
         <translation>1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1294"/>
+        <location filename="../layouts/scope_layout.ui" line="1297"/>
         <source>A2</source>
         <translation>A2</translation>
     </message>
@@ -1339,7 +1344,7 @@ shows the actual frequency set.
         <translation>A2-A1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1320"/>
+        <location filename="../layouts/scope_layout.ui" line="1323"/>
         <source>.</source>
         <translation>.</translation>
     </message>
@@ -1369,7 +1374,7 @@ shows the actual frequency set.
         <translation>2.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1201"/>
+        <location filename="../layouts/scope_layout.ui" line="1204"/>
         <source>1V</source>
         <translation>1V</translation>
     </message>
@@ -1384,7 +1389,7 @@ shows the actual frequency set.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1306"/>
+        <location filename="../layouts/scope_layout.ui" line="1309"/>
         <source>A3</source>
         <translation>A3</translation>
     </message>
@@ -1459,77 +1464,77 @@ shows the actual frequency set.
         <translation>Timebase</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1110"/>
+        <location filename="../layouts/scope_layout.ui" line="1113"/>
         <source>Trigger</source>
         <translation>Trigger</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1123"/>
+        <location filename="../layouts/scope_layout.ui" line="1126"/>
         <source>SAVE Traces</source>
         <translation>SAVE Traces</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1130"/>
+        <location filename="../layouts/scope_layout.ui" line="1133"/>
         <source>CCS</source>
         <translation>CCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1144"/>
+        <location filename="../layouts/scope_layout.ui" line="1147"/>
         <source>Fourier Transform</source>
         <translation>Fourier Transform</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1164"/>
+        <location filename="../layouts/scope_layout.ui" line="1167"/>
         <source>Resistance on SEN</source>
         <translation>Resistance on SEN</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1171"/>
+        <location filename="../layouts/scope_layout.ui" line="1174"/>
         <source>Frequency (IN2):</source>
         <translation>Frequency (IN2):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1178"/>
+        <location filename="../layouts/scope_layout.ui" line="1181"/>
         <source>OD1</source>
         <translation>OD1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1196"/>
+        <location filename="../layouts/scope_layout.ui" line="1199"/>
         <source>80 mV</source>
         <translation>80 mV</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1206"/>
+        <location filename="../layouts/scope_layout.ui" line="1209"/>
         <source>3V (Amplitude)</source>
         <translation>3V (Amplitude)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1215"/>
+        <location filename="../layouts/scope_layout.ui" line="1218"/>
         <source>WG( Sinusoidal )</source>
         <translation>WG( Sinusoidal )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1220"/>
+        <location filename="../layouts/scope_layout.ui" line="1223"/>
         <source>WG( Triangle )</source>
         <translation>WG( Triangle )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1225"/>
+        <location filename="../layouts/scope_layout.ui" line="1228"/>
         <source>SQ2( Square )</source>
         <translation>SQ2( Square )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1233"/>
+        <location filename="../layouts/scope_layout.ui" line="1236"/>
         <source>Capacitance (IN1):</source>
         <translation>Capacitance (IN1):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1240"/>
+        <location filename="../layouts/scope_layout.ui" line="1243"/>
         <source>SHOW ALL</source>
         <translation>SHOW ALL</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1282"/>
+        <location filename="../layouts/scope_layout.ui" line="1285"/>
         <source>A1</source>
         <translation>A1</translation>
     </message>
@@ -1667,7 +1672,7 @@ shows the actual frequency set.
         <translation>Stroboscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="439"/>
+        <location filename="../main.py" line="59"/>
         <source>Oscilloscope</source>
         <translation>Oscilloscope</translation>
     </message>
@@ -1937,99 +1942,99 @@ shows the actual frequency set.
         <translation>Rod Pendulum</translation>
     </message>
     <message>
-        <location filename="../main.py" line="249"/>
+        <location filename="../main.py" line="251"/>
         <source>Enable PopUp Help Window</source>
         <translation>Enable PopUp Help Window</translation>
     </message>
     <message>
         <location filename="../main.py" line="290"/>
         <source>Failed to load scope</source>
-        <translation>Failed to load scope</translation>
+        <translation type="obsolete">Failed to load scope</translation>
     </message>
     <message>
         <location filename="../main.py" line="325"/>
         <source>Failed to load %s</source>
-        <translation>Failed to load %s</translation>
+        <translation type="obsolete">Failed to load %s</translation>
     </message>
     <message>
         <location filename="../main.py" line="365"/>
         <source>No immediate application</source>
-        <translation>No immediate application</translation>
+        <translation type="obsolete">No immediate application</translation>
     </message>
     <message>
         <location filename="../main.py" line="353"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation>Please restart the application to lighten the screen&apos;s background</translation>
+        <translation type="obsolete">Please restart the application to lighten the screen&apos;s background</translation>
     </message>
     <message>
         <location filename="../main.py" line="365"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation>Please restart the application to darken the screen&apos;s background.</translation>
+        <translation type="obsolete">Please restart the application to darken the screen&apos;s background.</translation>
     </message>
     <message>
         <location filename="../main.py" line="375"/>
         <source>Device</source>
-        <translation>Device</translation>
+        <translation type="obsolete">Device</translation>
     </message>
     <message>
         <location filename="../main.py" line="376"/>
         <source>Reconnect</source>
-        <translation>Reconnect</translation>
+        <translation type="obsolete">Reconnect</translation>
     </message>
     <message>
         <location filename="../main.py" line="377"/>
         <source>LightBackGround next time</source>
-        <translation>LightBackGround next time</translation>
+        <translation type="obsolete">LightBackGround next time</translation>
     </message>
     <message>
         <location filename="../main.py" line="378"/>
         <source>DarkBackGround next time</source>
-        <translation>DarkBackGround next time</translation>
+        <translation type="obsolete">DarkBackGround next time</translation>
     </message>
     <message>
         <location filename="../main.py" line="379"/>
         <source>Choose Language</source>
-        <translation>Choose Language</translation>
+        <translation type="obsolete">Choose Language</translation>
     </message>
     <message>
         <location filename="../main.py" line="387"/>
         <source>School Expts</source>
-        <translation>School Expts</translation>
+        <translation type="obsolete">School Expts</translation>
     </message>
     <message>
         <location filename="../main.py" line="391"/>
         <source>Electronics</source>
-        <translation>Electronics</translation>
+        <translation type="obsolete">Electronics</translation>
     </message>
     <message>
         <location filename="../main.py" line="398"/>
         <source>Electrical</source>
-        <translation>Electrical</translation>
+        <translation type="obsolete">Electrical</translation>
     </message>
     <message>
         <location filename="../main.py" line="402"/>
         <source>Sound</source>
-        <translation>Sound</translation>
+        <translation type="obsolete">Sound</translation>
     </message>
     <message>
         <location filename="../main.py" line="406"/>
         <source>Mechanics</source>
-        <translation>Mechanics</translation>
+        <translation type="obsolete">Mechanics</translation>
     </message>
     <message>
         <location filename="../main.py" line="410"/>
         <source>Other Expts</source>
-        <translation>Other Expts</translation>
+        <translation type="obsolete">Other Expts</translation>
     </message>
     <message>
         <location filename="../main.py" line="414"/>
         <source>I2C Modules</source>
-        <translation>I2C Modules</translation>
+        <translation type="obsolete">I2C Modules</translation>
     </message>
     <message>
         <location filename="../main.py" line="418"/>
         <source>PythonCode</source>
-        <translation>PythonCode</translation>
+        <translation type="obsolete">PythonCode</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
@@ -2165,6 +2170,104 @@ shows the actual frequency set.
         <location filename="../layouts/newtonslaws.ui" line="204"/>
         <source>Spline</source>
         <translation>Spline</translation>
+    </message>
+</context>
+<context>
+    <name>editorHandler</name>
+    <message>
+        <location filename="../main.py" line="326"/>
+        <source>Failed to load scope</source>
+        <translation type="unfinished">Failed to load scope</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="360"/>
+        <source>Failed to load %s</source>
+        <translation type="unfinished">Failed to load %s</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="401"/>
+        <source>No immediate application</source>
+        <translation type="unfinished">No immediate application</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="389"/>
+        <source>Please restart the application to lighten the screen&apos;s background</source>
+        <translation type="unfinished">Please restart the application to lighten the screen&apos;s background</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="401"/>
+        <source>Please restart the application to darken the screen&apos;s background.</source>
+        <translation type="unfinished">Please restart the application to darken the screen&apos;s background.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="411"/>
+        <source>Device</source>
+        <translation type="unfinished">Device</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="412"/>
+        <source>Reconnect</source>
+        <translation type="unfinished">Reconnect</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="413"/>
+        <source>LightBackGround next time</source>
+        <translation type="unfinished">LightBackGround next time</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="414"/>
+        <source>DarkBackGround next time</source>
+        <translation type="unfinished">DarkBackGround next time</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="415"/>
+        <source>Choose Language</source>
+        <translation type="unfinished">Choose Language</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="423"/>
+        <source>School Expts</source>
+        <translation type="unfinished">School Expts</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="427"/>
+        <source>Electronics</source>
+        <translation type="unfinished">Electronics</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="434"/>
+        <source>Electrical</source>
+        <translation type="unfinished">Electrical</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="438"/>
+        <source>Sound</source>
+        <translation type="unfinished">Sound</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="442"/>
+        <source>Mechanics</source>
+        <translation type="unfinished">Mechanics</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="446"/>
+        <source>Other Expts</source>
+        <translation type="unfinished">Other Expts</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="450"/>
+        <source>I2C Modules</source>
+        <translation type="unfinished">I2C Modules</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="454"/>
+        <source>PythonCode</source>
+        <translation type="unfinished">PythonCode</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="475"/>
+        <source>Oscilloscope</source>
+        <translation type="unfinished">Oscilloscope</translation>
     </message>
 </context>
 <context>
