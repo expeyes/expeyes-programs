@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="en_IN" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="en_IN">
 <context>
     <name>Dialog</name>
     <message>
@@ -1303,7 +1304,7 @@ shows the actual frequency set.
     <message>
         <location filename="../scope.py" line="184"/>
         <source>Cal:</source>
-        <translation type="unfinished"></translation>
+        <translation>Cal:</translation>
     </message>
 </context>
 <context>
@@ -1449,7 +1450,7 @@ shows the actual frequency set.
         <translation>PV1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="782"/>
+        <location filename="../layouts/scope_layout.ui" line="806"/>
         <source>Current Source Voltage:</source>
         <translation type="obsolete">Current Source Voltage:</translation>
     </message>
@@ -1551,17 +1552,17 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="666"/>
         <source>1.65mA</source>
-        <translation type="unfinished"></translation>
+        <translation>1.65mA</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="685"/>
         <source>PCS</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Voltage across PCS(mV):</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltage across PCS(mV):</translation>
     </message>
 </context>
 <context>
@@ -1947,92 +1948,92 @@ shows the actual frequency set.
         <translation>Enable PopUp Help Window</translation>
     </message>
     <message>
-        <location filename="../main.py" line="290"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Failed to load scope</source>
         <translation type="obsolete">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="325"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Failed to load %s</source>
         <translation type="obsolete">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="365"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>No immediate application</source>
         <translation type="obsolete">No immediate application</translation>
     </message>
     <message>
-        <location filename="../main.py" line="353"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation type="obsolete">Please restart the application to lighten the screen&apos;s background</translation>
     </message>
     <message>
-        <location filename="../main.py" line="365"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation type="obsolete">Please restart the application to darken the screen&apos;s background.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="375"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Device</source>
         <translation type="obsolete">Device</translation>
     </message>
     <message>
-        <location filename="../main.py" line="376"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Reconnect</source>
         <translation type="obsolete">Reconnect</translation>
     </message>
     <message>
-        <location filename="../main.py" line="377"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>LightBackGround next time</source>
         <translation type="obsolete">LightBackGround next time</translation>
     </message>
     <message>
-        <location filename="../main.py" line="378"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>DarkBackGround next time</source>
         <translation type="obsolete">DarkBackGround next time</translation>
     </message>
     <message>
-        <location filename="../main.py" line="379"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Choose Language</source>
         <translation type="obsolete">Choose Language</translation>
     </message>
     <message>
-        <location filename="../main.py" line="387"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>School Expts</source>
         <translation type="obsolete">School Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="391"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Electronics</source>
         <translation type="obsolete">Electronics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="398"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Electrical</source>
         <translation type="obsolete">Electrical</translation>
     </message>
     <message>
-        <location filename="../main.py" line="402"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Sound</source>
         <translation type="obsolete">Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="406"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Mechanics</source>
         <translation type="obsolete">Mechanics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="410"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Other Expts</source>
         <translation type="obsolete">Other Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="414"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>I2C Modules</source>
         <translation type="obsolete">I2C Modules</translation>
     </message>
     <message>
-        <location filename="../main.py" line="418"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>PythonCode</source>
         <translation type="obsolete">PythonCode</translation>
     </message>
@@ -2177,97 +2178,97 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="326"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished">Failed to load scope</translation>
+        <translation>Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="360"/>
+        <location filename="../main.py" line="356"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished">Failed to load %s</translation>
+        <translation>Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="401"/>
+        <location filename="../main.py" line="397"/>
         <source>No immediate application</source>
-        <translation type="unfinished">No immediate application</translation>
+        <translation>No immediate application</translation>
     </message>
     <message>
-        <location filename="../main.py" line="389"/>
+        <location filename="../main.py" line="385"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished">Please restart the application to lighten the screen&apos;s background</translation>
+        <translation>Please restart the application to lighten the screen&apos;s background</translation>
     </message>
     <message>
-        <location filename="../main.py" line="401"/>
+        <location filename="../main.py" line="397"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished">Please restart the application to darken the screen&apos;s background.</translation>
+        <translation>Please restart the application to darken the screen&apos;s background.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="409"/>
+        <source>Device</source>
+        <translation>Device</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="410"/>
+        <source>Reconnect</source>
+        <translation>Reconnect</translation>
     </message>
     <message>
         <location filename="../main.py" line="411"/>
-        <source>Device</source>
-        <translation type="unfinished">Device</translation>
+        <source>LightBackGround next time</source>
+        <translation>LightBackGround next time</translation>
     </message>
     <message>
         <location filename="../main.py" line="412"/>
-        <source>Reconnect</source>
-        <translation type="unfinished">Reconnect</translation>
+        <source>DarkBackGround next time</source>
+        <translation>DarkBackGround next time</translation>
     </message>
     <message>
         <location filename="../main.py" line="413"/>
-        <source>LightBackGround next time</source>
-        <translation type="unfinished">LightBackGround next time</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="414"/>
-        <source>DarkBackGround next time</source>
-        <translation type="unfinished">DarkBackGround next time</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="415"/>
         <source>Choose Language</source>
-        <translation type="unfinished">Choose Language</translation>
+        <translation>Choose Language</translation>
     </message>
     <message>
-        <location filename="../main.py" line="423"/>
+        <location filename="../main.py" line="421"/>
         <source>School Expts</source>
-        <translation type="unfinished">School Expts</translation>
+        <translation>School Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="427"/>
+        <location filename="../main.py" line="425"/>
         <source>Electronics</source>
-        <translation type="unfinished">Electronics</translation>
+        <translation>Electronics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="434"/>
+        <location filename="../main.py" line="432"/>
         <source>Electrical</source>
-        <translation type="unfinished">Electrical</translation>
+        <translation>Electrical</translation>
     </message>
     <message>
-        <location filename="../main.py" line="438"/>
+        <location filename="../main.py" line="436"/>
         <source>Sound</source>
-        <translation type="unfinished">Sound</translation>
+        <translation>Sound</translation>
     </message>
     <message>
-        <location filename="../main.py" line="442"/>
+        <location filename="../main.py" line="440"/>
         <source>Mechanics</source>
-        <translation type="unfinished">Mechanics</translation>
+        <translation>Mechanics</translation>
     </message>
     <message>
-        <location filename="../main.py" line="446"/>
+        <location filename="../main.py" line="444"/>
         <source>Other Expts</source>
-        <translation type="unfinished">Other Expts</translation>
+        <translation>Other Expts</translation>
     </message>
     <message>
-        <location filename="../main.py" line="450"/>
+        <location filename="../main.py" line="448"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">I2C Modules</translation>
+        <translation>I2C Modules</translation>
     </message>
     <message>
-        <location filename="../main.py" line="454"/>
+        <location filename="../main.py" line="452"/>
         <source>PythonCode</source>
-        <translation type="unfinished">PythonCode</translation>
+        <translation>PythonCode</translation>
     </message>
     <message>
-        <location filename="../main.py" line="475"/>
+        <location filename="../main.py" line="473"/>
         <source>Oscilloscope</source>
-        <translation type="unfinished">Oscilloscope</translation>
+        <translation>Oscilloscope</translation>
     </message>
 </context>
 <context>

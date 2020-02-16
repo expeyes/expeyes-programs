@@ -91,11 +91,6 @@
         <translation>അവസാനിപ്പിക്കുക</translation>
     </message>
     <message>
-        <location filename="../BHCurve.py" line="62"/>
-        <source>Set Zero</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../sr04dist.py" line="87"/>
         <source>Clear Traces</source>
         <translation>ട്രെയ്സുകൾ മായ്ക്കുക</translation>
@@ -164,11 +159,6 @@
         <location filename="../diodeIV.py" line="50"/>
         <source>Zener Diode</source>
         <translation>സെനർ ഡയോട്</translation>
-    </message>
-    <message>
-        <location filename="../diodeIV.py" line="61"/>
-        <source>FIT with I=Io* exp(qV/nkT)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
@@ -576,13 +566,6 @@
         <translation>അവസാന ട്രെയ്സ് വിശകലനം ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../pendulumVelocity.py" line="87"/>
-        <source>
-Set SQ1 Frequency
-For Driven Pendulum Expt.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../pendulumVelocity.py" line="167"/>
         <source>Time Vs Angular velocity plot completed</source>
         <translation>സമയം കോണീയ പ്രവേഗം പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
@@ -606,11 +589,6 @@ For Driven Pendulum Expt.</source>
         <location filename="../RLtransient.py" line="102"/>
         <source>Ohm</source>
         <translation>ohm</translation>
-    </message>
-    <message>
-        <location filename="../plotIV.py" line="75"/>
-        <source>Sweep PV1 from</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="112"/>
@@ -748,16 +726,6 @@ For Driven Pendulum Expt.</source>
         <translation>mS/div</translation>
     </message>
     <message>
-        <location filename="../RLtransient.py" line="88"/>
-        <source>0 -&gt; 5V step on OD1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../RLtransient.py" line="92"/>
-        <source>5 -&gt; 0V step on OD1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../RCtransient.py" line="89"/>
         <source>Calculate RC</source>
         <translation>RC കണക്കാക്കുക</translation>
@@ -773,24 +741,9 @@ For Driven Pendulum Expt.</source>
         <translation>റെസിസ്റ്റൻസിന്റെ =</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="150"/>
-        <source>No data to analyze.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../RCtransient.py" line="150"/>
-        <source>Fitted data with V=Vo*exp(-t/RC). RC = </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../RCtransient.py" line="150"/>
         <source> mSec</source>
         <translation> mSec</translation>
-    </message>
-    <message>
-        <location filename="../RCtransient.py" line="152"/>
-        <source>Failed to fit the curve with V=Vo*exp(-t/RC)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="185"/>
@@ -883,16 +836,6 @@ For Driven Pendulum Expt.</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
-        <source>Invalid Input in some field</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../RLtransient.py" line="97"/>
-        <source>Rext =</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../RLCtransient.py" line="100"/>
         <source>Analyse latest Data</source>
         <translation>ഏറ്റവും പുതിയ ഡാറ്റ വിശകലനം ചെയ്യുക</translation>
@@ -911,11 +854,6 @@ For Driven Pendulum Expt.</source>
         <location filename="../RLCtransient.py" line="145"/>
         <source> kHz Damping factor= </source>
         <translation> kHz ഡാമ്പിങ്ങ് ഫാക്ടർ= </translation>
-    </message>
-    <message>
-        <location filename="../sr04dist.py" line="178"/>
-        <source>Failed to fit the curve</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="72"/>
@@ -944,11 +882,6 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
-        <source> mSec : Rind = </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../RLtransient.py" line="181"/>
         <source> Ohm : L = </source>
         <translation> Ohm : L = </translation>
     </message>
@@ -956,11 +889,6 @@ For Driven Pendulum Expt.</source>
         <location filename="../RLtransient.py" line="181"/>
         <source> mH</source>
         <translation> mH</translation>
-    </message>
-    <message>
-        <location filename="../RLtransient.py" line="184"/>
-        <source>Failed to fit the curve with V=Vo*exp(-t*L/R)</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../scope.py" line="168"/>
@@ -1003,11 +931,6 @@ For Driven Pendulum Expt.</source>
         <translation>%s:%6.2fV </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="342"/>
-        <source>%s input is clipped. Increase range</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../scope.py" line="355"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation>%5.2f V, %5.1f Hz</translation>
@@ -1033,24 +956,9 @@ For Driven Pendulum Expt.</source>
         <translation>റെസ്റ്റിസ്റ്റൻസ്: &lt;100Ohm  or  &gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="438"/>
-        <source>Range of</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../scope.py" line="438"/>
-        <source> set to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../scope.py" line="628"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>WG ൽ നിന്ന് SQ1 ലോട്ട് ഔട്ട്പുട്ട് മാറ്റിയിരിക്കുന്നു</translation>
-    </message>
-    <message>
-        <location filename="../scope.py" line="678"/>
-        <source>Capacitance too high or short to ground</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../scope.py" line="682"/>
@@ -1081,14 +989,6 @@ For Driven Pendulum Expt.</source>
         <location filename="../soundBeats.py" line="90"/>
         <source>SQ1</source>
         <translation>SQ1</translation>
-    </message>
-    <message>
-        <location filename="../soundBeats.py" line="102"/>
-        <source>Change of Freqency effected
-only after Enable/Disable controls.
-shows the actual frequency set.
-</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="106"/>
@@ -1126,11 +1026,6 @@ shows the actual frequency set.
         <translation>ആമ്പ്ലിട്ട്യൂഡ് (V)</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="77"/>
-        <source>in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../soundFreqResp.py" line="82"/>
         <source>seconds</source>
         <translation>സെക്കണ്ട്സ്</translation>
@@ -1141,11 +1036,6 @@ shows the actual frequency set.
         <translation>ഫീക്വൻസി = %5.0f Hz V = %5.3f</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="196"/>
-        <source>Completed in </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../tof.py" line="71"/>
         <source> Seconds</source>
         <translation> സെക്കണ്ട്സ്</translation>
@@ -1154,21 +1044,6 @@ shows the actual frequency set.
         <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Time interval</source>
         <translation>സമയ ഇടവേള പ്രാപല്യത്തിലില്ല</translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="236"/>
-        <source>Increase time interval to </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="236"/>
-        <source> or Reduce frequency span</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="248"/>
-        <source> mS at each step</source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="173"/>
@@ -1191,29 +1066,14 @@ shows the actual frequency set.
         <translation>Y ആക്സിസ് 0 തൊട്ട്</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="64"/>
-        <source>Measure during</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../sr04dist.py" line="69"/>
         <source>Secs</source>
         <translation>സെക്കണ്ട്സ്</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="83"/>
-        <source>Fit Curve using Sine</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../sr04dist.py" line="90"/>
         <source>Fourier Transform</source>
         <translation>ഫോറിയർ ട്രാൻസ്ഫോം</translation>
-    </message>
-    <message>
-        <location filename="../sr04dist.py" line="159"/>
-        <source>Sine Fit Result: Frequency </source>
-        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="215"/>
@@ -1276,11 +1136,6 @@ shows the actual frequency set.
         <translation>വോൾട്</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="104"/>
-        <source>show (A1-A2) Vs A2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../XYplot.py" line="142"/>
         <source>Voltage (A1-A2)</source>
         <translation>വോൾട്ടേജ് (A1-A2)</translation>
@@ -1296,8 +1151,153 @@ shows the actual frequency set.
         <translation>Ymax = %5.3f V</translation>
     </message>
     <message>
+        <location filename="../BHCurve.py" line="62"/>
+        <source>Set Zero</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../diodeIV.py" line="61"/>
+        <source>FIT with I=Io* exp(qV/nkT)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../pendulumVelocity.py" line="87"/>
+        <source>
+Set SQ1 Frequency
+For Driven Pendulum Expt.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="75"/>
+        <source>Sweep PV1 from</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="88"/>
+        <source>0 -&gt; 5V step on OD1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="92"/>
+        <source>5 -&gt; 0V step on OD1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="150"/>
+        <source>No data to analyze.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="150"/>
+        <source>Fitted data with V=Vo*exp(-t/RC). RC = </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RCtransient.py" line="152"/>
+        <source>Failed to fit the curve with V=Vo*exp(-t/RC)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLCsteadystate.py" line="378"/>
+        <source>Invalid Input in some field</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="97"/>
+        <source>Rext =</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="178"/>
+        <source>Failed to fit the curve</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="181"/>
+        <source> mSec : Rind = </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLtransient.py" line="184"/>
+        <source>Failed to fit the curve with V=Vo*exp(-t*L/R)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../scope.py" line="184"/>
         <source>Cal:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="342"/>
+        <source>%s input is clipped. Increase range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="438"/>
+        <source>Range of</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="438"/>
+        <source> set to </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="678"/>
+        <source>Capacitance too high or short to ground</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundBeats.py" line="102"/>
+        <source>Change of Freqency effected
+only after Enable/Disable controls.
+shows the actual frequency set.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="77"/>
+        <source>in</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="196"/>
+        <source>Completed in </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="236"/>
+        <source>Increase time interval to </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="236"/>
+        <source> or Reduce frequency span</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="248"/>
+        <source> mS at each step</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="64"/>
+        <source>Measure during</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="83"/>
+        <source>Fit Curve using Sine</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sr04dist.py" line="159"/>
+        <source>Sine Fit Result: Frequency </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="104"/>
+        <source>show (A1-A2) Vs A2</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1444,7 +1444,7 @@ shows the actual frequency set.
         <translation>PV1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="782"/>
+        <location filename="../layouts/scope_layout.ui" line="806"/>
         <source>Current Source Voltage:</source>
         <translation type="obsolete">കരന്റ് സോർസിലെ വോൾട്ടേജ്:</translation>
     </message>
@@ -1521,7 +1521,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1236"/>
         <source>Capacitance (IN1):</source>
-        <translation type="unfinished">കപ്പാസിറ്റൻസ്.(IN1):</translation>
+        <translation>കപ്പാസിറ്റൻസ്.(IN1):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1243"/>
@@ -1942,92 +1942,92 @@ shows the actual frequency set.
         <translation>പോപ്പ് അപ്പ് വിൻഡോ പ്രവർത്തന സജ്ജമാക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="290"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Failed to load scope</source>
         <translation type="obsolete">സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="325"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Failed to load %s</source>
         <translation type="obsolete">%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="365"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>No immediate application</source>
         <translation type="obsolete">ഇമീഡിയറ്റ് അപ്ലിക്കേഷൻ നിലവിലില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="353"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation type="obsolete">ഇളം പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="365"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation type="obsolete">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="375"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Device</source>
         <translation type="obsolete">ഡിവൈസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="376"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Reconnect</source>
         <translation type="obsolete">റീക്കണക്റ്റ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="377"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>LightBackGround next time</source>
         <translation type="obsolete">അടുത്ത തവണ ഇളം പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="378"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>DarkBackGround next time</source>
         <translation type="obsolete">അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="379"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Choose Language</source>
         <translation type="obsolete">ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="387"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>School Expts</source>
         <translation type="obsolete">സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="391"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Electronics</source>
         <translation type="obsolete">ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="398"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Electrical</source>
         <translation type="obsolete">ഇലെക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="402"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Sound</source>
         <translation type="obsolete">ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="406"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Mechanics</source>
         <translation type="obsolete">യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="410"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Other Expts</source>
         <translation type="obsolete">മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="414"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>I2C Modules</source>
         <translation type="obsolete">I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="418"/>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>PythonCode</source>
         <translation type="obsolete">പൈത്തൺ കോഡ്</translation>
     </message>
@@ -2172,97 +2172,97 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="326"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished">സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
+        <translation>സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="360"/>
+        <location filename="../main.py" line="356"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished">%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
+        <translation>%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="401"/>
+        <location filename="../main.py" line="397"/>
         <source>No immediate application</source>
-        <translation type="unfinished">ഇമീഡിയറ്റ് അപ്ലിക്കേഷൻ നിലവിലില്ല</translation>
+        <translation>ഇമീഡിയറ്റ് അപ്ലിക്കേഷൻ നിലവിലില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="389"/>
+        <location filename="../main.py" line="385"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished">ഇളം പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക</translation>
+        <translation>ഇളം പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="401"/>
+        <location filename="../main.py" line="397"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
+        <translation>ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="409"/>
+        <source>Device</source>
+        <translation>ഡിവൈസ്</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="410"/>
+        <source>Reconnect</source>
+        <translation>റീക്കണക്റ്റ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="411"/>
-        <source>Device</source>
-        <translation type="unfinished">ഡിവൈസ്</translation>
+        <source>LightBackGround next time</source>
+        <translation>അടുത്ത തവണ ഇളം പശ്ചാത്തലം</translation>
     </message>
     <message>
         <location filename="../main.py" line="412"/>
-        <source>Reconnect</source>
-        <translation type="unfinished">റീക്കണക്റ്റ്</translation>
+        <source>DarkBackGround next time</source>
+        <translation>അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
         <location filename="../main.py" line="413"/>
-        <source>LightBackGround next time</source>
-        <translation type="unfinished">അടുത്ത തവണ ഇളം പശ്ചാത്തലം</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="414"/>
-        <source>DarkBackGround next time</source>
-        <translation type="unfinished">അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="415"/>
         <source>Choose Language</source>
-        <translation type="unfinished">ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
+        <translation>ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="423"/>
+        <location filename="../main.py" line="421"/>
         <source>School Expts</source>
-        <translation type="unfinished">സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
+        <translation>സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="427"/>
+        <location filename="../main.py" line="425"/>
         <source>Electronics</source>
-        <translation type="unfinished">ഇലെക്ട്രോണിക്സ്</translation>
+        <translation>ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="434"/>
+        <location filename="../main.py" line="432"/>
         <source>Electrical</source>
-        <translation type="unfinished">ഇലെക്ട്രിക്കൽ</translation>
+        <translation>ഇലെക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="438"/>
+        <location filename="../main.py" line="436"/>
         <source>Sound</source>
-        <translation type="unfinished">ശബ്ദം</translation>
+        <translation>ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="442"/>
+        <location filename="../main.py" line="440"/>
         <source>Mechanics</source>
-        <translation type="unfinished">യന്ത്രശാസ്‌ത്രം</translation>
+        <translation>യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="446"/>
+        <location filename="../main.py" line="444"/>
         <source>Other Expts</source>
-        <translation type="unfinished">മറ്റ് പരീക്ഷണങ്ങൾ</translation>
+        <translation>മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="450"/>
+        <location filename="../main.py" line="448"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">I2C മോഡ്യൂൾസ്</translation>
+        <translation>I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="454"/>
+        <location filename="../main.py" line="452"/>
         <source>PythonCode</source>
-        <translation type="unfinished">പൈത്തൺ കോഡ്</translation>
+        <translation>പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="475"/>
+        <location filename="../main.py" line="473"/>
         <source>Oscilloscope</source>
-        <translation type="unfinished">ഓസിലോസ്‌കോപ്പ്</translation>
+        <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
 </context>
 <context>
