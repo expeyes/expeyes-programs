@@ -10,7 +10,7 @@ figure :ref:`the-scope17-screen`. Various experiments can be
 selected from the menu.
 
 .. _the-scope17-screen:
-.. figure:: pics/scope17.*
+.. figure:: pics/scope17.png
 
     The scope17 screen showing two traces
 

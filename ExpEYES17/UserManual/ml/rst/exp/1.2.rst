@@ -30,7 +30,7 @@ damage to the equipment. To measure higher voltages, scale them down
 using resistive potential divider networks.*
 
 .. _fig-e17:
-.. figure:: pics/eyes17-panel.*
+.. figure:: pics/eyes17-panel.jpg
    :width: 500px
 
 
