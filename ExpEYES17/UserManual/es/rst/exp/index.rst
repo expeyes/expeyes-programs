@@ -89,6 +89,8 @@ una experiencia sobre la inducción electromagnética.
 .. toctree::
    :maxdepth: 2
 
+   4.01
+   4.02
    4.1
    4.2
    4.3
@@ -119,12 +121,11 @@ distancia.
    5.2
    5.3
 
-Experiencias de mecánica y termofísica
-**************************************
+Experiencias de mecánica
+************************
 
 Fenómenos de resonancia son estudiados con el péndulo forzado.
-La aceleración de la gravedad es medida con un péndulo. Además
-se estudia el enfriamiento de un líquido con un sensor PT100.
+La aceleración de la gravedad es medida con un péndulo.
 
 .. toctree::
    :maxdepth: 2
@@ -133,7 +134,26 @@ se estudia el enfriamiento de un líquido con un sensor PT100.
    6.2
    6.3
    6.4
+
+Otras experiencias
+******************
+.. toctree::
+   :maxdepth: 2
+
    6.5
+   6.6
+   6.7
+
+Modulos I2C
+***********
+.. toctree::
+   :maxdepth: 2
+
+   6.90
+   6.91
+   6.92
+   6.93
+
 
 Codificar en Python para expEYES-17
 ***********************************

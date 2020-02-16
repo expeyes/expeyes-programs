@@ -15,3 +15,5 @@ doctrees/
 
 */rst/exp/_static/
 */rst/qt5HTML/
+
+*.zip

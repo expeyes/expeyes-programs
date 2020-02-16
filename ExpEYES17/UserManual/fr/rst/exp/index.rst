@@ -90,6 +90,8 @@ théorie. Il donne aussi une expérience sur l'induction
 .. toctree::
    :maxdepth: 2
 
+   4.01
+   4.02
    4.1
    4.2
    4.3
@@ -120,13 +122,12 @@ distance.
    5.2
    5.3
 
-Expériences de mécanique et thermophysique
-******************************************
+Expériences de mécanique
+************************
 
 Les phénomènes de résonance sont étudiés avec le pendule forcé. On
 mesure la valeur de l'accélération due à la pesanteur à l'aide d'un
-pendule. On étudie le refroidissement d'un liquide à l'aide d'une
-sonde PT100.
+pendule
 
 .. toctree::
    :maxdepth: 2
@@ -135,7 +136,27 @@ sonde PT100.
    6.2
    6.3
    6.4
+
+Autres expériences
+******************
+.. toctree::
+   :maxdepth: 2
+
    6.5
+   6.6
+   6.7
+
+Modules I2C
+***********
+.. toctree::
+   :maxdepth: 2
+
+   6.90
+   6.91
+   6.92
+   6.93
+
+
 
 Coder en Python pour expEYES-17
 *******************************
