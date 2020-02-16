@@ -1,0 +1,30 @@
+UNTRANSLATED
+.. 2.6
+
+AC mains pickup
+===============
+
+**Objective**
+
+Learn about the AC mains supply. Explore the phenomenon of propagation
+of AC through free space.
+
+.. image:: schematics/line-pickup.svg
+	   :width: 300px
+
+**Procedure**
+
+-  Connect a long wire to A3
+-  Take one end of the wire near the AC mains line, without touching any
+   mains supply.
+-  Enable A3, and it’s analysis.
+
+**Discussion**
+
+The power line pickup is shown below, there are five cycles in 100
+milliseconds. Without making any connection, how are we getting the AC
+voltage from the mains supply ? Why the voltage increaes when you touch
+the end of the wire connected to A1 by hand.
+
+.. image:: pics/pickup.png
+	   :width: 300px

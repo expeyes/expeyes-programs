@@ -1,0 +1,32 @@
+UNTRANSLATED
+.. 2.17
+
+Stroboscope
+===========
+
+**Objective**
+
+Observation of a periodic phenomenon with a periodic flashed light.
+
+**Procedure**
+
+.. image:: schematics/stroboscope.svg
+	   :width: 300px
+
+
+-  The disk is rotated by powering the motor by a 1.5 V cell.
+-  The disk is illuminated with light from the LED only, no other light
+   should be present.
+-  Adjust the frequency of SQ1, the disk will appear stationary when it
+   is equal to the frequency of rotation of the disk.
+
+**Discussion**
+
+When the frequency of the phenomenon under observation and the frequency
+of the flashing light are matching, one can see a still image.
+
+What happens when the frequency of the light is slightly increased, or slightly
+decreased?
+
+What happens when the frequency of the flasing light is twice the frequency
+of the phenomenon? and when it is the half of its value?

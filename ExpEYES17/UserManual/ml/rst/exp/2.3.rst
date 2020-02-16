@@ -1,0 +1,25 @@
+UNTRANSLATED
+.. 2.3
+
+Measuring Capacitance
+=====================
+
+**Objective**
+
+Measuring a capacitance.
+
+.. image:: schematics/cap-measure.svg
+	   :width: 300px
+
+**Procedure**
+
+-  Connect the capacitor between IN1 and Ground.
+-  Click on “Capacitance on IN1” . Should not touch the capacitor while
+   measuring
+
+**Discussion**
+
+We have used :math:`100~pF` capacitors in this activity.
+
+You can make the capacitors by pasting thin metal foils on both sides of
+insulators like paper, polythene or glass.

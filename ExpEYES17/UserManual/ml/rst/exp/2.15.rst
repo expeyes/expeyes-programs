@@ -1,0 +1,26 @@
+UNTRANSLATED
+.. 2.15
+
+Generating sound
+================
+
+**Objective**
+
+Generate sound from electrical signals, using a Piezo-electric buzzer.
+Digitize sound and measure its frequency. Use the Piezo buzzer or any
+other source of sound like a tuning fork.
+
+**Procedure**
+
+.. image:: schematics/sound-generator.svg
+	   :width: 300px
+
+-  Enable A1, and its analysis
+-  Set WG to 1000Hz, change it and listen to the sound.
+
+**Discussion**
+
+When you change the frequency of the voltage that excites the Piezo,
+both the frequency and the intesity of the sound changes. The intensity
+is maximum near 3500 Hz, due to resonance. The resonant frequency of the
+Piezo buzzer is decided by its size and mechanical properties.

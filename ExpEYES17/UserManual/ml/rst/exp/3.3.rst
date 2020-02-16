@@ -1,0 +1,25 @@
+UNTRANSLATED
+.. 3.3
+
+Clipping using PN junction diode
+================================
+
+**Objective**
+
+Demostrate clipping of an AC signal at different levels, using a PN
+junction diode
+
+.. image:: schematics/clipping.svg
+	   :width: 300px
+.. image:: pics/clipping.png
+	   :width: 300px
+
+**Procedure**
+
+-  Make connections and observe the output
+-  Change PV1 and note the difference in the output
+
+**Discussion**
+
+The clipping level is decided by the applied DC voltage and the diode
+drop.
