@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>RLC circuits, steady state response</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="rlc-circuits-steady-state-response">
+<h1>RLC circuits, steady state response</h1>
+<p><strong>Objective</strong></p>
+<p>Study the effect of series LCR elements in an AC circuit. Three
+different combinations can be studied.</p>
+<img alt="_images/RCsteadystate.svg" src="_images/RCsteadystate.svg" width="300px" /><img alt="_images/RLsteadystate.svg" src="_images/RLsteadystate.svg" width="300px" /><img alt="_images/RLCsteadystate.svg" src="_images/RLCsteadystate.svg" width="300px" /><p><strong>Procedure</strong></p>
+<ul class="simple">
+<li><p>Make connections one by one, as per the drawing</p></li>
+<li><p>Note down the amplitude and phase measurements, in each case</p></li>
+<li><p>Repeat the measurements by changing the frequency.</p></li>
+<li><p>For RLC series circuit, the junction of L and C is monitored by A3</p></li>
+<li><p>For resonance select <img class="math" src="_images/math/b05927222a41f6c8ad2f56c0f804dbf4408e5eca.png" alt="C = 1~\mu F"/>, <img class="math" src="_images/math/44ebff0ba36796cd9ee2d865afe267446cd829af.png" alt="L = 10~mH"/> and <img class="math" src="_images/math/784456a8c31411ca3eff7e37f5e975650d0a431b.png" alt="f = 1600~Hz"/>, adjust f to
+make phase shift zero</p></li>
+<li><p>The total voltage across L and C together goes almost to zero, the
+voltage across them are out of phase at resonance</p></li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The applied AC voltage is measured on A1 and the voltage across the
+resistor on A2. Subtracting the instantaneous values of A2 from A1 gives
+the combined voltage across the inductor and capacitor. We need to use
+an inductor with negligible resistance for good results. The phase
+difference between current and voltage is given by
+<img class="math" src="_images/math/c294892b3f57729b1c4b51a3ca05d0febc42df0b.png" alt="\Delta \Phi = \arctan((X_C − X_L)/X_R)"/>.</p>
+<p>The total voltage, voltage across R and the voltage across LC are shown
+in figure. The phasor diagram shows the phase angle between the current
+and the voltage. The inductance used in this experiment is around <img class="math" src="_images/math/e875fe84f3a05092166fd86c322d059029f8bd83.png" alt="10~mH"/>,
+having a resistance of <img class="math" src="_images/math/27c350f59fabf785d06cf5392a0cf465f09d4822.png" alt="20~\Omega"/>.</p>
+<p>At <img class="math" src="_images/math/d5861bf84832a2930266db81cdf58c7b36074961.png" alt="1600~Hz"/>, <img class="math" src="_images/math/20f067cba8e14b3e40ff45e5db0b8ec90def74c5.png" alt="X_C \simeq X_L"/> and the voltage across LC is decided by the
+resistance of the inductor. At the resonant frequency, the voltage drop
+across LC will be minimum, decided by the resistance of the inductor.
+The input A3 is connected between L and C, so that the individual
+voltage drop across L and C can be displayed.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

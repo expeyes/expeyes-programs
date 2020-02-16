@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>The main GUI program</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="the-main-gui-program">
+<h1>The main GUI program</h1>
+<p>Start Applications-&gt;Education-&gt;ExpEYES-17 from the menu. A four channel
+oscilloscope screen with several extra features will open as shown in
+figure <a class="reference internal" href="#the-scope17-screen"><span class="std std-ref">The scope17 screen showing two traces</span></a>. Various experiments can be
+selected from the menu.</p>
+<div class="figure" id="id1">
+<span id="the-scope17-screen"></span><img alt="_images/scope17.png" src="_images/scope17.png" />
+<p class="caption"><span class="caption-text">The scope17 screen showing two traces</span></p>
+</div>
+<p>The main window looks like a low frequency four channel oscilloscope,
+with some extra features, on the right side panel. Applications for
+various experiments can be selected from the pulldown menu. A brief
+description of the oscilloscope program is given below.</p>
+<ul class="simple">
+<li><p>Any of the four inputs (A1, A2, A3 or MIC) can be enabled using the
+corresponding checkbox. The input range can be selected by clicking
+on the menubutton on the right side of the checkbox. Select the
+desired input range from the popup menu.</p></li>
+<li><p>There is another checkbox, to enable mathematical fitting of the data
+using V = V0sin(2πft + θ) + C to show the amplitude and
+frequency.</p></li>
+<li><p>The horizontal scale (time base) can be changed by a slider, from .5
+mS fullscale to 500 mS full scale.</p></li>
+<li><p>The Checkbutton <strong>Freeze</strong>, allows to pause and resume the
+oscilloscope operation.</p></li>
+<li><p>The Trigger level can be set by a slider, and there is a menubutton
+to select the trigger source.</p></li>
+<li><p>To save the traces to a file, edit the filename and click on the
+<strong>SaveTo</strong> button.</p></li>
+<li><p>Clicking on <strong>FFT</strong> shows the frequency spectrum of all the eneabled
+channels, appears on popup windows.</p></li>
+</ul>
+<p>In addition to the Oscilloscope, there are several measurement/control
+options available on the GUI, they are explained below.</p>
+<ul class="simple">
+<li><p>If selected, the voltages at the inputs A1, A2 and A3 are sampled
+every second and displayed.</p></li>
+<li><p>The resistance connected between SEN and Ground is measured and
+displayed every second.</p></li>
+<li><p>Clicking <strong>Capacitance on IN1</strong>, measures the value of the capacitor
+connected between IN1 and GND.</p></li>
+<li><p>Clicking <strong>Frequency on IN2</strong>, measures the frequency of an external
+digital (TTL standard) pulse connected to IN2</p></li>
+<li><p>The shape of the waveform can be selected using the menubutton,
+default shape is sine. It can be changed to triangular. When the
+square wave option is selected, the output is shifted to SQ2. You
+cannot have sine/triangular and SQ2 at the same time.</p></li>
+<li><p>Frequency of the Waveform generator WG can be set using the slider or
+the text entry window. The two input methods follow each other,
+changing the slider will change the text field and entering data
+using text field will set the slider to that value. The frequency
+will be set to the nearest possible value and it will be displayed in
+the message window at the bottom. The amplitude of WG output can be
+set to 3 volts, 1 volt or 80 mV.</p></li>
+<li><p>SQ1 can be set using the same method as explained above. The duty
+cycle can be set between 1% to 99%, default is 50%.</p></li>
+<li><p>The programmable volages PV1 and PV2 are also set in a similar
+manner.</p></li>
+<li><p>Checkbuttons are provided to control OD1 and CCS.</p></li>
+</ul>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

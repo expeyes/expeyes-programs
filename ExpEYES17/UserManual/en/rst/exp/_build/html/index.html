@@ -13,6 +13,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Introduction" href="1.1.html" /> 
@@ -31,14 +32,16 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Getting Started</a></li>
 <li><a class="reference internal" href="#school-level-experiments">School Level Experiments</a></li>
 <li><a class="reference internal" href="#electronics">Electronics</a></li>
 <li><a class="reference internal" href="#electricity-and-magnetism">Electricity and Magnetism</a></li>
 <li><a class="reference internal" href="#sound">Sound</a></li>
-<li><a class="reference internal" href="#mechanics-heat">Mechanics &amp; Heat</a></li>
+<li><a class="reference internal" href="#mechanics">Mechanics</a></li>
+<li><a class="reference internal" href="#other-experiments">Other experiments</a></li>
+<li><a class="reference internal" href="#i2c-modules">I2C Modules</a></li>
 <li><a class="reference internal" href="#coding-expeyes-17-in-python">Coding expEYES-17 in Python</a></li>
 </ul>
 
@@ -166,6 +169,12 @@ with the theory. It also gives an experiment of electromagnetic
 induction.</p>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="4.01.html">Plot I-V Curve</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="4.01.html#schematic">Schematic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="4.01.html#instructions">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4.02.html">XY plotting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.1.html">RLC circuits, steady state response</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.2.html">Transient Response of RC circuits</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4.3.html">Transient Response of RL circuits</a></li>
@@ -195,18 +204,48 @@ digitized sound with distance.</p>
 </ul>
 </div>
 </div>
-<div class="section" id="mechanics-heat">
-<h1>Mechanics &amp; Heat<a class="headerlink" href="#mechanics-heat" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="mechanics">
+<h1>Mechanics<a class="headerlink" href="#mechanics" title="Permalink to this headline">¶</a></h1>
 <p>Resonance phenomena is studied using a driven pendulum. Value of
-acceleration due to gravity is measured using a pendulum. Cooling of a
-liquid is studied using a PT100 sensor.</p>
+acceleration due to gravity is measured using a pendulum.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="6.1.html">Acceleration due to gravity using Rod pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6.2.html">Angular Velocity of Pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6.3.html">Resonance of a driven pendulum</a></li>
 <li class="toctree-l1"><a class="reference internal" href="6.4.html">Distance Measurement, by ultrasound echo</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="other-experiments">
+<h1>Other experiments<a class="headerlink" href="#other-experiments" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="6.5.html">Temperature measurement using PT100</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.6.html">Data Logger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.7.html">Adanced Data Logger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6.7.html#introduction">Introduction</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="i2c-modules">
+<h1>I2C Modules<a class="headerlink" href="#i2c-modules" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="6.90.html">B-H Curve</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6.90.html#schematic">Schematic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.90.html#instructions">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6.91.html">Light Sensor Logger</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="6.91.html#schematic">Schematic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="6.91.html#instructions">Instructions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6.92.html">MPU6050</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6.93.html">I2C Logger</a></li>
 </ul>
 </div>
 </div>
@@ -269,7 +308,7 @@ calls used for communicating with the device is given below.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Jithin B.P..
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

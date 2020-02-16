@@ -86,6 +86,8 @@ induction.
 .. toctree::
    :maxdepth: 2
 
+   4.01
+   4.02
    4.1
    4.2
    4.3
@@ -114,12 +116,11 @@ digitized sound with distance.
    5.2
    5.3
 
-Mechanics & Heat
-****************
+Mechanics
+*********
 
 Resonance phenomena is studied using a driven pendulum. Value of
-acceleration due to gravity is measured using a pendulum. Cooling of a
-liquid is studied using a PT100 sensor.
+acceleration due to gravity is measured using a pendulum.
 
 
 .. toctree::
@@ -129,7 +130,27 @@ liquid is studied using a PT100 sensor.
    6.2
    6.3
    6.4
+
+Other experiments
+*****************
+.. toctree::
+   :maxdepth: 2
+
    6.5
+   6.6
+   6.7
+
+I2C Modules
+***********
+.. toctree::
+   :maxdepth: 2
+
+   6.90
+   6.91
+   6.92
+   6.93
+
+
 
 Coding expEYES-17 in Python
 ***************************

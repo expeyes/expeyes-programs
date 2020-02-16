@@ -13,6 +13,7 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Software Installation" href="1.3.html" />
@@ -35,7 +36,7 @@
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">The equipment</a><ul>
 <li><a class="reference internal" href="#external-connections">External connections</a><ul>
@@ -53,13 +54,13 @@
 <li><a class="reference internal" href="#capacitance-meter-in1">Capacitance meter IN1:</a></li>
 <li><a class="reference internal" href="#frequency-counter-in2">Frequency Counter IN2:</a></li>
 <li><a class="reference internal" href="#resistive-sensor-input-sen">Resistive Sensor Input (SEN):</a></li>
-<li><a class="reference internal" href="#analog-inputs-a1-a2"><img class="math" src="_images/math/bbc2ff13bad8d262b9cc56f16a664ff4871beaf1.png" alt="\pm16\ V"/> Analog Inputs, A1 &amp; A2:</a></li>
-<li><a class="reference internal" href="#analog-input-a3"><img class="math" src="_images/math/a8045cf7990709a0503df23e7cac7cf9fdfac062.png" alt="\pm3.3\ V"/> Analog Input A3:</a></li>
+<li><a class="reference internal" href="#pm16-v-analog-inputs-a1-a2"><img class="math" src="_images/math/bbc2ff13bad8d262b9cc56f16a664ff4871beaf1.png" alt="\pm16\ V"/> Analog Inputs, A1 &amp; A2:</a></li>
+<li><a class="reference internal" href="#pm3-3-v-analog-input-a3"><img class="math" src="_images/math/a8045cf7990709a0503df23e7cac7cf9fdfac062.png" alt="\pm3.3\ V"/> Analog Input A3:</a></li>
 <li><a class="reference internal" href="#microphone-input-mic">Microphone input MIC:</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#i2c-sensor-interface">I2C Sensor Interface:</a></li>
-<li><a class="reference internal" href="#power-supply"><img class="math" src="_images/math/2201dc802084bb28c4d086972d749820916bfaa6.png" alt="\pm\ 6\ V/10\ mA"/> Power supply:</a></li>
+<li><a class="reference internal" href="#pm-6-v-10-ma-power-supply"><img class="math" src="_images/math/2201dc802084bb28c4d086972d749820916bfaa6.png" alt="\pm\ 6\ V/10\ mA"/> Power supply:</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#accessory-set">1.2.2 Accessory Set</a></li>
@@ -201,16 +202,16 @@ be very accurate beyond that.</p>
 Thermistor, Photo-transistor etc. SEN is internally connected to 3.3
 volts through a 5.1kΩ resistor.</p>
 </div>
-<div class="section" id="analog-inputs-a1-a2">
-<h4><img class="math" src="_images/math/bbc2ff13bad8d262b9cc56f16a664ff4871beaf1.png" alt="\pm16\ V"/> Analog Inputs, A1 &amp; A2:<a class="headerlink" href="#analog-inputs-a1-a2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="pm16-v-analog-inputs-a1-a2">
+<h4><img class="math" src="_images/math/bbc2ff13bad8d262b9cc56f16a664ff4871beaf1.png" alt="\pm16\ V"/> Analog Inputs, A1 &amp; A2:<a class="headerlink" href="#pm16-v-analog-inputs-a1-a2" title="Permalink to this headline">¶</a></h4>
 <p>Can measure voltage within the ±16 volts range. The input voltage range
 can be selected from .5V to 16V fullscale. Voltage at these terminals
 can be displayed as a function of time, giving the functionality of a
 low frequency oscilloscope. The maximum sampling rate is 1 Msps
 /channel. Both have an input impedance of 1MΩ .</p>
 </div>
-<div class="section" id="analog-input-a3">
-<h4><img class="math" src="_images/math/a8045cf7990709a0503df23e7cac7cf9fdfac062.png" alt="\pm3.3\ V"/> Analog Input A3:<a class="headerlink" href="#analog-input-a3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="pm3-3-v-analog-input-a3">
+<h4><img class="math" src="_images/math/a8045cf7990709a0503df23e7cac7cf9fdfac062.png" alt="\pm3.3\ V"/> Analog Input A3:<a class="headerlink" href="#pm3-3-v-analog-input-a3" title="Permalink to this headline">¶</a></h4>
 <p>Can measure voltage within the ±3.3 volts range. The input can be
 amplified by connecting a resistor from Rg to Ground, gain
 =1 + (Rg)/(10000). This enables displaying very small amplitude signals.
@@ -228,8 +229,8 @@ can be captured.</p>
 strip supports I2C sensors. The software is capable of recognizing a
 large number of commercially available I2C sensors.</p>
 </div>
-<div class="section" id="power-supply">
-<h3><img class="math" src="_images/math/2201dc802084bb28c4d086972d749820916bfaa6.png" alt="\pm\ 6\ V/10\ mA"/> Power supply:<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="pm-6-v-10-ma-power-supply">
+<h3><img class="math" src="_images/math/2201dc802084bb28c4d086972d749820916bfaa6.png" alt="\pm\ 6\ V/10\ mA"/> Power supply:<a class="headerlink" href="#pm-6-v-10-ma-power-supply" title="Permalink to this headline">¶</a></h3>
 <p>The VR+ and VR- are regulated power outputs. They can supply very little
 current, but good enough to power an Op-Amp.</p>
 </div>
@@ -248,8 +249,8 @@ be energized by WG output or SQR1. Discs are enclosed in a plastic
 shell that forms a cavity, that enhances the amplitude of sound
 produced.</li>
 <li>DC Motor : Should be powered by a DC voltage less than 3 volts.</li>
-<li>Permanent Magnets : (a) 10mm dia &amp; length (b) 5 mm dia &amp; 10 mm length
-(c) Button size magnets(2)</li>
+<li>Permanent Magnets : (a) 10mm dia &amp; length (b) 5 mm dia &amp; 10 mm length (c)
+Button size magnets(2)</li>
 <li>5mm LEDS : RED, BLUE, GREEN, WHITE</li>
 <li>Capacitors : 100pF, 0.1uF , 1 uF &amp; 22uF</li>
 <li>Inductor : 10 mH / 20Ω,</li>
@@ -284,7 +285,7 @@ produced.</li>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2018, Jithin B.P..
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.7.5.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
     </div>
   </body>
 </html>

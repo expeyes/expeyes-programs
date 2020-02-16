@@ -1,0 +1,7 @@
+..    6.6
+
+Data Logger
+===========
+
+- Select Channels A1, A2, A3 or SEN
+- Record them for the desired time interval

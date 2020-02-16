@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Four-channel oscilloscope, and much more</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="four-channel-oscilloscope-and-much-more">
+<h1>Four-channel oscilloscope, and much more</h1>
+<blockquote>
+<div><p>Eyes17 comes with an application whose default User Interface is an
+enhanced four-channel oscilloscope.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/channel/UCIHUjpPn9wf1aHElqLn1RJQ">Link to YouTube videos</a><span class="link-target"> [https://www.youtube.com/channel/UCIHUjpPn9wf1aHElqLn1RJQ]</span></p></li>
+<li><p>The Oscilloscope program mainly functions as a four channel
+oscilloscope, with inputs A1, A2, A3 and MIC.</p></li>
+<li><p>Adjust the x-axis limit of the graph, using the Timebase Slider,
+generally to view several cycles of the waveform.</p></li>
+<li><p>If the waveform is not stable, select the proper trigger source. If
+needed adjust the Trigger level.</p></li>
+<li><p>The traces can be saved to a file, in text format. It is possible to
+take the Fourier transform and view the frequency spectrum of the
+input waveform.</p></li>
+<li><p>The oscilloscope program also has control/monitor widgets on the
+right side panel to access most of the ExpEYES features.</p></li>
+<li><p>The inputs A1, A2, A3 and the resistance connected to SEN are
+measured and displayed every second. But these readings are
+meaningless when AC inputs are connected.</p></li>
+<li><p>For sinusoidal AC inputs, enable the Check-Button in front of the
+channel widget to view the Peak voltage and frequency.</p></li>
+<li><p>The ExpEYES Input/Output terminals are briefly described below.</p></li>
+</ul>
+<div class="figure">
+<img alt="_images/scope-outputs.png" src="_images/scope-outputs.png" style="width: 300px;" />
+</div>
+<div class="section" id="output-terminals">
+<h2>Output Terminals</h2>
+<ul class="simple">
+<li><p><strong>CCS:</strong> <img class="math" src="_images/math/24f4ab6d4515be48d2743231bd07e0da82252bde.png" alt="1.1\ mA"/> Constant Current Source. On/Off using Check-Button
+Enable CCS.</p></li>
+<li><p><strong>PV1:</strong> Programmable Voltage, <img class="math" src="_images/math/3b7a582390aa358c825f0016c9aca6c33de8c610.png" alt="\pm 5\ V"/> range. Can be set using the
+Slider or Text-Entry widget</p></li>
+<li><p><strong>PV2:</strong> Similar to PV1, but ranges from <img class="math" src="_images/math/deceeaf1a45dc57b379bd2d8de5850cf3f6a9470.png" alt="- 3.3\ V"/> to <img class="math" src="_images/math/727042c5547738459bc946466cbf1815408b97e2.png" alt="+ 3.3\ V"/></p></li>
+<li><p><strong>SQ1:</strong> Square Wave Generator, swings from <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> to <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.
+Frequency can be set from <img class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png" alt="1\ Hz"/> to <img class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png" alt="5\ kHz"/>.</p></li>
+<li><p><strong>SQ2:</strong> Same as SQ1, but available as an option of WG.</p></li>
+<li><p><strong>OD1:</strong> Digital Output, voltage can be set to <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> or <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.</p></li>
+<li><p><strong>WG:</strong> Waveform Generator. Frequency from <img class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png" alt="1\ Hz"/> to <img class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png" alt="5\ kHz"/>.
+Amplitude can be set to <img class="math" src="_images/math/0bd5eb9989b969c47903e39dfbf07fe2096bba32.png" alt="3\ V"/>, <img class="math" src="_images/math/b3e216320b7c8be2cbc21be0d6b5b7902b40e30c.png" alt="1\ V"/> or <img class="math" src="_images/math/040a5395dcdf611ae7fed108966b47ee6ab99fa1.png" alt="80\ mV"/>.
+Can be set to Sine, Triangular or Square.
+In Square mode the output is on SQ2, with <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> to <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/> swing.</p></li>
+<li><p><strong>-WG:</strong> Inverted output of WG</p></li>
+</ul>
+<div class="figure">
+<img alt="_images/scope-inputs.png" src="_images/scope-inputs.png" style="width: 300px;" />
+</div>
+</div>
+<div class="section" id="input-terminals">
+<h2>Input Terminals</h2>
+<ul class="simple">
+<li><p><strong>IN1:</strong> Input for measuring Capacitance. Push-Button provided for
+measurement.</p></li>
+<li><p><strong>IN2:</strong> Input for measuring frequency of digital signals, swinging
+between <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> and <img class="math" src="_images/math/18acc1fa0d022fd729f0749ddc5f669917d3fb15.png" alt="3"/> to <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.
+Push-Button provided for measurement.</p></li>
+<li><p><strong>SEN:</strong> Input for measuring resistance. This point is internally
+connected to <img class="math" src="_images/math/9210342930929ea814930262304b16d0c79a28ad.png" alt="3.3\ V"/> via a <img class="math" src="_images/math/cdb1157e4d667f56a60f2e4950e769a7622f773c.png" alt="5.1\ k\Omega"/> resistor</p></li>
+<li><p><strong>A1:</strong> Voltage measurement point, functions as voltmeter and
+oscilloscope. Maximum Input range <img class="math" src="_images/math/3270edf84f06fcd268711a855a3f328399202056.png" alt="\pm\ 16\ V"/>, range is selectable
+from pull down menu. AC/DC mode selection by slider switch on the
+box.</p></li>
+<li><p><strong>A2:</strong> Same as A1, but no AC coupled mode</p></li>
+<li><p><strong>A3:</strong> Voltage measurement in <img class="math" src="_images/math/8f7e1f73995959fe74248d103c2cf3e7eb4fff40.png" alt="\pm\ 3.3\ V"/>. Small signals can
+be amplified by connecting a resistance from Rg to Ground</p></li>
+<li><p><strong>MIC:</strong> Condenser microphone input, output appears as the fourth
+channel of the oscilloscope</p></li>
+<li><p><strong>Rg:</strong> Gain resistor for A3. <img class="math" src="_images/math/0017517a0909fa2113c728609ce038ef0ddd8a64.png" alt="Gain = 1 + \frac{R_{g}}{100}"/>.
+For example connecting a <img class="math" src="_images/math/c881340f4a0fff8f9e62b5ed86ad9d3eeff919f7.png" alt="1\ k\Omega"/> resistor gives a gain of
+<img class="math" src="_images/math/67763ee8e4752b3b94c82605090336c07af1d3d5.png" alt="11"/>.</p></li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>
