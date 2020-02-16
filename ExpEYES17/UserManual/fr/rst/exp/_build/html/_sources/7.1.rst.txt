@@ -350,8 +350,8 @@ est montré ci-dessus.
 set_wave(frequence, typeDeSignal)
 """""""""""""""""""""""""""""""""
 
-Si le paramètre ``wavetype`` n'est pas spécifié, cela génère
-un signal en utilisant la table d'onde existante. Si ``wavetype``
+Si le paramètre ``typeDeSignal`` n'est pas spécifié, cela génère
+un signal en utilisant la table d'onde existante. Si ``typeDeSignal``
 est spécifié ``'sine'`` ou ``'tria'``, la table d'onde
 correspondante est chargée.
 

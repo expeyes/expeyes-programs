@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Le matériel</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="le-materiel">
+<h1>Le matériel</h1>
+<p>ExpEYES-17 est interfacé et alimenté grâce au port USB de l’ordinateur.
+Pour y connecter des signaux externes, il a plusieurs entrées/sorties,
+situées de chaque côté, comme montré sur la figure <a class="reference internal" href="#fig-e17"><span class="std std-ref">ExpEYES17</span></a>.
+Il peut surveiller et contrôler des tensions à ses connexions. Pour
+mesurer d’autres paramètres (tels que la température, la pression,
+etc.), on a besoin de les convertir en signaux électriques à l’aide
+de capteurs adéquats.</p>
+<p>La précision des mesures de tension est conditionnée par la stabilité
+de la référence à <img class="math" src="_images/math/312c50a98cd675d2aee73a4ea811b5c418504b4d.png" alt="3,3~V"/> utilisée, elle varie de <img class="math" src="_images/math/c9f7f549490149dcb80a9dd0129bf52ff079accc.png" alt="50~ppm"/> par degré
+Celsius. Les erreurs de gain et d’offset sont éliminées par une calibration
+initiale, à l’aide du convertisseur analogique-numérique 16 bits.</p>
+<p>Bien que notre premier objectif soit de faire des expériences, nous
+vous conseillons de lire la brève description du matériel ci-dessous.
+L’appareil peut être aussi utilisé comme matériel de test pour des
+expériences d’électricité et d’électronique.</p>
+<p><strong>IMPORTANT :</strong></p>
+<p><em>Les tensions extérieures connectées à ExpEYES17 doivent être comprises dans les limites autorisées. Les entrées A1 et A2 doivent être dans l’intervalle</em>
+<img class="math" src="_images/math/95ffa5ca56043a667a808c584d8dccb98bd552c6.png" alt="\pm16"/>
+<em>volts et les entrées IN1 and IN2 doivent être dans l’intervalle de 0 à 3,3 V. Des tension excessives peuvent provoquer des dommages permanents. Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs de tensions.</em></p>
+<div class="figure" id="id1">
+<span id="fig-e17"></span><img alt="_images/eyes17-panel.jpg" src="_images/eyes17-panel.jpg" style="width: 500px;" />
+<p class="caption"><span class="caption-text">ExpEYES17</span></p>
+<div class="legend">
+<p>La face avant d’ExpEYES17 avec les connexions externes sur le dessus.</p>
+</div>
+</div>
+<div class="section" id="connexions-externes">
+<h2>Connexions externes</h2>
+<p>Les fonctions des connexions externes sont expliquées brièvement ci-dessous.
+Toutes les bornes de couleur noire sont des masses (0 V), toutes
+les autres tensions sont mesurées par rapport à elles.</p>
+<div class="section" id="les-sorties">
+<h3>Les sorties :</h3>
+<div class="section" id="source-de-courant-constant-ccs">
+<h4>Source de courant constant (CCS) :</h4>
+<p>La source de courant constant peut être activée ou désactivée (ON
+et OFF) sous contrôle logiciel.La valeur nominale est 1,1 mA mais
+peut varier d’une unité à l’autre, à cause de la tolérance des composants.
+Pour mesurer sa valeur exacte, connecter un ampèremètre entre CCS
+et GND. Une autre méthode consiste à connecter une résistance connue
+(environ <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>) et mesurer la différence de potentiel
+à ses bornes. La résistance de charge doit être inférieure à <img class="math" src="_images/math/e592f89aa9852535fc5389fb882893b41800078c.png" alt="3~k\Omega"/>
+pour cette source de courant.</p>
+</div>
+</div>
+<div class="section" id="tension-programmable-pv1">
+<h3>Tension programmable (PV1) :</h3>
+<p>Elle peut être réglée, par logiciel, à toute valeur comprise dans
+l’intervalle de -5 V à +5 V. La résolution est 12 bits, ce qui implique
+une résolution en tension d’environ <img class="math" src="_images/math/bd29ee783d86f95c9d807faec95a1e5f25a15367.png" alt="2,5~mV"/>.</p>
+<div class="section" id="tension-programmable-pv2">
+<h4>Tension programmable (PV2) :</h4>
+<p>Elle peut être réglée, par logiciel, à toute valeur comprise dans
+l’intervalle de -3,3 V à +3,3 V. La résolution est 12 bits.</p>
+</div>
+<div class="section" id="signal-carre-sq1">
+<h4>Signal carré SQ1:</h4>
+<p>La sortie oscille entre 0 et 5 V et la fréquence peut être ajustée
+entre 10 Hz et 100 kHz. Toutes les valeurs intermédiaires de fréquence
+ne sont pas possibles. On peut programmer le rapport cyclique. Quand
+on règle la fréquence à 0 Hz provoque un état HAUT à la sortie, et
+si on la règle à -1 Hz, la sortie passe à l’état BAS ; dans les
+deux cas la génération de signal carré est désactivée. La sortie SQR1
+comporte une <strong>résistance série</strong> de <img class="math" src="_images/math/36dfc0dd6f490d35fa65c29d9013ee762dc718f1.png" alt="100~\Omega"/>
+intégrée si bien qu’elle peut commander des DELs directement.</p>
+</div>
+<div class="section" id="signal-carre-sq2">
+<h4>Signal carré SQ2:</h4>
+<p>La sortie oscille entre 0 et 5 V et la fréquence peut être ajustée
+entre 10 Hz et 100 kHz. Toutes les valeurs intermédiaires de fréquence
+ne sont pas possibles. On peut programmer le rapport cyclique. La
+sortie SQR2 n’est pas disponible quand on active WG.</p>
+</div>
+<div class="section" id="sortie-numerique-od1">
+<h4>Sortie numérique (OD1) :</h4>
+<p>La tension en OD1 peut être réglée à 0 ou 5 V, par logiciel.</p>
+</div>
+<div class="section" id="signal-sinusoidal-triangulaire-wg">
+<h4>Signal Sinusoïdal/Triangulaire WG :</h4>
+<p>Sa fréquence peut être ajustée entre 5 Hz et 5 kHz. La valeur crête
+peut être réglées à 3 V, 1,0 V ou 80 mV. La forme du signal est
+programmable. À l’aide de l’interface utilisateur on peut sélectionner
+une forme sinusoïdale ou triangulaire. <img class="math" src="_images/math/8eec40346746e3d6c580ca504fbd9e889d852ba9.png" alt="\overline{WG}"/> est le signal
+de WG, inversé..</p>
+</div>
+</div>
+<div class="section" id="entrees">
+<h3>Entrées :</h3>
+<div class="section" id="mesure-de-capacite-en-in1">
+<h4>Mesure de capacité en IN1 :</h4>
+<p>On peut mesurer la valeur d’un condensateur connecté entre IN1 et
+GND. Ça marche mieux pour de petites valeurs de capacité, jusqu’à
+10 nF, les résultats sont moins précis au-delà.</p>
+</div>
+<div class="section" id="frequencemetre-en-in2">
+<h4>Fréquencemètre en IN2 :</h4>
+<p>Celui-ci est capable de mesurer des fréquences jusqu’à plusieurs MHz.</p>
+</div>
+<div class="section" id="capteur-de-resistance-sen">
+<h4>Capteur de résistance (SEN) :</h4>
+<p>Cette entrée est surtout conçue pour des capteurs comme des photorésistances
+(LDR), des thermistances, des photo-transistors, etc. L’entrée SEN
+est connectée en interne à 3,3 V à travers une résistance de <img class="math" src="_images/math/b1a48943c2c92e1fda4acc96b15e087f23130e3b.png" alt="5,1~k\Omega"/>.</p>
+</div>
+<div class="section" id="entrees-analogiques-math-pm16v-a1-a2">
+<h4>Entrées analogiques:math:<cite>pm16V</cite>, A1 &amp; A2 :</h4>
+<p>Celles-ci peuvent mesurer des tensions dans l’intervalle <img class="math" src="_images/math/3da4466be0004e4b45ed095632a455e5ab7ccbf9.png" alt="\pm16~V"/>.
+On peut choisir le calibre de 0,5 V à 16 V en pleine échelle. On
+peut visualiser la tension de ces entrées en fonction du temps, ce
+qui donne une fonction d’oscilloscope pour basses fréquences. La plus
+grande vitesse d’échantillonnage est 1 Méch/s pour un seul canal.
+Chacune des entrées a une impédance de <img class="math" src="_images/math/227562a91fe2c5700dfa28d683d2e79e520ab153.png" alt="1~M\Omega"/> .</p>
+</div>
+<div class="section" id="entree-analogique-pm3-3v-a3">
+<h4>Entrée analogique <img class="math" src="_images/math/4fadcf15f169fa7ed69c9507ae179abe1170e6b9.png" alt="\pm3.3V"/> A3 :</h4>
+<p>Celle-ci peut mesurer une tension dans l’intervalle <img class="math" src="_images/math/95120124b896391b19e0eaacd032c3454e49fb0f.png" alt="\pm3.3~V"/>. On
+peut amplifier cette entrée en connectant une résistance entre Rg
+et GND, gain = <img class="math" src="_images/math/e4281700954f885e36666aa922f0f2f382dc0b73.png" alt="1+\frac{Rg}{10000}"/>. Cela permet d’afficher des signaux
+de très petite amplitude. L’impédance de l’entrée A3 est <img class="math" src="_images/math/d89a64758d669e39598fce286e5d378515f6f97c.png" alt="10~M\Omega"/>.</p>
+</div>
+<div class="section" id="entree-microphone-mic">
+<h4>Entrée Microphone MIC :</h4>
+<p>Un microphone à condensateur peut être connecté à cette borne afin
+de capturer le signal à la sortie.</p>
+</div>
+</div>
+<div class="section" id="interface-pour-les-capteurs-i2c">
+<h3>Interface pour les capteurs I2C :</h3>
+<p>Les quatre connexions (+5 V, GND, SCL et SDA) situées sur la bande
+de connexions Berg supporte les capteurs de la famille I2C. Le logiciel
+peut reconnaître un grand nombre de capteurs I2C disponibles dans
+le commerce.</p>
+</div>
+<div class="section" id="alimentation-pm6-v-10-ma">
+<h3>Alimentation <img class="math" src="_images/math/097fabb9f7b86d0726fc7fe468c5547439b7e3b6.png" alt="\pm6~V/10~mA"/>  :</h3>
+<p>Les bornes VR+ et VR- sont des alimentations régulées. Elles fournissent
+peut de courant, mais assez pour alimenter un ampli-op.</p>
+</div>
+</div>
+<div class="section" id="kit-d-accessoires">
+<h2>Kit d’accessoires</h2>
+<p>Quelques accessoires sont livrés avec expEYES.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Fils électriques, avec une borne rigide mâle et avec une pince crocodile.</p></li>
+<li><p>Microphone à condensateur avec ses fils.</p></li>
+<li><p>Bobine d’induction (2) : du fil isolé 44SWG enroulé dans une bobine
+de diamètre 1 cm. Environ 3000 tours (il peut y avoir quelques tours
+de plus). On peut utiliser ces bobines pour étudier l’inductance,
+l’induction électromagnétique, etc.</p></li>
+<li><p>Disque piézo-électrique (2) : sa fréquence de résonance est d’environ
+3500 Hz. Il peut être alimenté par la sortie WG ou SQR1. Le disque
+est enfermé dans une coquille en plastique formant une cavité, qui
+augmente l’amplitude du son produit.</p></li>
+<li><p>Moteur CC : doit être alimenté par une tension continue de moins
+de 3 V.</p></li>
+<li><p>Aimants permanents : (a) diamètre et longueur 10 mm (b) diamètre
+5 mm et longueur 10 mm (c) aimants de taille bouton(2)</p></li>
+<li><p>DELs 5 mm : rouge, bleue, verte, blanche.</p></li>
+<li><p>Condensateurs : 100 pF, 0.1 µF , 1 µF et 22 µF</p></li>
+<li><p>Inductances : 10 mH / <img class="math" src="_images/math/27c350f59fabf785d06cf5392a0cf465f09d4822.png" alt="20~\Omega"/>,</p></li>
+<li><p>Résistances :
+<img class="math" src="_images/math/068f945b4123d53bf3036b093fef79fea4f0f348.png" alt="560~\Omega"/>, <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>, <img class="math" src="_images/math/97437227c84e9a1b49907bf4e4aeb89f0d63e737.png" alt="2,2~k\Omega"/> ,
+<img class="math" src="_images/math/401c080b7a9144cddf0e5ad48a81afdd82f27712.png" alt="10~k\Omega"/>,
+<img class="math" src="_images/math/5c5a18bdc063ef476af83f210dd4bcfe69d8fff8.png" alt="51~k\Omega"/> et <img class="math" src="_images/math/747baa849ddf46b5a4d2e10666b6ae1c7a95ee05.png" alt="100~k\Omega"/></p></li>
+<li><p>photorésistance (LDR )</p></li>
+<li><p>Deux diodes silicium (<code class="docutils literal notranslate"><span class="pre">1N4148</span></code>) et une diode Zéner de <img class="math" src="_images/math/312c50a98cd675d2aee73a4ea811b5c418504b4d.png" alt="3,3~V"/></p></li>
+<li><p>Transistor NPN (<code class="docutils literal notranslate"><span class="pre">2N2222</span></code>)</p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

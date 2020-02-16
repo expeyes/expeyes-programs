@@ -1,0 +1,128 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="fr">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Courbe B-H &#8212; Documentation eyes17 1.0</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Enregistreur de capteur de lumière" href="6.91.html" />
+    <link rel="prev" title="Enregistreur de données avancé" href="6.7.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="6.91.html" title="Enregistreur de capteur de lumière"
+             accesskey="N">suivant</a> |</li>
+        <li class="right" >
+          <a href="6.7.html" title="Enregistreur de données avancé"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Courbe B-H</a><ul>
+<li><a class="reference internal" href="#schema">Schéma</a></li>
+<li><a class="reference internal" href="#instructions">Instructions</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Sujet précédent</h4>
+  <p class="topless"><a href="6.7.html"
+                        title="Chapitre précédent">Enregistreur de données avancé</a></p>
+  <h4>Sujet suivant</h4>
+  <p class="topless"><a href="6.91.html"
+                        title="Chapitre suivant">Enregistreur de capteur de lumière</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/6.90.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="courbe-b-h">
+<h1>Courbe B-H<a class="headerlink" href="#courbe-b-h" title="Lien permanent vers ce titre">¶</a></h1>
+<div class="section" id="schema">
+<h2>Schéma<a class="headerlink" href="#schema" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>Pour enregistrer l’hystérésis magnétique à l’aide d’un solénoïde commecté à PV1, et d’un magnétomètre MPU925x connecté au port I2C.</li>
+</ul>
+</div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li>Connecter le bobinage entre PV1 et GND</li>
+<li>Connecter le magnétomètre (MPU925x) au port I2C</li>
+<li>Placer le solénoïde sur le capteur de façon à ce que l’axe magnétique soit perpendiculaire au capteur</li>
+<li>Enregistrer les données&nbsp;: la tension de PV1 est balayée de -3 à 3&nbsp;V en 100 étapes, aller puis retour de 3 à -3&nbsp;V. Cela crée un champ magnétique généré par le solénoïde, mesuré par le capteur, dont on affiche la courbe.</li>
+<li>Ajouter un matériau ferromagnétique tel qu’un pince crocodile, et recommencer l’enregistrement. Observer l’hystérésis pour divers matériaux.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="6.91.html" title="Enregistreur de capteur de lumière"
+             >suivant</a> |</li>
+        <li class="right" >
+          <a href="6.7.html" title="Enregistreur de données avancé"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, GK.
+      Créé avec <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

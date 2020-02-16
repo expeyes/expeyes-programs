@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <title>Réponse de circuits RC en régime transitoire</title>
+    <link rel="stylesheet" href="_static/epub.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="reponse-de-circuits-rc-en-regime-transitoire">
+<h1>Réponse de circuits RC en régime transitoire</h1>
+<p><strong>Objectif</strong></p>
+<p>Tracer l’évolution de la tension aux bornes d’un condensateur, quand il
+est chargé en appliquant un échelon de tension à travers une résistance.
+Calculer la valeur de la capacité d’après la courbe.</p>
+<img alt="_images/RCtransient.svg" src="_images/RCtransient.svg" width="300px" /><img alt="_images/RCtransient.png" src="_images/RCtransient.png" style="width: 300px;" />
+<p><strong>Procédure</strong></p>
+<ul class="simple">
+<li><p>Dan le menu «Électricité», choisir le sous-menu «Circuit RC en régime
+transitoire».</p></li>
+<li><p>Cliquer sur les boutons <em>Échelon 0-&gt;5V</em> et <em>Échelon 5-&gt;0V</em> pour
+afficher les graphiques</p></li>
+<li><p>Ajuster l’échelle horizontale si nécessaire, et recommencer.</p></li>
+<li><p>Calculer la constante de temps RC.</p></li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Quand on applique un échelon de 0 à 5 V, la tension aux bornes du
+condensateur s’approche exponentiellement de 5 V comme montré sur la
+figure. En modélisant la courbe de décharge par
+<img class="math" src="_images/math/60a5f57cb425f62765c576e48ba2fc4c6a528fc8.png" alt="U(t) = U_0 \times e^{− t/RC}"/> , on
+peut extraire la constante de temps RC et s’en servir pour trouver la
+valeur de la capacité.</p>
+<p>Le tension aux bornes d’un condensateur ne varie exponentiellement que
+quand on le charge au travers d’un dipôle linéaire, une résistance par
+exemple. Si on le charge à l’aide d’une source de courant constant, la
+tension change linéairement, puisque <img class="math" src="_images/math/8cdaff7d632a472fa21532774e5176f13a64dc37.png" alt="Q = It = CU"/> , et la tension
+croît linéairement avec le temps comme
+<img class="math" src="_images/math/f3dc0e5a2b3efa80465d44cdcf6b88714ca8b0be.png" alt="U = (I/C) \times t"/>.</p>
+</div>
+
+
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>
