@@ -71,14 +71,14 @@ electronicsExptsScope = [
 ]
 
 electricalExpts = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),('4.1','plotIV')],
-[QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),('4.2','XYplot')],
-[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),('4.3','RLCsteadystate')],
-[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),('4.4','RCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),('4.5','RLtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),('4.6','RLCtransient')],
-[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),('4.7','filterCircuit')],
-[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),('4.8','induction')]
+[QT_TRANSLATE_NOOP('MainWindow','Plot I-V Curve'),('4.01','plotIV')],
+[QT_TRANSLATE_NOOP('MainWindow','XY Plotting'),('4.02','XYplot')],
+[QT_TRANSLATE_NOOP('MainWindow','RLC Steady state response'),('4.1','RLCsteadystate')],
+[QT_TRANSLATE_NOOP('MainWindow','RC Transient response'),('4.2','RCtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','RL Transient response'),('4.3','RLtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','RLC transient response'),('4.5','RLCtransient')],
+[QT_TRANSLATE_NOOP('MainWindow','Frequency Response of Filter Circuit'),('4.6','filterCircuit')],
+[QT_TRANSLATE_NOOP('MainWindow','Electromagnetic Induction'),('4.7','induction')]
 ]
 
 soundExpts = [
@@ -102,10 +102,10 @@ otherExpts = [
 ]
 
 modulesI2C = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),'BHCurve'],
-[QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),'lightsensorlogger'],
-[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), 'MPU6050'],
-[QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), 'i2cLogger']
+[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),('6.90', 'BHCurve')],
+[QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),('6.91', 'lightsensorlogger')],
+[QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), ('6.92', 'MPU6050')],
+[QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), ('6.93', 'i2cLogger')]
 ]
 
 pythonCodes = [ 
@@ -339,19 +339,15 @@ class MainWindow(QMainWindow):
 		explib = importlib.import_module(module_name)
 		try:
 			if self.expWidget != None:
-				self.expWidget.timer.stop()     # Stop the timer loop of current widget			
+				self.expWidget.timer.stop()	 # Stop the timer loop of current widget			
 			self.hwin = None
-			self.expWidget= None 			    # Let python delete it
+			self.expWidget= None				 # Let python delete it
 			w = explib.Expt(p) 
 			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
-			if type(e[1]) == 'string':
-				self.expName = e[1]
-				self.hlpName = e[1]
-			else: #tuple. select first
-				self.expName = e[1][1]
-				self.hlpName = e[1][1]
+			self.expName = e[1]
+			self.hlpName = e[1]
 			self.title = e[0]
 			self.showHelp()
 		except Exception as err:
@@ -406,6 +402,8 @@ class MainWindow(QMainWindow):
 		return
 	
 	def makeMenu(self):
+		imagePath = os.path.join(os.path.dirname(
+			os.path.abspath(__file__)),'images/')
 		bar = self.menuBar()
 		bar.clear() # reset all menu actions
 		mb = bar.addMenu(self.tr("Device"))
@@ -413,10 +411,10 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
 		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
-		sm.setIcon(QIcon("images/UN_emblem_blue.svg"))
+		sm.setIcon(QIcon(imagePath + "UN_emblem_blue.svg"))
 		for e in languages:
 			action = sm.addAction(e,  lambda item=e: self.setLanguage(item))
-			flag=f"images/{e}.svg"
+			flag=f"{imagePath}{e}.svg"
 			if os.path.exists(flag):
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
