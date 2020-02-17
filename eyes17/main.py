@@ -403,7 +403,7 @@ class MainWindow(QMainWindow):
 	
 	def makeMenu(self):
 		imagePath = os.path.join(os.path.dirname(
-			os.path.abspath(__file__)),'images/')
+			os.path.abspath(__file__)),'images')
 		bar = self.menuBar()
 		bar.clear() # reset all menu actions
 		mb = bar.addMenu(self.tr("Device"))
@@ -411,10 +411,10 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
 		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
-		sm.setIcon(QIcon(imagePath + "UN_emblem_blue.svg"))
+		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
 		for e in languages:
 			action = sm.addAction(e,  lambda item=e: self.setLanguage(item))
-			flag=f"{imagePath}{e}.svg"
+			flag=os.path.join(imagePath, f"{e}.svg")
 			if os.path.exists(flag):
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
