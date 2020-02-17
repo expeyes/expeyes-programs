@@ -17,6 +17,37 @@ if 'Windows' in pf:
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
 	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger
 
+"""
+Translations in advance for the menus:
+the top menu titles
+"""
+
+QT_TRANSLATE_NOOP('MainWindow','Device')
+QT_TRANSLATE_NOOP('MainWindow','School Expts')
+QT_TRANSLATE_NOOP('MainWindow','Electronics')
+QT_TRANSLATE_NOOP('MainWindow','Electrical')
+QT_TRANSLATE_NOOP('MainWindow','Sound')
+QT_TRANSLATE_NOOP('MainWindow','Mechanics')
+QT_TRANSLATE_NOOP('MainWindow','Other Expts')
+QT_TRANSLATE_NOOP('MainWindow','I2C Modules')
+QT_TRANSLATE_NOOP('MainWindow','PythonCode')
+
+"""
+The first submenu
+"""
+QT_TRANSLATE_NOOP('MainWindow','Reconnect')
+QT_TRANSLATE_NOOP('MainWindow','LightBackGround next time')
+QT_TRANSLATE_NOOP('MainWindow','DarkBackGround next time')
+QT_TRANSLATE_NOOP('MainWindow','Choose Language')
+
+"""
+Warning dialogs
+"""
+QT_TRANSLATE_NOOP('MainWindow','No immediate application')
+QT_TRANSLATE_NOOP('MainWindow',"Please restart the application to lighten the screen's background")
+QT_TRANSLATE_NOOP('MainWindow',"Please restart the application to darken the screen's background.")
+
+
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
 [QT_TRANSLATE_NOOP('MainWindow',"Resistance measurement"), ('2.2','res-measure')],
@@ -211,22 +242,35 @@ class MainWindow(QMainWindow):
 		if self.hwin != None:
 			self.hwin.close()
 
-	def __init__(self, lang):
+	def __init__(self, lang, app, tr_eyes, tr_qt):
 		"""
 		The constructor.
 		:param lang: the autodetected language, which comes from shell variables
+		:type  lang: str
+		:param app: pointer to the Application
+		:type  app: QApplication
+		:param tr_eyes: translator to localize eyes17
+		:type  tr_eyes: QTranslator
+		:param tr_qt: translator to localize Qt5
+		:type  tr_qt: QTranslator
 		"""
 		QMainWindow.__init__(self)
+		self.lang=None # this will be set later, after self.translate() tries
+		self.app=app
+		self.tr_eyes=tr_eyes
+		self.tr_qt=tr_qt
 
-		config = configparser.ConfigParser()
-		config.read(cnf)
+		self.conf = configparser.ConfigParser()
+		self.conf.read(cnf)
+		
 		try:
-			self.translators = self.translate(config['ScreenTheme']['language'])
-			self.lang = config['ScreenTheme']['language']
+			self.translate(self.conf['ScreenTheme']['language'])
+			self.lang = self.conf['ScreenTheme']['language']
 		except:
-			self.translators = self.translate(lang)
+			self.translate(lang)
 			self.lang=lang
 			
+		self.init_UI()
 		self.uncheckHelpBox.connect(self.uncheckTheHelpBox)
 		self.setEditorText.connect(self.updateEditor)
 		self.setConfigText.connect(self.updateConfig)
@@ -371,10 +415,10 @@ class MainWindow(QMainWindow):
 		@param key for example: 'Background'
 		@param value the text to assign to the key, for example: 'dark'
 		"""
-		config = configparser.ConfigParser()
-		config.read(cnf)
-		config[section][key] = value
-		with open(cnf,"w") as out: config.write(out)
+		self.conf = configparser.ConfigParser()
+		self.conf.read(cnf)
+		self.conf[section][key] = value
+		with open(cnf,"w") as out: self.conf.write(out)
 		return
 	
 	def setWBG(self):
@@ -457,6 +501,7 @@ class MainWindow(QMainWindow):
 			self.setConfig('ScreenTheme', 'language', l)
 			self.translators=self.translate(l)
 			self.lang=l
+			self.init_UI()
 			return
 
 	def reconnect(self):
@@ -482,26 +527,22 @@ class MainWindow(QMainWindow):
 		
 	# translation stuff
 	def translate(self, lang = None):
-		global app,t,t1
-
 		try:
-			app.removeTranslator(t)
-			app.removeTranslator(t1)
+			self.app.removeTranslator(self.tr_eyes)
+			self.app.removeTranslator(self.tr_qt)
 		except:
 			pass
 
 		if lang is None:
 			lang=QLocale.system().name()
-		t=QTranslator()
-		t.load("lang/"+lang, os.path.dirname(__file__))
-		app.installTranslator(t)
-		t1=QTranslator()
-		t1.load("qt_"+lang,
+		self.tr_eyes=QTranslator()
+		self.tr_eyes.load("lang/"+lang, os.path.dirname(__file__))
+		self.app.installTranslator(self.tr_eyes)
+		self.tr_qt=QTranslator()
+		self.tr_qt.load("qt_"+lang,
 			QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-		app.installTranslator(t1)
-		self.init_UI()
+		self.app.installTranslator(self.tr_qt)
 		self.uncheckHelpBox.emit()
-		return t,t1
 
 def run():
 	# Program starts here
@@ -526,7 +567,7 @@ def run():
 		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 	app.installTranslator(t1)
 
-	mw = MainWindow(lang)
+	mw = MainWindow(lang, app, t, t1)
 	sys.exit(app.exec_())
 
 if __name__ == '__main__':
