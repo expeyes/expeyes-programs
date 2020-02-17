@@ -18,10 +18,6 @@
   <property name="windowTitle">
    <string>Configure Axis</string>
   </property>
-  <property name="windowIcon">
-   <iconset>
-    <normaloff>:/control/play.svg</normaloff>:/control/play.svg</iconset>
-  </property>
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>

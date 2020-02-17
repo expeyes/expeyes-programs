@@ -6,13 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 
-import sys
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
-	
+from PyQt5 import QtCore, QtGui, QtWidgets
+
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
