@@ -1,8 +1,0 @@
-<RCC>
-  <qresource prefix="control">
-    <file>refresh.svg</file>
-    <file>stop.svg</file>
-    <file>play.svg</file>
-    <file>settings.svg</file>
-  </qresource>
-</RCC>
