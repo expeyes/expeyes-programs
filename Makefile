@@ -1,7 +1,7 @@
 DESTDIR =
 SUBDIRS = bin po firmware clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
-SUBDIRS_INDEP = expeyes-web eyes17/lang
+SUBDIRS_INDEP = expeyes-web eyes17/lang eyes17/layouts
 
 all:
 	python3 setup.py build
