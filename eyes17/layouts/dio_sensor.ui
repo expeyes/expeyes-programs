@@ -18,10 +18,6 @@
   <property name="windowTitle">
    <string>Sensor Reading</string>
   </property>
-  <property name="windowIcon">
-   <iconset resource="res.qrc">
-    <normaloff>:/control/play.svg</normaloff>:/control/play.svg</iconset>
-  </property>
   <property name="autoFillBackground">
    <bool>true</bool>
   </property>
