@@ -18,6 +18,10 @@ $(info PYRCC=$(PYRCC))
  
 all: $(UI_COMPILED) $(RC_COMPILED)
 
+install:
+	echo "Nothing to install, except when a debian package is built;"
+	echo "then the install will be managed by the packaging system."
+
 clean:
 	rm -f $(UI_COMPILED) $(RC_COMPILED)
 	rm -rf *.pyc *~ __pycache__
@@ -29,4 +33,4 @@ ui_%.py:  %.ui
 %_rc.py: %.qrc
 	$(PYRCC) $< -o $@
 
-.PHONY: all clean
+.PHONY: all clean install

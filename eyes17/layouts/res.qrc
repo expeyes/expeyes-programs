@@ -1,18 +1,13 @@
 <RCC>
   <qresource prefix="control">
-    <file>refresh.svg</file>
-    <file>plus.svg</file>
-    <file>stop.svg</file>
-    <file>kuttypy.png</file>
-    <file>play.svg</file>
-    <file>document-open.png</file>
-    <file>folder.png</file>
-    <file>saveall.png</file>
-    <file>kpys.jpeg</file>
-    <file>projectfolder.svg</file>
-    <file>minus.svg</file>
-    <file>settings.svg</file>
-    <file>reset.svg</file>
-    <file>saved.svg</file>
+    <file>controls/refresh.svg</file>
+    <file>controls/plus.svg</file>
+    <file>controls/stop.svg</file>
+    <file>controls/play.svg</file>
+    <file>controls/projectfolder.svg</file>
+    <file>controls/minus.svg</file>
+    <file>controls/settings.svg</file>
+    <file>controls/reset.svg</file>
+    <file>controls/saved.svg</file>
   </qresource>
 </RCC>
