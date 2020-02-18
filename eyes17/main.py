@@ -82,7 +82,7 @@ testEquipment = [
 electronicsExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),('3.11','diodeIV')],
 [QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),('3.12','npnCEout')],
-[QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),'pnpCEout'],
+[QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),('3.13','pnpCEout')],
 #[QT_TRANSLATE_NOOP('MainWindow','AM and FM'), 'amfm']
 ]
 
@@ -93,7 +93,7 @@ electronicsExptsScope = [
 [QT_TRANSLATE_NOOP('MainWindow','Diode Clipping'),('3.3','clipping')],
 [QT_TRANSLATE_NOOP('MainWindow','Diode Clamping'),('3.4','clamping')],
 [QT_TRANSLATE_NOOP('MainWindow','IC555 Multivibrator'),('3.5','osc555')],
-[QT_TRANSLATE_NOOP('MainWindow','Transistor Amplifier (CE)'),'npnCEamp'],
+[QT_TRANSLATE_NOOP('MainWindow','Transistor Amplifier (CE)'),('3.14','npnCEamp')],
 [QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),('3.6','opamp-inv')],
 [QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),('3.7','opamp-noninv')],
 [QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),('3.8','opamp-int')],
@@ -123,7 +123,7 @@ mechanicsExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),('6.2','pendulumVelocity')],
 [QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),('6.3','driven-pendulum')],
 [QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), ('6.4','sr04dist')],
-[QT_TRANSLATE_NOOP('MainWindow','Gravity by Time of Flight'), 'tof']
+[QT_TRANSLATE_NOOP('MainWindow','Gravity by Time of Flight'), ('6.10','tof')]
 ]
 
 otherExpts = [ 
@@ -306,14 +306,14 @@ class MainWindow(QMainWindow):
 		self.move(20, 20)
 		
 	def updateEditor(self,text):
-		if self.expName == 'editor':
+		if self.expName[1] == 'editor':
 			text = text.replace('import eyes17.eyes','#import eyes17.eyes')
 			text = text.replace('p = eyes17.eyes.open()','#p = eyes17.eyes.open() #Uncomment when running script in standalone mode')
 			self.expWidget.Edit.setText(text)
 			self.activateWindow()
 
 	def updateConfig(self,text):
-		if self.expName == 'advanced_logger':
+		if self.expName[1] == 'advanced_logger':
 			self.expWidget.setConfig(text)
 			self.activateWindow()
 
@@ -335,14 +335,14 @@ class MainWindow(QMainWindow):
 		if self.helpCB.isChecked() == True:
 			if self.hwin == None:
 				self.hwin = helpWin(self, (self.title,self.hlpName), self.lang)
-				if(self.hlpName in ['editor','advanced_logger']):
+				if(self.hlpName[1] in ['editor','advanced_logger']):
 					try:
 						from PyQt5.QtWebChannel import QWebChannel
-
 						self.channel = QWebChannel()
 						self.handler = self.editorHandler(self.setEditorText,self.setConfigText)
 						self.channel.registerObject('handler', self.handler)
 						self.hwin.page().setWebChannel(self.channel)
+						print('online help available')
 					except Exception as e:
 						print(e)
 
@@ -403,7 +403,7 @@ class MainWindow(QMainWindow):
 	def runCode(self, e):
 		if self.expName != 'editor': #Moved here from some other non coding expt
 			self.hlpName = e
-			self.callExpt( ['Python Coding', (9.0,'editor')])
+			self.callExpt( ['Python Coding', ('9.0','editor')])
 		self.expWidget.mycode = e[1]
 		self.expWidget.update()
 

@@ -16,32 +16,32 @@
         <translation>Lecture de capteur</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="56"/>
+        <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
         <translation>Enregistreur</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="63"/>
+        <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
         <translation>Initialisation</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="70"/>
+        <location filename="../layouts/dio_sensor.ui" line="66"/>
         <source>Scale</source>
         <translation>Échelle</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="110"/>
+        <location filename="../layouts/dio_sensor.ui" line="124"/>
         <source>SINE FIT</source>
         <translation>FIT Sinus</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="123"/>
+        <location filename="../layouts/dio_sensor.ui" line="137"/>
         <source>Pause</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="130"/>
+        <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
         <translation>FIT Sinus atténué</translation>
     </message>
@@ -51,29 +51,39 @@
         <translation>Configuration de l&apos;axe</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="75"/>
+        <location filename="../layouts/inputSelector.ui" line="71"/>
         <source>REFRESH</source>
         <translation>RAFRAÎCHIR</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="101"/>
+        <location filename="../layouts/inputSelector.ui" line="97"/>
         <source>.</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="132"/>
+        <location filename="../layouts/inputSelector.ui" line="128"/>
         <source>CONFIRM</source>
         <translation>CONFIRMER</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="150"/>
+        <location filename="../layouts/inputSelector.ui" line="146"/>
         <source>Min </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="169"/>
+        <location filename="../layouts/inputSelector.ui" line="165"/>
         <source>Max </source>
         <translation></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_control.ui" line="14"/>
+        <source>Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_robot.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

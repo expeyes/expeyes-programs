@@ -8,32 +8,32 @@
         <translation>സെൻസറിന്റെ റീടിങ്ങ്</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="56"/>
+        <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
         <translation>ഡാറ്റാ ലോഗർ</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="63"/>
+        <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
         <translation>സമാരംഭിക്കുക</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="70"/>
+        <location filename="../layouts/dio_sensor.ui" line="66"/>
         <source>Scale</source>
         <translation>സ്കെയിൽ</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="110"/>
+        <location filename="../layouts/dio_sensor.ui" line="124"/>
         <source>SINE FIT</source>
         <translation>സൈൻ ഫിറ്റ്</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="123"/>
+        <location filename="../layouts/dio_sensor.ui" line="137"/>
         <source>Pause</source>
         <translation>താൽക്കാലികമായി നിർത്തുക</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="130"/>
+        <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
         <translation>ഡാമ്പ്ഡ് സൈൻ ഫിറ്റ്</translation>
     </message>
@@ -43,29 +43,39 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="75"/>
+        <location filename="../layouts/inputSelector.ui" line="71"/>
         <source>REFRESH</source>
         <translation>പുതുക്കുക</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="101"/>
+        <location filename="../layouts/inputSelector.ui" line="97"/>
         <source>.</source>
         <translation>.</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="132"/>
+        <location filename="../layouts/inputSelector.ui" line="128"/>
         <source>CONFIRM</source>
         <translation>സ്ഥിരീകരിക്കുക</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="150"/>
+        <location filename="../layouts/inputSelector.ui" line="146"/>
         <source>Min </source>
         <translation>Min </translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="169"/>
+        <location filename="../layouts/inputSelector.ui" line="165"/>
         <source>Max </source>
         <translation>Max </translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_control.ui" line="14"/>
+        <source>Control</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_robot.ui" line="14"/>
+        <source>Dialog</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
