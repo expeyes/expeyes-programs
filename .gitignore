@@ -9,7 +9,7 @@ build/
 pypi/
 
 # lyx generated files
-*-lyxformat-*.lyx
+#*-lyxformat-*.lyx
 
 # debian packaging temporaries
 debian/*.log
@@ -55,4 +55,4 @@ m4/
 .pc/
 
 # generated language files
-*.qm
+#*.qm
