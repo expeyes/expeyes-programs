@@ -4,7 +4,7 @@
 
 ExpEYESന്റെ  SEN  എന്ന ടെർമിനൽ  റെസിസ്റ്റൻസ് അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം. 
 
-.. image:: images/res-parallel.svg
+.. image:: schematics/res-parallel.svg
    :width: 250px
 
 
