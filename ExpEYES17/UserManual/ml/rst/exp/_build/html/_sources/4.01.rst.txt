@@ -1,0 +1,18 @@
+..   4.01
+
+Plot I-V Curve
+==============
+
+Schematic
+---------
+
+.. image:: images/res-compare.png
+	   :width: 300px
+
+Instructions
+------------
+- Connect the resistors as shown in the figure.
+- R2 is used for measuring current, generally 1000 Ohms
+- Current through the circuits is Voltage at A1 / R2
+- PV1 is varied is steps. Voltage across R1 with current is plotted
+

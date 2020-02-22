@@ -1,0 +1,124 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Transistor Output characteristics (CE) &#8212; eyes17 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Opto-electric signal transmission" href="3.13.html" />
+    <link rel="prev" title="Diode I-V characteristics" href="3.11.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="3.13.html" title="Opto-electric signal transmission"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="3.11.html" title="Diode I-V characteristics"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="3.11.html"
+                        title="previous chapter">Diode I-V characteristics</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="3.13.html"
+                        title="next chapter">Opto-electric signal transmission</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/3.12.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>UNTRANSLATED
+.. 3.12</p>
+<div class="section" id="transistor-output-characteristics-ce">
+<h1>Transistor Output characteristics (CE)<a class="headerlink" href="#transistor-output-characteristics-ce" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objective</strong></p>
+<p>Plot the output characteristic curve of a transistor. Collector is
+connected to PV1 through a 1K resistor.</p>
+<a class="reference internal image-reference" href="_images/transistor_out.svg"><img alt="_images/transistor_out.svg" src="_images/transistor_out.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/transistor-ce.png"><img alt="_images/transistor-ce.png" src="_images/transistor-ce.png" style="width: 300px;" /></a>
+<p><strong>Procedure</strong></p>
+<ul class="simple">
+<li>Set base voltage to the 1 volt and START.</li>
+<li>Repeat for different base currents.</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The characteristic curves for different base currents are shown in
+figure. The collector current is obtained from the voltage difference
+across the <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> resistor.</p>
+<p>The base current is set by setting the voltage at one end of the <img class="math" src="_images/math/747baa849ddf46b5a4d2e10666b6ae1c7a95ee05.png" alt="100~k\Omega"/>
+resistor, the other end is connected to the transistor base. The value
+of base current is calculated by,
+<img class="math" src="_images/math/5b710c6ba84e84c8a17030c5217102ae168d1e02.png" alt="I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A"/>.
+If A2 is not connected, the code assumes 0.6 volts at the base to
+calculate the base current.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="3.13.html" title="Opto-electric signal transmission"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="3.11.html" title="Diode I-V characteristics"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Jithin B.P..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

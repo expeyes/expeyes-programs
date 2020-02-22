@@ -1,0 +1,111 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IC555 ഓസ്‌സിലേറ്റർ &#8212; eyes17 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ഇൻവെർട്ടിങ് ആംപ്ലിഫയർ" href="3.6.html" />
+    <link rel="prev" title="PN ജംഗ്ഷൻ ക്ലാമ്പിങ്" href="3.4.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="3.6.html" title="ഇൻവെർട്ടിങ് ആംപ്ലിഫയർ"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="3.4.html" title="PN ജംഗ്ഷൻ ക്ലാമ്പിങ്"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="3.4.html"
+                        title="previous chapter">PN  ജംഗ്ഷൻ ക്ലാമ്പിങ്</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="3.6.html"
+                        title="next chapter">ഇൻവെർട്ടിങ് ആംപ്ലിഫയർ</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/3.5.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="ic555">
+<h1>IC555 ഓസ്‌സിലേറ്റർ<a class="headerlink" href="#ic555" title="Permalink to this headline">¶</a></h1>
+<p>സ്‌കൊയർവേവ് ഉണ്ടാക്കാൻ സാധാരണയായി ഉപയോഗിക്കുന്ന ഒരു ICയാണ്  NE555. ഒരു കപ്പാസിറ്ററും രണ്ടു റെസിസ്റ്ററുകളും ഉപയോഗിച്ചാണ് ഔട്പുട്ടിന്റെ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും നിയന്ത്രിക്കുന്നത് .</p>
+<a class="reference internal image-reference" href="_images/osc555.svg"><img alt="_images/osc555.svg" src="_images/osc555.svg" width="300px" /></a>
+<ul class="simple">
+<li>ചിത്രത്തിൽ കാണിച്ചിരിക്കുന്ന സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക</li>
+<li>ICയുടെ മൂന്നാമത്തെ പിന്നിനെ A1ലേക്കും IN2വിലേക്കും ഘടിപ്പിക്കുക</li>
+<li>ICയുടെ ആറാമത്തെ പിന്നിനെ A2വിലേക്ക്  ഘടിപ്പിക്കുക</li>
+</ul>
+<p>താഴെക്കാണിച്ചിരിക്കുന്നതുപോലെ രണ്ടു ഗ്രാഫുകൾ കിട്ടേണ്ടതാണ് . റെസിസ്റ്ററിനു പകരം വെരിയബിൾ റെസിസ്റ്ററുകൾ ഉപയോഗിച്ചാൽ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും മാറ്റാൻ കഴിയും.</p>
+<a class="reference internal image-reference" href="_images/osc555-trace.png"><img alt="_images/osc555-trace.png" src="_images/osc555-trace.png" style="width: 300px;" /></a>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="3.6.html" title="ഇൻവെർട്ടിങ് ആംപ്ലിഫയർ"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="3.4.html" title="PN ജംഗ്ഷൻ ക്ലാമ്പിങ്"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Jithin B.P..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

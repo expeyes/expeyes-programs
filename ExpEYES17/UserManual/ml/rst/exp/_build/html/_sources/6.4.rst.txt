@@ -1,0 +1,27 @@
+UNTRANSLATED
+.. 6.4
+
+Distance Measurement, by ultrasound echo
+========================================
+
+**Objective**
+
+Measure distance by measuring the time taken by :math:`40~kHz` pulse train to
+echo from a hard surface.
+
+**Procedure**
+
+.. image:: schematics/sr04-dist.svg
+	   :width: 300px
+
+-  Keep a flat surface, like a cardboard sheet, around 10 cm from the
+   echo module
+-  Press START
+-  Change the distance with time
+
+**Discussion**
+
+The distance is calculated from the time taken by a burst of sound to
+echo from the surface kept in front of the module. The distance can be
+measred as function of time, enabling to calculate velocity,
+acceleration etc.

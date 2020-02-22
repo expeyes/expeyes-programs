@@ -1,0 +1,134 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ &#8212; eyes17 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="I2C Logger" href="6.93.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="6.93.html" title="I2C Logger"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="6.93.html"
+                        title="previous chapter">I2C Logger</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/7.1.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="expeyes">
+<h1>ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ<a class="headerlink" href="#expeyes" title="Permalink to this headline">¶</a></h1>
+<p>കുറേ പരീക്ഷണങ്ങൾക്കു വേണ്ടിയുള്ള GUI പ്രോഗ്രാമുകൾ ലഭ്യമാണെങ്കിലും പുതിയ പരീക്ഷണങ്ങൾ വികസിപ്പിച്ചെടുക്കാൻ പൈത്തൺ ഭാഷയിൽ ExpEYES ഉമായി ആശയവിനിമയം നടത്താൻ അറിഞ്ഞിരിക്കണം. അതിനുവേണ്ട വിവരങ്ങളാണ് ഈ അദ്ധ്യായത്തിന്റെ ഉള്ളടക്കം. വോൾടേജ് സെറ്റ് ചെയ്യുക, വോൾടേജ് അളക്കുക, വേവ്ഫോം ജനറേറ്റ്  ചെയ്യുക തുടങ്ങി എല്ലാ പ്രവൃത്തികളും പൈത്തൺ ഭാഷയിലെ ഓരോ കമാന്റുകൾ ഉപയോഗിച്ചാണ് നടപ്പാക്കുന്നത് .</p>
+<p>ഏറ്റവുമാദ്യം വേണ്ടത്   ExpEYESന്റെ പൈത്തൺ മൊഡ്യൂൾ ഇമ്പോർട്  ചെയ്യുകയും ഡിവൈസുമായി ബന്ധം സ്ഥാപിക്കുകയുമാണ്.  eyes17 എന്ന പാക്കേജിനകത്തെ eyes എന്ന മൊഡ്യൂളാണ്  ഇതിനാവശ്യം. കോഡ് താഴെക്കൊടുത്തിരിക്കുന്നു.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">eyes17.eyes</span>
+<span class="n">p</span> <span class="o">=</span> <span class="n">eyes17</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>കംപ്യൂട്ടറിന്റെ ഏതെങ്കിലും USB പോർട്ടിൽ ExpEYES കണ്ടെത്തിയാൽ റിട്ടേൺ ചെയ്യുന്ന വേരിയബിൾ ( p ) ഉപയോഗിച്ചാണ് ഡിവൈസിലേക്കകമാന്റുകൾ അയക്കുന്നത്. ശ്രമം പരാജയപ്പെട്ടാൽ 'None' എന്ന പൈത്തൺ ഡാറ്റാടൈപ്പാണ് റിട്ടേൺ ചെയ്യുക. താഴെക്കൊടുത്ത രണ്ടു വരി കോഡ് വേണമെങ്കിൽ ഉൾപ്പെടുത്താം. sys മൊഡ്യൂൾ കൂടി ഇമ്പോർട് ചെയ്തിരിക്കണം.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">p</span> <span class="o">==</span> <span class="bp">None</span><span class="p">:</span>
+     <span class="k">print</span> <span class="p">(</span><span class="s2">&quot;Device Not Detected&#39;)</span>
+     <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>PV1, PV2 എന്നീ ടെർമിനലുകളിൽ DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_pv1</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="n">p</span><span class="o">.</span><span class="n">set_pv2</span><span class="p">(</span><span class="o">-</span><span class="mf">1.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>A1 ,  A2, A3, SEN എന്നീ ഇൻപുട്ടുകൾ റീഡ് ചെയ്യാൻ</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A2&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A3&#39;</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;SEN&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>A1 ,  A2, A3, SEN എന്നിവ ടൈംസ്റ്റാമ്പൊടെ റീഡ് ചെയ്യാൻ</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage_time</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>SENൽ ഘടിപ്പിച്ചിരിക്കുന്ന റെസിസ്റ്റൻസ്  റീഡ് ചെയ്യാൻ</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_resistance</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><strong>OD1, SQ1, SQ2  എന്നീ ഔട്പുട്ടുകളിൽ  DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ</strong></p>
+<p>OD1നു പുറമെ SQ1, SQ2 എന്നീ ഔട്പുട്ട്കളിലും DC ലെവൽ സെറ്റ് ചെയ്യാൻ പറ്റും.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">OD1</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1">#set OD1 to HIGH, 5 volts</span>
+</pre></div>
+</div>
+<p><strong>WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  സൈൻ വേവ്  സെറ്റ് ചെയ്യാൻ</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_sine</span><span class="p">(</span><span class="mi">502</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>502.00803</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="6.93.html" title="I2C Logger"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Jithin B.P..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>

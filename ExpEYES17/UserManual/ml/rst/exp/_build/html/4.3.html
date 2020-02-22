@@ -1,0 +1,135 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Transient Response of RL circuits &#8212; eyes17 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Transient response of LCR circuits" href="4.4.html" />
+    <link rel="prev" title="Transient Response of RC circuits" href="4.2.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="4.4.html" title="Transient response of LCR circuits"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="4.2.html" title="Transient Response of RC circuits"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="4.2.html"
+                        title="previous chapter">Transient Response of RC circuits</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="4.4.html"
+                        title="next chapter">Transient response of LCR circuits</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/4.3.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>UNTRANSLATED
+.. 4.3</p>
+<div class="section" id="transient-response-of-rl-circuits">
+<h1>Transient Response of RL circuits<a class="headerlink" href="#transient-response-of-rl-circuits" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objective</strong></p>
+<p>Explore the nature of current and voltage when a voltage step is applied
+to resistor and inductor in series. By measuring the voltage across the
+inductor as a function of time, we can calculate its inductance.</p>
+<a class="reference internal image-reference" href="_images/RLtransient.svg"><img alt="_images/RLtransient.svg" src="_images/RLtransient.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/RLtransient.png"><img alt="_images/RLtransient.png" src="_images/RLtransient.png" style="width: 300px;" /></a>
+<p>In an RL circuit <img class="math" src="_images/math/baceda9639037b3ae02ea5c44c19c7f348a170ff.png" alt="V = RI + L(dI/dt)"/> and solving this will give
+<img class="math" src="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png" alt="I = I_0 \times e^{− (R/L)t}"/>. The coefficient of the exponential term R/L
+can be extracted from the graph of voltage across the inductor. The
+resistance of the inductor coil should be included in the
+calculations, <img class="math" src="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png" alt="R = R_{ext} + R*_L"/>.</p>
+<p><strong>Procedure</strong></p>
+<ul class="simple">
+<li>Inductor is the 3000 Turn coil</li>
+<li>Click on <em>0-&gt;5V STEP</em> and <em>5-&gt;0V step</em> Buttons to plot the graphs</li>
+<li>Adjust the horizontal scale, if required, and repeat.</li>
+<li>Calculate the value of inductance</li>
+<li>Insert an iron core into the inductor and repeat</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>The transient response of the RL circuit is shown in figure. The
+exponential curve is fitted to extract the L/R value. The resistance of
+the coil is measured by comparing it with the known external resistance
+under DC conditions. A2 is connected to OD1 for a more accurate
+measurement of the coil resistance.</p>
+<p>The applied voltages are above zero, but the graph went to negative
+voltages. Why ?</p>
+<p>What was the current before doing the 5-&gt;0 step ? What is back EMF ?</p>
+<p>Repeat with two coils in series, by (a) placing them far away (b)
+placing one over the other and (c) after changing the orientation. The
+effect of mutual inductance can be seen.</p>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="4.4.html" title="Transient response of LCR circuits"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="4.2.html" title="Transient Response of RC circuits"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Jithin B.P..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.5.
+    </div>
+  </body>
+</html>
