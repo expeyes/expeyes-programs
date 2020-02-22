@@ -1,35 +1,26 @@
-UNTRANSLATED
-.. 2.4
+റെസിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച്  
+---------------------------------------
 
-Measure resistance by comparison
-================================
+ഓംസ് നിയമപ്രകാരം സീരീസായി ഘടിപ്പിച്ച രണ്ടു റെസിസ്റ്ററുകളിലൂടെ കറന്റ് പ്രവഹിക്കുമ്പോൾ അവയോരോന്നിനും കുറുകെയുണ്ടാവുന്ന വോൾടേജ് അവയുടെ റെസിസ്റ്റൻസിന് ആനുപാതികമായിരിക്കും. രണ്ടിനും കുറുകെയുള്ള വോൾടേജ്കളും ഏതെങ്കിലും ഒരു റെസിസ്റ്റൻസും അറിയാമെങ്കിൽ രണ്ടാമത്തെ റെസിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച്  കണക്കുകൂട്ടാം. :math:`I = V_{A1}/R_2 = (V_{PV1} − V_{A1})/R_1`.
 
-**Objective**
-
-Learn to apply Ohm’s law to find the value of an unknown resistance by
-comparing it with a known one. Voltage across a resistor is given by
-V = IR . If same amount of current is flowing through two different
-resistors, the ratio of voltages will be the same as the ratio of
-resistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+ ചിത്രത്തിലെ R2 നമുക്കറിയാവുന്ന  റെസിസ്റ്റൻസും R1  കണ്ടുപിടിക്കാനുള്ളതും ആണെന്നിരിക്കട്ടെ.  R2 ആയി  1000ഓം ഉപയോഗിക്കാം. R1 ന്റെ  സ്ഥാനത്ത് ഒരു 2200 ഓം ഉപയോഗിക്കാം.
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
 
-**Procedure**
+-  ഒരു ബ്രെഡ്‌ബോർഡിൽ  R1ഉം  R2വും  സീരീസായി ഘടിപ്പിക്കുക 
+-  A1  ടെർമിനൽ രണ്ടു റെസിസ്റ്ററും ചേരുന്ന ബിന്ദുവിലേക്കു ഘടിപ്പിക്കുക  
+-  PV1  ടെർമിനൽ  R1ന്റെ ഒരറ്റത്ത്  ഘടിപ്പിക്കുക 
+-  R2വിന്റെ ഒരറ്റം ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക 
+-  PV1ൽ 4 വോൾട് സെറ്റ് ചെയ്യുക 
+-  A1 ലെ വോൾടേജ് അളക്കുക. 
 
--  Connect the unknown resistor R from PV1 to A1.
--  Connect :math:`1~k\Omega` (:math:`R_2`) from A1 to Ground.
--  Set PV1 to 4 volts.
--  Measure voltage at A1. Calculate the current :math:`I = U_{A1}/R_2`.
-   Value of :math:`R_1 = (U_{PV1} − U_{A1})/I`.
--  Select Electrical->Plot I-V curve from the menu to get an I-V plot
+R2ലൂടെയുള്ള കറന്റ്  :math:`I = V_{A1}/R_2` എന്ന സമവാക്യം നൽകും . ഇതേ കറന്റാണ്   R1ലൂടെയും ഒഴുകുന്നത്.  R1നു കുറുകെയുള്ള വോൾടേജ്  PV1 - A1  ആണ് . അതിനാൽ     :math:`R_1 = (V_{PV1} − V_{A1})/I`.
 
-**Discussion**
 
-What is the limitation of this method ? How do we choose the reference
-resistor ? suppose the unknown value is in :math:`M\Omega`, what will be the
-voltage drop across a :math:`1~k\Omega` reference resistor ? Our voltage
-measurement is having a resolution of :math:`1/4096`.
+നോട്ട്:
+A1 ടെർമിനലിന്റെ ഇൻപുട്ട് റെസിസ്റ്റൻസ് 1  മെഗാ ഓം ആണ് . അതിനാൽ  A1ന്റെ അകത്തേക്കൊഴുകുന്ന കറന്റ്  രണ്ടോ മൂന്നോ മൈക്രോ ആംപിയർ മാത്രമാണ് . ഇവിടെ നമുക്കതിനെ അവഗണിക്കാം. പക്ഷെ ഇതേ പരീക്ഷണം മെഗാ ഓം കണക്കിനുള്ള റെസിസ്റ്റൻസുകൾ  ഉപയോഗിച്ച് നടത്തുകയാണെങ്കിൽ  R2 വിനു പാരലലായി ഒരു 1 മെഗാ ഓം കൂടി കണക്കിലെടുക്കണം. 
+ഒരു ലളിതമായ പരീക്ഷണത്തിലൂടെ ഇൻപുട്ട് റെസിസ്റ്റൻസിന്റെ പ്രാധാന്യം മനസിലാക്കാം.    PV1ൽ 4 വോൾട് സെറ്റ് ചെയ്ത്  അതിനെ ഒരു 1 മെഗാ ഓം റെസിസ്റ്ററിലൂടെ  A1 ലേക്ക് ഘടിപ്പിക്കുക.  A1 കാണിക്കുന്നത്  2 വോൾട്ട് മാത്രമായിരിക്കും. ഇവിടെ പുറമെ ഘടിപ്പിച്ച റെസിസ്റ്ററും ഇൻപുട്ട് റെസിസ്റ്ററും ചേർന്ന് ഒരു സീരീസ് സർക്യൂട് ഉണ്ടാവുന്നുണ്ട് . രണ്ടു റെസിസ്റ്റൻസും തുല്യമായതിനാൽ പകുതി വോൾടേജ് നമ്മൾ ഘടിപ്പിച്ച 1 മെഗാ ഓം റെസിസ്റ്ററിനു കുറുകെ നഷ്ടപ്പെടുന്നു. 
 
-We will use this method later to measure the resistance of solutions,
-using AC.
+
+

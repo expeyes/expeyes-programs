@@ -1,31 +1,15 @@
-UNTRANSLATED
-.. 2.1
+DC വോൾടേജ് അളക്കുന്ന വിധം 
+--------------------------------
 
-Measuring Voltage
-=================
+ExpEYESന്റെ  A1, A2, A3 എന്നീ ടെർമിനലുകൾ DC വോൾടേജ് അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം. പുറമെനിന്നും വോൾടേജ് സോഴ്‌സുകൾ കണക്ട് ചെയ്യുമ്പോൾ ഒരറ്റം ഏതെങ്കിലും ഓരോ ഗ്രൗണ്ട്  ടെർമിനലിൽ കണക്ട് ചെയ്തിരിക്കണം. ഒരു 1.5 വോൾട് ഡ്രൈസെൽ , രണ്ടു കഷ്ണം വയർ എന്നിവയാണ് ആവശ്യമുള്ള സാധനങ്ങൾ.
 
-**Objective**
-
-Learn to measure voltage using expEYES and get some idea about the
-concept of Electrical Ground. A dry-cell and two wires are required.
-
-.. image:: schematics/measure-dc.svg
+.. image:: images/measure-dc.svg
 	   :width: 300px
 
-**Procedure**
+-  സെല്ലിന്റെ ഒരറ്റം ഗ്രൗണ്ടിലും മറ്റേയറ്റം A1ലും ഘടിപ്പിക്കുക.
+-  GUIയിൽ മുകള്ഭാഗത്തുള്ള A1 ചെക്ക്ബട്ടൺ ടിക്ക് ചെയ്യുക
 
--  Observe the voltage at A1 displayed.
--  Repeat by reversing the cell connections.
+വോൾടേജ് ചെക്ക്ബട്ടനു വലതുവശത്തായി ഡിസ്പ്ലേ ചെയ്തിരിക്കുന്നത് കാണാം. സെല്ലിന്റെ കണക്ഷൻസ് തിരിച്ചുകൊടുത്തശേഷം വീണ്ടും റീഡിങ് നോക്കുക. 
 
-**Discussion**
 
-Voltages measured value is +1.5 volts and it becomes -1.5 after
-reversing the connections.
 
-We are measuring the potential difference between two points. One of
-them can be treated as at zero volts, or Ground potential. The voltage
-measuring points of expEYES measure the voltage with respect to the
-terminals marked GND. We have connected the negative terminal of the
-cell to Ground. The positive terminal is at +1.5 volts with respect to
-the negative terminal. *Will it show correct voltage if GND is not
-connected ?*

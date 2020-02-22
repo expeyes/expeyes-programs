@@ -1,16 +1,13 @@
-Measuring Resistance parallel combination
-=========================================
 
-**Objective**
+റെസിസ്റ്ററുകളുടെ പാരലൽ കണക്ഷൻ 
+--------------------------------
 
-For parallel combination of resistors, this relation exists between
-the effective resistance :math:`R` and the components:
-:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+ExpEYESന്റെ  SEN  എന്ന ടെർമിനൽ  റെസിസ്റ്റൻസ് അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം. 
 
-.. image:: ./schematics/res-parallel.svg
-   :width: 300px
+.. image:: images/res-parallel.svg
+   :width: 250px
 
-**Procedure for two resistors**
 
--  Connect both resistors between SEN and any Ground terminal
--  Observe the value shown on the right side panel
+-  റെസിസ്റ്ററുകൾ പാരലലായി  SENനും ഗ്രൗണ്ടിനും ഇടയ്ക് ഘടിപ്പിക്കുക 
+
+റെസിസ്റ്റൻസ് സ്‌ക്രീനിന്റെ വലുത് മുകൾഭാഗത്തായി കാണിച്ചിരിക്കും.  :math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`.

@@ -1,26 +1,28 @@
-UNTRANSLATED
-.. 3.9
+ലോജിക് ഗേറ്റുകൾ 
+---------------------
+AND , OR തുടങ്ങിയ ലോജിക്കൽ ഓപ്പറേഷൻസ് നടത്താൻ കഴിയുന്നതരം സർക്യൂട്ടുകളാണ് ലോജിക് ഗേറ്റുകൾ. ഡയോഡുകൾ ഉപയൊഗിച്ച്  ഇവയെ നിർമിക്കാം പക്ഷെ കൃത്യമായ പ്രവർത്തനത്തിന് ലോജിക് ഗേറ്റ് IC കളാണ് മെച്ചം.  ഡയോഡ്  ഉപയോഗിച്ചുള്ള OR ഗേറ്റിന്റെയും   IC7408  ഉപയോഗിച്ചുള്ള  AND ഗേറ്റിന്റെയും സർക്യൂട്ടുകൾ താഴെക്കാണിച്ചിരിക്കുന്നു.
 
-Logic gates
-===========
-
-**Objective**
-
-Study of logic gates using SQ1 and PV1 as inputs, using TTL logic ICs
-7408 and 7432.
-
-**Procedure**
-
-.. image:: schematics/logic-gates.svg
+.. image:: images/diode-or-gate.svg
 	   :width: 300px
 
--  Enable A1, A2 ands A3. Set input range on A1 and A2 to 8V
--  Set SQ1 to 200 Hz and adjust timebase to view several cycles
--  Select SQ2 from the WG wave shape, set WG to 200 Hz
--  Repeat using the OR gate, 7432
--  The 1k resistor is required to give the 5 volt signal to A3 input
+.. image:: images/logic-gates.svg
+	   :width: 300px
 
-**Discussion**
+- ഏതെങ്കിലും ഒരു സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക
+- WG യെ 1000 ഹെർട്സ് ചതുരം ആയി സെറ്റ് ചെയ്യുക 
+- SQ1നെ 500ഹെർട്സിൽ സെറ്റ് ചെയ്യുക   
+- SQ1, SQ2 ടെർമിനലുകൾ ഗേറ്റിന്റെ ഇൻപുട്ടുകളിലേക്കു ഘടിപ്പിക്കുക 
+- A1ഉം  A2ഉം ഇൻപുട്ടുകളിലേക്കു ഘടിപ്പിക്കുക
+- A3 ഔട്പുട്ടിലേക്ക് ഘടിപ്പിക്കുക
+- A1 A2 റേഞ്ചുകൾ 16 വോൾട്ടിൽ സെറ്റ് ചെയ്യുക 
 
-The working of the logic gate will be evident from the 3 waveforms. You
-may shift traces vertically to separate them for clarity.
+രണ്ടു ഡയോഡുകൾ ഉപയോഗിച്ച് നിർമിച്ച OR ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
+
+.. image:: images/diode-or-gate-trace.png
+	   :width: 400px
+
+IC7408  ഉപയോഗിച്ച് നിർമിച്ച AND  ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
+
+.. image:: images/ic-and-gate-trace.png
+	   :width: 400px
+

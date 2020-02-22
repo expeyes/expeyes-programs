@@ -1,25 +1,15 @@
-UNTRANSLATED
-.. 2.3
+കപ്പാസിറ്ററുകളുടെ സീരീസ് കണക്ഷൻ 
+--------------------------------
 
-Measuring Capacitance in series combination
-===========================================
+ExpEYESന്റെ  IN1  എന്ന ടെർമിനൽ കപ്പാസിറ്റൻസ്  അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം. സീരീസായി കണക്ട് ചെയ്തിട്ടുള്ള കപ്പാസിറ്ററുകളുടെ എഫക്റ്റീവ് കപ്പാസിറ്റൻസ്    :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.  എന്ന സമവാക്യം അനുസരിച്ചായിരിക്കും.
 
-**Objective**
 
-Measuring the capacitance of series combination
-of capacitors.
+.. image:: images/cap-series.svg
+	   :width: 250px
 
-.. image:: schematics/cap-series.svg
-	   :width: 300px
 
-**Procedure for two capacitors**
+-   കപ്പാസിറ്ററുകളെ  IN1നും ഗ്രൗണ്ടിനും ഇടയ്ക്  സീരീസായി ഘടിപ്പിക്കുക 
+-   സ്‌ക്രീനിന്റെ വലതുഭാഗത്തു മുകളിലായി കാണുന്ന "കപ്പാസിറ്റൻസ് IN1" എന്ന ബട്ടൺ അമർത്തുക.
 
--  Connect one capacitor in IN1 and the second one in Ground. Connect the
-   opposite ends of both capacitors together.
--  Click on “Capacitance on IN1” . Should not touch the capacitor while
-   measuring
+കപ്പാസിറ്റൻസ്  ബട്ടണ് മുകളിൽ തന്നെ ഡിസ്പ്ലേ ചെയ്‌തു കാണിക്കും.
 
-**Discussion**
-
-For a series combination of capacitors, the effective capacitance is
-given by the relation :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.

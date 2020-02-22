@@ -1,91 +1,37 @@
-UNTRANSLATED
-.. 1.3
+സോഫ്റ്റ്‌വെയർ ഇൻസ്റ്റാലേഷൻ
+------------------------
+USB പോർട്ടും പൈത്തൺ ഇന്റെർപ്രെറ്ററും ഉള്ള ഏതു കംപ്യൂട്ടറിലും ExpEYES ഓടിക്കാൻ കഴിയും. താഴെക്കൊടുത്തിരിക്കുന്ന പൈത്തൺ മോഡ്യൂളുകൾ ഇൻസ്റ്റാൾ ചെയ്തിരിക്കണം. ഇതെങ്ങിനെ ചെയ്യും എന്നത് നിങ്ങൾ ഉപയോഗിക്കുന്ന ഓപ്പറേറ്റിംഗ് സിസ്റ്റത്തിനെ ആശ്രയിച്ചിരിക്കും. വിവിധരീതികൾ താഴെകൊടുത്തിരിക്കുന്നു. 
 
-Software Installation
-=====================
+1. **ഉബുണ്ടു 18.04 , ഡെബിയൻ 10, അതിനു ശേഷം വന്നവ**
+
+   ഇവയുടെ റെപ്പോസിറ്ററികളിൽ എക്സ്പൈസ്  സോഫ്റ്റ്‌വെയർ ലഭ്യമാണ് . പാക്കേജ് മാനേജർ ഉപയോഗിച്ചോ അല്ലെങ്കിൽ apt       കമാൻഡ് ഉപയോഗിച്ചോ സോഫ്റ്റ്‌വെയർ ഇൻസ്റ്റാൾ ചെയ്യാവുന്നതാണ് .
+
+$ sudo apt update
+
+$ sudo apt install eyes17
+
+ ഇത്രയും ചെയ്താൽ Eyes-17 ഡെസ്ക്ടോപ്പിൽ ലഭ്യമാവും.
+
+2. **ഏതെങ്കിലും GNU/Linux ഡിസ്ട്രിബൂഷൻ**
+ 
+ python3-serial, python-pyqtgraph, python3-scipy എന്നീ പാക്കേജുകൾ ഇൻസ്റ്റാൾ ചെയ്യുക. ExpEYES വെബ്‌സൈറ്റിൽ നിന്നും eyes17.zip കൊണ്ടുവരുക. 
+
+  $ gunzip eyes17.zip
+
+  $ cd eyes17
+
+  $ python3 main.py
+
+മറ്റേതെങ്കിലും പാക്കേജ് ആവശ്യമാണെങ്കിൽ എറർ മെസ്സേജ് നോക്കി അതും ഇൻസ്റ്റാൾ ചെയ്യുക.
 
 
-ExpEYES can run on any computer having a Python Interpreter and required
-modules. The USB interface is handled by a device driver program that
-presents the USB port as a Serial port to the Python programs. The
-communication the expEYES is done using a library written in Python.
-Programs with GUI have been written for many experiments. Eyes17
-software require the following packages
+ 
+3. **മൈക്രോസോഫ്ട് വിൻഡോസ്**
 
--  python-serial
--  python-numpy
--  python-scipy
--  python-qt4
--  python-pyqtgraph
+  വെബ്‌സൈറ്റിൽ നിന്നും വിൻഡോസ് ഇൻസ്റ്റാളർ കൊണ്ടുവന്നു റൺ ചെയ്യുക. കൂടുതൽ വിവരങ്ങൾക്ക്  https://expeyes.in/software.html എന്ന പേജ് സന്ദർശിക്കുക 
 
-Any GNU/Linux distributions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+4. **പെൻഡ്രൈവിൽ നിന്നും കമ്പ്യൂട്ടർ റൺ ചെയ്യിക്കുക**
 
-Download **eyes17-x.x.x.zip** (the latest version) from
-**http://expeyes.in** and upzip it, and change to the newly created
-folder. Issue the command
+     ഹാർഡ്‍ഡിസ്കിൽ സോഫ്റ്റ്‌വെയർ ഒന്നും ഇൻസ്റ്റാൾ ചെയ്യാതെ ഒരു പെൻഡ്രൈവിൽ നിന്നും കംപ്യൂട്ടറിനെ ബൂട്ട് ചെയ്തു ExpEYES ഓടിക്കാൻ പറ്റും. ഇതിനാവശ്യമായ iso ഇമേജ് വെബ്‌സൈറ്റിൽ ലഭ്യമാണ് . വിൻഡോസ് ഉപയോഗിക്കുന്നവർ rufus എന്ന പ്രോഗ്രാം ഡൌൺലോഡ് ചെയ്ത അതുപയോഗിച്ചു iso ഇമേജിനെ USB പെൻഡ്രൈവിലേക്കു ഇൻസ്റ്റാൾ ചെയ്യുക. ഈ പെൻഡ്രൈവ് ഉപയോഗിച്ച് ബൂട്ട് ചെയ്താൽ expeyes അതിന്റെ മെനുവിൽ ലഭ്യമായിരിക്കും.
 
-   $ sudo sh postinst       # set user write permission
-   
-   $ python main.py
-
-You will get error messages for any missing packages that are required
-for expeyes. Install them one by one and try again. Python programs
-required for several experiments are in the same directory, they are
-called by ’main.py’.
-
-Debian or Ubuntu GNU/Linux distributions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download **eyes17-x.x.x.deb** ( the latest version) from the software
-section of **http://expeyes.in** and install it using the command;
-
-    $ sudo gdebi eyes17-x.x.x.deb
-
-while connected to Internet
-
-The package ’eyes17’ (later than version 3) does not depend on the
-earlier versions of ExpEYES, like expeyes junior. During installation
-gdebi will automatically dowload and install all the required packages.
-
-The expEYES Live CD / USB pendrive
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The ISO image containing support for eyes17 can be downloaded from HERE.
-Make a DVD or USB memory stick bootable using this ISO image (Download
-rufus from https://rufus.akeo.ie to do this under MSWindows)
-
-Switch off the PC and insert the liveCD/Pendrive and switch it on. Enter
-the BIOS while booting, make the CDdrive/USB hard disk as the first boot
-device. A desktop will appear and you can start expEYES-17 from the menu
-**Applications->Education**->ExpEYES-17. You can also start it from a
-Terminal using the command:
-
-   $ python /usr/share/expeyes/eyes17/main.py
-
-On MSWindows
-^^^^^^^^^^^^
-
-The first thing to do is to install the driver software for the USB to
-serial converter IC MCP2200, available on Microchip website (also given
-on expeyes website). After installing this the device will appear as a
-COM port, that can be verified from the device manager of MSWindows.
-After this there are two options.
-
-A zip file containing all the necessary things for ExpEYES is available
-on the website, named eyes17win.zip. Unzip this file and run main.py
-from that. By using this method you will not able to write your own
-Python code to access expeyes, for that you need to install the
-following
-
-#. Python-2.x version
-#. python-serial
-#. python-qt4
-#. python-pyqtgraph,
-#. python-numpy
-#. python-scipy
-
-Download the eyes17-x.x.x.zip ( take latest version) from the website.
-Unzipping the files will create a directory **named eyes17**, run
-**main.py** from that.
 

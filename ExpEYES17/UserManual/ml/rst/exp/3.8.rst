@@ -1,25 +1,12 @@
-UNTRANSLATED
-.. 3.8
+ഓപ്പറേഷണൽ ആംപ്ലിഫയർ ഇന്റഗ്രേറ്റർ 
+-------------------------------
+ഹരണം, ഗുണനം , ഇന്റഗ്രേഷൻ , ഡിഫറെന്റിയേഷൻ തുടങ്ങിയ മാതേമട്ടിക്കൽ ഓപ്പറേഷൻസ്  സിമുലേറ്റ്  ചെയ്യാൻ സാധിക്കും. താഴെക്കാണിച്ചിരിക്കുന്ന ഇന്റഗ്രേറ്റർ അതിനൊരുദാഹരണമാണ്.
 
-Op-Amp Ingrator
-===============
-
-**Objective**
-
-Wire an Inverting amplifier using an Op-Amp and test it.
-
-.. image:: schematics/opamp-int.svg
+.. image:: images/opamp-int.svg
 	   :width: 300px
 
-**Procedure**
+- ചിത്രത്തിൽ കാണിച്ചിരിക്കുന്ന സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക 
+- WGയും  A1ഉം ആംപ്ലിഫയറിന്റെ ഇൻപുട്ടിലേക്കും  A2 ഔട്പുട്ടിലേക്കും ഘടിപ്പിക്കുക 
+- V+ ഉം V-ഉം പോസിറ്റീവും നെഗറ്റീവും സപ്ലൈ പിന്നുകളിലേക്കു ഘടിപ്പിക്കുക 
+- WGയുടെ വോൾടേജ്  80മില്ലിവോൾട്ടിൽ സെറ്റ് ചെയ്യുക 
 
--  Set WG amplitude to 80 mV and frequency to 1000 Hz
--  Enable A1 and A2 and their analysis option
--  Select 1V range for both A1 and A2
--  Make connections and observe the output
--  Change gain by changing the resistor values.
-
-**Discussion**
-
-The amplitude gain and and the phase correlation can be observed from
-the results.

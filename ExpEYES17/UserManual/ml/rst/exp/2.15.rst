@@ -1,26 +1,17 @@
-UNTRANSLATED
-.. 2.15
+ശബ്ദോല്പാദനം 
+-----------------
+വൈദ്യുതതരംഗങ്ങളെ ശബ്ദതരംഗങ്ങളാക്കി മാറ്റാവുന്നതാണ്. ലൗഡ്സ്പീക്കർ, പീസ്സോ ബസ്സർ എന്നിവ ഇതിനായി ഉപയോഗിക്കാം. വേവ്ഫോം ജനറേറ്ററിൽ നിന്നുള്ള വോൾട്ടേജിനെ ഒരു പീസ്സോ ബസ്സറിൽ കണക്ട് ചെയ്താണ് ഇവിടെ ഈ പരീക്ഷണം നടത്തുന്നത് .
 
-Generating sound
-================
-
-**Objective**
-
-Generate sound from electrical signals, using a Piezo-electric buzzer.
-Digitize sound and measure its frequency. Use the Piezo buzzer or any
-other source of sound like a tuning fork.
-
-**Procedure**
-
-.. image:: schematics/sound-generator.svg
+.. image:: images/sound-generator.svg
 	   :width: 300px
 
--  Enable A1, and its analysis
--  Set WG to 1000Hz, change it and listen to the sound.
 
-**Discussion**
+- പീസോ ബസ്സറിനെ WGക്കും ഗ്രൗണ്ടിനുമിടക്ക് കണക്ട് ചെയ്യുക 
+- സ്ലൈഡർ ഉപയോഗിച്ച്  സൈൻ വേവിന്റെ ആവൃത്തി  മാറ്റുക 
 
-When you change the frequency of the voltage that excites the Piezo,
-both the frequency and the intesity of the sound changes. The intensity
-is maximum near 3500 Hz, due to resonance. The resonant frequency of the
-Piezo buzzer is decided by its size and mechanical properties.
+WG യിൽ സെറ്റ് ചെയ്ത അതേ ആവൃത്തിയിലുള്ള ശബ്ദമാവും പീസ്സോ പുറപ്പെടുവിക്കുക. ആവൃത്തിക്കനുസരിച്ച്  ശബ്ദത്തിന്റെ തീവ്രതയും മാറിക്കൊണ്ടിരിക്കും. ഒരു പ്രത്യേക ആവൃത്തിയിൽ ശബ്ദതീവ്രത ഏറ്റവും കൂടുതലാവും. പീസ്സോ ബസ്സറിന്റെ റെസൊണൻസ് ഫ്രീക്വൻസിയിലാണ് ഇത് സംഭവിക്കുക.
+
+
+ 
+
+

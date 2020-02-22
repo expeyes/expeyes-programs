@@ -1,19 +1,13 @@
-UNTRANSLATED
-.. 2.2
 
-Measuring Resistance series combination
-=======================================
+റെസിസ്റ്ററുകളുടെ സീരീസ് കണക്ഷൻ 
+--------------------------------
 
-**Objective**
+ExpEYESന്റെ  SEN  എന്ന ടെർമിനൽ  റെസിസ്റ്റൻസ് അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം. 
 
-The effective resistance of a
-series combination of resistors is :math:`R = R_1 + R_2 + ⋯`. 
+.. image:: images/res-series.svg
+   :width: 250px
 
-.. image:: ./schematics/res-series.svg
-   :width: 300px	   
 
-**Procedure for two resitors**
+-  റെസിസ്റ്ററുകൾ സീരീസായി  SENനും ഗ്രൗണ്ടിനും ഇടയ്ക് ഘടിപ്പിക്കുക 
 
--  Connect one resistor in SEN and the other one in Ground terminal.
-   Connect opposite ends of the resistors together.
--  Observe the value shown on the right side panel
+റെസിസ്റ്റൻസ് സ്‌ക്രീനിന്റെ വലുത് മുകൾഭാഗത്തായി കാണിച്ചിരിക്കും.  R = R1 + R2 + ..

@@ -1,44 +1,16 @@
-UNTRANSLATED
-.. 2.13
+ട്രാൻസ്‌ഫോർമർ 
+--------------------
+ഒരു ചാലകത്തിലൂടെ ആൾട്ടർനേറ്റിംഗ് കറന്റ് പ്രവഹിക്കുമ്പോൾ അതിനു ചുറ്റും സദാ മാറിക്കൊണ്ടിരിക്കുന്ന ഒരു മാഗ്നെറ്റിക് ഫീൽഡ് ഉണ്ടാവുന്നതാണ്. ഈ ഫീൽഡിൽ വെച്ചിരിക്കുന്ന മറ്റൊരു ചാലകത്തിൽ വൈദ്യുതി പ്രേരിതമാവും. രണ്ടു കോയിലുകൾ ഉപയോഗിച്ച് ഇത് പരീക്ഷിച്ചുനോക്കാവുന്നതാണ്.
 
-AC Transformer
-==============
-
-**Objective**
-
-Demonstrate mutual induction using two coils, supplied with ExpEYES. One
-coil, the primary, is connected between WG and Ground. The axes of the
-coils are aligned and a ferrite core is inserted.\begin_inset Separator
-latexpar\end_inset
-
-.. image:: schematics/transformer.svg
-	   :width: 300px
-.. image:: pics/transformer-screen.png
+.. image:: images/transformer.svg
 	   :width: 300px
 
-**Procedure**
+-  ഒന്നാമത്തെ കോയിൽ   WGയിൽ നിന്നും ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക 
+-   A1നെ  WGയിൽ ഘടിപ്പിക്കുക 
+- രണ്ടാമത്തെ കോയിലിനെ A2വിനും ഗ്രൗണ്ടിനും ഇടക്ക് ഘടിപ്പിക്കുക 
+-  A2 എനേബിൾ ചെയ്യുക 
 
--  Make connections as shown in the figure
--  Enable A1 and A2
--  Set WG to 500 Hz
--  Bring the coils close and watch the voltage on A2.
--  Try inserting an ion core
+പ്രേരിതമാവുന്ന വോൾടേജ് വളരെ ചെറുതായിരിക്കും. കോയിലുകളെ ചേർത്തുവെച്ച പച്ചിരുമ്പിന്റെ ആണിയോ അതുപോലുള്ള ഏതെങ്കിലും ഫെറോമാഗ്നെറ്റിക് വസ്തുക്കളോ  കോയിലിനകത്തു കയറ്റി വെക്കുക. വോൾടേജ് കൂടുന്നതുകാണാം.
 
-**Discussion**
-
-The applied waveform and the induced waveform are shown in figure. A
-changing magnetic filed is causing the induced voltage. In the previous
-two experiments, the changing magnetic field was created by the movement
-of permanent magnets. In the present case the changing magnetic field is
-created by a time varying current.
-
-Try doing this experiment using a squarewave. Connect a 1kΩ resistor
-across secondary coil to reduce ringing.
-
-The concept of Alternating Current is introduced by plotting the voltage
-as a function of time. The behavior of circuits elements like capacitors
-and inductors in AC and DC circuits are explored, by measuring
-parameters like amplitude, frequency and phase. Converting electrical
-signals into sound and back is demonstrated.
-
-For each experiment, make connections as per the diagram given.
+.. image:: images/transformer-screen.png
+	   :width: 300px

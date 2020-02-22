@@ -1,32 +1,15 @@
-UNTRANSLATED
-.. 3.5
+IC555 ഓസ്‌സിലേറ്റർ 
+--------------------------
+സ്‌കൊയർവേവ് ഉണ്ടാക്കാൻ സാധാരണയായി ഉപയോഗിക്കുന്ന ഒരു ICയാണ്  NE555. ഒരു കപ്പാസിറ്ററും രണ്ടു റെസിസ്റ്ററുകളും ഉപയോഗിച്ചാണ് ഔട്പുട്ടിന്റെ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും നിയന്ത്രിക്കുന്നത് .
 
-IC555 Oscillator
-================
-
-**Objective**
-
-Wire an astable multivibrator circuit using IC555, measure the frequency
-and duty cycle of the output.
-
-.. image:: schematics/osc555.svg
-	   :width: 300px
-.. image:: pics/ic555-screen.png
+.. image:: images/osc555.svg
 	   :width: 300px
 
-Circuit is shown in figure. The frequency is given by
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. The HIGH time is given by
-:math:`\ln 2 \times C \times (R_1 + R_2)` and LOW time by
-:math:`\ln 2 \times C \times R_2`.
+- ചിത്രത്തിൽ കാണിച്ചിരിക്കുന്ന സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക 
+- ICയുടെ മൂന്നാമത്തെ പിന്നിനെ A1ലേക്കും IN2വിലേക്കും ഘടിപ്പിക്കുക 
+- ICയുടെ ആറാമത്തെ പിന്നിനെ A2വിലേക്ക്  ഘടിപ്പിക്കുക 
 
-**Procedure**
+താഴെക്കാണിച്ചിരിക്കുന്നതുപോലെ രണ്ടു ഗ്രാഫുകൾ കിട്ടേണ്ടതാണ് . റെസിസ്റ്ററിനു പകരം വെരിയബിൾ റെസിസ്റ്ററുകൾ ഉപയോഗിച്ചാൽ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും മാറ്റാൻ കഴിയും.
 
--  Make connections
--  measure frequency and duty cycle.
--  Repeat by changing the value of R1
-
-**Discussion**
-
-The output waveform is shown in figure. Change the value of resistors or
-the capacitor, and compare the frequency and duty cycle with the
-calculated values.
+.. image:: images/osc555-trace.png
+	   :width: 300px

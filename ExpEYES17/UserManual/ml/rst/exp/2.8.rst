@@ -1,30 +1,20 @@
-UNTRANSLATED
-.. 2.8
+ശരീരത്തിന്റെ വൈദ്യുതചാലകത
+--------------------------------
+നമ്മുടെ ശരീരം എത്രത്തോളം നല്ല ഒരു വൈദ്യുതചാലകമാണ്  എങ്ങിനെ പരീക്ഷിക്കാം. മെയിൻസ് സപ്ലൈ അപകടകരമാണെന്നു നമുക്കറിയാം. കുറഞ്ഞ വോൾട്ടേജുകൾ ഉപയോഗിച്ചു വേണം ഇത്തരം പരീക്ഷണങ്ങൾ നടത്താൻ. താഴെക്കാണിച്ചവിധം വയറുകൾ ഘടിപ്പിക്കുക.
 
-Human body as a conductor
-=========================
-
-**Objective**
-
-Touching the AC mains is fatal to us because our body is a conductor. We
-can explore this using low voltage signals.
-
-.. image:: schematics/conducting-human.svg
-	   :width: 300px
-.. image:: pics/conducting-human-screen.png
+ .. image:: images/conducting-human.svg
 	   :width: 300px
 
-**Procedure**
 
--  Set WG to 200 Hz.
--  Enable A1, A2 with analysis enabled.
--  Conenct WG and A1, with a wire
--  Connect WG and A2 through your body and note voltages
--  Repeat it using a 3 volt DC signal from PV1.
+- WGയിൽ നിന്നും A1ലേക്ക് ഒരു വയർ ഘടിപ്പിക്കുക.
+- മറ്റൊരു വയറിന്റെ ഒരറ്റം മാത്രം WGയിൽ ഘടിപ്പിക്കുക
+- മൂന്നാമതൊരു  വയറിന്റെ ഒരറ്റം മാത്രം A2വിൽ ഘടിപ്പിക്കുക
+- രണ്ടാമത്തെ വയറിന്റെ വെറുതെയിട്ടിരിക്കുന്ന അഗ്രം ഒരു കൈകൊണ്ടും മൂന്നാമത്തെ വയറിന്റെ അഗ്രം മറ്റേ കൈകൊണ്ടും മുറുക്കെപ്പിടിക്കുക.
 
-**Discussion**
+ശരീരം ഒരു നല്ല ചാലകമാണെന്നു സൂചിപ്പിക്കുന്നതാണ് പരീക്ഷണഫലം. WGക്കു പകരം PV1 ഉപയോഗിച്ച് ഈ പരീക്ഷണം ആവർത്തിക്കുക.
 
-The observed peak voltage will be less than 3volts, due to the
-resistance of the body. There could be some ripple due to the 50Hz AC
-pickup. This can be eliminated by performing the experiment far away
-from power lines, using a laptop.
+ .. image:: images/conducting-human-screen.png
+	   :width: 300px
+
+
+- 

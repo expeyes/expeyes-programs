@@ -1,38 +1,18 @@
-UNTRANSLATED
-.. 2.14
+ജലത്തിന്റെ എലെക്ട്രിക്കൽ റെസിസ്റ്റൻസ് 
+---------------------------------------------
+മൾട്ടിമീറ്റർ ഉപയോഗിച്ചാണ് നാം വസ്തുക്കളുടെ റെസിസ്റ്റൻസ് അളക്കുന്നത് . ടാപ്പിൽനിന്നോ കിണറ്റിൽ നിന്നോ ഒരു ഗ്ലാസിൽ അല്പം വെള്ളമെടുത്തു അതിന്റെ റെസിസ്റ്റൻസ് അളക്കാൻ ശ്രമിക്കുക. മൾട്ടിമീറ്റർ കാണിക്കുന്ന റീഡിങ് സ്ഥിരമായി നില്കുന്നുണ്ടോ എന്ന് നിരീക്ഷിക്കുക. ഇല്ലെങ്കിൽ എന്തുകൊണ്ട്?
+റെസിസ്റ്റൻസ് അളക്കേണ്ട വസ്തുവിലൂടെ ഒരു നിശ്ചിത അളവ് കറന്റ് കടത്തിവിട്ട് അതിനു കുറുകെ ഉണ്ടാവുന്ന വോൾടേജ് അളന്നാണ് മൾട്ടിമീറ്റർ റെസിസ്റ്റൻസ് കണക്കാക്കുന്നത്. വെള്ളത്തിലൂടെ വൈദ്യുതി പ്രവഹിക്കുമ്പോൾ ഇലൿട്രോളിസിസ് നടക്കുകയും എലെക്ട്രോഡുകളിൽ രാസപ്രവർത്തനങ്ങൾ നടക്കുകയും ചെയ്യും. ഈ പ്രക്രിയ റെസിസ്റ്റൻസിനെ മാറ്റിക്കൊണ്ടേയിരിക്കും. ഇതിനെ മറികടക്കാനുള്ള ഒരുവഴി DCക്കു പകരം AC ഉപയോഗിക്കുക എന്നതാണ്.
 
-Resistance of water, using AC
-=============================
 
-**Objective**
-
-Measure the resistance of ionic solutions, using both DC and AC
-voltages. We have used normal tap water. Try measuring the resistance
-using a multimeter first.\begin_inset Separator latexpar\end_inset
-
-.. image:: schematics/res-water.svg
-	   :width: 300px
-.. image:: pics/water-conduct.png
+.. image:: images/res-water.svg
 	   :width: 300px
 
-**Procedure**
+- ചിത്രത്തിൽ കാണിച്ചിരിക്കുന്നത് പോലെ കണക്ഷനുകൾ ചെയ്യുക 
+- ആംപ്ളിറ്റ്യൂഡും ഫ്രീക്വൻസിയും കാണിക്കുന്ന ചെക്ക് ബോക്സ്  ടിക്ക് ചെയ്യുക.
+- WG 1000ഹെർട്സ്ൽ  സെറ്റ് ചെയ്യുക 
 
--  R1 should be comparable to R, start with 10k.
--  Enable A1 and A2
--  Calculate the resistance as explained in section
-   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+വെള്ളത്തിന്റെ റെസിസ്റ്റൻസിനനുസരിച്ച്  R1ന്റെ  വാല്യൂ  തെരഞ്ഞെടുക്കുക. അധികം ലവണങ്ങൾ കലർന്ന വെള്ളമാണെങ്കിൽ റെസിസ്റ്റൻസ് കുറവായിരിക്കും. അപ്പോൾ R1ഉം കുറഞ്ഞ വാല്യൂ മതിയാവും. A2വിലെ വോൾടേജ്  A1ലെ വോൾട്ടേജിന്റെ പകുതിയോളം ആവുന്നതാണ് നല്ലത്.
 
-**Discussion**
+.. image:: images/water-conduct.png
+	   :width: 300px
 
-Observed values are shown in the table. The DC and AC resistances seems
-to be very different. With DC, the resistance of the liquid changes with
-time, due to electrolysis and bubble formation. The resistance does not
-depend much on the distance between the electrodes, the area of the
-electrode is having some effect. The resistance depends on the ion
-concentration and presence of impurities in the water used.
-
-Try changing the distance between electrodes. Try adding some common
-salt and repeat the measurements. Why is the behavior different for AC
-and DC ? What are the charge carriers responsible for the flow of
-electricity through solutions ? Is there any chemical reaction taking
-place ?
