@@ -60,8 +60,8 @@ class Expt(QWidget):
 		right.setSpacing(self.RPGAP)
 					
 		H = QHBoxLayout()
-		l = QLabel(self.tr("R from A1 to Ground"))
-		l.setMaximumWidth(160)
+		l = QLabel(self.tr("R to Ground"))
+		l.setMaximumWidth(120)
 		H.addWidget(l)
 		self.Rval = utils.lineEdit(50, self.Res, 10, None)
 		H.addWidget(self.Rval)
@@ -72,13 +72,19 @@ class Expt(QWidget):
 
 		
 		H = QHBoxLayout()
-		l = QLabel(self.tr("Sweep PV1 from"))
+		l = QLabel(self.tr("Starting PV1"))
 		l.setMaximumWidth(120)
 		H.addWidget(l)
 		self.PVmin = utils.lineEdit(40, self.VMIN, 10, None)
 		H.addWidget(self.PVmin)
-		l = QLabel(self.tr("to"))
-		l.setMaximumWidth(20)
+		l = QLabel(self.tr("V"))
+		l.setMaximumWidth(15)
+		H.addWidget(l)
+		right.addLayout(H)
+
+		H = QHBoxLayout()
+		l = QLabel(self.tr("Ending PV1"))
+		l.setMaximumWidth(120)
 		H.addWidget(l)
 		self.PVmax = utils.lineEdit(40, self.VMAX, 10, None)
 		H.addWidget(self.PVmax)
@@ -86,7 +92,6 @@ class Expt(QWidget):
 		l.setMaximumWidth(15)
 		H.addWidget(l)
 		right.addLayout(H)
-		
 		
 		H = QHBoxLayout()		 
 		b = QPushButton(self.tr("Start"))

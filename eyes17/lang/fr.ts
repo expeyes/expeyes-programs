@@ -124,7 +124,7 @@
         <translation>Effacer les traces</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="72"/>
+        <location filename="../XYplot2.py" line="97"/>
         <source>Save Data to</source>
         <translation>Enregistrer les données sous</translation>
     </message>
@@ -179,7 +179,7 @@
         <translation>à</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="88"/>
+        <location filename="../XYplot.py" line="86"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
@@ -239,7 +239,7 @@
         <translation>Mesurer toutes les</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="96"/>
+        <location filename="../XYplot.py" line="72"/>
         <source>Save Data</source>
         <translation>Enregistrer les données</translation>
     </message>
@@ -289,7 +289,7 @@
         <translation type="obsolete">tran-VI.txt</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="100"/>
+        <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
         <translation>Analyser la dernière trace</translation>
     </message>
@@ -305,13 +305,13 @@
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
-        <source>R from A1 to Ground</source>
-        <translation>R entre A1 et la masse (GND)</translation>
+        <source>R to Ground</source>
+        <translation type="unfinished">R entre A1 et la masse (GND)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
-        <source>Sweep PV1 from</source>
-        <translation>Balayer PV1 depuis</translation>
+        <source>Starting PV1</source>
+        <translation type="unfinished">Balayer PV1 depuis</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="169"/>
@@ -319,27 +319,27 @@
         <translation type="obsolete">iv.txt</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="112"/>
+        <location filename="../plotIV.py" line="117"/>
         <source>Change Voltage</source>
         <translation>Changer la tension</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="119"/>
+        <location filename="../plotIV.py" line="124"/>
         <source>Voltage = %5.3f</source>
         <translation>Tension = %5.3f</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="124"/>
+        <location filename="../plotIV.py" line="129"/>
         <source>Current = 0 mA</source>
         <translation>Courant = 0 mA</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="156"/>
+        <location filename="../plotIV.py" line="161"/>
         <source>Voltage = %5.3f V</source>
         <translation>Tension = %5.3f V</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="158"/>
+        <location filename="../plotIV.py" line="163"/>
         <source>Current = %5.3f mA</source>
         <translation>Courant = %5.3f mA</translation>
     </message>
@@ -449,12 +449,12 @@
         <translation>Résistance =</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="127"/>
+        <location filename="../XYplot.py" line="130"/>
         <source>messages</source>
         <translation>messages</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="81"/>
+        <location filename="../XYplot.py" line="79"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
@@ -825,37 +825,37 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Tension A2</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="144"/>
+        <location filename="../XYplot.py" line="147"/>
         <source>Voltage (A2)</source>
         <translation>Tension (A2)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="76"/>
+        <location filename="../XYplot2.py" line="101"/>
         <source>XYplot.txt</source>
         <translation>XYplot.txt</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="94"/>
+        <location filename="../XYplot.py" line="92"/>
         <source>Voltage range</source>
         <translation>Calibre (tension)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="99"/>
+        <location filename="../XYplot.py" line="97"/>
         <source>Volts</source>
         <translation>V</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="104"/>
+        <location filename="../XYplot.py" line="102"/>
         <source>show (A1-A2) Vs A2</source>
         <translation>montrer (A1-A2) en fonction de A2</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="142"/>
+        <location filename="../XYplot.py" line="145"/>
         <source>Voltage (A1-A2)</source>
         <translation>Tension (A1-A2)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="170"/>
+        <location filename="../XYplot.py" line="184"/>
         <source>Xmax = %5.3f V</source>
         <translation>Xmax = %5.3f V</translation>
     </message>
@@ -960,7 +960,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Erreur d&apos;analyse de données</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="224"/>
+        <location filename="../XYplot.py" line="241"/>
         <source>Error. Try Device-&gt;Reconnect</source>
         <translation>Erreur. Tentez Périphérique -&gt; Reconnexion</translation>
     </message>
@@ -1045,7 +1045,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Pas de trace disponible à sauvegarder</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="183"/>
+        <location filename="../XYplot.py" line="200"/>
         <source>Traces saved to </source>
         <translation>Traces enregistrées sous </translation>
     </message>
@@ -1055,7 +1055,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>SQR1 réglé à </translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source> Hz</source>
         <translation> Hz</translation>
     </message>
@@ -1150,12 +1150,12 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Graphique temps/vitesse angulaire tracé</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="171"/>
+        <location filename="../plotIV.py" line="176"/>
         <source>Slope of the Line (dV/dI) = </source>
         <translation>Pente de la ligne (dV/dt) = </translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="223"/>
+        <location filename="../plotIV.py" line="228"/>
         <source>Err</source>
         <translation>Err</translation>
     </message>
@@ -1215,7 +1215,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Effacé les données et les traces</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source>AWG set to </source>
         <translation>AWG réglé à </translation>
     </message>
@@ -1894,9 +1894,24 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>mA</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="171"/>
+        <location filename="../XYplot.py" line="185"/>
         <source>Ymax = %5.3f V</source>
         <translation>Ymax = %5.3f V</translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="58"/>
+        <source>Voltage (A1)</source>
+        <translation type="unfinished">Tension (A2) {1)?}</translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="164"/>
+        <source>Y-intercept = %5.3f V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="86"/>
+        <source>Ending PV1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
