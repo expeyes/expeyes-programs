@@ -5,7 +5,7 @@
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation>സെൻസറിന്റെ റീടിങ്ങ്</translation>
+        <translation>സെൻസറിന്റെ റീഡിങ് </translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>
@@ -35,7 +35,7 @@
     <message>
         <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
-        <translation>ഡാമ്പ്ഡ് സൈൻ ഫിറ്റ്</translation>
+        <translation>ഡാംപ്ഡ് സൈൻ ഫിറ്റ്</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
@@ -83,7 +83,7 @@
     <message>
         <location filename="../BHCurve.py" line="40"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
-        <translation>വോൾട്ടേജ്(V)-&gt; കരന്റ് -&gt; കാന്തിക വലയം(B)</translation>
+        <translation>വോൾട്ടേജ്(V)-&gt; കറന്റ്  -&gt; കാന്തിക വലയം(B)</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="42"/>
@@ -106,9 +106,9 @@
         <translation>ട്രെയ്സുകൾ മായ്ക്കുക</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="96"/>
+        <location filename="../XYplot.py" line="72"/>
         <source>Save Data</source>
-        <translation>ഡാറ്റ സെയവ് ചെയ്യുക</translation>
+        <translation>ഡാറ്റ സേവ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="95"/>
@@ -138,22 +138,22 @@
     <message>
         <location filename="../sr04dist.py" line="264"/>
         <source>Cleared Traces and Data</source>
-        <translation>ട്രെയ്സുകളും ഡാറ്റയും സെയവ് ചെയ്യുക</translation>
+        <translation>ട്രെയ്സുകളും ഡാറ്റയും സേവ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="271"/>
         <source>No data to save</source>
-        <translation>സെയവ് ചെയ്യാനായി ഡാറ്റയില്ല</translation>
+        <translation>സേവ് ചെയ്യാൻ ഡാറ്റയില്ല</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="183"/>
+        <location filename="../XYplot.py" line="200"/>
         <source>Traces saved to </source>
-        <translation>ട്രെയ്സുകൾ സെയവ് ചെയ്തിരിക്കുന്നത് </translation>
+        <translation>ട്രെയ്സുകൾ സേവ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="224"/>
+        <location filename="../XYplot.py" line="241"/>
         <source>Error. Try Device-&gt;Reconnect</source>
-        <translation>എറർ. ഡിവൈസ് &gt;റീക്കണക്റ്റ് ചെയ്യുക</translation>
+        <translation>തെറ്റ്. ഉപകരണം &gt;വീണ്ടും ഘടിപ്പിക്കുക</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="40"/>
@@ -193,7 +193,7 @@
     <message>
         <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
-        <translation>ഈ പ്രോഗ്രാം SQ1-നെ കൂടുതൽ വ്യക്തമായ മോഡിൽ സെറ്റ് ചെയ്യുന്നതാണ്. അപ്രാപ്ത്യമാക്കുന്നതാണ് ഫ്രീക്വൻസി 0.1 Hz തൊട്ട് 50HZ വരെ മാറ്റാവുന്നതാണ്</translation>
+        <translation>ഈ പ്രോഗ്രാം WG റദ്ദ് ചെയ്തുകൊണ്ട്  SQ1നെ 0.1Hz മുതൽ 50Hz വരെ സൂക്ഷ്മമായി ഫ്രീക്വൻസി  മാറ്റാവുന്ന രീതിയിൽ സെറ്റ് ചെയ്യും. </translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="84"/>
@@ -206,7 +206,7 @@
         <translation>sqr1 സെറ്റ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source> Hz</source>
         <translation> Hz</translation>
     </message>
@@ -311,7 +311,7 @@
         <translation>സാന്ദ്രത =</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="127"/>
+        <location filename="../XYplot.py" line="130"/>
         <source>messages</source>
         <translation>സന്ദേശങ്ങൾ</translation>
     </message>
@@ -323,12 +323,12 @@
     <message>
         <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
-        <translation>കോഡ് സെയവ് ചെയ്യുക</translation>
+        <translation>കോഡ് സേവ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
-        <translation>കോഡ് സെയവ് ചെയ്തിരിക്കുന്നത് </translation>
+        <translation>കോഡ് സേവ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="48"/>
@@ -343,45 +343,45 @@
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>From</source>
-        <translation>മുതൽ</translation>
+        <translation type="obsolete">മുതൽ</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="66"/>
         <source>to</source>
-        <translation>വരെ</translation>
+        <translation type="obsolete">വരെ</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="88"/>
+        <location filename="../XYplot.py" line="86"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="93"/>
         <source>Number of Steps =</source>
-        <translation>ഘട്ടങ്ങളുടെ എണ്ണം =</translation>
+        <translation type="obsolete">ഘട്ടങ്ങളുടെ എണ്ണം =</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="167"/>
+        <location filename="../filterCircuit.py" line="173"/>
         <source>Frequency = </source>
         <translation>ഫീക്വൻസി = </translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="191"/>
+        <location filename="../filterCircuit.py" line="197"/>
         <source>Fit failed</source>
         <translation>ഫിറ്റ് പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="214"/>
+        <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
         <translation>പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="217"/>
+        <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
         <translation>പ്രാപല്യമില്ലാത ഫ്രീക്വൻസി ലിമിറ്റുകൾ</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="259"/>
+        <location filename="../filterCircuit.py" line="265"/>
         <source>user Stopped</source>
         <translation>ഉപയോക്താവ് നിർത്തിയിരിക്കുന്നു</translation>
     </message>
@@ -418,22 +418,22 @@
     <message>
         <location filename="../induction.py" line="130"/>
         <source>Noise = </source>
-        <translation>അനാവശ്യമായ ശബ്ദം = </translation>
+        <translation>ഇലക്ട്രിക്കൽ നോയ്‌സ്  = </translation>
     </message>
     <message>
         <location filename="../induction.py" line="130"/>
         <source> V. Drop the Magnet until a trace is captured</source>
-        <translation> V ട്രെയ്സുകൾ പകർത്തുന്നത് വരെ കാന്തം താഴേക്ക് ഇടുക</translation>
+        <translation type="unfinished">കാന്തം  കോയിലിലൂടെ താഴേക്ക് ഇടുക</translation>
     </message>
     <message>
         <location filename="../induction.py" line="145"/>
         <source>Induced voltage </source>
-        <translation>ഇൻഡ്യൂസ്ട് വോൾട്ടേജ് </translation>
+        <translation>പ്രേരിതമായ വോൾട്ടേജ് </translation>
     </message>
     <message>
         <location filename="../induction.py" line="148"/>
         <source>Detected voltage above threshold. Peak voltages: </source>
-        <translation>ത്രെഷ്ഓൾഡ് പീക്ക് വോൾട്ടേജുകൾക്കു മുകളിലുള്ള വോൾട്ടേജുകൾ തിരിച്ചറിഞ്ഞിരിക്കുന്നു: </translation>
+        <translation>പ്രതീക്ഷിച്ച വോൾടേജ് സിഗ്നൽ ലഭിച്ചിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../logger.py" line="55"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../pt100.py" line="132"/>
         <source>Total Duration</source>
-        <translation>പൂർണമായ സമയക്രമം</translation>
+        <translation>മൊത്തം സമയം</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="148"/>
@@ -453,7 +453,7 @@
     <message>
         <location filename="../pt100.py" line="143"/>
         <source>Measure every</source>
-        <translation>എല്ലാം അളക്കുക</translation>
+        <translation>ഒരു അളവിന്</translation>
     </message>
     <message>
         <location filename="../lightsensorlogger.py" line="144"/>
@@ -546,14 +546,14 @@
         <translation>പ്രാപല്യത്തിലില്ലാത്ത സമയക്രമം അഥവാ റീഡികൾക്കു ഇടയിലുള്ള സമയം (&gt; 10 mSec)</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="276"/>
+        <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
         <translation>സെയവ് ചെയ്യാനായി ട്രെയ്സുകൾ ലഭ്യമല്ല</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="53"/>
         <source>Vbase (via 100kOhm)</source>
-        <translation>Vബെയ്സ്(via 100kohm)</translation>
+        <translation>Vb(100Kഓമിലൂടെ )</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="58"/>
@@ -571,14 +571,14 @@
         <translation>പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="100"/>
+        <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
         <translation>അവസാന ട്രെയ്സ് വിശകലനം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="167"/>
         <source>Time Vs Angular velocity plot completed</source>
-        <translation>സമയം കോണീയ പ്രവേഗം പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
+        <translation>പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="48"/>
@@ -592,46 +592,46 @@
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
-        <source>R from A1 to Ground</source>
-        <translation>A1 തൊട്ട് ഗ്രൗണ്ട് വരെയുള്ള റെസിസ്റ്റൻസ് R</translation>
+        <source>R to Ground</source>
+        <translation type="unfinished">R(ഗ്രൗണ്ടിലേക്ക് )</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="102"/>
         <source>Ohm</source>
-        <translation>ohm</translation>
+        <translation>ഓം</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="112"/>
+        <location filename="../plotIV.py" line="117"/>
         <source>Change Voltage</source>
         <translation>വോൾട്ടേജ് മാറ്റം വരുത്തുക</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="119"/>
+        <location filename="../plotIV.py" line="124"/>
         <source>Voltage = %5.3f</source>
         <translation>വോൾട്ടേജ് = %5.3f</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="124"/>
+        <location filename="../plotIV.py" line="129"/>
         <source>Current = 0 mA</source>
         <translation>കരന്റ് = 0 mA</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="156"/>
+        <location filename="../plotIV.py" line="161"/>
         <source>Voltage = %5.3f V</source>
         <translation>വോൾട്ടേജ് = %5.3V</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="158"/>
+        <location filename="../plotIV.py" line="163"/>
         <source>Current = %5.3f mA</source>
         <translation>കരന്റ് = %5.3f mA</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="171"/>
+        <location filename="../plotIV.py" line="176"/>
         <source>Slope of the Line (dV/dI) = </source>
         <translation>വരയുടെ ചെരിവ് (dV/dI) = </translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="223"/>
+        <location filename="../plotIV.py" line="228"/>
         <source>Err</source>
         <translation>എറർ</translation>
     </message>
@@ -761,12 +761,12 @@
         <translation>മായ്ച്ച ഡാറ്റയും ട്രെയ്സുകളും</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source>AWG set to </source>
         <translation>AWG സെറ്റ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="81"/>
+        <location filename="../XYplot.py" line="79"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
@@ -866,9 +866,9 @@
         <translation> kHz ഡാമ്പിങ്ങ് ഫാക്ടർ= </translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="72"/>
+        <location filename="../XYplot2.py" line="97"/>
         <source>Save Data to</source>
-        <translation>ഡാറ്റ സെയവ് ചെയ്യേണ്ടത്</translation>
+        <translation>ഡാറ്റ സേവ് ചെയ്യേണ്ടത്</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="73"/>
@@ -883,7 +883,7 @@
     <message>
         <location filename="../RLtransient.py" line="151"/>
         <source>Enter a valid Resistance</source>
-        <translation>പ്രാപല്യത്തിലുള്ള റെസിസ്റ്റൻസ് അടിക്കുക</translation>
+        <translation>റെസിസ്റ്റൻസ് അടിക്കുക</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
@@ -893,7 +893,7 @@
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source> Ohm : L = </source>
-        <translation> Ohm : L = </translation>
+        <translation> ഓം : L = </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
@@ -958,7 +958,7 @@
     <message>
         <location filename="../scope.py" line="390"/>
         <source>%5.0f Ohm</source>
-        <translation>%5.0f Ohm</translation>
+        <translation>%5.0f ഓം</translation>
     </message>
     <message>
         <location filename="../scope.py" line="392"/>
@@ -1013,7 +1013,7 @@
     <message>
         <location filename="../soundVelocity.py" line="98"/>
         <source>Enable Measurements</source>
-        <translation>അളക്കൽ പ്രവർത്തനക്ഷമമാക്കുക</translation>
+        <translation>അളവ് ആരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="171"/>
@@ -1028,7 +1028,7 @@
     <message>
         <location filename="../soundVelocity.py" line="190"/>
         <source>Trace saved to </source>
-        <translation>ട്രെയ്സുകൾ സെയവ് ചെയ്തിരിക്കുന്നത് </translation>
+        <translation>ട്രെയ്സുകൾ സേവ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="50"/>
@@ -1038,10 +1038,10 @@
     <message>
         <location filename="../soundFreqResp.py" line="82"/>
         <source>seconds</source>
-        <translation>സെക്കണ്ട്സ്</translation>
+        <translation type="obsolete">സെക്കണ്ട്സ്</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="177"/>
+        <location filename="../soundFreqResp.py" line="183"/>
         <source>Frequency = %5.0f Hz V = %5.3f</source>
         <translation>ഫീക്വൻസി = %5.0f Hz V = %5.3f</translation>
     </message>
@@ -1051,7 +1051,7 @@
         <translation> സെക്കണ്ട്സ്</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="223"/>
+        <location filename="../soundFreqResp.py" line="229"/>
         <source>Invalid Time interval</source>
         <translation>സമയ ഇടവേള പ്രാപല്യത്തിലില്ല</translation>
     </message>
@@ -1116,7 +1116,7 @@
         <translation>വോൾട്ടേജ്  A2</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="144"/>
+        <location filename="../XYplot.py" line="147"/>
         <source>Voltage (A2)</source>
         <translation>വോൾട്ടേജ് (A2)</translation>
     </message>
@@ -1131,32 +1131,32 @@
         <translation>സമയം</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="76"/>
+        <location filename="../XYplot2.py" line="101"/>
         <source>XYplot.txt</source>
         <translation>XYplot.txt</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="94"/>
+        <location filename="../XYplot.py" line="92"/>
         <source>Voltage range</source>
         <translation>വോൾട്ടേജിന്റെ പരിധി</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="99"/>
+        <location filename="../XYplot.py" line="97"/>
         <source>Volts</source>
         <translation>വോൾട്</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="142"/>
+        <location filename="../XYplot.py" line="145"/>
         <source>Voltage (A1-A2)</source>
         <translation>വോൾട്ടേജ് (A1-A2)</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="170"/>
+        <location filename="../XYplot.py" line="184"/>
         <source>Xmax = %5.3f V</source>
         <translation>Xmax = %5.3f V</translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="171"/>
+        <location filename="../XYplot.py" line="185"/>
         <source>Ymax = %5.3f V</source>
         <translation>Ymax = %5.3f V</translation>
     </message>
@@ -1179,8 +1179,8 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
-        <source>Sweep PV1 from</source>
-        <translation type="unfinished"></translation>
+        <source>Starting PV1</source>
+        <translation type="unfinished">PV1 തുടക്കം </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="88"/>
@@ -1263,30 +1263,26 @@ For Driven Pendulum Expt.</source>
 only after Enable/Disable controls.
 shows the actual frequency set.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+ഫ്രീക്വൻസി മാറ്റിയാൽ അളക്കുന്നത് നിർത്തി വീണ്ടും തുടങ്ങണം. </translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="77"/>
-        <source>in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="196"/>
+        <location filename="../soundFreqResp.py" line="202"/>
         <source>Completed in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source>Increase time interval to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source> or Reduce frequency span</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="248"/>
+        <location filename="../soundFreqResp.py" line="254"/>
         <source> mS at each step</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1306,9 +1302,49 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="104"/>
+        <location filename="../XYplot.py" line="102"/>
         <source>show (A1-A2) Vs A2</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="58"/>
+        <source>Voltage (A1)</source>
+        <translation type="unfinished">വോൾട്ടേജ് (A2) {1)?}</translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="164"/>
+        <source>Y-intercept = %5.3f V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="86"/>
+        <source>Ending PV1</source>
+        <translation type="unfinished">PV1 അവസാനം</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="61"/>
+        <source>Starting</source>
+        <translation type="unfinished">തുടക്കം</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="72"/>
+        <source>Ending</source>
+        <translation type="unfinished">അവസാനം</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="99"/>
+        <source># of Steps =</source>
+        <translation type="unfinished">സ്റ്റെപ്പുകൾ </translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="88"/>
+        <source>Sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="83"/>
+        <source>Total time</source>
+        <translation type="unfinished">സമയം </translation>
     </message>
 </context>
 <context>
@@ -1426,7 +1462,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
         <source> Hz</source>
-        <translation> Hz</translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="841"/>
@@ -1456,7 +1492,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="806"/>
         <source>Current Source Voltage:</source>
-        <translation type="obsolete">കരന്റ് സോർസിലെ വോൾട്ടേജ്:</translation>
+        <translation type="obsolete">കറന്റ് സോഴ്സ് വോൾട്ടേജ്:</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="742"/>
@@ -1476,7 +1512,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1126"/>
         <source>SAVE Traces</source>
-        <translation>ട്രെയ്സുകൾ സെയവ് ചെയ്യുക</translation>
+        <translation>ട്രെയ്സുകൾ സേവ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1133"/>
@@ -1614,12 +1650,12 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="59"/>
         <source>Resistance by Ohm&apos;s law</source>
-        <translation>റെസ്റ്റിസ്റ്റൻസ് ഓംസ് ലോയിലൂടെ</translation>
+        <translation>റെസ്റ്റിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച് </translation>
     </message>
     <message>
         <location filename="../main.py" line="60"/>
         <source>Direct and Alternating Currents</source>
-        <translation>ഡയറക്റ്റ് കറന്റും അൾട്ടർനേറ്റിങ്ങ് കറൻറും</translation>
+        <translation>DCയും ACയും </translation>
     </message>
     <message>
         <location filename="../main.py" line="61"/>
@@ -1629,7 +1665,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="62"/>
         <source>Separating AC and DC</source>
-        <translation>എസിയുടേയും ഡിസിയുടേയും വേർത്തിരിവ്</translation>
+        <translation>DCയും ACയും വേർതിരിക്കുക</translation>
     </message>
     <message>
         <location filename="../main.py" line="63"/>
@@ -1654,7 +1690,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="67"/>
         <source>Simple AC generator</source>
-        <translation>ലളിതമായ എസി ജെനെറേറ്റർ</translation>
+        <translation>ലളിതമായ AC ജെനെറേറ്റർ</translation>
     </message>
     <message>
         <location filename="../main.py" line="68"/>
@@ -1674,7 +1710,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="71"/>
         <source>Digitizing Sound</source>
-        <translation>ശബ്ദത്തിന്റെ ഡിജിട്ടൈസിങ്ങ്</translation>
+        <translation>ശബ്ദത്തിന്റെ ഡിജിറ്റൈസിങ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="72"/>
@@ -1684,22 +1720,22 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="83"/>
         <source>Diode Characteristics</source>
-        <translation>ഡയോട് കാരട്ടറിട്ടിക്സ്</translation>
+        <translation>ഡയോഡ് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="84"/>
         <source>NPN Output Characteristics</source>
-        <translation>എൻ.പി.എൻ ഔട്ട്പുട്ട് കാരട്ടറിട്ടിക്സ്</translation>
+        <translation>NPN ഔട്ട്പുട്ട് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="85"/>
         <source>PNP Output Characteristics</source>
-        <translation>പി.എൻ.പി ഔട്ട്പുട്ട് കാരട്ടറിട്ടിക്സ്</translation>
+        <translation>PNP ഔട്ട്പുട്ട് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="91"/>
         <source>Halfwave Rectifier</source>
-        <translation>ഹാഫ് വെയ്വ്വ് റെക്ട്ടിഫൈയർ</translation>
+        <translation>ഹാഫ് വേവ് റെക്റ്റിഫയർ </translation>
     </message>
     <message>
         <location filename="../main.py" line="156"/>
@@ -1714,37 +1750,37 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="94"/>
         <source>Diode Clamping</source>
-        <translation>ഡയോട് ക്ലാംപ്പിങ്ങ്</translation>
+        <translation>ഡയോട് ക്ലാംപിങ്  </translation>
     </message>
     <message>
         <location filename="../main.py" line="95"/>
         <source>IC555 Multivibrator</source>
-        <translation>IC555 മൾട്ടി വൈബ്രേട്ടർ</translation>
+        <translation>IC555 മൾട്ടി വൈബ്രേറ്റർ </translation>
     </message>
     <message>
         <location filename="../main.py" line="96"/>
         <source>Transistor Amplifier (CE)</source>
-        <translation>ട്രാൻസിസ്റ്റർ ആബ്ലിഫൈയർ (സി.ഇ)</translation>
+        <translation>ട്രാൻസിസ്റ്റർ ആംപ്ലിഫയർ  (സി.ഇ)</translation>
     </message>
     <message>
         <location filename="../main.py" line="97"/>
         <source>Inverting Amplifier</source>
-        <translation>ഇൻവേർട്ടിങ്ങ് ആബ്ലിഫൈയർ</translation>
+        <translation>ഇൻവേർട്ടിങ്ങ് ആംപ്ലിഫയർ </translation>
     </message>
     <message>
         <location filename="../main.py" line="98"/>
         <source>Non-Inverting Amplifier</source>
-        <translation>നോൺ ഇൻവേർട്ടിങ്ങ് ആബ്ലിഫൈയർ</translation>
+        <translation>നോൺ ഇൻവേർട്ടിങ്ങ് ആംപ്ലിഫയർ</translation>
     </message>
     <message>
         <location filename="../main.py" line="99"/>
         <source>Integrator using Op-Amp</source>
-        <translation>ഓപ്-ആമ്പ് ഉപയോഗിച്ചുള്ള ഇന്റഗ്രേറ്റർ</translation>
+        <translation>Op-Amp ഉപയോഗിച്ചുള്ള ഇന്റഗ്രേറ്റർ</translation>
     </message>
     <message>
         <location filename="../main.py" line="100"/>
         <source>Logic Gates</source>
-        <translation>ലോജിക്ക് ഗേറ്റ്സ്</translation>
+        <translation>ലോജിക്ക് ഗേറ്റുകൾ</translation>
     </message>
     <message>
         <location filename="../main.py" line="101"/>
@@ -1754,82 +1790,82 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="105"/>
         <source>Plot I-V Curve</source>
-        <translation>ഐ വി കർവിന്റെ പ്ലോട്ട്</translation>
+        <translation>I-V കർവിന്റെ പ്ലോട്ട്</translation>
     </message>
     <message>
         <location filename="../main.py" line="106"/>
         <source>XY Plotting</source>
-        <translation>XY- പ്ലോട്ട്</translation>
+        <translation>XY-പ്ലോട്ട്</translation>
     </message>
     <message>
         <location filename="../main.py" line="107"/>
         <source>RLC Steady state response</source>
-        <translation>RLC.സ്റ്റെടി സ്റ്റേറ് റെസ്പോൺസ്</translation>
+        <translation>RLC സ്റ്റെഡിസ്റ്റേറ് റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="108"/>
         <source>RC Transient response</source>
-        <translation>RC ട്രാൻസിയൻറ്റ് റെസ്പോൺസ്</translation>
+        <translation>RC ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="109"/>
         <source>RL Transient response</source>
-        <translation>RL ട്രാൻസിയൻറ്റ് റെസ്പോൺസ്</translation>
+        <translation>RL ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="110"/>
         <source>RLC transient response</source>
-        <translation>RLC ട്രാൻസിയൻറ്റ് റെസ്പോൺസ്</translation>
+        <translation>RLC ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="111"/>
         <source>Frequency Response of Filter Circuit</source>
-        <translation>ഫിൽട്ടർ സർക്യൂട്ടിന്റെ ഫ്രീക്ക്വൻസി</translation>
+        <translation>ഫിൽട്ടർ  ഫ്രീക്വൻസി റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="112"/>
         <source>Electromagnetic Induction</source>
-        <translation>വൈദ്യുതകാന്തിക ഇൻഡക്ഷൻ</translation>
+        <translation>വൈദ്യുതകാന്തികപ്രേരണം </translation>
     </message>
     <message>
         <location filename="../main.py" line="116"/>
         <source>Frequency Response of Piezo Buzzer</source>
-        <translation>പീസ്സോ ബസ്സറിന്റെ ഫ്രീക്ക്വൻസി</translation>
+        <translation>ബസ്സറിന്റെ ഫ്രീക്വൻസി  റെസ്പോൺസ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="117"/>
         <source>Velocity of Sound</source>
-        <translation>ശബ്ദത്തിന്റെ പ്രവേഹം</translation>
+        <translation>ശബ്ദത്തിന്റെ പ്രവേഗം</translation>
     </message>
     <message>
         <location filename="../main.py" line="118"/>
         <source>Sound beats</source>
-        <translation>ശബ്ദ സ്പന്ദനങ്ങൾ</translation>
+        <translation>ബീറ്റുകൾ </translation>
     </message>
     <message>
         <location filename="../main.py" line="122"/>
         <source>Rod Pendulum with Light barrier</source>
-        <translation>പ്രകാശ തടസ്സത്തോടുകൂടിയ റോഡ് പെൻഡുലം</translation>
+        <translation>പെൻഡുലം. Light Barrier</translation>
     </message>
     <message>
         <location filename="../main.py" line="123"/>
         <source>Pendulum Wavefrorm</source>
-        <translation>പെൻഡുലം വേവ് ഫോം</translation>
+        <translation>പെൻഡുലം വേവ്ഫോം</translation>
     </message>
     <message>
         <location filename="../main.py" line="124"/>
         <source>Driven Pendulum resonance</source>
-        <translation>ഡ്രിവൺ പെൻഡുലത്തിന്റെ റെസണ്ണൻസ്</translation>
+        <translation>ഡ്രിവൺ പെൻഡുലത്തിന്റെ റെസൊനൻസ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="125"/>
         <source>Distance by HY-SRF04 Echo module</source>
-        <translation>ദൂരം HY-SRF704 എക്കോ മൊഡ്യൂളിലൂടെ</translation>
+        <translation>ദൂരം അളക്കുക HY-SRF704</translation>
     </message>
     <message>
         <location filename="../main.py" line="126"/>
         <source>Gravity by Time of Flight</source>
-        <translation>ഗുരുത്വാകർഷണം ടൈം ഓഫ് ഫൈറ്റിലൂടെ</translation>
+        <translation>ഗുരുത്വാകർഷണം ടൈം ഓഫ് ഫ്ളൈറ്റ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="130"/>
@@ -1844,7 +1880,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="132"/>
         <source>Advanced Data Logger</source>
-        <translation>അഡ്വാൻസ്ട് ഡാറ്റാ ലോഗർ</translation>
+        <translation>അഡ്വാൻസ്ഡ്  ഡാറ്റാ ലോഗർ</translation>
     </message>
     <message>
         <location filename="../main.py" line="136"/>
@@ -1859,12 +1895,12 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="138"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
-        <translation>MPU-6050 ആസിലെറേഷൻ ആസിലെറേഷൻ താപനില</translation>
+        <translation>MPU-6050  ആക്സലെറേഷൻ ആക്സലെറേഷൻ  താപനില</translation>
     </message>
     <message>
         <location filename="../main.py" line="139"/>
         <source>General Purpose I2C Sensors</source>
-        <translation>ജനറൽ പർപ്പസ് I2C സെൻസെർസ്</translation>
+        <translation>പലതരം I2C സെൻസറുകൾ </translation>
     </message>
     <message>
         <location filename="../main.py" line="143"/>
@@ -1879,42 +1915,42 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="145"/>
         <source>Capture Single Input</source>
-        <translation>ഒരു ഇൻപുട്ട് കാപ്പ്ച്ച്വർ ചെയ്യുക</translation>
+        <translation>ഒരു ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../main.py" line="146"/>
         <source>Capture Two Inputs</source>
-        <translation>രണ്ട് ഇൻപുട്ട് കാപ്പ്ച്ച്വർ ചെയ്യുക</translation>
+        <translation>രണ്ട് ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../main.py" line="147"/>
         <source>Capture Four Inputs</source>
-        <translation>നാല് ഇൻപുട്ട് കാപ്പ്ച്ച്വർ ചെയ്യുക</translation>
+        <translation>നാല് ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../main.py" line="148"/>
         <source>Triangular Waveform</source>
-        <translation>ട്രയാൻഗുലർ വെയ്വ്വ്ഫോം</translation>
+        <translation>ട്രയാൻഗുലർ വേവ്ഫോം</translation>
     </message>
     <message>
         <location filename="../main.py" line="149"/>
         <source>Arbitrary Waveform</source>
-        <translation>ആർബിട്ടറി വെയ്വ്വ്ഫോം</translation>
+        <translation>ഏതുതരത്തിലുമുള്ള വേവ്ഫോം</translation>
     </message>
     <message>
         <location filename="../main.py" line="150"/>
         <source>Waveform Table</source>
-        <translation>വെയ്വ്വ്ഫോം ടെബിൾ</translation>
+        <translation>വേവ്ഫോം പട്ടിക</translation>
     </message>
     <message>
         <location filename="../main.py" line="151"/>
         <source>RC Transient</source>
-        <translation>RC ട്രാൻസിയന്റ്</translation>
+        <translation>RC ട്രാൻഷിയൻറ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="152"/>
         <source>RL Transient</source>
-        <translation>RL ട്രാൻസിയന്റ്</translation>
+        <translation>RL ട്രാൻഷിയൻറ് </translation>
     </message>
     <message>
         <location filename="../main.py" line="153"/>
@@ -1924,17 +1960,17 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="154"/>
         <source>Clipping with Diode</source>
-        <translation>ഡയോട് കൊണ്ട് ക്ലിപ്പിങ്ങ്</translation>
+        <translation>ഡയോഡ്  ക്ലിപ്പിങ്ങ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="155"/>
         <source>Clamping with Diode</source>
-        <translation>ഡയോട് കൊണ്ട് ക്ലാമ്പിങ്ങ്</translation>
+        <translation>ഡയോഡ്  ക്ലാമ്പിങ്ങ്</translation>
     </message>
     <message>
         <location filename="../main.py" line="157"/>
         <source>NPN Ib vs IC plot</source>
-        <translation>എൻ പി എൻ Ib vs IC പ്ലോട്ട്</translation>
+        <translation>NPN Ib-IC പ്ലോട്ട്</translation>
     </message>
     <message>
         <location filename="../main.py" line="158"/>
@@ -1949,7 +1985,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="297"/>
         <source>Enable PopUp Help Window</source>
-        <translation>പോപ്പ് അപ്പ് വിൻഡോ പ്രവർത്തന സജ്ജമാക്കുക</translation>
+        <translation>സഹായജാലകം തുറക്കുക</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="723"/>
@@ -1979,12 +2015,12 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="25"/>
         <source>Device</source>
-        <translation type="unfinished">ഡിവൈസ്</translation>
+        <translation type="unfinished">ഉപകരണം</translation>
     </message>
     <message>
         <location filename="../main.py" line="38"/>
         <source>Reconnect</source>
-        <translation type="unfinished">റീക്കണക്റ്റ്</translation>
+        <translation type="unfinished">വീണ്ടും ഘടിപ്പിക്കുക </translation>
     </message>
     <message>
         <location filename="../main.py" line="39"/>
@@ -2014,7 +2050,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="28"/>
         <source>Electrical</source>
-        <translation type="unfinished">ഇലെക്ട്രിക്കൽ</translation>
+        <translation type="unfinished">ഇലക്ട്രിക്കൽ</translation>
     </message>
     <message>
         <location filename="../main.py" line="29"/>
@@ -2044,47 +2080,47 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
         <source>MainWindow</source>
-        <translation>മെയിൻ വിൻഡോ</translation>
+        <translation>പ്രധാനജാലകം</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="42"/>
         <source>CHOOSE Y PARAMETER</source>
-        <translation>Y പരാമീറ്റർ തിരഞ്ഞെടുക്കുക</translation>
+        <translation>ഘടകം തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="49"/>
         <source>Click the Button above to select X axis parameter</source>
-        <translation>X ആക്സിക്സ് പരാമീട്ടർ തിരഞ്ഞെടുക്കുന്നതിനായി മുകളിലെ ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക</translation>
+        <translation>X-ആക്സിസ് ഘടകം തിരഞ്ഞെടുക്കുന്നതിനായി മുകളിലെ ബട്ടൺ അമർത്തുക</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="56"/>
         <source>Click the Button above to select Y axis parameter</source>
-        <translation>Y ആക്സിക്സ് പരാമീട്ടർ തിരഞ്ഞെടുക്കുന്നതിനായി മുകളിലെ ബട്ടണിൽ ക്ലിക്ക് ചെയ്യുക</translation>
+        <translation>Y-ആക്സിസ് ഘടകം തെരഞ്ഞെടുക്കുന്നതിനായി മുകളിലെ ബട്ടൺ അമർത്തുക</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="69"/>
         <source>CHOOSE X PARAMETER</source>
-        <translation>X പരാമീറ്റർ തിരഞ്ഞെടുക്കുക</translation>
+        <translation>X-ഘടകം തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="107"/>
         <source>Datapoints</source>
-        <translation>ഡാറ്റാ പോയിന്റ്സ്</translation>
+        <translation>ഡാറ്റാ പോയന്റുകൾ</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="154"/>
         <source> milliSeconds</source>
-        <translation> മില്ലിസെക്കണ്ടുകൾ</translation>
+        <translation> മില്ലിസെക്കൻഡുകൾ </translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="127"/>
         <source>LOG DATA</source>
-        <translation>ലോഗ് ഡാറ്റാ</translation>
+        <translation>ലോഗ് ഡാറ്റ</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="134"/>
         <source>Time Interval</source>
-        <translation>ടൈം ഇൻന്റർവെൽ</translation>
+        <translation>സമയപരിധി</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="167"/>
@@ -2144,7 +2180,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="81"/>
         <source>RECORD</source>
-        <translation>റെക്കോഡ്</translation>
+        <translation>രേഖപ്പെടുത്തുക</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="91"/>
@@ -2154,7 +2190,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="111"/>
         <source>Averaging Samples</source>
-        <translation>സാമ്പിളുകൾ ശരാശരിപ്പെടുത്തുക</translation>
+        <translation>സാമ്പിളുകളുടെ  ശരാശരിയെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="118"/>
@@ -2174,7 +2210,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="204"/>
         <source>Spline</source>
-        <translation>സപ്ലൈൻ</translation>
+        <translation>സ്പ്ലൈൻ </translation>
     </message>
 </context>
 <context>

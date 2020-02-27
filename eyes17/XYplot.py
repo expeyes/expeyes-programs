@@ -55,7 +55,7 @@ class Expt(QWidget):
 		ax = self.pwin.getAxis('bottom')
 		ax.setLabel(self.tr('Voltage  A2'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel(self.tr('Voltage (A2)'))
+		ax.setLabel(self.tr('Voltage (A1)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.VMIN, self.VMAX)
@@ -69,12 +69,10 @@ class Expt(QWidget):
 		right.setSpacing(self.RPGAP)				
 
 		H = QHBoxLayout()
-		self.SaveButton = QPushButton(self.tr("Save Data to"))
+		self.SaveButton = QPushButton(self.tr("Save Data"))
 		self.SaveButton.setMaximumWidth(90)
 		self.SaveButton.clicked.connect(self.save_data)		
 		H.addWidget(self.SaveButton)
-		self.Filename = utils.lineEdit(150, self.tr('XYplot.txt'), 20, None )
-		H.addWidget(self.Filename)
 		right.addLayout(H)
 
 		H = QHBoxLayout()
@@ -114,6 +112,11 @@ class Expt(QWidget):
 		self.Ymax = QLabel(text='')
 		H.addWidget(self.Ymax)
 		right.addLayout(H)
+		
+		H = QHBoxLayout()
+		self.Yinter = QLabel(text='')
+		H.addWidget(self.Yinter)
+		right.addLayout(H)
 
 
 		#------------------------end of right panel ----------------
@@ -143,13 +146,24 @@ class Expt(QWidget):
 		else:		
 			ax.setLabel(self.tr('Voltage (A2)'))
 				
+
+	def find_yint(self,x,y):    #y-intercept
+		yint = 0
+		for k in range(1,len(x)):
+			if y[k] > 0 and x[k] > 0 and x[k-1] < 0:    # crossing y-axis
+				return y[k]
+		return 0.0
+	
 	def update(self):
 		try:
 			tvs = self.p.capture2(self.NP, self.TG)
 			self.Data[0] = tvs[3]    # A2
 			if self.Diffmode.isChecked() == False:
 				self.Data[1] = tvs[1]   # A1
+				yint = self.find_yint(self.Data[1], self.Data[0])  
+				self.Yinter.setText(unicode(self.tr('Y-intercept = %5.3f V')) %yint)
 			else:
+				self.Yinter.setText('')
 				self.Data[1] = tvs[1] - tvs[3]  # A1-A2
 			for ch in range(self.MAXCHAN):
 				self.traceWidget[ch].setData(self.Data[0], self.Data[1])		
@@ -174,7 +188,10 @@ class Expt(QWidget):
 			self.Ymax.setText('')
 	
 	def save_data(self):
-		fn = self.Filename.text()
+		self.timer.stop()
+		fn = QFileDialog.getSaveFileName()
+		if fn == '':
+			return
 		dat = []
 		for ch in range(2):
 				dat.append( [self.Data[0], self.Data[1] ])

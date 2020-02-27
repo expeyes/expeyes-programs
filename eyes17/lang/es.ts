@@ -139,7 +139,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="96"/>
+        <location filename="../XYplot.py" line="72"/>
         <source>Save Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -179,12 +179,12 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="183"/>
+        <location filename="../XYplot.py" line="200"/>
         <source>Traces saved to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="224"/>
+        <location filename="../XYplot.py" line="241"/>
         <source>Error. Try Device-&gt;Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
@@ -224,7 +224,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source> Hz</source>
         <translation type="unfinished"></translation>
     </message>
@@ -329,7 +329,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="127"/>
+        <location filename="../XYplot.py" line="130"/>
         <source>messages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -359,47 +359,32 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="61"/>
-        <source>From</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="66"/>
-        <source>to</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../XYplot.py" line="88"/>
+        <location filename="../XYplot.py" line="86"/>
         <source>Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="93"/>
-        <source>Number of Steps =</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../filterCircuit.py" line="167"/>
+        <location filename="../filterCircuit.py" line="173"/>
         <source>Frequency = </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="191"/>
+        <location filename="../filterCircuit.py" line="197"/>
         <source>Fit failed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="214"/>
+        <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="217"/>
+        <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="259"/>
+        <location filename="../filterCircuit.py" line="265"/>
         <source>user Stopped</source>
         <translation type="unfinished"></translation>
     </message>
@@ -564,7 +549,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="276"/>
+        <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
         <translation type="unfinished"></translation>
     </message>
@@ -589,7 +574,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="100"/>
+        <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
         <translation type="unfinished"></translation>
     </message>
@@ -617,7 +602,7 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
-        <source>R from A1 to Ground</source>
+        <source>R to Ground</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -627,41 +612,41 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
-        <source>Sweep PV1 from</source>
+        <source>Starting PV1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="112"/>
+        <location filename="../plotIV.py" line="117"/>
         <source>Change Voltage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="119"/>
+        <location filename="../plotIV.py" line="124"/>
         <source>Voltage = %5.3f</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="124"/>
+        <location filename="../plotIV.py" line="129"/>
         <source>Current = 0 mA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="156"/>
+        <location filename="../plotIV.py" line="161"/>
         <source>Voltage = %5.3f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="158"/>
+        <location filename="../plotIV.py" line="163"/>
         <source>Current = %5.3f mA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="171"/>
+        <location filename="../plotIV.py" line="176"/>
         <source>Slope of the Line (dV/dI) = </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="223"/>
+        <location filename="../plotIV.py" line="228"/>
         <source>Err</source>
         <translation type="unfinished"></translation>
     </message>
@@ -816,12 +801,12 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="194"/>
+        <location filename="../XYplot.py" line="211"/>
         <source>AWG set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="81"/>
+        <location filename="../XYplot.py" line="79"/>
         <source>WG</source>
         <translation type="unfinished"></translation>
     </message>
@@ -936,7 +921,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="72"/>
+        <location filename="../XYplot2.py" line="97"/>
         <source>Save Data to</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1149,22 +1134,12 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="77"/>
-        <source>in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="82"/>
-        <source>seconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="177"/>
+        <location filename="../soundFreqResp.py" line="183"/>
         <source>Frequency = %5.0f Hz V = %5.3f</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="196"/>
+        <location filename="../soundFreqResp.py" line="202"/>
         <source>Completed in </source>
         <translation type="unfinished"></translation>
     </message>
@@ -1174,22 +1149,22 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="223"/>
+        <location filename="../soundFreqResp.py" line="229"/>
         <source>Invalid Time interval</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source>Increase time interval to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source> or Reduce frequency span</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="248"/>
+        <location filename="../soundFreqResp.py" line="254"/>
         <source> mS at each step</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1269,7 +1244,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="144"/>
+        <location filename="../XYplot.py" line="147"/>
         <source>Voltage (A2)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1284,38 +1259,78 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="76"/>
+        <location filename="../XYplot2.py" line="101"/>
         <source>XYplot.txt</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="94"/>
+        <location filename="../XYplot.py" line="92"/>
         <source>Voltage range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="99"/>
+        <location filename="../XYplot.py" line="97"/>
         <source>Volts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="104"/>
+        <location filename="../XYplot.py" line="102"/>
         <source>show (A1-A2) Vs A2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="142"/>
+        <location filename="../XYplot.py" line="145"/>
         <source>Voltage (A1-A2)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="170"/>
+        <location filename="../XYplot.py" line="184"/>
         <source>Xmax = %5.3f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot.py" line="171"/>
+        <location filename="../XYplot.py" line="185"/>
         <source>Ymax = %5.3f V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="58"/>
+        <source>Voltage (A1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="164"/>
+        <source>Y-intercept = %5.3f V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="86"/>
+        <source>Ending PV1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="61"/>
+        <source>Starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="72"/>
+        <source>Ending</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="99"/>
+        <source># of Steps =</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="88"/>
+        <source>Sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="83"/>
+        <source>Total time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

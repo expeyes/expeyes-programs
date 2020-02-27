@@ -74,13 +74,19 @@ class Expt(QWidget):
 		'''
 
 		H = QHBoxLayout()
-		l = QLabel(text=self.tr('From'))
-		l.setMaximumWidth(35)
+		l = QLabel(text=self.tr('Starting'))
+		l.setMaximumWidth(70)
 		H.addWidget(l)
 		self.AWGstart = utils.lineEdit(60, self.FMIN, 6, None)
 		H.addWidget(self.AWGstart)
-		l = QLabel(text=self.tr('to'))
+		l = QLabel(text=self.tr('Hz'))
 		l.setMaximumWidth(20)
+		H.addWidget(l)
+		right.addLayout(H)
+
+		H = QHBoxLayout()
+		l = QLabel(text=self.tr('Ending'))
+		l.setMaximumWidth(70)
 		H.addWidget(l)
 		self.AWGstop = utils.lineEdit(60, self.FMAX, 6, None)
 		H.addWidget(self.AWGstop)
@@ -90,7 +96,7 @@ class Expt(QWidget):
 		right.addLayout(H)
 		 
 		H = QHBoxLayout()
-		l = QLabel(text=self.tr('Number of Steps ='))
+		l = QLabel(text=self.tr('# of Steps ='))
 		l.setMaximumWidth(120)
 		H.addWidget(l)
 		self.NSTEPtext = utils.lineEdit(60, self.NSTEP, 6, None)
