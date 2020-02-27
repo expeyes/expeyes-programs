@@ -9,7 +9,7 @@ QT5HTML = qt5HTML/index.html
 PREBUILD = exp/_static/.keeper
 RSTFILES = $(shell ls exp/*.rst)
 THIS_LANG = $(shell basename $$(realpath ..))
-SVGFILES = $(shell ls exp/schematics/$(THIS_LANG)/*.svg)
+SVGFILES = $(shell ls exp/schematics/$(THIS_LANG)/*/svg 2>/dev/null)
 
 SOURCES = $(shell ls exp/*.rst) exp/conf.py exp/Makefile \
   exp/cover/coverpage.pdf exp/cover/preface.pdf
@@ -27,7 +27,7 @@ clean:
 	rm -rf exp/_build/doctrees
 
 distclean:
-	rm -rf qt5HTML exp/_build exp/_static
+	rm -rf qt5HTML/* exp/_build exp/_static
 
 $(PDF): $(SOURCES)
 	make -C exp latexpdf

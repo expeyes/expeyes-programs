@@ -2095,11 +2095,6 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="41"/>
-        <source>Choose Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../main.py" line="26"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
@@ -2145,13 +2140,8 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="39"/>
-        <source>LightBackGround next time</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="40"/>
-        <source>DarkBackGround next time</source>
+        <location filename="../main.py" line="41"/>
+        <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2167,6 +2157,16 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="48"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="39"/>
+        <source>LightBackGround next time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="40"/>
+        <source>DarkBackGround next time</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

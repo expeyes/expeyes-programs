@@ -27,7 +27,7 @@ clean:
 	rm -rf exp/_build/doctrees
 
 distclean:
-	rm -rf qt5HTML exp/_build exp/_static
+	rm -rf qt5HTML/* exp/_build exp/_static
 
 $(PDF): $(SOURCES)
 	make -C exp latexpdf

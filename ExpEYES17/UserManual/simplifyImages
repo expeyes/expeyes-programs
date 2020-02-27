@@ -1,0 +1,46 @@
+#! /bin/sh
+
+destdir=$1
+shift
+languages=$@
+
+echo "Eliminate redundancies in destdir = $destdir, for languages = $languages"
+for l in $languages; do
+    echo "language = $l"
+    for f in $destdir/$l/_images/*.*; do
+	b=$(basename $f)
+	if [ -f $destdir/_images/$b ]; then
+	    if cmp $f $destdir/_images/$b >/dev/null 2>&1; then
+	       # we have two files with the same content
+	       rm $f
+	       ln -s ../../_images/$b $destdir/$l/_images
+	   else
+	       echo -n '.'
+	    fi
+	else
+	    mv $f $destdir/_images/$b
+	    ln -s ../../_images/$b $destdir/$l/_images
+	fi
+    done
+    for f in $destdir/$l/_images/math/*.*; do
+	b=$(basename $f)
+	if [ -f $destdir/_images/math/$b ]; then
+	    if cmp $f $destdir/_images/math/$b >/dev/null 2>&1; then
+	       # we have two files with the same content
+	       rm $f
+	       ln -s ../../../_images/math/$b $destdir/$l/_images/math
+	       echo -n '-'
+	   else
+	       echo -n '.'
+	    fi
+	else
+	    mv $f $destdir/_images/math/$b
+	    ln -s ../../../_images/math/$b $destdir/$l/_images/math
+	    echo -n '+'
+	fi
+    done
+    echo
+    echo "$l [end]"
+done
+echo "simplification done."
+
