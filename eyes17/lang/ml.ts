@@ -193,7 +193,7 @@
     <message>
         <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
-        <translation>ഈ പ്രോഗ്രാം SQ1-നെ കൂടുതൽ വ്യക്തമായ മോഡിൽ സെറ്റ് ചെയ്യുന്നതാണ്. അപ്രാപ്ത്യമാക്കുന്നതാണ് ഫ്രീക്വൻസി 0.1 Hz തൊട്ട് 50HZ വരെ മാറ്റാവുന്നതാണ്</translation>
+        <translation>ഈ പ്രോഗ്രാം WG റദ്ദ് ചെയ്തുകൊണ്ട്  SQ1നെ 0.1Hz മുതൽ 50Hz വരെ സൂക്ഷ്മമായി ഫ്രീക്വൻസി  മാറ്റാവുന്ന രീതിയിൽ സെറ്റ് ചെയ്യും. </translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="84"/>
@@ -343,12 +343,12 @@
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>From</source>
-        <translation>മുതൽ</translation>
+        <translation type="obsolete">മുതൽ</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="66"/>
         <source>to</source>
-        <translation>വരെ</translation>
+        <translation type="obsolete">വരെ</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="86"/>
@@ -358,30 +358,30 @@
     <message>
         <location filename="../filterCircuit.py" line="93"/>
         <source>Number of Steps =</source>
-        <translation>ഘട്ടങ്ങളുടെ എണ്ണം =</translation>
+        <translation type="obsolete">ഘട്ടങ്ങളുടെ എണ്ണം =</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="167"/>
+        <location filename="../filterCircuit.py" line="173"/>
         <source>Frequency = </source>
         <translation>ഫീക്വൻസി = </translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="191"/>
+        <location filename="../filterCircuit.py" line="197"/>
         <source>Fit failed</source>
         <translation>ഫിറ്റ് പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="214"/>
+        <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
         <translation>പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="217"/>
+        <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
         <translation>പ്രാപല്യമില്ലാത ഫ്രീക്വൻസി ലിമിറ്റുകൾ</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="259"/>
+        <location filename="../filterCircuit.py" line="265"/>
         <source>user Stopped</source>
         <translation>ഉപയോക്താവ് നിർത്തിയിരിക്കുന്നു</translation>
     </message>
@@ -418,22 +418,22 @@
     <message>
         <location filename="../induction.py" line="130"/>
         <source>Noise = </source>
-        <translation>അനാവശ്യമായ ശബ്ദം = </translation>
+        <translation>ഇലക്ട്രിക്കൽ നോയ്‌സ്  = </translation>
     </message>
     <message>
         <location filename="../induction.py" line="130"/>
         <source> V. Drop the Magnet until a trace is captured</source>
-        <translation> V ട്രെയ്സുകൾ പകർത്തുന്നത് വരെ കാന്തം താഴേക്ക് ഇടുക</translation>
+        <translation type="unfinished">കാന്തം  കോയിലിലൂടെ താഴേക്ക് ഇടുക</translation>
     </message>
     <message>
         <location filename="../induction.py" line="145"/>
         <source>Induced voltage </source>
-        <translation>ഇൻഡ്യൂസ്ട് വോൾട്ടേജ് </translation>
+        <translation>പ്രേരിതമായ വോൾട്ടേജ് </translation>
     </message>
     <message>
         <location filename="../induction.py" line="148"/>
         <source>Detected voltage above threshold. Peak voltages: </source>
-        <translation>ത്രെഷ്ഓൾഡ് പീക്ക് വോൾട്ടേജുകൾക്കു മുകളിലുള്ള വോൾട്ടേജുകൾ തിരിച്ചറിഞ്ഞിരിക്കുന്നു: </translation>
+        <translation>പ്രതീക്ഷിച്ച വോൾടേജ് സിഗ്നൽ ലഭിച്ചിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../logger.py" line="55"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../pt100.py" line="132"/>
         <source>Total Duration</source>
-        <translation>പൂർണമായ സമയക്രമം</translation>
+        <translation>മൊത്തം സമയം</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="148"/>
@@ -453,7 +453,7 @@
     <message>
         <location filename="../pt100.py" line="143"/>
         <source>Measure every</source>
-        <translation>എല്ലാം അളക്കുക</translation>
+        <translation>ഒരു അളവിന്</translation>
     </message>
     <message>
         <location filename="../lightsensorlogger.py" line="144"/>
@@ -546,7 +546,7 @@
         <translation>പ്രാപല്യത്തിലില്ലാത്ത സമയക്രമം അഥവാ റീഡികൾക്കു ഇടയിലുള്ള സമയം (&gt; 10 mSec)</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="276"/>
+        <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
         <translation>സെയവ് ചെയ്യാനായി ട്രെയ്സുകൾ ലഭ്യമല്ല</translation>
     </message>
@@ -578,7 +578,7 @@
     <message>
         <location filename="../pendulumVelocity.py" line="167"/>
         <source>Time Vs Angular velocity plot completed</source>
-        <translation>സമയം കോണീയ പ്രവേഗം പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
+        <translation>പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="48"/>
@@ -593,7 +593,7 @@
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R to Ground</source>
-        <translation type="unfinished">A1ലെ റെസിസ്റ്റൻസ് R</translation>
+        <translation type="unfinished">R(ഗ്രൗണ്ടിലേക്ക് )</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="102"/>
@@ -1013,7 +1013,7 @@
     <message>
         <location filename="../soundVelocity.py" line="98"/>
         <source>Enable Measurements</source>
-        <translation>അളക്കൽ പ്രവർത്തനക്ഷമമാക്കുക</translation>
+        <translation>അളവ് ആരംഭിക്കുക</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="171"/>
@@ -1038,10 +1038,10 @@
     <message>
         <location filename="../soundFreqResp.py" line="82"/>
         <source>seconds</source>
-        <translation>സെക്കണ്ട്സ്</translation>
+        <translation type="obsolete">സെക്കണ്ട്സ്</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="177"/>
+        <location filename="../soundFreqResp.py" line="183"/>
         <source>Frequency = %5.0f Hz V = %5.3f</source>
         <translation>ഫീക്വൻസി = %5.0f Hz V = %5.3f</translation>
     </message>
@@ -1051,7 +1051,7 @@
         <translation> സെക്കണ്ട്സ്</translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="223"/>
+        <location filename="../soundFreqResp.py" line="229"/>
         <source>Invalid Time interval</source>
         <translation>സമയ ഇടവേള പ്രാപല്യത്തിലില്ല</translation>
     </message>
@@ -1263,30 +1263,26 @@ For Driven Pendulum Expt.</source>
 only after Enable/Disable controls.
 shows the actual frequency set.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+ഫ്രീക്വൻസി മാറ്റിയാൽ അളക്കുന്നത് നിർത്തി വീണ്ടും തുടങ്ങണം. </translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="77"/>
-        <source>in</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../soundFreqResp.py" line="196"/>
+        <location filename="../soundFreqResp.py" line="202"/>
         <source>Completed in </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source>Increase time interval to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="236"/>
+        <location filename="../soundFreqResp.py" line="242"/>
         <source> or Reduce frequency span</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundFreqResp.py" line="248"/>
+        <location filename="../soundFreqResp.py" line="254"/>
         <source> mS at each step</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1324,6 +1320,31 @@ shows the actual frequency set.
         <location filename="../plotIV.py" line="86"/>
         <source>Ending PV1</source>
         <translation type="unfinished">PV1 അവസാനം</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="61"/>
+        <source>Starting</source>
+        <translation type="unfinished">തുടക്കം</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="72"/>
+        <source>Ending</source>
+        <translation type="unfinished">അവസാനം</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="99"/>
+        <source># of Steps =</source>
+        <translation type="unfinished">സ്റ്റെപ്പുകൾ </translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="88"/>
+        <source>Sec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="83"/>
+        <source>Total time</source>
+        <translation type="unfinished">സമയം </translation>
     </message>
 </context>
 <context>
@@ -1441,7 +1462,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
         <source> Hz</source>
-        <translation> Hz</translation>
+        <translation>Hz</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="841"/>
@@ -1471,7 +1492,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="806"/>
         <source>Current Source Voltage:</source>
-        <translation type="obsolete">കരന്റ് സോർസിലെ വോൾട്ടേജ്:</translation>
+        <translation type="obsolete">കറന്റ് സോഴ്സ് വോൾട്ടേജ്:</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="742"/>

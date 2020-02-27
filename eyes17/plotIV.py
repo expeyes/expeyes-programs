@@ -66,7 +66,7 @@ class Expt(QWidget):
 		self.Rval = utils.lineEdit(50, self.Res, 10, None)
 		H.addWidget(self.Rval)
 		l = QLabel(self.tr("Ohm"))
-		l.setMaximumWidth(20)
+		l.setMaximumWidth(30)
 		H.addWidget(l)
 		right.addLayout(H)
 
@@ -78,7 +78,7 @@ class Expt(QWidget):
 		self.PVmin = utils.lineEdit(40, self.VMIN, 10, None)
 		H.addWidget(self.PVmin)
 		l = QLabel(self.tr("V"))
-		l.setMaximumWidth(15)
+		l.setMaximumWidth(30)
 		H.addWidget(l)
 		right.addLayout(H)
 
@@ -89,7 +89,7 @@ class Expt(QWidget):
 		self.PVmax = utils.lineEdit(40, self.VMAX, 10, None)
 		H.addWidget(self.PVmax)
 		l = QLabel(self.tr("V"))
-		l.setMaximumWidth(15)
+		l.setMaximumWidth(30)
 		H.addWidget(l)
 		right.addLayout(H)
 		
