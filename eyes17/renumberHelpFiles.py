@@ -5,6 +5,7 @@ import os, re
 
 paths=glob('../ExpEYES17/UserManual/??')
 
+commands=[]
 for p in paths:
     p=os.path.join(p,'rst', 'exp')
     with open("renumbering.txt") as rn:
@@ -14,5 +15,8 @@ for p in paths:
             if m:
                 f=m.group(1)+".rst"
                 g=m.group(2)+".rst"
-                print (f"mv {os.path.join(p,f)} {os.path.join(p,g)}")
+                commands.insert(0, f"git mv {os.path.join(p,f)} {os.path.join(p,g)}")
+
+for l in commands:
+    print(l)
                 
