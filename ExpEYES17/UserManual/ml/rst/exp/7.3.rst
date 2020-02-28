@@ -1,38 +1,6 @@
-..    6.7
+അഡ്വാൻസ്ഡ് ഡാറ്റ ലോഗർ 
+----------------------
+ന്റെ വിവിധടെർമിനലുകളിലെ വോൾട്ടേജുകൾ നിശ്ചിത ഇടവേളകളിൽ രേഖപ്പെടുത്താനുള്ള പ്രോഗ്രാമാണ് ടാറ്റ ലോഗർ. എത്ര തവണ അളവുകൾ രേഖപ്പെടുത്തണം, അടുത്തടുത്ത രണ്ടളവുകളുടെ ഇടക്കുള്ള സമയം എന്നീ  കാര്യങ്ങൾ നമുക്ക് സെറ്റ് ചെയ്യാവുന്നതാണ്.
+വളരെയധികം ബഹുമുഖമായ സൗകര്യങ്ങലുള്ള ഒരു ഡാറ്റ ലോഗറാണിത്. X-ആക്സിസിലും Y-ആക്സിസിലും നമുക്ക് വേണ്ട ഇൻപുട്ടുകൾ തെരഞ്ഞെടുക്കാൻ പറ്റും.
 
-Adanced Data Logger
-===================
 
-Introduction
-------------
-
-The simple data logger you are already familiar with records any
-specified input voltage with respect to time, however, it is often
-desirable to vary one output parameter, and study the effect on some
-other aspect of the experiment.
-
-In the advanced data logger, both X and Y can be chosen from the following list
-
-- Inputs
-  
-   - Time
-   - Voltmeter: A1,A2,A3,IN1,SEN,AN8,CCS
-   - Capacitance
-   - Resistance
-   - Oscilloscope
-     
-      - Extracted frequency,phase,amplitude or offset using a sine fit
-      - Difference in phase between A1(Any analog input) and A2. Also, ratio of amplitudes.
-   - Frequency on IN2
-   - Any connected I2C sensor (Magnetometer, accelerometer, temperature, gyro etc)
-     
-       - Select 1 parameter from any of the detected sensors added automatically to the list
-   - SR04 distance sensor
-- Outputs (Start and End must be specified)
-  
-    - WG Sine wave generator frequency
-    - SQ1, SQ2 square wave generator
-    - PV1, PV2 voltage outputs
-
-`Online Examples
-<https://csparkresearch.in/lightblog/2020-02-03-advanced-logger.html>`_

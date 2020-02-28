@@ -2,10 +2,10 @@
 ---------------------
 AND , OR തുടങ്ങിയ ലോജിക്കൽ ഓപ്പറേഷൻസ് നടത്താൻ കഴിയുന്നതരം സർക്യൂട്ടുകളാണ് ലോജിക് ഗേറ്റുകൾ. ഡയോഡുകൾ ഉപയൊഗിച്ച്  ഇവയെ നിർമിക്കാം പക്ഷെ കൃത്യമായ പ്രവർത്തനത്തിന് ലോജിക് ഗേറ്റ് IC കളാണ് മെച്ചം.  ഡയോഡ്  ഉപയോഗിച്ചുള്ള OR ഗേറ്റിന്റെയും   IC7408  ഉപയോഗിച്ചുള്ള  AND ഗേറ്റിന്റെയും സർക്യൂട്ടുകൾ താഴെക്കാണിച്ചിരിക്കുന്നു.
 
-.. image:: schematics/diode-or-gate.svg
+.. image:: schematics/gate-or-diode.svg
 	   :width: 300px
 
-.. image:: schematics/logic-gates.svg
+.. image:: schematics/gate-and-ic.svg
 	   :width: 300px
 
 - ഏതെങ്കിലും ഒരു സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക
@@ -18,11 +18,11 @@ AND , OR തുടങ്ങിയ ലോജിക്കൽ ഓപ്പറേഷ
 
 രണ്ടു ഡയോഡുകൾ ഉപയോഗിച്ച് നിർമിച്ച OR ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
 
-.. image:: pics/diode-or-gate-trace.png
+.. image:: pics/gate-or-diode-screen.png
 	   :width: 400px
 
 IC7408  ഉപയോഗിച്ച് നിർമിച്ച AND  ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
 
-.. image:: pics/ic-and-gate-trace.png
+.. image:: pics/gate-and-ic-screen.png
 	   :width: 400px
 

@@ -1,36 +1,18 @@
-UNTRANSLATED
-.. 4.5
+RLC ട്രാൻഷിയൻറ് റെസ്പോൺസ് 
+-------------------------
+സർക്യൂട്ടിൽ ഇൻഡക്റ്ററോ കപ്പാസിറ്ററോ മാത്രം ഉണ്ടാവുമ്പോൾ വോൾട്ടേജ് എക്സ്പോണെൻഷ്യൽ ആയാണ്  മാറുന്നത് എന്ന് കണ്ടുകഴിഞ്ഞു. എന്നാൽ ഇവ രണ്ടും ഒരുമിച്ചു വരുമ്പോൾ വോൾട്ടേജ് ഓസ്‌സിലേറ്റ് ചെയ്യാനുള്ള സാധ്യതയുമുണ്ട്. റെസിസ്റ്റൻസും കപ്പാസിറ്റൻസും കുറവും ഇൻഡക്റ്റൻസ് കൂടുതലും ഉള്ള സർക്യൂട്ടുകളാണ് ഓസ്‌സിലേറ്റ് ചെയ്യുക., ഗണിതഭാഷയിൽ ഡാംപിങ് ഫാക്ടർ   :math:`\frac{R}{2}\sqrt{C/L}` ഒന്നിൽ കുറവുള്ളവ.
+ഓസ്‌സിലേറ്റ് ചെയ്യുന്ന ആവൃത്തി  :math:`f_0 = 1/(2\pi\sqrt{LC})` ആയിരിക്കും .
 
-RC Integration & Differentiation
-================================
 
-**Objective**
-
-RC circuits can integrate or differentiate a voltage waveform with
-respect to time. A square wave is integrated to get a triangular wave
-and differentiated to get spikes at the transitions.\begin_inset
-Separator latexpar\end_inset
-
-.. image:: schematics/RCintegration.svg
+.. image:: schematics/RLCtransient.svg
 	   :width: 300px
-.. image:: schematics/RCsteadystate.svg
-	   :width: 300px
+	   
+-  കോയിൽ OD1ൽ നിന്നും A1ലേക്ക് ഘടിപ്പിക്കുക.
+-  ഒരു 0.1uF കപ്പാസിറ്റർ  A1ൽ നിന്ന്  ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക.
+- A2വിനെ OD1ലേക്ക് ഘടിപ്പിക്കുക 
+-  സ്റ്റെപ് വോൾട്ടേജ് നൽകാനുള്ള ബട്ടൺ അമർത്തുക 
+- ഡാറ്റ വിശകലനം ചെയ്യുക 
 
-**Procedure**
+.. image:: pics/RLCtransient-screen.png
+	   :width: 500px
 
--  Select WG triangular wave option
--  Set WG to 500Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` and :math:`C = 1~\mu F`
--  Adjust the horizontal scale to view more than 4 cycles.
--  Repeat the same for RC differentiator, at :math:`50~Hz`.
-
-**Discussion**
-
-Integration of a triangular waveform gives parabolic shape and
-differentiation gives a square shape. The differentiation can only be
-shown at lower frequency. Try these for other wave shapes, for example a
-squarewave. Integrating a square wave should give a triangular wave.
-
-.. image:: pics/RCintegration.png
-	   :width: 300px
-.. image:: pics/RCdifferentiation.png
-	   :width: 300px

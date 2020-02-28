@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Distance Measurement, by ultrasound echo &#8212; eyes17 1.0 documentation</title>
+    <title>ദൂരം അളക്കുന്ന സെൻസർ &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Temperature measurement using PT100" href="7.1.html" />
-    <link rel="prev" title="Resonance of a driven pendulum" href="6.3.html" /> 
+    <link rel="next" title="താപനില PT100 സെൻസർ ഉപയോഗിച്ച്" href="7.1.html" />
+    <link rel="prev" title="പെൻഡുലത്തിന്റെ റെസോനൻസ്" href="6.3.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="7.1.html" title="Temperature measurement using PT100"
+          <a href="7.1.html" title="താപനില PT100 സെൻസർ ഉപയോഗിച്ച്"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="6.3.html" title="Resonance of a driven pendulum"
+          <a href="6.3.html" title="പെൻഡുലത്തിന്റെ റെസോനൻസ്"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="6.3.html"
-                        title="previous chapter">Resonance of a driven pendulum</a></p>
+                        title="previous chapter">പെൻഡുലത്തിന്റെ  റെസോനൻസ്</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="7.1.html"
-                        title="next chapter">Temperature measurement using PT100</a></p>
+                        title="next chapter">താപനില PT100 സെൻസർ ഉപയോഗിച്ച്</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,26 +69,15 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>UNTRANSLATED
-.. 6.4</p>
-<div class="section" id="distance-measurement-by-ultrasound-echo">
-<h1>Distance Measurement, by ultrasound echo<a class="headerlink" href="#distance-measurement-by-ultrasound-echo" title="Permalink to this headline">¶</a></h1>
-<p><strong>Objective</strong></p>
-<p>Measure distance by measuring the time taken by <img class="math" src="_images/math/13419c81a695554fc8440c9ec12986cced8a0b4c.png" alt="40~kHz"/> pulse train to
-echo from a hard surface.</p>
-<p><strong>Procedure</strong></p>
+  <div class="section" id="id1">
+<h1>ദൂരം അളക്കുന്ന സെൻസർ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>വളരെയധികം പ്രചാരത്തിലുള്ള ഒരു സെൻസറാണ്  HY-SR04. രണ്ടു 40khz പീസോ ഡിസ്‌ക്കുകളാണ് ഇതിന്റെ പ്രധാനഭാഗം. ട്രാൻസ്മിറ്റർ പീസോ പുറപ്പെടുവിക്കുന്ന ഒരു പൾസ് ഏതെങ്കിലും വസ്തുവിൽ തട്ടി തിരിച്ചുവരികയാണെങ്കിൽ  റസീവർ പീസോ അതിനെ പിടിച്ചെടുത്ത് ഒരു സിഗ്നൽ തരും. ശബ്ദത്തിന്റെ പൾസ് തിരിച്ചുവരാണെടുത്ത സമയത്തിൽ നിന്നും അത് തട്ടിയ വസ്തുവിലേക്കുള്ള ദൂരം കണക്കാക്കാം.</p>
 <a class="reference internal image-reference" href="_images/sr04-dist.svg"><img alt="_images/sr04-dist.svg" src="_images/sr04-dist.svg" width="300px" /></a>
 <ul class="simple">
-<li>Keep a flat surface, like a cardboard sheet, around 10 cm from the
-echo module</li>
-<li>Press START</li>
-<li>Change the distance with time</li>
+<li>ചിത്രത്തിൽ കാണിച്ചവിധം വയറുകൾ ഘടിപ്പിക്കുക</li>
+<li>സെൻസറിനു മുൻപിൽ പരന്ന പ്രതലമുള്ള ഒരു വസ്തു വെക്കുക</li>
+<li>'തുടങ്ങുക' ബട്ടൺ അമർത്തുക</li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>The distance is calculated from the time taken by a burst of sound to
-echo from the surface kept in front of the module. The distance can be
-measred as function of time, enabling to calculate velocity,
-acceleration etc.</p>
 </div>
 
 
@@ -104,10 +93,10 @@ acceleration etc.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="7.1.html" title="Temperature measurement using PT100"
+          <a href="7.1.html" title="താപനില PT100 സെൻസർ ഉപയോഗിച്ച്"
              >next</a> |</li>
         <li class="right" >
-          <a href="6.3.html" title="Resonance of a driven pendulum"
+          <a href="6.3.html" title="പെൻഡുലത്തിന്റെ റെസോനൻസ്"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

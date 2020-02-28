@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Temperature measurement using PT100 &#8212; eyes17 1.0 documentation</title>
+    <title>താപനില PT100 സെൻസർ ഉപയോഗിച്ച് &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data Logger" href="7.2.html" />
-    <link rel="prev" title="Distance Measurement, by ultrasound echo" href="6.4.html" /> 
+    <link rel="next" title="ഡാറ്റ ലോഗർ" href="7.2.html" />
+    <link rel="prev" title="ദൂരം അളക്കുന്ന സെൻസർ" href="6.4.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="7.2.html" title="Data Logger"
+          <a href="7.2.html" title="ഡാറ്റ ലോഗർ"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="6.4.html" title="Distance Measurement, by ultrasound echo"
+          <a href="6.4.html" title="ദൂരം അളക്കുന്ന സെൻസർ"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="6.4.html"
-                        title="previous chapter">Distance Measurement, by ultrasound echo</a></p>
+                        title="previous chapter">ദൂരം അളക്കുന്ന സെൻസർ</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="7.2.html"
-                        title="next chapter">Data Logger</a></p>
+                        title="next chapter">ഡാറ്റ ലോഗർ</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,38 +69,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>UNTRANSLATED
-.. 6.5</p>
-<div class="section" id="temperature-measurement-using-pt100">
-<h1>Temperature measurement using PT100<a class="headerlink" href="#temperature-measurement-using-pt100" title="Permalink to this headline">¶</a></h1>
-<p><strong>Objective</strong></p>
-<p>Record the temperature of a liquid by using a Platinum Resistance
-Thermometer. Resistance of a PT100 element is related to the temperature
-by the equation <img class="math" src="_images/math/fa7c31e0f5de02e1d335ca390907a3c6b583549c.png" alt="R(T) = R_0 (1 + AT + BT^2)"/>, where
-<img class="math" src="_images/math/53a20f2a00696f557838673af1af95b5c27bee90.png" alt="A = 3,9083 \times 10^{−3}"/> and <img class="math" src="_images/math/614f03160a972cd6580c2ba31802bd61e72d1c35.png" alt="B =  − 5,775 \times 10^{−7}"/>.</p>
+  <div class="section" id="pt100">
+<h1>താപനില PT100 സെൻസർ ഉപയോഗിച്ച്<a class="headerlink" href="#pt100" title="Permalink to this headline">¶</a></h1>
+<p>ചില വസ്തുക്കളുടെ വൈദ്യുത പ്രതിരോധം അതിന്റെ താപനിലയുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു. ഈ ബന്ധം ഒരു ബാഹ്യ താപനില അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം.വ്യാവസായിക ആപ്ലിക്കേഷനുകളിലെ ഏറ്റവും സാധാരണമായ, താപനില സെൻസറുകളാണ് RTD (റെസിസ്റ്റൻസ് ടെമ്പറേച്ചർ ഡിറ്റക്ടറുകൾ). അവ നല്ല സ്ഥിരതയും ആവർത്തനക്ഷമതയുമുള്ളവയാണ്. പ്ലാറ്റിനം, നിക്കൽ‌ അല്ലെങ്കിൽ‌ ചെമ്പ്‌ എന്നിവ ഉപയോഗിച്ച് നിർമ്മിച്ച ഒരു വയർ‌ RTD യായി ഉപയോഗിക്കാം. PT100 വ്യാവസായികാടിസ്ഥാനത്തിൽ ഉപയോഗത്തിലുള്ള ഒരു പ്ലാറ്റിനം RTD യാണ്. പൂജ്യം ഡിഗ്രി സെൽഷ്യസിൽ ഇതിന്റെ പ്രതിരോധം 100 ഓം ആണ്. ഇതിന്റെ പ്രതിരോധവും താപനിലയും തമ്മിലുള്ള ബന്ധം
+<img class="math" src="_images/math/fa7c31e0f5de02e1d335ca390907a3c6b583549c.png" alt="R(T) = R_0 (1 + AT + BT^2)"/> എന്നതാണ്.
+<img class="math" src="_images/math/53a20f2a00696f557838673af1af95b5c27bee90.png" alt="A = 3,9083 \times 10^{−3}"/> and <img class="math" src="_images/math/614f03160a972cd6580c2ba31802bd61e72d1c35.png" alt="B =  − 5,775 \times 10^{−7}"/>. PT100 ഉപയോഗിച്ച്  തണുത്തുകൊണ്ടിരിക്കുന്ന വെള്ളത്തിന്റെ താപനില സമയത്തിനനുസരിച്ച്  മാറുന്നത്തിന്റെ ഗ്രാഫ് വരക്കുകയാണ് ഈ പരീക്ഷണത്തിന്റെ ഉദ്ദേശം.</p>
 <a class="reference internal image-reference" href="_images/pt100.svg"><img alt="_images/pt100.svg" src="_images/pt100.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/pt100-screen.png"><img alt="_images/pt100-screen.png" src="_images/pt100-screen.png" style="width: 300px;" /></a>
-<p><strong>Procedure</strong></p>
 <ul class="simple">
-<li>Enter the Gain, Offset error and the Current from CCS</li>
-<li>Select the temperature range and time intervals</li>
-<li>Select the required parameters and press START</li>
+<li>PT100നെ CCSൽ നിന്നും ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക.</li>
+<li>A3യെ CCSലേക്ക് ഘടിപ്പിക്കുക</li>
+<li>ഗെയിൻ സെറ്റിങ് റെസിസ്റ്റർ Rg 1000ഓം ഘടിപ്പിക്കുക</li>
+<li>സ്റ്റാർട്ട് ബട്ടൺ അമർത്തുക</li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>Cooling curve of water is shown in figure</p>
-<p>To measure the resistance of the PT100 element, we connect it from the
-CCS to ground and measure the voltage across it. The actual current of
-CCS should be measured using an ammeter or by measuring the voltage frop
-across an known resistor. The input to A3 is amplified 11 times by
-connecting <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> resistor from Rg to Ground.</p>
-<p>The resistance of PT100 is <img class="math" src="_images/math/c869bead85121f53b9909b1c317716d79cc49146.png" alt="1000~\Omega"/> at <img class="math" src="_images/math/d88860a7696731c22c4a53793ac1f4c64a3e0bc6.png" alt="0^\circ C"/>. It changes nearly <img class="math" src="_images/math/ea6f6f13b9f5b09ee6f4887642cd59215a15fc2d.png" alt="0,4~\Omega /^\circ C"/>
-, changing the voltage by <img class="math" src="_images/math/512ccf9984795afbd18794dc027782b1fadb27e9.png" alt="0, 4~mV"/>. The 12 bit ADC output changes
-by 1 LSB for <img class="math" src="_images/math/fede4649a130b0403092403f4cc5b793ba204ceb.png" alt="1,22~mV"/> change in input voltage, hence any temperature
-change less than 3 degrees will not be detected. Use an external
-non-inverting amplifier to increase the resolution. The gain of the
-amplifier should be such that the maximum temperature measured should
-give an output less than 3.3 volts. Change the gain field entry
-accordingly.</p>
+<a class="reference internal image-reference" href="_images/pt100-screen.png"><img alt="_images/pt100-screen.png" src="_images/pt100-screen.png" style="width: 300px;" /></a>
+<p>ഈ പരീക്ഷണത്തിൽ താപനില കൃത്യമായി ലഭിക്കണമെങ്കിൽ താഴെപ്പറയുന്ന ഘടകങ്ങൾ പരിഗണിക്കേണ്ടതുണ്ട്.
+- കറന്റ് സോഴ്സ്  1.1mA യിൽ നിന്നും വ്യത്യാസപ്പെട്ടിരിക്കാം. യാഥാർത്ഥമൂല്യം അളന്ന് GUIൽ നൽകണം.
+- A3യുടെ അകത്തുള്ള ആംപ്ലിഫയറിന്റെ ഗെയിൻ , ഓഫ്സെറ്റ് എന്നിവയും പ്രത്യേകം അളന്ന് GUIൽ രേഖപ്പെടുത്താം.
+- ഉരുകുന്ന ഐസ് പോലെ അറിയാവുന്ന താപനിലയുള്ള എന്തെങ്കിലും ഉപയോഗിച്ച് ഉപകരണത്തിന്റെ സൂക്ഷ്മത ഉറപ്പുവരുത്തണം.</p>
 </div>
 
 
@@ -116,10 +101,10 @@ accordingly.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="7.2.html" title="Data Logger"
+          <a href="7.2.html" title="ഡാറ്റ ലോഗർ"
              >next</a> |</li>
         <li class="right" >
-          <a href="6.4.html" title="Distance Measurement, by ultrasound echo"
+          <a href="6.4.html" title="ദൂരം അളക്കുന്ന സെൻസർ"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

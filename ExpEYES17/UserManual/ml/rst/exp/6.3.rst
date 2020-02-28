@@ -1,35 +1,18 @@
-UNTRANSLATED
-.. 6.3
-
-Resonance of a driven pendulum
-==============================
-
-**Objective**
-
-Demonstrate the resonance of a driven pendulum.
+പെൻഡുലത്തിന്റെ  റെസോനൻസ് 
+----------------------------------------
+ദോലനം ചെയ്യുന്ന എല്ലാ വസ്തുക്കൾക്കും ഒരു സ്വാഭാവിക ആവൃത്തിയുണ്ടായിരിക്കും. അതിനെ ദോലനം ചെയ്യിക്കുന്ന ബലത്തിന്റെ ആവൃത്തി സ്വാഭാവിക ആവൃത്തിക്കു തുല്യമായി വരുമ്പോൾ ദോലനത്തിന്റെ തീവ്രത വളരെയധികം കൂടുന്നു. ഈ പ്രതിഭാസമാണ് റെസോനൻസ് . ഇതിന്റെ ഏറ്റവും ലളിതമായ ഒരുദാഹരണമാണ് പെൻഡുലം. 
 
 .. image:: schematics/driven-pendulum.svg
 	   :width: 300px
-.. image:: pics/resonance-pendulum.jpg
+.. image:: pics/driven-pendulum-photo.jpg
 	   :width: 300px
 
-**Procedure**
+- ഒരു കഷണം കടലാസും രണ്ടു ചെറിയ കാന്തങ്ങളുമുപയോഗിച്ച ചിത്രത്തിൽ കാണിച്ചിരിക്കുന്നതുപോലെ ഒരു പെൻഡുലമുണ്ടാക്കുക.
+- അതിനെ ദോലനം ചെയ്യിക്കാവുന്ന രീതിയിൽ തൂക്കിയിടുക.
+- SQ1നും ഗ്രൗണ്ടിനുമിടയിൽ  ഘടിപ്പിച്ച ഒരു കോയിൽ അല്പം അകലത്തായി വെക്കുക.
+- SQ1 ന്റെ ആവൃത്തി  
 
-Make a pendulum using two button magnets and a piece of paper. Suspend
-it and place the 3000T coil near that, as shown in figure.
+:math:`T = 2\pi\sqrt{l/g}` എന്ന സമവാക്യമുപയോഗിച്ച 4 സെന്റിമീറ്റർ നീളമുള്ള പെൻഡുലത്തിന്റെ ദോലനകാലം 0.4 സെക്കൻഡും ആവൃത്തി 2.5 ഹെർട്സുമാണ്.SQ1ന്റെ ആവൃത്തി അതിനടുത്തെത്തുമ്പോൾ പെൻഡുലം ശക്തമായി ദോലനം ചെയ്യാൻ തുടങ്ങും.
 
--  Connect the coil between SQ1 and ground
--  Calculate the resonant frequency from the length of the pendulum
--  Scan the frequency around the expected resonance frequency
 
-**Discussion**
 
-When SQ1 reaches the resonant frequency of the pendulum, the amplitude
-goes up due to resonance. A 4 cm (from the center of the magnet to the
-axis of oscillation) long pendulum resonated at around :math:`2,5~Hz`, almost
-tallying with its calculated natural frequency. The resonant frequency
-of the pendulum is given by :math:`f = 1/(2\pi\sqrt{g/l})`, where :math:`l` is the
-distance from the center of the magnet to the point of suspension and :math:`g`
-is the acceleration due to gravity.
-
-Repeat the experiment by changing the length of the pendulum.

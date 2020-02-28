@@ -1,33 +1,24 @@
-UNTRANSLATED
-.. 3.12
+NPN ഔട്ട്പുട്ട് ക്യാരക്ടറിസ്റ്റിക് കർവ്
+=================================
+ഒരു സർക്യൂട്ടിലൂടെ ഒഴുകുന്ന ഒരു ചെറിയ കറന്റുപയോഗിച്ച് മറ്റൊരു സർക്യൂട്ടിലെ ഒരു വലിയ കറന്റിനെ നിയന്ത്രിക്കുക എന്നതാണ്  ട്രാൻസിസ്റ്ററിന്റെ പ്രാഥമികമായ പ്രവർത്തനം. ഒരു ട്രാൻസിസ്റ്ററിന് എമിറ്റർ, ബേസ്, കളക്ടർ എന്നീ മൂന്നു ടെർമിനലുകൾ ഉണ്ട്. മൂന്നു ടെർമിനലുകൾ ഉപയോഗിച്ചു രണ്ട് സർക്യൂട്ടുകൾ ഉണ്ടാക്കുമ്പോൾ ഏതെങ്കിലും ഒരു ടെർമിനൽ പൊതുവായി വരും. ഇതിൽ എമിറ്റർ പൊതുവായി എടുക്കുന്ന രീതിയെ കോമൺ എമിറ്റർ കോൺഫിഗറേഷൻ എന്ന് പറയും. കോമൺ എമിറ്റർ കോൺഫിഗറേഷനിൽ കളക്ടർ-എമിറ്റർ വോൾട്ടേജിനനുസരിച്ച്   കളക്ടർ-എമിറ്റർ കറന്റിന്റെ എങ്ങനെ മാറുന്നു എന്നത്തിന്റെ ഗ്രാഫാണ് നമുക്ക് വരക്കേണ്ടത്. ഇത് ബേസ്-എമിറ്റർ കറന്റിനെ  പല മൂല്യങ്ങളിൽ സെറ്റ് ചെയ്തു കൊണ്ട് വരക്കുന്നതാണ്.
 
-Transistor Output characteristics (CE)
-======================================
++----------------------------------------------------------------------------+
+|.. image:: pics/transistor-ce-config.png                                    |
+|   :width: 300px                                                            |
+|.. image:: schematics/transistor-ce.svg                                     |
+|   :width: 300px                                                            |
++----------------------------------------------------------------------------+
 
-**Objective**
+- ഒരു NPN ട്രാന്സിസ്റ്ററിനെ ബ്രെഡ്‌ബോർഡിൽ ഉറപ്പിക്കുക. 2N2222 കിറ്റിനൊപ്പം നൽകിയിട്ടുണ്ട്.
+- PV1നെ 1K റെസിസ്റ്റർ വഴി കലക്ടറിലേക്ക് ഘടിപ്പിക്കുക
+- PV2വിനെ 100K റെസിസ്റ്റർ വഴി ബേസിലേക്ക്  ഘടിപ്പിക്കുക  
+- PV2വിൽ 1 വോൾട്ട് സെറ്റ് ചെയ്യുക.
+- 'തുടങ്ങുക' എന്ന ബട്ടൺ അമർത്തുക 
+- PV2 വിന്റെ മൂല്യം മാറ്റി വീണ്ടും ഗ്രാഫ് വരക്കുക.
 
-Plot the output characteristic curve of a transistor. Collector is
-connected to PV1 through a 1K resistor.
+പ്രോഗ്രാം PV1ന്റെ മൂല്യം ഘട്ടം ഘട്ടമായി വർദ്ധിപ്പിക്കുകയും, ഓരോ ഘട്ടത്തിലും കളക്ടർ വോൾട്ടേജ് അളക്കുകയും ചെയ്യുന്നു. 1K റെസിസ്റ്ററിനു കുറുകെയുള്ള വോൾട്ടേജിൽ നിന്നും ഓം നിയമം ഉപയോഗിച്ച്  കളക്ടർ കറന്റ് കണക്കുകൂട്ടാം.
 
-.. image:: schematics/transistor_out.svg
-	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
+.. image:: pics/npn-ce-char-screen.png
+   :width: 500px
 
-**Procedure**
 
--  Set base voltage to the 1 volt and START.
--  Repeat for different base currents.
-
-**Discussion**
-
-The characteristic curves for different base currents are shown in
-figure. The collector current is obtained from the voltage difference
-across the :math:`1~k\Omega` resistor.
-
-The base current is set by setting the voltage at one end of the :math:`100~k\Omega`
-resistor, the other end is connected to the transistor base. The value
-of base current is calculated by,
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
-If A2 is not connected, the code assumes 0.6 volts at the base to
-calculate the base current.

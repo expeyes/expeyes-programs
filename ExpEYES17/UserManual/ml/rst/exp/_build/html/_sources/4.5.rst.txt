@@ -1,47 +1,21 @@
-UNTRANSLATED
-.. 4.3
-
-Transient Response of RL circuits
-=================================
-
-**Objective**
-
-Explore the nature of current and voltage when a voltage step is applied
-to resistor and inductor in series. By measuring the voltage across the
-inductor as a function of time, we can calculate its inductance.
+RL ട്രാൻഷിയൻറ് റെസ്പോൺസ് 
+------------------------
+ഒരു ഇൻഡേക്ടറിലേക്ക് സീരീസിൽ ഘടിപ്പിച്ചിരിക്കുന്ന റെസിസ്റ്ററിലൂടെ ഒരു വോൾട്ടേജ് സ്റ്റെപ്  കൊടുക്കുമ്പോൾ ഇൻഡക്റ്ററിന്റെ വോൾട്ടേജിലുണ്ടാവുന്ന വ്യതിയാനമാണ് നാം അളക്കാൻ ശ്രമിക്കുന്നത്.
 
 .. image:: schematics/RLtransient.svg
 	   :width: 300px
-.. image:: pics/RLtransient.png
-	   :width: 300px
 
-In an RL circuit :math:`V = RI + L(dI/dt)` and solving this will give
-:math:`I = I_0 \times e^{− (R/L)t}`. The coefficient of the exponential term R/L
-can be extracted from the graph of voltage across the inductor. The
-resistance of the inductor coil should be included in the
-calculations, :math:`R = R_{ext} + R*_L`.
+- 10  മില്ലിഹെൻറി ഇൻഡക്റ്ററും  1000 ഓം റെസിസ്റ്ററും ബ്രെഡ്‌ബോർഡിൽ ഉറപ്പിക്കുക
+- രണ്ടും ചേരുന്ന ഭാഗം A1 ലേക്ക് ഘടിപ്പിക്കുക.    
+- റെസിസ്റ്ററിന്റെ മറ്റേയറ്റം OD1ലേക്ക് ഘടിപ്പിക്കുക. 
+- ഇൻഡക്റ്ററിന്റെ മറ്റേയറ്റം  ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക.
+- സ്റ്റെപ് വോൾട്ടേജ് നൽകാനുള്ള ബട്ടൺ അമർത്തുക 
+- 10 മില്ലിഹെൻറി ഇൻഡക്റ്ററിനു പകരം 3000 ചുറ്റുള്ള കോയിൽ ഉപയോഗിച്ച്  പരീക്ഷണം ആവർത്തിക്കുക 
 
-**Procedure**
 
--  Inductor is the 3000 Turn coil
--  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
--  Adjust the horizontal scale, if required, and repeat.
--  Calculate the value of inductance
--  Insert an iron core into the inductor and repeat
+കപ്പാസിറ്റർ ഡിസ്ചാർജ് ചെയ്യുമ്പോൾ   :math:`I = I_0 \times e^{− (R/L)t}` എന്ന സമവാക്യമനുസരിച്ചാണ് വോൾട്ടേജ് മാറുന്നത്. ഗ്രാഫിനെ ഈ സമവാക്യവുമായി FIT ചെയ്ത് R/Lഉം  അതിൽനിന്ന്  ഇൻഡക്റ്റൻസും  കണ്ടുപിടിക്കാം. കൊടുക്കുന്ന വോൾട്ടേജ് വോൾട്ടിൽ നിന്നും പൂജ്യത്തിലേക്ക് പോകുമ്പോൾ ഇൻഡക്ടറിന്റെ വോൾട്ടേജ് പെട്ടന്ന്  നെഗറ്റീവായി മാറുകയും പിന്നീട് ക്രമേണ പൂജ്യത്തിലേക്കു വരികയുമാണ് ചെയ്യുന്നത്. നെഗറ്റീവ് വോൾട്ടേജ് നാം അപ്ലൈ ചെയ്യുന്നില്ല. ഇണ്ടാക്റ്ററിൽ പ്രേരിതമാവുന്ന ബാക്ക് EMF ആണിതിന് കാരണം.
 
-**Discussion**
+.. image:: pics/RLtransient-screen.png
+        :width: 300px
 
-The transient response of the RL circuit is shown in figure. The
-exponential curve is fitted to extract the L/R value. The resistance of
-the coil is measured by comparing it with the known external resistance
-under DC conditions. A2 is connected to OD1 for a more accurate
-measurement of the coil resistance.
-
-The applied voltages are above zero, but the graph went to negative
-voltages. Why ?
-
-What was the current before doing the 5->0 step ? What is back EMF ?
-
-Repeat with two coils in series, by (a) placing them far away (b)
-placing one over the other and (c) after changing the orientation. The
-effect of mutual inductance can be seen.
+കിറ്റിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള രണ്ടു കോയിലുകളുടെയും ഇൻഡക്റ്റൻസ് അളക്കുക. രണ്ടും സീരീസിൽ ഘടിപ്പിച്ച്  മൊത്തം ഇൻഡക്റ്റൻസ് അളക്കുക. ഇൻഡക്ടറുകൾ വ്യത്യസ്തരീതികളിൽ ചേർത്തുവെച്ചുകൊണ്ട് അളവുകൾ ആവർത്തിക്കുക. മ്യുച്വൽ ഇൻഡക്റ്റൻസ് ഇവയിൽ നിന്നും കണ്ടുപിടിക്കാം.

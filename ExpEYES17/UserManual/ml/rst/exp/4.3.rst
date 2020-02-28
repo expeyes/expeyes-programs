@@ -1,48 +1,49 @@
-UNTRANSLATED
-.. 4.1
-
-RLC circuits, steady state response
-===================================
-
-**Objective**
-
-Study the effect of series LCR elements in an AC circuit. Three
-different combinations can be studied.
+LCR സർക്യൂട്ടുകളിലൂടെ AC സൈൻ വേവ് (steady state response)
+-------------------------------------------------------
+റെസിസ്റ്റർ, കപ്പാസിറ്റർ, ഇൻഡക്ടർ എന്നിവ സീരീസിൽ ഘടിപ്പിച്ചിരിക്കുന്ന ഒരു സർക്യൂട്ടിലൂടെ AC സൈൻ വേവ്  പ്രവഹിക്കുമ്പോൾ സർക്യൂട്ടിന്റെ വിവിധബിന്ദുക്കളിലെ വോൾട്ടേജുകളുടെ ആംപ്ലിട്യൂഡ്  ഫേസ്  എന്നിവ അളക്കാനുള്ള പരീക്ഷണങ്ങളാണ് ഈ വിഭാഗത്തിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ളത്. ആദ്യമായി റെസിസ്റ്ററും കപ്പാസിറ്ററും മാത്രമടങ്ങിയ സർക്യൂട്ടിന്റെ കാര്യമെടുക്കാം.ഈ പരീക്ഷണത്തിന് മുൻപ് ഭാഗം 2.8ൽ വിവരിച്ചിരിക്കുന്ന (രണ്ടു സീരീസ് റെസിസ്റ്ററുകൾ മാത്രമുള്ള) പരീക്ഷണം ചെയ്യുക.
 
 .. image:: schematics/RCsteadystate.svg
 	   :width: 300px
 .. image:: schematics/RLsteadystate.svg
 	   :width: 300px
+
+- 1 uF കപ്പാസിറ്ററും 1000 ഓം റെസിസ്റ്ററും ബ്രെഡ്‌ബോർഡിൽ ഉറപ്പിക്കുക
+- കപ്പാസിറ്ററിന്റെ ഒരറ്റം WGയിലേക്കും A1 ലേക്കും ഘടിപ്പിക്കുക. 
+- റെസിസ്റ്ററിന്റെ ഒരറ്റം ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക.
+- രണ്ടും ചേരുന്ന ഭാഗം A2വിലേക്ക് ഘടിപ്പിക്കുക.    
+- ഫേസ് വ്യത്യാസം അളക്കുക. സമവാക്യപ്രകാരമുള്ള ഫലവുമായി താരതമ്യം ചെയ്യുക.
+
+.. image:: pics/RCsteadystate-screen.png
+	   :width: 600px
+
+സർക്യൂറ്റിൽ അപ്ലൈ ചെയ്ത മൊത്തം വോൾട്ടേജ് മഞ്ഞ ഗ്രാഫും, റെസിസ്റ്ററിനു കുറുകെയുള്ള വോൾട്ടേജ് പച്ച ഗ്രാഫും, കപ്പാസിറ്ററിനു കുറുകെയുള്ള വോൾട്ടേജ് ചുവപ്പു ഗ്രാഫുമാണ്. റെസിസ്റ്ററിനു കുറുകെയുള്ള വോൾട്ടെജ്ഉം അതിലൂടെയൊഴുകുന്ന കറന്റും ഒരേ ഫേസിൽ ആയതിനാൽ പച്ച ഗ്രാഫിനെ നമുക്ക് കറന്റിന്റെ ഫേസ് ആയെടുക്കാം.ചുവപ്പു ഗ്രാഫിന്റെ 90 ഡിഗ്രി മുൻപിലാണ് പച്ച ഗ്രാഫ് എന്ന് കാണാം. കാരണം ഒരു കപ്പാസിറ്ററിൽ കറന്റ് വോൾട്ടേജിനെക്കാൾ 90 ഡിഗ്രി മുൻപിലാണ്. കപ്പാസിറ്ററിന്റെ രണ്ടറ്റത്തുമുള്ള വോൾട്ടേജുകളുടെ ഫേസ് വ്യത്യാസം ഗ്രാഫിന്റെ അതേ ജാലകത്തിൽ എഴുതിക്കാണിച്ചിരിക്കുന്നു.
+
+ഈ ഫേസ് വ്യത്യാസം  :math:`\theta=tan^{-1} (Xc/R)` എന്ന സമവാക്യമുപയോഗിച്ച്  കണക്കാക്കാം. :math:`Xc=\frac{1}{2\pi fC}`. സ്‌ക്രീനിന്റെ താഴെ വലതു വശത്തെ കാൽക്കുലേറ്റർ ഉപയോഗിച്ച ഇവ എളുപ്പത്തിൽ കണക്കാക്കാം. വിവിധമൂല്യങ്ങൾ ഉള്ള കപ്പാസിറ്ററുകൾ ഉപയോഗിച്ച്  പരീക്ഷണം ആവർത്തിക്കുക. സമവാക്യമനുസരിച്ചുള്ള ഫലങ്ങളും അളവുകളും തമ്മിൽ വ്യത്യാസമുണ്ടോ എന്ന് നിരീക്ഷിക്കുക.
+
+ഓരോ ഘടകങ്ങളുടെയും കുറുകെയുള്ള വോൾട്ടേജുകളും കാണിച്ചിരിക്കുന്നു. കപ്പാസിറ്ററിനും റെസിസ്റ്ററിനും കുറുകെയുള്ള വോൾട്ടേജുകൾ തമ്മിൽ കൂട്ടിയാൽ മൊത്തം വോൾടേജ് കിട്ടണം. പക്ഷെ   :math:`V=sqrt(Vc^{2} + (Vr^{2})` എന്ന രീതിയിൽ വേണം അത് ചെയ്യാൻ. കപ്പാസിറ്ററിനു പകരം ഒരു 2200 ഓം റെസിസ്റ്ററുപയോഗിച്ച്  പരീക്ഷണം ആവർത്തിക്കുകയാണെങ്കിൽ  വോൾട്ടേജുകൾ സാധാരണഗതിയിൽ കൂട്ടിയാൽ മതി എന്ന് കാണാം. കാരണം ഫേസ് വ്യത്യാസം ഇല്ല എന്നതാണ്.
+
+**RL സർക്യൂട്ട്** : അടുത്തത്  റെസിസ്റ്ററും ഇൻഡക്ടറും മാത്രമടങ്ങിയ സർക്യൂട്ടാണ്.
+
+- കപ്പാസിറ്ററിനെ മാറ്റി അതേ സ്ഥാനത്ത് ഒരു 10mH ഇൻഡക്ടർ ഉറപ്പിക്കുക.
+- ഉപയോഗിക്കുന്ന ഇൻഡക്ടർ താരതമ്യേന ചെറുതായതിനാൽ ആവൃത്തി 4000 ആയി വർധിപ്പിക്കുക. 
+
+സീരീസ് റെസൊണൻസ് 
+---------------------
+അടുത്തതാണ്  പരീക്ഷണത്തിന്റെ ഏറ്റവും പ്രധാനഘട്ടം. കപ്പാസിറ്ററും ഇൻഡക്ടറും സീരീസിൽ വരുമ്പോൾ അവയുടെ മൊത്തം ഫേസ് വ്യത്യാസം   :math:`\theta=tan^{-1}\left(\frac{X_{L}-X_{C}}{R)}\right)`. ഇവിടെ  :math:`Xc=\frac{1}{2\pi fC}` യും   :math:`X_{L}= 2\pi fC` ഉമാണ്. ഏതെങ്കിലും ഒരു ആവൃത്തിയിൽ ഇവയുടെ മൂല്യങ്ങൾ തുല്യമാവുകയും തുക പൂജ്യമാവുകയും ചെയ്യും. ഈ സമയത്ത് കപ്പാസിറ്ററിനും ഇൻഡക്ടറിനും കുറുകെയുള്ള മൊത്തം വോൾട്ടേജ് പൂജ്യമാവും. ഇതാണ് സീരീസ് റെസൊണൻസ്. എന്നാൽ ഈ സമയത്തും അവയോരോന്നിന്റേയും കുറുകെയുള്ള വോൾട്ടേജ് പൂജ്യമാവുന്നില്ല എന്ന് കാണാം. അവ തുല്യവും വിപരീത ഫേസുകളിലും ആയതിനാലാണ് തുക പൂജ്യമാവുന്നത്. A3 കൂടി ഉപയോഗിക്കുമ്പോൾ ഇവയെ പ്രത്യേകമായും നമുക്ക്‌ അളക്കാൻ പറ്റുന്നു. 
+
 .. image:: schematics/RLCsteadystate.svg
 	   :width: 300px
 
-**Procedure**
+- 1uFഉം 10mHയും 1000 ഓമും ബ്രെഡ്‌ബോർഡിൽ ഉറപ്പിക്കുക
+- ചിത്രത്തിൽ കാണിച്ചവിധം വയറുകൾ ഘടിപ്പിക്കുക.
+- 1uFഉം 10mHയും 1000 ഓമും ഉപയോഗിച്ച്  ആവൃത്തി കണക്കാക്കുക (1591.5 Hz)
+- ആവൃത്തി 1600 ഹെർട്സിൽ സെറ്റ് ചെയ്യുക 
+- ഫേസ് വ്യതാസം പൂജ്യമാക്കാൻ ആവൃത്തി ചെറുതായി മാറ്റുക.
+- A3യുടെ ചെക്ക് ബോക്സ് റിച്ച ചെയ്യുക 
 
--  Make connections one by one, as per the drawing
--  Note down the amplitude and phase measurements, in each case
--  Repeat the measurements by changing the frequency.
--  For RLC series circuit, the junction of L and C is monitored by A3
--  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH` and :math:`f = 1600~Hz`, adjust f to
-   make phase shift zero
--  The total voltage across L and C together goes almost to zero, the
-   voltage across them are out of phase at resonance
+.. image:: pics/RLCsteadystate-screen.png
+	   :width: 600px
+	   
+ചുവപ്പു ഗ്രാഫ് തികച്ചും പൂജ്യത്തിലെത്തുന്നില്ല എന്നു കാണാം. ഇൻഡക്റ്ററിന്റെ 10 ഓം റെസിസ്റ്റൻസാണിതിനു കാരണം.
 
-**Discussion**
-
-The applied AC voltage is measured on A1 and the voltage across the
-resistor on A2. Subtracting the instantaneous values of A2 from A1 gives
-the combined voltage across the inductor and capacitor. We need to use
-an inductor with negligible resistance for good results. The phase
-difference between current and voltage is given by
-:math:`\Delta \Phi = \arctan((X_C − X_L)/X_R)`.
-
-The total voltage, voltage across R and the voltage across LC are shown
-in figure. The phasor diagram shows the phase angle between the current
-and the voltage. The inductance used in this experiment is around :math:`10~mH`,
-having a resistance of :math:`20~\Omega`.
-
-At :math:`1600~Hz`, :math:`X_C \simeq X_L` and the voltage across LC is decided by the
-resistance of the inductor. At the resonant frequency, the voltage drop
-across LC will be minimum, decided by the resistance of the inductor.
-The input A3 is connected between L and C, so that the individual
-voltage drop across L and C can be displayed.
+ 

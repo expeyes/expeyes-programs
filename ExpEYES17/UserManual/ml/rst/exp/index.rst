@@ -67,6 +67,7 @@ characteristics have a dedicated GUI.
    3.4
    3.5
    3.6
+   3.7
    3.8
    3.9
    3.10
@@ -96,6 +97,9 @@ induction.
    4.6
    4.7
    4.8
+   4.9
+   4.10
+   4.11
 
 Sound
 *****
@@ -131,6 +135,7 @@ acceleration due to gravity is measured using a pendulum.
    6.2
    6.3
    6.4
+   6.5
 
 Other experiments
 *****************
@@ -165,4 +170,4 @@ calls used for communicating with the device is given below.
 .. toctree::
    :maxdepth: 2
 
-   7.1
+   9.0

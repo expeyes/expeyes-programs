@@ -1,36 +1,21 @@
-UNTRANSLATED
-.. 4.2
-
-Transient Response of RC circuits
-=================================
-
-**Objective**
-
-Plot the voltage across a capacitor, when it is charged by applying a
-voltage step through a resistor. Calculate the value of the capacitance
-from the graph.
+RC ട്രാൻഷിയൻറ് റെസ്പോൺസ് 
+--------------------------
+LCR സർക്യൂട്ടുകളിൽ പെട്ടന്നൊരു വോൾട്ടേജ് അപ്ലൈ ചെയ്യുമ്പോൾ ഓരോ ഘടകങ്ങൾക്കും കുറുകെയുള്ള വോൾടേജ് മാറ്റങ്ങളെയാണ് ട്രാൻഷിയൻറ് റെസ്പോൺസ്  എന്ന് പറയുന്നത്. ക്ഷണികപ്രതികരണം എന്ന് വേണമെങ്കിൽ പറയാം.
+ഏറ്റവും ലളിതമായത്  RC സീരീസ് സർക്യൂട്ടാണ്. റെസിസ്റ്ററിലൂടെ  ഒരു വോൾട്ടേജ് സ്റ്റെപ് അപ്ലൈ ചെയുമ്പോൾ  കപ്പാസിറ്ററിന്റെ വോൾടേജ്  ഗ്രാഫ് എക്സ്പൊണൻഷ്യൽ ആയാണ് വർധിക്കുന്നത്.
 
 .. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RCtransient.png
-	   :width: 300px
 
-**Procedure**
+- 1 uF കപ്പാസിറ്ററും  1000 ഓം റെസിസ്റ്ററും ബ്രെഡ്‌ബോർഡിൽ ഉറപ്പിക്കുക
+-  രണ്ടും ചേരുന്ന ഭാഗം A1 ലേക്ക് ഘടിപ്പിക്കുക.    
+-  റെസിസ്റ്ററിന്റെമറ്റേയറ്റം OD1 ലേക്ക് ഘടിപ്പിക്കുക. 
+-  കപ്പാസിറ്ററിന്റെ മറ്റേയറ്റം  ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക.
+-  സ്റ്റെപ് വോൾട്ടേജ് നൽകാനുള്ള ബട്ടൺ അമർത്തുക 
 
--  From **\\emphElectrical** , select **\\emphRCTransientresponse**
--  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
--  Adjust the horizontal scale, if required, and repeat.
--  Calculate RC time constant.
 
-**Discussion**
+കപ്പാസിറ്റർ ഡിസ്ചാർജ് ചെയ്യുമ്പോൾ :math:`V(t) = V_0 e^{− t/RC}` എന്ന സമവാക്യമനുസരിച്ചാണ് വോൾട്ടേജ് മാറുന്നത്. ഗ്രാഫിനെ ഈ സമവാക്യവുമായി FIT ചെയ്ത് RCയും അതിൽനിന്ന് കപ്പാസിറ്റൻസും കണ്ടുപിടിക്കാം.
 
-Applying a 0 to 5V step makes the voltage across the capacitor to rise
-exponentially as shown in the figure. By fitting the discharge curve
-with :math:`U(t) = U_0 \times e^{− t/RC}`, we can extract the RC time
-constant and find the values of capacitance from it.
+.. image:: pics/RCtransient-screen.png
+        :width: 300px
 
-The voltage across a capacitor is exponential only when it is charged
-trough a linear element, a resistor for example. When charged from a
-constant current source, the voltage shows linear increase, because
-:math:`Q = It = CV` , and voltage increases linearly with time as
-:math:`V = (I/C) \times t`.
+

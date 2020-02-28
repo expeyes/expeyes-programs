@@ -1,8 +1,6 @@
-UNTRANSLATED
-.. 1.5
-
 Getting Familiar with ExpEYES17
 ===============================
+TODO
 
 Before proceeding with the experiments, let us do some simple exercises
 to become familiar with expEYES-17. Connect the device a USB port and

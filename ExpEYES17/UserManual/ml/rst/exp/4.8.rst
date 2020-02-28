@@ -1,33 +1,18 @@
-UNTRANSLATED
-..  4.7
+വൈദ്യുത കാന്തിക പ്രേരണം 
+--------------------------------
+ഒരു വൈദ്യുതചാലകത്തിന്റെ ചുറ്റുമുള്ള കാന്തിക ക്ഷേത്രത്തിന്റെ തീവ്രത കൂടുകയോ കുറയുകയോ ദിശ മാറുകയോ ചെയ്താൽ ചാലകത്തിൽ വൈദ്യുതി  പ്രേരിതമാവുന്നു. ഒരു കോയിലും സ്ഥിരകാന്തവും  ഉപയോഗിച്ച്  ഇത് പരീക്ഷിച്ചു നോക്കാവുന്നതാണ്.
 
-Electromagnetic induction
-=========================
-
-**Objective**
-
-Explore the voltage induced across a coil by a changing magnetic field,
-by dropping a small cylindrical magnet into a coil. Use a tube to guide
-the magnet through the coil.
-
-.. image:: schematics/induction.svg
+.. image:: pics/induction-photo.jpg
 	   :width: 300px
+
+- കോയിലിനെ നും ഗ്രൗണ്ടിനുമിടക്ക് ഘടിപ്പിക്കുക.
+- സ്കാനിങ് തുടങ്ങുക എന്ന ബട്ടൺ അമർത്തുക.
+- കോയിലിനകത്തു വെച്ചിരിക്കുന്ന ഒരു കുഴലിലൂടെ കാന്തം താഴേക്കിടുക.
+- ഒരു ഗ്രാഫ് കിട്ടുന്നതു വരെ ആവർത്തിക്കുക 
+
 .. image:: pics/induction-screen.png
-	   :width: 300px
+	   :width: 500px
 
-**Procedure**
+പ്രേരിതവൈദ്യുതിയുടെ അളവ് കാന്തത്തിന്റെ പ്രവേഗം, കാന്തത്തിന്റെ ശക്തി, കോയിലിന്റെ വലിപ്പം , ചുറ്റുകളുടെ എണ്ണം എന്നീ ഘടകങ്ങളെ ആശ്രയിച്ചിരിക്കും.
 
--  Click on Start Scanning. A horizontal trace should appear
--  Drop the magnet through the coil, until a trace is caught.
--  Repeat the process by changing the parameters like magnet strength,
-   speed etc.
 
-**Discussion**
-
-The result is shown in figure. The amplitude increases with the speed of
-the magnet. From the graph, we can find the time taken by the magnet to
-travel through the coil.
-
-The second peak is bigger than the first peak. Why ? Where will be the
-magnet at the zero crossing of the induced voltage? Drop the magnet from
-different heights and plot the voltage vs square root of the height.
