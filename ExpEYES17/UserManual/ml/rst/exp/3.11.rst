@@ -1,43 +1,28 @@
-UNTRANSLATED
-.. 3.11
+ലോജിക് ഗേറ്റുകൾ 
+---------------------
+AND , OR തുടങ്ങിയ ലോജിക്കൽ ഓപ്പറേഷൻസ് നടത്താൻ കഴിയുന്നതരം സർക്യൂട്ടുകളാണ് ലോജിക് ഗേറ്റുകൾ. ഡയോഡുകൾ ഉപയൊഗിച്ച്  ഇവയെ നിർമിക്കാം പക്ഷെ കൃത്യമായ പ്രവർത്തനത്തിന് ലോജിക് ഗേറ്റ് IC കളാണ് മെച്ചം.  ഡയോഡ്  ഉപയോഗിച്ചുള്ള OR ഗേറ്റിന്റെയും   IC7408  ഉപയോഗിച്ചുള്ള  AND ഗേറ്റിന്റെയും സർക്യൂട്ടുകൾ താഴെക്കാണിച്ചിരിക്കുന്നു.
 
-Diode I-V characteristics
-=========================
-
-**Objective**
-
-Draw the I-V Characteristic of diode and compare the result with the
-theory.
-
-**Procedure**
-
-.. image:: schematics/diode_iv.svg
-	   :width: 300px
-.. image:: pics/diode-iv-screen.png
+.. image:: schematics/diode-or-gate.svg
 	   :width: 300px
 
--  Make connections
--  Click on START to draw the characteristic curve.
--  Analyse the data
--  Plot the IV of LEDs
+.. image:: schematics/logic-gates.svg
+	   :width: 300px
 
-**Discussion**
+- ഏതെങ്കിലും ഒരു സർക്യൂട്ട്  ബ്രെഡ്‌ബോർഡിൽ നിർമിക്കുക
+- WG യെ 1000 ഹെർട്സ് ചതുരം ആയി സെറ്റ് ചെയ്യുക 
+- SQ1നെ 500ഹെർട്സിൽ സെറ്റ് ചെയ്യുക   
+- SQ1, SQ2 ടെർമിനലുകൾ ഗേറ്റിന്റെ ഇൻപുട്ടുകളിലേക്കു ഘടിപ്പിക്കുക 
+- A1ഉം  A2ഉം ഇൻപുട്ടുകളിലേക്കു ഘടിപ്പിക്കുക
+- A3 ഔട്പുട്ടിലേക്ക് ഘടിപ്പിക്കുക
+- A1 A2 റേഞ്ചുകൾ 16 വോൾട്ടിൽ സെറ്റ് ചെയ്യുക 
 
-The IV characteristic of an ideal PN junction diode is given by equation
-:math:`I = I_0 \times e^{(qU/kT) − 1}`, where :math:`I_0` is the reverse saturation
-current, :math:`q` the charge of electron, :math:`k` the Boltzmann constant, :math:`T` the
-temperature in Kelvin. For a practical, non-ideal, diode, the equation
-is :math:`I = I_0 \times e^{(qU/nkT) − 1}`, where :math:`n` is the ideality factor, that
-is 1 for an ideal diode. For practical diodes it varies from 1 to 2. We
-have used a IN4148 silicon diode. The value of *n* for 1N4148 is around 2.
-We have calculated the value of :math:`n` by fitting the experimental data with
-the equation.
+രണ്ടു ഡയോഡുകൾ ഉപയോഗിച്ച് നിർമിച്ച OR ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
 
-The voltage at which LED starts emitting light depends on its wavelength
-and Planck’s constant. Energy of a photon is given by :math:`E = h\nu  = hc/\lambda` .
-This energy is equal to the energy of an electron that overcomes the
-junction barrier and is given by :math:`E = eV_0`. So Planck’s constant
-:math:`h = eV_0 \times \lambda / c`, where :math:`\lambda` is the wavelength of light from the LED, :math:`e`
-the charge of electron and :math:`c` the velocity of light.
+.. image:: pics/diode-or-gate-trace.png
+	   :width: 400px
 
-Repeat the experiment by heating the diode to different temperatures.
+IC7408  ഉപയോഗിച്ച് നിർമിച്ച AND  ഗേറ്റിന്റെ ഇൻപുട്ട് ഔട്പുട്ട്  ഗ്രാഫുകൾ താഴെ കാണിച്ചിരിക്കുന്നു.
+
+.. image:: pics/ic-and-gate-trace.png
+	   :width: 400px
+
