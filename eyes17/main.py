@@ -473,7 +473,7 @@ class MainWindow(QMainWindow):
 		for e in electronicsExptsScope:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
 			
-		for e in electronicsExptsScope:
+		for e in electronicsExpts:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.callExpt(item))	
 		
 		em = bar.addMenu(self.tr("Electrical"))
