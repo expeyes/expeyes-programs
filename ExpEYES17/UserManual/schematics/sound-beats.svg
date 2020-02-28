@@ -13,7 +13,7 @@
    height="100%"
    viewBox="-6 -6 790 278"
    sodipodi:docname="sound-beats.svg"
-   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
    inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/sound-beats.png"
    inkscape:export-xdpi="36.64122"
    inkscape:export-ydpi="36.64122">
@@ -25,7 +25,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -44,7 +44,7 @@
      inkscape:window-height="1013"
      id="namedview85"
      showgrid="false"
-     inkscape:zoom="1.3544304"
+     inkscape:zoom="1.3594937"
      inkscape:cx="395"
      inkscape:cy="139"
      inkscape:window-x="0"
@@ -82,12 +82,12 @@ File &quot;sound-beats.ps&quot; Page 1
      font-size="40"
      id="text18"
      style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
-     x="407.16187"
+     x="413.16187"
      y="94.279999">
     <tspan
-       x="407.16187"
+       x="413.16187"
        y="94.279999"
-       id="tspan16">Piezo 1</tspan>
+       id="tspan16">Piézo1</tspan>
   </text>
   <text
      font-size="40"
@@ -104,12 +104,12 @@ File &quot;sound-beats.ps&quot; Page 1
      font-size="40"
      id="text30"
      style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
-     x="403.88187"
+     x="409.88187"
      y="222.28">
     <tspan
-       x="403.88187"
+       x="409.88187"
        y="222.28"
-       id="tspan28">Piezo 2</tspan>
+       id="tspan28">Piézo2</tspan>
   </text>
   <path
      style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"

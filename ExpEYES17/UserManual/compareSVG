@@ -2,6 +2,7 @@
 
 import sys, tempfile, os
 from subprocess import call, Popen, PIPE
+from PIL import Image, ImageStat
 
 TMP_PREFIX = "compareSVG_"
 
@@ -25,11 +26,13 @@ def compare(f1, f2, tmp):
     :param tmp: a temporary directory
     :return: a number related to the count of different pixels between both views
     """
-    count=None   
     png1=convertToPNG(f1, 1, tmp)
     png2=convertToPNG(f2, 2, tmp)
-    call(f"gmic {png1} {png2} -blend xor -o {os.path.join(tmp,'blend.png')}", shell=True)
-    return count
+    out=os.path.join(tmp,'blend.png')
+    call(f"gmic {png1} {png2} -blend xor -o {out} > /dev/null 2>&1", shell=True)
+    img=Image.open(out)
+    stat=ImageStat.Stat(img)
+    return sum(stat.mean)/3
     
 if __name__ == "__main__":
     if len(sys.argv) < 3:
@@ -40,8 +43,8 @@ if __name__ == "__main__":
         pass # destroys the temporary dir
     # create the temporary dir again
     call(f"mkdir -p {tmp}", shell=True)
-    compare(sys.argv[1], sys.argv[2], tmp)
-    call(f"pcmanfm {tmp}", shell=True)
-    print("look at dir", tmp)
+    result = compare(sys.argv[1], sys.argv[2], tmp)
+    # call(f"pcmanfm {tmp}", shell=True)
+    print(sys.argv[1], "result=" , result, "look at dir", tmp)
     
         
