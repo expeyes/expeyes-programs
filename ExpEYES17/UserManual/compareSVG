@@ -1,0 +1,47 @@
+#! /usr/bin/python3
+
+import sys, tempfile, os
+from subprocess import call, Popen, PIPE
+
+TMP_PREFIX = "compareSVG_"
+
+def convertToPNG(filename, num, tmp):
+    """
+    converts an SVG file to a PNG file in a temporary directory
+    :param filename: name of a SVG file
+    :param num: a number
+    :param tmp: temporary directory
+    :return: path to the created PNG file
+    """
+    png=os.path.join(tmp, os.path.basename(filename)+f"{num}.png")
+    call(f"rsvg-convert --background-color white --width 600 {filename} -o {png} ", shell=True)
+    return png
+
+def compare(f1, f2, tmp):
+    """
+    Helps to compare two SVG files
+    :param f1: first svg file
+    :param f2: second svg file
+    :param tmp: a temporary directory
+    :return: a number related to the count of different pixels between both views
+    """
+    count=None   
+    png1=convertToPNG(f1, 1, tmp)
+    png2=convertToPNG(f2, 2, tmp)
+    call(f"gmic {png1} {png2} -blend xor -o {os.path.join(tmp,'blend.png')}", shell=True)
+    return count
+    
+if __name__ == "__main__":
+    if len(sys.argv) < 3:
+        print(f"Usage {sys.argv[0]} file1.svg file2.svg")
+        print("  Convert two SVG files to bitmaps and checks a XOR blend of both")
+        sys.exit(1)
+    with tempfile.TemporaryDirectory(prefix=TMP_PREFIX) as tmp:
+        pass # destroys the temporary dir
+    # create the temporary dir again
+    call(f"mkdir -p {tmp}", shell=True)
+    compare(sys.argv[1], sys.argv[2], tmp)
+    call(f"pcmanfm {tmp}", shell=True)
+    print("look at dir", tmp)
+    
+        
