@@ -6,7 +6,7 @@ Courbe I-U
 Schéma
 ------
 
-.. image:: images/res-compare.png
+.. image:: schematics/res-compare.svg
 	   :width: 300px
 
 Instructions

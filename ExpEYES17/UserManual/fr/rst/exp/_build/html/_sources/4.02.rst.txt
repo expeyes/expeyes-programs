@@ -7,7 +7,7 @@ Ce programme trace A1 en fonction de A2 ou (A1-A2) en fonction de A2.
 Il est utile pour tracer des courbes de Lissajous et pour l'étude des
 circuits RC.
 
-.. image:: images/XYplot.png
+.. image:: schematics/XYplot.svg
 	   :width: 300px
 
 Pour le circuit ci-dessus, on peut tracer la courbe de la tension aux

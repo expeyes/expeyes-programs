@@ -6,7 +6,7 @@ XY plotting
 This program plots A1 vs A2 or (A1-A2) vs A2. It is useful for
 plotting Lissajous figures and stdying RC circuits
 
-.. image:: images/XYplot.png
+.. image:: schematics/XYplot.svg
 	   :width: 300px
 
 For the circuit shown above, we can plot the voltage across the

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.12.4)  22 FEB 2020 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.10.10)  28 FEB 2020 14:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1066,17 +1066,17 @@ File: cap-parallel.pdf Graphic file (type pdf)
 Package pdftex.def Info: cap-parallel.pdf  used on input line 797.
 (pdftex.def)             Requested size: 225.84229pt x 148.6801pt.
  [18 <./cap-series.pdf>]
-<res-compare.pdf, id=736, 963.6pt x 411.5375pt>
+<res-compare.pdf, id=736, 963.6pt x 424.58624pt>
 File: res-compare.pdf Graphic file (type pdf)
 <use res-compare.pdf>
 Package pdftex.def Info: res-compare.pdf  used on input line 828.
-(pdftex.def)             Requested size: 225.84229pt x 96.45386pt.
+(pdftex.def)             Requested size: 225.84229pt x 99.51215pt.
  [19 <./cap-parallel.pdf> <./res-compare.pdf
 
 pdfTeX warning: pdflatex (file ./res-compare.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
 >]
-<ac-dc.pdf, id=753, 963.6pt x 109.40875pt>
+<ac-dc.pdf, id=755, 963.6pt x 109.40875pt>
 File: ac-dc.pdf Graphic file (type pdf)
 <use ac-dc.pdf>
 Package pdftex.def Info: ac-dc.pdf  used on input line 872.
@@ -1085,7 +1085,7 @@ File: ac-dc.pdf Graphic file (type pdf)
 <use ac-dc.pdf>
 Package pdftex.def Info: ac-dc.pdf  used on input line 897.
 (pdftex.def)             Requested size: 225.84229pt x 25.6426pt.
-<sqr-wave.pdf, id=754, 853.1875pt x 722.7pt>
+<sqr-wave.pdf, id=756, 853.1875pt x 722.7pt>
 File: sqr-wave.pdf Graphic file (type pdf)
 <use sqr-wave.pdf>
 Package pdftex.def Info: sqr-wave.pdf  used on input line 898.
@@ -1095,23 +1095,23 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 897--899
 [] [] 
  []
 
-<line-pickup.pdf, id=755, 963.6pt x 228.855pt>
+<line-pickup.pdf, id=757, 963.6pt x 228.855pt>
 File: line-pickup.pdf Graphic file (type pdf)
 <use line-pickup.pdf>
 Package pdftex.def Info: line-pickup.pdf  used on input line 908.
 (pdftex.def)             Requested size: 225.84229pt x 53.63776pt.
 [20 <./ac-dc.pdf> <./sqr-wave.pdf>]
-<pickup.pdf, id=770, 853.1875pt x 722.7pt>
+<pickup.pdf, id=772, 853.1875pt x 722.7pt>
 File: pickup.pdf Graphic file (type pdf)
 <use pickup.pdf>
 Package pdftex.def Info: pickup.pdf  used on input line 932.
 (pdftex.def)             Requested size: 225.84229pt x 191.29404pt.
-<acdc-separating.pdf, id=771, 963.6pt x 766.865pt>
+<acdc-separating.pdf, id=773, 963.6pt x 766.865pt>
 File: acdc-separating.pdf Graphic file (type pdf)
 <use acdc-separating.pdf>
 Package pdftex.def Info: acdc-separating.pdf  used on input line 944.
 (pdftex.def)             Requested size: 225.84229pt x 179.73354pt.
-<acdc-sep-screen.pdf, id=772, 853.1875pt x 722.7pt>
+<acdc-sep-screen.pdf, id=774, 853.1875pt x 722.7pt>
 File: acdc-sep-screen.pdf Graphic file (type pdf)
 <use acdc-sep-screen.pdf>
 Package pdftex.def Info: acdc-sep-screen.pdf  used on input line 945.
@@ -1122,12 +1122,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 944--946
  []
 
 [21 <./line-pickup.pdf> <./pickup.pdf>]
-<conducting-human.pdf, id=788, 963.6pt x 687.56876pt>
+<conducting-human.pdf, id=790, 963.6pt x 687.56876pt>
 File: conducting-human.pdf Graphic file (type pdf)
 <use conducting-human.pdf>
 Package pdftex.def Info: conducting-human.pdf  used on input line 983.
 (pdftex.def)             Requested size: 225.84229pt x 161.14853pt.
-<conducting-human-screen.pdf, id=789, 853.1875pt x 722.7pt>
+<conducting-human-screen.pdf, id=791, 853.1875pt x 722.7pt>
 File: conducting-human-screen.pdf Graphic file (type pdf)
 <use conducting-human-screen.pdf>
 Package pdftex.def Info: conducting-human-screen.pdf  used on input line 984.
@@ -1138,7 +1138,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 983--985
  []
 
 [22 <./acdc-separating.pdf> <./acdc-sep-screen.pdf>]
-<res-body.pdf, id=811, 963.6pt x 562.1pt>
+<res-body.pdf, id=813, 963.6pt x 562.1pt>
 File: res-body.pdf Graphic file (type pdf)
 <use res-body.pdf>
 Package pdftex.def Info: res-body.pdf  used on input line 1022.
@@ -1153,23 +1153,23 @@ ge 23 undefined on input line 1034.
 pdfTeX warning: pdflatex (file ./res-body.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
 >]
-<ldr.pdf, id=838, 963.6pt x 462.72874pt>
+<ldr.pdf, id=840, 963.6pt x 462.72874pt>
 File: ldr.pdf Graphic file (type pdf)
 <use ldr.pdf>
 Package pdftex.def Info: ldr.pdf  used on input line 1058.
 (pdftex.def)             Requested size: 225.84229pt x 108.45178pt.
-<lemon-cell.pdf, id=839, 963.6pt x 691.58376pt>
+<lemon-cell.pdf, id=841, 963.6pt x 691.58376pt>
 File: lemon-cell.pdf Graphic file (type pdf)
 <use lemon-cell.pdf>
 Package pdftex.def Info: lemon-cell.pdf  used on input line 1092.
 (pdftex.def)             Requested size: 225.84229pt x 162.08954pt.
  [24 <./ldr.pdf>]
-<ac-generator.pdf, id=850, 963.6pt x 503.8825pt>
+<ac-generator.pdf, id=852, 963.6pt x 503.8825pt>
 File: ac-generator.pdf Graphic file (type pdf)
 <use ac-generator.pdf>
 Package pdftex.def Info: ac-generator.pdf  used on input line 1128.
 (pdftex.def)             Requested size: 225.84229pt x 118.09717pt.
-<ac-gen-screen.pdf, id=851, 722.62471pt x 473.46986pt>
+<ac-gen-screen.pdf, id=853, 722.62471pt x 473.46986pt>
 File: ac-gen-screen.pdf Graphic file (type pdf)
 <use ac-gen-screen.pdf>
 Package pdftex.def Info: ac-gen-screen.pdf  used on input line 1129.
@@ -1184,12 +1184,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1128--1130
 pdfTeX warning: pdflatex (file ./ac-generator.pdf): PDF inclusion: multiple pdf
 s with page group included in a single page
 > <./ac-gen-screen.pdf>]
-<transformer.pdf, id=879, 963.6pt x 850.17625pt>
+<transformer.pdf, id=881, 963.6pt x 850.17625pt>
 File: transformer.pdf Graphic file (type pdf)
 <use transformer.pdf>
 Package pdftex.def Info: transformer.pdf  used on input line 1172.
 (pdftex.def)             Requested size: 225.84229pt x 199.25957pt.
-<transformer-screen.pdf, id=880, 722.62471pt x 471.96425pt>
+<transformer-screen.pdf, id=882, 722.62471pt x 471.96425pt>
 File: transformer-screen.pdf Graphic file (type pdf)
 <use transformer-screen.pdf>
 Package pdftex.def Info: transformer-screen.pdf  used on input line 1173.
@@ -1200,12 +1200,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1172--1174
  []
 
 [26 <./transformer.pdf> <./transformer-screen.pdf>]
-<res-water.pdf, id=895, 963.6pt x 499.8675pt>
+<res-water.pdf, id=897, 963.6pt x 499.8675pt>
 File: res-water.pdf Graphic file (type pdf)
 <use res-water.pdf>
 Package pdftex.def Info: res-water.pdf  used on input line 1224.
 (pdftex.def)             Requested size: 225.84229pt x 117.15614pt.
-<water-conduct.pdf, id=896, 722.62471pt x 474.9755pt>
+<water-conduct.pdf, id=898, 722.62471pt x 474.9755pt>
 File: water-conduct.pdf Graphic file (type pdf)
 <use water-conduct.pdf>
 Package pdftex.def Info: water-conduct.pdf  used on input line 1225.
@@ -1220,12 +1220,12 @@ LaTeX Warning: Hyper reference `2.14:sec:Measure-resistance-by-comparison' on p
 age 27 undefined on input line 1237.
 
 [27 <./res-water.pdf> <./water-conduct.pdf>]
-<sound-generator.pdf, id=911, 963.6pt x 562.1pt>
+<sound-generator.pdf, id=913, 963.6pt x 562.1pt>
 File: sound-generator.pdf Graphic file (type pdf)
 <use sound-generator.pdf>
 Package pdftex.def Info: sound-generator.pdf  used on input line 1268.
 (pdftex.def)             Requested size: 225.84229pt x 131.74187pt.
-<sound-capture.pdf, id=912, 963.6pt x 320.19624pt>
+<sound-capture.pdf, id=914, 963.6pt x 320.19624pt>
 File: sound-capture.pdf Graphic file (type pdf)
 <use sound-capture.pdf>
 Package pdftex.def Info: sound-capture.pdf  used on input line 1296.
@@ -1235,7 +1235,7 @@ Package pdftex.def Info: sound-capture.pdf  used on input line 1296.
 pdfTeX warning: pdflatex (file ./sound-capture.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
 >]
-<stroboscope.pdf, id=936, 963.6pt x 516.93124pt>
+<stroboscope.pdf, id=938, 963.6pt x 516.93124pt>
 File: stroboscope.pdf Graphic file (type pdf)
 <use stroboscope.pdf>
 Package pdftex.def Info: stroboscope.pdf  used on input line 1333.
@@ -1244,19 +1244,23 @@ Package pdftex.def Info: stroboscope.pdf  used on input line 1333.
 
 ]
 Chapitre 7.
-<scope-outputs.pdf, id=952, 908.2673pt x 722.59966pt>
+<scope-outputs.pdf, id=954, 963.6pt x 766.865pt>
 File: scope-outputs.pdf Graphic file (type pdf)
 <use scope-outputs.pdf>
 Package pdftex.def Info: scope-outputs.pdf  used on input line 1416.
-(pdftex.def)             Requested size: 225.84229pt x 179.66815pt.
+(pdftex.def)             Requested size: 225.84229pt x 179.73354pt.
 [31]
-<scope-inputs.pdf, id=958, 778.80162pt x 722.59966pt>
+<scope-inputs.pdf, id=960, 963.6pt x 893.3375pt>
 File: scope-inputs.pdf Graphic file (type pdf)
 <use scope-inputs.pdf>
 Package pdftex.def Info: scope-inputs.pdf  used on input line 1458.
-(pdftex.def)             Requested size: 225.84229pt x 209.5375pt.
- [32 <./scope-outputs.pdf> <./scope-inputs.pdf>]
-<halfwave.pdf, id=972, 963.6pt x 617.30624pt>
+(pdftex.def)             Requested size: 225.84229pt x 209.37546pt.
+ [32 <./scope-outputs.pdf> <./scope-inputs.pdf
+
+pdfTeX warning: pdflatex (file ./scope-inputs.pdf): PDF inclusion: multiple pdf
+s with page group included in a single page
+>]
+<halfwave.pdf, id=981, 963.6pt x 617.30624pt>
 File: halfwave.pdf Graphic file (type pdf)
 <use halfwave.pdf>
 Package pdftex.def Info: halfwave.pdf  used on input line 1511.
@@ -1271,7 +1275,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1511--1513
  []
 
 [33 <./halfwave.pdf>]
-<fullwave.pdf, id=998, 963.6pt x 732.7375pt>
+<fullwave.pdf, id=1007, 963.6pt x 732.7375pt>
 File: fullwave.pdf Graphic file (type pdf)
 <use fullwave.pdf>
 Package pdftex.def Info: fullwave.pdf  used on input line 1561.
@@ -1286,7 +1290,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1561--1563
  []
 
 [34 <./fullwave.pdf>]
-<clipping.pdf, id=1022, 963.6pt x 487.8225pt>
+<clipping.pdf, id=1031, 963.6pt x 487.8225pt>
 File: clipping.pdf Graphic file (type pdf)
 <use clipping.pdf>
 Package pdftex.def Info: clipping.pdf  used on input line 1596.
@@ -1300,7 +1304,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1596--1598
 [] [] 
  []
 
-<clamping.pdf, id=1023, 963.6pt x 606.265pt>
+<clamping.pdf, id=1032, 963.6pt x 606.265pt>
 File: clamping.pdf Graphic file (type pdf)
 <use clamping.pdf>
 Package pdftex.def Info: clamping.pdf  used on input line 1622.
@@ -1319,12 +1323,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1622--1624
 pdfTeX warning: pdflatex (file ./clamping.pdf): PDF inclusion: multiple pdfs wi
 th page group included in a single page
 >]
-<osc555.pdf, id=1054, 963.6pt x 711.65875pt>
+<osc555.pdf, id=1063, 963.6pt x 711.65875pt>
 File: osc555.pdf Graphic file (type pdf)
 <use osc555.pdf>
 Package pdftex.def Info: osc555.pdf  used on input line 1648.
 (pdftex.def)             Requested size: 225.84229pt x 166.7946pt.
-<ic555-screen.pdf, id=1055, 722.62471pt x 496.05225pt>
+<ic555-screen.pdf, id=1064, 722.62471pt x 496.05225pt>
 File: ic555-screen.pdf Graphic file (type pdf)
 <use ic555-screen.pdf>
 Package pdftex.def Info: ic555-screen.pdf  used on input line 1649.
@@ -1334,7 +1338,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1648--1650
 [] [] 
  []
 
-<opamp-inv.pdf, id=1056, 963.6pt x 659.46375pt>
+<opamp-inv.pdf, id=1065, 963.6pt x 659.46375pt>
 File: opamp-inv.pdf Graphic file (type pdf)
 <use opamp-inv.pdf>
 Package pdftex.def Info: opamp-inv.pdf  used on input line 1683.
@@ -1344,18 +1348,18 @@ Package pdftex.def Info: opamp-inv.pdf  used on input line 1683.
 pdfTeX warning: pdflatex (file ./opamp-inv.pdf): PDF inclusion: multiple pdfs w
 ith page group included in a single page
 >]
-<opamp-noninv.pdf, id=1103, 963.6pt x 696.6025pt>
+<opamp-noninv.pdf, id=1112, 963.6pt x 696.6025pt>
 File: opamp-noninv.pdf Graphic file (type pdf)
 <use opamp-noninv.pdf>
 Package pdftex.def Info: opamp-noninv.pdf  used on input line 1717.
 (pdftex.def)             Requested size: 225.84229pt x 163.26581pt.
-<opamp-int.pdf, id=1104, 963.6pt x 764.8575pt>
+<opamp-int.pdf, id=1113, 963.6pt x 764.8575pt>
 File: opamp-int.pdf Graphic file (type pdf)
 <use opamp-int.pdf>
 Package pdftex.def Info: opamp-int.pdf  used on input line 1750.
 (pdftex.def)             Requested size: 225.84229pt x 179.26303pt.
  [37 <./opamp-noninv.pdf>]
-<logic-gates.pdf, id=1134, 963.6pt x 653.44125pt>
+<logic-gates.pdf, id=1143, 963.6pt x 653.44125pt>
 File: logic-gates.pdf Graphic file (type pdf)
 <use logic-gates.pdf>
 Package pdftex.def Info: logic-gates.pdf  used on input line 1786.
@@ -1365,7 +1369,7 @@ Package pdftex.def Info: logic-gates.pdf  used on input line 1786.
 pdfTeX warning: pdflatex (file ./logic-gates.pdf): PDF inclusion: multiple pdfs
  with page group included in a single page
 >]
-<clock-divider.pdf, id=1175, 963.6pt x 831.105pt>
+<clock-divider.pdf, id=1185, 963.6pt x 831.105pt>
 File: clock-divider.pdf Graphic file (type pdf)
 <use clock-divider.pdf>
 Package pdftex.def Info: clock-divider.pdf  used on input line 1823.
@@ -1374,7 +1378,7 @@ File: clock-divider.pdf Graphic file (type pdf)
 <use clock-divider.pdf>
 Package pdftex.def Info: clock-divider.pdf  used on input line 1855.
 (pdftex.def)             Requested size: 225.84229pt x 194.78975pt.
-<clock-divider2.pdf, id=1176, 722.62471pt x 472.71706pt>
+<clock-divider2.pdf, id=1186, 722.62471pt x 472.71706pt>
 File: clock-divider2.pdf Graphic file (type pdf)
 <use clock-divider2.pdf>
 Package pdftex.def Info: clock-divider2.pdf  used on input line 1855.
@@ -1393,12 +1397,12 @@ Overfull \hbox (13.80238pt too wide) in paragraph at lines 1855--1855
  []
 
 [39 <./clock-divider.pdf>]
-<diode_iv.pdf, id=1188, 963.6pt x 505.89pt>
+<diode_iv.pdf, id=1197, 963.6pt x 505.89pt>
 File: diode_iv.pdf Graphic file (type pdf)
 <use diode_iv.pdf>
 Package pdftex.def Info: diode_iv.pdf  used on input line 1869.
 (pdftex.def)             Requested size: 225.84229pt x 118.56767pt.
-<diode-iv-screen.pdf, id=1189, 853.1875pt x 722.7pt>
+<diode-iv-screen.pdf, id=1198, 853.1875pt x 722.7pt>
 File: diode-iv-screen.pdf Graphic file (type pdf)
 <use diode-iv-screen.pdf>
 Package pdftex.def Info: diode-iv-screen.pdf  used on input line 1870.
@@ -1409,12 +1413,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1869--1871
  []
 
 [40 <./clock-divider2.pdf> <./diode_iv.pdf> <./diode-iv-screen.pdf>]
-<transistor_out.pdf, id=1208, 963.6pt x 772.8875pt>
+<transistor_out.pdf, id=1217, 963.6pt x 772.8875pt>
 File: transistor_out.pdf Graphic file (type pdf)
 <use transistor_out.pdf>
 Package pdftex.def Info: transistor_out.pdf  used on input line 1919.
 (pdftex.def)             Requested size: 225.84229pt x 181.14505pt.
-<transistor-ce.pdf, id=1209, 722.62471pt x 532.18324pt>
+<transistor-ce.pdf, id=1218, 722.62471pt x 532.18324pt>
 File: transistor-ce.pdf Graphic file (type pdf)
 <use transistor-ce.pdf>
 Package pdftex.def Info: transistor-ce.pdf  used on input line 1920.
@@ -1425,12 +1429,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 1919--1921
  []
 
 [41 <./transistor_out.pdf> <./transistor-ce.pdf>]
-<opto-electric.pdf, id=1231, 963.6pt x 569.12625pt>
+<opto-electric.pdf, id=1240, 963.6pt x 569.12625pt>
 File: opto-electric.pdf Graphic file (type pdf)
 <use opto-electric.pdf>
 Package pdftex.def Info: opto-electric.pdf  used on input line 1955.
 (pdftex.def)             Requested size: 225.84229pt x 133.38863pt.
-<opto-electric-transmission.pdf, id=1232, 722.62471pt x 474.9755pt>
+<opto-electric-transmission.pdf, id=1241, 722.62471pt x 474.9755pt>
 File: opto-electric-transmission.pdf Graphic file (type pdf)
 <use opto-electric-transmission.pdf>
 Package pdftex.def Info: opto-electric-transmission.pdf  used on input line 195
@@ -1446,26 +1450,26 @@ Chapitre 8.
 File: res-compare.pdf Graphic file (type pdf)
 <use res-compare.pdf>
 Package pdftex.def Info: res-compare.pdf  used on input line 1998.
-(pdftex.def)             Requested size: 225.84229pt x 96.45386pt.
+(pdftex.def)             Requested size: 225.84229pt x 99.51215pt.
 [43
 
 ]
-<XYplot.pdf, id=1255, 963.6pt x 512.91624pt>
+<XYplot.pdf, id=1264, 963.6pt x 512.91624pt>
 File: XYplot.pdf Graphic file (type pdf)
 <use XYplot.pdf>
 Package pdftex.def Info: XYplot.pdf  used on input line 2025.
 (pdftex.def)             Requested size: 225.84229pt x 120.21445pt.
-<RCsteadystate.pdf, id=1256, 963.6pt x 500.87125pt>
+<RCsteadystate.pdf, id=1265, 963.6pt x 500.87125pt>
 File: RCsteadystate.pdf Graphic file (type pdf)
 <use RCsteadystate.pdf>
 Package pdftex.def Info: RCsteadystate.pdf  used on input line 2045.
 (pdftex.def)             Requested size: 225.84229pt x 117.3914pt.
-<RLsteadystate.pdf, id=1257, 963.6pt x 500.87125pt>
+<RLsteadystate.pdf, id=1266, 963.6pt x 500.87125pt>
 File: RLsteadystate.pdf Graphic file (type pdf)
 <use RLsteadystate.pdf>
 Package pdftex.def Info: RLsteadystate.pdf  used on input line 2046.
 (pdftex.def)             Requested size: 225.84229pt x 117.3914pt.
-<RLCsteadystate.pdf, id=1258, 963.6pt x 628.3475pt>
+<RLCsteadystate.pdf, id=1267, 963.6pt x 628.3475pt>
 File: RLCsteadystate.pdf Graphic file (type pdf)
 <use RLCsteadystate.pdf>
 Package pdftex.def Info: RLCsteadystate.pdf  used on input line 2047.
@@ -1475,7 +1479,11 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2045--2048
 [] []
  []
 
-[44 <./XYplot.pdf> <./RCsteadystate.pdf> <./RLsteadystate.pdf
+[44 <./XYplot.pdf> <./RCsteadystate.pdf
+
+pdfTeX warning: pdflatex (file ./RCsteadystate.pdf): PDF inclusion: multiple pd
+fs with page group included in a single page
+> <./RLsteadystate.pdf
 
 pdfTeX warning: pdflatex (file ./RLsteadystate.pdf): PDF inclusion: multiple pd
 fs with page group included in a single page
@@ -1484,7 +1492,7 @@ fs with page group included in a single page
 pdfTeX warning: pdflatex (file ./RLCsteadystate.pdf): PDF inclusion: multiple p
 dfs with page group included in a single page
 >]
-<RCtransient.pdf, id=1285, 963.6pt x 543.02875pt>
+<RCtransient.pdf, id=1295, 963.6pt x 543.02875pt>
 File: RCtransient.pdf Graphic file (type pdf)
 <use RCtransient.pdf>
 Package pdftex.def Info: RCtransient.pdf  used on input line 2104.
@@ -1499,7 +1507,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2104--2106
  []
 
 [45 <./RCtransient.pdf>]
-<RLtransient.pdf, id=1296, 963.6pt x 628.3475pt>
+<RLtransient.pdf, id=1306, 963.6pt x 628.3475pt>
 File: RLtransient.pdf Graphic file (type pdf)
 <use RLtransient.pdf>
 Package pdftex.def Info: RLtransient.pdf  used on input line 2151.
@@ -1514,12 +1522,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2151--2153
  []
 
 [46 <./RLtransient.pdf>]
-<RLCtransient.pdf, id=1308, 963.6pt x 543.02875pt>
+<RLCtransient.pdf, id=1319, 963.6pt x 543.02875pt>
 File: RLCtransient.pdf Graphic file (type pdf)
 <use RLCtransient.pdf>
 Package pdftex.def Info: RLCtransient.pdf  used on input line 2214.
 (pdftex.def)             Requested size: 225.84229pt x 127.27203pt.
-<RLC-curves.pdf, id=1309, 722.62471pt x 526.91354pt>
+<RLC-curves.pdf, id=1320, 722.62471pt x 526.91354pt>
 File: RLC-curves.pdf Graphic file (type pdf)
 <use RLC-curves.pdf>
 Package pdftex.def Info: RLC-curves.pdf  used on input line 2215.
@@ -1529,7 +1537,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2214--2216
 [] [] 
  []
 
-<RCintegration.pdf, id=1310, 963.6pt x 500.87125pt>
+<RCintegration.pdf, id=1321, 963.6pt x 500.87125pt>
 File: RCintegration.pdf Graphic file (type pdf)
 <use RCintegration.pdf>
 Package pdftex.def Info: RCintegration.pdf  used on input line 2256.
@@ -1548,7 +1556,7 @@ File: RCintegration.pdf Graphic file (type pdf)
 <use RCintegration.pdf>
 Package pdftex.def Info: RCintegration.pdf  used on input line 2283.
 (pdftex.def)             Requested size: 225.84229pt x 117.3914pt.
-<RCdifferentiation.pdf, id=1328, 853.1875pt x 722.7pt>
+<RCdifferentiation.pdf, id=1338, 853.1875pt x 722.7pt>
 File: RCdifferentiation.pdf Graphic file (type pdf)
 <use RCdifferentiation.pdf>
 Package pdftex.def Info: RCdifferentiation.pdf  used on input line 2284.
@@ -1559,12 +1567,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2283--2285
  []
 
 [48 <./RCintegration.pdf> <./RCdifferentiation.pdf>]
-<sqwaveFFT.pdf, id=1344, 853.1875pt x 722.7pt>
+<sqwaveFFT.pdf, id=1354, 853.1875pt x 722.7pt>
 File: sqwaveFFT.pdf Graphic file (type pdf)
 <use sqwaveFFT.pdf>
 Package pdftex.def Info: sqwaveFFT.pdf  used on input line 2327.
 (pdftex.def)             Requested size: 225.84229pt x 191.29404pt.
-<sinewaveFFT.pdf, id=1345, 853.1875pt x 722.7pt>
+<sinewaveFFT.pdf, id=1355, 853.1875pt x 722.7pt>
 File: sinewaveFFT.pdf Graphic file (type pdf)
 <use sinewaveFFT.pdf>
 Package pdftex.def Info: sinewaveFFT.pdf  used on input line 2328.
@@ -1574,12 +1582,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2327--2329
 [] [] 
  []
 
-<induction.pdf, id=1346, 963.6pt x 686.565pt>
+<induction.pdf, id=1356, 963.6pt x 686.565pt>
 File: induction.pdf Graphic file (type pdf)
 <use induction.pdf>
 Package pdftex.def Info: induction.pdf  used on input line 2340.
 (pdftex.def)             Requested size: 225.84229pt x 160.91327pt.
-<induction-screen.pdf, id=1347, 661.65295pt x 541.96877pt>
+<induction-screen.pdf, id=1357, 661.65295pt x 541.96877pt>
 File: induction-screen.pdf Graphic file (type pdf)
 <use induction-screen.pdf>
 Package pdftex.def Info: induction-screen.pdf  used on input line 2341.
@@ -1596,7 +1604,7 @@ File: sound-capture.pdf Graphic file (type pdf)
 <use sound-capture.pdf>
 Package pdftex.def Info: sound-capture.pdf  used on input line 2394.
 (pdftex.def)             Requested size: 225.84229pt x 75.0458pt.
-<piezo-freq-resp.pdf, id=1375, 722.62471pt x 485.51389pt>
+<piezo-freq-resp.pdf, id=1385, 722.62471pt x 485.51389pt>
 File: piezo-freq-resp.pdf Graphic file (type pdf)
 <use piezo-freq-resp.pdf>
 Package pdftex.def Info: piezo-freq-resp.pdf  used on input line 2395.
@@ -1613,12 +1621,12 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2394--2396
 LaTeX Warning: Hyper reference `5.2:fig:Sound-waves' on page 52 undefined on in
 put line 2421.
 
-<sound_waves.pdf, id=1385, 963.6pt x 509.905pt>
+<sound_waves.pdf, id=1395, 963.6pt x 509.905pt>
 File: sound_waves.pdf Graphic file (type pdf)
 <use sound_waves.pdf>
 Package pdftex.def Info: sound_waves.pdf  used on input line 2447.
 (pdftex.def)             Requested size: 225.84229pt x 119.50868pt.
-<sound-velocity.pdf, id=1386, 963.6pt x 420.57124pt>
+<sound-velocity.pdf, id=1396, 963.6pt x 420.57124pt>
 File: sound-velocity.pdf Graphic file (type pdf)
 <use sound-velocity.pdf>
 Package pdftex.def Info: sound-velocity.pdf  used on input line 2447.
@@ -1641,7 +1649,7 @@ LaTeX Warning: Hyper reference `5.2:sec:Resonance-frequency-of' on page 52 unde
 fined on input line 2455.
 
 [52 <./sound_waves.pdf> <./sound-velocity.pdf>]
-<sound-beats.pdf, id=1403, 963.6pt x 339.2675pt>
+<sound-beats.pdf, id=1413, 963.6pt x 339.2675pt>
 File: sound-beats.pdf Graphic file (type pdf)
 <use sound-beats.pdf>
 Package pdftex.def Info: sound-beats.pdf  used on input line 2489.
@@ -1651,12 +1659,12 @@ Package pdftex.def Info: sound-beats.pdf  used on input line 2489.
 
 ]
 Chapitre 10.
-<rod-pendulum.pdf, id=1418, 963.6pt x 569.12625pt>
+<rod-pendulum.pdf, id=1428, 963.6pt x 569.12625pt>
 File: rod-pendulum.pdf Graphic file (type pdf)
 <use rod-pendulum.pdf>
 Package pdftex.def Info: rod-pendulum.pdf  used on input line 2540.
 (pdftex.def)             Requested size: 225.84229pt x 133.38863pt.
-<light-barrier-photo.pdf, id=1419, 963.6pt x 630.355pt>
+<light-barrier-photo.pdf, id=1429, 963.6pt x 630.355pt>
 File: light-barrier-photo.pdf Graphic file (type pdf)
 <use light-barrier-photo.pdf>
 Package pdftex.def Info: light-barrier-photo.pdf  used on input line 2541.
@@ -1667,18 +1675,18 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2540--2542
  []
 
 [55 <./rod-pendulum.pdf> <./light-barrier-photo.pdf>]
-<pendulum-screen.pdf, id=1436, 705.31204pt x 541.96877pt>
+<pendulum-screen.pdf, id=1446, 705.31204pt x 541.96877pt>
 File: pendulum-screen.pdf Graphic file (type pdf)
 <use pendulum-screen.pdf>
 Package pdftex.def Info: pendulum-screen.pdf  used on input line 2575.
 (pdftex.def)             Requested size: 225.84229pt x 173.54105pt.
  [56 <./pendulum-screen.pdf>]
-<driven-pendulum.pdf, id=1445, 963.6pt x 414.54875pt>
+<driven-pendulum.pdf, id=1456, 963.6pt x 414.54875pt>
 File: driven-pendulum.pdf Graphic file (type pdf)
 <use driven-pendulum.pdf>
 Package pdftex.def Info: driven-pendulum.pdf  used on input line 2612.
 (pdftex.def)             Requested size: 225.84229pt x 97.15962pt.
-<resonance-pendulum.pdf, id=1446, 853.1875pt x 722.7pt>
+<resonance-pendulum.pdf, id=1457, 853.1875pt x 722.7pt>
 File: resonance-pendulum.pdf Graphic file (type pdf)
 <use resonance-pendulum.pdf>
 Package pdftex.def Info: resonance-pendulum.pdf  used on input line 2613.
@@ -1688,19 +1696,19 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2612--2614
 [] [] 
  []
 
-<sr04-dist.pdf, id=1447, 963.6pt x 582.175pt>
+<sr04-dist.pdf, id=1458, 963.6pt x 582.175pt>
 File: sr04-dist.pdf Graphic file (type pdf)
 <use sr04-dist.pdf>
 Package pdftex.def Info: sr04-dist.pdf  used on input line 2655.
 (pdftex.def)             Requested size: 225.84229pt x 136.44693pt.
 [57 <./driven-pendulum.pdf> <./resonance-pendulum.pdf>] [58 <./sr04-dist.pdf>]
 Chapitre 11.
-<pt100.pdf, id=1473, 963.6pt x 841.1425pt>
+<pt100.pdf, id=1483, 963.6pt x 841.1425pt>
 File: pt100.pdf Graphic file (type pdf)
 <use pt100.pdf>
 Package pdftex.def Info: pt100.pdf  used on input line 2690.
 (pdftex.def)             Requested size: 225.84229pt x 197.14229pt.
-<pt100-screen.pdf, id=1474, 693.26802pt x 541.96877pt>
+<pt100-screen.pdf, id=1484, 693.26802pt x 541.96877pt>
 File: pt100-screen.pdf Graphic file (type pdf)
 <use pt100-screen.pdf>
 Package pdftex.def Info: pt100-screen.pdf  used on input line 2691.
@@ -1717,7 +1725,7 @@ Overfull \hbox (0.9967pt too wide) in paragraph at lines 2690--2692
 ]
 Chapitre 12.
 [63]
-<MPU6050.pdf, id=1518, 722.59966pt x 722.59966pt>
+<MPU6050.pdf, id=1528, 722.59966pt x 722.59966pt>
 File: MPU6050.pdf Graphic file (type pdf)
 <use MPU6050.pdf>
 Package pdftex.def Info: MPU6050.pdf  used on input line 2874.
@@ -1737,7 +1745,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 3166--3166
  []
 
 [69]
-<sine.pdf, id=1552, 853.1875pt x 722.7pt>
+<sine.pdf, id=1562, 853.1875pt x 722.7pt>
 File: sine.pdf Graphic file (type pdf)
 <use sine.pdf>
 Package pdftex.def Info: sine.pdf  used on input line 3195.
@@ -1747,7 +1755,7 @@ File: halfwave.pdf Graphic file (type pdf)
 <use halfwave.pdf>
 Package pdftex.def Info: halfwave.pdf  used on input line 3219.
 (pdftex.def)             Requested size: 301.12305pt x 192.90771pt.
-<capture4.pdf, id=1561, 853.1875pt x 722.7pt>
+<capture4.pdf, id=1571, 853.1875pt x 722.7pt>
 File: capture4.pdf Graphic file (type pdf)
 <use capture4.pdf>
 Package pdftex.def Info: capture4.pdf  used on input line 3220.
@@ -1762,12 +1770,12 @@ LaTeX Font Info:    Font shape `TS1/pcr/m/it' in size <10.95> not available
 (Font)              Font shape `TS1/pcr/m/sl' tried instead on input line 3257.
 
  [72]
-<loadEquation.pdf, id=1574, 853.1875pt x 722.7pt>
+<loadEquation.pdf, id=1584, 853.1875pt x 722.7pt>
 File: loadEquation.pdf Graphic file (type pdf)
 <use loadEquation.pdf>
 Package pdftex.def Info: loadEquation.pdf  used on input line 3282.
 (pdftex.def)             Requested size: 301.12305pt x 255.07709pt.
-<loadTable.pdf, id=1575, 853.1875pt x 722.7pt>
+<loadTable.pdf, id=1585, 853.1875pt x 722.7pt>
 File: loadTable.pdf Graphic file (type pdf)
 <use loadTable.pdf>
 Package pdftex.def Info: loadTable.pdf  used on input line 3283.
@@ -1794,12 +1802,12 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 3309.
  ) 
 Here is how much of TeX's memory you used:
- 15767 strings out of 494418
- 228173 string characters out of 6173588
- 330227 words of memory out of 5000000
- 18810 multiletter control sequences out of 15000+600000
+ 15767 strings out of 492615
+ 228173 string characters out of 6131389
+ 334696 words of memory out of 5000000
+ 19038 multiletter control sequences out of 15000+600000
  53830 words of font info for 86 fonts, out of 8000000 for 9000
- 82 hyphenation exceptions out of 8191
+ 1142 hyphenation exceptions out of 8191
  38i,18n,60p,425b,693s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
@@ -1819,10 +1827,10 @@ texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on eyes17.pdf (80 pages, 6595888 bytes).
+Output written on eyes17.pdf (80 pages, 4430887 bytes).
 PDF statistics:
- 1702 PDF objects out of 1728 (max. 8388607)
- 1363 compressed objects within 14 object streams
+ 1712 PDF objects out of 1728 (max. 8388607)
+ 1370 compressed objects within 14 object streams
  212 named destinations out of 1000 (max. 500000)
  1290 words of extra memory for PDF output out of 10000 (max. 10000000)
 

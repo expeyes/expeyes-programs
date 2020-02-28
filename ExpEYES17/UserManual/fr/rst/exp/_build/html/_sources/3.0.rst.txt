@@ -34,7 +34,7 @@ est un oscilloscope à quatre canaux amélioré.
 -  Les branchements d'entrée/sortie d'ExpEYES sont brièvement décrits
    ci-dessous.
 
-.. figure:: ./images/scope-outputs.png
+.. figure:: ./schematics/scope-outputs.svg
    :width: 300px
 
 Branchements de sortie
@@ -56,7 +56,7 @@ Branchements de sortie
    carré, la sortie est sur SQ2, avec une excursion de :math:`0` à :math:`5\ V`.
 -  **-WG:** Sortie de WG inversée.
 
-.. figure:: ./images/scope-inputs.png
+.. figure:: ./schematics/scope-inputs.svg
    :width: 300px
 
 Branchements d'entrée
