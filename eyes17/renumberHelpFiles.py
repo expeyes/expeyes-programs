@@ -15,7 +15,7 @@ for p in paths:
     with open("renumbering.txt") as rn:
         for l in rn.readlines():
             l=l.strip()
-            m=re.match(r"([.0-9]+) ([.0-9]+)", l)
+            m=re.match(r"([.0-9ab]+) ([.0-9ab]+)", l)
             if m:
                 f=m.group(1)+".rst"
                 g=m.group(2)+".rst"
