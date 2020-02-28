@@ -1,26 +1,34 @@
-.. 2.15
+.. 2.11
    
-Générer un son
---------------
+Tension d’une pile-citron
+-------------------------
 
 **Objectif**
 
-Générer un son avec des signaux électriques, à l’aide d’un buzzer
-piézo-électrique. Numériser un son et mesurer sa fréquence ? Utiliser un
-buzzer piézo ou toute autre source sonore comme un diapason.
+Créer une source de tension en insérant des plaques de zinc et cuivre
+dans un citron. Explorer les possibilités de fournir du courant et la
+résistance interne.
+
+.. image:: schematics/lemon-cell.svg
+	   :width: 300px
 
 **Procédure**
 
-.. image:: schematics/sound-generator.svg
-	   :width: 300px
-
--  Activer A1, et son analyse
--  Régler WG à :math:`1000~Hz`, puis changer et écouter le son
+-  Cliquer sur A1 pour mesurer la tension
+-  Mesurer la tension avec et sans une résistance de :math:`1~k\Omega`.
 
 **Discussion**
 
-Quand on change la fréquence du signal qui excite le piézo, la fréquence
-et l’intensité du son changent toutes les deux. L’intensité est maximale
-près de :math:`3500~Hz`, à cause de la résonance. La fréquence de résonance
-d’un buzzer piézo dépend de sa taille et de ses propriétés mécaniques.
+La tension entre le zinc et le cuivre est d’environ 0,9 V. Quand on
+connecte la résistance, elle diminue à quelques 0,33 V. Quand on
+connecte la pile, le courant commence à circuler à travers la
+résistance. Mais pourquoi la tension diminue-t-elle ?
+
+Quelle est la résistance interne de la pile ?
+
+Le courant est le flux de charges et il doit faire le tour complet. Ce
+la signifie que le courant doit traverser la pile aussi. Selon la
+résistance interne de la pile, une part de la tension est perdue à
+l’intérieur même de la pile. Est-ce que la même chose se produit avec
+une pile du commerce neuve ?
 

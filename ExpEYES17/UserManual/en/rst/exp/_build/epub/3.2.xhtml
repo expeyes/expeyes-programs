@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Fullwave rectifier using PN junctions</title>
+    <title>Half wave rectifier using PN junction</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,24 +12,32 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="fullwave-rectifier-using-pn-junctions">
-<h1>Fullwave rectifier using PN junctions</h1>
+  <div class="section" id="half-wave-rectifier-using-pn-junction">
+<h1>Half wave rectifier using PN junction</h1>
 <p><strong>Objective</strong></p>
-<p>Make a full wave rectifier, using two diodes. Two AC waveforms,
-differing by 180 degree in phase as required. WG and WG bar provide the
-same.</p>
-<img alt="_images/fullwave.svg" src="_images/fullwave.svg" width="300px" /><img alt="_images/fullwave.png" src="_images/fullwave.png" style="width: 300px;" />
+<p>Learn the working of a PN junction diode as a rectifier. RC filtering to
+reduce the ripple (the AC component).</p>
+<img alt="_images/halfwave.svg" src="_images/halfwave.svg" width="300px" /><img alt="_images/halfwave.png" src="_images/halfwave.png" style="width: 300px;" />
 <p><strong>Procedure</strong></p>
 <ul class="simple">
-<li><p>Make connections</p></li>
-<li><p>Enable A1, A2 and A3</p></li>
-<li><p>Set WG to 200Hz and adjust timebase to view 4 to 5 cycles</p></li>
+<li><p>Make connections and observe the output</p></li>
+<li><p>Connect a <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> load resistor, note the difference in amplitude</p></li>
+<li><p>Connect a <img class="math" src="_images/math/83b243116fc4ea50c8c083f6da6696cdf9d7d82d.png" alt="1 \mu F"/> capacitor, and see the filtering effect.</p></li>
+<li><p>Try different values load resistors and filter capacitors</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Adding capacitors to reduce the ripple is left as an exercise to the
-user. This experiment is only to demonstrate the working of a full wave
-rectifier, it cannot provide more than few milli amperes of current.</p>
-<p>Why full-wave rectifier is superior to half-wave rectifier ?</p>
+<p>The negative half is removed by the diode as shown in figure. Also
+notice that the voltage in the positive half is reduced by around 0.7
+volts, the voltage drop across a silicon diode. A load resistor is
+required for the proper operation of the circuit, it could be more than
+1kΩ but do NOT use very low values since our AC source can drive only up
+to 5 mA current.</p>
+<p>We can see that the capacitor charges up and then during the missing
+cycle it maintains the voltage. The remaining AC component is called the
+ripple in the DC.</p>
+<p>Can we use very large capacitance to reduce the ripple ?</p>
+<p>During what part of the cycle does current flow through the diode ?</p>
+<p>Amount of peak current is decided by what ?</p>
 </div>
 
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Photorésistances &#8212; Documentation eyes17 1.0</title>
+    <title>Signal d’antenne alternatif dû au secteur &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Tension d’une pile-citron" href="2.11.html" />
-    <link rel="prev" title="Résistance électrique du corps humain" href="2.9.html" /> 
+    <link rel="next" title="Séparation des composantes continue et alternative" href="2.11.html" />
+    <link rel="prev" title="Courants continu et alternatif" href="2.9.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.11.html" title="Tension d’une pile-citron"
+          <a href="2.11.html" title="Séparation des composantes continue et alternative"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="2.9.html" title="Résistance électrique du corps humain"
+          <a href="2.9.html" title="Courants continu et alternatif"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="2.9.html"
-                        title="Chapitre précédent">Résistance électrique du corps humain</a></p>
+                        title="Chapitre précédent">Courants continu et alternatif</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="2.11.html"
-                        title="Chapitre suivant">Tension d’une pile-citron</a></p>
+                        title="Chapitre suivant">Séparation des composantes continue et alternative</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,26 +70,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="photoresistances">
-<h1>Photorésistances<a class="headerlink" href="#photoresistances" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="signal-dantenne-alternatif-du-au-secteur">
+<h1>Signal d’antenne alternatif dû au secteur<a class="headerlink" href="#signal-dantenne-alternatif-du-au-secteur" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Objectif</strong></p>
-<p>Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et
-sa variation en fonction de la distance à la source.</p>
-<a class="reference internal image-reference" href="_images/ldr.svg"><img alt="_images/ldr.svg" src="_images/ldr.svg" width="300px" /></a>
+<p>Étudier l’alimentation du secteur en courant alternatif. Explorer le
+phénomène de propagation de tensions alternatives à travers l’espace.</p>
+<a class="reference internal image-reference" href="_images/line-pickup.svg"><img alt="_images/line-pickup.svg" src="_images/line-pickup.svg" width="300px" /></a>
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li>Mesurer la résistance de la LDR, pour diverses intensités lumineuses.</li>
-<li>Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée
-afficher des variations</li>
-<li>Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation</li>
+<li>Connecter un long fil en A3</li>
+<li>Approcher une extrémité du fil près d’une ligne d’alimentation du
+secteur, sans toucher aucune source de tension.</li>
+<li>Activer A3, et son analyse.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>La résistance varie de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> à environ <img class="math" src="_images/math/747baa849ddf46b5a4d2e10666b6ae1c7a95ee05.png" alt="100~k\Omega"/>
-selon l’intensité de la lumière qui l’éclaire. La tension est
-proportionnelle à la résistance (si le courant est constant). La
-résistance diminue quand l’éclairage augmente. Si on utilise une
-source de lumière ponctuelle, la résistance est censée augmenter comme
-le carré de la distance entre la photorésistance et la source lumière.</p>
+<p>Le signal d’antenne du secteur est affiché ci-dessous, il y a cinq
+cycles en 100&nbsp;ms. Sans faire aucune connexion, comment se fait-il qu’on
+reçoive un signal de tension alternative depuis le secteur&nbsp;? Pourquoi la
+tension augmente-t-elle quand on touche le fil connecté en A1 avec la
+main&nbsp;?</p>
+<a class="reference internal image-reference" href="_images/pickup.png"><img alt="_images/pickup.png" src="_images/pickup.png" style="width: 300px;" /></a>
 </div>
 
 
@@ -105,10 +105,10 @@ le carré de la distance entre la photorésistance et la source lumière.</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="2.11.html" title="Tension d’une pile-citron"
+          <a href="2.11.html" title="Séparation des composantes continue et alternative"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="2.9.html" title="Résistance électrique du corps humain"
+          <a href="2.9.html" title="Courants continu et alternatif"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

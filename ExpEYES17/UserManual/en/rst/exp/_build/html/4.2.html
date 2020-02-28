@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Transient Response of RC circuits &#8212; eyes17 1.0 documentation</title>
+    <title>XY plotting &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Transient Response of RL circuits" href="4.3.html" />
-    <link rel="prev" title="RLC circuits, steady state response" href="4.1.html" /> 
+    <link rel="next" title="RLC circuits, steady state response" href="4.3.html" />
+    <link rel="prev" title="Plot I-V Curve" href="4.1.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="4.3.html" title="Transient Response of RL circuits"
+          <a href="4.3.html" title="RLC circuits, steady state response"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="4.1.html" title="RLC circuits, steady state response"
+          <a href="4.1.html" title="Plot I-V Curve"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="4.1.html"
-                        title="previous chapter">RLC circuits, steady state response</a></p>
+                        title="previous chapter">Plot I-V Curve</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="4.3.html"
-                        title="next chapter">Transient Response of RL circuits</a></p>
+                        title="next chapter">RLC circuits, steady state response</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,31 +69,17 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="transient-response-of-rc-circuits">
-<h1>Transient Response of RC circuits<a class="headerlink" href="#transient-response-of-rc-circuits" title="Permalink to this headline">¶</a></h1>
-<p><strong>Objective</strong></p>
-<p>Plot the voltage across a capacitor, when it is charged by applying a
-voltage step through a resistor. Calculate the value of the capacitance
-from the graph.</p>
-<a class="reference internal image-reference" href="_images/RCtransient.svg"><img alt="_images/RCtransient.svg" src="_images/RCtransient.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/RCtransient.png"><img alt="_images/RCtransient.png" src="_images/RCtransient.png" style="width: 300px;" /></a>
-<p><strong>Procedure</strong></p>
+  <div class="section" id="xy-plotting">
+<h1>XY plotting<a class="headerlink" href="#xy-plotting" title="Permalink to this headline">¶</a></h1>
+<p>This program plots A1 vs A2 or (A1-A2) vs A2. It is useful for
+plotting Lissajous figures and stdying RC circuits</p>
+<a class="reference internal image-reference" href="_images/XYplot.svg"><img alt="_images/XYplot.svg" src="_images/XYplot.svg" width="300px" /></a>
+<p>For the circuit shown above, we can plot the voltage across the
+capacitor against the voltage across the resistor. It will form a
+circle when they are equal.</p>
 <ul class="simple">
-<li>From <strong>\emphElectrical</strong> , select <strong>\emphRCTransientresponse</strong></li>
-<li>Click on <em>0-&gt;5V STEP</em> and <em>5-&gt;0V step</em> Buttons to plot the graphs</li>
-<li>Adjust the horizontal scale, if required, and repeat.</li>
-<li>Calculate RC time constant.</li>
+<li>Select C = 1uF, R = 1 kOhm and plot (A1-A2) vs A2. Adjust the frequency to get a circle</li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>Applying a 0 to 5V step makes the voltage across the capacitor to rise
-exponentially as shown in the figure. By fitting the discharge curve
-with <img class="math" src="_images/math/60a5f57cb425f62765c576e48ba2fc4c6a528fc8.png" alt="U(t) = U_0 \times e^{− t/RC}"/>, we can extract the RC time
-constant and find the values of capacitance from it.</p>
-<p>The voltage across a capacitor is exponential only when it is charged
-trough a linear element, a resistor for example. When charged from a
-constant current source, the voltage shows linear increase, because
-<img class="math" src="_images/math/a3cea16b8decb2f89c05eba1adf1898a81269d6c.png" alt="Q = It = CV"/> , and voltage increases linearly with time as
-<img class="math" src="_images/math/ff184117dc8012c2a6f1936486f04c832380d1e2.png" alt="V = (I/C) \times t"/>.</p>
 </div>
 
 
@@ -109,10 +95,10 @@ constant current source, the voltage shows linear increase, because
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="4.3.html" title="Transient Response of RL circuits"
+          <a href="4.3.html" title="RLC circuits, steady state response"
              >next</a> |</li>
         <li class="right" >
-          <a href="4.1.html" title="RLC circuits, steady state response"
+          <a href="4.1.html" title="Plot I-V Curve"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

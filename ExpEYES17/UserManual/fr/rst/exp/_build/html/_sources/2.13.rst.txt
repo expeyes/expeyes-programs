@@ -1,45 +1,31 @@
-.. 2.13
+.. 2.9
    
-Transformateur de courant alternatif
-------------------------------------
+Résistance électrique du corps humain
+-------------------------------------
 
 **Objectif**
 
-Démontrer l’induction mutuelle entre deux bobinages, fournis avec
-ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
-aligne les axes des deux bobinages et on insère un noyau de
-ferrite.
+Mesurer la résistance électrique du corps humain en la comparant à une
+résistance connue. On commence avec un signal continu issu de PV1 puis
+on continue avec un signal alternatif issu de WG.
 
-.. image:: schematics/transformer.svg
-	   :width: 300px
-.. image:: pics/transformer-screen.png
+.. image:: schematics/res-body.svg
 	   :width: 300px
 
 **Procédure**
 
--  Faire les connections comme montré sur la figure
--  Activer A1 et A2
--  Régler WG à :math:`500~Hz`
--  Approcher les bobinages l’un de l’autre et observer la tension en A2.
--  Essayer d’insérer un noyau en ferrite
+-  Régler PV1 à 3 V
+-  Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
+-  Calculer la résistance de son corps comme expliqué à la section
+   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+-  Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer
+   les analyses de A1 et A2 afin de mesurer les tensions.
 
 **Discussion**
 
-Le signal appliqué et le signal induit sont présentés sur la figure. Un
-champ magnétique oscillant est la cause de la tension induite. Dans les
-deux expériences précédentes, le champ magnétique oscillant était créé
-par le mouvement d’aimants permanents. Dans le cas présent, il est créé
-par un courant variable dans le temps.
-
-Essayer de faire cette expérience avec un signal carré. Connecter une
-résistance de :math:`1~k\Omega` aux bornes du bobinage secondaire pour réduire
-les oscillation de résonance.
-
-Le concept de courant alternatif est introduit en affichant la tension
-en fonction du temps. On explore le comportement de dipôles tels que les
-condensateurs et les bobinages en courant continu et alternatif, en
-mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
-La conversion de signaux électriques en son et l’inverse est démontré.
-Pour chaque expérience, on réalise les connexions selon le diagramme
-donné.
+Les mesures en courant continu sont plus affectées par les bruits
+électriques. La résistance en courant alternatif est censée être
+inférieure à la résistance en courant continu. La résistance est due à
+notre peau, le courant électrique peut y passer comme il passe à travers
+un condensateur.
 

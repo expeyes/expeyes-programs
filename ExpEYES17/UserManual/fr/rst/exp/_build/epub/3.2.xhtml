@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Redressement double alternance avec des jonctions PN</title>
+    <title>Redressement demi-onde à l’aide d’une jonction PN</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,27 +12,36 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="redressement-double-alternance-avec-des-jonctions-pn">
-<h1>Redressement double alternance avec des jonctions PN</h1>
+  <div class="section" id="redressement-demi-onde-a-laide-dune-jonction-pn">
+<h1>Redressement demi-onde à l’aide d’une jonction PN</h1>
 <p><strong>Objectif</strong></p>
-<p>Réaliser un redresseur double alternance, à l’aide de deux diodes. Il
-faut deux signaux alternatifs, déphasés de 180 degrés. Ceux-ci sont
-fournis par WG et <img class="math" src="_images/math/8eec40346746e3d6c580ca504fbd9e889d852ba9.png" alt="\overline{WG}"/>.</p>
-<img alt="_images/fullwave.svg" src="_images/fullwave.svg" width="300px" /><img alt="_images/fullwave.png" src="_images/fullwave.png" style="width: 300px;" />
+<p>Étudier le fonctionnement d’une diode à jonction PN comme redresseur.
+Filtrage RC pour réduire les variations de tension (la composante
+alternative).</p>
+<img alt="_images/halfwave.svg" src="_images/halfwave.svg" width="300px" /><img alt="_images/halfwave.png" src="_images/halfwave.png" style="width: 300px;" />
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li><p>Faire les connexions</p></li>
-<li><p>Activer A1, A2 et A3</p></li>
-<li><p>Régler WG à 200 Hz et ajuster la base de temps pour voir 4 ou 5
-cycles.</p></li>
+<li><p>Faire les connexions et observer les sorties</p></li>
+<li><p>Connecter une résistance de charge de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>, noter le changement
+d’amplitude</p></li>
+<li><p>Connecter un condensateur de <img class="math" src="_images/math/83b243116fc4ea50c8c083f6da6696cdf9d7d82d.png" alt="1 \mu F"/>,  et observer l’effet de filtrage.</p></li>
+<li><p>Essayer plusieurs valeurs de résistances de charge et de
+condensateurs de filtrage.</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>On laisse comme exercice à l’utilisateur de réduire la fluctuation de
-tension à l’aide d’un condensateur. Cette expérience est seulement là
-pour montrer le fonctionnement d’une redressement double alternance, il
-ne peut pas produire beaucoup plus que quelques milliampères de courant.</p>
-<p>En quoi un redressement double alternance est-il supérieur à un
-redressement simple alternance ?</p>
+<p>La partie négative est ôtée par la diode comme montré sur la figure.
+Noter aussi que la tension est diminuée de quelques 0,7 V dans la moitié
+positive, c’est la chute de tension aux bornes de la diode silicium,
+quand le courant y passe. Une résistance de charge est nécessaire pour
+que le circuit fonctionne correctement, on peut utiliser plus de
+<img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>, mais NE PAS utiliser de valeurs plus faibles, comme la source
+courant alternatif ne peut pas fournir un courant de plus de <img class="math" src="_images/math/6fe46a7af303c50b92950b0f351a9cd553195d2b.png" alt="5~mA"/>.</p>
+<p>On peut voir que le condensateur se charge puis qu’il maintient la
+tension pendant la partie manquante du cycle.</p>
+<p>Peut-on utiliser des condensateurs de grande capacité pour réduire la
+fluctuation de tension ?</p>
+<p>Durant quelle partie du cycle le courant traverse-t-il la diode ?</p>
+<p>Qu’est qui conditionne la valeur du courant crête ?</p>
 </div>
 
 

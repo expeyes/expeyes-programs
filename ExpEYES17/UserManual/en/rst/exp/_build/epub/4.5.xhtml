@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>RC Integration &amp; Differentiation</title>
+    <title>Transient Response of RL circuits</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,27 +12,38 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rc-integration-differentiation">
-<h1>RC Integration &amp; Differentiation</h1>
+  <div class="section" id="transient-response-of-rl-circuits">
+<h1>Transient Response of RL circuits</h1>
 <p><strong>Objective</strong></p>
-<p>RC circuits can integrate or differentiate a voltage waveform with
-respect to time. A square wave is integrated to get a triangular wave
-and differentiated to get spikes at the transitions.begin_inset
-Separator latexparend_inset</p>
-<img alt="_images/RCintegration.svg" src="_images/RCintegration.svg" width="300px" /><img alt="_images/RCsteadystate.svg" src="_images/RCsteadystate.svg" width="300px" /><p><strong>Procedure</strong></p>
+<p>Explore the nature of current and voltage when a voltage step is applied
+to resistor and inductor in series. By measuring the voltage across the
+inductor as a function of time, we can calculate its inductance.</p>
+<img alt="_images/RLtransient.svg" src="_images/RLtransient.svg" width="300px" /><img alt="_images/RLtransient.png" src="_images/RLtransient.png" style="width: 300px;" />
+<p>In an RL circuit <img class="math" src="_images/math/baceda9639037b3ae02ea5c44c19c7f348a170ff.png" alt="V = RI + L(dI/dt)"/> and solving this will give
+<img class="math" src="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png" alt="I = I_0 \times e^{− (R/L)t}"/>. The coefficient of the exponential term R/L
+can be extracted from the graph of voltage across the inductor. The
+resistance of the inductor coil should be included in the
+calculations, <img class="math" src="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png" alt="R = R_{ext} + R*_L"/>.</p>
+<p><strong>Procedure</strong></p>
 <ul class="simple">
-<li><p>Select WG triangular wave option</p></li>
-<li><p>Set WG to 500Hz (<img class="math" src="_images/math/fdfa6216fdf0e24c028b65c6e6c4cd7a99258dc7.png" alt="T = 2~ms"/>), <img class="math" src="_images/math/280e8649ccff07c13fba08ce258abc19f3dbf5fb.png" alt="R = 1~k\Omega"/> and <img class="math" src="_images/math/b05927222a41f6c8ad2f56c0f804dbf4408e5eca.png" alt="C = 1~\mu F"/></p></li>
-<li><p>Adjust the horizontal scale to view more than 4 cycles.</p></li>
-<li><p>Repeat the same for RC differentiator, at <img class="math" src="_images/math/46b8bc674cc9e8cb7c5a4be8ebd673b599092808.png" alt="50~Hz"/>.</p></li>
+<li><p>Inductor is the 3000 Turn coil</p></li>
+<li><p>Click on <em>0-&gt;5V STEP</em> and <em>5-&gt;0V step</em> Buttons to plot the graphs</p></li>
+<li><p>Adjust the horizontal scale, if required, and repeat.</p></li>
+<li><p>Calculate the value of inductance</p></li>
+<li><p>Insert an iron core into the inductor and repeat</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Integration of a triangular waveform gives parabolic shape and
-differentiation gives a square shape. The differentiation can only be
-shown at lower frequency. Try these for other wave shapes, for example a
-squarewave. Integrating a square wave should give a triangular wave.</p>
-<img alt="_images/RCintegration.png" src="_images/RCintegration.png" style="width: 300px;" />
-<img alt="_images/RCdifferentiation.png" src="_images/RCdifferentiation.png" style="width: 300px;" />
+<p>The transient response of the RL circuit is shown in figure. The
+exponential curve is fitted to extract the L/R value. The resistance of
+the coil is measured by comparing it with the known external resistance
+under DC conditions. A2 is connected to OD1 for a more accurate
+measurement of the coil resistance.</p>
+<p>The applied voltages are above zero, but the graph went to negative
+voltages. Why ?</p>
+<p>What was the current before doing the 5-&gt;0 step ? What is back EMF ?</p>
+<p>Repeat with two coils in series, by (a) placing them far away (b)
+placing one over the other and (c) after changing the orientation. The
+effect of mutual inductance can be seen.</p>
 </div>
 
 

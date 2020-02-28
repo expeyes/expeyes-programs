@@ -1,38 +1,40 @@
-.. 4.4
+.. 4.2
    
-Réponse transitoire de circuit RLC
-----------------------------------
+Réponse de circuits RC en régime transitoire
+--------------------------------------------
 
 **Objectif**
 
-Explorer la nature oscillatoire de la mise en série de L et C. La
-fréquence de résonance d’un circuit LC série est donnée par
-:math:`f_0 = 1/(2\pi\sqrt{LC})`. Le facteur d’amortissement
-est :math:`R/(2\sqrt{LC})`, et il vaut 1 pour
-l’amortissement
-critique (http://en.wikiversity.org/wiki/RLC\_circuit). Selon les
-valeurs de C/L et R, la réponse peut être sous-amortie, amortie de façon
-critique ou sur-amortie.
+Tracer l’évolution de la tension aux bornes d’un condensateur, quand il
+est chargé en appliquant un échelon de tension à travers une résistance.
+Calculer la valeur de la capacité d’après la courbe.
 
-.. image:: schematics/RLCtransient.svg
+.. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RLC-curves.png
+.. image:: pics/RCtransient.png
 	   :width: 300px
 
 **Procédure**
 
--  Commencer avec le bobinage et un condensateur de :math:`0,1~\mu F`
--  Cliquer sur *Échelon 5->0 V*. Ajuster l’axe des abscisses et
-   recommencer si nécessaire.
--  Ajuster le graphique (FIT) pour trouver la fréquence de résonance et
-   l’amortissement.
--  Recommencer avec une résistance entre OD1 et le bobinage.
--  Recommencer l’expérience avec diverses valeurs de R, L et C.
+-  Dan le menu «Électricité», choisir le sous-menu «Circuit RC en régime
+   transitoire».
+-  Cliquer sur les boutons *Échelon 0->5V* et *Échelon 5->0V* pour
+   afficher les graphiques
+-  Ajuster l’échelle horizontale si nécessaire, et recommencer.
+-  Calculer la constante de temps RC.
 
 **Discussion**
 
-On a utilisé le bobinage de 3000 tours et le condensateur de :math:`0,1~\mu F`.La
-tension aux bornes du condensateur est montrée sur la figure après un
-échelon 5->0 V. La fréquence de résonance mesurée est conforme à
-:math:`f = 1/(2\pi\sqrt{LC})`, compte tenu de la tolérance sur
-les valeurs des composants.
+Quand on applique un échelon de 0 à 5 V, la tension aux bornes du
+condensateur s’approche exponentiellement de 5 V comme montré sur la
+figure. En modélisant la courbe de décharge par
+:math:`U(t) = U_0 \times e^{− t/RC}` , on
+peut extraire la constante de temps RC et s’en servir pour trouver la
+valeur de la capacité.
+
+Le tension aux bornes d’un condensateur ne varie exponentiellement que
+quand on le charge au travers d’un dipôle linéaire, une résistance par
+exemple. Si on le charge à l’aide d’une source de courant constant, la
+tension change linéairement, puisque :math:`Q = It = CU` , et la tension
+croît linéairement avec le temps comme
+:math:`U = (I/C) \times t`.

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Logic gates &#8212; eyes17 1.0 documentation</title>
+    <title>Non-Inverting Amplifier &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Clock Divider" href="3.10.html" />
-    <link rel="prev" title="Op-Amp Ingrator" href="3.8.html" /> 
+    <link rel="next" title="Op-Amp Ingrator" href="3.10.html" />
+    <link rel="prev" title="Inverting Amplifier" href="3.8.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="3.10.html" title="Clock Divider"
+          <a href="3.10.html" title="Op-Amp Ingrator"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="3.8.html" title="Op-Amp Ingrator"
+          <a href="3.8.html" title="Inverting Amplifier"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="3.8.html"
-                        title="previous chapter">Op-Amp Ingrator</a></p>
+                        title="previous chapter">Inverting Amplifier</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="3.10.html"
-                        title="next chapter">Clock Divider</a></p>
+                        title="next chapter">Op-Amp Ingrator</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,23 +69,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="logic-gates">
-<h1>Logic gates<a class="headerlink" href="#logic-gates" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="non-inverting-amplifier">
+<h1>Non-Inverting Amplifier<a class="headerlink" href="#non-inverting-amplifier" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Study of logic gates using SQ1 and PV1 as inputs, using TTL logic ICs
-7408 and 7432.</p>
+<p>Wire an Inverting amplifier using an Op-Amp and test it.</p>
+<a class="reference internal image-reference" href="_images/opamp-noninv.svg"><img alt="_images/opamp-noninv.svg" src="_images/opamp-noninv.svg" width="300px" /></a>
 <p><strong>Procedure</strong></p>
-<a class="reference internal image-reference" href="_images/logic-gates.svg"><img alt="_images/logic-gates.svg" src="_images/logic-gates.svg" width="300px" /></a>
 <ul class="simple">
-<li>Enable A1, A2 ands A3. Set input range on A1 and A2 to 8V</li>
-<li>Set SQ1 to 200 Hz and adjust timebase to view several cycles</li>
-<li>Select SQ2 from the WG wave shape, set WG to 200 Hz</li>
-<li>Repeat using the OR gate, 7432</li>
-<li>The 1k resistor is required to give the 5 volt signal to A3 input</li>
+<li>Set WG amplitude to 80 mV and frequency to 1000 Hz</li>
+<li>Enable A1 and A2 and their analysis option</li>
+<li>Select 1V range for both A1 and A2</li>
+<li>Make connections and observe the output</li>
+<li>Change gain by changing the resistor values.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The working of the logic gate will be evident from the 3 waveforms. You
-may shift traces vertically to separate them for clarity.</p>
+<p>The amplitude gain and and the phase correlation can be observed from
+the results.</p>
 </div>
 
 
@@ -101,10 +100,10 @@ may shift traces vertically to separate them for clarity.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="3.10.html" title="Clock Divider"
+          <a href="3.10.html" title="Op-Amp Ingrator"
              >next</a> |</li>
         <li class="right" >
-          <a href="3.8.html" title="Op-Amp Ingrator"
+          <a href="3.8.html" title="Inverting Amplifier"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

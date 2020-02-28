@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Portes logiques &#8212; Documentation eyes17 1.0</title>
+    <title>Amplificateur non-inverseur &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Diviseur d’horloge" href="3.10.html" />
-    <link rel="prev" title="Intégrateur à ampli-op" href="3.8.html" /> 
+    <link rel="next" title="Intégrateur à ampli-op" href="3.10.html" />
+    <link rel="prev" title="Amplificateur inverseur" href="3.8.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="3.10.html" title="Diviseur d’horloge"
+          <a href="3.10.html" title="Intégrateur à ampli-op"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="3.8.html" title="Intégrateur à ampli-op"
+          <a href="3.8.html" title="Amplificateur inverseur"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="3.8.html"
-                        title="Chapitre précédent">Intégrateur à ampli-op</a></p>
+                        title="Chapitre précédent">Amplificateur inverseur</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="3.10.html"
-                        title="Chapitre suivant">Diviseur d’horloge</a></p>
+                        title="Chapitre suivant">Intégrateur à ampli-op</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,26 +70,23 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="portes-logiques">
-<h1>Portes logiques<a class="headerlink" href="#portes-logiques" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="amplificateur-non-inverseur">
+<h1>Amplificateur non-inverseur<a class="headerlink" href="#amplificateur-non-inverseur" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Objectif</strong></p>
-<p>Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
-des circuits intégrés de portes logiques TTL 7408 and 7432.</p>
+<p>Câbler un amplificateur non-inverseur à l’aide d’un ampli-op et le
+tester.</p>
+<a class="reference internal image-reference" href="_images/opamp-noninv.svg"><img alt="_images/opamp-noninv.svg" src="_images/opamp-noninv.svg" width="300px" /></a>
 <p><strong>Procédure</strong></p>
-<a class="reference internal image-reference" href="_images/logic-gates.svg"><img alt="_images/logic-gates.svg" src="_images/logic-gates.svg" width="300px" /></a>
 <ul class="simple">
-<li>Activer A1, A2 et A3. Régler le calibre pour A1 et A2 à 8&nbsp;V</li>
-<li>Régler SQ1 à 200&nbsp;Hz et ajuster la base de temps pour voir plusieurs
-cycles</li>
-<li>régler SQ2 depuis la forme de signal de WG, régler WG à 200&nbsp;Hz</li>
-<li>Recommencer avec la porte OU, 7432</li>
-<li>La résistance de 1<em>k</em>Ω est nécessaire pour connecter un signal de
-5&nbsp;V à l’entrée A3.</li>
+<li>Régler l’amplitude de WG à 80&nbsp;mV et la fréquence à 1000&nbsp;Hz</li>
+<li>Activer A1 et A2 avec option d’analyse</li>
+<li>Sélectionner le calibre 1&nbsp;V pour A1 et A2</li>
+<li>Faire les connexions et observer la sortie</li>
+<li>Changer le gain en modifiant les valeurs des résistances.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Le fonctionnement de la porte logique sera évident à partir des trois
-signaux. On peut décaler les traces verticalement pour les séparer et
-les rendre plus claires.</p>
+<p>On peut observer le gain par l’amplitude, mais aussi le déphasage dans
+les résultats.</p>
 </div>
 
 
@@ -105,10 +102,10 @@ les rendre plus claires.</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="3.10.html" title="Diviseur d’horloge"
+          <a href="3.10.html" title="Intégrateur à ampli-op"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="3.8.html" title="Intégrateur à ampli-op"
+          <a href="3.8.html" title="Amplificateur inverseur"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

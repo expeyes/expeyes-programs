@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Human body as a conductor &#8212; eyes17 1.0 documentation</title>
+    <title>Measure resistance by comparison &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Resistance of human body" href="2.9.html" />
-    <link rel="prev" title="Separating DC &amp; AC components" href="2.7.html" /> 
+    <link rel="next" title="Direct and Alternating Currents" href="2.9.html" />
+    <link rel="prev" title="Measuring Capacitance of a parallel combination" href="2.7.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.9.html" title="Resistance of human body"
+          <a href="2.9.html" title="Direct and Alternating Currents"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="2.7.html" title="Separating DC &amp; AC components"
+          <a href="2.7.html" title="Measuring Capacitance of a parallel combination"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="2.7.html"
-                        title="previous chapter">Separating DC &amp; AC components</a></p>
+                        title="previous chapter">Measuring Capacitance of a parallel combination</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="2.9.html"
-                        title="next chapter">Resistance of human body</a></p>
+                        title="next chapter">Direct and Alternating Currents</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,26 +69,31 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="human-body-as-a-conductor">
-<h1>Human body as a conductor<a class="headerlink" href="#human-body-as-a-conductor" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="measure-resistance-by-comparison">
+<h1>Measure resistance by comparison<a class="headerlink" href="#measure-resistance-by-comparison" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Touching the AC mains is fatal to us because our body is a conductor. We
-can explore this using low voltage signals.</p>
-<a class="reference internal image-reference" href="_images/conducting-human.svg"><img alt="_images/conducting-human.svg" src="_images/conducting-human.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/conducting-human-screen.png"><img alt="_images/conducting-human-screen.png" src="_images/conducting-human-screen.png" style="width: 300px;" /></a>
+<p>Learn to apply Ohm’s law to find the value of an unknown resistance by
+comparing it with a known one. Voltage across a resistor is given by
+V = IR . If same amount of current is flowing through two different
+resistors, the ratio of voltages will be the same as the ratio of
+resistances, <img class="math" src="_images/math/82162ef1e74838867e821869332f61839d9eae14.png" alt="I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1"/>.</p>
+<a class="reference internal image-reference" href="_images/res-compare.svg"><img alt="_images/res-compare.svg" src="_images/res-compare.svg" width="300px" /></a>
 <p><strong>Procedure</strong></p>
 <ul class="simple">
-<li>Set WG to 200 Hz.</li>
-<li>Enable A1, A2 with analysis enabled.</li>
-<li>Conenct WG and A1, with a wire</li>
-<li>Connect WG and A2 through your body and note voltages</li>
-<li>Repeat it using a 3 volt DC signal from PV1.</li>
+<li>Connect the unknown resistor R from PV1 to A1.</li>
+<li>Connect <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> (<img class="math" src="_images/math/2df6d73140b918ff471271bf0d299332148bb9b5.png" alt="R_2"/>) from A1 to Ground.</li>
+<li>Set PV1 to 4 volts.</li>
+<li>Measure voltage at A1. Calculate the current <img class="math" src="_images/math/455309425a1c121db3b191eff4f0ea851271a7f6.png" alt="I = U_{A1}/R_2"/>.
+Value of <img class="math" src="_images/math/46d0c0b0a1c375061957ed1ee45ec0f79096bca2.png" alt="R_1 = (U_{PV1} − U_{A1})/I"/>.</li>
+<li>Select Electrical-&gt;Plot I-V curve from the menu to get an I-V plot</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The observed peak voltage will be less than 3volts, due to the
-resistance of the body. There could be some ripple due to the 50Hz AC
-pickup. This can be eliminated by performing the experiment far away
-from power lines, using a laptop.</p>
+<p>What is the limitation of this method ? How do we choose the reference
+resistor ? suppose the unknown value is in <img class="math" src="_images/math/d09cee760dc43b03cbf1e345e22363826a4eda80.png" alt="M\Omega"/>, what will be the
+voltage drop across a <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> reference resistor ? Our voltage
+measurement is having a resolution of <img class="math" src="_images/math/450e4e23bca999c7ef8d807d3d4f3d5f859b4617.png" alt="1/4096"/>.</p>
+<p>We will use this method later to measure the resistance of solutions,
+using AC.</p>
 </div>
 
 
@@ -104,10 +109,10 @@ from power lines, using a laptop.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="2.9.html" title="Resistance of human body"
+          <a href="2.9.html" title="Direct and Alternating Currents"
              >next</a> |</li>
         <li class="right" >
-          <a href="2.7.html" title="Separating DC &amp; AC components"
+          <a href="2.7.html" title="Measuring Capacitance of a parallel combination"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

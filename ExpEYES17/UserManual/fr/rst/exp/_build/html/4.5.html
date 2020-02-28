@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Différenciation et intégration RC &#8212; Documentation eyes17 1.0</title>
+    <title>Réponse transitoire de circuits RL &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Analyse de Fourier" href="4.6.html" />
-    <link rel="prev" title="Réponse transitoire de circuit RLC" href="4.4.html" /> 
+    <link rel="next" title="Différenciation et intégration RC" href="4.6.html" />
+    <link rel="prev" title="Réponse de circuits RC en régime transitoire" href="4.4.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="4.6.html" title="Analyse de Fourier"
+          <a href="4.6.html" title="Différenciation et intégration RC"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="4.4.html" title="Réponse transitoire de circuit RLC"
+          <a href="4.4.html" title="Réponse de circuits RC en régime transitoire"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="4.4.html"
-                        title="Chapitre précédent">Réponse transitoire de circuit RLC</a></p>
+                        title="Chapitre précédent">Réponse de circuits RC en régime transitoire</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="4.6.html"
-                        title="Chapitre suivant">Analyse de Fourier</a></p>
+                        title="Chapitre suivant">Différenciation et intégration RC</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,30 +70,44 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="differenciation-et-integration-rc">
-<h1>Différenciation et intégration RC<a class="headerlink" href="#differenciation-et-integration-rc" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="reponse-transitoire-de-circuits-rl">
+<h1>Réponse transitoire de circuits RL<a class="headerlink" href="#reponse-transitoire-de-circuits-rl" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Objectif</strong></p>
-<p>Les circuits RC peuvent intégrer ou différencier un signal de tension
-par rapport au temps. Si on intègre un signal carré on obtient un signal
-triangulaire et si on différencie on obtient des pics aux
-transitions.</p>
-<a class="reference internal image-reference" href="_images/RCintegration.svg"><img alt="_images/RCintegration.svg" src="_images/RCintegration.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/RCsteadystate.svg"><img alt="_images/RCsteadystate.svg" src="_images/RCsteadystate.svg" width="300px" /></a>
+<p>Explorer la nature du courant et de la tension quand un échelon de
+tension est appliqué à une résistance et un bobinage en série. En
+mesurant la tension en fonction du temps aux bornes du bobinage, on peut
+calculer son inductance.</p>
+<a class="reference internal image-reference" href="_images/RLtransient.svg"><img alt="_images/RLtransient.svg" src="_images/RLtransient.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/RLtransient.png"><img alt="_images/RLtransient.png" src="_images/RLtransient.png" style="width: 300px;" /></a>
+<p>Dans un circuit RL, <img class="math" src="_images/math/9f56540eb0da866353f38e2d23a05783810103f3.png" alt="U = RI + L(dI/dt)"/> , équation
+qui se résout en
+<img class="math" src="_images/math/ed77bde1a0989f9797868b93eb46ad1ec2a866ae.png" alt="I = I_0 \times e^{− (R/L)t}"/>. Le
+coefficient du terme exponentiel R/L peut être déduit du graphique de la
+tension aux bornes du bobinage. La résistance du bobinage doit être
+incluse dans les calculs, <img class="math" src="_images/math/b3a947d322e5f6be310e967d44df7fe38904a979.png" alt="R = R_{ext} + R*_L"/>.</p>
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li>Sélectionner l’option signal triangulaire pour WG</li>
-<li>Régler WG à 500&nbsp;Hz (<img class="math" src="_images/math/fdfa6216fdf0e24c028b65c6e6c4cd7a99258dc7.png" alt="T = 2~ms"/>), <img class="math" src="_images/math/280e8649ccff07c13fba08ce258abc19f3dbf5fb.png" alt="R = 1~k\Omega"/> et <img class="math" src="_images/math/b05927222a41f6c8ad2f56c0f804dbf4408e5eca.png" alt="C = 1~\mu F"/></li>
-<li>Ajuster l’échelle horizontale pour voir plus de quatre cycles.</li>
-<li>Recommencer la même chose pour le différenciateur RC, à <img class="math" src="_images/math/46b8bc674cc9e8cb7c5a4be8ebd673b599092808.png" alt="50~Hz"/>.</li>
+<li>Le bobinage est la bobine de 3000 tours</li>
+<li>Cliquer sur les boutons <em>Échelon 0-&gt;5V</em> et <em>Échelon 5-&gt;0V</em> pour
+afficher les graphiques</li>
+<li>Ajuster l’échelle horizontale, si nécessaire, et recommencer.</li>
+<li>Calculer la valeur de l’inductance</li>
+<li>Insérer un noyau en fer dans le bobinage et recommencer</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>L’intégration d’un signal triangulaire donne une forme parabolique et la
-différenciation donne une forme carrée. La différenciation ne peut être
-montrée qu’à basse fréquence. Essayer cela pour d’autres formes de
-signaux, par exemple signal carré. Si on intègre un signal carré on est
-censé obtenir un signal triangulaire.</p>
-<a class="reference internal image-reference" href="_images/RCintegration.png"><img alt="_images/RCintegration.png" src="_images/RCintegration.png" style="width: 300px;" /></a>
-<a class="reference internal image-reference" href="_images/RCdifferentiation.png"><img alt="_images/RCdifferentiation.png" src="_images/RCdifferentiation.png" style="width: 300px;" /></a>
+<p>La réponse transitoire du circuit RL est montrée sur la figure. La
+courbe exponentielle est modélisée pour extraire la valeur de L/R. La
+résistance de la bobine est mesurée en la comparant avec la résistance
+externe connue, en courant continu. A2 est connecté à OD1 pour une
+mesure plus précise de la résistance du bobinage.</p>
+<p>Les tensions appliquées sont positives, mais le graphique va vers des
+tensions négatives, pourquoi&nbsp;?</p>
+<p>Quel était le courant avant le début de l’échelon 5-&gt;0&nbsp;V&nbsp;? Quelle est la
+force contre-électromotrice (<em>fcem</em>)&nbsp;?</p>
+<p>Recommencer avec deux bobinages en série, (a) en les plaçant l’un loin
+de l’autre, (b) en les plaçant l’un sur l’autre, (c) après changement
+d’orientation de l’un des deux. On peut voir l’effet de l’induction
+mutuelle.</p>
 </div>
 
 
@@ -109,10 +123,10 @@ censé obtenir un signal triangulaire.</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="4.6.html" title="Analyse de Fourier"
+          <a href="4.6.html" title="Différenciation et intégration RC"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="4.4.html" title="Réponse transitoire de circuit RLC"
+          <a href="4.4.html" title="Réponse de circuits RC en régime transitoire"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

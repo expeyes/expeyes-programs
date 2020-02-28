@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>AC mains pickup &#8212; eyes17 1.0 documentation</title>
+    <title>Measuring Capacitance in series combination &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Separating DC &amp; AC components" href="2.7.html" />
-    <link rel="prev" title="Direct and Alternating Currents" href="2.5.html" /> 
+    <link rel="next" title="Measuring Capacitance of a parallel combination" href="2.7.html" />
+    <link rel="prev" title="Measuring Capacitance" href="2.5.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.7.html" title="Separating DC &amp; AC components"
+          <a href="2.7.html" title="Measuring Capacitance of a parallel combination"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="2.5.html" title="Direct and Alternating Currents"
+          <a href="2.5.html" title="Measuring Capacitance"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="2.5.html"
-                        title="previous chapter">Direct and Alternating Currents</a></p>
+                        title="previous chapter">Measuring Capacitance</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="2.7.html"
-                        title="next chapter">Separating DC &amp; AC components</a></p>
+                        title="next chapter">Measuring Capacitance of a parallel combination</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,25 +69,22 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="ac-mains-pickup">
-<h1>AC mains pickup<a class="headerlink" href="#ac-mains-pickup" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="measuring-capacitance-in-series-combination">
+<h1>Measuring Capacitance in series combination<a class="headerlink" href="#measuring-capacitance-in-series-combination" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Learn about the AC mains supply. Explore the phenomenon of propagation
-of AC through free space.</p>
-<a class="reference internal image-reference" href="_images/line-pickup.svg"><img alt="_images/line-pickup.svg" src="_images/line-pickup.svg" width="300px" /></a>
-<p><strong>Procedure</strong></p>
+<p>Measuring the capacitance of series combination
+of capacitors.</p>
+<a class="reference internal image-reference" href="_images/cap-series.svg"><img alt="_images/cap-series.svg" src="_images/cap-series.svg" width="300px" /></a>
+<p><strong>Procedure for two capacitors</strong></p>
 <ul class="simple">
-<li>Connect a long wire to A3</li>
-<li>Take one end of the wire near the AC mains line, without touching any
-mains supply.</li>
-<li>Enable A3, and it’s analysis.</li>
+<li>Connect one capacitor in IN1 and the second one in Ground. Connect the
+opposite ends of both capacitors together.</li>
+<li>Click on “Capacitance on IN1” . Should not touch the capacitor while
+measuring</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The power line pickup is shown below, there are five cycles in 100
-milliseconds. Without making any connection, how are we getting the AC
-voltage from the mains supply ? Why the voltage increaes when you touch
-the end of the wire connected to A1 by hand.</p>
-<a class="reference internal image-reference" href="_images/pickup.png"><img alt="_images/pickup.png" src="_images/pickup.png" style="width: 300px;" /></a>
+<p>For a series combination of capacitors, the effective capacitance is
+given by the relation <img class="math" src="_images/math/a129681a2164895f179b5dad647243f7b4151c92.png" alt="\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯"/>.</p>
 </div>
 
 
@@ -103,10 +100,10 @@ the end of the wire connected to A1 by hand.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="2.7.html" title="Separating DC &amp; AC components"
+          <a href="2.7.html" title="Measuring Capacitance of a parallel combination"
              >next</a> |</li>
         <li class="right" >
-          <a href="2.5.html" title="Direct and Alternating Currents"
+          <a href="2.5.html" title="Measuring Capacitance"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

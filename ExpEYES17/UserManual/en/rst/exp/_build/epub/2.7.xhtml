@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Separating DC &amp; AC components</title>
+    <title>Measuring Capacitance of a parallel combination</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,28 +12,20 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="separating-dc-ac-components">
-<h1>Separating DC &amp; AC components</h1>
+  <div class="section" id="measuring-capacitance-of-a-parallel-combination">
+<h1>Measuring Capacitance of a parallel combination</h1>
 <p><strong>Objective</strong></p>
-<p>Separating AC and DC components of a voltage waveform using a capacitor.</p>
-<p><strong>Procedure</strong></p>
-<img alt="_images/acdc-separating.svg" src="_images/acdc-separating.svg" width="300px" /><img alt="_images/acdc-sep-screen.png" src="_images/acdc-sep-screen.png" style="width: 300px;" />
+<p>Measuring the capacitance of a parallel combination
+of capacitors.</p>
+<img alt="_images/cap-parallel.svg" src="_images/cap-parallel.svg" width="300px" /><p><strong>Procedure for two capacitors</strong></p>
 <ul class="simple">
-<li><p>Set SQR1 to 500 Hz</p></li>
-<li><p>Enable A1 and A2</p></li>
-<li><p>Adjust the horizontal scale to see several cycles.</p></li>
+<li><p>Connect both capacitors between IN1 and Ground.</p></li>
+<li><p>Click on “Capacitance on IN1” . Should not touch the capacitor while
+measuring</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The observed waveforms with and without the series capacitor are shown
-in figure. The voltage is swinging between 0 and 5 volts. After passing
-through the capacitor the voltage swings from -2.5 volts to +2.5 volts.</p>
-<p>What will you get if you subtract a 2.5 from the y-coordinate of every
-point of the first graph? That is what the capacitor did. It did not
-allow the DC part to pass through. This original square wave can be
-considered as a 2.5V AC superimposed on a 2.5V DC.</p>
-<p>You may need to connect a resistor from A2 to GND to see a waveform
-swinging between -2.5 to +2.5 volts. Remove the resistor and observe the
-result.</p>
+<p>For parallel combination, the effective capacitance is given by
+<img class="math" src="_images/math/f23ac950c94d19d1f7cf10fd58be02d8447bcaee.png" alt="C = C_1 + C_2 + ⋯"/>.</p>
 </div>
 
 

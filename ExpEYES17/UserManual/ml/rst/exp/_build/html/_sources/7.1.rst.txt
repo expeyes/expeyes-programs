@@ -1,65 +1,42 @@
-ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ 
----------------------------------------
-കുറേ പരീക്ഷണങ്ങൾക്കു വേണ്ടിയുള്ള GUI പ്രോഗ്രാമുകൾ ലഭ്യമാണെങ്കിലും പുതിയ പരീക്ഷണങ്ങൾ വികസിപ്പിച്ചെടുക്കാൻ പൈത്തൺ ഭാഷയിൽ ExpEYES ഉമായി ആശയവിനിമയം നടത്താൻ അറിഞ്ഞിരിക്കണം. അതിനുവേണ്ട വിവരങ്ങളാണ് ഈ അദ്ധ്യായത്തിന്റെ ഉള്ളടക്കം. വോൾടേജ് സെറ്റ് ചെയ്യുക, വോൾടേജ് അളക്കുക, വേവ്ഫോം ജനറേറ്റ്  ചെയ്യുക തുടങ്ങി എല്ലാ പ്രവൃത്തികളും പൈത്തൺ ഭാഷയിലെ ഓരോ കമാന്റുകൾ ഉപയോഗിച്ചാണ് നടപ്പാക്കുന്നത് . 
+UNTRANSLATED
+.. 6.5
 
-ഏറ്റവുമാദ്യം വേണ്ടത്   ExpEYESന്റെ പൈത്തൺ മൊഡ്യൂൾ ഇമ്പോർട്  ചെയ്യുകയും ഡിവൈസുമായി ബന്ധം സ്ഥാപിക്കുകയുമാണ്.  eyes17 എന്ന പാക്കേജിനകത്തെ eyes എന്ന മൊഡ്യൂളാണ്  ഇതിനാവശ്യം. കോഡ് താഴെക്കൊടുത്തിരിക്കുന്നു.
+Temperature measurement using PT100
+===================================
 
-.. code-block:: python
+**Objective**
 
-   import eyes17.eyes
-   p = eyes17.eyes.open()
+Record the temperature of a liquid by using a Platinum Resistance
+Thermometer. Resistance of a PT100 element is related to the temperature
+by the equation :math:`R(T) = R_0 (1 + AT + BT^2)`, where
+:math:`A = 3,9083 \times 10^{−3}` and :math:`B =  − 5,775 \times 10^{−7}`.
 
-കംപ്യൂട്ടറിന്റെ ഏതെങ്കിലും USB പോർട്ടിൽ ExpEYES കണ്ടെത്തിയാൽ റിട്ടേൺ ചെയ്യുന്ന വേരിയബിൾ ( p ) ഉപയോഗിച്ചാണ് ഡിവൈസിലേക്കകമാന്റുകൾ അയക്കുന്നത്. ശ്രമം പരാജയപ്പെട്ടാൽ 'None' എന്ന പൈത്തൺ ഡാറ്റാടൈപ്പാണ് റിട്ടേൺ ചെയ്യുക. താഴെക്കൊടുത്ത രണ്ടു വരി കോഡ് വേണമെങ്കിൽ ഉൾപ്പെടുത്താം. sys മൊഡ്യൂൾ കൂടി ഇമ്പോർട് ചെയ്തിരിക്കണം.
+.. image:: schematics/pt100.svg
+	   :width: 300px
+.. image:: pics/pt100-screen.png
+	   :width: 300px
 
-.. code-block:: python
+**Procedure**
 
-   if p == None:
-	print ("Device Not Detected')
-	sys.exit()
+-  Enter the Gain, Offset error and the Current from CCS
+-  Select the temperature range and time intervals
+-  Select the required parameters and press START
 
-**PV1, PV2 എന്നീ ടെർമിനലുകളിൽ DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ**
+**Discussion**
 
-.. code-block:: python
+Cooling curve of water is shown in figure
 
-   p.set_pv1(2.5)
-   p.set_pv2(-1.2)
+To measure the resistance of the PT100 element, we connect it from the
+CCS to ground and measure the voltage across it. The actual current of
+CCS should be measured using an ammeter or by measuring the voltage frop
+across an known resistor. The input to A3 is amplified 11 times by
+connecting :math:`1~k\Omega` resistor from Rg to Ground.
 
-**A1 ,  A2, A3, SEN എന്നീ ഇൻപുട്ടുകൾ റീഡ് ചെയ്യാൻ**
-
-.. code-block:: python
-
-   print p.get_voltage('A1')
-   print p.get_voltage('A2')
-   print p.get_voltage('A3')
-   print p.get_voltage('SEN')
-
-**A1 ,  A2, A3, SEN എന്നിവ ടൈംസ്റ്റാമ്പൊടെ റീഡ് ചെയ്യാൻ**
-
-.. code-block:: python
-
-   print p.get_voltage_time('A1')
-
-**SENൽ ഘടിപ്പിച്ചിരിക്കുന്ന റെസിസ്റ്റൻസ്  റീഡ് ചെയ്യാൻ**
-
-.. code-block:: python
-
-   print p.get_resistance()
-
-**OD1, SQ1, SQ2  എന്നീ ഔട്പുട്ടുകളിൽ  DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ**
-
-OD1നു പുറമെ SQ1, SQ2 എന്നീ ഔട്പുട്ട്കളിലും DC ലെവൽ സെറ്റ് ചെയ്യാൻ പറ്റും.
-
-.. code-block:: python
-
-   p.set_state(OD1=1)   #set OD1 to HIGH, 5 volts
-
-**WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  സൈൻ വേവ്  സെറ്റ് ചെയ്യാൻ**
-
-.. code-block:: python
-
-   print p.set_sine(502)
-
-502.00803
-
-
-
+The resistance of PT100 is :math:`1000~\Omega` at :math:`0^\circ C`. It changes nearly :math:`0,4~\Omega /^\circ C`
+, changing the voltage by :math:`0, 4~mV`. The 12 bit ADC output changes
+by 1 LSB for :math:`1,22~mV` change in input voltage, hence any temperature
+change less than 3 degrees will not be detected. Use an external
+non-inverting amplifier to increase the resolution. The gain of the
+amplifier should be such that the maximum temperature measured should
+give an output less than 3.3 volts. Change the gain field entry
+accordingly.

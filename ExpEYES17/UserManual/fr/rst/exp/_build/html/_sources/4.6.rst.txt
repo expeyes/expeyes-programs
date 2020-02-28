@@ -1,38 +1,36 @@
-.. 4.6
+.. 4.5
    
-Analyse de Fourier
-------------------
+Différenciation et intégration RC
+---------------------------------
 
 **Objectif**
 
-Étudier la transformée de Fourier d’un signal. Représentations
-temporelle et fréquentielle d’un signal.
+Les circuits RC peuvent intégrer ou différencier un signal de tension
+par rapport au temps. Si on intègre un signal carré on obtient un signal
+triangulaire et si on différencie on obtient des pics aux
+transitions.
+
+.. image:: schematics/RCintegration.svg
+	   :width: 300px
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
 
 **Procédure**
 
--  Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif
-   (interrupteur à glissière sur le boîtier)
--  Activer A1 et A2, sélectionner le calibre 4 V
--  Régler WG et SQ1 à 500 Hz
--  Cliquer sur le bouton FFT
+-  Sélectionner l’option signal triangulaire pour WG
+-  Régler WG à 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
+-  Ajuster l’échelle horizontale pour voir plus de quatre cycles.
+-  Recommencer la même chose pour le différenciateur RC, à :math:`50~Hz`.
 
 **Discussion**
 
-Dans le graphique de la transformée de Fourier, la fréquence est sur
-l’axe x et l’axe y montre l’intensité relative des composants
-fréquentiels du signal. On appelle ça la représentation
-fréquentielle (http://en.wikipedia.org/wiki/Fourier\_transform).
-Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
-plus petits sont une mesure de la distorsion du signal sinusoïdal.
+L’intégration d’un signal triangulaire donne une forme parabolique et la
+différenciation donne une forme carrée. La différenciation ne peut être
+montrée qu’à basse fréquence. Essayer cela pour d’autres formes de
+signaux, par exemple signal carré. Si on intègre un signal carré on est
+censé obtenir un signal triangulaire.
 
-Un signal carré peut être représenté comme
-:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
-Dans la transformée de Fourier d’un signal carré de fréquence *f* , il y
-aura un composant *3 f* (dont l’amplitude est le tiers du composant *f*),
-un composant *5 f* (amplitude un cinquième), etc. comme montré sur
-la figure.
-
-.. image:: pics/sqwaveFFT.png
+.. image:: pics/RCintegration.png
 	   :width: 300px
-.. image:: pics/sinewaveFFT.png
+.. image:: pics/RCdifferentiation.png
 	   :width: 300px

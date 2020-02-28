@@ -1,16 +1,16 @@
-.. 3.4
+.. 3.3
    
-Décalage à l’aide d’un diode à jonction PN
-------------------------------------------
+Écrêtage à l’aide d’une diode à jonction PN
+-------------------------------------------
 
 **Objectif**
 
-Démontrer le décalage d’un signal alternatif à différents niveaux, à
-l’aide d’une diode à jonction PN
+Démontrer l’écrêtage d’un signal alternatif à différents niveaux, à
+l’aide d’une diode à jonction PN.
 
-.. image:: schematics/clamping.svg
+.. image:: schematics/clipping.svg
 	   :width: 300px
-.. image:: pics/clamping.png
+.. image:: pics/clipping.png
 	   :width: 300px
 
 **Procédure**
@@ -20,6 +20,6 @@ l’aide d’une diode à jonction PN
 
 **Discussion**
 
-Le niveau de décalage est conditionné par la tension continue appliquée
+Le niveau d’écrêtage est conditionné par la tension continue appliquée
 et par la chute de tension de la diode.
 

@@ -1,13 +1,13 @@
-.. 3.8
+.. 3.6
    
-Intégrateur à ampli-op
-----------------------
+Amplificateur inverseur
+-----------------------
 
 **Objectif**
 
-Câbler un intégrateur à ampli-op et le tester.
+Câbler un amplificateur inverseur à l’aide d’un ampli-op et le tester.
 
-.. image:: schematics/opamp-int.svg
+.. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
 **Procédure**

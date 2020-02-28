@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Electromagnetic induction &#8212; eyes17 1.0 documentation</title>
+    <title>Fourier Analysis &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Frequency response of Piezo" href="5.1.html" />
-    <link rel="prev" title="Fourier Analysis" href="4.6.html" /> 
+    <link rel="next" title="Electromagnetic induction" href="4.8.html" />
+    <link rel="prev" title="RC Integration &amp; Differentiation" href="4.6.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="5.1.html" title="Frequency response of Piezo"
+          <a href="4.8.html" title="Electromagnetic induction"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="4.6.html" title="Fourier Analysis"
+          <a href="4.6.html" title="RC Integration &amp; Differentiation"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="4.6.html"
-                        title="previous chapter">Fourier Analysis</a></p>
+                        title="previous chapter">RC Integration &amp; Differentiation</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="5.1.html"
-                        title="next chapter">Frequency response of Piezo</a></p>
+  <p class="topless"><a href="4.8.html"
+                        title="next chapter">Electromagnetic induction</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,28 +69,33 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="electromagnetic-induction">
-<h1>Electromagnetic induction<a class="headerlink" href="#electromagnetic-induction" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="fourier-analysis">
+<h1>Fourier Analysis<a class="headerlink" href="#fourier-analysis" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Explore the voltage induced across a coil by a changing magnetic field,
-by dropping a small cylindrical magnet into a coil. Use a tube to guide
-the magnet through the coil.</p>
-<a class="reference internal image-reference" href="_images/induction.svg"><img alt="_images/induction.svg" src="_images/induction.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/induction-screen.png"><img alt="_images/induction-screen.png" src="_images/induction-screen.png" style="width: 300px;" /></a>
+<p>Learn about Fourier Transform of a signal. Time and Frequency domain
+representations.</p>
 <p><strong>Procedure</strong></p>
 <ul class="simple">
-<li>Click on Start Scanning. A horizontal trace should appear</li>
-<li>Drop the magnet through the coil, until a trace is caught.</li>
-<li>Repeat the process by changing the parameters like magnet strength,
-speed etc.</li>
+<li>Connect SQ1 to A1 and WG to A2. Put A1 in AC coupled mode (slide
+switch on the box)</li>
+<li>Enable A1 and A2, select 4 volt scale</li>
+<li>Set both WG and SQ1 to 500Hz</li>
+<li>Press the FFT button</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The result is shown in figure. The amplitude increases with the speed of
-the magnet. From the graph, we can find the time taken by the magnet to
-travel through the coil.</p>
-<p>The second peak is bigger than the first peak. Why ? Where will be the
-magnet at the zero crossing of the induced voltage? Drop the magnet from
-different heights and plot the voltage vs square root of the height.</p>
+<p>In the Fourier transform plot, frequency is on the x-axis and the y-axis
+shows the relative strength of the frequency components of the signal.
+This is called the frequency domain
+representation (<a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_transform">http://en.wikipedia.org/wiki/Fourier_transform</a>).
+For the sine wave there is only one dominant peak, the smaller ones are
+a measure of distortion of the sine wave.</p>
+<p>A square wave function can be represented as
+<img class="math" src="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png" alt="f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯"/>. In the
+Fourier transform of a square wave of frequency f , there will be a 3f
+component (having an amplitude of one third of f ), 5f component
+(amplitude one fifth) etc. as shown in the figure.</p>
+<a class="reference internal image-reference" href="_images/sqwaveFFT.png"><img alt="_images/sqwaveFFT.png" src="_images/sqwaveFFT.png" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="_images/sinewaveFFT.png"><img alt="_images/sinewaveFFT.png" src="_images/sinewaveFFT.png" style="width: 300px;" /></a>
 </div>
 
 
@@ -106,10 +111,10 @@ different heights and plot the voltage vs square root of the height.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="5.1.html" title="Frequency response of Piezo"
+          <a href="4.8.html" title="Electromagnetic induction"
              >next</a> |</li>
         <li class="right" >
-          <a href="4.6.html" title="Fourier Analysis"
+          <a href="4.6.html" title="RC Integration &amp; Differentiation"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

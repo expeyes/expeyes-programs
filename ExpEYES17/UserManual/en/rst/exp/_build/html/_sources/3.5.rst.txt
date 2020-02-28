@@ -1,31 +1,24 @@
-.. 3.5
+.. 3.4
 
-IC555 Oscillator
-================
+Clamping using PN junction diode
+================================
 
 **Objective**
 
-Wire an astable multivibrator circuit using IC555, measure the frequency
-and duty cycle of the output.
+Demostrate clamping of an AC signal at different levels, using a PN
+junction diode
 
-.. image:: schematics/osc555.svg
+.. image:: schematics/clamping.svg
 	   :width: 300px
-.. image:: pics/ic555-screen.png
+.. image:: pics/clamping.png
 	   :width: 300px
-
-Circuit is shown in figure. The frequency is given by
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. The HIGH time is given by
-:math:`\ln 2 \times C \times (R_1 + R_2)` and LOW time by
-:math:`\ln 2 \times C \times R_2`.
 
 **Procedure**
 
--  Make connections
--  measure frequency and duty cycle.
--  Repeat by changing the value of R1
+-  Make connections and observe the output
+-  Change PV1 and note the difference in the output
 
 **Discussion**
 
-The output waveform is shown in figure. Change the value of resistors or
-the capacitor, and compare the frequency and duty cycle with the
-calculated values.
+The clamping level is decided by the applied DC voltage and the diode
+drop.

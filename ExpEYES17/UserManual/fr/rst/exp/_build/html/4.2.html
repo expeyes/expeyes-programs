@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Réponse de circuits RC en régime transitoire &#8212; Documentation eyes17 1.0</title>
+    <title>Courbes XY &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Réponse transitoire de circuits RL" href="4.3.html" />
-    <link rel="prev" title="Circuits RLC, réponse en régime stationnaire" href="4.1.html" /> 
+    <link rel="next" title="Circuits RLC, réponse en régime stationnaire" href="4.3.html" />
+    <link rel="prev" title="Courbe I-U" href="4.1.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="4.3.html" title="Réponse transitoire de circuits RL"
+          <a href="4.3.html" title="Circuits RLC, réponse en régime stationnaire"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="4.1.html" title="Circuits RLC, réponse en régime stationnaire"
+          <a href="4.1.html" title="Courbe I-U"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="4.1.html"
-                        title="Chapitre précédent">Circuits RLC, réponse en régime stationnaire</a></p>
+                        title="Chapitre précédent">Courbe I-U</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="4.3.html"
-                        title="Chapitre suivant">Réponse transitoire de circuits RL</a></p>
+                        title="Chapitre suivant">Circuits RLC, réponse en régime stationnaire</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,36 +70,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="reponse-de-circuits-rc-en-regime-transitoire">
-<h1>Réponse de circuits RC en régime transitoire<a class="headerlink" href="#reponse-de-circuits-rc-en-regime-transitoire" title="Lien permanent vers ce titre">¶</a></h1>
-<p><strong>Objectif</strong></p>
-<p>Tracer l’évolution de la tension aux bornes d’un condensateur, quand il
-est chargé en appliquant un échelon de tension à travers une résistance.
-Calculer la valeur de la capacité d’après la courbe.</p>
-<a class="reference internal image-reference" href="_images/RCtransient.svg"><img alt="_images/RCtransient.svg" src="_images/RCtransient.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/RCtransient.png"><img alt="_images/RCtransient.png" src="_images/RCtransient.png" style="width: 300px;" /></a>
-<p><strong>Procédure</strong></p>
+  <div class="section" id="courbes-xy">
+<h1>Courbes XY<a class="headerlink" href="#courbes-xy" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Ce programme trace A1 en fonction de A2 ou (A1-A2) en fonction de A2.
+Il est utile pour tracer des courbes de Lissajous et pour l’étude des
+circuits RC.</p>
+<a class="reference internal image-reference" href="_images/XYplot.svg"><img alt="_images/XYplot.svg" src="_images/XYplot.svg" width="300px" /></a>
+<p>Pour le circuit ci-dessus, on peut tracer la courbe de la tension aux
+bornes du condensateur en fonction de la tension aux bornes de la
+résistance. Cela forme un cercle quand elles sont égales.</p>
 <ul class="simple">
-<li>Dan le menu «Électricité», choisir le sous-menu «Circuit RC en régime
-transitoire».</li>
-<li>Cliquer sur les boutons <em>Échelon 0-&gt;5V</em> et <em>Échelon 5-&gt;0V</em> pour
-afficher les graphiques</li>
-<li>Ajuster l’échelle horizontale si nécessaire, et recommencer.</li>
-<li>Calculer la constante de temps RC.</li>
+<li>Sélectionner C = 1µF, R = 1 kΩ et tracer (A1-A2) en fonction de A2.
+Ajuster la fréquence pour obtenir un cercle.</li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>Quand on applique un échelon de 0 à 5&nbsp;V, la tension aux bornes du
-condensateur s’approche exponentiellement de 5&nbsp;V comme montré sur la
-figure. En modélisant la courbe de décharge par
-<img class="math" src="_images/math/60a5f57cb425f62765c576e48ba2fc4c6a528fc8.png" alt="U(t) = U_0 \times e^{− t/RC}"/> , on
-peut extraire la constante de temps RC et s’en servir pour trouver la
-valeur de la capacité.</p>
-<p>Le tension aux bornes d’un condensateur ne varie exponentiellement que
-quand on le charge au travers d’un dipôle linéaire, une résistance par
-exemple. Si on le charge à l’aide d’une source de courant constant, la
-tension change linéairement, puisque <img class="math" src="_images/math/8cdaff7d632a472fa21532774e5176f13a64dc37.png" alt="Q = It = CU"/> , et la tension
-croît linéairement avec le temps comme
-<img class="math" src="_images/math/f3dc0e5a2b3efa80465d44cdcf6b88714ca8b0be.png" alt="U = (I/C) \times t"/>.</p>
 </div>
 
 
@@ -115,10 +98,10 @@ croît linéairement avec le temps comme
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="4.3.html" title="Réponse transitoire de circuits RL"
+          <a href="4.3.html" title="Circuits RLC, réponse en régime stationnaire"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="4.1.html" title="Circuits RLC, réponse en régime stationnaire"
+          <a href="4.1.html" title="Courbe I-U"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

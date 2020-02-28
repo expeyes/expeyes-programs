@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Establish Connection &#8212; eyes17 1.0 documentation</title>
+    <title>Temperature measurement using PT100 &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,7 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="I2C Logger" href="6.93.html" /> 
+    <link rel="next" title="Data Logger" href="7.2.html" />
+    <link rel="prev" title="Distance Measurement, by ultrasound echo" href="6.4.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -25,47 +26,22 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="6.93.html" title="I2C Logger"
+          <a href="7.2.html" title="Data Logger"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="6.4.html" title="Distance Measurement, by ultrasound echo"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Establish Connection</a></li>
-<li><a class="reference internal" href="#set-pv1-v-set-pv2-v">set_pv1(v), set_pv2(v)</a></li>
-<li><a class="reference internal" href="#get-voltage-input">get_voltage(input)</a></li>
-<li><a class="reference internal" href="#get-voltage-time-input">get_voltage_time(input)</a></li>
-<li><a class="reference internal" href="#get-resistance">get_resistance()</a></li>
-<li><a class="reference internal" href="#get-capacitance">get_capacitance()</a></li>
-<li><a class="reference internal" href="#get-version">get_version()</a></li>
-<li><a class="reference internal" href="#get-temperature">get_temperature()</a></li>
-<li><a class="reference internal" href="#set-state-ouput-value">set_state(OUPUT=value)</a></li>
-<li><a class="reference internal" href="#set-sine-frequency">set_sine(frequency)</a></li>
-<li><a class="reference internal" href="#set-sine-amp-amplitude">set_sine_amp(amplitude)</a></li>
-<li><a class="reference internal" href="#set-sqr1-frequency">set_sqr1(frequency)</a></li>
-<li><a class="reference internal" href="#set-sqr1-slow-frequency">set_sqr1_slow(frequency)</a></li>
-<li><a class="reference internal" href="#set-sqr2-frequency">set_sqr2(frequency)</a></li>
-<li><a class="reference internal" href="#set-sqr1-frequency-dutycyle">set_sqr1(frequency, dutyCyle)</a></li>
-<li><a class="reference internal" href="#get-freq-input">get_freq(input)</a></li>
-<li><a class="reference internal" href="#duty-cycle-input">duty_cycle(input)</a></li>
-<li><a class="reference internal" href="#r2ftime-input1-input2">r2ftime(input1, input2)</a></li>
-<li><a class="reference internal" href="#multi-r2rtime-input-numcycles">multi_r2rtime(input, numCycles)</a></li>
-<li><a class="reference internal" href="#select-range-channel-range">select_range(channel, range)</a></li>
-<li><a class="reference internal" href="#id1">select_range(channel, range)</a></li>
-<li><a class="reference internal" href="#capture1-input-number-of-samples-time-interval">capture1(Input, Number of samples, time interval)</a></li>
-<li><a class="reference internal" href="#capture2-number-of-samples-time-interval">capture2(Number of samples, time interval)</a></li>
-<li><a class="reference internal" href="#capture4-number-of-samples-time-interval">capture4(Number of samples, time interval)</a></li>
-<li><a class="reference internal" href="#set-wave-frequency-wavetype">set_wave(frequency, wavetype)</a></li>
-<li><a class="reference internal" href="#load-equation-function-span">load_equation(function, span)</a></li>
-<li><a class="reference internal" href="#load-table-function-span">load_table(function, span)</a></li>
-</ul>
-
   <h4>Previous topic</h4>
-  <p class="topless"><a href="6.93.html"
-                        title="previous chapter">I2C Logger</a></p>
+  <p class="topless"><a href="6.4.html"
+                        title="previous chapter">Distance Measurement, by ultrasound echo</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="7.2.html"
+                        title="next chapter">Data Logger</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -93,324 +69,36 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The GUI programs described in the previous sections are meant for a
-fixed set of experiments. To develop new experiments, one should know
-how to access the features of expEYES from software. Important function
-calls used for communicating with the device is given below.</p>
-</div>
-<div class="section" id="establish-connection">
-<h1>Establish Connection<a class="headerlink" href="#establish-connection" title="Permalink to this headline">¶</a></h1>
-<p>To access the EYES17 hardware, the python modules for eyes17 must be
-installed. They should be inside a directory named eyes17, that could be
-in your home directory or on the Python PATH. <strong>Every program should
-start with the following 2 lines</strong></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">eyes17.eyes</span>
-<span class="n">p</span> <span class="o">=</span> <span class="n">eyes17</span><span class="o">.</span><span class="n">eyes</span><span class="o">.</span><span class="n">open</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The variable <code class="docutils literal notranslate"><span class="pre">p</span></code> is the software object, representing the hardware.</p>
-<p>The following sections explains the Python function calls to access the
-eyes17 hardware. Each function call will be explained with an example
-usage.</p>
-</div>
-<div class="section" id="set-pv1-v-set-pv2-v">
-<h1>set_pv1(v), set_pv2(v)<a class="headerlink" href="#set-pv1-v-set-pv2-v" title="Permalink to this headline">¶</a></h1>
-<p>Sets the DC voltages at PV1 and PV2. PV1 range is -5 to 5. PV2 range is
--3.3 to 3.3.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_pv1</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_pv2</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>The value set is printed. Measure the voltages using a meter.</p>
-</div>
-<div class="section" id="get-voltage-input">
-<h1>get_voltage(input)<a class="headerlink" href="#get-voltage-input" title="Permalink to this headline">¶</a></h1>
-<p>Returns the voltage at the specified input.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A2&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A3&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;MIC&#39;</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;SEN&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Connect PV1 to A1 and use the set_pv1() and get_voltage together. This
-function sets the input range by trial</p>
-<p>and error, depending on the input signal.</p>
-</div>
-<div class="section" id="get-voltage-time-input">
-<h1>get_voltage_time(input)<a class="headerlink" href="#get-voltage-time-input" title="Permalink to this headline">¶</a></h1>
-<p>Returns a tuple, containing the computer’s time stamp and the voltage at
-the specified input</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage_time</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="get-resistance">
-<h1>get_resistance()<a class="headerlink" href="#get-resistance" title="Permalink to this headline">¶</a></h1>
-<p>Returns the value of resistance connected to SEN, it should be between
-100 Ohm and 100k for reasonable accuracy.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_resistance</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="get-capacitance">
-<h1>get_capacitance()<a class="headerlink" href="#get-capacitance" title="Permalink to this headline">¶</a></h1>
-<p>Returns the value of capacitance connected to IN1 (works well in pF
-ranges)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_capacitance</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="get-version">
-<h1>get_version()<a class="headerlink" href="#get-version" title="Permalink to this headline">¶</a></h1>
-<p>Returns the version number of the Firmware</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_version</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="get-temperature">
-<h1>get_temperature()<a class="headerlink" href="#get-temperature" title="Permalink to this headline">¶</a></h1>
-<p>Returns the temperature of the processor inside eyes17</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_temperature</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-state-ouput-value">
-<h1>set_state(OUPUT=value)<a class="headerlink" href="#set-state-ouput-value" title="Permalink to this headline">¶</a></h1>
-<p>Sets the output of OD1, SQ1 etc. Connect OD1 to A1 and run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_state</span><span class="p">(</span><span class="n">OD1</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_voltage</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-sine-frequency">
-<h1>set_sine(frequency)<a class="headerlink" href="#set-sine-frequency" title="Permalink to this headline">¶</a></h1>
-<p>Generates the sinewave of requested frequency on WG (range from 5Hz to
-5000Hz). All intermediate values are not possible, function returns the
-actual value set.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_sine</span><span class="p">(</span><span class="mi">502</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>502.00803</p>
-</div>
-<div class="section" id="set-sine-amp-amplitude">
-<h1>set_sine_amp(amplitude)<a class="headerlink" href="#set-sine-amp-amplitude" title="Permalink to this headline">¶</a></h1>
-<p>The amplitude can be set to 3 pre-defined values of the peak voltage (
-0-&gt; 80mV, 1-&gt; 1V, 2-&gt; 3V)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_sine_amp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Sets the amplitude to 3 volts peak.</p>
-</div>
-<div class="section" id="set-sqr1-frequency">
-<h1>set_sqr1(frequency)<a class="headerlink" href="#set-sqr1-frequency" title="Permalink to this headline">¶</a></h1>
-<p>Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All
-intermediate values are not possible, function returns the actual value
-set.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">15030</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>15030.53</p>
-</div>
-<div class="section" id="set-sqr1-slow-frequency">
-<h1>set_sqr1_slow(frequency)<a class="headerlink" href="#set-sqr1-slow-frequency" title="Permalink to this headline">¶</a></h1>
-<p>Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
-intermediate values are not possible, function returns the actual value
-set. Resolution is high but WG is disabled when SQ1 is operated in this
-mode.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_sqr1_slow</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-sqr2-frequency">
-<h1>set_sqr2(frequency)<a class="headerlink" href="#set-sqr2-frequency" title="Permalink to this headline">¶</a></h1>
-<p>Similar to set_sqr1() but SQ2 is not available along with WG, only one
-at a time.</p>
-</div>
-<div class="section" id="set-sqr1-frequency-dutycyle">
-<h1>set_sqr1(frequency, dutyCyle)<a class="headerlink" href="#set-sqr1-frequency-dutycyle" title="Permalink to this headline">¶</a></h1>
-<p>Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
-intermediate values are not possible, function returns the actual value
-set.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>          <span class="c1"># 1000Hz with 30% duty cycle</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="get-freq-input">
-<h1>get_freq(input)<a class="headerlink" href="#get-freq-input" title="Permalink to this headline">¶</a></h1>
-<p>Measures the frequency of a square wave on the input, IN2 or SEN.
-Connect SQ1 to IN2 and run the code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">get_freq</span><span class="p">(</span><span class="s1">&#39;IN2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="duty-cycle-input">
-<h1>duty_cycle(input)<a class="headerlink" href="#duty-cycle-input" title="Permalink to this headline">¶</a></h1>
-<p>Measures the duty cycle a square wave on the input, IN2 or SEN. Connect
-SQ1 to IN2 and run the code</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">duty_cycle</span><span class="p">(</span><span class="s1">&#39;IN2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="r2ftime-input1-input2">
-<h1>r2ftime(input1, input2)<a class="headerlink" href="#r2ftime-input1-input2" title="Permalink to this headline">¶</a></h1>
-<p>Measures the time interval between a rising edge on input1 to another
-one on input2, the inputs can be the same also. This can be tested using
-a square wave.</p>
-<p>Connect SQ1 to IN2 and run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">r2ftime</span><span class="p">(</span><span class="s1">&#39;IN2&#39;</span><span class="p">,</span> <span class="s1">&#39;IN2&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>0.0003</p>
-<p>The 1kHz square wave with 30% duty cycle has a Period of one millisecond
-and stays HIGH for .3 milliseconds.</p>
-</div>
-<div class="section" id="multi-r2rtime-input-numcycles">
-<h1>multi_r2rtime(input, numCycles)<a class="headerlink" href="#multi-r2rtime-input-numcycles" title="Permalink to this headline">¶</a></h1>
-<p>Measures the time interval between rising edges on input1. Time between
-2 edges is one cycle. Number of cycles to be measured also can be
-specified, default value is 1. The allowed values are 1,2,4,8,12,16,32
-and 48. This can be tested using a square wave.</p>
-<p>Connect SQ1 to IN2 and run</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">set_sqr1</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">multi_r2rtime</span><span class="p">(</span><span class="s1">&#39;IN2&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>0.008</p>
-</div>
-<div class="section" id="select-range-channel-range">
-<h1>select_range(channel, range)<a class="headerlink" href="#select-range-channel-range" title="Permalink to this headline">¶</a></h1>
-<p>The input range of A1 and A2 can be set from ±0.5V to ±16V
-fullscale, using the programmable gain amplifiers.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 4volt maximum</span>
-<span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>         <span class="c1"># 8 volt maximum</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="id1">
-<h1>select_range(channel, range)<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>The input range of A1 and A2 can be set from ±0.5V to ±16V
-fullscale, using the programmable gain amplifiers.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>         <span class="c1"># 4volt maximum</span>
-<span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">8</span><span class="p">)</span>         <span class="c1"># 8 volt maximum</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="capture1-input-number-of-samples-time-interval">
-<h1>capture1(Input, Number of samples, time interval)<a class="headerlink" href="#capture1-input-number-of-samples-time-interval" title="Permalink to this headline">¶</a></h1>
-<p>Digitizes the specified input. The number of samples could be upto
-10000. The time gap between two consecutive samples id given in
-microseconds (range 2 to 1000 usec).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">print</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>will print two arrays of time and voltage.</p>
-<p>We need to plot the graph of the output for a better understanding. This
-can be done using the matplotlib module, imported using the pylab
-interface. Connect WG to A1 with a wire and run;</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine_amp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">t</span><span class="p">,</span><span class="n">v</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The output of this code is given below.</p>
-</div>
-<div class="section" id="capture2-number-of-samples-time-interval">
-<h1>capture2(Number of samples, time interval)<a class="headerlink" href="#capture2-number-of-samples-time-interval" title="Permalink to this headline">¶</a></h1>
-<p>Digitizes the inputs A1 and A2 together. The number of samples could be
-upto 10000. The time gap between two consecutive samples id given in
-microseconds (range 2 to 1000 usec).</p>
-<p>Connect WG to A1 and a diode from A1 to A2. Run the code below</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine_amp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">tt</span><span class="p">,</span><span class="n">vv</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture2</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span><span class="n">v</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">tt</span><span class="p">,</span><span class="n">vv</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-<p>The output of this code is given below.</p>
-<a class="reference internal image-reference" href="_images/halfwave.png"><img alt="_images/halfwave.png" src="_images/halfwave.png" style="width: 400px;" /></a>
-<a class="reference internal image-reference" href="_images/capture4.png"><img alt="_images/capture4.png" src="_images/capture4.png" style="width: 400px;" /></a>
-</div>
-<div class="section" id="capture4-number-of-samples-time-interval">
-<h1>capture4(Number of samples, time interval)<a class="headerlink" href="#capture4-number-of-samples-time-interval" title="Permalink to this headline">¶</a></h1>
-<p>Digitizes the inputs A1,A2,A3 and MIC together. The number of samples
-could be upto 10000. The time gap between two consecutive samples id
-given in microseconds (range 2 to 1000 usec).</p>
-<p>Connect WG to A3 and run the code given below. Result is shown above.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine_amp</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_sine</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">select_range</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">res</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture4</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span><span class="n">res</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>        <span class="c1"># A3</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">res</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span><span class="n">res</span><span class="p">[</span><span class="mi">7</span><span class="p">])</span>        <span class="c1"># MIC</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="set-wave-frequency-wavetype">
-<h1>set_wave(frequency, wavetype)<a class="headerlink" href="#set-wave-frequency-wavetype" title="Permalink to this headline">¶</a></h1>
-<p>If wavetype is not specified, it generates the waveform using the
-existing wave table. If wavetype is specified (‘sine’ or ‘tria’)</p>
-<p>corresponding wavetable is loaded.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_wave</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">&#39;sine&#39;</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_wave</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>       <span class="c1"># Sets 100Hz using the existing table</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_wave</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="s1">&#39;tria&#39;</span><span class="p">)</span>  <span class="c1"># Sets triagular wave table and generates 100Hz</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">50</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="load-equation-function-span">
-<h1>load_equation(function, span)<a class="headerlink" href="#load-equation-function-span" title="Permalink to this headline">¶</a></h1>
-<p>Makes the wave table using the quation. Connect WG to A1 and run the
-code below. The output also is shown below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-
-<span class="k">def</span> <span class="nf">f1</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">sin</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="mi">3</span>
-
-<span class="n">p</span><span class="o">.</span><span class="n">load_equation</span><span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="n">pi</span><span class="p">,</span><span class="n">pi</span><span class="p">])</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_wave</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="load-table-function-span">
-<h1>load_table(function, span)<a class="headerlink" href="#load-table-function-span" title="Permalink to this headline">¶</a></h1>
-<p>The wave table can be loaded with a 512 element array. Connect WG to A1
-and run the code below. After taking the absolute value, the table
-starts with 256, goes down to zero and then goes upto 255, tracing a
-triagular wave. The tableoutput also is shown above.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pylab</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">256</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
-<span class="n">x</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">load_table</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-<span class="n">p</span><span class="o">.</span><span class="n">set_wave</span><span class="p">(</span><span class="mi">400</span><span class="p">)</span>
-<span class="n">x</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">capture1</span><span class="p">(</span><span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
+  <div class="section" id="temperature-measurement-using-pt100">
+<h1>Temperature measurement using PT100<a class="headerlink" href="#temperature-measurement-using-pt100" title="Permalink to this headline">¶</a></h1>
+<p><strong>Objective</strong></p>
+<p>Record the temperature of a liquid by using a Platinum Resistance
+Thermometer. Resistance of a PT100 element is related to the temperature
+by the equation <img class="math" src="_images/math/fa7c31e0f5de02e1d335ca390907a3c6b583549c.png" alt="R(T) = R_0 (1 + AT + BT^2)"/>, where
+<img class="math" src="_images/math/53a20f2a00696f557838673af1af95b5c27bee90.png" alt="A = 3,9083 \times 10^{−3}"/> and <img class="math" src="_images/math/614f03160a972cd6580c2ba31802bd61e72d1c35.png" alt="B =  − 5,775 \times 10^{−7}"/>.</p>
+<a class="reference internal image-reference" href="_images/pt100.svg"><img alt="_images/pt100.svg" src="_images/pt100.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/pt100-screen.png"><img alt="_images/pt100-screen.png" src="_images/pt100-screen.png" style="width: 300px;" /></a>
+<p><strong>Procedure</strong></p>
+<ul class="simple">
+<li>Enter the Gain, Offset error and the Current from CCS</li>
+<li>Select the temperature range and time intervals</li>
+<li>Select the required parameters and press START</li>
+</ul>
+<p><strong>Discussion</strong></p>
+<p>Cooling curve of water is shown in figure</p>
+<p>To measure the resistance of the PT100 element, we connect it from the
+CCS to ground and measure the voltage across it. The actual current of
+CCS should be measured using an ammeter or by measuring the voltage frop
+across an known resistor. The input to A3 is amplified 11 times by
+connecting <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> resistor from Rg to Ground.</p>
+<p>The resistance of PT100 is <img class="math" src="_images/math/c869bead85121f53b9909b1c317716d79cc49146.png" alt="1000~\Omega"/> at <img class="math" src="_images/math/d88860a7696731c22c4a53793ac1f4c64a3e0bc6.png" alt="0^\circ C"/>. It changes nearly <img class="math" src="_images/math/ea6f6f13b9f5b09ee6f4887642cd59215a15fc2d.png" alt="0,4~\Omega /^\circ C"/>
+, changing the voltage by <img class="math" src="_images/math/512ccf9984795afbd18794dc027782b1fadb27e9.png" alt="0, 4~mV"/>. The 12 bit ADC output changes
+by 1 LSB for <img class="math" src="_images/math/fede4649a130b0403092403f4cc5b793ba204ceb.png" alt="1,22~mV"/> change in input voltage, hence any temperature
+change less than 3 degrees will not be detected. Use an external
+non-inverting amplifier to increase the resolution. The gain of the
+amplifier should be such that the maximum temperature measured should
+give an output less than 3.3 volts. Change the gain field entry
+accordingly.</p>
 </div>
 
 
@@ -426,7 +114,10 @@ triagular wave. The tableoutput also is shown above.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="6.93.html" title="I2C Logger"
+          <a href="7.2.html" title="Data Logger"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="6.4.html" title="Distance Measurement, by ultrasound echo"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

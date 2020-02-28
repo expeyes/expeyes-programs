@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Voltage of a lemon cell</title>
+    <title>Separating DC &amp; AC components</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,26 +12,28 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="voltage-of-a-lemon-cell">
-<h1>Voltage of a lemon cell</h1>
+  <div class="section" id="separating-dc-ac-components">
+<h1>Separating DC &amp; AC components</h1>
 <p><strong>Objective</strong></p>
-<p>Make a voltage source by inserting Zinc and Copper plates into a lemon.
-Explore the current driving capability and internal resistance.</p>
-<img alt="_images/lemon-cell.svg" src="_images/lemon-cell.svg" width="300px" /><p><strong>Procedure</strong></p>
+<p>Separating AC and DC components of a voltage waveform using a capacitor.</p>
+<p><strong>Procedure</strong></p>
+<img alt="_images/acdc-separating.svg" src="_images/acdc-separating.svg" width="300px" /><img alt="_images/acdc-sep-screen.png" src="_images/acdc-sep-screen.png" style="width: 300px;" />
 <ul class="simple">
-<li><p>Click on A1 to measure voltage</p></li>
-<li><p>Measure the voltage with and without the 1k resistor</p></li>
+<li><p>Set SQR1 to 500 Hz</p></li>
+<li><p>Enable A1 and A2</p></li>
+<li><p>Adjust the horizontal scale to see several cycles.</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Voltage across the Copper and Zinc terminals is nearly .9 volts.
-Connecting the resistor reduces it to 0.33 volts. When connected,
-current will start flowing through the resistor. But why is the voltage
-going down ?</p>
-<p>What is the internal resistance of the cell ?</p>
-<p>Current is the flow of charges and it has to complete the path. That
-means, current has to flow through the cell also. Depending on the
-internal resistance of the cell, part of the voltage gets dropped inside
-the cell itself. Does the same happen with a new dry-cell ?</p>
+<p>The observed waveforms with and without the series capacitor are shown
+in figure. The voltage is swinging between 0 and 5 volts. After passing
+through the capacitor the voltage swings from -2.5 volts to +2.5 volts.</p>
+<p>What will you get if you subtract a 2.5 from the y-coordinate of every
+point of the first graph? That is what the capacitor did. It did not
+allow the DC part to pass through. This original square wave can be
+considered as a 2.5V AC superimposed on a 2.5V DC.</p>
+<p>You may need to connect a resistor from A2 to GND to see a waveform
+swinging between -2.5 to +2.5 volts. Remove the resistor and observe the
+result.</p>
 </div>
 
 

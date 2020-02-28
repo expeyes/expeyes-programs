@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Caractéristique U-I d’une diode</title>
+    <title>Portes logiques</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,40 +12,25 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="caracteristique-u-i-dune-diode">
-<h1>Caractéristique U-I d’une diode</h1>
+  <div class="section" id="portes-logiques">
+<h1>Portes logiques</h1>
 <p><strong>Objectif</strong></p>
-<p>Tracer la caractéristique U-I d’une diode et comparer les résultats avec
-la théorie.</p>
+<p>Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
+des circuits intégrés de portes logiques TTL 7408 and 7432.</p>
 <p><strong>Procédure</strong></p>
-<img alt="_images/diode_iv.svg" src="_images/diode_iv.svg" width="300px" /><img alt="_images/diode-iv-screen.png" src="_images/diode-iv-screen.png" style="width: 300px;" />
-<ul class="simple">
-<li><p>Faire les connexions</p></li>
-<li><p>Cliquer sur DÉMARRER pour tracer la courbe caractéristique.</p></li>
-<li><p>Analyser les données</p></li>
-<li><p>Tracer les courbes U-I de DELs</p></li>
+<img alt="_images/logic-gates.svg" src="_images/logic-gates.svg" width="300px" /><ul class="simple">
+<li><p>Activer A1, A2 et A3. Régler le calibre pour A1 et A2 à 8 V</p></li>
+<li><p>Régler SQ1 à 200 Hz et ajuster la base de temps pour voir plusieurs
+cycles</p></li>
+<li><p>régler SQ2 depuis la forme de signal de WG, régler WG à 200 Hz</p></li>
+<li><p>Recommencer avec la porte OU, 7432</p></li>
+<li><p>La résistance de 1<em>k</em>Ω est nécessaire pour connecter un signal de
+5 V à l’entrée A3.</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>La caractéristique U-I d’une jonction PN idéale est donnée par
-l’équation
-<img class="math" src="_images/math/1f2504b3b9356a19bca33fe878056102889cf4e9.png" alt="I = I_0 \times e^{(qU/kT) − 1}"/>, où
-<img class="math" src="_images/math/855050f8e6ce09f0c2716ded698e80a83b3436b3.png" alt="I_0"/> est le courant de saturation inverse, <img class="math" src="_images/math/620a3ce6403ec82f1347af9985bc03f7a9382f4a.png" alt="q"/> la charge de
-l’électron, <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> la constante de Boltzmann, <img class="math" src="_images/math/f2d283a2071f9d043c9e0b0f794a8880fa0d3ce9.png" alt="T"/> la température en Kelvin.
-Pour une diode réelle, non-idéale, l’équation est
-<img class="math" src="_images/math/39d09511d6ffd909e706b64ab124c7c865c0a19c.png" alt="I = I_0 \times e^{(qU/nkT) − 1}"/>, où <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/>
-est le facteur d’idéalité, qui vaut 1 pour une diode idéale. Pour des
-diodes réelles il varie entre 1 et 2. On a utilisé une diode au silicium
-1N4148. La valeur de <em>n</em> pour 1N4148 est proche de 2. On a calculé la
-valeur de <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> en modélisant les valeurs expérimentales par l’équation.</p>
-<p>La tension à laquelle une DEL commence à émettre de la lumière dépend de
-sa longueur d’onde et de la constante de Planck. L’énergie d’un photon
-est donnée par <img class="math" src="_images/math/7d26a58f053a6006d66fbdf8066d0cedad85a45e.png" alt="E = h\nu  = hc/\lambda"/>. Cette énergie est égale au
-travail d’un électron qui franchit un seuil de potentiel, qui est donné
-par <img class="math" src="_images/math/d76ab808f15e0e219ae4d5601d92a92ae0fec084.png" alt="E = eU_0"/>. Donc la constante de Planck est
-<img class="math" src="_images/math/255444f8beafc92370a22fe3b726ad1c6ad08474.png" alt="h = eU_0 \times \lambda / c"/>, où <img class="math" src="_images/math/76f1d8ace30435987c01a00ca53a71cba1f40e6c.png" alt="\lambda"/> est la longueur d’onde de la
-DEL, <img class="math" src="_images/math/78a06cf7a34f39fde71fbba0d5539baae7c72d4e.png" alt="e"/> la charge de l’électron et <img class="math" src="_images/math/ae12a24f88803b5895632e4848d87d46483c492c.png" alt="c"/> la vitesse de la lumière.</p>
-<p>Recommencer cette expérience en chauffant la diode à différentes
-températures.</p>
+<p>Le fonctionnement de la porte logique sera évident à partir des trois
+signaux. On peut décaler les traces verticalement pour les séparer et
+les rendre plus claires.</p>
 </div>
 
 

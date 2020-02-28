@@ -1,26 +1,29 @@
-.. 2.10
+.. 2.6
 
-Light dependent resistors
-=========================
+AC mains pickup
+===============
 
 **Objective**
 
-Learn about LDR. Measure intensity of light and its variation with
-distance from the source.
+Learn about the AC mains supply. Explore the phenomenon of propagation
+of AC through free space.
 
-.. image:: schematics/ldr.svg
+.. image:: schematics/line-pickup.svg
 	   :width: 300px
 
 **Procedure**
 
--  Measure the LDR’s resistance, for different light intensities.
--  Iluminate LDR using a fluorescent lamp, A1 should show ripples
--  Put A1 in AC mode and measure ripple frequency
+-  Connect a long wire to A3
+-  Take one end of the wire near the AC mains line, without touching any
+   mains supply.
+-  Enable A3, and it’s analysis.
 
 **Discussion**
 
-The resistance vary from 1kΩ to around 100 kΩ depending on the intensity
-of light falling on it. The voltage is proportional to the resistance.
-The resistance decreases with intensity of light. If you use a point
-source of light, the resistance should increase as the square of the
-distance between the LDR and the light source.
+The power line pickup is shown below, there are five cycles in 100
+milliseconds. Without making any connection, how are we getting the AC
+voltage from the mains supply ? Why the voltage increaes when you touch
+the end of the wire connected to A1 by hand.
+
+.. image:: pics/pickup.png
+	   :width: 300px

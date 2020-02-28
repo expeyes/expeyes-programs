@@ -1,13 +1,13 @@
-.. 3.8
+.. 3.6
 
-Op-Amp Ingrator
-===============
+Inverting Amplifier
+===================
 
 **Objective**
 
 Wire an Inverting amplifier using an Op-Amp and test it.
 
-.. image:: schematics/opamp-int.svg
+.. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
 **Procedure**
@@ -20,5 +20,5 @@ Wire an Inverting amplifier using an Op-Amp and test it.
 
 **Discussion**
 
-The amplitude gain and and the phase correlation can be observed from
-the results.
+The amplitude gain and and the phase difference can be observed from the
+results.

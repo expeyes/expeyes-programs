@@ -1,24 +1,18 @@
-.. 2.3
+.. 2.2
 
-Measuring Capacitance
-=====================
+Measuring Resistance series combination
+=======================================
 
 **Objective**
 
-Measuring a capacitance.
+The effective resistance of a
+series combination of resistors is :math:`R = R_1 + R_2 + ⋯`. 
 
-.. image:: schematics/cap-measure.svg
-	   :width: 300px
+.. image:: ./schematics/res-series.svg
+   :width: 300px	   
 
-**Procedure**
+**Procedure for two resitors**
 
--  Connect the capacitor between IN1 and Ground.
--  Click on “Capacitance on IN1” . Should not touch the capacitor while
-   measuring
-
-**Discussion**
-
-We have used :math:`100~pF` capacitors in this activity.
-
-You can make the capacitors by pasting thin metal foils on both sides of
-insulators like paper, polythene or glass.
+-  Connect one resistor in SEN and the other one in Ground terminal.
+   Connect opposite ends of the resistors together.
+-  Observe the value shown on the right side panel

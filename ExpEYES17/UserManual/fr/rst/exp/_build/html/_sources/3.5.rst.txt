@@ -1,33 +1,25 @@
-.. 3.5
+.. 3.4
    
-Oscillateur à IC555
--------------------
+Décalage à l’aide d’un diode à jonction PN
+------------------------------------------
 
 **Objectif**
 
-Câbler un circuit de multivibrateur astable à l’aide d’un IC555, mesurer
-la fréquence et le rapport cyclique de la sortie.
+Démontrer le décalage d’un signal alternatif à différents niveaux, à
+l’aide d’une diode à jonction PN
 
-.. image:: schematics/osc555.svg
+.. image:: schematics/clamping.svg
 	   :width: 300px
-.. image:: pics/ic555-screen.png
+.. image:: pics/clamping.png
 	   :width: 300px
-
-Le circuit est présenté sur la figure. La fréquence est données par
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La durée
-HAUTE est donnée par
-:math:`\ln 2 \times C \times (R_1 + R_2)`
-et la durée BASSE par :math:`\ln 2 \times C \times R_2`.
 
 **Procédure**
 
--  Faire les connexions
--  mesurer la fréquence et le rapport cyclique.
--  Recommencer en changeant les valeurs de R1
+-  Faire les connexions et observer les sorties.
+-  Changer PV1 et observer le changement dans les sorties
 
 **Discussion**
 
-Le signal de sortie est montré sur la figure. Changer la valeur des
-résistances et du condensateur, puis comparer la fréquence et le rapport
-cyclique avec les valeurs calculées.
+Le niveau de décalage est conditionné par la tension continue appliquée
+et par la chute de tension de la diode.
 

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Numériser un son</title>
+    <title>Un générateur alternatif simple</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,28 +12,30 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="numeriser-un-son">
-<h1>Numériser un son</h1>
+  <div class="section" id="un-generateur-alternatif-simple">
+<h1>Un générateur alternatif simple</h1>
 <p><strong>Objectif</strong></p>
-<p>Numériser des signaux sonores d’un microphone, et mesurer leur
-fréquence. Utiliser le buzzer piézo ou toute autre source sonore comme
-un diapason.</p>
+<p>Mesurer la fréquence et l’amplitude d’une tension induite aux bornes
+d’un bobinage par un aimant en rotation. On utilise l’aimant de
+<img class="math" src="_images/math/47605fcbdf423fdd45a548d0b153ed1572401cac.png" alt="10~mm\times 10~mm"/> et la bobine de 3000 tours qui sont dans le kit.</p>
+<img alt="_images/ac-generator.svg" src="_images/ac-generator.svg" width="300px" /><img alt="_images/ac-gen-screen.png" src="_images/ac-gen-screen.png" style="width: 300px;" />
 <p><strong>Procédure</strong></p>
-<img alt="_images/sound-capture.svg" src="_images/sound-capture.svg" width="300px" /><ul class="simple">
-<li><p>Activer A1 et MIC, ainsi que leurs analyses</p></li>
-<li><p>Positionner le microphone face au buzzer</p></li>
-<li><p>Régler WG à <img class="math" src="_images/math/ac4e20e69c37eff30edc1ed3d9f2a165574e1fca.png" alt="1000~Hz"/>, puis le modifier et observer la sortie MIC</p></li>
-<li><p>Utiliser un sifflet à la place du buzzer et trouver sa fréquence à
-l’aide de la sortie MIC.</p></li>
+<ul class="simple">
+<li><p>Fixer l’aimant couché sur l’axe du moteur et alimenter ce moteur avec
+une pile de 1,5 V</p></li>
+<li><p>Activer A1 et A2, avec option d’analyse</p></li>
+<li><p>Régler la base de temps sur 100 ms pleine échelle</p></li>
+<li><p>Approcher le bobinage de l’aimant (sans le toucher), et observer la
+tension induite</p></li>
+<li><p>Recommencer l’expérience avec deux bobinages.</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Le signal du générateur et la sortie du microphone sont montrés dans la
-figure</p>
-<p>Les ondes sonores créent des variations de pression dans le milieu
-qu’elles traversent. Le microphone crée une tension proportionnelle aux
-variations de pression. Les variations de tension sont à l’unisson des
-variations de pression. On peut comparer le microphone à un capteur de
-pression, mais qui fonctionne seulement pour les variations de pression.</p>
+<p>La tension obtenue est affichée dans la figure. La différence de phase
+entre les deux signaux dépend de l’angle entre les axes des deux
+bobinages.</p>
+<p>Approcher un bobinage court-circuité près de l’aimant et observer le
+changement de fréquence. Le bobinage court-circuité prend de l’énergie
+du générateur et la vitesse en est diminuée.</p>
 </div>
 
 

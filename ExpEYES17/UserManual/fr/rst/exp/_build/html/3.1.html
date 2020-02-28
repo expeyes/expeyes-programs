@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Redressement demi-onde à l’aide d’une jonction PN &#8212; Documentation eyes17 1.0</title>
+    <title>Oscilloscope à quatre canaux, et plus &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Redressement double alternance avec des jonctions PN" href="3.2.html" />
-    <link rel="prev" title="Oscilloscope à quatre canaux, et plus" href="3.0.html" /> 
+    <link rel="next" title="Redressement demi-onde à l’aide d’une jonction PN" href="3.2.html" />
+    <link rel="prev" title="Stroboscope" href="2.21.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,22 +27,31 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="3.2.html" title="Redressement double alternance avec des jonctions PN"
+          <a href="3.2.html" title="Redressement demi-onde à l’aide d’une jonction PN"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="3.0.html" title="Oscilloscope à quatre canaux, et plus"
+          <a href="2.21.html" title="Stroboscope"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
     </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Oscilloscope à quatre canaux, et plus</a><ul>
+<li><a class="reference internal" href="#branchements-de-sortie">Branchements de sortie</a></li>
+<li><a class="reference internal" href="#branchements-d-entree">Branchements d’entrée</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Sujet précédent</h4>
-  <p class="topless"><a href="3.0.html"
-                        title="Chapitre précédent">Oscilloscope à quatre canaux, et plus</a></p>
+  <p class="topless"><a href="2.21.html"
+                        title="Chapitre précédent">Stroboscope</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="3.2.html"
-                        title="Chapitre suivant">Redressement double alternance avec des jonctions PN</a></p>
+                        title="Chapitre suivant">Redressement demi-onde à l’aide d’une jonction PN</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,37 +79,83 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="redressement-demi-onde-a-laide-dune-jonction-pn">
-<h1>Redressement demi-onde à l’aide d’une jonction PN<a class="headerlink" href="#redressement-demi-onde-a-laide-dune-jonction-pn" title="Lien permanent vers ce titre">¶</a></h1>
-<p><strong>Objectif</strong></p>
-<p>Étudier le fonctionnement d’une diode à jonction PN comme redresseur.
-Filtrage RC pour réduire les variations de tension (la composante
-alternative).</p>
-<a class="reference internal image-reference" href="_images/halfwave.svg"><img alt="_images/halfwave.svg" src="_images/halfwave.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/halfwave.png"><img alt="_images/halfwave.png" src="_images/halfwave.png" style="width: 300px;" /></a>
-<p><strong>Procédure</strong></p>
+  <div class="section" id="oscilloscope-a-quatre-canaux-et-plus">
+<h1>Oscilloscope à quatre canaux, et plus<a class="headerlink" href="#oscilloscope-a-quatre-canaux-et-plus" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Eyes17 est livré avec une application dont l’interface utilisateur par défaut
+est un oscilloscope à quatre canaux amélioré.</p>
 <ul class="simple">
-<li>Faire les connexions et observer les sorties</li>
-<li>Connecter une résistance de charge de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>, noter le changement
-d’amplitude</li>
-<li>Connecter un condensateur de <img class="math" src="_images/math/83b243116fc4ea50c8c083f6da6696cdf9d7d82d.png" alt="1 \mu F"/>,  et observer l’effet de filtrage.</li>
-<li>Essayer plusieurs valeurs de résistances de charge et de
-condensateurs de filtrage.</li>
+<li><a class="reference external" href="https://www.youtube.com/channel/UCIHUjpPn9wf1aHElqLn1RJQ">Lien vers des vidéos YouTube</a></li>
+<li>Le programme d’oscilloscope à quatre canaux fonctionne à peu de choses
+près comme un oscilloscope avec des entrées nommées
+A1, A2, A3 and MIC.</li>
+<li>Ajuster la sensibilté en X de l’écran, à l’aide du curseur de Base de Temps,
+en général pour observer plusieurs périodes du signal.</li>
+<li>Si le signal n’est pas stable choisir la source appropriée pour la fonction
+«&nbsp;trigger&nbsp;». Si nécessaire ajuster le seuil du «&nbsp;trigger&nbsp;».</li>
+<li>On peut enregistrer les traces dans un fichier, à un format texte. On peut
+prendre la transformée de Fourier et visualiser le spectre de fréquence
+du signal d’entrée.</li>
+<li>Le programme d’oscilloscope a aussi de widgets de contrôle sur le panneau
+de droite pour accéder à la plupart des fonctionnalités d’ExpEYES.</li>
+<li>Les entrées A1, A2, A3 et les résistances connectées à SEN sont
+mesurées et leurs valeurs affichées chaque seconde. Mais ces affichages
+n’ont pas de sens quand on connected des sources alternatives.</li>
+<li>Pour les entrées en courant alternatif, on peut cocher les cases à droite
+du widget de canal pour lire la tension de crête et la fréquence.</li>
+<li>Les branchements d’entrée/sortie d’ExpEYES sont brièvement décrits
+ci-dessous.</li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>La partie négative est ôtée par la diode comme montré sur la figure.
-Noter aussi que la tension est diminuée de quelques 0,7&nbsp;V dans la moitié
-positive, c’est la chute de tension aux bornes de la diode silicium,
-quand le courant y passe. Une résistance de charge est nécessaire pour
-que le circuit fonctionne correctement, on peut utiliser plus de
-<img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/>, mais NE PAS utiliser de valeurs plus faibles, comme la source
-courant alternatif ne peut pas fournir un courant de plus de <img class="math" src="_images/math/6fe46a7af303c50b92950b0f351a9cd553195d2b.png" alt="5~mA"/>.</p>
-<p>On peut voir que le condensateur se charge puis qu’il maintient la
-tension pendant la partie manquante du cycle.</p>
-<p>Peut-on utiliser des condensateurs de grande capacité pour réduire la
-fluctuation de tension&nbsp;?</p>
-<p>Durant quelle partie du cycle le courant traverse-t-il la diode&nbsp;?</p>
-<p>Qu’est qui conditionne la valeur du courant crête&nbsp;?</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/scope-outputs.svg"><img alt="_images/scope-outputs.svg" src="_images/scope-outputs.svg" width="300px" /></a>
+</div>
+<div class="section" id="branchements-de-sortie">
+<h2>Branchements de sortie<a class="headerlink" href="#branchements-de-sortie" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><strong>CCS:</strong> source courant constant de <img class="math" src="_images/math/24f4ab6d4515be48d2743231bd07e0da82252bde.png" alt="1.1\ mA"/>, on l’active et on la
+désactive à l’aide du bouton à cocher CCS.</li>
+<li><strong>PV1:</strong> Tension programmable, dans l’intervalle <img class="math" src="_images/math/3b7a582390aa358c825f0016c9aca6c33de8c610.png" alt="\pm 5\ V"/>. On peut
+la régler à l’aide du curseur ou à l’aide d’une entrée texte.</li>
+<li><strong>PV2:</strong> comparable à PV1, mais pour l’intervalle <img class="math" src="_images/math/deceeaf1a45dc57b379bd2d8de5850cf3f6a9470.png" alt="- 3.3\ V"/> à <img class="math" src="_images/math/727042c5547738459bc946466cbf1815408b97e2.png" alt="+ 3.3\ V"/></li>
+<li><strong>SQ1:</strong> Générateur de signal carré, variant entre <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> et <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.
+La fréquence est réglable de <img class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png" alt="1\ Hz"/> à <img class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png" alt="5\ kHz"/>.</li>
+<li><strong>SQ2:</strong> comme SQ1, mais disponible comme une option de WG.</li>
+<li><strong>OD1:</strong> Sortie numérique, sa tension peut être <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> ou <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.</li>
+<li><strong>WG:</strong> Générateur de basse fréquence. La fréquence est entre <img class="math" src="_images/math/b5489d27c0163a0b1273d1b7ab91eb679805b6cf.png" alt="1\ Hz"/>
+et <img class="math" src="_images/math/895c735dd3781af6274b7720aeac12c325bb8f32.png" alt="5\ kHz"/>. On peut régler l’amplitude à <img class="math" src="_images/math/0bd5eb9989b969c47903e39dfbf07fe2096bba32.png" alt="3\ V"/>, <img class="math" src="_images/math/b3e216320b7c8be2cbc21be0d6b5b7902b40e30c.png" alt="1\ V"/>
+ou <img class="math" src="_images/math/040a5395dcdf611ae7fed108966b47ee6ab99fa1.png" alt="80\ mV"/>.
+Le signal peut être sinusoïdal, triangulaire ou carré. En mode signal
+carré, la sortie est sur SQ2, avec une excursion de <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> à <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.</li>
+<li><strong>-WG:</strong> Sortie de WG inversée.</li>
+</ul>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/scope-inputs.svg"><img alt="_images/scope-inputs.svg" src="_images/scope-inputs.svg" width="300px" /></a>
+</div>
+</div>
+<div class="section" id="branchements-d-entree">
+<h2>Branchements d’entrée<a class="headerlink" href="#branchements-d-entree" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><strong>IN1:</strong> Entrée pour mesurer la capacité d’un condensateur. Un
+bouton-poussoir permet de lancer la mesure.</li>
+<li><strong>IN2:</strong> Entrée pour mesurer la fréquence de signaux numériques, qui
+varient entre <img class="math" src="_images/math/532f3248d6552e7ac6b785bd935f404ad593e6a9.png" alt="0"/> et <img class="math" src="_images/math/18acc1fa0d022fd729f0749ddc5f669917d3fb15.png" alt="3"/> à <img class="math" src="_images/math/1a3570db4544521e511c77e7f1f57c75632c5d52.png" alt="5\ V"/>.
+Un bouton-poussoir permet de lancer la mesure.</li>
+<li><strong>SEN:</strong> Entrée pour mesurer la résistance. Ce point est rappelé en interne
+à <img class="math" src="_images/math/9210342930929ea814930262304b16d0c79a28ad.png" alt="3.3\ V"/> via une résistance de  <img class="math" src="_images/math/cdb1157e4d667f56a60f2e4950e769a7622f773c.png" alt="5.1\ k\Omega"/>.</li>
+<li><strong>A1:</strong> Entrée de mesure de tension, fonctionne comme voltmètre ou comme
+oscilloscope. Le calibre maximal est <img class="math" src="_images/math/3270edf84f06fcd268711a855a3f328399202056.png" alt="\pm\ 16\ V"/>, on choisit
+le calibre depuis un menu déroulant. On peut choisir le mode de couplage
+continu/alternatif à l’aide d’un contact à glissière sur le boîtier.</li>
+<li><strong>A2:</strong> Identique à A1, mais sans couplage alternatif.</li>
+<li><strong>A3:</strong> Entrée de mesure de tension pour <img class="math" src="_images/math/8f7e1f73995959fe74248d103c2cf3e7eb4fff40.png" alt="\pm\ 3.3\ V"/>. On peut
+amplifier les signaux faibles en connectant une résistance entre Rg et
+GND.</li>
+<li><strong>MIC:</strong> Entrée à microphone (à condensateur), son signal apparaît comme
+le canal quatre de l’oscilloscope.</li>
+<li><strong>Rg:</strong> Résistance de gain pour A3. <img class="math" src="_images/math/0017517a0909fa2113c728609ce038ef0ddd8a64.png" alt="Gain = 1 + \frac{R_{g}}{100}"/>.
+Par exemple, si on connecte une résistance de <img class="math" src="_images/math/c881340f4a0fff8f9e62b5ed86ad9d3eeff919f7.png" alt="1\ k\Omega"/> on obtient
+un gain de <img class="math" src="_images/math/67763ee8e4752b3b94c82605090336c07af1d3d5.png" alt="11"/>.</li>
+</ul>
+</div>
 </div>
 
 
@@ -116,10 +171,10 @@ fluctuation de tension&nbsp;?</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="3.2.html" title="Redressement double alternance avec des jonctions PN"
+          <a href="3.2.html" title="Redressement demi-onde à l’aide d’une jonction PN"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="3.0.html" title="Oscilloscope à quatre canaux, et plus"
+          <a href="2.21.html" title="Stroboscope"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

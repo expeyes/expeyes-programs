@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Opto-electric signal transmission &#8212; eyes17 1.0 documentation</title>
+    <title>Diode I-V characteristics &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Plot I-V Curve" href="4.01.html" />
-    <link rel="prev" title="Transistor Output characteristics (CE)" href="3.12.html" /> 
+    <link rel="next" title="Transistor Output characteristics (CE)" href="3.14.html" />
+    <link rel="prev" title="Clock Divider" href="3.12.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="4.01.html" title="Plot I-V Curve"
+          <a href="3.14.html" title="Transistor Output characteristics (CE)"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="3.12.html" title="Transistor Output characteristics (CE)"
+          <a href="3.12.html" title="Clock Divider"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="3.12.html"
-                        title="previous chapter">Transistor Output characteristics (CE)</a></p>
+                        title="previous chapter">Clock Divider</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="4.01.html"
-                        title="next chapter">Plot I-V Curve</a></p>
+  <p class="topless"><a href="3.14.html"
+                        title="next chapter">Transistor Output characteristics (CE)</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,29 +69,37 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="opto-electric-signal-transmission">
-<h1>Opto-electric signal transmission<a class="headerlink" href="#opto-electric-signal-transmission" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="diode-i-v-characteristics">
+<h1>Diode I-V characteristics<a class="headerlink" href="#diode-i-v-characteristics" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Demonstrate the transmission of signals using light. An LED is powered
-by a 1kHz signal and the light is made to fall on a photo-transistor.</p>
-<a class="reference internal image-reference" href="_images/opto-electric.svg"><img alt="_images/opto-electric.svg" src="_images/opto-electric.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/opto-electric-transmission.png"><img alt="_images/opto-electric-transmission.png" src="_images/opto-electric-transmission.png" style="width: 300px;" /></a>
+<p>Draw the I-V Characteristic of diode and compare the result with the
+theory.</p>
 <p><strong>Procedure</strong></p>
+<a class="reference internal image-reference" href="_images/diode_iv.svg"><img alt="_images/diode_iv.svg" src="_images/diode_iv.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/diode-iv-screen.png"><img alt="_images/diode-iv-screen.png" src="_images/diode-iv-screen.png" style="width: 300px;" /></a>
 <ul class="simple">
-<li>Keep the LED facing the photo-transistor and set SQR1 to 1000Hz</li>
-<li>Repeat the experiment by changing the frequency.</li>
+<li>Make connections</li>
+<li>Click on START to draw the characteristic curve.</li>
+<li>Analyse the data</li>
+<li>Plot the IV of LEDs</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The SEN input is internally connected to 5 volts through a <img class="math" src="_images/math/b1a48943c2c92e1fda4acc96b15e087f23130e3b.png" alt="5,1~k\Omega"/>
-resistor. The output of the photo-transistor at <img class="math" src="_images/math/71e0510df4df44cfb1644b4503bf0c84a2326101.png" alt="1~kHz"/> is shown in figure.
-The square trace is the voltage across the LED. When the LED is ON,
-photo-transistor conducts and the voltage across the collector drops to
-<img class="math" src="_images/math/f259596ec478838a19c37c38f45cfc3602ca4791.png" alt="0,2~V"/>. When the LED is OFF the photo-transistor goes into cut off
-mode and the collector shows almost the supply voltage. The rise and
-fall times of the photo-transistor seem to be different. Find the upper
-limit of the frequency that the given photo-transistor can respond.</p>
-<p>Repeat this experiment with a Fiber Optic cable to guide the light from
-LED to the photo-transistor.</p>
+<p>The IV characteristic of an ideal PN junction diode is given by equation
+<img class="math" src="_images/math/1f2504b3b9356a19bca33fe878056102889cf4e9.png" alt="I = I_0 \times e^{(qU/kT) − 1}"/>, where <img class="math" src="_images/math/855050f8e6ce09f0c2716ded698e80a83b3436b3.png" alt="I_0"/> is the reverse saturation
+current, <img class="math" src="_images/math/620a3ce6403ec82f1347af9985bc03f7a9382f4a.png" alt="q"/> the charge of electron, <img class="math" src="_images/math/0b7c1e16a3a8a849bb8ffdcdbf86f65fd1f30438.png" alt="k"/> the Boltzmann constant, <img class="math" src="_images/math/f2d283a2071f9d043c9e0b0f794a8880fa0d3ce9.png" alt="T"/> the
+temperature in Kelvin. For a practical, non-ideal, diode, the equation
+is <img class="math" src="_images/math/39d09511d6ffd909e706b64ab124c7c865c0a19c.png" alt="I = I_0 \times e^{(qU/nkT) − 1}"/>, where <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> is the ideality factor, that
+is 1 for an ideal diode. For practical diodes it varies from 1 to 2. We
+have used a IN4148 silicon diode. The value of <em>n</em> for 1N4148 is around 2.
+We have calculated the value of <img class="math" src="_images/math/e11f2701c4a39c7fe543a6c4150b421d50f1c159.png" alt="n"/> by fitting the experimental data with
+the equation.</p>
+<p>The voltage at which LED starts emitting light depends on its wavelength
+and Planck’s constant. Energy of a photon is given by <img class="math" src="_images/math/7d26a58f053a6006d66fbdf8066d0cedad85a45e.png" alt="E = h\nu  = hc/\lambda"/> .
+This energy is equal to the energy of an electron that overcomes the
+junction barrier and is given by <img class="math" src="_images/math/e13f2c6096f050e0c7cdbd867b87777a190fe77c.png" alt="E = eV_0"/>. So Planck’s constant
+<img class="math" src="_images/math/a0eb8bb4c0140d5f48a9a9a465080164dd0099e3.png" alt="h = eV_0 \times \lambda / c"/>, where <img class="math" src="_images/math/76f1d8ace30435987c01a00ca53a71cba1f40e6c.png" alt="\lambda"/> is the wavelength of light from the LED, <img class="math" src="_images/math/78a06cf7a34f39fde71fbba0d5539baae7c72d4e.png" alt="e"/>
+the charge of electron and <img class="math" src="_images/math/ae12a24f88803b5895632e4848d87d46483c492c.png" alt="c"/> the velocity of light.</p>
+<p>Repeat the experiment by heating the diode to different temperatures.</p>
 </div>
 
 
@@ -107,10 +115,10 @@ LED to the photo-transistor.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="4.01.html" title="Plot I-V Curve"
+          <a href="3.14.html" title="Transistor Output characteristics (CE)"
              >next</a> |</li>
         <li class="right" >
-          <a href="3.12.html" title="Transistor Output characteristics (CE)"
+          <a href="3.12.html" title="Clock Divider"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

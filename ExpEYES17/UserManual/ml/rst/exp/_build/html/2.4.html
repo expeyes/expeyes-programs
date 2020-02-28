@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>റെസിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച് &#8212; eyes17 1.0 documentation</title>
+    <title>റെസിസ്റ്ററുകളുടെ പാരലൽ കണക്ഷൻ &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="സ്ഥിരവൈദ്യുതിയും പ്രത്യവർത്തിധാരാവൈദ്യുതിയും (DC &amp; AC)" href="2.5.html" />
-    <link rel="prev" title="കപ്പാസിറ്ററുകളുടെ പാരലൽ കണക്ഷൻ" href="2.3b.html" /> 
+    <link rel="next" title="കപ്പാസിറ്റൻസ് അളക്കുന്ന വിധം" href="2.5.html" />
+    <link rel="prev" title="റെസിസ്റ്ററുകളുടെ സീരീസ് കണക്ഷൻ" href="2.3.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.5.html" title="സ്ഥിരവൈദ്യുതിയും പ്രത്യവർത്തിധാരാവൈദ്യുതിയും (DC &amp; AC)"
+          <a href="2.5.html" title="കപ്പാസിറ്റൻസ് അളക്കുന്ന വിധം"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="2.3b.html" title="കപ്പാസിറ്ററുകളുടെ പാരലൽ കണക്ഷൻ"
+          <a href="2.3.html" title="റെസിസ്റ്ററുകളുടെ സീരീസ് കണക്ഷൻ"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -37,11 +37,11 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
-  <p class="topless"><a href="2.3b.html"
-                        title="previous chapter">കപ്പാസിറ്ററുകളുടെ പാരലൽ കണക്ഷൻ</a></p>
+  <p class="topless"><a href="2.3.html"
+                        title="previous chapter">റെസിസ്റ്ററുകളുടെ സീരീസ് കണക്ഷൻ</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="2.5.html"
-                        title="next chapter">സ്ഥിരവൈദ്യുതിയും പ്രത്യവർത്തിധാരാവൈദ്യുതിയും (DC &amp; AC)</a></p>
+                        title="next chapter">കപ്പാസിറ്റൻസ് അളക്കുന്ന വിധം</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -70,23 +70,13 @@
           <div class="body" role="main">
             
   <div class="section" id="id1">
-<h1>റെസിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച്<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<p>ഓംസ് നിയമപ്രകാരം സീരീസായി ഘടിപ്പിച്ച രണ്ടു റെസിസ്റ്ററുകളിലൂടെ കറന്റ് പ്രവഹിക്കുമ്പോൾ അവയോരോന്നിനും കുറുകെയുണ്ടാവുന്ന വോൾടേജ് അവയുടെ റെസിസ്റ്റൻസിന് ആനുപാതികമായിരിക്കും. രണ്ടിനും കുറുകെയുള്ള വോൾടേജ്കളും ഏതെങ്കിലും ഒരു റെസിസ്റ്റൻസും അറിയാമെങ്കിൽ രണ്ടാമത്തെ റെസിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച്  കണക്കുകൂട്ടാം. <img class="math" src="_images/math/f4aa055d2db73ef982166b11e2068ac9579f2b6e.png" alt="I = V_{A1}/R_2 = (V_{PV1} − V_{A1})/R_1"/>.</p>
-<blockquote>
-<div>ചിത്രത്തിലെ R2 നമുക്കറിയാവുന്ന  റെസിസ്റ്റൻസും R1  കണ്ടുപിടിക്കാനുള്ളതും ആണെന്നിരിക്കട്ടെ.  R2 ആയി  1000ഓം ഉപയോഗിക്കാം. R1 ന്റെ  സ്ഥാനത്ത് ഒരു 2200 ഓം ഉപയോഗിക്കാം.</div></blockquote>
-<a class="reference internal image-reference" href="_images/res-compare.svg"><img alt="_images/res-compare.svg" src="_images/res-compare.svg" width="300px" /></a>
+<h1>റെസിസ്റ്ററുകളുടെ പാരലൽ കണക്ഷൻ<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>ExpEYESന്റെ  SEN  എന്ന ടെർമിനൽ  റെസിസ്റ്റൻസ് അളക്കാൻ വേണ്ടി ഉപയോഗിക്കാം.</p>
+<a class="reference internal image-reference" href="_images/res-parallel.svg"><img alt="_images/res-parallel.svg" src="_images/res-parallel.svg" width="250px" /></a>
 <ul class="simple">
-<li>ഒരു ബ്രെഡ്‌ബോർഡിൽ  R1ഉം  R2വും  സീരീസായി ഘടിപ്പിക്കുക</li>
-<li>A1  ടെർമിനൽ രണ്ടു റെസിസ്റ്ററും ചേരുന്ന ബിന്ദുവിലേക്കു ഘടിപ്പിക്കുക</li>
-<li>PV1  ടെർമിനൽ  R1ന്റെ ഒരറ്റത്ത്  ഘടിപ്പിക്കുക</li>
-<li>R2വിന്റെ ഒരറ്റം ഗ്രൗണ്ടിലേക്ക് ഘടിപ്പിക്കുക</li>
-<li>PV1ൽ 4 വോൾട് സെറ്റ് ചെയ്യുക</li>
-<li>A1 ലെ വോൾടേജ് അളക്കുക.</li>
+<li>റെസിസ്റ്ററുകൾ പാരലലായി  SENനും ഗ്രൗണ്ടിനും ഇടയ്ക് ഘടിപ്പിക്കുക</li>
 </ul>
-<p>R2ലൂടെയുള്ള കറന്റ്  <img class="math" src="_images/math/689d58ede7fbdc15dd6c302af1f45e262ffdd263.png" alt="I = V_{A1}/R_2"/> എന്ന സമവാക്യം നൽകും . ഇതേ കറന്റാണ്   R1ലൂടെയും ഒഴുകുന്നത്.  R1നു കുറുകെയുള്ള വോൾടേജ്  PV1 - A1  ആണ് . അതിനാൽ     <img class="math" src="_images/math/4280f45cc0f25fb4c757283f5177069a4ee6be3e.png" alt="R_1 = (V_{PV1} − V_{A1})/I"/>.</p>
-<p>നോട്ട്:
-A1 ടെർമിനലിന്റെ ഇൻപുട്ട് റെസിസ്റ്റൻസ് 1  മെഗാ ഓം ആണ് . അതിനാൽ  A1ന്റെ അകത്തേക്കൊഴുകുന്ന കറന്റ്  രണ്ടോ മൂന്നോ മൈക്രോ ആംപിയർ മാത്രമാണ് . ഇവിടെ നമുക്കതിനെ അവഗണിക്കാം. പക്ഷെ ഇതേ പരീക്ഷണം മെഗാ ഓം കണക്കിനുള്ള റെസിസ്റ്റൻസുകൾ  ഉപയോഗിച്ച് നടത്തുകയാണെങ്കിൽ  R2 വിനു പാരലലായി ഒരു 1 മെഗാ ഓം കൂടി കണക്കിലെടുക്കണം.
-ഒരു ലളിതമായ പരീക്ഷണത്തിലൂടെ ഇൻപുട്ട് റെസിസ്റ്റൻസിന്റെ പ്രാധാന്യം മനസിലാക്കാം.    PV1ൽ 4 വോൾട് സെറ്റ് ചെയ്ത്  അതിനെ ഒരു 1 മെഗാ ഓം റെസിസ്റ്ററിലൂടെ  A1 ലേക്ക് ഘടിപ്പിക്കുക.  A1 കാണിക്കുന്നത്  2 വോൾട്ട് മാത്രമായിരിക്കും. ഇവിടെ പുറമെ ഘടിപ്പിച്ച റെസിസ്റ്ററും ഇൻപുട്ട് റെസിസ്റ്ററും ചേർന്ന് ഒരു സീരീസ് സർക്യൂട് ഉണ്ടാവുന്നുണ്ട് . രണ്ടു റെസിസ്റ്റൻസും തുല്യമായതിനാൽ പകുതി വോൾടേജ് നമ്മൾ ഘടിപ്പിച്ച 1 മെഗാ ഓം റെസിസ്റ്ററിനു കുറുകെ നഷ്ടപ്പെടുന്നു.</p>
+<p>റെസിസ്റ്റൻസ് സ്‌ക്രീനിന്റെ വലുത് മുകൾഭാഗത്തായി കാണിച്ചിരിക്കും.  <img class="math" src="_images/math/f134a803e31216865f6c12aecce2a0906103fa77.png" alt="\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯"/>.</p>
 </div>
 
 
@@ -102,10 +92,10 @@ A1 ടെർമിനലിന്റെ ഇൻപുട്ട് റെസിസ
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="2.5.html" title="സ്ഥിരവൈദ്യുതിയും പ്രത്യവർത്തിധാരാവൈദ്യുതിയും (DC &amp; AC)"
+          <a href="2.5.html" title="കപ്പാസിറ്റൻസ് അളക്കുന്ന വിധം"
              >next</a> |</li>
         <li class="right" >
-          <a href="2.3b.html" title="കപ്പാസിറ്ററുകളുടെ പാരലൽ കണക്ഷൻ"
+          <a href="2.3.html" title="റെസിസ്റ്ററുകളുടെ സീരീസ് കണക്ഷൻ"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

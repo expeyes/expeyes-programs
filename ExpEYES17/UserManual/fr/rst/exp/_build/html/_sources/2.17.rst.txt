@@ -1,31 +1,45 @@
-.. 2.17
-
-Stroboscope
-===========
+.. 2.13
+   
+Transformateur de courant alternatif
+------------------------------------
 
 **Objectif**
 
-Observation d'un phénomène périodique à l'aide de lumière pulsée périodiquement.
+Démontrer l’induction mutuelle entre deux bobinages, fournis avec
+ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
+aligne les axes des deux bobinages et on insère un noyau de
+ferrite.
+
+.. image:: schematics/transformer.svg
+	   :width: 300px
+.. image:: pics/transformer-screen.png
+	   :width: 300px
 
 **Procédure**
 
-.. image:: schematics/stroboscope.svg
-	   :width: 300px
-
-
--  On fait tourner un disque à l'aide du moteur alimenté par une pile de 1,5 V.
--  On éclaire le disque seulement par la limère de la DEL, il ne devrait
-   pas y avoir d'autre source lumineuse.
--  Ajuster la fréquence de SQ1, le disque apparaît stationnaire quand elle est
-   égale à la fréquence de rotation du disque.
+-  Faire les connections comme montré sur la figure
+-  Activer A1 et A2
+-  Régler WG à :math:`500~Hz`
+-  Approcher les bobinages l’un de l’autre et observer la tension en A2.
+-  Essayer d’insérer un noyau en ferrite
 
 **Discussion**
 
-Quand la fréquence du phénomène observé et la fréquence de la lumière pulsée
-sont identiques, on peu observer une image statique.
+Le signal appliqué et le signal induit sont présentés sur la figure. Un
+champ magnétique oscillant est la cause de la tension induite. Dans les
+deux expériences précédentes, le champ magnétique oscillant était créé
+par le mouvement d’aimants permanents. Dans le cas présent, il est créé
+par un courant variable dans le temps.
 
-Qu'arrive-t-il quand on augmente ou qu'on diminue un petit peu la fréquence de
-la lumière ?
+Essayer de faire cette expérience avec un signal carré. Connecter une
+résistance de :math:`1~k\Omega` aux bornes du bobinage secondaire pour réduire
+les oscillation de résonance.
 
-Qu'arrive-t-il quand la fréquence de la lumière pulsée est le double de
-celle du phénomène ? et quand elle est la moitié ?
+Le concept de courant alternatif est introduit en affichant la tension
+en fonction du temps. On explore le comportement de dipôles tels que les
+condensateurs et les bobinages en courant continu et alternatif, en
+mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
+La conversion de signaux électriques en son et l’inverse est démontré.
+Pour chaque expérience, on réalise les connexions selon le diagramme
+donné.
+

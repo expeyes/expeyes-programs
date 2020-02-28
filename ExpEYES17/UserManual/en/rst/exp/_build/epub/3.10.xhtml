@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Clock Divider</title>
+    <title>Op-Amp Ingrator</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,34 +12,21 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="clock-divider">
-<h1>Clock Divider</h1>
+  <div class="section" id="op-amp-ingrator">
+<h1>Op-Amp Ingrator</h1>
 <p><strong>Objective</strong></p>
-<p>Study of a clock divider, using a D flip-flop (TTL family, 7474).</p>
-<p><strong>Procedure</strong></p>
-<img alt="_images/clock-divider.svg" src="_images/clock-divider.svg" width="300px" /><ul class="simple">
-<li><p>Enable A1 and A2, set range to 8 volts fullscale</p></li>
-<li><p>Set SQ1 to 500 Hz</p></li>
+<p>Wire an Inverting amplifier using an Op-Amp and test it.</p>
+<img alt="_images/opamp-int.svg" src="_images/opamp-int.svg" width="300px" /><p><strong>Procedure</strong></p>
+<ul class="simple">
+<li><p>Set WG amplitude to 80 mV and frequency to 1000 Hz</p></li>
+<li><p>Enable A1 and A2 and their analysis option</p></li>
+<li><p>Select 1V range for both A1 and A2</p></li>
+<li><p>Make connections and observe the output</p></li>
+<li><p>Change gain by changing the resistor values.</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The output toggles at every rising edge of the input, resulting in a
-division of frequency by two. The output is a symmetric squarewave,
-irrespective of the duty cycle of the input pulse. The HIGH output of
-the TTL IC is around 4 volts only.</p>
-<table class="docutils">
-<colgroup>
-<col style="width: 100%" />
-</colgroup>
-<tbody>
-<tr class="row-odd"><td><img alt="_images/clock-divider.png" src="_images/clock-divider.png" style="width: 300px;" />
-<img alt="_images/clock-divider2.png" src="_images/clock-divider2.png" style="width: 300px;" />
-</td>
-</tr>
-<tr class="row-even"><td><p>Figure 3.1 A clock divider circuit, using a D-flipflop. Outputs for two
-different types of input are shown</p></td>
-</tr>
-</tbody>
-</table>
+<p>The amplitude gain and and the phase correlation can be observed from
+the results.</p>
 </div>
 
 

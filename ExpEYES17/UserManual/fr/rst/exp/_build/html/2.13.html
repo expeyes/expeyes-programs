@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Transformateur de courant alternatif &#8212; Documentation eyes17 1.0</title>
+    <title>Résistance électrique du corps humain &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Résistance de l’eau, en courant alternatif" href="2.14.html" />
-    <link rel="prev" title="Un générateur alternatif simple" href="2.12.html" /> 
+    <link rel="next" title="Photorésistances" href="2.14.html" />
+    <link rel="prev" title="Le corps humain comme conducteur" href="2.12.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.14.html" title="Résistance de l’eau, en courant alternatif"
+          <a href="2.14.html" title="Photorésistances"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="2.12.html" title="Un générateur alternatif simple"
+          <a href="2.12.html" title="Le corps humain comme conducteur"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="2.12.html"
-                        title="Chapitre précédent">Un générateur alternatif simple</a></p>
+                        title="Chapitre précédent">Le corps humain comme conducteur</a></p>
   <h4>Sujet suivant</h4>
   <p class="topless"><a href="2.14.html"
-                        title="Chapitre suivant">Résistance de l’eau, en courant alternatif</a></p>
+                        title="Chapitre suivant">Photorésistances</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,39 +70,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="transformateur-de-courant-alternatif">
-<h1>Transformateur de courant alternatif<a class="headerlink" href="#transformateur-de-courant-alternatif" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="resistance-electrique-du-corps-humain">
+<h1>Résistance électrique du corps humain<a class="headerlink" href="#resistance-electrique-du-corps-humain" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Objectif</strong></p>
-<p>Démontrer l’induction mutuelle entre deux bobinages, fournis avec
-ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
-aligne les axes des deux bobinages et on insère un noyau de
-ferrite.</p>
-<a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/transformer-screen.png"><img alt="_images/transformer-screen.png" src="_images/transformer-screen.png" style="width: 300px;" /></a>
+<p>Mesurer la résistance électrique du corps humain en la comparant à une
+résistance connue. On commence avec un signal continu issu de PV1 puis
+on continue avec un signal alternatif issu de WG.</p>
+<a class="reference internal image-reference" href="_images/res-body.svg"><img alt="_images/res-body.svg" src="_images/res-body.svg" width="300px" /></a>
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li>Faire les connections comme montré sur la figure</li>
-<li>Activer A1 et A2</li>
-<li>Régler WG à <img class="math" src="_images/math/def704035f18cc44643a5bf64441776f350438a0.png" alt="500~Hz"/></li>
-<li>Approcher les bobinages l’un de l’autre et observer la tension en A2.</li>
-<li>Essayer d’insérer un noyau en ferrite</li>
+<li>Régler PV1 à 3&nbsp;V</li>
+<li>Relier PV1 à A2, à travers son corps, et mesurer la tension en A2</li>
+<li>Calculer la résistance de son corps comme expliqué à la section
+<a class="reference external" href="#sec:Measure-resistance-by-comparison">2.4↑</a></li>
+<li>Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer
+les analyses de A1 et A2 afin de mesurer les tensions.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Le signal appliqué et le signal induit sont présentés sur la figure. Un
-champ magnétique oscillant est la cause de la tension induite. Dans les
-deux expériences précédentes, le champ magnétique oscillant était créé
-par le mouvement d’aimants permanents. Dans le cas présent, il est créé
-par un courant variable dans le temps.</p>
-<p>Essayer de faire cette expérience avec un signal carré. Connecter une
-résistance de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> aux bornes du bobinage secondaire pour réduire
-les oscillation de résonance.</p>
-<p>Le concept de courant alternatif est introduit en affichant la tension
-en fonction du temps. On explore le comportement de dipôles tels que les
-condensateurs et les bobinages en courant continu et alternatif, en
-mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
-La conversion de signaux électriques en son et l’inverse est démontré.
-Pour chaque expérience, on réalise les connexions selon le diagramme
-donné.</p>
+<p>Les mesures en courant continu sont plus affectées par les bruits
+électriques. La résistance en courant alternatif est censée être
+inférieure à la résistance en courant continu. La résistance est due à
+notre peau, le courant électrique peut y passer comme il passe à travers
+un condensateur.</p>
 </div>
 
 
@@ -118,10 +107,10 @@ donné.</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="2.14.html" title="Résistance de l’eau, en courant alternatif"
+          <a href="2.14.html" title="Photorésistances"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="2.12.html" title="Un générateur alternatif simple"
+          <a href="2.12.html" title="Le corps humain comme conducteur"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

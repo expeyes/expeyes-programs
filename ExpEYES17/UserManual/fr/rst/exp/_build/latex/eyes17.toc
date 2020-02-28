@@ -60,12 +60,12 @@
 \contentsline {section}{\numberline {7.6}Oscillateur \IeC {\`a} IC555}{36}{section.7.6}% 
 \contentsline {section}{\numberline {7.7}Amplificateur inverseur}{36}{section.7.7}% 
 \contentsline {section}{\numberline {7.8}Amplificateur non-inverseur}{37}{section.7.8}% 
-\contentsline {section}{\numberline {7.9}Int\IeC {\'e}grateur \IeC {\`a} ampli-op}{37}{section.7.9}% 
+\contentsline {section}{\numberline {7.9}Int\IeC {\'e}grateur \IeC {\`a} ampli-op}{38}{section.7.9}% 
 \contentsline {section}{\numberline {7.10}Portes logiques}{38}{section.7.10}% 
 \contentsline {section}{\numberline {7.11}Diviseur d\IeC {\textquoteright }horloge}{39}{section.7.11}% 
 \contentsline {section}{\numberline {7.12}Caract\IeC {\'e}ristique U-I d\IeC {\textquoteright }une diode}{40}{section.7.12}% 
 \contentsline {section}{\numberline {7.13}Caract\IeC {\'e}ristique de la sortie (CE) d\IeC {\textquoteright }un transistor}{41}{section.7.13}% 
-\contentsline {section}{\numberline {7.14}Transmission d\IeC {\textquoteright }un signal Opto-\IeC {\'e}lectrique}{42}{section.7.14}% 
+\contentsline {section}{\numberline {7.14}Transmission d\IeC {\textquoteright }un signal Opto-\IeC {\'e}lectrique}{41}{section.7.14}% 
 \contentsline {chapter}{\numberline {8}Exp\IeC {\'e}riences d\IeC {\textquoteright }\IeC {\'e}lectricit\IeC {\'e} et magn\IeC {\'e}tisme}{43}{chapter.8}% 
 \contentsline {section}{\numberline {8.1}Courbe I-U}{43}{section.8.1}% 
 \contentsline {subsection}{\numberline {8.1.1}Sch\IeC {\'e}ma}{43}{subsection.8.1.1}% 
@@ -74,10 +74,9 @@
 \contentsline {section}{\numberline {8.3}Circuits RLC, r\IeC {\'e}ponse en r\IeC {\'e}gime stationnaire}{44}{section.8.3}% 
 \contentsline {section}{\numberline {8.4}R\IeC {\'e}ponse de circuits RC en r\IeC {\'e}gime transitoire}{45}{section.8.4}% 
 \contentsline {section}{\numberline {8.5}R\IeC {\'e}ponse transitoire de circuits RL}{46}{section.8.5}% 
-\contentsline {section}{\numberline {8.6}R\IeC {\'e}ponse transitoire de circuit RLC}{47}{section.8.6}% 
-\contentsline {section}{\numberline {8.7}Diff\IeC {\'e}renciation et int\IeC {\'e}gration RC}{47}{section.8.7}% 
-\contentsline {section}{\numberline {8.8}Analyse de Fourier}{48}{section.8.8}% 
-\contentsline {section}{\numberline {8.9}Induction \IeC {\'e}lectromagn\IeC {\'e}tique}{49}{section.8.9}% 
+\contentsline {section}{\numberline {8.6}Diff\IeC {\'e}renciation et int\IeC {\'e}gration RC}{47}{section.8.6}% 
+\contentsline {section}{\numberline {8.7}Analyse de Fourier}{48}{section.8.7}% 
+\contentsline {section}{\numberline {8.8}Induction \IeC {\'e}lectromagn\IeC {\'e}tique}{48}{section.8.8}% 
 \contentsline {chapter}{\numberline {9}Exp\IeC {\'e}riences sur le son}{51}{chapter.9}% 
 \contentsline {section}{\numberline {9.1}R\IeC {\'e}ponse en fr\IeC {\'e}quence d\IeC {\textquoteright }un pi\IeC {\'e}zo}{51}{section.9.1}% 
 \contentsline {section}{\numberline {9.2}Vitesse du son}{52}{section.9.2}% 
@@ -102,29 +101,3 @@
 \contentsline {section}{\numberline {12.3}MPU6050}{64}{section.12.3}% 
 \contentsline {section}{\numberline {12.4}Enregistreur I2C}{64}{section.12.4}% 
 \contentsline {chapter}{\numberline {13}Coder en Python pour expEYES-17}{65}{chapter.13}% 
-\contentsline {section}{\numberline {13.1}\IeC {\'E}tablir la Connexion}{65}{section.13.1}% 
-\contentsline {section}{\numberline {13.2}set\_pv1(v), set\_pv2(v)}{66}{section.13.2}% 
-\contentsline {section}{\numberline {13.3}get\_voltage(entree)}{66}{section.13.3}% 
-\contentsline {section}{\numberline {13.4}get\_voltage\_time(entree)}{66}{section.13.4}% 
-\contentsline {section}{\numberline {13.5}get\_resistance()}{66}{section.13.5}% 
-\contentsline {section}{\numberline {13.6}get\_capacitance()}{66}{section.13.6}% 
-\contentsline {section}{\numberline {13.7}get\_version()}{67}{section.13.7}% 
-\contentsline {section}{\numberline {13.8}get\_temperature()}{67}{section.13.8}% 
-\contentsline {section}{\numberline {13.9}set\_state(SORTIE=valeur)}{67}{section.13.9}% 
-\contentsline {section}{\numberline {13.10}set\_sine(fequence)}{67}{section.13.10}% 
-\contentsline {section}{\numberline {13.11}set\_sine\_amp(amplitude)}{67}{section.13.11}% 
-\contentsline {section}{\numberline {13.12}set\_sqr1(frequence)}{68}{section.13.12}% 
-\contentsline {section}{\numberline {13.13}set\_sqr1\_slow(frequence)}{68}{section.13.13}% 
-\contentsline {section}{\numberline {13.14}set\_sqr2(frequence)}{68}{section.13.14}% 
-\contentsline {section}{\numberline {13.15}set\_sqr1(frequence, rapportCyclique)}{68}{section.13.15}% 
-\contentsline {section}{\numberline {13.16}get\_freq(entree)}{68}{section.13.16}% 
-\contentsline {section}{\numberline {13.17}duty\_cycle(entree)}{69}{section.13.17}% 
-\contentsline {section}{\numberline {13.18}r2ftime(entree1, entree2)}{69}{section.13.18}% 
-\contentsline {section}{\numberline {13.19}multi\_r2rtime(entree, nbCycles)}{69}{section.13.19}% 
-\contentsline {section}{\numberline {13.20}select\_range(canal, calibre)}{69}{section.13.20}% 
-\contentsline {section}{\numberline {13.21}capture1(entree, nbEchantillons, intervalleTemps)}{70}{section.13.21}% 
-\contentsline {section}{\numberline {13.22}capture2(nbEchantillons, intervalleTemps)}{70}{section.13.22}% 
-\contentsline {section}{\numberline {13.23}capture4(nbEchantillons, intervalleTemps)}{72}{section.13.23}% 
-\contentsline {section}{\numberline {13.24}set\_wave(frequence, typeDeSignal)}{72}{section.13.24}% 
-\contentsline {section}{\numberline {13.25}load\_equation(fonction, intervalle)}{72}{section.13.25}% 
-\contentsline {section}{\numberline {13.26}load\_table(table)}{73}{section.13.26}% 

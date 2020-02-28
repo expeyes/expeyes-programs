@@ -1,7 +1,0 @@
-..    6.6
-
-Enregistreur de données
-=======================
-
-- Sélectionner les canaux A1, A2, A3 ou SEN
-- Les enregistrer avec l'intervalle de temps désiré

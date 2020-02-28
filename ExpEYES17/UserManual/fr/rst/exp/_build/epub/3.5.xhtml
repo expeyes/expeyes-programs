@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Oscillateur à IC555</title>
+    <title>Décalage à l’aide d’un diode à jonction PN</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,27 +12,20 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="oscillateur-a-ic555">
-<h1>Oscillateur à IC555</h1>
+  <div class="section" id="decalage-a-laide-dun-diode-a-jonction-pn">
+<h1>Décalage à l’aide d’un diode à jonction PN</h1>
 <p><strong>Objectif</strong></p>
-<p>Câbler un circuit de multivibrateur astable à l’aide d’un IC555, mesurer
-la fréquence et le rapport cyclique de la sortie.</p>
-<img alt="_images/osc555.svg" src="_images/osc555.svg" width="300px" /><img alt="_images/ic555-screen.png" src="_images/ic555-screen.png" style="width: 300px;" />
-<p>Le circuit est présenté sur la figure. La fréquence est données par
-<img class="math" src="_images/math/367f724ead30fda4a28e49b089ab80a2592dbfff.png" alt="f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)"/>. La durée
-HAUTE est donnée par
-<img class="math" src="_images/math/980e85ae6f65381d828acd36825fa84852ff1a96.png" alt="\ln 2 \times C \times (R_1 + R_2)"/>
-et la durée BASSE par <img class="math" src="_images/math/64f8687bfd678e99fcc62e8cbdefcc0b004ec5df.png" alt="\ln 2 \times C \times R_2"/>.</p>
+<p>Démontrer le décalage d’un signal alternatif à différents niveaux, à
+l’aide d’une diode à jonction PN</p>
+<img alt="_images/clamping.svg" src="_images/clamping.svg" width="300px" /><img alt="_images/clamping.png" src="_images/clamping.png" style="width: 300px;" />
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li><p>Faire les connexions</p></li>
-<li><p>mesurer la fréquence et le rapport cyclique.</p></li>
-<li><p>Recommencer en changeant les valeurs de R1</p></li>
+<li><p>Faire les connexions et observer les sorties.</p></li>
+<li><p>Changer PV1 et observer le changement dans les sorties</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Le signal de sortie est montré sur la figure. Changer la valeur des
-résistances et du condensateur, puis comparer la fréquence et le rapport
-cyclique avec les valeurs calculées.</p>
+<p>Le niveau de décalage est conditionné par la tension continue appliquée
+et par la chute de tension de la diode.</p>
 </div>
 
 

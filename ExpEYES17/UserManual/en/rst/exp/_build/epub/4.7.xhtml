@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Electromagnetic induction</title>
+    <title>Fourier Analysis</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,27 +12,33 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="electromagnetic-induction">
-<h1>Electromagnetic induction</h1>
+  <div class="section" id="fourier-analysis">
+<h1>Fourier Analysis</h1>
 <p><strong>Objective</strong></p>
-<p>Explore the voltage induced across a coil by a changing magnetic field,
-by dropping a small cylindrical magnet into a coil. Use a tube to guide
-the magnet through the coil.</p>
-<img alt="_images/induction.svg" src="_images/induction.svg" width="300px" /><img alt="_images/induction-screen.png" src="_images/induction-screen.png" style="width: 300px;" />
+<p>Learn about Fourier Transform of a signal. Time and Frequency domain
+representations.</p>
 <p><strong>Procedure</strong></p>
 <ul class="simple">
-<li><p>Click on Start Scanning. A horizontal trace should appear</p></li>
-<li><p>Drop the magnet through the coil, until a trace is caught.</p></li>
-<li><p>Repeat the process by changing the parameters like magnet strength,
-speed etc.</p></li>
+<li><p>Connect SQ1 to A1 and WG to A2. Put A1 in AC coupled mode (slide
+switch on the box)</p></li>
+<li><p>Enable A1 and A2, select 4 volt scale</p></li>
+<li><p>Set both WG and SQ1 to 500Hz</p></li>
+<li><p>Press the FFT button</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The result is shown in figure. The amplitude increases with the speed of
-the magnet. From the graph, we can find the time taken by the magnet to
-travel through the coil.</p>
-<p>The second peak is bigger than the first peak. Why ? Where will be the
-magnet at the zero crossing of the induced voltage? Drop the magnet from
-different heights and plot the voltage vs square root of the height.</p>
+<p>In the Fourier transform plot, frequency is on the x-axis and the y-axis
+shows the relative strength of the frequency components of the signal.
+This is called the frequency domain
+representation (<a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_transform">http://en.wikipedia.org/wiki/Fourier_transform</a>).
+For the sine wave there is only one dominant peak, the smaller ones are
+a measure of distortion of the sine wave.</p>
+<p>A square wave function can be represented as
+<img class="math" src="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png" alt="f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯"/>. In the
+Fourier transform of a square wave of frequency f , there will be a 3f
+component (having an amplitude of one third of f ), 5f component
+(amplitude one fifth) etc. as shown in the figure.</p>
+<img alt="_images/sqwaveFFT.png" src="_images/sqwaveFFT.png" style="width: 300px;" />
+<img alt="_images/sinewaveFFT.png" src="_images/sinewaveFFT.png" style="width: 300px;" />
 </div>
 
 

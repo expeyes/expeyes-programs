@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Digtizing sound &#8212; eyes17 1.0 documentation</title>
+    <title>A simple AC generator &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Stroboscope" href="2.17.html" />
-    <link rel="prev" title="Generating sound" href="2.15.html" /> 
+    <link rel="next" title="AC Transformer" href="2.17.html" />
+    <link rel="prev" title="Voltage of a lemon cell" href="2.15.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.17.html" title="Stroboscope"
+          <a href="2.17.html" title="AC Transformer"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="2.15.html" title="Generating sound"
+          <a href="2.15.html" title="Voltage of a lemon cell"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="2.15.html"
-                        title="previous chapter">Generating sound</a></p>
+                        title="previous chapter">Voltage of a lemon cell</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="2.17.html"
-                        title="next chapter">Stroboscope</a></p>
+                        title="next chapter">AC Transformer</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,27 +69,32 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="digtizing-sound">
-<h1>Digtizing sound<a class="headerlink" href="#digtizing-sound" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="a-simple-ac-generator">
+<h1>A simple AC generator<a class="headerlink" href="#a-simple-ac-generator" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Digitize sound signals from a microphone, and measure its frequency. Use
-the Piezo buzzer or any other source of sound like a tuning fork.</p>
+<p>Measure the frequency and amplitude of the voltage induced across a
+solenoid coil by a rotating magnet. Use the 10 mm x 10 mm magnet and the
+3000T coils that comes with the kit.</p>
+<a class="reference internal image-reference" href="_images/ac-generator.svg"><img alt="_images/ac-generator.svg" src="_images/ac-generator.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/ac-gen-screen.png"><img alt="_images/ac-gen-screen.png" src="_images/ac-gen-screen.png" style="width: 300px;" /></a>
 <p><strong>Procedure</strong></p>
-<a class="reference internal image-reference" href="_images/sound-capture.svg"><img alt="_images/sound-capture.svg" src="_images/sound-capture.svg" width="300px" /></a>
 <ul class="simple">
-<li>Enable A1 and MIC , with analysis</li>
-<li>Position the buzzer facing the microphone</li>
-<li>Set WG to 1000Hz, change it and watch the MIC output</li>
-<li>Use a whistle instead of the buzzer and find out the frequency of MIC
-output.</li>
+<li>Mount the magnet horizontally and power the DC motor from a 1.5 volts
+cell</li>
+<li>Enable A1 and A2, with analysis option</li>
+<li>Set timebase to 100 mS full scale</li>
+<li>Bring the coil near the magnet (not to touch it), watch the induced
+voltage</li>
+<li>Repeat the experiment using 2 coils.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The driving signal and the microphone output is shown in figure</p>
-<p>Sound waves create pressure variations in the medium through which it
-travel. The microphone generates a voltage proportional to the pressure.
-The voltage variations are in tune with the pressure variations. You can
-consider the microphone as a pressure sensor, but working only for time
-varying pressures.</p>
+<p>The voltage output is shown in figure. The phase difference between the
+two voltages depends on the angle between the axes of the two coils.</p>
+<p>Bring a shorted coil near the magnet to observe the change in frequency.
+The shorted coil is drawing energy from the generator and the speed get
+reduced. The magnetic field in this generator is very weak. The
+resistance of the coil is very high and trying to draw any current from
+it will drop most of the voltage across the coil itself.</p>
 </div>
 
 
@@ -105,10 +110,10 @@ varying pressures.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="2.17.html" title="Stroboscope"
+          <a href="2.17.html" title="AC Transformer"
              >next</a> |</li>
         <li class="right" >
-          <a href="2.15.html" title="Generating sound"
+          <a href="2.15.html" title="Voltage of a lemon cell"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

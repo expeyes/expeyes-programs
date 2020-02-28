@@ -1,35 +1,46 @@
-.. 4.5
+.. 4.3
 
-RC Integration & Differentiation
-================================
+Transient Response of RL circuits
+=================================
 
 **Objective**
 
-RC circuits can integrate or differentiate a voltage waveform with
-respect to time. A square wave is integrated to get a triangular wave
-and differentiated to get spikes at the transitions.\begin_inset
-Separator latexpar\end_inset
+Explore the nature of current and voltage when a voltage step is applied
+to resistor and inductor in series. By measuring the voltage across the
+inductor as a function of time, we can calculate its inductance.
 
-.. image:: schematics/RCintegration.svg
+.. image:: schematics/RLtransient.svg
 	   :width: 300px
-.. image:: schematics/RCsteadystate.svg
+.. image:: pics/RLtransient.png
 	   :width: 300px
+
+In an RL circuit :math:`V = RI + L(dI/dt)` and solving this will give
+:math:`I = I_0 \times e^{− (R/L)t}`. The coefficient of the exponential term R/L
+can be extracted from the graph of voltage across the inductor. The
+resistance of the inductor coil should be included in the
+calculations, :math:`R = R_{ext} + R*_L`.
 
 **Procedure**
 
--  Select WG triangular wave option
--  Set WG to 500Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` and :math:`C = 1~\mu F`
--  Adjust the horizontal scale to view more than 4 cycles.
--  Repeat the same for RC differentiator, at :math:`50~Hz`.
+-  Inductor is the 3000 Turn coil
+-  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
+-  Adjust the horizontal scale, if required, and repeat.
+-  Calculate the value of inductance
+-  Insert an iron core into the inductor and repeat
 
 **Discussion**
 
-Integration of a triangular waveform gives parabolic shape and
-differentiation gives a square shape. The differentiation can only be
-shown at lower frequency. Try these for other wave shapes, for example a
-squarewave. Integrating a square wave should give a triangular wave.
+The transient response of the RL circuit is shown in figure. The
+exponential curve is fitted to extract the L/R value. The resistance of
+the coil is measured by comparing it with the known external resistance
+under DC conditions. A2 is connected to OD1 for a more accurate
+measurement of the coil resistance.
 
-.. image:: pics/RCintegration.png
-	   :width: 300px
-.. image:: pics/RCdifferentiation.png
-	   :width: 300px
+The applied voltages are above zero, but the graph went to negative
+voltages. Why ?
+
+What was the current before doing the 5->0 step ? What is back EMF ?
+
+Repeat with two coils in series, by (a) placing them far away (b)
+placing one over the other and (c) after changing the orientation. The
+effect of mutual inductance can be seen.

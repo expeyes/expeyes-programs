@@ -1,34 +1,36 @@
-.. 3.12
+.. 3.10
    
-Caractéristique de la sortie (CE) d’un transistor
--------------------------------------------------
+Diviseur d’horloge
+------------------
 
 **Objectif**
 
-Tracer la courbe caractéristique de sortie d’un transistor. Le
-collecteur est connecté à PV1 à travers une résistance de :math:`1~k\Omega`.
-
-.. image:: schematics/transistor_out.svg
-	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
+Étudier un diviseur d’horloge, à l’aide d’une bascule D (famille TTL,
+7474).
 
 **Procédure**
 
--  Régler la tension de base à 1 V et DÉMARRER.
--  Recommencer pour diverses valeurs du courant de base.
+.. image:: schematics/clock-divider.svg
+	   :width: 300px
+
+-  Activer A1 et A2, Régler leurs calibres à 8 V
+-  Régler SQ1 à 500 Hz
 
 **Discussion**
 
-Les courbes caractéristiques pour différentes valeurs du courant de base
-sont montrées sur la figure. Le courant de collecteur est obtenu à
-partir de la différence de potentiel aux bornes de la résistance de
-:math:`1~k\Omega`.
+La sortie est basculée à chaque front montant sur l’entrée, si bien que
+la fréquence est divisée par deux. Le signal de sortie est un signal
+carré symétrique, même si le signal d’entrée a un rapport cyclique
+différent. La tension de sortie HAUTE d’un circuit intégré TTL est
+proche de 4 V seulement.
 
-Le courant de la base dépend du réglage de la source de tension à
-l’extrémité d'une résistance de :math:`100~k\Omega`, l’autre extrémité étant
-connectée à la base. La valeur du courant de base est calculée par
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
-Si A2 n’est pas connectée, le code considère une valeur de 0,6 V pour la
-base afin de calculer le courant dans celle-ci.
++-------------------------------------------------------------------------+
+|.. image:: pics/clock-divider.png                                        |
+|	   :width: 300px                                                  |
+|.. image:: pics/clock-divider2.png                                       |
+|	   :width: 300px                                                  |
++-------------------------------------------------------------------------+
+|Figure 3.1 Un circuit diviseur d’horloge, à l’aide d’une bascule D. Les  |
+|sorties pour deux types différents de signal d’entrée sont montrées      |
++-------------------------------------------------------------------------+
 

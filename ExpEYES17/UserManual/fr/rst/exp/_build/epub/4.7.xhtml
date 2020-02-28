@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Induction électromagnétique</title>
+    <title>Analyse de Fourier</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,32 +12,34 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="induction-electromagnetique">
-<h1>Induction électromagnétique</h1>
+  <div class="section" id="analyse-de-fourier">
+<h1>Analyse de Fourier</h1>
 <p><strong>Objectif</strong></p>
-<p>Explorer la tension induite aux bornes d’un bobinage par un champ
-magnétique variable, en laissant tomber un petit aimant cylindrique à
-travers le bobinage. On utilise un tube pour guider l’aimant à travers
-le bobinage.</p>
-<img alt="_images/induction.svg" src="_images/induction.svg" width="300px" /><img alt="_images/induction-screen.png" src="_images/induction-screen.png" style="width: 300px;" />
+<p>Étudier la transformée de Fourier d’un signal. Représentations
+temporelle et fréquentielle d’un signal.</p>
 <p><strong>Procédure</strong></p>
 <ul class="simple">
-<li><p>Cliquer sur « Démarrer le scan ». Un trace horizontale devrait
-apparaître</p></li>
-<li><p>Laisser tomber l’aimant à travers la bobine, jusqu’à ce qu’on capture
-une trace.</p></li>
-<li><p>Recommencer le processus en changeant des paramètres comme la force
-de l’aimant, la vitesse, etc.</p></li>
+<li><p>Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif
+(interrupteur à glissière sur le boîtier)</p></li>
+<li><p>Activer A1 et A2, sélectionner le calibre 4 V</p></li>
+<li><p>Régler WG et SQ1 à 500 Hz</p></li>
+<li><p>Cliquer sur le bouton FFT</p></li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Le résultat est montré sur la figure. L’amplitude augmente avec la
-vitesse de l’aimant. D’après le graphique, on peut déterminer le temps
-que met l’aimant à traverser le bobinage.</p>
-<p>Le deuxième pic est plus grand que le premier. Pourquoi ? À quel endroit
-est censé se trouver l’aimant quand la tension induite passe par zéro ?
-Laisser tomber l’aimant depuis différentes hauteurs et faire un
-graphique de la tension crête en fonction de la racine carrée de la
-hauteur de chute.</p>
+<p>Dans le graphique de la transformée de Fourier, la fréquence est sur
+l’axe x et l’axe y montre l’intensité relative des composants
+fréquentiels du signal. On appelle ça la représentation
+fréquentielle (<a class="reference external" href="http://en.wikipedia.org/wiki/Fourier_transform">http://en.wikipedia.org/wiki/Fourier_transform</a>).
+Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
+plus petits sont une mesure de la distorsion du signal sinusoïdal.</p>
+<p>Un signal carré peut être représenté comme
+<img class="math" src="_images/math/b5d4e174ea86a52e786342b24673c46c8abbd387.png" alt="f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯"/>.
+Dans la transformée de Fourier d’un signal carré de fréquence <em>f</em> , il y
+aura un composant <em>3 f</em> (dont l’amplitude est le tiers du composant <em>f</em>),
+un composant <em>5 f</em> (amplitude un cinquième), etc. comme montré sur
+la figure.</p>
+<img alt="_images/sqwaveFFT.png" src="_images/sqwaveFFT.png" style="width: 300px;" />
+<img alt="_images/sinewaveFFT.png" src="_images/sinewaveFFT.png" style="width: 300px;" />
 </div>
 
 

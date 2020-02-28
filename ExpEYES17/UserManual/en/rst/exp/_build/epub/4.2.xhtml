@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
   <head>
     <meta charset="utf-8" />
-    <title>Transient Response of RC circuits</title>
+    <title>XY plotting</title>
     <link rel="stylesheet" href="_static/epub.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" /> 
   </head><body>
@@ -12,30 +12,16 @@
       <div class="documentwrapper">
           <div class="body" role="main">
             
-  <div class="section" id="transient-response-of-rc-circuits">
-<h1>Transient Response of RC circuits</h1>
-<p><strong>Objective</strong></p>
-<p>Plot the voltage across a capacitor, when it is charged by applying a
-voltage step through a resistor. Calculate the value of the capacitance
-from the graph.</p>
-<img alt="_images/RCtransient.svg" src="_images/RCtransient.svg" width="300px" /><img alt="_images/RCtransient.png" src="_images/RCtransient.png" style="width: 300px;" />
-<p><strong>Procedure</strong></p>
+  <div class="section" id="xy-plotting">
+<h1>XY plotting</h1>
+<p>This program plots A1 vs A2 or (A1-A2) vs A2. It is useful for
+plotting Lissajous figures and stdying RC circuits</p>
+<img alt="_images/XYplot.svg" src="_images/XYplot.svg" width="300px" /><p>For the circuit shown above, we can plot the voltage across the
+capacitor against the voltage across the resistor. It will form a
+circle when they are equal.</p>
 <ul class="simple">
-<li><p>From <strong>\emphElectrical</strong> , select <strong>\emphRCTransientresponse</strong></p></li>
-<li><p>Click on <em>0-&gt;5V STEP</em> and <em>5-&gt;0V step</em> Buttons to plot the graphs</p></li>
-<li><p>Adjust the horizontal scale, if required, and repeat.</p></li>
-<li><p>Calculate RC time constant.</p></li>
+<li><p>Select C = 1uF, R = 1 kOhm and plot (A1-A2) vs A2. Adjust the frequency to get a circle</p></li>
 </ul>
-<p><strong>Discussion</strong></p>
-<p>Applying a 0 to 5V step makes the voltage across the capacitor to rise
-exponentially as shown in the figure. By fitting the discharge curve
-with <img class="math" src="_images/math/60a5f57cb425f62765c576e48ba2fc4c6a528fc8.png" alt="U(t) = U_0 \times e^{− t/RC}"/>, we can extract the RC time
-constant and find the values of capacitance from it.</p>
-<p>The voltage across a capacitor is exponential only when it is charged
-trough a linear element, a resistor for example. When charged from a
-constant current source, the voltage shows linear increase, because
-<img class="math" src="_images/math/a3cea16b8decb2f89c05eba1adf1898a81269d6c.png" alt="Q = It = CV"/> , and voltage increases linearly with time as
-<img class="math" src="_images/math/ff184117dc8012c2a6f1936486f04c832380d1e2.png" alt="V = (I/C) \times t"/>.</p>
 </div>
 
 

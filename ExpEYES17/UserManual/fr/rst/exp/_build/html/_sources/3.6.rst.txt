@@ -1,25 +1,33 @@
-.. 3.6
+.. 3.5
    
-Amplificateur inverseur
------------------------
+Oscillateur à IC555
+-------------------
 
 **Objectif**
 
-Câbler un amplificateur inverseur à l’aide d’un ampli-op et le tester.
+Câbler un circuit de multivibrateur astable à l’aide d’un IC555, mesurer
+la fréquence et le rapport cyclique de la sortie.
 
-.. image:: schematics/opamp-inv.svg
+.. image:: schematics/osc555.svg
 	   :width: 300px
+.. image:: pics/ic555-screen.png
+	   :width: 300px
+
+Le circuit est présenté sur la figure. La fréquence est données par
+:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La durée
+HAUTE est donnée par
+:math:`\ln 2 \times C \times (R_1 + R_2)`
+et la durée BASSE par :math:`\ln 2 \times C \times R_2`.
 
 **Procédure**
 
--  Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
--  Activer A1 et A2 avec option d’analyse
--  Sélectionner le calibre 1 V pour A1 et A2
--  Faire les connexions et observer la sortie
--  Changer le gain en modifiant les valeurs des résistances.
+-  Faire les connexions
+-  mesurer la fréquence et le rapport cyclique.
+-  Recommencer en changeant les valeurs de R1
 
 **Discussion**
 
-On peut observer le gain par l’amplitude, mais aussi le déphasage dans
-les résultats.
+Le signal de sortie est montré sur la figure. Changer la valeur des
+résistances et du condensateur, puis comparer la fréquence et le rapport
+cyclique avec les valeurs calculées.
 

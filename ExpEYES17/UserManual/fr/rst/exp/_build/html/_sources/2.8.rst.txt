@@ -1,32 +1,39 @@
-.. 2.8
+.. 2.4
    
-Le corps humain comme conducteur
---------------------------------
+Mesurer des résistances par comparaison
+---------------------------------------
 
 **Objectif**
 
-Toucher un fil du secteur est fatal parce que notre corps est un
-conducteur électrique. On peut explorer cela à l’aide de signaux de
-faible tension.
+Apprendre à appliquer la loi d’Ohm pour trouver le valeur d’une
+résistance inconnue par comparaison avec une résistance connue. La
+tension aux bornes d’une résistance est donnée par :math:`U = RI`. Si la
+même valeur de courant parcourt deux résistances différentes, alors le
+rapport des tensions sera le même que le rapport des
+résistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
 
-.. image:: schematics/conducting-human.svg
-	   :width: 300px
-.. image:: pics/conducting-human-screen.png
+.. image:: schematics/res-compare.svg
 	   :width: 300px
 
 **Procédure**
 
--  Régler WG à 200 Hz.
--  Activer A1, A2 avec leurs analyses.
--  Connecter WG et A1, avec un fil
--  Connecter WG et A2 avec son corps et noter les tensions
--  Recommencer à l’aide d’un signal de 3 V continu issu de PV1.
+-  Connecter la résistance inconnue R entre PV1 et A1.
+-  Connecter :math:`1~k\Omega` (:math:`R_2`) entre A1 et GND.
+-  Régler PV1 à 4 V.
+-  Mesurer la tension en A1. Calculer le courant
+   :math:`I = U_{A1}/R_2`. Valeur de
+   :math:`R_1 = (U_{PV1} − U_{A1})/I`.
+-  Sélectionner « Électricité->Tracé d’une courbe courant-tension » dans
+   le menu pour obtenir une courbe I-U.
 
 **Discussion**
 
-La tension crête observée est de moins de 3 V, à cause de la résistance
-du corps humain. Il peut y avoir un peu de perturbation due au signaux à
-50 Hz du secteur captés par effet d’antenne. On peut éliminer cela en
-travaillant loin des lignes d’alimentation du secteur, à l’aide d’un
-ordinateur portable.
+Quelle est la limitation de cette méthode ? Comment choisir la
+résistance de référence ? Si on suppose que la valeur inconnue est en
+:math:`M\Omega`, quelle serait la chute de tension aux bornes d’une résistance de
+référence de :math:`1~k\Omega` ? Notre mesure de tension a une résolution de
+:math:`1/4096`.
+
+On utilisera cette méthode plus tard pour mesurer la résistance de
+solutions, à l’aide de courant alternatif.
 

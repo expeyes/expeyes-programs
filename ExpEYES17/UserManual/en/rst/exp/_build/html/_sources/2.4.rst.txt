@@ -1,34 +1,16 @@
-.. 2.4
-
-Measure resistance by comparison
-================================
+Measuring Resistance parallel combination
+=========================================
 
 **Objective**
 
-Learn to apply Ohm’s law to find the value of an unknown resistance by
-comparing it with a known one. Voltage across a resistor is given by
-V = IR . If same amount of current is flowing through two different
-resistors, the ratio of voltages will be the same as the ratio of
-resistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+For parallel combination of resistors, this relation exists between
+the effective resistance :math:`R` and the components:
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
 
-.. image:: schematics/res-compare.svg
-	   :width: 300px
+.. image:: ./schematics/res-parallel.svg
+   :width: 300px
 
-**Procedure**
+**Procedure for two resistors**
 
--  Connect the unknown resistor R from PV1 to A1.
--  Connect :math:`1~k\Omega` (:math:`R_2`) from A1 to Ground.
--  Set PV1 to 4 volts.
--  Measure voltage at A1. Calculate the current :math:`I = U_{A1}/R_2`.
-   Value of :math:`R_1 = (U_{PV1} − U_{A1})/I`.
--  Select Electrical->Plot I-V curve from the menu to get an I-V plot
-
-**Discussion**
-
-What is the limitation of this method ? How do we choose the reference
-resistor ? suppose the unknown value is in :math:`M\Omega`, what will be the
-voltage drop across a :math:`1~k\Omega` reference resistor ? Our voltage
-measurement is having a resolution of :math:`1/4096`.
-
-We will use this method later to measure the resistance of solutions,
-using AC.
+-  Connect both resistors between SEN and any Ground terminal
+-  Observe the value shown on the right side panel

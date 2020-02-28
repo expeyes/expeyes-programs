@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Stroboscope &#8212; Documentation eyes17 1.0</title>
+    <title>Transformateur de courant alternatif &#8212; Documentation eyes17 1.0</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Oscilloscope à quatre canaux, et plus" href="3.0.html" />
-    <link rel="prev" title="Numériser un son" href="2.16.html" /> 
+    <link rel="next" title="Résistance de l’eau, en courant alternatif" href="2.18.html" />
+    <link rel="prev" title="Un générateur alternatif simple" href="2.16.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -27,10 +27,10 @@
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="3.0.html" title="Oscilloscope à quatre canaux, et plus"
+          <a href="2.18.html" title="Résistance de l’eau, en courant alternatif"
              accesskey="N">suivant</a> |</li>
         <li class="right" >
-          <a href="2.16.html" title="Numériser un son"
+          <a href="2.16.html" title="Un générateur alternatif simple"
              accesskey="P">précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>
@@ -39,10 +39,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Sujet précédent</h4>
   <p class="topless"><a href="2.16.html"
-                        title="Chapitre précédent">Numériser un son</a></p>
+                        title="Chapitre précédent">Un générateur alternatif simple</a></p>
   <h4>Sujet suivant</h4>
-  <p class="topless"><a href="3.0.html"
-                        title="Chapitre suivant">Oscilloscope à quatre canaux, et plus</a></p>
+  <p class="topless"><a href="2.18.html"
+                        title="Chapitre suivant">Résistance de l’eau, en courant alternatif</a></p>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
@@ -70,26 +70,39 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="stroboscope">
-<h1>Stroboscope<a class="headerlink" href="#stroboscope" title="Lien permanent vers ce titre">¶</a></h1>
+  <div class="section" id="transformateur-de-courant-alternatif">
+<h1>Transformateur de courant alternatif<a class="headerlink" href="#transformateur-de-courant-alternatif" title="Lien permanent vers ce titre">¶</a></h1>
 <p><strong>Objectif</strong></p>
-<p>Observation d’un phénomène périodique à l’aide de lumière pulsée périodiquement.</p>
+<p>Démontrer l’induction mutuelle entre deux bobinages, fournis avec
+ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
+aligne les axes des deux bobinages et on insère un noyau de
+ferrite.</p>
+<a class="reference internal image-reference" href="_images/transformer.svg"><img alt="_images/transformer.svg" src="_images/transformer.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/transformer-screen.png"><img alt="_images/transformer-screen.png" src="_images/transformer-screen.png" style="width: 300px;" /></a>
 <p><strong>Procédure</strong></p>
-<a class="reference internal image-reference" href="_images/stroboscope.svg"><img alt="_images/stroboscope.svg" src="_images/stroboscope.svg" width="300px" /></a>
 <ul class="simple">
-<li>On fait tourner un disque à l’aide du moteur alimenté par une pile de 1,5 V.</li>
-<li>On éclaire le disque seulement par la limère de la DEL, il ne devrait
-pas y avoir d’autre source lumineuse.</li>
-<li>Ajuster la fréquence de SQ1, le disque apparaît stationnaire quand elle est
-égale à la fréquence de rotation du disque.</li>
+<li>Faire les connections comme montré sur la figure</li>
+<li>Activer A1 et A2</li>
+<li>Régler WG à <img class="math" src="_images/math/def704035f18cc44643a5bf64441776f350438a0.png" alt="500~Hz"/></li>
+<li>Approcher les bobinages l’un de l’autre et observer la tension en A2.</li>
+<li>Essayer d’insérer un noyau en ferrite</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>Quand la fréquence du phénomène observé et la fréquence de la lumière pulsée
-sont identiques, on peu observer une image statique.</p>
-<p>Qu’arrive-t-il quand on augmente ou qu’on diminue un petit peu la fréquence de
-la lumière&nbsp;?</p>
-<p>Qu’arrive-t-il quand la fréquence de la lumière pulsée est le double de
-celle du phénomène&nbsp;? et quand elle est la moitié&nbsp;?</p>
+<p>Le signal appliqué et le signal induit sont présentés sur la figure. Un
+champ magnétique oscillant est la cause de la tension induite. Dans les
+deux expériences précédentes, le champ magnétique oscillant était créé
+par le mouvement d’aimants permanents. Dans le cas présent, il est créé
+par un courant variable dans le temps.</p>
+<p>Essayer de faire cette expérience avec un signal carré. Connecter une
+résistance de <img class="math" src="_images/math/50bb9242422c292354b45ce24089737251c21aea.png" alt="1~k\Omega"/> aux bornes du bobinage secondaire pour réduire
+les oscillation de résonance.</p>
+<p>Le concept de courant alternatif est introduit en affichant la tension
+en fonction du temps. On explore le comportement de dipôles tels que les
+condensateurs et les bobinages en courant continu et alternatif, en
+mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
+La conversion de signaux électriques en son et l’inverse est démontré.
+Pour chaque expérience, on réalise les connexions selon le diagramme
+donné.</p>
 </div>
 
 
@@ -105,10 +118,10 @@ celle du phénomène&nbsp;? et quand elle est la moitié&nbsp;?</p>
           <a href="genindex.html" title="Index général"
              >index</a></li>
         <li class="right" >
-          <a href="3.0.html" title="Oscilloscope à quatre canaux, et plus"
+          <a href="2.18.html" title="Résistance de l’eau, en courant alternatif"
              >suivant</a> |</li>
         <li class="right" >
-          <a href="2.16.html" title="Numériser un son"
+          <a href="2.16.html" title="Un générateur alternatif simple"
              >précédent</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">Documentation eyes17 1.0</a> &#187;</li> 
       </ul>

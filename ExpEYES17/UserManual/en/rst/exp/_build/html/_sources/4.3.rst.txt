@@ -1,46 +1,47 @@
-.. 4.3
+.. 4.1
 
-Transient Response of RL circuits
-=================================
+RLC circuits, steady state response
+===================================
 
 **Objective**
 
-Explore the nature of current and voltage when a voltage step is applied
-to resistor and inductor in series. By measuring the voltage across the
-inductor as a function of time, we can calculate its inductance.
+Study the effect of series LCR elements in an AC circuit. Three
+different combinations can be studied.
 
-.. image:: schematics/RLtransient.svg
+.. image:: schematics/RCsteadystate.svg
 	   :width: 300px
-.. image:: pics/RLtransient.png
+.. image:: schematics/RLsteadystate.svg
 	   :width: 300px
-
-In an RL circuit :math:`V = RI + L(dI/dt)` and solving this will give
-:math:`I = I_0 \times e^{− (R/L)t}`. The coefficient of the exponential term R/L
-can be extracted from the graph of voltage across the inductor. The
-resistance of the inductor coil should be included in the
-calculations, :math:`R = R_{ext} + R*_L`.
+.. image:: schematics/RLCsteadystate.svg
+	   :width: 300px
 
 **Procedure**
 
--  Inductor is the 3000 Turn coil
--  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
--  Adjust the horizontal scale, if required, and repeat.
--  Calculate the value of inductance
--  Insert an iron core into the inductor and repeat
+-  Make connections one by one, as per the drawing
+-  Note down the amplitude and phase measurements, in each case
+-  Repeat the measurements by changing the frequency.
+-  For RLC series circuit, the junction of L and C is monitored by A3
+-  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH` and :math:`f = 1600~Hz`, adjust f to
+   make phase shift zero
+-  The total voltage across L and C together goes almost to zero, the
+   voltage across them are out of phase at resonance
 
 **Discussion**
 
-The transient response of the RL circuit is shown in figure. The
-exponential curve is fitted to extract the L/R value. The resistance of
-the coil is measured by comparing it with the known external resistance
-under DC conditions. A2 is connected to OD1 for a more accurate
-measurement of the coil resistance.
+The applied AC voltage is measured on A1 and the voltage across the
+resistor on A2. Subtracting the instantaneous values of A2 from A1 gives
+the combined voltage across the inductor and capacitor. We need to use
+an inductor with negligible resistance for good results. The phase
+difference between current and voltage is given by
+:math:`\Delta \Phi = \arctan((X_C − X_L)/X_R)`.
 
-The applied voltages are above zero, but the graph went to negative
-voltages. Why ?
+The total voltage, voltage across R and the voltage across LC are shown
+in figure. The phasor diagram shows the phase angle between the current
+and the voltage. The inductance used in this experiment is around :math:`10~mH`,
+having a resistance of :math:`20~\Omega`.
 
-What was the current before doing the 5->0 step ? What is back EMF ?
-
-Repeat with two coils in series, by (a) placing them far away (b)
-placing one over the other and (c) after changing the orientation. The
-effect of mutual inductance can be seen.
+At :math:`1600~Hz`, :math:`X_C \simeq X_L` and the voltage across LC is decided by the
+resistance of the inductor. At the resonant frequency, the voltage drop
+across LC will be minimum, decided by the resistance of the inductor.
+The input A3 is connected between L and C, so that the individual
+voltage drop across L and C can be displayed.

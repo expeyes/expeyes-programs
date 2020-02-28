@@ -1,29 +1,31 @@
-.. 2.10
+.. 2.6
    
-Photorésistances
-----------------
+Signal d’antenne alternatif dû au secteur
+-----------------------------------------
 
 **Objectif**
 
-Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et
-sa variation en fonction de la distance à la source.
+Étudier l’alimentation du secteur en courant alternatif. Explorer le
+phénomène de propagation de tensions alternatives à travers l’espace.
 
-.. image:: schematics/ldr.svg
+.. image:: schematics/line-pickup.svg
 	   :width: 300px
-
+		   
 **Procédure**
 
--  Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
--  Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée
-   afficher des variations
--  Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation
+-  Connecter un long fil en A3
+-  Approcher une extrémité du fil près d’une ligne d’alimentation du
+   secteur, sans toucher aucune source de tension.
+-  Activer A3, et son analyse.
 
 **Discussion**
 
-La résistance varie de :math:`1~k\Omega` à environ :math:`100~k\Omega`
-selon l’intensité de la lumière qui l’éclaire. La tension est
-proportionnelle à la résistance (si le courant est constant). La
-résistance diminue quand l’éclairage augmente. Si on utilise une
-source de lumière ponctuelle, la résistance est censée augmenter comme
-le carré de la distance entre la photorésistance et la source lumière.
+Le signal d’antenne du secteur est affiché ci-dessous, il y a cinq
+cycles en 100 ms. Sans faire aucune connexion, comment se fait-il qu’on
+reçoive un signal de tension alternative depuis le secteur ? Pourquoi la
+tension augmente-t-elle quand on touche le fil connecté en A1 avec la
+main ?
+
+.. image:: pics/pickup.png
+	   :width: 300px
 

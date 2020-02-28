@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>A simple AC generator &#8212; eyes17 1.0 documentation</title>
+    <title>Human body as a conductor &#8212; eyes17 1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -16,8 +16,8 @@
     <script type="text/javascript" src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="AC Transformer" href="2.13.html" />
-    <link rel="prev" title="Voltage of a lemon cell" href="2.11.html" /> 
+    <link rel="next" title="Resistance of human body" href="2.13.html" />
+    <link rel="prev" title="Separating DC &amp; AC components" href="2.11.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,10 +26,10 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="2.13.html" title="AC Transformer"
+          <a href="2.13.html" title="Resistance of human body"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="2.11.html" title="Voltage of a lemon cell"
+          <a href="2.11.html" title="Separating DC &amp; AC components"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>
@@ -38,10 +38,10 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="2.11.html"
-                        title="previous chapter">Voltage of a lemon cell</a></p>
+                        title="previous chapter">Separating DC &amp; AC components</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="2.13.html"
-                        title="next chapter">AC Transformer</a></p>
+                        title="next chapter">Resistance of human body</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -69,32 +69,26 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="a-simple-ac-generator">
-<h1>A simple AC generator<a class="headerlink" href="#a-simple-ac-generator" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="human-body-as-a-conductor">
+<h1>Human body as a conductor<a class="headerlink" href="#human-body-as-a-conductor" title="Permalink to this headline">¶</a></h1>
 <p><strong>Objective</strong></p>
-<p>Measure the frequency and amplitude of the voltage induced across a
-solenoid coil by a rotating magnet. Use the 10 mm x 10 mm magnet and the
-3000T coils that comes with the kit.</p>
-<a class="reference internal image-reference" href="_images/ac-generator.svg"><img alt="_images/ac-generator.svg" src="_images/ac-generator.svg" width="300px" /></a>
-<a class="reference internal image-reference" href="_images/ac-gen-screen.png"><img alt="_images/ac-gen-screen.png" src="_images/ac-gen-screen.png" style="width: 300px;" /></a>
+<p>Touching the AC mains is fatal to us because our body is a conductor. We
+can explore this using low voltage signals.</p>
+<a class="reference internal image-reference" href="_images/conducting-human.svg"><img alt="_images/conducting-human.svg" src="_images/conducting-human.svg" width="300px" /></a>
+<a class="reference internal image-reference" href="_images/conducting-human-screen.png"><img alt="_images/conducting-human-screen.png" src="_images/conducting-human-screen.png" style="width: 300px;" /></a>
 <p><strong>Procedure</strong></p>
 <ul class="simple">
-<li>Mount the magnet horizontally and power the DC motor from a 1.5 volts
-cell</li>
-<li>Enable A1 and A2, with analysis option</li>
-<li>Set timebase to 100 mS full scale</li>
-<li>Bring the coil near the magnet (not to touch it), watch the induced
-voltage</li>
-<li>Repeat the experiment using 2 coils.</li>
+<li>Set WG to 200 Hz.</li>
+<li>Enable A1, A2 with analysis enabled.</li>
+<li>Conenct WG and A1, with a wire</li>
+<li>Connect WG and A2 through your body and note voltages</li>
+<li>Repeat it using a 3 volt DC signal from PV1.</li>
 </ul>
 <p><strong>Discussion</strong></p>
-<p>The voltage output is shown in figure. The phase difference between the
-two voltages depends on the angle between the axes of the two coils.</p>
-<p>Bring a shorted coil near the magnet to observe the change in frequency.
-The shorted coil is drawing energy from the generator and the speed get
-reduced. The magnetic field in this generator is very weak. The
-resistance of the coil is very high and trying to draw any current from
-it will drop most of the voltage across the coil itself.</p>
+<p>The observed peak voltage will be less than 3volts, due to the
+resistance of the body. There could be some ripple due to the 50Hz AC
+pickup. This can be eliminated by performing the experiment far away
+from power lines, using a laptop.</p>
 </div>
 
 
@@ -110,10 +104,10 @@ it will drop most of the voltage across the coil itself.</p>
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="2.13.html" title="AC Transformer"
+          <a href="2.13.html" title="Resistance of human body"
              >next</a> |</li>
         <li class="right" >
-          <a href="2.11.html" title="Voltage of a lemon cell"
+          <a href="2.11.html" title="Separating DC &amp; AC components"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">eyes17 1.0 documentation</a> &#187;</li> 
       </ul>

@@ -1,40 +1,29 @@
-.. 2.14
+.. 2.10
    
-Résistance de l’eau, en courant alternatif
-------------------------------------------
+Photorésistances
+----------------
 
 **Objectif**
 
-Mesurer la résistance de solutions ioniques, en utilisant des signaux
-continu et alternatif. On utilise de l’eau ordinaire du robinet. Essayer
-de mesurer la résistance au préalable à l’aide d’un
-multimètre.
+Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et
+sa variation en fonction de la distance à la source.
 
-.. image:: schematics/res-water.svg
-	   :width: 300px
-.. image:: pics/water-conduct.png
+.. image:: schematics/ldr.svg
 	   :width: 300px
 
 **Procédure**
 
--  R1 est censé être comparable avec R, On commence avec :math:`10~k\Omega`.
--  Activer A1 et A2
--  Calculer la résistance comme expliqué à la section
-   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+-  Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
+-  Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée
+   afficher des variations
+-  Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation
 
 **Discussion**
 
-Les valeurs observées sont montrées dans le tableau. Les résistances en
-continu et en alternatif semblent très différentes. En courant continu,
-la résistance du liquide change au cours du temps, à cause d’une
-électrolyse et de la formation de bulles. La résistance dépend peu de la
-distance entre électrodes, c’est la surface de l’électrode qui a le plus
-d’effet. La résistance dépend de la concentration en ions et à la
-présence d’impuretés dans l’eau.
-
-Essayer de changer la distance entre électrodes. Essayer d’ajouter un
-sel ordinaire et recommencer les mesures. Pourquoi le comportement
-est-il différence en courant continu ou alternatif ? Quels sont les
-porteurs de charges responsables du flux d’électricité à travers les
-solutions ? Y a-t-il une réaction chimique qui se produit ?
+La résistance varie de :math:`1~k\Omega` à environ :math:`100~k\Omega`
+selon l’intensité de la lumière qui l’éclaire. La tension est
+proportionnelle à la résistance (si le courant est constant). La
+résistance diminue quand l’éclairage augmente. Si on utilise une
+source de lumière ponctuelle, la résistance est censée augmenter comme
+le carré de la distance entre la photorésistance et la source lumière.
 

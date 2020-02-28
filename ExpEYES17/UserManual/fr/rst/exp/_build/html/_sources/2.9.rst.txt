@@ -1,31 +1,35 @@
-.. 2.9
-   
-Résistance électrique du corps humain
--------------------------------------
+.. 2.5
+
+Courants continu et alternatif
+------------------------------
 
 **Objectif**
 
-Mesurer la résistance électrique du corps humain en la comparant à une
-résistance connue. On commence avec un signal continu issu de PV1 puis
-on continue avec un signal alternatif issu de WG.
+Introduire le concept de tensions variables dans le temps, à l’aide d’un
+graphique :math:`U(t)`. Comparer les graphiques de continu et
+d’alternatif.
 
-.. image:: schematics/res-body.svg
+.. image:: schematics/ac-dc.svg
 	   :width: 300px
-
+		   
 **Procédure**
 
--  Régler PV1 à 3 V
--  Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
--  Calculer la résistance de son corps comme expliqué à la section
-   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
--  Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer
-   les analyses de A1 et A2 afin de mesurer les tensions.
+-  Régler PV1 à 2 V et régler WG à 200 Hz
+-  Activer l’analyse sur A1, afin de mesurer l’amplitude et la
+   fréquence.
+-  Activer A2
 
 **Discussion**
 
-Les mesures en courant continu sont plus affectées par les bruits
-électriques. La résistance en courant alternatif est censée être
-inférieure à la résistance en courant continu. La résistance est due à
-notre peau, le courant électrique peut y passer comme il passe à travers
-un condensateur.
+Dans le graphique, si la courbe de tension ne change pas (si elle est
+horizontale), c’est du courant continu pur. Si la tension change avec le
+temps, il y a une composante alternative. Si la tension moyenne est
+nulle, alors c’est de l’alternatif pur. Dans le deuxième graphique, la
+tension varie entre zéro et cinq volt ; est-ce du courant alternatif,
+continu, ou quelque chose d’autre ?
+
+.. image:: pics/ac-dc.png
+	   :width: 300px
+.. image:: pics/sqr-wave.png
+	   :width: 300px
 
