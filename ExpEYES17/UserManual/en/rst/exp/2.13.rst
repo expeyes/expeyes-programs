@@ -1,43 +1,29 @@
-.. 2.13
+.. 2.9
 
-AC Transformer
-==============
+Resistance of human body
+========================
 
 **Objective**
 
-Demonstrate mutual induction using two coils, supplied with ExpEYES. One
-coil, the primary, is connected between WG and Ground. The axes of the
-coils are aligned and a ferrite core is inserted.\begin_inset Separator
-latexpar\end_inset
+Measure the resistance of human body by comparing it with a known
+resistor. We start with a DC input from PV1 and then using the AC signal
+from WG.
 
-.. image:: schematics/transformer.svg
-	   :width: 300px
-.. image:: pics/transformer-screen.png
+.. image:: schematics/res-body.svg
 	   :width: 300px
 
 **Procedure**
 
--  Make connections as shown in the figure
--  Enable A1 and A2
--  Set WG to 500 Hz
--  Bring the coils close and watch the voltage on A2.
--  Try inserting an ion core
+-  Set PV1 to 3 volts
+-  Join PV1 and A2, through your body and measure voltage at A2
+-  Calculate your body’s resistance, as given in section
+   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+-  Repeat using SINE instead of PV1. Enable analysis on A1 and A2 to
+   measure voltage.
 
 **Discussion**
 
-The applied waveform and the induced waveform are shown in figure. A
-changing magnetic filed is causing the induced voltage. In the previous
-two experiments, the changing magnetic field was created by the movement
-of permanent magnets. In the present case the changing magnetic field is
-created by a time varying current.
-
-Try doing this experiment using a squarewave. Connect a 1kΩ resistor
-across secondary coil to reduce ringing.
-
-The concept of Alternating Current is introduced by plotting the voltage
-as a function of time. The behavior of circuits elements like capacitors
-and inductors in AC and DC circuits are explored, by measuring
-parameters like amplitude, frequency and phase. Converting electrical
-signals into sound and back is demonstrated.
-
-For each experiment, make connections as per the diagram given.
+The DC measurements are affected more by the electrical noise. The AC
+resistance should be less than the DC resistance. The resistance is due
+to our skin and AC can pass through this, like it passes through a
+capacitor.

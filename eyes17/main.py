@@ -82,13 +82,6 @@ testEquipment = [
 
 
 electronicsExptsScope = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),('3.11','diodeIV')],
-[QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),('3.12','npnCEout')],
-[QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),('3.13','pnpCEout')],
-#[QT_TRANSLATE_NOOP('MainWindow','AM and FM'), 'amfm']
-]
-
-electronicsExptsScope = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Oscilloscope'),('3.0', 'scope')],
 [QT_TRANSLATE_NOOP('MainWindow','Halfwave Rectifier'),('3.1','halfwave')],
 [QT_TRANSLATE_NOOP('MainWindow','Fullwave Rectifier'),('3.2','fullwave')],
@@ -101,6 +94,13 @@ electronicsExptsScope = [
 [QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),('3.8','opamp-int')],
 [QT_TRANSLATE_NOOP('MainWindow','Logic Gates'),('3.9','logic-gates')],
 [QT_TRANSLATE_NOOP('MainWindow','Clock Divider Circuit'),('3.10','clock-divider')]
+]
+
+electronicsExpts = [ 
+[QT_TRANSLATE_NOOP('MainWindow','Diode Characteristics'),('3.11','diodeIV')],
+[QT_TRANSLATE_NOOP('MainWindow','NPN Output Characteristics'),('3.12','npnCEout')],
+[QT_TRANSLATE_NOOP('MainWindow','PNP Output Characteristics'),('3.13','pnpCEout')],
+#[QT_TRANSLATE_NOOP('MainWindow','AM and FM'), 'amfm']
 ]
 
 electricalExpts = [ 

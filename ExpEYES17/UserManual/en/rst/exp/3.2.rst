@@ -1,29 +1,40 @@
-.. 3.2
+.. 3.1
 
-Fullwave rectifier using PN junctions
+Half wave rectifier using PN junction
 =====================================
 
 **Objective**
 
-Make a full wave rectifier, using two diodes. Two AC waveforms,
-differing by 180 degree in phase as required. WG and WG bar provide the
-same.
+Learn the working of a PN junction diode as a rectifier. RC filtering to
+reduce the ripple (the AC component).
 
-.. image:: schematics/fullwave.svg
+.. image:: schematics/halfwave.svg
 	   :width: 300px
-.. image:: pics/fullwave.png
+.. image:: pics/halfwave.png
 	   :width: 300px
 
 **Procedure**
 
--  Make connections
--  Enable A1, A2 and A3
--  Set WG to 200Hz and adjust timebase to view 4 to 5 cycles
+-  Make connections and observe the output
+-  Connect a :math:`1~k\Omega` load resistor, note the difference in amplitude
+-  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
+-  Try different values load resistors and filter capacitors
 
 **Discussion**
 
-Adding capacitors to reduce the ripple is left as an exercise to the
-user. This experiment is only to demonstrate the working of a full wave
-rectifier, it cannot provide more than few milli amperes of current.
+The negative half is removed by the diode as shown in figure. Also
+notice that the voltage in the positive half is reduced by around 0.7
+volts, the voltage drop across a silicon diode. A load resistor is
+required for the proper operation of the circuit, it could be more than
+1kΩ but do NOT use very low values since our AC source can drive only up
+to 5 mA current.
 
-Why full-wave rectifier is superior to half-wave rectifier ?
+We can see that the capacitor charges up and then during the missing
+cycle it maintains the voltage. The remaining AC component is called the
+ripple in the DC.
+
+Can we use very large capacitance to reduce the ripple ?
+
+During what part of the cycle does current flow through the diode ?
+
+Amount of peak current is decided by what ?

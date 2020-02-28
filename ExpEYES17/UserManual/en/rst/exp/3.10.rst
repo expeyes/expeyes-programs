@@ -1,34 +1,24 @@
-.. 3.10
+.. 3.8
 
-Clock Divider
-=============
+Op-Amp Ingrator
+===============
 
 **Objective**
 
-Study of a clock divider, using a D flip-flop (TTL family, 7474).
+Wire an Inverting amplifier using an Op-Amp and test it.
+
+.. image:: schematics/opamp-int.svg
+	   :width: 300px
 
 **Procedure**
 
-.. image:: schematics/clock-divider.svg
-	   :width: 300px
-
--  Enable A1 and A2, set range to 8 volts fullscale
--  Set SQ1 to 500 Hz
+-  Set WG amplitude to 80 mV and frequency to 1000 Hz
+-  Enable A1 and A2 and their analysis option
+-  Select 1V range for both A1 and A2
+-  Make connections and observe the output
+-  Change gain by changing the resistor values.
 
 **Discussion**
 
-The output toggles at every rising edge of the input, resulting in a
-division of frequency by two. The output is a symmetric squarewave,
-irrespective of the duty cycle of the input pulse. The HIGH output of
-the TTL IC is around 4 volts only.
-
-+-------------------------------------------------------------------------+
-|.. image:: pics/clock-divider.png                                        |
-|	   :width: 300px                                                  |
-|.. image:: pics/clock-divider2.png                                       |
-|	   :width: 300px                                                  |
-+-------------------------------------------------------------------------+
-|Figure 3.1 A clock divider circuit, using a D-flipflop. Outputs for two  |
-|different types of input are shown                                       |
-+-------------------------------------------------------------------------+
-
+The amplitude gain and and the phase correlation can be observed from
+the results.

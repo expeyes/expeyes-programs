@@ -1,33 +1,35 @@
-.. 4.4
+.. 4.2
 
-Transient response of LCR circuits
-==================================
+Transient Response of RC circuits
+=================================
 
 **Objective**
 
-Explore the oscillatory nature of L and C in series. Resonant frequency
-of series LC circuit is given by :math:`f_0 = 1/(2\pi\sqrt{LC})`. The damping
-factor is :math:`R/(2\sqrt{LC})`, and it is equal to 1 for critical
-damping (http://en.wikiversity.org/wiki/RLC\_circuit). Depending
-upon the value of C/L and R, the response could be under-damped,
-critically-damped or over-damped.
+Plot the voltage across a capacitor, when it is charged by applying a
+voltage step through a resistor. Calculate the value of the capacitance
+from the graph.
 
-.. image:: schematics/RLCtransient.svg
+.. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RLC-curves.png
+.. image:: pics/RCtransient.png
 	   :width: 300px
 
 **Procedure**
 
--  Start with the coil and :math:`0,1~\mu F` capacitor
--  Click on 5->0V STEP. Adjust x-axis and repeat if required.
--  FIT the graph to find the resonant frequency & Damping.
--  Repeat with a resistor between OD1 and the inductor.
--  Repeat the experiment with different values of L, C and R
+-  From **\\emphElectrical** , select **\\emphRCTransientresponse**
+-  Click on *0->5V STEP* and *5->0V step* Buttons to plot the graphs
+-  Adjust the horizontal scale, if required, and repeat.
+-  Calculate RC time constant.
 
 **Discussion**
 
-We have used the 3000 turn coil and a :math:`0,1~\mu F` capacitor. The voltage
-across the capacitor after a 5 to 0V step is shown in figure. The
-measured resonant frequency tallies with :math:`f = 1/(2\pi\sqrt{LC})`,
-within the component tolerance values.
+Applying a 0 to 5V step makes the voltage across the capacitor to rise
+exponentially as shown in the figure. By fitting the discharge curve
+with :math:`U(t) = U_0 \times e^{− t/RC}`, we can extract the RC time
+constant and find the values of capacitance from it.
+
+The voltage across a capacitor is exponential only when it is charged
+trough a linear element, a resistor for example. When charged from a
+constant current source, the voltage shows linear increase, because
+:math:`Q = It = CV` , and voltage increases linearly with time as
+:math:`V = (I/C) \times t`.

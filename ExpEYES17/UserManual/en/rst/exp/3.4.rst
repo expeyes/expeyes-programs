@@ -1,16 +1,16 @@
-.. 3.4
+.. 3.3
 
-Clamping using PN junction diode
+Clipping using PN junction diode
 ================================
 
 **Objective**
 
-Demostrate clamping of an AC signal at different levels, using a PN
+Demostrate clipping of an AC signal at different levels, using a PN
 junction diode
 
-.. image:: schematics/clamping.svg
+.. image:: schematics/clipping.svg
 	   :width: 300px
-.. image:: pics/clamping.png
+.. image:: pics/clipping.png
 	   :width: 300px
 
 **Procedure**
@@ -20,5 +20,5 @@ junction diode
 
 **Discussion**
 
-The clamping level is decided by the applied DC voltage and the diode
+The clipping level is decided by the applied DC voltage and the diode
 drop.
