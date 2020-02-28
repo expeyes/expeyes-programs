@@ -3,7 +3,7 @@
 MPU6050
 =======
 
-.. image:: images/MPU6050.png
+.. image:: pics/MPU6050.png
 	   :width: 300px
 
 Module I2C avec un accéléromètre, un gyromètre et un capteur de température
