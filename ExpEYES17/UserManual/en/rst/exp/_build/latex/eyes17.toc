@@ -58,73 +58,74 @@
 \contentsline {section}{\numberline {7.4}Clipping using PN junction diode}{35}{section.7.4}% 
 \contentsline {section}{\numberline {7.5}Clamping using PN junction diode}{35}{section.7.5}% 
 \contentsline {section}{\numberline {7.6}IC555 Oscillator}{36}{section.7.6}% 
-\contentsline {section}{\numberline {7.7}Inverting Amplifier}{36}{section.7.7}% 
-\contentsline {section}{\numberline {7.8}Non-Inverting Amplifier}{37}{section.7.8}% 
-\contentsline {section}{\numberline {7.9}Op-Amp Ingrator}{38}{section.7.9}% 
-\contentsline {section}{\numberline {7.10}Logic gates}{38}{section.7.10}% 
-\contentsline {section}{\numberline {7.11}Clock Divider}{39}{section.7.11}% 
-\contentsline {section}{\numberline {7.12}Diode I-V characteristics}{40}{section.7.12}% 
-\contentsline {section}{\numberline {7.13}Transistor Output characteristics (CE)}{41}{section.7.13}% 
-\contentsline {section}{\numberline {7.14}Opto-electric signal transmission}{42}{section.7.14}% 
-\contentsline {chapter}{\numberline {8}Electricity and Magnetism}{43}{chapter.8}% 
-\contentsline {section}{\numberline {8.1}Plot I-V Curve}{43}{section.8.1}% 
-\contentsline {subsection}{\numberline {8.1.1}Schematic}{43}{subsection.8.1.1}% 
-\contentsline {subsection}{\numberline {8.1.2}Instructions}{43}{subsection.8.1.2}% 
-\contentsline {section}{\numberline {8.2}XY plotting}{44}{section.8.2}% 
-\contentsline {section}{\numberline {8.3}RLC circuits, steady state response}{44}{section.8.3}% 
-\contentsline {section}{\numberline {8.4}Transient Response of RC circuits}{45}{section.8.4}% 
-\contentsline {section}{\numberline {8.5}Transient Response of RL circuits}{46}{section.8.5}% 
-\contentsline {section}{\numberline {8.6}RC Integration \& Differentiation}{47}{section.8.6}% 
-\contentsline {section}{\numberline {8.7}Fourier Analysis}{48}{section.8.7}% 
-\contentsline {section}{\numberline {8.8}Electromagnetic induction}{48}{section.8.8}% 
-\contentsline {chapter}{\numberline {9}Sound}{51}{chapter.9}% 
-\contentsline {section}{\numberline {9.1}Frequency response of Piezo}{51}{section.9.1}% 
-\contentsline {section}{\numberline {9.2}Velocity of sound}{52}{section.9.2}% 
-\contentsline {section}{\numberline {9.3}Sound beats}{53}{section.9.3}% 
-\contentsline {chapter}{\numberline {10}Mechanics}{55}{chapter.10}% 
-\contentsline {section}{\numberline {10.1}Acceleration due to gravity using Rod pendulum}{55}{section.10.1}% 
-\contentsline {section}{\numberline {10.2}Angular Velocity of Pendulum}{56}{section.10.2}% 
-\contentsline {section}{\numberline {10.3}Resonance of a driven pendulum}{57}{section.10.3}% 
-\contentsline {section}{\numberline {10.4}Distance Measurement, by ultrasound echo}{57}{section.10.4}% 
-\contentsline {chapter}{\numberline {11}Other experiments}{59}{chapter.11}% 
-\contentsline {section}{\numberline {11.1}Temperature measurement using PT100}{59}{section.11.1}% 
-\contentsline {section}{\numberline {11.2}Data Logger}{60}{section.11.2}% 
-\contentsline {section}{\numberline {11.3}Adanced Data Logger}{60}{section.11.3}% 
-\contentsline {subsection}{\numberline {11.3.1}Introduction}{60}{subsection.11.3.1}% 
-\contentsline {chapter}{\numberline {12}I2C Modules}{63}{chapter.12}% 
-\contentsline {section}{\numberline {12.1}B-H Curve}{63}{section.12.1}% 
-\contentsline {subsection}{\numberline {12.1.1}Schematic}{63}{subsection.12.1.1}% 
-\contentsline {subsection}{\numberline {12.1.2}Instructions}{63}{subsection.12.1.2}% 
-\contentsline {section}{\numberline {12.2}Light Sensor Logger}{64}{section.12.2}% 
-\contentsline {subsection}{\numberline {12.2.1}Schematic}{64}{subsection.12.2.1}% 
-\contentsline {subsection}{\numberline {12.2.2}Instructions}{64}{subsection.12.2.2}% 
-\contentsline {section}{\numberline {12.3}MPU6050}{64}{section.12.3}% 
-\contentsline {section}{\numberline {12.4}I2C Logger}{65}{section.12.4}% 
-\contentsline {chapter}{\numberline {13}Coding expEYES-17 in Python}{67}{chapter.13}% 
-\contentsline {section}{\numberline {13.1}Establish Connection}{67}{section.13.1}% 
-\contentsline {section}{\numberline {13.2}set\_pv1(v), set\_pv2(v)}{68}{section.13.2}% 
-\contentsline {section}{\numberline {13.3}get\_voltage(input)}{68}{section.13.3}% 
-\contentsline {section}{\numberline {13.4}get\_voltage\_time(input)}{68}{section.13.4}% 
-\contentsline {section}{\numberline {13.5}get\_resistance()}{68}{section.13.5}% 
-\contentsline {section}{\numberline {13.6}get\_capacitance()}{68}{section.13.6}% 
-\contentsline {section}{\numberline {13.7}get\_version()}{69}{section.13.7}% 
-\contentsline {section}{\numberline {13.8}get\_temperature()}{69}{section.13.8}% 
-\contentsline {section}{\numberline {13.9}set\_state(OUPUT=value)}{69}{section.13.9}% 
-\contentsline {section}{\numberline {13.10}set\_sine(frequency)}{69}{section.13.10}% 
-\contentsline {section}{\numberline {13.11}set\_sine\_amp(amplitude)}{69}{section.13.11}% 
-\contentsline {section}{\numberline {13.12}set\_sqr1(frequency)}{70}{section.13.12}% 
-\contentsline {section}{\numberline {13.13}set\_sqr1\_slow(frequency)}{70}{section.13.13}% 
-\contentsline {section}{\numberline {13.14}set\_sqr2(frequency)}{70}{section.13.14}% 
-\contentsline {section}{\numberline {13.15}set\_sqr1(frequency, dutyCyle)}{70}{section.13.15}% 
-\contentsline {section}{\numberline {13.16}get\_freq(input)}{70}{section.13.16}% 
-\contentsline {section}{\numberline {13.17}duty\_cycle(input)}{71}{section.13.17}% 
-\contentsline {section}{\numberline {13.18}r2ftime(input1, input2)}{71}{section.13.18}% 
-\contentsline {section}{\numberline {13.19}multi\_r2rtime(input, numCycles)}{71}{section.13.19}% 
-\contentsline {section}{\numberline {13.20}select\_range(channel, range)}{71}{section.13.20}% 
-\contentsline {section}{\numberline {13.21}select\_range(channel, range)}{72}{section.13.21}% 
-\contentsline {section}{\numberline {13.22}capture1(Input, Number of samples, time interval)}{72}{section.13.22}% 
-\contentsline {section}{\numberline {13.23}capture2(Number of samples, time interval)}{72}{section.13.23}% 
-\contentsline {section}{\numberline {13.24}capture4(Number of samples, time interval)}{73}{section.13.24}% 
-\contentsline {section}{\numberline {13.25}set\_wave(frequency, wavetype)}{74}{section.13.25}% 
-\contentsline {section}{\numberline {13.26}load\_equation(function, span)}{74}{section.13.26}% 
-\contentsline {section}{\numberline {13.27}load\_table(function, span)}{74}{section.13.27}% 
+\contentsline {section}{\numberline {7.7}Transistor Output characteristics (CE)}{36}{section.7.7}% 
+\contentsline {section}{\numberline {7.8}Inverting Amplifier}{37}{section.7.8}% 
+\contentsline {section}{\numberline {7.9}Non-Inverting Amplifier}{38}{section.7.9}% 
+\contentsline {section}{\numberline {7.10}Op-Amp Ingrator}{38}{section.7.10}% 
+\contentsline {section}{\numberline {7.11}Logic gates}{39}{section.7.11}% 
+\contentsline {section}{\numberline {7.12}Clock Divider}{40}{section.7.12}% 
+\contentsline {section}{\numberline {7.13}Diode I-V characteristics}{41}{section.7.13}% 
+\contentsline {section}{\numberline {7.14}Transistor Output characteristics (CE)}{42}{section.7.14}% 
+\contentsline {section}{\numberline {7.15}Opto-electric signal transmission}{43}{section.7.15}% 
+\contentsline {chapter}{\numberline {8}Electricity and Magnetism}{45}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Plot I-V Curve}{45}{section.8.1}% 
+\contentsline {subsection}{\numberline {8.1.1}Schematic}{45}{subsection.8.1.1}% 
+\contentsline {subsection}{\numberline {8.1.2}Instructions}{45}{subsection.8.1.2}% 
+\contentsline {section}{\numberline {8.2}XY plotting}{46}{section.8.2}% 
+\contentsline {section}{\numberline {8.3}RLC circuits, steady state response}{46}{section.8.3}% 
+\contentsline {section}{\numberline {8.4}Transient Response of RC circuits}{47}{section.8.4}% 
+\contentsline {section}{\numberline {8.5}Transient Response of RL circuits}{48}{section.8.5}% 
+\contentsline {section}{\numberline {8.6}RC Integration \& Differentiation}{49}{section.8.6}% 
+\contentsline {section}{\numberline {8.7}Fourier Analysis}{50}{section.8.7}% 
+\contentsline {section}{\numberline {8.8}Electromagnetic induction}{50}{section.8.8}% 
+\contentsline {chapter}{\numberline {9}Sound}{53}{chapter.9}% 
+\contentsline {section}{\numberline {9.1}Frequency response of Piezo}{53}{section.9.1}% 
+\contentsline {section}{\numberline {9.2}Velocity of sound}{54}{section.9.2}% 
+\contentsline {section}{\numberline {9.3}Sound beats}{55}{section.9.3}% 
+\contentsline {chapter}{\numberline {10}Mechanics}{57}{chapter.10}% 
+\contentsline {section}{\numberline {10.1}Acceleration due to gravity using Rod pendulum}{57}{section.10.1}% 
+\contentsline {section}{\numberline {10.2}Angular Velocity of Pendulum}{58}{section.10.2}% 
+\contentsline {section}{\numberline {10.3}Resonance of a driven pendulum}{59}{section.10.3}% 
+\contentsline {section}{\numberline {10.4}Distance Measurement, by ultrasound echo}{59}{section.10.4}% 
+\contentsline {chapter}{\numberline {11}Other experiments}{61}{chapter.11}% 
+\contentsline {section}{\numberline {11.1}Temperature measurement using PT100}{61}{section.11.1}% 
+\contentsline {section}{\numberline {11.2}Data Logger}{62}{section.11.2}% 
+\contentsline {section}{\numberline {11.3}Adanced Data Logger}{62}{section.11.3}% 
+\contentsline {subsection}{\numberline {11.3.1}Introduction}{62}{subsection.11.3.1}% 
+\contentsline {chapter}{\numberline {12}I2C Modules}{65}{chapter.12}% 
+\contentsline {section}{\numberline {12.1}B-H Curve}{65}{section.12.1}% 
+\contentsline {subsection}{\numberline {12.1.1}Schematic}{65}{subsection.12.1.1}% 
+\contentsline {subsection}{\numberline {12.1.2}Instructions}{65}{subsection.12.1.2}% 
+\contentsline {section}{\numberline {12.2}Light Sensor Logger}{66}{section.12.2}% 
+\contentsline {subsection}{\numberline {12.2.1}Schematic}{66}{subsection.12.2.1}% 
+\contentsline {subsection}{\numberline {12.2.2}Instructions}{66}{subsection.12.2.2}% 
+\contentsline {section}{\numberline {12.3}MPU6050}{66}{section.12.3}% 
+\contentsline {section}{\numberline {12.4}I2C Logger}{67}{section.12.4}% 
+\contentsline {chapter}{\numberline {13}Coding expEYES-17 in Python}{69}{chapter.13}% 
+\contentsline {section}{\numberline {13.1}Establish Connection}{69}{section.13.1}% 
+\contentsline {section}{\numberline {13.2}set\_pv1(v), set\_pv2(v)}{70}{section.13.2}% 
+\contentsline {section}{\numberline {13.3}get\_voltage(input)}{70}{section.13.3}% 
+\contentsline {section}{\numberline {13.4}get\_voltage\_time(input)}{70}{section.13.4}% 
+\contentsline {section}{\numberline {13.5}get\_resistance()}{70}{section.13.5}% 
+\contentsline {section}{\numberline {13.6}get\_capacitance()}{70}{section.13.6}% 
+\contentsline {section}{\numberline {13.7}get\_version()}{71}{section.13.7}% 
+\contentsline {section}{\numberline {13.8}get\_temperature()}{71}{section.13.8}% 
+\contentsline {section}{\numberline {13.9}set\_state(OUPUT=value)}{71}{section.13.9}% 
+\contentsline {section}{\numberline {13.10}set\_sine(frequency)}{71}{section.13.10}% 
+\contentsline {section}{\numberline {13.11}set\_sine\_amp(amplitude)}{71}{section.13.11}% 
+\contentsline {section}{\numberline {13.12}set\_sqr1(frequency)}{72}{section.13.12}% 
+\contentsline {section}{\numberline {13.13}set\_sqr1\_slow(frequency)}{72}{section.13.13}% 
+\contentsline {section}{\numberline {13.14}set\_sqr2(frequency)}{72}{section.13.14}% 
+\contentsline {section}{\numberline {13.15}set\_sqr1(frequency, dutyCyle)}{72}{section.13.15}% 
+\contentsline {section}{\numberline {13.16}get\_freq(input)}{72}{section.13.16}% 
+\contentsline {section}{\numberline {13.17}duty\_cycle(input)}{73}{section.13.17}% 
+\contentsline {section}{\numberline {13.18}r2ftime(input1, input2)}{73}{section.13.18}% 
+\contentsline {section}{\numberline {13.19}multi\_r2rtime(input, numCycles)}{73}{section.13.19}% 
+\contentsline {section}{\numberline {13.20}select\_range(channel, range)}{73}{section.13.20}% 
+\contentsline {section}{\numberline {13.21}select\_range(channel, range)}{74}{section.13.21}% 
+\contentsline {section}{\numberline {13.22}capture1(Input, Number of samples, time interval)}{74}{section.13.22}% 
+\contentsline {section}{\numberline {13.23}capture2(Number of samples, time interval)}{74}{section.13.23}% 
+\contentsline {section}{\numberline {13.24}capture4(Number of samples, time interval)}{75}{section.13.24}% 
+\contentsline {section}{\numberline {13.25}set\_wave(frequency, wavetype)}{76}{section.13.25}% 
+\contentsline {section}{\numberline {13.26}load\_equation(function, span)}{76}{section.13.26}% 
+\contentsline {section}{\numberline {13.27}load\_table(function, span)}{76}{section.13.27}% 

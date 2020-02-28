@@ -447,6 +447,12 @@ INPUT ./osc555.pdf
 INPUT ic555-screen.pdf
 INPUT ./ic555-screen.pdf
 INPUT ./ic555-screen.pdf
+INPUT transistor_out.pdf
+INPUT ./transistor_out.pdf
+INPUT ./transistor_out.pdf
+INPUT transistor-ce.pdf
+INPUT ./transistor-ce.pdf
+INPUT ./transistor-ce.pdf
 INPUT opamp-inv.pdf
 INPUT ./opamp-inv.pdf
 INPUT ./opamp-inv.pdf
@@ -479,9 +485,7 @@ INPUT ./diode-iv-screen.pdf
 INPUT ./diode-iv-screen.pdf
 INPUT transistor_out.pdf
 INPUT ./transistor_out.pdf
-INPUT ./transistor_out.pdf
 INPUT transistor-ce.pdf
-INPUT ./transistor-ce.pdf
 INPUT ./transistor-ce.pdf
 INPUT opto-electric.pdf
 INPUT ./opto-electric.pdf
