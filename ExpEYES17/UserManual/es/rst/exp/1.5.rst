@@ -1,0 +1,23 @@
+
+Familiarizarse con ExpEYES17
+==============================
+
+Antes de comenzar los experimentos, hagamos algunos ejercicios 
+simples para familiarizarnos con expEYES-17. Inicie su computadora 
+con el live CDROM, conecte el dispositivo a un puerto USB e inicie 
+el programa EYES-17 desde el menú « Aplicacioness->Ciencias ».
+Active la opción "ventana de ayuda emergente" y seleccione los 
+primeros elementos del menú « Exp. escolares ».
+
+Los siguientes capítulos están estructurados de acuerdo con los menús 
+del programa eyes17, cada capítulo contiene las experiencias 
+disponibles en el menú correspondiente, como « Exp. escolares », « Electrónica »,
+« Électricité », etc. Para realizar el experimento, lo seleccionamos
+en el menú. La ayuda en línea está disponible para cada experimento,
+de forma redundante con este manual
+
+Las capturas de pantalla proporcionadas en este documento no provienen 
+de la interfaz de usuario, ya que las imágenes con un fondo negro son 
+problemáticas cuando se imprimen. Los gráficos son generados por un 
+código independiente.
+
