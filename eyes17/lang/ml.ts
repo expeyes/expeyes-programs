@@ -168,12 +168,12 @@
     <message>
         <location filename="../diodeIV.py" line="50"/>
         <source>Zener Diode</source>
-        <translation>സെനർ ഡയോട്</translation>
+        <translation>സെനർ ഡയോഡ് </translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
         <source>Fitted with Diode Equation : Io = </source>
-        <translation>ഈ ഡയോട് സമവാക്യത്താൽ ഫിറ്റ് ചെയ്യപ്പെട്ടിരിക്കുന്നു : Io </translation>
+        <translation>ഈ ഡയോഡ്  സമവാക്യത്താൽ ഫിറ്റ് ചെയ്യപ്പെട്ടിരിക്കുന്നു : Io </translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
@@ -268,12 +268,12 @@
     <message>
         <location filename="../rodPendulum.py" line="186"/>
         <source>Invalid Number of trials</source>
-        <translation>പ്രാബല്യമില്ലാത്ത പരീക്ഷണങ്ങളുടെ എണ്ണം</translation>
+        <translation>ഈ നമ്പർ സ്വീകാര്യമല്ല</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="192"/>
         <source>Invalid Length</source>
-        <translation>പ്രാബല്യമില്ലാത്ത നീളം</translation>
+        <translation>ഈ നീളം സ്വീകാര്യമല്ല</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="250"/>
@@ -328,7 +328,7 @@
     <message>
         <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
-        <translation>കോഡ് സേവ് ചെയ്തിരിക്കുന്നത് </translation>
+        <translation>കോഡ് സേവ് ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="48"/>
@@ -338,7 +338,7 @@
     <message>
         <location filename="../filterCircuit.py" line="53"/>
         <source>Amplitude Gain</source>
-        <translation>ആമ്പ്ളിട്ടൂട് ഗെയ്ൻ</translation>
+        <translation>ആംപ്ലിറ്റ്യൂഡ്  ഗെയ്ൻ</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
@@ -363,7 +363,7 @@
     <message>
         <location filename="../filterCircuit.py" line="173"/>
         <source>Frequency = </source>
-        <translation>ഫീക്വൻസി = </translation>
+        <translation>ഫ്രീക്വൻസി = </translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="197"/>
@@ -378,7 +378,7 @@
     <message>
         <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
-        <translation>പ്രാപല്യമില്ലാത ഫ്രീക്വൻസി ലിമിറ്റുകൾ</translation>
+        <translation>ഫ്രീക്വൻസി ലിമിറ്റുകൾ ശരിയല്ല</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="265"/>
@@ -403,7 +403,7 @@
     <message>
         <location filename="../induction.py" line="62"/>
         <source>Select Range of A1</source>
-        <translation>A1 ന്റെ റേൻജ് തിരഞ്ഞെടുക്കുക</translation>
+        <translation>A1 ന്റെ റേഞ്ച് തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
         <location filename="../induction.py" line="65"/>
@@ -448,7 +448,7 @@
     <message>
         <location filename="../pt100.py" line="148"/>
         <source>Seconds</source>
-        <translation>സെക്കണ്ട്സ്</translation>
+        <translation>സെക്കൻഡ്</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="143"/>
@@ -468,12 +468,12 @@
     <message>
         <location filename="../sr04dist.py" line="230"/>
         <source>Invalid Duration</source>
-        <translation>പ്രാപല്യമില്ലാത്ത സമയക്രമം</translation>
+        <translation>സമയം സ്വീകാര്യമല്ല</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="264"/>
         <source>Invalid time interval between reads</source>
-        <translation>റീഡ്സ്ന് ഇടയിലുള്ള സമയക്രമം പ്രാപല്യത്തിലില്ല</translation>
+        <translation>സമയം സ്വീകാര്യമല്ല</translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="32"/>
@@ -543,12 +543,12 @@
     <message>
         <location filename="../MPU6050.py" line="170"/>
         <source>Invalid Duration or Time between reads (&gt; 10 mSec)</source>
-        <translation>പ്രാപല്യത്തിലില്ലാത്ത സമയക്രമം അഥവാ റീഡികൾക്കു ഇടയിലുള്ള സമയം (&gt; 10 mSec)</translation>
+        <translation>സമയം സ്വീകാര്യമല്ല (&gt; 10 mSec)</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
-        <translation>സെയവ് ചെയ്യാനായി ട്രെയ്സുകൾ ലഭ്യമല്ല</translation>
+        <translation>സേവ് ചെയ്യാനായി ട്രെയ്സുകൾ ലഭ്യമല്ല</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="53"/>
@@ -568,12 +568,12 @@
     <message>
         <location filename="../npnCEout.py" line="141"/>
         <source>Invalid Base valtage, shold be from .5 to 3</source>
-        <translation>പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <translation>ബേസ് വോൾട്ടേജ് സ്വീകാര്യമല്ല, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
-        <translation>അവസാന ട്രെയ്സ് വിശകലനം ചെയ്യുക</translation>
+        <translation>ട്രെയ്സ് വിശകലനം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="167"/>
@@ -628,7 +628,7 @@
     <message>
         <location filename="../plotIV.py" line="176"/>
         <source>Slope of the Line (dV/dI) = </source>
-        <translation>വരയുടെ ചെരിവ് (dV/dI) = </translation>
+        <translation>ചെരിവ് (dV/dI) = </translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="228"/>
@@ -638,12 +638,12 @@
     <message>
         <location filename="../pnpCEout.py" line="136"/>
         <source>Base valtage shold be from -0.5 to -3</source>
-        <translation>ബെയ്സ് വോൾട്ടേജ് 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <translation>ബെയ്സ് വോൾട്ടേജ്  -0.5നും -3നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
         <source>Invalid Base valtage, shold be from -0.5 to -3</source>
-        <translation>പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <translation>പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടക്കാവണം</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
@@ -713,17 +713,17 @@
     <message>
         <location filename="../pt100.py" line="271"/>
         <source>Invalid temperature limit</source>
-        <translation>പ്രാപല്യമില്ലാത്ത താപനില പരിധി</translation>
+        <translation>സ്വീകാര്യമല്ലാത്ത താപനില പരിധി</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="278"/>
         <source>Invalid Offset or Gain</source>
-        <translation>പ്രാപല്യമില്ലാത്ത ഓഫ്സെറ്റ് അഥവാ ഗെയ്ൻ</translation>
+        <translation>സ്വീകാര്യമല്ലാത്ത ഓഫ്സെറ്റ് അഥവാ ഗെയ്ൻ</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="284"/>
         <source>Invalid CCS input</source>
-        <translation>പ്രാപല്യമില്ലാത്ത CSS ഇൻപുട്ട്</translation>
+        <translation>സ്വീകാര്യമല്ലാത്ത CSS ഇൻപുട്ട്</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="88"/>
@@ -848,7 +848,7 @@
     <message>
         <location filename="../RLCtransient.py" line="100"/>
         <source>Analyse latest Data</source>
-        <translation>ഏറ്റവും പുതിയ ഡാറ്റ വിശകലനം ചെയ്യുക</translation>
+        <translation>ഡാറ്റ വിശകലനം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="108"/>
@@ -858,12 +858,12 @@
     <message>
         <location filename="../RLCtransient.py" line="145"/>
         <source>Resonant Frequency = </source>
-        <translation>റെസണേറ്റ് ഫ്രീക്വൻസി = </translation>
+        <translation>റെസൊണന്റ് ഫ്രീക്വൻസി = </translation>
     </message>
     <message>
         <location filename="../RLCtransient.py" line="145"/>
         <source> kHz Damping factor= </source>
-        <translation> kHz ഡാമ്പിങ്ങ് ഫാക്ടർ= </translation>
+        <translation> kHz. ഡാംപിങ് ഫാക്ടർ= </translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="97"/>
@@ -878,12 +878,12 @@
     <message>
         <location filename="../RLtransient.py" line="107"/>
         <source>Analyse last Trace</source>
-        <translation>അവസാന ട്രെയ്സ് വിശകലനം ചെയ്യുക</translation>
+        <translation>വിശകലനം ചെയ്യുക</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="151"/>
         <source>Enter a valid Resistance</source>
-        <translation>റെസിസ്റ്റൻസ് അടിക്കുക</translation>
+        <translation>റെസിസ്റ്റൻസ്  തരുക</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
@@ -913,7 +913,7 @@
     <message>
         <location filename="../scope.py" line="205"/>
         <source>Error. Could not connect. Check cable. </source>
-        <translation>എറർ ബന്ധം പുനസ്ഥാപിക്കാനാകുന്നില്ല കേമ്പിൾ ചെക്ക് ചെയ്യുക. </translation>
+        <translation>എറർ.ബന്ധം പുനസ്ഥാപിക്കാനാകുന്നില്ല കേബിൾ ചെക്ക് ചെയ്യുക. </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="171"/>
@@ -1003,12 +1003,12 @@
     <message>
         <location filename="../soundBeats.py" line="106"/>
         <source>Enable WG</source>
-        <translation>WG പ്രവർത്തനക്ഷമമാക്കുക</translation>
+        <translation>WG പ്രവർത്തിപ്പിക്കുക </translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="110"/>
         <source>Enable SQ1</source>
-        <translation>SQ1 പ്രവർത്തനക്ഷമമാക്കുക</translation>
+        <translation>SQ1 പ്രവർത്തിപ്പിക്കുക </translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="98"/>
@@ -1053,7 +1053,7 @@
     <message>
         <location filename="../soundFreqResp.py" line="229"/>
         <source>Invalid Time interval</source>
-        <translation>സമയ ഇടവേള പ്രാപല്യത്തിലില്ല</translation>
+        <translation>സ്വീകാര്യമല്ലാത്ത സമയ ഇടവേള</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="173"/>
@@ -1073,7 +1073,7 @@
     <message>
         <location filename="../sr04dist.py" line="52"/>
         <source>Y-axis from 0 to</source>
-        <translation>Y ആക്സിസ് 0 തൊട്ട്</translation>
+        <translation>Y-ആക്സിസ് പരിധി</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="69"/>
