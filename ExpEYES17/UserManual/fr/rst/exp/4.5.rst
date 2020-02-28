@@ -1,36 +1,52 @@
-.. 4.5
+.. 4.3
    
-Différenciation et intégration RC
----------------------------------
+Réponse transitoire de circuits RL
+----------------------------------
 
 **Objectif**
 
-Les circuits RC peuvent intégrer ou différencier un signal de tension
-par rapport au temps. Si on intègre un signal carré on obtient un signal
-triangulaire et si on différencie on obtient des pics aux
-transitions.
+Explorer la nature du courant et de la tension quand un échelon de
+tension est appliqué à une résistance et un bobinage en série. En
+mesurant la tension en fonction du temps aux bornes du bobinage, on peut
+calculer son inductance.
 
-.. image:: schematics/RCintegration.svg
+.. image:: schematics/RLtransient.svg
 	   :width: 300px
-.. image:: schematics/RCsteadystate.svg
+.. image:: pics/RLtransient.png
 	   :width: 300px
+
+Dans un circuit RL, :math:`U = RI + L(dI/dt)` , équation
+qui se résout en
+:math:`I = I_0 \times e^{− (R/L)t}`. Le
+coefficient du terme exponentiel R/L peut être déduit du graphique de la
+tension aux bornes du bobinage. La résistance du bobinage doit être
+incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
 
 **Procédure**
 
--  Sélectionner l’option signal triangulaire pour WG
--  Régler WG à 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
--  Ajuster l’échelle horizontale pour voir plus de quatre cycles.
--  Recommencer la même chose pour le différenciateur RC, à :math:`50~Hz`.
+-  Le bobinage est la bobine de 3000 tours
+-  Cliquer sur les boutons *Échelon 0->5V* et *Échelon 5->0V* pour
+   afficher les graphiques
+-  Ajuster l’échelle horizontale, si nécessaire, et recommencer.
+-  Calculer la valeur de l’inductance
+-  Insérer un noyau en fer dans le bobinage et recommencer
 
 **Discussion**
 
-L’intégration d’un signal triangulaire donne une forme parabolique et la
-différenciation donne une forme carrée. La différenciation ne peut être
-montrée qu’à basse fréquence. Essayer cela pour d’autres formes de
-signaux, par exemple signal carré. Si on intègre un signal carré on est
-censé obtenir un signal triangulaire.
+La réponse transitoire du circuit RL est montrée sur la figure. La
+courbe exponentielle est modélisée pour extraire la valeur de L/R. La
+résistance de la bobine est mesurée en la comparant avec la résistance
+externe connue, en courant continu. A2 est connecté à OD1 pour une
+mesure plus précise de la résistance du bobinage.
 
-.. image:: pics/RCintegration.png
-	   :width: 300px
-.. image:: pics/RCdifferentiation.png
-	   :width: 300px
+Les tensions appliquées sont positives, mais le graphique va vers des
+tensions négatives, pourquoi ?
+
+Quel était le courant avant le début de l’échelon 5->0 V ? Quelle est la
+force contre-électromotrice (*fcem*) ?
+
+Recommencer avec deux bobinages en série, (a) en les plaçant l’un loin
+de l’autre, (b) en les plaçant l’un sur l’autre, (c) après changement
+d’orientation de l’un des deux. On peut voir l’effet de l’induction
+mutuelle.
+

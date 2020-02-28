@@ -1,52 +1,50 @@
-.. 4.3
+.. 4.1
    
-Réponse transitoire de circuits RL
-----------------------------------
+Circuits RLC, réponse en régime stationnaire
+--------------------------------------------
 
 **Objectif**
 
-Explorer la nature du courant et de la tension quand un échelon de
-tension est appliqué à une résistance et un bobinage en série. En
-mesurant la tension en fonction du temps aux bornes du bobinage, on peut
-calculer son inductance.
+Étudier le comportement de dipôle RLC dans un circuit en courant
+alternatif. Trois combinaisons différentes peuvent être étudiées.
 
-.. image:: schematics/RLtransient.svg
+.. image:: schematics/RCsteadystate.svg
 	   :width: 300px
-.. image:: pics/RLtransient.png
+.. image:: schematics/RLsteadystate.svg
 	   :width: 300px
-
-Dans un circuit RL, :math:`U = RI + L(dI/dt)` , équation
-qui se résout en
-:math:`I = I_0 \times e^{− (R/L)t}`. Le
-coefficient du terme exponentiel R/L peut être déduit du graphique de la
-tension aux bornes du bobinage. La résistance du bobinage doit être
-incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
+.. image:: schematics/RLCsteadystate.svg
+	   :width: 300px
 
 **Procédure**
 
--  Le bobinage est la bobine de 3000 tours
--  Cliquer sur les boutons *Échelon 0->5V* et *Échelon 5->0V* pour
-   afficher les graphiques
--  Ajuster l’échelle horizontale, si nécessaire, et recommencer.
--  Calculer la valeur de l’inductance
--  Insérer un noyau en fer dans le bobinage et recommencer
+-  Faire les connexions une par une, selon les schémas
+-  Prendre note des mesures d’amplitude et de phase, dans chaque cas
+-  Recommencer les mesures en changeant la fréquence.
+-  Pour le circuit série RLC, la jonction entre L et C est surveillées
+   par A3
+-  Pour la résonance, sélectionner :math:`C = 1~\mu F`,
+   :math:`L = 10~mH` et :math:`f = 1600~Hz`, ajuster f pour obtenir un déphasage nul
+-  La tension totale aux bornes de L et C s’approche de zéro, les
+   tensions de chacun sont déphasées à la résonance
 
 **Discussion**
 
-La réponse transitoire du circuit RL est montrée sur la figure. La
-courbe exponentielle est modélisée pour extraire la valeur de L/R. La
-résistance de la bobine est mesurée en la comparant avec la résistance
-externe connue, en courant continu. A2 est connecté à OD1 pour une
-mesure plus précise de la résistance du bobinage.
+La tension alternative de la source est en A1 et la tension aux bornes
+de la résistance en A2. Si on soustrait les valeurs instantanées de A2
+de A1 on obtient la tension totale aux bornes de L et C. IL faut
+utiliser un bobinage avec une résistance négligeable pour de bons
+résultats. Le déphasage entre courant et tension est donnée par
+:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
 
-Les tensions appliquées sont positives, mais le graphique va vers des
-tensions négatives, pourquoi ?
+La tension totale, la tension aux bornes de R et la tension aux bornes
+de LC sont montrées dans la figure. Le diagramme de phase montre le
+déphasage entre courant et tension. Le bobinage utilisé dans
+l’expérience a une inductance d’environ :math:`10~mH` et une résistance de
+:math:`20~\Omega`.
 
-Quel était le courant avant le début de l’échelon 5->0 V ? Quelle est la
-force contre-électromotrice (*fcem*) ?
-
-Recommencer avec deux bobinages en série, (a) en les plaçant l’un loin
-de l’autre, (b) en les plaçant l’un sur l’autre, (c) après changement
-d’orientation de l’un des deux. On peut voir l’effet de l’induction
-mutuelle.
+À :math:`1600~Hz`, :math:`Z_C \simeq Z_L` et la tension aux bornes
+de LC est déterminée par la résistance du bobinage. À la fréquence de
+résonance, la tension aux bornes de LC sera minimale, déterminée par la
+résistance du bobinage. L’entrée A3 est connectée entre L et C, si bien
+que les tensions individuelles de L et C peuvent être présentées.
 

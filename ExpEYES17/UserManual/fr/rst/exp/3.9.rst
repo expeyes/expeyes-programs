@@ -1,29 +1,26 @@
-.. 3.9
+.. 3.7
    
-Portes logiques
----------------
+Amplificateur non-inverseur
+---------------------------
 
 **Objectif**
 
-Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
-des circuits intégrés de portes logiques TTL 7408 and 7432.
+Câbler un amplificateur non-inverseur à l’aide d’un ampli-op et le
+tester.
+
+.. image:: schematics/opamp-noninv.svg
+	   :width: 300px
 
 **Procédure**
 
-.. image:: schematics/logic-gates.svg
-	   :width: 300px
-
--  Activer A1, A2 et A3. Régler le calibre pour A1 et A2 à 8 V
--  Régler SQ1 à 200 Hz et ajuster la base de temps pour voir plusieurs
-   cycles
--  régler SQ2 depuis la forme de signal de WG, régler WG à 200 Hz
--  Recommencer avec la porte OU, 7432
--  La résistance de 1\ *k*\ Ω est nécessaire pour connecter un signal de
-   5 V à l’entrée A3.
+-  Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
+-  Activer A1 et A2 avec option d’analyse
+-  Sélectionner le calibre 1 V pour A1 et A2
+-  Faire les connexions et observer la sortie
+-  Changer le gain en modifiant les valeurs des résistances.
 
 **Discussion**
 
-Le fonctionnement de la porte logique sera évident à partir des trois
-signaux. On peut décaler les traces verticalement pour les séparer et
-les rendre plus claires.
+On peut observer le gain par l’amplitude, mais aussi le déphasage dans
+les résultats.
 

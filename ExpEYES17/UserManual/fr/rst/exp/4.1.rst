@@ -1,50 +1,20 @@
-.. 4.1
-   
-Circuits RLC, réponse en régime stationnaire
---------------------------------------------
+..   4.01
 
-**Objectif**
+Courbe I-U
+==========
 
-Étudier le comportement de dipôle RLC dans un circuit en courant
-alternatif. Trois combinaisons différentes peuvent être étudiées.
+Schéma
+------
 
-.. image:: schematics/RCsteadystate.svg
-	   :width: 300px
-.. image:: schematics/RLsteadystate.svg
-	   :width: 300px
-.. image:: schematics/RLCsteadystate.svg
+.. image:: schematics/res-compare.svg
 	   :width: 300px
 
-**Procédure**
+Instructions
+------------
 
--  Faire les connexions une par une, selon les schémas
--  Prendre note des mesures d’amplitude et de phase, dans chaque cas
--  Recommencer les mesures en changeant la fréquence.
--  Pour le circuit série RLC, la jonction entre L et C est surveillées
-   par A3
--  Pour la résonance, sélectionner :math:`C = 1~\mu F`,
-   :math:`L = 10~mH` et :math:`f = 1600~Hz`, ajuster f pour obtenir un déphasage nul
--  La tension totale aux bornes de L et C s’approche de zéro, les
-   tensions de chacun sont déphasées à la résonance
-
-**Discussion**
-
-La tension alternative de la source est en A1 et la tension aux bornes
-de la résistance en A2. Si on soustrait les valeurs instantanées de A2
-de A1 on obtient la tension totale aux bornes de L et C. IL faut
-utiliser un bobinage avec une résistance négligeable pour de bons
-résultats. Le déphasage entre courant et tension est donnée par
-:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
-
-La tension totale, la tension aux bornes de R et la tension aux bornes
-de LC sont montrées dans la figure. Le diagramme de phase montre le
-déphasage entre courant et tension. Le bobinage utilisé dans
-l’expérience a une inductance d’environ :math:`10~mH` et une résistance de
-:math:`20~\Omega`.
-
-À :math:`1600~Hz`, :math:`Z_C \simeq Z_L` et la tension aux bornes
-de LC est déterminée par la résistance du bobinage. À la fréquence de
-résonance, la tension aux bornes de LC sera minimale, déterminée par la
-résistance du bobinage. L’entrée A3 est connectée entre L et C, si bien
-que les tensions individuelles de L et C peuvent être présentées.
+- Connecter les résistances comme sur la figure ci-dessus.
+- on utilise R2 pour la mesure du courant, sa valeur est généralement 1000 Ω
+- Le courant dans le circuit est la tension en A1 divisée par R2
+- PV1 est varié par étapes. La courbe de la tension aux bornes de R1 est
+  tracée en fonction du courant.
 

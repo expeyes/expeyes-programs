@@ -1,36 +1,25 @@
-.. 3.10
+.. 3.8
    
-Diviseur d’horloge
-------------------
+Intégrateur à ampli-op
+----------------------
 
 **Objectif**
 
-Étudier un diviseur d’horloge, à l’aide d’une bascule D (famille TTL,
-7474).
+Câbler un intégrateur à ampli-op et le tester.
+
+.. image:: schematics/opamp-int.svg
+	   :width: 300px
 
 **Procédure**
 
-.. image:: schematics/clock-divider.svg
-	   :width: 300px
-
--  Activer A1 et A2, Régler leurs calibres à 8 V
--  Régler SQ1 à 500 Hz
+-  Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
+-  Activer A1 et A2 avec option d’analyse
+-  Sélectionner le calibre 1 V pour A1 et A2
+-  Faire les connexions et observer la sortie
+-  Changer le gain en modifiant les valeurs des résistances.
 
 **Discussion**
 
-La sortie est basculée à chaque front montant sur l’entrée, si bien que
-la fréquence est divisée par deux. Le signal de sortie est un signal
-carré symétrique, même si le signal d’entrée a un rapport cyclique
-différent. La tension de sortie HAUTE d’un circuit intégré TTL est
-proche de 4 V seulement.
-
-+-------------------------------------------------------------------------+
-|.. image:: pics/clock-divider.png                                        |
-|	   :width: 300px                                                  |
-|.. image:: pics/clock-divider2.png                                       |
-|	   :width: 300px                                                  |
-+-------------------------------------------------------------------------+
-|Figure 3.1 Un circuit diviseur d’horloge, à l’aide d’une bascule D. Les  |
-|sorties pour deux types différents de signal d’entrée sont montrées      |
-+-------------------------------------------------------------------------+
+On peut observer le gain par l’amplitude, mais aussi le déphasage dans
+les résultats.
 

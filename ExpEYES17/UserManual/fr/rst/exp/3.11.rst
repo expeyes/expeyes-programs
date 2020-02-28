@@ -1,47 +1,29 @@
-.. 3.11
+.. 3.9
    
-Caractéristique U-I d’une diode
--------------------------------
+Portes logiques
+---------------
 
 **Objectif**
 
-Tracer la caractéristique U-I d’une diode et comparer les résultats avec
-la théorie.
+Étudier des portes logiques en utilisant SQ1 et PV1 comme entrées, avec
+des circuits intégrés de portes logiques TTL 7408 and 7432.
 
 **Procédure**
 
-.. image:: schematics/diode_iv.svg
-	   :width: 300px
-.. image:: pics/diode-iv-screen.png
+.. image:: schematics/logic-gates.svg
 	   :width: 300px
 
--  Faire les connexions
--  Cliquer sur DÉMARRER pour tracer la courbe caractéristique.
--  Analyser les données
--  Tracer les courbes U-I de DELs
+-  Activer A1, A2 et A3. Régler le calibre pour A1 et A2 à 8 V
+-  Régler SQ1 à 200 Hz et ajuster la base de temps pour voir plusieurs
+   cycles
+-  régler SQ2 depuis la forme de signal de WG, régler WG à 200 Hz
+-  Recommencer avec la porte OU, 7432
+-  La résistance de 1\ *k*\ Ω est nécessaire pour connecter un signal de
+   5 V à l’entrée A3.
 
 **Discussion**
 
-La caractéristique U-I d’une jonction PN idéale est donnée par
-l’équation
-:math:`I = I_0 \times e^{(qU/kT) − 1}`, où
-:math:`I_0` est le courant de saturation inverse, :math:`q` la charge de
-l’électron, :math:`k` la constante de Boltzmann, :math:`T` la température en Kelvin.
-Pour une diode réelle, non-idéale, l’équation est
-:math:`I = I_0 \times e^{(qU/nkT) − 1}`, où :math:`n`
-est le facteur d’idéalité, qui vaut 1 pour une diode idéale. Pour des
-diodes réelles il varie entre 1 et 2. On a utilisé une diode au silicium
-1N4148. La valeur de *n* pour 1N4148 est proche de 2. On a calculé la
-valeur de :math:`n` en modélisant les valeurs expérimentales par l’équation.
-
-La tension à laquelle une DEL commence à émettre de la lumière dépend de
-sa longueur d’onde et de la constante de Planck. L’énergie d’un photon
-est donnée par :math:`E = h\nu  = hc/\lambda`. Cette énergie est égale au
-travail d’un électron qui franchit un seuil de potentiel, qui est donné
-par :math:`E = eU_0`. Donc la constante de Planck est
-:math:`h = eU_0 \times \lambda / c`, où :math:`\lambda` est la longueur d’onde de la
-DEL, :math:`e` la charge de l’électron et :math:`c` la vitesse de la lumière.
-
-Recommencer cette expérience en chauffant la diode à différentes
-températures.
+Le fonctionnement de la porte logique sera évident à partir des trois
+signaux. On peut décaler les traces verticalement pour les séparer et
+les rendre plus claires.
 

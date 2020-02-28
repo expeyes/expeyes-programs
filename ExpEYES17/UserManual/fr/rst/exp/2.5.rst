@@ -1,35 +1,26 @@
-.. 2.5
+.. 2.3
 
-Courants continu et alternatif
-------------------------------
+Mesurer une Capacité
+--------------------
 
 **Objectif**
 
-Introduire le concept de tensions variables dans le temps, à l’aide d’un
-graphique :math:`U(t)`. Comparer les graphiques de continu et
-d’alternatif.
+Mesurer la capacité d'un condensateur.
 
-.. image:: schematics/ac-dc.svg
+.. image:: schematics/cap-measure.svg
 	   :width: 300px
-		   
+
 **Procédure**
 
--  Régler PV1 à 2 V et régler WG à 200 Hz
--  Activer l’analyse sur A1, afin de mesurer l’amplitude et la
-   fréquence.
--  Activer A2
+-  Connecter le condensateur entre IN1 and GND.
+-  Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
+   condensateur pendant la mesure.
 
 **Discussion**
 
-Dans le graphique, si la courbe de tension ne change pas (si elle est
-horizontale), c’est du courant continu pur. Si la tension change avec le
-temps, il y a une composante alternative. Si la tension moyenne est
-nulle, alors c’est de l’alternatif pur. Dans le deuxième graphique, la
-tension varie entre zéro et cinq volt ; est-ce du courant alternatif,
-continu, ou quelque chose d’autre ?
+On a utilisé des condensateurs de :math:`100~pF` pour cette activité.
 
-.. image:: pics/ac-dc.png
-	   :width: 300px
-.. image:: pics/sqr-wave.png
-	   :width: 300px
+On peut créer des condensateurs en collant de fines feuilles de métal
+sur les deux faces d’un isolant comme le papier, le polystyrène ou le
+verre.
 

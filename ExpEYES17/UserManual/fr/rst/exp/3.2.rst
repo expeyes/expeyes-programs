@@ -1,33 +1,45 @@
-.. 3.2
+.. 3.1
    
-Redressement double alternance avec des jonctions PN
-----------------------------------------------------
+Redressement demi-onde à l’aide d’une jonction PN
+-------------------------------------------------
 
 **Objectif**
 
-Réaliser un redresseur double alternance, à l’aide de deux diodes. Il
-faut deux signaux alternatifs, déphasés de 180 degrés. Ceux-ci sont
-fournis par WG et :math:`\overline{WG}`.
+Étudier le fonctionnement d’une diode à jonction PN comme redresseur.
+Filtrage RC pour réduire les variations de tension (la composante
+alternative).
 
-.. image:: schematics/fullwave.svg
+.. image:: schematics/halfwave.svg
 	   :width: 300px
-.. image:: pics/fullwave.png
+.. image:: pics/halfwave.png
 	   :width: 300px
 
 **Procédure**
 
--  Faire les connexions
--  Activer A1, A2 et A3
--  Régler WG à 200 Hz et ajuster la base de temps pour voir 4 ou 5
-   cycles.
+-  Faire les connexions et observer les sorties
+-  Connecter une résistance de charge de :math:`1~k\Omega`, noter le changement
+   d’amplitude
+-  Connecter un condensateur de :math:`1 \mu F`,  et observer l’effet de filtrage.
+-  Essayer plusieurs valeurs de résistances de charge et de
+   condensateurs de filtrage.
 
 **Discussion**
 
-On laisse comme exercice à l’utilisateur de réduire la fluctuation de
-tension à l’aide d’un condensateur. Cette expérience est seulement là
-pour montrer le fonctionnement d’une redressement double alternance, il
-ne peut pas produire beaucoup plus que quelques milliampères de courant.
+La partie négative est ôtée par la diode comme montré sur la figure.
+Noter aussi que la tension est diminuée de quelques 0,7 V dans la moitié
+positive, c’est la chute de tension aux bornes de la diode silicium,
+quand le courant y passe. Une résistance de charge est nécessaire pour
+que le circuit fonctionne correctement, on peut utiliser plus de
+:math:`1~k\Omega`, mais NE PAS utiliser de valeurs plus faibles, comme la source
+courant alternatif ne peut pas fournir un courant de plus de :math:`5~mA`.
 
-En quoi un redressement double alternance est-il supérieur à un
-redressement simple alternance ?
+On peut voir que le condensateur se charge puis qu’il maintient la
+tension pendant la partie manquante du cycle.
+
+Peut-on utiliser des condensateurs de grande capacité pour réduire la
+fluctuation de tension ?
+
+Durant quelle partie du cycle le courant traverse-t-il la diode ?
+
+Qu’est qui conditionne la valeur du courant crête ?
 
