@@ -1,36 +1,25 @@
-.. 3.5
+.. 3.4
    
-Oscilador  IC555
--------------------
+Defasaje utilizando un diodo de unión PN
+------------------------------------------
 
 **Objetivo**
 
-Cablear un circuito multivibrador astable usando un IC555, medir
-la frecuencia y la relación cíclica de trabajo de la salida.
+Demostrar el cambio de una señal alterna en diferentes niveles,
+utilizando un diodo de unión PN
 
-.. image:: schematics/osc555.svg
+.. image:: schematics/clamping.svg
 	   :width: 300px
-.. image:: pics/ic555-screen.png
+.. image:: pics/clamping.png
 	   :width: 300px
-
-El circuito se muestra en la figura. La frecuencia está dada por
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La duración
-ALTA está dada por 
-:math:`\ln 2 \times C \times (R_1 + R_2)`
-et la durée BAJA par :math:`\ln 2 \times C \times R_2`.
 
 **Procedimiento**
 
--  Hacer las conexiones
--  Medir lafrecuencia y la relación cíclica.
--  Recomenzar cambiando los valores de R1
+-  Hacer las conexiones y observar las salidas.
+-  Cambiar PV1 y observar el cambio en las salidas.
 
-**Discusion**
+**Discusión**
 
-La señal de salida se muestra en la figura. Cambiar el valor de resistencias y el condensador, a continuación, 
-comparar la frecuencia y el informe cíclico con los valores calculados.
-
-
-
-
+El nivel de desfase está condicionado por el voltaje continuo aplicado
+y por la caída de voltaje del diodo.
 

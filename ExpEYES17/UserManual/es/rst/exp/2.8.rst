@@ -1,38 +1,39 @@
-.. 2.8
+.. 2.4
    
-El cuerpo humano como conductor
--------------------------------
+Medir resistencias por comparación
+----------------------------------
 
 **Objetivo**
 
-Tocar un terminal del sector es fatal porque nuestro cuerpo conduce la 
-electricidad. Se puede explorar este fenómeno con señales de pequeño
-voltaje.
+Aprender a aplicar la Ley de Ohm para encontrar el valor de una
+resistencia desconocida comparándola con una resistencia conocida.
 
-.. image:: schematics/conducting-human.svg
-	   :width: 300px
-.. image:: pics/conducting-human-screen.png
+El voltaje  a través de una resistencia viene dada por :math:`U = RI`.
+Si la corriente que pasa a través de dos resistencias es la misma,
+entonces el cociente de los voltajes será el mismo que el cociente
+de las resistencias, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+
+.. image:: schematics/res-compare.svg
 	   :width: 300px
 
 **Procedimiento**
 
--  Fijar WG en 200 Hz.
--  Activar A1, A2 con sus análisis.
--  Conectar WG y A1, por un hilo.
--  Conectar WG y A2 con su cuerpo y notar los voltajes.
--  Reiterar con una señal de 3 V continuos procedente de PV1.
+-  Conectar la resistencia desconocida entre PV1 y A1.
+-  Conectar :math:`1~k\Omega` (:math:`R_2`) entre A1 y GND.
+-  Fijar PV1 en 4 V.
+-  Medir el voltaje en A1. Calcular el corriente
+   :math:`I = U_{A1}/R_2`. Valor de
+   :math:`R_1 = (U_{PV1} − U_{A1})/I`.
+-  Seleccionar « Electricidad->Dibujar la curva Corriente-Voltaje » en el
+   menú para tener una curva I-U.
 
 **Discusión**
 
-El voltaje pico a pico que se observa es menos de 3 V, debido a la
-resistencia del cuerpo humano. Pueden ser perturbaciones debidas a la
-señal a 50 hercios del sector,captados por efecto de antena. Se los puede
-eliminar si se trabaja lejos de las líneas de alimentación del sector,
-con un ordenador portátil.
+¿Cuál es el límite de este método? ¿Cómo se elige la resistencia de
+referencia? Supongamos que el valor desconocido está en
+:math:`M\Omega`, ¿cuál sería la caída de voltaje en una resistencia de
+referencia de :math:`1~k\Omega`?  Nuestra medida de voltaje tiene una
+resolución de :math:`1/4096`.
 
-
-
-
-
-
-
+Usaremos este método más adelante para medir la resistencia de soluciones,
+con corriente alterno.

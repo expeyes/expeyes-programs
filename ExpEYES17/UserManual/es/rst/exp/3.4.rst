@@ -1,16 +1,16 @@
-.. 3.4
+.. 3.3
    
-Defasaje utilizando un diodo de unión PN
-------------------------------------------
+Desfase utilizando un diodo de unión PN
+-------------------------------------------
 
 **Objetivo**
 
-Demostrar el cambio de una señal alterna en diferentes niveles,
-utilizando un diodo de unión PN
+Demostrar el desfase de una señal alterna en diferentes niveles,
+utilizando un diodo de unión PN.
 
-.. image:: schematics/clamping.svg
+.. image:: schematics/clipping.svg
 	   :width: 300px
-.. image:: pics/clamping.png
+.. image:: pics/clipping.png
 	   :width: 300px
 
 **Procedimiento**

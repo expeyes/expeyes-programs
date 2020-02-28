@@ -1,0 +1,38 @@
+.. 2.16
+   
+Numerizar un sonido
+-------------------
+
+**Objetivo**
+
+Numerizar señales sonoras de un micrófono, y medir su frecuencia.
+Utilizar el zumbador o cualquier otra fuente de sonido como
+diapasón.
+
+**Procedimiento**
+
+.. image:: schematics/sound-capture.svg
+	   :width: 300px
+
+-  Activar A1 y MIC, y también sus análisis.
+-  Aproximar el micrófono del zumbador.
+-  Fijar WG en :math:`1000~Hz`, después modificarlo, y observar la salida
+   MIC.
+-  Utilizar un silbato en lugar del zumbador y encontrar su frecuencia con
+   la salida MIC.
+
+**Discusión**
+
+La señal del generador y la salida del micrófono se muestran en la figura.
+
+Las ondas sonoras crean variaciones de presión en el medio en que
+pasan. El micrófono crea una tensión proporcional a las variaciones de
+presión. La variaciones del voltaje están al unísono de las variaciones
+de presión. Se puede comparar el micrófono a un sensor de presión,
+pero que funciona únicamente con variaciones de presión.
+
+
+
+
+
+

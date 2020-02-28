@@ -1,34 +1,37 @@
-.. 4.7
+.. 4.6
    
-Inducción electromagnética
---------------------------
+Análisis de Fourier
+-------------------
 
 **Objetivo**
 
-Explorando el voltaje inducido a través de un bobinado por un campo
-magnética variable, dejando caer un pequeño imán cilíndrico a
-a través del bobinado. Se usa un tubo para guiar el imán a través de
-bobinado
-
-.. image:: schematics/induction.svg
-	   :width: 300px
-.. image:: pics/induction-screen.png
-	   :width: 300px
+Estudie la transformada de Fourier de una señal. Representaciones 
+temporales y de frecuencia de una señal.
 
 **Procedimiento**
 
--  Hacer clic en "Iniciar escaneo". Una traza horizontal debe aparecer
--  Dejar caer el imán a través de la bobina hasta que capture un rastro.
--  Repetir el proceso cambiando parámetros como la fuerza del imán, velocidad, etc.
+-  Conectar SQ1 a A1 y WG a A2. Establecer A1 en modo de acoplamiento alternativo (interruptor deslizante en la caja)
+-  Activar A1 y A2, seleccionar el calibre en 4 V
+-  Establecer WG y SQ1 a 500 Hz
+-  Hacer clic en el botón FFT
 
 **Discusión**
 
-El resultado se muestra en la figura. La amplitud aumenta con la
-velocidad del imán. A partir del gráfico, podemos determinar el 
-tiempo que tarda el imán en pasar por el bobinado.
+En el gráfico de la transformada de Fourier, la frecuencia está 
+en el eje x y el eje, y muestra la intensidad relativa de los 
+componentes de frecuencia de la señal. Esto se llama representación 
+de frecuencia (http://en.wikipedia.org/wiki/Fourier\_transform).
+En el caso de la señal sinusoidal solo hay un pico dominante, los picos
+más pequeños son una medida de distorsión de señal sinusoidal.
 
-El segundo pico es más grande que el primero. Por qué ? ¿Dónde 
-se supone que está el imán cuando el voltaje inducido pasa por cero?
-Deje caer el imán desde diferentes alturas y grafique el voltaje máximo 
-frente a la raíz cuadrada de la altura de caída.
+Una señal cuadrada puede ser representada con 
+:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
+En la transformada de Fourier de una señal de frecuencia cuadrada *f* , habrá 
+un componente *3 f* (cuya amplitud es un tercio del componente *f*),
+un componente *5 f* (amplitud un quinto), etc. como se muestra en
+la figura.
 
+.. image:: pics/sqwaveFFT.png
+	   :width: 300px
+.. image:: pics/sinewaveFFT.png
+	   :width: 300px

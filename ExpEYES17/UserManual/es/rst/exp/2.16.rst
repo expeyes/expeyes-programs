@@ -1,36 +1,39 @@
-.. 2.16
+.. 2.12
    
-Numerizar un sonido
--------------------
+Un generador alterno simple
+---------------------------
 
 **Objetivo**
 
-Numerizar señales sonoras de un micrófono, y medir su frecuencia.
-Utilizar el zumbador o cualquier otra fuente de sonido como
-diapasón.
+Medir la frecuencia y el amplitud de una tensión inducida  voltaje
+en un bobinado por un imán en rotación. Se utiliza el imán de
+:math:`10~mm\times 10~mm` y el bobinado de 3000 ciclos que vienen con
+el kit.
+
+.. image:: schematics/ac-generator.svg
+	   :width: 300px
+.. image:: pics/ac-gen-screen.png
+	   :width: 300px
 
 **Procedimiento**
 
-.. image:: schematics/sound-capture.svg
-	   :width: 300px
-
--  Activar A1 y MIC, y también sus análisis.
--  Aproximar el micrófono del zumbador.
--  Fijar WG en :math:`1000~Hz`, después modificarlo, y observar la salida
-   MIC.
--  Utilizar un silbato en lugar del zumbador y encontrar su frecuencia con
-   la salida MIC.
+-  Fijar el imán acostado en el eje del motor y alimentar el motor con
+   una pila de 1.5 V.
+-  Activar A1 y A2, con opción de análisis.
+-  Fijar la base de tiempo en 100 ms escala completa.
+-  Aproximar el bobinado de imán (sin tocarlo) y observar la tensión
+   inducida.
+-  Reiterar la experiencia con dos bobinados.
 
 **Discusión**
 
-La señal del generador y la salida del micrófono se muestran en la figura.
+La tensión obtenida se muestra en la figura. La diferencia de fase
+entre ambas señales depende de la diferencia angular entre los ejes
+de ambos bobinados.
 
-Las ondas sonoras crean variaciones de presión en el medio en que
-pasan. El micrófono crea una tensión proporcional a las variaciones de
-presión. La variaciones del voltaje están al unísono de las variaciones
-de presión. Se puede comparar el micrófono a un sensor de presión,
-pero que funciona únicamente con variaciones de presión.
-
+Aproximar un bobinado en corto-circuito del imán y observar el cambio
+de frecuencia. El bobinado en corto-circuito toma energía del generador
+y la velocidad baja.
 
 
 

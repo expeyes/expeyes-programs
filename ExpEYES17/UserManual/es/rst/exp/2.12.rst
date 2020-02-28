@@ -1,39 +1,36 @@
-.. 2.12
+.. 2.8
    
-Un generador alterno simple
----------------------------
+El cuerpo humano como conductor
+-------------------------------
 
 **Objetivo**
 
-Medir la frecuencia y el amplitud de una tensión inducida  voltaje
-en un bobinado por un imán en rotación. Se utiliza el imán de
-:math:`10~mm\times 10~mm` y el bobinado de 3000 ciclos que vienen con
-el kit.
+Tocar un terminal del sector es fatal porque nuestro cuerpo conduce la 
+electricidad. Se puede explorar este fenómeno con señales de pequeño
+voltaje.
 
-.. image:: schematics/ac-generator.svg
+.. image:: schematics/conducting-human.svg
 	   :width: 300px
-.. image:: pics/ac-gen-screen.png
+.. image:: pics/conducting-human-screen.png
 	   :width: 300px
 
 **Procedimiento**
 
--  Fijar el imán acostado en el eje del motor y alimentar el motor con
-   una pila de 1.5 V.
--  Activar A1 y A2, con opción de análisis.
--  Fijar la base de tiempo en 100 ms escala completa.
--  Aproximar el bobinado de imán (sin tocarlo) y observar la tensión
-   inducida.
--  Reiterar la experiencia con dos bobinados.
+-  Fijar WG en 200 Hz.
+-  Activar A1, A2 con sus análisis.
+-  Conectar WG y A1, por un hilo.
+-  Conectar WG y A2 con su cuerpo y notar los voltajes.
+-  Reiterar con una señal de 3 V continuos procedente de PV1.
 
 **Discusión**
 
-La tensión obtenida se muestra en la figura. La diferencia de fase
-entre ambas señales depende de la diferencia angular entre los ejes
-de ambos bobinados.
+El voltaje pico a pico que se observa es menos de 3 V, debido a la
+resistencia del cuerpo humano. Pueden ser perturbaciones debidas a la
+señal a 50 hercios del sector,captados por efecto de antena. Se los puede
+eliminar si se trabaja lejos de las líneas de alimentación del sector,
+con un ordenador portátil.
 
-Aproximar un bobinado en corto-circuito del imán y observar el cambio
-de frecuencia. El bobinado en corto-circuito toma energía del generador
-y la velocidad baja.
+
 
 
 

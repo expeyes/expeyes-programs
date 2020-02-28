@@ -1,31 +1,47 @@
-.. 2.17
-
-Estroboscopio
-=============
+.. 2.13
+   
+Transformador de corriente alterna
+----------------------------------
 
 **Objetivo**
 
-Observar un fenómeno periódico con luz pulsada periódicamente.
+Demostrar la inducción mutua entre dos bobinados, que vienen con
+el kit.Se conecta un de los dos bobinados, el primario, entre WD y GND.
+Se alinean los ejes de los bobinados, y se inserta un núcleo de ferrita.
+
+.. image:: schematics/transformer.svg
+	   :width: 300px
+.. image:: pics/transformer-screen.png
+	   :width: 300px
 
 **Procedimiento**
 
-.. image:: schematics/stroboscope.svg
-	   :width: 300px
-
-
--  Hacer girar un disco con el motor alimentado por une pila de 1.5 V.
--  Iluminar el disco solamente por la luz del LED, se prescinden otras
-   fuentes de luz.
--  Ajustar la frecuencia de SQ1, el disco parece estacionario cuando se
-   equipara a la frecuencia de giración del disco.
+-  Conectar como lo muestra la figura.
+-  Activar A1 y A2
+-  Fijar WG en :math:`500~Hz`
+-  Aproximar los bobinados uno con el otro y observar el voltaje en A2.
+-  Insertar un núcleo de ferrita.
 
 **Discusión**
 
-Cuando la frecuencia del fenómeno observado y la frecuencia de la luz pulsada
-se equiparan, se puede observar una imagen estática.
+La señal aplicada y inducida está representada en la figura. Un campo
+magnético oscilante causa la tensión inducida. En los dos experimentos
+previos, el campo magnético era creado por los movimiento de imanes. En
+el caso presente, es creado por una corriente variable en el tiempo.
 
-¿Qué pasa cuando se sube o se baja un poco la frecuencia de la luz?
+Intentar la misma experiencia con una señal cuadrada.Conectar una resistencia
+de :math:`1~k\Omega` a los terminales del bobinado secundario para reducir
+las oscilaciones de resonancia.
 
-¿Qué pasa cuando la frecuencia de la luz es el doble de la frecuencia
-del fenómeno? ¿Y cuando es la mitad?
+El concepto de corriente alterna es introducido por la curva de la
+tensión como función del tiempo. Se explora el comportamiento de varios
+dipolos como capacitores y bobinados en corriente continua y alterna,
+midiendo parámetros como amplitud, frecuencia y fase. La conversión de
+señales eléctricas en sonido y la reciproca, se demuestra. Para cada
+experiencia, se realizan conexiones según el diagrama anexado.
+
+
+
+
+
 

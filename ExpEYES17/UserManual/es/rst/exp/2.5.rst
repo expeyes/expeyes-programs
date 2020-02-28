@@ -1,32 +1,25 @@
-.. 2.5
+.. 2.3
 
-Corriente continua y alterna
-----------------------------
+Medir una capacidad
+-------------------
 
 **Objetivo**
 
-Introducir el concepto de voltaje dependiente del tiempo, gracias a
-una curva :math:`U(t)`. Comparar las curvas continuas y alternas.
+Medir la capacidad de un capacitor.
 
-.. image:: schematics/ac-dc.svg
+.. image:: schematics/cap-measure.svg
 	   :width: 300px
-		   
+
 **Procedimiento**
 
--  Fijar PV1 en 2 V y fijar WG en 200 Hz
--  Activar el análisis en A1, para medir el amplitud y la frecuencia.
--  Activar A2
+-  Conectar el capacitor entre IN1 y GND.
+-  Hacer clic en «Capacidad en IN1» . No se debe tocar el
+   capacitor durante la medida.
 
 **Discusión**
 
-En la curva, si la linea del voltaje no cambia (si está horizontal), es
-corriente continua pura. Si el voltaje cambia con el tiempo, hay un
-componente alterno. Si el voltaje medio se anula, entonces es alterna
-pura. En la segunda curva, el voltaje cambia entre cero y cinco voltios;
-¿sería corriente alterna, continua, o cualquier otra cosa?
+Se ha utilizado un capacitor de :math:`100~pF` para esta actividad.
 
-.. image:: pics/ac-dc.png
-	   :width: 300px
-.. image:: pics/sqr-wave.png
-	   :width: 300px
+Se puede crear capacitores si se pega finas hojas de metal en ambas
+caras de un aislante como papel, poliestireno o vidrio.
 

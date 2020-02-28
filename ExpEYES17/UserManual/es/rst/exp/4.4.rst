@@ -1,38 +1,40 @@
-.. 4.4
+.. 4.2
    
-Respuesta transitoria del circuito RLC
---------------------------------------
+Respuesta de circuitos RC en régimen transitorio
+------------------------------------------------
 
-**Objectivo**
+**Objetivo**
 
-Explorar la naturaleza oscilatoria de la serialización L y C.
-La frecuencia de resonancia de un circuito LC en serie viene dada por
-:math:`f_0 = 1/(2\pi\sqrt{LC})`. El factor de amortiguación
-es :math:`R/(2\sqrt{LC})`, y vale 1 por
-la amortiguación
-crítica  (http://en.wikiversity.org/wiki/RLC\_circuit). De acuerdo a
-valores de C / L y R, la respuesta puede ser sub-amortiguada, amortiguada
-crítica o sobre-amortiguada.
+Trazar la evolución de la tensión a los terminales de un condensador, cuando 
+se cargue aplicando  un paso de voltaje a través de una resistencia. 
+Calcular el valor de la capacidad sobre la base de la curva.
 
-.. image:: schematics/RLCtransient.svg
+.. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RLC-curves.png
+.. image:: pics/RCtransient.png
 	   :width: 300px
 
 **Procedimiento**
 
--  Comenzar con el bobinado y un condensador de :math:`0,1~\mu F`
--  Clicar sobre *Échelon 5->0 V*. Ajuste el eje x  de las abscisas y
-   recomenzar si fuera necesario.
-- Ajustar el gráfico (FIT) para encontrar la frecuencia de resonancia y 
-  la amortiguación.
-- Recomenzar con resistencia entre OD1 y el bobinado.
-- Recomenzar el experimento con varios valores de R, L y C.
+-  En el menú «Electricidad», seleccionar el sub-menú «Circuito RC en régimen
+   transitorio».
+-  Hacer clic en los botones *Échelon 0->5V* et *Échelon 5->0V* para
+   mostrar los gráficos.
+-  Ajustar la escala horizontal si es necesario, y comenzar nuevamente.
+-  Calcular la constante de tiempo RC.
 
 **Discusión**
 
-Se utilizó el bobinado de 3000 vueltas y el condensador de :math:`0,1~\mu F`.El
-voltaje a través del condensador se muestra en la figura después de un
-paso 5-> 0 V.  . La frecuencia de resonancia medida está de acuerdo con
-:math:`f = 1/(2\pi\sqrt{LC})`, dada la tolerancia en los valores de los 
-componentes.
+Cuando se aplica un paso de 0 a 5 V, el voltaje a través del
+el condensador se aproxima exponencialmente a 5 V como se muestra en el
+Fig. modelando la curva de descarga por
+:math:`U(t) = U_0 \times e^{− t/RC}` , 
+podemos extraer la constante de tiempo RC y usarla para encontrar el
+valor de la capacidad.
+
+El voltaje a través de un condensador varía exponencialmente solo
+cuando se carga a través de un dipolo lineal, una resistencia por
+ejemplo. Si se carga utilizando una fuente de corriente constante, el
+el voltaje cambia linealmente, ya que :math:`Q = It = CU` , y el voltaje
+crece linealmente con el tiempo como
+:math:`U = (I/C) \times t`.

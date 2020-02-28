@@ -1,27 +1,40 @@
-.. 2.15
+.. 2.11
    
-Generar un sonido
------------------
+Voltaje de una pila de limón
+----------------------------
 
 **Objetivo**
 
-Generar un sonido con señales eléctricos, usando un zumbador
-piezo-eléctrico. Numerizar un sonido y medir su frecuencia. Utilizar
-un zumbador piezo-eléctrico o cualquier fuente sonora como diapasón.
+Crear una fuente de voltaje insertando placas delgadas de zinc y de cobre en un
+limón. Explorar las posibilidades de generar corriente, y la resistencia
+interna.
+
+.. image:: schematics/lemon-cell.svg
+	   :width: 300px
 
 **Procedimiento**
 
-.. image:: schematics/sound-generator.svg
-	   :width: 300px
-
--  Activar A1, y su análisis
--  Fijar WG en :math:`1000~Hz`, y después escuchar el sonido.
+-  Hacer clic en A1 para medir el voltaje.
+-  Medir el voltaje con y sin una resistencia de :math:`1~k\Omega`.
 
 **Discusión**
 
-Cuando se cambia la frecuencia de la señal que excita el piezo, la
-frecuencia y la intensidad del sonido cambian ambas. La intensidad es
-máxima cerca de :math:`3500~Hz`, debido a la resonancia. La frecuencia
-de resonancia de un zumbador piezo depende de su tamaño y de sus propiedades
-mecánicas.
+El voltaje entre zinc y cobre es aproximadamente 0.9 V. Cuando se
+conecta la resistencia, puede disminuir hasta cerca 0.33 V. Cuando
+se conecta la pila, la corriente comienza a fluir a través de la resistencia.
+Pero ¿por qué disminuye el voltaje?
+
+Cuál es la resistencia interna de la batería?
+
+La corriente es causada por el movimiento de cargas eléctricas y debe
+circular completamente. Esto significa que la corriente también tiene
+que pasar por la batería. Según la resistencia interna de la batería,
+parte del voltaje se pierde dentro de la propia batería. ¿Ocurrirá lo
+mismo con una pila seca nueva del comercio?
+
+
+
+
+
+
 

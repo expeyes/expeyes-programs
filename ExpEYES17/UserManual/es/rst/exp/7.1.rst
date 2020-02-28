@@ -1,417 +1,49 @@
-.. note::
-	    
-   Programas con interfaz gráfica descritos en los capítulos
-   anteriores están previstos para un conjunto determinado de
-   experimentos. Para desarrollar nuevas experiencias, uno debe saber
-   cómo acceder a las funcionalidades de expEYES por
-   software. Llamadas de funciones importantes para comunicarse con el
-   dispositivo se dan a continuación.
-
-Establecer la conexión
-""""""""""""""""""""""
-
-Para acceder al hardware EYES17, los módulos Python para ``eyes17``
-debe estar instalado Se supone que están en un directorio
-denominado ``eyes17``, que podría estar en su directorio personal
-o sobre « Python PATH ».
-
-**Todos los programas deben comenzar con las siguientes dos líneas:**
-
-.. code-block:: python
-
-   import eyes17.eyes
-   p = eyes17.eyes.open()
-
-La variable ``p`` es el objeto de software que representa el hardware.
-
-Las siguientes secciones explican las llamadas a la función Python para
-acceder al hardware EYES17. Cada llamada a la función se explica
-con un ejemplo de uso.
-
-set_pv1(v), set_pv2(v)
-""""""""""""""""""""""
-
-Ajusta el voltaje de CC en PV1 y PV2. El intervalo para PV1 es
-de -5 a 5. El intervalo para PV2 est de -3,3 a 3,3.
-
-.. code-block:: python
-
-   print p.set_pv1(4)
-   print p.set_pv2(2.1)
-
-Se muestra el valor asignado a la salida. Medir los voltajes
-con un voltímetro
-
-get_voltage(entrada)
-""""""""""""""""""""
-
-Devuelve el voltaje de la entrada especificada.
-
-.. code-block:: python
-
-   print p.get_voltage('A1')
-   print p.get_voltage('A2')
-   print p.get_voltage('A3')
-   print p.get_voltage('MIC')
-   print p.get_voltage('SEN')
-
-Conectar PV1 en A1, y utilizar ``set_pv1()`` y ``get_voltage('A1')``
-juntos. Esta función ajusta la plantilla de entrada por prueba y
-error, dependiendo del valor de la señal de entrada..
-
-get_voltage_time(entrada)
-"""""""""""""""""""""""""
-
-Devuelve una tupla, que contiene el sello de fecha de la computadora 
-y el voltaje en la entrada especificada..
-
-.. code-block:: python
-
-   print p.get_voltage_time('A1')
-
-
-get_resistance()
-""""""""""""""""
-
-Devuelve el valor de la resistencia conectada en SEN, que debería ser
-entre :math:`100~\Omega` y :math:`100~k\Omega` para una precisión razonable.
-
-..code-block:: python
-
-   print p.get_resistance()
-
-
-get_capacitance()
-"""""""""""""""""
-
-Devuelve el valor de la capacidad conectada en IN1 (funciona bien 
-en el dominio de :math:`pF`)
-
-.. code-block:: python
-
-   print p.get_capacitance()
-
-
-get_version()
-"""""""""""""
-
-Devuelve la versión del firmware.
-
-.. code-block:: python
-
-   print p.get_version()
-
-get_temperature()
-""""""""""""""""""
-
-Devuelve la temperatura del procesador dentro de EYES17
-
-.. code-block:: python
-
-   print p.get_temperature()
-
-
-set_state(SALIDA=valor)
-"""""""""""""""""""""""
-
-Establece el estado lógico de la salida OD1, SQ1, etc. 
-Conectar OD1 en A1 y lanzar :
-
-.. code-block:: python
-
-   p.set_state(OD1=1)
-   print p.get_voltage('A1')
-
-
-set_sine(frecuencia)
-""""""""""""""""""""
-
-Genera la señal sinusoidal de la frecuencia solicitada en WG (intervalo
-de :math:`5~Hz` a :math:`5000~Hz`). Todos los valores intermedios no son 
-posibles, la función devuelve el valor realmente adoptado.
-
-.. code-block:: python
-
-   print p.set_sine(502)
-
-``502.00803``
-
-set_sine_amp(amplitud)
-""""""""""""""""""""""
-
-La amplitud se puede establecer en tres valores de voltaje preestablecidos en las
-cresta (0 para tener :math:`80~mV`, 1 para tener :math:`1~V`, 3 para tener :math:`3~V`).
-
-.. code-block:: python
-
-   p.set_sine_amp(2)
-
-Ajusta la amplitud en :math:`3~V` cresta.
-
-set_sqr1(frecuencia)
-""""""""""""""""""""
-
-Ajusta la frecuencia de la salida SQ1 (intervalo de :math:`4~Hz` en :math:`1~MHz`).
-Todos los valores intermedios no son posibles, la función devuelve 
-el valor realmente adoptado.
-
-.. code-block:: python
-
-   print p.set_sqr1(15030)
-
-``15030.53``
-
-set_sqr1_slow(frecuencia)
-"""""""""""""""""""""""""
-
-Ajusta la frecuencia de la salida SQ1 (intervalo de :math:`0,1~Hz` a :math:`1~MHz`).
-Todos los valores intermedios no son posibles, la función devuelve 
-el valor realmente adoptado. La resolución está bien, pero 
-WG está deshabilitado cuando se ordena SQ1 de esta manera.
-
-.. code-block:: python
-
-   print p.set_sqr1_slow(0.5)
-
-
-set_sqr2(frecuencia)
-""""""""""""""""""""
-
-Similar a set_sqr1() pero SQ2 no está disponible al mismo tiempo 
-que WG, sólo se puede usar una de las dos salidas a la vez.
-
-set_sqr1(frecuencia, cicloDeTrabajo)
-""""""""""""""""""""""""""""""""""""
-
-Ajusta la frecuencia de la salida SQ1 (intervalo de :math:`0,1~Hz` a :math:`1~MHz`).
-Todos los valores intermedios no son posibles, la función 
-devuelve el valor realmente adoptado.
-
-.. code-block:: python
-
-   print p.set_sqr1(1000, 30)          #1000 Hz, ciclo de trabajo 30%
-
-
-get_freq(entrada)
-"""""""""""""""""
-
-Mide la frecuencia de una señal cuadrada en la entrada, IN2 o SEN. Conectar 
-SQ1 en IN2 e iniciar el código:
-
-.. code-block:: python
-
-   p.set_sqr1(1000)
-   print p.get_freq('IN2')
-
-
-duty_cycle(entrada)
-"""""""""""""""""""
-
-Mide el ciclo de trabajo de una onda cuadrada, IN2 oo SEN. Conectar
-SQ1 en IN2 y lanzar el còdigo :
-
-.. code-block:: python
-
-   p.set_sqr1(1000, 30)
-   print p.duty_cycle('IN2')
-
-
-r2ftime(entrada1, entrada2)
-"""""""""""""""""""""""""""
-
-Mide el intervalo de tiempo entre un flanco ascendente en la entrada1 
-hasta un flanco descendente en la entrada2, las entradas pueden ser 
-las mismas. Se puede usar para probar una onda cuadrada.
-
-Conectar SQ1 en IN2 y lanzar el código :
-
-.. code-block:: python
-
-   p.set_sqr1(1000, 30)
-   print p.r2ftime('IN2', 'IN2')
-
-``0.0003``
-
-La señal cuadrada en :math:`1~kHz`con una relación cíclica del 30% tiene 
-un período de de :math:`1~ms` y permanece en el estado ALTO durante :math:`0,3~ms`.
-
-multi_r2rtime(entrada, nCiclos)
-"""""""""""""""""""""""""""""""
-
-Mide el intervalo de tiempo entre dos bordes ascendentes de la entrada
-``entrada``. La duración entre dos bordes ascendentes es un ciclo.
-Se puede especificar el número de ciclos a medir, el valor predeterminado 
-es 1. Los valores permitidos son 1,2,4,8,12,16,32 y 48. Esto se puede probar con 
-una señal cuadrada.
-
-Conectar SQ1 en IN2 y lanzar el código :
-
-.. code-block:: python
-
-   p.set_sqr1(1000)
-   print p.multi_r2rtime('IN2', 8)
-
-``0.008``
-
-select_range(canal, calibre)
-""""""""""""""""""""""""""""
-
-Los calibres para A1 y A2 se pueden ajustar desde :math:`\pm0.5~V`
-hasta :math:`\pm16~V`, utilizando amplificadores de ganancia programables.
-
-.. code-block:: python
-
-   p.select_range('A1', 4)         # 4 volt maximum
-   p.select_range('A1', 8)         # 8 volt maximum
-
-
-capture1(entrada, nMuestras, intervaloTiempo)
-"""""""""""""""""""""""""""""""""""""""""""""
-
-Escanea la entrada especificada. El número de muestras puede subir hasta
-10000. La duración entre dos muestras consecutivas se da en 
-microsegundos (intervalo de :math:`2` a :math:`1000~\mu s`).
-
-.. code-block:: python
-
-   print p.capture1('A1', 5, 5)
-
-mostrará dos tablas de fechas y voltajes.
-
-Cuando necesite crear un gráfico del voltaje de salida para 
-una mejor comprensión, puede hacerlo utilizando el módulo ``matplotlib``,
-importado a través de la interfaz ``pylab``. Conectar WG en A1 con la ayuda
-un hilo y tirar :
-
-.. code-block:: python
-
-   from pylab import *
-   p.set_sine_amp(2)
-   p.set_sine(1000)
-   p.select_range('A1', 4)
-   t,v = p.capture1('A1', 300, 10)
-   plot(t,v)
-   show()
-
-El resultado de este código se da a continuación.
-
-.. image:: pics/sine.png
-	   :width: 400px
-
-
-capture2(nMuestras, intervaloTiempo)
-""""""""""""""""""""""""""""""""""""
-
-Escanea las entradas A1 y A2 simultáneamente. El número de muestras 
-puede ser de hasta 10000. La duración entre dos muestras consecutivas 
-se da en microsegundos (intervalo de :math:`2` a :math:`1000~\mu s`).
-
-Conectar WG en A1, y un diodo entre A1 y A2. Iniciar el siguiente código :
-
-.. code-block:: python
-
-   from pylab import *
-   p.set_sine_amp(2)
-   p.set_sine(1000)
-   p.select_range('A1', 4)
-   t,v,tt,vv = p.capture2(300, 10)
-   plot(t,v)
-   plot(tt,vv)
-   show()
-
-El resultado de este código se da a continuación.
-
-.. image:: pics/halfwave.png
-	   :width: 400px
-.. image:: pics/capture4.png
-	   :width: 400px
-
-capture4(nMuestras, intervaloTiempo)
-""""""""""""""""""""""""""""""""""""
-
-Escanea las entradas A1, A2, A3 y MIC simultáneamente. El número de muestras 
-puede ser de hasta 10000. La duración entre dos muestras consecutivas 
-se da en microsegundos (intervalo de :math:`2` a :math:`1000~\mu s`).
-
-Conectar WG en A3 e inicie el código que figura a continuación. El resultado
-se muestra a continuación.
-
-.. code-block:: python
-
-   from pylab import *
-   p.set_sine_amp(2)
-   p.set_sine(1000)
-   p.select_range('A1', 4)
-   res = p.capture4(300, 10)
-   plot(res{[}4{]},res{[}5{]})        # A3
-   plot(res{[}6{]},res{[}7{]})        # MIC
-   show()
-
-
-set_wave(frecuencia, tipoDeSenal)
-"""""""""""""""""""""""""""""""""
-
-Si el parámetro ``tipoDeSenal`` no está especificado, esto genera
-una signal señal utilizando la tabla de ondas existente. Si ``tipoDeSenal``
-está especificada ``'sine'`` ou ``'tria'``, la tabla de onda
-correspondiente está cargada.
-
-.. code-block:: python
-
-   from pylab import *
-   p.set_wave(1000, 'sine')
-   p.set_wave(100)          # frec. 100Hz con la tabla corriente
-   x,y = p.capture1('A1', 500,50)
-   plot(x,y)
-   p.set_wave(100, 'tria')  # tabla de onda triangular y 100 Hz
-   x,y = p.capture1('A1', 500,50)
-   plot(x,y)
-   show()
-
-
-load_equation(funcion, intervalo)
-"""""""""""""""""""""""""""""""""
-
-Crea la tabla de ondas usando la ecuación. Conecte WG a A1 e 
-inicia el código siguiente. El resultado se muestra a continuación.
-
-.. code-block:: python
-
-   from pylab import *
+.. 6.5
    
-   def f1(x):
-       return sin(x) + sin(3*x)/3
-       
-   p.load_equation(f1, [-pi,pi])
-   p.set_wave(400)
-   x,y = p.capture1('A1', 500,10)
-   plot(x,y)
-   show()
+Medición de la temperatura con una sonda PT100
+------------------------------------------------
 
-.. image:: pics/loadEquation.png
-	   :width: 400px
-.. image:: pics/loadTable.png
-	   :width: 400px
+**Objetivo**
+
+Registrar la temperatura de un líquido con un termómetro de 
+resistencia de platino. La resistencia de un módulo PT100 
+depende de la temperatura por la relación
+:math:`R(T) = R_0 (1 + AT + BT^2)`, donde
+:math:`A = 3,9083 \times 10^{−3}` et :math:`B =  − 5,775 \times 10^{−7}`.
 
 
-load_table(tabla)
-"""""""""""""""""
+.. image:: schematics/pt100.svg
+	   :width: 300px
+.. image:: pics/pt100-screen.png
+	   :width: 300px
 
-También puede cargar la tabla de ondas con una matriz de 512 elementos.
-Conecte WG a A1 e inicie el código a continuación. Después de la operación 
-de valor absoluto, la tabla comienza con 256, luego baja a 0 y finalmente 
-vuelve a 255, que dibuja una señal triangular.
-El resultado debido a esta tabla se muestra arriba.
+**Procedimiento**
 
-.. code-block:: python
+-  Ingresar el error de compensación de ganancia y el valor actual de CSS
+-  Seleccionar el rango de temperatura y los intervalos de tiempo
+-  Seleccionar los parámetros requeridos y haga clic en INICIAR
 
-   from pylab import *
-   x = arange(-256, 256)
-   x = abs(x)
-   p.load_table(x)
-   p.set_wave(400)
-   x,y = p.capture1('A1', 500, 10)
-   plot(x,y)
-   show()
+**Discusión**
+
+En la figura se muestra un gráfico de refrigeración del agua de 
+un recipiente.
+
+Para medir la resistencia de un elemento PT100, se conecta entre CSS 
+y GND y se mide la tensión en sus terminales. Es posible medir el valor exacto 
+de CSS utilizando un multímetro o midiendo la tensión en los terminales de resistencia 
+conocida. La entrada de A3 se amplifica 11 veces conectando una resistencia 
+de  :math:`1~k\Omega` entre Rg y GND.
+
+La resistencia de una sonda PT100 es :math:`1000~\Omega` en :math:`0^\circ C`. Ella cambia 
+practicamente de :math:`0,4~\Omega /^\circ C`, modificando el voltaje de
+:math:`0, 4~mV`. La
+salida del convertidor analógico digital cambia un bit de peso bajo para un cambio 
+de :math:`1,22~mV` en la tensión de entrada, por lo tanto un cambio de temperatura 
+de menos de 3°C no sería siempre detectada. Se utiliza un amplificador no inversor 
+para aumentar la resolución. La ganancia de este amplificador deberá ser tal que temperatura 
+máxima medida da un voltaje de salida inferior a 3,3 V. Modificar el campo «Ganancia» según sea.
+
+
+
 
 

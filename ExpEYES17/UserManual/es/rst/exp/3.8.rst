@@ -1,26 +1,25 @@
-.. 3.8
+.. 3.6
    
-Integrado de amplificador operacional
--------------------------------------
+Amplificador inversor
+-----------------------
 
 **Objetivo**
 
-Conectar un integrado de amplificador operacional y probarlo.
+Cablear un amplificador inversor con un ampli-op y probarlo.
 
-.. image:: schematics/opamp-int.svg
+.. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
 **Procedimiento**
 
--  Ajustar la amplitud de WG en 80 mv y la frecuencia en 1000 Hz 
--  Activar A1 y A2 con opción de análisis 
--  Seleccionar el calibre 1 V para A1 y A2
--  Hacer les connexions et observer la salida.
--  Cambiar la ganancia modificando los valores de las resistencias.
+-  Ajustar la amplitud de WG a 80 mv y la frecuencia a 1000 Hz
+-  Activar A1 y A2 con opción de análisis.
+-  Seleccionar el calibre 1 V para A1 y A2.
+-  Hacer las conexiones y mirar la salida.
+-  Cambiar la ganancia modificando los valores de resistencia.
 
 **Discusión**
 
-Se puede observar la ganancia por la amplitud, pero también el 
-desfase en los resultados.
-
+Podemos observar la ganancia por la amplitud, pero también el cambio de fase en
+los resultados.
 

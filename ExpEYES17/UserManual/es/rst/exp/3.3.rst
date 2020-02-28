@@ -1,25 +1,40 @@
-.. 3.3
+.. 3.2
    
-Desfase utilizando un diodo de unión PN
--------------------------------------------
+Rectificación de onda completa con diodos a unión PN
+----------------------------------------------------
 
 **Objetivo**
 
-Demostrar el desfase de una señal alterna en diferentes niveles,
-utilizando un diodo de unión PN.
+Realizar un rectificador de onda completa, con dos diodos. Se necesitan
+dos señales alternas, desfasadas de 180 grados. Estos son proporcionados
+por WG y :math:`\overline{WG}`.
 
-.. image:: schematics/clipping.svg
+.. image:: schematics/fullwave.svg
 	   :width: 300px
-.. image:: pics/clipping.png
+.. image:: pics/fullwave.png
 	   :width: 300px
 
 **Procedimiento**
 
--  Hacer las conexiones y observar las salidas.
--  Cambiar PV1 y observar el cambio en las salidas.
+-  Realizar las conexiones.
+-  Activar A1, A2 y A3
+-  Fijar WG en 200 Hz y ajustar la base de tiempo para ver 4 o 5
+   ciclos.
 
 **Discusión**
 
-El nivel de desfase está condicionado por el voltaje continuo aplicado
-y por la caída de voltaje del diodo.
+Se deja cómo ejercicio par el lector, reducir la fluctuación de
+voltaje gracias a un capacitor. Esta experiencia está aquí únicamente
+para mostrar el funcionamiento de una rectificación de onda completa, no
+puede producir más que escasos miliamperios de corriente.
+
+¿Por qué sería una rectificación de onda completa superior a una
+rectificación de media onda?
+
+
+
+
+
+
+
 

@@ -1,34 +1,42 @@
-.. 3.12
+.. 3.10
    
-Característica de la salida (CE) de un transistor
--------------------------------------------------
+Divisor de reloj
+------------------
 
 **Objetivo**
 
-Trace la curva característica de salida de un transistor.  El
-colector está conectado a PV1 a través de una resistencia de :math:`1~k\Omega`.
-
-.. image:: schematics/transistor_out.svg
-	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
+Estudiar un divisor de reloj con una báscula D (familia TTL,
+7474).
 
 **Procedimiento**
 
--  Ajustar el voltaje básico a 1 V y COMENZAR.
--  Repetir para varios valores de la corriente básica.
+.. image:: schematics/clock-divider.svg
+	   :width: 300px
+
+-  Activar A1 y A2, ajustar sus calibres a 8 V 
+-  Regular SQ1 en 500 Hz
 
 **Discusión**
 
-Las curvas características para diferentes valores de la corriente de base 
-se muestran en la figura. La corriente de colector se obtiene a partir de la 
-diferencia de potencial en los terminaless de la resistencia de 
-:math:`1~k\Omega`.
+La salida cambia en cada borde ascendente en la entrada, de modo que 
+la frecuencia se divide por dos. La señal de salida es una onda cuadrada simétrica, 
+incluso si la señal de entrada tiene un ciclo de trabajo diferente. 
+El alto voltaje de salida de un TTL es cercano a 4V solamente.
 
-La corriente de la base depende del ajuste de la fuente de tensión en el 
-extremo de la resistencia de :math:`100~k\Omega`, el otro extremo estando
-conectado a la base. El valor de la corriente de base está dada por
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
-Si A2 no está conectado, el código considera un valor de 0.6 V para el
-base para calcular la corriente en ella.
++-------------------------------------------------------------------------+
+|.. image:: pics/clock-divider.png                                        |
+|	   :width: 300px                                                  |
+|.. image:: pics/clock-divider2.png                                       |
+|	   :width: 300px                                                  |
++-------------------------------------------------------------------------+
+| Figura 3.1 Un circuito divisor de reloj, utilizando una báscula D. Se   |
+| muestran las salidas para dos tipos diferentes de señal de entrada.     |
++-------------------------------------------------------------------------+
+
+
+
+
+
+
+
 

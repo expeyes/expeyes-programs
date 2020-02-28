@@ -1,48 +1,86 @@
-.. 3.1
-   
-Rectificación de media onda con una unión PN
---------------------------------------------
+Osciloscopio de cuatro canales, y más
+=====================================
 
-**Objetivo**
-
-Estudiar el funcionamiento de un diodo de unión PN como rectificador.
-Filtración RC para reducir las variaciones de voltaje (el componente
-alterno).
-
-.. image:: schematics/halfwave.svg
-	   :width: 300px
-.. image:: pics/halfwave.png
-	   :width: 300px
-
-**Procedimiento**
-
--  Hacer las conexiones y observar las salidas.
--  Conectar una resistencia de carga de :math:`1~k\Omega`, notar el cambio
-   de amplitud.
--  Conectar un capacitor de :math:`1 \mu F`,  y observar el efecto de filtración.
--  Probar varios valores de resistencia de carga y de capacitor de filtración.
-
-**Discusión**
-
-La parte negativa es bloqueada por el diodo come se muestra en la figura.
-Se nota también que la tensión disminuye cerca de 0.7 V en la
-mitad positiva, es la caída de voltaje en los terminales de un diodo de
-silicio, cuando la corriente fluye. Una resistencia de carga es necesaria
-para que el circuito funcione correctamente, se puede utilizar más de
-:math:`1~k\Omega`, pero QUE NO SE UTILICE menos, porque la fuente de corriente
-alterna no puede proporcionar más que :math:`5~mA`.
-
-Se puede ver que el capacitor se carga y después mantiene la tensión
-durante la parte vacía del ciclo.
-
-¿Se pueden utilizar capacitores de larga capacidad para reducir la fluctuación
-de voltaje?
-
-¿En qué parte del ciclo fluye la corriente en el diodo?
-
-¿De qué depende el valor de la corriente pico?
+Eyes17 viene con una aplicación cuya interfaz de usuario por defecto es un
+osciloscopio de cuatro canales mejorado.
 
 
+-  `Enlace a vídeos YouTube <https://www.youtube.com/channel/UCIHUjpPn9wf1aHElqLn1RJQ>`_
+
+-  El programa de osciloscopio de cuatro canales funciona aproximadamente
+   como un osciloscopio que tiene entradas nombradas
+   A1, A2, A3 y MIC.
+
+-  Ajustar la sensibilidad en X de la pantalla, con el cursor de Base de Tiempo,
+   generalmente para observar algunos periodos de la señal.
+
+-  Si la señal no está estable, seleccionar la fuente apropiada para la
+   función « trigger ». Si necesario ajustar el nivel del « trigger ».
+
+-  Se pueden registrar la curvas en un archivo, en formato texto. Se puede
+   extraer la transformada de Fourier y visualizar el espectro de
+   frecuencia de la señal de entrada.
+
+-  El programa de osciloscopio también tiene widgets de control en el
+   panel de derecha para acceder a la mayoría de la funciones de ExpEYES.
+
+-  Las entradas A1, A2, A3 y la resistencias conectadas en SEN son
+   medidas y sus valores son mostradas cada secunda. Pero esos valores
+   no tienen sentido cuando se conectan fuentes alternas.
+
+-  Para entradas en alterna, se pueden marcar las casillas a la derecha del
+   widget de cada canal para leer elvoltaje  pico y la frecuencia.
+
+-  La conexiones de entrada/salida de ExpEYES son brevemente descritas
+   aquí abajo.
+
+.. figure:: ./schematics/scope-outputs.svg
+   :width: 300px
+
+Conexiones de salida
+^^^^^^^^^^^^^^^^^^^^
+
+-  **CCS:** fuente de corriente constante de :math:`1.1\ mA`, se activa y se
+   desactiva marcando la casilla CCS.
+-  **PV1:** Tensión programable, en el intervalo :math:`\pm 5\ V`. Se
+   puede fijar gracias al cursor o por una entrada de texto.
+-  **PV2:** similar a PV1, pero por el intervalo :math:`- 3.3\ V` a :math:`+ 3.3\ V`
+-  **SQ1:** Generador de señal cuadrada, variando entre :math:`0` y :math:`5\ V`.
+   La frecuencia puede ser fijada entre :math:`1\ Hz` y :math:`5\ kHz`.
+-  **SQ2:** parecida a SQ1, pero disponible como opción de WG.
+-  **OD1:** Salida digital, su voltaje puede ser :math:`0` o :math:`5\ V`.
+-  **WG:** Generador de señal de baja frecuencia. Su frecuencia está entre :math:`1\ Hz`
+   y :math:`5\ kHz`. Se puede fijar su amplitud en :math:`3\ V`, :math:`1\ V`
+   o :math:`80\ mV`.
+   La señal puede ser sinusoidal, triangular o cuadrada. En modo señal
+   cuadrada, la salida está en SQ2, con una variación de :math:`0` a :math:`5\ V`.
+-  **-WG:** Salida de WG, invertida.
+
+.. figure:: ./schematics/scope-inputs.svg
+   :width: 300px
+
+Conexiones de entrada
+^^^^^^^^^^^^^^^^^^^^^
+
+-  **IN1:** Entrada para medir la capacidad de un capacitor. Un pulsador
+   permite iniciar la medida.
+-  **IN2:** Entrada para medir la frecuencia de señales digitales, que
+   varían entre :math:`0` y :math:`3`, hasta :math:`5\ V`.
+   Un pulsador permite iniciar la medida.
+-  **SEN:** Entrada para medir la resistencia. Este punto es conectado
+   internamente a :math:`3.3\ V` por una resistencia de  :math:`5.1\ k\Omega`.
+-  **A1:** Entrada de medida de voltaje, funciona cómo un voltímetros o cómo
+   osciloscopio. El rango máximo es :math:`\pm\ 16\ V`, se selecciona
+   el rango desde un menú desplegable. Se puede elegir el modo de
+   acoplamiento continuo/alterno con un contacto en dos posiciones en la caja.
+-  **A2:** parecido a A1, pero sin acoplamiento alterno.
+-  **A3:** Entrada de medida de voltaje para :math:`\pm\ 3.3\ V`. Se pueden
+   amplificar señales débiles conectando una resistencia entre Rg y GND.
+-  **MIC:** Entrada para micrófono (de condensador), su señal aparece cómo
+   canal numero cuatro del osciloscopio.
+-  **Rg:** Resistencia de ganancia para A3. :math:`Gan. = 1 + \frac{R_{g}}{100}`.
+   Por ejemplo, si se conecta una resistencia de :math:`1\ k\Omega` se logra
+   una ganancia de :math:`11`.
 
 
 

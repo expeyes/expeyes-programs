@@ -1,37 +1,38 @@
-.. 2.11
+.. 2.7
    
-Voltaje de una pila de limón
-----------------------------
+Separación de componentes continuo y alterno
+--------------------------------------------
 
 **Objetivo**
 
-Crear una fuente de voltaje insertando placas delgadas de zinc y de cobre en un
-limón. Explorar las posibilidades de generar corriente, y la resistencia
-interna.
-
-.. image:: schematics/lemon-cell.svg
-	   :width: 300px
+Separar los componentes alterno y continuo de una señal con un capacitor.
 
 **Procedimiento**
 
--  Hacer clic en A1 para medir el voltaje.
--  Medir el voltaje con y sin una resistencia de :math:`1~k\Omega`.
+.. image:: schematics/acdc-separating.svg
+	   :width: 300px
+.. image:: pics/acdc-sep-screen.png
+	   :width: 300px
+
+-  Fijar SQR1 en 500 Hz
+-  Activar A1 y A2
+   -  Ajustar la escala horizontal para observa algunos ciclos.
 
 **Discusión**
 
-El voltaje entre zinc y cobre es aproximadamente 0.9 V. Cuando se
-conecta la resistencia, puede disminuir hasta cerca 0.33 V. Cuando
-se conecta la pila, la corriente comienza a fluir a través de la resistencia.
-Pero ¿por qué disminuye el voltaje?
+Los señales observadas con y sin el capacitor en serie están mostrados
+en la figura. El voltaje oscila entre 0 y 5 V. Después de atravesar un
+capacitor, el voltaje oscila entre -2,5 V y +2,5 V.
 
-Cuál es la resistencia interna de la batería?
+¿Qué obtendría si restara 2.5 V de la coordenada de cada punto en el
+primer gráfico?  Eso es lo que hizo el condensador.  Se opuso al paso
+del componente en voltaje continuo.  El voltaje original puede
+considerarse como la superposición de un voltaje de alterno de 5 V
+(pico a pico) y un voltaje continuo de 2,5 V.
 
-La corriente es causada por el movimiento de cargas eléctricas y debe
-circular completamente. Esto significa que la corriente también tiene
-que pasar por la batería. Según la resistencia interna de la batería,
-parte del voltaje se pierde dentro de la propia batería. ¿Ocurrirá lo
-mismo con una pila seca nueva del comercio?
-
+Puede ser necesario conectar una resistencia entre A2 y GND para ver
+una señal oscilante entre -2.5 y +2.5 V. Quitar la resistencia y
+observar la señal.
 
 
 

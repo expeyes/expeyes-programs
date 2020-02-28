@@ -1,50 +1,46 @@
-.. 4.3
+.. 4.1
    
-Respuesta transitoria de circuitos RL
--------------------------------------
+Circuitos RLC, respuesta en estado estable
+--------------------------------------------
 
 **Objetivo**
 
-Explore la naturaleza de la corriente y el voltaje cuando se aplica un 
-paso de voltaje a una resistencia y un bobinado en serie.
-Al medir el voltaje en función del tiempo a través del devanado, es posible
-calcular su inductancia
+Estudiar el comportamiento del dipolo RLC en un circuito de corriente.
+alterna. Se pueden estudiar tres combinaciones diferentes.
 
-.. image:: schematics/RLtransient.svg
+.. image:: schematics/RCsteadystate.svg
 	   :width: 300px
-.. image:: pics/RLtransient.png
+.. image:: schematics/RLsteadystate.svg
 	   :width: 300px
-
-En el circuito RL, :math:`U = RI + L(dI/dt)` , la ecuaciòn
-que se resuelve en
-:math:`I = I_0 \times e^{− (R/L)t}`. El
-coeficiente del término exponencial R/L puede deducirse de la gráfica de la
-voltaje a través del devanado. La resistencia del devanado debe ser
-incluido en los cálculos, :math:`R = R_{ext} + R*_L`.
+.. image:: schematics/RLCsteadystate.svg
+	   :width: 300px
 
 **Procedimiento**
 
--  El devanado es el carrete de 3000 vueltas.
--  Hacer clic en los botones * Escalón 0-> 5V * y * Escalón 5-> 0V * para mostrar gráficos.
--  Ajustar la escala horizontal, si es necesario, y comenzar nuevamente.
--  Calcular el valor de la inductancia.
--  Insertar un núcleo de hierro en el bobinado y comenzar nuevamente.
+-  Hacer las conexiones una por una, de acuerdo con los diagramas.
+-  Tomar nota de las medidas de amplitud y fase, en cada caso
+-  Repetir las mediciones cambiando la frecuencia.
+-  Para el circuito de la serie RLC, se supervisa la unión entre L y C con A3.
+- Para resonancia, seleccionar :math:`C = 1~\mu F`,
+   :math:`L = 10~mH` et :math:`f = 1600~Hz`,ajustar f para obtener un cambio de fase cero
+- El voltaje total a través de L y C se acerca a cero, el voltaje de cada uno no está sincronizado con la resonancia
 
 **Discusión**
 
-La respuesta transitoria del circuito RL se muestra en la figura. La curva 
-exponencial se modela para extraer el valor de L / R. La resistencia 
-de la bobina se mide comparándola con la resistencia externa conocida, en 
-corriente continua. A2 está conectado a OD1 para una medición más precisa 
-de la resistencia del bobinado.
+El voltaje alterno de la fuente está en A1 y el voltaje a través de la resistencia en 
+A2. Si restamos los valores instantáneos de A2 de A1, obtenemos el voltaje 
+total a través de L y C. Use un bobinado con resistencia insignificante para 
+obtener buenos resultados. La diferencia de fase entre corriente y voltaje viene dada por
+:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
 
-Los voltajes aplicados son positivos, pero el gráfico va hacia
-voltajes negativos, ¿por qué?
+El voltaje total, el voltaje a través de R y el voltaje a través de
+LC se muestran en la figura. El diagrama de fases muestra el
+cambio de fase entre corriente y voltaje. El bobinado utilizado en 
+la experiencia tiene una inductancia de alrededor de :math:`10~mH` y una resistencia de
+:math:`20~\Omega`.
 
-¿Cuál era la corriente antes del inicio del paso 5-> 0 V? Cuál es la
-fuerza contraelectromotriz (*fcem*) ?
-
-Repita con dos bobinas en serie, (a) colocándolas una lejos de la otra, 
-(b) colocándolas una encima de la otra, (c) después de cambiar la orientación 
-de una de las dos . Podemos ver el efecto de la inducción mutua.
-
+Cuando :math:`1600~Hz`, :math:`Z_C \simeq Z_L` el voltaje en las terminales
+LC está determinado por la resistencia del devanado. A la frecuencia de
+resonancia, el voltaje a través de LC será mínimo, determinado por el
+Resistencia de bobinado. La entrada A3 está conectada entre L y C, entonces
+se pueden presentar los voltajes individuales de L y C.

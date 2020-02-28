@@ -1,37 +1,36 @@
-.. 4.6
+.. 4.5
    
-Análisis de Fourier
--------------------
+Diferenciación e integración RC
+---------------------------------
 
 **Objetivo**
 
-Estudie la transformada de Fourier de una señal. Representaciones 
-temporales y de frecuencia de una señal.
+Los circuitos RC pueden integrar o diferenciar una señal de voltaje
+en relación al tiempo. Si integramos una señal cuadrada obtenemos una señal
+triangular y si diferenciamos obtenemos picos en las
+transiciones.
+
+.. image:: schematics/RCintegration.svg
+	   :width: 300px
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
 
 **Procedimiento**
 
--  Conectar SQ1 a A1 y WG a A2. Establecer A1 en modo de acoplamiento alternativo (interruptor deslizante en la caja)
--  Activar A1 y A2, seleccionar el calibre en 4 V
--  Establecer WG y SQ1 a 500 Hz
--  Hacer clic en el botón FFT
+-  Seleccionar la opción de señal triangular para WG
+-  Establecer WG a 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
+-  Ajustar la escala horizontal para ver más de cuatro ciclos.
+-  Repetir lo mismo para el diferenciador RC, con :math:`50~Hz`.
 
 **Discusión**
 
-En el gráfico de la transformada de Fourier, la frecuencia está 
-en el eje x y el eje, y muestra la intensidad relativa de los 
-componentes de frecuencia de la señal. Esto se llama representación 
-de frecuencia (http://en.wikipedia.org/wiki/Fourier\_transform).
-En el caso de la señal sinusoidal solo hay un pico dominante, los picos
-más pequeños son una medida de distorsión de señal sinusoidal.
+La integración de una señal triangular da una forma parabólica y la diferenciación
+da una forma cuadrada. La diferenciación solo se puede mostrar a baja frecuencia. 
+Probar esto para otras formas de señales, por ejemplo, onda cuadrada. 
+Si integramos una señal cuadrada se supone que debemos obtener una señal
+triangular.
 
-Una señal cuadrada puede ser representada con 
-:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
-En la transformada de Fourier de una señal de frecuencia cuadrada *f* , habrá 
-un componente *3 f* (cuya amplitud es un tercio del componente *f*),
-un componente *5 f* (amplitud un quinto), etc. como se muestra en
-la figura.
-
-.. image:: pics/sqwaveFFT.png
+.. image:: pics/RCintegration.png
 	   :width: 300px
-.. image:: pics/sinewaveFFT.png
+.. image:: pics/RCdifferentiation.png
 	   :width: 300px

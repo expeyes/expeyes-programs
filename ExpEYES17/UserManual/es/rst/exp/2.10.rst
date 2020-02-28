@@ -1,28 +1,30 @@
-.. 2.10
+.. 2.6
    
-Foto-resistencia
-----------------
+Señal de antena alterna, debido al sector
+-----------------------------------------
 
 **Objetivo**
 
-Estudiar una foto-resistencia (LDR). Medir la intensidad de la luz y
-su variación con la distancia a la fuente.
+Estudiar la alimentación del sector con corriente alterna. Explorar el
+fenómeno de la propagación de voltajes alternativos a través del
+espacio.
 
-.. image:: schematics/ldr.svg
+.. image:: schematics/line-pickup.svg
 	   :width: 300px
-
+		   
 **Procedimiento**
 
--  Medir la resistencia de la LDR, para varias intensidades de luz.
--  Iluminar la LDR con una làmpara fluorescente, supuestamente A1 mostrará
-   variaciones.
--  Fijar A1 en modo alterno y medir la frecuencia de la oscilación.
+-  Conectar un largo trozo de cable eléctrico en A3
+-  Colocar el otro extremo del cable eléctrico cerca de un cable eléctrico conectado a la red eléctrica (nunca toque el cable).
+-  Activar A3, y su análisis.
 
 **Discusión**
 
-La resistencia varia de :math:`1~k\Omega` hasta cerca :math:`100~k\Omega`
-según la luz que la ilumina. El voltaje es proporcional a la resistencia
-(si la corriente no cambia). La resistencia baja cuando la iluminación
-sube. Si se utiliza una fuente de luz puntual, la resistencia aumenta
-supuestamente como el cuadrado de la distancia entre foto-resistencia y
-fuente de luz.
+La señal de antena del sector está mostrada abajo: hay cinco ciclos en
+100 ms. Sin hacer ninguna conexión, ¿cómo es posible recuperar un
+voltaje alterno de la red eléctrica? ¿Por qué cambia el valor del
+voltaje cuando se toca el cable conectado en A3 con el mano?
+
+.. image:: pics/pickup.png
+	   :width: 300px
+
