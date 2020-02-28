@@ -4,7 +4,7 @@ ExpEYES എന്ന ഉപകരണവുമായി എങ്ങനെ പര
 
 **ഔട്ട്പുട്ട് ടെർമിനലുകൾ** 
 
-.. figure:: ./images/scope-outputs.png
+.. figure:: ./schematics/scope-outputs.svg
    :width: 300px
 
 - CCS : കോൺസ്റ്റന്റ്  കറന്റ്  സോഴ്സ് 
@@ -24,7 +24,7 @@ ExpEYES എന്ന ഉപകരണവുമായി എങ്ങനെ പര
 
  **ഇൻപുട്ട്  ടെർമിനലുകൾ**
 
-.. figure:: ./images/scope-inputs.png
+.. figure:: ./schematics/scope-inputs.svg
    :width: 300px
 
 

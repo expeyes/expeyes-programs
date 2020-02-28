@@ -34,7 +34,7 @@ osciloscopio de cuatro canales mejorado.
 -  La conexiones de entrada/salida de ExpEYES son brevemente descritas
    aquí abajo.
 
-.. figure:: ./images/scope-outputs.png
+.. figure:: ./schematics/scope-outputs.svg
    :width: 300px
 
 Conexiones de salida
@@ -56,7 +56,7 @@ Conexiones de salida
    cuadrada, la salida está en SQ2, con una variación de :math:`0` a :math:`5\ V`.
 -  **-WG:** Salida de WG, invertida.
 
-.. figure:: ./images/scope-inputs.png
+.. figure:: ./schematics/scope-inputs.svg
    :width: 300px
 
 Conexiones de entrada

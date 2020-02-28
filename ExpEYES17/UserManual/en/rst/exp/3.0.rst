@@ -32,7 +32,7 @@ Four-channel oscilloscope, and much more
 
 -  The ExpEYES Input/Output terminals are briefly described below.
 
-.. figure:: ./images/scope-outputs.png
+.. figure:: ./schematics/scope-outputs.svg
    :width: 300px
 
 Output Terminals
@@ -53,7 +53,7 @@ Output Terminals
    In Square mode the output is on SQ2, with :math:`0` to :math:`5\ V` swing.
 -  **-WG:** Inverted output of WG
 
-.. figure:: ./images/scope-inputs.png
+.. figure:: ./schematics/scope-inputs.svg
    :width: 300px
 
 Input Terminals
