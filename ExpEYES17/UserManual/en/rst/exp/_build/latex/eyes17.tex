@@ -2726,6 +2726,400 @@ fixed set of experiments. To develop new experiments, one should know
 how to access the features of expEYES from software. Important function
 calls used for communicating with the device is given below.
 
+\begin{sphinxadmonition}{note}{Note:}
+The GUI programs described in the previous sections are meant for a
+fixed set of experiments. To develop new experiments, one should know
+how to access the features of expEYES from software. Important function
+calls used for communicating with the device is given below.
+\end{sphinxadmonition}
+
+
+\section{Establish Connection}
+\label{\detokenize{9.0:establish-connection}}\label{\detokenize{9.0::doc}}
+To access the EYES17 hardware, the python modules for eyes17 must be
+installed. They should be inside a directory named eyes17, that could be
+in your home directory or on the Python PATH. \sphinxstylestrong{Every program should
+start with the following 2 lines}
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import} \PYG{n+nn}{eyes17.eyes}
+\PYG{n}{p} \PYG{o}{=} \PYG{n}{eyes17}\PYG{o}{.}\PYG{n}{eyes}\PYG{o}{.}\PYG{n}{open}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+The variable \sphinxcode{\sphinxupquote{p}} is the software object, representing the hardware.
+
+The following sections explains the Python function calls to access the
+eyes17 hardware. Each function call will be explained with an example
+usage.
+
+
+\section{set\_pv1(v), set\_pv2(v)}
+\label{\detokenize{9.0:set-pv1-v-set-pv2-v}}
+Sets the DC voltages at PV1 and PV2. PV1 range is -5 to 5. PV2 range is
+-3.3 to 3.3.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}pv1}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}pv2}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+The value set is printed. Measure the voltages using a meter.
+
+
+\section{get\_voltage(input)}
+\label{\detokenize{9.0:get-voltage-input}}
+Returns the voltage at the specified input.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A3}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{MIC}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{SEN}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+Connect PV1 to A1 and use the set\_pv1() and get\_voltage together. This
+function sets the input range by trial
+
+and error, depending on the input signal.
+
+
+\section{get\_voltage\_time(input)}
+\label{\detokenize{9.0:get-voltage-time-input}}
+Returns a tuple, containing the computer’s time stamp and the voltage at
+the specified input
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage\PYGZus{}time}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{get\_resistance()}
+\label{\detokenize{9.0:get-resistance}}
+Returns the value of resistance connected to SEN, it should be between
+100 Ohm and 100k for reasonable accuracy.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}resistance}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{get\_capacitance()}
+\label{\detokenize{9.0:get-capacitance}}
+Returns the value of capacitance connected to IN1 (works well in pF
+ranges)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}capacitance}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{get\_version()}
+\label{\detokenize{9.0:get-version}}
+Returns the version number of the Firmware
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}version}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{get\_temperature()}
+\label{\detokenize{9.0:get-temperature}}
+Returns the temperature of the processor inside eyes17
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}temperature}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{set\_state(OUPUT=value)}
+\label{\detokenize{9.0:set-state-ouput-value}}
+Sets the output of OD1, SQ1 etc. Connect OD1 to A1 and run
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}state}\PYG{p}{(}\PYG{n}{OD1}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}voltage}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{set\_sine(frequency)}
+\label{\detokenize{9.0:set-sine-frequency}}
+Generates the sinewave of requested frequency on WG (range from 5Hz to
+5000Hz). All intermediate values are not possible, function returns the
+actual value set.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine}\PYG{p}{(}\PYG{l+m+mi}{502}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+502.00803
+
+
+\section{set\_sine\_amp(amplitude)}
+\label{\detokenize{9.0:set-sine-amp-amplitude}}
+The amplitude can be set to 3 pre-defined values of the peak voltage (
+0-\textgreater{} 80mV, 1-\textgreater{} 1V, 2-\textgreater{} 3V)
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine\PYGZus{}amp}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+Sets the amplitude to 3 volts peak.
+
+
+\section{set\_sqr1(frequency)}
+\label{\detokenize{9.0:set-sqr1-frequency}}
+Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{15030}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+15030.53
+
+
+\section{set\_sqr1\_slow(frequency)}
+\label{\detokenize{9.0:set-sqr1-slow-frequency}}
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set. Resolution is high but WG is disabled when SQ1 is operated in this
+mode.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1\PYGZus{}slow}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{set\_sqr2(frequency)}
+\label{\detokenize{9.0:set-sqr2-frequency}}
+Similar to set\_sqr1() but SQ2 is not available along with WG, only one
+at a time.
+
+
+\section{set\_sqr1(frequency, dutyCyle)}
+\label{\detokenize{9.0:set-sqr1-frequency-dutycyle}}
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{)}          \PYG{c+c1}{\PYGZsh{} 1000Hz with 30\PYGZpc{} duty cycle}
+\end{sphinxVerbatim}
+
+
+\section{get\_freq(input)}
+\label{\detokenize{9.0:get-freq-input}}
+Measures the frequency of a square wave on the input, IN2 or SEN.
+Connect SQ1 to IN2 and run the code
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{get\PYGZus{}freq}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IN2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{duty\_cycle(input)}
+\label{\detokenize{9.0:duty-cycle-input}}
+Measures the duty cycle a square wave on the input, IN2 or SEN. Connect
+SQ1 to IN2 and run the code
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{duty\PYGZus{}cycle}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IN2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{r2ftime(input1, input2)}
+\label{\detokenize{9.0:r2ftime-input1-input2}}
+Measures the time interval between a rising edge on input1 to another
+one on input2, the inputs can be the same also. This can be tested using
+a square wave.
+
+Connect SQ1 to IN2 and run
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{30}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{r2ftime}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IN2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IN2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+0.0003
+
+The 1kHz square wave with 30\% duty cycle has a Period of one millisecond
+and stays HIGH for .3 milliseconds.
+
+
+\section{multi\_r2rtime(input, numCycles)}
+\label{\detokenize{9.0:multi-r2rtime-input-numcycles}}
+Measures the time interval between rising edges on input1. Time between
+2 edges is one cycle. Number of cycles to be measured also can be
+specified, default value is 1. The allowed values are 1,2,4,8,12,16,32
+and 48. This can be tested using a square wave.
+
+Connect SQ1 to IN2 and run
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sqr1}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{multi\PYGZus{}r2rtime}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{IN2}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+0.008
+
+
+\section{select\_range(channel, range)}
+\label{\detokenize{9.0:select-range-channel-range}}
+The input range of A1 and A2 can be set from \(\pm\)0.5V to \(\pm\)16V
+fullscale, using the programmable gain amplifiers.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} 4volt maximum}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} 8 volt maximum}
+\end{sphinxVerbatim}
+
+
+\section{select\_range(channel, range)}
+\label{\detokenize{9.0:id1}}
+The input range of A1 and A2 can be set from \(\pm\)0.5V to \(\pm\)16V
+fullscale, using the programmable gain amplifiers.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} 4volt maximum}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{p}{)}         \PYG{c+c1}{\PYGZsh{} 8 volt maximum}
+\end{sphinxVerbatim}
+
+
+\section{capture1(Input, Number of samples, time interval)}
+\label{\detokenize{9.0:capture1-input-number-of-samples-time-interval}}
+Digitizes the specified input. The number of samples could be upto
+10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k}{print} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+will print two arrays of time and voltage.
+
+We need to plot the graph of the output for a better understanding. This
+can be done using the matplotlib module, imported using the pylab
+interface. Connect WG to A1 with a wire and run;
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine\PYGZus{}amp}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{n}{t}\PYG{p}{,}\PYG{n}{v} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{300}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+The output of this code is given below.
+
+
+\section{capture2(Number of samples, time interval)}
+\label{\detokenize{9.0:capture2-number-of-samples-time-interval}}
+Digitizes the inputs A1 and A2 together. The number of samples could be
+upto 10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).
+
+Connect WG to A1 and a diode from A1 to A2. Run the code below
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine\PYGZus{}amp}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{n}{t}\PYG{p}{,}\PYG{n}{v}\PYG{p}{,}\PYG{n}{tt}\PYG{p}{,}\PYG{n}{vv} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture2}\PYG{p}{(}\PYG{l+m+mi}{300}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{v}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{tt}\PYG{p}{,}\PYG{n}{vv}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+The output of this code is given below.
+
+\noindent\sphinxincludegraphics[width=400\sphinxpxdimen]{{halfwave}.pdf}
+\noindent\sphinxincludegraphics[width=400\sphinxpxdimen]{{capture4}.pdf}
+
+
+\section{capture4(Number of samples, time interval)}
+\label{\detokenize{9.0:capture4-number-of-samples-time-interval}}
+Digitizes the inputs A1,A2,A3 and MIC together. The number of samples
+could be upto 10000. The time gap between two consecutive samples id
+given in microseconds (range 2 to 1000 usec).
+
+Connect WG to A3 and run the code given below. Result is shown above.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine\PYGZus{}amp}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}sine}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{select\PYGZus{}range}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{)}
+\PYG{n}{res} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture4}\PYG{p}{(}\PYG{l+m+mi}{300}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{)}        \PYG{c+c1}{\PYGZsh{} A3}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{6}\PYG{p}{]}\PYG{p}{,}\PYG{n}{res}\PYG{p}{[}\PYG{l+m+mi}{7}\PYG{p}{]}\PYG{p}{)}        \PYG{c+c1}{\PYGZsh{} MIC}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{set\_wave(frequency, wavetype)}
+\label{\detokenize{9.0:set-wave-frequency-wavetype}}
+If wavetype is not specified, it generates the waveform using the
+existing wave table. If wavetype is specified (‘sine’ or ‘tria’)
+
+corresponding wavetable is loaded.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}wave}\PYG{p}{(}\PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{sine}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}wave}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{)}       \PYG{c+c1}{\PYGZsh{} Sets 100Hz using the existing table}
+\PYG{n}{x}\PYG{p}{,}\PYG{n}{y} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}wave}\PYG{p}{(}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{tria}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}  \PYG{c+c1}{\PYGZsh{} Sets triagular wave table and generates 100Hz}
+\PYG{n}{x}\PYG{p}{,}\PYG{n}{y} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{load\_equation(function, span)}
+\label{\detokenize{9.0:load-equation-function-span}}
+Makes the wave table using the quation. Connect WG to A1 and run the
+code below. The output also is shown below.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+
+\PYG{k}{def} \PYG{n+nf}{f1}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{return} \PYG{n}{sin}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{+} \PYG{n}{sin}\PYG{p}{(}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{x}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{3}
+
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{load\PYGZus{}equation}\PYG{p}{(}\PYG{n}{f1}\PYG{p}{,} \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n}{pi}\PYG{p}{,}\PYG{n}{pi}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}wave}\PYG{p}{(}\PYG{l+m+mi}{400}\PYG{p}{)}
+\PYG{n}{x}\PYG{p}{,}\PYG{n}{y} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
+
+\section{load\_table(function, span)}
+\label{\detokenize{9.0:load-table-function-span}}
+The wave table can be loaded with a 512 element array. Connect WG to A1
+and run the code below. After taking the absolute value, the table
+starts with 256, goes down to zero and then goes upto 255, tracing a
+triagular wave. The tableoutput also is shown above.
+
+\begin{sphinxVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{pylab} \PYG{k+kn}{import} \PYG{o}{*}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{arange}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{256}\PYG{p}{,} \PYG{l+m+mi}{256}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{load\PYGZus{}table}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{set\PYGZus{}wave}\PYG{p}{(}\PYG{l+m+mi}{400}\PYG{p}{)}
+\PYG{n}{x}\PYG{p}{,}\PYG{n}{y} \PYG{o}{=} \PYG{n}{p}\PYG{o}{.}\PYG{n}{capture1}\PYG{p}{(}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{A1}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+m+mi}{500}\PYG{p}{,}\PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{sphinxVerbatim}
+
 
 
 \renewcommand{\indexname}{Index}

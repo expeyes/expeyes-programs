@@ -66,6 +66,7 @@ characteristics have a dedicated GUI.
    3.4
    3.5
    3.6
+   3.7
    3.8
    3.9
    3.10
@@ -164,4 +165,4 @@ calls used for communicating with the device is given below.
 .. toctree::
    :maxdepth: 2
 
-   7.1
+   9.0

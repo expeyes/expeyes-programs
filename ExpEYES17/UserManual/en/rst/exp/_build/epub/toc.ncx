@@ -558,9 +558,165 @@
     </navPoint>
     <navPoint id="navPoint92" playOrder="84">
       <navLabel>
-        <text>Temperature measurement using PT100</text>
+        <text>Establish Connection</text>
       </navLabel>
-      <content src="7.1.xhtml" />  
+      <content src="9.0.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint93" playOrder="85">
+      <navLabel>
+        <text>set_pv1(v), set_pv2(v)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-pv1-v-set-pv2-v" />  
+    </navPoint>
+    <navPoint id="navPoint94" playOrder="86">
+      <navLabel>
+        <text>get_voltage(input)</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-voltage-input" />  
+    </navPoint>
+    <navPoint id="navPoint95" playOrder="87">
+      <navLabel>
+        <text>get_voltage_time(input)</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-voltage-time-input" />  
+    </navPoint>
+    <navPoint id="navPoint96" playOrder="88">
+      <navLabel>
+        <text>get_resistance()</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-resistance" />  
+    </navPoint>
+    <navPoint id="navPoint97" playOrder="89">
+      <navLabel>
+        <text>get_capacitance()</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-capacitance" />  
+    </navPoint>
+    <navPoint id="navPoint98" playOrder="90">
+      <navLabel>
+        <text>get_version()</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-version" />  
+    </navPoint>
+    <navPoint id="navPoint99" playOrder="91">
+      <navLabel>
+        <text>get_temperature()</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-temperature" />  
+    </navPoint>
+    <navPoint id="navPoint100" playOrder="92">
+      <navLabel>
+        <text>set_state(OUPUT=value)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-state-ouput-value" />  
+    </navPoint>
+    <navPoint id="navPoint101" playOrder="93">
+      <navLabel>
+        <text>set_sine(frequency)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sine-frequency" />  
+    </navPoint>
+    <navPoint id="navPoint102" playOrder="94">
+      <navLabel>
+        <text>set_sine_amp(amplitude)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sine-amp-amplitude" />  
+    </navPoint>
+    <navPoint id="navPoint103" playOrder="95">
+      <navLabel>
+        <text>set_sqr1(frequency)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sqr1-frequency" />  
+    </navPoint>
+    <navPoint id="navPoint104" playOrder="96">
+      <navLabel>
+        <text>set_sqr1_slow(frequency)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sqr1-slow-frequency" />  
+    </navPoint>
+    <navPoint id="navPoint105" playOrder="97">
+      <navLabel>
+        <text>set_sqr2(frequency)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sqr2-frequency" />  
+    </navPoint>
+    <navPoint id="navPoint106" playOrder="98">
+      <navLabel>
+        <text>set_sqr1(frequency, dutyCyle)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-sqr1-frequency-dutycyle" />  
+    </navPoint>
+    <navPoint id="navPoint107" playOrder="99">
+      <navLabel>
+        <text>get_freq(input)</text>
+      </navLabel>
+      <content src="9.0.xhtml#get-freq-input" />  
+    </navPoint>
+    <navPoint id="navPoint108" playOrder="100">
+      <navLabel>
+        <text>duty_cycle(input)</text>
+      </navLabel>
+      <content src="9.0.xhtml#duty-cycle-input" />  
+    </navPoint>
+    <navPoint id="navPoint109" playOrder="101">
+      <navLabel>
+        <text>r2ftime(input1, input2)</text>
+      </navLabel>
+      <content src="9.0.xhtml#r2ftime-input1-input2" />  
+    </navPoint>
+    <navPoint id="navPoint110" playOrder="102">
+      <navLabel>
+        <text>multi_r2rtime(input, numCycles)</text>
+      </navLabel>
+      <content src="9.0.xhtml#multi-r2rtime-input-numcycles" />  
+    </navPoint>
+    <navPoint id="navPoint111" playOrder="103">
+      <navLabel>
+        <text>select_range(channel, range)</text>
+      </navLabel>
+      <content src="9.0.xhtml#select-range-channel-range" />  
+    </navPoint>
+    <navPoint id="navPoint112" playOrder="104">
+      <navLabel>
+        <text>select_range(channel, range)</text>
+      </navLabel>
+      <content src="9.0.xhtml#id1" />  
+    </navPoint>
+    <navPoint id="navPoint113" playOrder="105">
+      <navLabel>
+        <text>capture1(Input, Number of samples, time interval)</text>
+      </navLabel>
+      <content src="9.0.xhtml#capture1-input-number-of-samples-time-interval" />  
+    </navPoint>
+    <navPoint id="navPoint114" playOrder="106">
+      <navLabel>
+        <text>capture2(Number of samples, time interval)</text>
+      </navLabel>
+      <content src="9.0.xhtml#capture2-number-of-samples-time-interval" />  
+    </navPoint>
+    <navPoint id="navPoint115" playOrder="107">
+      <navLabel>
+        <text>capture4(Number of samples, time interval)</text>
+      </navLabel>
+      <content src="9.0.xhtml#capture4-number-of-samples-time-interval" />  
+    </navPoint>
+    <navPoint id="navPoint116" playOrder="108">
+      <navLabel>
+        <text>set_wave(frequency, wavetype)</text>
+      </navLabel>
+      <content src="9.0.xhtml#set-wave-frequency-wavetype" />  
+    </navPoint>
+    <navPoint id="navPoint117" playOrder="109">
+      <navLabel>
+        <text>load_equation(function, span)</text>
+      </navLabel>
+      <content src="9.0.xhtml#load-equation-function-span" />  
+    </navPoint>
+    <navPoint id="navPoint118" playOrder="110">
+      <navLabel>
+        <text>load_table(function, span)</text>
+      </navLabel>
+      <content src="9.0.xhtml#load-table-function-span" />  
     </navPoint>
   </navMap>
 </ncx>

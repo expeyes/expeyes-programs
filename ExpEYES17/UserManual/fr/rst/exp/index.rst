@@ -170,4 +170,4 @@ importants pour communiquer avec l'appareil sont donnés ci-dessous.
 .. toctree::
    :maxdepth: 2
 
-   7.1
+   9.0

@@ -101,3 +101,30 @@
 \contentsline {section}{\numberline {12.3}MPU6050}{64}{section.12.3}% 
 \contentsline {section}{\numberline {12.4}I2C Logger}{65}{section.12.4}% 
 \contentsline {chapter}{\numberline {13}Coding expEYES-17 in Python}{67}{chapter.13}% 
+\contentsline {section}{\numberline {13.1}Establish Connection}{67}{section.13.1}% 
+\contentsline {section}{\numberline {13.2}set\_pv1(v), set\_pv2(v)}{68}{section.13.2}% 
+\contentsline {section}{\numberline {13.3}get\_voltage(input)}{68}{section.13.3}% 
+\contentsline {section}{\numberline {13.4}get\_voltage\_time(input)}{68}{section.13.4}% 
+\contentsline {section}{\numberline {13.5}get\_resistance()}{68}{section.13.5}% 
+\contentsline {section}{\numberline {13.6}get\_capacitance()}{68}{section.13.6}% 
+\contentsline {section}{\numberline {13.7}get\_version()}{69}{section.13.7}% 
+\contentsline {section}{\numberline {13.8}get\_temperature()}{69}{section.13.8}% 
+\contentsline {section}{\numberline {13.9}set\_state(OUPUT=value)}{69}{section.13.9}% 
+\contentsline {section}{\numberline {13.10}set\_sine(frequency)}{69}{section.13.10}% 
+\contentsline {section}{\numberline {13.11}set\_sine\_amp(amplitude)}{69}{section.13.11}% 
+\contentsline {section}{\numberline {13.12}set\_sqr1(frequency)}{70}{section.13.12}% 
+\contentsline {section}{\numberline {13.13}set\_sqr1\_slow(frequency)}{70}{section.13.13}% 
+\contentsline {section}{\numberline {13.14}set\_sqr2(frequency)}{70}{section.13.14}% 
+\contentsline {section}{\numberline {13.15}set\_sqr1(frequency, dutyCyle)}{70}{section.13.15}% 
+\contentsline {section}{\numberline {13.16}get\_freq(input)}{70}{section.13.16}% 
+\contentsline {section}{\numberline {13.17}duty\_cycle(input)}{71}{section.13.17}% 
+\contentsline {section}{\numberline {13.18}r2ftime(input1, input2)}{71}{section.13.18}% 
+\contentsline {section}{\numberline {13.19}multi\_r2rtime(input, numCycles)}{71}{section.13.19}% 
+\contentsline {section}{\numberline {13.20}select\_range(channel, range)}{71}{section.13.20}% 
+\contentsline {section}{\numberline {13.21}select\_range(channel, range)}{72}{section.13.21}% 
+\contentsline {section}{\numberline {13.22}capture1(Input, Number of samples, time interval)}{72}{section.13.22}% 
+\contentsline {section}{\numberline {13.23}capture2(Number of samples, time interval)}{72}{section.13.23}% 
+\contentsline {section}{\numberline {13.24}capture4(Number of samples, time interval)}{73}{section.13.24}% 
+\contentsline {section}{\numberline {13.25}set\_wave(frequency, wavetype)}{74}{section.13.25}% 
+\contentsline {section}{\numberline {13.26}load\_equation(function, span)}{74}{section.13.26}% 
+\contentsline {section}{\numberline {13.27}load\_table(function, span)}{74}{section.13.27}% 
