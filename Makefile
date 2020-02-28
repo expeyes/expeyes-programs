@@ -70,19 +70,19 @@ install:
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
 	# for expeyes-clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
-	# for eyes17 (documentation and help files)
-	make -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
 
 install_indep:
 	for d in $(SUBDIRS_INDEP); do \
 	  make -C $$d install DESTDIR=$(DESTDIR); \
 	done
+	# for eyes17 (documentation and help files)
+	make -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
 
 
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
-	  [ ! -f $$d/Makefile ] || make -C $$d clean; \
+	  [ ! -f $$d/Makefile ] || make -C $$d distclean || make -C $$d clean; \
 	done
 	# clean the bootloader hex file
 	make -C microhope/firmware clean

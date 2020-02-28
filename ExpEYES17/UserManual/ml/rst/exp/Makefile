@@ -134,8 +134,14 @@ latex:
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
-.PHONY: latexpdf
+.PHONY: latexpdf latexpdf0
 latexpdf:
+	@echo "========================================="
+	@echo "|| Not building PDF file for Malayalam ||"
+	@echo "|| This is a known BUG!                ||"
+	@echo "========================================="
+
+latexpdf0:
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo copying a few files
 	cp cover/*.pdf $(BUILDDIR)/latex
