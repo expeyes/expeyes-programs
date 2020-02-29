@@ -161,7 +161,36 @@ pythonCodes = [
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum'), 'rodpend']
 ]
 
-languages = ['fr_FR','en_IN', 'es_ES', 'ml_IN']
+class Language:
+	def __init__(self, name, finished=True):
+		"""
+		the constructor
+		:param name: the name of the language, for example "de_DE"
+		:param finished: boolean stating whether the translation is OK; True by default
+		"""
+		self.name = name
+		self.finished = finished
+
+	def __str__(self):
+		if self.finished:
+			return self.name
+		else:
+			return f"{self.name} (experimental)"
+
+	def flag(self, imagePath):
+		"""
+		:param imagePath: directory containing language flags
+		:return: the path to an image if available for this language
+		"""
+		result=os.path.join(imagePath, f"{self.name}.svg")
+		if os.path.exists(result):
+			return result
+		else:
+			return ""
+
+languages = [
+	Language('fr_FR'),Language('en_IN'), Language('es_ES', False),
+	Language('ml_IN'), Language('kd_IN', False)]
 
 
 #---------------------------------------------------------------------
@@ -460,9 +489,9 @@ class MainWindow(QMainWindow):
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
 		for e in languages:
-			action = sm.addAction(e,  lambda item=e: self.setLanguage(item))
-			flag=os.path.join(imagePath, f"{e}.svg")
-			if os.path.exists(flag):
+			action = sm.addAction(str(e),  lambda item=str(e): self.setLanguage(item))
+			flag=e.flag(imagePath)
+			if flag:
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
 		em = bar.addMenu(self.tr("School Expts"))

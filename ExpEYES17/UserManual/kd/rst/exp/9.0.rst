@@ -1,0 +1,246 @@
+..  UNTRANSLATED
+
+ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ 
+---------------------------------------
+കുറേ പരീക്ഷണങ്ങൾക്കു വേണ്ടിയുള്ള GUI പ്രോഗ്രാമുകൾ ലഭ്യമാണെങ്കിലും പുതിയ പരീക്ഷണങ്ങൾ വികസിപ്പിച്ചെടുക്കാൻ പൈത്തൺ ഭാഷയിൽ ExpEYES ഉമായി ആശയവിനിമയം നടത്താൻ അറിഞ്ഞിരിക്കണം. അതിനുവേണ്ട വിവരങ്ങളാണ് ഈ അദ്ധ്യായത്തിന്റെ ഉള്ളടക്കം. വോൾടേജ് സെറ്റ് ചെയ്യുക, വോൾടേജ് അളക്കുക, വേവ്ഫോം ജനറേറ്റ്  ചെയ്യുക തുടങ്ങി എല്ലാ പ്രവൃത്തികളും പൈത്തൺ ഭാഷയിലെ ഓരോ കമാന്റുകൾ ഉപയോഗിച്ചാണ് നടപ്പാക്കുന്നത് . 
+
+ഏറ്റവുമാദ്യം വേണ്ടത്   ExpEYESന്റെ പൈത്തൺ മൊഡ്യൂൾ ഇമ്പോർട്  ചെയ്യുകയും ഡിവൈസുമായി ബന്ധം സ്ഥാപിക്കുകയുമാണ്.  eyes17 എന്ന പാക്കേജിനകത്തെ eyes എന്ന മൊഡ്യൂളാണ്  ഇതിനാവശ്യം. കോഡ് താഴെക്കൊടുത്തിരിക്കുന്നു.
+
+.. code-block:: python
+
+   import eyes17.eyes
+   p = eyes17.eyes.open()
+
+കംപ്യൂട്ടറിന്റെ ഏതെങ്കിലും USB പോർട്ടിൽ ExpEYES കണ്ടെത്തിയാൽ റിട്ടേൺ ചെയ്യുന്ന വേരിയബിൾ ( p ) ഉപയോഗിച്ചാണ് ഡിവൈസിലേക്ക്  കമാന്റുകൾ അയക്കുന്നത്. ശ്രമം പരാജയപ്പെട്ടാൽ 'None' എന്ന പൈത്തൺ ഡാറ്റാടൈപ്പാണ് റിട്ടേൺ ചെയ്യുക. താഴെക്കൊടുത്ത രണ്ടു വരി കോഡ് വേണമെങ്കിൽ ഉൾപ്പെടുത്താം. sys മൊഡ്യൂൾ കൂടി ഇമ്പോർട് ചെയ്തിരിക്കണം.
+
+.. code-block:: python
+
+   if p == None:
+	print ("Device Not Detected')
+	sys.exit()
+
+താഴെക്കൊടുത്തിരിക്കുന്ന ഉദാഹരണങ്ങളെല്ലാം തന്നെ open() ഫങ്ക്ഷൻ റിട്ടേൺ ചെയ്ത 'p' എന്ന വേരിയബിൾ ഉപയോഗിക്കും. മൊഡ്യൂൾ ഇമ്പോർട് ചെയ്യാനും ഡിവൈസ് കണക്ട് ചെയ്യാനുമുള്ള രണ്ടുവരി കോഡ് എല്ലാ പ്രോഗ്രാമ്മുകളുടെയും തുടക്കത്തിൽ ഉണ്ടായിരിക്കണം. 
+
+വോൾട്ടേജ് സെറ്റ് ചെയ്യാനും അളക്കാനും
+-------------------------------
+**PV1, PV2 എന്നീ ടെർമിനലുകളിൽ DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ** : set_pv1(v), set_pv2(v)
+
+.. code-block:: python
+
+   p.set_pv1(2.5)
+   p.set_pv2(-1.2)
+
+**A1 ,  A2, A3, SEN എന്നീ ഇൻപുട്ടുകൾ റീഡ് ചെയ്യാൻ** : get_voltage(input)
+
+.. code-block:: python
+
+   print (p.get_voltage('A1'))
+   print (p.get_voltage('A2'))
+   print (p.get_voltage('A3'))
+   print (p.get_voltage('SEN')
+
+**A1, A2, A3, SEN എന്നിവ ടൈംസ്റ്റാമ്പൊടെ റീഡ് ചെയ്യാൻ** : get_voltage_time(input)
+
+.. code-block:: python
+
+   print (p.get_voltage_time('A1'))
+
+**OD1, SQ1, SQ2  എന്നീ ഔട്പുട്ടുകളിൽ  DC ലെവൽ  സെറ്റ് ചെയ്യാൻ** : set_state(OUPUT=value)
+
+.. code-block:: python
+
+   p.set_state(OD1=1)   #set OD1 to HIGH, 5 volts
+
+റെസിസ്റ്റൻസ്, കപ്പാസിറ്റൻസ് അളക്കാൻ 
+--------------------------------
+
+**SENൽ ഘടിപ്പിച്ചിരിക്കുന്ന റെസിസ്റ്റൻസ്  അളക്കാൻ** : get_resistance()
+
+.. code-block:: python
+
+   print (p.get_resistance())
+
+**IN1ൽ ഘടിപ്പിച്ചിരിക്കുന്ന കപ്പാസിറ്റൻസ്  അളക്കാൻ** : get_resistance()
+
+.. code-block:: python
+
+   print (p.get_resistance())
+
+വേവ്ഫോമുകൾ സെറ്റ് ചെയ്യാൻ
+----------------------------
+
+**WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  സൈൻ വേവ്  സെറ്റ് ചെയ്യാൻ** : set_sine(frequency)
+
+.. code-block:: python
+
+   print (p.set_sine(502))
+
+502.00803
+
+എല്ലാ ആവൃത്തികളും സാദ്ധ്യമല്ലാത്തതിനാൽ ഏറ്റവുമടുത്തുള്ള സാദ്ധ്യമായ ആവൃത്തി സെറ്റ് ചെയ്ത് ആ വാല്യൂ റിട്ടേൺ ചെയ്യുന്നു. 500 ഹെർട്സിനു  പകരം 502.00803 ഹെർട്സ് ആണ് സെറ്റ് ചെയ്ത ആവൃത്തി.
+
+**WG യുടെ ആംപ്ലിട്യൂഡ് സെറ്റ് ചെയ്യാൻ** : set_sine_amp(amplitude)
+
+.. code-block:: python
+
+   p.set_sine_amp(2)    # o for 80mV, 1 for 1Volts, 2 for 3Volts
+
+
+**SQR1ന്റെ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും സെറ്റ് ചെയ്യാൻ** : set_sqr1(frequency, dutyCyle)
+
+.. code-block:: python
+
+   print (p.set_sqr1(1000, 30))      # 1000Hz with 30% duty cycle
+   print (p.set_sqr1(1000))          # 1000Hz, default 50% duty cycle
+
+**SQR1 മാത്രമായി ഉയർന്ന റെസൊല്യൂഷനിൽ സെറ്റ് ചെയ്യാൻ** : set_sqr1_slow(frequency)
+
+.. code-block:: python
+
+   print (p.set_sqr1_slow(0.5))      # can set from 0.1Hz to 1MHz (but WG disabled)
+
+സമയവും ആവൃത്തിയും അളക്കാൻ 
+--------------------------
+
+**IN1ലെ സ്‌ക്വയർവേവിന്റെ ആവൃത്തി അളക്കാൻ** : get_freq(input)
+
+.. code-block:: python
+
+   p.set_sqr1(1000)		    # connect SQ1 to IN2
+   print (p.get_freq('IN2'))        # measure frequency of square wave on IN2
+
+
+**IN1ലെ സ്‌ക്വയർവേവിന്റെ   ഡ്യൂട്ടിസൈക്കിൾ  അളക്കാൻ** : duty_cycle(input)
+
+.. code-block:: python
+
+   p.set_sqr1(1000, 30)
+   print p.duty_cycle('IN2')       # measure duty cycle a square on IN2
+
+**രണ്ടു റൈസിംഗ് എഡ്ജുകൾ തമ്മിലുള്ള സമയം അളക്കാൻ** : r2ftime(input1, input2)
+
+.. code-block:: python
+
+   p.set_sqr1(1000, 30)
+   print p.r2ftime('IN2', 'IN2')   # time between rising edges on IN1 and IN2
+
+**സ്‌ക്വയർവേവിന്റെ  ടൈം പീരീഡ്  അളക്കാൻ** : multi_r2rtime(input, numCycles)
+
+.. code-block:: python
+
+   p.set_sqr1(1000)                 # connect SQ1 to IN2
+   print p.multi_r2rtime('IN2', 8)  # measure time for 8 cycles
+
+വേവ്ഫോം ഡിജിറ്റൈസ് ചെയ്യാൻ 
+--------------------------
+വേവ്ഫോമുകൾ ഡിജിറ്റൈസ് ചെയ്യാൻ capture1, capture2, capture4 എന്നിങ്ങനെ മൂന്ന് ഫങ്ക്ഷനുകൾ ഉണ്ട്.  ഏതെങ്കിലും ഒരൊറ്റ ഇൻപുട്ടിലെ വേവ് ഡിജിറ്റൈസ് ചെയ്യാൻ  capture1 ഉപയോഗിക്കാം. ഡിജിറ്റൈസ് ചെയ്യേണ്ട ഇൻപുട്ടിന്റെ പേര് , അളവുകളുടെ എണ്ണം, രണ്ടളവുകൾകിടക്കുള്ള സമയം എന്നീ വിവരങ്ങളാണ് capture1() ഫങ്ഷന് നൽകേണ്ടത്. അത് റിട്ടേൺ ചെയ്യുന്ന രണ്ടു arrayകളിൽ അളവുകൾ നടത്തിയ സമയവും ഓരോ അളവിലും കിട്ടിയ വോൾടട്ടെജുകളും ഉണ്ടായിരിക്കും. ഒരു capture1() കാളിൽ പരമാവധി 10000 അളവുകൾ ആകാം. തൊട്ടടുത്ത രണ്ട്  അളവുകൾക്കിടയിലെ ചുരുങ്ങിയ സമയം 1.5 മൈക്രോസെക്കൻഡാണ്. ഡിജിറ്റൈസ്  ചെയ്യുന്ന വേവിന്റെ ആവൃത്തിക്കനുസരിച്ചാണ് ഈ സമയം തീരുമാനിക്കുന്നത്. ഉദാഹരണത്തിന് 1000 ഹെർട്സ് വേവിന്റെ 4 സൈക്കിൾ കാപ്ച്ചർ ചെയ്യാൻ മൊത്തം 4000 മൈക്രോസെക്കൻഡ് വേണം. ഇതിനു 400 പോയിന്റുകൾ 10 മൈക്രോസെക്കൻഡ്  ഗ്യാപ്പിൽ കാപ്ച്ചർ ചെയ്യണം. 800 പോയിന്റുകളാണെങ്കിൽ 5 മൈക്രോസെക്കൻഡ്  മതി. capture ഫങ്ഷനുകൾ വിളിക്കുന്നതിന്‌ മുൻപ് ഇൻപുട്ടിന്റെ റേഞ്ച് സെറ്റ് ചെയ്തിരിക്കണം.
+
+**A1ന്റെയും A2വിന്റേയും റേഞ്ച് സെറ്റ്  ചെയ്യാൻ**
+
+.. code-block:: python
+
+   p.select_range('A1', 4)         # set to 4V, maximum is 16
+   p.select_range('A2', 16)        # set to 8 volt 
+
+**ഒരു വേവ്ഫോം ഡിജിറ്റൈസ് ചെയ്യാൻ** : capture1(Input, numSamples, timeGap) 
+
+.. code-block:: python
+
+   # Connect a wire from WG to A1
+   p.set_sine(1000)               
+   print p.capture1('A1', 5, 5)
+
+ചെറിയ എണ്ണം അളവുകളാണെങ്കിൽ റിസൾട്ട് പ്രിന്റ് ചെയ്തുകാണിക്കാം പക്ഷെ നൂറുകണക്കിന് ഡാറ്റപോയന്റുകൾ ഉണ്ടാവുമ്പോൾ ഗ്രാഫ് വരക്കുകയാണ് സാധാരണ ചെയ്യുക. താഴെക്കാണിച്ചിരിക്കുന്ന പ്രോഗ്രാം matplotlib ഉപയോഗിച്ച് ഗ്രാഫ് വരക്കുന്നതിന്റെ ഒരുദാഹരണമാണ്.
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   t,v = p.capture1('A1', 300, 10)
+   plot(t,v)
+   show()
+
+.. image:: pics/sine-mpl-screen.png
+	   :width: 400px
+
+
+**രണ്ടു  വേവ്ഫോമുകൾ ഒരുമിച്ചു ഡിജിറ്റൈസ് ചെയ്യാൻ** : capture2 (numSamples, timeGap) 
+
+രണ്ടു വേവ്ഫോമുകൾ തമ്മിലുള്ള ഫേസ് വ്യതാസം കണ്ടുപിടിക്കാൻ അവയെ ഒരുമിച്ചു കാപ്ച്ചർ ചെയ്യണം.  ഇതിനുള്ളതാണ്  capture2 ഫങ്ഷൻ. A1ഉം  A2വും ആയിരിക്കും ഇൻപുട്ടുകൾ. അളവുകളുടെ എണ്ണം, രണ്ടളവുകൾകിടക്കുള്ള സമയം എന്നിവയാണ് ഈ ഫങ്ഷന്റെ ഇൻപുട്ടുകൾ. സമയം, വോൾട്ടേജ് എന്നിവയുടെ രണ്ടു സെറ്റ്  arrayകൾ ഇത് റിട്ടേൺ ചെയ്യും.
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   t,v,tt,vv = p.capture2(300, 10)
+   plot(t,v)
+   plot(tt,vv)
+   show()
+
+.. image:: pics//halfwave-mpl-screen.png
+	   :width: 400px
+
+**നാലു വേവ്ഫോമുകൾ ഒരുമിച്ചു ഡിജിറ്റൈസ് ചെയ്യാൻ** : capture4  (numSamples, timeGap) 
+
+capture4() ഫങ്ക്ഷൻ  A1,A2,A3, MIC എന്നീ നാലു ഇൻപുട്ടുകളെയും ഒരുമിച്ച് ഡിജിറ്റൈസ് ചെയ്യുന്നു. നാലു സെറ്റ് , അതായത് എട്ട് arrayകൾ ഇത് റിട്ടേൺ ചെയ്യും.
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine_amp(2)
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   res = p.capture4(300, 10)
+   plot(res[4],res[5])        # A3
+   plot(res[6],res[7])        # MIC
+   show()
+
+.. image:: pics/capture4-mpl-screen.png
+	   :width: 400px
+	   
+WG വേവ് ടേബിൾ
+---------------
+512 അക്കങ്ങളുള്ള ഒരു പട്ടികയുപയോഗിച്ചാണ്  WG യിലെ വേവ്ഫോം ഉണ്ടാക്കുന്നത്. ഇതിൽ സംഭരിച്ചിരിക്കുന്ന അക്കങ്ങളെ തുടർച്ചയായി ആനുപാതികമായ ഒരു വോൾട്ടേജാക്കി മാറ്റി WG യിലേക്കയക്കുന്നു. ഈ ടേബിളിലെ അക്കങ്ങളാണ് തരംഗത്തിന്റെ ആകൃതി നിർണയിക്കുന്നത്. ഒരിക്കൽ ടേബിൾ സെറ്റ് ചെയ്താൽ അടുത്തതവണ സെറ്റ് ചെയ്യുന്നത് വരെ അത് പ്രാബല്യത്തിലിരിക്കും. ഫങ്ക്ഷൻ ഉപയോഗിച്ച് ടേബിൾ ലോഡ് ചെയ്യാൻ പറ്റും.  ടേബിൾ ലോഡ് ചെയ്ത ശേഷം ആവശ്യമുള്ള ആവൃത്തിയിൽ വേവ് സെറ്റ് ചെയ്യാം. 
+
+**WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  വേവ്ഫോം  സെറ്റ് ചെയ്യാൻ** : set_wave(frequency, wavetype)
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_wave(1000, 'sine')
+   p.set_wave(100)       # Sets 100Hz using the existing table
+   time.sleep(0.2)
+   x,y = p.capture1('A1', 500,50)
+   plot(x,y)
+   p.set_wave(100, 'tria')  # Sets triagular wave table and generates 100Hz
+   time.sleep(0.2)
+   x,y = p.capture1('A1', 500,50)
+   plot(x,y)
+   show()
+
+
+**ഫങ്ക്ഷൻ  ലോഡ് ചെയ്യാൻ** : p.load_equation(function, span)
+
+.. code-block:: python
+
+   from pylab import *
+
+   def f1(x):
+       return sin(x) + sin(3*x)/3 
+
+   p.load_equation(f1, [-pi,pi])
+   p.set_wave(400)
+   x,y = p.capture1('A1', 500,10)
+   plot(x,y)
+   show()
+
+.. image:: pics/load-equation-mpl-screen.png
+	   :width: 400px
+	   
+.. image:: pics/load-table-mpl-screen.png
+	   :width: 400px
+
+
+
