@@ -1,0 +1,16 @@
+Measuring Resistance parallel combination
+=========================================
+
+**Objective**
+
+For parallel combination of resistors, this relation exists between
+the effective resistance :math:`R` and the components:
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+
+.. image:: ./schematics/res-parallel.svg
+   :width: 300px
+
+**Procedure for two resistors**
+
+-  Connect both resistors between SEN and any Ground terminal
+-  Observe the value shown on the right side panel

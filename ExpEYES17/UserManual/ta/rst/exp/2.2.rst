@@ -1,0 +1,18 @@
+.. 2.2
+
+Measuring Resistance
+====================
+
+**Objective**
+
+ExpEYES has a terminal marked **SEN**, that can be used for measuring
+resistances in the range of :math:`100~\Omega` to :math:`100~k\Omega`.
+You can also study the series and parallel combination of resistors.
+
+.. image:: ./schematics/res-measure.svg
+   :width: 300px	   
+
+**Procedure**
+
+-  Connect the resistor between SEN and any Ground terminal
+-  Observe the value shown on the right side panel
