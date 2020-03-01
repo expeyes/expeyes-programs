@@ -47,6 +47,11 @@ help:
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*
+	cd cover; rm -f *.aux *.log *~
+
+.PHONY: distclean
+distclean: clean
+	cd cover; rm -f *.pdf
 
 .PHONY: html
 html:
@@ -141,7 +146,13 @@ latexpdf:
 	@echo "|| This is a known BUG!                ||"
 	@echo "========================================="
 
-latexpdf0:
+cover/coverpage.pdf: cover/coverpage.tex
+	cd cover; pdflatex coverpage.tex
+
+cover/preface.pdf: cover/preface.tex
+	cd cover; pdflatex preface.tex
+
+latexpdf0: cover/coverpage.pdf cover/preface.pdf
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo copying a few files
 	cp cover/*.pdf $(BUILDDIR)/latex

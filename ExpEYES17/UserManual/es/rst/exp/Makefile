@@ -47,6 +47,11 @@ help:
 .PHONY: clean
 clean:
 	rm -rf $(BUILDDIR)/*
+	cd cover; rm -f *.aux *.log *~
+
+.PHONY: distclean
+distclean: clean
+	cd cover; rm -f *.pdf
 
 .PHONY: html
 html:
@@ -134,8 +139,14 @@ latex:
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
+cover/coverpage.pdf: cover/coverpage.tex
+	cd cover; pdflatex coverpage.tex
+
+cover/preface.pdf: cover/preface.tex
+	cd cover; pdflatex preface.tex
+
 .PHONY: latexpdf
-latexpdf:
+latexpdf: cover/coverpage.pdf cover/preface.pdf
 	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo copying a few files
 	cp cover/*.pdf $(BUILDDIR)/latex

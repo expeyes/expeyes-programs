@@ -1,5 +1,8 @@
 .buildinfo
 
+*/rst/exp/_build/html/*
+*/rst/exp/_build/doctrees/*
+
 */rst/exp/_build/epub/*
 !*/rst/exp/_build/epub/eyes17.epub
 
@@ -17,3 +20,6 @@ doctrees/
 */rst/qt5HTML/
 
 *.zip
+
+*.aux
+*.log
