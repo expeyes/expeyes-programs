@@ -612,7 +612,7 @@ For Driven Pendulum Expt.</translation>
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R to Ground</source>
-        <translation type="unfinished">R from A1 to Ground</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="102"/>
@@ -622,7 +622,7 @@ For Driven Pendulum Expt.</translation>
     <message>
         <location filename="../plotIV.py" line="75"/>
         <source>Starting PV1</source>
-        <translation type="unfinished">Sweep PV1 from</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="117"/>
@@ -1318,7 +1318,7 @@ shows the actual frequency set.
     <message>
         <location filename="../XYplot.py" line="58"/>
         <source>Voltage (A1)</source>
-        <translation type="unfinished">Voltage (A2) {1)?}</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="164"/>
@@ -2009,82 +2009,82 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="46"/>
         <source>No immediate application</source>
-        <translation type="unfinished">No immediate application</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="47"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished">Please restart the application to lighten the screen&apos;s background</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="48"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished">Please restart the application to darken the screen&apos;s background.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="25"/>
         <source>Device</source>
-        <translation type="unfinished">Device</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="38"/>
         <source>Reconnect</source>
-        <translation type="unfinished">Reconnect</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="39"/>
         <source>LightBackGround next time</source>
-        <translation type="unfinished">LightBackGround next time</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="40"/>
         <source>DarkBackGround next time</source>
-        <translation type="unfinished">DarkBackGround next time</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="41"/>
         <source>Choose Language</source>
-        <translation type="unfinished">Choose Language</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="26"/>
         <source>School Expts</source>
-        <translation type="unfinished">School Expts</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="27"/>
         <source>Electronics</source>
-        <translation type="unfinished">Electronics</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="28"/>
         <source>Electrical</source>
-        <translation type="unfinished">Electrical</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="29"/>
         <source>Sound</source>
-        <translation type="unfinished">Sound</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="30"/>
         <source>Mechanics</source>
-        <translation type="unfinished">Mechanics</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="31"/>
         <source>Other Expts</source>
-        <translation type="unfinished">Other Expts</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="32"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">I2C Modules</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="33"/>
         <source>PythonCode</source>
-        <translation type="unfinished">PythonCode</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
