@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="kn_IN" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="kn_IN" sourcelanguage="en">
 <context>
     <name>Dialog</name>
     <message>
@@ -1958,7 +1957,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="298"/>
+        <location filename="../main.py" line="327"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2181,97 +2180,97 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="373"/>
+        <location filename="../main.py" line="402"/>
         <source>Failed to load scope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="403"/>
+        <location filename="../main.py" line="432"/>
         <source>Failed to load %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="444"/>
+        <location filename="../main.py" line="473"/>
         <source>No immediate application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="432"/>
+        <location filename="../main.py" line="461"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="444"/>
+        <location filename="../main.py" line="473"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="456"/>
+        <location filename="../main.py" line="485"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="457"/>
+        <location filename="../main.py" line="486"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="458"/>
+        <location filename="../main.py" line="487"/>
         <source>LightBackGround next time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="459"/>
+        <location filename="../main.py" line="488"/>
         <source>DarkBackGround next time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="460"/>
+        <location filename="../main.py" line="489"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="468"/>
+        <location filename="../main.py" line="497"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="472"/>
+        <location filename="../main.py" line="501"/>
         <source>Electronics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="479"/>
+        <location filename="../main.py" line="508"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="483"/>
+        <location filename="../main.py" line="512"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="487"/>
+        <location filename="../main.py" line="516"/>
         <source>Mechanics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="491"/>
+        <location filename="../main.py" line="520"/>
         <source>Other Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="495"/>
+        <location filename="../main.py" line="524"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="499"/>
+        <location filename="../main.py" line="528"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="521"/>
+        <location filename="../main.py" line="550"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2279,7 +2278,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="202"/>
+        <location filename="../main.py" line="231"/>
         <source>Help: %s</source>
         <translation type="unfinished"></translation>
     </message>
