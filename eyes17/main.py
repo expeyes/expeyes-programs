@@ -229,7 +229,7 @@ class helpWin(QWebView):
 			fn = self.foundFirstHelp(name[1])
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
-		self.setMaximumSize(QSize(500, 1200))
+		#self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
