@@ -104,7 +104,7 @@
         <translation>Diode Zéner</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation type="unfinished">Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
     </message>
@@ -219,7 +219,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="79"/>
+        <location filename="../tof.py" line="81"/>
         <source>sqr1 set to </source>
         <translation type="unfinished"></translation>
     </message>
@@ -334,17 +334,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation type="unfinished"></translation>
     </message>
@@ -851,42 +851,42 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation type="unfinished"></translation>
     </message>
@@ -971,17 +971,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="184"/>
-        <source>Device Reconnected</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../scope.py" line="184"/>
-        <source>Cal:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../scope.py" line="205"/>
+        <location filename="../scope.py" line="209"/>
         <source>Error. Could not connect. Check cable. </source>
         <translation type="unfinished"></translation>
     </message>
@@ -996,92 +986,92 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="468"/>
+        <location filename="../scope.py" line="472"/>
         <source>FFT Error</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="277"/>
+        <location filename="../scope.py" line="281"/>
         <source>Time: %6.2fmS </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="286"/>
+        <location filename="../scope.py" line="290"/>
         <source>%s:%6.2fV </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="342"/>
+        <location filename="../scope.py" line="346"/>
         <source>%s input is clipped. Increase range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="355"/>
+        <location filename="../scope.py" line="359"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="383"/>
+        <location filename="../scope.py" line="387"/>
         <source>A%d %5.3f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="385"/>
+        <location filename="../scope.py" line="389"/>
         <source>A%d</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="390"/>
+        <location filename="../scope.py" line="394"/>
         <source>%5.0f Ohm</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="392"/>
+        <location filename="../scope.py" line="396"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="438"/>
+        <location filename="../scope.py" line="442"/>
         <source>Range of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="438"/>
+        <location filename="../scope.py" line="442"/>
         <source> set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="628"/>
+        <location filename="../scope.py" line="632"/>
         <source>Output Changed from WG to SQ2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="678"/>
+        <location filename="../scope.py" line="682"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="682"/>
+        <location filename="../scope.py" line="686"/>
         <source> pF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="685"/>
+        <location filename="../scope.py" line="689"/>
         <source> nF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="688"/>
+        <location filename="../scope.py" line="692"/>
         <source> uF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="701"/>
+        <location filename="../scope.py" line="705"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="703"/>
+        <location filename="../scope.py" line="707"/>
         <source>No signal</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1144,7 +1134,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="71"/>
+        <location filename="../tof.py" line="73"/>
         <source> Seconds</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1219,22 +1209,22 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="39"/>
+        <location filename="../tof.py" line="41"/>
         <source>Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="65"/>
+        <location filename="../tof.py" line="67"/>
         <source>start..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="71"/>
+        <location filename="../tof.py" line="73"/>
         <source>Time of flight =</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Error. Try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1331,6 +1321,21 @@ shows the actual frequency set.
     <message>
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="185"/>
+        <source>Calibrated </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="187"/>
+        <source>Not Calibrated </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="188"/>
+        <source>Device Reconnected:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2100,7 +2105,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="327"/>
+        <location filename="../main.py" line="331"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2188,97 +2193,97 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="402"/>
+        <location filename="../main.py" line="407"/>
         <source>Failed to load scope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="432"/>
+        <location filename="../main.py" line="438"/>
         <source>Failed to load %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="473"/>
+        <location filename="../main.py" line="479"/>
         <source>No immediate application</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="461"/>
+        <location filename="../main.py" line="467"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="473"/>
+        <location filename="../main.py" line="479"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="485"/>
+        <location filename="../main.py" line="491"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="486"/>
+        <location filename="../main.py" line="492"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="489"/>
+        <location filename="../main.py" line="495"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="487"/>
+        <location filename="../main.py" line="493"/>
         <source>LightBackGround next time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="488"/>
+        <location filename="../main.py" line="494"/>
         <source>DarkBackGround next time</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="497"/>
+        <location filename="../main.py" line="503"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="501"/>
+        <location filename="../main.py" line="507"/>
         <source>Electronics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="508"/>
+        <location filename="../main.py" line="514"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="512"/>
+        <location filename="../main.py" line="518"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="516"/>
+        <location filename="../main.py" line="522"/>
         <source>Mechanics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="520"/>
+        <location filename="../main.py" line="526"/>
         <source>Other Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="524"/>
+        <location filename="../main.py" line="530"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="528"/>
+        <location filename="../main.py" line="534"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="550"/>
+        <location filename="../main.py" line="556"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2286,7 +2291,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="231"/>
+        <location filename="../main.py" line="233"/>
         <source>Help: %s</source>
         <translation type="unfinished"></translation>
     </message>

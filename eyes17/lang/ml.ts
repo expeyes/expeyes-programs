@@ -191,7 +191,7 @@
         <translation>I-V പ്ലോട്ടിങ്ങ് പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>ഈ പ്രോഗ്രാം WG റദ്ദ് ചെയ്തുകൊണ്ട്  SQ1നെ 0.1Hz മുതൽ 50Hz വരെ സൂക്ഷ്മമായി ഫ്രീക്വൻസി  മാറ്റാവുന്ന രീതിയിൽ സെറ്റ് ചെയ്യും. </translation>
     </message>
@@ -201,7 +201,7 @@
         <translation>SQ1 സെറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="79"/>
+        <location filename="../tof.py" line="81"/>
         <source>sqr1 set to </source>
         <translation>sqr1 സെറ്റ് ചെയ്തിരിക്കുന്നത് </translation>
     </message>
@@ -316,17 +316,17 @@
         <translation>സന്ദേശങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation>കോഡ് നടപ്പിലാക്കുക</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation>കോഡ് സേവ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation>കോഡ് സേവ് ചെയ്യുക</translation>
     </message>
@@ -811,37 +811,37 @@
         <translation>ഡാറ്റ വിശകലനം ചെയ്യാനാകുന്നില്ല &gt;എറർ</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation>F = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>ഫെയ്സ് ഡിഫറൻസ് = %5.1f deg</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
@@ -908,10 +908,10 @@
     <message>
         <location filename="../scope.py" line="184"/>
         <source>Device Reconnected</source>
-        <translation>ഡിവൈസുമായുള്ള ബന്ധം പുനസ്ഥാപിച്ചു</translation>
+        <translation type="obsolete">ഡിവൈസുമായുള്ള ബന്ധം പുനസ്ഥാപിച്ചു</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="205"/>
+        <location filename="../scope.py" line="209"/>
         <source>Error. Could not connect. Check cable. </source>
         <translation>എറർ.ബന്ധം പുനസ്ഥാപിക്കാനാകുന്നില്ല കേബിൾ ചെക്ക് ചെയ്യുക. </translation>
     </message>
@@ -926,72 +926,72 @@
         <translation>ഫ്രീക്വൻസി സ്പെക്ട്രം</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="468"/>
+        <location filename="../scope.py" line="472"/>
         <source>FFT Error</source>
         <translation>FFT എറർ</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="277"/>
+        <location filename="../scope.py" line="281"/>
         <source>Time: %6.2fmS </source>
         <translation>സമയം: %6.2fmS </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="286"/>
+        <location filename="../scope.py" line="290"/>
         <source>%s:%6.2fV </source>
         <translation>%s:%6.2fV </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="355"/>
+        <location filename="../scope.py" line="359"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation>%5.2f V, %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="383"/>
+        <location filename="../scope.py" line="387"/>
         <source>A%d %5.3f V</source>
         <translation>A%d %5.3f V</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="385"/>
+        <location filename="../scope.py" line="389"/>
         <source>A%d</source>
         <translation>A%d</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="390"/>
+        <location filename="../scope.py" line="394"/>
         <source>%5.0f Ohm</source>
         <translation>%5.0f ഓം</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="392"/>
+        <location filename="../scope.py" line="396"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation>റെസ്റ്റിസ്റ്റൻസ്: &lt;100Ohm  or  &gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="628"/>
+        <location filename="../scope.py" line="632"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>WG ൽ നിന്ന് SQ1 ലോട്ട് ഔട്ട്പുട്ട് മാറ്റിയിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="682"/>
+        <location filename="../scope.py" line="686"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="685"/>
+        <location filename="../scope.py" line="689"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="688"/>
+        <location filename="../scope.py" line="692"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="701"/>
+        <location filename="../scope.py" line="705"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="703"/>
+        <location filename="../scope.py" line="707"/>
         <source>No signal</source>
         <translation>സിഗ്നൽ ലഭ്യമല്ല</translation>
     </message>
@@ -1046,7 +1046,7 @@
         <translation>ഫീക്വൻസി = %5.0f Hz V = %5.3f</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="71"/>
+        <location filename="../tof.py" line="73"/>
         <source> Seconds</source>
         <translation> സെക്കണ്ട്സ്</translation>
     </message>
@@ -1091,22 +1091,22 @@
         <translation>സമയം Vs ദൂരം പ്ലോട്ട് പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="39"/>
+        <location filename="../tof.py" line="41"/>
         <source>Measure</source>
         <translation>അളക്കുക</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="65"/>
+        <location filename="../tof.py" line="67"/>
         <source>start..</source>
         <translation>തുടങ്ങുക..</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="71"/>
+        <location filename="../tof.py" line="73"/>
         <source>Time of flight =</source>
         <translation>ടൈം ഓഫ് ഫ്ലൈറ്റ് =</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Error. Try again</source>
         <translation>എറർ വീണ്ടും ശ്രമിക്കുക</translation>
     </message>
@@ -1208,7 +1208,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1233,27 +1233,22 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="184"/>
-        <source>Cal:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../scope.py" line="342"/>
+        <location filename="../scope.py" line="346"/>
         <source>%s input is clipped. Increase range</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="438"/>
+        <location filename="../scope.py" line="442"/>
         <source>Range of</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="438"/>
+        <location filename="../scope.py" line="442"/>
         <source> set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="678"/>
+        <location filename="../scope.py" line="682"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1345,6 +1340,21 @@ shows the actual frequency set.
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
         <translation type="unfinished">സമയം </translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="185"/>
+        <source>Calibrated</source>
+        <translation type="unfinished">കാലിബ്രേറ്റ്  ചെയ്തത്</translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="187"/>
+        <source>Not Calibrated</source>
+        <translation type="unfinished">കാലിബ്രേറ്റ്  ചെയ്യാത്തത്</translation>
+    </message>
+    <message>
+        <location filename="../scope.py" line="188"/>
+        <source>Device Reconnected:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1983,7 +1993,7 @@ shows the actual frequency set.
         <translation>റോഡ് പെൻഡുലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="327"/>
+        <location filename="../main.py" line="331"/>
         <source>Enable PopUp Help Window</source>
         <translation>സഹായജാലകം തുറക്കുക</translation>
     </message>
@@ -2216,97 +2226,97 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="402"/>
+        <location filename="../main.py" line="407"/>
         <source>Failed to load scope</source>
         <translation>സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="432"/>
+        <location filename="../main.py" line="438"/>
         <source>Failed to load %s</source>
         <translation>%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="473"/>
+        <location filename="../main.py" line="479"/>
         <source>No immediate application</source>
         <translation>ഇമീഡിയറ്റ് അപ്ലിക്കേഷൻ നിലവിലില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="461"/>
+        <location filename="../main.py" line="467"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation>ഇളം പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="473"/>
+        <location filename="../main.py" line="479"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation>ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="485"/>
+        <location filename="../main.py" line="491"/>
         <source>Device</source>
         <translation>ഡിവൈസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="486"/>
+        <location filename="../main.py" line="492"/>
         <source>Reconnect</source>
         <translation>റീക്കണക്റ്റ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="487"/>
+        <location filename="../main.py" line="493"/>
         <source>LightBackGround next time</source>
         <translation>അടുത്ത തവണ ഇളം പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="488"/>
+        <location filename="../main.py" line="494"/>
         <source>DarkBackGround next time</source>
         <translation>അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="489"/>
+        <location filename="../main.py" line="495"/>
         <source>Choose Language</source>
         <translation>ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="497"/>
+        <location filename="../main.py" line="503"/>
         <source>School Expts</source>
         <translation>സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="501"/>
+        <location filename="../main.py" line="507"/>
         <source>Electronics</source>
         <translation>ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="508"/>
+        <location filename="../main.py" line="514"/>
         <source>Electrical</source>
         <translation>ഇലെക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="512"/>
+        <location filename="../main.py" line="518"/>
         <source>Sound</source>
         <translation>ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="516"/>
+        <location filename="../main.py" line="522"/>
         <source>Mechanics</source>
         <translation>യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="520"/>
+        <location filename="../main.py" line="526"/>
         <source>Other Expts</source>
         <translation>മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="524"/>
+        <location filename="../main.py" line="530"/>
         <source>I2C Modules</source>
         <translation>I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="528"/>
+        <location filename="../main.py" line="534"/>
         <source>PythonCode</source>
         <translation>പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="550"/>
+        <location filename="../main.py" line="556"/>
         <source>Oscilloscope</source>
         <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
@@ -2314,7 +2324,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="231"/>
+        <location filename="../main.py" line="233"/>
         <source>Help: %s</source>
         <translation>സഹായം: %s</translation>
     </message>
