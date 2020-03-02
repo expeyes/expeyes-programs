@@ -1896,7 +1896,7 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="93"/>
-        <source>Integrator using Op-Amp</source>
+        <source>Op-Amp Summing Junction</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

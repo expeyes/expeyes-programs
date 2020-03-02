@@ -1343,12 +1343,12 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../scope.py" line="185"/>
-        <source>Calibrated</source>
+        <source>Calibrated </source>
         <translation type="unfinished">കാലിബ്രേറ്റ്  ചെയ്തത്</translation>
     </message>
     <message>
         <location filename="../scope.py" line="187"/>
-        <source>Not Calibrated</source>
+        <source>Not Calibrated </source>
         <translation type="unfinished">കാലിബ്രേറ്റ്  ചെയ്യാത്തത്</translation>
     </message>
     <message>
@@ -1784,8 +1784,8 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="93"/>
-        <source>Integrator using Op-Amp</source>
-        <translation>Op-Amp ഉപയോഗിച്ചുള്ള ഇന്റഗ്രേറ്റർ</translation>
+        <source>Op-Amp Summing Junction</source>
+        <translation type="unfinished">Op-Amp ഉപയോഗിച്ചുള്ള ഇന്റഗ്രേറ്റർ</translation>
     </message>
     <message>
         <location filename="../main.py" line="94"/>

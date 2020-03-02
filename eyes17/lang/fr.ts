@@ -2516,8 +2516,8 @@ Pour l&apos;expe. de pendule forcé.</translation>
     </message>
     <message>
         <location filename="../main.py" line="93"/>
-        <source>Integrator using Op-Amp</source>
-        <translation>Intégrateur à base d&apos;ampli. op</translation>
+        <source>Op-Amp Summing Junction</source>
+        <translation type="unfinished">Intégrateur à base d&apos;ampli. op</translation>
     </message>
     <message>
         <location filename="../main.py" line="94"/>
