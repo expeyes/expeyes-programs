@@ -1,7 +1,5 @@
-.. 1.1
-
 Introduction
-============
+=============
 
 Science is the study of the physical world by systematic observations
 and experiments. Proper science education is essential for cultivating a

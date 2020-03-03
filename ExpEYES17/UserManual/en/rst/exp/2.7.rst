@@ -1,5 +1,3 @@
-.. 2.3
-
 Measuring Capacitance of a parallel combination
 ===============================================
 
@@ -13,9 +11,9 @@ of capacitors.
 
 **Procedure for two capacitors**
 
--  Connect both capacitors between IN1 and Ground.
--  Click on “Capacitance on IN1” . Should not touch the capacitor while
-   measuring
+-  Connect the capacitors as shown in the figure.
+-  Click on “Capacitance on IN1” . Should not touch the circuit while measuring
+
 
 **Discussion**
 

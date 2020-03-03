@@ -1,23 +1,21 @@
-.. 6.1
-
 Acceleration due to gravity using Rod pendulum
 ===============================================
+Period of oscillations of a pendulum depends on it's length and the value of gravity.
+Period of oscillation of a uniform rod about one end is given by
+:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration due to gravity.
 
 **Objective**
 
-Measure the period of oscillations of a rod pendulum using a light
-barrier and calculate the value of acceleration due to gravity. Period
-of oscillation of a uniform rod about one end is given by
-:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration
-due to gravity. The pendulum (T-shaped, a knife edge attached to a 6mm
+Measure the period of oscillations of a rod pendulum using a photo-transisor and
+LED arrangement. The pendulum (T-shaped, a knife edge attached to a 6mm
 dia rod) is made to swing between an LED and photo-transistor, connected
 to expEYES. The LED and photo-transistor are mounted on a U-shaped
 bracket as shown in figure.
 
 .. image:: schematics/rod-pendulum.svg
-	   :width: 300px
-.. image:: pics/light-barrier-photo.jpg
-	   :width: 300px
+	   :width: 400px
+.. image:: pics/rod-pend-LB.jpg
+	   :width: 200px
 
 **Procedure**
 
@@ -26,11 +24,9 @@ bracket as shown in figure.
 
 **Discussion**
 
-The time period is measured 50 times, using a 14.6cm rod pendulum, and
-the average value is 0.627 seconds. The calculated value of ’g’ is
-:math:`977,4~cm\cdot s^{-2}`, slightly different from the actual value due to the
-following reasons. The length is measured from the knife edge to the
-bottom and used in the formula. But there is a small mass projecting
-above the knife edge that is not included in the calculation. Another
-reason is that the pendulum may not be exactly vertical in the resting
-position.
+The period of oscillation can be measured with an accuracy of 100 microseconds.
+However Mainly there are two sources of error. The length is measured from the knife
+edge to the bottom and used in the formula. But there is a small mass projecting
+above the knife edge that is not included in the calculation. Also the
+calculations assume that the pendulum must be exactly vertical in the resting
+position, which has to be ensured.

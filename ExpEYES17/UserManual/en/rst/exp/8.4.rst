@@ -1,4 +1,3 @@
-..    6.93
-
 I2C Logger
 ==========
+Scan for the I2C sensors connected. The detected sensors can be accessed.

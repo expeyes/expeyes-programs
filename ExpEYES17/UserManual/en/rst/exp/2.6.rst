@@ -1,22 +1,17 @@
-.. 2.3
-
 Measuring Capacitance in series combination
 ===========================================
 
 **Objective**
 
-Measuring the capacitance of series combination
-of capacitors.
+Measuring the capacitance of series combination of capacitors.
 
 .. image:: schematics/cap-series.svg
 	   :width: 300px
 
 **Procedure for two capacitors**
 
--  Connect one capacitor in IN1 and the second one in Ground. Connect the
-   opposite ends of both capacitors together.
--  Click on “Capacitance on IN1” . Should not touch the capacitor while
-   measuring
+-  Connect the capacitors as shown in the figure.
+-  Click on “Capacitance on IN1” . Should not touch the circuit while measuring
 
 **Discussion**
 

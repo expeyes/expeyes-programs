@@ -1,24 +1,29 @@
-.. 3.8
-
-Op-Amp Ingrator
-===============
+Summing Amplifier
+====================
+Operational amplifiers can be used for simulating mathematical operations like addition, integration,
+differentiation etc. 
 
 **Objective**
 
-Wire an Inverting amplifier using an Op-Amp and test it.
-
-.. image:: schematics/opamp-int.svg
-	   :width: 300px
+Make a summing amplifier using an Op-Amp and test it.
 
 **Procedure**
 
--  Set WG amplitude to 80 mV and frequency to 1000 Hz
--  Enable A1 and A2 and their analysis option
--  Select 1V range for both A1 and A2
--  Make connections and observe the output
--  Change gain by changing the resistor values.
+.. image:: schematics/opamp-summing.svg
+	   :width: 300px
+
+-  Make the circuit on bread board, as shown. Use :math:`1k\Omega` for all resistors
+-  Set PV1 and PV2 to 1V each
+-  Enable A1, A2 and A3
+-  Observe the outputs. Verify that the output is the sum of inputs
+
+The output is given by 
+:math:`V_{o}= \frac{R1}{Rf}V1 + \frac{R2}{Rf}V2 + ...`
 
 **Discussion**
+The summation can be done using AC waveforms also. Our supply voltage is only 6V. So the output should be 
+kept less than 4V.
 
-The amplitude gain and and the phase correlation can be observed from
-the results.
+-  Replace R1 with :math:`10k\Omega` and feed SQ1 instead of PV1
+
+

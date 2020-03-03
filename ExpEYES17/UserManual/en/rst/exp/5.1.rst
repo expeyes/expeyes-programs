@@ -1,5 +1,3 @@
-.. 5.1
-
 Frequency response of Piezo
 ===========================
 
@@ -9,16 +7,17 @@ Plot the frequency response curve of the Piezo disk by scanning through
 the frequency and measuring the amplitude of the microphone output.
 
 .. image:: schematics/sound-capture.svg
-	   :width: 300px
-.. image:: pics/piezo-freq-resp.png
-	   :width: 300px
-
+	   :width: 500px
+	   
 **Procedure**
 
 -  Make the connections and keep the Mic and the Buzzer facing each
    other
 -  Press START button
 
+.. image:: pics/piezo-freq-resp-screen.png
+	   :width: 500px
+	   
 **Discussion**
 
 The Frequency Vs Amplitude plot is shown in figure. The amplitude is

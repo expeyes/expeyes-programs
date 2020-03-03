@@ -1,17 +1,14 @@
-.. 1.4
-
 The main GUI program
 ====================
 
 Start Applications->Education->ExpEYES-17 from the menu. A four channel
 oscilloscope screen with several extra features will open as shown in
-figure :ref:`the-scope17-screen`. Various experiments can be
-selected from the menu.
+the figure. Various experiments can be selected from the menu.
 
 .. _the-scope17-screen:
-.. figure:: pics/scope17.*
+.. figure:: pics/eyes17-screen-en.png
 
-    The scope17 screen showing two traces
+    The ExpEYES-17 main GUI
 
 The main window looks like a low frequency four channel oscilloscope,
 with some extra features, on the right side panel. Applications for

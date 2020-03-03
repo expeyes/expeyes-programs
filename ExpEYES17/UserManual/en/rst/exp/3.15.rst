@@ -1,33 +1,40 @@
-.. 3.13
+PNP Transistor Output characteristics (CE)
+===========================================
+The basic working principle of a transistor is controlling a bigger current in circuit using a small current in another circuit. Being a three terminal device, one terminal has to be common for the two crcuits. The common emitter configuration
+is very common in most of the applications. We can explore the working of the transistor by studying the relationships between various voltages at different terminals and currents through them. 
 
-Opto-electric signal transmission
-=================================
 
 **Objective**
 
-Demonstrate the transmission of signals using light. An LED is powered
-by a 1kHz signal and the light is made to fall on a photo-transistor.
-
-.. image:: schematics/opto-electric.svg
-	   :width: 300px
-.. image:: pics/opto-electric-transmission.png
-	   :width: 300px
+Using a PNP transistir, plot the Collector voltage against the collector current
+in a common emitter configuration. Repeat it for different base currennts. Collector current
+is calculated from the voltage across the a 1K resistor, in the collector circuit.
 
 **Procedure**
 
--  Keep the LED facing the photo-transistor and set SQR1 to 1000Hz
--  Repeat the experiment by changing the frequency.
+.. image:: schematics/pnp_ce_char.png
+	   :width: 300px
+	   
+-  Fix the transistor on a bread board and make the connections.
+-  Set base voltage to the 1 volt and press the START button.
+-  Repeat for different base currents, increment PV2 by 0.3 volt steps.
+
+The resulting graphs are shown below. This experiments also can be done manually from
+the oscilloscope GUI, by noting down the readings.
+
+.. image:: pics/pnp-ce-char-screen.png
+	   :width: 500px
+
 
 **Discussion**
 
-The SEN input is internally connected to 5 volts through a :math:`5,1~k\Omega`
-resistor. The output of the photo-transistor at :math:`1~kHz` is shown in figure.
-The square trace is the voltage across the LED. When the LED is ON,
-photo-transistor conducts and the voltage across the collector drops to
-:math:`0,2~V`. When the LED is OFF the photo-transistor goes into cut off
-mode and the collector shows almost the supply voltage. The rise and
-fall times of the photo-transistor seem to be different. Find the upper
-limit of the frequency that the given photo-transistor can respond.
+The characteristic curves for different base currents are shown in
+figure. The collector current is obtained from the voltage difference
+across the :math:`1~k\Omega` resistor.
 
-Repeat this experiment with a Fiber Optic cable to guide the light from
-LED to the photo-transistor.
+The base current is set by setting the voltage at one end of the :math:`100~k\Omega`
+resistor, the other end is connected to the transistor base. The value
+of base current is calculated by,
+:math:`I_b = (V_{PV2} − V_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
+If A2 is not connected, the code assumes 0.6 volts at the base to
+calculate the base current.

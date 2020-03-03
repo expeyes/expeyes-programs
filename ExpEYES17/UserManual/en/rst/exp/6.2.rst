@@ -1,17 +1,18 @@
-.. 6.2
-
-Angular Velocity of Pendulum
-============================
+Digitizing Pendulum Oscillations
+==================================
+The nature of oscillations of a pendulum can be studied by digitizing the angular
+displacement as a function of time. By fitting this data with a sinusoind, the
+time period can be extracted. However, it is much cheaper to digitize the velocity
+of the pendulum, using a simple DVD motor. Attaching the pendulm to the axis of the
+motor and oscillating it induces volatge, proportional to the angular velocity
+of the pendulum.
 
 **Objective**
+Digitize the angular velocity of a rod pendulum and calculate the value of 'g'
+from it.
 
-To study the nature of oscillations of a pendulum. An angle encoder is
-required for measuring the angular displacement as a function of time.
-But using a DC motor as a sensor, we can measure the angular velocity as
-a function of time.\begin_inset Separator latexpar\end_inset
-
-.. image:: pics/pendulum-screen.png
-	   :width: 300px
+.. image:: schematics/pend-digitize.svg
+	   :width: 350px
 
 **Procedure**
 
@@ -19,6 +20,9 @@ a function of time.\begin_inset Separator latexpar\end_inset
 -  Connect the motor between A3 and GND
 -  Connect :math:`100~\Omega` resistor from Rg to Ground
 -  Oscillate the pendulum and START digitizing
+
+.. image:: pics/pendulum-screen.png
+	   :width: 500px
 
 **Discussion**
 

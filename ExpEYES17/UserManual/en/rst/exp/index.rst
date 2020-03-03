@@ -30,7 +30,11 @@ enabled.
 
    2.1
    2.2
+   2.2a
+   2.2b
    2.3
+   2.3a
+   2.3b
    2.4
    2.5
    2.6
@@ -45,10 +49,6 @@ enabled.
    2.15
    2.16
    2.17
-   2.18
-   2.19
-   2.20
-   2.21
 
 Electronics
 ***********
@@ -60,6 +60,7 @@ characteristics have a dedicated GUI.
 .. toctree::
    :maxdepth: 2
 
+   3.0
    3.1
    3.2
    3.3
@@ -73,8 +74,6 @@ characteristics have a dedicated GUI.
    3.11
    3.12
    3.13
-   3.14
-   3.15
 
 Electricity and Magnetism
 *************************
@@ -87,15 +86,15 @@ induction.
 .. toctree::
    :maxdepth: 2
 
+   4.01
+   4.02
    4.1
    4.2
    4.3
    4.4
    4.5
-   4.4
    4.6
    4.7
-   4.8
 
 Sound
 *****
@@ -137,19 +136,19 @@ Other experiments
 .. toctree::
    :maxdepth: 2
 
-   7.1
-   7.2
-   7.3
+   6.5
+   6.6
+   6.7
 
 I2C Modules
 ***********
 .. toctree::
    :maxdepth: 2
 
-   8.1
-   8.2
-   8.3
-   8.4
+   6.90
+   6.91
+   6.92
+   6.93
 
 
 
@@ -165,4 +164,4 @@ calls used for communicating with the device is given below.
 .. toctree::
    :maxdepth: 2
 
-   9.0
+   7.1

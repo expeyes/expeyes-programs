@@ -1,13 +1,12 @@
-.. 5.3
-
 Sound beats
 ===========
+Beats are produced when two sinusoidal sound waves of equal amplitude and very nearly equal frequencies mix. The amplitude or intensity of the combined signal would rise and fall at a rate equal to the difference between the two original frequencies. 
+:math:`f_b = f_1 - f_2`.
 
 **Objective**
 
-Study the interference of sound from two individual sources. Two Piezo
-buzzers are powered by two different sources, and the sound is directed
-towards the microphone.
+Study the beats produced by two Piezo buzzers are excited by two nearby
+frequencies. The sound is captured by a microphone.
 
 .. image:: schematics/sound-beats.svg
 	   :width: 300px
@@ -21,9 +20,13 @@ towards the microphone.
 -  Select both of them to get the beat pattern
 -  Press FFT to view the frequency spectrum
 
+.. image:: pics/sound-beats-screen.png
+	   :width: 500px
+
+
 **Discussion**
 
 From figure it can be seen how the low frequency envelope is created.
 Distance between two minimum pressure points., of the envelope,
 corresponds to the beat wavelength. The Fourier transform of the output
-is shown in figure .
+shows the two different frequency components.

@@ -7,7 +7,7 @@
 
 **ഔട്ട്പുട്ട് ടെർമിനലുകൾ** 
 
-.. figure:: schematics/scope-outputs.svg
+.. figure:: pics/scope-outputs.png
    :width: 300px
 
 - CCS : കോൺസ്റ്റന്റ്  കറന്റ്  സോഴ്സ് 
@@ -27,7 +27,7 @@
 
  **ഇൻപുട്ട്  ടെർമിനലുകൾ**
 
-.. figure:: schematics/scope-inputs.svg
+.. figure:: pics/scope-inputs.png
    :width: 300px
 
 

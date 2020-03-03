@@ -1,16 +1,20 @@
 Measuring Resistance parallel combination
 =========================================
-
-**Objective**
-
 For parallel combination of resistors, this relation exists between
 the effective resistance :math:`R` and the components:
 :math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
 
-.. image:: ./schematics/res-parallel.svg
+**Objective**
+
+Measure the resistance of parallel combination of resistors. Values 560, 1000 and 2200 Ohms are available with the kit.
+
+.. image:: schematics/res-parallel.svg
    :width: 300px
 
 **Procedure for two resistors**
 
--  Connect both resistors between SEN and any Ground terminal
--  Observe the value shown on the right side panel
+-  Measure the resistances separately.
+-  Connect them as shown in the figure.
+-  Observe the value shown on the right side panel.
+-  Compare the values with calculated results.
+-  Repeat the experiment with different resistors.

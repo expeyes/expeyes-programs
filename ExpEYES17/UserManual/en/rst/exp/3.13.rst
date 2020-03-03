@@ -1,24 +1,34 @@
-.. 3.11
-
 Diode I-V characteristics
 =========================
+The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current
+is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by
+plotting the voltage against current.
 
 **Objective**
 
-Draw the I-V Characteristic of diode and compare the result with the
-theory.
+Draw the I-V Characteristic of diode and compare the result with the theory.
 
 **Procedure**
 
 .. image:: schematics/diode_iv.svg
 	   :width: 300px
-.. image:: pics/diode-iv-screen.png
-	   :width: 300px
-
--  Make connections
+  
+-  Make the connections as shown in the figure. Use :math:`1000\Omega` resistor
 -  Click on START to draw the characteristic curve.
 -  Analyse the data
 -  Plot the IV of LEDs
+
+.. image:: pics/diode-iv-screen.png
+	   :width: 500px
+
+It is possible to do this by manually taking the reading, from the oscilloscope GUI.
+The steps involved are:
+
+- Set PV1 to 100mV
+- Read the voltage at A1, voltage across the diode
+- Calculate current from :math:`I=\frac{V_{PV1}-V_{A1}}{1000}`
+- Increment PV1 by 100mV , up to 5V, and repeat the process
+- plot the readings of A1 against I.
 
 **Discussion**
 

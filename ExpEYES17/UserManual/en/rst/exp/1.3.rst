@@ -1,28 +1,36 @@
-.. 1.3
-
 Software Installation
 =====================
-
-
-ExpEYES can run on any computer having a Python Interpreter and required
-modules. The USB interface is handled by a device driver program that
-presents the USB port as a Serial port to the Python programs. The
+ExpEYES can run on any computer having a USB port and a Python 
+Interpreter along with the modules required for accessing them.
+The USB interface is handled by a device driver program that
+presents the USB port as a Serial port to the Python module. The
 communication the expEYES is done using a library written in Python.
-Programs with GUI have been written for many experiments. Eyes17
-software require the following packages
+Programs with GUI have been written for many experiments. ExpEYES-17
+communication library requires the 'numpy' module. The GUI depends
+on packages like pyqtgraph and scipy. The code has been ported to 
+python3 and installation can be done in several ways.
 
--  python-serial
--  python-numpy
--  python-scipy
--  python-qt4
--  python-pyqtgraph
+On Debian-10 , Ubuntu-18.04 and above
+-------------------------------------
+$ sudo apt update
+$ sudo apt install eyes17
+
+This will install the versions available in the repository of Ubuntu or Debian.
+To install the latest versions download the .deb packages from
+https://expeyes.in/software.html and install using the commands.
+
+ $ sudo apt-remove eyes17          # to remove any old version
+ $ sudo gdebi downloaded_deb_file
+
+while connected to the Internet
 
 Any GNU/Linux distributions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Download **eyes17-x.x.x.zip** (the latest version) from
-**http://expeyes.in** and upzip it, and change to the newly created
-folder. Issue the command
+https://expeyes.in/software.html
+upzip it, and change to the newly created
+folder named 'eyes17'. Issue the command
 
    $ sudo sh postinst       # set user write permission
    
@@ -33,24 +41,11 @@ for expeyes. Install them one by one and try again. Python programs
 required for several experiments are in the same directory, they are
 called by ’main.py’.
 
-Debian or Ubuntu GNU/Linux distributions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download **eyes17-x.x.x.deb** ( the latest version) from the software
-section of **http://expeyes.in** and install it using the command;
-
-    $ sudo gdebi eyes17-x.x.x.deb
-
-while connected to Internet
-
-The package ’eyes17’ (later than version 3) does not depend on the
-earlier versions of ExpEYES, like expeyes junior. During installation
-gdebi will automatically dowload and install all the required packages.
-
 The expEYES Live CD / USB pendrive
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ISO image containing support for eyes17 can be downloaded from HERE.
+The ISO image containing support for eyes17 can be downloaded from
+the web page http://expeyes.in/software.html
 Make a DVD or USB memory stick bootable using this ISO image (Download
 rufus from https://rufus.akeo.ie to do this under MSWindows)
 
@@ -62,29 +57,18 @@ Terminal using the command:
 
    $ python /usr/share/expeyes/eyes17/main.py
 
-On MSWindows
-^^^^^^^^^^^^
+Installing on MS Windows
+-------------------------
 
-The first thing to do is to install the driver software for the USB to
-serial converter IC MCP2200, available on Microchip website (also given
-on expeyes website). After installing this the device will appear as a
-COM port, that can be verified from the device manager of MSWindows.
-After this there are two options.
+**Bundled Installer:** 
+Download and install eyes17-setup installer, from the link provided on
+https://expeyes.in/software.html
 
-A zip file containing all the necessary things for ExpEYES is available
-on the website, named eyes17win.zip. Unzip this file and run main.py
-from that. By using this method you will not able to write your own
-Python code to access expeyes, for that you need to install the
-following
+Run the installer and launch eyes17 from
+the icon created on the desktop. This has been tested on Windows10.
 
-#. Python-2.x version
-#. python-serial
-#. python-qt4
-#. python-pyqtgraph,
-#. python-numpy
-#. python-scipy
-
-Download the eyes17-x.x.x.zip ( take latest version) from the website.
-Unzipping the files will create a directory **named eyes17**, run
-**main.py** from that.
+Another method is to Install Python3 and the required modules to run 
+the ExpEYES17 code. Download  the latest eyes17 zip file.
+Since the programs are written in Python, the same source code works 
+on GNU/Linux and Windows.
 

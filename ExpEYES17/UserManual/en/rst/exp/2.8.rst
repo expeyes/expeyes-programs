@@ -1,34 +1,46 @@
-.. 2.4
-
 Measure resistance by comparison
 ================================
+According to Ohm's law, current through a conductor and the potential difference between it's end are proportional. The constant of proportionality is called the resistance. Mathematically :math:`R =\frac{V}{I}`. When two resistors are connected in series, the current will be same through both. :math:`I=\frac{V_{1}}{R_{1}}=\frac{V_{2}}{R_{2}}`. if the value of one resistance and the voltage across both are known, the other resistance can be calculated from  
+:math:`R_{1}=R_{2}\times\frac{V_{1}}{V_{2}}`
 
 **Objective**
 
-Learn to apply Ohm’s law to find the value of an unknown resistance by
-comparing it with a known one. Voltage across a resistor is given by
-V = IR . If same amount of current is flowing through two different
-resistors, the ratio of voltages will be the same as the ratio of
-resistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+Find the value of an unknown resistance by comparing it with a known resistance, using the equations given above.
+Assume R1 is the unknown resistance and R2 is :math:`1000\Omega`
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
 
 **Procedure**
 
--  Connect the unknown resistor R from PV1 to A1.
--  Connect :math:`1~k\Omega` (:math:`R_2`) from A1 to Ground.
+-  Fix the two resisters in series on a bread board.
+-  Connect the junction to A1
+-  Connect the other end of R2(:math:`1~k\Omega`) to Ground.
+-  Connect one end of R1 to PV1
 -  Set PV1 to 4 volts.
--  Measure voltage at A1. Calculate the current :math:`I = U_{A1}/R_2`.
-   Value of :math:`R_1 = (U_{PV1} − U_{A1})/I`.
--  Select Electrical->Plot I-V curve from the menu to get an I-V plot
+-  Enable the Checkbutton on top right, to measure the DC voltage at A1.
 
+Current :math:`I = \frac{V_{A1}}{R_{2}}` and R1 can be calculated using :math:`R1 = \frac {V_{PV1} - V_{A1}}{I}`.
+
+Ohm's law in AC circuits
+----------------------------
+It can be easily shown that this measurement can be done using AC also. We will use both A1 and A2 inputs here.
+
+-  Fix the two resisters in series on a bread board.
+-  Connect the junction to A2
+-  Connect the other end of R2(:math:`1~k\Omega`) to Ground.
+-  Connect one end of R1 to both WG and A1
+-  Set WG to 1000Hz
+-  Enable A1 and A2
+-  Enable the Cursor Check button to diplay the voltages at the cursor
+
+Taking voltage reading from the picture below, 
+:math:`I = \frac{1.92}{1000}` and :math:`R1=\frac{3.01-1.92}{0.00192} = 576.7`
+
+.. image:: pics/res-compare-ac.png
+	   :width: 600px
+ 
 **Discussion**
+In this measurements we have made the assumption that no current flows in to A1 and A2. This is not true, they both have an input impedance of :math:`1M\Omega` . This will matter when we use resistance values of maga Ohms range. To illustrate this
+connect WG to A1 using a wire and the same signal to A2 through a :math:`1M\Omega`  resistor. Try to explain the results using Ohm's law.
 
-What is the limitation of this method ? How do we choose the reference
-resistor ? suppose the unknown value is in :math:`M\Omega`, what will be the
-voltage drop across a :math:`1~k\Omega` reference resistor ? Our voltage
-measurement is having a resolution of :math:`1/4096`.
-
-We will use this method later to measure the resistance of solutions,
-using AC.

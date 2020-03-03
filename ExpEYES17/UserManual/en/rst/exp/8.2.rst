@@ -1,6 +1,4 @@
-﻿..    6.91
-
-Light Sensor Logger
+﻿Light Sensor Logger
 ===================
 
 Schematic
