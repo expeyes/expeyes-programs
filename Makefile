@@ -1,7 +1,7 @@
 DESTDIR =
 SUBDIRS = bin po clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
-SUBDIRS_INDEP = firmware expeyes-web eyes17/lang eyes17/layouts
+SUBDIRS_INDEP = firmware expeyes-web eyes17/lang eyes17/layouts eyes17/helpFiles
 
 all: all_arch all_indep
 
@@ -80,7 +80,11 @@ install_indep:
 	  make -C $$d install DESTDIR=$(DESTDIR); \
 	done
 	# for eyes17 (documentation and help files)
-	make -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
+	# !!!!! temporarily disabled !!!!!
+	# help files are installed by eyes17/helpFiles/Makefile
+	# User Manuals should also be made in the same directory !
+	#
+	# make -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
 
 
 clean:
