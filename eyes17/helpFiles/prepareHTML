@@ -68,14 +68,8 @@ done
 
 echo "Image files simplification done."
 
-for l in $languages; do
-	echo "Converting ReST to HTML" for "$l" 
-    for f in $destdir/$l/_sources/*.rst; do
-		b=$(basename $f)
-		echo "$f"
-		rst2html "$f"  "$destdir/$l/${b%.*}.html"
-    done
-done
+echo "To convert RST files to HTML, please run 'make'"
+
 
 
 

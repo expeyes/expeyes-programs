@@ -1,12 +1,16 @@
 DESTDIR =
-LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 | grep -Ev "pics|schematics")
+LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics")
 
 all:
-	./prepareHTML
+	./prepareHTML . $(LANGUAGES)
+	for l in $(LANGUAGES); do \
+	  echo "====| RST => HTML for language $$l |===="; \
+	  $(MAKE) -C $$l all; \
+	done
 
 clean:
 	for l in $(LANGUAGES); do \
-	  rm $$l/*.html; \
+	  rm -f $$l/*.html; \
 	done
 
 install: all
