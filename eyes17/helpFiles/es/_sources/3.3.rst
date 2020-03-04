@@ -1,0 +1,40 @@
+.. 3.2
+   
+Rectificación de onda completa con diodos a unión PN
+----------------------------------------------------
+
+**Objetivo**
+
+Realizar un rectificador de onda completa, con dos diodos. Se necesitan
+dos señales alternas, desfasadas de 180 grados. Estos son proporcionados
+por WG y :math:`\overline{WG}`.
+
+.. image:: schematics/fullwave.svg
+	   :width: 300px
+.. image:: pics/fullwave.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Realizar las conexiones.
+-  Activar A1, A2 y A3
+-  Fijar WG en 200 Hz y ajustar la base de tiempo para ver 4 o 5
+   ciclos.
+
+**Discusión**
+
+Se deja cómo ejercicio par el lector, reducir la fluctuación de
+voltaje gracias a un capacitor. Esta experiencia está aquí únicamente
+para mostrar el funcionamiento de una rectificación de onda completa, no
+puede producir más que escasos miliamperios de corriente.
+
+¿Por qué sería una rectificación de onda completa superior a una
+rectificación de media onda?
+
+
+
+
+
+
+
+

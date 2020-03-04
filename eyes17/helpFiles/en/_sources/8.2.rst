@@ -1,0 +1,10 @@
+﻿Light Sensor Logger
+=====================
+
+- To Record luminosity values from the TSL2561 sensor.
+
+**Instructions**
+
+- Connect the light sensor(TSL2561) to the I2C port
+- Set the acquisition time, interval, and select the values to plot.
+- Acquire data as a function of time

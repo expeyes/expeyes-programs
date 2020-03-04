@@ -1,9 +1,10 @@
-.. note::
+Programming ExpEYES using Python
+==================================
 
-    The GUI programs described in the previous sections are meant for a
-    fixed set of experiments. To develop new experiments, one should know
-    how to access the features of expEYES from software. Important function
-    calls used for communicating with the device is given below.
+The GUI programs described in the previous sections are meant for a
+fixed set of experiments. To develop new experiments, one should know
+how to access the features of expEYES from software. Important function
+calls used for communicating with the device is given below.
 
 Establish Connection
 """"""""""""""""""""
@@ -289,6 +290,9 @@ interface. Connect WG to A1 with a wire and run;
 
 The output of this code is given below.
 
+.. image:: ../_images/sine-mpl-screen.png
+	   :width: 400px
+
 
 capture2(Number of samples, time interval)
 """"""""""""""""""""""""""""""""""""""""""
@@ -312,9 +316,7 @@ Connect WG to A1 and a diode from A1 to A2. Run the code below
 
 The output of this code is given below.
 
-.. image:: pics/halfwave.png
-	   :width: 400px
-.. image:: pics/capture4.png
+.. image:: ../_images/halfwave-mpl-screen.png
 	   :width: 400px
 
 capture4(Number of samples, time interval)
@@ -337,6 +339,9 @@ Connect WG to A3 and run the code given below. Result is shown above.
    plot(res[6],res[7])        # MIC
    show()
 
+.. image:: ../_images/capture4-mpl-screen.png
+	   :width: 400px
+	   
 set_wave(frequency, wavetype)
 """""""""""""""""""""""""""""
 
@@ -396,3 +401,10 @@ triagular wave. The tableoutput also is shown above.
    x,y = p.capture1('A1', 500,10)
    plot(x,y)
    show()
+
+.. image:: ../_images/load-equation-mpl-screen.png
+	   :width: 400px
+	   
+.. image:: ../_images/load-table-mpl-screen.png
+	   :width: 400px
+	   

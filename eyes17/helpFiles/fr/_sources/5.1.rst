@@ -1,0 +1,24 @@
+.. 5.1
+   
+Réponse en fréquence d’un piézo
+-------------------------------
+
+**Objectif**
+
+Faire le graphique de la courbe de réponse d’un disque piézo en scannant
+la fréquence et en mesurant l’amplitude à la sortie du microphone.
+
+.. image:: schematics/sound-capture.svg
+	   :width: 300px
+.. image:: pics/piezo-freq-resp.png
+	   :width: 300px
+
+**Procédure**
+
+-  Faire les connexions et fixer le buzzer et le microphone face à face
+-  Cliquer sur le bouton DÉMARRER
+
+**Discussion**
+
+Le graphique de l’amplitude en fonction de la fréquence est montré sur
+la figure. L’amplitude est maximale près de 3500 Hz.

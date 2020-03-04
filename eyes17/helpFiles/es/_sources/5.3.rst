@@ -1,0 +1,28 @@
+.. 5.3
+   
+Latidos sonoros
+---------------
+
+**Objetivo**
+
+Estudiar la interferencia sonora de dos fuentes individuales. Dos
+zumbadores piezoeléctricos funcionan con dos fuentes independientes, y el sonido
+se envía a un micrófono.
+
+.. image:: schematics/sound-beats.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Establecer WG a 3500 Hz y SQ1 a 3600 Hz
+-  Activar WG y SQ1 por separado para verificar la salida MIC
+-  Ajustar la posición de los zumbadores piezoeléctricos, en relación con el micrófono, para obtener prácticamente la misma amplitud con cada.
+-  Activar ambos al mismo tiempo para obtener la figura de ritmo
+-  Hacer clic en FFT para ver el espectro de frecuencia
+
+**Discusión**
+
+En la figura podemos ver cómo la envolvente de baja frecuencia
+aparece. La duración entre dos instantes de presión mínima, en
+el sobre, corresponde a la media frecuencia de los latidos. la
+La transformada de Fourier se muestra en la figura.

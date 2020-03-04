@@ -90,7 +90,7 @@ electronicsExptsScope = [
 [QT_TRANSLATE_NOOP('MainWindow','Transistor Amplifier (CE)'),('3.7','npnCEamp')],
 [QT_TRANSLATE_NOOP('MainWindow','Inverting Amplifier'),('3.8','opamp-inv')],
 [QT_TRANSLATE_NOOP('MainWindow','Non-Inverting Amplifier'),('3.9','opamp-noninv')],
-[QT_TRANSLATE_NOOP('MainWindow','Integrator using Op-Amp'),('3.10','opamp-int')],
+[QT_TRANSLATE_NOOP('MainWindow','Summing Amplifier'),('3.10','opamp-sum')],
 [QT_TRANSLATE_NOOP('MainWindow','Logic Gates'),('3.11','logic-gates')],
 [QT_TRANSLATE_NOOP('MainWindow','Clock Divider Circuit'),('3.12','clock-divider')]
 ]
@@ -229,7 +229,7 @@ class helpWin(QWebView):
 			fn = self.foundFirstHelp(name[1])
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
-		self.setMaximumSize(QSize(500, 1200))
+		#self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)

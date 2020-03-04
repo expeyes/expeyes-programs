@@ -1,0 +1,16 @@
+Medir resistencias en paralelo
+==============================
+
+**Objetivo**
+
+Para resistencias en paralelo, la relación para calcular la
+resistencia equivalente:
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+
+.. image:: ./schematics/res-parallel.svg
+   :width: 300px
+
+**Procedimiento para dos resistencias**
+
+-  Conectar ambas resistencias entre SEN y GND.
+-  Observar el valor mostrado en el panel de derecha.

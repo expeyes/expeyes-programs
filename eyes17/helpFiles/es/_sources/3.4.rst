@@ -1,0 +1,25 @@
+.. 3.3
+   
+Desfase utilizando un diodo de unión PN
+-------------------------------------------
+
+**Objetivo**
+
+Demostrar el desfase de una señal alterna en diferentes niveles,
+utilizando un diodo de unión PN.
+
+.. image:: schematics/clipping.svg
+	   :width: 300px
+.. image:: pics/clipping.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Hacer las conexiones y observar las salidas.
+-  Cambiar PV1 y observar el cambio en las salidas.
+
+**Discusión**
+
+El nivel de desfase está condicionado por el voltaje continuo aplicado
+y por la caída de voltaje del diodo.
+

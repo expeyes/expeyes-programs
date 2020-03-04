@@ -1,27 +1,29 @@
-.. 2.13
-
 AC Transformer
-==============
+===============
+There will be a time varying magnetic filed around a conductor carrying AC.
+A voltage will be induced across another conductor placed in this field. 
+This is the working principle of a transformer, that can be demonstrated using the two
+coils included in the kit.
 
 **Objective**
 
-Demonstrate mutual induction using two coils, supplied with ExpEYES. One
+Construct a transformer demonstrate mutual induction using two coils. One
 coil, the primary, is connected between WG and Ground. The axes of the
-coils are aligned and a ferrite core is inserted.\begin_inset Separator
-latexpar\end_inset
-
-.. image:: schematics/transformer.svg
-	   :width: 300px
-.. image:: pics/transformer-screen.png
-	   :width: 300px
+coils are aligned and any ferromagnetic material may be inserted for better coupling.
 
 **Procedure**
 
+.. image:: schematics//transformer.svg
+	   :width: 300px
+
 -  Make connections as shown in the figure
 -  Enable A1 and A2
--  Set WG to 500 Hz
+-  Set WG to 1000 Hz
 -  Bring the coils close and watch the voltage on A2.
--  Try inserting an ion core
+-  Try inserting an ion core, a nail or screwdriver also would do.
+
+.. image:: ../_images/transformer-screen.png
+	   :width: 300px
 
 **Discussion**
 
@@ -33,11 +35,3 @@ created by a time varying current.
 
 Try doing this experiment using a squarewave. Connect a 1kΩ resistor
 across secondary coil to reduce ringing.
-
-The concept of Alternating Current is introduced by plotting the voltage
-as a function of time. The behavior of circuits elements like capacitors
-and inductors in AC and DC circuits are explored, by measuring
-parameters like amplitude, frequency and phase. Converting electrical
-signals into sound and back is demonstrated.
-
-For each experiment, make connections as per the diagram given.

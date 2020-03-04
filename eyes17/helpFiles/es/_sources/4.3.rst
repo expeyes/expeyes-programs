@@ -1,0 +1,46 @@
+.. 4.1
+   
+Circuitos RLC, respuesta en estado estable
+--------------------------------------------
+
+**Objetivo**
+
+Estudiar el comportamiento del dipolo RLC en un circuito de corriente.
+alterna. Se pueden estudiar tres combinaciones diferentes.
+
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
+.. image:: schematics/RLsteadystate.svg
+	   :width: 300px
+.. image:: schematics/RLCsteadystate.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Hacer las conexiones una por una, de acuerdo con los diagramas.
+-  Tomar nota de las medidas de amplitud y fase, en cada caso
+-  Repetir las mediciones cambiando la frecuencia.
+-  Para el circuito de la serie RLC, se supervisa la unión entre L y C con A3.
+- Para resonancia, seleccionar :math:`C = 1~\mu F`,
+   :math:`L = 10~mH` et :math:`f = 1600~Hz`,ajustar f para obtener un cambio de fase cero
+- El voltaje total a través de L y C se acerca a cero, el voltaje de cada uno no está sincronizado con la resonancia
+
+**Discusión**
+
+El voltaje alterno de la fuente está en A1 y el voltaje a través de la resistencia en 
+A2. Si restamos los valores instantáneos de A2 de A1, obtenemos el voltaje 
+total a través de L y C. Use un bobinado con resistencia insignificante para 
+obtener buenos resultados. La diferencia de fase entre corriente y voltaje viene dada por
+:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
+
+El voltaje total, el voltaje a través de R y el voltaje a través de
+LC se muestran en la figura. El diagrama de fases muestra el
+cambio de fase entre corriente y voltaje. El bobinado utilizado en 
+la experiencia tiene una inductancia de alrededor de :math:`10~mH` y una resistencia de
+:math:`20~\Omega`.
+
+Cuando :math:`1600~Hz`, :math:`Z_C \simeq Z_L` el voltaje en las terminales
+LC está determinado por la resistencia del devanado. A la frecuencia de
+resonancia, el voltaje a través de LC será mínimo, determinado por el
+Resistencia de bobinado. La entrada A3 está conectada entre L y C, entonces
+se pueden presentar los voltajes individuales de L y C.

@@ -1,16 +1,13 @@
-.. 1.2
-
 The equipment
 =============
 
 ExpEYES-17 is interfaced and powered by the USB port of the computer,
 and it is programmable in Python. It can function as a low frequency
 oscilloscope, function generator, programmable voltage source, frequency
-counter and data logger. For connecting external signals, it has two
-spring loaded terminals blocks, one for output signals and another for
-inputs, as shown in figure `1.1↓ <#fig:The-ExpEYES-toppanel>`__. The
-software can monitor and control the voltages at these terminals. In
-order to measure other parameters (like temperature, pressure etc.), we
+counter and data logger. For connecting external signals, it has connectors 
+on the top panel. as shown in the figure below. The software can monitor and 
+control the voltages at these terminals. Inorder to measure other 
+parameters (like temperature, pressure etc.), we
 need to convert them in to electrical signals by using appropriate
 sensor elements. The accuracy of the voltage measurements is decided by
 the stability of the 3.3V reference used, it is 50ppm per degree
@@ -28,12 +25,9 @@ and IN2 must be in 0 to 3.3V range. Exceeding these limits may result in
 damage to the equipment. To measure higher voltages, scale them down
 using resistive potential divider networks.*
 
-.. _fig-e17:
-.. figure:: pics/eyes17-panel.*
-   :width: 500px
+.. image:: pics/eyes-box.jpg
+	   :width: 600px
 
-
-Figure 1.1 The ExpEYES17 top panel showing the external connections.
 
 External connections
 --------------------
@@ -160,7 +154,10 @@ current, but good enough to power an Op-Amp.
 1.2.2 Accessory Set
 -------------------
 
-Some accessories are provided with expEYES.
+.. image:: _images/accessory.jpg
+	   :width: 600px
+	   
+To get started, a set of accessories are provided with expEYES.
 
 -  Pieces of wires, with pin and with crocodile clip.
 -  Condenser microphone with leads.

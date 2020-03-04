@@ -1,0 +1,18 @@
+.. 2.2
+   
+Medir una resistencia
+---------------------
+
+**Objetivo**
+
+ExpEYES tiene un terminal marcado **SEN**, que se puede utilizar para medir
+resistencias en el intervalo :math:`100~\Omega` à :math:`100~k\Omega`.
+
+.. image:: ./schematics/res-measure.svg
+   :width: 300px	   
+
+**Procedimiento**
+
+-  Conectar la resistencia entre terminales SEN y GND
+-  Observar el valor mostrado en el panel de derecha.
+

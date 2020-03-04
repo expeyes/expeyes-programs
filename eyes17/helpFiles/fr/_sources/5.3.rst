@@ -1,0 +1,29 @@
+.. 5.3
+   
+Battements sonores
+------------------
+
+**Objectif**
+
+Étudier les interférences sonores de deux sources individuelles. Deux
+buzzers piézo sont alimentés par deux sources indépendantes, et le son
+est envoyé vers un microphone.
+
+.. image:: schematics/sound-beats.svg
+	   :width: 300px
+
+**Procédure**
+
+-  Régler WG à 3500 Hz et SQ1 à 3600 Hz
+-  Activer WG et SQ1 séparément pour vérifier la sortie MIC
+-  Ajuster la position des buzzers piézo, par rapport au microphone,
+   pour obtenir pratiquement la même amplitude avec chacun
+-  Activer les deux en même temps pour obtenir la figure de battement
+-  Cliquer sur FFT pour voir les spectre fréquentiel
+
+**Discussion**
+
+Sur la figure on peut voir comment l’enveloppe de basse fréquence
+apparaît. La durée entre deux instants de pression minimale, sur
+l’enveloppe, correspond à la demi-fréquence des battements. La
+transformée de Fourier est montrée sur la figure.

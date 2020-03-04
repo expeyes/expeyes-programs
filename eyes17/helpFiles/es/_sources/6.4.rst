@@ -1,0 +1,26 @@
+.. 6.4
+   
+Medición de distancia por ultrasonido (ecografìa?)
+--------------------------------------------------
+
+**Objetivo**
+
+Medir una distancia midiendo el tiempo que toma una salva 
+de frecuencia: :math:`40~kHz` para hacer un eco contra una superficie dura.
+
+**Procedimiento**
+
+.. image:: schematics/sr04-dist.svg
+	   :width: 300px
+
+-  Colocar una superficie dura, como un cartón, a unos 10 cm del módulo de eco 
+-  Hacer clic en INICIO 
+-  Cambiar la distancia
+
+**Discusión**
+
+La distancia se calcula a partir del tiempo que tarda una salva acústica en 
+recorrer ida y vuelta (en eco) la distancia que separa el módulo de la superficie 
+reflectante. La distancia puede medirse en función del tiempo, lo que permite 
+calcular velocidad, aceleración, etc.
+

@@ -1,0 +1,29 @@
+.. 2.10
+   
+Photorésistances
+----------------
+
+**Objectif**
+
+Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et
+sa variation en fonction de la distance à la source.
+
+.. image:: schematics/ldr.svg
+	   :width: 300px
+
+**Procédure**
+
+-  Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
+-  Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée
+   afficher des variations
+-  Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation
+
+**Discussion**
+
+La résistance varie de :math:`1~k\Omega` à environ :math:`100~k\Omega`
+selon l’intensité de la lumière qui l’éclaire. La tension est
+proportionnelle à la résistance (si le courant est constant). La
+résistance diminue quand l’éclairage augmente. Si on utilise une
+source de lumière ponctuelle, la résistance est censée augmenter comme
+le carré de la distance entre la photorésistance et la source lumière.
+

@@ -1,0 +1,21 @@
+Medir la capacidad de capacitores en paralelo
+=============================================
+
+**Objetivo**
+
+Medir la capacidad de capacitores en paralelo.
+
+.. image:: schematics/cap-parallel.svg
+	   :width: 300px
+
+**Procedimiento para dos capacitores**
+
+-  Conectar ambos capacitores entre IN1 y GND.
+-  Hacer clic en «Capacidad en IN1» . No se deben tocar los capacitores
+   durante la medida.
+
+**Discusión**
+
+Para capacitores en paralelo, se calcula la capacidad equivalente gracias
+a la relación:
+:math:`C = C_1 + C_2 + ⋯`.

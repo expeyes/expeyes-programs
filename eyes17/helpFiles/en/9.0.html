@@ -1,0 +1,687 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>Programming ExpEYES using Python</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document" id="programming-expeyes-using-python">
+<h1 class="title">Programming ExpEYES using Python</h1>
+
+<p>The GUI programs described in the previous sections are meant for a
+fixed set of experiments. To develop new experiments, one should know
+how to access the features of expEYES from software. Important function
+calls used for communicating with the device is given below.</p>
+<div class="section" id="establish-connection">
+<h1>Establish Connection</h1>
+<p>To access the EYES17 hardware, the python modules for eyes17 must be
+installed. They should be inside a directory named eyes17, that could be
+in your home directory or on the Python PATH. <strong>Every program should
+start with the following 2 lines</strong></p>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">eyes17.eyes</span>
+<span class="name">p</span> <span class="operator">=</span> <span class="name">eyes17</span><span class="operator">.</span><span class="name">eyes</span><span class="operator">.</span><span class="name">open</span><span class="punctuation">()</span>
+</pre>
+<p>The variable <tt class="docutils literal">p</tt> is the software object, representing the hardware.</p>
+<p>The following sections explains the Python function calls to access the
+eyes17 hardware. Each function call will be explained with an example
+usage.</p>
+</div>
+<div class="section" id="set-pv1-v-set-pv2-v">
+<h1>set_pv1(v), set_pv2(v)</h1>
+<p>Sets the DC voltages at PV1 and PV2. PV1 range is -5 to 5. PV2 range is
+-3.3 to 3.3.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv1</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv2</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+</pre>
+<p>The value set is printed. Measure the voltages using a meter.</p>
+</div>
+<div class="section" id="get-voltage-input">
+<h1>get_voltage(input)</h1>
+<p>Returns the voltage at the specified input.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A2'</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A3'</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'MIC'</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'SEN'</span><span class="punctuation">)</span>
+</pre>
+<p>Connect PV1 to A1 and use the set_pv1() and get_voltage together. This
+function sets the input range by trial</p>
+<p>and error, depending on the input signal.</p>
+</div>
+<div class="section" id="get-voltage-time-input">
+<h1>get_voltage_time(input)</h1>
+<p>Returns a tuple, containing the computer's time stamp and the voltage at
+the specified input</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage_time</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="get-resistance">
+<h1>get_resistance()</h1>
+<p>Returns the value of resistance connected to SEN, it should be between
+100 Ohm and 100k for reasonable accuracy.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_resistance</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="get-capacitance">
+<h1>get_capacitance()</h1>
+<p>Returns the value of capacitance connected to IN1 (works well in pF
+ranges)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_capacitance</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="get-version">
+<h1>get_version()</h1>
+<p>Returns the version number of the Firmware</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_version</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="get-temperature">
+<h1>get_temperature()</h1>
+<p>Returns the temperature of the processor inside eyes17</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_temperature</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="set-state-ouput-value">
+<h1>set_state(OUPUT=value)</h1>
+<p>Sets the output of OD1, SQ1 etc. Connect OD1 to A1 and run</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_state</span><span class="punctuation">(</span><span class="name">OD1</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="set-sine-frequency">
+<h1>set_sine(frequency)</h1>
+<p>Generates the sinewave of requested frequency on WG (range from 5Hz to
+5000Hz). All intermediate values are not possible, function returns the
+actual value set.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">502</span><span class="punctuation">)</span>
+</pre>
+<p>502.00803</p>
+</div>
+<div class="section" id="set-sine-amp-amplitude">
+<h1>set_sine_amp(amplitude)</h1>
+<p>The amplitude can be set to 3 pre-defined values of the peak voltage (
+0-&gt; 80mV, 1-&gt; 1V, 2-&gt; 3V)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+</pre>
+<p>Sets the amplitude to 3 volts peak.</p>
+</div>
+<div class="section" id="set-sqr1-frequency">
+<h1>set_sqr1(frequency)</h1>
+<p>Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">15030</span><span class="punctuation">)</span>
+</pre>
+<p>15030.53</p>
+</div>
+<div class="section" id="set-sqr1-slow-frequency">
+<h1>set_sqr1_slow(frequency)</h1>
+<p>Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set. Resolution is high but WG is disabled when SQ1 is operated in this
+mode.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1_slow</span><span class="punctuation">(</span><span class="literal number float">0.5</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="set-sqr2-frequency">
+<h1>set_sqr2(frequency)</h1>
+<p>Similar to set_sqr1() but SQ2 is not available along with WG, only one
+at a time.</p>
+</div>
+<div class="section" id="set-sqr1-frequency-dutycyle">
+<h1>set_sqr1(frequency, dutyCyle)</h1>
+<p>Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>          <span class="comment single"># 1000Hz with 30% duty cycle</span>
+</pre>
+</div>
+<div class="section" id="get-freq-input">
+<h1>get_freq(input)</h1>
+<p>Measures the frequency of a square wave on the input, IN2 or SEN.
+Connect SQ1 to IN2 and run the code</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_freq</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="duty-cycle-input">
+<h1>duty_cycle(input)</h1>
+<p>Measures the duty cycle a square wave on the input, IN2 or SEN. Connect
+SQ1 to IN2 and run the code</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">duty_cycle</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+</pre>
+</div>
+<div class="section" id="r2ftime-input1-input2">
+<h1>r2ftime(input1, input2)</h1>
+<p>Measures the time interval between a rising edge on input1 to another
+one on input2, the inputs can be the same also. This can be tested using
+a square wave.</p>
+<p>Connect SQ1 to IN2 and run</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">r2ftime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+</pre>
+<p>0.0003</p>
+<p>The 1kHz square wave with 30% duty cycle has a Period of one millisecond
+and stays HIGH for .3 milliseconds.</p>
+</div>
+<div class="section" id="multi-r2rtime-input-numcycles">
+<h1>multi_r2rtime(input, numCycles)</h1>
+<p>Measures the time interval between rising edges on input1. Time between
+2 edges is one cycle. Number of cycles to be measured also can be
+specified, default value is 1. The allowed values are 1,2,4,8,12,16,32
+and 48. This can be tested using a square wave.</p>
+<p>Connect SQ1 to IN2 and run</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">multi_r2rtime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>
+</pre>
+<p>0.008</p>
+</div>
+<div class="section" id="select-range-channel-range">
+<h1>select_range(channel, range)</h1>
+<p>The input range of A1 and A2 can be set from ±0.5V to ±16V
+fullscale, using the programmable gain amplifiers.</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
+</pre>
+</div>
+<div class="section" id="id1">
+<h1>select_range(channel, range)</h1>
+<p>The input range of A1 and A2 can be set from ±0.5V to ±16V
+fullscale, using the programmable gain amplifiers.</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
+</pre>
+</div>
+<div class="section" id="capture1-input-number-of-samples-time-interval">
+<h1>capture1(Input, Number of samples, time interval)</h1>
+<p>Digitizes the specified input. The number of samples could be upto
+10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">)</span>
+</pre>
+<p>will print two arrays of time and voltage.</p>
+<p>We need to plot the graph of the output for a better understanding. This
+can be done using the matplotlib module, imported using the pylab
+interface. Connect WG to A1 with a wire and run;</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<p>The output of this code is given below.</p>
+<img alt="pics/sine-mpl-screen.png" src="pics/sine-mpl-screen.png" style="width: 400px;" />
+</div>
+<div class="section" id="capture2-number-of-samples-time-interval">
+<h1>capture2(Number of samples, time interval)</h1>
+<p>Digitizes the inputs A1 and A2 together. The number of samples could be
+upto 10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).</p>
+<p>Connect WG to A1 and a diode from A1 to A2. Run the code below</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">,</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture2</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<p>The output of this code is given below.</p>
+<img alt="pics/halfwave-mpl-screen.png" src="pics/halfwave-mpl-screen.png" style="width: 400px;" />
+</div>
+<div class="section" id="capture4-number-of-samples-time-interval">
+<h1>capture4(Number of samples, time interval)</h1>
+<p>Digitizes the inputs A1,A2,A3 and MIC together. The number of samples
+could be upto 10000. The time gap between two consecutive samples id
+given in microseconds (range 2 to 1000 usec).</p>
+<p>Connect WG to A3 and run the code given below. Result is shown above.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">res</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture4</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">5</span><span class="punctuation">])</span>        <span class="comment single"># A3</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">7</span><span class="punctuation">])</span>        <span class="comment single"># MIC</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics/capture4-mpl-screen.png" src="pics/capture4-mpl-screen.png" style="width: 400px;" />
+</div>
+<div class="section" id="set-wave-frequency-wavetype">
+<h1>set_wave(frequency, wavetype)</h1>
+<p>If wavetype is not specified, it generates the waveform using the
+existing wave table. If wavetype is specified ('sine' or 'tria')</p>
+<p>corresponding wavetable is loaded.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal string single">'sine'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">)</span>       <span class="comment single"># Sets 100Hz using the existing table</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">,</span> <span class="literal string single">'tria'</span><span class="punctuation">)</span>  <span class="comment single"># Sets triagular wave table and generates 100Hz</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="load-equation-function-span">
+<h1>load_equation(function, span)</h1>
+<p>Makes the wave table using the quation. Connect WG to A1 and run the
+code below. The output also is shown below.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+
+<span class="keyword">def</span> <span class="name function">f1</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span>
+    <span class="keyword">return</span> <span class="name">sin</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="name">sin</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="operator">*</span><span class="name">x</span><span class="punctuation">)</span><span class="operator">/</span><span class="literal number integer">3</span>
+
+<span class="name">p</span><span class="operator">.</span><span class="name">load_equation</span><span class="punctuation">(</span><span class="name">f1</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="operator">-</span><span class="name">pi</span><span class="punctuation">,</span><span class="name">pi</span><span class="punctuation">])</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+</div>
+<div class="section" id="load-table-function-span">
+<h1>load_table(function, span)</h1>
+<p>The wave table can be loaded with a 512 element array. Connect WG to A1
+and run the code below. After taking the absolute value, the table
+starts with 256, goes down to zero and then goes upto 255, tracing a
+triagular wave. The tableoutput also is shown above.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">x</span> <span class="operator">=</span> <span class="name">arange</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">256</span><span class="punctuation">,</span> <span class="literal number integer">256</span><span class="punctuation">)</span>
+<span class="name">x</span> <span class="operator">=</span> <span class="name builtin">abs</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">load_table</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics/load-equation-mpl-screen.png" src="pics/load-equation-mpl-screen.png" style="width: 400px;" />
+<img alt="pics/load-table-mpl-screen.png" src="pics/load-table-mpl-screen.png" style="width: 400px;" />
+</div>
+</div>
+</body>
+</html>

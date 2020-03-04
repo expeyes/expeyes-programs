@@ -1,0 +1,26 @@
+.. 3.9
+   
+Puertas lógicas
+---------------
+
+**Objetivo**
+
+Estudiar puertas lógicas utilizando SQ1 y PV1 como entradas, con 
+circuitos integrados de puertas lógicas TTL 7408 y 7432.
+
+**Procedimiento**
+
+.. image:: schematics/logic-gates.svg
+	   :width: 300px
+
+-  Activar A1, A2 y A3. Regular el calibre para A1 y A2 en 8 V 
+-  Regular SQ1 en 200 Hz y ajustar la base de tiempo para ver varios ciclos 
+-  Ajustar SQ2 desde la forma de señal de WG, ajustar WG en 200 Hz.
+-  Recomenzar con la puerta OR, 7432
+-  La resistencia de 1 kΩ es necesaria para conectar una señal de 5 V en la entrada A3.
+
+**Discusión**
+
+El funcionamiento de la puerta lógica será evidente a partir de las tres señales. 
+Podemos mover las trazas verticalmente para separarlas y hacerlas más claras.
+

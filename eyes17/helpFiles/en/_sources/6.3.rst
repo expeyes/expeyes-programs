@@ -1,0 +1,37 @@
+Resonance of a driven pendulum
+==============================
+The amplitude of an oscillating body becomes maximum when the frequency of the
+driving force is equal to its natural resonant frequency. A driven pendulum is a very
+simple example of such a system.
+
+**Objective**
+
+Demonstrate the resonance of a driven pendulum. The pendulum is made by two
+button shaped magnets suspended on a piece of paper. A coil powered from SQ1 provides
+the driving force.
+
+**Procedure**
+
+Make a pendulum using two button magnets and a piece of paper. Suspend
+it and place the 3000T coil near that, as shown in figure.
+
+.. image:: schematics/driven-pendulum.svg
+	   :width: 400px
+.. image:: pics/driven-pendulum-photo.jpg
+	   :width: 300px
+
+-  Connect the coil between SQ1 and ground
+-  Calculate the resonant frequency from the length of the pendulum
+-  Adjust the frequency around the expected resonance frequency
+
+**Discussion**
+
+When SQ1 reaches the resonant frequency of the pendulum, the amplitude
+goes up due to resonance. A 4 cm (from the center of the magnet to the
+axis of oscillation) long pendulum resonated at around :math:`2,5~Hz`, almost
+tallying with its calculated natural frequency. The resonant frequency
+of the pendulum is given by :math:`f = 1/(2\pi\sqrt{g/l})`, where :math:`l` is the
+distance from the center of the magnet to the point of suspension and :math:`g`
+is the acceleration due to gravity.
+
+Repeat the experiment by changing the length of the pendulum.
