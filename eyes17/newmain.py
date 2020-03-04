@@ -222,7 +222,7 @@ class helpWin(QWebView):
 
 		self.parent=parent
 		self.lang=lang
-		helpPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'rst/')
+		helpPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'helpFiles/')
 		fn = helpPath + lang[:2] + '/' + name[1][0] + '.html'
 		print(fn)
 

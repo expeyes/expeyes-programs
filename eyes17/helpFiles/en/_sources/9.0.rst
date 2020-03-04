@@ -1,0 +1,410 @@
+Programming ExpEYES using Python
+==================================
+
+The GUI programs described in the previous sections are meant for a
+fixed set of experiments. To develop new experiments, one should know
+how to access the features of expEYES from software. Important function
+calls used for communicating with the device is given below.
+
+Establish Connection
+""""""""""""""""""""
+
+To access the EYES17 hardware, the python modules for eyes17 must be
+installed. They should be inside a directory named eyes17, that could be
+in your home directory or on the Python PATH. **Every program should
+start with the following 2 lines**
+
+.. code-block:: python
+
+   import eyes17.eyes
+   p = eyes17.eyes.open()
+
+The variable ``p`` is the software object, representing the hardware.
+
+The following sections explains the Python function calls to access the
+eyes17 hardware. Each function call will be explained with an example
+usage.
+
+set_pv1(v), set_pv2(v)
+""""""""""""""""""""""
+
+Sets the DC voltages at PV1 and PV2. PV1 range is -5 to 5. PV2 range is
+-3.3 to 3.3.
+
+.. code-block:: python
+
+   print p.set_pv1(4) 
+   print p.set_pv2(2)
+
+The value set is printed. Measure the voltages using a meter.
+
+get_voltage(input)
+""""""""""""""""""
+
+Returns the voltage at the specified input.
+
+.. code-block:: python
+
+   print p.get_voltage('A1')
+   print p.get_voltage('A2')
+   print p.get_voltage('A3')
+   print p.get_voltage('MIC')
+   print p.get_voltage('SEN')
+
+Connect PV1 to A1 and use the set_pv1() and get_voltage together. This
+function sets the input range by trial
+
+and error, depending on the input signal.
+
+get_voltage_time(input)
+"""""""""""""""""""""""
+
+Returns a tuple, containing the computer's time stamp and the voltage at
+the specified input
+
+.. code-block:: python
+
+   print p.get_voltage_time('A1')
+
+get_resistance()
+""""""""""""""""
+
+Returns the value of resistance connected to SEN, it should be between
+100 Ohm and 100k for reasonable accuracy.
+
+.. code-block:: python
+
+   print p.get_resistance()
+
+get_capacitance()
+"""""""""""""""""
+
+Returns the value of capacitance connected to IN1 (works well in pF
+ranges)
+
+.. code-block:: python
+
+   print p.get_capacitance()
+
+get_version()
+"""""""""""""
+
+Returns the version number of the Firmware
+
+.. code-block:: python
+
+   print p.get_version()
+
+get_temperature()
+"""""""""""""""""
+
+Returns the temperature of the processor inside eyes17
+
+.. code-block:: python
+
+   print p.get_temperature()
+
+set_state(OUPUT=value)
+""""""""""""""""""""""
+
+Sets the output of OD1, SQ1 etc. Connect OD1 to A1 and run
+
+.. code-block:: python
+
+   p.set_state(OD1=1) 
+   print p.get_voltage('A1')
+
+set_sine(frequency)
+""""""""""""""""""""
+
+Generates the sinewave of requested frequency on WG (range from 5Hz to
+5000Hz). All intermediate values are not possible, function returns the
+actual value set.
+
+.. code-block:: python
+
+   print p.set_sine(502)
+
+502.00803
+
+set_sine_amp(amplitude)
+"""""""""""""""""""""""
+
+The amplitude can be set to 3 pre-defined values of the peak voltage (
+0-> 80mV, 1-> 1V, 2-> 3V)
+
+.. code-block:: python
+
+   p.set_sine_amp(2)
+
+Sets the amplitude to 3 volts peak.
+
+set_sqr1(frequency)
+"""""""""""""""""""
+
+Sets the frequency of SQ1 output (range from 4Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.
+
+.. code-block:: python
+
+   print p.set_sqr1(15030)
+
+15030.53
+
+set_sqr1_slow(frequency)
+""""""""""""""""""""""""
+
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set. Resolution is high but WG is disabled when SQ1 is operated in this
+mode.
+
+.. code-block:: python
+
+   print p.set_sqr1_slow(0.5)
+
+set_sqr2(frequency)
+"""""""""""""""""""
+
+Similar to set_sqr1() but SQ2 is not available along with WG, only one
+at a time.
+
+set_sqr1(frequency, dutyCyle)
+"""""""""""""""""""""""""""""
+
+Sets the frequency of SQ1 output (range from 0.1Hz to 1 MHz).All
+intermediate values are not possible, function returns the actual value
+set.
+
+.. code-block:: python
+
+   print p.set_sqr1(1000, 30)          # 1000Hz with 30% duty cycle
+
+get_freq(input)
+"""""""""""""""
+
+Measures the frequency of a square wave on the input, IN2 or SEN.
+Connect SQ1 to IN2 and run the code
+
+.. code-block:: python
+
+   p.set_sqr1(1000)
+   print p.get_freq('IN2')
+
+duty_cycle(input)
+"""""""""""""""""
+
+Measures the duty cycle a square wave on the input, IN2 or SEN. Connect
+SQ1 to IN2 and run the code
+
+.. code-block:: python
+
+   p.set_sqr1(1000, 30)
+   print p.duty_cycle('IN2')
+
+r2ftime(input1, input2)
+"""""""""""""""""""""""
+
+Measures the time interval between a rising edge on input1 to another
+one on input2, the inputs can be the same also. This can be tested using
+a square wave.
+
+Connect SQ1 to IN2 and run
+
+.. code-block:: python
+
+   p.set_sqr1(1000, 30)
+   print p.r2ftime('IN2', 'IN2')
+
+0.0003
+
+The 1kHz square wave with 30% duty cycle has a Period of one millisecond
+and stays HIGH for .3 milliseconds.
+
+multi_r2rtime(input, numCycles)
+"""""""""""""""""""""""""""""""
+
+Measures the time interval between rising edges on input1. Time between
+2 edges is one cycle. Number of cycles to be measured also can be
+specified, default value is 1. The allowed values are 1,2,4,8,12,16,32
+and 48. This can be tested using a square wave.
+
+Connect SQ1 to IN2 and run
+
+.. code-block:: python
+
+   p.set_sqr1(1000)
+   print p.multi_r2rtime('IN2', 8)
+
+0.008
+
+select_range(channel, range)
+""""""""""""""""""""""""""""
+
+The input range of A1 and A2 can be set from ±0.5\ V to ±16\ V
+fullscale, using the programmable gain amplifiers.
+
+.. code-block:: python
+
+   p.select_range('A1', 4)         # 4volt maximum
+   p.select_range('A1', 8)         # 8 volt maximum
+
+select_range(channel, range)
+""""""""""""""""""""""""""""
+
+The input range of A1 and A2 can be set from ±0.5\ V to ±16\ V
+fullscale, using the programmable gain amplifiers.
+
+.. code-block:: python
+
+   p.select_range('A1', 4)         # 4volt maximum
+   p.select_range('A1', 8)         # 8 volt maximum
+
+capture1(Input, Number of samples, time interval)
+"""""""""""""""""""""""""""""""""""""""""""""""""
+
+Digitizes the specified input. The number of samples could be upto
+10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).
+
+.. code-block:: python
+
+   print p.capture1('A1', 5, 5)
+
+will print two arrays of time and voltage.
+
+We need to plot the graph of the output for a better understanding. This
+can be done using the matplotlib module, imported using the pylab
+interface. Connect WG to A1 with a wire and run;
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine_amp(2)
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   t,v = p.capture1('A1', 300, 10)
+   plot(t,v)
+   show()
+
+The output of this code is given below.
+
+.. image:: pics/sine-mpl-screen.png
+	   :width: 400px
+
+
+capture2(Number of samples, time interval)
+""""""""""""""""""""""""""""""""""""""""""
+
+Digitizes the inputs A1 and A2 together. The number of samples could be
+upto 10000. The time gap between two consecutive samples id given in
+microseconds (range 2 to 1000 usec).
+
+Connect WG to A1 and a diode from A1 to A2. Run the code below
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine_amp(2)
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   t,v,tt,vv = p.capture2(300, 10)
+   plot(t,v)
+   plot(tt,vv)
+   show()
+
+The output of this code is given below.
+
+.. image:: pics/halfwave-mpl-screen.png
+	   :width: 400px
+
+capture4(Number of samples, time interval)
+""""""""""""""""""""""""""""""""""""""""""
+
+Digitizes the inputs A1,A2,A3 and MIC together. The number of samples
+could be upto 10000. The time gap between two consecutive samples id
+given in microseconds (range 2 to 1000 usec).
+
+Connect WG to A3 and run the code given below. Result is shown above.
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_sine_amp(2)
+   p.set_sine(1000)
+   p.select_range('A1', 4)
+   res = p.capture4(300, 10)
+   plot(res[4],res[5])        # A3
+   plot(res[6],res[7])        # MIC
+   show()
+
+.. image:: pics/capture4-mpl-screen.png
+	   :width: 400px
+	   
+set_wave(frequency, wavetype)
+"""""""""""""""""""""""""""""
+
+If wavetype is not specified, it generates the waveform using the
+existing wave table. If wavetype is specified ('sine' or 'tria')
+
+corresponding wavetable is loaded.
+
+.. code-block:: python
+
+   from pylab import *
+   p.set_wave(1000, 'sine')
+   p.set_wave(100)       # Sets 100Hz using the existing table
+   x,y = p.capture1('A1', 500,50)
+   plot(x,y)
+   p.set_wave(100, 'tria')  # Sets triagular wave table and generates 100Hz
+   x,y = p.capture1('A1', 500,50)
+   plot(x,y)
+   show()
+
+load_equation(function, span)
+"""""""""""""""""""""""""""""
+
+Makes the wave table using the quation. Connect WG to A1 and run the
+code below. The output also is shown below.
+
+.. code-block:: python
+
+   from pylab import *
+
+   def f1(x):
+       return sin(x) + sin(3*x)/3 
+
+   p.load_equation(f1, [-pi,pi])
+   p.set_wave(400)
+   x,y = p.capture1('A1', 500,10)
+   plot(x,y)
+   show()
+
+     
+
+load_table(function, span)
+""""""""""""""""""""""""""
+
+The wave table can be loaded with a 512 element array. Connect WG to A1
+and run the code below. After taking the absolute value, the table
+starts with 256, goes down to zero and then goes upto 255, tracing a
+triagular wave. The tableoutput also is shown above.
+
+.. code-block:: python
+
+   from pylab import *
+   x = arange(-256, 256)
+   x = abs(x)
+   p.load_table(x)
+   p.set_wave(400)
+   x,y = p.capture1('A1', 500,10)
+   plot(x,y)
+   show()
+
+.. image:: pics/load-equation-mpl-screen.png
+	   :width: 400px
+	   
+.. image:: pics/load-table-mpl-screen.png
+	   :width: 400px
+	   

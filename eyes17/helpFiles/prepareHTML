@@ -1,0 +1,67 @@
+#! /bin/sh
+
+# Script opeartes from a directory containing 'pics' and 'schematics' directories.
+# It also contains all language directories with their own 'pics' and 'schematics' inside.
+# Script converts the image files inside the language tree if they are same as the ones
+# inside the master 'pics' and 'schematics' directories.
+
+destdir=$1
+shift
+languages=$@
+echo "Working in" $destdir "for Languages" $languages
+
+
+
+echo "Removing duplicates in pics"
+
+for l in $languages; do
+    echo "language = $l"
+    for f in $destdir/$l/pics/*.*; do
+	b=$(basename $f)
+	if [ -f $destdir/pics/$b ]; then
+	    if cmp $f $destdir/pics/$b >/dev/null 2>&1; then
+	       #echo we have two files with the same content
+	       rm -f $f
+	       ln -s ../../pics/$b ./$destdir/$l/pics
+	   else
+	       echo -n '.'
+	    fi
+	fi
+    done
+done
+
+
+echo "Removing duplicates in schematics"
+
+for l in $languages; do
+    echo "language = $l"
+    for f in $destdir/$l/schematics/*.*; do
+	b=$(basename $f)
+	if [ -f $destdir/schematics/$b ]; then
+	    if cmp $f $destdir/schematics/$b >/dev/null 2>&1; then
+	       # we have two files with the same content
+	       rm -f $f
+	       ln -s ../../schematics/$b ./$destdir/$l/schematics
+	   else
+	       echo -n '.'
+	    fi
+	fi
+    done
+done
+
+
+
+echo "Image files simplification done."
+
+for l in $languages; do
+	echo "Converting ReST to HTML" for "$l" 
+    for f in $destdir/$l/_sources/*.rst; do
+		b=$(basename $f)
+		echo "$f"
+		rst2html "$f"  "$destdir/$l/${b%.*}.html"
+    done
+done
+
+
+
+

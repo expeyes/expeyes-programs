@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.14: http://docutils.sourceforge.net/" />
+<title>9.0.rst</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+</head>
+<body>
+<div class="document">
+
+
+<div class="section" id="expeyes">
+<h1>ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ</h1>
+<p>കുറേ പരീക്ഷണങ്ങൾക്കു വേണ്ടിയുള്ള GUI പ്രോഗ്രാമുകൾ ലഭ്യമാണെങ്കിലും പുതിയ പരീക്ഷണങ്ങൾ വികസിപ്പിച്ചെടുക്കാൻ പൈത്തൺ ഭാഷയിൽ ExpEYES ഉമായി ആശയവിനിമയം നടത്താൻ അറിഞ്ഞിരിക്കണം. അതിനുവേണ്ട വിവരങ്ങളാണ് ഈ അദ്ധ്യായത്തിന്റെ ഉള്ളടക്കം. വോൾടേജ് സെറ്റ് ചെയ്യുക, വോൾടേജ് അളക്കുക, വേവ്ഫോം ജനറേറ്റ്  ചെയ്യുക തുടങ്ങി എല്ലാ പ്രവൃത്തികളും പൈത്തൺ ഭാഷയിലെ ഓരോ കമാന്റുകൾ ഉപയോഗിച്ചാണ് നടപ്പാക്കുന്നത് .</p>
+<p>ഏറ്റവുമാദ്യം വേണ്ടത്   ExpEYESന്റെ പൈത്തൺ മൊഡ്യൂൾ ഇമ്പോർട്  ചെയ്യുകയും ഡിവൈസുമായി ബന്ധം സ്ഥാപിക്കുകയുമാണ്.  eyes17 എന്ന പാക്കേജിനകത്തെ eyes എന്ന മൊഡ്യൂളാണ്  ഇതിനാവശ്യം. കോഡ് താഴെക്കൊടുത്തിരിക്കുന്നു.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">import</span> <span class="name namespace">eyes17.eyes</span>
+<span class="name">p</span> <span class="operator">=</span> <span class="name">eyes17</span><span class="operator">.</span><span class="name">eyes</span><span class="operator">.</span><span class="name">open</span><span class="punctuation">()</span>
+</pre>
+<p>കംപ്യൂട്ടറിന്റെ ഏതെങ്കിലും USB പോർട്ടിൽ ExpEYES കണ്ടെത്തിയാൽ റിട്ടേൺ ചെയ്യുന്ന വേരിയബിൾ ( p ) ഉപയോഗിച്ചാണ് ഡിവൈസിലേക്ക്  കമാന്റുകൾ അയക്കുന്നത്. ശ്രമം പരാജയപ്പെട്ടാൽ 'None' എന്ന പൈത്തൺ ഡാറ്റാടൈപ്പാണ് റിട്ടേൺ ചെയ്യുക. താഴെക്കൊടുത്ത രണ്ടു വരി കോഡ് വേണമെങ്കിൽ ഉൾപ്പെടുത്താം. sys മൊഡ്യൂൾ കൂടി ഇമ്പോർട് ചെയ്തിരിക്കണം.</p>
+<pre class="code python literal-block">
+<span class="keyword">if</span> <span class="name">p</span> <span class="operator">==</span> <span class="name builtin pseudo">None</span><span class="punctuation">:</span>
+     <span class="keyword">print</span> <span class="punctuation">(</span><span class="literal string double">&quot;Device Not Detected')</span>
+     <span class="name">sys</span><span class="operator">.</span><span class="name">exit</span><span class="punctuation">()</span>
+</pre>
+<p>താഴെക്കൊടുത്തിരിക്കുന്ന ഉദാഹരണങ്ങളെല്ലാം തന്നെ open() ഫങ്ക്ഷൻ റിട്ടേൺ ചെയ്ത 'p' എന്ന വേരിയബിൾ ഉപയോഗിക്കും. മൊഡ്യൂൾ ഇമ്പോർട് ചെയ്യാനും ഡിവൈസ് കണക്ട് ചെയ്യാനുമുള്ള രണ്ടുവരി കോഡ് എല്ലാ പ്രോഗ്രാമ്മുകളുടെയും തുടക്കത്തിൽ ഉണ്ടായിരിക്കണം.</p>
+</div>
+<div class="section" id="id1">
+<h1>വോൾട്ടേജ് സെറ്റ് ചെയ്യാനും അളക്കാനും</h1>
+<p><strong>PV1, PV2 എന്നീ ടെർമിനലുകളിൽ DC വോൾടേജ് സെറ്റ് ചെയ്യാൻ</strong> : set_pv1(v), set_pv2(v)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_pv1</span><span class="punctuation">(</span><span class="literal number float">2.5</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_pv2</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number float">1.2</span><span class="punctuation">)</span>
+</pre>
+<p><strong>A1 ,  A2, A3, SEN എന്നീ ഇൻപുട്ടുകൾ റീഡ് ചെയ്യാൻ</strong> : get_voltage(input)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">))</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A2'</span><span class="punctuation">))</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A3'</span><span class="punctuation">))</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'SEN'</span><span class="punctuation">)</span>
+</pre>
+<p><strong>A1, A2, A3, SEN എന്നിവ ടൈംസ്റ്റാമ്പൊടെ റീഡ് ചെയ്യാൻ</strong> : get_voltage_time(input)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_voltage_time</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">))</span>
+</pre>
+<p><strong>OD1, SQ1, SQ2  എന്നീ ഔട്പുട്ടുകളിൽ  DC ലെവൽ  സെറ്റ് ചെയ്യാൻ</strong> : set_state(OUPUT=value)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_state</span><span class="punctuation">(</span><span class="name">OD1</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>   <span class="comment single">#set OD1 to HIGH, 5 volts</span>
+</pre>
+</div>
+<div class="section" id="id2">
+<h1>റെസിസ്റ്റൻസ്, കപ്പാസിറ്റൻസ് അളക്കാൻ</h1>
+<p><strong>SENൽ ഘടിപ്പിച്ചിരിക്കുന്ന റെസിസ്റ്റൻസ്  അളക്കാൻ</strong> : get_resistance()</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_resistance</span><span class="punctuation">())</span>
+</pre>
+<p><strong>IN1ൽ ഘടിപ്പിച്ചിരിക്കുന്ന കപ്പാസിറ്റൻസ്  അളക്കാൻ</strong> : get_resistance()</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_resistance</span><span class="punctuation">())</span>
+</pre>
+</div>
+<div class="section" id="id3">
+<h1>വേവ്ഫോമുകൾ സെറ്റ് ചെയ്യാൻ</h1>
+<p><strong>WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  സൈൻ വേവ്  സെറ്റ് ചെയ്യാൻ</strong> : set_sine(frequency)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">502</span><span class="punctuation">))</span>
+</pre>
+<p>502.00803</p>
+<p>എല്ലാ ആവൃത്തികളും സാദ്ധ്യമല്ലാത്തതിനാൽ ഏറ്റവുമടുത്തുള്ള സാദ്ധ്യമായ ആവൃത്തി സെറ്റ് ചെയ്ത് ആ വാല്യൂ റിട്ടേൺ ചെയ്യുന്നു. 500 ഹെർട്സിനു  പകരം 502.00803 ഹെർട്സ് ആണ് സെറ്റ് ചെയ്ത ആവൃത്തി.</p>
+<p><strong>WG യുടെ ആംപ്ലിട്യൂഡ് സെറ്റ് ചെയ്യാൻ</strong> : set_sine_amp(amplitude)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>    <span class="comment single"># o for 80mV, 1 for 1Volts, 2 for 3Volts</span>
+</pre>
+<p><strong>SQR1ന്റെ ആവൃത്തിയും ഡ്യൂട്ടിസൈക്കിളും സെറ്റ് ചെയ്യാൻ</strong> : set_sqr1(frequency, dutyCyle)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">))</span>      <span class="comment single"># 1000Hz with 30% duty cycle</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">))</span>          <span class="comment single"># 1000Hz, default 50% duty cycle</span>
+</pre>
+<p><strong>SQR1 മാത്രമായി ഉയർന്ന റെസൊല്യൂഷനിൽ സെറ്റ് ചെയ്യാൻ</strong> : set_sqr1_slow(frequency)</p>
+<pre class="code python literal-block">
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1_slow</span><span class="punctuation">(</span><span class="literal number float">0.5</span><span class="punctuation">))</span>      <span class="comment single"># can set from 0.1Hz to 1MHz (but WG disabled)</span>
+</pre>
+</div>
+<div class="section" id="id4">
+<h1>സമയവും ആവൃത്തിയും അളക്കാൻ</h1>
+<p><strong>IN1ലെ സ്‌ക്വയർവേവിന്റെ ആവൃത്തി അളക്കാൻ</strong> : get_freq(input)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>                 <span class="comment single"># connect SQ1 to IN2</span>
+<span class="keyword">print</span> <span class="punctuation">(</span><span class="name">p</span><span class="operator">.</span><span class="name">get_freq</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">))</span>        <span class="comment single"># measure frequency of square wave on IN2</span>
+</pre>
+<p><strong>IN1ലെ സ്‌ക്വയർവേവിന്റെ   ഡ്യൂട്ടിസൈക്കിൾ  അളക്കാൻ</strong> : duty_cycle(input)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">duty_cycle</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>       <span class="comment single"># measure duty cycle a square on IN2</span>
+</pre>
+<p><strong>രണ്ടു റൈസിംഗ് എഡ്ജുകൾ തമ്മിലുള്ള സമയം അളക്കാൻ</strong> : r2ftime(input1, input2)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">r2ftime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal string single">'IN2'</span><span class="punctuation">)</span>   <span class="comment single"># time between rising edges on IN1 and IN2</span>
+</pre>
+<p><strong>സ്‌ക്വയർവേവിന്റെ  ടൈം പീരീഡ്  അളക്കാൻ</strong> : multi_r2rtime(input, numCycles)</p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>                 <span class="comment single"># connect SQ1 to IN2</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">multi_r2rtime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>  <span class="comment single"># measure time for 8 cycles</span>
+</pre>
+</div>
+<div class="section" id="id5">
+<h1>വേവ്ഫോം ഡിജിറ്റൈസ് ചെയ്യാൻ</h1>
+<p>വേവ്ഫോമുകൾ ഡിജിറ്റൈസ് ചെയ്യാൻ capture1, capture2, capture4 എന്നിങ്ങനെ മൂന്ന് ഫങ്ക്ഷനുകൾ ഉണ്ട്.  ഏതെങ്കിലും ഒരൊറ്റ ഇൻപുട്ടിലെ വേവ് ഡിജിറ്റൈസ് ചെയ്യാൻ  capture1 ഉപയോഗിക്കാം. ഡിജിറ്റൈസ് ചെയ്യേണ്ട ഇൻപുട്ടിന്റെ പേര് , അളവുകളുടെ എണ്ണം, രണ്ടളവുകൾകിടക്കുള്ള സമയം എന്നീ വിവരങ്ങളാണ് capture1() ഫങ്ഷന് നൽകേണ്ടത്. അത് റിട്ടേൺ ചെയ്യുന്ന രണ്ടു arrayകളിൽ അളവുകൾ നടത്തിയ സമയവും ഓരോ അളവിലും കിട്ടിയ വോൾടട്ടെജുകളും ഉണ്ടായിരിക്കും. ഒരു capture1() കാളിൽ പരമാവധി 10000 അളവുകൾ ആകാം. തൊട്ടടുത്ത രണ്ട്  അളവുകൾക്കിടയിലെ ചുരുങ്ങിയ സമയം 1.5 മൈക്രോസെക്കൻഡാണ്. ഡിജിറ്റൈസ്  ചെയ്യുന്ന വേവിന്റെ ആവൃത്തിക്കനുസരിച്ചാണ് ഈ സമയം തീരുമാനിക്കുന്നത്. ഉദാഹരണത്തിന് 1000 ഹെർട്സ് വേവിന്റെ 4 സൈക്കിൾ കാപ്ച്ചർ ചെയ്യാൻ മൊത്തം 4000 മൈക്രോസെക്കൻഡ് വേണം. ഇതിനു 400 പോയിന്റുകൾ 10 മൈക്രോസെക്കൻഡ്  ഗ്യാപ്പിൽ കാപ്ച്ചർ ചെയ്യണം. 800 പോയിന്റുകളാണെങ്കിൽ 5 മൈക്രോസെക്കൻഡ്  മതി. capture ഫങ്ഷനുകൾ വിളിക്കുന്നതിന്‌ മുൻപ് ഇൻപുട്ടിന്റെ റേഞ്ച് സെറ്റ് ചെയ്തിരിക്കണം.</p>
+<p><strong>A1ന്റെയും A2വിന്റേയും റേഞ്ച് സെറ്റ്  ചെയ്യാൻ</strong></p>
+<pre class="code python literal-block">
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># set to 4V, maximum is 16</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A2'</span><span class="punctuation">,</span> <span class="literal number integer">16</span><span class="punctuation">)</span>        <span class="comment single"># set to 8 volt</span>
+</pre>
+<p><strong>ഒരു വേവ്ഫോം ഡിജിറ്റൈസ് ചെയ്യാൻ</strong> : capture1(Input, numSamples, timeGap)</p>
+<pre class="code python literal-block">
+<span class="comment single"># Connect a wire from WG to A1</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="keyword">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">,</span> <span class="literal number integer">5</span><span class="punctuation">)</span>
+</pre>
+<p>ചെറിയ എണ്ണം അളവുകളാണെങ്കിൽ റിസൾട്ട് പ്രിന്റ് ചെയ്തുകാണിക്കാം പക്ഷെ നൂറുകണക്കിന് ഡാറ്റപോയന്റുകൾ ഉണ്ടാവുമ്പോൾ ഗ്രാഫ് വരക്കുകയാണ് സാധാരണ ചെയ്യുക. താഴെക്കാണിച്ചിരിക്കുന്ന പ്രോഗ്രാം matplotlib ഉപയോഗിച്ച് ഗ്രാഫ് വരക്കുന്നതിന്റെ ഒരുദാഹരണമാണ്.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics/sine-mpl-screen.png" src="pics/sine-mpl-screen.png" style="width: 400px;" />
+<p><strong>രണ്ടു  വേവ്ഫോമുകൾ ഒരുമിച്ചു ഡിജിറ്റൈസ് ചെയ്യാൻ</strong> : capture2 (numSamples, timeGap)</p>
+<p>രണ്ടു വേവ്ഫോമുകൾ തമ്മിലുള്ള ഫേസ് വ്യതാസം കണ്ടുപിടിക്കാൻ അവയെ ഒരുമിച്ചു കാപ്ച്ചർ ചെയ്യണം.  ഇതിനുള്ളതാണ്  capture2 ഫങ്ഷൻ. A1ഉം  A2വും ആയിരിക്കും ഇൻപുട്ടുകൾ. അളവുകളുടെ എണ്ണം, രണ്ടളവുകൾകിടക്കുള്ള സമയം എന്നിവയാണ് ഈ ഫങ്ഷന്റെ ഇൻപുട്ടുകൾ. സമയം, വോൾട്ടേജ് എന്നിവയുടെ രണ്ടു സെറ്റ്  arrayകൾ ഇത് റിട്ടേൺ ചെയ്യും.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">,</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture2</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics//halfwave-mpl-screen.png" src="pics//halfwave-mpl-screen.png" style="width: 400px;" />
+<p><strong>നാലു വേവ്ഫോമുകൾ ഒരുമിച്ചു ഡിജിറ്റൈസ് ചെയ്യാൻ</strong> : capture4  (numSamples, timeGap)</p>
+<p>capture4() ഫങ്ക്ഷൻ  A1,A2,A3, MIC എന്നീ നാലു ഇൻപുട്ടുകളെയും ഒരുമിച്ച് ഡിജിറ്റൈസ് ചെയ്യുന്നു. നാലു സെറ്റ് , അതായത് എട്ട് arrayകൾ ഇത് റിട്ടേൺ ചെയ്യും.</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
+<span class="name">res</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture4</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">5</span><span class="punctuation">])</span>        <span class="comment single"># A3</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">7</span><span class="punctuation">])</span>        <span class="comment single"># MIC</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics/capture4-mpl-screen.png" src="pics/capture4-mpl-screen.png" style="width: 400px;" />
+</div>
+<div class="section" id="wg">
+<h1>WG വേവ് ടേബിൾ</h1>
+<p>512 അക്കങ്ങളുള്ള ഒരു പട്ടികയുപയോഗിച്ചാണ്  WG യിലെ വേവ്ഫോം ഉണ്ടാക്കുന്നത്. ഇതിൽ സംഭരിച്ചിരിക്കുന്ന അക്കങ്ങളെ തുടർച്ചയായി ആനുപാതികമായ ഒരു വോൾട്ടേജാക്കി മാറ്റി WG യിലേക്കയക്കുന്നു. ഈ ടേബിളിലെ അക്കങ്ങളാണ് തരംഗത്തിന്റെ ആകൃതി നിർണയിക്കുന്നത്. ഒരിക്കൽ ടേബിൾ സെറ്റ് ചെയ്താൽ അടുത്തതവണ സെറ്റ് ചെയ്യുന്നത് വരെ അത് പ്രാബല്യത്തിലിരിക്കും. ഫങ്ക്ഷൻ ഉപയോഗിച്ച് ടേബിൾ ലോഡ് ചെയ്യാൻ പറ്റും.  ടേബിൾ ലോഡ് ചെയ്ത ശേഷം ആവശ്യമുള്ള ആവൃത്തിയിൽ വേവ് സെറ്റ് ചെയ്യാം.</p>
+<p><strong>WG യിൽ ഒരു നിശ്ചിത ആവൃത്തിയുള്ള  വേവ്ഫോം  സെറ്റ് ചെയ്യാൻ</strong> : set_wave(frequency, wavetype)</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal string single">'sine'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">)</span>       <span class="comment single"># Sets 100Hz using the existing table</span>
+<span class="name">time</span><span class="operator">.</span><span class="name">sleep</span><span class="punctuation">(</span><span class="literal number float">0.2</span><span class="punctuation">)</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">,</span> <span class="literal string single">'tria'</span><span class="punctuation">)</span>  <span class="comment single"># Sets triagular wave table and generates 100Hz</span>
+<span class="name">time</span><span class="operator">.</span><span class="name">sleep</span><span class="punctuation">(</span><span class="literal number float">0.2</span><span class="punctuation">)</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<p><strong>ഫങ്ക്ഷൻ  ലോഡ് ചെയ്യാൻ</strong> : p.load_equation(function, span)</p>
+<pre class="code python literal-block">
+<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+
+<span class="keyword">def</span> <span class="name function">f1</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span>
+    <span class="keyword">return</span> <span class="name">sin</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="name">sin</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="operator">*</span><span class="name">x</span><span class="punctuation">)</span><span class="operator">/</span><span class="literal number integer">3</span>
+
+<span class="name">p</span><span class="operator">.</span><span class="name">load_equation</span><span class="punctuation">(</span><span class="name">f1</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="operator">-</span><span class="name">pi</span><span class="punctuation">,</span><span class="name">pi</span><span class="punctuation">])</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span>
+<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
+<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
+<span class="name">show</span><span class="punctuation">()</span>
+</pre>
+<img alt="pics/load-equation-mpl-screen.png" src="pics/load-equation-mpl-screen.png" style="width: 400px;" />
+<img alt="pics/load-table-mpl-screen.png" src="pics/load-table-mpl-screen.png" style="width: 400px;" />
+</div>
+</div>
+</body>
+</html>

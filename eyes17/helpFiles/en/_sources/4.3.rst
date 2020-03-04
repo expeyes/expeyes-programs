@@ -1,0 +1,79 @@
+RLC circuits, steady state response
+===================================
+Under a sinusoidal signal, the three basic passive components Resistance, Inductance, and Capacitance shows different phase relationships between the voltage and current. For a resistor the voltage waveforms are “in-phase” with the current. In a pure inductance the voltage waveform “leads” the current by 90 degree. In a pure capacitance the voltage waveform “lags” the current by 90 degree. Using ExpEYES we can study these things experimentally. We will also explore the phase relationships between voltages at various points in the circuit. Three different cases RC, RL and RLC will be studied. The voltage and phase values at series resonance condition will be explored. An Impedance calculator is provided or the right side of the GUI, to compare the measure values with calculations.
+
+**Objective**
+
+Measure the amplitude and phase values in an RC circuit. The phase difference of voltages at
+the two ends of tha capacitor is given by
+
+ :math:`\theta=\tan^{1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
+
+
+**Procedure**
+
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
+.. image:: schematics/RLsteadystate.svg
+	   :width: 300px
+.. image:: pics/RCsteadystate-photo.png
+   :width: 300px
+
+-  Use a bread board as shown in the figure.
+-  Fix a 1uF capacitor and :math:`1k\Omega` resistor. 
+-  Make the connections as shown in the first schematic.
+-  Repeat the measurements, at different frequencies.
+
+The resulting waveforms for the RC circuit are shown below. The green trace (voltage at A2) is the voltage waveform across the resistance. This can be considered as the current waveform since voltage and current are in phase across a resistance. The red trace is the voltage across the capacitance, and it can be seen that the current waveform is leading by 90 deg. 
+
+The phase difference across the capacitor is diplayed at the top corner. This can be compared with the calculated values. 
+
+.. image:: pics/RCsteadystate-screen.png
+	   :width: 500px
+
+The next step is to study the RL circuit. Here you will observe the current waveform lagging behind the voltage across the inductor.
+
+
+-  Replace the capacitor with a 10mH inductor.
+-  Set frequency to 4000 Hz to get a larger phase shift, because the inductance used is very small.
+
+
+LCR and Series Resonance
+==========================
+When both inductor and capacitor are present the phase shift across LC is given by 
+
+:math:`\theta=\tan^{1}\Bigg(\frac{X_c-X_L}{R}\Bigg)` 
+where :math:`X_c = \frac{1}{2\pi fC}` 
+and :math:`X_L = 2\pi fL`
+ 
+The inductive reactance increases with frequency while the capacitive reactance decreases with it. At some
+frequency they will become equal and the phase shift across LC will become zero. The total voltage across LC also
+will become zero. This condition is called series resonance.
+
+.. image:: schematics/RLCsteadystate.svg
+   :width: 300px
+
+-  Make the connections using L, C and R
+-  Connect A1, A2 and A3 as shown in the figure.
+-  Note down the amplitude and phase measurements, in each case
+-  For RLC series circuit, the junction of L and C is monitored by A3
+-  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH`
+-  Set frequency to :math:`f = 1600~Hz`, adjust it to make phase shift zero
+
+The resonance frequency for the given L and C is 1591.5 hz. We set it nearby to start with.
+The total voltage across L and C together goes almost to zero.
+It is not exactly zero because of the ohmic resistance of the coil.
+The input A3 is connected between L and C, so that the individual
+voltage drop across L and C can be displayed. It can be see that they are equal and out of phase,
+as shown below.
+
+.. image:: pics/RLCsteadystate-screen.png
+	   :width: 500px
+	   
+**Discussion**
+
+This experiment can be used for measuring the values of unknown capacitors or inductors. Make an RL or RC circiut
+with a known resistance and measure the phase shift at different frequencies. The L or C values can be calculated
+using 
+:math:`C = \frac{1}{2 \pi f R \tan{\theta}}` and 
+:math:`L = \frac{R \tan{\theta}}{2 \pi f }`

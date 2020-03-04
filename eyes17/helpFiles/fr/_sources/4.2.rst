@@ -1,0 +1,18 @@
+..  4.02
+
+Courbes XY
+==========
+
+Ce programme trace A1 en fonction de A2 ou (A1-A2) en fonction de A2.
+Il est utile pour tracer des courbes de Lissajous et pour l'étude des
+circuits RC.
+
+.. image:: schematics/XYplot.svg
+	   :width: 300px
+
+Pour le circuit ci-dessus, on peut tracer la courbe de la tension aux
+bornes du condensateur en fonction de la tension aux bornes de la
+résistance. Cela forme un cercle quand elles sont égales.
+
+- Sélectionner C = 1µF, R = 1 kΩ et tracer (A1-A2) en fonction de A2.
+  Ajuster la fréquence pour obtenir un cercle.

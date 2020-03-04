@@ -1,0 +1,40 @@
+.. 2.11
+   
+Voltaje de una pila de limón
+----------------------------
+
+**Objetivo**
+
+Crear una fuente de voltaje insertando placas delgadas de zinc y de cobre en un
+limón. Explorar las posibilidades de generar corriente, y la resistencia
+interna.
+
+.. image:: schematics/lemon-cell.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Hacer clic en A1 para medir el voltaje.
+-  Medir el voltaje con y sin una resistencia de :math:`1~k\Omega`.
+
+**Discusión**
+
+El voltaje entre zinc y cobre es aproximadamente 0.9 V. Cuando se
+conecta la resistencia, puede disminuir hasta cerca 0.33 V. Cuando
+se conecta la pila, la corriente comienza a fluir a través de la resistencia.
+Pero ¿por qué disminuye el voltaje?
+
+Cuál es la resistencia interna de la batería?
+
+La corriente es causada por el movimiento de cargas eléctricas y debe
+circular completamente. Esto significa que la corriente también tiene
+que pasar por la batería. Según la resistencia interna de la batería,
+parte del voltaje se pierde dentro de la propia batería. ¿Ocurrirá lo
+mismo con una pila seca nueva del comercio?
+
+
+
+
+
+
+

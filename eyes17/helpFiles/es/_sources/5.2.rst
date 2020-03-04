@@ -1,0 +1,54 @@
+.. 5.2
+   
+Velocidad del sonido
+--------------------
+
+**Objetivo**
+
+Calcular la velocidad del sonido midiendo la variación de presión según
+la distancia.
+
+El sonido viaja como una serie de compresiones y expansiones. La figura
+`5.1↓ <#fig:Sound-waves>`__\ (a) muestra las regiones de alta y baja 
+presión a lo largo de la dirección de propagación, junto con la salida de 
+un sensor de presión en las posiciones correspondientes.
+
+Se puede hacer un gráfico de las variaciones de presión en cualquier punto 
+en sincronización con la variación en el punto de partida. La fase de la salida 
+del micrófono cambia cuando cambia su distancia al piezo.Cuando se mueve 
+por una longitud de onda, la fase cambia en 360°. Si la fase cambia en *X* 
+grados para un cambio en la distancia de :math:`\Delta D`,
+la longitud de onda viene dada por :math:`\lambda = (360 \times \Delta D)/X`. Se 
+obtiene la velocidad del sonido multiplicando esto por la frecuencia.
+
++----------------------------------------------------------------------------+
+|.. image:: pics/sound_waves.png                                             |
+|	   :width: 300px                                                     |
+|.. image:: schematics/sound-velocity.svg                                    |
+|	   :width: 300px                                                     |
++----------------------------------------------------------------------------+
+|Figura 5.1 (a) compresiones y expansiones a lo largo de la dirección de     |
+|la propagación del sonido. (b) diagrama de montaje                          |
++----------------------------------------------------------------------------+
+
+**Procedimiento**
+
+-  Ajuste la frecuencia a la resonancia máxima midiendo la respuesta de amplitud `5.1↑ <#sec:Resonance-frequency-of>`__
+-  Ubicar el piezo frente al micrófono, a lo largo de un eje
+-  Activar medición
+-  Ajustar la distancia para que las dos pistas estén en fase
+-  Cambiar la distancia para eliminar 180 °; esta distancia es la media longitud de onda.
+
+**Discusión**
+
+A 3500 Hz, un cambio de distancia de 2 cm provoca un cambio en
+fase de 176° à 102°. Usando la ecuación,
+:math:`v = f \times (360 \times \Delta D)/X`, :math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot s^{−1}`.
+Es importante mantener el micrófono y el disco piezoeléctrico en el
+mismo eje para resultados precisos.
+
+
+
+
+
+

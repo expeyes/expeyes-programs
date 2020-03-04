@@ -1,0 +1,31 @@
+.. 2.17
+
+Estroboscopio
+=============
+
+**Objetivo**
+
+Observar un fenómeno periódico con luz pulsada periódicamente.
+
+**Procedimiento**
+
+.. image:: schematics/stroboscope.svg
+	   :width: 300px
+
+
+-  Hacer girar un disco con el motor alimentado por une pila de 1.5 V.
+-  Iluminar el disco solamente por la luz del LED, se prescinden otras
+   fuentes de luz.
+-  Ajustar la frecuencia de SQ1, el disco parece estacionario cuando se
+   equipara a la frecuencia de giración del disco.
+
+**Discusión**
+
+Cuando la frecuencia del fenómeno observado y la frecuencia de la luz pulsada
+se equiparan, se puede observar una imagen estática.
+
+¿Qué pasa cuando se sube o se baja un poco la frecuencia de la luz?
+
+¿Qué pasa cuando la frecuencia de la luz es el doble de la frecuencia
+del fenómeno? ¿Y cuando es la mitad?
+
