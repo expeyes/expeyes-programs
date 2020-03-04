@@ -14,7 +14,7 @@ all_arch:
 	  if [ -x $$d/configure ]; then \
 	    (cd $$d; ./configure -prefix=/usr; $(MAKE) all;) \
 	  else \
-	    $(MAKE) -C $$d $@; \
+	    $(MAKE) -C $$d all; \
 	  fi; \
 	done
 
