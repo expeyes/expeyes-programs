@@ -1,9 +1,11 @@
 DESTDIR =
-SUBDIRS = bin po firmware clib/expeyes-clib microhope \
+SUBDIRS = bin po clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
-SUBDIRS_INDEP = expeyes-web eyes17/lang eyes17/layouts
+SUBDIRS_INDEP = firmware expeyes-web eyes17/lang eyes17/layouts
 
-all:
+all: all_arch all_indep
+
+all_arch:
 	python3 setup.py build
 	for d in $(SUBDIRS); do \
 	  if [ -f $$d/configure.ac ]; then \
@@ -15,15 +17,17 @@ all:
 	    make -C $$d $@; \
 	  fi; \
 	done
-	# make the bootloader hex file
-	make -C microhope/firmware atmega32
 
 all_indep:
 	for d in $(SUBDIRS_INDEP); do \
 	  make -C $$d all; \
 	done
+	# make the bootloader hex file
+	make -C microhope/firmware atmega32
 
-install:
+install: install_arch install_indep
+
+install_arch:
 	# for python3-expeyes
 	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
 	  python3 setup.py install --install-layout=deb \
@@ -90,4 +94,4 @@ clean:
 	cd clib/expeyes-clib; sh clean-all.sh
 
 
-.PHONY: all all_indep install install_indep clean
+.PHONY: all all_arch all_indep install install_arch install_indep clean
