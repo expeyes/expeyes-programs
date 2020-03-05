@@ -1589,7 +1589,7 @@ shows the actual frequency set.
     <message>
         <location filename="../newmain.py" line="84"/>
         <source>Oscilloscope</source>
-        <translation type="unfinished">ഓസിലോസ്‌കോപ്പ്</translation>
+        <translation type="unfinished">ಆಸಿಲ್ಲೋಸ್ಕೋಪ್</translation>
     </message>
     <message>
         <location filename="../newmain.py" line="52"/>
@@ -2009,7 +2009,7 @@ shows the actual frequency set.
     <message>
         <location filename="../newmain.py" line="26"/>
         <source>School Expts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ಸ್ಕೂಲ್ ಎಕ್ಸ್‌ಪೆಟ್ಸ್</translation>
     </message>
     <message>
         <location filename="../newmain.py" line="27"/>
