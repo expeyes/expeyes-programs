@@ -24,7 +24,7 @@ the Piezo buzzer or any other source of sound like a tuning fork.
 
 The microphone output is shown in figure.
 
-.. image:: pics/sound-capture-screen.png
+.. image:: pics/sound-capture.png
 	   :width: 400px
 
 **Discussion**

@@ -10,7 +10,7 @@ provided by a transformer with a center tap.
 Make a full wave rectifier, using two diodes. Two AC waveforms,
 differing by 180 degree in phase, are provided by the WG and :math:`\bar{WG}` outputs.
 
-.. image:: ../_images/fullwave.svg
+.. image:: schematics/fullwave.svg
 	   :width: 300px
 
 **Procedure**
@@ -19,7 +19,7 @@ differing by 180 degree in phase, are provided by the WG and :math:`\bar{WG}` ou
 -  Enable A1, A2 and A3
 -  Set WG to 1000Hz and adjust timebase to view 4 to 5 cycles
 
-.. image:: ../_images/fullwave-screen.png
+.. image:: pics/fullwave-screen.png
 	   :width: 500px
 
 **Discussion**

@@ -13,7 +13,7 @@ is called alternating current (AC). To study the behavior of AC, an oscilloscope
 Introduce the concept of time dependent voltages, using a V(t) graph.
 Compare the graph of DC and AC.
 
-.. image:: ../_images/ac-dc.svg
+.. image:: schematics/ac-dc.svg
 	   :width: 300px
 
 **Procedure**
@@ -38,7 +38,7 @@ There could be combination of both. For example, take the case of a squarewave t
 Is the graph shown below is AC or DC ? It is a 2.5 DC plus an AC changing from -2.5V to +2.5V.
 Separating these components will be explained in the coming sections. 
 
-.. image:: ../_images/sqr-wave-screen.png
+.. image:: pics/sqr-wave-screen.png
 	   :width: 300px
 	   
 

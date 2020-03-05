@@ -11,7 +11,7 @@ Generate sound from electrical signals, using a Piezo-electric buzzer.
 
 **Procedure**
 
-.. image:: ../_images/sound-generator.svg
+.. image:: schematics/sound-generator.svg
 	   :width: 300px
 
 -  Enable A1, and its analysis

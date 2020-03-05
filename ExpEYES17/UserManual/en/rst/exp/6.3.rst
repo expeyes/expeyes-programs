@@ -15,9 +15,9 @@ the driving force.
 Make a pendulum using two button magnets and a piece of paper. Suspend
 it and place the 3000T coil near that, as shown in figure.
 
-.. image:: ../_images/driven-pendulum.svg
+.. image:: schematics/driven-pendulum.svg
 	   :width: 400px
-.. image:: ../_images/driven-pendulum-photo.jpg
+.. image:: pics/driven-pendulum-photo.jpg
 	   :width: 300px
 
 -  Connect the coil between SQ1 and ground

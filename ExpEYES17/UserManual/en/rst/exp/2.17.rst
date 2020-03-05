@@ -22,7 +22,7 @@ coils are aligned and any ferromagnetic material may be inserted for better coup
 -  Bring the coils close and watch the voltage on A2.
 -  Try inserting an ion core, a nail or screwdriver also would do.
 
-.. image:: ../_images/transformer-screen.png
+.. image:: pics/transformer-screen.png
 	   :width: 300px
 
 **Discussion**

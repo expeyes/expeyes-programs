@@ -154,7 +154,7 @@ current, but good enough to power an Op-Amp.
 1.2.2 Accessory Set
 -------------------
 
-.. image:: _images/accessory.jpg
+.. image:: pics/accessory.jpg
 	   :width: 600px
 	   
 To get started, a set of accessories are provided with expEYES.

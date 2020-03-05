@@ -290,7 +290,7 @@ interface. Connect WG to A1 with a wire and run;
 
 The output of this code is given below.
 
-.. image:: ../_images/sine-mpl-screen.png
+.. image:: pics/sine-mpl-screen.png
 	   :width: 400px
 
 
@@ -316,7 +316,7 @@ Connect WG to A1 and a diode from A1 to A2. Run the code below
 
 The output of this code is given below.
 
-.. image:: ../_images/halfwave-mpl-screen.png
+.. image:: pics/halfwave-mpl-screen.png
 	   :width: 400px
 
 capture4(Number of samples, time interval)
@@ -339,7 +339,7 @@ Connect WG to A3 and run the code given below. Result is shown above.
    plot(res[6],res[7])        # MIC
    show()
 
-.. image:: ../_images/capture4-mpl-screen.png
+.. image:: pics/capture4-mpl-screen.png
 	   :width: 400px
 	   
 set_wave(frequency, wavetype)
@@ -402,9 +402,9 @@ triagular wave. The tableoutput also is shown above.
    plot(x,y)
    show()
 
-.. image:: ../_images/load-equation-mpl-screen.png
+.. image:: pics/load-equation-mpl-screen.png
 	   :width: 400px
 	   
-.. image:: ../_images/load-table-mpl-screen.png
+.. image:: pics/load-table-mpl-screen.png
 	   :width: 400px
 	   

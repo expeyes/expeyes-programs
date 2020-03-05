@@ -1,7 +1,7 @@
 ﻿MPU6050
 =======
 
-.. image:: ../_images/MPU6050.png
+.. image:: pics/MPU6050.png
 	   :width: 300px
 
 I2C module with Accelerometer, Gyroscope and Temperature
