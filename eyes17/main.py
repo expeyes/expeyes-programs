@@ -392,13 +392,13 @@ class MainWindow(QMainWindow):
 				self.hwin = None
 				self.expWidget= None 			    # Let python delete it
 				w = explib.Expt(p) 
-				self.setWindowTitle(e[0])
 				self.setCentralWidget(w)
 				self.expWidget = w
 				self.expName = 'scope'
 			except:
 				self.expName = ''
 				self.setWindowTitle(self.tr('Failed to load scope'))
+		self.setWindowTitle(self.tr(e[0]))
 		self.hwin = None
 		self.title = e[0]
 		self.showHelp()
