@@ -1,7 +1,7 @@
 DESTDIR =
 SUBDIRS = bin po clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
-SUBDIRS_INDEP = firmware expeyes-web eyes17/lang eyes17/layouts eyes17/helpFiles
+SUBDIRS_INDEP = expeyes-web eyes17/lang eyes17/layouts eyes17/helpFiles
 
 all: all_arch all_indep
 
@@ -23,7 +23,7 @@ all_indep:
 	  $(MAKE) -C $$d all; \
 	done
 	# make the bootloader hex file
-	$(MAKE) -C microhope/firmware atmega32
+	# $(MAKE) -C microhope/firmware atmega32
 
 install: install_arch install_indep
 
@@ -68,7 +68,7 @@ install_arch:
 	install -m 644 desktop/*doc.desktop $(DESTDIR)/usr/share/applications
 	# subdirs stuff
 	for d in $(SUBDIRS); do \
-	  $(MAKE) -C $$d $@ DESTDIR=$(DESTDIR); \
+	  $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
 	# fix permissions in /usr/share/expeyes
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
@@ -93,7 +93,7 @@ clean:
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || $(MAKE) -C $$d clean; \
 	done
 	# clean the bootloader hex file
-	$(MAKE) -C microhope/firmware clean
+	# $(MAKE) -C microhope/firmware clean
 	# clean the autconf generated files
 	cd clib/expeyes-clib; sh clean-all.sh
 
