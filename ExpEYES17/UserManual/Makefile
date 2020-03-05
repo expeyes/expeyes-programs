@@ -4,13 +4,13 @@ LANGUAGES = en $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev 'pics|s
 RST_SUBDIRS = $(shell ls -d */rst)
 
 all: progress
-	for d in $(RST_SUBDIRS); do make -C $$d; done
+	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d; done
 
 clean:
-	for d in $(RST_SUBDIRS); do make -C $$d clean; done
+	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d clean; done
 
 distclean:
-	for d in $(RST_SUBDIRS); do make -C $$d distclean; done
+	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d distclean; done
 
 install:
 	# install PDF user manuals (when they exist)
@@ -24,7 +24,7 @@ install:
 	  fi; \
 	  cp -a $$l/rst/qt5HTML/* $(DESTDIR)/usr/share/eyes17/rst/$$l; \
 	done
-	make simplify_images
+	$(MAKE) simplify_images
 
 simplify_images:
 	# simplify illustrations for Qt5 help windows
@@ -35,7 +35,7 @@ simplify_images:
 progress:
 	@for l in $(LANGUAGES); do \
 	  if [ $$l != "en" ]; then \
-	    make --quiet -C $$l/rst progress; \
+	    $(MAKE) --quiet -C $$l/rst progress; \
 	  fi; \
 	done
 

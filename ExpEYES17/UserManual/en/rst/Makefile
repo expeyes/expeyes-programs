@@ -9,7 +9,7 @@ QT5HTML = qt5HTML/index.html
 PREBUILD = exp/_static/.keeper
 RSTFILES = $(shell ls exp/*.rst)
 THIS_LANG = $(shell basename $$(realpath ..))
-SVGFILES = $(shell ls exp/schematics/$(THIS_LANG)/*.svg)
+SVGFILES = $(shell ls exp/schematics/$(THIS_LANG)/*/svg 2>/dev/null)
 
 SOURCES = $(shell ls exp/*.rst) exp/conf.py exp/Makefile \
   exp/cover/coverpage.pdf exp/cover/preface.pdf
@@ -30,13 +30,13 @@ distclean:
 	rm -rf qt5HTML/* exp/_build exp/_static
 
 $(PDF): $(SOURCES)
-	make -C exp latexpdf
+	$(MAKE) -C exp latexpdf
 
 $(HTML): $(SOURCES)
-	make -C exp html
+	$(MAKE) -C exp html
 
 $(EPUB): $(SOURCES)
-	make -C exp epub
+	$(MAKE) -C exp epub
 
 $(QT5HTML): $(SOURCES) $(HTML) 
 	./simplifyForQt5 --indir=exp/_build/html --outdir=qt5HTML
@@ -54,7 +54,7 @@ progress:
 	done;
 	@echo "[end]"
 	@echo -n "Files to update: "
-	@make --quiet progress_update
+	@$(MAKE) --quiet progress_update
 	@echo "[end]"
 	@echo "========================================================================="
 
