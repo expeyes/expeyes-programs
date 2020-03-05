@@ -1,0 +1,12 @@
+#! /usr/bin/make
+
+SOURCES = $(shell ls _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
+HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
+
+all: $(HTML_FILES)
+	@echo
+	@echo "[Done]"
+%.html: _sources/%.rst
+	@echo -n "$@ "
+	@rst2html $< $@
+

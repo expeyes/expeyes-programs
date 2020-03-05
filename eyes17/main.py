@@ -222,11 +222,10 @@ class helpWin(QWebView):
 
 		self.parent=parent
 		self.lang=lang
+		helpPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'helpFiles/')
+		fn = helpPath + lang[:2] + '/' + name[1][0] + '.html'
+		print(fn)
 
-		if type(name[1]) is str:
-			fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'html', name[1]+'.html')
-		else:
-			fn = self.foundFirstHelp(name[1])
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
 		#self.setMaximumSize(QSize(500, 1200))

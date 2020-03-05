@@ -1,9 +1,24 @@
 #! /bin/sh
 
-# Script opeartes from a directory containing 'pics' and 'schematics' directories.
-# It also contains all language directories with their own 'pics' and 'schematics' inside.
-# Script converts the image files inside the language tree if they are same as the ones
-# inside the master 'pics' and 'schematics' directories.
+#############################################
+# This script updates help files for eyes17 #
+#############################################
+#
+# it operates from a directory containing 'pics' and 'schematics' directories.
+# the directory also contains all language directories,
+# with their own 'pics' and 'schematics' inside.
+#
+# Script changes files inside the language tree to symlinks if they are same
+# as the ones inside the master 'pics' and 'schematics' directories.
+#
+#####################################
+# Managing translation of SVG files #
+#####################################
+#
+# When one wants to translate a vectorial image (SVG format), one must first
+# delete the symlink from the language tree's 'schematics' directory, 
+# rework the SVG file from the common 'schematics' directory, and save it
+# as a plain file with the same name, but inside the language tree's directory.
 
 destdir=$1
 shift
@@ -53,14 +68,8 @@ done
 
 echo "Image files simplification done."
 
-for l in $languages; do
-	echo "Converting ReST to HTML" for "$l" 
-    for f in $destdir/$l/_sources/*.rst; do
-		b=$(basename $f)
-		echo "$f"
-		rst2html "$f"  "$destdir/$l/${b%.*}.html"
-    done
-done
+echo "To convert RST files to HTML, please run 'make'"
+
 
 
 

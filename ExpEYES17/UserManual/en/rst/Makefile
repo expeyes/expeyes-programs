@@ -22,8 +22,8 @@ $(PREBUILD):
 
 clean:
 	rm -rf qt5HTML/_sources qt5HTML/_static/*.js
-	cd exp/_build/epub; rm -rf $$(ls | grep -v eyes17.epub)
-	cd exp/_build/latex; rm -rf $$(ls | grep -v eyes17.pdf)
+	rm -rf $$(ls -d exp/_build/epub/* | grep -v eyes17.epub)
+	rm -rf $$(ls -d exp/_build/latex/* | grep -v eyes17.pdf)
 	rm -rf exp/_build/doctrees
 
 distclean:

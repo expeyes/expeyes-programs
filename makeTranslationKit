@@ -1,0 +1,36 @@
+#! /usr/bin/python3
+
+import sys, os, zipfile
+from glob import glob
+
+if len(sys.argv) < 2:
+    print(f"""Usage: {sys.argv[0]} <language code>
+    example: {sys.argv[0]} hi
+    this will create a file /tmp/translate-to-hi.zip
+    with a translation kit for Hindi language, and last
+    updated contents from the git repository.""")
+    sys.exit(1)
+
+lang=sys.argv[1]
+
+if not os.path.exists(os.path.join("ExpEYES17","UserManual",lang)):
+    print(f"Error: the directory ExpEYES17/UserManual/{lang} is missing")
+    sys.exit(1)
+
+tsFile=os.path.join("eyes17","lang",f"{lang}.ts")
+if not os.path.exists(tsFile):
+    print(f"Error: the file {tsFile} is missing")
+    sys.exit(1)
+
+with zipfile.ZipFile(f"/tmp/translate-to-{lang}.zip", mode="w") as myzip:
+    for rstFile in glob(f"ExpEYES17/UserManual/{lang}/rst/exp/*.rst"):
+        myzip.write(rstFile)
+    for schem in glob(f"ExpEYES17/UserManual/{lang}/rst/exp/schematics/*.svg"):
+        myzip.write(schem)
+    for pic in glob(f"ExpEYES17/UserManual/{lang}/rst/exp/pics/*"):
+        myzip.write(pic)
+    myzip.write(tsFile)
+    
+    
+
+print(f"[DONE] Check the contents of /tmp/translate-to-{lang}.zip")
