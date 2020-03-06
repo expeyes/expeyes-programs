@@ -73,6 +73,7 @@ install_arch:
 	# fix permissions in /usr/share/expeyes
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
 	# for expeyes-clib
+	rm -f  $(DESTDIR)/usr/share/expeyes/clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
 install_indep:
