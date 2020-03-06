@@ -12,7 +12,7 @@ is calculated from the voltage across the a 1K resistor, in the collector circui
 
 **Procedure**
 
-.. image:: schematics/pnp_ce_char.png
+.. image:: schematics/pnp_ce_char.svg
 	   :width: 300px
 	   
 -  Fix the transistor on a bread board and make the connections.
