@@ -13,7 +13,7 @@ using a disk with a marker.
 
 **Procedure**
 
-.. image:: schematic/stroboscope.svg
+.. image:: schematics/stroboscope.svg
 	   :width: 300px
 
 -  The disk is rotated by powering the motor by a 1.5 V cell.
