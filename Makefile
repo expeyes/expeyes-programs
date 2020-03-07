@@ -3,7 +3,7 @@ SUBDIRS = bin po clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
 SUBDIRS_INDEP = expeyes-web eyes17/lang eyes17/layouts eyes17/helpFiles
 
-all: all_arch all_indep
+all: all_arch all_indep all_firmware
 
 all_arch:
 	python3 setup.py build
@@ -24,6 +24,15 @@ all_indep:
 	done
 	# make the bootloader hex file
 	# $(MAKE) -C microhope/firmware atmega32
+
+all_firmware:
+	for d in $(SUBDIRS); do \
+	  $(MAKE) -C $$d firmware; \
+	done
+
+clean_firmware: clean
+	# clean the bootloader hex file
+	make -C microhope/firmware clean
 
 install: install_arch install_indep
 
@@ -93,10 +102,7 @@ clean:
 	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || $(MAKE) -C $$d clean; \
 	done
-	# clean the bootloader hex file
-	# $(MAKE) -C microhope/firmware clean
-	# clean the autconf generated files
 	cd clib/expeyes-clib; sh clean-all.sh
 
 
-.PHONY: all all_arch all_indep install install_arch install_indep clean
+.PHONY: all all_arch all_indep all_firmware install install_arch install_indep clean clean_firmware
