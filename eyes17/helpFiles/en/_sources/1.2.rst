@@ -68,7 +68,7 @@ Square Wave SQ1:
 Output swings from 0 to 5 volts and frequency can be varied 4Hz to
 100kHz. All intermediate values of frequency are not possible. The duty
 cycle of the output is programmable. Setting frequency to 0Hz will make
-the output HIGH and setting it to − 1 will make it LOW, in both cases
+the output HIGH and setting it to :math:`-1` will make it LOW, in both cases
 the wave generation is disabled. SQR1 output has a :math:`100~\Omega` **series
 resistor** inside so that it can drive LEDs directly.
 
