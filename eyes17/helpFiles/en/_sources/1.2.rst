@@ -128,8 +128,9 @@ low frequency oscilloscope. The maximum sampling rate is 1 Msps
 """"""""""""""""""""""""""""""""""
 
 Can measure voltage within the ±3.3 volts range. The input can be
-amplified by connecting a resistor from Rg to Ground, gain
-=1 + (Rg)/(10000). This enables displaying very small amplitude signals.
+amplified by connecting a resistor from Rg to Ground,
+:math:`gain=1 + \frac{R_g}{10000}`.
+This enables displaying very small amplitude signals.
 The input impedance of A3 is 10\ M\ Ω.
 
 Microphone input MIC:
@@ -151,7 +152,7 @@ large number of commercially available I2C sensors.
 The VR+ and VR- are regulated power outputs. They can supply very little
 current, but good enough to power an Op-Amp.
 
-1.2.2 Accessory Set
+1.2.2 Accessory Set
 -------------------
 
 .. image:: pics/accessory.jpg

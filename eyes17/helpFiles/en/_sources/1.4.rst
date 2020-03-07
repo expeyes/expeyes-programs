@@ -20,7 +20,7 @@ description of the oscilloscope program is given below.
    on the menubutton on the right side of the checkbox. Select the
    desired input range from the popup menu.
 -  There is another checkbox, to enable mathematical fitting of the data
-   using V = V\ 0\ sin(2\ πft + θ\ ) + C to show the amplitude and
+   using :math:`V=V_0 sin(2\pi f t + \theta )+C` to show the amplitude and
    frequency.
 -  The horizontal scale (time base) can be changed by a slider, from .5
    mS fullscale to 500 mS full scale.
