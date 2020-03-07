@@ -102,7 +102,7 @@ clean:
 	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || $(MAKE) -C $$d clean; \
 	done
-	cd clib/expeyes-clib; sh clean-all.sh
+	[ ! -e clib/expeyes-clib/clean-all.sh ] || cd clib/expeyes-clib && sh clean-all.sh
 
 
 .PHONY: all all_arch all_indep all_firmware install install_arch install_indep clean clean_firmware
