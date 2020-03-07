@@ -89,12 +89,6 @@ install_indep:
 	for d in $(SUBDIRS_INDEP); do \
 	  $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
-	# for eyes17 (documentation and help files)
-	# !!!!! temporarily disabled !!!!!
-	# help files are installed by eyes17/helpFiles/Makefile
-	# User Manuals should also be made in the same directory !
-	#
-	# $(MAKE) -C ExpEYES17/UserManual install DESTDIR=$(DESTDIR)
 
 
 clean:
