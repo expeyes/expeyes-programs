@@ -26,8 +26,8 @@ all_indep:
 	# $(MAKE) -C microhope/firmware atmega32
 
 all_firmware:
-	for d in $(SUBDIRS); do \
-	  $(MAKE) -C $$d firmware; \
+	for d in firmware kuttyPy/firmware microhope/firmware; do \
+	  $(MAKE) -C $$d all; \
 	done
 
 clean_firmware: clean
