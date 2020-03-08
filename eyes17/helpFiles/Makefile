@@ -6,6 +6,10 @@ all:
 	for l in $(LANGUAGES); do \
 	  echo "====| RST => HTML for language $$l |===="; \
 	  $(MAKE) -C $$l all; \
+	  echo "====| RST => PDF for language $$l |===="; \
+	  $(MAKE) -C $$l latexpdf; \
+	  echo "====| RST => EPUB for language $$l |===="; \
+	  $(MAKE) -C $$l epub; \
 	done
 
 clean:
