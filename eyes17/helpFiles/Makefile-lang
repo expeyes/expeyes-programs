@@ -45,14 +45,10 @@ help:
 # for languages without correct LaTeX babel, change this dependency
 # so latexpdf will not be called
 latexpdf:
-	if [ -f NoLaTeX ]; then \
-	  $(MAKE) real_latexpdf; \
+	@if [ -f NoLaTeX ]; then \
+	  printf "+----------------------------------+\n| No LaTeX build since it is not   |\n| well supported for this language |\n+----------------------------------+\n"; \
 	else \
-	  @echo "
-+----------------------------------+
-| No LaTeX build since it is not   |
-| well supported for this language |
-+----------------------------------+"; \
+	  $(MAKE) real_latexpdf; \
 	fi
 
 real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
@@ -68,7 +64,7 @@ real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
 	python3 prettyLaTeX.py $(BUILDDIR)/latex expEYES-17.tex
 	@echo generating PDF images in the LaTeX directory
 	rm -f $(BUILDDIR)/latex/Makefile-images
-	ln -s ../../Makefile-images $(BUILDDIR)/latex
+	ln -s ../../../Makefile-images $(BUILDDIR)/latex
 	make -C $(BUILDDIR)/latex -f Makefile-images -j4
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
