@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /usr/bin/python3
 
 #############################################
 # This script updates help files for eyes17 #
@@ -8,69 +8,76 @@
 # the directory also contains all language directories,
 # with their own 'pics' and 'schematics' inside.
 #
-# Script changes files inside the language tree to symlinks if they are same
-# as the ones inside the master 'pics' and 'schematics' directories.
+# Script creates symlinks, if they do not exist, from the language-specific
+# 'pics' and 'schematics' directories to the common files, except when a plain
+# file with the same name already exists in the language-specific directory
 #
-#####################################
-# Managing translation of SVG files #
-#####################################
+############################################
+# Managing translation of SVG files        #
+# or a language-specific bitmap screenshot #
+############################################
 #
 # When one wants to translate a vectorial image (SVG format), one must first
 # delete the symlink from the language tree's 'schematics' directory, 
 # rework the SVG file from the common 'schematics' directory, and save it
 # as a plain file with the same name, but inside the language tree's directory.
+#
+# To install a language-specific screenshot, e.g. <lang>/pics/foo-screen.png,
+# first delete the symlink from <lang>/pics/foo-screen.png to
+# ../../foo-screen.png, then save a plain file in <lang>/pics/foo-screen.png
+#
+# BEWARE: symlinks must be removed prior to saving plain files!
 
-destdir=$1
-shift
-languages=$@
-echo "Working in" $destdir "for Languages" $languages
+import sys, argparse, os, glob
 
+def checkAndRepairLinks (args, imgDir, globs):
+  """
+  check and repair symlinks from language-specific directories to
+  common images. There is an exception for the files missing.*, which
+  are specials; symlinks to them do not come from language-specific
+  directories.
+  :param args: parsed arguments
+  :type  args: argparse.ArgumentParser
+  :param imgDir: name of an image directory ("pics","schematics")
+  :param globs: list of globbing expressions to get files (like "*.png")
+  """
+  print(f"establishing symlinks to images {', '.join(globs)} in {imgDir}")
+  # find basenames of images inside pics common directory
+  images = []
+  for g in globs:
+    images += glob.glob(os.path.join(args.destdir, imgDir, g))
+  images = [os.path.basename(img) for img in images]
+  images = [img for img in images  if not img.startswith("missing.")]
+  for l in args.languages:
+    print(f"language = {l}", end=" ")
+    for img in images:
+      path=os.path.join(args.destdir,l,imgDir,img)
+      if os.path.exists(path):
+        if os.path.islink(path):
+          print(".", end="")
+        else:
+          print("o", end="")
+      else:
+        # path does not yet exist, create the symlink
+        os.symlink(
+          os.path.join('..','..',imgDir,img),
+          os.path.join(args.destdir,l,imgDir,img)
+        )
+        print('+', end="")
+    print()
 
-
-echo "Removing duplicates in pics"
-
-for l in $languages; do
-    echo "language = $l"
-    for f in $destdir/$l/pics/*.*; do
-	b=$(basename $f)
-	if [ -f $destdir/pics/$b ]; then
-	    if cmp $f $destdir/pics/$b >/dev/null 2>&1; then
-	       #echo we have two files with the same content
-	       rm -f $f
-	       ln -s ../../pics/$b ./$destdir/$l/pics
-	   else
-	       echo -n '.'
-	    fi
-	fi
-    done
-done
-
-
-echo "Removing duplicates in schematics"
-
-for l in $languages; do
-    echo "language = $l"
-    for f in $destdir/$l/schematics/*.*; do
-	b=$(basename $f)
-	if [ -f $destdir/schematics/$b ]; then
-	    if cmp $f $destdir/schematics/$b >/dev/null 2>&1; then
-	       # we have two files with the same content
-	       rm -f $f
-	       ln -s ../../schematics/$b ./$destdir/$l/schematics
-	   else
-	       echo -n '.'
-	    fi
-	fi
-    done
-done
-
-
-
-echo "Image files simplification done."
-
-echo "To convert RST files to HTML, please run 'make'"
-
-
-
-
-
+if __name__ == "__main__":
+  parser = argparse.ArgumentParser(prog='prepareHTML')
+  parser.add_argument(
+    'destdir', metavar='destdir', type=str,
+    help='The directory where prepareHTML is supposed to work'
+  )
+  parser.add_argument(
+    'languages', metavar='lang', type=str, nargs='+',
+    help='list of language directories (for instance en es fr ml)'
+  )
+  args = parser.parse_args()
+  print(f"Working in {args.destdir} for languages {', '.join(args.languages)}")
+  checkAndRepairLinks (args, 'pics', ['*.jpg','*.png'])
+  checkAndRepairLinks (args, 'schematics', ['*.svg'])
+  print ("To convert RST files to HTML, please run 'make'")
