@@ -77,6 +77,7 @@ epub:
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
 
 .PHONY: clean
+clean:
 	rm -rf $(BUILDDIR)/*
 	cd cover; rm -f *.aux *.log *~
 
