@@ -40,7 +40,7 @@ help:
 .PHONY: help Makefile
 
 .PHONY: latexpdf
-latexpdf: #cover/coverpage.pdf cover/preface.pdf
+latexpdf: cover/coverpage.pdf cover/preface.pdf
 	$(SPHINXBUILD) -b latex "$(SOURCEDIR)" $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo copying a few files
 	cp cover/*.pdf $(BUILDDIR)/latex
@@ -58,9 +58,4 @@ latexpdf: #cover/coverpage.pdf cover/preface.pdf
 	@echo "Running LaTeX files through pdflatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
