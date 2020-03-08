@@ -36,10 +36,11 @@ if PQT5 == True:
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
 		QMessageBox, QFileDialog
 	try:	# New versions of PyQt5 has removed QtWebkit. Insted use QWebEngineView
-		from PyQt5.QtWebKitWidgets import QWebView
-	except:
 		from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView
 		print ('loaded QWebEngineView')
+	except:
+		from PyQt5.QtWebKitWidgets import QWebView
+		print ('loaded QWebkit')
 	from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
 	from PyQt5.Qt import QT_VERSION_STR
