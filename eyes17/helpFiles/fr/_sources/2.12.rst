@@ -1,32 +1,54 @@
-.. 2.8
-   
 Le corps humain comme conducteur
---------------------------------
+================================
 
-**Objectif**
+Il est bien connu qu'il ne faut pas toucher les fils de courant du
+secteur. C'est parce que notre corps conduit l'électricité. En même
+temps, on ne peut pas allumer une DEL à l'aide d'une pile en utilisant
+les doigts pour faire la connexion. On peut explorer ça plus avant à
+l'aide des sources de tension continue et alternative de faible
+tension fournies par ExpEYES.
 
-Toucher un fil du secteur est fatal parce que notre corps est un
-conducteur électrique. On peut explorer cela à l’aide de signaux de
-faible tension.
+Objectif
+--------
+
+Étudier la conduction du courant électrique par le corps humain.
+
+Procédure
+---------
 
 .. image:: schematics/conducting-human.svg
 	   :width: 300px
-.. image:: pics/conducting-human-screen.png
-	   :width: 300px
 
-**Procédure**
-
--  Régler WG à 200 Hz.
--  Activer A1, A2 avec leurs analyses.
--  Connecter WG et A1, avec un fil
--  Connecter WG et A2 avec son corps et noter les tensions
+-  Connecter un fil de WG à A1
+-  Connecter un bout d'un fil long à WG
+-  Connecter un bout d'un autre fil long à A2
+-  Activer A1, A2 avec leurs analyses en amplitude et en fréquence.
+-  Tenir en main les extrémités non connectées des deux fils longs.
 -  Recommencer à l’aide d’un signal de 3 V continu issu de PV1.
 
-**Discussion**
+Les signaux observés sont présentés ci-dessous. La tension en A2 est
+un peu moins de 3 V, à cause de la résistance du corps.
 
-La tension crête observée est de moins de 3 V, à cause de la résistance
-du corps humain. Il peut y avoir un peu de perturbation due au signaux à
-50 Hz du secteur captés par effet d’antenne. On peut éliminer cela en
+.. image:: pics/conducting-human-screen.png
+	   :width: 500px
+
+Discussion
+----------
+
+Quand on utilise une tension continue, la fraction qui atteint A2 est
+plus petite, ce qui signifie que le corps conduit mieux le courant
+alternatif que le courant continu. La tension mesurée en A2 dépend du
+quotient de la résistance opposée par le corps humain et l'impédance
+(:math:`1M\Omega`) de A2. La différence de phase entre les tensions
+implique la présence d'une capacité dans le circuit.
+
+La conduction à travers le corps se produit-elle par la peau, ou par
+le flux sanguin ? Comment épondre à cette question ? Quel est le
+contenu en sel du sang ? Essayer de mesurer la résistance d'une eau
+salée. Quel est le rôle joué par la peau ?
+
+Il peut y avoir un peu de perturbation due au signaux à 50 Hz du
+secteur captés par effet d’antenne. On peut éliminer cela en
 travaillant loin des lignes d’alimentation du secteur, à l’aide d’un
 ordinateur portable.
 

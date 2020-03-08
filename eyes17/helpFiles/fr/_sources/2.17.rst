@@ -1,29 +1,40 @@
-.. 2.13
-   
 Transformateur de courant alternatif
-------------------------------------
+====================================
 
-**Objectif**
+On crée un champ magnétique variable à l'aide d'un circuit alimenté en
+courant alternatif. Une tension est induite dans une autre circuit
+placé dans ce champ. C'est le principe de fonctionnement d'un
+transformateur, qu'on peut démontrer à l'aide des bobines fournies
+dans le kit.
 
-Démontrer l’induction mutuelle entre deux bobinages, fournis avec
-ExpEYES. Un des bobinages, le primaire, est connecté entre WD et GND. On
-aligne les axes des deux bobinages et on insère un noyau de
-ferrite.
+Objectif
+--------
 
-.. image:: schematics/transformer.svg
+Constrire un transformateur pour démontrer l’induction mutuelle entre
+deux bobinages. Un des bobinages, le primaire, est connecté entre WD
+et GND. On aligne les axes des deux bobinages et on insère un noyau de
+ferromagnétique pour un meilleur couplage.
+
+
+Procédure
+---------
+
+.. image:: schematics//transformer.svg
 	   :width: 300px
-.. image:: pics/transformer-screen.png
-	   :width: 300px
 
-**Procédure**
 
 -  Faire les connections comme montré sur la figure
 -  Activer A1 et A2
--  Régler WG à :math:`500~Hz`
+-  Régler WG à :math:`1000~Hz`
 -  Approcher les bobinages l’un de l’autre et observer la tension en A2.
--  Essayer d’insérer un noyau en ferrite
+-  Essayer d’insérer un noyau en fer, un clou ou un tournevis peuvent
+   faire l'affaire.
 
-**Discussion**
+.. image:: pics/transformer-screen.png
+	   :width: 300px
+
+Discussion
+----------
 
 Le signal appliqué et le signal induit sont présentés sur la figure. Un
 champ magnétique oscillant est la cause de la tension induite. Dans les
@@ -34,12 +45,3 @@ par un courant variable dans le temps.
 Essayer de faire cette expérience avec un signal carré. Connecter une
 résistance de :math:`1~k\Omega` aux bornes du bobinage secondaire pour réduire
 les oscillation de résonance.
-
-Le concept de courant alternatif est introduit en affichant la tension
-en fonction du temps. On explore le comportement de dipôles tels que les
-condensateurs et les bobinages en courant continu et alternatif, en
-mesurant des paramètres tels que l’amplitude, la fréquence et la phase.
-La conversion de signaux électriques en son et l’inverse est démontré.
-Pour chaque expérience, on réalise les connexions selon le diagramme
-donné.
-

@@ -1,26 +1,45 @@
-.. 2.3
-
 Mesurer une Capacité
---------------------
+====================
 
-**Objectif**
+Quand on place une charge électrique **Q** de part et d'autre d'un
+isolant, il en résulte une différence de potentiel **U** à ses
+bornes. Le quotient :math:`Q/U` est par définition sa capacité
+:math:`C`, la formule étant :math:`C = Q/U`. Un condensateur est
+généralement formé par deux armatures conductrices séparées par un
+isolant. La capacité est le quotient de la charge que porte une
+armature par la différence de potentiel entre les deux armatures. La
+capcité dépend de la surface des armatures, de la distance qui els
+sépare, de la constante diélectrique de l'isolant et de la géométrie
+des armatures.
+
+Pour un condensateur plan, :math:`C=\frac{\epsilon_{0}\epsilon_{r}A}{d}`,
+où A est l'aire des armatures qui se font face, d est la
+distance qui les sépare, :math:`\epsilon_{r}` est la constante
+diélectrique du matriau isolant et :math:`\epsilon_{0}` est la
+permittivité du vide dont la valeur est :math:`8.85418782 × 10^{-12}Fm^{-1}`.
+
+Objectif
+--------
 
 Mesurer la capacité d'un condensateur.
 
 .. image:: schematics/cap-measure.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
 -  Connecter le condensateur entre IN1 and GND.
--  Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
+-  Cliquer sur « Capacité en IN1 » . Il ne faut pas toucher le
    condensateur pendant la mesure.
+-  Recommencer avec différentes valeurs de capacité, en commençant par
+   :math:`100~pF`, jusqu'à plusieurs :math:`\mu F`.
 
-**Discussion**
-
-On a utilisé des condensateurs de :math:`100~pF` pour cette activité.
+Discussion
+----------
 
 On peut créer des condensateurs en collant de fines feuilles de métal
 sur les deux faces d’un isolant comme le papier, le polystyrène ou le
-verre.
+verre. On peut déterminer la constante diélectrique des matériaux par
+cette méthode.
 

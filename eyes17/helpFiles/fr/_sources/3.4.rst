@@ -1,24 +1,34 @@
-.. 3.3
-   
 Écrêtage à l’aide d’une diode à jonction PN
--------------------------------------------
+===========================================
 
-**Objectif**
+Un diode à jonction PN conduit le courant quand le potentiel de
+l'anode dépasse le potentiel de la cathode d'une valeur supérieure au
+seuil de tension de la diode. On peut amener une tension alternative à
+l'anode à travers une résistance et écrêter une part de celle-ci en
+connectant la cathode à une source de tension.
+
+Objectif
+--------
 
 Démontrer l’écrêtage d’un signal alternatif à différents niveaux, à
 l’aide d’une diode à jonction PN.
 
+Procédure
+---------
+
 .. image:: schematics/clipping.svg
 	   :width: 300px
-.. image:: pics/clipping.png
-	   :width: 300px
 
-**Procédure**
+-  Faire les connexions sur la plaque de montage comme montré sur la figure ;
+- régler WG à 1000 Hz ;
+- Changer PV1 et observer le changement de niveau d'écrêtage ;
+- Renverser le sens de la diode pour écrêter de l'autre côté.
 
--  Faire les connexions et observer les sorties.
--  Changer PV1 et observer le changement dans les sorties
+   .. image:: pics/clipping-screen.png
+	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
 Le niveau d’écrêtage est conditionné par la tension continue appliquée
 et par la chute de tension de la diode.

@@ -165,6 +165,9 @@ peut de courant, mais assez pour alimenter un ampli-op.
 Kit d'accessoires
 -----------------
 
+.. image:: pics/accessory.jpg
+	   :width: 600px
+	   
 Quelques accessoires sont livrés avec expEYES.
 
   *  Fils électriques, avec une borne rigide mâle et avec une pince crocodile.
@@ -182,7 +185,7 @@ Quelques accessoires sont livrés avec expEYES.
   *  Aimants permanents : (a) diamètre et longueur 10 mm (b) diamètre
      5 mm et longueur 10 mm (c) aimants de taille bouton(2)
   *  DELs 5 mm : rouge, bleue, verte, blanche.
-  *  Condensateurs : 100 pF, 0.1 µF , 1 µF et 22 µF
+  *  Condensateurs : 100 pF, 0,1 µF , 1 µF et 22 µF
   *  Inductances : 10 mH / :math:`20~\Omega`,
   *  Résistances :
      :math:`560~\Omega`, :math:`1~k\Omega`, :math:`2,2~k\Omega` ,

@@ -1,23 +1,29 @@
-.. 2.15
-   
 Générer un son
---------------
+==============
 
-**Objectif**
+On peut convertir des signaux électriques en sons à l'aide de
+hauts-parleurs, be buzzers piézo, etc. On utilise un buzzer parce que
+les hauts-parleurs disponibles ont une impédance faible et demandent
+plus de courant.
+
+Objectif
+--------
 
 Générer un son avec des signaux électriques, à l’aide d’un buzzer
-piézo-électrique. Numériser un son et mesurer sa fréquence ? Utiliser un
-buzzer piézo ou toute autre source sonore comme un diapason.
+piézo-électrique.
 
-**Procédure**
+Procédure
+---------
 
 .. image:: schematics/sound-generator.svg
 	   :width: 300px
 
 -  Activer A1, et son analyse
--  Régler WG à :math:`1000~Hz`, puis changer et écouter le son
+-  Régler WG à :math:`1000~Hz`, puis changer la fréquence à l'aide du
+   curseur et écouter le son
 
-**Discussion**
+Discussion
+----------
 
 Quand on change la fréquence du signal qui excite le piézo, la fréquence
 et l’intensité du son changent toutes les deux. L’intensité est maximale

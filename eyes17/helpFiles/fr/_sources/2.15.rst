@@ -1,23 +1,30 @@
-.. 2.11
-   
 Tension d’une pile-citron
--------------------------
+=========================
 
-**Objectif**
+On forme une « pile citron » en insérant des plaques de zinc et cuivre
+dans un citron, ou en les plongeant dans n'importe quel acide
+dilué. La tension qui apparaît aux bornes de ces électrodes est petite
+et la pile a une grande résistance interne. À cause de ça, la tension
+chute quand on connecte une résistance de charge.
 
-Créer une source de tension en insérant des plaques de zinc et cuivre
-dans un citron. Explorer les possibilités de fournir du courant et la
-résistance interne.
+Objectif
+--------
+
+Créer une « pile citron » et explorer sa résistance interne.
 
 .. image:: schematics/lemon-cell.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
--  Cliquer sur A1 pour mesurer la tension
--  Mesurer la tension avec et sans une résistance de :math:`1~k\Omega`.
+-  Connecter les électrodes à A1 et GND
+-  Cliquer sur la case à cocher A1 pour affcher sa tension
+-  Connecter une résistance de :math:`1000\Omega` entre les électrodes
+-  Mesurer à nouveau la tension, noter comme elle réduit.
 
-**Discussion**
+Discussion
+----------
 
 La tension entre le zinc et le cuivre est d’environ 0,9 V. Quand on
 connecte la résistance, elle diminue à quelques 0,33 V. Quand on

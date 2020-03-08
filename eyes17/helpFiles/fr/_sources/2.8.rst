@@ -1,39 +1,70 @@
-.. 2.4
-   
 Mesurer des résistances par comparaison
----------------------------------------
+=======================================
 
-**Objectif**
+Selon la loi d'Ohm, le courant dans un dipôle et la différence de
+potentiel à ses bornes sont proportionnels. La constante de
+proportionnalité se nomme la résistance. Mathématiquement :
+:math:`R =\frac{V}{I}`. Quand deux résistances sont connectées en
+série, le courant est le même dans chacune :
+:math:`I=\frac{V_{1}}{R_{1}}=\frac{V_{2}}{R_{2}}`. Si la valeur d'une
+résistance et la tension à ses bornes sont connues, on peut calculer
+l'autre résistance par :math:`R_{1}=R_{2}\times\frac{V_{1}}{V_{2}}`
 
-Apprendre à appliquer la loi d’Ohm pour trouver le valeur d’une
-résistance inconnue par comparaison avec une résistance connue. La
-tension aux bornes d’une résistance est donnée par :math:`U = RI`. Si la
-même valeur de courant parcourt deux résistances différentes, alors le
-rapport des tensions sera le même que le rapport des
-résistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+Objectif
+--------
+
+Trouver la valeur d'une résistance inconnue en la comparant à une résistance
+connue, à l'aide des équations ci-dessus. Soit :math:`R_{1}` la résistance
+inconnue et :math:`R_{2} = 1000 \Omega`
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
--  Connecter la résistance inconnue R entre PV1 et A1.
--  Connecter :math:`1~k\Omega` (:math:`R_2`) entre A1 et GND.
+-  Placer les deux résistances en série sur la plaque de montage ;
+-  Connecter le « point milieu » à A1 ;
+-  Connecter l'autre extrémité de :math:`R_{2} (1~k\Omega)` à GND ;
+-  Connecter l'autre extrémité de :math:`R_{1}` à PV1
 -  Régler PV1 à 4 V.
--  Mesurer la tension en A1. Calculer le courant
-   :math:`I = U_{A1}/R_2`. Valeur de
-   :math:`R_1 = (U_{PV1} − U_{A1})/I`.
--  Sélectionner « Électricité->Tracé d’une courbe courant-tension » dans
-   le menu pour obtenir une courbe I-U.
+-  Activer le bouton à cocher en haut à droite, pour mesurer la tension
+   continue en A1.
 
-**Discussion**
+Le courant :math:`I = \frac{V_{A1}}{R_{2}}` et :math:`R_{1}`  peuvent être
+calculés à l'aide de :math:`R_{1}= \frac {V_{PV1} - V_{A1}}{I}`.
 
-Quelle est la limitation de cette méthode ? Comment choisir la
-résistance de référence ? Si on suppose que la valeur inconnue est en
-:math:`M\Omega`, quelle serait la chute de tension aux bornes d’une résistance de
-référence de :math:`1~k\Omega` ? Notre mesure de tension a une résolution de
-:math:`1/4096`.
+La loi d'Ohm dans les circuits en courant alternatif
+----------------------------------------------------
 
-On utilisera cette méthode plus tard pour mesurer la résistance de
-solutions, à l’aide de courant alternatif.
+On peut facilement montrer que ce type de mesure peut aussi être fait
+en courant alternatif. On utilisera les deux entrées A1 et A2 ici.
 
+-  Placer les deux résistances en série sur la plaque de montage ;
+-  Connecter le « point milieu » à A2 ;
+-  Connecter l'autre extrémité de :math:`R_{2} (1~k\Omega)` à GND ;
+-  Connecter l'autre extrémité de :math:`R_{1}` à A1 et aussi à WG
+-  Régler WG  à 1000 Hz
+-  Activer A1 et A2
+-  Activer le bouton à cocher du curseur pour afficher les tensions au
+   niveau du curseur
+
+En prenant en compte les lectures de tension de la figure ci-dessous,
+:math:`I = \frac{1.92}{1000}` and :math:`R1=\frac{3.01-1.92}{0.00192} = 576.7`
+
+.. image:: pics/res-compare-ac.png
+	   :width: 600px
+ 
+
+
+Discussion
+----------
+
+Pour ces mesures on fait la supposition qu'aucun courant n'est
+consommé par A1 et A2. Ce n'est pas vrai, chacune de ces entrées a une
+impédance de :math:`1M\Omega`. Ça commence à prendre de l'importance
+quand on utilise des résistances dont l'odre de grandeur approche du
+méga-ohm. Pour illustrer cela, connecter WG à A1 à l'aide d'un fil et
+le même signal à A2 à travers une résistance de
+:math:`1M\Omega`. Essayer d'expliquer le résultat en utilisant le loi
+d'Ohm.

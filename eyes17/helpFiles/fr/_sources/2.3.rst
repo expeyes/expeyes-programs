@@ -1,16 +1,20 @@
 Mesure de résistances en série
 ==============================
 
-**Objectif**
-
 La résistance équivalente à une série de résistances est
 :math:`R = R_1 + R_2 + ⋯`. 
+
+Objectif
+--------
+
+Mesurer la résistance d'une association de plusieurs conducteurs ohmiques en série.
 
 .. image:: ./schematics/res-series.svg
    :width: 300px	   
 
-**Procédure pour deux résistances**
+Procédure pour deux résistances
+-------------------------------
 
--  Connecter une résistance à SEN et l'autre à GND.
-   Connecter les extrémités opposées des résistances l'une à l'autre.
+-  Connecter une résistance à SEN et l'autre à GND selon la figure.
 -  Observer la valeur affichée sur le panneau de droite.
+- Recommencer avec d'autres résistances. 

@@ -1,20 +1,44 @@
-.. 3.1
-   
 Redressement demi-onde à l’aide d’une jonction PN
--------------------------------------------------
+=================================================
 
-**Objectif**
+Une jonction PN ne conduit le courant que dans un seul sens. Seulement
+la moitié d'un signal alternatif pur peut traverser une jonction
+PN. On utilise largement ce dispositif pour redresser du courant
+alternatif en continu.
+
+Objectif
+--------
 
 Étudier le fonctionnement d’une diode à jonction PN comme redresseur.
+On utilise une diode 1N4148 ou 1N4003.
 Filtrage RC pour réduire les variations de tension (la composante
 alternative).
 
+Procédure
+---------
+
 .. image:: schematics/halfwave.svg
 	   :width: 300px
-.. image:: pics/halfwave.png
-	   :width: 300px
 
-**Procédure**
+-  PLacer la diode sur une plaque de montage ;
+-  Faire les connections et observer le résultat ;
+-  Connecter une résistance de charge de :math:`1~k\Omega`, noter la variation
+   de l'amplitude.
+
+La courbe est montrée ci-dessous.
+
+.. image:: pics/halfwave-screen.png
+	   :width: 500px
+
+-  Connecter un condensateur de :math:`1 \mu F`, et voir l'effet de filtrage ;
+-  Essayer diverses valeurs de résistances de charge et de condensateurs de
+   filtrage.
+
+Voici, ci-dessous, l'effet du filtre RC.
+
+.. image:: pics/halfwave-filter-screen.png
+	   :width: 500px
+
 
 -  Faire les connexions et observer les sorties
 -  Connecter une résistance de charge de :math:`1~k\Omega`, noter le changement
@@ -23,10 +47,12 @@ alternative).
 -  Essayer plusieurs valeurs de résistances de charge et de
    condensateurs de filtrage.
 
-**Discussion**
+Discussion
+----------
 
-La partie négative est ôtée par la diode comme montré sur la figure.
-Noter aussi que la tension est diminuée de quelques 0,7 V dans la moitié
+La partie négative est ôtée par la diode comme montré sur la figure. Le signal
+de sortie est un peu bruité ;
+noter aussi que la tension est diminuée de quelques 0,7 V dans la moitié
 positive, c’est la chute de tension aux bornes de la diode silicium,
 quand le courant y passe. Une résistance de charge est nécessaire pour
 que le circuit fonctionne correctement, on peut utiliser plus de
@@ -34,12 +60,21 @@ que le circuit fonctionne correctement, on peut utiliser plus de
 courant alternatif ne peut pas fournir un courant de plus de :math:`5~mA`.
 
 On peut voir que le condensateur se charge puis qu’il maintient la
-tension pendant la partie manquante du cycle.
+tension pendant la partie manquante du cycle. La composante alternative
+résiduelle se nomme « ondulation » de la tension continue.
 
-Peut-on utiliser des condensateurs de grande capacité pour réduire la
-fluctuation de tension ?
+
+Peut-on utiliser des condensateurs de grande capacité pour réduire cette
+ondulation ?
 
 Durant quelle partie du cycle le courant traverse-t-il la diode ?
 
 Qu’est qui conditionne la valeur du courant crête ?
 
+Si on utilise une diode 1N400x sans résistance de charge, une tension apparaît
+dans la sortie même durant l'alternance négative. Cela disparaît quand on branche
+une résistance de charge. Ce type d'élément parasite, tel que la capacité d'une
+jonction PN, est plus faible pour une diode 1N4148 ; pourquoi ?
+
+.. image:: pics/halfwave-capacitance-screen.png
+	   :width: 500px

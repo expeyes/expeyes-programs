@@ -1,5 +1,5 @@
-.. note::
-	    
+.. note
+   
    Les programmes à interface graphique décrit dans les chapitres
    précédents sont prévus pour un ensemble fini d'expériences. Pour
    développer de nouvelles expériences, on doit savoir comment accéder
@@ -122,8 +122,8 @@ et lancer :
    print p.get_voltage('A1')
 
 
-set_sine(fequence)
-""""""""""""""""""
+set_sine(frequence)
+"""""""""""""""""""
 
 Génère le signal sinusoïdal de la fréquence demandée sur WG (intervalle
 de :math:`5~Hz` à :math:`5000~Hz`). Toutes les valeurs intermédiaires ne sont
@@ -294,7 +294,7 @@ d'un fil et lancer :
 
 Le résultat de ce code est donné ci-dessous.
 
-.. image:: pics/sine.png
+.. image:: pics/sine-mpl-screen.png
 	   :width: 400px
 
 
@@ -320,9 +320,7 @@ Connecter WG à A1, et une diode entre A1 et A2. Lancer le code ci-dessous :
 
 Le résultat de ce code est donné ci-dessous.
 
-.. image:: pics/halfwave.png
-	   :width: 400px
-.. image:: pics/capture4.png
+.. image:: pics/halfwave-mpl-screen.png
 	   :width: 400px
 
 capture4(nbEchantillons, intervalleTemps)
@@ -347,6 +345,9 @@ est montré ci-dessus.
    show()
 
 
+.. image:: pics/capture4-mpl-screen.png
+	   :width: 400px
+	   
 set_wave(frequence, typeDeSignal)
 """""""""""""""""""""""""""""""""
 
@@ -387,11 +388,6 @@ lancer le code ci-dessous. Le résultat est montré plus bas.
    plot(x,y)
    show()
 
-.. image:: pics/loadEquation.png
-	   :width: 400px
-.. image:: pics/loadTable.png
-	   :width: 400px
-
 
 load_table(table)
 """""""""""""""""
@@ -414,3 +410,9 @@ Le résultat dû à ce tableau est montré ci-dessus.
    show()
 
 
+.. image:: pics/load-equation-mpl-screen.png
+	   :width: 400px
+	   
+.. image:: pics/load-table-mpl-screen.png
+	   :width: 400px
+	   

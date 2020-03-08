@@ -1,22 +1,23 @@
-
 Mesure de la capacité de condensateurs en série
 ===============================================
 
-**Objectif**
+Objectif
+--------
 
 Mesurer la capacité de condensateurs en série.
 
 .. image:: schematics/cap-series.svg
 	   :width: 300px
 
-**Procédure pour deux condensateurs**
+Procédure pour deux condensateurs
+---------------------------------
 
--  Connecter un condensateur à IN1 et l'autre à GND. Relier ensemble les
-   extrémités opposées des deux condensateurs.
--  Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
-   condensateur pendant la mesure.
+-  Connecter les condensateurs selon la figure ;
+-  Cliquer sur « Capacité en IN1 » . Il ne faut pas toucher le
+   circuit pendant la mesure.
 
-**Discussion**
+Discussion
+----------
 
 Pour des condensateurs en série, on peut calculer la capacité équivalente
 à l'aide de la formule :

@@ -1,9 +1,13 @@
-.. 2.6
-   
 Signal d’antenne alternatif dû au secteur
------------------------------------------
+=========================================
 
-**Objectif**
+On trouve un champ magnétique variable au voisinage des lignes d'alimentation
+en courant alternatif. Ce champ magnétique induit une tension aux bornes d'un
+conducteur placé à proximité. On peut explorer cela en connectant un fil long
+à une extrémité, à l'appareil de mesure.
+
+Objectif
+--------
 
 Étudier l’alimentation du secteur en courant alternatif. Explorer le
 phénomène de propagation de tensions alternatives à travers l’espace.
@@ -11,14 +15,16 @@ phénomène de propagation de tensions alternatives à travers l’espace.
 .. image:: schematics/line-pickup.svg
 	   :width: 300px
 		   
-**Procédure**
+Procédure
+---------
 
--  Connecter un long fil en A3
+-  Connecter un long fil en A1
 -  Approcher une extrémité du fil près d’une ligne d’alimentation du
    secteur, sans toucher aucune source de tension.
--  Activer A3, et son analyse.
+-  Activer A1, et son analyse.
 
-**Discussion**
+Discussion
+----------
 
 Le signal d’antenne du secteur est affiché ci-dessous, il y a cinq
 cycles en 100 ms. Sans faire aucune connexion, comment se fait-il qu’on
@@ -26,6 +32,6 @@ reçoive un signal de tension alternative depuis le secteur ? Pourquoi la
 tension augmente-t-elle quand on touche le fil connecté en A1 avec la
 main ?
 
-.. image:: pics/pickup.png
+.. image:: pics/line-pickup-screen.png
 	   :width: 300px
 

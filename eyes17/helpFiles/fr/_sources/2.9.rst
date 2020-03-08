@@ -1,9 +1,17 @@
-.. 2.5
-
 Courants continu et alternatif
-------------------------------
+==============================
 
-**Objectif**
+L'intenisté et le sens du courant électrique d'une pile ne change pas avec le temps.
+On l'appelle « courant continu ». Le courant du secteur est de nature différente.
+Le courant du secteur en France est normalisé à 230 V, 50 Hz. Une fréquence de
+50 Hz signifie un changement de tension qui se répète toutes les 20 millisecondes.
+Qi on mesure la tension entre la phase et le neutre d'une prise de courant
+domestique, la tension augmente de zéro à 325 V (:math:`230 \sqrt{2}`) en 5 ms
+et revient à zéro dans les 5 ms suivantes. Ce type de courant est nommé courant
+alternatif. Pour étudier ce type de courant, il faut un oscilloscope.
+
+Objectif
+--------
 
 Introduire le concept de tensions variables dans le temps, à l’aide d’un
 graphique :math:`U(t)`. Comparer les graphiques de continu et
@@ -12,24 +20,40 @@ d’alternatif.
 .. image:: schematics/ac-dc.svg
 	   :width: 300px
 		   
-**Procédure**
+Procédure
+---------
 
--  Régler PV1 à 2 V et régler WG à 200 Hz
--  Activer l’analyse sur A1, afin de mesurer l’amplitude et la
-   fréquence.
+-  Connecter WG à A1 et PV1 à A2, à l'aide de fils.
+-  Régler PV1 à 2_V et WG à 1000 Hz
+-  Activer l'analyse sur A1, pour mesurer l'amplitude et la fréquence.
 -  Activer A2
 
-**Discussion**
+Voici, ci-dessous, une copie d'écran de ce qu'on peut obtenir.
+
+.. image:: pics/ac-dc-screen.png
+	   :width: 300px
+
+On ne doit pas en conclure que la tension soit purement continue ou alternative.
+Il peut y avoir une combinaison des deux. Par exemple, si on prend l'exemple
+d'une tension carrée oscillant entre 0 et 5 V.
+
+-  Connecter SQ1 à A1
+-  Régler le calibre de A1 à 8V. Ajuster le déclenchement pour stabiliser la trace.
+-  Régler PV1 à 2 V et régler WG à 1000 Hz
+
+Le graphique ci-dessous est-il alternatif ou continu ? On préfère le considérer
+comme une valeur continue à 2,5 V additionnée à une valeur alternative oscillant
+entre -2,5 V et +2,5 V.
+
+On verra plus loin comment séparer ces composantes.
+
+.. image:: pics/sqr-wave-screen.png
+	   :width: 300px
+	   
+Discussion
+----------
 
 Dans le graphique, si la courbe de tension ne change pas (si elle est
 horizontale), c’est du courant continu pur. Si la tension change avec le
 temps, il y a une composante alternative. Si la tension moyenne est
-nulle, alors c’est de l’alternatif pur. Dans le deuxième graphique, la
-tension varie entre zéro et cinq volt ; est-ce du courant alternatif,
-continu, ou quelque chose d’autre ?
-
-.. image:: pics/ac-dc.png
-	   :width: 300px
-.. image:: pics/sqr-wave.png
-	   :width: 300px
-
+nulle, alors c’est de l’alternatif pur.

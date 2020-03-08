@@ -1,40 +1,54 @@
-.. 2.14
-   
 Résistance de l’eau, en courant alternatif
-------------------------------------------
+==========================================
 
-**Objectif**
+La résistance de l'eau donne une indication sur sa pureté. L'eau
+conduit principalement à cause des sels dissous. Si vous n'avez jamais
+mesuré la résistance de l'eau ordinaire du robinet, essayez de la
+faire à l'aide d'un multimètre. Obtenez-vous une lecture stable ?
+
+Objectif
+--------
 
 Mesurer la résistance de solutions ioniques, en utilisant des signaux
-continu et alternatif. On utilise de l’eau ordinaire du robinet. Essayer
-de mesurer la résistance au préalable à l’aide d’un
-multimètre.
+continu et alternatif. On utilise de l’eau ordinaire du robinet.
 
 .. image:: schematics/res-water.svg
 	   :width: 300px
+
+Procédure
+---------
+
+-  Faire les connexions selon le schéma
+-  Choisir une résistance comparable à celle de l'eau, commencer avec
+   :math:`10~k\Omega`.
+-  Activer A1 et A2, et l'affichage de leurs amplitudes et fréquences.
+
+Calculer la résistance à l'aide de la méthode de comparaison à une résistance connue. Le courant qui passe vaut :math:`I = \frac{U_{A2}}{R_{1}}`.
+
+La résistance de l'eau vaut
+:math:`R_{w} = \frac {U_{A1} - U_{A2}}{I} = \frac {U_{A1} - U_{A2}}{U_{A2}}\times R_{1}`.
+      
 .. image:: pics/water-conduct.png
 	   :width: 300px
 
-**Procédure**
+Discussion
+----------
 
--  R1 est censé être comparable avec R, On commence avec :math:`10~k\Omega`.
--  Activer A1 et A2
--  Calculer la résistance comme expliqué à la section
-   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+On peut recommencer l'expérience en utilisant la tension continue de
+PV1. Utiliser les affichages continus de A1 et A2 dans ce cas. En
+courant continu, la résistance du liquide semble canger avec le temps,
+alors qu'en courant alternatif la valeur est stable. Quand on
+travaille avec une tasse et les deux fils qui trempent dedans par
+leurs extrémités, la résistance dépend peu de la distance entre les
+extrémités. C'est l'aire des électrodes qui a le plus d'effet. Pour
+déterminer la résistivité de l'eau, il faudrait réaliser une colonne
+d'eau dans un tube, avec des électrondes planes aux extrémités.
 
-**Discussion**
+La résistance dépende de la concentration des ions et de la présence
+d'impuretés dans l'eau utilisée. Essayer d'ajouter un peu de sel de
+cuisine et de recommencer les mesures.
 
-Les valeurs observées sont montrées dans le tableau. Les résistances en
-continu et en alternatif semblent très différentes. En courant continu,
-la résistance du liquide change au cours du temps, à cause d’une
-électrolyse et de la formation de bulles. La résistance dépend peu de la
-distance entre électrodes, c’est la surface de l’électrode qui a le plus
-d’effet. La résistance dépend de la concentration en ions et à la
-présence d’impuretés dans l’eau.
-
-Essayer de changer la distance entre électrodes. Essayer d’ajouter un
-sel ordinaire et recommencer les mesures. Pourquoi le comportement
-est-il différence en courant continu ou alternatif ? Quels sont les
-porteurs de charges responsables du flux d’électricité à travers les
-solutions ? Y a-t-il une réaction chimique qui se produit ?
-
+Pourquoi le comportement est-il différent en continu et en
+alternatif ? Quels sont les porteurs de charge responsables du passage
+du courant dans la solution ? Y a-t-il des réactions chimiques qui
+sont provoquées par le courant ?

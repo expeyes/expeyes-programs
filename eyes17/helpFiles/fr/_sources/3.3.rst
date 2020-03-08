@@ -1,29 +1,41 @@
-.. 3.2
-   
 Redressement double alternance avec des jonctions PN
-----------------------------------------------------
+====================================================
 
-**Objectif**
+Un redresseur simple alternance dépend de la capacité de filtrage sur
+une longue duére pour fournir le courant continu. Cela provoque une
+forte ondulation et convient mal pour les courants élevés. Un
+redresseur double alternance résout ce problème en fournissant du
+courant tant durant l'alternance positive que durant la
+négative. Cependant, il nécessite de disposer de deux phases de
+tension altenative en entrée, fournies le plus souvent par un
+transformateur avec point milieu.
+
+
+Objectif
+--------
 
 Réaliser un redresseur double alternance, à l’aide de deux diodes. Il
 faut deux signaux alternatifs, déphasés de 180 degrés. Ceux-ci sont
-fournis par WG et :math:`\overline{WG}`.
+fournis par WG et :math:`\bar{WG}`.
 
 .. image:: schematics/fullwave.svg
 	   :width: 300px
-.. image:: pics/fullwave.png
-	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
--  Faire les connexions
+-  Faire les connexions sur la plaque de montage
 -  Activer A1, A2 et A3
--  Régler WG à 200 Hz et ajuster la base de temps pour voir 4 ou 5
+-  Régler WG à 1000 Hz et ajuster la base de temps pour voir 4 ou 5
    cycles.
 
-**Discussion**
+.. image:: pics/fullwave-screen.png
+	   :width: 500px
 
-On laisse comme exercice à l’utilisateur de réduire la fluctuation de
+Discussion
+----------
+
+On laisse comme exercice à l’utilisateur de réduire l'ondulation de
 tension à l’aide d’un condensateur. Cette expérience est seulement là
 pour montrer le fonctionnement d’une redressement double alternance, il
 ne peut pas produire beaucoup plus que quelques milliampères de courant.

@@ -1,29 +1,28 @@
-.. 4.3
-   
 Réponse transitoire de circuits RL
-----------------------------------
+==================================
 
-**Objectif**
+Dans un circuit RL, la tension est donnée par
+:math:`U(t) = RI(t) + L(dI/dt)`, ce qui donne, quand on le résout pour
+un échelon de tension, :math:`I = I_0 \times e^{− (R/L)t}`. Le
+coefficient R/L du terme exponentiel peut être déduit du graphique de
+la tension aux bornes du bobinage. Il faut inclure la résistance
+propre du bobinage dans le calcul, :math:`R = R_{ext} + R*_L`.
+
+Objectif
+---------
 
 Explorer la nature du courant et de la tension quand un échelon de
 tension est appliqué à une résistance et un bobinage en série. En
 mesurant la tension en fonction du temps aux bornes du bobinage, on peut
-calculer son inductance.
+calculer le quotient R/L.
+
+
+Procédure
+---------
 
 .. image:: schematics/RLtransient.svg
 	   :width: 300px
-.. image:: pics/RLtransient.png
-	   :width: 300px
-
-Dans un circuit RL, :math:`U = RI + L(dI/dt)` , équation
-qui se résout en
-:math:`I = I_0 \times e^{− (R/L)t}`. Le
-coefficient du terme exponentiel R/L peut être déduit du graphique de la
-tension aux bornes du bobinage. La résistance du bobinage doit être
-incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
-
-**Procédure**
-
+	   
 -  Le bobinage est la bobine de 3000 tours
 -  Cliquer sur les boutons *Échelon 0->5V* et *Échelon 5->0V* pour
    afficher les graphiques
@@ -31,13 +30,18 @@ incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
 -  Calculer la valeur de l’inductance
 -  Insérer un noyau en fer dans le bobinage et recommencer
 
-**Discussion**
+.. image:: pics/RLtransient-screen.png
+	   :width: 500px
+
+Discussion
+----------
 
 La réponse transitoire du circuit RL est montrée sur la figure. La
 courbe exponentielle est modélisée pour extraire la valeur de L/R. La
 résistance de la bobine est mesurée en la comparant avec la résistance
 externe connue, en courant continu. A2 est connecté à OD1 pour une
-mesure plus précise de la résistance du bobinage.
+mesure plus précise de la résistance du bobinage. Le programme s'en sert
+pour calculer et afficher la valeur de l'inductance.
 
 Les tensions appliquées sont positives, mais le graphique va vers des
 tensions négatives, pourquoi ?

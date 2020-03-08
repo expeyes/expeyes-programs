@@ -1,31 +1,41 @@
-.. 2.9
-   
 Résistance électrique du corps humain
--------------------------------------
+=====================================
 
-**Objectif**
+On a vu qu'il est possible de mesurer une résistance inconnue par
+comparaison à une résistance connue en les connectant en série et en
+mesurant les tensions à leur bornes. On peut utiliser cette technique
+pour mesurer la résistance du corps humain.
+
+Objectif
+---------
 
 Mesurer la résistance électrique du corps humain en la comparant à une
-résistance connue. On commence avec un signal continu issu de PV1 puis
-on continue avec un signal alternatif issu de WG.
+résistance connue, pour des signaux continu et alternatif.
 
 .. image:: schematics/res-body.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
 -  Régler PV1 à 3 V
--  Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
--  Calculer la résistance de son corps comme expliqué à la section
-   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
--  Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer
-   les analyses de A1 et A2 afin de mesurer les tensions.
+-  Relier PV1 par un file à A1
+-  Connecter l'extrémité d'un fil long à PV1
+-  Connecter l'extrémité d'un autre fil long à A2
+-  Connecter une résistance de   :math:`100\Omega` entre A2 et GND.
+-  Activer les cases à cocher    pour afficher A1 et A2
+-  Tenir en main les deux extrémités non branchées des fils longs.
+-  Recommencer en utilisant SINE au lieu de PV1.
+-  Activer les analyses d'amplitude et de fréquence pour A1 et A2.
+   
+Discussion
+----------
 
-**Discussion**
-
-Les mesures en courant continu sont plus affectées par les bruits
-électriques. La résistance en courant alternatif est censée être
-inférieure à la résistance en courant continu. La résistance est due à
-notre peau, le courant électrique peut y passer comme il passe à travers
-un condensateur.
+La résistance en alternatif est plus faible que celle en courant
+continu. La résistance est due à notre peau,et le courant alternatif
+peut la traverser, de la même façon qu'il passe à travers le matériau
+diélectrique d'un condensateur. UN peu d'exploration révèle qu'une
+sorte de condensateur se forme entre lectrémité du fil et le sang, la
+peau jouant le rôle de diélectrique. Explorer l'effet d'un plateau
+métallique connecté au bout du fil.
 

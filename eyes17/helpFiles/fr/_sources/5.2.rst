@@ -1,15 +1,14 @@
-.. 5.2
-   
 Vitesse du son
---------------
+==============
 
-**Objectif**
+Objectif
+--------
 
 Calculer la vitesse du son en mesurant les variation de pression selon
 la distance.
 
 Le son voyage comme une série de compressions et d’expansions. La figure
-`5.1↓ <#fig:Sound-waves>`__\ (a) montre les régions de haute et basse
+`5.2↓ <#fig:Sound-waves>`__\ (b) montre les régions de haute et basse
 pression le long de la direction de propagation, en même temps que la
 sortie d’un capteur de pression aux positions correspondantes.
 
@@ -22,16 +21,17 @@ la longueur d’onde est donnée par :math:`\lambda = (360 \times \Delta
 obtient la vitesse du son en multipliant cela par la fréquence.
 
 +----------------------------------------------------------------------------+
-|.. image:: pics/sound_waves.png                                             |
-|	   :width: 300px                                                     |
 |.. image:: schematics/sound-velocity.svg                                    |
 |	   :width: 300px                                                     |
+|.. image:: pics/sound_waves.png                                             |
+|	   :width: 300px                                                     |
 +----------------------------------------------------------------------------+
-|Figure 5.1 (a) compressions et expansions le long de la direction de        |
-|propagation d’un son. (b) schéma de montage                                 |
+|Figure 5.2 (a) schéma de montage  (b) compressions et expansions le long de |
+|la direction de propagation d’un son.                                       |
 +----------------------------------------------------------------------------+
 
-**Procédure**
+Procédure
+---------
 
 -  Régler la fréquence au maximum de résonance en mesurant la réponse en
    amplitude `5.1↑ <#sec:Resonance-frequency-of>`__
@@ -41,10 +41,15 @@ obtient la vitesse du son en multipliant cela par la fréquence.
 -  Modifier la distance pour les déphaser de 180° ; cette distance est
    la demi-longueur d’onde.
 
-**Discussion**
+.. image:: pics/sound-velocity180-screen.png
+	   :width: 600px
+	   
+Discussion
+----------
 
 À 3500 Hz, un changement de distance de 2 cm provoque un changement de
-phase de 176° à 102°. À l’aide de l’équation,
-:math:`v = f \times (360 \times \Delta D)/X`, :math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot s^{−1}`.
-Il est important de conserver le microphone et le disque piézo sur le
-même axe pour des résultats précis.
+phase de 176° à 102°. À l’aide de l’équation, :math:`v = f
+\times (360 \times \Delta D)/X`,
+:math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot
+s^{−1}`.  Il est important de conserver le microphone et le disque
+piézo sur le même axe pour des résultats précis.

@@ -1,33 +1,40 @@
-.. 2.16
-   
 Numériser un son
-----------------
+================
 
-**Objectif**
+Les ondes sonores créent des variations de pression dans le milieu
+qu'elles traversent. Le microphone génère une tension proportionnelle
+à la variation de pression. On peut considérer le microphone comme un
+capteur de pression, mais qui fonctionne seulement pour les pressions
+variables dans le temps.
+
+Objectif
+--------
 
 Numériser des signaux sonores d’un microphone, et mesurer leur
 fréquence. Utiliser le buzzer piézo ou toute autre source sonore comme
 un diapason.
 
-**Procédure**
+Procédure
+---------
 
 .. image:: schematics/sound-capture.svg
-	   :width: 300px
+	   :width: 400px
 
--  Activer A1 et MIC, ainsi que leurs analyses
+-  Activer MIC, ainsi que l'analyse de son amplitude et sa fréquence
 -  Positionner le microphone face au buzzer
 -  Régler WG à :math:`1000~Hz`, puis le modifier et observer la sortie MIC
--  Utiliser un sifflet à la place du buzzer et trouver sa fréquence à
-   l’aide de la sortie MIC.
+-  Utiliser un sifflet à la place du buzzer
+-  Cliquer sur « Transformation de Fourier » (FFT) pendant que le
+   signal est stationnaire pour l'analyser.
 
-**Discussion**
+Le signal du microphone est mintré ci-dessous.   
 
-Le signal du générateur et la sortie du microphone sont montrés dans la
-figure
+.. image:: pics/sound-capture-screen.png
+	   :width: 400px
 
-Les ondes sonores créent des variations de pression dans le milieu
-qu’elles traversent. Le microphone crée une tension proportionnelle aux
-variations de pression. Les variations de tension sont à l’unisson des
-variations de pression. On peut comparer le microphone à un capteur de
-pression, mais qui fonctionne seulement pour les variations de pression.
+Discussion
+----------
 
+La possibilité de capter un son et de mesurer sa fréquence permet de
+nombreuses expériences. Créer des sons en soufflant sur des tubes
+fermés peut être utilisé pour mesurer la vitesse du son dans l'air.

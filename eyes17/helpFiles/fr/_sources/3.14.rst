@@ -1,24 +1,44 @@
 .. 3.12
    
-Caractéristique de la sortie (CE) d’un transistor
--------------------------------------------------
+Caractéristique de la sortie d’un transistor en mode EC
+=======================================================
 
-**Objectif**
+Le principe de fonctionnement d'un transitor, pour faire simple, est de contrôler
+un courant fort à l'aide d'un courant faible dans un autre circuit. Comme le
+transistor a trois « pattes », une des bornes doit être commune aux deux circuits.
+On peut explorer le fonctionnement d'un transistor en étudiant les relations entre
+diverses tensions à différentes bornes et les courants qui y passent.
 
-Tracer la courbe caractéristique de sortie d’un transistor. Le
-collecteur est connecté à PV1 à travers une résistance de :math:`1~k\Omega`.
+Objectif
+--------
 
-.. image:: schematics/transistor_out.svg
+À l'aide d'un transistor NPN, tracer la variation de la tension de collecteur
+en fonction du courant de collecteur dans la configuration émetteur commun.
+On répère cela pour trois courants de base différents. Le courant de collecteur
+est calculé à partir de la tension aux bornes d'une résistances de
+:math:`1~k\Omega`, dans le circuit du collecteur.
+
+
+Procédure
+---------
+
+.. image:: schematics/npn-ce-char.svg
 	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
 
-**Procédure**
-
+- Placer le transistor sur une planche de contacts et réaliser les connexions.
 -  Régler la tension de base à 1 V et DÉMARRER.
--  Recommencer pour diverses valeurs du courant de base.
+-  Recommencer pour diverses valeurs du courant de base, en incrémentant PV2
+   par étapes de 0,3 V.
 
-**Discussion**
+Un exemple de graphique est montré ci-dessous. On peut aussi faire
+cette expérience manuellement depuis l'interface graphique
+Oscilloscope, et en notant les observations.
+
+.. image:: pics/npn-ce-char-screen.png
+	   :width: 500px
+
+Discussion
+----------
 
 Les courbes caractéristiques pour différentes valeurs du courant de base
 sont montrées sur la figure. Le courant de collecteur est obtenu à

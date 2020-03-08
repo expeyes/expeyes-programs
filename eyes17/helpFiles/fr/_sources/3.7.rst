@@ -1,34 +1,44 @@
-.. 3.12
-   
-Caractéristique de la sortie (CE) d’un transistor
--------------------------------------------------
+Amplificateur à transistor (EC)
+===============================
 
-**Objectif**
+On peut modifier l'expérience de tracé des caractéristiques d'un transistor
+pour la changer en montage amplificateur à émetteur commun. Tout ce qu'il
+faut faire, c'est de créer un réseau diviseur de tension pour réduire
+l'amplitude de WG à moins de 80 mV. On connecte ce signal réduit à la base
+à travers un condensateur de :math:`1 \mu F`.
 
-Tracer la courbe caractéristique de sortie d’un transistor. Le
-collecteur est connecté à PV1 à travers une résistance de :math:`1~k\Omega`.
+Objectif
+--------
 
-.. image:: schematics/transistor_out.svg
+Démontrer l'action amplificatrice d'un transistor NPN dans la configuration
+émetteur commun.
+
+Procédure
+---------
+
+.. image:: schematics/transistor-amplifier.svg
 	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
+	   
 
-**Procédure**
+-  Plcer le transistor sur la plaque de montage et raliser les connections
+   selon le schéma ;
+-  Régler la tension de la base à 1 V et DÉMARRER ;
+-  Régler l'amplitude de WG à 80 mV ;
+-  Activer A1 et A2 ;
+-  Utiliser le curseur pour changer la tension de la base et oberver le
+   décalage du point de fonctionnement.
 
--  Régler la tension de base à 1 V et DÉMARRER.
--  Recommencer pour diverses valeurs du courant de base.
+Le résultat est monté ci-dessous. On peut voir que les signaux d'entré
+et de sortie sont déphasés de 180 degrés.
 
-**Discussion**
+.. image:: pics/transistor-amplifier-screen.png
+   :width: 500px
 
-Les courbes caractéristiques pour différentes valeurs du courant de base
-sont montrées sur la figure. Le courant de collecteur est obtenu à
-partir de la différence de potentiel aux bornes de la résistance de
-:math:`1~k\Omega`.
 
-Le courant de la base dépend du réglage de la source de tension à
-l’extrémité d'une résistance de :math:`100~k\Omega`, l’autre extrémité étant
-connectée à la base. La valeur du courant de base est calculée par
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
-Si A2 n’est pas connectée, le code considère une valeur de 0,6 V pour la
-base afin de calculer le courant dans celle-ci.
+Discussion
+----------
 
+Le courant de la base est fixé grâce à la source de tension PV2, à
+travers une résistance de :math:`100~k\Omega`. Cela fixe le point de
+fonctionnement en courant continu du système. Réglez-le afin d'obtenir
+le moins de distorsion possible dans le signal de sortie.

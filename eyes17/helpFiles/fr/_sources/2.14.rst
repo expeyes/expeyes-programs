@@ -1,9 +1,11 @@
-.. 2.10
-   
 Photorésistances
-----------------
+================
 
-**Objectif**
+La résistance d'une photorésistance diminue avec l'intensité de la
+lumière qu'elle reçoit. On peut mesurer cela à l'aide de l'entrée SEN.
+
+Objectif
+--------
 
 Étudier une photorésistance (LDR). Mesurer l’intensité de la lumière et
 sa variation en fonction de la distance à la source.
@@ -11,14 +13,20 @@ sa variation en fonction de la distance à la source.
 .. image:: schematics/ldr.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
+-  Connecter la photorésistance entre SEN et GND
+-  Connecter un fil entre SEN et A1   
 -  Mesurer la résistance de la LDR, pour diverses intensités lumineuses.
 -  Éclairer la LDR à l’aide d’une lampe à fluorescence, A1 est censée
-   afficher des variations
--  Placer A1 en mode alternatif et mesurer la fréquence de l’oscillation
+   afficher des fluctuations
+-  Régler la base de temps pour avoir 200 ms à pleine échelle
+-  Placer A1 en mode alternatif à l'aide de l'interrupteur et mesurer
+   la fréquence de l’oscillation
 
-**Discussion**
+Discussion
+----------
 
 La résistance varie de :math:`1~k\Omega` à environ :math:`100~k\Omega`
 selon l’intensité de la lumière qui l’éclaire. La tension est
@@ -27,3 +35,5 @@ résistance diminue quand l’éclairage augmente. Si on utilise une
 source de lumière ponctuelle, la résistance est censée augmenter comme
 le carré de la distance entre la photorésistance et la source lumière.
 
+La lumière d'une lampe fluorescence fonctionnant à 50 Hz provoque des
+ondulations à 100 Hz, et on peut les détecter.

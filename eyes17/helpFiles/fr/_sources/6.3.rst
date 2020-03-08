@@ -1,29 +1,38 @@
-.. 6.3
-   
 Résonance d’un pendule forcé
-----------------------------
+============================
 
-**Objectif**
+L'amplitude d'un corps oscillant devient maximale quand la fréquence
+de la force d'excitation est égale à sa fréquence de résonance
+naturelle. Un pendule forcé est un exemple très simple de cette
+situation.
 
-Démontrer la résonance d’un pendule forcé.
+Objectif
+--------
 
-.. image:: schematics/driven-pendulum.svg
-	   :width: 300px
-.. image:: pics/resonance-pendulum.jpg
-	   :width: 300px
+Démontrer la résonance d’un pendule forcé. On réalise l pendule à
+l'aid de deux boutons magnétiques, suspendus à un morceau de
+papier. Une bobine alimentée par SQ1 fournit la force d'excitation.
 
-**Procédure**
+
+Procédure
+---------
 
 Réaliser un pendule avec deux aimants boutons et un morceau de papier.
 Le suspendre et placer la bobine de 3000 tours à proximité, comme montré
 sur la figure.
+
+.. image:: schematics/driven-pendulum.svg
+	   :width: 400px
+.. image:: pics/driven-pendulum-photo.jpg
+	   :width: 300px
 
 -  Connecter la bobine entre SQ1 et GND
 -  Calculer la fréquence de résonance d’après la longueur du pendule
 -  Scanner la fréquence au voisinage de la fréquence de résonance
    attendue
 
-**Discussion**
+Discussion
+----------
 
 Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude
 augmente. Un pendule long de 4 cm (du centre des aimants à l’axe de

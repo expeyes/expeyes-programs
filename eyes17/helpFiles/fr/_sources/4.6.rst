@@ -1,36 +1,56 @@
-.. 4.5
-   
 Différenciation et intégration RC
----------------------------------
+=================================
 
-**Objectif**
+.. image:: schematics/RLC-circuit.svg
+   :width: 300px
 
-Les circuits RC peuvent intégrer ou différencier un signal de tension
-par rapport au temps. Si on intègre un signal carré on obtient un signal
-triangulaire et si on différencie on obtient des pics aux
-transitions.
+Quand on ferme l'interrupteur dans le montage ci-dessus cela change la
+tension aux bornes du condensateur. Selon les valeurs relatives de L,
+C et R, la tension peut osciller ou changer de façon exponentielle.
 
-.. image:: schematics/RCintegration.svg
-	   :width: 300px
-.. image:: schematics/RCsteadystate.svg
-	   :width: 300px
+Objectif
+--------
 
-**Procédure**
+Appliquer un échelon de tension à un circuit RLC. Capturer et analyser
+la tension qui en résulte aux bornes du condensateur.
 
--  Sélectionner l’option signal triangulaire pour WG
--  Régler WG à 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
--  Ajuster l’échelle horizontale pour voir plus de quatre cycles.
--  Recommencer la même chose pour le différenciateur RC, à :math:`50~Hz`.
+Procédure
+---------
 
-**Discussion**
+.. image:: schematics/RLCtransient.svg
+   :width: 300px
 
-L’intégration d’un signal triangulaire donne une forme parabolique et la
-différenciation donne une forme carrée. La différenciation ne peut être
-montrée qu’à basse fréquence. Essayer cela pour d’autres formes de
-signaux, par exemple signal carré. Si on intègre un signal carré on est
-censé obtenir un signal triangulaire.
+- Utiliser la bobine de 3000 tours et le condensateur de :math:`0.1~\mu F` ;
+- Cliquer sur *Échelon 5->0 V*. Ajuster l'axe des X et recommencer si nécessaire ;
+- Modéliser (FIT) le graphique pour trouver la fréquence de résonance
+  et le facteur d'amortissement ;
+- Recommencer avec des valeurs plus grandes de capacité et de résistance.
 
-.. image:: pics/RCintegration.png
-	   :width: 300px
-.. image:: pics/RCdifferentiation.png
-	   :width: 300px
+
+.. image:: pics/RLCtransient-screen.png
+   :width: 500px
+
+Les valeurs choisies donnent un amortissement sous-critique. Le
+bobinage à une inductance de plus de 100 mH et une résistance de près
+de :math:`500 \Omega`. Pour augmenter l'amortissement, on peut
+utiliser une résistance en série de plus grande valeur, ou une
+capacité plus grande.
+
+
+Discussion
+----------
+
+On a exploré la nature oscillante d'un circuit L, C série. La
+fréquence de résonance des circuits série LC est donnée par
+:math:`f_0 = 1/(2\pi\sqrt{LC})`. Le facteur d'amortissement est
+:math:`R/(2\sqrt{LC})`, et il vaut 1 pour l'amortissement
+critique. Selon les valeurs relatives de C/L et R, l'amortissement
+peut être sous-critique, critique, ou super-critique.
+
+On a utilisé une bobne de 3000 tours et un condensateur de
+:math:`0,1~\mu F`.  La tension aux bornes du condensateur après un
+échelon de 5 à 0 V est présentée sur la figure. La fréquence de
+résonance mesurée correspond à :math:`f = 1/(2\pi\sqrt{LC})`, dans les
+limites de la tolérance des composants.
+
+https://fr.wikipedia.org/wiki/Circuit_RLC

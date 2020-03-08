@@ -1,38 +1,26 @@
-.. 4.6
-   
-Analyse de Fourier
-------------------
+Réponse en fréquence d'un circuit de filtrage
+=============================================
 
-**Objectif**
+La transmission de sigaux électriques à travers un circuit de filtrage
+dépend de la fréquence. Le quotient des amplitudes du signal de sortie
+sur celle du siganl d'entrée se nomme *le gain*. Quand on trace son
+évolution en fonction de la fréquence on obtient la courbe de réponse
+en fréquence du cirduit de filtrage.
 
-Étudier la transformée de Fourier d’un signal. Représentations
-temporelle et fréquentielle d’un signal.
+Objectif
+--------
 
-**Procédure**
+Tracer la réponse en fréquence d'un circuit de filtrage, avec
+:math:`L = 10\mu H, C=1 \mu F R=100`. La fréquence de résonance attendue
+pour ce filtre passe-bande est :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`.
 
--  Connecter SQ1 à A1 et WG à A2. Mettre A1 en mode couplage alternatif
-   (interrupteur à glissière sur le boîtier)
--  Activer A1 et A2, sélectionner le calibre 4 V
--  Régler WG et SQ1 à 500 Hz
--  Cliquer sur le bouton FFT
+Procédure
+----------
 
-**Discussion**
+.. image:: schematics/RLCfilter.svg
+   :width: 300px
 
-Dans le graphique de la transformée de Fourier, la fréquence est sur
-l’axe x et l’axe y montre l’intensité relative des composants
-fréquentiels du signal. On appelle ça la représentation
-fréquentielle (http://en.wikipedia.org/wiki/Fourier\_transform).
-Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
-plus petits sont une mesure de la distorsion du signal sinusoïdal.
+- Assembler le filtre RLC sur la plaque de montage ;
+- Connecter WG et A1 à l'entrée du circuit de filtrage ;
+- Connecter A2 à la sortie.
 
-Un signal carré peut être représenté comme
-:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
-Dans la transformée de Fourier d’un signal carré de fréquence *f* , il y
-aura un composant *3 f* (dont l’amplitude est le tiers du composant *f*),
-un composant *5 f* (amplitude un cinquième), etc. comme montré sur
-la figure.
-
-.. image:: pics/sqwaveFFT.png
-	   :width: 300px
-.. image:: pics/sinewaveFFT.png
-	   :width: 300px

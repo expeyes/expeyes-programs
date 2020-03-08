@@ -1,25 +1,37 @@
-.. 2.17
-
 Stroboscope
 ===========
 
-**Objectif**
+Un stroboscope est un instrument qui sert à faire apparaître un objet
+en mouvement cyclique à l'arrêt, ou en mouvement ralenti. Il consiste
+en une source de lumière capable de produire des flashes répétitifs et
+brefs. Si un objet tournant à une certaine fréquence est illuminé par
+un flash à la même fréquence, il ne devient visible que quand il
+repasse à une position particulière. Cela donne l'impression qu'il est
+à l'arrêt. Si les deux fréquences sont légèrement différentes, l'objet
+apparaît en mouvement au ralenti.
 
-Observation d'un phénomène périodique à l'aide de lumière pulsée périodiquement.
+Objectif
+--------
 
-**Procédure**
+Observation d'un phénomène périodique à l'aide de lumière pulsée périodiquement,
+à l'aide d'un disque portant une marque.
+
+Procédure
+---------
 
 .. image:: schematics/stroboscope.svg
 	   :width: 300px
 
 
 -  On fait tourner un disque à l'aide du moteur alimenté par une pile de 1,5 V.
--  On éclaire le disque seulement par la limère de la DEL, il ne devrait
-   pas y avoir d'autre source lumineuse.
--  Ajuster la fréquence de SQ1, le disque apparaît stationnaire quand elle est
-   égale à la fréquence de rotation du disque.
+-  Connecter une DEL à SQ1
+-  Régler le rapport cyclique de SQ1 à 20 % ou moins
+-  Ajuster la fréquence de SQ1, pour que le disque apparaisse stationnaire
+-  On doit travailler dans une zone sombre,  et éclairer le disque seulement
+   par la lumière de la DEL, il ne devrait pas y avoir d'autre source lumineuse.
 
-**Discussion**
+Discussion
+----------
 
 Quand la fréquence du phénomène observé et la fréquence de la lumière pulsée
 sont identiques, on peu observer une image statique.

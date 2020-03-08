@@ -1,29 +1,30 @@
-.. 4.2
-   
 Réponse de circuits RC en régime transitoire
---------------------------------------------
+============================================
 
-**Objectif**
+Objectif
+--------
 
 Tracer l’évolution de la tension aux bornes d’un condensateur, quand il
 est chargé en appliquant un échelon de tension à travers une résistance.
-Calculer la valeur de la capacité d’après la courbe.
+Extraire la valeur du produit RC en modélisant la courbe obtenue.
+
+Procédure
+---------
 
 .. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RCtransient.png
-	   :width: 300px
 
-**Procédure**
-
--  Dan le menu «Électricité», choisir le sous-menu «Circuit RC en régime
-   transitoire».
+- Réaliser les connexions selon le schéma ;
 -  Cliquer sur les boutons *Échelon 0->5V* et *Échelon 5->0V* pour
-   afficher les graphiques
--  Ajuster l’échelle horizontale si nécessaire, et recommencer.
+   afficher les graphiques ;
+-  Ajuster l’échelle horizontale si nécessaire, et recommencer ;
 -  Calculer la constante de temps RC.
 
-**Discussion**
+.. image:: pics/RCtransient-screen.png
+	   :width: 500px
+
+Discussion
+----------
 
 Quand on applique un échelon de 0 à 5 V, la tension aux bornes du
 condensateur s’approche exponentiellement de 5 V comme montré sur la

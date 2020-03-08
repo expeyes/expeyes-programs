@@ -1,16 +1,24 @@
 Mesure de résistances en parallèle
 ==================================
 
-**Objectif**
-
 Pour des résistances en parallèle, la relation suivante permet de calculer
 la résistance équivalente :
 :math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
 
+Objectif
+--------
+
+Mesurer la résistance de combinaisons en parallèle de dipôles ohmiques.
+Le kit fournit les valeurs 560, 1000 et 2200 :math:`\Omega`.
+
 .. image:: ./schematics/res-parallel.svg
    :width: 300px
 
-**Procédure pour deux résistances**
+Procédure pour deux résistances
+-------------------------------
 
--  Connecter les deux résistances entre SEN et GND.
--  Observer la valeur affichée sur le panneau de droite.
+- Mesurer les résistances séparément
+- Les connecter comme sur la figure
+- Observer les valeurs sur le panneau de droite
+- Comparer les valeurs avec celles que donne le calcul
+- Recommencer l'expérience avec diverses combinaisons de résistances.

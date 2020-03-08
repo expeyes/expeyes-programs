@@ -1,38 +1,41 @@
-.. 6.1
-   
 Accélération de la pesanteur à l’aide d’un pendule pesant
----------------------------------------------------------
+=========================================================
 
-**Objectif**
+La période des oscillations d'un pendule dépend de sa longueur et de
+la valeur de la gravité. La période des oscillations d'une barre
+uniforme (cas du pendule pesant) oscillant au bout d'une de ses
+extrémités est donnée par :math:`T = 2\pi\sqrt{2l/3g}`, où :math:`l`
+est la longueur et :math:`g` l'accélération due à la gravité.
+
+Objectif
+--------
 
 Mesurer la période des oscillations d’un pendule pesant à l’aide d’une
-barrière photo-électrique et calculer l’accélération de la pesanteur. La
-période des oscillations d’une tige uniforme autour d’une de ses
-extrémités est donnée par :math:`T = 2\pi\sqrt{2l/3g}`, où :math:`l` est la
-longueur et :math:`g` est l’accélération de la pesanteur. Le pendule (en forme
-de :math:`T`, un bord de couteau fixé à une tige de diamètre 6 mm) est mis à
-osciller entre une DEL et un photo-transistor, connectés à ExpEYES. La
-DEL et le photo-transistor sont montés sur un support en forme de :math:`U`
+barrière photo-électrique. Le pendule (en forme de :math:`T`, un bord
+de couteau fixé à une tige de diamètre 6 mm) est mis à osciller entre
+une DEL et un photo-transistor, connectés à expEYES. La DEL et le
+photo-transistor sont montés sur un support en forme de :math:`U`
 comme le montre la figure.
 
 .. image:: schematics/rod-pendulum.svg
-	   :width: 300px
-.. image:: pics/light-barrier-photo.jpg
-	   :width: 300px
+	   :width: 400px
+.. image:: pics/rod-pend-LB.jpg
+	   :width: 200px
 
-**Procédure**
+Procédure
+---------
 
 -  Mettre le pendule en oscillation et cliquer sur DÉMARRER
 -  Recommencer avec diverses longueurs de pendule.
 
-**Discussion**
+Discussion
+----------
 
-La période est mesurée 50 fois, à l’aide d’un pendule pesant de
-14,6 cm, et la valeur moyenne est 0,627 s. La valeur calculée de
-*g* est :math:`977,4~cm\cdot s^{-2}`, légèrement différente de la
-valeur réelle pour les raisons suivantes : La longueur est mesurée
-depuis le bord du couteau jusqu’au bas de la tige et utilisée dans la
-formule. Mais il y a un peu de masse présente au-dessus du fil du
-couteau qui n’est pas comprise dans le calcul. Une autre raison peut
-être que le pendule n’est peut-être pas exactement vertical dans la
-position de repos.
+On peut mesurer la période d'oscillation avec une précision de
+:math:`100 \mu s`. Il y a cependant deux sources principales
+d'erreurs. La longueur est mesurée du bordu du couteau au bas du
+pendule, puis utilisée dans la formule. Mais une petite fraction de la
+masse se situe au-dessus du bord du couteau et elles n'est pas
+considérée dans le calcul. De plus le calcul suppose que la barrère
+photo-électrique soit exactement à la verticale du pendule dans sa
+position de repos, ce dont il faut s'assurer.
