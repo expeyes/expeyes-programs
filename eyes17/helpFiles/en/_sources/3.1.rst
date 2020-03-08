@@ -1,20 +1,22 @@
 Oscilloscope and other Equipment
-========================================
-The first thing that appears when you open the ExpEYES GUI program is an Oscilloscope window. The graphs of the four channel scope appears on the left side. On the right side we have the Buttons, Sliders etc. to control the scope and most of the hardware features of ExpEYES, like DC supplies, waveform generators etc. To understand ExpEYES, one should start  with the Input/Output trerminals and their functions as expleined below.
+================================
 
-.. figure:: pics/scope-outputs.png
+The first thing that appears when you open the ExpEYES GUI program is an Oscilloscope window. The graphs of the four channel scope appears on the left side. On the right side we have the Buttons, Sliders etc. to control the scope and most of the hardware features of ExpEYES, like DC supplies, waveform generators etc. To understand ExpEYES, one should start  with the Input/Output terminals and their functions as explained below.
+
+.. figure:: ./schematics/scope-outputs.svg
    :width: 300px
    
-**Output Terminals**
+Output Terminals
+----------------
 
 - CCS: :math:`1.1\ mA` Constant Current Source.
-   If you connect a resistor from this terminal to ground, a current of 1.1mA will flow irrespective of the value of the resistor. The maximum allowed value of the resistor is :math:`2k\Omega`. Using the Check-Button given on the GUI, you can ennable CCS.
+   If you connect a resistor from this terminal to ground, a current of 1.1mA will flow irrespective of the value of the resistor. The maximum allowed value of the resistor is :math:`2k\Omega`. Using the Check-Button given on the GUI, you can enable CCS.
    
 - PV1 and PV2: Programmable Voltages
    The output of this terminal can be set anywhere from -5V to +5V, using software. The voltage can be verified by connecting a voltmeter between PV1 and ground. PV2 is a similar output but the range is only from  :math:`- 3.3\ V` to :math:`+ 3.3\ V`. The voltages can be set from the GUI, using Sliders or Text-Entry widgets. 
    
 - SQ1: Square Wave Generator
-   This terminal can generate a Square wave that changes continuously from :math:`0` to :math:`5\ V`. The frequency can be set from the GUI from 1Hz to 5kHz, but it can be programmed to generate 0.1Hz to 1MHz. SQ1 has a :math:`100\Omega` series resistor so that LEDs can be directly connected.
+   This terminal can generate a Square wave that changes from :math:`0` to :math:`5\ V`. The frequency can be set from the GUI from 1Hz to 5kHz, but it can be programmed to generate 0.1Hz to 1MHz. SQ1 has a :math:`100\Omega` series resistor so that LEDs can be directly connected.
 
 - SQ2: Square Wave Generator
    SQ2 is available as an option of WG, means only one is available at a time. SQ2 has no series resistor. 
@@ -28,10 +30,11 @@ The first thing that appears when you open the ExpEYES GUI program is an Oscillo
    Triangular or Square. In SQR mode the output will appear on SQ2, with :math:`0` to :math:`5\ V` swing. 
    :math:`\bar{WG}` is just an inverted output of WG.
 
-.. figure:: pics/scope-inputs.png
+.. figure:: ./schematics/scope-inputs.svg
    :width: 300px
 
-**Input Terminals**
+Input Terminals
+---------------
 
 - IN1: For measuring Capacitance
    This has a built-in capacitance meter. By connecting between IN1 and ground, you can measure capacitance values ranging from few picoFarads to several microFarads. A Push-Button is provided for measurement.
@@ -41,9 +44,9 @@ The first thing that appears when you open the ExpEYES GUI program is an Oscillo
    between :math:`0` and :math:`3` to :math:`5\ V`. A Push-Button provided for measurement.
    
 - SEN: Input for measuring resistance
-   This is actually a voltage measurement terminal that is is internally connected to :math:`3.3\ V` via a :math:`5.1\ k\Omega` resistor. We calculate the value of the externally conencted load by using Ohm's law. This terminal is mostly used for connecting resistive sensors like photo-transistors, for time interval measurements.
+   This is actually a voltage measurement terminal that is is internally connected to :math:`3.3\ V` via a :math:`5.1\ k\Omega` resistor. We calculate the value of the externally connected load by using Ohm's law. This terminal is mostly used for connecting resistive sensors like photo-transistors, for time interval measurements.
   
-- A1: Voltage measurement terminal
+- A1 and A2: Voltage measurement terminal
    Functions as voltmeter and oscilloscope inputs. Maximum Input range  :math:`\pm\ 16\ V`. An AC/DC mode selection slider switch is provided on the box. 
    The maximum input voltage range is selectable from pull down menu. Input A2 is same as A1, but no AC coupled mode.
 
@@ -63,7 +66,8 @@ The first thing that appears when you open the ExpEYES GUI program is an Oscillo
 - :math:`\pm\ 6V/10mA` DC Supply
   This sockets provide DC power for Op-Amp circuits, with very limited current.
   
-**Graphical User Interface**
+Graphical User Interface
+------------------------
   
 .. figure:: pics/scope-screen-en.png
    :width: 600px
@@ -71,7 +75,8 @@ The first thing that appears when you open the ExpEYES GUI program is an Oscillo
 The GUI menubar consists of several pulldown menus for different categories of experiments. 
 The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fiields for accessing the hardware features explained earlier.
       
-**Oscilloscope Controls**
+Oscilloscope Controls
+---------------------
 
 - Channel Selection
    The four channels A1, A2, A3 and MIC can be selected for display using the Check buttons on lower half of the right side.
@@ -100,7 +105,8 @@ The left side of the the screen is the four channel oscilloscope window. On the 
 - Fourier Transform
     The Fourier transform converts the data from time domain to frequency domain. The amplitudes of the frequency components will be displayed. The value of the fundamenta frequency will be displayed.
 
-**Other Controls and Readbacks**
+Other Controls and Readbacks
+----------------------------
 
 - On the top right side there are Check boxes labelled A1, A2 and A3. Selecting them will display the instantaneous values of the voltages at terminals A1, A2 and A3. These are useful for measuring DC volatges only.
 

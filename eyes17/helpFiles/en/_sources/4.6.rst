@@ -1,18 +1,21 @@
 Transient response of LCR circuits
 ==================================
+
 .. image:: schematics/RLC-circuit.svg
    :width: 300px
 
 Closing the switch in the cicuit shown above will change the voltage across the
-capacitor. Depending on the relative values of L,C and R , the voltage may
+capacitor. Depending on the relative values of L, C and R , the voltage may
 show oscillations or it may change in an exponential manner.
 
-**Objective**
+Objective
+---------
 
 Apply a step voltage to an LCR circuit. Capture and analyse the resulting
 voltage across the capacitor.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/RLCtransient.svg
    :width: 300px
@@ -27,11 +30,12 @@ voltage across the capacitor.
    :width: 500px
 
 The values chosen are for an underdamped response. The coil has in inductance
-more than 100mH and a resistance of around 500 :math:`\Omega`.
+more than 100mH and a resistance of around :math:`500 \Omega`.
 To increase damping, you may add a series resistor, or use a larger value
 capacitor.
 
-**Discussion**
+Discussion
+----------
 
 Explore the oscillatory nature of L and C in series. Resonant frequency
 of series LC circuit is given by :math:`f_0 = 1/(2\pi\sqrt{LC})`. The damping
@@ -44,4 +48,5 @@ across the capacitor after a 5 to 0V step is shown in figure. The
 measured resonant frequency tallies with :math:`f = 1/(2\pi\sqrt{LC})`,
 within the component tolerance values.
 
-http://en.wikiversity.org/wiki/RLC\_circuit.
+https://en.wikipedia.org/wiki/RLC_circuit
+

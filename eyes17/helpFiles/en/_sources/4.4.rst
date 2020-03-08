@@ -1,12 +1,14 @@
 Transient Response of RC circuits
 =================================
 
-**Objective**
+Objective
+---------
 
 Plot the voltage across a capacitor, when it is charged by applying a
-voltage step through a resistor. Extract the value of RC from the graph by curve fitting.h.
+voltage step through a resistor. Extract the value of RC from the graph by curve fitting.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/RCtransient.svg
 	   :width: 300px
@@ -19,7 +21,8 @@ voltage step through a resistor. Extract the value of RC from the graph by curve
 .. image:: pics/RCtransient-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
 Applying a 0 to 5V step makes the voltage across the capacitor to rise
 exponentially as shown in the figure. By fitting the discharge curve

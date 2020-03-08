@@ -17,7 +17,7 @@ do experiments, you are advised to read through the brief description of
 the equipment given below. The device can be also used as a test
 equipment for electrical and electronics engineering experiments.
 
-*IMPORTANT :*
+**IMPORTANT :**
 
 *The external voltages connected to ExpEYES17 must be within the allowed
 limits. Inputs A1 and A2 must be within ±16 volts range and Inputs IN1
@@ -173,7 +173,7 @@ To get started, a set of accessories are provided with expEYES.
 -  Permanent Magnets : (a) 10mm dia & length (b) 5 mm dia & 10 mm length (c)
    Button size magnets(2)
 -  5mm LEDS : RED, BLUE, GREEN, WHITE
--  Capacitors : 100pF, 0.1uF , 1 uF & 22uF
+-  Capacitors : 100pF, 0.1 µF , 1 µF et 22 µF
 -  Inductor : 10 mH / 20Ω,
 -  Resistors : 560Ω, 1k\ Ω, 2.2k\ Ω , 10k\ Ω , 51k\ Ω and 100 k\ Ω
 -  LDR

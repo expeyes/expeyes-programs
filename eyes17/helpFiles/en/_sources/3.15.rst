@@ -1,16 +1,19 @@
 PNP Transistor Output characteristics (CE)
 ===========================================
+
 The basic working principle of a transistor is controlling a bigger current in circuit using a small current in another circuit. Being a three terminal device, one terminal has to be common for the two crcuits. The common emitter configuration
 is very common in most of the applications. We can explore the working of the transistor by studying the relationships between various voltages at different terminals and currents through them. 
 
 
-**Objective**
+Objective
+---------
 
-Using a PNP transistir, plot the Collector voltage against the collector current
+Using a PNP transistor, plot the Collector voltage against the collector current
 in a common emitter configuration. Repeat it for different base currennts. Collector current
 is calculated from the voltage across the a 1K resistor, in the collector circuit.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/pnp_ce_char.svg
 	   :width: 300px
@@ -26,7 +29,8 @@ the oscilloscope GUI, by noting down the readings.
 	   :width: 500px
 
 
-**Discussion**
+Discussion
+----------
 
 The characteristic curves for different base currents are shown in
 figure. The collector current is obtained from the voltage difference

@@ -1,33 +1,35 @@
 Velocity of sound
 =================
 
-**Objective**
+Objective
+----------
 
 Calculate the velocity of sound by measuring the pressure variation with
 distance. Sound travels as a series of compressions and rarefactions.
-Figure `↓ <#fig:Sound-waves>`__\ (a) shows the High and Low pressure
+Figure `↓ <#fig:Sound-waves>`__\ (b) shows the High and Low pressure
 regions along the direction of travel, along with output of a pressure
 sensor at corresponding positions.
 
 We can display the pressure variation at any point with respect to the
 variation at the starting point. The phase of the microphone output
 changes as you change its distance from the Piezo. Moving by one
-wavelength changes the phase by 360 degrees. If the phase changes by X
+wavelength changes the phase by 360 degrees. If the phase changes by *X*
 degrees for :math:`\Delta D` cm change in distance, the wavelength is given by
 :math:`\lambda = (360 \times \Delta D)/X`. The velocity of sound can be calculated by
 multiplying the frequency with this.
 
 +----------------------------------------------------------------------------+
 |.. image:: schematics/sound-velocity.svg                                    |
-|      :width: 400px                                                         |
+|      :width: 300px                                                         |
 |.. image:: pics/sound-waves.png                                             |
-|      :width: 400px                                                         |
+|      :width: 300px                                                         |
 +----------------------------------------------------------------------------+
 |Figure 5.1 (a) schematic (b)compressions et expansions along the direction  |
 | of sound.                                                                  |
 +----------------------------------------------------------------------------+
 
-**Procedure**
+Procedure
+----------
 
 -  Set frequency to resonant maximum by measuring the frequency response
    `5.1↑ <#sec:Resonance-frequency-of>`__
@@ -40,9 +42,12 @@ multiplying the frequency with this.
 .. image:: pics/sound-velocity180-screen.png
 	   :width: 600px
 	   
-**Discussion**
+Discussion
+----------
 
-At 3500 Hz, for a 2 cm change in distance the phase changed from 176 to
-102. Using the equation,
-:math:`v = f \times (360 \times \Delta D)/X`, :math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot s^{−1}`. It is important to keep the mic and the Piezo disc on the same
-axis, for accurate results.
+At 3500 Hz, for a 2 cm change in distance the phase changed from 176
+to
+102. Using the equation, :math:`v = f \times (360 \times \Delta D)/X`,
+:math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot
+s^{−1}`. It is important to keep the mic and the Piezo disc on the
+same axis, for accurate results.

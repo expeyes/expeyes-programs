@@ -1,12 +1,15 @@
 Clamping using PN junction diode
 ================================
+
 A DC can be added to an AC signal using a diode.
 
-**Objective**
+Objective
+---------
 
-Demostrate clamping of an AC signal at different levels, using a PN junction diode
+Demonstrate clamping of an AC signal at different levels, using a PN junction diode
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/clamping.svg
 	   :width: 300px
@@ -19,7 +22,8 @@ Demostrate clamping of an AC signal at different levels, using a PN junction dio
 .. image:: pics/clamping-screen.png
 	   :width: 300px
 
-**Discussion**
+Discussion
+----------
 
 The clamping level is decided by the applied DC voltage and the diode
 drop.

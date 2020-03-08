@@ -1,5 +1,5 @@
 Programming ExpEYES using Python
-==================================
+================================
 
 The GUI programs described in the previous sections are meant for a
 fixed set of experiments. To develop new experiments, one should know

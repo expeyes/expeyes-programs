@@ -1,12 +1,15 @@
 Clipping using PN junction diode
 ================================
+
 A PN junction diode conducts when the anode voltage exceeds the cathode voltage by an amount greater than the forward voltage of the diode. We can feed an AC voltage to the anode through a resistor and clip a part of it by applying a DC voltage at the cathode.
 
-**Objective**
+Objective
+---------
 
-Demostrate clipping of an AC signal at different levels, using a PN junction diode
+Demonstrate clipping of an AC signal at different levels, using a PN junction diode
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/clipping.svg
 	   :width: 300px
@@ -20,7 +23,8 @@ Demostrate clipping of an AC signal at different levels, using a PN junction dio
 	   :width: 500px
 
 
-**Discussion**
+Discussion
+----------
 
 The clipping level is decided by the applied DC voltage and the diode
 drop.

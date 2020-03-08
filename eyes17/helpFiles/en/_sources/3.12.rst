@@ -2,11 +2,13 @@ Clock Divider
 =============
 A D-type flip-flop can be configured as a clock divider.
 
-**Objective**
+Objective
+---------
 
 Study of a clock divider, using a D flip-flop (TTL family, 7474).
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/clock-divider.svg
 	   :width: 300px
@@ -19,7 +21,8 @@ For a symmetric input, the input and output waveforms are shown below.
 .. image:: pics/clock-divider-screen.png
    :width: 500px 
 
-**Discussion**
+Discussion
+----------
 
 The output toggles at every rising edge of the input, resulting in a
 division of frequency by two. The output is a symmetric squarewave,

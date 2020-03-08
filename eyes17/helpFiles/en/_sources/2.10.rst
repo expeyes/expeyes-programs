@@ -4,14 +4,16 @@ A changing magnetic field will be present near the wires carrying AC. Voltage wi
 between the ends of a conductor placed in this field. We can explore this by connecting one
 end of a long wire to the measuring equipment.
 
-**Objective**
+Objective
+---------
 
 Learn about the AC mains supply. Explore the phenomenon of propagation of AC through free space.
 
 .. image:: schematics/line-pickup.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 -  Connect a long wire to A1
 -  Take one end of the wire near the AC mains line, without touching any

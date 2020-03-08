@@ -1,22 +1,25 @@
 Direct and Alternating Currents
 ===============================
+
 The magnitude and direction of current from a drycell does not change with time. It is called DC or dirrect current. 
 The mains supply we get is of different kind. The mains supply in India is 230V at 50 Hz. A frequency of 50 Hz means
-the change in voltage repeats every 20milliseconds. If we measure the voltage across the 
+the change in voltage repeats every 20 milliseconds. If we measure the voltage across the 
 phase and neutral terminals of a household power socket, the voltage will
 increase from zero to 325V (:math:`230\sqrt{2}`) in 5 mS and it will be back to zero in the next 5 mS. 
 During the third 5mS it will reach -325V and will again reach zero during the fourth 5mS. These type of current
 is called alternating current (AC). To study the behavior of AC, an oscilloscope is required.
 
-**Objective** 
+Objective
+---------
 
-Introduce the concept of time dependent voltages, using a V(t) graph.
+Introduce the concept of time dependent voltages, using a :math:`V(t)` graph.
 Compare the graph of DC and AC.
 
 .. image:: schematics/ac-dc.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 -  Connect WG to A1 and PV1 to A2, using wires.
 -  Set PV1 to 2 volts and Set WG to 1000 Hz

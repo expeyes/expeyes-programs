@@ -1,17 +1,20 @@
 AC Transformer
 ===============
-There will be a time varying magnetic filed around a conductor carrying AC.
+
+There will be a time varying magnetic field around a conductor carrying AC.
 A voltage will be induced across another conductor placed in this field. 
 This is the working principle of a transformer, that can be demonstrated using the two
 coils included in the kit.
 
-**Objective**
+Objective
+---------
 
 Construct a transformer demonstrate mutual induction using two coils. One
 coil, the primary, is connected between WG and Ground. The axes of the
 coils are aligned and any ferromagnetic material may be inserted for better coupling.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics//transformer.svg
 	   :width: 300px
@@ -20,12 +23,13 @@ coils are aligned and any ferromagnetic material may be inserted for better coup
 -  Enable A1 and A2
 -  Set WG to 1000 Hz
 -  Bring the coils close and watch the voltage on A2.
--  Try inserting an ion core, a nail or screwdriver also would do.
+-  Try inserting an iron core, a nail or screwdriver also would do.
 
 .. image:: pics/transformer-screen.png
 	   :width: 300px
 
-**Discussion**
+Discussion
+----------
 
 The applied waveform and the induced waveform are shown in figure. A
 changing magnetic filed is causing the induced voltage. In the previous
