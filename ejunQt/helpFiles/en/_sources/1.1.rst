@@ -1,0 +1,43 @@
+Introduction
+=============
+
+Science is the study of the physical world by systematic observations
+and experiments. Proper science education is essential for cultivating a
+society where reasoning and logical thinking prevails and not
+superstition and irrational beliefs. Science education is also essential
+for training enough technicians, engineers and scientists for the
+economy of the modern world. It is widely accepted that personal
+experience in the form of experiments and observations, either carried
+out by students or performed as demonstrations by teachers, are
+essential to the pedagogy of science. However, almost everywhere science
+is mostly taught from the text books without giving importance to
+experiments, partly due to lack of equipment. As a result, most of the
+students fail to correlate their classroom experience to problems
+encountered in daily life. To some extent this can be corrected by
+learning science based on exploration and experimenting.
+
+The advent of personal computers and their easy availability has opened
+up a new path for making laboratory equipment. Addition of some hardware
+to an ordinary computer can convert it in to a science laboratory.
+Performing quick measurements with good accuracy enables one to study a
+wide range of phenomena. Science experiments generally involve
+measuring/controlling physical parameters like temperature, pressure,
+velocity, acceleration, force, voltage, current etc. If the measured
+physical property is changing rapidly, the measurements need to be
+automated and a computer becomes a useful tool. For example,
+understanding the variation of AC mains voltage with time requires
+measuring it after every millisecond.
+
+The ability to perform experiments with reasonable accuracy also opens
+up the possibility of research oriented science education. Students can
+compare the experimental data with mathematical models and examine the
+fundamental laws governing various phenomena. Research scientists do the
+same with highly sophisticated equipment. The expEYES ( expEriments for
+Young Engineers & Scientists) kit is designed to support a wide range of
+experiments, from school to post graduate level. It also acts as a test
+equipment for electronics engineers and hobbyists. The simple and open
+architecture of expEYES allows the users to *develop new experiments,
+without getting into the details of electronics or computer
+programming*. This User’s manual describes *expEYES-Junior* along with
+several experiments.
+

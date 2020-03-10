@@ -1,0 +1,41 @@
+.. 6.1
+   
+Aceleración de la gravedad con un péndulo pesado
+---------------------------------------------------------
+
+**Objetivo**
+
+Medir el período de oscilación de un péndulo con ayuda de una 
+barrera fotoeléctrica y calcular la aceleración de la gravedad. 
+El período de oscilaciones de una varilla uniforme alrededor de uno 
+de sus extremos está dada por :math:`T = 2\pi\sqrt{2l/3g}`, donde :math:`l` es la
+longitud y :math:`g` es la aceleración de la gravedad. El pèndulo (en forma
+de :math:`T`, un filo de cuchilla unido a una varilla de 6 mm de diámetro) y puesto en un
+oscilador entre una LED y un foto transistor, conectados en ExpEYES. La
+LED y el foto transistor están montados sobre un soporte en forma de :math:`U`
+como lo muestra la figura.
+
+.. image:: schematics/rod-pendulum.svg
+	   :width: 300px
+.. image:: pics/light-barrier-photo.jpg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Poner el péndulo en oscilación y hacer clic en INICIO 
+-  Recomenzar con diferentes longitudes de péndulo.
+
+**Discusión**
+
+El período se mide 50 veces, utilizando un péndulo pesado de 14,6 cm,
+y el valor medio es 0,627 s. 
+El valor calculado de *g* es :math:`977,4~cm\cdot s^{-2}`, ligeramente diferente del
+valor real por las siguientes razones : La longitud es medida
+desde el borde del cuchillohasta la parte inferior de la hoja y utilizada en la
+fórmula. Pero hay un poco de masa presente sobre el filo cuchillo 
+que no está incluido en el cálculo. Otra razón puede ser que el 
+péndulo tal vez no es exactamente vertical en la posición de descanso.
+
+
+
+

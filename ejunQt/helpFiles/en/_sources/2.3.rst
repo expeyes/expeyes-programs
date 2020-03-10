@@ -1,0 +1,16 @@
+Measuring Resistance series combination
+========================================
+The effective resistance of a series combination of resistors is :math:`R = R_1 + R_2 + ⋯`. 
+
+**Objective**
+
+Measure the resistance of series combination of resistors.
+
+.. image:: schematics/res-series.svg
+   :width: 300px	   
+
+**Procedure for two resitors**
+
+-  Connect the resistors between SEN and ground as shown in the figure.
+-  Observe the value shown on the right side panel.
+-  Repeat with different resistors.

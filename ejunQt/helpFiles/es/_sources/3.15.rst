@@ -1,0 +1,42 @@
+.. 3.13
+   
+Transmisión de una señal opto-eléctrica
+----------------------------------------
+
+**Objetivo**
+
+Demuestre la transmisión de señales con luz. Un LED es
+alimentado por una señal de frecuencia de 1 kHz y dirigimos su luz hacia
+un fototransistor.
+
+.. image:: schematics/opto-electric.svg
+	   :width: 300px
+.. image:: pics/opto-electric-transmission.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Colocar el LED delante del fototransistor y configurar SQ1 en :math:`1000~Hz`
+-  Repetir el experimento cambiando la frecuencia.
+
+
+**Discusión**
+
+La entrada SEN está conectada en 5 V a través de una resistencia de 
+:math:`5,1~k\Omega`. La salida del fototransistor crea una señal de frecuencia
+:math:`1~kHz`como muestra la figura. La onda cuadrada es el voltaje que 
+alimenta el LED. Cuando el LED está encendido, el fototransistor es un
+conductor y el voltaje en el colector cae a :math:`0,2~V`. Cuando el LED
+está apagado, el transistor entra en modo de aislamiento y el colector vuelve
+al voltaje de la fuente de alimentación. Los tiempos de ascenso y caída del
+foto transistor parecen ser diferentes. Encuentra el límite superior en
+frecuencia a la que el fototransistor es capaz de responder.
+
+Repita este experimento con una fibra óptica para guiar la 
+luz del LED al fototransistor.
+
+
+
+
+
+

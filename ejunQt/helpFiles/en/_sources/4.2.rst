@@ -1,0 +1,28 @@
+RLC circuits, steady state response
+===================================
+Under a sinusoidal signal, the three basic passive components Resistance, Inductance, and Capacitance shows different phase relationships between the voltage and current. For a resistor the voltage waveforms are “in-phase” with the current. We will also explore the phase relationships between voltages at various points in the circuit. An Impedance calculator is provided or the right side of the GUI, to compare the measure values with calculations.
+
+**Objective**
+
+Measure the amplitude and phase values in an RC circuit. The phase difference of voltages at
+the two ends of tha capacitor is given by
+
+ :math:`\theta=\tan^{1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
+
+
+**Procedure**
+
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
+
+-  Use a bread board as shown in the figure.
+-  Fix a 1uF capacitor and :math:`1k\Omega` resistor. 
+-  Make the connections as shown in the schematic.
+
+The resulting waveforms for the RC circuit are shown below. The green trace (voltage at A2) is the voltage waveform across the resistance. This can be considered as the current waveform since voltage and current are in phase across a resistance. The red trace is the voltage across the capacitance, and it can be seen that the current waveform is leading by 90 deg. 
+
+The phase difference across the capacitor is diplayed at the top corner. This can be compared with the calculated values. 
+
+.. image:: pics/RCsteadystate-screen.png
+	   :width: 500px
+

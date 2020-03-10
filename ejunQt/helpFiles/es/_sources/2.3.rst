@@ -1,0 +1,16 @@
+Medir resistencias en serie
+===========================
+
+**Objetivo**
+
+La resistencia equivalente a una serie de resistencias es
+:math:`R = R_1 + R_2 + ⋯`. 
+
+.. image:: ./schematics/res-series.svg
+   :width: 300px	   
+
+**Procedimiento para dos resistencias**
+
+-  Conectar una resistencia a SEN y otra a GND. Conectar ambos terminales
+   opuestos de las resistencias entre sí.
+-  Observar el valor mostrado en el panel de derecha.

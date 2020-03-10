@@ -1,0 +1,32 @@
+.. 2.1
+
+Medir un voltaje
+----------------
+
+**Objetivo**
+
+Aprender a medir el voltaje utilizando expEYES y obtener una
+comprensión del concepto de masa eléctrica (descarga a tierra). Se
+necesitan una pila seca y dos hilos de conexión.
+
+.. image:: schematics/measure-dc.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Observar el voltaje mostrado por A1.
+-  Volver invirtiendo las conexiones a la pila. Concluir.
+
+**Discusión**
+
+El voltaje medido es +1,5 V y se cambian en -1,5 V después de la inversión
+de conexiones.
+
+La diferencia de potencial se mide entre dos puntos. Uno puede ser
+considerado como cero volt, o potencial de la masa (GND, Tierra). El
+voltaje mostrado por expEYES es una medida del voltaje relativo a las
+conexiones de masa, identificadas como GND. Tuvimos el terminal
+negativo de la pila a GND y el positivo esta a +1,5 V relativamente a
+GND. *¿Daría el voltaje correcto si la conexión a masa [Tierra] no
+estuviera conectada?*
+

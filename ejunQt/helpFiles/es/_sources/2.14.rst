@@ -1,0 +1,28 @@
+.. 2.10
+   
+Foto-resistencia
+----------------
+
+**Objetivo**
+
+Estudiar una foto-resistencia (LDR). Medir la intensidad de la luz y
+su variación con la distancia a la fuente.
+
+.. image:: schematics/ldr.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Medir la resistencia de la LDR, para varias intensidades de luz.
+-  Iluminar la LDR con una làmpara fluorescente, supuestamente A1 mostrará
+   variaciones.
+-  Fijar A1 en modo alterno y medir la frecuencia de la oscilación.
+
+**Discusión**
+
+La resistencia varia de :math:`1~k\Omega` hasta cerca :math:`100~k\Omega`
+según la luz que la ilumina. El voltaje es proporcional a la resistencia
+(si la corriente no cambia). La resistencia baja cuando la iluminación
+sube. Si se utiliza una fuente de luz puntual, la resistencia aumenta
+supuestamente como el cuadrado de la distancia entre foto-resistencia y
+fuente de luz.

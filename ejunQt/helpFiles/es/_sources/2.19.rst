@@ -1,0 +1,27 @@
+.. 2.15
+   
+Generar un sonido
+-----------------
+
+**Objetivo**
+
+Generar un sonido con señales eléctricos, usando un zumbador
+piezo-eléctrico. Numerizar un sonido y medir su frecuencia. Utilizar
+un zumbador piezo-eléctrico o cualquier fuente sonora como diapasón.
+
+**Procedimiento**
+
+.. image:: schematics/sound-generator.svg
+	   :width: 300px
+
+-  Activar A1, y su análisis
+-  Fijar WG en :math:`1000~Hz`, y después escuchar el sonido.
+
+**Discusión**
+
+Cuando se cambia la frecuencia de la señal que excita el piezo, la
+frecuencia y la intensidad del sonido cambian ambas. La intensidad es
+máxima cerca de :math:`3500~Hz`, debido a la resonancia. La frecuencia
+de resonancia de un zumbador piezo depende de su tamaño y de sus propiedades
+mecánicas.
+

@@ -1,0 +1,25 @@
+.. 5.1
+   
+Respuesta de frecuencia de un piezo
+-----------------------------------
+
+**Objetivo**
+
+Grafica la curva de respuesta de un disco piezoeléctrico escaneando 
+la frecuencia y midiendo la amplitud en la salida del micrófono.
+
+.. image:: schematics/sound-capture.svg
+	   :width: 300px
+.. image:: pics/piezo-freq-resp.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Conectar y fijar el timbre y el micrófono cara a cara 
+-  Hacer clic en el botón INICIO
+
+**Discusión**
+
+El gráfico de amplitud vs. frecuencia se muestra en la figura. 
+La amplitud es máxima cerca de 3500 Hz.
+
