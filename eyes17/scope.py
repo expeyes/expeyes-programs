@@ -304,8 +304,6 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			self.pwin.vLine.setPos(mousePoint.x())
 			self.showVoltagesAtCursor(xval)
 
-			
-		
 		
 	def update(self):
 		if self.p is None:
@@ -364,7 +362,9 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if self.Diff.isChecked() == True and self.chanStatus[0] == 1 and self.chanStatus[1] == 1:
 			r = 16./self.rangeVals[0]
 			self.diffTraceW.setData(self.timeData[0], r*(self.voltData[0]-self.voltData[1]))
-
+		else:
+			self.diffTraceW.setData([0,0],[0,0])
+			
 		if self.Cross.isChecked():
 			self.showVoltagesAtCursor(self.pwin.vLine.x())
 		else:
