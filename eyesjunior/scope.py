@@ -201,14 +201,14 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				text= unicode(self.tr('Time: %6.2fmS ')) %t[index],
 				color= self.resultCols[0]
 			)
-			self.resLabs[0].setPos(0, -11)
+			self.resLabs[0].setPos(0, -7)
 			self.pwin.addItem(self.resLabs[0])
 			
 			for k in range(self.MAXCHAN):
 				if self.chanStatus[k] == 1:
 					self.Results[k+1] = unicode(self.tr('%s:%6.2fV ')) %(self.sources[k],self.voltData[k][index])
 					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resultCols[k])
-					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
+					self.resLabs[k+1].setPos(0, -8 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
 
 	def updateTV(self, evt):
@@ -307,6 +307,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				print('update resistance: err')
 				self.comerr()
 		# End of update
+
 
 	def show_diff(self):
 		if self.Diff.isChecked() == False:
