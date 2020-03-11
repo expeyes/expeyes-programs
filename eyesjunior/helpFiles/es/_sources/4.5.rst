@@ -1,0 +1,50 @@
+.. 4.3
+   
+Respuesta transitoria de circuitos RL
+-------------------------------------
+
+**Objetivo**
+
+Explore la naturaleza de la corriente y el voltaje cuando se aplica un 
+paso de voltaje a una resistencia y un bobinado en serie.
+Al medir el voltaje en función del tiempo a través del devanado, es posible
+calcular su inductancia
+
+.. image:: schematics/RLtransient.svg
+	   :width: 300px
+.. image:: pics/RLtransient.png
+	   :width: 300px
+
+En el circuito RL, :math:`U = RI + L(dI/dt)` , la ecuaciòn
+que se resuelve en
+:math:`I = I_0 \times e^{− (R/L)t}`. El
+coeficiente del término exponencial R/L puede deducirse de la gráfica de la
+voltaje a través del devanado. La resistencia del devanado debe ser
+incluido en los cálculos, :math:`R = R_{ext} + R*_L`.
+
+**Procedimiento**
+
+-  El devanado es el carrete de 3000 vueltas.
+-  Hacer clic en los botones * Escalón 0-> 5V * y * Escalón 5-> 0V * para mostrar gráficos.
+-  Ajustar la escala horizontal, si es necesario, y comenzar nuevamente.
+-  Calcular el valor de la inductancia.
+-  Insertar un núcleo de hierro en el bobinado y comenzar nuevamente.
+
+**Discusión**
+
+La respuesta transitoria del circuito RL se muestra en la figura. La curva 
+exponencial se modela para extraer el valor de L / R. La resistencia 
+de la bobina se mide comparándola con la resistencia externa conocida, en 
+corriente continua. A2 está conectado a OD1 para una medición más precisa 
+de la resistencia del bobinado.
+
+Los voltajes aplicados son positivos, pero el gráfico va hacia
+voltajes negativos, ¿por qué?
+
+¿Cuál era la corriente antes del inicio del paso 5-> 0 V? Cuál es la
+fuerza contraelectromotriz (*fcem*) ?
+
+Repita con dos bobinas en serie, (a) colocándolas una lejos de la otra, 
+(b) colocándolas una encima de la otra, (c) después de cambiar la orientación 
+de una de las dos . Podemos ver el efecto de la inducción mutua.
+

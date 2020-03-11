@@ -1,0 +1,38 @@
+.. 6.2
+   
+Velocidad angular de un péndulo
+-------------------------------
+
+**Objetivo**
+
+Estudiar la naturaleza de las oscilaciones de un péndulo. Un 
+codificador angular es necesario para medir el desplazamiento 
+angular en función del tiempo. Pero utilizando un motor de corriente 
+continua como sensor, puede medir la velocidad angular en función del tiempo.
+
+.. image:: pics/pendulum-screen.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Atar cualquier péndulo rígido al eje del motor. 
+-  Conectar el motor entre A3 y GND 
+-  Conectar una resistencia de:math:`100~ Omega` entre rg y GND 
+-  Poner el péndulo en oscilación e INICIAR el escaneo
+
+**Discusión**
+
+La señal obtenida se muestra en la figura. Cuando se modeliza por una 
+ecuación
+:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, con 
+la ayuda de Grace, hemos obtenido una frecuencia angular de :math:`10~Hz`.
+
+Es conveniente realizar el péndulo con un mazo bastante pesado y una varilla 
+ligera que la conecte al eje del motor. En este caso, el motor de corriente continua 
+se comporta como generador y la tensión es proporcional a la velocidad angular.
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+
+Mesure de la capacité de condensateurs en parallèle
+===================================================
+
+**Objectif**
+
+Mesurer la capacité de condensateurs en parallèle
+
+.. image:: schematics/cap-parallel.svg
+	   :width: 300px
+
+**Procédure pour deux condensateurs**
+
+-  Connecter les deux condensateurs entre IN1 and GND.
+-  Cliquer sur «Capacité en IN1» . Il ne faut pas toucher le
+   condensateur pendant la mesure.
+
+**Discussion**
+
+Pour des condensateurs en parallèle, on peut calculer la capacité équivalente
+à l'aide de la formule :
+:math:`C = C_1 + C_2 + ⋯`.

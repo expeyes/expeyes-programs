@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 225 150"
+   width="1350"
+   height="900"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="Flag_of_India_ML.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs38" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1511"
+     inkscape:window-height="848"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="0.26222222"
+     inkscape:cx="675"
+     inkscape:cy="1060.1695"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="text849" />
+  <rect
+     width="225"
+     height="150"
+     fill="#f93"
+     id="rect2" />
+  <rect
+     width="225"
+     height="100"
+     y="50"
+     fill="#fff"
+     id="rect4" />
+  <rect
+     width="225"
+     height="50"
+     y="100"
+     fill="#128807"
+     id="rect6" />
+  <g
+     transform="translate(112.5,75)"
+     id="g32">
+    <circle
+       r="20"
+       fill="#008"
+       id="circle8" />
+    <circle
+       r="17.5"
+       fill="#fff"
+       id="circle10" />
+    <circle
+       r="3.5"
+       fill="#008"
+       id="circle12" />
+    <g
+       id="d">
+      <g
+         id="c">
+        <g
+           id="b">
+          <g
+             id="a">
+            <circle
+               r="0.875"
+               fill="#008"
+               transform="rotate(7.5) translate(17.5)"
+               id="circle14" />
+            <path
+               fill="#008"
+               d="M 0,17.5 0.6,7 C 0.6,7 0,2 0,2 0,2 -0.6,7 -0.6,7 L 0,17.5 z"
+               id="path16" />
+          </g>
+          <use
+             xlink:href="#a"
+             transform="rotate(15)"
+             id="use19" />
+        </g>
+        <use
+           xlink:href="#b"
+           transform="rotate(30)"
+           id="use22" />
+      </g>
+      <use
+         xlink:href="#c"
+         transform="rotate(60)"
+         id="use25" />
+    </g>
+    <use
+       xlink:href="#d"
+       transform="rotate(120)"
+       id="use28" />
+    <use
+       xlink:href="#d"
+       transform="rotate(-120)"
+       id="use30" />
+  </g>
+  <g
+     aria-label="EN"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:12.02519798px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16666667px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text849">
+    <g
+       aria-label="മല"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:12.02519798px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16666667px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       id="text877">
+      <path
+         d="m 37.135858,78.162513 v 29.036457 q 13.151041,0 22.526041,-9.375 9.374999,-9.374999 9.374999,-22.656249 0,-9.375 -4.036458,-16.015624 -4.036458,-6.770833 -9.635416,-6.770833 -7.552083,0 -12.890625,7.552083 -5.338541,7.552083 -5.338541,18.229166 z M 62.135857,107.19897 H 94.948356 V 78.162513 q 0,-12.239583 -8.072917,-20.833333 -7.942708,-8.723958 -19.270832,-8.723958 5.078125,3.515625 7.812499,10.546875 2.864584,7.031249 2.864584,16.015624 0,9.765625 -4.296875,18.229166 -4.296875,8.463543 -11.848958,13.802083 z M 28.021275,78.162513 q 0,-15.755208 11.067708,-26.822916 11.197916,-11.197916 26.953124,-11.197916 15.755208,0 26.953124,11.197916 11.197919,11.067708 11.197919,26.822916 V 116.31355 H 28.021275 V 78.162513 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.33332825px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.16666667px"
+         id="path879" />
+      <path
+         d="m 129.58377,69.568763 v 7.682291 h 40.36459 v -7.682291 q 0,-9.114583 -5.98959,-15.624999 -5.85937,-6.510417 -14.32291,-6.510417 -8.33334,0 -14.19271,6.510417 -5.85938,6.510416 -5.85938,15.624999 z m 69.53125,-29.427082 h 9.11458 V 116.31355 H 120.33898 V 69.568763 q 0,-12.890625 8.59375,-22.005208 8.59375,-9.244791 20.70313,-9.244791 12.10937,0 20.70312,9.244791 8.59375,9.114583 8.59375,22.005208 v 16.796874 h -49.34896 v 20.833333 h 69.53125 V 40.141681 Z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:133.33332825px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;writing-mode:lr-tb;text-anchor:start;stroke-width:0.16666667px"
+         id="path881" />
+    </g>
+  </g>
+</svg>

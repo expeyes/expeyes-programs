@@ -1,0 +1,24 @@
+Measuring Capacitance
+=====================
+Adding electric charge **Q** to an isolated body results in a potential difference **V** between that body and it's surroundings. The ratio is called it's capacitance **C**, given by the equation :math:`C = Q/V`. A capacitor is generally formed by two conducting surfaces separated by a non-conducting material. The capacitance is the ratio charge in one plate and the potential difference between the plates. The capacitance depends on the area of the plates, distance between them, dielectric constant of the separating material and the geometry of the plates. 
+
+For a parallel plate capcitor, :math:`C=\frac{\epsilon_{0}\epsilon_{r} A}{d}`, where A is the area of the plates facing each other, d is the distance between plates, :math:`\epsilon_{r}` is the dielectric constant of the material between the plates and :math:`\epsilon_{0}` is the permittivity of free space whose value is :math:`8.85418782 × 10^{-12} Fm^{-1}`.
+
+**Objective**
+
+Measuring a capacitance using the IN1 terminal.
+
+.. image:: schematics/cap-measure.svg
+	   :width: 300px
+
+**Procedure**
+
+-  Connect the capacitor between IN1 and Ground.
+-  Click on “Capacitance on IN1” . Should not touch the circuit while measuring.
+-  Repeat with different values of capacitors, starting from :math:`100~pF` to several micro Farads.
+
+**Discussion**
+
+You can make the capacitors by pasting thin metal foils on both sides of
+insulators like paper, polythene or glass. It is possible to find out the dielectric constant of materials 
+by this method.

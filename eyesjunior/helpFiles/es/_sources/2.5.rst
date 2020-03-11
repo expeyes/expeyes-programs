@@ -1,0 +1,25 @@
+.. 2.3
+
+Medir una capacidad
+-------------------
+
+**Objetivo**
+
+Medir la capacidad de un capacitor.
+
+.. image:: schematics/cap-measure.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Conectar el capacitor entre IN1 y GND.
+-  Hacer clic en «Capacidad en IN1» . No se debe tocar el
+   capacitor durante la medida.
+
+**Discusión**
+
+Se ha utilizado un capacitor de :math:`100~pF` para esta actividad.
+
+Se puede crear capacitores si se pega finas hojas de metal en ambas
+caras de un aislante como papel, poliestireno o vidrio.
+

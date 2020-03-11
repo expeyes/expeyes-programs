@@ -1,0 +1,31 @@
+.. 2.9
+   
+Résistance électrique du corps humain
+-------------------------------------
+
+**Objectif**
+
+Mesurer la résistance électrique du corps humain en la comparant à une
+résistance connue. On commence avec un signal continu issu de PV1 puis
+on continue avec un signal alternatif issu de WG.
+
+.. image:: schematics/res-body.svg
+	   :width: 300px
+
+**Procédure**
+
+-  Régler PV1 à 3 V
+-  Relier PV1 à A2, à travers son corps, et mesurer la tension en A2
+-  Calculer la résistance de son corps comme expliqué à la section
+   `2.4↑ <#sec:Measure-resistance-by-comparison>`__
+-  Recommencer en utilisant un signal sinusoïdal au lieu de PV1. Activer
+   les analyses de A1 et A2 afin de mesurer les tensions.
+
+**Discussion**
+
+Les mesures en courant continu sont plus affectées par les bruits
+électriques. La résistance en courant alternatif est censée être
+inférieure à la résistance en courant continu. La résistance est due à
+notre peau, le courant électrique peut y passer comme il passe à travers
+un condensateur.
+

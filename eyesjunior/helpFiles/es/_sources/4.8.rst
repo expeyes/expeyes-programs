@@ -1,0 +1,34 @@
+.. 4.7
+   
+Inducción electromagnética
+--------------------------
+
+**Objetivo**
+
+Explorando el voltaje inducido a través de un bobinado por un campo
+magnética variable, dejando caer un pequeño imán cilíndrico a
+a través del bobinado. Se usa un tubo para guiar el imán a través de
+bobinado
+
+.. image:: schematics/induction.svg
+	   :width: 300px
+.. image:: pics/induction-screen.png
+	   :width: 300px
+
+**Procedimiento**
+
+-  Hacer clic en "Iniciar escaneo". Una traza horizontal debe aparecer
+-  Dejar caer el imán a través de la bobina hasta que capture un rastro.
+-  Repetir el proceso cambiando parámetros como la fuerza del imán, velocidad, etc.
+
+**Discusión**
+
+El resultado se muestra en la figura. La amplitud aumenta con la
+velocidad del imán. A partir del gráfico, podemos determinar el 
+tiempo que tarda el imán en pasar por el bobinado.
+
+El segundo pico es más grande que el primero. Por qué ? ¿Dónde 
+se supone que está el imán cuando el voltaje inducido pasa por cero?
+Deje caer el imán desde diferentes alturas y grafique el voltaje máximo 
+frente a la raíz cuadrada de la altura de caída.
+

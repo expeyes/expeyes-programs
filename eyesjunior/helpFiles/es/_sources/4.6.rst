@@ -1,0 +1,36 @@
+.. 4.5
+   
+Diferenciación e integración RC
+---------------------------------
+
+**Objetivo**
+
+Los circuitos RC pueden integrar o diferenciar una señal de voltaje
+en relación al tiempo. Si integramos una señal cuadrada obtenemos una señal
+triangular y si diferenciamos obtenemos picos en las
+transiciones.
+
+.. image:: schematics/RCintegration.svg
+	   :width: 300px
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
+
+**Procedimiento**
+
+-  Seleccionar la opción de señal triangular para WG
+-  Establecer WG a 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
+-  Ajustar la escala horizontal para ver más de cuatro ciclos.
+-  Repetir lo mismo para el diferenciador RC, con :math:`50~Hz`.
+
+**Discusión**
+
+La integración de una señal triangular da una forma parabólica y la diferenciación
+da una forma cuadrada. La diferenciación solo se puede mostrar a baja frecuencia. 
+Probar esto para otras formas de señales, por ejemplo, onda cuadrada. 
+Si integramos una señal cuadrada se supone que debemos obtener una señal
+triangular.
+
+.. image:: pics/RCintegration.png
+	   :width: 300px
+.. image:: pics/RCdifferentiation.png
+	   :width: 300px
