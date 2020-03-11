@@ -9,8 +9,6 @@ class I2C():
 	"""
 	Methods to interact with the I2C port.
 
-
-
 	.. code-block:: python
 
 		#Code Example : Read Values from an HMC5883L 3-axis Magnetometer(compass) [GY-273 sensor] connected to the I2C port
@@ -395,6 +393,221 @@ class I2C():
 			self.stop()
 
 		return addrs
+
+
+class SPI():
+	"""
+	Methods to interact with the SPI port. An instance of Packet_Handler must be passed to the init function
+	Available in the eyes20 form factor onwards. version_number >= 5.0:
+	"""
+	DDS_CLOCK = 25e6
+	def __init__(self,H):
+		self.H = H
+
+	def set_parameters(self,primary_prescaler=0,secondary_prescaler=2,CKE=1,CKP=0,SMP=1):
+		"""
+		sets SPI parameters.
+		
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		primary_pres        Primary Prescaler(0,1,2,3) for 64MHz clock->(64:1,16:1,4:1,1:1)
+		secondary_pres      Secondary prescaler(0,1,..7)->(8:1,7:1,..1:1)
+		CKE                 CKE 0 or 1.
+		CKP                 CKP 0 or 1.
+		================    ============================================================================================
+		"""
+		try:
+			self.H.__sendByte__(CP.SPI_HEADER)
+			self.H.__sendByte__(CP.SET_SPI_PARAMETERS)
+			#0Bhgfedcba - > <g>: modebit CKP,<f>: modebit CKE, <ed>:primary pre,<cba>:secondary pre
+			self.H.__sendByte__(secondary_prescaler|(primary_prescaler<<3)|(CKE<<5)|(CKP<<6)|(SMP<<7)) 
+			self.H.__get_ack__()
+		except Exception as ex:
+			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+
+	def start(self,channel):
+		"""
+		selects SPI channel to enable.
+		Basically lowers the relevant chip select pin .
+		
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		channel             'CS1','CS2'
+		================    ============================================================================================
+		
+		"""
+		self.set_cs(channel,0)
+
+	def set_cs(self,channel,state):
+		"""
+		Enable or disable a chip select
+		
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		channel             'CS1','CS2'
+		state               1 for HIGH, 0 for LOW
+		================    ============================================================================================
+		
+		"""
+		try:
+			chip_sels = ['NONE','A1','A2','CS1','CS2','CS3','CS4']
+			channel = channel.upper()
+			if channel in chip_sels:
+				csnum=chip_sels.index(channel)
+				self.H.__sendByte__(CP.SPI_HEADER)
+				if state:self.H.__sendByte__(CP.STOP_SPI)
+				else:self.H.__sendByte__(CP.START_SPI)
+				self.H.__sendByte__(csnum)
+			else: print('Channel does not exist')
+		except Exception as ex:
+			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+		
+	def stop(self,channel):
+		"""
+		selects SPI channel to disable.
+		Sets the relevant chip select pin to HIGH.
+		
+		
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		channel             'CS1','CS2'
+		================    ============================================================================================
+		
+		"""
+		self.set_cs(channel,1)
+
+	def send8(self,value):
+		"""
+		SENDS 8-bit data over SPI
+		
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		value               value to transmit
+		================    ============================================================================================
+		:return: value returned by slave device
+		"""
+		self.H.__sendByte__(CP.SPI_HEADER)
+		self.H.__sendByte__(CP.SEND_SPI8)
+		self.H.__sendByte__(value)  #value byte
+		v=self.H.__getByte__()
+		self.H.__get_ack__()
+		return v
+
+	def send16(self,value):
+		"""
+		SENDS 16-bit data over SPI
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		value               value to transmit
+		================    ============================================================================================
+		:return: value returned by slave device
+		:rtype: int
+		"""
+		self.H.__sendByte__(CP.SPI_HEADER)
+		self.H.__sendByte__(CP.SEND_SPI16)
+		self.H.__sendInt__(value)   #value byte
+		v=self.H.__getInt__()
+		self.H.__get_ack__()
+		return v
+
+	def send8_burst(self,value):
+		"""
+		SENDS 8-bit data over SPI
+		No acknowledge/return value
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		value               value to transmit
+		================    ============================================================================================
+		:return: Nothing
+		"""
+		self.H.__sendByte__(CP.SPI_HEADER)
+		self.H.__sendByte__(CP.SEND_SPI8_BURST)
+		self.H.__sendByte__(value)  #value byte
+		
+	def send16_burst(self,value):
+		"""
+		SENDS 16-bit data over SPI
+		no acknowledge/return value
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		==============  ============================================================================================
+		**Arguments** 
+		==============  ============================================================================================
+		value           value to transmit
+		==============  ============================================================================================
+		:return: nothing
+		"""
+		self.H.__sendByte__(CP.SPI_HEADER)
+		self.H.__sendByte__(CP.SEND_SPI16_BURST)
+		self.H.__sendInt__(value)   #value byte
+
+	def xfer(self,chan,data):
+		self.start(chan)
+		reply=[]
+		for a in data:
+			reply.append(self.send8(a))
+		self.stop(chan)
+		return reply
+
+	def map_reference_clock(self,scaler,*args):
+		"""
+		Map the internal oscillator output  to SQR1,SQR2,SQR3,SQR4 or WAVEGEN
+		The output frequency is 128/(1<<scaler) MHz
+		
+		scaler [0-15]
+			
+			* 0 -> 128MHz
+			* 1 -> 64MHz
+			* 2 -> 32MHz
+			* 3 -> 16MHz
+			* .
+			* .
+			* 15 ->128./32768 MHz
+		example::
+		
+		>>> I.map_reference_clock(2,'SQR1','SQR2')
+		
+		outputs 32 MHz on SQR1, SQR2 pins
+		
+		.. note::
+			if you change the reference clock for 'wavegen' , the external waveform generator(AD9833) resolution and range will also change.
+			default frequency for 'wavegen' is 16MHz. Setting to 1MHz will give you 16 times better resolution, but a usable range of
+			0Hz to about 100KHz instead of the original 2MHz.
+		
+		"""
+		self.H.__sendByte__(CP.WAVEGEN)
+		self.H.__sendByte__(CP.MAP_REFERENCE)
+		chan=0
+		if 'SQR1' in args:chan|=1
+		if 'SQR2' in args:chan|=2
+		if 'CS3' in args:chan|=4 #CS3
+		if 'WAVEGEN' in args:chan|=8  #CS3
+		self.H.__sendByte__(chan)
+		self.H.__sendByte__(scaler)
+		if 'WAVEGEN' in args: self.DDS_CLOCK = 128e6/(1<<scaler)
+		self.H.__get_ack__()
+
 
 
 class DACCHAN:

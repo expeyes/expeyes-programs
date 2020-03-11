@@ -1,5 +1,5 @@
 ############# MATHEMATICAL AND ANALYTICS ###############
-import functools
+import functools,sys
 from functools import partial
 import numpy as np
 import time,struct
@@ -783,9 +783,34 @@ class inputs():
 
 class outputs():
 	p=None
+	if sys.version_info.major==3:
+		DDS_MAX_FREQ = 0xFFFFFFF-1    #24 bit resolution
+	else:
+		DDS_MAX_FREQ = eval("0xFFFFFFFL-1")    #24 bit resolution
+	#control bytes
+	DDS_B28 = 13
+	DDS_HLB = 12
+	DDS_FSELECT = 11
+	DDS_PSELECT = 10
+	DDS_RESET = 8
+	DDS_SLEEP1 =7
+	DDS_SLEEP12 =6
+	DDS_OPBITEN =5
+	DDS_DIV2 =3
+	DDS_MODE =1
+
+	DDS_FSYNC =9
+
+	DDS_SINE =(0)
+	DDS_TRIANGLE =(1<<DDS_MODE)
+	DDS_SQUARE =(1<<DDS_OPBITEN)
+	DDS_RESERVED =(1<<DDS_OPBITEN)|(1<<DDS_MODE)
+	clockScaler = 4 # 8MHz
+
 	def __init__(self,p):
 		self.permanentOutputs=[]
 		self.setDevice(p)
+
 	def setDevice(self,dev):
 		self.p = dev
 		self.permanentOutputs = [{
@@ -817,8 +842,76 @@ class outputs():
 				'min':[1],
 				'max':[5000],
 			},]
+		if self.p.version_number>=5:
+			self.permanentOutputs.append({
+				'name':'AD9833_DDS',
+				'init':self.init_AD9833,
+				'write':self.set_AD9833,
+				'fields':['FREQ'],
+				'min':[1],
+				'max':[2e6],
+				'outputconfig':[{
+							'name':'wavetype',
+							'options':['Sine','Triangle'],
+							'function':self.set_waveform_mode
+							},
+					],
+			})
 		for a in self.permanentOutputs:
 			a['type'] = 'output'
 	def init(self):
 		pass
+
+	def init_AD9833(self):
+		self.CS='CS1'
+		self.p.SPI.set_parameters(2,2,1,1,0)
+		self.p.SPI.map_reference_clock(self.clockScaler,'CS3')
+		print ('clock set to ',self.p.SPI.DDS_CLOCK )
+		self.waveform_mode = self.DDS_SINE;
+		self.write(1<<self.DDS_RESET)
+		self.write((1<<self.DDS_B28) | self.waveform_mode )               #finished loading data
+		self.active_channel = 0
+		self.frequency  =  1000
+
+	def write(self,con):
+		self.p.SPI.start(self.CS)
+		self.p.SPI.send16(con)
+		self.p.SPI.stop(self.CS)
+
+	def set_AD9833(self,freq,register=0,**args):
+		self.active_channel = register
+		self.frequency  =  freq
+
+		freq_setting = int(round(freq * self.DDS_MAX_FREQ / self.p.SPI.DDS_CLOCK))
+		modebits = (1<<self.DDS_B28)| self.waveform_mode
+		if register:
+			modebits|=(1<<self.DDS_FSELECT)
+			regsel = 0x8000
+		else:
+			regsel=0x4000
+
+		self.write( (1<<self.DDS_RESET) | modebits ) #Ready to load DATA
+		self.write( (regsel |  (freq_setting&0x3FFF))&0xFFFF      )           #LSB
+		self.write( (regsel | ((freq_setting>>14)&0x3FFF))&0xFFFF )           #MSB
+		phase = args.get('phase',0)
+		self.write( 0xc000|phase)                            #Phase
+		self.write(modebits)               #finished loading data
+
+	def set_voltage_AD9833(self,v):
+		self.waveform_mode=self.DDS_TRIANGLE
+		self.set_AD9833(0,0,phase = v)#0xfff*v/.6)
+
+	def select_frequency_register(self,register):
+		self.active_channel = register
+		modebits = self.waveform_mode
+		if register:    modebits|=(1<<self.DDS_FSELECT)
+		self.write(modebits)
+
+
+	def set_waveform_mode(self,mode):
+		self.waveform_mode=mode+1
+		modebits = mode+1
+		if self.active_channel:    modebits|=(1<<self.DDS_FSELECT)
+		self.write(modebits )
+
 

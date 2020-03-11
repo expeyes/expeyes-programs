@@ -250,6 +250,7 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 				a.setParent(None)
 		self.widgets =[]
 		for a in sensor.get('config',[]): #Load configuration menus
+			print('found config',a,a['name'])
 			l = QtWidgets.QLabel(a.get('name',''))
 			self.configLayout.addWidget(l) ; self.widgets.append(l)
 			l = QtWidgets.QComboBox(); l.addItems(a.get('options',[]))
@@ -302,6 +303,14 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 					l.valueChanged['int'].connect(functools.partial(self.write,parameters))
 					self.configLayout.addWidget(l) ; self.widgets.append(l)
 					self.functions.append(sensor['write'])
+					for a in sensor.get('outputconfig',[]): #Load configuration menus
+						l = QtWidgets.QLabel(a.get('name',''))
+						self.configLayout.addWidget(l) ; self.widgets.append(l)
+						l = QtWidgets.QComboBox(); l.addItems(a.get('options',[]))
+						l.currentIndexChanged['int'].connect(a.get('function',None))
+						self.configLayout.addWidget(l) ; self.widgets.append(l)
+
+
 				parameters+=1
 
 			if not self.autoRefresh: #Time consuming , blocking function call. add a button for it.
