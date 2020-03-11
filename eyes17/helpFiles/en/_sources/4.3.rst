@@ -9,7 +9,7 @@ Objective
 Measure the amplitude and phase values in an RC circuit. The phase difference of voltages at
 the two ends of the capacitor is given by
 
- :math:`\theta=\tan^{1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
+ :math:`\theta=\tan^{-1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
 
 
 Procedure
