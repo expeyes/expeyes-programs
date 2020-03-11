@@ -311,14 +311,15 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if not self.p.connected:
 			self.comerr()
 			return
-		if self.voltmeter.isVisible() and self.voltmeter.type=='input' and self.voltmeter.autoRefresh:
-			try:
-				v = self.voltmeter.read()
-			except Exception as e:
-				self.comerr()
-				return
-			if v is not None:
-				self.voltmeter.setValue(v)
+		if self.voltmeter is not None:
+			if self.voltmeter.isVisible() and self.voltmeter.type=='input' and self.voltmeter.autoRefresh:
+				try:
+					v = self.voltmeter.read()
+				except Exception as e:
+					self.comerr()
+					return
+				if v is not None:
+					self.voltmeter.setValue(v)
 		if self.Freeze.isChecked(): return
 
 		try:
