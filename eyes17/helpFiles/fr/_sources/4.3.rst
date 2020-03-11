@@ -21,7 +21,7 @@ Objectif
 
 Mesurer les amplitudes et les phases dans un circuit RC. Le déphasage des tensions aux bornes du condensateur est donné par
 
-:math:`\theta=\tan^{1}\Bigg(\frac{Z_c}{R}\Bigg)` où l'impédance du condensateur
+:math:`\theta=\tan^{-1}\Bigg(\frac{Z_c}{R}\Bigg)` où l'impédance du condensateur
 est :math:`Z_c = \frac{1}{2\pi fC}`
 
 
