@@ -1,5 +1,3 @@
-.. 3.12
-   
 Caractéristique de la sortie d’un transistor en mode EC
 =======================================================
 

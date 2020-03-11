@@ -91,16 +91,93 @@ Branchements d'entrée
 
 L'Interface utilisateur graphique
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note
-   à traduire
+
+ .. figure:: pics/scope-screen-en.png
+   :width: 600px
+
+La barre de menus de l'interface graphique utilisateur consiste en
+plusieurs menus déroulants pour diverses catégories d'expériences.
+
+La partie gauche de l'écran est la fenêtre de l'oscilloscope quatre
+voies. Dans la partie droite, il y a des boutons, des curseurs et des
+zones de texte pour les accès au matériel comme expliqué plus haut.
    
 Les contrôles de l'oscilloscope
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note
-   à traduire
+
+- Sélection des canaux
+   Les quatre canaux A1, A2, A3 et MIC peuvent être sélectionnés pour
+   l'affichage à l'aide de cases à cocher dans la moitié du bas de la
+   partie droite.
+
+- Choix des calibres
+   Des menus déroulants sont disponibles pour chaque canal afin de
+   choisir le calibre. A1 et 12 ont un calibre maximal de :math:`\pm\ 16\ V`.
+
+- Amplitude et fréquence
+   Des cases à cocher à droite de chaque sélection de calibre
+   permettent d'activer la modélisation mathématique des données
+   capturées à l'aide d'une fonction `sinus`. L'amplitude et la
+   fréquence calculées sont affichées.
+   
+- Le curseur de la base de temps
+   Le curseur de la base de temps permet de régler la durée de l'axe
+   des X. La durée maximale peut être ajustée de 1 ms à 500 ms.
+   
+- Les contrôles de synchronisation
+   Un oscilloscope à mémoire numérise et capture périodiquement le
+   signal d'entrée pendant une certaine durée et affiche le
+   résultat. Afin d'obtenir une trace stable, la valeur et la pente du
+   signal d'entrée au début de chaque capture devraient être mles
+   mêmes. Ces valeurs de départ sont réglées par le réglage du niveau
+   de synchronisation.
+  
+- L'enregistrement des données
+   Les données des traces peuvent être enregistrées dans un fichier au
+   format texte. La date et les valeurs de tension de chaque trace
+   seront écrites dans un fichier.
+   
+- Le curseur
+   On peut activer un curseur vertical afin de visualiser les valeurs
+   instantanées de chaque canal à la position du curseur selon la
+   date.
+  
+- L'option :math:`A1-A2`
+   Cette option dessine une trace qui représente la différence des signaux A1 et A2.
+ 
+- La transformée de Fourier
+    La transformée de Fourier permet de convertir les données du
+    domaine temporel en domaine fréquentiel. Les amplitudes des composantes
+    fréquentielle sont affichées. On peut observer la valeur
+    de la fréquence fondamentale.
    
 Les autre contrôles et afficheurs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. note
-   à traduire
    
+- En haut de la partie droite il y a des cases à cocher étiquetées A1,
+  A2 et A3. Quand on les coche, cela affiche les valeurs instantanées
+  des entrées A1, A2 et A3. Ces valeurs ne sont utiles que pour la
+  mesure de tensions continues.
+
+- La valeur de la résistance connectée entre **SEN** et **GND** est
+  présentée sous les affichages des tensions continues.
+
+- Juste à côté se trouve un bouton pour mesurer la capacité connectée
+  entre **IN1** et **GND**.
+
+- On trouve un bouton pour mesurer la fréquence des signaux numériques
+  connectés à **IN2**. Ce signal doit osciller entre zéro et 5 V.
+
+- Deux cases à cocher sont fournies pour régler l'état de **OD1** et **CSS**.
+
+- Un menu déroulant permet de sélectionner la forme du signal
+  **WG**. Quand on sélectionne *SQR*, le signal de sortie devient
+  disponible sur **SQR2**. Il y a aussi un menu pour choisir
+  l'amplitude de la sortie **WG**. Les valeurs permises sont 3 V, 1 V
+  et 80 mV.
+
+- Il y a quatre curseurs verticaux tout à gauche de l'interface
+  graphique. On peut les utiliser afin de décaler verticalement les
+  traces. Ça peut être utile dans des expériences comme l'étude des
+  portes logiques.
+

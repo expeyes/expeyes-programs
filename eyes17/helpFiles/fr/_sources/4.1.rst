@@ -1,20 +1,29 @@
-..   4.01
-
 Courbe I-U
 ==========
 
-Schéma
-------
+Ici on trace la courbe de la tension en fonction du courant qui
+traverse un dipôle. Le courant est déterminé par la tension aux bornes
+d'une résistance que celui-ci traverse. Le graphique est une ligne
+droite pour les conducteurs ohmiques, mais ce n'est pas le cas pour
+les dipôles non-linéaires commes les diodes.
+
+Objectif
+--------
+
+Tracer la caractéristique courant-tension de divers dipôles.
+
+Procédure
+---------
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
 
-Instructions
-------------
+- Connecter les résistances selon le schéma.
+- R2 est utilisé pour la mesure du courant, on prend généralement
+  :math:`1000 \Omega`
+- Le courant qui traverse le circuit se calcule comme la tension en A1
+  divisée par R2 ;
+- On varie PV1 progressivement. La tension aux bornes de R1 est mise en graphique.
 
-- Connecter les résistances comme sur la figure ci-dessus.
-- on utilise R2 pour la mesure du courant, sa valeur est généralement 1000 Ω
-- Le courant dans le circuit est la tension en A1 divisée par R2
-- PV1 est varié par étapes. La courbe de la tension aux bornes de R1 est
-  tracée en fonction du courant.
-
+.. image:: pics/plot-iv-screen.png
+	   :width: 500px

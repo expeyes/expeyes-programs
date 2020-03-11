@@ -1,33 +1,45 @@
-.. 3.5
-   
 Oscillateur à IC555
--------------------
+===================
 
-**Objectif**
+Le circuit IC555 est un circuit *timer* très populaire. On peut le
+configurer comme multivibrateur astable ou monostable. Les valeurs de
+la fréquence et le rapport cyclique peuvent être réglés par le choix
+de deux résistances et d'un condensateur.
+
+Objectif
+--------
 
 Câbler un circuit de multivibrateur astable à l’aide d’un IC555, mesurer
 la fréquence et le rapport cyclique de la sortie.
 
-.. image:: schematics/osc555.svg
-	   :width: 300px
-.. image:: pics/ic555-screen.png
-	   :width: 300px
 
-Le circuit est présenté sur la figure. La fréquence est données par
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La durée
-HAUTE est donnée par
-:math:`\ln 2 \times C \times (R_1 + R_2)`
-et la durée BASSE par :math:`\ln 2 \times C \times R_2`.
+Procédure
+---------
 
-**Procédure**
+.. image:: schematics/ic555.svg
+	   :width: 300px
 
 -  Faire les connexions
 -  mesurer la fréquence et le rapport cyclique.
--  Recommencer en changeant les valeurs de R1
+-  Recommencer en changeant les valeurs de R1.
 
-**Discussion**
+La courbe obtenue est représentée ci-dessous. La fréquence et le rapport cyclique peuvent être calculées à l'aide des équations suivantes et comparées aux mesures.
+
+Les durées des tensions haute et basse sont : :math:`T_{1} =
+0.693(R_{1} + R_{2})C` et :math:`T_{2} = 0.693 R_{2} C`.  La fréquence
+vaut :math:`f = \frac{1}{(T_{1}+T_{2})}` et le rapport cyclique vaut
+:math:`= \frac{T_{1}}{(T_{1}+T_{2})}`
+
+.. image:: pics/ic555-screen.png
+	   :width: 500px
+
+
+Discussion
+----------
 
 Le signal de sortie est montré sur la figure. Changer la valeur des
-résistances et du condensateur, puis comparer la fréquence et le rapport
-cyclique avec les valeurs calculées.
+résistances et du condensateur, puis comparer la fréquence et le
+rapport cyclique avec les valeurs calculées. On peut utiliser des
+résistances variables pour modifier la fréquence et le rapport
+cyclique.
 

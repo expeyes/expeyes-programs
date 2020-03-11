@@ -1,12 +1,15 @@
 Non-inverting Amplifier
 ========================
+
 This experiment is very similar to the previous one, the inverting amplifier.
 
-**Objective**
+Objective
+---------
 
-Wire an non-inverting amplifier using an Op-Amp, like uA741 or OP07,  and test it.
+Wire an non-inverting amplifier using an Op-Amp, like µA741 or OP07,  and test it.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/opamp-noninv.svg
 	   :width: 300px
@@ -23,7 +26,8 @@ The amplitude gain and and the phase difference can be observed from the output 
 .. image:: pics/opamp-noninv-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
-Using expeyes, it is not possible to study the high frequency response.
+Using expEYES, it is not possible to study the high frequency response.
 

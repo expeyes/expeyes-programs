@@ -1,25 +1,39 @@
-.. 3.8
-   
-Intégrateur à ampli-op
-----------------------
+Amplificateur additionneur
+==========================
 
-**Objectif**
+On peut utiliser des amplificateurs opérationnels pour simuler des
+opérations mathématiques telles que l'addition, l'intégration, la
+différentiation, etc.
 
-Câbler un intégrateur à ampli-op et le tester.
+Objectif
+--------
 
-.. image:: schematics/opamp-int.svg
+Faire un amplificateur additionneur à l'aide d'un circuit intégré
+amplificateur opérationnel et le tester.
+
+
+Procédure
+---------
+
+.. image:: schematics/opamp-summing.svg
 	   :width: 300px
 
-**Procédure**
+-  Réaliser le circuit sur la plaque de montage, selon le
+   schéma. Utiliser :math:`1k\Omega` pour toutes les résistances
+-  Régler PV1 et PV2 à 1 V chacun
+-  Activer A1, A2 et A3
+-  Observer les signaux. Vérifier que le signal de sortie est la somme
+   des signaux d'entrée.
 
--  Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
--  Activer A1 et A2 avec option d’analyse
--  Sélectionner le calibre 1 V pour A1 et A2
--  Faire les connexions et observer la sortie
--  Changer le gain en modifiant les valeurs des résistances.
+Le signal de sortie est donné par 
+:math:`V_{sortie}= \frac{R_{1}}{R_{f}}V_{1} + \frac{R_{2}}{R_{f}}V_{2} + ...`
 
-**Discussion**
+Discussion
+----------
 
-On peut observer le gain par l’amplitude, mais aussi le déphasage dans
-les résultats.
+L'addition peut aussi se faire avec des tensions alternatives. Notre tension d'alimentation est seulement de 6 V. Il faut donc faire en sorte que les signaux de sortie ne dépassent pas 4 V.
+
+-  Remplacer :math:`R_{1}` par :math:`10k\Omega` et y appliquer le signal de
+   SQ1 au lieu de PV1.
+
 

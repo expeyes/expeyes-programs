@@ -1,19 +1,22 @@
 Inverting Amplifier
 ===================
+
 It is very easy to make an amplifier using an Operational Amplifier IC. The amplification factor is decided the
 ratio of two resistors.
 
-**Objective**
+Objective
+---------
 
-Wire an Inverting amplifier using an Op-Amp, like uA741 or OP07,  and test it.
+Wire an Inverting amplifier using an Op-Amp, like µA741 or OP07,  and test it.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
 -  Make the connections on bread board as shown in the figure.
--  Set WG amplitude to 80 mV and frequency to 1000 Hz
+-  Set WG amplitude to 80 mV and frequency to 1000 Hz
 -  Enable A1 and A2, and set ranges to 1V
 -  Enable the amplitude and frequency displays of A1 and A2.
 -  Make connections and calculate the voltage gain from the output
@@ -24,7 +27,8 @@ The amplitude gain and and the phase difference can be observed from the output 
 .. image:: pics/opamp-inv-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
-Using expeyes, it is not possible to study the high frequency response.
+Using expEYES, it is not possible to study the high frequency response.
 

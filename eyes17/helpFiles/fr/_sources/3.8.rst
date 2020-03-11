@@ -1,25 +1,37 @@
-.. 3.6
-   
 Amplificateur inverseur
------------------------
+=======================
 
-**Objectif**
+On peut faire très facilement un amplificateur à l'aide d'un circuit
+intégré d'amplificateur opérationnel. Le facteur d'amplification se
+règle à l'aide du quotient de deux résistances.
 
-Câbler un amplificateur inverseur à l’aide d’un ampli-op et le tester.
+Objectif
+--------
+
+Câbler un amplificateur inverseur à l’aide d’un ampli-op comme un
+µA741 ou un OP07 et le tester.
+
+Procédure
+---------
 
 .. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
-**Procédure**
-
+-  Faire les connexions sur la plaque de montage selon le schéma		   
 -  Régler l’amplitude de WG à 80 mV et la fréquence à 1000 Hz
--  Activer A1 et A2 avec option d’analyse
--  Sélectionner le calibre 1 V pour A1 et A2
--  Faire les connexions et observer la sortie
--  Changer le gain en modifiant les valeurs des résistances.
+-  Activer A1 et A2 et régler les calibres à 1 V
+-  Activer l'analyse des amplitudes et fréquences pour A1 et A2.
+-  Faire les connexions et observer le gain de tension à la sortie
+-  Modifier le gain en modifiant les valeurs des résistances.
 
-**Discussion**
+Le gain en amplitude et la différence de phase peuvent être observés
+dans la figure ci-dessous.
 
-On peut observer le gain par l’amplitude, mais aussi le déphasage dans
-les résultats.
+.. image:: pics/opamp-inv-screen.png
+	   :width: 500px
+
+Discussion
+----------
+
+Avec expEYES, on ne peut pas étudier la réponse aux hautes fréquences.
 

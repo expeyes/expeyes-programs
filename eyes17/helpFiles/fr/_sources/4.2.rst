@@ -1,18 +1,36 @@
-..  4.02
-
 Courbes XY
 ==========
 
-Ce programme trace A1 en fonction de A2 ou (A1-A2) en fonction de A2.
-Il est utile pour tracer des courbes de Lissajous et pour l'étude des
-circuits RC.
+Les oscilloscopes utilisent généralement l'axe X comme représentation du temps. Il est aussi possible de les utiliser en mode XY, où un signal est tracé en fonction d'un autre, utilisé pour l'axe X. Cette fonctionnalité permet d'afficher les courbes de Lissajou, et aussi pour mesurer des déphasages entre deux signaux d'entrée.
 
-.. image:: schematics/XYplot.svg
+Objectif
+--------
+
+Afficher deux signaux en mode XY et trouver leur différence de
+phase. Le déphasage est dû à un circuit RC.
+
+.. image:: schematics/RCsteadystate.svg
+	   :width: 300px
+.. image:: pics/phase-from-xy-screen.png
 	   :width: 300px
 
-Pour le circuit ci-dessus, on peut tracer la courbe de la tension aux
-bornes du condensateur en fonction de la tension aux bornes de la
-résistance. Cela forme un cercle quand elles sont égales.
+Procédure
+---------
+	   
+-  Faire les connexions selon le schéma. Utiliser
+   :math:`1 k\Omega` et :math:`1 \mu F`\ ;
+-  Noter la valeur maximale :math:`y_{max}` et l'ordonnée à l'origine :math:`y_{o}`
 
-- Sélectionner C = 1µF, R = 1 kΩ et tracer (A1-A2) en fonction de A2.
-  Ajuster la fréquence pour obtenir un cercle.
+The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{o}}{y_{max}}\Bigg)`    
+	   
+.. image:: pics/xyplot-screen.png
+   :width: 500px
+	      
+
+Discussion
+----------
+
+Il y a une option pour afficher (A1-A2) en fonction de A2. Dans le circuit ci-dessus, cela affiche la tension aux bornes du condensateur en fonction de la tension aux bornes de la résistance.
+
+- Choisir :math:`C = 1\mu F`, :math:`R = 1 k\Omega` et afficher (A1-A2) en fonction de A2. and plot (A1-A2) vs A2. A
+- Ajuster la fréquence pour rendre ces tensions égales.

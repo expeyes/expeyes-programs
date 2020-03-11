@@ -73,7 +73,7 @@ Graphical User Interface
    :width: 600px
  
 The GUI menubar consists of several pulldown menus for different categories of experiments. 
-The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fiields for accessing the hardware features explained earlier.
+The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fields for accessing the hardware features explained earlier.
       
 Oscilloscope Controls
 ---------------------
@@ -81,7 +81,7 @@ Oscilloscope Controls
 - Channel Selection
    The four channels A1, A2, A3 and MIC can be selected for display using the Check buttons on lower half of the right side.
 
-- Input Volatge Range
+- Input Voltage Range
    Pulldown menus are provided against each channel for selecting the input voltage range. A1 and A2 are having a maximum range of :math:`\pm\ 16\ V`.
 
 - Amplitude and Frequency    
@@ -91,7 +91,7 @@ Oscilloscope Controls
    The time base slider is for selecting the duration of the X-axis. The allowed full range can be set from 1mS to 500mS.  
    
 - Trigger Controls
-   A digital storage oscilloscope digitizes periodically captures the input for a given duration and displays the result. To get a stable trace, the amplitude and slope of the input and the beginning of each capture operation should be kept same. This starting value is decided by the trigger level setting.
+   A digital storage oscilloscope digitizes periodically and captures the input for a given duration and displays the result. To get a stable trace, the amplitude and slope of the input and the beginning of each capture operation should be kept same. This starting value is decided by the trigger level setting.
   
 - Saving Data
    The data of the traces can be saved to a file in text format. The time and voltage values of each selcted trace will be written to a file.
@@ -99,26 +99,26 @@ Oscilloscope Controls
 - Cursor
    A vertical cursor can be enabled to view the instantaneous values of each channel at the cursor position along with time.
   
-- A1-A2 Option
+- :math:`A1-A2` Option
    This option draws a trace showing the difference of A1 and A2 inputs.
  
 - Fourier Transform
-    The Fourier transform converts the data from time domain to frequency domain. The amplitudes of the frequency components will be displayed. The value of the fundamenta frequency will be displayed.
+    The Fourier transform converts the data from time domain to frequency domain. The amplitudes of the frequency components will be displayed. The value of the fundamenta frequency will be observed.
 
 Other Controls and Readbacks
 ----------------------------
 
-- On the top right side there are Check boxes labelled A1, A2 and A3. Selecting them will display the instantaneous values of the voltages at terminals A1, A2 and A3. These are useful for measuring DC volatges only.
+- On the top right side there are Check boxes labelled A1, A2 and A3. Selecting them will display the instantaneous values of the voltages at terminals **A1**, **A2** and **A3**. These are useful for measuring DC volatges only.
 
-- The value of the resistance connected to **SEN** is displayed below the DC voltage displays.
+- The value of the resistance connected between **SEN** and **GND** is displayed below the DC voltage displays.
 
-- Next is a Button for measuring the capacitance connected to IN1.
+- Next is a Button for measuring the capacitance connected between **IN1** and **GND**.
 
-- A Button is available for measuring the frequency of a digital pulse at IN2. The signals should be swinging from zero to 5 volts.
+- A Button is available for measuring the frequency of a digital pulse at **IN2**. The signals should be swinging from zero to 5 volts.
 
-- Two CheckButtons are provided for selecting OD1 and CCS.
+- Two CheckButtons are provided for selecting **OD1** and **CCS**.
 
-- A pulldown Menu is given for selecting the waveshape of WG. When SQR is selected, the output shifts to SQ2. There is also a menu to select the amplitude of WG output. The allowed values are 3V, 1V and 80mV.
+- A pulldown Menu is given for selecting the waveshape of **WG**. When *SQR* is selected, the output shifts to **SQ2**. There is also a menu to select the amplitude of **WG** output. The allowed values are 3V, 1V and 80mV.
 
-- There are four vertical sliders on the left side of the GUI. They are used for horizontally shifting the traces. This i useful in experiments like the study of logic gates.
+- There are four vertical sliders on the left side of the GUI. They are used for vertically shifting the traces. This is useful in experiments like the study of logic gates.
 

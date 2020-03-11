@@ -1,14 +1,17 @@
 Logic gates
 ===========
+
 Logic gate circuits can perform operations like AND, OR etc. They can be implemented using
 PN junction diodes for demonstration purpose. A wide range of logic gate ICs are also available. 
 
-**Objective**
+Objective
+---------
 
 Study of logic gates using SQ1 and PV1 as inputs, using TTL logic ICs
 7408 and 7432.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/gate-or-diode.svg
 	   :width: 300px
@@ -32,7 +35,8 @@ The results for the AND gate made using the IC 7408 is shown below.
 .. image:: pics/gate-and-ic-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
 The working of the logic gate will be evident from the 3 waveforms. You
 may shift traces vertically to separate them for clarity.
