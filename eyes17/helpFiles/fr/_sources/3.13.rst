@@ -29,7 +29,7 @@ Procédure
 	   :width: 500px
 
 On peut aussi faire cela en notant manuellement les lectures, depuis
-l'intrface utilisateur graphique de l'oscilloscope. Les étapes
+l'interface utilisateur graphique de l'oscilloscope. Les étapes
 nécessaires sont :
 
 - Régler PV1 à 100 mV

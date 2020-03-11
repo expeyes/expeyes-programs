@@ -10,7 +10,7 @@ dans le kit.
 Objectif
 --------
 
-Constrire un transformateur pour démontrer l’induction mutuelle entre
+Construire un transformateur pour démontrer l’induction mutuelle entre
 deux bobinages. Un des bobinages, le primaire, est connecté entre WD
 et GND. On aligne les axes des deux bobinages et on insère un noyau de
 ferromagnétique pour un meilleur couplage.

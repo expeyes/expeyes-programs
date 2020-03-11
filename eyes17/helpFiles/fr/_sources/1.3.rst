@@ -47,7 +47,7 @@ la zone de téléchargement de **http://expeyes.in** et l'installer
 alors qu'on est connecté à Internet
 
 Le paquet ``eyes17`` (de version supérieure à 3) ne dépend
-pas de versions antérieures d'ExpEYES, comme expeyes-junior. Pendant
+pas de versions antérieures d'expEYES, comme expeyes-junior. Pendant
 l'installation ``gdebi`` téléchargera automatiquement et installera
 les paquets requis.
 
@@ -56,7 +56,7 @@ les paquets requis.
     $ sudo apt install eyes17
 
 alors qu'on est connecté à Internet ; le paquet ``eyes17`` disponible
-dans la distribution (actuellement dans debian/buster ou ubuntu/bionic)
+dans la distribution (actuellement dans debian/buster ou Ubuntu/bionic)
 ainsi que toutes ses dépendances sera téléchargé et installé.
 
 Le CD vif expEYES / La clé USB vive

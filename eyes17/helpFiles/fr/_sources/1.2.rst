@@ -31,7 +31,7 @@ expériences d'électricité et d'électronique.
 
    ExpEYES17
    
-   La face avant d'ExpEYES17 avec les connexions externes sur le dessus.
+   La face avant d'expEYES17 avec les connexions externes sur le dessus.
 
 Connexions externes
 -------------------
@@ -47,7 +47,7 @@ Source de courant constant (CCS) :
 """"""""""""""""""""""""""""""""""
 
 La source de courant constant peut être activée ou désactivée (ON
-et OFF) sous contrôle logiciel.La valeur nominale est 1,1 mA mais
+et OFF) sous contrôle logiciel. La valeur nominale est 1,1 mA mais
 peut varier d'une unité à l'autre, à cause de la tolérance des composants.
 Pour mesurer sa valeur exacte, connecter un ampèremètre entre CCS
 et GND. Une autre méthode consiste à connecter une résistance connue
@@ -76,7 +76,7 @@ entre 10 Hz et 100 kHz. Toutes les valeurs intermédiaires de fréquence
 ne sont pas possibles. On peut programmer le rapport cyclique. Quand
 on règle la fréquence à 0 Hz provoque un état HAUT à la sortie, et
 si on la règle à -1 Hz, la sortie passe à l'état BAS ; dans les
-deux cas la génération de signal carré est désactivée. La sortie SQR1
+deux cas la génération de signal carré est désactivée. La sortie SQ1
 comporte une **résistance série** de :math:`100~\Omega`
 intégrée si bien qu'elle peut commander des DELs directement.
 
@@ -120,7 +120,7 @@ Celui-ci est capable de mesurer des fréquences jusqu'à plusieurs MHz.
 Capteur de résistance (SEN) :
 """""""""""""""""""""""""""""
 
-Cette entrée est surtout conçue pour des capteurs comme des photorésistances
+Cette entrée est surtout conçue pour des capteurs comme des photo-résistances
 (LDR), des thermistances, des photo-transistors, etc. L'entrée SEN
 est connectée en interne à 3,3 V à travers une résistance de :math:`5,1~k\Omega`.
 
@@ -191,7 +191,7 @@ Quelques accessoires sont livrés avec expEYES.
      :math:`560~\Omega`, :math:`1~k\Omega`, :math:`2,2~k\Omega` ,
      :math:`10~k\Omega`,
      :math:`51~k\Omega` et :math:`100~k\Omega`
-  *  photorésistance (LDR )
+  *  photo-résistance (LDR )
   *  Deux diodes silicium (``1N4148``) et une diode Zéner de :math:`3,3~V`
   *  Transistor NPN (``2N2222``)
 

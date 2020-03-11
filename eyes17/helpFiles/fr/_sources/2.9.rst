@@ -1,11 +1,11 @@
 Courants continu et alternatif
 ==============================
 
-L'intenisté et le sens du courant électrique d'une pile ne change pas avec le temps.
+L'intensité et le sens du courant électrique d'une pile ne change pas avec le temps.
 On l'appelle « courant continu ». Le courant du secteur est de nature différente.
 Le courant du secteur en France est normalisé à 230 V, 50 Hz. Une fréquence de
 50 Hz signifie un changement de tension qui se répète toutes les 20 millisecondes.
-Qi on mesure la tension entre la phase et le neutre d'une prise de courant
+Si on mesure la tension entre la phase et le neutre d'une prise de courant
 domestique, la tension augmente de zéro à 325 V (:math:`230 \sqrt{2}`) en 5 ms
 et revient à zéro dans les 5 ms suivantes. Ce type de courant est nommé courant
 alternatif. Pour étudier ce type de courant, il faut un oscilloscope.

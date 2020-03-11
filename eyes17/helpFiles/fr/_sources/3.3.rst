@@ -2,12 +2,12 @@ Redressement double alternance avec des jonctions PN
 ====================================================
 
 Un redresseur simple alternance dépend de la capacité de filtrage sur
-une longue duére pour fournir le courant continu. Cela provoque une
+une longue durée pour fournir le courant continu. Cela provoque une
 forte ondulation et convient mal pour les courants élevés. Un
 redresseur double alternance résout ce problème en fournissant du
 courant tant durant l'alternance positive que durant la
 négative. Cependant, il nécessite de disposer de deux phases de
-tension altenative en entrée, fournies le plus souvent par un
+tension alternative en entrée, fournies le plus souvent par un
 transformateur avec point milieu.
 
 

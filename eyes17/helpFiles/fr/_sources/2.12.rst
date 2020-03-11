@@ -43,7 +43,7 @@ quotient de la résistance opposée par le corps humain et l'impédance
 implique la présence d'une capacité dans le circuit.
 
 La conduction à travers le corps se produit-elle par la peau, ou par
-le flux sanguin ? Comment épondre à cette question ? Quel est le
+le flux sanguin ? Comment répondre à cette question ? Quel est le
 contenu en sel du sang ? Essayer de mesurer la résistance d'une eau
 salée. Quel est le rôle joué par la peau ?
 

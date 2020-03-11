@@ -1,9 +1,8 @@
-.. 2.1
-
 Mesurer une tension
--------------------
+===================
 
-**Objectif**
+Objectif
+--------
 
 Apprendre à mesurer une tension à l’aide d’expEYES et avoir une petite
 idée du concept de masse électrique (GND). Il faut une pile et deux fils
@@ -12,12 +11,14 @@ idée du concept de masse électrique (GND). Il faut une pile et deux fils
 .. image:: schematics/measure-dc.svg
 	   :width: 300px
 
-**Procédure**
+Procédure
+---------
 
 -  Observer la tension affichée pour A1.
 -  Recommencer en inversant les connexions à la pile. connections.
 
-**Discussion**
+Discussion
+----------
 
 La valeur des tensions mesurées est +1,5 V et elle devient -1,5 V après
 retournement des connexions.

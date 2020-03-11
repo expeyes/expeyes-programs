@@ -84,7 +84,7 @@ Expériences d'électricité et magnétisme
 
 Ce chapitre contient principalement des expériences sur le
 comportement en régime stationnaire et en régime transitoire pour des
-dipôles LCR. Il confronte les résultats expérimentaux avec la
+dipôles RLC. Il confronte les résultats expérimentaux avec la
 théorie. Il donne aussi une expérience sur l'induction
 électromagnétique.
 

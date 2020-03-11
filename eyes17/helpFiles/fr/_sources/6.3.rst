@@ -10,7 +10,7 @@ Objectif
 --------
 
 Démontrer la résonance d’un pendule forcé. On réalise l pendule à
-l'aid de deux boutons magnétiques, suspendus à un morceau de
+l'aide de deux boutons magnétiques, suspendus à un morceau de
 papier. Une bobine alimentée par SQ1 fournit la force d'excitation.
 
 

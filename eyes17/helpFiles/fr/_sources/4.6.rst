@@ -47,7 +47,7 @@ fréquence de résonance des circuits série LC est donnée par
 critique. Selon les valeurs relatives de C/L et R, l'amortissement
 peut être sous-critique, critique, ou super-critique.
 
-On a utilisé une bobne de 3000 tours et un condensateur de
+On a utilisé une bobine de 3000 tours et un condensateur de
 :math:`0,1~\mu F`.  La tension aux bornes du condensateur après un
 échelon de 5 à 0 V est présentée sur la figure. La fréquence de
 résonance mesurée correspond à :math:`f = 1/(2\pi\sqrt{LC})`, dans les

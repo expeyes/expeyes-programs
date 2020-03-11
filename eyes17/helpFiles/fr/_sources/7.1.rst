@@ -37,7 +37,7 @@ La courbe de refroidissement d'un récipient d'eau est montrée ci-dessous.
 Discussion
 ----------
 
-On peut augmenter la précisdion des mesures à l'aide des étapes suivantes.
+On peut augmenter la précision des mesures à l'aide des étapes suivantes.
 
 Mesurer la valeur précise du courant donné par CSS en la saisir dans
 l'interface utilisateur, elle peut être légèrement différente de

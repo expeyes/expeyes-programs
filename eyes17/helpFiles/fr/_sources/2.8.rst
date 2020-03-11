@@ -63,7 +63,7 @@ Discussion
 Pour ces mesures on fait la supposition qu'aucun courant n'est
 consommé par A1 et A2. Ce n'est pas vrai, chacune de ces entrées a une
 impédance de :math:`1M\Omega`. Ça commence à prendre de l'importance
-quand on utilise des résistances dont l'odre de grandeur approche du
+quand on utilise des résistances dont l'ordre de grandeur approche du
 méga-ohm. Pour illustrer cela, connecter WG à A1 à l'aide d'un fil et
 le même signal à A2 à travers une résistance de
 :math:`1M\Omega`. Essayer d'expliquer le résultat en utilisant le loi

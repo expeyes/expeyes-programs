@@ -1,7 +1,7 @@
 Induction électromagnétique
 ===========================
 
-Une tension apparaît dans un counducteur plongé dans un champ
+Une tension apparaît dans un conducteur plongé dans un champ
 magnétique variant avec le temps. On peut le montrer à l'aide d'un
 bobinage et d'un aimant mobile.
 
