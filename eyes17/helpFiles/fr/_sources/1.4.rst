@@ -7,7 +7,7 @@ en plus, s'ouvrir comme affiché sur la figure.
 On peut choisir de nombreuses expériences depuis le menu.
 
 .. _the-scope17-screen:
-.. figure:: pics/eyes17-screen-en.png
+.. figure:: pics/eyes17-screen.png
 
     Scope17
 

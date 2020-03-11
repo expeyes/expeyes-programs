@@ -6,7 +6,7 @@ oscilloscope screen with several extra features will open as shown in
 the figure. Various experiments can be selected from the menu.
 
 .. _the-scope17-screen:
-.. figure:: pics/eyes17-screen-en.png
+.. figure:: pics/eyes17-screen.png
 
     The ExpEYES-17 main GUI
 
