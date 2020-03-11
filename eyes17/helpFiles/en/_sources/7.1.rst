@@ -1,14 +1,17 @@
 Temperature measurement using PT100
 ===================================
-The Resistance Temperature Detector (RTD) is a temperature sensing device whose resistance changes with temperature, typically built from platinum. To measure the resistance across an RTD, apply a constant current, measure the resulting voltage, and determine the RTD resistance. The Pt100 is a popular RTD with a resistance of 100 ohms at 0°C.  Resistance of a PT100 element is related to the temperature
+
+The Resistance Temperature Detector (RTD) is a temperature sensing device whose resistance changes with temperature, typically built from platinum. To measure the resistance across an RTD, apply a constant current, measure the resulting voltage, and determine the RTD resistance. The PT100 is a popular RTD with a resistance of :math:`100 \Omega` at 0°C.  Resistance of a PT100 element is related to the temperature
 by the equation :math:`R(T) = R_0 (1 + AT + BT^2)`, where
 :math:`A = 3,9083 \times 10^{−3}` and :math:`B =  − 5,775 \times 10^{−7}`.
 
-**Objective**
+Objective
+---------
 
 Record the temperature of a liquid by using a Pt100.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/pt100.svg
 	   :width: 300px
@@ -24,7 +27,8 @@ Cooling curve of water is shown in the figure below.
 .. image:: pics/pt100-screen.png
 	   :width: 300px
 
-**Discussion**
+Discussion
+----------
 
 The accuracy of the measurements can be increased by the following steps.
 

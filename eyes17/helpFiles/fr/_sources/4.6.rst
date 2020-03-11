@@ -1,5 +1,5 @@
-Différenciation et intégration RC
-=================================
+Réponses transitoires de circuits RLC
+=====================================
 
 .. image:: schematics/RLC-circuit.svg
    :width: 300px

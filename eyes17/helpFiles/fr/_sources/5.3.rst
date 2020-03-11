@@ -1,27 +1,37 @@
-.. 5.3
-   
 Battements sonores
-------------------
+==================
 
-**Objectif**
+Le phénomène de battements est dû à deux ondes sinusoïdales de même
+amplitude et de fréquences très proches qui se
+superposent. L'amplitude ou l'intensité du signal combiné augmenterait
+et diminuerait à une fréquence égale à la différence entre les
+fréquences des deux signaux. :math:`f_b = f_1 - f_2`.
 
-Étudier les interférences sonores de deux sources individuelles. Deux
-buzzers piézo sont alimentés par deux sources indépendantes, et le son
-est envoyé vers un microphone.
+Objectif
+--------
+
+Étudier les battements produits par deux buzzers piézo-électriques
+excités par deux signaux de fréquences voisines. Le son est capturé
+par un microphone.
+
+Procédure
+---------
 
 .. image:: schematics/sound-beats.svg
 	   :width: 300px
 
-**Procédure**
-
 -  Régler WG à 3500 Hz et SQ1 à 3600 Hz
 -  Activer WG et SQ1 séparément pour vérifier la sortie MIC
--  Ajuster la position des buzzers piézo, par rapport au microphone,
+-  Ajuster les positions des buzzers piézo, par rapport au microphone,
    pour obtenir pratiquement la même amplitude avec chacun
 -  Activer les deux en même temps pour obtenir la figure de battement
 -  Cliquer sur FFT pour voir les spectre fréquentiel
 
-**Discussion**
+.. image:: pics/sound-beats-screen.png
+	   :width: 500px
+
+Discussion
+----------
 
 Sur la figure on peut voir comment l’enveloppe de basse fréquence
 apparaît. La durée entre deux instants de pression minimale, sur

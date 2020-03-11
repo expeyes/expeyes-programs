@@ -1,26 +1,34 @@
-.. 6.2
-   
 Vitesse angulaire d’un pendule
-------------------------------
+==============================
 
-**Objectif**
+On peut étudier la nature des oscillations d'un pendule en numérisant
+le déplacement angulaire de celui-ci en fonction dut temps. En
+modélisant les résultats par une fonction sinusoïde, il est possible
+d'extraire la période temporelle. Cependant, c'est beaucoup moins cher
+de numériser la vitesse angulaire du pendule, à l'aide d'un simple
+moteur de DVD. Quand on fixe le pendule à l'axe du moteur et qu'on le
+laisse osciller, cela induit une tension, proportionnelle à la
+vitesse angulaire.
 
-Étudier la nature des oscillations d’un pendule. Un encodeur angulaire
-est nécessaire pour mesurer le déplacement angulaire en fonction du
-temps. Mais en utilisant un moteur à courant continu comme capteur, on
-peut mesurer la vitesse angulaire en fonction du temps.
+Objectif
+--------
 
-.. image:: pics/pendulum-screen.png
-	   :width: 300px
+Numériser la vitesse angulaire d'un pendule pesant et calculer la
+valeur de *g* à partir des résultats.
 
-**Procédure**
+Procédure
+---------
 
--  Attacher un quelconque de pendule rigide à l’axe du moteur.
--  Connecter le moteur entre A3 et GND
--  Connecter une résistance de :math:`100~\Omega` entre Rg et GND
--  Mettre le pendule en oscillation et DÉMARRER la numérisation
+.. image:: schematics/pend-digitize.svg
+	   :width: 350px
 
-**Discussion**
+-  Attacher un quelconque de pendule rigide à l’axe du moteur ;
+-  Connecter le moteur entre A3 et GND ;
+-  Connecter une résistance de :math:`100~\Omega` entre Rg et GND ;
+-  Mettre le pendule en oscillation et DÉMARRER la numérisation.
+
+Discussion
+----------
 
 Le signal obtenu est montré sur la figure. Quand on le modélise par une
 équation

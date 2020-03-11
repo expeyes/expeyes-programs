@@ -3,11 +3,11 @@ Le programme graphique principal
 
 Démarrer Applications->Éducation->ExpEYES-17 depuis le menu. Un écran
 d'oscilloscope à quatre canaux avec de nombreuses fonctionnalités
-en plus, s'ouvrir comme affiché sur la figure :ref:`the-scope17-screen`.
+en plus, s'ouvrir comme affiché sur la figure.
 On peut choisir de nombreuses expériences depuis le menu.
 
 .. _the-scope17-screen:
-.. figure:: pics/scope17.*
+.. figure:: pics/eyes17-screen-en.png
 
     Scope17
 

@@ -1,10 +1,11 @@
-.. note
-   
-   Les programmes à interface graphique décrit dans les chapitres
-   précédents sont prévus pour un ensemble fini d'expériences. Pour
-   développer de nouvelles expériences, on doit savoir comment accéder
-   aux fonctionnalités d'expEYES par logiciel. Les appels de fonctions
-   importants pour communiquer avec l'appareil sont donnés ci-dessous.
+Programmer ExpEYES à l'aide de Python
+=====================================
+
+Les programmes à interface graphique décrit dans les chapitres
+précédents sont prévus pour un ensemble fini d'expériences. Pour
+développer de nouvelles expériences, on doit savoir comment accéder
+aux fonctionnalités d'expEYES par logiciel. Les appels de fonctions
+importants pour communiquer avec l'appareil sont donnés ci-dessous.
 
 Établir la Connexion
 """"""""""""""""""""

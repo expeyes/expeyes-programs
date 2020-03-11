@@ -1,14 +1,14 @@
-﻿..    6.91
-
-Enregistreur de capteur de lumière
+﻿Enregistreur de capteur de lumière
 ==================================
 
 Schéma
 ------
+
 - Il s'agit d'enregistrer les valeurs de la luminosité à l'aide du capteur TSL2561.
 
 Instructions
 ------------
+
 - Connecter le capteur de lumière (TSL2561) au port I2C
 - Régler le temps d'acquisition, l'intervalle entre deux mesures, et sélectionner les valeurs à considérer pour la courbe.
 - Lancer l'acquisition des données en fonction du temps.

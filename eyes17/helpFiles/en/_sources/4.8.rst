@@ -1,15 +1,18 @@
 Electromagnetic induction
 =========================
+
 A voltage is induced across a conductor kept in a changing magnetic field. This 
 can be demonsrated using a coil and a moving magnet.
 
-**Objective**
+Objective
+---------
 
 Explore the voltage induced across a coil by a changing magnetic field,
 by dropping a small cylindrical magnet into a coil. Use a tube to guide
 the magnet through the coil.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/induction.svg
 	   :width: 300px
@@ -24,7 +27,8 @@ the magnet through the coil.
 .. image:: pics/induction-screen.png
 	   :width: 300px
 
-**Discussion**
+Discussion
+----------
 
 The result is shown in figure. The amplitude increases with the speed of
 the magnet. From the graph, we can find the time taken by the magnet to

@@ -131,6 +131,7 @@ acceleration due to gravity is measured using a pendulum.
    6.2
    6.3
    6.4
+   6.5
 
 Other experiments
 *****************
@@ -156,14 +157,9 @@ I2C Modules
 Coding expEYES-17 in Python
 ***************************
 
-The GUI programs described in the previous sections are meant for a
-fixed set of experiments. To develop new experiments, one should know
-how to access the features of expEYES from software. Important function
-calls used for communicating with the device is given below.
-
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    9.0
  

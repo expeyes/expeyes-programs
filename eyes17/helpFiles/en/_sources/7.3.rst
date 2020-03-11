@@ -1,5 +1,6 @@
 Adanced Data Logger
 ===================
+
 The simple data logger you are already familiar with records any
 specified input voltage with respect to time, however, it is often
 desirable to vary one output parameter, and study the effect on some

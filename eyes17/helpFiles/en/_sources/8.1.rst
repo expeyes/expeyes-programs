@@ -1,5 +1,6 @@
 ﻿B-H Curve
 ==========
+
 The magnetic field density (H) around a current carrying coil depends on the coil parameters and the current. The magnetic flux density (B) depends on H and the magnetic permeability of the medium. B and H They are related by the equation 
 :math:`B=\mu H` where :math:`\mu` is the permeability.
 
@@ -9,11 +10,13 @@ as shown in the figure.
 .. image:: pics/hysteresis-loop.png
 	   :width: 400px
 
-**Objective**
+Objective
+---------
 
 To Record Magnetic Hysterisis using a solenoid connected to PV1, and a MPU925x magnetometer connected to the I2C port.
   
-**Procedure**
+Procedure
+---------
 
 - Connect the coil between PV1 and ground
 - Connect the Magnetometer(MPU925x) to the I2C port
