@@ -27,7 +27,7 @@ Procédure
 -  Cliquer sur « Transformation de Fourier » (FFT) pendant que le
    signal est stationnaire pour l'analyser.
 
-Le signal du microphone est mintré ci-dessous.   
+Le signal du microphone est montré ci-dessous.   
 
 .. image:: pics/sound-capture-screen.png
 	   :width: 400px
