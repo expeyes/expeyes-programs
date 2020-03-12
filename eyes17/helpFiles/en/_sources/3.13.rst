@@ -11,7 +11,7 @@ Draw the V-I Characteristic of diode and compare the result with the theory.
 Procedure
 ---------
 
-.. image:: schematics/diode-iv.svg
+.. image:: schematics/diode_iv.svg
 	   :width: 300px
   
 -  Make the connections as shown in the figure. Use :math:`1000\Omega` resistor

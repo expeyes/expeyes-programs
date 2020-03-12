@@ -3,16 +3,10 @@
    version="1.1"
    id="diode_iv" width="100%" height="100%"  viewBox="-6 -6 438 230">
 <desc>
-XCircuit Version 3.7
-File "diode_iv.ps" Page 1
+XCircuit Version 3.9
+File "xcircuit/diode_iv.ps" Page 1
 </desc>
 <g stroke="black">
-<path d="M96,48 L124,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M224,48 L196,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<path d="M196,48 L190,34 178,62 166,34 154,62 142,34 130,62 124,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 144  96)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">1K</tspan>
-</text></g>
 <ellipse cx="240" cy="48" rx="16" ry="16" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M176,160 L176,208 240,208 240,160 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M304,160 L304,208 400,208 400,160 z" fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
@@ -35,6 +29,15 @@ File "diode_iv.ps" Page 1
 </text></g>
 <g transform="matrix(   1    0   -0    1 304 192)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">GND</tspan>
+</text></g>
+<path d="M224,48 L196,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M96,48 L124,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<path d="M124,48 L130,62 142,34 154,62 166,34 178,62 190,34 196,48 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
+<g transform="matrix( 0.7 -1.09102e-11 1.09102e-11  0.7 128  80)" fill="#a52a2a" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="14">1.0<tspan dx="7">k</tspan></tspan><text stroke="none" font-family="Times" font-size="40" ><tspan x="79" y="14">&#937;</tspan></text>
+</text></g>
+<g transform="matrix( 0.7 -1.09102e-11 1.09102e-11  0.7 144  16)" fill="#0000ff" >
+<text stroke="none" font-family="Times" font-size="40" ><tspan x="0" y="13">R</tspan>
 </text></g>
 </g>
 </svg>
