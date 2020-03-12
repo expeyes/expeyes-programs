@@ -59,6 +59,15 @@ I2C_PULLDOWN_SCL = Byte.pack(15)
 I2C_DISABLE_SMBUS= Byte.pack(16)
 I2C_START_SCOPE  = Byte.pack(17)
 
+#/*-----SPI--------*/
+SPI_HEADER         = Byte.pack(3)
+START_SPI          = Byte.pack(1)
+SEND_SPI8          = Byte.pack(2)
+SEND_SPI16         = Byte.pack(3)
+STOP_SPI           = Byte.pack(4)
+SET_SPI_PARAMETERS = Byte.pack(5)
+SEND_SPI8_BURST    = Byte.pack(6)
+SEND_SPI16_BURST   = Byte.pack(7)
 
 #/*-----------DAC--------*/
 DAC                = Byte.pack(6)
@@ -67,6 +76,7 @@ SET_DAC            = Byte.pack(1)
 
 #/*--------WAVEGEN-----*/
 WAVEGEN              = Byte.pack(7)
+MAP_REFERENCE        = Byte.pack(8)
 SET_WG               = Byte.pack(1)
 SET_SQR1             = Byte.pack(3)
 SET_SQR_LONG         = Byte.pack(4)

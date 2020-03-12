@@ -36,13 +36,13 @@ Discussion
 
 On peut recommencer l'expérience en utilisant la tension continue de
 PV1. Utiliser les affichages continus de A1 et A2 dans ce cas. En
-courant continu, la résistance du liquide semble canger avec le temps,
+courant continu, la résistance du liquide semble changer avec le temps,
 alors qu'en courant alternatif la valeur est stable. Quand on
 travaille avec une tasse et les deux fils qui trempent dedans par
 leurs extrémités, la résistance dépend peu de la distance entre les
 extrémités. C'est l'aire des électrodes qui a le plus d'effet. Pour
 déterminer la résistivité de l'eau, il faudrait réaliser une colonne
-d'eau dans un tube, avec des électrondes planes aux extrémités.
+d'eau dans un tube, avec des électrodes planes aux extrémités.
 
 La résistance dépende de la concentration des ions et de la présence
 d'impuretés dans l'eau utilisée. Essayer d'ajouter un peu de sel de

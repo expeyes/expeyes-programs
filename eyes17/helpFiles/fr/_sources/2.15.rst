@@ -19,7 +19,7 @@ Procédure
 ---------
 
 -  Connecter les électrodes à A1 et GND
--  Cliquer sur la case à cocher A1 pour affcher sa tension
+-  Cliquer sur la case à cocher A1 pour afficher sa tension
 -  Connecter une résistance de :math:`1000\Omega` entre les électrodes
 -  Mesurer à nouveau la tension, noter comme elle réduit.
 

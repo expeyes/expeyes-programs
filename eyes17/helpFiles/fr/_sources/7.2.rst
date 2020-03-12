@@ -1,7 +1,8 @@
-..    6.6
-
 Enregistreur de données
 =======================
 
-- Sélectionner les canaux A1, A2, A3 ou SEN
-- Les enregistrer avec l'intervalle de temps désiré
+L'enregistreur de données est un programme permettant à l'utilisateur
+d'enregistrer les entrées de tension en fonction du temps.
+
+- Sélectionner les canaux A1, A2, A3 ou SEN ;
+- Les enregistrer avec l'intervalle de temps désiré.

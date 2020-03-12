@@ -7,6 +7,7 @@ doc
 __pyshared__/
 build/
 pypi/
+eyes20/
 
 # lyx generated files
 *-lyxformat-*.lyx

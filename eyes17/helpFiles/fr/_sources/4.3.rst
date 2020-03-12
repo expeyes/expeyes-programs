@@ -1,50 +1,115 @@
-.. 4.1
-   
 Circuits RLC, réponse en régime stationnaire
---------------------------------------------
+============================================
 
-**Objectif**
+En signal sinusoïdal, il y a trois composants passifs de base : la
+résistance, l'inductance et le condensateur, qui montrent des
+déphasages différents entre tension et courant. Dans le cas d'une
+résistance, le signal de tension est en phase avec le courant. Pour
+une inductance pure, le signal de tension est en avance de phase de
+90 degrés sur le courant. Pour un condensateur pur, le signal de
+tension est en retard de phase de 90 degrés sur le courant. À l'aide
+d'expEYES on peut étudier ces phénomènes expérimentalement. On peut
+aussi explorer les relations de phase entre les tensions à différents
+points du montage. Trois cas différents, RC, RL et RLC seront
+étudiés. Les valeurs de tension et de déphasage dans les conditions de
+résonance série seront explorées. Un calculateur dédié d'impédance est
+fourni dans la partie droite de l'interface utilisateur, pour comparer
+les valeurs mesurées aux calculs.
 
-Étudier le comportement de dipôle RLC dans un circuit en courant
-alternatif. Trois combinaisons différentes peuvent être étudiées.
+Objectif
+--------
+
+Mesurer les amplitudes et les phases dans un circuit RC. Le déphasage des tensions aux bornes du condensateur est donné par
+
+:math:`\theta=\tan^{-1}\Bigg(\frac{Z_c}{R}\Bigg)` où l'impédance du condensateur
+est :math:`Z_c = \frac{1}{2\pi fC}`
+
+
+Procédure
+---------
 
 .. image:: schematics/RCsteadystate.svg
 	   :width: 300px
 .. image:: schematics/RLsteadystate.svg
 	   :width: 300px
+.. image:: pics/RCsteadystate-photo.png
+   :width: 300px
+
+-  Utiliser la plaque de montage comme montré ci-dessus
+-  Placer un condensateur de :math:`1 \mu F` et une résistance de
+   :math:`1k\Omega`\ ;
+-  Faire les connexions selon le premier schéma ;
+-  recommencer les mesures, à différentes fréquences.
+
+Les signaux résultants pour le circuit RC sont montrés
+ci-dessous. La trace verte (tension en A2) est le signal de la
+tension aux bornes de la résistance. On peut la considérer comme le
+signal du courant comme la tension et le courant sont en phase dans
+une résistance. La trace rouge est la tension aux bornes du
+condensateur, et on voit que le signal du courant est en avance de
+phase de 90 degrés.
+
+Le déphasage du condensateur est montrée dans le coin du haut. On peut
+la comparer aux valeurs calculées.
+
+.. image:: pics/RCsteadystate-screen.png
+	   :width: 500px
+
+L'étape suivante est d'étudier le circuit RL. Là on observera le
+signal de courant en retard de phase par rapport à la tension aux
+bornes de l'inductance.
+
+
+-  Remplacer le condensateur par une inductance de 10 mH ;
+-  Régler la fréquence à 4000 Hz pour obtenir un déphasage plus important,
+   parce que l'inductance utilisée est petite, et sa résistance interne
+   non nulle.
+
+
+RLC et la résonance série
+=========================
+
+Quand un condensateur et une inductance sont tous deux présents, le déphasage aux bornes de la série LC est donnée par
+
+:math:`\theta=\tan^{1}\Bigg(\frac{Z_c-Z_L}{R}\Bigg)` 
+où :math:`Z_c = \frac{1}{2\pi fC}` 
+et :math:`Z_L = 2\pi fL`
+
+L'impédance du bobinage augmente avec la fréquence tandis que celle du
+condensateur diminue. À une certaine fréquence, elles doivent devenir
+égales et le déphasage aux bornes de la série LC s'annule. La tension
+totale aux bornes de la série LC s'annule aussi. Cette condition
+précise se nomme la résonance.
+
 .. image:: schematics/RLCsteadystate.svg
-	   :width: 300px
+   :width: 300px
 
-**Procédure**
+-  Réaliser les connexions à l'aide de L, C et R ;
+-  Connecter A1, A2 et A3 selon le schéma ;
+-  Noter les amplitudes et les mesures de phases, dans chacun des cas ;
+-  Pour les circuits série RLC, le point commun à L et C est suivi par A3 ;
+-  Pour la résonance choisir :math:`C = 1~\mu F`, :math:`L = 10~mH` ;
+-  Régler la fréquence à :math:`f = 1600~Hz`, et l'ajuster pour annuler
+   le déphasage.
 
--  Faire les connexions une par une, selon les schémas
--  Prendre note des mesures d’amplitude et de phase, dans chaque cas
--  Recommencer les mesures en changeant la fréquence.
--  Pour le circuit série RLC, la jonction entre L et C est surveillées
-   par A3
--  Pour la résonance, sélectionner :math:`C = 1~\mu F`,
-   :math:`L = 10~mH` et :math:`f = 1600~Hz`, ajuster f pour obtenir un déphasage nul
--  La tension totale aux bornes de L et C s’approche de zéro, les
-   tensions de chacun sont déphasées à la résonance
+La fréquence de résonance calculée pour les valeurs données de L et C
+est 1591,5 Hz. On commence près de cette fréquence au début. La
+tension totale aux bornes de l'ensemble L et C s'approche de zéro. Ce
+n'est pas exactement zéro à cause de la résistance interne du
+bobinage. L'entrée A3 est connectée au point milieu entre L et C, si
+bien que les différences de potentiel individuelles aux bornes de L et
+C peuvent être affichées. On voit qu'elles sont égales et en
+opposition de phase, comme ci-dessous.
 
-**Discussion**
+.. image:: pics/RLCsteadystate-screen.png
+	   :width: 500px
+	   
+Discussion
+----------
 
-La tension alternative de la source est en A1 et la tension aux bornes
-de la résistance en A2. Si on soustrait les valeurs instantanées de A2
-de A1 on obtient la tension totale aux bornes de L et C. IL faut
-utiliser un bobinage avec une résistance négligeable pour de bons
-résultats. Le déphasage entre courant et tension est donnée par
-:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
-
-La tension totale, la tension aux bornes de R et la tension aux bornes
-de LC sont montrées dans la figure. Le diagramme de phase montre le
-déphasage entre courant et tension. Le bobinage utilisé dans
-l’expérience a une inductance d’environ :math:`10~mH` et une résistance de
-:math:`20~\Omega`.
-
-À :math:`1600~Hz`, :math:`Z_C \simeq Z_L` et la tension aux bornes
-de LC est déterminée par la résistance du bobinage. À la fréquence de
-résonance, la tension aux bornes de LC sera minimale, déterminée par la
-résistance du bobinage. L’entrée A3 est connectée entre L et C, si bien
-que les tensions individuelles de L et C peuvent être présentées.
-
+On peut utiliser cette expérience pour mesurer les valeurs des
+capacités ou des inductances inconnues. Réaliser un circuit RL ou RC
+avec une résistance connue et mesurer les déphasages à diverses
+fréquences. On peut calculer les valeurs de L et C grâce aux formules
+:math:`C = \frac{1}{2 \pi f R \tan{\theta}}` et 
+:math:`L = \frac{R \tan{\theta}}{2 \pi f }`.

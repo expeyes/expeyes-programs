@@ -1,9 +1,8 @@
-.. 2.2
-   
 Mesurer une Résistance
-----------------------
+======================
 
-**Objectif**
+Objectif
+--------
 
 ExpEYES a une borne marquée **SEN**, qu’on peut utiliser pour mesurer
 des résistances dans l’intervalle de :math:`100~\Omega` à :math:`100~k\Omega`.
@@ -11,7 +10,8 @@ des résistances dans l’intervalle de :math:`100~\Omega` à :math:`100~k\Omega
 .. image:: ./schematics/res-measure.svg
    :width: 300px	   
 
-**Procédure**
+Procédure
+---------
 
 -  Connecter la résistance entre SEN une borne GND
 -  Observer la valeur afficher dans le panneau de droite

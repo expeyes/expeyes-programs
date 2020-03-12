@@ -1,7 +1,7 @@
 Oscilloscope à quatre canaux, et plus
 =====================================
 
-La première chose qui apparaît quand on ouvre le programme avec l'interface graphique d'ExpEYES, c'est une fenêtre d'oscilloscope. Les graphiques de quatre canaux d'oscilloscope apparaissent à gauche. À droite il y des boutons, des curseurs, etc. pour contrôler l'oscilloscope et la plupart des spécificités matérielles d'ExpEYES, comme les sorties en courant continu, les générateurs de signaux, etc. Pour comprendre ExpEYES, il faut commencer avec les bornes d'Entrée/Sortie et leurs fonctions, comme expliqué ci-dessous.
+La première chose qui apparaît quand on ouvre le programme avec l'interface graphique d'expEYES, c'est une fenêtre d'oscilloscope. Les graphiques de quatre canaux d'oscilloscope apparaissent à gauche. À droite il y des boutons, des curseurs, etc. pour contrôler l'oscilloscope et la plupart des spécificités matérielles d'expEYES, comme les sorties en courant continu, les générateurs de signaux, etc. Pour comprendre ExpEYES, il faut commencer avec les bornes d'Entrée/Sortie et leurs fonctions, comme expliqué ci-dessous.
 
 .. figure:: ./schematics/scope-outputs.svg
    :width: 300px
@@ -61,7 +61,7 @@ Branchements d'entrée
    mesure.
 -  **SEN :** Entrée pour mesurer la résistance. Ce point est rappelé en interne
    à :math:`3.3\ V` via une résistance de :math:`5.1\ k\Omega`. La
-   valeur de la résistance externe connectée là est détermnées par la
+   valeur de la résistance externe connectée là est déterminée par la
    loi d'Ohm. On utilise cette borne principalement pour connecter des
    capteurs résistifs comme des photo-transistors, pour des mesures
    d'intervalle de temps.
@@ -128,7 +128,7 @@ Les contrôles de l'oscilloscope
    Un oscilloscope à mémoire numérise et capture périodiquement le
    signal d'entrée pendant une certaine durée et affiche le
    résultat. Afin d'obtenir une trace stable, la valeur et la pente du
-   signal d'entrée au début de chaque capture devraient être mles
+   signal d'entrée au début de chaque capture devraient être les
    mêmes. Ces valeurs de départ sont réglées par le réglage du niveau
    de synchronisation.
   

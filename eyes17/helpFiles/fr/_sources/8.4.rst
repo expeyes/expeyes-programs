@@ -1,4 +1,4 @@
-..    6.93
-
 Enregistreur I2C
 ================
+
+Scanne les capteurs I2C connectés. On peut accéder aux capteurs découverts.

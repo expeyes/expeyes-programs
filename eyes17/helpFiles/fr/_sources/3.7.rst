@@ -20,15 +20,15 @@ Procédure
 	   :width: 300px
 	   
 
--  Plcer le transistor sur la plaque de montage et raliser les connections
+-  Placer le transistor sur la plaque de montage et réaliser les connections
    selon le schéma ;
 -  Régler la tension de la base à 1 V et DÉMARRER ;
 -  Régler l'amplitude de WG à 80 mV ;
 -  Activer A1 et A2 ;
--  Utiliser le curseur pour changer la tension de la base et oberver le
+-  Utiliser le curseur pour changer la tension de la base et observer le
    décalage du point de fonctionnement.
 
-Le résultat est monté ci-dessous. On peut voir que les signaux d'entré
+Le résultat est monté ci-dessous. On peut voir que les signaux d'entrée
 et de sortie sont déphasés de 180 degrés.
 
 .. image:: pics/transistor-amplifier-screen.png

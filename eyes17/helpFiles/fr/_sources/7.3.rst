@@ -1,5 +1,3 @@
-..    6.7
-
 Enregistreur de données avancé
 ==============================
 
@@ -26,7 +24,7 @@ Avec l'enregistreur de données avancé, on peut choisit l'abscisse X et l'ordon
    - la fréquence à l'entrée A2
    - tout capteur I2C connecté (magnétomètre, accéléromètre, capteur de température, gyromètre, etc.)
      
-       - Sélectionner un paramètre de n'importe lequel des capteurs autodétectés et présents dans la liste
+       - Sélectionner un paramètre de n'importe lequel des capteurs auto-détectés et présents dans la liste
    - capteur de distance SR04
 - Sortie (il faut spécifier les valeurs de début et de fin)
   

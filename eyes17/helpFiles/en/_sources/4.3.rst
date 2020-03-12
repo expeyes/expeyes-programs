@@ -9,7 +9,7 @@ Objective
 Measure the amplitude and phase values in an RC circuit. The phase difference of voltages at
 the two ends of the capacitor is given by
 
- :math:`\theta=\tan^{1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
+ :math:`\theta=\tan^{-1}\Bigg(\frac{X_c}{R}\Bigg)` where the capacitive reactance :math:`X_c = \frac{1}{2\pi fC}`
 
 
 Procedure
@@ -38,11 +38,12 @@ The next step is to study the RL circuit. Here you will observe the current wave
 
 
 -  Replace the capacitor with a 10mH inductor.
--  Set frequency to 4000 Hz to get a larger phase shift, because the inductance used is very small.
+-  Set frequency to 4000 Hz to get a larger phase shift, because the inductance used is very small, and its internal resistance cannot be neglected.
 
 
 LCR and Series Resonance
-==========================
+========================
+
 When both inductor and capacitor are present the phase shift across LC is given by 
 
 :math:`\theta=\tan^{1}\Bigg(\frac{X_c-X_L}{R}\Bigg)` 
@@ -63,7 +64,7 @@ will become zero. This condition is called series resonance.
 -  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH`
 -  Set frequency to :math:`f = 1600~Hz`, adjust it to make phase shift zero
 
-The resonance frequency for the given L and C is 1591.5 hz. We set it nearby to start with.
+The resonance frequency for the given L and C is 1591.5 Hz. We set it nearby to start with.
 The total voltage across L and C together goes almost to zero.
 It is not exactly zero because of the ohmic resistance of the coil.
 The input A3 is connected between L and C, so that the individual
@@ -76,7 +77,7 @@ as shown below.
 Discussion
 ----------
 
-This experiment can be used for measuring the values of unknown capacitors or inductors. Make an RL or RC circiut
+This experiment can be used for measuring the values of unknown capacitors or inductors. Make an RL or RC circuit
 with a known resistance and measure the phase shift at different frequencies. The L or C values can be calculated
 using 
 :math:`C = \frac{1}{2 \pi f R \tan{\theta}}` and 

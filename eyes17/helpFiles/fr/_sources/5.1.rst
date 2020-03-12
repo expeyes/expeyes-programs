@@ -1,5 +1,5 @@
-Réponse en fréquence d’un piézo
-===============================
+Réponse en fréquence d’un disque piézo-electrique
+=================================================
 
 
 Objectif

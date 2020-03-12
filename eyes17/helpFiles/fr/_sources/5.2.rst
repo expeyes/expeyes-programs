@@ -23,7 +23,7 @@ obtient la vitesse du son en multipliant cela par la fréquence.
 +----------------------------------------------------------------------------+
 |.. image:: schematics/sound-velocity.svg                                    |
 |	   :width: 300px                                                     |
-|.. image:: pics/sound_waves.png                                             |
+|.. image:: pics/sound-waves.png                                             |
 |	   :width: 300px                                                     |
 +----------------------------------------------------------------------------+
 |Figure 5.2 (a) schéma de montage  (b) compressions et expansions le long de |

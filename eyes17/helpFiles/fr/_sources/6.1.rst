@@ -11,7 +11,7 @@ Objectif
 --------
 
 Mesurer la période des oscillations d’un pendule pesant à l’aide d’une
-barrière photo-électrique. Le pendule (en forme de :math:`T`, un bord
+barrière photoélectriques. Le pendule (en forme de :math:`T`, un bord
 de couteau fixé à une tige de diamètre 6 mm) est mis à osciller entre
 une DEL et un photo-transistor, connectés à expEYES. La DEL et le
 photo-transistor sont montés sur un support en forme de :math:`U`
@@ -33,9 +33,9 @@ Discussion
 
 On peut mesurer la période d'oscillation avec une précision de
 :math:`100 \mu s`. Il y a cependant deux sources principales
-d'erreurs. La longueur est mesurée du bordu du couteau au bas du
+d'erreurs. La longueur est mesurée du bord du couteau au bas du
 pendule, puis utilisée dans la formule. Mais une petite fraction de la
 masse se situe au-dessus du bord du couteau et elles n'est pas
-considérée dans le calcul. De plus le calcul suppose que la barrère
-photo-électrique soit exactement à la verticale du pendule dans sa
+considérée dans le calcul. De plus le calcul suppose que la barrière
+photoélectrique soit exactement à la verticale du pendule dans sa
 position de repos, ce dont il faut s'assurer.

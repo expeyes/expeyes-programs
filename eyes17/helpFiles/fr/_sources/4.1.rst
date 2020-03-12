@@ -5,7 +5,7 @@ Ici on trace la courbe de la tension en fonction du courant qui
 traverse un dipôle. Le courant est déterminé par la tension aux bornes
 d'une résistance que celui-ci traverse. Le graphique est une ligne
 droite pour les conducteurs ohmiques, mais ce n'est pas le cas pour
-les dipôles non-linéaires commes les diodes.
+les dipôles non-linéaires comme les diodes.
 
 Objectif
 --------

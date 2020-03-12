@@ -1,11 +1,11 @@
 Réponse en fréquence d'un circuit de filtrage
 =============================================
 
-La transmission de sigaux électriques à travers un circuit de filtrage
+La transmission de signaux électriques à travers un circuit de filtrage
 dépend de la fréquence. Le quotient des amplitudes du signal de sortie
-sur celle du siganl d'entrée se nomme *le gain*. Quand on trace son
+sur celle du signal d'entrée se nomme *le gain*. Quand on trace son
 évolution en fonction de la fréquence on obtient la courbe de réponse
-en fréquence du cirduit de filtrage.
+en fréquence du circuit de filtrage.
 
 Objectif
 --------

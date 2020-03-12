@@ -162,6 +162,9 @@ class Interface():
 		#logic analyzer section of the device.  It also contains methods to generate plottable data
 		#from the original timestamp arrays.
 		self.I2C = I2C(self.H)
+		if self.version_number >= 5.0:
+			from .Peripherals import SPI
+			self.SPI = SPI(self.H)
 		#self.I2C.pullSCLLow(5000)        
 		self.hexid=''    
 		if self.H.connected:

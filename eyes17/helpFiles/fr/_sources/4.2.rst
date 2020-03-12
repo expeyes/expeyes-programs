@@ -21,7 +21,8 @@ Procédure
    :math:`1 k\Omega` et :math:`1 \mu F`\ ;
 -  Noter la valeur maximale :math:`y_{max}` et l'ordonnée à l'origine :math:`y_{o}`
 
-The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{o}}{y_{max}}\Bigg)`    
+Le déphasage est donné par l'équation
+:math:`\theta = sin^{-1}\Bigg(\frac{y_{o}}{y_{max}}\Bigg)`    
 	   
 .. image:: pics/xyplot-screen.png
    :width: 500px

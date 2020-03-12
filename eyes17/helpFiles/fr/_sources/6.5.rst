@@ -1,0 +1,30 @@
+Mesure de gravité par temps de vol
+==================================
+
+On peut déterminer la valeur de l'accélération de la gravité en
+mesurant le temps de vol d'un objet en chute libre, pour une distance
+donnée.
+
+Objectif
+--------
+
+Mesurer l'accélération de la gravité par temps de vol
+
+Procédure
+---------
+
+.. image:: schematics/gravity-tof.svg
+	   :width: 300px
+
+-  Placer la bille de fer sous l'électro-aimant ;
+-  Placer le contact du capteur dessous, à une distance de quelques
+   dizaines de centimètres ;
+-  Cliquer sur DÉMARRER.
+
+
+Discussion
+----------
+
+Le programme suppose qu'il n'y ait pas de délai entre la chute de la
+tension appliquée au bobinage et le début de la chute de la bille. Ce
+n'est pas exact et c'est une source d'erreur dans les résultats.

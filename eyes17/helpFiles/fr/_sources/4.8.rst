@@ -1,21 +1,25 @@
-.. 4.7
-   
 Induction électromagnétique
----------------------------
+===========================
 
-**Objectif**
+Une tension apparaît dans un conducteur plongé dans un champ
+magnétique variant avec le temps. On peut le montrer à l'aide d'un
+bobinage et d'un aimant mobile.
+
+Objectif
+--------
 
 Explorer la tension induite aux bornes d’un bobinage par un champ
 magnétique variable, en laissant tomber un petit aimant cylindrique à
 travers le bobinage. On utilise un tube pour guider l’aimant à travers
 le bobinage.
 
+Procédure
+---------
+
 .. image:: schematics/induction.svg
 	   :width: 300px
-.. image:: pics/induction-screen.png
-	   :width: 300px
-
-**Procédure**
+.. image:: pics/induction-photo.jpg
+	   :width: 400px
 
 -  Cliquer sur « Démarrer le scan ». Un trace horizontale devrait
    apparaître
@@ -24,7 +28,11 @@ le bobinage.
 -  Recommencer le processus en changeant des paramètres comme la force
    de l’aimant, la vitesse, etc.
 
-**Discussion**
+.. image:: pics/induction-screen.png
+	   :width: 300px
+
+Discussion
+----------
 
 Le résultat est montré sur la figure. L’amplitude augmente avec la
 vitesse de l’aimant. D’après le graphique, on peut déterminer le temps

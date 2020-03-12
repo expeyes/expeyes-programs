@@ -35,7 +35,7 @@ La résistance en alternatif est plus faible que celle en courant
 continu. La résistance est due à notre peau,et le courant alternatif
 peut la traverser, de la même façon qu'il passe à travers le matériau
 diélectrique d'un condensateur. UN peu d'exploration révèle qu'une
-sorte de condensateur se forme entre lectrémité du fil et le sang, la
+sorte de condensateur se forme entre l'extrémité du fil et le sang, la
 peau jouant le rôle de diélectrique. Explorer l'effet d'un plateau
 métallique connecté au bout du fil.
 

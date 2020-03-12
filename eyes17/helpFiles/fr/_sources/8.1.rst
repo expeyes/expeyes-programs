@@ -1,18 +1,34 @@
-﻿..    6.90
-
-Courbe B-H
+﻿Courbe B-H
 ==========
 
-Schéma
-------
+L'excitation magnétique (H) créée par bobinage traversé par un courant dépend des paramètres du bobinage et du courant. Le champ magnétique (B) dépend de H et de la perméabilité magnétique du milieu. B et H sont reliés par l'équation
+:math:`B=\mu H` où :math:`\mu` est la perméabilité.
 
-- Pour enregistrer l'hystérésis magnétique à l'aide d'un solénoïde commecté à PV1, et d'un magnétomètre MPU925x connecté au port I2C.
+La perméabilité n'est pas une constante pour les matériaux
+ferromagnétiques, comme le fer. Si on augment H, B augmente puis
+sature à un certain point. Quand on diminue H, B ne diminue pas en
+suivant le même chemin, comme montré sur la figure.
   
-Instructions
-------------
+.. image:: pics/hysteresis-loop.png
+	   :width: 400px
 
-- Connecter le bobinage entre PV1 et GND
-- Connecter le magnétomètre (MPU925x) au port I2C
-- Placer le solénoïde sur le capteur de façon à ce que l'axe magnétique soit perpendiculaire au capteur
-- Enregistrer les données : la tension de PV1 est balayée de -3 à 3 V en 100 étapes, aller puis retour de 3 à -3 V. Cela crée un champ magnétique généré par le solénoïde, mesuré par le capteur, dont on affiche la courbe.
-- Ajouter un matériau ferromagnétique tel qu'un pince crocodile, et recommencer l'enregistrement. Observer l'hystérésis pour divers matériaux.
+Objectif
+--------
+
+Enregistrer l'hystérésis magnétique à l'aide d'un solénoïde connecté
+entre PV1 et GND, et un magnétomètre MPU925x connecté au port I2C.
+  
+Procédure
+---------
+
+- Connecter le bobinage entre PV1 et GND ;
+- Connecter le magnétomètre (MPU925x) au port I2C ;
+- Placer le solénoïde sur le capteur de telle façon que l'axe magnétique
+  soit perpendiculaire au capteur ;
+- Acquérir les données : ce faisant, la tension de PV1 varie de 3 V à -3 V
+  en cent étapes, puis revient de -3 V à 3 V. Cela produit un champ
+  magnétique proportionnel au courant du solénoïde, qui est mesuré par
+  le capteur et figuré par une courbe.
+- Ajouter un matériau ferromagnétique comme une pince crocodile, et
+  recommencer l'acquisition. Observer l'hystérésis pour divers matériaux.
+

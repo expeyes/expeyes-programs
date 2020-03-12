@@ -84,7 +84,7 @@ Expériences d'électricité et magnétisme
 
 Ce chapitre contient principalement des expériences sur le
 comportement en régime stationnaire et en régime transitoire pour des
-dipôles LCR. Il confronte les résultats expérimentaux avec la
+dipôles RLC. Il confronte les résultats expérimentaux avec la
 théorie. Il donne aussi une expérience sur l'induction
 électromagnétique.
 
@@ -137,6 +137,7 @@ pendule
    6.2
    6.3
    6.4
+   6.5
 
 Autres expériences
 ******************
@@ -162,13 +163,7 @@ Modules I2C
 Coder en Python pour expEYES-17
 *******************************
 
-Les programmes à interface graphique décrit dans les chapitres
-précédents sont prévus pour un ensemble fini d'expériences. Pour
-développer de nouvelles expériences, on doit savoir comment accéder
-aux fonctionnalités d'expEYES par logiciel. Les appels de fonctions
-importants pour communiquer avec l'appareil sont donnés ci-dessous.
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    9.0

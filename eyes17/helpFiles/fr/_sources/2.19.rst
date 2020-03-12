@@ -2,7 +2,7 @@ Générer un son
 ==============
 
 On peut convertir des signaux électriques en sons à l'aide de
-hauts-parleurs, be buzzers piézo, etc. On utilise un buzzer parce que
+hauts-parleurs, de buzzers piézo, etc. On utilise un buzzer parce que
 les hauts-parleurs disponibles ont une impédance faible et demandent
 plus de courant.
 

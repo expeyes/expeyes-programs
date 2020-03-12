@@ -1,7 +1,7 @@
 Caractéristique de la sortie d’un transistor en mode EC
 =======================================================
 
-Le principe de fonctionnement d'un transitor, pour faire simple, est de contrôler
+Le principe de fonctionnement d'un transistor, pour faire simple, est de contrôler
 un courant fort à l'aide d'un courant faible dans un autre circuit. Comme le
 transistor a trois « pattes », une des bornes doit être commune aux deux circuits.
 On peut explorer le fonctionnement d'un transistor en étudiant les relations entre
@@ -12,7 +12,7 @@ Objectif
 
 À l'aide d'un transistor NPN, tracer la variation de la tension de collecteur
 en fonction du courant de collecteur dans la configuration émetteur commun.
-On répère cela pour trois courants de base différents. Le courant de collecteur
+On repère cela pour trois courants de base différents. Le courant de collecteur
 est calculé à partir de la tension aux bornes d'une résistances de
 :math:`1~k\Omega`, dans le circuit du collecteur.
 

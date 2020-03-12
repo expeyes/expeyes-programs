@@ -15,7 +15,7 @@ Séparer les composantes alternative et continue d’un signal carré oscillant 
 Procédure
 ---------
 
--  Régler SQR1 à 1000 Hz
+-  Régler SQ1 à 1000 Hz
 -  Connecter SQ1 à A1
 -  Connecter SQ1 à A2 à travers un condensateur de :math:`0.1 \mu F`
 

@@ -20,7 +20,7 @@ Procédure
 .. image:: schematics/halfwave.svg
 	   :width: 300px
 
--  PLacer la diode sur une plaque de montage ;
+-  Placer la diode sur une plaque de montage ;
 -  Faire les connections et observer le résultat ;
 -  Connecter une résistance de charge de :math:`1~k\Omega`, noter la variation
    de l'amplitude.

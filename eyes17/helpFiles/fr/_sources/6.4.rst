@@ -1,24 +1,32 @@
-.. 6.4
-   
 Mesure de distance, par écho ultrasonore
-----------------------------------------
+========================================
 
-**Objectif**
+On peut mesurer une distance en envoyant une salve ultrasonore vers
+une cible et en mesurant l'intervalle de temps de l'écho. On trouve
+des modules électroniques à bon marché pour ce type d'application. Le
+Hy-SR04 est un module de ce type, qui utilise une combinaison
+d'émetteur et récepteur piézo-électriques à une fréquence de 40 kHz.
+
+Objectif
+--------
 
 Mesurer une distance en mesurant le temps que prend une salve de
-fréquence :math:`40~kHz` à faire un écho contre une surface dure.
+fréquence :math:`40~kHz` à faire un écho contre une surface dure,
+à l'aide d'un module Hy-SR04.
 
-**Procédure**
+Procédure
+---------
 
 .. image:: schematics/sr04-dist.svg
 	   :width: 300px
 
--  Placer uns surface dure, comme un carton, à quelques 10 cm du module
-   d’écho
+-  Réaliser les connexions selon le schéma ;		   
+-  Placer uns surface dure, comme un carton, à quelques 10 cm du module SR04 ;
 -  Cliquer sur DÉMARRER
 -  Changer la distance
 
-**Discussion**
+Discussion
+----------
 
 La distance est calculée à partir du temps que met une salve sonore à
 parcourir aller-retour (en écho) la distance qui sépare le module de la
