@@ -1,23 +1,12 @@
-.. note
-   there is an inconsistency in the English file, which was removed from
-   the French translation and the Spanish translation (2020-03-10): traditional
-   plots about diodes and transistors are about the variation of the current I
-   as a function of the voltage V. The GUI for this experiment with eyes17 obeys
-   this traditional plot usage. So, the text should tell about V-I (as one says
-   X-Y); furthermore, "This can be visualized by plotting the current against
-   voltage.", and not the reverse.
-   
-Diode I-V characteristics
+Diode V-I characteristics
 =========================
 
-The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current
-is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by
-plotting the voltage against current.
+The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by plotting the current against the voltage.
 
 Objective
 ---------
 
-Draw the I-V Characteristic of diode and compare the result with the theory.
+Draw the V-I Characteristic of diode and compare the result with the theory.
 
 Procedure
 ---------
