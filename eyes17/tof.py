@@ -21,7 +21,10 @@ class Expt(QWidget):
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 		
-
+		try:
+			self.p.set_state(OD1=1)
+		except:
+			pass
 
 		full = QVBoxLayout()
 		
@@ -33,7 +36,6 @@ class Expt(QWidget):
 
 		s=self.tr(self.info)
 		self.Edit.setText(s)
-		self.p.set_state(OD1=1)
 			
 		H = QHBoxLayout()
 		b = QPushButton(self.tr("Measure"))

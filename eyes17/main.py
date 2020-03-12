@@ -224,7 +224,6 @@ class helpWin(QWebView):
 		self.lang=lang
 		helpPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'helpFiles/')
 		fn = helpPath + lang[:2] + '/' + name[1][0] + '.html'
-		print(fn)
 
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
