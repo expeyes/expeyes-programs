@@ -1,5 +1,5 @@
 DESTDIR =
-LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics")
+LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit")
 
 all:
 	./prepareHTML . $(LANGUAGES)
