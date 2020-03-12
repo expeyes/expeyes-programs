@@ -7,7 +7,7 @@ abierta como se muestra en la figura :ref:`the-scope17-screen`.
 Podemos elegir muchas experiencias del menú.
 
 .. _the-scope17-screen:
-.. figure:: pics/scope17.*
+.. figure:: pics/eyes17-screen.png
 
     Scope17
 
