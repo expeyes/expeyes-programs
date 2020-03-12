@@ -1,17 +1,20 @@
 Resistance of human body
 ========================
+
 We have seen that an unknown resistance can be measured by comparing with a known resistance
 by connecting them in series and measuring the voltages across them. This technique can be used to
 measure the resistance of human body.
 
-**Objective**
+Objective
+---------
 Measure the resistance of human body by comparing it with a known
 resistor, for DC and AC voltages.
 
 .. image:: schematics/res-body.svg
    :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 -  Set PVS to 3 volts
 -  Connect a wire from PV1 to A1
@@ -26,7 +29,8 @@ resistor, for DC and AC voltages.
 .. image:: pics/res-human-screen.png
 	   :width: 500px
 	   
-**Discussion**
+Discussion
+----------
 The AC resistance is less than the DC resistance. The resistance is due
 to our skin and AC can pass through this, like it passes through the
 dielectric material of a capacitor. A bit of exploring will reveal that

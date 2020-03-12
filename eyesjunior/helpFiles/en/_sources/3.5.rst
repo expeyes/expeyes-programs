@@ -1,15 +1,18 @@
 IC555 Oscillator
 ================
-NE555 is a very popular time circuit IC. It can be configured as an astable or monostable
+
+IC555 is a very popular time circuit IC. It can be configured as an astable or monostable
 multivibrator. The values of frequency and duty cycle are decided by two resistors and a capacitor. 
 
 
-**Objective**
+Objective
+---------
 
 Wire an astable multivibrator circuit using IC555, measure the frequency
 and duty cycle of the output.
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/ic555.svg
 	   :width: 300px
@@ -17,19 +20,20 @@ and duty cycle of the output.
 -  Make connections
 -  Set OD1 to high, for powering the circuit
 -  measure frequency and duty cycle.
--  Repeat by changing the value of R1
+-  Repeat by changing the value of R1.
 
 
 The output waveform is shown below. The frequency and dutycycle can be calculated using the equations given below
 and compared with the measurements.
 
-:math:`T1 = 0.693(R1 + R2)C` and :math:`T2 = 0.693 R2 C`.
-Frequency :math:`f = \frac{1}{(T1+T2)}` and duty cycle :math:`= \frac{T1}{(T1+T2)}`
+The durations of high and low voltage are: :math:`T_{1} = 0.693(R_{1} + R_{2})C` and :math:`T_{2} = 0.693 R_{2} C`.
+Frequency :math:`f = \frac{1}{(T_{1}+T_{2})}` and duty cycle :math:`= \frac{T_{1}}{(T_{1}+T_{2})}`
 
 .. image:: pics/ic555-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
 The output waveform is shown in figure. Change the value of resistors or
 the capacitor, and compare the frequency and duty cycle with the

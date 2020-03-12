@@ -1,11 +1,13 @@
 Oscilloscope and other Equipment
-========================================
+================================
+
 The first thing that appears when you open the ExpEYES GUI program is an Oscilloscope window. The graphs of the four channel scope appears on the left side. On the right side we have the Buttons, Sliders etc. to control the scope and most of the hardware features of ExpEYES, like DC supplies, waveform generators etc. To understand ExpEYES, one should start  with the Input/Output trerminals and their functions as expleined below.
 
 .. figure:: pics/top-panel.png
    :width: 300px
    
-**Input/Output Terminals**
+Input/Output Terminals
+----------------------
 
 - CCS: :math:`1.1\ mA` Constant Current Source.
    If you connect a resistor from this terminal to ground, a current of 1.1mA will flow irrespective of the value of the resistor. The maximum allowed value of the resistor is :math:`2k\Omega`. Using the Check-Button given on the GUI, you can ennable CCS.
@@ -46,12 +48,14 @@ The first thing that appears when you open the ExpEYES GUI program is an Oscillo
 -  Inverting Amplifier
    An inverting amplifier with a maximum gain of -51 is available. It's gain can be reduced by feeding the signal through a series resistor.
   
-**Graphical User Interface**
+Graphical User Interface
+------------------------
   
 The GUI menubar consists of several pulldown menus for different categories of experiments. 
 The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fiields for accessing the hardware features explained earlier.
       
-**Oscilloscope Controls**
+Oscilloscope Controls
+---------------------
 
 - Channel Selection
    The four channels A1, A2, IN1 and IN2 can be selected for display using the Check buttons on lower half of the right side.
@@ -78,7 +82,8 @@ The left side of the the screen is the four channel oscilloscope window. On the 
 - Fourier Transform
     The Fourier transform converts the data from time domain to frequency domain. The amplitudes of the frequency components will be displayed. The value of the fundamenta frequency will be displayed.
 
-**Other Controls and Readbacks**
+Other Controls and Readbacks
+----------------------------
 
 - On the top right side there are Check boxes labelled A1, A2, IN1 and IN2. Selecting them will display the instantaneous values of the voltages at those terminals. These are useful for measuring DC volatges only.
 

@@ -1,15 +1,18 @@
 Half wave rectifier using PN junction
 =====================================
+
 A PN junction conducts only in one direction. Only one half of a pure AC
 signal can pass through a PN junction. This device is widely used for generating 
 DC from AC. 
 
-**Objective**
+Objective
+---------
 
 Learn the working of a PN junction diode as a rectifier. Use 1N4148 or
 1N4003. RC filtering to reduce the ripple (the AC component).
 
-**Procedure**
+Procedure
+---------
 
 .. image:: schematics/halfwave.svg
 	   :width: 300px
@@ -26,14 +29,15 @@ The output is shown below.
 -  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
 -  Try different values load resistors and filter capacitors
 
-The effect of the RC filter is shown below. The capacitor used is 22uF and
+The effect of the RC filter is shown below. The capacitor used is 22 µF and
 the oscillator circuit is unable to supply the charging current, resulting in
 a reduction of voltage in the input signal.
 
 .. image:: pics/halfwave-filter-screen.png
 	   :width: 500px
 
-**Discussion**
+Discussion
+----------
 
 The negative half is removed by the diode as shown in figure. The output is a bit noisy
 and there is some reduction in the voltage. When you connect the load resistor, the

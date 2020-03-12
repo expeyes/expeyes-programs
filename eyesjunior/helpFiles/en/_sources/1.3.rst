@@ -13,13 +13,13 @@ python3 and installation can be done in several ways.
 On Debian-10 , Ubuntu-18.04 and above
 -------------------------------------
 $ sudo apt update
-$ sudo apt install eyes-junior
+$ sudo apt install expeyes
 
 This will install the versions available in the repository of Ubuntu or Debian.
 To install the latest versions download the .deb packages from
 https://expeyes.in/software.html and install using the commands.
 
- $ sudo apt-remove eyes-junior          # to remove any old version
+ $ sudo apt-remove expeyes         # to remove any old version
  $ sudo gdebi downloaded_deb_file
 
 while connected to the Internet

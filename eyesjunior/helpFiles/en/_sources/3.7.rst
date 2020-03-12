@@ -1,16 +1,17 @@
-Diode I-V characteristics
+Diode V-I characteristics
 =========================
-The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current
-is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by
-plotting the voltage against current.
 
-**Objective**
+The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by plotting the current against the voltage.
 
-Draw the I-V Characteristic of diode and compare the result with the theory.
+Objective
+---------
 
-**Procedure**
+Draw the V-I Characteristic of diode and compare the result with the theory.
 
-.. image:: schematics/diode-iv.svg
+Procedure
+---------
+
+.. image:: schematics/diode_iv.svg
 	   :width: 300px
   
 -  Make the connections as shown in the figure. Use :math:`1000\Omega` resistor
@@ -19,7 +20,7 @@ Draw the I-V Characteristic of diode and compare the result with the theory.
 -  Plot the IV of LEDs
 
 .. image:: pics/diode-iv-screen.png
-   :width: 500px
+	   :width: 500px
 
 It is possible to do this by manually taking the reading, from the oscilloscope GUI.
 The steps involved are:
@@ -28,9 +29,11 @@ The steps involved are:
 - Read the voltage at A1, voltage across the diode
 - Calculate current from :math:`I=\frac{V_{PV1}-V_{A1}}{1000}`
 - Increment PV1 by 100mV , up to 5V, and repeat the process
-- plot the readings of A1 against I.
+- plot the readings of I against A1.
 
-**Discussion**
+
+Discussion
+----------
 
 The IV characteristic of an ideal PN junction diode is given by equation
 :math:`I = I_0 \times e^{(qU/kT) − 1}`, where :math:`I_0` is the reverse saturation

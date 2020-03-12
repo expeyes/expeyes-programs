@@ -1,10 +1,12 @@
 A simple AC generator
 =====================
+
 A voltage will be induced across a conductor placed in a changing magnetic field. This can be
 demonstrated by making a simple AC generator.  Use the 10 mm x 10 mm magnet and the
 3000T coils that comes with the kit.
 
-**Objective**
+Objective
+---------
 Measure the frequency and amplitude of the voltage induced across a
 solenoid coil kept near a rotating magnet. Use more than one coils to 
 generate multi-phase AC.
@@ -12,7 +14,8 @@ generate multi-phase AC.
 .. image:: schematics/ac-generator.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 -  Mount the magnet horizontally and power the DC motor from a 1.5 volts
    cell
@@ -25,7 +28,8 @@ generate multi-phase AC.
 .. image:: pics/ac-gen-screen.png
 	   :width: 300px
 
-**Discussion**
+Discussion
+----------
 
 The voltage output is shown in figure. The phase difference between the
 two voltages depends on the angle between the axes of the two coils.

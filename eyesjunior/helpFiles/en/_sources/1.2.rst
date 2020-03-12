@@ -14,7 +14,7 @@ do experiments, you are advised to read through the brief description of
 the equipment given below. The device can be also used as a test
 equipment for electrical and electronics engineering experiments.
 
-*IMPORTANT :*
+**IMPORTANT :**
 
 *The external voltages connected to ExpEYES Junior must be within the allowed
 limits. Inputs A1 and A2 must be within ±5 volts range and Inputs IN1

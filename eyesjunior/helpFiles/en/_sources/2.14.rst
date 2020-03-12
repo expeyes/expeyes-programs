@@ -1,16 +1,19 @@
 Light dependent resistors
 =========================
+
 The resistance of an LDR reduces with the intensity of light falling on it. 
 This can be measured using the SEN terminal.
 
-**Objective**
+Objective
+---------
 
 Learn about LDR. Measure intensity of light and its variation with distance from the source.
 
 .. image:: schematics/ldr.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 - Connect the LDR from SEN to ground
 - Connect a wire from SEN to A1
@@ -18,7 +21,9 @@ Learn about LDR. Measure intensity of light and its variation with distance from
 - Iluminate LDR using a fluorescent lamp, A1 should show ripples
 - Set the time base to 200mS full scale
 
-**Discussion**
+Discussion
+----------
+
 The resistance vary from 1kΩ to around 100 kΩ depending on the intensity
 of light falling on it. The voltage is proportional to the resistance.
 The resistance decreases with intensity of light. If you use a point

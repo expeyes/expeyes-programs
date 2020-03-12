@@ -1,7 +1,8 @@
 Measuring Voltage
 =================
 
-**Objective**
+Objective
+---------
 
 Learn to measure voltage using expEYES and get some idea about the
 concept of Electrical Ground. A dry-cell and two wires are required.
@@ -9,12 +10,14 @@ concept of Electrical Ground. A dry-cell and two wires are required.
 .. image:: schematics/measure-dc.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
 -  Observe the voltage at A1 displayed.
 -  Repeat by reversing the cell connections.
 
-**Discussion**
+Discussion
+----------
 
 Voltages measured value is +1.5 volts and it becomes -1.5 after
 reversing the connections.

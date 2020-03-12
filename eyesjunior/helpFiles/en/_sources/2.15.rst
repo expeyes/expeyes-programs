@@ -1,24 +1,28 @@
 Voltage of a lemon cell
 =======================
+
 A lemon cell is formed by inserting Copper and Zinc plates in to a lemon, or any dilute acid.
 The voltage developed across the electrodes is very small and the cell has a very high internal 
-resistance. Due to this the voltage drops when a load resistor is conencted.
+resistance. Due to this the voltage drops when a load resistor is connected.
  
-**Objective**
+Objective
+---------
 
-Make a lemoc cell and explore it's internal resistance.
+Make a lemon cell and explore it's internal resistance.
 
 .. image:: schematics/lemon-cell.svg
 	   :width: 300px
 
-**Procedure**
+Procedure
+---------
 
--  Connect th electrodes to A1 and Ground
+-  Connect the electrodes to A1 and Ground
 -  Enable Checkbutton for displaying the voltage at A1
 -  Connect a :math:`1000\Omega` resistance across the electrodes.
 -  Measure the voltage again, to note down the reduction in it.
 
-**Discussion**
+Discussion
+----------
 
 Voltage across the Copper and Zinc terminals is nearly .9 volts.
 Connecting the resistor reduces it to 0.33 volts. When connected,
