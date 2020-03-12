@@ -68,13 +68,6 @@ characteristics have a dedicated GUI.
    3.6
    3.7
    3.8
-   3.9
-   3.10
-   3.11
-   3.12
-   3.13
-   3.14
-   3.15
 
 Electricity and Magnetism
 *************************
@@ -94,8 +87,6 @@ induction.
    4.5
    4.4
    4.6
-   4.7
-   4.8
 
 Sound
 *****
@@ -114,8 +105,6 @@ digitized sound with distance.
    :maxdepth: 2
 
    5.1
-   5.2
-   5.3
 
 Mechanics
 *********
@@ -138,6 +127,4 @@ Other experiments
    :maxdepth: 2
 
    7.1
-   7.2
-   7.3
 

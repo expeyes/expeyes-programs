@@ -9,8 +9,8 @@ all:
 	  $(MAKE) -C $$l all; \
 	  #echo "====| RST => PDF for language $$l |===="; \
 	  #$(MAKE) -C $$l latexpdf; \
-	  #echo "====| RST => EPUB for language $$l |===="; \
-	  #$(MAKE) -C $$l epub; \
+	  echo "====| RST => EPUB for language $$l |===="; \
+	  $(MAKE) -C $$l epub; \
 	done
 
 clean:
