@@ -5,7 +5,7 @@ Transient response of LCR circuits
    :width: 300px
 
 Closing the switch in the cicuit shown above will change the voltage across the
-capacitor. Depending on the relative values of L, C and R , the voltage may
+capacitor. Depending on the relative values of L, C and R, the voltage may
 show oscillations or it may change in an exponential manner.
 
 Objective

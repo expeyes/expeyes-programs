@@ -29,10 +29,8 @@ The steps involved are:
 - Read the voltage at A1, voltage across the diode
 - Calculate current from :math:`I=\frac{V_{PV1}-V_{A1}}{1000}`
 - Increment PV1 by 100mV , up to 5V, and repeat the process
-- plot the readings of A1 against I.
+- plot the readings of I against A1.
 
-.. note
-   rather: "plot I agains the readings of A1"
 
 Discussion
 ----------

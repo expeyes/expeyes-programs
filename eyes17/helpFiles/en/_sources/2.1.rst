@@ -16,7 +16,8 @@ Procedure
 -  Observe the voltage at A1 displayed.
 -  Repeat by reversing the cell connections.
 
-**Discussion**
+Discussion
+----------
 
 Voltages measured value is +1.5 volts and it becomes -1.5 after
 reversing the connections.

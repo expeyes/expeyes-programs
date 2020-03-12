@@ -10,7 +10,7 @@ school menu.
 The following chapters are organized according to the pulldown menus of
 the eyes17 program, each chapter containing the experiments under the
 corresponding menu; like School level, Eelectronics, Eelectrical etc. To
-perform the expeiment, select it from the menu. Online help is available
+perform the experiment, select it from the menu. Online help is available
 for every experiment, making this manual almost redundant.
 
 
