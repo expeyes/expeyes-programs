@@ -5,7 +5,7 @@ NPN ഔട്ട്പുട്ട് ക്യാരക്ടറിസ്റ്
 +----------------------------------------------------------------------------+
 |.. image:: pics/transistor-ce-config.png                                    |
 |   :width: 300px                                                            |
-|.. image:: schematics/transistor-ce.svg                                     |
+|.. image:: schematics/npn-ce-char.svg                                       |
 |   :width: 300px                                                            |
 +----------------------------------------------------------------------------+
 
