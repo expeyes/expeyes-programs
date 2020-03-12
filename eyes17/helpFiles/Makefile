@@ -4,6 +4,7 @@ LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|sche
 all:
 	./prepareHTML . $(LANGUAGES)
 	for l in $(LANGUAGES); do \
+	  [ -d $$l/_sources/_static ] || mkdir $$l/_sources/_static; \
 	  echo "====| RST => HTML for language $$l |===="; \
 	  $(MAKE) -C $$l all; \
 	  echo "====| RST => PDF for language $$l |===="; \
