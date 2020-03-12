@@ -7,8 +7,6 @@
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
-.. image:: schematics/res-compare-ac.svg
-	   :width: 300px
 
 -  ഒരു ബ്രെഡ്‌ബോർഡിൽ  R1ഉം  R2വും  സീരീസായി ഘടിപ്പിക്കുക (1000 and 2200 ohms)
 -  A1  ടെർമിനൽ രണ്ടു റെസിസ്റ്ററും ചേരുന്ന ബിന്ദുവിലേക്കു ഘടിപ്പിക്കുക  
