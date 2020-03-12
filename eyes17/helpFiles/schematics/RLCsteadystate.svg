@@ -3,7 +3,7 @@
    version="1.1"
    id="RLCsteadystate" width="100%" height="100%"  viewBox="-6 -6 598 390">
 <desc>
-XCircuit Version 3.7
+XCircuit Version 3.8
 File "RLCsteadystate.ps" Page 1
 </desc>
 <g stroke="black">
@@ -50,9 +50,6 @@ File "RLCsteadystate.ps" Page 1
 <path d="M64,224 C65,224 0,272 64,320 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M64,224 C65,224 176,272 176,320 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
 <path d="M544,224 C545,224 480,288 528,320 " fill="none" stroke-width="2" stroke-linejoin="bevel" stroke-linecap="round" stroke="#000000" />
-<g transform="matrix(   1    0   -0    1 256  96)" fill="#000000" >
-<text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0">optional</tspan>
-</text></g>
 <g transform="matrix(   1    0   -0    1 496   0)" fill="#000000" >
 <text stroke="none" font-family="Helvetica" font-size="40" ><tspan x="0" y="0"></tspan>
 </text></g>
