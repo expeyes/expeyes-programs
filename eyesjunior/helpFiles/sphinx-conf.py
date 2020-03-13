@@ -19,7 +19,7 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = 'expEYES-17'
+project = 'expEYES-Junior'
 copyright = '2020, Ajith Kumar B.P., Jithin B.P.'
 author = 'Ajith Kumar B.P., Jithin B.P.'
 
@@ -105,7 +105,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'expEYES-17doc'
+htmlhelp_basename = 'expEYES-Juniordoc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -132,7 +132,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'expEYES-17.tex', 'expEYES-17 Documentation',
+    (master_doc, 'expEYES-Junior.tex', 'expEYES-Junior Documentation',
      'Ajith Kumar B.P., Jithin B.P.', 'manual'),
 ]
 
@@ -142,7 +142,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'expeyes-17', 'expEYES-17 Documentation',
+    (master_doc, 'expeyes-Junior', 'expEYES-Junior Documentation',
      [author], 1)
 ]
 
@@ -153,8 +153,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'expEYES-17', 'expEYES-17 Documentation',
-     author, 'expEYES-17', 'One line description of project.',
+    (master_doc, 'expEYES-Junior', 'expEYES-Junior Documentation',
+     author, 'expEYES-Junior', 'One line description of project.',
      'Miscellaneous'),
 ]
 
