@@ -139,12 +139,12 @@
         <translation>Régler SQ1</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="38"/>
+        <location filename="../editor.py" line="36"/>
         <source>Execute Code</source>
         <translation>Exécuter le code</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="41"/>
+        <location filename="../editor.py" line="39"/>
         <source>Save Code</source>
         <translation>Enregistrer le code</translation>
     </message>
@@ -494,42 +494,42 @@
         <translation>Calculer Z_L, Z_C et f_0</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="292"/>
         <source>F = %5.1f Hz</source>
         <translation>f = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="288"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>V_total (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>V_R (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="291"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>V_LC (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="294"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>Diff phase = %5.1f °</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="296"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>V_C (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="298"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>V_L (A2-A3) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="383"/>
+        <location filename="../RLCsteadystate.py" line="378"/>
         <source>Invalid Input in some field</source>
         <translation>Entrée invalide dans un champ</translation>
     </message>
@@ -649,7 +649,7 @@
         <translation type="obsolete">PV2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="346"/>
+        <location filename="../scope.py" line="345"/>
         <source>%s input is clipped. Increase range</source>
         <translation>L&apos;entrée %s est saturée. Augmentez le calibre</translation>
     </message>
@@ -694,7 +694,7 @@
         <translation type="obsolete">A1-A2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="359"/>
+        <location filename="../scope.py" line="358"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation>%5.2f V, %5.1f Hz</translation>
     </message>
@@ -719,7 +719,7 @@
         <translation type="obsolete">%6.1f pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="705"/>
+        <location filename="../scope.py" line="706"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1f Hz %4.1f%%</translation>
     </message>
@@ -865,7 +865,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication. Tentez une reconnexion depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="394"/>
+        <location filename="../scope.py" line="395"/>
         <source>%5.0f Ohm</source>
         <translation>%5.0f Ω</translation>
     </message>
@@ -885,7 +885,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Erreur de communication FFT. Reconnecter depuis le menu de périphériques</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="472"/>
+        <location filename="../scope.py" line="473"/>
         <source>FFT Error</source>
         <translation>Erreur de FFT</translation>
     </message>
@@ -905,17 +905,17 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">AWG réglé à %6.2f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="632"/>
+        <location filename="../scope.py" line="633"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>Sortie changée de WG à SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="682"/>
+        <location filename="../scope.py" line="683"/>
         <source>Capacitance too high or short to ground</source>
         <translation>Capacité excessive ou court-circuit à la masse</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="707"/>
+        <location filename="../scope.py" line="708"/>
         <source>No signal</source>
         <translation>Pas de signal</translation>
     </message>
@@ -1000,7 +1000,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Vz</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="34"/>
+        <location filename="../driven-pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>Ceprogramme met SQ1 en mode haute résolution. WG sera désactivé. La fréquence sera changée de 0,1 Hz en 50 Hz</translation>
     </message>
@@ -1060,7 +1060,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation> Hz</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="69"/>
+        <location filename="../editor.py" line="67"/>
         <source>Code saved to </source>
         <translation>Code enregistré sous </translation>
     </message>
@@ -1275,17 +1275,17 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation type="obsolete">Nombre non valide</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="442"/>
+        <location filename="../scope.py" line="443"/>
         <source>Range of</source>
         <translation>Intervalle de</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="442"/>
+        <location filename="../scope.py" line="443"/>
         <source> set to </source>
         <translation> réglé à </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="686"/>
+        <location filename="../scope.py" line="687"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
@@ -1375,12 +1375,12 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Transformée de Fourier</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="690"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="692"/>
+        <location filename="../scope.py" line="693"/>
         <source> uF</source>
         <translation> µF</translation>
     </message>
@@ -1839,17 +1839,17 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>Erreur de connexion. Vérifier le câble. </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="387"/>
+        <location filename="../scope.py" line="388"/>
         <source>A%d %5.3f V</source>
         <translation>A%d %5.3f V</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="389"/>
+        <location filename="../scope.py" line="390"/>
         <source>A%d</source>
         <translation>A%d</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="396"/>
+        <location filename="../scope.py" line="397"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation>Résistance : &lt; 100 Ω  ou  &gt; 100 kΩ</translation>
     </message>
@@ -2725,7 +2725,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>Pendule à barre</translation>
     </message>
     <message>
-        <location filename="../main.py" line="330"/>
+        <location filename="../main.py" line="325"/>
         <source>Enable PopUp Help Window</source>
         <translation>Activer la fenêtre surgissante d&apos;aide</translation>
     </message>
@@ -2823,97 +2823,97 @@ Pour l&apos;expe. de pendule forcé.</translation>
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="405"/>
+        <location filename="../main.py" line="399"/>
         <source>Failed to load scope</source>
         <translation>Échec au chargement de l&apos;oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="437"/>
+        <location filename="../main.py" line="430"/>
         <source>Failed to load %s</source>
         <translation>Échec au chargement de %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="478"/>
+        <location filename="../main.py" line="471"/>
         <source>No immediate application</source>
         <translation>Pas d&apos;application immédiate</translation>
     </message>
     <message>
-        <location filename="../main.py" line="466"/>
+        <location filename="../main.py" line="459"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
         <translation>Veuillez redémarrer l&apos;application pour éclaircir le fond de l&apos;écran</translation>
     </message>
     <message>
-        <location filename="../main.py" line="478"/>
+        <location filename="../main.py" line="471"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
         <translation>Veuillez redémarrer l&apos;application pour noicir le fond de l&apos;écran.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="490"/>
+        <location filename="../main.py" line="483"/>
         <source>Device</source>
         <translation>Périphérique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="491"/>
+        <location filename="../main.py" line="484"/>
         <source>Reconnect</source>
         <translation>Reconnecter</translation>
     </message>
     <message>
-        <location filename="../main.py" line="492"/>
+        <location filename="../main.py" line="485"/>
         <source>LightBackGround next time</source>
         <translation>Fond clair la prochaine fois</translation>
     </message>
     <message>
-        <location filename="../main.py" line="493"/>
+        <location filename="../main.py" line="486"/>
         <source>DarkBackGround next time</source>
         <translation>Fond sombre la prochaine fois</translation>
     </message>
     <message>
-        <location filename="../main.py" line="494"/>
+        <location filename="../main.py" line="487"/>
         <source>Choose Language</source>
         <translation>Choix de la langue</translation>
     </message>
     <message>
-        <location filename="../main.py" line="502"/>
+        <location filename="../main.py" line="495"/>
         <source>School Expts</source>
         <translation>Expériences scolaires</translation>
     </message>
     <message>
-        <location filename="../main.py" line="506"/>
+        <location filename="../main.py" line="499"/>
         <source>Electronics</source>
         <translation>Électronique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="513"/>
+        <location filename="../main.py" line="506"/>
         <source>Electrical</source>
         <translation>Électricité</translation>
     </message>
     <message>
-        <location filename="../main.py" line="517"/>
+        <location filename="../main.py" line="510"/>
         <source>Sound</source>
         <translation>Son</translation>
     </message>
     <message>
-        <location filename="../main.py" line="521"/>
+        <location filename="../main.py" line="514"/>
         <source>Mechanics</source>
         <translation>Mécanique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="525"/>
+        <location filename="../main.py" line="518"/>
         <source>Other Expts</source>
         <translation>Autres expériences</translation>
     </message>
     <message>
-        <location filename="../main.py" line="529"/>
+        <location filename="../main.py" line="522"/>
         <source>I2C Modules</source>
         <translation>Modules I2C</translation>
     </message>
     <message>
-        <location filename="../main.py" line="533"/>
+        <location filename="../main.py" line="526"/>
         <source>PythonCode</source>
         <translation>Code Python</translation>
     </message>
     <message>
-        <location filename="../main.py" line="555"/>
+        <location filename="../main.py" line="548"/>
         <source>Oscilloscope</source>
         <translation>Oscilloscope</translation>
     </message>
@@ -2921,7 +2921,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="232"/>
+        <location filename="../main.py" line="229"/>
         <source>Help: %s</source>
         <translation>Aide  %s</translation>
     </message>
