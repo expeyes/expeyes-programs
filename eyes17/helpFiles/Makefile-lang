@@ -57,8 +57,7 @@ real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
 	cp cover/*.pdf $(BUILDDIR)/latex
 	@echo modifying the title page
 	cd $(BUILDDIR)/latex; \
-	  sed -i '/\\usepackage{sphinx}/a\
-\\usepackage{pdfpages}' expEYES-17.tex; \
+	  sed -i '/\\usepackage{sphinx}/r ../../include.tex' expEYES-17.tex; \
 	  sed -i 's/\\sphinxmaketitle/\\includepdf{coverpage.pdf}\n\\includepdf{preface.pdf}/' expEYES-17.tex;
 	@echo launching prettyLaTeX.py
 	python3 prettyLaTeX.py $(BUILDDIR)/latex expEYES-17.tex
@@ -66,9 +65,9 @@ real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
 	rm -f $(BUILDDIR)/latex/Makefile-images
 	ln -s ../../../Makefile-images $(BUILDDIR)/latex
 	make -C $(BUILDDIR)/latex -f Makefile-images -j4
-	@echo "Running LaTeX files through pdflatex..."
-	$(MAKE) -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo "Running LaTeX files through xelatex..."
+	$(MAKE) -C $(BUILDDIR)/latex all-pdf PDFLATEX="latexmk -xelatex -silent -f -dvi- -ps-" || cat $(BUILDDIR)/latex/expEYES-17.log
+	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
 
 .PHONY: epub
 epub:

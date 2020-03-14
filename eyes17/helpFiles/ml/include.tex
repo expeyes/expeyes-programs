@@ -1,0 +1,23 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX code to be added after \usepackage{sphinx} to enable   %
+% the build by XeLaTeX, specific for Malayalam language        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pdfpages}
+\usepackage{polyglossia,xltxtra}
+\newfontfamily\malayalamfont[Script=Malayalam,Mapping=tex-text]{Rachana}
+\setmainfont{Rachana}
+\newfontfamily\engfont[Mapping=tex-text]{FreeSerif}
+\def\xromn#1{{\fontencoding{T1}\fontfamily{cmr}\selectfont#1}}
+\def\squote{\xromn{`}}
+\def\esquote{\xromn{'}}
+\def\dquote{\xromn{``}}
+\def\edquote{\xromn{''}}
+\DeclareTextFontCommand{\myfont}{\engfont}
+\def\mdash{\myfont{\textemdash}}
+\def\ndash{\myfont{\textendash}}
+%\linespread{1.2}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                end of inserted code                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
