@@ -50,7 +50,7 @@ install_arch:
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes
 	install -d $(DESTDIR)/usr/share/expeyes
-	cp -a eyes eyes-junior eyes17 $(DESTDIR)/usr/share/expeyes
+	cp -a eyes eyes17 $(DESTDIR)/usr/share/expeyes
 	# icons
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-logo.png \
