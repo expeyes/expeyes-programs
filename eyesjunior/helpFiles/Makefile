@@ -1,7 +1,7 @@
 DESTDIR =
 LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit")
 CORES = -j4
-SDE = $(shell dpkg-parsechangelog -l ../../changelog -STimestamp)
+export SOURCE_DATE_EPOCH = $(shell dpkg-parsechangelog -l ../../debian/changelog -STimestamp)
 
 all:
 	./prepareHTML . $(LANGUAGES)
@@ -14,7 +14,7 @@ all:
 userManual:
 	for l in $(LANGUAGES); do \
 	  echo "====| RST => PDF for language $$l |===="; \
-	  export SOURCE_DATE_EPOCH=$(SDE); make $(CORES) -C $$l latexpdf; \
+	  make $(CORES) -C $$l latexpdf; \
 	  echo "====| RST => EPUB for language $$l |===="; \
 	  make $(CORES) -C $$l epub; \
 	done
