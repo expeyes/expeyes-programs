@@ -4,9 +4,10 @@
 % the build by XeLaTeX, specific for Malayalam language        %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{pdfpages}
+\usepackage{fontspec}
 \usepackage{polyglossia,xltxtra}
-\newfontfamily\malayalamfont[Script=Malayalam,Mapping=tex-text]{Rachana}
-\setmainfont{Rachana}
+\setdefaultlanguage{malayalam}
+\setmainfont[Script=Malayalam, HyphenChar="00AD]{Rachana}
 \newfontfamily\engfont[Mapping=tex-text]{FreeSerif}
 \def\xromn#1{{\fontencoding{T1}\fontfamily{cmr}\selectfont#1}}
 \def\squote{\xromn{`}}
@@ -16,7 +17,13 @@
 \DeclareTextFontCommand{\myfont}{\engfont}
 \def\mdash{\myfont{\textemdash}}
 \def\ndash{\myfont{\textendash}}
-%\linespread{1.2}
+\lefthyphenmin=3
+\righthyphenmin=4
+\linespread{1.2}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\sloppy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                end of inserted code                          %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
