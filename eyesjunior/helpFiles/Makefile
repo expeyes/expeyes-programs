@@ -1,7 +1,9 @@
 DESTDIR =
 LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit")
 CORES = -j4
-export SOURCE_DATE_EPOCH = $(shell dpkg-parsechangelog -l ../../debian/changelog -STimestamp)
+# try to take a timestamp from ../../debian/changelog and if that fails
+# replace by 1584377500, which is near 2020-1016 17:00 UTC
+export SOURCE_DATE_EPOCH = $(shell dpkg-parsechangelog -l ../../debian/changelog -STimestamp 2>/dev/null || echo 1584377500)
 
 all:
 	./prepareHTML . $(LANGUAGES)
