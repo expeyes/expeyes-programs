@@ -1,5 +1,4 @@
-.. eyes17 documentation master file, created by
-   sphinx-quickstart on Sat Jan  6 00:43:37 2018.
+.. eyes17 documentation master file
 
 Getting Started
 ***************
@@ -8,10 +7,6 @@ Getting Started
    :maxdepth: 2
 
    1.1
-   1.2
-   1.3
-   1.4
-   1.5
 	 
 School Level Experiments
 ************************
@@ -159,7 +154,7 @@ Coding expEYES-17 in Python
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
 
    9.0
  
