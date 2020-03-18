@@ -55,7 +55,7 @@ several experiments, there is also a Programmer’s manual available.
    1.5
 	 
 School Level Experiments
-************************
+========================
 
 This chapter will discuss the experiments and demonstrations without
 much data analysis, experiments given in the menu SchoolExpts. Simple
@@ -92,7 +92,7 @@ enabled.
    2.21
 
 Electronics
-***********
+===========
 
 This chapter explains several electronics experiments. Most of them are
 done using the oscilloscope GUI. Some of them like Diode and Transistor
@@ -118,7 +118,7 @@ characteristics have a dedicated GUI.
    3.15
 
 Electricity and Magnetism
-*************************
+=========================
 
 This section mainly contains experiments on the steady state and
 transient response of LCR circuit elements. the experimental results
@@ -139,7 +139,7 @@ induction.
    4.8
 
 Sound
-*****
+=====
 
 Pressure variations, about an equilibrium pressure, transmitted through
 a medium is called sound. They are longitudinal waves. Moving a sheet of
@@ -159,7 +159,7 @@ digitized sound with distance.
    5.3
 
 Mechanics
-*********
+=========
 
 Resonance phenomena is studied using a driven pendulum. Value of
 acceleration due to gravity is measured using a pendulum.
@@ -175,7 +175,7 @@ acceleration due to gravity is measured using a pendulum.
    6.5
 
 Other experiments
-*****************
+=================
 .. toctree::
    :maxdepth: 2
 
@@ -184,7 +184,7 @@ Other experiments
    7.3
 
 I2C Modules
-***********
+===========
 .. toctree::
    :maxdepth: 2
 
@@ -196,7 +196,7 @@ I2C Modules
 
 
 Coding expEYES-17 in Python
-***************************
+=========================== 
 
 
 .. toctree::
