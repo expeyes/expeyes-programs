@@ -5,3 +5,7 @@
 build/
 !build/latex/expEYES-17.pdf
 !build/epub/expEYES-17.epub
+
+# python files, except prettyLaTeX.py
+*.py
+!prettyLaTeX.py
