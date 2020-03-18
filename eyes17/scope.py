@@ -335,6 +335,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				self.timeData[0], self.voltData[0] = self.p.capture1(str(self.A1Map.currentText()), self.NP, self.TG, trigger=self.trigEnable.isChecked())
 		except:
 			self.comerr()
+			self.p.connected = False
 			return
 			
 		for ch in range(4):

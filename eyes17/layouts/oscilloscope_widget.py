@@ -187,9 +187,9 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 	def reconnect(self,device):	
 		self.p = device
 		self.I2C = self.p.I2C
-		self.inputs.p = self.p
-		self.outputs.p = self.p
-		self.outputs.setDevice(self.p)
+		self.inputs.__init__(self.p)
+		self.outputs.__init__(self.p)
+		#self.outputs.setDevice(self.p)
 		self.permanentInputs = self.inputs.permanentInputs
 		self.permanentOutputs = self.outputs.permanentOutputs
 		self.init()
@@ -200,7 +200,7 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 	def refreshSensorList(self):
 		self.logger = LOGGER(self.I2C)
 		x = self.logger.I2CScan()
-		print('I2C Found: ',x)
+		#print('I2C Found: ',x)
 		self.sensorList = []
 		for a in x:
 			s = self.logger.sensors.get(a,None)
@@ -210,10 +210,13 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 
 	def updateOptions(self,sensors,outputs):
 		self.sensors = sensors+outputs
+		self.availableInputs.blockSignals(True)
+
 		self.availableInputs.clear()
 		self.availableInputs.addItems([a['name'] for a in self.sensors])
 		if self.activeSensor not in self.sensors:
 			self.loadSensor(self.sensors[0])
+		self.availableInputs.blockSignals(False)
 
 	def selectSensor(self,index):
 		self.loadSensor(self.sensors[index])
@@ -250,7 +253,6 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 				a.setParent(None)
 		self.widgets =[]
 		for a in sensor.get('config',[]): #Load configuration menus
-			print('found config',a,a['name'])
 			l = QtWidgets.QLabel(a.get('name',''))
 			self.configLayout.addWidget(l) ; self.widgets.append(l)
 			l = QtWidgets.QComboBox(); l.addItems(a.get('options',[]))

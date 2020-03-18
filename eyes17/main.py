@@ -305,6 +305,14 @@ class MainWindow(QMainWindow):
 		self.setEditorText.connect(self.updateEditor)
 		self.setConfigText.connect(self.updateConfig)
 
+		self.shortcutActions={}
+		self.shortcuts={"Ctrl+R":self.reconnect}
+		for a in self.shortcuts:
+			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
+			shortcut.activated.connect(self.shortcuts[a])
+			self.shortcutActions[a] = shortcut
+
+
 	def uncheckTheHelpBox(self):
 		"""
 		unchecks the help checkbox
@@ -552,7 +560,7 @@ class MainWindow(QMainWindow):
 		self.expWidget.msg('')
 		if p != None: 
 			print('recovering...',self.expName)
-			if self.expName == 'scope':
+			if self.expName == ('3.1','scope'):
 				self.expWidget.recover()
 		
 	# translation stuff
