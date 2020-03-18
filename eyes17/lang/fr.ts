@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -78,12 +79,12 @@
     <message>
         <location filename="../layouts/dio_control.ui" line="14"/>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Contrôle</translation>
     </message>
     <message>
         <location filename="../layouts/dio_robot.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogue</translation>
     </message>
 </context>
 <context>
@@ -306,12 +307,12 @@
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R to Ground</source>
-        <translation type="unfinished">R entre A1 et la masse (GND)</translation>
+        <translation>R vers la masse (GND)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
         <source>Starting PV1</source>
-        <translation type="unfinished">Balayer PV1 depuis</translation>
+        <translation>Démarrer PV1</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="169"/>
@@ -1901,57 +1902,57 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../XYplot.py" line="58"/>
         <source>Voltage (A1)</source>
-        <translation type="unfinished">Tension (A2) {1)?}</translation>
+        <translation>Tension (A1)</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="164"/>
         <source>Y-intercept = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordonnée à l&apos;origine = %5.3f V</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="86"/>
         <source>Ending PV1</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin pour PV1</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrage</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="72"/>
         <source>Ending</source>
-        <translation type="unfinished"></translation>
+        <translation>Fin</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre d&apos;étapes =</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
         <source>Sec</source>
-        <translation type="unfinished"></translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Temps total</translation>
     </message>
     <message>
         <location filename="../scope.py" line="185"/>
         <source>Calibrated </source>
-        <translation type="unfinished"></translation>
+        <translation>Calibré </translation>
     </message>
     <message>
         <location filename="../scope.py" line="187"/>
         <source>Not Calibrated </source>
-        <translation type="unfinished"></translation>
+        <translation>Non calibré </translation>
     </message>
     <message>
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
-        <translation type="unfinished"></translation>
+        <translation>Appareil reconnecté :</translation>
     </message>
 </context>
 <context>
@@ -2517,7 +2518,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../main.py" line="93"/>
         <source>Summing Amplifier</source>
-        <translation type="unfinished">Intégrateur à base d&apos;ampli. op</translation>
+        <translation>Amplificateur additionneur</translation>
     </message>
     <message>
         <location filename="../main.py" line="94"/>
@@ -2742,82 +2743,82 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../main.py" line="46"/>
         <source>No immediate application</source>
-        <translation type="unfinished">Pas d&apos;application immédiate</translation>
+        <translation>Pas d&apos;application immédiate</translation>
     </message>
     <message>
         <location filename="../main.py" line="47"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished">Veuillez redémarrer l&apos;application pour éclaircir le fond de l&apos;écran</translation>
+        <translation>Veuillez redémarrer l&apos;application pour éclaircir le fond de l&apos;écran</translation>
     </message>
     <message>
         <location filename="../main.py" line="48"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished">Veuillez redémarrer l&apos;application pour noicir le fond de l&apos;écran.</translation>
+        <translation>Veuillez redémarrer l&apos;application pour noicir le fond de l&apos;écran.</translation>
     </message>
     <message>
         <location filename="../main.py" line="25"/>
         <source>Device</source>
-        <translation type="unfinished">Périphérique</translation>
+        <translation>Périphérique</translation>
     </message>
     <message>
         <location filename="../main.py" line="38"/>
         <source>Reconnect</source>
-        <translation type="unfinished">Reconnecter</translation>
+        <translation>Reconnecter</translation>
     </message>
     <message>
         <location filename="../main.py" line="39"/>
         <source>LightBackGround next time</source>
-        <translation type="unfinished">Fond clair la prochaine fois</translation>
+        <translation>Fond clair la prochaine fois</translation>
     </message>
     <message>
         <location filename="../main.py" line="40"/>
         <source>DarkBackGround next time</source>
-        <translation type="unfinished">Fond sombre la prochaine fois</translation>
+        <translation>Fond sombre la prochaine fois</translation>
     </message>
     <message>
         <location filename="../main.py" line="41"/>
         <source>Choose Language</source>
-        <translation type="unfinished">Choix de la langue</translation>
+        <translation>Choix de la langue</translation>
     </message>
     <message>
         <location filename="../main.py" line="26"/>
         <source>School Expts</source>
-        <translation type="unfinished">Expériences scolaires</translation>
+        <translation>Expériences scolaires</translation>
     </message>
     <message>
         <location filename="../main.py" line="27"/>
         <source>Electronics</source>
-        <translation type="unfinished">Électronique</translation>
+        <translation>Électronique</translation>
     </message>
     <message>
         <location filename="../main.py" line="28"/>
         <source>Electrical</source>
-        <translation type="unfinished">Électricité</translation>
+        <translation>Électricité</translation>
     </message>
     <message>
         <location filename="../main.py" line="29"/>
         <source>Sound</source>
-        <translation type="unfinished">Son</translation>
+        <translation>Son</translation>
     </message>
     <message>
         <location filename="../main.py" line="30"/>
         <source>Mechanics</source>
-        <translation type="unfinished">Mécanique</translation>
+        <translation>Mécanique</translation>
     </message>
     <message>
         <location filename="../main.py" line="31"/>
         <source>Other Expts</source>
-        <translation type="unfinished">Autres expériences</translation>
+        <translation>Autres expériences</translation>
     </message>
     <message>
         <location filename="../main.py" line="32"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">Modules I2C</translation>
+        <translation>Modules I2C</translation>
     </message>
     <message>
         <location filename="../main.py" line="33"/>
         <source>PythonCode</source>
-        <translation type="unfinished">Code Python</translation>
+        <translation>Code Python</translation>
     </message>
 </context>
 <context>

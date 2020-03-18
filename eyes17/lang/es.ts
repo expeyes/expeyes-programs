@@ -1,81 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="es" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="es">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../layouts/dio_control.ui" line="14"/>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>Controlar</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>Inicializar</translation>
     </message>
     <message>
         <location filename="../layouts/dio_robot.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>Dialogo</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation type="unfinished"></translation>
+        <translation>Lectura del sensor</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
-        <translation type="unfinished">Registrador de datos</translation>
+        <translation>Registrador de datos</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="66"/>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>Escala</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="124"/>
         <source>SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste sinusoidal</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="137"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>Pausa</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>Ajuste sinusoidal amortiguado</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
         <source>Configure Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar eje</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="71"/>
         <source>REFRESH</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizar</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="97"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation>.</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="128"/>
         <source>CONFIRM</source>
-        <translation type="unfinished"></translation>
+        <translation>Confirmar</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="146"/>
         <source>Min </source>
-        <translation type="unfinished"></translation>
+        <translation>Min </translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="165"/>
         <source>Max </source>
-        <translation type="unfinished"></translation>
+        <translation>Max </translation>
     </message>
 </context>
 <context>
@@ -283,7 +284,7 @@
     <message>
         <location filename="../plotIV.py" line="105"/>
         <source>Analyze last Trace</source>
-        <translation>Analizar el último rastro </translation>
+        <translation>Analizar el último rastro</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="48"/>
@@ -1742,7 +1743,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../rodPendulum.py" line="186"/>
         <source>Invalid Number of trials</source>
-        <translation>Número de ensayos no válido.</translation>
+        <translation>Número de ensayos no válido</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="192"/>
@@ -1797,157 +1798,158 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../dust_sensor.py" line="38"/>
         <source>Time (S)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo (s)</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="50"/>
         <source>Ratio =</source>
-        <translation type="unfinished"></translation>
+        <translation>Proporción =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="52"/>
         <source>Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocupación</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="54"/>
         <source>Average Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>Ocupación promedio =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="56"/>
         <source>Concentration =</source>
-        <translation type="unfinished"></translation>
+        <translation>Concentración =</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
-        <translation type="unfinished"></translation>
+        <translation>Comenzando</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="72"/>
         <source>Ending</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizando</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation type="unfinished"></translation>
+        <translation>numero de pasos =</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R to Ground</source>
-        <translation type="unfinished"></translation>
+        <translation>R hasta la masa (GND)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
         <source>Starting PV1</source>
-        <translation type="unfinished"></translation>
+        <translation>Comenzando PV1</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="86"/>
         <source>Ending PV1</source>
-        <translation type="unfinished"></translation>
+        <translation>Finalizando PV1</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="103"/>
         <source>mA</source>
-        <translation type="unfinished"></translation>
+        <translation>mA</translation>
     </message>
     <message>
         <location filename="../scope.py" line="168"/>
         <source>Reconnecting...</source>
-        <translation type="unfinished"></translation>
+        <translation>Reconectando...</translation>
     </message>
     <message>
         <location filename="../scope.py" line="185"/>
         <source>Calibrated </source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Calibrado </translatorcomment>
+        <translation></translation>
     </message>
     <message>
         <location filename="../scope.py" line="187"/>
         <source>Not Calibrated </source>
-        <translation type="unfinished"></translation>
+        <translation>No calibrado </translation>
     </message>
     <message>
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dispositivo reconectado:</translation>
     </message>
     <message>
         <location filename="../scope.py" line="209"/>
         <source>Error. Could not connect. Check cable. </source>
-        <translation type="unfinished"></translation>
+        <translation>Error. Reconexión imposible. Verificar el cable. </translation>
     </message>
     <message>
         <location filename="../scope.py" line="389"/>
         <source>A%d %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>A%d %5.3f V</translation>
     </message>
     <message>
         <location filename="../scope.py" line="391"/>
         <source>A%d</source>
-        <translation type="unfinished"></translation>
+        <translation>A%d</translation>
     </message>
     <message>
         <location filename="../scope.py" line="398"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
-        <translation type="unfinished"></translation>
+        <translation>Resistencia: &lt; 100 Ω  o  &gt; 100 kΩ</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
-        <translation type="unfinished"></translation>
+        <translation>Duración total</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
         <source>Sec</source>
-        <translation type="unfinished"></translation>
+        <translation>s</translation>
     </message>
     <message>
         <location filename="../tof.py" line="41"/>
         <source>Measure</source>
-        <translation type="unfinished"></translation>
+        <translation>Medir</translation>
     </message>
     <message>
         <location filename="../tof.py" line="67"/>
         <source>start..</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar..</translation>
     </message>
     <message>
         <location filename="../tof.py" line="73"/>
         <source>Time of flight =</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo de vuelo</translation>
     </message>
     <message>
         <location filename="../tof.py" line="75"/>
         <source>Error. Try again</source>
-        <translation type="unfinished"></translation>
+        <translation>Error. Inténtalo de nuevo</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="69"/>
         <source>Voltage  A1</source>
-        <translation type="unfinished">Voltaje A1</translation>
+        <translation>Voltaje A1</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="81"/>
         <source>Time</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiempo</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="58"/>
         <source>Voltage (A1)</source>
-        <translation type="unfinished">Voltaje (A2) {1)?}</translation>
+        <translation>Voltaje (A1)</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="164"/>
         <source>Y-intercept = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ordenanda inicial = %5.3f V</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="185"/>
         <source>Ymax = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Ymax = %5.3f V</translation>
     </message>
 </context>
 <context>
@@ -1955,252 +1957,252 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../layouts/scope_layout.ui" line="14"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="138"/>
         <source>Channels</source>
-        <translation type="unfinished"></translation>
+        <translation>Canales</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="182"/>
         <source>1mS</source>
-        <translation type="unfinished"></translation>
+        <translation>1 ms</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1297"/>
         <source>A2</source>
-        <translation type="unfinished">A2</translation>
+        <translation>A2</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="207"/>
         <source>Results</source>
-        <translation type="unfinished"></translation>
+        <translation>Resultados</translation>
     </message>
     <message>
         <location filename="../layouts/miniScope.ui" line="228"/>
         <source>Cross Check Freq</source>
-        <translation type="unfinished"></translation>
+        <translation>Frecuencia de verificación cruzada</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="138"/>
         <source>A2-A1</source>
-        <translation type="unfinished">A1-A1 {2-?}</translation>
+        <translation>A2-A1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="151"/>
         <source>FREEZE</source>
-        <translation type="unfinished"></translation>
+        <translation>Congelar</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="164"/>
         <source>Cursor</source>
-        <translation type="unfinished"></translation>
+        <translation>Cursor</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="251"/>
         <source>Measure Voltages</source>
-        <translation type="unfinished"></translation>
+        <translation>Medida de voltaje</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="433"/>
         <source>16V</source>
-        <translation type="unfinished"></translation>
+        <translation>16V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="438"/>
         <source>8V</source>
-        <translation type="unfinished"></translation>
+        <translation>8V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="580"/>
         <source>4V</source>
-        <translation type="unfinished"></translation>
+        <translation>4V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="448"/>
         <source>2.5V</source>
-        <translation type="unfinished"></translation>
+        <translation>2.5V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1204"/>
         <source>1V</source>
-        <translation type="unfinished"></translation>
+        <translation>1V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="595"/>
         <source>0.5V</source>
-        <translation type="unfinished"></translation>
+        <translation>0.5V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="496"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;La amplitud&lt;/span&gt; y &lt;span style=&quot; font-weight:600;&quot;&gt;la frecuencia&lt;/span&gt; son extraídas de la&lt;/p&gt;&lt;p&gt;señal sinusoidal con el mínimo ajuste cuadrado.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Eso supone que una señal sinusoida sea proporcionada.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;Para señales mixtas, use el botón de transformación FOURIER&lt;/p&gt;&lt;p&gt;abajo.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="411"/>
         <source>MIC</source>
-        <translation type="unfinished"></translation>
+        <translation>MIC</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="585"/>
         <source>2V</source>
-        <translation type="unfinished"></translation>
+        <translation>2V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1309"/>
         <source>A3</source>
-        <translation type="unfinished">A3</translation>
+        <translation>A3</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="666"/>
         <source>1.65mA</source>
-        <translation type="unfinished"></translation>
+        <translation>1.65 mA</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="685"/>
         <source>PCS</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="841"/>
         <source>symmetric volts</source>
-        <translation type="unfinished"></translation>
+        <translation>voltios simétricos</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Voltage across PCS(mV):</source>
-        <translation type="unfinished"></translation>
+        <translation>Voltaje a través de PCS (mV):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="742"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Valor del voltaje a la fuente de corriente constanta&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="854"/>
         <source> Volts</source>
-        <translation type="unfinished"></translation>
+        <translation> V</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="806"/>
         <source>PV1</source>
-        <translation type="unfinished">PV1</translation>
+        <translation>PV1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="884"/>
         <source>SQ1</source>
-        <translation type="unfinished">SQ1</translation>
+        <translation>SQ1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="897"/>
         <source> %</source>
-        <translation type="unfinished"></translation>
+        <translation> %</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="959"/>
         <source>symmetric</source>
-        <translation type="unfinished"></translation>
+        <translation>simétrico</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="940"/>
         <source>PV2</source>
-        <translation type="unfinished">PV2</translation>
+        <translation>PV2</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="983"/>
         <source>WG</source>
-        <translation type="unfinished">WG</translation>
+        <translation>WG</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
         <source> Hz</source>
-        <translation type="unfinished"> Hz</translation>
+        <translation> Hz</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1049"/>
         <source>Timebase</source>
-        <translation type="unfinished">Barrer</translation>
+        <translation>Barrer</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1113"/>
         <source>Trigger</source>
-        <translation type="unfinished">Disparador</translation>
+        <translation>Disparador</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1126"/>
         <source>SAVE Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>Guardar seguimiento</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1133"/>
         <source>CCS</source>
-        <translation type="unfinished"></translation>
+        <translation>CCS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1147"/>
         <source>Fourier Transform</source>
-        <translation type="unfinished">Transformada de Fourier</translation>
+        <translation>Transformada de Fourier</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1167"/>
         <source>Resistance on SEN</source>
-        <translation type="unfinished"></translation>
+        <translation>Resistencia en SEN</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1174"/>
         <source>Frequency (IN2):</source>
-        <translation type="unfinished"></translation>
+        <translation>Frecuencia (IN2):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1181"/>
         <source>OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>OD1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1199"/>
         <source>80 mV</source>
-        <translation type="unfinished"></translation>
+        <translation>80 mV</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1209"/>
         <source>3V (Amplitude)</source>
-        <translation type="unfinished"></translation>
+        <translation>3V (Amplitud)</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1218"/>
         <source>WG( Sinusoidal )</source>
-        <translation type="unfinished"></translation>
+        <translation>WG ( Sinusoidal )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1223"/>
         <source>WG( Triangle )</source>
-        <translation type="unfinished"></translation>
+        <translation>WG ( Triangular )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1228"/>
         <source>SQ2( Square )</source>
-        <translation type="unfinished"></translation>
+        <translation>SQ2 ( Cuadrado )</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1236"/>
         <source>Capacitance (IN1):</source>
-        <translation type="unfinished"></translation>
+        <translation>Capacitancia (IN1):</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1243"/>
         <source>SHOW ALL</source>
-        <translation type="unfinished"></translation>
+        <translation>MOSTRAR TODO</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1285"/>
         <source>A1</source>
-        <translation type="unfinished">A1</translation>
+        <translation>A1</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1323"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation>.</translation>
     </message>
 </context>
 <context>
@@ -2288,12 +2290,12 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="46"/>
         <source>No immediate application</source>
-        <translation>La aplicación no es inmediata.</translation>
+        <translation>La aplicación no es inmediata</translation>
     </message>
     <message>
         <location filename="../main.py" line="47"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation>Vuelva a iniciar la aplicación para aclarar el fondo de pantalla.</translation>
+        <translation>Vuelva a iniciar la aplicación para aclarar el fondo de pantalla</translation>
     </message>
     <message>
         <location filename="../main.py" line="48"/>
@@ -2343,7 +2345,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="60"/>
         <source>Direct and Alternating Currents</source>
-        <translation>Corrientes continua y alterna.</translation>
+        <translation>Corrientes continua y alterna</translation>
     </message>
     <message>
         <location filename="../main.py" line="61"/>
@@ -2668,157 +2670,158 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
         <source>MainWindow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ventana principal</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="42"/>
         <source>CHOOSE Y PARAMETER</source>
-        <translation type="unfinished"></translation>
+        <translation>ELIJA Y PARÁMETRO</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="49"/>
         <source>Click the Button above to select X axis parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>Haga clic en el botón de arriba para seleccionar el parámetro del eje X</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="56"/>
         <source>Click the Button above to select Y axis parameter</source>
-        <translation type="unfinished"></translation>
+        <translation>Haga clic en el botón de arriba para seleccionar el parámetro del eje Y</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="69"/>
         <source>CHOOSE X PARAMETER</source>
-        <translation type="unfinished"></translation>
+        <translation>ELIJA X PARÁMETRO</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="107"/>
         <source>Datapoints</source>
-        <translation type="unfinished"></translation>
+        <translation>Numero de datos</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="154"/>
         <source> milliSeconds</source>
-        <translation type="unfinished"></translation>
+        <translation> ms</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="127"/>
         <source>LOG DATA</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrar datos</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="134"/>
         <source>Time Interval</source>
-        <translation type="unfinished"></translation>
+        <translation>Intervalo de tiempo</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="167"/>
         <source>Settling Time b/w X and Y</source>
-        <translation type="unfinished"></translation>
+        <translation>Elijar tiempo entre X y Y</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="28"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>NO</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="33"/>
         <source>2</source>
-        <translation type="unfinished"></translation>
+        <translation>2</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="38"/>
         <source>3</source>
-        <translation type="unfinished"></translation>
+        <translation>3</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="43"/>
         <source>4</source>
-        <translation type="unfinished"></translation>
+        <translation>4</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="48"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation>5</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="53"/>
         <source>6</source>
-        <translation type="unfinished"></translation>
+        <translation>6</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="58"/>
         <source>7</source>
-        <translation type="unfinished"></translation>
+        <translation>7</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="63"/>
         <source>8</source>
-        <translation type="unfinished"></translation>
+        <translation>8</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="68"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation>9</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="73"/>
         <source>10</source>
-        <translation type="unfinished"></translation>
+        <translation>10</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="81"/>
         <source>RECORD</source>
-        <translation type="unfinished"></translation>
+        <translation>GRABAR</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="91"/>
         <source>Calculate</source>
-        <translation type="unfinished"></translation>
+        <translation>Calcular</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="111"/>
         <source>Averaging Samples</source>
-        <translation type="unfinished"></translation>
+        <translation>Promedio de muestras</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="118"/>
         <source>Number of samples considered for moving average in results calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>Número de muestras consideradas para el promedio móvil en el cálculo de resultados</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="125"/>
         <source>Polynomial Degree</source>
-        <translation type="unfinished"></translation>
+        <translation>Grado polinomial</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="132"/>
         <source>Degree of the polynomial used for smoothing the data</source>
-        <translation type="unfinished"></translation>
+        <translation>Grado del polinomio utilizado para suavizar los datos</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="204"/>
         <source>Spline</source>
-        <translation type="unfinished"></translation>
+        <translation>Spline</translation>
     </message>
     <message>
         <location filename="../main.py" line="41"/>
         <source>Choose Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige lengua</translation>
     </message>
     <message>
         <location filename="../main.py" line="93"/>
         <source>Summing Amplifier</source>
-        <translation type="unfinished"></translation>
+        <translation>Amplificador sumador</translation>
     </message>
     <message>
         <location filename="../main.py" line="134"/>
         <source>Advanced Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>Registrador de datos avanzado</translation>
     </message>
     <message>
         <location filename="../main.py" line="138"/>
         <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation type="unfinished"></translation>
+        <translatorcomment>Histéresis magnética (sensor MPU925x)</translatorcomment>
+        <translation></translation>
     </message>
 </context>
 <context>
@@ -2826,97 +2829,97 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="407"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished">Error al cargar el osciloscopio</translation>
+        <translation>Error al cargar el osciloscopio</translation>
     </message>
     <message>
         <location filename="../main.py" line="438"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished">Error al cargar %s</translation>
+        <translation>Error al cargar %s</translation>
     </message>
     <message>
         <location filename="../main.py" line="479"/>
         <source>No immediate application</source>
-        <translation type="unfinished">La aplicación no es inmediata.</translation>
+        <translation>La aplicación no es inmediata</translation>
     </message>
     <message>
         <location filename="../main.py" line="467"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="unfinished">Vuelva a iniciar la aplicación para aclarar el fondo de pantalla.</translation>
+        <translation>Vuelva a iniciar la aplicación para aclarar el fondo de pantalla</translation>
     </message>
     <message>
         <location filename="../main.py" line="479"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="unfinished">Vuelva a iniciar la aplicación para oscurecer el fondo de pantalla.</translation>
+        <translation>Vuelva a iniciar la aplicación para oscurecer el fondo de pantalla.</translation>
     </message>
     <message>
         <location filename="../main.py" line="491"/>
         <source>Device</source>
-        <translation type="unfinished">Dispositivo</translation>
+        <translation>Dispositivo</translation>
     </message>
     <message>
         <location filename="../main.py" line="492"/>
         <source>Reconnect</source>
-        <translation type="unfinished">Reconexión</translation>
+        <translation>Reconexión</translation>
     </message>
     <message>
         <location filename="../main.py" line="493"/>
         <source>LightBackGround next time</source>
-        <translation type="unfinished">Fondo brillante (después de reiniciar)</translation>
+        <translation>Fondo brillante (después de reiniciar)</translation>
     </message>
     <message>
         <location filename="../main.py" line="494"/>
         <source>DarkBackGround next time</source>
-        <translation type="unfinished">Fondo oscuro (después de reiniciar)</translation>
+        <translation>Fondo oscuro (después de reiniciar)</translation>
     </message>
     <message>
         <location filename="../main.py" line="495"/>
         <source>Choose Language</source>
-        <translation type="unfinished"></translation>
+        <translation>Elige lengua</translation>
     </message>
     <message>
         <location filename="../main.py" line="503"/>
         <source>School Expts</source>
-        <translation type="unfinished">Exp. escolares</translation>
+        <translation>Exp. escolares</translation>
     </message>
     <message>
         <location filename="../main.py" line="507"/>
         <source>Electronics</source>
-        <translation type="unfinished">Electrónico</translation>
+        <translation>Electrónico</translation>
     </message>
     <message>
         <location filename="../main.py" line="514"/>
         <source>Electrical</source>
-        <translation type="unfinished">Electricidad</translation>
+        <translation>Electricidad</translation>
     </message>
     <message>
         <location filename="../main.py" line="518"/>
         <source>Sound</source>
-        <translation type="unfinished">Sonido</translation>
+        <translation>Sonido</translation>
     </message>
     <message>
         <location filename="../main.py" line="522"/>
         <source>Mechanics</source>
-        <translation type="unfinished">Mecánica</translation>
+        <translation>Mecánica</translation>
     </message>
     <message>
         <location filename="../main.py" line="526"/>
         <source>Other Expts</source>
-        <translation type="unfinished">Otras experiencias</translation>
+        <translation>Otras experiencias</translation>
     </message>
     <message>
         <location filename="../main.py" line="530"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">Módules I2C</translation>
+        <translation>Módules I2C</translation>
     </message>
     <message>
         <location filename="../main.py" line="534"/>
         <source>PythonCode</source>
-        <translation type="unfinished">Código Python</translation>
+        <translation>Código Python</translation>
     </message>
     <message>
         <location filename="../main.py" line="556"/>
         <source>Oscilloscope</source>
-        <translation type="unfinished">Osciloscopio</translation>
+        <translation>Osciloscopio</translation>
     </message>
 </context>
 <context>
@@ -2924,7 +2927,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="229"/>
         <source>Help: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayuda: %s</translation>
     </message>
 </context>
 </TS>
