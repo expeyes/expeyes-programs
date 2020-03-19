@@ -1,20 +1,26 @@
-.. eyes17 documentation master file, created by
-   sphinx-quickstart on Sat Jan  6 00:43:37 2018.
+.. eyes17 documentation master file
 
-Getting Started
-***************
+EYES17 User Manual
+******************
+
+ആമുഖം 
+========
+ശാസ്ത്രഗവേഷണത്തിൽ സിദ്ധാന്തങ്ങളും പരീക്ഷണങ്ങളും തുല്യപ്രാധാന്യമുള്ളവയാണ്. ശാസ്ത്രപഠനത്തിനും ഇത് ബാധകമാണെങ്കിലും ലബോറട്ടറി ഉപകരണങ്ങളുടെ അഭാവവും മത്സരപരീക്ഷകളുടെ ആധിക്യവും കാരണം നമ്മുടെ ശാസ്ത്രപഠനം വെറും പാഠപുസ്തകം  കാണാപ്പാഠമാക്കുന്നതിലേക്കു ചുരുങ്ങിയിരിക്കുന്നു. പേഴ്സണൽ കമ്പ്യൂട്ടറുകളുടെ വരവും അവയുടെ വ്യാപകമായ ലഭ്യതയും ലബോറട്ടറി ഉപകരണങ്ങൾ നിർമ്മിക്കുന്നതിനുള്ള ഒരു പുതിയ മാർഗം തുറന്നിരിക്കുകയാണ്. സ്കൂളിൽ പഠിക്കുന്ന കുട്ടിക്ക്  വീട്ടിൽ  ഒരു സയൻസ്  ലാബ്  എന്നു  കേൾക്കുമ്പോൾ വിദ്യാലയങ്ങളിൽ വലിയ പണച്ചെലവിൽ സജ്ജീകരിച്ച ലാബുകളെക്കുറിച്ചുള്ള  ഒരു ചിത്രമാവും രക്ഷിതാക്കളുടെ മനസ്സിലേക്കോടിയെത്തുക. എന്നാൽ വീട്ടിൽ ഒരു കംപ്യൂട്ടറുണ്ടെങ്കിൽ അതിനു വേണ്ടത് നിങ്ങളുടെ കൈയിലും കീശയിലുമൊതുങ്ങാവുന്ന ചെറിയൊരുപകരണം മാത്രമാണു് . കമ്പ്യൂട്ടറിൽ ഘടിപ്പിക്കാവുന്ന പരീക്ഷണോപകരണങ്ങൾ വികസിതരാജ്യങ്ങളിൽ വളരെ സാധാരണമാണെങ്കിലും ഇന്ത്യയിൽ IIT, IISER പോലെയുള്ള  വളരെ ചുരുങ്ങിയ സ്ഥാപനങ്ങളിൽ മാത്രമാണ്  ഇത്തരം ഉപകരണങ്ങൾ   ഉപയോഗത്തിലുള്ളത് , അവയാകട്ടെ വൻവില കൊടുത്തു ഇറക്കുമതി   ചെയ്തവയുമാണ്. പലനിലയിലും  ഇവയോട് കിടനിൽക്കുന്നതും അതേസമയം ഏതൊരു സ്കൂളിനോ കോളേജിനോ ഒരു വ്യക്തിക്കോ വരെ  താങ്ങാവുന്ന വില മാത്രമുള്ളതുമാണ്  ExpEYES (Experiments for Young Engineers and Scientists)എന്ന ഈ ഉപകരണം.
+
+ഹൈസ്കൂൾ തലം മുതൽ ബിരുദതലം വരെയുള്ള പാഠ്യപദ്ധതിയിൽ ഉൾപ്പെടുത്തിയിട്ടുള്ള  അനേകം പരീക്ഷണങ്ങൾ ഇതുപയോഗിച്ചു വളരെ കൃത്യതയോടെ ചെയ്യാവുന്നതാണ്. ഫിസിക്സിന്റെയും ഇലക്ട്രോണിക്സിന്റെയും മേഖലകളിലുള്ള നിരവധി പരീക്ഷണങ്ങൾക്കു പുറമെ  ലബോറട്ടറികളിൽ  സാധാരണമായി ഉപയോഗിക്കുന്ന ഓസ്‌സിലോസ്കോപ് , ഫങ്ക്ഷൻ  ജനറേറ്റർ എന്നീ ഉപകരണങ്ങൾക്ക്  പകരമായും ഇതിനെ ഉപയോഗിക്കാവുന്നതാണ്. പ്രാഥമികമായ ശാസ്ത്രതത്വങ്ങളെ പ്രായോഗികമായി വിശദീകരിക്കുന്ന  പ്രവർത്തനങ്ങൾ  ഇതിന്റെ മറ്റൊരു പ്രധാന മേഖലയാണ് , ഉദാഹരണമായി വൈദ്യുതിയെ ശബ്ദമായും തിരിച്ചും മാറ്റുവാനും അവയുടെ ആവൃത്തി അളക്കാനുമെല്ലാം വളരെ എളുപ്പമാണ്.വിവിധതരം സെൻസർ എലെമെന്റ്സ് ഉപയോഗിച്ച്  താപനില, മർദ്ദം, വേഗത, ത്വരണം, ബലം, വോൾട്ടേജ്, കറന്റ് തുടങ്ങിയവ അളക്കാനും നിയന്ത്രിക്കാനും കഴിയും. അതിവേഗം മാറിക്കൊണ്ടിരിക്കുന്നു അളവുകൾ രേഖപ്പെടുത്താൻ കമ്പ്യൂട്ടർ വളരെ ആവശ്യമാണ്. ഉദാഹരണത്തിന്,  എസി മെയിൻസ് വോൾട്ടേജ് രേഖപ്പെടുത്താൻ ഓരോ മില്ലിസെക്കൻഡിലും അതിനെ അളക്കേണ്ടതുണ്ട് . കംപ്യൂട്ടറിന്റെ USB പോർട്ടിൽ ഘടിപ്പിക്കാവുന്ന ഈ ഉപകരണത്തിന്റെ പ്രോഗ്രാമുകൾ പൈത്തൺ ഭാഷയിലാണ് എഴുതപ്പെട്ടിരിക്കുന്നത്. ഇതിന്റെ ഉപയോഗത്തിന് സഹായിക്കുന്ന യൂസർ മാന്വലുകളും വിഡിയോകളും ലഭ്യമാണ്.കൂടുതൽ വിവരങ്ങൾക്ക്  www.expeyes.in എന്ന വെബ്‌സൈറ്റ്  സന്ദർശിക്കുക.
+
+
 
 .. toctree::
    :maxdepth: 2
 
-   1.1
    1.2
    1.3
    1.4
    1.5
 	 
 School Level Experiments
-************************
+========================
 
 This chapter will discuss the experiments and demonstrations without
 much data analysis, experiments given in the menu SchoolExpts. Simple
@@ -51,7 +57,7 @@ enabled.
    2.21
 
 Electronics
-***********
+===========
 
 This chapter explains several electronics experiments. Most of them are
 done using the oscilloscope GUI. Some of them like Diode and Transistor
@@ -77,7 +83,7 @@ characteristics have a dedicated GUI.
    3.15
 
 Electricity and Magnetism
-*************************
+=========================
 
 This section mainly contains experiments on the steady state and
 transient response of LCR circuit elements. the experimental results
@@ -98,7 +104,7 @@ induction.
    4.8
 
 Sound
-*****
+=====
 
 Pressure variations, about an equilibrium pressure, transmitted through
 a medium is called sound. They are longitudinal waves. Moving a sheet of
@@ -118,7 +124,7 @@ digitized sound with distance.
    5.3
 
 Mechanics
-*********
+=========
 
 Resonance phenomena is studied using a driven pendulum. Value of
 acceleration due to gravity is measured using a pendulum.
@@ -134,7 +140,7 @@ acceleration due to gravity is measured using a pendulum.
    6.5
 
 Other experiments
-*****************
+=================
 .. toctree::
    :maxdepth: 2
 
@@ -143,7 +149,7 @@ Other experiments
    7.3
 
 I2C Modules
-***********
+===========
 .. toctree::
    :maxdepth: 2
 
@@ -155,7 +161,7 @@ I2C Modules
 
 
 Coding expEYES-17 in Python
-***************************
+===========================
 
 The GUI programs described in the previous sections are meant for a
 fixed set of experiments. To develop new experiments, one should know
