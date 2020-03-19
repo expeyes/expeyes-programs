@@ -47,7 +47,7 @@ programming*. This User’s manual describes *expEYES-17* along with
 several experiments, there is also a Programmer’s manual available.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    1.2
    1.3
@@ -67,7 +67,7 @@ an experiment is selected, the corresponding help window will popup, if
 enabled.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    2.1
    2.2
@@ -99,7 +99,7 @@ done using the oscilloscope GUI. Some of them like Diode and Transistor
 characteristics have a dedicated GUI.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    3.1
    3.2
@@ -126,7 +126,7 @@ with the theory. It also gives an experiment of electromagnetic
 induction.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    4.1
    4.2
@@ -152,7 +152,7 @@ frequency. Velocity of sound is measured by observing the phase shift of
 digitized sound with distance.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    5.1
    5.2
@@ -166,7 +166,7 @@ acceleration due to gravity is measured using a pendulum.
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    6.1
    6.2
@@ -177,7 +177,7 @@ acceleration due to gravity is measured using a pendulum.
 Other experiments
 =================
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    7.1
    7.2
@@ -186,7 +186,7 @@ Other experiments
 I2C Modules
 ===========
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    8.1
    8.2
@@ -200,7 +200,7 @@ Coding expEYES-17 in Python
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    9.0
  
