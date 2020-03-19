@@ -62,7 +62,7 @@ master_doc = 'index'
 # Usually you set "language" from the command line for these cases.
 
 language = os.path.abspath(__file__).split('/')[-3]
-print(f"Auto-detected language: '{language}'.")
+# print(f"Auto-detected language: '{language}'.")
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -128,11 +128,15 @@ latex_elements = {
     # 'figure_align': 'htbp',
 }
 
+# latex has another master document, since epub and Latex do not
+# use the same standards for the toc depth!
+master_doc_for_latex = "index.latex"
+
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'expEYES-17.tex', 'expEYES-17 Documentation',
+    (master_doc_for_latex, 'expEYES-17.tex', 'expEYES-17 Documentation',
      'Ajith Kumar B.P., Jithin B.P.', 'manual'),
 ]
 

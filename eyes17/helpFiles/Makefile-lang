@@ -2,8 +2,10 @@
 
 ##### This part is to generate html files in the current directory ###########
 
+RSTSOURCES = $(shell ls _sources/*.rst)
 SOURCES = $(shell ls _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
 HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
+TARGET = $(shell cd _sources && python3 -c 'import conf; print(conf.project)')
 
 all: $(HTML_FILES)
 	@echo
@@ -51,7 +53,12 @@ latexpdf:
 	  $(MAKE) real_latexpdf; \
 	fi
 
-real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
+real_latexpdf: build/latex/$(TARGET).pdf
+
+build/latex/$(TARGET).pdf : cover/coverpage.pdf cover/preface.pdf $(RSTSOURCES)
+	@echo making the tempory file \"index.latex.rst\"
+	@sed 's/:maxdepth: 1/:maxdepth: 2/' _sources/index.rst > \
+	  _sources/index.latex.rst
 	$(SPHINXBUILD) -b latex "$(SOURCEDIR)" $(ALLSPHINXOPTS) $(BUILDDIR)/latex
 	@echo copying a few files
 	cp cover/*.pdf $(BUILDDIR)/latex
@@ -68,9 +75,13 @@ real_latexpdf: cover/coverpage.pdf cover/preface.pdf $(SOURCES)
 	@echo "Running LaTeX files through xelatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf PDFLATEX="latexmk -xelatex -silent -f -dvi- -ps-" || cat $(BUILDDIR)/latex/expEYES-17.log
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
+	@echo removing the tempory file \"index.latex.rst\"
+	@rm -f _sources/index.latex.rst
 
 .PHONY: epub
-epub:
+epub: build/epub/$(TARGET).epub
+
+build/epub/$(TARGET).epub: $(RSTSOURCES)
 	$(SPHINXBUILD) -b epub "$(SOURCEDIR)" $(ALLSPHINXOPTS) $(BUILDDIR)/epub
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
