@@ -1,10 +1,37 @@
 \documentclass[12pt,a4paper]{report}
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
-\DeclareUnicodeCharacter{00A0}{\nobreakspace}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
-\usepackage{times}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX code  to enable                                        %
+% the build by XeLaTeX, specific for Malayalam language        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{pdfpages}
+\usepackage{fontspec}
+\usepackage{polyglossia,xltxtra}
+\setdefaultlanguage{malayalam}
+\setmainfont[Script=Malayalam, HyphenChar="00AD]{Rachana}
+\newfontfamily\engfont[Mapping=tex-text]{FreeSerif}
+\newfontfamily\malayalamfontsf{Rachana}[Script=Malayalam]
+\newfontfamily\malayalamfonttt{Rachana}[Script=Malayalam]
+\def\xromn#1{{\fontencoding{T1}\fontfamily{cmr}\selectfont#1}}
+\def\squote{\xromn{`}}
+\def\esquote{\xromn{'}}
+\def\dquote{\xromn{``}}
+\def\edquote{\xromn{''}}
+\DeclareTextFontCommand{\myfont}{\engfont}
+\def\mdash{\myfont{\textemdash}}
+\def\ndash{\myfont{\textendash}}
+\lefthyphenmin=3
+\righthyphenmin=4
+\linespread{1.2}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\sloppy
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                end of inserted code                          %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
 \thispagestyle{empty}
 
