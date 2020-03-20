@@ -19,4 +19,4 @@ Procedure
 - PV1 is varied is steps. Voltage across R1 with current is plotted
 
 .. image:: pics/plot-iv-screen.png
-	   :width: 500px
+	   :width: 400px

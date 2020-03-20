@@ -32,7 +32,7 @@ Le résultat est monté ci-dessous. On peut voir que les signaux d'entrée
 et de sortie sont déphasés de 180 degrés.
 
 .. image:: pics/transistor-amplifier-screen.png
-   :width: 500px
+	   :width: 400px
 
 
 Discussion

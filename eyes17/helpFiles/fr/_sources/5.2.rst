@@ -42,7 +42,7 @@ Procédure
    la demi-longueur d’onde.
 
 .. image:: pics/sound-velocity180-screen.png
-	   :width: 600px
+	   :width: 400px
 	   
 Discussion
 ----------

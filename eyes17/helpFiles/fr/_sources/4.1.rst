@@ -26,4 +26,4 @@ Procédure
 - On varie PV1 progressivement. La tension aux bornes de R1 est mise en graphique.
 
 .. image:: pics/plot-iv-screen.png
-	   :width: 500px
+	   :width: 400px

@@ -19,7 +19,7 @@ Procedure
 For a symmetric input, the input and output waveforms are shown below.
 
 .. image:: pics/clock-divider-screen.png
-   :width: 500px 
+	   :width: 400px
 
 Discussion
 ----------
@@ -30,4 +30,4 @@ irrespective of the duty cycle of the input pulse, as shown below. Every rising 
 of the input results in a level change at the output.
 
 .. image:: pics/clock-divider-screen-2.png
-   :width: 500px
+	   :width: 400px

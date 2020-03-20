@@ -40,7 +40,7 @@ Procedure
    distance is half wave length.
 
 .. image:: pics/sound-velocity180-screen.png
-	   :width: 600px
+	   :width: 400px
 	   
 Discussion
 ----------

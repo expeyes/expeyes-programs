@@ -26,7 +26,7 @@ Le gain en amplitude et la différence de phase peuvent être observés
 dans la figure ci-dessous.
 
 .. image:: pics/opamp-noninv-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

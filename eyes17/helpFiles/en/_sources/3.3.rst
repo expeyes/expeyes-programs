@@ -23,7 +23,7 @@ Procedure
 -  Set WG to 1000Hz and adjust timebase to view 4 to 5 cycles
 
 .. image:: pics/fullwave-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

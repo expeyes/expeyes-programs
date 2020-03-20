@@ -22,7 +22,7 @@ Procedure
 The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{int}}{y_{max}}\Bigg)`    
 	   
 .. image:: pics/xyplot-screen.png
-   :width: 500px
+	   :width: 400px
 	      
 
 Discussion

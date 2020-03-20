@@ -42,7 +42,7 @@ Taking voltage reading from the picture below,
 :math:`I = \frac{1.92}{1000}` and :math:`R1=\frac{3.01-1.92}{0.00192} = 576.7`
 
 .. image:: pics/res-compare-ac.png
-	   :width: 600px
+	   :width: 400px
  
 Discussion
 ----------

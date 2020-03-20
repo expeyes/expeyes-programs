@@ -32,12 +32,12 @@ Le résultat obtenu à l'aide d'une porte OU réalisée à l'aide de diodes
 est montré ci-dessous.   
 
 .. image:: pics/gate-or-diode-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Le résultat pour une porte ET réalisée à l'aide d'un IC7408 est montré ci-dessous.
 
 .. image:: pics/gate-and-ic-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

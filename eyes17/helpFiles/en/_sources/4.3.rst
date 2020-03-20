@@ -32,7 +32,7 @@ The resulting waveforms for the RC circuit are shown below. The green trace (vol
 The phase difference across the capacitor is diplayed at the top corner. This can be compared with the calculated values. 
 
 .. image:: pics/RCsteadystate-screen.png
-	   :width: 500px
+	   :width: 400px
 
 The next step is to study the RL circuit. Here you will observe the current waveform lagging behind the voltage across the inductor.
 
@@ -72,7 +72,7 @@ voltage drop across L and C can be displayed. It can be see that they are equal 
 as shown below.
 
 .. image:: pics/RLCsteadystate-screen.png
-	   :width: 500px
+	   :width: 400px
 	   
 Discussion
 ----------

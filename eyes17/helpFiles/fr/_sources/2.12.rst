@@ -30,7 +30,7 @@ Les signaux observés sont présentés ci-dessous. La tension en A2 est
 un peu moins de 3 V, à cause de la résistance du corps.
 
 .. image:: pics/conducting-human-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

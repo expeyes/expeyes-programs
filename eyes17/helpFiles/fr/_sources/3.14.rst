@@ -33,7 +33,7 @@ cette expérience manuellement depuis l'interface graphique
 Oscilloscope, et en notant les observations.
 
 .. image:: pics/npn-ce-char-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

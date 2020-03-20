@@ -70,7 +70,7 @@ Graphical User Interface
 ------------------------
   
 .. figure:: pics/scope-screen-en.png
-   :width: 600px
+	   :width: 400px
  
 The GUI menubar consists of several pulldown menus for different categories of experiments. 
 The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fields for accessing the hardware features explained earlier.

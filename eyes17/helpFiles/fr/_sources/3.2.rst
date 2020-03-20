@@ -28,7 +28,7 @@ Procédure
 La courbe est montrée ci-dessous.
 
 .. image:: pics/halfwave-screen.png
-	   :width: 500px
+	   :width: 400px
 
 -  Connecter un condensateur de :math:`1 \mu F`, et voir l'effet de filtrage ;
 -  Essayer diverses valeurs de résistances de charge et de condensateurs de
@@ -37,7 +37,7 @@ La courbe est montrée ci-dessous.
 Voici, ci-dessous, l'effet du filtre RC.
 
 .. image:: pics/halfwave-filter-screen.png
-	   :width: 500px
+	   :width: 400px
 
 
 -  Faire les connexions et observer les sorties
@@ -77,4 +77,4 @@ une résistance de charge. Ce type d'élément parasite, tel que la capacité d'
 jonction PN, est plus faible pour une diode 1N4148 ; pourquoi ?
 
 .. image:: pics/halfwave-capacitance-screen.png
-	   :width: 500px
+	   :width: 400px

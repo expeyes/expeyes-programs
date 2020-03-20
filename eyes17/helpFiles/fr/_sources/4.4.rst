@@ -21,7 +21,7 @@ Procédure
 -  Calculer la constante de temps RC.
 
 .. image:: pics/RCtransient-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

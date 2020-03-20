@@ -28,7 +28,7 @@ Procédure
 
 
 .. image:: pics/RLCtransient-screen.png
-   :width: 500px
+	   :width: 400px
 
 Les valeurs choisies donnent un amortissement sous-critique. Le
 bobinage à une inductance de plus de 100 mH et une résistance de près

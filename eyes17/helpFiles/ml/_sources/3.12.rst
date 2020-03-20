@@ -9,6 +9,6 @@
 - SQ1 നെ 1000ഹെർട്സിൽ സെറ്റ് ചെയ്യുക.
   
 .. image:: pics/clock-divider-screen.png
-	   :width: 500px
+	   :width: 400px
 
 

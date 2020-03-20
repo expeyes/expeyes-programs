@@ -30,7 +30,7 @@ Procédure
    cycles.
 
 .. image:: pics/fullwave-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

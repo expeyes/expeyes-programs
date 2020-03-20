@@ -93,7 +93,7 @@ L'Interface utilisateur graphique
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
  .. figure:: pics/scope-screen-en.png
-   :width: 600px
+	   :width: 400px
 
 La barre de menus de l'interface graphique utilisateur consiste en
 plusieurs menus déroulants pour diverses catégories d'expériences.

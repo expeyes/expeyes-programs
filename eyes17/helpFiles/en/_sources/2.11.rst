@@ -20,7 +20,7 @@ Procedure
 -  Conenct SQ1 to A2 through a  :math:`0.1 \mu F` capacitor
 
 .. image:: pics/acdc-sep-screen.png
-	   :width: 500px
+	   :width: 400px
 
 
 Discussion

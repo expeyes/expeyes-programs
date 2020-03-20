@@ -20,7 +20,7 @@ Procédure
 -  Connecter SQ1 à A2 à travers un condensateur de :math:`0.1 \mu F`
 
 .. image:: pics/acdc-sep-screen.png
-	   :width: 500px
+	   :width: 400px
 
 
 Discussion

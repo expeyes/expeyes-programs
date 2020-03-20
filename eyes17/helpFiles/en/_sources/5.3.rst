@@ -24,7 +24,7 @@ Procedure
 -  Press FFT to view the frequency spectrum
 
 .. image:: pics/sound-beats-screen.png
-	   :width: 500px
+	   :width: 400px
 
 
 Discussion

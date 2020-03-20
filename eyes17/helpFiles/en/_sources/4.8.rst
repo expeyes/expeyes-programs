@@ -17,7 +17,7 @@ Procedure
 .. image:: schematics/induction.svg
 	   :width: 300px
 .. image:: pics/induction-photo.jpg
-	   :width: 500px
+	   :width: 400px
 
 -  Click on Start Scanning. A horizontal trace should appear
 -  Drop the magnet through the coil, until a trace is caught.

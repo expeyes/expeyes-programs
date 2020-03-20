@@ -31,7 +31,7 @@ Procédure
 -  Insérer un noyau en fer dans le bobinage et recommencer
 
 .. image:: pics/RLtransient-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

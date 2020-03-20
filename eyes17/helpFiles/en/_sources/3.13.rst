@@ -20,7 +20,7 @@ Procedure
 -  Plot the IV of LEDs
 
 .. image:: pics/diode-iv-screen.png
-	   :width: 500px
+	   :width: 400px
 
 It is possible to do this by manually taking the reading, from the oscilloscope GUI.
 The steps involved are:

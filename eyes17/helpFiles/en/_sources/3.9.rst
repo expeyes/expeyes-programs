@@ -24,7 +24,7 @@ Procedure
 The amplitude gain and and the phase difference can be observed from the output below.
 
 .. image:: pics/opamp-noninv-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

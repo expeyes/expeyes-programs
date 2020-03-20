@@ -18,7 +18,7 @@ Procédure
 -  Cliquer sur le bouton DÉMARRER
 
 .. image:: pics/piezo-freq-resp-screen.png
-	   :width: 500px
+	   :width: 400px
 	   
 Discussion
 ----------

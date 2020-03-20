@@ -26,7 +26,7 @@ Procédure
 -  Tracer les courbes U-I de DELs
 
 .. image:: pics/diode-iv-screen.png
-	   :width: 500px
+	   :width: 400px
 
 On peut aussi faire cela en notant manuellement les lectures, depuis
 l'interface utilisateur graphique de l'oscilloscope. Les étapes

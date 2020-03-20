@@ -53,7 +53,7 @@ Le déphasage du condensateur est montrée dans le coin du haut. On peut
 la comparer aux valeurs calculées.
 
 .. image:: pics/RCsteadystate-screen.png
-	   :width: 500px
+	   :width: 400px
 
 L'étape suivante est d'étudier le circuit RL. Là on observera le
 signal de courant en retard de phase par rapport à la tension aux
@@ -102,7 +102,7 @@ C peuvent être affichées. On voit qu'elles sont égales et en
 opposition de phase, comme ci-dessous.
 
 .. image:: pics/RLCsteadystate-screen.png
-	   :width: 500px
+	   :width: 400px
 	   
 Discussion
 ----------

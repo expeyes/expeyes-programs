@@ -10,5 +10,5 @@
 -  'തുടങ്ങുക' ബട്ടൺ അമർത്തുക 
 
 .. image:: pics/piezo-freq-resp-screen.png
-	   :width: 500px
+	   :width: 400px
 

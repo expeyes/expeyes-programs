@@ -28,4 +28,4 @@ de la sortie.
 
 
 .. image:: pics/clock-divider-screen-2.png
-   :width: 500px
+	   :width: 400px
