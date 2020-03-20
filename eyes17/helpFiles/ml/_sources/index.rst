@@ -1,7 +1,7 @@
 .. eyes17 documentation master file
 
-EYES17 User Manual
-******************
+EYES17 സഹായഗ്രന്ഥം 
+*******************
 
 ആമുഖം 
 ========
@@ -19,17 +19,10 @@ EYES17 User Manual
    1.4
    1.5
 	 
-School Level Experiments
+സ്‌കൂൾതലത്തിലുള്ള പരീക്ഷണങ്ങൾ  
 ========================
 
-This chapter will discuss the experiments and demonstrations without
-much data analysis, experiments given in the menu SchoolExpts. Simple
-tasks like measuring voltage, resistance, capacitance etc. will be done
-followed by resistances changing with temperature or light. The concept
-of Alternating Current is introduced by plotting the voltage as a
-function of time. Generating and digitizing sound will be covered. When
-an experiment is selected, the corresponding help window will popup, if
-enabled.
+ശാസ്ത്രതത്വങ്ങളെ ലളിതമായ പരീക്ഷണങ്ങളിലൂടെ മനസ്സിലാക്കാൻ സഹായിക്കുന്ന പ്രവർത്തനങ്ങളാണ് ഈ അധ്യായത്തിന്റെ ഉള്ളടക്കം. ExpEYES എന്ന ഉപകരണത്തിന്റെ പ്രവർത്തനരീതിയുമായി പരിചയപ്പെടുക എന്ന ഉദ്ദേശവും ഇതിനുണ്ട്. വോൾട്ടേജ്, പ്രതിരോധം, കപ്പാസിറ്റൻസ് എന്നിവ അളക്കാൻ പഠിക്കുക, വൈദ്യുതിയുടെ വ്യത്യസ്തരൂപങ്ങളെ പരിചയപ്പെടുക തുടങ്ങിയ പരീക്ഷണങ്ങളാണ് പ്രധാനമായും ഉൾപ്പെടുത്തിയിരിക്കുന്നത്. പരീക്ഷണം നടത്താൻ വേണ്ട നിർദ്ദേശങ്ങൾ സഹായജാലകത്തിൽ ലഭ്യമാണ്.
 
 .. toctree::
    :maxdepth: 1
@@ -59,9 +52,7 @@ enabled.
 Electronics
 ===========
 
-This chapter explains several electronics experiments. Most of them are
-done using the oscilloscope GUI. Some of them like Diode and Transistor
-characteristics have a dedicated GUI.
+ചില ഇലക്ട്രോണിക്സ് പരീക്ഷണങ്ങളാണ് ഈ അധ്യായത്തിന്റെ ഉള്ളടക്കം. മിക്കതും സയൻസ് / എഞ്ചിനീയറിംഗ് സിലബസിൽ നിന്നും എടുത്തിട്ടുള്ളവയാണ്. ഓസ്‌സിലോസ്കോപ്, DC സപ്ലൈ, സിഗ്നൽ ജനറേറ്റർ എന്നിങ്ങനെ അനേകം ഉപകരണങ്ങൾക്ക് ബദലായാണ് ExpEYES നെ ഉപയോഗിക്കുന്നത്. പരീക്ഷണഫലങ്ങൾ കമ്പ്യൂട്ടറിൽ ശേഖരിക്കാനും വിശകലനം ചെയ്യാനും കൂടുതൽ സൗകര്യം നൽകുന്നതാണ് ഈ രീതി. പരിമിതമായ സമയം മാത്രമനുവദിക്കുന്ന കോളേജ് ലബോറട്ടറിയിൽ നിന്നും പഠിതാവിനെ സ്വതന്ത്രമാക്കുക എന്ന ഉദ്ദേശവും ഇതിനുണ്ട്.  
 
 .. toctree::
    :maxdepth: 1
@@ -82,13 +73,10 @@ characteristics have a dedicated GUI.
    3.14
    3.15
 
-Electricity and Magnetism
-=========================
+വൈദ്യതിയും കാന്തികതയും
+======================
 
-This section mainly contains experiments on the steady state and
-transient response of LCR circuit elements. the experimental results
-with the theory. It also gives an experiment of electromagnetic
-induction.
+ഇലക്ട്രിക്കൽ സർക്യൂട്ടുകളെപ്പറ്റിയുള്ള പഠനമാണ് ഈ അധ്യായത്തിന്റെ ഉള്ളടക്കം. റെസിസ്റ്റൻസ് , കപ്പാസിറ്റൻസ് , ഇൻഡക്റ്റൻസ് എന്നിവ വൈദ്യുതസിഗ്നലുകളോട് എങ്ങനെ പ്രതികരിക്കുന്നു എന്നതാണ് പ്രധാന പഠനവിഷയം. വൈദ്യതിയും കാന്തികതയും തമ്മിലുള്ള ബന്ധം വിശദീകരിക്കുന്ന പരീക്ഷണങ്ങളും ഉൾപ്പെടുത്തിയിട്ടുണ്ട്.
 
 .. toctree::
    :maxdepth: 1
@@ -103,18 +91,10 @@ induction.
    4.7
    4.8
 
-Sound
-=====
+ശബ്ദം 
+======
 
-Pressure variations, about an equilibrium pressure, transmitted through
-a medium is called sound. They are longitudinal waves. Moving a sheet of
-paper back and forth in air can generate these kind of pressure waves,
-like the paper cone of a loudspeaker. When the frequency is within 20 to
-20000Hz range, we can hear the sound. In this chapter, we will generate
-sound from electrical signals, detect them using the built-in microphone
-(a pressure sensor) and study the properties like amplitude and
-frequency. Velocity of sound is measured by observing the phase shift of
-digitized sound with distance.
+ഒരു മാധ്യമത്തിലൂടെ സഞ്ചരിക്കുന്ന മർദ്ദവ്യതിയാനമാണ് ശബ്ദം. ഒരു ലൗഡ്‌സ്പീക്കറിന്റെ കടലാസ് കോൺ മുൻപോട്ടും പുറകോട്ടും ചലിക്കുമ്പോൾ ശബ്ദം ഉണ്ടാവുന്നു എന്ന് നമുക്കറിയാം. വൈദ്യുതസിഗ്നലുകളെ ശബ്ദമായും തിരിച്ചും മാറ്റുന്ന പരീക്ഷണങ്ങൾ ഈ അധ്യായത്തിൽ ഉൾപ്പെടുത്തിയിരിക്കുന്നു. ശബ്ദത്തിന്റെ പ്രവേഗം അളക്കുക, ബീറ്റുകൾ ഉണ്ടാക്കുക എന്നിവയാണ് പ്രധാന പരീക്ഷണങ്ങൾ.
 
 .. toctree::
    :maxdepth: 1
@@ -123,12 +103,10 @@ digitized sound with distance.
    5.2
    5.3
 
-Mechanics
-=========
+യന്ത്രശാസ്ത്രം 
+==========
 
-Resonance phenomena is studied using a driven pendulum. Value of
-acceleration due to gravity is measured using a pendulum.
-
+ചലിക്കുന്ന വസ്തുക്കളുടെ സ്ഥാനം . പ്രവേഗം എന്നിവ അളക്കുന്നതിനുള്ള  പരീക്ഷണങ്ങളാണ് പ്രധാനമായും ഈ അധ്യായത്തിന്റെ ഉള്ളടക്കം.  പെൻഡുലം ഉപയോഗിച്ച് ചെയ്യാവുന്ന പരീക്ഷണങ്ങൾ ഉൾപ്പെടുത്തിയതിനെ പ്രധാനകാരണം അതിന്റെ ദോലനസമയം ഒരു സെക്കന്റിന്റെ പതിനായിരത്തിൽ ഒരംശം കൃത്യതയോടെ ExpEYES ഉപയോഗിച്ച് അളക്കാൻ പറ്റും എന്നതാണ്. 
 
 .. toctree::
    :maxdepth: 1
@@ -139,7 +117,7 @@ acceleration due to gravity is measured using a pendulum.
    6.4
    6.5
 
-Other experiments
+മറ്റു പരീക്ഷണങ്ങൾ 
 =================
 .. toctree::
    :maxdepth: 1
@@ -148,8 +126,8 @@ Other experiments
    7.2
    7.3
 
-I2C Modules
-===========
+I2Cമോഡ്യൂളുകൾ 
+=============
 .. toctree::
    :maxdepth: 1
 
@@ -160,14 +138,10 @@ I2C Modules
 
 
 
-Coding expEYES-17 in Python
-===========================
+ExpEYESന്റെ  പൈത്തൺ പ്രോഗ്രാമുകൾ 
+===============================
 
-The GUI programs described in the previous sections are meant for a
-fixed set of experiments. To develop new experiments, one should know
-how to access the features of expEYES from software. Important function
-calls used for communicating with the device is given below.
-
+കഴിഞ്ഞ അധ്യായങ്ങളിൽ പരിചയപ്പെട്ട പരീക്ഷണങ്ങൾ ചെയ്യാൻ കമ്പ്യൂട്ടർ പ്രോഗ്രാമ്മിങ് ആവശ്യമില്ല, കാരണം അതിനുവേണ്ട GUI പ്രോഗ്രാമുകൾ എഴുതപ്പെട്ടു കഴിഞ്ഞു. എന്നാൽ പുതിയ പരീക്ഷണങ്ങൾ രൂപപ്പെടുത്തിയെടുക്കാൻ പൈത്തൺ ഉപയോഗിച്ച്  ExpEYESഉമായി സംവദിക്കാൻ പഠിക്കണം. ഇതിന്റെ പ്രാഥമികപാഠങ്ങളാണ് ഈ അധ്യായത്തിന്റെ ഉള്ളടക്കം. numpy, matplotlib എന്നീ പൈത്തൺ മോഡ്യൂളുകളാണ് പ്രധാനമായും ഉപയോഗിക്കുന്നത്. 
 
 .. toctree::
    :maxdepth: 1
