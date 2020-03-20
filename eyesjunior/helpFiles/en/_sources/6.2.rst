@@ -26,7 +26,7 @@ Procedure
 -  Oscillate the pendulum and START digitizing
 
 .. image:: pics/pendulum-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

@@ -23,7 +23,7 @@ damage to the equipment. To measure higher voltages, scale them down
 using resistive potential divider networks.*
 
 .. image:: pics/ej-with-pc-lr.jpg
-	   :width: 600px
+	   :width: 400px
 
 
 External connections
@@ -114,7 +114,7 @@ on MIC.
 -------------------
 
 .. image:: pics/accessory.jpg
-	   :width: 600px
+	   :width: 400px
 	   
 To get started, a set of accessories are provided with expEYES.
 

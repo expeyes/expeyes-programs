@@ -19,7 +19,7 @@ Procedure
 -  Calculate RC time constant.
 
 .. image:: pics/RCtransient-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

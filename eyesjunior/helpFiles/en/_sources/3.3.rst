@@ -13,7 +13,7 @@ Make a full wave rectifier, using two diodes. Two AC waveforms,
 differing by 180 degree in phase, the second one is made by an inverting amplifier circuit.
 
 .. image:: schematics/fullwave.svg
-	   :width: 500px
+	   :width: 400px
 
 Procedure
 ---------
@@ -22,7 +22,7 @@ Procedure
 -  Enable A1, A2 and IN1
 
 .. image:: pics/fullwave-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

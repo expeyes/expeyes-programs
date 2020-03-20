@@ -41,7 +41,7 @@ It can be easily shown that this measurement can be done using AC also. We will 
 Taking voltage reading from the picture below, one can calculate the value of one resistor if the other is known. 
 
 .. image:: pics/res-compare-ac.png
-	   :width: 600px
+	   :width: 400px
  
 Discussion
 ----------

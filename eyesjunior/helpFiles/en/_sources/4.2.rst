@@ -25,5 +25,5 @@ The resulting waveforms for the RC circuit are shown below. The green trace (vol
 The phase difference across the capacitor is diplayed at the top corner. This can be compared with the calculated values. 
 
 .. image:: pics/RCsteadystate-screen.png
-	   :width: 500px
+	   :width: 400px
 

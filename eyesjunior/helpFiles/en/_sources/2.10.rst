@@ -22,7 +22,7 @@ Procedure
 
 
 .. image:: pics/line-pickup-screen.png
-	   :width: 500px
+	   :width: 400px
 
 The amplitude of the pickup depends on the wattage of the electrical equipment operating nearby,
 distance to them and on the length of the wire used.

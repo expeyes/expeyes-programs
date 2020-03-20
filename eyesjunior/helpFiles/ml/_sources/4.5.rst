@@ -14,5 +14,5 @@ RLC ട്രാൻഷിയൻറ് റെസ്പോൺസ്
 - ഡാറ്റ വിശകലനം ചെയ്യുക 
 
 .. image:: pics/RLCtransient-screen.png
-	   :width: 500px
+	   :width: 400px
 

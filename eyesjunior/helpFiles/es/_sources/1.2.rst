@@ -29,7 +29,7 @@ experimentos de electricidad y electrónica.
 
 .. _fig-e17:
 .. figure:: pics/eyes17-panel.jpg
-   :width: 500px
+	   :width: 400px
 
    ExpEYES17
    

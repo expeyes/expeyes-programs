@@ -29,7 +29,7 @@ Procedure
 The observed results are shown here.
 
 .. image:: pics/ac-dc-screen.png
-	   :width: 500px
+	   :width: 400px
 
 This should not lead to a conclusion the voltages are either DC or AC. 
 There could be combination of both. For example, take the case of a squarewave that changes between 0 and 5V.
@@ -42,7 +42,7 @@ Is the graph shown below is AC or DC ? It is a 2.5 DC plus an AC changing from -
 Separating these components will be explained in the coming sections. 
 
 .. image:: pics/sqr-wave-screen.png
-	   :width: 500px
+	   :width: 400px
 	   
 
 If the voltage is not changing with time, it is pure DC. If it is

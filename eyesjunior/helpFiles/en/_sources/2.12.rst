@@ -26,7 +26,7 @@ The observed voltage waveforms are shown below. The voltage on A2 is slightly le
 resistance of the body. 
 
 .. image:: pics/conducting-human-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

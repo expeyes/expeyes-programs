@@ -19,7 +19,7 @@ Procedure
 -  Reverse the direction of the diode to clip the opposite side
 
 .. image:: pics/clipping-screen.png
-	   :width: 500px
+	   :width: 400px
 
 
 Discussion

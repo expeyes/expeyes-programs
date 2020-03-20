@@ -11,6 +11,6 @@
 - രണ്ടും ഒരേസമയം പ്രവർത്തിപ്പിക്കുക 
 
 .. image::  pics/sound-beats-screen.png
-	   :width: 500px
+	   :width: 400px
 
 

@@ -28,12 +28,12 @@ Procedure
 The results for the OR gate made using the diodes is shown below.
 
 .. image:: pics/gate-or-diode-screen.png
-	   :width: 500px
+	   :width: 400px
 
 The results for the AND gate made using the IC 7408 is shown below.
 
 .. image:: pics/gate-and-ic-screen.png
-	   :width: 500px
+	   :width: 400px
 
 Discussion
 ----------

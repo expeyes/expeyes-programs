@@ -27,7 +27,7 @@ Procedure
 -  Enable amplitude and frequency display for A1 and A2.
 
 .. image:: pics/res-human-screen.png
-	   :width: 500px
+	   :width: 400px
 	   
 Discussion
 ----------

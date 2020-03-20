@@ -27,7 +27,7 @@ Procedure
 
 
 .. image:: pics/RLCtransient-screen.png
-   :width: 500px
+	   :width: 400px
 
 The values chosen are for an underdamped response. The coil has in inductance
 more than 100mH and a resistance of around :math:`500 \Omega`.
