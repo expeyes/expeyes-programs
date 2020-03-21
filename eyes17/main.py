@@ -36,17 +36,9 @@ QT_TRANSLATE_NOOP('MainWindow','PythonCode')
 The first submenu
 """
 QT_TRANSLATE_NOOP('MainWindow','Reconnect')
-QT_TRANSLATE_NOOP('MainWindow','LightBackGround next time')
-QT_TRANSLATE_NOOP('MainWindow','DarkBackGround next time')
+QT_TRANSLATE_NOOP('MainWindow','LightBackGround')
+QT_TRANSLATE_NOOP('MainWindow','DarkBackGround')
 QT_TRANSLATE_NOOP('MainWindow','Choose Language')
-
-"""
-Warning dialogs
-"""
-QT_TRANSLATE_NOOP('MainWindow','No immediate application')
-QT_TRANSLATE_NOOP('MainWindow',"Please restart the application to lighten the screen's background")
-QT_TRANSLATE_NOOP('MainWindow',"Please restart the application to darken the screen's background.")
-
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
@@ -484,8 +476,8 @@ class MainWindow(QMainWindow):
 		bar.clear() # reset all menu actions
 		mb = bar.addMenu(self.tr("Device"))
 		mb.addAction(self.tr('Reconnect'), self.reconnect)
-		mb.addAction(self.tr('LightBackGround next time'), self.setWBG)
-		mb.addAction(self.tr('DarkBackGround next time'), self.setBBG)
+		mb.addAction(self.tr('LightBackGround'), self.setWBG)
+		mb.addAction(self.tr('DarkBackGround'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
 		for e in languages:
