@@ -424,7 +424,7 @@ class MainWindow(QMainWindow):
 				self.expWidget.timer.stop()	 # Stop the timer loop of current widget			
 			self.hwin = None
 			self.expWidget= None				 # Let python delete it
-			w = explib.Expt(p) 
+			w = explib.Expt(p)
 			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
@@ -464,11 +464,8 @@ class MainWindow(QMainWindow):
 		sets a light background for the scope's screen
 		"""	
 		self.setConfig('ScreenTheme', 'Background', 'light')
-		QMessageBox.warning(
-			self,
-			self.tr('No immediate application'),
-			self.tr("Please restart the application to lighten the screen's background")
-		)
+		self.conf.read(cnf)
+		self.callExpt(electronicsExptsScope[0])	# Start the scope by default
 		return
 		
 	def setBBG(self):
@@ -476,11 +473,8 @@ class MainWindow(QMainWindow):
 		sets a dark background for the scope's screen
 		"""	
 		self.setConfig('ScreenTheme', 'Background', 'dark')
-		QMessageBox.warning(
-			self,
-			self.tr('No immediate application'),
-			self.tr("Please restart the application to darken the screen's background.")
-		)
+		self.conf.read(cnf)
+		self.callExpt(electronicsExptsScope[0])	 # Start the scope by default
 		return
 	
 	def makeMenu(self):

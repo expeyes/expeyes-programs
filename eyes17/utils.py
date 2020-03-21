@@ -154,7 +154,6 @@ language = en_IN
 
 config = configparser.ConfigParser()
 config.read(cnf)
-forprint = "dark" not in config['ScreenTheme']['Background']
 
 penCols   = ['y','g','r','m','c']     #pqtgraph pen colors
 penCols2  = ['#000000','b','r','m','g']     #pqtgraph pen colors
@@ -162,6 +161,8 @@ htmlcols  = ['yellow', 'green', 'red','magenta','cyan']
 htmlcols2 = ['black', 'blue', 'red','magenta','cyan']
 
 def makeFitTraceColors():
+	config.read(cnf)
+	forprint = "dark" not in config['ScreenTheme']['Background']
 	pens = []
 	if forprint == True:
 		pg.setConfigOption('background', (227, 241, 209))
@@ -175,6 +176,8 @@ def makeFitTraceColors():
 	return pens	
 		
 def makeTraceColors():
+	config.read(cnf)
+	forprint = "dark" not in config['ScreenTheme']['Background']
 	pens = []
 	if forprint == True:
 		pg.setConfigOption('background', (227, 241, 209))
@@ -182,18 +185,23 @@ def makeTraceColors():
 			x=pg.mkPen(p, width=2)
 			pens.append(x)
 	else:
+		pg.setConfigOption('background', (0, 0, 0))
 		for p in penCols:
 			x=pg.mkPen(p, width=1)
 			pens.append(x)
 	return pens	
 	
 def makeResultColors():
+	config.read(cnf)
+	forprint = "dark" not in config['ScreenTheme']['Background']
 	if forprint == True:
 		return penCols2
 	else:
 		return penCols
 		
 def makeHtmlColors():
+	config.read(cnf)
+	forprint = "dark" not in config['ScreenTheme']['Background']
 	if forprint == True:
 		return htmlcols2
 	else:
