@@ -4,8 +4,16 @@ from xml.dom import minidom
 import sys, os, re
 from subprocess import call, Popen, PIPE
 from PyQt5.QtCore import QObject, QTranslator
+from PyQt5.QtWidgets import QDialog
+import sys
+from layouts.ui_screenshot import Ui_Dialog
 
 contexts = ["MainWindow", "Expt", "Form", "helpWin", "Dialog", "editorHandler", "@default"]
+
+class translateDialog(QDialog, Ui_Dialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self, parent)
+        self.ui=self.setupUi(self)
 
 class SvgTranslator(QTranslator):
     def __init__(self, lang):

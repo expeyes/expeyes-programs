@@ -691,7 +691,8 @@ class MainWindow(QMainWindow):
 			screenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
 		except:
 			screenShotDir = '~/'
-		screenShotPath=os.path.join(screenShotDir, self.safeFileName(self.title+"-screen", 'svg').lower())
+		bw = self.conf['ScreenTheme']['BackGround']
+		screenShotPath=os.path.join(screenShotDir, self.safeFileName(self.title+"-screen-"+bw, 'svg').lower())
 		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', screenShotPath, 'SVG(*.svg)')
 		if path:
 			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
@@ -715,9 +716,73 @@ class MainWindow(QMainWindow):
 			self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
+
+		# if the language is currently English, it is possible to
+		# translate the screenshot in various languages
+		if self.lang[:2] == "en" and path:
+			self.translateScreenshot(path)
+
+	def translateScreenshot(self, path):
+		"""
+		Generate translations of a screen shot
+		:param path: the path to a svg file
+		"""
+		try:
+			translate_svg_path = self.conf['DEFAULT']['translate_svg_path']
+			supported_languages = self.conf['DEFAULT']['supported_languages']
+		except:
+			translate_svg_path = "/tmp/screen/{lang}/{filename}"
+			supported_languages = "en,es,fr,ml"
+		from translate_svg import translateDialog, SvgTranslator
+		from PyQt5.QtSvg import QSvgWidget
+		from PyQt5.QtWidgets import QVBoxLayout
+		d = translateDialog(self)
+		d.buttonBox.helpRequested.connect(self.translateScreenshotHelp)
+		svg=QSvgWidget(path)
+		d.imgFrame.setLayout(QVBoxLayout())
+		d.imgFrame.layout().addWidget(svg)
+		d.pathEdit.setText(translate_svg_path)
+		d.langEdit.setText(supported_languages)
+		ok = d.exec_()
+		if ok:
+			translate_svg_path = d.pathEdit.text()
+			supported_languages = d.langEdit.text()
+			self.setConfig('DEFAULT', 'translate_svg_path', translate_svg_path)
+			self.setConfig('DEFAULT', 'supported_languages', supported_languages)
+			self.conf.read(cnf)
+			languages = [l.strip() for l in supported_languages.split(",")]
+			filename = os.path.basename(path)
+			for lang in languages:
+				langpath = os.path.abspath(
+				  translate_svg_path.format(filename=filename, lang=lang)
+				)
+				os.makedirs(os.path.abspath(os.path.dirname(langpath)), exist_ok=True)
+				with open(langpath, "w") as outfile:
+					outfile.write(SvgTranslator(lang).translateSvg(path))
 		return
+		
+	def translateScreenshotHelp(self):
+		"""
+		callback function for the help button of screenshot
+		translation dialog.
+		"""
+		# this message is not translated, since it appears
+		# only when self.lang is set for English language
+		QtWidgets.QMessageBox.warning(self, 
+		  'Translate screenshots', 
+		  """\
+This feature is for developers. 
+When English language is chosen, the programe Eyes17
+can output localized screenshots for a list of 
+languages. The path used to save files is specified 
+in a Python-specific way {lang} refers to a language 
+string, {filename} is the name of the SVG file which 
+will be translated. Do not modify those special templates.
 
-
+You can customize the way they are used to build the path."""
+		)
+		return
+		
 	def screenshotPlot(self):
 		try:
 			plt = self.expWidget.pwin
