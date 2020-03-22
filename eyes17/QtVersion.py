@@ -28,7 +28,7 @@ if (os.getenv("QT_VERSION") and os.getenv("QT_VERSION").startswith("5")) or \
 	PQT5=True
 
 if PQT5 == True:
-	from PyQt5 import QtGui, QtCore, QtWidgets
+	from PyQt5 import QtGui, QtCore, QtWidgets, QtSvg
 	from PyQt5.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
 		QSyntaxHighlighter
 	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
@@ -45,7 +45,7 @@ if PQT5 == True:
 		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
 	from PyQt5.Qt import QT_VERSION_STR
 else:
-	from PyQt4 import QtGui, QtCore
+	from PyQt4 import QtGui, QtCore, QtSvg
 	from PyQt4 import QtGui as QtWidgets
 	from PyQt4.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
 		QSyntaxHighlighter

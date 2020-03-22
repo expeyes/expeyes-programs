@@ -7,7 +7,124 @@ from QtVersion import *
 showVersions()
 
 
+### Image export feature
+import numpy as np
 import pyqtgraph as pg
+from pyqtgraph import functions as fn
+from pyqtgraph.exporters import Exporter
+from pyqtgraph.parametertree import Parameter
+
+__all__ = ['PQG_ImageExporter']
+
+
+class PQG_ImageExporter(Exporter):
+    Name = "Working Image Exporter (PNG, TIF, JPG, ...)"
+    allowCopy = True
+
+    def __init__(self, item):
+        Exporter.__init__(self, item)
+        tr = self.getTargetRect()
+        if isinstance(item, QtGui.QGraphicsItem):
+            scene = item.scene()
+        else:
+            scene = item
+        bgbrush = scene.views()[0].backgroundBrush()
+        #bgbrush = pg.mkBrush('w')
+        bg = bgbrush.color()
+        if bgbrush.style() == QtCore.Qt.NoBrush:
+            bg.setAlpha(0)
+
+        self.params = Parameter(name='params', type='group', children=[
+            {'name': 'width', 'type': 'int',
+                'value': tr.width(), 'limits': (0, None)},
+            {'name': 'height', 'type': 'int',
+                'value': tr.height(), 'limits': (0, None)},
+            {'name': 'antialias', 'type': 'bool', 'value': True},
+            {'name': 'background', 'type': 'color', 'value': bg},
+        ])
+        self.params.param('width').sigValueChanged.connect(self.widthChanged)
+        self.params.param('height').sigValueChanged.connect(self.heightChanged)
+
+    def widthChanged(self):
+        sr = self.getSourceRect()
+        ar = float(sr.height()) / sr.width()
+        self.params.param('height').setValue(
+            self.params['width'] * ar, blockSignal=self.heightChanged)
+
+    def heightChanged(self):
+        sr = self.getSourceRect()
+        ar = float(sr.width()) / sr.height()
+        self.params.param('width').setValue(
+            self.params['height'] * ar, blockSignal=self.widthChanged)
+
+    def parameters(self):
+        return self.params
+
+    def export(self, fileName=None, toBytes=False, copy=False):
+        if fileName is None and not toBytes and not copy:
+            if USE_PYSIDE:
+                filter = ["*."+str(f)
+                          for f in QtGui.QImageWriter.supportedImageFormats()]
+            else:
+                filter = ["*."+bytes(f).decode('utf-8')
+                          for f in QtGui.QImageWriter.supportedImageFormats()]
+            preferred = ['*.png', '*.tif', '*.jpg']
+            for p in preferred[::-1]:
+                if p in filter:
+                    filter.remove(p)
+                    filter.insert(0, p)
+            self.fileSaveDialog(filter=filter)
+            return
+
+        targetRect = QtCore.QRect(
+            0, 0, self.params['width'], self.params['height'])
+        sourceRect = self.getSourceRect()
+
+        #self.png = QtGui.QImage(targetRect.size(), QtGui.QImage.Format_ARGB32)
+        # self.png.fill(pyqtgraph.mkColor(self.params['background']))
+        w, h = self.params['width'], self.params['height']
+        if w == 0 or h == 0:
+            raise Exception(
+                "Cannot export image with size=0 (requested export size is %dx%d)" % (w, h))
+        bg = np.empty((int(self.params['width']), int(
+            self.params['height']), 4), dtype=np.ubyte)
+        color = self.params['background']
+        bg[:, :, 0] = color.blue()
+        bg[:, :, 1] = color.green()
+        bg[:, :, 2] = color.red()
+        bg[:, :, 3] = color.alpha()
+        self.png = fn.makeQImage(bg, alpha=True)
+
+        # set resolution of image:
+        origTargetRect = self.getTargetRect()
+        resolutionScale = targetRect.width() / origTargetRect.width()
+        #self.png.setDotsPerMeterX(self.png.dotsPerMeterX() * resolutionScale)
+        #self.png.setDotsPerMeterY(self.png.dotsPerMeterY() * resolutionScale)
+
+        painter = QtGui.QPainter(self.png)
+        #dtr = painter.deviceTransform()
+        try:
+            self.setExportMode(True, {
+                               'antialias': self.params['antialias'], 'background': self.params['background'], 'painter': painter, 'resolutionScale': resolutionScale})
+            painter.setRenderHint(
+                QtGui.QPainter.Antialiasing, self.params['antialias'])
+            self.getScene().render(painter, QtCore.QRectF(
+                targetRect), QtCore.QRectF(sourceRect))
+        finally:
+            self.setExportMode(False)
+        painter.end()
+
+        if copy:
+            QtGui.QApplication.clipboard().setImage(self.png)
+        elif toBytes:
+            return self.png
+        else:
+            self.png.save(fileName)
+
+
+PQG_ImageExporter.register()
+
+
 
 pf = platform.platform()
 print (pf)	
@@ -298,7 +415,7 @@ class MainWindow(QMainWindow):
 		self.setConfigText.connect(self.updateConfig)
 
 		self.shortcutActions={}
-		self.shortcuts={"Ctrl+R":self.reconnect}
+		self.shortcuts={"Ctrl+R":self.reconnect,'Alt+s':self.screenshot,'Alt+p':self.screenshotPlot}
 		for a in self.shortcuts:
 			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
 			shortcut.activated.connect(self.shortcuts[a])
@@ -486,6 +603,13 @@ class MainWindow(QMainWindow):
 			if flag:
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
+
+
+
+		sm = mb.addMenu(self.tr("Screenshot"))
+		action = sm.addAction(self.tr('Screenshot Whole Window(Svg) Alt+s'),  self.screenshot)
+		action = sm.addAction(self.tr('Screenshot Plot  Alt+p'),  self.screenshotPlot)
+
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
@@ -527,6 +651,72 @@ class MainWindow(QMainWindow):
 			self.lang=l
 			self.init_UI()
 			return
+
+	def screenshot(self):
+		try:
+			self.expWidget.timer.stop()
+		except:
+			pass
+
+
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', '~/')
+		if path:
+			generator = QtSvg.QSvgGenerator()
+			generator.setFileName(path)
+			#generator.setOutputDevice(fp)
+			target_rect = QtCore.QRectF(0, 0, 800, 600)
+			generator.setSize(target_rect.size().toSize())#self.size())
+			generator.setViewBox(self.rect())
+			generator.setTitle("ExpEYES 17 Screenshot")
+			generator.setDescription("some description")
+			p = QtGui.QPainter()
+			p.begin(generator)
+			self.render(p)
+			p.end()
+
+		try:
+			self.expWidget.timer.start(self.expWidget.TIMER)
+		except:
+			pass
+
+
+	def screenshotPlot(self):
+		try:
+			plt = self.expWidget.pwin
+		except Exception as e:
+			QtWidgets.QMessageBox.warning(self, self.tr('Missing Plot'), self.tr('Unable to locate a plot. Please try to right click and export'))
+			print(' no plot found ',e)
+			return
+
+		try:
+			self.expWidget.timer.stop()
+		except:
+			pass
+
+
+		path, _filter  = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '~/', 'PNG(*.png) SVG(*.svg)')
+		if path:
+			#check if file extension is CSV
+			if path[-3:] not in ['svg','png'] :
+				path+='.png'
+
+			if path[-3:] == 'png':
+				ex = PQG_ImageExporter(plt.scene())#plotItem)
+				ex.parameters()['width'] = 600 #Default export width is 600px
+				val,ok = QtWidgets.QInputDialog.getInt(self,"Set Width", 'Enter Width of image (px). Height will be autoset',800,50,4000)
+				if ok :
+					ex.parameters()['width'] = val # Override with user conf
+				ex.export(path)
+
+			elif path[-3:] == 'svg':
+				ex = pg.exporters.SVGExporter(plt.scene())#plotItem)
+				ex.export(path)
+
+		try:
+			self.expWidget.timer.start(self.expWidget.TIMER)
+		except:
+			pass
+
 
 	def reconnect(self):
 		global p,eyes
