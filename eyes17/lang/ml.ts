@@ -2336,7 +2336,7 @@ shows the actual frequency set.
         <translation>പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="752"/>
+        <location filename="../main.py" line="750"/>
         <source>Oscilloscope</source>
         <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
@@ -2366,17 +2366,17 @@ shows the actual frequency set.
         <translation type="unfinished">ഗ്രാഫ് മാത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="707"/>
+        <location filename="../main.py" line="705"/>
         <source>Missing Plot</source>
         <translation>ഗ്രാഫ് കിട്ടുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="707"/>
+        <location filename="../main.py" line="705"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="726"/>
+        <location filename="../main.py" line="724"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>വീതി (എത്ര പിക്സൽ)</translation>
     </message>
