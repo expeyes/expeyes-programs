@@ -404,6 +404,7 @@ class MainWindow(QMainWindow):
 		self.app=app
 		self.tr_eyes=tr_eyes
 		self.tr_qt=tr_qt
+		self.title = None # the title is set by self.setExp
 
 		self.conf = configparser.ConfigParser()
 		self.conf.read(cnf)
@@ -539,6 +540,7 @@ class MainWindow(QMainWindow):
 		is not a string, then it is an iterable with possible HTML file names,
 		and the last file name may also be a module name.
 		"""	
+		self.title=e[0] # record the title of the experiments, for snapshots
 		module_name =  e[1] if type(e[1]) is str else e[1][-1]
 		explib = importlib.import_module(module_name)
 		try:
@@ -664,17 +666,38 @@ class MainWindow(QMainWindow):
 			self.init_UI()
 			return
 
+	def safeFileName(self, candidate, ext):
+		"""
+		Build a safe flie name from a candidate string
+		:param candidate: a string which can contain spaces, accented chars, etc.
+		:param ext: the extension of the file name
+		:returns: a safe ASCII file name
+		"""
+		result=""
+		for c in candidate:
+			if ord(c) in set(range(48,58)).union(set(range(65,91))).union(set(range(97,123))) or c == "-":
+				result += c
+			else:
+				result += "_"
+		return result+"."+ext
+		
 	def screenshot(self):
 		try:
 			self.expWidget.timer.stop()
 		except:
 			pass
 
-
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', '~/', 'SVG(*.svg)')
+		try:
+			screenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
+		except:
+			screenShotDir = '~/'
+		screenShotPath=os.path.join(screenShotDir, self.safeFileName(self.title+"-screen", 'svg').lower())
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', screenShotPath, 'SVG(*.svg)')
 		if path:
+			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
+			self.conf.read(cnf)
 			generator = QtSvg.QSvgGenerator()
-			if path[-3:] != 'svg':
+			if path[-4:] != '.svg':
 				path+='.svg'
 			generator.setFileName(path)
 			#generator.setOutputDevice(fp)
@@ -682,7 +705,7 @@ class MainWindow(QMainWindow):
 			generator.setSize(target_rect.size().toSize())#self.size())
 			generator.setViewBox(self.rect())
 			generator.setTitle("ExpEYES 17 Screenshot")
-			generator.setDescription("some description")
+			generator.setDescription(self.title)
 			p = QtGui.QPainter()
 			p.begin(generator)
 			self.render(p)
@@ -692,6 +715,7 @@ class MainWindow(QMainWindow):
 			self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
+		return
 
 
 	def screenshotPlot(self):
@@ -708,13 +732,19 @@ class MainWindow(QMainWindow):
 			pass
 
 
-		path, _filter  = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '~/', 'PNG(*.png) SVG(*.svg)')
+		try:
+			ScreenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
+		except:
+			ScreenShotDir = '~/'
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotDir, 'PNG(*.png) SVG(*.svg)')
 		if path:
+			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
+			self.conf.read(cnf)
 			#check if file extension is svg or png
-			if path[-3:] not in ['svg','png'] :
+			if path[-4:] not in ['.svg','.png'] :
 				path+='.svg'
 
-			if path[-3:] == 'png':
+			if path[-4:] == '.png':
 				ex = PQG_ImageExporter(plt.scene())#plotItem)
 				ex.parameters()['width'] = 600 #Default export width is 600px
 				val,ok = QtWidgets.QInputDialog.getInt(self,"Set Width", self.tr('Enter Width(px). Height will be autoset'),800,50,4000)
@@ -722,7 +752,7 @@ class MainWindow(QMainWindow):
 					ex.parameters()['width'] = val # Override with user conf
 				ex.export(path)
 
-			elif path[-3:] == 'svg':
+			elif path[-4:] == '.svg':
 				ex = pg.exporters.SVGExporter(plt.scene())#plotItem)
 				ex.export(path)
 
