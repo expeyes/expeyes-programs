@@ -156,6 +156,10 @@ QT_TRANSLATE_NOOP('MainWindow','Reconnect')
 QT_TRANSLATE_NOOP('MainWindow','LightBackGround')
 QT_TRANSLATE_NOOP('MainWindow','DarkBackGround')
 QT_TRANSLATE_NOOP('MainWindow','Choose Language')
+QT_TRANSLATE_NOOP('MainWindow','Screenshot')
+QT_TRANSLATE_NOOP('MainWindow','Whole Window Alt-s')
+QT_TRANSLATE_NOOP('MainWindow','Graph Only Alt-p')
+QT_TRANSLATE_NOOP('MainWindow','Credits')
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
@@ -333,6 +337,7 @@ class helpWin(QWebView):
 		self.lang=lang
 		helpPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'helpFiles/')
 		fn = helpPath + lang[:2] + '/' + name[1][0] + '.html'
+		print(fn)
 
 		self.load(QUrl.fromLocalFile(fn))
 		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
@@ -340,7 +345,7 @@ class helpWin(QWebView):
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
-
+	'''
 	def foundFirstHelp(self, proposed_files):
 		"""
 		Check in sequence, a list of directories for a file to be found,
@@ -364,6 +369,7 @@ class helpWin(QWebView):
 				if os.path.exists(target):
 					return target	
 		return None
+		'''
 
 class MainWindow(QMainWindow):
 	WIDTH = 950
@@ -372,7 +378,7 @@ class MainWindow(QMainWindow):
 	expName = ''
 	hlpName = ''
 	hwin = None
-	
+	credwin = None
 	uncheckHelpBox = pyqtSignal()
 	setEditorText = pyqtSignal(str)
 	setConfigText = pyqtSignal(str)
@@ -413,6 +419,7 @@ class MainWindow(QMainWindow):
 		self.uncheckHelpBox.connect(self.uncheckTheHelpBox)
 		self.setEditorText.connect(self.updateEditor)
 		self.setConfigText.connect(self.updateConfig)
+		self.credwin = None
 
 		self.shortcutActions={}
 		self.shortcuts={"Ctrl+R":self.reconnect,'Alt+s':self.screenshot,'Alt+p':self.screenshotPlot}
@@ -477,6 +484,12 @@ class MainWindow(QMainWindow):
 		@pyqtSlot(str)
 		def config(self,value):
 			self.sigConfig.emit(value)
+
+
+	def showCredits(self):
+		if self.credwin == None:
+			self.credwin = helpWin(self, (self.tr('Credits'),('1.1','Credits')), self.lang)
+		self.credwin.show()
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
@@ -604,11 +617,10 @@ class MainWindow(QMainWindow):
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
 
-
-
-		sm = mb.addMenu(self.tr("Screenshot"))
-		action = sm.addAction(self.tr('Screenshot Whole Window(Svg) Alt+s'),  self.screenshot)
-		action = sm.addAction(self.tr('Screenshot Plot  Alt+p'),  self.screenshotPlot)
+		sm = mb.addMenu(self.tr('Screenshot'))
+		action = sm.addAction(self.tr('Whole Window Alt-s'),  self.screenshot)
+		action = sm.addAction(self.tr('Graph Only Alt-p'),  self.screenshotPlot)
+		mb.addAction(self.tr('Credits'), self.showCredits)
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
@@ -659,9 +671,11 @@ class MainWindow(QMainWindow):
 			pass
 
 
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', '~/')
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', '~/', 'SVG(*.svg)')
 		if path:
 			generator = QtSvg.QSvgGenerator()
+			if path[-3:] != 'svg':
+				path+='.svg'
 			generator.setFileName(path)
 			#generator.setOutputDevice(fp)
 			target_rect = QtCore.QRectF(0, 0, 800, 600)
@@ -696,14 +710,14 @@ class MainWindow(QMainWindow):
 
 		path, _filter  = QtGui.QFileDialog.getSaveFileName(self, 'Save File', '~/', 'PNG(*.png) SVG(*.svg)')
 		if path:
-			#check if file extension is CSV
+			#check if file extension is svg or png
 			if path[-3:] not in ['svg','png'] :
-				path+='.png'
+				path+='.svg'
 
 			if path[-3:] == 'png':
 				ex = PQG_ImageExporter(plt.scene())#plotItem)
 				ex.parameters()['width'] = 600 #Default export width is 600px
-				val,ok = QtWidgets.QInputDialog.getInt(self,"Set Width", 'Enter Width of image (px). Height will be autoset',800,50,4000)
+				val,ok = QtWidgets.QInputDialog.getInt(self,"Set Width", self.tr('Enter Width(px). Height will be autoset'),800,50,4000)
 				if ok :
 					ex.parameters()['width'] = val # Override with user conf
 				ex.export(path)
