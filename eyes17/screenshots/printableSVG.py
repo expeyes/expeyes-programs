@@ -17,12 +17,14 @@ def isScreenBg(line):
         return width > 500
     return False
 
-def dark2light(lines):
+def ligthenOneLine(l):
     """
-    converts the dark style to a light style
-    :param lines: a list of strings
-    :returns: a list of strings with subsitutions done
+    process one line to make it a line of the lighter SVG file
+    :param l: one line
+    :returns: the processed line, eventually an empty string
     """
+    if isScreenBg(l):
+        return ""
     # substitute some colors and a few widths
     sub = [
         ('fill="#ffff00"', 'fill="#000000"'),
@@ -40,21 +42,38 @@ def dark2light(lines):
         ('g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1"',
          'g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="2"'),
     ]
-    result=[]
-    for l in deepcopy(lines):
-        for s in sub:
-            l=l.replace(*s)
-        if not isScreenBg(l):
-            # include all elements but exclude the screen's background image
-            result.append(l)
-    return result
-            
+    for s in sub:
+        l=l.replace(*s)
+    return l
+
+def lightenSvgFile(inFname, outFname=""):
+    """
+    Writes a SVG file for printing usage
+    :param inFname: the name of the input file
+    :param outFname: the name of the ouput file or an empty string
+    :returns: the actual name of the output file, eventually composed
+    by modifying the input file name
+    """
+    if not outFname:
+        # create outFname based on inFname
+        if "-screen" in inFname:
+            outFname = inFname.replace("-screen", "-print")
+        else:
+            outFname = inFname.replace(".svg", "")+"-print.svg"
+        if "-dark" in outFname:
+            outFname = outFname.replace("-dark", "")
+    with open(inFname) as infile, open(outFname,"w") as outfile:
+        l=infile.readline()
+        while l:
+            outfile.write(ligthenOneLine(l))
+            l=infile.readline()
+    return outFname
+
 if __name__ == "__main__":
-    if len(sys.argv) > 2:
+    outFname=""
+    if len(sys.argv) > 1:
         inFname = sys.argv[1]
+    if len(sys.argv) > 2:
         outFname = sys.argv[2]
-    f1=open(inFname).readlines()
-    f3=dark2light(f1)
-    with open(outFname,"w") as outfile:
-        for l in f3:
-            outfile.write(l)
+    outFname = lightenSvgFile(inFname, outFname)
+    print("Wrote", outFname)
