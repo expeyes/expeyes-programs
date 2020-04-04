@@ -728,7 +728,7 @@ class MainWindow(QMainWindow):
 		SVG files for print usage, with light colors.
 		:param path: the path to a svg file
 		"""
-		from screenshots.printableSVG import lightenSvgFile
+		from screenshots.printableSVG import lightenSvgFile, svg2png
 		try:
 			translate_svg_path = self.conf['DEFAULT']['translate_svg_path']
 			supported_languages = self.conf['DEFAULT']['supported_languages']
@@ -747,10 +747,17 @@ class MainWindow(QMainWindow):
 		d.imgFrame.layout().addWidget(svg)
 		d.pathEdit.setText(translate_svg_path)
 		d.langEdit.setText(supported_languages)
+		width = int(self.conf['DEFAULT'].get('pngWidth', "400"))
+		d.widthSpinBox.setValue(width)
 		ok = d.exec_()
 		if ok:
 			translate_svg_path = d.pathEdit.text()
 			supported_languages = d.langEdit.text()
+			pngWanted=False
+			if d.widthCheckBox.isChecked():
+				pngWanted=True
+				width = d.widthSpinBox.value()
+				self.setConfig('DEFAULT', 'pngWidth', str(width))
 			self.setConfig('DEFAULT', 'translate_svg_path', translate_svg_path)
 			self.setConfig('DEFAULT', 'supported_languages', supported_languages)
 			self.conf.read(cnf)
@@ -764,8 +771,11 @@ class MainWindow(QMainWindow):
 				with open(langpath, "w") as outfile:
 					svgData = SvgTranslator(lang).translateSvg(path)
 					outfile.write(svgData)
+				svg2png(langpath, app=self.app, width=width)
 				if "-dark" in langpath:
-					lightenSvgFile(langpath)
+					lightFile = lightenSvgFile(langpath)
+					svg2png(lightFile, app=self.app, width=width)
+									
 		return
 		
 	def translateScreenshotHelp(self):
