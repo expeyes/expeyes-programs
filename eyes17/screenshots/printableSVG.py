@@ -98,13 +98,16 @@ def svg2png (fName, width=600, app=None, oFilename=""):
         if "stroke-width" in g.attributes:
             g.setAttribute("stroke-width", str(float(g.getAttribute("stroke-width"))/sqrt(scale)))
     qsr=QSvgRenderer(svg.toxml().encode("utf-8"))
-    img=QImage(int(width), int(h*scale), QImage.Format_ARGB32)
+    # I do not know why, but without the correction, the height of the
+    # PNG image is too big. Are the viewport units misleading?
+    correction = 1.33
+    img=QImage(int(w*scale), int(h*scale/correction), QImage.Format_ARGB32)
     img.fill(QColor("white"))
     p=QPainter(img)
     qsr.render(p)
     p.end()
     if not oFilename:
-        oFilename = re.sub(r"svg$", "png", fName)
+        oFilename = re.sub(r"\.svg$", f"-{width}px.png", fName)
     img.save(oFilename)
     return oFilename
 
