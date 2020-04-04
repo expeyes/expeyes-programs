@@ -23,7 +23,7 @@ def dark2light(lines):
     :param lines: a list of strings
     :returns: a list of strings with subsitutions done
     """
-    # change some colors and a few widths
+    # substitute some colors and a few widths
     sub = [
         ('fill="#ffff00"', 'fill="#000000"'),
         ('g fill="#008000"', 'g fill="#0000ff"'),
@@ -50,19 +50,11 @@ def dark2light(lines):
     return result
             
 if __name__ == "__main__":
-    # from pprint import pprint
     if len(sys.argv) > 2:
-        f1 = sys.argv[1]
-        f2 = sys.argv[2]
-    else:
-        f1 = "oscilloscope-screen-dark.svg"
-        f2 = "oscilloscope-screen-light.svg"
-    f1=open(f1).readlines()
-    f2=open(f2).readlines()
+        inFname = sys.argv[1]
+        outFname = sys.argv[2]
+    f1=open(inFname).readlines()
     f3=dark2light(f1)
-    real_diffs = [ l for l in differences(f3, f2) if re.match(r"^[-\+\?].*", l)]
-    for d in real_diffs:
-        print(d, end="")
-    with open("new.svg","w") as outfile:
+    with open(outFname,"w") as outfile:
         for l in f3:
             outfile.write(l)
