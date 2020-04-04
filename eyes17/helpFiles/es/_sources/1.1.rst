@@ -1,0 +1,15 @@
+Credits
+=======
+
+Copyrights
+----------
+
+- (c) 2005-2020 Ajith Kumar B.P. <bpajith@gmail.com>
+- (c) 2015-2020 jithin B.P. <jithinbp@gmail.com>
+
+Contributors
+------------
+
+- code, suggestions and French translation: Georges Khaznadar <georgesk@debian.org>
+- Spanish translation: Bibiana Boccolini <bboccolini@gmail.com>
+- Malayalam translation: Amal M <amalmphysics@gmail.com>
