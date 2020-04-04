@@ -701,7 +701,6 @@ class MainWindow(QMainWindow):
 			if path[-4:] != '.svg':
 				path+='.svg'
 			generator.setFileName(path)
-			#generator.setOutputDevice(fp)
 			target_rect = QtCore.QRectF(0, 0, 800, 600)
 			generator.setSize(target_rect.size().toSize())#self.size())
 			generator.setViewBox(self.rect())
@@ -809,7 +808,9 @@ You can customize the way they are used to build the path."""
 			ScreenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
 		except:
 			ScreenShotDir = '~/'
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotDir, 'SVG(*.svg);;PNG(*.png)')
+		bw = self.conf['ScreenTheme']['BackGround']
+		ScreenShotPath=os.path.join(ScreenShotDir, self.safeFileName(self.title+"-small-screen-"+bw, 'svg').lower())			
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotPath, 'SVG(*.svg);;PNG(*.png)')
 		if path:
 			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
 			self.conf.read(cnf)
@@ -826,8 +827,17 @@ You can customize the way they are used to build the path."""
 				ex.export(path)
 
 			elif path[-4:] == '.svg':
-				ex = pg.exporters.SVGExporter(plt.scene())#plotItem)
-				ex.export(path)
+				generator = QtSvg.QSvgGenerator()
+				generator.setFileName(path)
+				target_rect = QtCore.QRectF(0, 0, 800, 600)
+				generator.setSize(target_rect.size().toSize())#self.size())
+				generator.setViewBox(plt.rect())
+				generator.setTitle("ExpEYES 17 Smaller Screenshot")
+				generator.setDescription(self.title)
+				p = QtGui.QPainter()
+				p.begin(generator)
+				self.render(p)
+				p.end()
 				# if the language is currently English, it is possible to
 				# translate the screenshot in various languages
 				if self.lang[:2] == "en" and path:
