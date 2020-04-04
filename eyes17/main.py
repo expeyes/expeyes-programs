@@ -734,7 +734,9 @@ class MainWindow(QMainWindow):
 			translate_svg_path = self.conf['DEFAULT']['translate_svg_path']
 			supported_languages = self.conf['DEFAULT']['supported_languages']
 		except:
-			translate_svg_path = "/tmp/screen/{lang}/{filename}"
+			translate_svg_path = os.path.join(
+				os.path.dirname(path), "screen", "{lang}", "{filename}"
+			)
 			supported_languages = "en,es,fr,ml"
 		from translate_svg import translateDialog, SvgTranslator
 		from PyQt5.QtSvg import QSvgWidget
@@ -807,7 +809,7 @@ You can customize the way they are used to build the path."""
 			ScreenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
 		except:
 			ScreenShotDir = '~/'
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotDir, 'PNG(*.png) SVG(*.svg)')
+		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotDir, 'SVG(*.svg);;PNG(*.png)')
 		if path:
 			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
 			self.conf.read(cnf)
@@ -826,6 +828,10 @@ You can customize the way they are used to build the path."""
 			elif path[-4:] == '.svg':
 				ex = pg.exporters.SVGExporter(plt.scene())#plotItem)
 				ex.export(path)
+				# if the language is currently English, it is possible to
+				# translate the screenshot in various languages
+				if self.lang[:2] == "en" and path:
+					self.translateScreenshot(path)
 
 		try:
 			self.expWidget.timer.start(self.expWidget.TIMER)
