@@ -1,0 +1,15 @@
+Crédits
+=======
+
+Copyrights
+----------
+
+- (c) 2005-2020 Ajith Kumar B.P. <bpajith@gmail.com>
+- (c) 2015-2020 jithin B.P. <jithinbp@gmail.com>
+
+Contributeurs
+-------------
+
+- code, suggestions et traduction française : Georges Khaznadar <georgesk@debian.org>
+- traduction espagnole : Bibiana Boccolini <bboccolini@gmail.com>
+- traduction en Malayalam : Amal M <amalmphysics@gmail.com>
