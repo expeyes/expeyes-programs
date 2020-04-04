@@ -725,8 +725,11 @@ class MainWindow(QMainWindow):
 	def translateScreenshot(self, path):
 		"""
 		Generate translations of a screen shot
+		BONUS: if the screen shot is in dark screen mode, creates also
+		SVG files for print usage, with light colors.
 		:param path: the path to a svg file
 		"""
+		from screenshots.printableSVG import lightenSvgFile
 		try:
 			translate_svg_path = self.conf['DEFAULT']['translate_svg_path']
 			supported_languages = self.conf['DEFAULT']['supported_languages']
@@ -758,7 +761,10 @@ class MainWindow(QMainWindow):
 				)
 				os.makedirs(os.path.abspath(os.path.dirname(langpath)), exist_ok=True)
 				with open(langpath, "w") as outfile:
-					outfile.write(SvgTranslator(lang).translateSvg(path))
+					svgData = SvgTranslator(lang).translateSvg(path)
+					outfile.write(svgData)
+				if "-dark" in langpath:
+					lightenSvgFile(langpath)
 		return
 		
 	def translateScreenshotHelp(self):
