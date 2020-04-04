@@ -69,7 +69,46 @@ def lightenSvgFile(inFname, outFname=""):
             l=infile.readline()
     return outFname
 
-if __name__ == "__main__":
+def svg2png (fName, width=600, app=None, oFilename=""):
+    """
+    Smart convertion to PNG files; stroke widths are widened when necessary,
+    so traces on an oscilloscope screen will be visible even if it is
+    downscaled. A PNG file is written.
+    :param fname: file name of a SVG drawing
+    :param width: the width of the wanted PNG drawing; its height will be
+    :param app: the current application
+    :param oFilename: facultative file name for the output PNG file
+    calculated automatically
+    :returns: the effective file name of the written PNG file
+    """
+    from xml.dom import minidom
+    from PyQt5.QtSvg import QSvgRenderer
+    from PyQt5.QtGui import QImage, QPainter, QColor, QGuiApplication
+    from math import sqrt
+
+    if not app:
+        app=QGuiApplication([])
+    doc = minidom.parse(open(fName))
+    svg = doc.getElementsByTagName("svg")[0]
+    sizeMatch = re.match(r"(\d+) (\d+) (\d+) (\d+)", svg.getAttribute("viewBox"))
+    w, h = int(sizeMatch.group(3)), int(sizeMatch.group(3))
+    groups = svg.getElementsByTagName("g")
+    scale = width/w
+    for g in groups:
+        if "stroke-width" in g.attributes:
+            g.setAttribute("stroke-width", str(float(g.getAttribute("stroke-width"))/sqrt(scale)))
+    qsr=QSvgRenderer(svg.toxml().encode("utf-8"))
+    img=QImage(int(width), int(h*scale), QImage.Format_ARGB32)
+    img.fill(QColor("white"))
+    p=QPainter(img)
+    qsr.render(p)
+    p.end()
+    if not oFilename:
+        oFilename = re.sub(r"svg$", "png", fName)
+    img.save(oFilename)
+    return oFilename
+
+def test_lighten():
     outFname=""
     if len(sys.argv) > 1:
         inFname = sys.argv[1]
@@ -77,3 +116,12 @@ if __name__ == "__main__":
         outFname = sys.argv[2]
     outFname = lightenSvgFile(inFname, outFname)
     print("Wrote", outFname)
+    return
+
+def test_convert():
+    print("Wrote", svg2png(sys.argv[1], width=300))
+    return
+
+if __name__ == "__main__":
+    test_convert()
+    
