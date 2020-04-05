@@ -1,15 +1,11 @@
 Crédits
 =======
 
-Copyrights
-----------
++ matériel & micro-logiciel : Jithin B P  (https://csparkresearch.in/expeyes-dev)
++ logiciel  : Jithin B P, Georges Khaznadar, Ajith Kumar B P
++ Traductions
+   + Malayalam  : Amal M., Ajith Kumar B P
+   + Français   : Georges Khaznadar
+   + Espagnol   : Bibiana Boccolini
++ Documentation : Georges Khaznadar, Ajith Kumar B P, V V V Satyanarayana
 
-- (c) 2005-2020 Ajith Kumar B.P. <bpajith@gmail.com>
-- (c) 2015-2020 jithin B.P. <jithinbp@gmail.com>
-
-Contributeurs
--------------
-
-- code, suggestions et traduction française : Georges Khaznadar <georgesk@debian.org>
-- traduction espagnole : Bibiana Boccolini <bboccolini@gmail.com>
-- traduction en Malayalam : Amal M <amalmphysics@gmail.com>
