@@ -1,0 +1,10 @@
+Creditos
+========
+
++ hardware & Firmware   : Ajith Kumar B P, V V V Satyanarayana
++ Software  : Ajith Kumar B P, Georges Khaznadar, Jithin B P
++ Traducciones
+   + Malayalam  : Amal M., Ajith Kumar B P
+   + Francés    : Georges Khaznadar
+   + Español    : Bibiana Boccolini
++ Documentación : Georges Khaznadar, Ajith Kumar B P, V V V Satyanarayana

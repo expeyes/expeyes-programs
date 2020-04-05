@@ -197,6 +197,7 @@ class MainWindow(QMainWindow):
 	expName = ''
 	hlpName = ''
 	hwin = None
+	credwin = None
 	
 	uncheckHelpBox = pyqtSignal()
 	setEditorText = pyqtSignal(str)
@@ -268,6 +269,11 @@ class MainWindow(QMainWindow):
 		self.screen = QDesktopWidget().screenGeometry()
 		self.show()
 		self.move(20, 20)
+
+	def showCredits(self):
+		if self.credwin == None:
+			self.credwin = helpWin(self, (self.tr('Credits'),('1.0','Credits')), self.lang)
+		self.credwin.show()
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
@@ -399,6 +405,8 @@ class MainWindow(QMainWindow):
 			if flag:
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
+		mb.addAction(self.tr('Credits'), self.showCredits)
+
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
 			em.addAction(self.tr(e[0]),  lambda item=e: self.scope_help(item))	
