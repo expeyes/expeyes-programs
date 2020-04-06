@@ -68,3 +68,37 @@ disponibles en la interfaz de usuario, que se explican a continuación. :
   * Las dos salidas de voltaje programables PV1 y PV2 también se configuran
     de manera similar....
   * Se proporcionan botones de verificación para controlar OD1 y CCS.
+
+El menú principal de la ventana
+===============================
+
+En parte arriba, la ventana tiene un menú para cambiar la experiencia
+corriente: cada una de sus entradas es una categoría de experiencias,
+como Experiencias escolares, Electrónico, Electricidad, etc... salvo la
+entrada en la izquierda "Dispositivo", que da acceso a mandos especiales.
+
+Los submenús de "Dispositivo"
+-----------------------------
+
+Cuando se activa el menú "Dispositivo", una serie de submenús aparece:
+
+- **Reconexión**: eso intentara sincronizar el computador con Eyes17 después
+  de una Reconexión.
+- **Fondo brillante**: procura un fondo brillante para mostrar las trazas
+  del osciloscopio. La experiencia corriente es olvidada, y la interfaz
+  por defecto es reinicializada.
+- **Fondo sombre**: mismo tipo de acción, pero con un fondo oscuro.
+- **Elige lengua**: permite elegir la lengua, para la interfaz y para las
+  ventanas de ayuda.
+- **Captura de pantalla**: se pueden hacer capturas de la pantalla con la
+  interfaz completo, o con solamente la trama del osciloscopio
+  (respectivamente con atajados de teclado `Alt-S` y `Alt-P`). En el
+  caso particular donde la lengua corriente es el Ingles, y el fondo
+  oscuro es seleccionado, un dialogo adicional permite además de crear
+  automáticamente una serie de capturas de pantallas traducidas en todas
+  las lenguas soportadas por Eyes17, con fondo brillante y fondo oscuro,
+  en formatos SVG (vectorial) y PNG (pixmap). Esta operación es bastante
+  rápida, y puede generar muchos datos. Se puede fácilmente rechazar.
+- **Créditos**: abre una ventana con los créditos a los autores y
+  contribuidores de ExpEYES-17.
+ 

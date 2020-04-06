@@ -72,3 +72,38 @@ disponibles dans l'interface utilisateur, qui sont expliqués ci-dessous :
   *  Des boutons à cocher sont fournis pour contrôler OD1 et CCS.
 
 
+Le menu principal de la fenêtre
+===============================
+
+Le haut de la fenêtre contient un menu pour changer l'expérience courante :
+chacune de ses entrées est une catégorie d'expériences, comme les
+Expériences scolaire, l'Électronique, l'Électricité, etc... sauf l'entrée
+tout à gauche, "Périphérique", qui contient des commandes spéciales.
+
+Les sous-menus de « Périphérique »
+----------------------------------
+
+Quand on active le menu  « Périphérique », de nouveau sous-menus
+apparaissent :
+
+- **Reconnecter**: cela essaiera de synchroniser l'ordinateur et Eyes17
+  après une reconnexion.
+- **Fond clair**: cela permet d'utiliser un fond clair pour l'affichage
+  des traces. Toute expérience en cours est oubliée, et l'interface
+  utilisateur par défaut est réinitialisée à la place.
+- **Fond sombre**: c'est le même type d'action, mais on obtient un fond
+  sombre pour afficher les traces.
+- **Choix de la langue**: cela permet de choisir la langue pour l'interface
+  utilisateur et pour les fenêtres d'aide.
+- **Copie d'écran**: on peut réaliser une copie d'écran de l'interface
+  utilisateur complète ou juste de l'afficheur de l'oscilloscope
+  (respectivement avec les raccourcis clavier `Alt-S` et `Alt-P`).
+  Dans le cas particulier où la langue courante est l'anglais, et où
+  le fond sombre est sélectionné, un dialogue permettra en plus de créer
+  automatiquement une série de copies d'écran traduites vers toutes les
+  langues supportées par Eyes17, sur fond sombre et sur fond clair,
+  en format SVG (vectoriel) et PNG (pixmap). Cette opération est assez rapide,
+  et elle peut générer quantité de données. On peut facilement la refuser.
+- **Crédits**: cela ouvre une fenêtre avec les crédits pour les auteurs et
+  les contributeurs d'expEYES-17.
+ 

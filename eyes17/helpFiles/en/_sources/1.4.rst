@@ -61,3 +61,36 @@ options available on the GUI, they are explained below.
    manner.
 -  Checkbuttons are provided to control OD1 and CCS.
 
+The top menu of the Main Window
+===============================
+
+The top of the window contains a menu to change the current experimental
+setup: every entry in this menu is a category of experiments, like
+School experiments, Electronics, Electrical, and so on... except the
+leftmost entry "Device", which contains special commands.
+
+The Device submenus
+-------------------
+
+When one triggers the "Device" menu, new submenus appear:
+
+- **Reconnect**: try to synchronize the computer and Eyes17 after
+  a reconnection.
+- **Light Background**: allows one to use a light background to
+  display the traces. Any selected experiment is forgotten, and the
+  default user interface is re-initialised instead.
+- **Dark Background**: it is the same, but one gets a dark background to
+  display the traces.
+- **Choose language**: this allows one to select the language for the
+  user interface and for the help files.
+- **Screen shot**: one can take a snapshot from the complete Graphic User
+  Interface, or just from the oscilloscope's display (respective keyboard
+  shortcuts are `Alt-S` and `Alt-P`). In the special case when English
+  language and Dark Background are set, an additional dialog will let
+  one create automatically a set of snapshots translated to every
+  language supported by Eyes17, on dark and on light backgrounds, in
+  SVG (vectorial) and PNG (pixmap) formats. This feature is rather
+  fast, and it can generate a lot of data. One can dismiss it easily.
+- **Credits**: this opens a window with credits for authors and contributors
+  of ExpEYES-17.
+ 
