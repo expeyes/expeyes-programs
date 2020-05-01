@@ -5,91 +5,101 @@
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation type="unfinished"></translation>
+        <translation>சென்சார் ரீடிங்</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>தரவு பதிவு</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>துவக்கு</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="66"/>
         <source>Scale</source>
-        <translation type="unfinished"></translation>
+        <translation>அளவு</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="124"/>
         <source>SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>சைன் ஃபிட்</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="137"/>
         <source>Pause</source>
-        <translation type="unfinished"></translation>
+        <translation>இடைநிறுத்தம்</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
-        <translation type="unfinished"></translation>
+        <translation>டேம்ப்டு சைன்</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
         <source>Configure Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>அச்சு கட்டமைப்பு</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="71"/>
         <source>REFRESH</source>
-        <translation type="unfinished"></translation>
+        <translation>புதுப்பிப்பு</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="97"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation>.</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="128"/>
         <source>CONFIRM</source>
-        <translation type="unfinished"></translation>
+        <translation>உறுதிப்படுத்தவும்</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="146"/>
         <source>Min </source>
-        <translation type="unfinished"></translation>
+        <translation>குறைந்தபட்சம் </translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="165"/>
         <source>Max </source>
-        <translation type="unfinished"></translation>
+        <translation>அதிகபட்சம் </translation>
     </message>
     <message>
         <location filename="../layouts/dio_control.ui" line="14"/>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>கட்டுப்பாடு</translation>
     </message>
     <message>
         <location filename="../layouts/dio_robot.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>உரையாடல்</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="14"/>
         <source>Screnshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="48"/>
-        <source>Translations</source>
-        <translation type="unfinished"></translation>
+        <source>Translations =</source>
+        <translation type="unfinished">மொழிபெயர்ப்புகள்</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="58"/>
         <source>Path</source>
+        <translation type="obsolete">வழி</translation>
+    </message>
+    <message>
+        <location filename="../layouts/screenshot.ui" line="61"/>
+        <source>Path =</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/screenshot.ui" line="71"/>
+        <source>PNG, width =</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -98,267 +108,267 @@
     <message>
         <location filename="../BHCurve.py" line="40"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
-        <translation type="unfinished"></translation>
+        <translation>மின்னழுத்தம் (V) -&gt; மின்னோட்டம் -&gt; காந்தப்புலம் (B)</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="42"/>
         <source>Magnetic Field (H)</source>
-        <translation type="unfinished"></translation>
+        <translation>காந்தப்புலம் (B)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="75"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>தொடங்கு</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="79"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>நிறுத்து</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="62"/>
         <source>Set Zero</source>
-        <translation type="unfinished"></translation>
+        <translation>பூஜ்ஜியத்தை அமைக்கவும்</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="87"/>
         <source>Clear Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>தடயங்களை அழிக்கவும்</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="72"/>
         <source>Save Data</source>
-        <translation type="unfinished"></translation>
+        <translation>தரவைச் சேமிக்கவும்</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="95"/>
         <source>MPU925x Sensor Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>MPU925x சென்சார் கண்டுபிடிக்க படவில்லை</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="122"/>
         <source>Completed plotting B-H</source>
-        <translation type="unfinished"></translation>
+        <translation>B-H வரைபடம் முடிந்தது </translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="132"/>
         <source>Residual Magnetic Field: %.2f</source>
-        <translation type="unfinished"></translation>
+        <translation>மீதமுள்ள காந்தப்புலம்: %.2f</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="159"/>
         <source>Started</source>
-        <translation type="unfinished"></translation>
+        <translation>தொடங்கியது</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="257"/>
         <source>User Stopped</source>
-        <translation type="unfinished"></translation>
+        <translation>பயனர் நிறுத்தப்பட்டது</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="264"/>
         <source>Cleared Traces and Data</source>
-        <translation type="unfinished"></translation>
+        <translation>தடயங்கள் மற்றும் தரவுகள் அழிக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="271"/>
         <source>No data to save</source>
-        <translation type="unfinished"></translation>
+        <translation>சேமிக்க தரவுகள் இல்லை</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="200"/>
         <source>Traces saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>தடயங்கள் சேமிக்கப்பட்டது</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="241"/>
         <source>Error. Try Device-&gt;Reconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>பிழை. சாதனத்தை முயற்சிக்கவும்-&gt;மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="40"/>
         <source>Voltage (V)</source>
-        <translation type="unfinished"></translation>
+        <translation>மின்னழுத்தம் (V)</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="42"/>
         <source>Current (mA)</source>
-        <translation type="unfinished"></translation>
+        <translation>மின்னோட்டம் (mA)</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="50"/>
         <source>Zener Diode</source>
-        <translation type="unfinished"></translation>
+        <translation>ஜெனர் டையோட்</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="61"/>
         <source>FIT with I=Io* exp(qV/nkT)</source>
-        <translation type="unfinished"></translation>
+        <translation>I=Io* exp(qV/nkT) உடன் ஃபிட் செய்யவும்</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
         <source>Fitted with Diode Equation : Io = </source>
-        <translation type="unfinished"></translation>
+        <translation>டையோட் சமன்பாடு ஃபிட் செய்யப்பட்டது : Io = </translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="109"/>
         <source> mA , Ideality factor = </source>
-        <translation type="unfinished"></translation>
+        <translation> mA , ஐடியலிட்டி காரணி = </translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="140"/>
         <source>Analysis failed. Could not fit data</source>
-        <translation type="unfinished"></translation>
+        <translation>பகுப்பாய்வு தோல்வியடைந்தது. தரவு ஃபிட் செய்ய முடியவில்லை</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="117"/>
         <source>Completed plotting I-V</source>
-        <translation type="unfinished"></translation>
+        <translation>வரைபடம் முடிந்தது</translation>
     </message>
     <message>
         <location filename="../driven-pendulum.py" line="32"/>
-        <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
-        <translation type="unfinished"></translation>
+        <source>This program sets SQ1 to high resolution mode. WG will be disabled. Frequency can be changed from 0.1 Hz to 50 Hz</source>
+        <translation type="obsolete">இந்த நிரல் SQ1ஐ உயர் தெளிவுத்திறன் பயன்முறையில் அமைக்கிறது. WG முடக்கப்படும். அதிர்வெண்ணை 0.1 Hz முதல் 50 Hz வரை மாற்றலாம்</translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="84"/>
         <source>Set SQ1</source>
-        <translation type="unfinished"></translation>
+        <translation>SQ1ஐ அமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="83"/>
         <source>sqr1 set to </source>
-        <translation type="unfinished"></translation>
+        <translation>sqr1 அமைக்கப்பட்டது </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="211"/>
         <source> Hz</source>
-        <translation type="unfinished"></translation>
+        <translation> Hz</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="38"/>
         <source>Trials</source>
-        <translation type="unfinished"></translation>
+        <translation>சோதனைகள்</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="40"/>
         <source>Time Period (mSec)</source>
-        <translation type="unfinished"></translation>
+        <translation>நேர இடைவெளி (mSec)</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="57"/>
         <source>Pendulum length</source>
-        <translation type="unfinished"></translation>
+        <translation>ஊசல் நீளம்</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="57"/>
         <source>cm</source>
-        <translation type="unfinished"></translation>
+        <translation>cm</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="67"/>
         <source>Clear Data and Traces</source>
-        <translation type="unfinished"></translation>
+        <translation>தரவு மற்றும் தடயங்களை அழிக்கவும்</translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="91"/>
         <source>Set WG</source>
-        <translation type="unfinished"></translation>
+        <translation>WGஐ அமைக்கவும்</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="84"/>
         <source>Number of trials</source>
-        <translation type="unfinished"></translation>
+        <translation>சோதனைகளின் எண்ணிக்கை</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
         <source>Frequency of Oscillation = </source>
-        <translation type="unfinished"></translation>
+        <translation>அலைவின் அதிர்வெண் = </translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
         <source> Hz. Damping Factor = </source>
-        <translation type="unfinished"></translation>
+        <translation> Hz. டேம்பிங் காரணி</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="155"/>
         <source>Timeout</source>
-        <translation type="unfinished"></translation>
+        <translation>நேரம் முடிந்தது</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="170"/>
         <source>Completed</source>
-        <translation type="unfinished"></translation>
+        <translation>முடிவடைந்தது</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="186"/>
         <source>Invalid Number of trials</source>
-        <translation type="unfinished"></translation>
+        <translation>தவறான சோதனைகளின் எண்ணிக்கை</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="192"/>
         <source>Invalid Length</source>
-        <translation type="unfinished"></translation>
+        <translation>தவறான நீளம்</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="250"/>
         <source>Started Measurements</source>
-        <translation type="unfinished"></translation>
+        <translation>அளவீடுகள் தொடங்கப்பட்டன</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="38"/>
         <source>Time (S)</source>
-        <translation type="unfinished"></translation>
+        <translation>நேரம் (S)</translation>
     </message>
     <message>
         <location filename="../XYplot2.py" line="83"/>
         <source>Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>மின்னழுத்தம்</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="50"/>
         <source>Ratio =</source>
-        <translation type="unfinished"></translation>
+        <translation>விகிதம் =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="52"/>
         <source>Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>ஆக்கிரமிப்பு =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="54"/>
         <source>Average Occupancy =</source>
-        <translation type="unfinished"></translation>
+        <translation>சராசரி ஆக்கிரமிப்பு =</translation>
     </message>
     <message>
         <location filename="../dust_sensor.py" line="56"/>
         <source>Concentration =</source>
-        <translation type="unfinished"></translation>
+        <translation>செறிவு =</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="130"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>செய்திகள்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
-        <translation type="unfinished"></translation>
+        <translation>மென்பொருளை இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
-        <translation type="unfinished"></translation>
+        <translation>மென்பொருளை சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
-        <translation type="unfinished"></translation>
+        <translation>மென்பொருளை சேமிக்கப்பட்டது </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="48"/>
         <source>Frequency (Hz)</source>
-        <translation type="unfinished"></translation>
+        <translation>அதிர்வெண் (Hz)</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="53"/>
@@ -875,42 +885,42 @@ For Driven Pendulum Expt.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1171,7 +1181,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source> Seconds</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1246,22 +1256,22 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="43"/>
         <source>Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="69"/>
         <source>start..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Time of flight =</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1375,6 +1385,11 @@ shows the actual frequency set.
         <source>Device Reconnected:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../driven-pendulum.py" line="34"/>
+        <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Form</name>
@@ -1416,7 +1431,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1323"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">.</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="251"/>
@@ -1491,7 +1506,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
         <source> Hz</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished"> Hz</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="841"/>
@@ -1904,7 +1919,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="246"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">தரவு பதிவு</translation>
     </message>
     <message>
         <location filename="../main.py" line="247"/>
@@ -2012,7 +2027,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="450"/>
+        <location filename="../main.py" line="454"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2250,117 +2265,117 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="530"/>
+        <location filename="../main.py" line="535"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="562"/>
+        <location filename="../main.py" line="568"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="609"/>
+        <location filename="../main.py" line="615"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="610"/>
+        <location filename="../main.py" line="616"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="613"/>
+        <location filename="../main.py" line="619"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="633"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="637"/>
         <source>Electronics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="644"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="642"/>
+        <location filename="../main.py" line="648"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="646"/>
+        <location filename="../main.py" line="652"/>
         <source>Mechanics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="650"/>
+        <location filename="../main.py" line="656"/>
         <source>Other Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="654"/>
+        <location filename="../main.py" line="660"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="658"/>
+        <location filename="../main.py" line="664"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="880"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="611"/>
+        <location filename="../main.py" line="617"/>
         <source>LightBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="618"/>
         <source>DarkBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="628"/>
         <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="790"/>
+        <location filename="../main.py" line="814"/>
         <source>Missing Plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="790"/>
+        <location filename="../main.py" line="814"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="625"/>
+        <location filename="../main.py" line="631"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="629"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="624"/>
+        <location filename="../main.py" line="630"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="815"/>
+        <location filename="../main.py" line="841"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2368,7 +2383,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="343"/>
+        <location filename="../main.py" line="345"/>
         <source>Help: %s</source>
         <translation type="unfinished"></translation>
     </message>

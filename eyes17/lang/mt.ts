@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="kn_IN" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="mt_IN" sourcelanguage="en">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">सेन्सर वाचन</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>

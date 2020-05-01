@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="kn_IN" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="gu_IN" sourcelanguage="en_IN">
 <context>
     <name>Dialog</name>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
         <source>Sensor Reading</source>
-        <translation type="unfinished"></translation>
+        <translation>સેન્સર વાંચન</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>વાંચન સંગ્રહ</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
-        <translation type="unfinished"></translation>
+        <translation>શરૂઆત</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="66"/>
@@ -371,9 +371,24 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../soundFreqResp.py" line="61"/>
+        <source>From</source>
+        <translation type="obsolete">From</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="66"/>
+        <source>to</source>
+        <translation type="obsolete">to</translation>
+    </message>
+    <message>
         <location filename="../XYplot.py" line="86"/>
         <source>Hz</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="93"/>
+        <source>Number of Steps =</source>
+        <translation type="obsolete">Number of Steps =</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="173"/>
@@ -595,7 +610,9 @@
         <source>
 Set SQ1 Frequency
 For Driven Pendulum Expt.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">
+Set SQ1 Frequency
+For Driven Pendulum Expt.</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="167"/>
@@ -1098,7 +1115,10 @@ For Driven Pendulum Expt.</source>
 only after Enable/Disable controls.
 shows the actual frequency set.
 </source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Change of Freqency effected
+only after Enable/Disable controls.
+shows the actual frequency set.
+</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="106"/>
@@ -1134,6 +1154,16 @@ shows the actual frequency set.
         <location filename="../soundFreqResp.py" line="50"/>
         <source>Amplitude (V)</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="77"/>
+        <source>in</source>
+        <translation type="obsolete">in</translation>
+    </message>
+    <message>
+        <location filename="../soundFreqResp.py" line="82"/>
+        <source>seconds</source>
+        <translation type="obsolete">seconds</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="183"/>
@@ -1296,6 +1326,21 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../XYplot.py" line="58"/>
+        <source>Voltage (A1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../XYplot.py" line="164"/>
+        <source>Y-intercept = %5.3f V</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../plotIV.py" line="86"/>
+        <source>Ending PV1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
         <translation type="unfinished"></translation>
@@ -1311,11 +1356,6 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="86"/>
-        <source>Ending PV1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
         <translation type="unfinished"></translation>
@@ -1323,16 +1363,6 @@ shows the actual frequency set.
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
         <source>Sec</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../XYplot.py" line="58"/>
-        <source>Voltage (A1)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../XYplot.py" line="164"/>
-        <source>Y-intercept = %5.3f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1494,6 +1524,11 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../layouts/scope_layout.ui" line="806"/>
+        <source>Current Source Voltage:</source>
+        <translation type="obsolete">Current Source Voltage:</translation>
+    </message>
+    <message>
         <location filename="../layouts/scope_layout.ui" line="742"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
@@ -1607,11 +1642,6 @@ shows the actual frequency set.
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="197"/>
-        <source>Oscilloscope</source>
-        <translation type="unfinished">ಆಸಿಲ್ಲೋಸ್ಕೋಪ್</translation>
-    </message>
-    <message>
         <location filename="../main.py" line="165"/>
         <source>Voltage measurement</source>
         <translation type="unfinished"></translation>
@@ -1714,6 +1744,11 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="185"/>
         <source>Stroboscope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="197"/>
+        <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1874,7 +1909,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="246"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">વાંચન સંગ્રહ</translation>
     </message>
     <message>
         <location filename="../main.py" line="247"/>
@@ -1987,6 +2022,16 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load scope</source>
+        <translation type="obsolete">Failed to load scope</translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load %s</source>
+        <translation type="obsolete">Failed to load %s</translation>
+    </message>
+    <message>
         <location filename="../main.py" line="142"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
@@ -2014,7 +2059,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="143"/>
         <source>School Expts</source>
-        <translation type="unfinished">ಸ್ಕೂಲ್ ಎಕ್ಸ್‌ಪೆಟ್ಸ್</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="144"/>
@@ -2212,12 +2257,12 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="535"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
         <location filename="../main.py" line="568"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
         <location filename="../main.py" line="615"/>

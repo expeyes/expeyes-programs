@@ -303,7 +303,7 @@ class Language:
 
 languages = [
 	Language('fr_FR'),Language('en_IN'), Language('es_ES'),
-	Language('ml_IN'), Language('kd_IN', False)]
+	Language('ml_IN'), Language('ta_IN'), Language('gu_IN'), Language('kd_IN', False)]
 
 
 #---------------------------------------------------------------------
