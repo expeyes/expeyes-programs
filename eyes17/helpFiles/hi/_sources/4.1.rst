@@ -1,0 +1,22 @@
+Plot I-V Curve
+==============
+Here we plot voltage across an element against the current flowing though it. The current is calculated from the voltage across a series resistance. The graph of resistors is a straight line, but not for non-linear elements like the diodes. 
+
+Objective
+---------
+
+Plot the I-V curve of several circuit elements.
+
+Procedure
+---------
+
+.. image:: schematics/res-compare.svg
+	   :width: 300px
+
+- Connect the resistors as shown in the figure.
+- R2 is used for measuring current, generally :math:`1000 \Omega`
+- Current through the circuits is Voltage at A1 / R2
+- PV1 is varied is steps. Voltage across R1 with current is plotted
+
+.. image:: pics/plot-iv-screen.png
+	   :width: 400px

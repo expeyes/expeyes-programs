@@ -1,0 +1,35 @@
+Fullwave rectifier using PN junctions
+=====================================
+
+A half wave rectifier output depends on the filter capacitor for a long duration to provide DC output. This
+results in larger ripple and not suitable for higher current. A fullwave rectifier solves this by providing
+output for both negative and positive halfcycles. However it requires two out of phase AC inputs, generally
+provided by a transformer with a center tap. 
+
+Objective
+---------
+
+Make a full wave rectifier, using two diodes. Two AC waveforms,
+differing by 180 degree in phase, are provided by the WG and :math:`\bar{WG}` outputs.
+
+.. image:: schematics/fullwave.svg
+	   :width: 300px
+
+Procedure
+---------
+
+-  Make connections on a breadboard
+-  Enable A1, A2 and A3
+-  Set WG to 1000Hz and adjust timebase to view 4 to 5 cycles
+
+.. image:: pics/fullwave-screen.png
+	   :width: 400px
+
+Discussion
+----------
+
+Adding capacitors to reduce the ripple is left as an exercise to the
+user. This experiment is only to demonstrate the working of a full wave
+rectifier, it cannot provide more than few milli amperes of current.
+
+Why full-wave rectifier is superior to half-wave rectifier ?

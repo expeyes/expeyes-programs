@@ -2745,7 +2745,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>Pendule à barre</translation>
     </message>
     <message>
-        <location filename="../main.py" line="454"/>
+        <location filename="../main.py" line="459"/>
         <source>Enable PopUp Help Window</source>
         <translation>Activer la fenêtre surgissante d&apos;aide</translation>
     </message>
@@ -2863,12 +2863,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="535"/>
+        <location filename="../main.py" line="540"/>
         <source>Failed to load scope</source>
         <translation>Échec au chargement de l&apos;oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="568"/>
+        <location filename="../main.py" line="573"/>
         <source>Failed to load %s</source>
         <translation>Échec au chargement de %s</translation>
     </message>
@@ -2888,12 +2888,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation type="obsolete">Veuillez redémarrer l&apos;application pour noicir le fond de l&apos;écran.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="615"/>
+        <location filename="../main.py" line="620"/>
         <source>Device</source>
         <translation>Périphérique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="621"/>
         <source>Reconnect</source>
         <translation>Reconnecter</translation>
     </message>
@@ -2908,97 +2908,97 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation type="obsolete">Fond sombre la prochaine fois</translation>
     </message>
     <message>
-        <location filename="../main.py" line="619"/>
+        <location filename="../main.py" line="624"/>
         <source>Choose Language</source>
         <translation>Choix de la langue</translation>
     </message>
     <message>
-        <location filename="../main.py" line="633"/>
+        <location filename="../main.py" line="639"/>
         <source>School Expts</source>
         <translation>Expériences scolaires</translation>
     </message>
     <message>
-        <location filename="../main.py" line="637"/>
+        <location filename="../main.py" line="643"/>
         <source>Electronics</source>
         <translation>Électronique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="644"/>
+        <location filename="../main.py" line="650"/>
         <source>Electrical</source>
         <translation>Électricité</translation>
     </message>
     <message>
-        <location filename="../main.py" line="648"/>
+        <location filename="../main.py" line="654"/>
         <source>Sound</source>
         <translation>Son</translation>
     </message>
     <message>
-        <location filename="../main.py" line="652"/>
+        <location filename="../main.py" line="658"/>
         <source>Mechanics</source>
         <translation>Mécanique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="656"/>
+        <location filename="../main.py" line="662"/>
         <source>Other Expts</source>
         <translation>Autres expériences</translation>
     </message>
     <message>
-        <location filename="../main.py" line="660"/>
+        <location filename="../main.py" line="666"/>
         <source>I2C Modules</source>
         <translation>Modules I2C</translation>
     </message>
     <message>
-        <location filename="../main.py" line="664"/>
+        <location filename="../main.py" line="670"/>
         <source>PythonCode</source>
         <translation>Code Python</translation>
     </message>
     <message>
-        <location filename="../main.py" line="880"/>
+        <location filename="../main.py" line="886"/>
         <source>Oscilloscope</source>
         <translation>Oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="617"/>
+        <location filename="../main.py" line="622"/>
         <source>LightBackGround</source>
         <translation>Fond clair</translation>
     </message>
     <message>
-        <location filename="../main.py" line="618"/>
+        <location filename="../main.py" line="623"/>
         <source>DarkBackGround</source>
         <translation>Fond sombre</translation>
     </message>
     <message>
-        <location filename="../main.py" line="628"/>
+        <location filename="../main.py" line="634"/>
         <source>Screenshot</source>
         <translation>Copie d&apos;écran</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Missing Plot</source>
         <translation>Graphique manquant</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>Impossible de trouver un graphique. Veuillez essayer un clic de droite et exporter</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="637"/>
         <source>Credits</source>
         <translation>Crédits</translation>
     </message>
     <message>
-        <location filename="../main.py" line="629"/>
+        <location filename="../main.py" line="635"/>
         <source>Whole Window Alt-s</source>
         <translation>Toute la fenêtre (Alt-s)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="630"/>
+        <location filename="../main.py" line="636"/>
         <source>Graph Only Alt-p</source>
         <translation>Seulement le graphique (Alt-p)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="847"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>Saisir la largeur (px). La hauteur sera auto-ajustée</translation>
     </message>
@@ -3006,7 +3006,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="345"/>
+        <location filename="../main.py" line="350"/>
         <source>Help: %s</source>
         <translation>Aide  %s</translation>
     </message>

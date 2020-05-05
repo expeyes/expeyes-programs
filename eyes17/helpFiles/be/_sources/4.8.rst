@@ -1,0 +1,39 @@
+Electromagnetic induction
+=========================
+
+A voltage is induced across a conductor kept in a changing magnetic field. This 
+can be demonsrated using a coil and a moving magnet.
+
+Objective
+---------
+
+Explore the voltage induced across a coil by a changing magnetic field,
+by dropping a small cylindrical magnet into a coil. Use a tube to guide
+the magnet through the coil.
+
+Procedure
+---------
+
+.. image:: schematics/induction.svg
+	   :width: 300px
+.. image:: pics/induction-photo.jpg
+	   :width: 400px
+
+-  Click on Start Scanning. A horizontal trace should appear
+-  Drop the magnet through the coil, until a trace is caught.
+-  Repeat the process by changing the parameters like magnet strength,
+   speed etc.
+
+.. image:: pics/induction-screen.png
+	   :width: 300px
+
+Discussion
+----------
+
+The result is shown in figure. The amplitude increases with the speed of
+the magnet. From the graph, we can find the time taken by the magnet to
+travel through the coil.
+
+The second peak is bigger than the first peak. Why ? Where will be the
+magnet at the zero crossing of the induced voltage? Drop the magnet from
+different heights and plot the voltage vs square root of the height.

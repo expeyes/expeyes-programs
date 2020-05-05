@@ -1,0 +1,52 @@
+Transient response of LCR circuits
+==================================
+
+.. image:: schematics/RLC-circuit.svg
+   :width: 300px
+
+Closing the switch in the cicuit shown above will change the voltage across the
+capacitor. Depending on the relative values of L, C and R, the voltage may
+show oscillations or it may change in an exponential manner.
+
+Objective
+---------
+
+Apply a step voltage to an LCR circuit. Capture and analyse the resulting
+voltage across the capacitor.
+
+Procedure
+---------
+
+.. image:: schematics/RLCtransient.svg
+   :width: 300px
+
+-  Use the 3000 turn coil and :math:`0.1~\mu F` capacitor
+-  Click on 5->0V STEP. Adjust x-axis and repeat if required.
+-  FIT the graph to find the resonant frequency & Damping factor.
+-  Repeat with increased capacitance and resistance values.
+
+
+.. image:: pics/RLCtransient-screen.png
+	   :width: 400px
+
+The values chosen are for an underdamped response. The coil has in inductance
+more than 100mH and a resistance of around :math:`500 \Omega`.
+To increase damping, you may add a series resistor, or use a larger value
+capacitor.
+
+Discussion
+----------
+
+Explore the oscillatory nature of L and C in series. Resonant frequency
+of series LC circuit is given by :math:`f_0 = 1/(2\pi\sqrt{LC})`. The damping
+factor is :math:`R/(2\sqrt{LC})`, and it is equal to 1 for critical
+damping.  Depending upon the value of C/L and R, the response could be under-damped,
+critically-damped or over-damped.
+
+We have used the 3000 turn coil and a :math:`0,1~\mu F` capacitor. The voltage
+across the capacitor after a 5 to 0V step is shown in figure. The
+measured resonant frequency tallies with :math:`f = 1/(2\pi\sqrt{LC})`,
+within the component tolerance values.
+
+https://en.wikipedia.org/wiki/RLC_circuit
+

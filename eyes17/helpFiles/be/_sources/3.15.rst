@@ -1,0 +1,44 @@
+PNP Transistor Output characteristics (CE)
+===========================================
+
+The basic working principle of a transistor is controlling a bigger current in circuit using a small current in another circuit. Being a three terminal device, one terminal has to be common for the two crcuits. The common emitter configuration
+is very common in most of the applications. We can explore the working of the transistor by studying the relationships between various voltages at different terminals and currents through them. 
+
+
+Objective
+---------
+
+Using a PNP transistor, plot the Collector voltage against the collector current
+in a common emitter configuration. Repeat it for different base currennts. Collector current
+is calculated from the voltage across the a 1K resistor, in the collector circuit.
+
+Procedure
+---------
+
+.. image:: schematics/pnp_ce_char.svg
+	   :width: 300px
+	   
+-  Fix the transistor on a bread board and make the connections.
+-  Set base voltage to the 1 volt and press the START button.
+-  Repeat for different base currents, increment PV2 by 0.3 volt steps.
+
+The resulting graphs are shown below. This experiments also can be done manually from
+the oscilloscope GUI, by noting down the readings.
+
+.. image:: pics/pnp-ce-char-screen.png
+	   :width: 400px
+
+
+Discussion
+----------
+
+The characteristic curves for different base currents are shown in
+figure. The collector current is obtained from the voltage difference
+across the :math:`1~k\Omega` resistor.
+
+The base current is set by setting the voltage at one end of the :math:`100~k\Omega`
+resistor, the other end is connected to the transistor base. The value
+of base current is calculated by,
+:math:`I_b = (V_{PV2} − V_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
+If A2 is not connected, the code assumes 0.6 volts at the base to
+calculate the base current.

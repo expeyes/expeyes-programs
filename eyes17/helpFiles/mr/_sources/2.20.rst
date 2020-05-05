@@ -1,0 +1,38 @@
+Digtizing sound
+===============
+
+Sound waves create pressure variations in the medium through which it
+travel. The microphone generates a voltage proportional to the pressure change.
+You can consider the microphone as a pressure sensor, but working only for time
+varying pressures.
+
+Objective
+---------
+
+Digitize sound signals from a microphone, and measure its frequency. Use
+the Piezo buzzer or any other source of sound like a tuning fork.
+
+Procedure
+---------
+
+.. image:: schematics/sound-capture.svg
+	   :width: 400px
+
+-  Enable CheckButton MIC and it's amplitude and frequency display. 
+-  Position the buzzer facing the microphone
+-  Set WG to 1000Hz, change it and watch the MIC output
+-  Use a whistle instead of the buzzer
+-  Press 'Fourier Transform' while signal is steady to analyze it.
+
+
+The microphone output is shown in figure.
+
+.. image:: pics/sound-capture-screen.png
+	   :width: 400px
+
+Discussion
+----------
+
+The ability to capture sound and measure it's frequency leads to several experiments.
+Making sound by blowing air in to one end closed tubes can be used for measuring
+the velocity of sound in air. 

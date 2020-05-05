@@ -302,10 +302,15 @@ class Language:
 			return ""
 
 languages = [
-	Language('fr_FR'),Language('en_IN'), Language('es_ES'),
-	Language('ml_IN'), Language('ta_IN'), Language('gu_IN'), Language('kd_IN', False)]
+	Language('fr_FR'), Language('en_IN'), Language('es_ES'),
+	Language('ml_IN'), Language('ta_IN'), Language('te_IN'), 
+	Language('mr_IN'), Language('gu_IN'), Language('kn_IN'),
+	Language('be_IN'), Language('pa_IN'), Language('or_IN'),
+	Language('hi_IN')
+	]
 
-
+langNames = ['French', 'English', 'Spanish', 'Malayalam', 'Tamil*', 'Telugu*',
+	'Marathi*', 'Gujarati*', 'Kannada*', 'Bengali*', 'Punjabi*', 'Oriya*', 'Hindi*']
 #---------------------------------------------------------------------
 		
 class helpWin(QWebView):
@@ -612,8 +617,9 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('DarkBackGround'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
-		for e in languages:
-			action = sm.addAction(str(e),  lambda item=str(e): self.setLanguage(item))
+		for k in range(len(languages)):
+			e = languages[k]
+			action = sm.addAction(str(langNames[k]),  lambda item=str(e): self.setLanguage(item))
 			flag=e.flag(imagePath)
 			if flag:
 				action.setIcon(QIcon(flag))

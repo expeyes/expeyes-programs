@@ -2291,7 +2291,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
         <translation>Reconexión</translation>
     </message>
     <message>
-        <location filename="../main.py" line="454"/>
+        <location filename="../main.py" line="459"/>
         <source>Enable PopUp Help Window</source>
         <translation>Activar la ventana de ayuda emergente</translation>
     </message>
@@ -2864,12 +2864,12 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="535"/>
+        <location filename="../main.py" line="540"/>
         <source>Failed to load scope</source>
         <translation>Error al cargar el osciloscopio</translation>
     </message>
     <message>
-        <location filename="../main.py" line="568"/>
+        <location filename="../main.py" line="573"/>
         <source>Failed to load %s</source>
         <translation>Error al cargar %s</translation>
     </message>
@@ -2889,12 +2889,12 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
         <translation type="obsolete">Vuelva a iniciar la aplicación para oscurecer el fondo de pantalla.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="615"/>
+        <location filename="../main.py" line="620"/>
         <source>Device</source>
         <translation>Dispositivo</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="621"/>
         <source>Reconnect</source>
         <translation>Reconexión</translation>
     </message>
@@ -2909,97 +2909,97 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
         <translation type="obsolete">Fondo oscuro (después de reiniciar)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="619"/>
+        <location filename="../main.py" line="624"/>
         <source>Choose Language</source>
         <translation>Elige lengua</translation>
     </message>
     <message>
-        <location filename="../main.py" line="633"/>
+        <location filename="../main.py" line="639"/>
         <source>School Expts</source>
         <translation>Exp. escolares</translation>
     </message>
     <message>
-        <location filename="../main.py" line="637"/>
+        <location filename="../main.py" line="643"/>
         <source>Electronics</source>
         <translation>Electrónico</translation>
     </message>
     <message>
-        <location filename="../main.py" line="644"/>
+        <location filename="../main.py" line="650"/>
         <source>Electrical</source>
         <translation>Electricidad</translation>
     </message>
     <message>
-        <location filename="../main.py" line="648"/>
+        <location filename="../main.py" line="654"/>
         <source>Sound</source>
         <translation>Sonido</translation>
     </message>
     <message>
-        <location filename="../main.py" line="652"/>
+        <location filename="../main.py" line="658"/>
         <source>Mechanics</source>
         <translation>Mecánica</translation>
     </message>
     <message>
-        <location filename="../main.py" line="656"/>
+        <location filename="../main.py" line="662"/>
         <source>Other Expts</source>
         <translation>Otras experiencias</translation>
     </message>
     <message>
-        <location filename="../main.py" line="660"/>
+        <location filename="../main.py" line="666"/>
         <source>I2C Modules</source>
         <translation>Módules I2C</translation>
     </message>
     <message>
-        <location filename="../main.py" line="664"/>
+        <location filename="../main.py" line="670"/>
         <source>PythonCode</source>
         <translation>Código Python</translation>
     </message>
     <message>
-        <location filename="../main.py" line="880"/>
+        <location filename="../main.py" line="886"/>
         <source>Oscilloscope</source>
         <translation>Osciloscopio</translation>
     </message>
     <message>
-        <location filename="../main.py" line="617"/>
+        <location filename="../main.py" line="622"/>
         <source>LightBackGround</source>
         <translation>Fondo brillante</translation>
     </message>
     <message>
-        <location filename="../main.py" line="618"/>
+        <location filename="../main.py" line="623"/>
         <source>DarkBackGround</source>
         <translation>Fondo oscuro</translation>
     </message>
     <message>
-        <location filename="../main.py" line="628"/>
+        <location filename="../main.py" line="634"/>
         <source>Screenshot</source>
         <translation>Captura de pantalla</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Missing Plot</source>
         <translation>Trama faltante</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>Incapaz de localizar una trama. Por favor haga clic de derecha y exporte</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="637"/>
         <source>Credits</source>
         <translation>Creditos</translation>
     </message>
     <message>
-        <location filename="../main.py" line="629"/>
+        <location filename="../main.py" line="635"/>
         <source>Whole Window Alt-s</source>
         <translation>Ventana entera (Alt-s)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="630"/>
+        <location filename="../main.py" line="636"/>
         <source>Graph Only Alt-p</source>
         <translation>Solo la trama (Alt-p)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="847"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>Tecle ancho (px). La altura sera auto-computatda</translation>
     </message>
@@ -3007,7 +3007,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="345"/>
+        <location filename="../main.py" line="350"/>
         <source>Help: %s</source>
         <translation>Ayuda: %s</translation>
     </message>

@@ -1,0 +1,39 @@
+Separating DC & AC components
+=============================
+
+A capacitor does not allow DC to pass through it. This property can be demonstrated using a squarewave
+swinging from 0 to 5V. 
+
+.. image:: schematics/acdc-separating.svg
+	   :width: 300px
+
+Objective
+---------
+
+Separate the AC component of a 0 to 5V sqauarewave.
+
+Procedure
+---------
+
+-  Set SQ1 to 1000 Hz.
+-  Connect SQ1 to A1 
+-  Conenct SQ1 to A2 through a  :math:`0.1 \mu F` capacitor
+
+.. image:: pics/acdc-sep-screen.png
+	   :width: 400px
+
+
+Discussion
+----------
+
+The observed waveforms with and without the series capacitor are shown
+in figure. The voltage is swinging between 0 and 5 volts. After passing
+through the capacitor the voltage swings from -2.5 volts to +2.5 volts.
+
+What will you get if you subtract a 2.5 from the y-coordinate of every
+point of the first graph? That is what the capacitor did. It did not
+allow the DC part to pass through. This original square wave can be
+considered as a 2.5V AC superimposed on a 2.5V DC.
+
+In case the output on A2 is having a DC component, connect a
+:math:`100k\Omega` resistor from A2 to GND.

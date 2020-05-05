@@ -1,0 +1,47 @@
+Resistance of water, using AC
+=============================
+
+Resistance of water is an indication of it's purity. Water conducts mostly due to the 
+dissolved salts. If you have never tried measuring the resistance of ordinary tap water
+try doing it with a multimeter. Are you getting a stable reading ?
+
+Objective
+---------
+
+Measure the resistance of ionic solutions, using AC voltages, using normal tap water. 
+
+.. image:: schematics/res-water.svg
+	   :width: 300px
+
+Procedure
+---------
+
+-  Make connections as shown in the diagram
+-  Choose the resistor comparable to that of water, start with 10k.
+-  Enable A1 and A2 with the amplitude and frequency display options.
+
+Calculate the resistance using the method of comparing with a known resistance.
+Current flowing :math:`I = \frac{V_{A2}}{R_{1}}`
+
+Resistance offered by water 
+:math:`R_{w} = \frac {V_{A1} - V_{A2}}{I} = \frac {V_{A1} - V_{A2}}{V_{A2}}\times R_{1}`.
+
+
+.. image:: pics/water-conduct.png
+	   :width: 300px
+
+Discussion
+----------
+
+The experiment may be repeated using DC from PV1. Use the DC displays of A1 and A2 while using DC.
+With DC, the resistance of the liquid changes with
+time, but AC gives a steady reading. When done using water in a cup with two wire ends dippped in it,
+the resistance does not depend much on the distance between the electrodes, the area of the
+electrode is having some effect. To find out the resistivity of water we need to use a column 
+of water in a tube, with electrode plates at both ends. 
+
+The resistance depends on the ion concentration and presence of impurities in the water used.
+Try adding some common salt and repeat the measurements.
+
+Why is the behavior different for AC and DC ? What are the charge carriers responsible for the flow of
+electricity through solutions ? Is there any chemical reaction taking place ?

@@ -1,0 +1,37 @@
+Transistor Amplifier CE
+=======================
+
+The experiment to draw the transistor characteristics can be modified to 
+convert it into a common emitter amplifier. All we need to do is to make a 
+potential divider network to reduce the amplitude of WG to a value less than 80 mV.
+This reduced output is connected to the base through a :math:`1 \mu F` capacitor.
+
+Objective
+---------
+Demonstrates the amplifier action of an NPN transistor in the
+common emitter configuration.
+
+Procedure
+---------
+
+.. image:: schematics/transistor-amplifier.svg
+	   :width: 300px
+	   
+-  Fix the transistor on bread board and make connection as shown in the figure.
+-  Set base voltage to the 1 volt and START.
+-  Set WG amplitude to 80mV.
+-  Enable A1 and A2
+-  Use the slider to change base voltage to observe the shift in operating point.
+
+The output is shown below. It can be seen that the input and output signals are 180 degree out of phase.
+
+.. image:: pics/transistor-amplifier-screen.png
+	   :width: 400px
+
+
+Discussion
+----------
+
+The base current is set the PV2 voltage applied via the :math:`100~k\Omega`
+resistor. This sets DC operating point of the circuit.Choose this to get
+minimum distortion in the output.

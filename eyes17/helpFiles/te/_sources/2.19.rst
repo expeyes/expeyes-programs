@@ -1,0 +1,29 @@
+Generating sound
+================
+
+Electrical signals can be converted into sound using devices like loudspeaker,
+Piezo buzzer etc. We use a buzzer because available loudspeakers have a low impedance
+and require more current.
+ 
+Objective
+---------
+
+Generate sound from electrical signals, using a Piezo-electric buzzer.
+
+
+Procedure
+---------
+
+.. image:: schematics/sound-generator.svg
+	   :width: 300px
+
+-  Enable A1, and its analysis
+-  Set WG to 1000Hz, change it using the Slider provided and listen to the sound.
+
+Discussion
+----------
+
+When you change the frequency of the voltage that excites the Piezo,
+both the frequency and the intesity of the sound changes. The intensity
+is maximum near 3500 Hz, due to resonance. The resonant frequency of the
+Piezo buzzer is decided by its size and the mechanical properties.

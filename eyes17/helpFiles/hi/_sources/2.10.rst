@@ -1,0 +1,29 @@
+AC mains pickup
+===============
+A changing magnetic field will be present near the wires carrying AC. Voltage will be induced
+between the ends of a conductor placed in this field. We can explore this by connecting one
+end of a long wire to the measuring equipment.
+
+Objective
+---------
+
+Learn about the AC mains supply. Explore the phenomenon of propagation of AC through free space.
+
+.. image:: schematics/line-pickup.svg
+	   :width: 300px
+
+Procedure
+---------
+
+-  Connect a long wire to A1
+-  Take one end of the wire near the AC mains line, without touching any
+   mains supply.
+-  Enable A1, and it’s analysis.
+
+
+.. image:: pics/line-pickup-screen.png
+	   :width: 300px
+
+The amplitude of the pickup depends on the wattage of the electrical equipment operating nearby,
+distance to them and on the length of the wire used.
+

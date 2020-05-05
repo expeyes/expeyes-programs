@@ -1,0 +1,124 @@
+Oscilloscope and other Equipment
+================================
+
+The first thing that appears when you open the ExpEYES GUI program is an Oscilloscope window. The graphs of the four channel scope appears on the left side. On the right side we have the Buttons, Sliders etc. to control the scope and most of the hardware features of ExpEYES, like DC supplies, waveform generators etc. To understand ExpEYES, one should start  with the Input/Output terminals and their functions as explained below.
+
+.. figure:: ./schematics/scope-outputs.svg
+   :width: 300px
+   
+Output Terminals
+----------------
+
+- CCS: :math:`1.1\ mA` Constant Current Source.
+   If you connect a resistor from this terminal to ground, a current of 1.1mA will flow irrespective of the value of the resistor. The maximum allowed value of the resistor is :math:`2k\Omega`. Using the Check-Button given on the GUI, you can enable CCS.
+   
+- PV1 and PV2: Programmable Voltages
+   The output of this terminal can be set anywhere from -5V to +5V, using software. The voltage can be verified by connecting a voltmeter between PV1 and ground. PV2 is a similar output but the range is only from  :math:`- 3.3\ V` to :math:`+ 3.3\ V`. The voltages can be set from the GUI, using Sliders or Text-Entry widgets. 
+   
+- SQ1: Square Wave Generator
+   This terminal can generate a Square wave that changes from :math:`0` to :math:`5\ V`. The frequency can be set from the GUI from 1Hz to 5kHz, but it can be programmed to generate 0.1Hz to 1MHz. SQ1 has a :math:`100\Omega` series resistor so that LEDs can be directly connected.
+
+- SQ2: Square Wave Generator
+   SQ2 is available as an option of WG, means only one is available at a time. SQ2 has no series resistor. 
+
+- OD1: Digital Output
+   The output of this terminal can be set to either :math:`0` or :math:`5\ V`. Using the Check-Button given on the GUI, you can change the voltage level at OD1.
+   
+- WG: Waveform Generator
+   This terminal is an arbitrary waveform generator. The frequency can be varied from :math:`5\ Hz` to :math:`5\ kHz`. 
+   Amplitude can be set to :math:`3\ V`, :math:`1\ V` or :math:`80\ mV`. The shape can be set to Sine, 
+   Triangular or Square. In SQR mode the output will appear on SQ2, with :math:`0` to :math:`5\ V` swing. 
+   :math:`\bar{WG}` is just an inverted output of WG.
+
+.. figure:: ./schematics/scope-inputs.svg
+   :width: 300px
+
+Input Terminals
+---------------
+
+- IN1: For measuring Capacitance
+   This has a built-in capacitance meter. By connecting between IN1 and ground, you can measure capacitance values ranging from few picoFarads to several microFarads. A Push-Button is provided for measurement.
+   
+- IN2: Frequency counter for logic signals
+   This terminal can measure the frequency and dutycycle of digital signals, swinging
+   between :math:`0` and :math:`3` to :math:`5\ V`. A Push-Button provided for measurement.
+   
+- SEN: Input for measuring resistance
+   This is actually a voltage measurement terminal that is is internally connected to :math:`3.3\ V` via a :math:`5.1\ k\Omega` resistor. We calculate the value of the externally connected load by using Ohm's law. This terminal is mostly used for connecting resistive sensors like photo-transistors, for time interval measurements.
+  
+- A1 and A2: Voltage measurement terminal
+   Functions as voltmeter and oscilloscope inputs. Maximum Input range  :math:`\pm\ 16\ V`. An AC/DC mode selection slider switch is provided on the box. 
+   The maximum input voltage range is selectable from pull down menu. Input A2 is same as A1, but no AC coupled mode.
+
+- A3: Voltage measurement terminal
+   This has only a range of :math:`\pm\ 3.3\ V`. Inputs to A3 can be internally amplified by connecting a resistance from Rg to Ground. This helps measuring very small signals.
+
+- MIC: Microphone input
+   A Condenser microphone can be directly connected to this. The output appears as the fourth channel of the oscilloscope
+
+-  Rg: Gain resistor for A3. :math:`Gain = 1 + \frac{R_{g}}{100}`.
+   For example connecting a :math:`1\ k\Omega` resistor gives a gain of
+   :math:`11`.
+
+- I2C Interface
+   I2C standard circuits can be connected to this. A wide range of sensors to measure temperature, pressure, velocity, acceleration, magnetic field etc. are available in the market. ExpEYES supports many of them from the GUI.
+
+- :math:`\pm\ 6V/10mA` DC Supply
+  This sockets provide DC power for Op-Amp circuits, with very limited current.
+  
+Graphical User Interface
+------------------------
+  
+.. figure:: pics/scope-screen-en.png
+	   :width: 400px
+ 
+The GUI menubar consists of several pulldown menus for different categories of experiments. 
+The left side of the the screen is the four channel oscilloscope window. On the right side there are Buttons, Sliders and Text Fields for accessing the hardware features explained earlier.
+      
+Oscilloscope Controls
+---------------------
+
+- Channel Selection
+   The four channels A1, A2, A3 and MIC can be selected for display using the Check buttons on lower half of the right side.
+
+- Input Voltage Range
+   Pulldown menus are provided against each channel for selecting the input voltage range. A1 and A2 are having a maximum range of :math:`\pm\ 16\ V`.
+
+- Amplitude and Frequency    
+   Check buttons on the right side of the range selection menu enables mathematical fitting of the captured data using a Sine function. The calculated Amplitude and Frequency are displayed.
+   
+- Time base Slider
+   The time base slider is for selecting the duration of the X-axis. The allowed full range can be set from 1mS to 500mS.  
+   
+- Trigger Controls
+   A digital storage oscilloscope digitizes periodically and captures the input for a given duration and displays the result. To get a stable trace, the amplitude and slope of the input and the beginning of each capture operation should be kept same. This starting value is decided by the trigger level setting.
+  
+- Saving Data
+   The data of the traces can be saved to a file in text format. The time and voltage values of each selcted trace will be written to a file.
+   
+- Cursor
+   A vertical cursor can be enabled to view the instantaneous values of each channel at the cursor position along with time.
+  
+- :math:`A1-A2` Option
+   This option draws a trace showing the difference of A1 and A2 inputs.
+ 
+- Fourier Transform
+    The Fourier transform converts the data from time domain to frequency domain. The amplitudes of the frequency components will be displayed. The value of the fundamenta frequency will be observed.
+
+Other Controls and Readbacks
+----------------------------
+
+- On the top right side there are Check boxes labelled A1, A2 and A3. Selecting them will display the instantaneous values of the voltages at terminals **A1**, **A2** and **A3**. These are useful for measuring DC volatges only.
+
+- The value of the resistance connected between **SEN** and **GND** is displayed below the DC voltage displays.
+
+- Next is a Button for measuring the capacitance connected between **IN1** and **GND**.
+
+- A Button is available for measuring the frequency of a digital pulse at **IN2**. The signals should be swinging from zero to 5 volts.
+
+- Two CheckButtons are provided for selecting **OD1** and **CCS**.
+
+- A pulldown Menu is given for selecting the waveshape of **WG**. When *SQR* is selected, the output shifts to **SQ2**. There is also a menu to select the amplitude of **WG** output. The allowed values are 3V, 1V and 80mV.
+
+- There are four vertical sliders on the left side of the GUI. They are used for vertically shifting the traces. This is useful in experiments like the study of logic gates.
+

@@ -1,0 +1,11 @@
+Credits
+=======
+
++ hardware & Firmware   : Jithin B P  (https://csparkresearch.in/expeyes-dev)
++ Software  : Jithin B P, Georges Khaznadar, Ajith Kumar B P
++ Translations
+   + Malayalam  : Amal M., Ajith Kumar B P
+   + French     : Georges Khaznadar
+   + Spanish    : Bibiana Boccolini
++ Documentation : Georges Khaznadar, Ajith Kumar B P, V V V Satyanarayana
+

@@ -1,0 +1,7 @@
+Data Logger
+===========
+
+Data logger is a program that allows the user to record the voltage inputs as a function of time.
+
+- Select Channels A1, A2, A3 or SEN
+- Record them for the desired time interval

@@ -1,0 +1,39 @@
+IC555 Oscillator
+================
+
+IC555 is a very popular time circuit IC. It can be configured as an astable or monostable
+multivibrator. The values of frequency and duty cycle are decided by two resistors and a capacitor. 
+
+
+Objective
+---------
+
+Wire an astable multivibrator circuit using IC555, measure the frequency
+and duty cycle of the output.
+
+Procedure
+---------
+
+.. image:: schematics/ic555.svg
+	   :width: 300px
+
+-  Make connections
+-  measure frequency and duty cycle.
+-  Repeat by changing the value of R1.
+
+
+The output waveform is shown below. The frequency and dutycycle can be calculated using the equations given below
+and compared with the measurements.
+
+The durations of high and low voltage are: :math:`T_{1} = 0.693(R_{1} + R_{2})C` and :math:`T_{2} = 0.693 R_{2} C`.
+Frequency :math:`f = \frac{1}{(T_{1}+T_{2})}` and duty cycle :math:`= \frac{T_{1}}{(T_{1}+T_{2})}`
+
+.. image:: pics/ic555-screen.png
+	   :width: 400px
+
+Discussion
+----------
+
+The output waveform is shown in figure. Change the value of resistors or
+the capacitor, and compare the frequency and duty cycle with the
+calculated values. Variable resistors may be used to change the frequency and duty cycle.

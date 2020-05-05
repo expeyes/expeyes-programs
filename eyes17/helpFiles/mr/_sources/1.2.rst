@@ -1,0 +1,182 @@
+The equipment
+=============
+
+ExpEYES-17 is interfaced and powered by the USB port of the computer,
+and it is programmable in Python. It can function as a low frequency
+oscilloscope, function generator, programmable voltage source, frequency
+counter and data logger. For connecting external signals, it has connectors 
+on the top panel. as shown in the figure below. The software can monitor and 
+control the voltages at these terminals. Inorder to measure other 
+parameters (like temperature, pressure etc.), we
+need to convert them in to electrical signals by using appropriate
+sensor elements. The accuracy of the voltage measurements is decided by
+the stability of the 3.3V reference used, it is 50ppm per degree
+celcius. The gain and offset errors are eliminated by initial
+calibration, using a 16bit ADC. Even though our primary objective is to
+do experiments, you are advised to read through the brief description of
+the equipment given below. The device can be also used as a test
+equipment for electrical and electronics engineering experiments.
+
+**IMPORTANT :**
+
+*The external voltages connected to ExpEYES17 must be within the allowed
+limits. Inputs A1 and A2 must be within ±16 volts range and Inputs IN1
+and IN2 must be in 0 to 3.3V range. Exceeding these limits may result in
+damage to the equipment. To measure higher voltages, scale them down
+using resistive potential divider networks.*
+
+.. image:: pics/eyes-box.jpg
+	   :width: 400px
+
+
+External connections
+--------------------
+
+The functions of the external connections briefly explained below. All
+the black coulored terminals are at ground potential, all other voltages
+are measured with respect to it.
+
+Outputs:
+^^^^^^^^
+
+Constant Current Source (CCS) :
+"""""""""""""""""""""""""""""""
+
+The constant current source can be switched ON and OFF under software
+control. The nominal value is 1.1 mA but may vary from unit to unit, due
+to component tolerances. To measure the exact value, connect an ammeter
+from CCS to GND. Another method is to connect a known resistance (~1k)
+and measure the voltage drop across it. The load resistor should be less
+than 3k for this current source.
+
+Programmable Voltage (PV1) :
+""""""""""""""""""""""""""""
+
+Can be set, from software, to any value in the -5V to +5V range. The
+resolution is 12 bits, implies a minimum voltage step of around 2.5
+millivolts.
+
+Programmable Voltage (PV2) :
+""""""""""""""""""""""""""""
+
+Can be set, from software, to any value in the -3.3V to +3.3V range. The
+resolution is 12 bits.
+
+Square Wave SQ1:
+""""""""""""""""
+
+Output swings from 0 to 5 volts and frequency can be varied 4Hz to
+100kHz. All intermediate values of frequency are not possible. The duty
+cycle of the output is programmable. Setting frequency to 0Hz will make
+the output HIGH and setting it to :math:`-1` will make it LOW, in both cases
+the wave generation is disabled. SQR1 output has a :math:`100~\Omega` **series
+resistor** inside so that it can drive LEDs directly.
+
+Square Wave SQ2:
+""""""""""""""""
+
+Output swings from 0 to 5 volts and frequency can be varied 4Hz to
+100kHz. All intermediate values of frequency are not possible. The duty
+cycle of the output is programmable. SQR2 is not available when WG is
+active.
+
+Digital Output (OD1) :
+""""""""""""""""""""""
+
+The voltage at OD1 can be set to 0 or 5 volts, using software.
+
+Sine/Triangular Wave WG:
+""""""""""""""""""""""""
+
+Frequency can be varied from 5Hz to 5kHz. The peak value of the
+amplitude can be set to 3 volts, 1.0 volt or 80 mV. Shape of the output
+waveform is programmable. Using the GUI sine or triangular can be
+selected. WG bar is inverted WG.
+
+Inputs:
+^^^^^^^
+
+Capacitance meter IN1:
+""""""""""""""""""""""
+
+Capacitance connected between IN1 and Ground can be measured. It works
+better for lower capacitance values, upto 10 nanoFarads, results may not
+be very accurate beyond that.
+
+Frequency Counter IN2:
+""""""""""""""""""""""
+
+Capable of measuring frequencies upto several MHz.
+
+Resistive Sensor Input (SEN):
+"""""""""""""""""""""""""""""
+
+This is mainly meant for sensors like Light Dependent Resistor,
+Thermistor, Photo-transistor etc. SEN is internally connected to 3.3
+volts through a 5.1\ k\ Ω resistor.
+
+:math:`\pm16\ V` Analog Inputs, A1 & A2:
+""""""""""""""""""""""""""""""""""""""""
+
+Can measure voltage within the ±16 volts range. The input voltage range
+can be selected from .5V to 16V fullscale. Voltage at these terminals
+can be displayed as a function of time, giving the functionality of a
+low frequency oscilloscope. The maximum sampling rate is 1 Msps
+/channel. Both have an input impedance of 1\ M\ Ω .
+
+:math:`\pm3.3\ V` Analog Input A3:
+""""""""""""""""""""""""""""""""""
+
+Can measure voltage within the ±3.3 volts range. The input can be
+amplified by connecting a resistor from Rg to Ground,
+:math:`gain=1 + \frac{R_g}{10000}`.
+This enables displaying very small amplitude signals.
+The input impedance of A3 is 10\ M\ Ω.
+
+Microphone input MIC:
+"""""""""""""""""""""
+
+A condenser microphone can be connected to this terminal and the output
+can be captured.
+
+I2C Sensor Interface:
+^^^^^^^^^^^^^^^^^^^^^
+
+The four connections (+5V, Ground, SCL and SDA) of the 8 terminal berg
+strip supports I2C sensors. The software is capable of recognizing a
+large number of commercially available I2C sensors.
+
+:math:`\pm\ 6\ V/10\ mA` Power supply:
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The VR+ and VR- are regulated power outputs. They can supply very little
+current, but good enough to power an Op-Amp.
+
+1.2.2 Accessory Set
+-------------------
+
+.. image:: pics/accessory.jpg
+	   :width: 400px
+	   
+To get started, a set of accessories are provided with expEYES.
+
+-  Pieces of wires, with pin and with crocodile clip.
+-  Condenser microphone with leads.
+-  Inductor Coil (2) : 44SWG wire on 1cm dia bobbin. Around 3000 Turns
+   (some may have more turns). These coils can be used for studying
+   inductance, electromagnetic induction etc.
+-  Piezo Electric Discs (2) : Resonant frequency is around 3500 Hz. Can
+   be energized by WG output or SQR1. Discs are enclosed in a plastic
+   shell that forms a cavity, that enhances the amplitude of sound
+   produced.
+-  DC Motor : Should be powered by a DC voltage less than 3 volts.
+-  Permanent Magnets : (a) 10mm dia & length (b) 5 mm dia & 10 mm length (c)
+   Button size magnets(2)
+-  5mm LEDS : RED, BLUE, GREEN, WHITE
+-  Capacitors : 100pF, 0.1 µF , 1 µF et 22 µF
+-  Inductor : 10 mH / 20Ω,
+-  Resistors : 560Ω, 1k\ Ω, 2.2k\ Ω , 10k\ Ω , 51k\ Ω and 100 k\ Ω
+-  LDR
+-  Two silicon diodes (1N4148) and one 3.3 volts zener diode
+-  NPN Transistor( 2N2222)
+

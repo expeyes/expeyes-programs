@@ -1,0 +1,41 @@
+Digitizing Pendulum Oscillations
+================================
+
+The nature of oscillations of a pendulum can be studied by digitizing the angular
+displacement as a function of time. By fitting this data with a sinusoid, the
+time period can be extracted. However, it is much cheaper to digitize the velocity
+of the pendulum, using a simple DVD motor. Attaching the pendulm to the axis of the
+motor and oscillating it induces voltage, proportional to the angular velocity
+of the pendulum.
+
+Objective
+---------
+
+Digitize the angular velocity of a rod pendulum and calculate the value of 'g'
+from it.
+
+Procedure
+---------
+
+.. image:: schematics/pend-digitize.svg
+	   :width: 350px
+
+-  Attach some sort of rigid pendulum to the axis of the motor.
+-  Connect the motor between A3 and GND
+-  Connect :math:`100~\Omega` resistor from Rg to Ground
+-  Oscillate the pendulum and START digitizing
+
+.. image:: pics/pendulum-screen.png
+	   :width: 400px
+
+Discussion
+----------
+
+The observed waveform is shown in figure. Fitting it with equation
+:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, using Grace gave an
+angular frequency of :math:`10~Hz`.
+
+The pendulum should be made with a heavy bob and a light weight rod
+connecting it to the axis of the motor. In this case, the DC motor acts
+like a generator and the voltage is proportional to the instantaneous
+angular velocity.

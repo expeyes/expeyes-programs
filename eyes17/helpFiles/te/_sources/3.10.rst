@@ -1,0 +1,35 @@
+Summing Amplifier
+=================
+
+Operational amplifiers can be used for simulating mathematical operations like addition, integration,
+differentiation etc. 
+
+Objective
+---------
+
+Make a summing amplifier using an Op-Amp and test it.
+
+Procedure
+---------
+
+.. image:: schematics/opamp-summing.svg
+	   :width: 300px
+
+-  Make the circuit on bread board, as shown. Use :math:`1k\Omega` for all resistors
+-  Set PV1 and PV2 to 1V each
+-  Enable A1, A2 and A3
+-  Observe the outputs. Verify that the output is the sum of inputs
+
+The output is given by 
+:math:`V_{out}= \frac{R_{1}}{R_{f}}V_{1} + \frac{R_{2}}{R_{f}}V_{2} + ...`
+
+
+Discussion
+----------
+
+The summation can be done using AC waveforms also. Our supply voltage is only 6V. So the output should be 
+kept less than 4V.
+
+-  Replace :math:`R_{1}` with :math:`10k\Omega` and feed SQ1 instead of PV1.
+
+

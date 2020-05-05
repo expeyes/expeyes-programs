@@ -2013,7 +2013,7 @@ shows the actual frequency set.
         <translation>റോഡ് പെൻഡുലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="454"/>
+        <location filename="../main.py" line="459"/>
         <source>Enable PopUp Help Window</source>
         <translation>സഹായജാലകം തുറക്കുക</translation>
     </message>
@@ -2266,12 +2266,12 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="535"/>
+        <location filename="../main.py" line="540"/>
         <source>Failed to load scope</source>
         <translation>സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="568"/>
+        <location filename="../main.py" line="573"/>
         <source>Failed to load %s</source>
         <translation>%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
@@ -2291,12 +2291,12 @@ shows the actual frequency set.
         <translation type="obsolete">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="615"/>
+        <location filename="../main.py" line="620"/>
         <source>Device</source>
         <translation>ഡിവൈസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="621"/>
         <source>Reconnect</source>
         <translation>റീക്കണക്റ്റ്</translation>
     </message>
@@ -2311,97 +2311,97 @@ shows the actual frequency set.
         <translation type="obsolete">അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="619"/>
+        <location filename="../main.py" line="624"/>
         <source>Choose Language</source>
         <translation>ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="633"/>
+        <location filename="../main.py" line="639"/>
         <source>School Expts</source>
         <translation>സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="637"/>
+        <location filename="../main.py" line="643"/>
         <source>Electronics</source>
         <translation>ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="644"/>
+        <location filename="../main.py" line="650"/>
         <source>Electrical</source>
         <translation>ഇലെക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="648"/>
+        <location filename="../main.py" line="654"/>
         <source>Sound</source>
         <translation>ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="652"/>
+        <location filename="../main.py" line="658"/>
         <source>Mechanics</source>
         <translation>യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="656"/>
+        <location filename="../main.py" line="662"/>
         <source>Other Expts</source>
         <translation>മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="660"/>
+        <location filename="../main.py" line="666"/>
         <source>I2C Modules</source>
         <translation>I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="664"/>
+        <location filename="../main.py" line="670"/>
         <source>PythonCode</source>
         <translation>പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="880"/>
+        <location filename="../main.py" line="886"/>
         <source>Oscilloscope</source>
         <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="617"/>
+        <location filename="../main.py" line="622"/>
         <source>LightBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="618"/>
+        <location filename="../main.py" line="623"/>
         <source>DarkBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="628"/>
+        <location filename="../main.py" line="634"/>
         <source>Screenshot</source>
         <translation>സ്ക്രീൻഷോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="629"/>
+        <location filename="../main.py" line="635"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">മൊത്തം ജാലകം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="630"/>
+        <location filename="../main.py" line="636"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">ഗ്രാഫ് മാത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Missing Plot</source>
         <translation>ഗ്രാഫ് കിട്ടുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="820"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="847"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>വീതി (എത്ര പിക്സൽ)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="637"/>
         <source>Credits</source>
         <translation type="unfinished">പ്രവർത്തകർ</translation>
     </message>
@@ -2409,7 +2409,7 @@ shows the actual frequency set.
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="345"/>
+        <location filename="../main.py" line="350"/>
         <source>Help: %s</source>
         <translation>സഹായം: %s</translation>
     </message>

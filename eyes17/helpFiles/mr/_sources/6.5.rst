@@ -1,0 +1,27 @@
+Gravity by Time of Flight
+=========================
+
+The value of acceleration due to gravity can be obtained by measuring the time of flight
+of a freely falling body, for a given distance.
+
+Objective
+---------
+
+Measure accelration due to gravity by time of flight
+
+Procedure
+---------
+
+.. image:: schematics/gravity-tof.svg
+	   :width: 300px
+
+-  Attach the iron ball on the electromagnet
+-  Keep the contact sensor below, at a distance of several tens of centimeters
+-  Press START
+
+Discussion
+----------
+
+The program assumes that there is no delay between the removal of the voltage
+applied to the coil and the detachment of the ball. This is not true and causes
+an error in the results.

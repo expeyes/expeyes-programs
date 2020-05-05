@@ -1,0 +1,74 @@
+Software Installation
+=====================
+ExpEYES can run on any computer having a USB port and a Python 
+Interpreter along with the modules required for accessing them.
+The USB interface is handled by a device driver program that
+presents the USB port as a Serial port to the Python module. The
+communication the expEYES is done using a library written in Python.
+Programs with GUI have been written for many experiments. ExpEYES-17
+communication library requires the 'numpy' module. The GUI depends
+on packages like pyqtgraph and scipy. The code has been ported to 
+python3 and installation can be done in several ways.
+
+On Debian-10 , Ubuntu-18.04 and above
+-------------------------------------
+$ sudo apt update
+$ sudo apt install eyes17
+
+This will install the versions available in the repository of Ubuntu or Debian.
+To install the latest versions download the .deb packages from
+https://expeyes.in/software.html and install using the commands.
+
+ $ sudo apt-remove eyes17          # to remove any old version
+ $ sudo gdebi downloaded_deb_file
+
+while connected to the Internet
+
+Any GNU/Linux distributions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Download **eyes17-x.x.x.zip** (the latest version) from
+https://expeyes.in/software.html
+upzip it, and change to the newly created
+folder named 'eyes17'. Issue the command
+
+   $ sudo sh postinst       # set user write permission
+   
+   $ python main.py
+
+You will get error messages for any missing packages that are required
+for expeyes. Install them one by one and try again. Python programs
+required for several experiments are in the same directory, they are
+called by ’main.py’.
+
+The expEYES Live CD / USB pendrive
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The ISO image containing support for eyes17 can be downloaded from
+the web page http://expeyes.in/software.html
+Make a DVD or USB memory stick bootable using this ISO image (Download
+rufus from https://rufus.akeo.ie to do this under MSWindows)
+
+Switch off the PC and insert the liveCD/Pendrive and switch it on. Enter
+the BIOS while booting, make the CDdrive/USB hard disk as the first boot
+device. A desktop will appear and you can start expEYES-17 from the menu
+**Applications->Education**->ExpEYES-17. You can also start it from a
+Terminal using the command:
+
+   $ python /usr/share/expeyes/eyes17/main.py
+
+Installing on MS Windows
+-------------------------
+
+**Bundled Installer:** 
+Download and install eyes17-setup installer, from the link provided on
+https://expeyes.in/software.html
+
+Run the installer and launch eyes17 from
+the icon created on the desktop. This has been tested on Windows10.
+
+Another method is to Install Python3 and the required modules to run 
+the ExpEYES17 code. Download  the latest eyes17 zip file.
+Since the programs are written in Python, the same source code works 
+on GNU/Linux and Windows.
+

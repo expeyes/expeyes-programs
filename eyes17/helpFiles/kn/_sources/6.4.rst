@@ -1,0 +1,32 @@
+Distance Measurement, Echo module
+=================================
+
+Distance can be measured by sending a burst of sound to the target and measuring the
+time interval to receive the echo. There are low cost electronics modules
+available for such applications. Hy-SR04 is such a module, that uses a 40kHz
+Piezo transmitter and receiver combination.
+
+Objective
+---------
+
+Measure distance by measuring the time taken by :math:`40~kHz` pulse train to
+echo from a hard surface, using HY-SR04
+
+Procedure
+---------
+
+.. image:: schematics/sr04-dist.svg
+	   :width: 300px
+
+-  Make the connections as shown in the schematic
+-  Keep a flat surface around 10 cm from the SR04 module
+-  Press START
+-  Change the distance with time
+
+Discussion
+----------
+
+The distance is calculated from the time taken by a burst of sound to
+echo from the surface kept in front of the module. The distance can be
+measured as function of time, enabling to calculate velocity,
+acceleration etc.

@@ -1,0 +1,96 @@
+The main GUI program
+====================
+
+Start Applications->Education->ExpEYES-17 from the menu. A four channel
+oscilloscope screen with several extra features will open as shown in
+the figure. Various experiments can be selected from the menu.
+
+.. _the-scope17-screen:
+.. figure:: pics/eyes17-screen.png
+
+    The ExpEYES-17 main GUI
+
+The main window looks like a low frequency four channel oscilloscope,
+with some extra features, on the right side panel. Applications for
+various experiments can be selected from the pulldown menu. A brief
+description of the oscilloscope program is given below.
+
+-  Any of the four inputs (A1, A2, A3 or MIC) can be enabled using the
+   corresponding checkbox. The input range can be selected by clicking
+   on the menubutton on the right side of the checkbox. Select the
+   desired input range from the popup menu.
+-  There is another checkbox, to enable mathematical fitting of the data
+   using :math:`V=V_0 sin(2\pi f t + \theta )+C` to show the amplitude and
+   frequency.
+-  The horizontal scale (time base) can be changed by a slider, from .5
+   mS fullscale to 500 mS full scale.
+-  The Checkbutton **Freeze**, allows to pause and resume the
+   oscilloscope operation.
+-  The Trigger level can be set by a slider, and there is a menubutton
+   to select the trigger source.
+-  To save the traces to a file, edit the filename and click on the
+   **SaveTo** button.
+-  Clicking on **FFT** shows the frequency spectrum of all the eneabled
+   channels, appears on popup windows.
+
+In addition to the Oscilloscope, there are several measurement/control
+options available on the GUI, they are explained below.
+
+-  If selected, the voltages at the inputs A1, A2 and A3 are sampled
+   every second and displayed.
+-  The resistance connected between SEN and Ground is measured and
+   displayed every second.
+-  Clicking **Capacitance on IN1**, measures the value of the capacitor
+   connected between IN1 and GND.
+-  Clicking **Frequency on IN2**, measures the frequency of an external
+   digital (TTL standard) pulse connected to IN2
+-  The shape of the waveform can be selected using the menubutton,
+   default shape is sine. It can be changed to triangular. When the
+   square wave option is selected, the output is shifted to SQ2. You
+   cannot have sine/triangular and SQ2 at the same time.
+-  Frequency of the Waveform generator WG can be set using the slider or
+   the text entry window. The two input methods follow each other,
+   changing the slider will change the text field and entering data
+   using text field will set the slider to that value. The frequency
+   will be set to the nearest possible value and it will be displayed in
+   the message window at the bottom. The amplitude of WG output can be
+   set to 3 volts, 1 volt or 80 mV.
+-  SQ1 can be set using the same method as explained above. The duty
+   cycle can be set between 1% to 99%, default is 50%.
+-  The programmable volages PV1 and PV2 are also set in a similar
+   manner.
+-  Checkbuttons are provided to control OD1 and CCS.
+
+The top menu of the Main Window
+===============================
+
+The top of the window contains a menu to change the current experimental
+setup: every entry in this menu is a category of experiments, like
+School experiments, Electronics, Electrical, and so on... except the
+leftmost entry "Device", which contains special commands.
+
+The Device submenus
+-------------------
+
+When one triggers the "Device" menu, new submenus appear:
+
+- **Reconnect**: try to synchronize the computer and Eyes17 after
+  a reconnection.
+- **Light Background**: allows one to use a light background to
+  display the traces. Any selected experiment is forgotten, and the
+  default user interface is re-initialised instead.
+- **Dark Background**: it is the same, but one gets a dark background to
+  display the traces.
+- **Choose language**: this allows one to select the language for the
+  user interface and for the help files.
+- **Screen shot**: one can take a snapshot from the complete Graphic User
+  Interface, or just from the oscilloscope's display (respective keyboard
+  shortcuts are `Alt-S` and `Alt-P`). In the special case when English
+  language and Dark Background are set, an additional dialog will let
+  one create automatically a set of snapshots translated to every
+  language supported by Eyes17, on dark and on light backgrounds, in
+  SVG (vectorial) and PNG (pixmap) formats. This feature is rather
+  fast, and it can generate a lot of data. One can dismiss it easily.
+- **Credits**: this opens a window with credits for authors and contributors
+  of ExpEYES-17.
+ 

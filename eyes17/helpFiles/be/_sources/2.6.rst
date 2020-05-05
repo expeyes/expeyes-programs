@@ -1,0 +1,22 @@
+Measuring Capacitance in series combination
+===========================================
+
+Objective
+---------
+
+Measuring the capacitance of series combination of capacitors.
+
+.. image:: schematics/cap-series.svg
+	   :width: 300px
+
+Procedure for two capacitors
+----------------------------
+
+-  Connect the capacitors as shown in the figure.
+-  Click on “Capacitance on IN1” . Should not touch the circuit while measuring
+
+Discussion
+----------
+
+For a series combination of capacitors, the effective capacitance is
+given by the relation :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.

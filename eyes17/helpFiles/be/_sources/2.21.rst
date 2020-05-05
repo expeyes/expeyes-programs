@@ -1,0 +1,38 @@
+Stroboscope
+===========
+
+A stroboscope is an instrument used to make a cyclically moving object appear to be slow-moving, or stationary.
+It consists of light source which produces brief repetitive flashes of light. If a body rotating at some frequency
+is illuminated with a light flashing at the same frequency, it is visible only when it is at a particular position.
+This gives an impression that it is stationary. If the two frequencies differ slightly, the body will apprear to
+move very slowly. 
+
+Objective
+---------
+
+Observation of a rotating body with a periodic flashed light, 
+using a disk with a marker.
+
+Procedure
+---------
+
+.. image:: schematics/stroboscope.svg
+	   :width: 300px
+
+-  The disk is rotated by powering the motor by a 1.5 V cell.
+-  Connect a white LED to SQ1
+-  Set the dutycycle of SQ1 to 20% or less
+-  Adjust the frequency of SQ1, to make the disk appear stationary
+-  You need a dark area, no other light should fall on the body.
+
+Discussion
+----------
+
+When the frequency of the phenomenon under observation and the frequency
+of the flashing light are matching, one can see a still image.
+
+What happens when the frequency of the light is slightly increased, or slightly
+decreased?
+
+What happens when the frequency of the flashing light is twice the frequency
+of the phenomenon? and when it is the half of its value?

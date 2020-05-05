@@ -1,0 +1,36 @@
+Resistance of human body
+========================
+
+We have seen that an unknown resistance can be measured by comparing with a known resistance
+by connecting them in series and measuring the voltages across them. This technique can be used to
+measure the resistance of human body.
+
+Objective
+---------
+Measure the resistance of human body by comparing it with a known
+resistor, for DC and AC voltages.
+
+.. image:: schematics/res-body.svg
+   :width: 300px
+
+Procedure
+---------
+
+-  Set PV1 to 3 volts
+-  Connect a wire from PV1 to A1
+-  Connect one end of a wire to PV1
+-  Connect one end of another wire to A2
+-  Connect a :math:`100\Omega` resistor from A2 to ground.
+-  Enable the Checkboxes to display A1 and A2
+-  Hold the unconnected ends of both wires by your hands.
+-  Repeat using SINE instead of PV1. 
+-  Enable amplitude and frequency display for A1 and A2.
+
+Discussion
+----------
+The AC resistance is less than the DC resistance. The resistance is due
+to our skin and AC can pass through this, like it passes through the
+dielectric material of a capacitor. A bit of exploring will reveal that
+a capacitor is formed between the tip of the wire and blood inside
+with the skin acting as a dielectric. Explore the effect of a metal plate
+at the tip of the wire.

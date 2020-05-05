@@ -1,0 +1,41 @@
+A simple AC generator
+=====================
+
+A voltage will be induced across a conductor placed in a changing magnetic field. This can be
+demonstrated by making a simple AC generator.  Use the 10 mm x 10 mm magnet and the
+3000T coils that comes with the kit.
+
+Objective
+---------
+Measure the frequency and amplitude of the voltage induced across a
+solenoid coil kept near a rotating magnet. Use more than one coils to 
+generate multi-phase AC.
+
+.. image:: schematics/ac-generator.svg
+	   :width: 300px
+
+Procedure
+---------
+
+-  Mount the magnet horizontally and power the DC motor from a 1.5 volts
+   cell
+-  Enable A1 and A2, with analysis option
+-  Set timebase to 100 mS full scale
+-  Bring the coil near the magnet (not to touch it), watch the induced
+   voltage
+-  Repeat the experiment using 2 coils.
+
+.. image:: pics/ac-gen-screen.png
+	   :width: 300px
+
+Discussion
+----------
+
+The voltage output is shown in figure. The phase difference between the
+two voltages depends on the angle between the axes of the two coils.
+
+Bring a shorted coil near the magnet to observe the change in frequency.
+The shorted coil is drawing energy from the generator and the speed get
+reduced. The magnetic field in this generator is very weak. The
+resistance of the coil is very high and trying to draw any current from
+it will drop most of the voltage across the coil itself.

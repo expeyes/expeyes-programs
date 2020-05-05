@@ -1,0 +1,43 @@
+Human body as a conductor
+=========================
+
+It is well known that touching the mains supply is fatal. This is because our body conducts electricity. 
+At the same time you cannot light an LED from a drycell by using your fingers to make the connection.
+We can explore this further using the low voltage AC and DC sources of ExpEYES.
+
+Objective
+---------
+To study the electrical conduction of human body
+
+Procedure
+---------
+
+.. image:: schematics/conducting-human.svg
+	   :width: 300px
+
+-  Connect a wire from WG to A1
+-  Connect one end of a wire to WG
+-  Connect one end of another wire to A2
+-  Enable A1, A2 and their amplitude and frequency display.
+-  Hold the unconnected ends of both wires by your hands.
+-  Repeat it using a 3 volt DC signal from PV1.
+
+The observed voltage waveforms are shown below. The voltage on A2 is slightly less than 3volts, due to the
+resistance of the body. 
+
+.. image:: pics/conducting-human-screen.png
+	   :width: 400px
+
+Discussion
+----------
+
+Using DC the voltage reaching A2 is smaller, which means that body conducts AC better than DC.
+The voltage measured at A2 is decided by the ratio of the resistance offered by the body and
+the input impedance (:math:`1M\Omega`) of A2. The phase difference between the two waves implies
+that there is some capacitance present in the circuit. 
+
+Is the conduction happening through the surface of the body or through the blood stream? How to answer this question?
+What is the salt content of blod? Try measuring the resistance of salt water. What is the role played by the skin?
+
+There could be some ripple due to the 50Hz AC pickup. This can be eliminated by performing the experiment far away
+from power lines, using a laptop.

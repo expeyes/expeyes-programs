@@ -1,0 +1,25 @@
+Measuring Resistance
+====================
+
+Resistance is generally measured using a multimeter. ExpEYES provides a limited facility
+to do this, using the SEN terminal. SEN is actually a voltage measurement terminal, with
+a :math:`5.1k~\Omega` resistor connected to  :math:`3.3V` internally. The internal :math:`5.1k~\Omega`
+and the external resistor connected to SEN forms a series combination. By knowing the voltage across both
+and the value of one resistance, we can calculate the other using Ohm's law. The drawback of this method
+is that the accuracy is poor when the external resistance differs widely from :math:`5.1k~\Omega`.
+A resonable range is from :math:`100~\Omega` to :math:`100~k\Omega`.
+
+Objective
+---------
+
+Measure resistance using the **SEN** terminal. 
+
+.. image:: schematics/res-measure.svg
+   :width: 300px	   
+
+Procedure
+---------
+
+-  Connect the resistor between SEN and any Ground terminal.
+-  Observe the value shown on the top right side of the GUI.
+-  Repeat with different resistors

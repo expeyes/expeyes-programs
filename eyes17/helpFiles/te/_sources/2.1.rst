@@ -1,0 +1,31 @@
+Measuring Voltage
+=================
+
+Objective
+---------
+
+Learn to measure voltage using expEYES and get some idea about the
+concept of Electrical Ground. A dry-cell and two wires are required.
+
+.. image:: schematics/measure-dc.svg
+	   :width: 300px
+
+Procedure
+---------
+
+-  Observe the voltage at A1 displayed.
+-  Repeat by reversing the cell connections.
+
+Discussion
+----------
+
+Voltages measured value is +1.5 volts and it becomes -1.5 after
+reversing the connections.
+
+We are measuring the potential difference between two points. One of
+them can be treated as at zero volts, or Ground potential. The voltage
+measuring points of expEYES measure the voltage with respect to the
+terminals marked GND. We have connected the negative terminal of the
+cell to Ground. The positive terminal is at +1.5 volts with respect to
+the negative terminal. *Will it show correct voltage if GND is not
+connected ?*

@@ -1,0 +1,17 @@
+Getting Familiar with ExpEYES17
+===============================
+
+Before proceeding with the experiments, let us do some simple exercises
+to become familiar with expEYES-17. Connect the device a USB port and
+start the ExpEYES-17 program from the menu ’Applications->Education’.
+Enable the ’Popup Help’ option and select the first few items from the
+school menu.
+
+The following chapters are organized according to the pulldown menus of
+the eyes17 program, each chapter containing the experiments under the
+corresponding menu; like School level, Eelectronics, Eelectrical etc. To
+perform the experiment, select it from the menu. Online help is available
+for every experiment, making this manual almost redundant.
+
+
+
