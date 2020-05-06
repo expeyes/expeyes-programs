@@ -582,7 +582,7 @@ class MainWindow(QMainWindow):
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
 		for e in languages:
-			action = sm.addAction(f"{e.name} ({e.localName}))",  lambda item=e.name: self.setLanguage(item))
+			action = sm.addAction(f"{e.name} ({e.localName}))",  lambda item=e.ident: self.setLanguage(item))
 			flag=e.flag(imagePath)
 			# if flag exists, append localisation status underneath
 			# else display only localisation status
@@ -631,11 +631,11 @@ class MainWindow(QMainWindow):
 			em.addAction(self.tr(e[0]),  lambda item=e: self.runCode(item))	
 
 	def setLanguage(self,l):
-			self.setConfig('ScreenTheme', 'language', l)
-			self.translators=self.translate(l)
-			self.lang=l
-			self.init_UI()
-			return
+		self.setConfig('ScreenTheme', 'language', l)
+		self.translators=self.translate(l)
+		self.lang=l
+		self.init_UI()
+		return
 
 	def safeFileName(self, candidate, ext):
 		"""

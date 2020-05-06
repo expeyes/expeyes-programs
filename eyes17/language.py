@@ -61,10 +61,28 @@ class Language:
             svgFlag=docFlag.documentElement
             w=float(svgFlag.getAttribute("width"))
             h=float(svgFlag.getAttribute("height"))
+            vb=svgFlag.getAttribute("viewBox")
             scale=w/float(svgProgress.getAttribute("width"))
+            offsetY=h*1.1
+            if vb:
+                # there is a viewbox; let us make a dictionary from it
+                m=re.match(r"(\d+)\D+(\d+)\D+(\d+)\D+(\d+)", vb)
+                vb={
+                    "x": float(m.group(1)),
+                    "y": float(m.group(2)),
+                    "w": float(m.group(3)),
+                    "h": float(m.group(4)),
+                }
+                scale=vb["w"]/float(svgProgress.getAttribute("width"))
+                offsetY=vb["h"]*1.1
             group = docFlag.createElement("g")
-            group.setAttribute("transform", f"matrix({scale} 0 0 {scale} 0 {h})")
-            svgFlag.setAttribute("height", str(1.1*h))
+            group.setAttribute("transform", f"matrix({scale} 0 0 {scale} 0 {offsetY})")
+            if vb:
+                vb["h"] = 1.2 * vb["h"]
+                svgFlag.setAttribute("viewBox", "{x} {y} {w} {h}".format(**vb))
+                svgFlag.setAttribute("height", str(1.2*h))
+            else:
+                svgFlag.setAttribute("height", str(1.2*h))
             for rect in svgProgress.childNodes:
                 group.appendChild(rect.cloneNode(True))
             svgFlag.appendChild(group)
