@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 225 150"
+   width="1350"
+   height="900"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="Flag_of_India_MR.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs38" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1511"
+     inkscape:window-height="848"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="0.24224955"
+     inkscape:cx="87.13406"
+     inkscape:cy="520.06852"
+     inkscape:window-x="241"
+     inkscape:window-y="257"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="text849" />
+  <rect
+     width="225"
+     height="150"
+     fill="#f93"
+     id="rect2" />
+  <rect
+     width="225"
+     height="100"
+     y="50"
+     fill="#fff"
+     id="rect4" />
+  <rect
+     width="225"
+     height="50"
+     y="100"
+     fill="#128807"
+     id="rect6" />
+  <g
+     transform="translate(112.5,75)"
+     id="g32">
+    <circle
+       r="20"
+       fill="#008"
+       id="circle8" />
+    <circle
+       r="17.5"
+       fill="#fff"
+       id="circle10" />
+    <circle
+       r="3.5"
+       fill="#008"
+       id="circle12" />
+    <g
+       id="d">
+      <g
+         id="c">
+        <g
+           id="b">
+          <g
+             id="a">
+            <circle
+               r="0.875"
+               fill="#008"
+               transform="rotate(7.5) translate(17.5)"
+               id="circle14" />
+            <path
+               fill="#008"
+               d="M 0,17.5 0.6,7 C 0.6,7 0,2 0,2 0,2 -0.6,7 -0.6,7 L 0,17.5 z"
+               id="path16" />
+          </g>
+          <use
+             xlink:href="#a"
+             transform="rotate(15)"
+             id="use19" />
+        </g>
+        <use
+           xlink:href="#b"
+           transform="rotate(30)"
+           id="use22" />
+      </g>
+      <use
+         xlink:href="#c"
+         transform="rotate(60)"
+         id="use25" />
+    </g>
+    <use
+       xlink:href="#d"
+       transform="rotate(120)"
+       id="use28" />
+    <use
+       xlink:href="#d"
+       transform="rotate(-120)"
+       id="use30" />
+  </g>
+  <g
+     aria-label="EN"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:12.02519798px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16666667px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text849">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.66666698px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02777778px"
+       x="-244.06781"
+       y="-0.63559324"
+       id="text76"><tspan
+         sodipodi:role="line"
+         id="tspan74"
+         x="-244.06781"
+         y="5.2628446"
+         style="stroke-width:0.02777778px"></tspan></text>
+    <g
+       aria-label="मरा"
+       style="font-style:normal;font-weight:normal;font-size:161.13092041px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.67137885px"
+       id="text104">
+      <path
+         d="M 41.567213,66.572056 H 79.332272 V 31.954085 H 41.567213 Z M 12.299292,31.954085 V 22.51282 h 95.356778 v 9.441265 H 89.717664 V 127.31086 H 79.332272 V 76.957447 H 41.567213 v 7.395658 q 0,2.51767 -0.944127,4.405923 -0.944126,1.888253 -2.202961,1.888253 -3.619152,0 -12.273645,-7.867721 -8.654493,-7.86772 -8.654493,-11.014809 0,-2.045607 1.573545,-3.619151 1.573544,-1.573544 3.619151,-1.573544 h 8.497139 V 31.954085 Z"
+         style="stroke-width:0.67137885px"
+         id="path106" />
+      <path
+         d="M 103.56486,31.954085 V 22.51282 h 72.85509 v 9.441265 h -14.1619 V 56.02931 q 0,9.755974 -6.60888,16.522213 -6.45153,6.608886 -15.42074,6.608886 -1.25883,0 -3.46179,-0.472063 -2.04561,-0.629418 -5.03534,-1.730899 6.76624,11.801581 15.89279,22.659036 9.28391,10.700097 20.77078,20.298717 l -6.13682,7.39566 Q 145.42113,113.30632 131.88865,95.525268 118.35617,77.586865 108.75755,57.130791 l 9.44127,-5.192696 q 2.67502,7.553012 8.65449,12.11629 6.13682,4.563278 13.37512,4.563278 4.72064,0 8.02508,-3.619151 3.4618,-3.619152 3.4618,-8.969202 V 31.954085 Z"
+         style="stroke-width:0.67137885px"
+         id="path108" />
+      <path
+         d="M 172.17138,31.954085 V 22.51282 h 46.10484 v 9.441265 h -17.9384 V 127.31086 H 189.95243 V 31.954085 Z"
+         style="stroke-width:0.67137885px"
+         id="path110" />
+    </g>
+  </g>
+</svg>

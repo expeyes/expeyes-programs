@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   viewBox="0 0 225 150"
+   width="1350"
+   height="900"
+   version="1.1"
+   id="svg34"
+   sodipodi:docname="Flag_of_India_PA.svg"
+   inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
+  <metadata
+     id="metadata40">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs38" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1511"
+     inkscape:window-height="848"
+     id="namedview36"
+     showgrid="false"
+     inkscape:zoom="0.24224955"
+     inkscape:cx="-260.49728"
+     inkscape:cy="636.64963"
+     inkscape:window-x="241"
+     inkscape:window-y="257"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="text849" />
+  <rect
+     width="225"
+     height="150"
+     fill="#f93"
+     id="rect2" />
+  <rect
+     width="225"
+     height="100"
+     y="50"
+     fill="#fff"
+     id="rect4" />
+  <rect
+     width="225"
+     height="50"
+     y="100"
+     fill="#128807"
+     id="rect6" />
+  <g
+     transform="translate(112.5,75)"
+     id="g32">
+    <circle
+       r="20"
+       fill="#008"
+       id="circle8" />
+    <circle
+       r="17.5"
+       fill="#fff"
+       id="circle10" />
+    <circle
+       r="3.5"
+       fill="#008"
+       id="circle12" />
+    <g
+       id="d">
+      <g
+         id="c">
+        <g
+           id="b">
+          <g
+             id="a">
+            <circle
+               r="0.875"
+               fill="#008"
+               transform="rotate(7.5) translate(17.5)"
+               id="circle14" />
+            <path
+               fill="#008"
+               d="M 0,17.5 0.6,7 C 0.6,7 0,2 0,2 0,2 -0.6,7 -0.6,7 L 0,17.5 z"
+               id="path16" />
+          </g>
+          <use
+             xlink:href="#a"
+             transform="rotate(15)"
+             id="use19" />
+        </g>
+        <use
+           xlink:href="#b"
+           transform="rotate(30)"
+           id="use22" />
+      </g>
+      <use
+         xlink:href="#c"
+         transform="rotate(60)"
+         id="use25" />
+    </g>
+    <use
+       xlink:href="#d"
+       transform="rotate(120)"
+       id="use28" />
+    <use
+       xlink:href="#d"
+       transform="rotate(-120)"
+       id="use30" />
+  </g>
+  <g
+     aria-label="EN"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4px;line-height:12.02519798px;font-family:Arimo;-inkscape-font-specification:'Arimo, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.16666667px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     id="text849">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:6.66666698px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.02777778px"
+       x="-244.06781"
+       y="-0.63559324"
+       id="text76"><tspan
+         sodipodi:role="line"
+         id="tspan74"
+         x="-244.06781"
+         y="5.2628446"
+         style="stroke-width:0.02777778px"></tspan></text>
+    <g
+       aria-label="ਪੰਜਾ"
+       style="font-style:normal;font-weight:normal;font-size:113.53534698px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.47306398px"
+       id="text240">
+      <path
+         d="m 43.978164,37.882895 q 0.720683,1.275055 1.330492,2.716422 0.609809,1.441366 1.219618,3.049045 0.997869,2.716422 1.884864,6.375276 0.942432,3.603416 1.219618,7.927516 0.05544,1.275056 0.05544,3.15992 0.05544,1.829427 -0.221749,4.102351 -0.221748,2.217487 -0.886994,4.767598 -0.609809,2.55011 -1.884865,5.266532 -0.609809,1.275055 -0.997869,1.995739 -0.38806,0.720683 -0.665246,1.16418 -0.277186,0.498935 -0.498935,0.665247 v 0.942432 q 0.776121,1.053306 1.552241,2.051175 0.831558,0.942432 1.77399,1.884864 1.607678,1.607679 3.714291,3.381668 2.106613,1.718553 4.767598,2.882734 2.55011,1.164181 5.211095,1.275055 2.716422,0.110874 5.211095,-0.38806 2.494673,-0.554372 4.71216,-1.552241 2.217488,-0.99787 3.825166,-2.051176 1.884864,-1.219618 2.439236,-1.77399 0.332623,-0.221748 0.498934,-0.498934 V 37.882895 h 18.737768 v 7.040522 H 85.389738 V 109.17511 H 78.238341 V 93.375513 q -1.16418,0.665246 -2.993607,1.607678 -1.77399,0.886995 -4.046915,1.663116 -2.217487,0.77612 -4.823034,1.330492 -2.550111,0.498935 -5.266532,0.388061 -2.439236,-0.05544 -5.100221,-0.886995 -2.605548,-0.831558 -5.211095,-2.217488 -2.550111,-1.441366 -4.989346,-3.381668 -2.383799,-1.995738 -4.324101,-4.379537 -1.995738,-2.383799 -3.159919,-3.880603 -1.108744,-1.496804 -1.718553,-2.272924 -0.332623,-0.443498 -0.609809,-0.776121 -0.221748,-0.332623 -0.332623,-0.554371 v -0.942432 q 1.718553,-2.328362 3.104483,-4.93391 1.16418,-2.328361 2.217487,-5.155657 1.053306,-2.882734 1.164181,-6.042653 0.110874,-3.104482 -0.110875,-5.599156 Q 41.816113,54.846672 41.428053,52.906371 41.09543,50.910632 40.596495,49.413829 40.152998,47.917025 39.764938,46.863718 39.543189,46.253909 39.32144,45.865849 39.155129,45.422352 39.044254,45.200603 38.93338,45.034291 38.822506,44.923417 H 27.513321 v -7.040522 z"
+         style="stroke-width:0.47306398px"
+         id="path242" />
+      <path
+         d="m 91.986761,23.690977 q 0,3.159919 1.607679,5.10022 l -1.552241,2.383799 q -2.328362,-1.607678 -3.658854,-4.157789 -1.330493,-2.605547 -1.330493,-5.931778 0,-2.605547 0.99787,-4.878472 0.942432,-2.272924 2.660984,-3.991477 1.718553,-1.718553 3.991477,-2.6609847 2.272925,-0.9978692 4.878472,-0.9978692 2.605545,0 4.823035,0.9978692 2.27292,0.9424317 3.8806,2.6609847 1.66312,1.718553 2.60555,3.991477 0.94243,2.272925 0.94243,4.878472 0,3.159919 -1.38593,5.765467 -1.38593,2.605547 -3.60341,4.3241 l -1.44137,-2.383799 q 0.83156,-0.942432 1.33049,-2.217487 0.55437,-1.330492 0.55437,-2.882733 0,-1.607679 -0.60981,-2.993608 -0.6098,-1.441367 -1.66311,-2.439236 -0.99787,-1.053307 -2.43924,-1.663116 -1.38593,-0.609809 -2.993605,-0.609809 -1.607678,0 -2.993608,0.609809 -1.385929,0.609809 -2.383798,1.663116 -1.053307,0.997869 -1.607679,2.439236 -0.609809,1.385929 -0.609809,2.993608 z"
+         style="stroke-width:0.47306398px"
+         id="path244" />
+      <path
+         d="m 114.38338,63.882933 q 0.887,-0.166312 1.77399,-0.221749 0.887,-0.110874 1.77399,-0.221749 l 0.66525,0.776121 v 9.978693 h 32.31987 V 44.923417 H 96.255424 v -7.040522 h 73.509706 v 7.040522 h -11.58637 v 64.251693 h -7.26228 V 81.234771 h -32.31987 v 27.940339 h -7.26227 V 81.234771 h -9.86782 l -0.55437,-0.776121 q 0.11087,-0.942432 0.16631,-1.940301 0.11087,-0.99787 0.38806,-2.051176 0.33262,-2.051176 1.21962,-3.825166 0.88699,-1.829426 2.66098,-3.880602 1.21962,-1.38593 2.77186,-2.328362 1.55224,-0.942432 2.93817,-1.496804 1.38593,-0.554372 2.32836,-0.77612 0.94244,-0.277186 0.99787,-0.277186 z"
+         style="stroke-width:0.47306398px"
+         id="path246" />
+      <path
+         d="m 197.81634,37.882895 v 7.040522 H 186.22997 V 81.789142 H 178.9677 V 44.923417 h -10.14501 v -7.040522 z"
+         style="stroke-width:0.47306398px"
+         id="path248" />
+    </g>
+  </g>
+</svg>
