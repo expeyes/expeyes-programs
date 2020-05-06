@@ -2,7 +2,7 @@ DESTDIR =
 SUBDIRS = bin po clib/expeyes-clib microhope \
           microhope/po microhope/microhope-doc
 SUBDIRS_INDEP = expeyes-web \
-		eyes17/lang eyes17/layouts eyes17/helpFiles \
+		eyes17 eyes17/lang eyes17/layouts eyes17/helpFiles \
 		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles
 
 all: all_arch all_indep all_firmware
