@@ -1,6 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser
 from utils import cnf
+from language import languages, langNames
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
 from PyQt5.QtGui import QIcon
 from QtVersion import *
@@ -274,43 +275,6 @@ pythonCodes = [
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum'), 'rodpend']
 ]
 
-class Language:
-	def __init__(self, name, finished=True):
-		"""
-		the constructor
-		:param name: the name of the language, for example "de_DE"
-		:param finished: boolean stating whether the translation is OK; True by default
-		"""
-		self.name = name
-		self.finished = finished
-
-	def __str__(self):
-		if self.finished:
-			return self.name
-		else:
-			return f"{self.name} (experimental)"
-
-	def flag(self, imagePath):
-		"""
-		:param imagePath: directory containing language flags
-		:return: the path to an image if available for this language
-		"""
-		result=os.path.join(imagePath, f"{self.name}.svg")
-		if os.path.exists(result):
-			return result
-		else:
-			return ""
-
-languages = [
-	Language('fr_FR'), Language('en_IN'), Language('es_ES'),
-	Language('ml_IN'), Language('ta_IN'), Language('te_IN'), 
-	Language('mr_IN'), Language('gu_IN'), Language('kn_IN'),
-	Language('be_IN'), Language('pa_IN'), Language('or_IN'),
-	Language('hi_IN')
-	]
-
-langNames = ['French', 'English', 'Spanish', 'Malayalam', 'Tamil*', 'Telugu*',
-	'Marathi*', 'Gujarati*', 'Kannada*', 'Bengali*', 'Punjabi*', 'Oriya*', 'Hindi*']
 #---------------------------------------------------------------------
 		
 class helpWin(QWebView):
@@ -617,10 +581,11 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('DarkBackGround'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
-		for k in range(len(languages)):
-			e = languages[k]
-			action = sm.addAction(str(langNames[k]),  lambda item=str(e): self.setLanguage(item))
+		for e in languages:
+			action = sm.addAction(f"{e.name} ({e.localName}))",  lambda item=e.name: self.setLanguage(item))
 			flag=e.flag(imagePath)
+			# if flag exists, append localisation status underneath
+			# else display only localisation status
 			if flag:
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
