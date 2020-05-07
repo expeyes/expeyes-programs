@@ -1,5 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path, configparser
+import sys, time, math, importlib, os, platform, os.path, configparser, csv
 from utils import cnf
 from language import languages
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
@@ -581,6 +581,12 @@ class MainWindow(QMainWindow):
 		mb.addAction(self.tr('DarkBackGround'), self.setBBG)
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
+		translationProgress=csv.DictReader(
+			open("lang/status.txt"),
+			delimiter=",",
+			fieldnames=('ident','finished','unfinished','ignored'),
+		)
+		translationProgress=list(translationProgress)
 		for e in languages:
 			action = sm.addAction(f"{e.name} ({e.localName}))",  lambda item=e.ident: self.setLanguage(item))
 			flag=e.flag(imagePath)
@@ -589,11 +595,19 @@ class MainWindow(QMainWindow):
 			if flag:
 				action.setIcon(QIcon(flag))
 				action.setIconVisibleInMenu(True)
-
+				prog = [tp for tp in translationProgress if e.ident[:2] == tp["ident"]]
+				if prog:
+					prog = prog[0]
+					tip = self.tr('Language = {} : done = {}, to finish = {}, untranslated = {}')
+					tip = tip.format(prog["ident"], prog["finished"], prog["unfinished"], prog["ignored"])
+				action.setStatusTip(tip + ". To contribute to the translation, please contact the authors.")
+				action.setToolTip(tip)
 		sm = mb.addMenu(self.tr('Screenshot'))
 		action = sm.addAction(self.tr('Whole Window Alt-s'),  self.screenshot)
 		action = sm.addAction(self.tr('Graph Only Alt-p'),  self.screenshotPlot)
 		mb.addAction(self.tr('Credits'), self.showCredits)
+		mb.addSeparator()
+		mb.addAction(self.tr('Quit'), self.close)
 
 		em = bar.addMenu(self.tr("School Expts"))
 		for e in schoolExpts:
