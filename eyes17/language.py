@@ -110,8 +110,6 @@ languages = [
     Language('hi_IN', 'Hindi',     'हिन्दी',      locales)
     ]
 
-langNames = [lang.name for lang in languages]
-
 def createFlagStatus(
         flagDir="images", statusDir="lang", flagStatusDir="images"):
     """

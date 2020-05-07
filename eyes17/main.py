@@ -1,7 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser
 from utils import cnf
-from language import languages, langNames
+from language import languages
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
 from PyQt5.QtGui import QIcon
 from QtVersion import *
