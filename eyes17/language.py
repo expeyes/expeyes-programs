@@ -115,8 +115,10 @@ langNames = [lang.name for lang in languages]
 def createFlagStatus(
         flagDir="images", statusDir="lang", flagStatusDir="images"):
     """
-    create flags with status colors appended below
-    :param flagDir: directory containing flags
+    create flags with status colors appended below in directory
+    flagStatusDir, taking images in SVG format from flagDir, and
+    status from statusDir.
+
     :param statusDir: directory containg status images
     :param flagStatusDir: directory to write flags with status
     """
@@ -129,6 +131,7 @@ def createFlagStatus(
         fname = f"{l.ident}.status.svg"
         with open(os.path.join(flagStatusDir, fname), "w") as outfile:
             outfile.write(svg)
+    return    
 
 if __name__ == "__main__":
     print("Create flags with localization progress status")
