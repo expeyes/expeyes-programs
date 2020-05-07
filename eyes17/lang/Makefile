@@ -22,7 +22,7 @@ eyes17.pro: $(SOURCES)
 	@echo "TRANSLATIONS = $(TS_FILES)"  >> $@
 
 clean:
-	rm -f *~ $(QM_FILES) eyes17.pro lrelease.log *.svg
+	rm -f *~ $(QM_FILES) eyes17.pro lrelease.log *.svg status.txt
 
 install:
 

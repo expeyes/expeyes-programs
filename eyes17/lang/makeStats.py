@@ -44,3 +44,6 @@ if __name__ == "__main__":
         print(k, "=>", v)
         with open(k+".svg","w") as outfile:
             outfile.write(v.toSVG())
+    with open("status.txt","w") as outfile:
+        for k,v in results.items():
+            outfile.write(f"{k},{v.finished},{v.unfinished},{v.ignored}\n")
