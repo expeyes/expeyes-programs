@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="ml" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="te_IN" sourcelanguage="en">
 <context>
     <name>Dialog</name>
     <message>
@@ -79,7 +79,7 @@
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="14"/>
-        <source>Screnshot</source>
+        <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -211,7 +211,7 @@
         <translation>I-V plotting (ఇతివృత్తం) పూర్తయింది</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>ఈ ప్రోగ్రామ్ SQ1 ను అధిక రిజల్యూషన్ మోడ్‌కు సెట్ చేస్తుంది. WG నిలిపివేయబడుతుంది. ఫ్రీక్వెన్సీని 0.1 Hz నుండి 50Hz కు మార్చవచ్చు</translation>
     </message>
@@ -221,7 +221,7 @@
         <translation>SQ1 సెట్ చేయండి</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="83"/>
         <source>sqr1 set to </source>
         <translation>sqr1 కు సెట్ చేయబడింది </translation>
     </message>
@@ -336,17 +336,17 @@
         <translation>సందేశములు</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation>కోడ్‌ను అమలు చేయండి</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation>కోడ్‌ను సేవ్ చేయండి</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation>కోడ్  ఈ ఫైల్ లో సేవ్  చేయబడింది</translation>
     </message>
@@ -831,37 +831,37 @@
         <translation>డేటా విశ్లేషణ లోపం</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation>F = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>దశ తేడా = %5.1f డిగ్రీ</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
@@ -1066,7 +1066,7 @@
         <translation>ఫ్రీక్వెన్సీ = %5.0f Hz V = %5.3f</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source> Seconds</source>
         <translation> సెకండ్లు</translation>
     </message>
@@ -1111,22 +1111,22 @@
         <translation>సమయం vs దూరం గ్రాఫ్ పూర్తి అయింది</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="43"/>
         <source>Measure</source>
         <translation>కొలత</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="69"/>
         <source>start..</source>
         <translation>ప్రారంభించండి ..</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Time of flight =</source>
         <translation>టైమ్ ఆఫ్ ఫ్లైట్ =</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
         <translation>లోపం. మళ్ళీ ప్రయత్నించండి</translation>
     </message>
@@ -1228,7 +1228,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2013,7 +2013,7 @@ shows the actual frequency set.
         <translation>రాడ్ లోలకం</translation>
     </message>
     <message>
-        <location filename="../main.py" line="419"/>
+        <location filename="../main.py" line="421"/>
         <source>Enable PopUp Help Window</source>
         <translation>పాపప్ సహాయ విండోను ప్రారంభించండి</translation>
     </message>
@@ -2281,12 +2281,12 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="499"/>
+        <location filename="../main.py" line="502"/>
         <source>Failed to load scope</source>
         <translation>పరిధిని లోడ్ చేయడంలో విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../main.py" line="531"/>
+        <location filename="../main.py" line="535"/>
         <source>Failed to load %s</source>
         <translation>%s లోడ్ చేయడంలో విఫలమైంది</translation>
     </message>
@@ -2306,12 +2306,12 @@ shows the actual frequency set.
         <translation type="obsolete">డార్క్  స్క్రీన్ బ్యాక్ గ్రౌండ్ గా మార్చడానికి దయచేసి మరల ప్రారంభిచనుంది</translation>
     </message>
     <message>
-        <location filename="../main.py" line="578"/>
+        <location filename="../main.py" line="582"/>
         <source>Device</source>
         <translation>పరికరం</translation>
     </message>
     <message>
-        <location filename="../main.py" line="579"/>
+        <location filename="../main.py" line="583"/>
         <source>Reconnect</source>
         <translation>రీకనెక్ట్</translation>
     </message>
@@ -2326,107 +2326,107 @@ shows the actual frequency set.
         <translation type="obsolete">డార్క్ బ్యాక్‌గ్రౌండ్ తదుపరిసారి</translation>
     </message>
     <message>
-        <location filename="../main.py" line="582"/>
+        <location filename="../main.py" line="586"/>
         <source>Choose Language</source>
         <translation>భాషను ఎంచుకోండి</translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="616"/>
         <source>School Expts</source>
         <translation>పాఠశాల ప్రయోగాలు</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="620"/>
         <source>Electronics</source>
         <translation>ఎలక్ట్రానిక్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="627"/>
         <source>Electrical</source>
         <translation>ఎలక్ట్రికల్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="631"/>
         <source>Sound</source>
         <translation>ధ్వని</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="635"/>
         <source>Mechanics</source>
         <translation>మెకానిక్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="635"/>
+        <location filename="../main.py" line="639"/>
         <source>Other Expts</source>
         <translation>ఇతర ప్రయోగాలు</translation>
     </message>
     <message>
-        <location filename="../main.py" line="639"/>
+        <location filename="../main.py" line="643"/>
         <source>I2C Modules</source>
         <translation>I2C మాడ్యూల్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="643"/>
+        <location filename="../main.py" line="647"/>
         <source>PythonCode</source>
         <translation>పైథాన్ కోడ్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="863"/>
         <source>Oscilloscope</source>
         <translation>ఒస్సిల్లోస్కోప్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="608"/>
+        <location filename="../main.py" line="612"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="580"/>
+        <location filename="../main.py" line="584"/>
         <source>LightBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="581"/>
+        <location filename="../main.py" line="585"/>
         <source>DarkBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="605"/>
+        <location filename="../main.py" line="609"/>
         <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="606"/>
+        <location filename="../main.py" line="610"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="607"/>
+        <location filename="../main.py" line="611"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Missing Plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="824"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="605"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="610"/>
+        <location filename="../main.py" line="614"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>

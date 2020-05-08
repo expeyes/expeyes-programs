@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="bn_IN" sourcelanguage="en_IN">
+<!DOCTYPE TS><TS version="2.0" language="bn_IN" sourcelanguage="en">
 <context>
     <name>Dialog</name>
     <message>
@@ -221,7 +221,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation type="unfinished"></translation>
     </message>
@@ -231,7 +231,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="83"/>
         <source>sqr1 set to </source>
         <translation type="unfinished"></translation>
     </message>
@@ -346,17 +346,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation type="unfinished"></translation>
     </message>
@@ -880,42 +880,42 @@ For Driven Pendulum Expt.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1176,7 +1176,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source> Seconds</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1251,22 +1251,22 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="43"/>
         <source>Measure</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="69"/>
         <source>start..</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Time of flight =</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2017,7 +2017,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="419"/>
+        <location filename="../main.py" line="421"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2255,127 +2255,127 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="499"/>
+        <location filename="../main.py" line="502"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="531"/>
+        <location filename="../main.py" line="535"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="578"/>
+        <location filename="../main.py" line="582"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="579"/>
+        <location filename="../main.py" line="583"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="582"/>
+        <location filename="../main.py" line="586"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="616"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="620"/>
         <source>Electronics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="627"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="631"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="635"/>
         <source>Mechanics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="635"/>
+        <location filename="../main.py" line="639"/>
         <source>Other Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="639"/>
+        <location filename="../main.py" line="643"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="643"/>
+        <location filename="../main.py" line="647"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="863"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="580"/>
+        <location filename="../main.py" line="584"/>
         <source>LightBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="581"/>
+        <location filename="../main.py" line="585"/>
         <source>DarkBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="605"/>
+        <location filename="../main.py" line="609"/>
         <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Missing Plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="608"/>
+        <location filename="../main.py" line="612"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="606"/>
+        <location filename="../main.py" line="610"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="607"/>
+        <location filename="../main.py" line="611"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="824"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="605"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="610"/>
+        <location filename="../main.py" line="614"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>

@@ -588,7 +588,7 @@ class MainWindow(QMainWindow):
 		)
 		translationProgress=list(translationProgress)
 		for e in languages:
-			action = sm.addAction(f"{e.name} ({e.localName}))",  lambda item=e.ident: self.setLanguage(item))
+			action = sm.addAction(f"{e.name} ({e.localName})",  lambda item=e.ident: self.setLanguage(item))
 			flag=e.flag(imagePath)
 			# if flag exists, append localisation status underneath
 			# else display only localisation status
