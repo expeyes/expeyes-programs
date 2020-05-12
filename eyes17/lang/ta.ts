@@ -79,18 +79,28 @@
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="14"/>
-        <source>Screenshot</source>
-        <translation>ஸ்கிரீன்ஷாட்</translation>
+        <source>Screnshot</source>
+        <translation type="unfinished">ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="48"/>
-        <source>Translations</source>
-        <translation>மொழிபெயர்ப்புகள்</translation>
+        <source>Translations =</source>
+        <translation type="unfinished">மொழிபெயர்ப்புகள்</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="58"/>
         <source>Path</source>
-        <translation>வழி</translation>
+        <translation type="obsolete">வழி</translation>
+    </message>
+    <message>
+        <location filename="../layouts/screenshot.ui" line="61"/>
+        <source>Path =</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/screenshot.ui" line="71"/>
+        <source>PNG, width =</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -218,7 +228,7 @@
     <message>
         <location filename="../driven-pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled. Frequency can be changed from 0.1 Hz to 50 Hz</source>
-        <translation>இந்த நிரல் SQ1ஐ உயர் தெளிவுத்திறன் பயன்முறையில் அமைக்கிறது. WG முடக்கப்படும். அதிர்வெண்ணை 0.1 Hz முதல் 50 Hz வரை மாற்றலாம்</translation>
+        <translation type="obsolete">இந்த நிரல் SQ1ஐ உயர் தெளிவுத்திறன் பயன்முறையில் அமைக்கிறது. WG முடக்கப்படும். அதிர்வெண்ணை 0.1 Hz முதல் 50 Hz வரை மாற்றலாம்</translation>
     </message>
     <message>
         <location filename="../drivenRodPendulum.py" line="84"/>
@@ -226,7 +236,7 @@
         <translation>SQ1ஐ அமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="83"/>
         <source>sqr1 set to </source>
         <translation>sqr1 அமைக்கப்பட்டது </translation>
     </message>
@@ -341,17 +351,17 @@
         <translation>செய்திகள்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation>மென்பொருளை இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation>மென்பொருளை சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation>மென்பொருளை சேமிக்கப்பட்டது </translation>
     </message>
@@ -602,7 +612,9 @@
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="87"/>
-        <source>Set SQ1 Frequency For Driven Pendulum Expt.</source>
+        <source>
+Set SQ1 Frequency
+For Driven Pendulum Expt.</source>
         <translation type="unfinished">ஊசல் ஆய்வுக்காக SQ1 அதிர்வெண்ணை அமைக்கவும்</translation>
     </message>
     <message>
@@ -617,8 +629,8 @@
     </message>
     <message>
         <location filename="../plotIV.py" line="50"/>
-        <source>Voltage across R (Volts)</source>
-        <translation>மின்னழுத்தம் Rன் வழியாக (Volts)</translation>
+        <source>Voltage across R(Volts)</source>
+        <translation type="unfinished">மின்னழுத்தம் Rன் வழியாக (Volts)</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="63"/>
@@ -831,11 +843,6 @@
         <translation>WG</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="156"/>
-        <source>இம்பீடண்ஸ் கணக்கீடு</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../RLCsteadystate.py" line="160"/>
         <source>F (in Hz)</source>
         <translation>F (in Hz)</translation>
@@ -871,42 +878,42 @@
         <translation>தரவு பகுப்பாய்வு பிழை</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation>F = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>ஃபேஸ் வேறுபாடு</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation>சில தவறான உள்ளீடுகள்</translation>
     </message>
@@ -1152,7 +1159,7 @@ shows the actual frequency set.
     <message>
         <location filename="../soundFreqResp.py" line="82"/>
         <source>seconds</source>
-        <translation>விநாடிகள்</translation>
+        <translation type="obsolete">விநாடிகள்</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="183"/>
@@ -1165,7 +1172,7 @@ shows the actual frequency set.
         <translation> ல் முடிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source> Seconds</source>
         <translation> விநாடிகள்</translation>
     </message>
@@ -1240,22 +1247,22 @@ shows the actual frequency set.
         <translation>நேரம் மற்றும் தூரம் வரைபடம் வரையப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="43"/>
         <source>Measure</source>
         <translation>அளவிடவும்</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="69"/>
         <source>start..</source>
         <translation>தொடங்கவும்..</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Time of flight =</source>
         <translation>பயண நேரம் =</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
         <translation>தவறு. மீண்டும் முயற்சிக்கவும்</translation>
     </message>
@@ -1368,6 +1375,16 @@ shows the actual frequency set.
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
         <translation>சாதனம் மீண்டும் இணைக்கப்பட்டுள்ளது:</translation>
+    </message>
+    <message>
+        <location filename="../driven-pendulum.py" line="34"/>
+        <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../RLCsteadystate.py" line="156"/>
+        <source>Impedance Calculator</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1528,11 +1545,6 @@ shows the actual frequency set.
         <translation>டைம்பேஸ்</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1113"/>
-        <source>ட்ரிகர்</source>
-        <translation></translation>
-    </message>
-    <message>
         <location filename="../layouts/scope_layout.ui" line="1126"/>
         <source>SAVE Traces</source>
         <translation>தரவுகளை சேமிக்கவும்</translation>
@@ -1627,386 +1639,386 @@ shows the actual frequency set.
         <source>Voltage across PCS(mV):</source>
         <translation>PCSன் குறுக்கே மின்னழுத்தம்(mV)</translation>
     </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="1113"/>
+        <source>Trigger</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="165"/>
+        <location filename="../main.py" line="166"/>
         <source>Voltage measurement</source>
         <translation>மின்னழுத்த அளவீடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="166"/>
+        <location filename="../main.py" line="167"/>
         <source>Resistance measurement</source>
         <translation>மின்தடை அளவீடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="167"/>
+        <location filename="../main.py" line="168"/>
         <source>Resistors in Series</source>
         <translation>தொடரில் உள்ள மின்தடைகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="168"/>
+        <location filename="../main.py" line="169"/>
         <source>Resistors in Parallel</source>
         <translation>இணையாக உள்ள மின்தடைகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="169"/>
+        <location filename="../main.py" line="170"/>
         <source>Capacitance measurement</source>
         <translation>மின்தேக்க அளவீடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="170"/>
+        <location filename="../main.py" line="171"/>
         <source>Capacitors in Series</source>
         <translation>தொடரில் உள்ள மின்தேக்கங்கள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="171"/>
+        <location filename="../main.py" line="172"/>
         <source>Capacitors in Parallel</source>
         <translation>இணையாக உள்ள மின்தேக்கங்கள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="172"/>
+        <location filename="../main.py" line="173"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation>ஓம்&apos;ன் விதிப்படி மின்தடை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="173"/>
+        <location filename="../main.py" line="174"/>
         <source>Direct and Alternating Currents</source>
         <translation>நேர் மற்றும் மாற்று மின்னோட்டங்கள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="174"/>
+        <location filename="../main.py" line="175"/>
         <source>AC mains pickup</source>
         <translation>ஏசி மெயின்ஸ் பிக்கப்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="175"/>
+        <location filename="../main.py" line="176"/>
         <source>Separating AC and DC</source>
         <translation>AC மற்றும் DCஐ பிரித்தல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="176"/>
+        <location filename="../main.py" line="177"/>
         <source>Conducting Human body</source>
         <translation>மின்கடத்தும் மனித உடல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="177"/>
+        <location filename="../main.py" line="178"/>
         <source>Resistance of Human body</source>
         <translation>மனித உடலின் மின்தடை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="178"/>
+        <location filename="../main.py" line="179"/>
         <source>Light Dependent Resistor</source>
         <translation>ஒளி சார்பு மின்தடை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="179"/>
+        <location filename="../main.py" line="180"/>
         <source>Lemon Cell</source>
         <translation>எலுமிச்சை செல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="180"/>
+        <location filename="../main.py" line="181"/>
         <source>Simple AC generator</source>
         <translation>எளிய AC ஜெனரேட்டர்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="181"/>
+        <location filename="../main.py" line="182"/>
         <source>Transformer</source>
         <translation>மின்மாற்றி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="182"/>
+        <location filename="../main.py" line="183"/>
         <source>Resistance of Water</source>
         <translation>நீரின் மின்தடை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="183"/>
+        <location filename="../main.py" line="184"/>
         <source>Generating Sound</source>
         <translation>ஒலியை உருவாக்குகிறது</translation>
     </message>
     <message>
-        <location filename="../main.py" line="184"/>
+        <location filename="../main.py" line="185"/>
         <source>Digitizing Sound</source>
         <translation>ஒலியை டிஜிட்டல் செய்கிறது</translation>
     </message>
     <message>
-        <location filename="../main.py" line="185"/>
+        <location filename="../main.py" line="186"/>
         <source>Stroboscope</source>
         <translation>ஸ்ட்ரோபோஸ்கோப்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="197"/>
+        <location filename="../main.py" line="198"/>
         <source>Oscilloscope</source>
         <translation>அலைக்காட்டி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="212"/>
+        <location filename="../main.py" line="213"/>
         <source>Diode Characteristics</source>
         <translation>டையோடு பண்புகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="213"/>
+        <location filename="../main.py" line="214"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN வெளியீடு பண்புகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="214"/>
+        <location filename="../main.py" line="215"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP  வெளியீடு பண்புகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="198"/>
+        <location filename="../main.py" line="199"/>
         <source>Halfwave Rectifier</source>
         <translation>அரை அலை திருத்தி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="271"/>
+        <location filename="../main.py" line="272"/>
         <source>Fullwave Rectifier</source>
         <translation>முழு அலை திருத்தி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="200"/>
+        <location filename="../main.py" line="201"/>
         <source>Diode Clipping</source>
         <translation>டையோடு கிளிப்பிங்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="201"/>
+        <location filename="../main.py" line="202"/>
         <source>Diode Clamping</source>
         <translation>டையோடு கிளாம்பிங்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="202"/>
+        <location filename="../main.py" line="203"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555 மல்டிவைபிரேட்டர்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="203"/>
+        <location filename="../main.py" line="204"/>
         <source>Transistor Amplifier (CE)</source>
         <translation>டிரான்சிஸ்டர் பெருக்கி (CE)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="204"/>
+        <location filename="../main.py" line="205"/>
         <source>Inverting Amplifier</source>
         <translation>தலைகீழ் பெருக்கி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="205"/>
+        <location filename="../main.py" line="206"/>
         <source>Non-Inverting Amplifier</source>
         <translation>மாற்றப்படாத பெருக்கி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="206"/>
+        <location filename="../main.py" line="207"/>
         <source>Summing Amplifier</source>
         <translation>கூட்டு பெருக்கி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="207"/>
+        <location filename="../main.py" line="208"/>
         <source>Logic Gates</source>
         <translation>லாஜிக் கேட்ஸ்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="208"/>
+        <location filename="../main.py" line="209"/>
         <source>Clock Divider Circuit</source>
         <translation>கடிகார வகுப்பி சுற்று</translation>
     </message>
     <message>
-        <location filename="../main.py" line="220"/>
+        <location filename="../main.py" line="221"/>
         <source>Plot I-V Curve</source>
         <translation>I-V வளைவு வரையவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="221"/>
+        <location filename="../main.py" line="222"/>
         <source>XY Plotting</source>
         <translation>XY வரையப்யடுகிறது</translation>
     </message>
     <message>
-        <location filename="../main.py" line="222"/>
+        <location filename="../main.py" line="223"/>
         <source>RLC Steady state response</source>
         <translation>RLC நிலையான தன்மை விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="223"/>
+        <location filename="../main.py" line="224"/>
         <source>RC Transient response</source>
         <translation>RC நிலையற்றம் விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="224"/>
+        <location filename="../main.py" line="225"/>
         <source>RL Transient response</source>
         <translation>RL  நிலையற்றம் விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="225"/>
+        <location filename="../main.py" line="226"/>
         <source>RLC transient response</source>
         <translation>RLC நிலையற்றம் விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="226"/>
+        <location filename="../main.py" line="227"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation>வடிகட்டி சுற்றின் அதிர்வெண் விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="227"/>
+        <location filename="../main.py" line="228"/>
         <source>Electromagnetic Induction</source>
         <translation>மின்காந்த தூண்டல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="231"/>
+        <location filename="../main.py" line="232"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation>பைசோ ஒலிப்பானின் அதிர்வெண் விளைவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="232"/>
+        <location filename="../main.py" line="233"/>
         <source>Velocity of Sound</source>
         <translation>ஒலியின் திசைவேகம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="233"/>
+        <location filename="../main.py" line="234"/>
         <source>Sound beats</source>
         <translation>ஒலி துடிப்புக்கள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="237"/>
-        <source>Rod Pendulum with Light barrier</source>
-        <translation>ஒளி தடையுடன் தடி ஊசல்</translation>
-    </message>
-    <message>
         <location filename="../main.py" line="238"/>
-        <source>Pendulum Wavefrorm</source>
-        <translation>ஊசல் அலைவடிவம்</translation>
+        <source>Rod Pendulum with Light barrier</source>
+        <translation type="unfinished">ஊசல் அலைவடிவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="239"/>
+        <location filename="../main.py" line="240"/>
         <source>Driven Pendulum resonance</source>
         <translation>இயக்கப்படும் ஊசல் ஒத்ததிர்வு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="240"/>
+        <location filename="../main.py" line="241"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation>HY-SRF04 எதிரொலி தொகுதியின் மூலம் தூரம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="241"/>
+        <location filename="../main.py" line="242"/>
         <source>Gravity by Time of Flight</source>
         <translation>பயண நேரத்தின் மூலம் புவி ஈர்ப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="245"/>
+        <location filename="../main.py" line="246"/>
         <source>Temperatue, PT100 Sensor</source>
         <translation>வெப்பநிலை, PT100 சென்சார்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="246"/>
+        <location filename="../main.py" line="247"/>
         <source>Data Logger</source>
         <translation>தரவு பதிவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="247"/>
+        <location filename="../main.py" line="248"/>
         <source>Advanced Data Logger</source>
         <translation>மேம்பட்ட தரவு பதிவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="251"/>
+        <location filename="../main.py" line="252"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation>காந்தக் கலப்பு  (MPU925x சென்சார்)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="252"/>
+        <location filename="../main.py" line="253"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation>ஒளிர்வு(TSL2561) பதிவு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="253"/>
+        <location filename="../main.py" line="254"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050 முடுக்கம், வேகம் மற்றும் வெப்பநிலை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="254"/>
+        <location filename="../main.py" line="255"/>
         <source>General Purpose I2C Sensors</source>
         <translation>பொது பயன்பாடுள்ள I2C சென்சார்கள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="258"/>
+        <location filename="../main.py" line="259"/>
         <source>Read Inputs</source>
         <translation>உள்ளீடுகளைப் படிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="260"/>
         <source>Set DC Voltages</source>
         <translation>DC மின்னழுத்தங்களை அமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="260"/>
+        <location filename="../main.py" line="261"/>
         <source>Capture Single Input</source>
         <translation>ஒரு உள்ளீடை பிடிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="261"/>
+        <location filename="../main.py" line="262"/>
         <source>Capture Two Inputs</source>
         <translation>இரண்டு உள்ளீடுகளைப் பிடிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="262"/>
+        <location filename="../main.py" line="263"/>
         <source>Capture Four Inputs</source>
         <translation>நான்கு உள்ளீடுகளைப் பிடிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="263"/>
+        <location filename="../main.py" line="264"/>
         <source>Triangular Waveform</source>
         <translation>முக்கோண அலைவடிவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="264"/>
+        <location filename="../main.py" line="265"/>
         <source>Arbitrary Waveform</source>
         <translation>தன்னிச்சையான அலைவடிவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="265"/>
+        <location filename="../main.py" line="266"/>
         <source>Waveform Table</source>
         <translation>அலைவடிவ அட்டவணை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="266"/>
+        <location filename="../main.py" line="267"/>
         <source>RC Transient</source>
         <translation>RC நிலையற்றம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="267"/>
+        <location filename="../main.py" line="268"/>
         <source>RL Transient</source>
         <translation>RL நிலையற்றம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="268"/>
+        <location filename="../main.py" line="269"/>
         <source>RC Integration</source>
         <translation>RC ஒருங்கிணைப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="269"/>
+        <location filename="../main.py" line="270"/>
         <source>Clipping with Diode</source>
         <translation>டையோடு கிளிப்பிங்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="270"/>
+        <location filename="../main.py" line="271"/>
         <source>Clamping with Diode</source>
         <translation>டையோடு கிளாம்பிங்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="272"/>
+        <location filename="../main.py" line="273"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib மற்றும் ICன் வரைபடம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="273"/>
+        <location filename="../main.py" line="274"/>
         <source>Fourier Transform</source>
         <translation>ஃபூரியர் மாற்றம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="274"/>
+        <location filename="../main.py" line="275"/>
         <source>Rod Pendulum</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="450"/>
+        <location filename="../main.py" line="421"/>
         <source>Enable PopUp Help Window</source>
         <translation></translation>
     </message>
@@ -2021,67 +2033,67 @@ shows the actual frequency set.
         <translation type="obsolete">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="142"/>
+        <location filename="../main.py" line="143"/>
         <source>Device</source>
         <translation>சாதனம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="155"/>
+        <location filename="../main.py" line="156"/>
         <source>Reconnect</source>
         <translation>மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="156"/>
+        <location filename="../main.py" line="157"/>
         <source>LightBackGround</source>
         <translation>வெளிச்சமிக்க பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="157"/>
+        <location filename="../main.py" line="158"/>
         <source>DarkBackGround</source>
         <translation>இருண்ட பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="158"/>
+        <location filename="../main.py" line="159"/>
         <source>Choose Language</source>
         <translation>மொழியை தேர்ந்தெடுக்கவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="143"/>
+        <location filename="../main.py" line="144"/>
         <source>School Expts</source>
         <translation>பள்ளி ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="144"/>
+        <location filename="../main.py" line="145"/>
         <source>Electronics</source>
         <translation>மின்னணுவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="145"/>
+        <location filename="../main.py" line="146"/>
         <source>Electrical</source>
         <translation>மின்னியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="146"/>
+        <location filename="../main.py" line="147"/>
         <source>Sound</source>
         <translation>ஒலியியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="147"/>
+        <location filename="../main.py" line="148"/>
         <source>Mechanics</source>
         <translation>இயங்குவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="148"/>
+        <location filename="../main.py" line="149"/>
         <source>Other Expts</source>
         <translation>மற்ற ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="149"/>
+        <location filename="../main.py" line="150"/>
         <source>I2C Modules</source>
         <translation>I2C தொகுதிகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="150"/>
+        <location filename="../main.py" line="151"/>
         <source>PythonCode</source>
         <translation>பைதான் கோடு</translation>
     </message>
@@ -2221,22 +2233,22 @@ shows the actual frequency set.
         <translation>ஸ்ப்லைன்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="159"/>
+        <location filename="../main.py" line="160"/>
         <source>Screenshot</source>
         <translation>ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="160"/>
+        <location filename="../main.py" line="161"/>
         <source>Whole Window Alt-s</source>
         <translation>முழு விண்டோ Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="161"/>
+        <location filename="../main.py" line="162"/>
         <source>Graph Only Alt-p</source>
         <translation>வரைபடம் மட்டும் Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="162"/>
+        <location filename="../main.py" line="163"/>
         <source>Credits</source>
         <translation>நன் மதிப்பு</translation>
     </message>
@@ -2244,125 +2256,135 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="530"/>
+        <location filename="../main.py" line="502"/>
         <source>Failed to load scope</source>
-        <translation type="obsolete">Failed to load scope</translation>
+        <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="562"/>
+        <location filename="../main.py" line="535"/>
         <source>Failed to load %s</source>
-        <translation type="obsolete">Failed to load %s</translation>
+        <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="609"/>
+        <location filename="../main.py" line="582"/>
         <source>Device</source>
         <translation>சாதனம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="610"/>
+        <location filename="../main.py" line="583"/>
         <source>Reconnect</source>
         <translation>மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="613"/>
+        <location filename="../main.py" line="586"/>
         <source>Choose Language</source>
         <translation>மொழியை தேர்ந்தெடுக்கவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="616"/>
         <source>School Expts</source>
         <translation>பள்ளி ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="620"/>
         <source>Electronics</source>
         <translation>மின்னணுவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="627"/>
         <source>Electrical</source>
         <translation>மின்னியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="642"/>
+        <location filename="../main.py" line="631"/>
         <source>Sound</source>
         <translation>ஒலியியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="646"/>
+        <location filename="../main.py" line="635"/>
         <source>Mechanics</source>
         <translation>இயங்குவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="650"/>
+        <location filename="../main.py" line="639"/>
         <source>Other Expts</source>
         <translation>மற்ற ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="654"/>
+        <location filename="../main.py" line="643"/>
         <source>I2C Modules</source>
         <translation>I2C தொகுதிகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="658"/>
+        <location filename="../main.py" line="647"/>
         <source>PythonCode</source>
         <translation>பைதான் கோடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="863"/>
         <source>Oscilloscope</source>
         <translation>அலைக்காட்டி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="611"/>
+        <location filename="../main.py" line="584"/>
         <source>LightBackGround</source>
         <translation>வெளிச்சமிக்க பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="585"/>
         <source>DarkBackGround</source>
         <translation>இருண்ட பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="609"/>
         <source>Screenshot</source>
         <translation>ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="790"/>
+        <location filename="../main.py" line="797"/>
         <source>Missing Plot</source>
         <translation>வரைபடத்தை காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="790"/>
+        <location filename="../main.py" line="797"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>வரைபடத்தை கண்டுபிடிக்க முடியவில்லை. வலது கிளிக் செய்து ஏற்றுமதி செய்ய முயற்சிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="625"/>
+        <location filename="../main.py" line="612"/>
         <source>Credits</source>
         <translation>நன் மதிப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="610"/>
         <source>Whole Window Alt-s</source>
         <translation>முழு விண்டோ Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="624"/>
+        <location filename="../main.py" line="611"/>
         <source>Graph Only Alt-p</source>
         <translation>வரைபடம் மட்டும் Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="815"/>
+        <location filename="../main.py" line="824"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>அகலத்தை (px) உள்ளீடவும். உயரம் தானாக அமைக்கப்படும்</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="605"/>
+        <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="614"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="343"/>
+        <location filename="../main.py" line="312"/>
         <source>Help: %s</source>
         <translation>உதவி: %s</translation>
     </message>

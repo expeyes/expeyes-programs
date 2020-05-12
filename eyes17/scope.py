@@ -206,7 +206,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 
 
 		except Exception as e:
-			self.msgwin.setText('<font color="red">' + self.tr('Error. Could not connect. Check cable. ') + str(e))
+			self.msgwin.setText('<font color="red">' + self.tr('Error. Could not connect. Check cable. ') )
 		
 
 	def show_fft(self):

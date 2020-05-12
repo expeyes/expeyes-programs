@@ -553,7 +553,7 @@
     <message>
         <location filename="../MPU6050.py" line="137"/>
         <source>I2C device communication error</source>
-        <translation>12C ഡിവൈസുമായുള്ള ബന്ധം &gt;എറർ</translation>
+        <translation>12C ഡിവൈസുമായുള്ള ബന്ധം &gt;തകരാറ് </translation>
     </message>
     <message>
         <location filename="../MPU6050.py" line="155"/>
@@ -653,7 +653,7 @@
     <message>
         <location filename="../plotIV.py" line="228"/>
         <source>Err</source>
-        <translation>എറർ</translation>
+        <translation>തകരാറ് </translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
@@ -828,7 +828,7 @@
     <message>
         <location filename="../RLCsteadystate.py" line="283"/>
         <source>Data Analysis Error</source>
-        <translation>ഡാറ്റ വിശകലനം ചെയ്യാനാകുന്നില്ല &gt;എറർ</translation>
+        <translation>ഡാറ്റ വിശകലനം ചെയ്യാനാകുന്നില്ല &gt;പിശക്</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="289"/>
@@ -933,7 +933,7 @@
     <message>
         <location filename="../scope.py" line="209"/>
         <source>Error. Could not connect. Check cable. </source>
-        <translation>എറർ.ബന്ധം പുനസ്ഥാപിക്കാനാകുന്നില്ല കേബിൾ ചെക്ക് ചെയ്യുക. </translation>
+        <translation>തകരാറ് .ബന്ധം പുനസ്ഥാപിക്കാനാകുന്നില്ല കേബിൾ ചെക്ക് ചെയ്യുക. </translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="171"/>
@@ -948,7 +948,7 @@
     <message>
         <location filename="../scope.py" line="474"/>
         <source>FFT Error</source>
-        <translation>FFT എറർ</translation>
+        <translation>FFT പിശക്</translation>
     </message>
     <message>
         <location filename="../scope.py" line="281"/>
@@ -1038,7 +1038,7 @@
     <message>
         <location filename="../soundBeats.py" line="171"/>
         <source>FFT err</source>
-        <translation>FFT എറർ</translation>
+        <translation>FFT പിശക്</translation>
     </message>
     <message>
         <location filename="../soundVelocity.py" line="178"/>
@@ -1128,7 +1128,7 @@
     <message>
         <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
-        <translation>എറർ വീണ്ടും ശ്രമിക്കുക</translation>
+        <translation>പിശക് വീണ്ടും ശ്രമിക്കുക</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="56"/>
