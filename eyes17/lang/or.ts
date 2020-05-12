@@ -592,12 +592,12 @@
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
-        <source>Base valtage shold be from .5 to 3</source>
+        <source>Base voltage should be from .5 to 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
-        <source>Invalid Base valtage, shold be from .5 to 3</source>
+        <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -681,17 +681,17 @@ For Driven Pendulum Expt.</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
-        <source>Base valtage shold be from -0.5 to -3</source>
+        <source>Base voltage should be from -0.5 to -3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
-        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
+        <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
-        <source>Temparature (C)</source>
+        <source>Temperature (C)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1883,7 +1883,7 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="239"/>
-        <source>Pendulum Wavefrorm</source>
+        <source>Pendulum Waveform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1918,7 +1918,7 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
+        <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="mr_IN" sourcelanguage="en">
+<!DOCTYPE TS><TS version="2.0" language="mr_IN" sourcelanguage="en">
 <context>
     <name>Dialog</name>
     <message>
@@ -11,82 +10,82 @@
     <message>
         <location filename="../layouts/dio_sensor.ui" line="52"/>
         <source>Data Logger</source>
-        <translation >डेटा लॉगर</translation>
+        <translation>डेटा लॉगर</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
-        <translation >सुरु करा</translation>
+        <translation>सुरु करा</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="66"/>
         <source>Scale</source>
-        <translation >स्केल</translation>
+        <translation>स्केल</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="124"/>
         <source>SINE FIT</source>
-        <translation >साइन फिट</translation>
+        <translation>साइन फिट</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="137"/>
         <source>Pause</source>
-        <translation >पॉज</translation>
+        <translation>पॉज</translation>
     </message>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="144"/>
         <source>DAMPED SINE FIT</source>
-        <translation >डॅमप्ड साइन फिट</translation>
+        <translation>डॅमप्ड साइन फिट</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
         <source>Configure Axis</source>
-        <translation >अक्ष कॉन्फिगर करा</translation>
+        <translation>अक्ष कॉन्फिगर करा</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="71"/>
         <source>REFRESH</source>
-        <translation >रीफ्रेश</translation>
+        <translation>रीफ्रेश</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="97"/>
         <source>.</source>
-        <translation >.</translation>
+        <translation>.</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="128"/>
         <source>CONFIRM</source>
-        <translation >पुष्टी</translation>
+        <translation>पुष्टी</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="146"/>
         <source>Min </source>
-        <translation >किमान</translation>
+        <translation>किमान</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="165"/>
         <source>Max </source>
-        <translation >कमाल</translation>
+        <translation>कमाल</translation>
     </message>
     <message>
         <location filename="../layouts/dio_control.ui" line="14"/>
         <source>Control</source>
-        <translation >नियंत्रण</translation>
+        <translation>नियंत्रण</translation>
     </message>
     <message>
         <location filename="../layouts/dio_robot.ui" line="14"/>
         <source>Dialog</source>
-        <translation >संवाद</translation>
+        <translation>संवाद</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="14"/>
         <source>Screnshot</source>
-        <translation >स्क्रीनशॉट</translation>
+        <translation>स्क्रीनशॉट</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="48"/>
         <source>Translations =</source>
-        <translation >अनुवाद</translation>
+        <translation>अनुवाद</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="58"/>
@@ -109,32 +108,32 @@
     <message>
         <location filename="../BHCurve.py" line="40"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
-        <translation >व्होल्टेज (V) -&gt; करंट  -&gt; मॅग्नेटिक फील्ड (B)</translation>
+        <translation>व्होल्टेज (V) -&gt; करंट  -&gt; मॅग्नेटिक फील्ड (B)</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="42"/>
         <source>Magnetic Field (H)</source>
-        <translation >मॅग्नेटिक फील्ड (H)</translation>
+        <translation>मॅग्नेटिक फील्ड (H)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="75"/>
         <source>Start</source>
-        <translation >सुरु करा</translation>
+        <translation>सुरु करा</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="79"/>
         <source>Stop</source>
-        <translation >थांबवा</translation>
+        <translation>थांबवा</translation>
     </message>
     <message>
         <location filename="../BHCurve.py" line="62"/>
         <source>Set Zero</source>
-        <translation >शून्य सेट करा</translation>
+        <translation>शून्य सेट करा</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="87"/>
         <source>Clear Traces</source>
-        <translation >ट्रेसेस क्लिअर करा </translation>
+        <translation>ट्रेसेस क्लिअर करा </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="72"/>
@@ -573,12 +572,12 @@
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
-        <source>Base valtage shold be from .5 to 3</source>
+        <source>Base voltage should be from .5 to 3</source>
         <translation type="unfinished">बेस व्होल्टेज .5V ते 3V पर्यंत असावे</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
-        <source>Invalid Base valtage, shold be from .5 to 3</source>
+        <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished">अवैध बेस व्होल्टेज, .5V ते 3V पर्यंत असू द्या</translation>
     </message>
     <message>
@@ -660,17 +659,17 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
-        <source>Base valtage shold be from -0.5 to -3</source>
+        <source>Base voltage should be from -0.5 to -3</source>
         <translation type="unfinished">बेस व्होल्टेज -0.5V ते -3V पर्यंत असावे</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
-        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
+        <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished">अवैध बेस व्होल्टेज, -0.5V ते -3V पर्यंत असू द्या</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
-        <source>Temparature (C)</source>
+        <source>Temperature (C)</source>
         <translation type="unfinished">तापमान (C)</translation>
     </message>
     <message>
@@ -1397,7 +1396,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="1323"/>
         <source>.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">.</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="251"/>
@@ -1854,7 +1853,7 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="239"/>
-        <source>Pendulum Wavefrorm</source>
+        <source>Pendulum Waveform</source>
         <translation type="unfinished">पेंडुलम वेव्हफॉर्म</translation>
     </message>
     <message>
@@ -1889,7 +1888,7 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
+        <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished">मॅग्नेटिक हिस्टेरिसिस (MPU925x सेन्सर)</translation>
     </message>
     <message>

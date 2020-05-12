@@ -52,7 +52,7 @@ class Expt(QWidget):
 		ax = self.pwin.getAxis('bottom')
 		ax.setLabel(self.tr('Time (mS)'))
 		ax = self.pwin.getAxis('left')
-		ax.setLabel(self.tr('Temparature (C)'))
+		ax.setLabel(self.tr('Temperature (C)'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.TMIN, self.TMAX)
 		self.pwin.setYRange(self.TPMIN, self.TPMAX)

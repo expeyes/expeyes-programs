@@ -365,8 +365,8 @@
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
-        <source>Temparature (C)</source>
-        <translation>Température (°C)</translation>
+        <source>Temperature (C)</source>
+        <translation type="unfinished">Température (°C)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="66"/>
@@ -1146,13 +1146,13 @@ Affichage de l&apos;ensemble de fréquences actuel.
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
-        <source>Base valtage shold be from .5 to 3</source>
-        <translation>La tension de base devrait être entre 5 et 3</translation>
+        <source>Base voltage should be from .5 to 3</source>
+        <translation type="unfinished">La tension de base devrait être entre 5 et 3</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
-        <source>Invalid Base valtage, shold be from .5 to 3</source>
-        <translation>Tension de base non valide ; elle doit être entre 5 et 3</translation>
+        <source>Invalid Base voltage, should be from .5 to 3</source>
+        <translation type="unfinished">Tension de base non valide ; elle doit être entre 5 et 3</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
@@ -1181,13 +1181,13 @@ Affichage de l&apos;ensemble de fréquences actuel.
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
-        <source>Base valtage shold be from -0.5 to -3</source>
-        <translation>La tension de base devrait être entre -0,5 et -3</translation>
+        <source>Base voltage should be from -0.5 to -3</source>
+        <translation type="unfinished">La tension de base devrait être entre -0,5 et -3</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
-        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
-        <translation>Tension de base invalide, elle devrait être entre -0,5 et -3</translation>
+        <source>Invalid Base voltage, should be from -0.5 to -3</source>
+        <translation type="unfinished">Tension de base invalide, elle devrait être entre -0,5 et -3</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="242"/>
@@ -2611,8 +2611,8 @@ Pour l&apos;expe. de pendule forcé.</translation>
     </message>
     <message>
         <location filename="../main.py" line="239"/>
-        <source>Pendulum Wavefrorm</source>
-        <translation>Signal d&apos;un pendule</translation>
+        <source>Pendulum Waveform</source>
+        <translation type="unfinished">Signal d&apos;un pendule</translation>
     </message>
     <message>
         <location filename="../main.py" line="240"/>
@@ -2646,8 +2646,8 @@ Pour l&apos;expe. de pendule forcé.</translation>
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation>Hystérésis magnétique (capteur MPU925x)</translation>
+        <source>Magnetic Hysteresis (MPU925x Sensor)</source>
+        <translation type="unfinished">Hystérésis magnétique (capteur MPU925x)</translation>
     </message>
     <message>
         <location filename="../main.py" line="253"/>

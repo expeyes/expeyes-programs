@@ -40,7 +40,7 @@
     <message>
         <location filename="../layouts/inputSelector.ui" line="19"/>
         <source>Configure Axis</source>
-        <translation type="unfinished"></translation>
+        <translation>అక్షాన్ని కాన్ఫిగర్ చేయండి</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="71"/>
@@ -70,32 +70,32 @@
     <message>
         <location filename="../layouts/dio_control.ui" line="14"/>
         <source>Control</source>
-        <translation type="unfinished"></translation>
+        <translation>నియంత్రణ</translation>
     </message>
     <message>
         <location filename="../layouts/dio_robot.ui" line="14"/>
         <source>Dialog</source>
-        <translation type="unfinished"></translation>
+        <translation>డైలాగ్</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="14"/>
-        <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <source>Screnshot</source>
+        <translation type="unfinished">స్క్రీన్ షాట్</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="48"/>
         <source>Translations =</source>
-        <translation type="unfinished"></translation>
+        <translation>అనువాదాలు =</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="61"/>
         <source>Path =</source>
-        <translation type="unfinished"></translation>
+        <translation>మార్గం =</translation>
     </message>
     <message>
         <location filename="../layouts/screenshot.ui" line="71"/>
         <source>PNG, width =</source>
-        <translation type="unfinished"></translation>
+        <translation>PNG, వెడల్పు =</translation>
     </message>
 </context>
 <context>
@@ -108,7 +108,7 @@
     <message>
         <location filename="../BHCurve.py" line="42"/>
         <source>Magnetic Field (H)</source>
-        <translation type="unfinished">అయిస్కాంత క్షేత్రం(H)</translation>
+        <translation>అయిస్కాంత క్షేత్రం(H)</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="75"/>
@@ -443,7 +443,7 @@
     <message>
         <location filename="../induction.py" line="130"/>
         <source> V. Drop the Magnet until a trace is captured</source>
-        <translation type="unfinished">V. ఒక ట్రేస్ సంగ్రహించే వరకు అయస్కాంతాన్ని వదలండి</translation>
+        <translation>V. ఒక ట్రేస్ సంగ్రహించే వరకు అయస్కాంతాన్ని వదలండి</translation>
     </message>
     <message>
         <location filename="../induction.py" line="145"/>
@@ -582,12 +582,12 @@
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
-        <source>Base valtage shold be from .5 to 3</source>
+        <source>Base voltage should be from .5 to 3</source>
         <translation type="unfinished">బేస్ వోల్టేజ్ .5 నుండి 3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
-        <source>Invalid Base valtage, shold be from .5 to 3</source>
+        <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished">చెల్లని బేస్ వోల్టేజ్, .5 నుండి 3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
@@ -613,7 +613,7 @@
     <message>
         <location filename="../plotIV.py" line="63"/>
         <source>R to Ground</source>
-        <translation type="unfinished">R నుండి గ్రౌండ్ కు</translation>
+        <translation>R నుండి గ్రౌండ్ కు</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="102"/>
@@ -657,18 +657,18 @@
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
-        <source>Base valtage shold be from -0.5 to -3</source>
-        <translation>బేస్ వోల్టేజ్ -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
+        <source>Base voltage should be from -0.5 to -3</source>
+        <translation type="unfinished">బేస్ వోల్టేజ్ -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
-        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
-        <translation>చెల్లని బేస్ వోల్టేజ్, -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
+        <source>Invalid Base voltage, should be from -0.5 to -3</source>
+        <translation type="unfinished">చెల్లని బేస్ వోల్టేజ్, -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
-        <source>Temparature (C)</source>
-        <translation>ఉష్ణోగ్రత (c)</translation>
+        <source>Temperature (C)</source>
+        <translation type="unfinished">ఉష్ణోగ్రత (c)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="66"/>
@@ -1183,94 +1183,94 @@
     <message>
         <location filename="../BHCurve.py" line="62"/>
         <source>Set Zero</source>
-        <translation type="unfinished"></translation>
+        <translation>సున్నా సెట్ చేయండి</translation>
     </message>
     <message>
         <location filename="../diodeIV.py" line="61"/>
         <source>FIT with I=Io* exp(qV/nkT)</source>
-        <translation type="unfinished"></translation>
+        <translation> I = Io * exp (qV/nkT) తో FIT చేయండి</translation>
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="87"/>
         <source>
 Set SQ1 Frequency
 For Driven Pendulum Expt.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">నడిచే లోలకం ప్రయోగం కోసం SQ1 ఫ్రీక్వెన్సీని సెట్ చేయండి</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="75"/>
         <source>Starting PV1</source>
-        <translation type="unfinished">PV1 ప్రారంభిస్తోంది </translation>
+        <translation>PV1 ప్రారంభిస్తోంది </translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="88"/>
         <source>0 -&gt; 5V step on OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>OD1 పై 5V స్టెప్</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="92"/>
         <source>5 -&gt; 0V step on OD1</source>
-        <translation type="unfinished"></translation>
+        <translation>OD1 పై 0V స్టెప్</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="150"/>
         <source>No data to analyze.</source>
-        <translation type="unfinished"></translation>
+        <translation>విశ్లేషించడానికి డేటా లేదు.</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="150"/>
         <source>Fitted data with V=Vo*exp(-t/RC). RC = </source>
-        <translation type="unfinished"></translation>
+        <translation>V = Vo * exp (-t/RC) తో అమర్చిన డేటా. RC =</translation>
     </message>
     <message>
         <location filename="../RCtransient.py" line="152"/>
         <source>Failed to fit the curve with V=Vo*exp(-t/RC)</source>
-        <translation type="unfinished"></translation>
+        <translation>V = Vo * exp (-t/RC) తో వక్రతను అమర్చడంలో విఫలమైంది</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
-        <translation type="unfinished"></translation>
+        <translation>కొన్ని ఫీల్డ్‌లో చెల్లని ఇన్‌పుట్</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="97"/>
         <source>Rext =</source>
-        <translation type="unfinished"></translation>
+        <translation>Rext =</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="178"/>
         <source>Failed to fit the curve</source>
-        <translation type="unfinished"></translation>
+        <translation>కర్వ్ ఫిట్ విఫలమైంది</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="181"/>
         <source> mSec : Rind = </source>
-        <translation type="unfinished"></translation>
+        <translation>mSec : Rind =</translation>
     </message>
     <message>
         <location filename="../RLtransient.py" line="184"/>
         <source>Failed to fit the curve with V=Vo*exp(-t*L/R)</source>
-        <translation type="unfinished"></translation>
+        <translation>V = Vo * exp (-t*L/R) తో వక్రతను అమర్చడంలో విఫలమైంది</translation>
     </message>
     <message>
         <location filename="../scope.py" line="346"/>
         <source>%s input is clipped. Increase range</source>
-        <translation type="unfinished"></translation>
+        <translation>% s ఇన్పుట్ క్లిప్ చేయబడింది.పరిధిని పెంచండి</translation>
     </message>
     <message>
         <location filename="../scope.py" line="444"/>
         <source>Range of</source>
-        <translation type="unfinished"></translation>
+        <translation>పరిధి</translation>
     </message>
     <message>
         <location filename="../scope.py" line="444"/>
         <source> set to </source>
-        <translation type="unfinished"></translation>
+        <translation>కు సెట్ చేయబడింది</translation>
     </message>
     <message>
         <location filename="../scope.py" line="684"/>
         <source>Capacitance too high or short to ground</source>
-        <translation type="unfinished"></translation>
+        <translation>కెపాసిటన్స్  చాలా ఎక్కువ లేదా GNDకి షార్ట్ అయినది </translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="102"/>
@@ -1278,98 +1278,97 @@ For Driven Pendulum Expt.</source>
 only after Enable/Disable controls.
 shows the actual frequency set.
 </source>
-        <translation type="unfinished">
-ఎనేబుల్/డిసేబుల్ కంట్రోల్స్ తర్వాతే ఫ్రీక్వెన్సీ మార్పు ప్రభావితం చేయబడుతుంది</translation>
+        <translation>ఎనేబుల్/డిసేబుల్ కంట్రోల్స్ తర్వాతే ఫ్రీక్వెన్సీ మార్పు ప్రభావితం చేయబడుతుంది</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="202"/>
         <source>Completed in </source>
-        <translation type="unfinished"></translation>
+        <translation>లో పూర్తయింది</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="242"/>
         <source>Increase time interval to </source>
-        <translation type="unfinished"></translation>
+        <translation>సమయ వ్యవధి పెంచండి</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="242"/>
         <source> or Reduce frequency span</source>
-        <translation type="unfinished"></translation>
+        <translation>లేదా ఫ్రీక్వెన్సీ వ్యవధిని తగ్గించండి</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="254"/>
         <source> mS at each step</source>
-        <translation type="unfinished"></translation>
+        <translation>ప్రతి దశలో mS</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="64"/>
         <source>Measure during</source>
-        <translation type="unfinished"></translation>
+        <translation>సమయంలో కొలత</translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="83"/>
         <source>Fit Curve using Sine</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../sr04dist.py" line="159"/>
         <source>Sine Fit Result: Frequency </source>
-        <translation type="unfinished"></translation>
+        <translation>సైన్ ఉపయోగించి కర్వ్ ఫిట్ చేయండి </translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="102"/>
         <source>show (A1-A2) Vs A2</source>
-        <translation type="unfinished"></translation>
+        <translation>(A1-A2) Vs A2 ని చూపండి</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="58"/>
         <source>Voltage (A1)</source>
-        <translation type="unfinished">వోల్టేజ్ (A2) {1)?}</translation>
+        <translation>వోల్టేజ్ (A1) {1)?}</translation>
     </message>
     <message>
         <location filename="../XYplot.py" line="164"/>
         <source>Y-intercept = %5.3f V</source>
-        <translation type="unfinished"></translation>
+        <translation>Y- అంతరాయం =% 5.3f V</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="86"/>
         <source>Ending PV1</source>
-        <translation type="unfinished">PV1 ఎండింగ్</translation>
+        <translation>PV1 పివి 1 ముగుస్తోంది</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
-        <translation type="unfinished">ప్రారంభిస్తోంది</translation>
+        <translation>ప్రారంభిస్తోంది</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="72"/>
         <source>Ending</source>
-        <translation type="unfinished">ఆపబడుతోంది</translation>
+        <translation>ఆపబడుతోంది</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation type="unfinished"># దశల సంఖ్య </translation>
+        <translation># దశల సంఖ్య </translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
         <source>Sec</source>
-        <translation type="unfinished"></translation>
+        <translation>Sec</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="83"/>
         <source>Total time</source>
-        <translation type="unfinished">సమయము</translation>
+        <translation>సమయము</translation>
     </message>
     <message>
         <location filename="../scope.py" line="185"/>
         <source>Calibrated </source>
-        <translation type="unfinished">కాలిబ్రేటెడ్</translation>
+        <translation>కాలిబ్రేటెడ్</translation>
     </message>
     <message>
         <location filename="../scope.py" line="187"/>
         <source>Not Calibrated </source>
-        <translation type="unfinished">క్యాలిబ్రేషన్ చేయలేదు</translation>
+        <translation>క్యాలిబ్రేషన్ చేయలేదు</translation>
     </message>
     <message>
         <location filename="../scope.py" line="188"/>
@@ -1487,7 +1486,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="959"/>
         <source>symmetric</source>
-        <translation>symmetric</translation>
+        <translation>సమాన</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="1015"/>
@@ -1497,7 +1496,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="841"/>
         <source>symmetric volts</source>
-        <translation type="unfinished">symmetric volts</translation>
+        <translation>సమాన వోల్ట్ల</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="884"/>
@@ -1622,17 +1621,17 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/scope_layout.ui" line="666"/>
         <source>1.65mA</source>
-        <translation type="unfinished"></translation>
+        <translation>1.65mA</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="685"/>
         <source>PCS</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS</translation>
     </message>
     <message>
         <location filename="../layouts/scope_layout.ui" line="723"/>
         <source>Voltage across PCS(mV):</source>
-        <translation type="unfinished"></translation>
+        <translation>PCS అంతటా వోల్టేజ్ (mV)</translation>
     </message>
 </context>
 <context>
@@ -1805,7 +1804,7 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="207"/>
         <source>Summing Amplifier</source>
-        <translation type="unfinished">సమ్మింగ్ యాంప్లిఫైయర్</translation>
+        <translation>సమ్మింగ్ యాంప్లిఫైయర్</translation>
     </message>
     <message>
         <location filename="../main.py" line="208"/>
@@ -1914,8 +1913,8 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation>మాగ్నెటిక్ హిస్టెరిసిస్(MPU925x సెన్సార్)</translation>
+        <source>Magnetic Hysteresis (MPU925x Sensor)</source>
+        <translation type="unfinished">మాగ్నెటిక్ హిస్టెరిసిస్(MPU925x సెన్సార్)</translation>
     </message>
     <message>
         <location filename="../main.py" line="253"/>
@@ -2035,22 +2034,22 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="47"/>
         <source>Please restart the application to lighten the screen&apos;s background</source>
-        <translation type="obsolete">ഇളം പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക</translation>
+        <translation type="obsolete">స్క్రీన్ ని కొంచెం కాంతి వంతము (తెలుపు ఛాయా) చేయటానికి అప్లికేషన్ ను మరి యొక సారీ మొదలు పెట్టుము.</translation>
     </message>
     <message>
         <location filename="../main.py" line="48"/>
         <source>Please restart the application to darken the screen&apos;s background.</source>
-        <translation type="obsolete">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
+        <translation type="obsolete">స్క్రీన్ బాక్గ్రౌండ్ ను కొంచెం కాంతి విహీనము (నలుపు ఛాయా) చేయటానికి అప్లికేషన్ ను మరి యొక సారీ మొదలు పెట్టుము.</translation>
     </message>
     <message>
         <location filename="../main.py" line="143"/>
         <source>Device</source>
-        <translation type="unfinished">పరికరం</translation>
+        <translation>పరికరం</translation>
     </message>
     <message>
         <location filename="../main.py" line="156"/>
         <source>Reconnect</source>
-        <translation type="unfinished">రీకనెక్ట్ </translation>
+        <translation>రీకనెక్ట్ </translation>
     </message>
     <message>
         <location filename="../main.py" line="39"/>
@@ -2065,47 +2064,47 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="159"/>
         <source>Choose Language</source>
-        <translation type="unfinished">భాషను ఎంచుకోండి</translation>
+        <translation>భాషను ఎంచుకోండి</translation>
     </message>
     <message>
         <location filename="../main.py" line="144"/>
         <source>School Expts</source>
-        <translation type="unfinished">స్కూల్ ప్రయోగాలు</translation>
+        <translation>పాఠశాల ప్రయోగాలు</translation>
     </message>
     <message>
         <location filename="../main.py" line="145"/>
         <source>Electronics</source>
-        <translation type="unfinished">ఎలక్ట్రానిక్స్</translation>
+        <translation>ఎలక్ట్రానిక్స్</translation>
     </message>
     <message>
         <location filename="../main.py" line="146"/>
         <source>Electrical</source>
-        <translation type="unfinished">ఎలక్ట్రికల్</translation>
+        <translation>ఎలక్ట్రికల్</translation>
     </message>
     <message>
         <location filename="../main.py" line="147"/>
         <source>Sound</source>
-        <translation type="unfinished">ధ్వని</translation>
+        <translation>ధ్వని</translation>
     </message>
     <message>
         <location filename="../main.py" line="148"/>
         <source>Mechanics</source>
-        <translation type="unfinished">మెకానిక్స్</translation>
+        <translation>మెకానిక్స్</translation>
     </message>
     <message>
         <location filename="../main.py" line="149"/>
         <source>Other Expts</source>
-        <translation type="unfinished">ఇతర ప్రయోగాలు</translation>
+        <translation>ఇతర ప్రయోగాలు</translation>
     </message>
     <message>
         <location filename="../main.py" line="150"/>
         <source>I2C Modules</source>
-        <translation type="unfinished">I2C మాడ్యూల్స్</translation>
+        <translation>I2C మాడ్యూల్స్</translation>
     </message>
     <message>
         <location filename="../main.py" line="151"/>
         <source>PythonCode</source>
-        <translation type="unfinished">పైథాన్ కోడ్</translation>
+        <translation>పైథాన్ కోడ్</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="14"/>
@@ -2120,12 +2119,12 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/advancedLogger.ui" line="49"/>
         <source>Click the Button above to select X axis parameter</source>
-        <translation>X-అక్షం పరామితిని (పారామిటర్ ni) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
+        <translation>X-అక్షం పరామితిని (పారామిటర్ ని) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="56"/>
         <source>Click the Button above to select Y axis parameter</source>
-        <translation>Y-అక్షం పరామితిని (పారామిటర్ ni) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
+        <translation>Y-అక్షం పరామితిని (పారామిటర్ ని) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
     </message>
     <message>
         <location filename="../layouts/advancedLogger.ui" line="69"/>
@@ -2225,7 +2224,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="118"/>
         <source>Number of samples considered for moving average in results calculation</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫలితాల గణనలో సగటును తరలించడానికి పరిగణించబడిన నమూనాల సంఖ్య</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="125"/>
@@ -2235,7 +2234,7 @@ shows the actual frequency set.
     <message>
         <location filename="../layouts/newtonslaws.ui" line="132"/>
         <source>Degree of the polynomial used for smoothing the data</source>
-        <translation type="unfinished"></translation>
+        <translation>డేటాను సున్నితంగా చేయడానికి ఉపయోగించే బహుపది (polynomial) డిగ్రీ</translation>
     </message>
     <message>
         <location filename="../layouts/newtonslaws.ui" line="204"/>
@@ -2245,37 +2244,37 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="157"/>
         <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation>లైట్ బ్యాక్‌గ్రౌండ్</translation>
     </message>
     <message>
         <location filename="../main.py" line="158"/>
         <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation>డార్క్ బ్యాక్‌గ్రౌండ్</translation>
     </message>
     <message>
         <location filename="../main.py" line="160"/>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>స్క్రీన్ షాట్</translation>
     </message>
     <message>
         <location filename="../main.py" line="161"/>
         <source>Whole Window Alt-s</source>
-        <translation type="unfinished"></translation>
+        <translation>మొత్తం విండో Alt-s</translation>
     </message>
     <message>
         <location filename="../main.py" line="162"/>
         <source>Graph Only Alt-p</source>
-        <translation type="unfinished"></translation>
+        <translation>గ్రాఫ్ మాత్రమే Alt-p</translation>
     </message>
     <message>
         <location filename="../main.py" line="163"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>క్రెడిట్స్</translation>
     </message>
     <message>
         <location filename="../main.py" line="239"/>
-        <source>Pendulum Wavefrorm</source>
-        <translation type="unfinished"></translation>
+        <source>Pendulum Waveform</source>
+        <translation type="unfinished">లోలకం వేవ్‌ఫ్రామ్</translation>
     </message>
 </context>
 <context>
@@ -2378,57 +2377,57 @@ shows the actual frequency set.
     <message>
         <location filename="../main.py" line="612"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation>క్రెడిట్స్</translation>
     </message>
     <message>
         <location filename="../main.py" line="584"/>
         <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation>లైట్ బ్యాక్‌గ్రౌండ్</translation>
     </message>
     <message>
         <location filename="../main.py" line="585"/>
         <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation>డార్క్ బ్యాక్‌గ్రౌండ్</translation>
     </message>
     <message>
         <location filename="../main.py" line="609"/>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation>స్క్రీన్ షాట్</translation>
     </message>
     <message>
         <location filename="../main.py" line="610"/>
         <source>Whole Window Alt-s</source>
-        <translation type="unfinished"></translation>
+        <translation>మొత్తం విండో Alt-s</translation>
     </message>
     <message>
         <location filename="../main.py" line="611"/>
         <source>Graph Only Alt-p</source>
-        <translation type="unfinished"></translation>
+        <translation>గ్రాఫ్ మాత్రమే Alt-p</translation>
     </message>
     <message>
         <location filename="../main.py" line="797"/>
         <source>Missing Plot</source>
-        <translation type="unfinished"></translation>
+        <translation>ప్లాట్ లేదు</translation>
     </message>
     <message>
         <location filename="../main.py" line="797"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
-        <translation type="unfinished"></translation>
+        <translation>దయచేసి కుడి క్లిక్ చేసి ఎగుమతి చేయడానికి ప్రయత్నించండి</translation>
     </message>
     <message>
         <location filename="../main.py" line="824"/>
         <source>Enter Width(px). Height will be autoset</source>
-        <translation type="unfinished"></translation>
+        <translation>వెడల్పు (px) నమోదు చేయండి.ఎత్తు ఆటోసెట్ అవుతుంది</translation>
     </message>
     <message>
         <location filename="../main.py" line="605"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
-        <translation type="unfinished"></translation>
+        <translation>భాష = {}: పూర్తయింది = {}, పూర్తి చేయడానికి = {}, అనువదించని = {}</translation>
     </message>
     <message>
         <location filename="../main.py" line="614"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>క్విట్</translation>
     </message>
 </context>
 <context>

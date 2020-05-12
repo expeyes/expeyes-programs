@@ -133,10 +133,10 @@ class Expt(QWidget):
 		try:
 			vbset = float(text)
 			if vbset > -0.5 or vbset < -3.0:
-				self.msg(self.tr('Base valtage shold be from -0.5 to -3'))
+				self.msg(self.tr('Base voltage should be from -0.5 to -3'))
 				return
 		except:
-			self.msg(self.tr('Invalid Base valtage, shold be from -0.5 to -3'))
+			self.msg(self.tr('Invalid Base voltage, should be from -0.5 to -3'))
 			return
 				
 		try:

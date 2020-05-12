@@ -582,13 +582,13 @@
     </message>
     <message>
         <location filename="../npnCEout.py" line="138"/>
-        <source>Base valtage shold be from .5 to 3</source>
-        <translation>ബെയ്സ് വോൾട്ടേജ് 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <source>Base voltage should be from .5 to 3</source>
+        <translation type="unfinished">ബെയ്സ് വോൾട്ടേജ് 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
-        <source>Invalid Base valtage, shold be from .5 to 3</source>
-        <translation>ബേസ് വോൾട്ടേജ് സ്വീകാര്യമല്ല, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <source>Invalid Base voltage, should be from .5 to 3</source>
+        <translation type="unfinished">ബേസ് വോൾട്ടേജ് സ്വീകാര്യമല്ല, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
         <location filename="../plotIV.py" line="105"/>
@@ -657,18 +657,18 @@
     </message>
     <message>
         <location filename="../pnpCEout.py" line="136"/>
-        <source>Base valtage shold be from -0.5 to -3</source>
-        <translation>ബെയ്സ് വോൾട്ടേജ്  -0.5നും -3നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
+        <source>Base voltage should be from -0.5 to -3</source>
+        <translation type="unfinished">ബെയ്സ് വോൾട്ടേജ്  -0.5നും -3നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
-        <source>Invalid Base valtage, shold be from -0.5 to -3</source>
-        <translation>പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടക്കാവണം</translation>
+        <source>Invalid Base voltage, should be from -0.5 to -3</source>
+        <translation type="unfinished">പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടക്കാവണം</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="55"/>
-        <source>Temparature (C)</source>
-        <translation>താപനില (c)</translation>
+        <source>Temperature (C)</source>
+        <translation type="unfinished">താപനില (c)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="66"/>
@@ -1192,7 +1192,9 @@
     </message>
     <message>
         <location filename="../pendulumVelocity.py" line="87"/>
-        <source> Set SQ1 Frequency For Driven Pendulum Expt.</source>
+        <source>
+Set SQ1 Frequency
+For Driven Pendulum Expt.</source>
         <translation type="unfinished">SQ1 ന്റെ ആവൃത്തി സെറ്റ് ചെയ്യുക</translation>
     </message>
     <message>
@@ -1272,13 +1274,13 @@
     </message>
     <message>
         <location filename="../soundBeats.py" line="102"/>
-        <source>Change of Freqency effected only after Enable/Disable controls.
-shows the actual frequency set. 
+        <source>Change of Freqency effected
+only after Enable/Disable controls.
+shows the actual frequency set.
 </source>
         <translation type="unfinished">
 ഫ്രീക്വൻസി മാറ്റിയാൽ അളക്കുന്നത് നിർത്തി വീണ്ടും തുടങ്ങണം.</translation>
     </message>
-
     <message>
         <location filename="../soundFreqResp.py" line="202"/>
         <source>Completed in </source>
@@ -1877,8 +1879,8 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="239"/>
-        <source>Pendulum Wavefrorm</source>
-        <translation>പെൻഡുലം വേവ്ഫോം</translation>
+        <source>Pendulum Waveform</source>
+        <translation type="unfinished">പെൻഡുലം വേവ്ഫോം</translation>
     </message>
     <message>
         <location filename="../main.py" line="240"/>
@@ -1912,8 +1914,8 @@ shows the actual frequency set.
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Magnetic Hysterisis (MPU925x Sensor)</source>
-        <translation>മാഗ്നറ്റിക് ഹിസ്റ്ററ്റിസിസ് (MPU925xസെൻസർ)</translation>
+        <source>Magnetic Hysteresis (MPU925x Sensor)</source>
+        <translation type="unfinished">മാഗ്നറ്റിക് ഹിസ്റ്ററ്റിസിസ് (MPU925xസെൻസർ)</translation>
     </message>
     <message>
         <location filename="../main.py" line="253"/>

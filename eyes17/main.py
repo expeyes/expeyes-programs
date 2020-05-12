@@ -236,7 +236,7 @@ soundExpts = [
 
 mechanicsExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Rod Pendulum with Light barrier'), ('6.1','rodPendulum')],
-[QT_TRANSLATE_NOOP('MainWindow','Pendulum Wavefrorm'),('6.2','pendulumVelocity')],
+[QT_TRANSLATE_NOOP('MainWindow','Pendulum Waveform'),('6.2','pendulumVelocity')],
 [QT_TRANSLATE_NOOP('MainWindow','Driven Pendulum resonance'),('6.3','driven-pendulum')],
 [QT_TRANSLATE_NOOP('MainWindow','Distance by HY-SRF04 Echo module'), ('6.4','sr04dist')],
 [QT_TRANSLATE_NOOP('MainWindow','Gravity by Time of Flight'), ('6.5','tof')]
@@ -249,7 +249,7 @@ otherExpts = [
 ]
 
 modulesI2C = [ 
-[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysterisis (MPU925x Sensor)'),('8.1', 'BHCurve')],
+[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysteresis (MPU925x Sensor)'),('8.1', 'BHCurve')],
 [QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),('8.2', 'lightsensorlogger')],
 [QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), ('8.3', 'MPU6050')],
 [QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), ('8.4', 'i2cLogger')]
