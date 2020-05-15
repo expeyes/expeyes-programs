@@ -582,7 +582,7 @@ class MainWindow(QMainWindow):
 		sm = mb.addMenu(self.tr("Choose Language"))
 		sm.setIcon(QIcon(os.path.join(imagePath, "UN_emblem_blue.svg")))
 		translationProgress=csv.DictReader(
-			open("lang/status.txt"),
+			open(os.path.join(os.path.dirname(__file__),"lang/status.txt")),
 			delimiter=",",
 			fieldnames=('ident','finished','unfinished','ignored'),
 		)
