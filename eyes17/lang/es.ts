@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="es" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="es">
 <context>
     <name>Dialog</name>
     <message>
@@ -358,7 +359,7 @@
     <message>
         <location filename="../pt100.py" line="55"/>
         <source>Temperature (C)</source>
-        <translation type="unfinished">Temperatura (°C)</translation>
+        <translation>Temperatura (°C)</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="66"/>
@@ -1144,12 +1145,12 @@ Visualización de la frecuencia actual configurada.
     <message>
         <location filename="../npnCEout.py" line="138"/>
         <source>Base voltage should be from .5 to 3</source>
-        <translation type="unfinished">El voltaje base debe ser de .5 a 3</translation>
+        <translation>El voltaje base debe ser de .5 a 3</translation>
     </message>
     <message>
         <location filename="../npnCEout.py" line="141"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
-        <translation type="unfinished">Voltaje base no válido, debe ser de .5 a 3</translation>
+        <translation>Voltaje base no válido, debe ser de .5 a 3</translation>
     </message>
     <message>
         <location filename="../rodPendulum.py" line="138"/>
@@ -1179,12 +1180,12 @@ Visualización de la frecuencia actual configurada.
     <message>
         <location filename="../pnpCEout.py" line="136"/>
         <source>Base voltage should be from -0.5 to -3</source>
-        <translation type="unfinished">El voltaje base debe ser de -0.5 a -3</translation>
+        <translation>El voltaje base debe ser de -0.5 a -3</translation>
     </message>
     <message>
         <location filename="../pnpCEout.py" line="139"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
-        <translation type="unfinished">Voltaje base no válido, debe ser de -0.5 a -3</translation>
+        <translation>Voltaje base no válido, debe ser de -0.5 a -3</translation>
     </message>
     <message>
         <location filename="../pt100.py" line="242"/>
@@ -2558,7 +2559,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="239"/>
         <source>Pendulum Waveform</source>
-        <translation type="unfinished">Señal de un péndulo</translation>
+        <translation>Señal de un péndulo</translation>
     </message>
     <message>
         <location filename="../main.py" line="240"/>
@@ -2838,7 +2839,7 @@ Establecer la frecuencia SQ1 para la extracción de péndulo conducido.</transla
     <message>
         <location filename="../main.py" line="252"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
-        <translation type="unfinished"></translation>
+        <translation>Histéresis Magnética (sensor MPU925x)</translation>
     </message>
     <message>
         <location filename="../main.py" line="160"/>
