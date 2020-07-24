@@ -2,7 +2,7 @@
 import sys, time, math, importlib, os, platform, os.path, configparser, csv
 from utils import cnf
 from language import languages
-from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
+from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot, Qt, QTimer
 from PyQt5.QtGui import QIcon
 from QtVersion import *
 showVersions()
@@ -351,6 +351,9 @@ class MainWindow(QMainWindow):
 	uncheckHelpBox = pyqtSignal()
 	setEditorText = pyqtSignal(str)
 	setConfigText = pyqtSignal(str)
+	translate_screenshot = pyqtSignal()
+	screenshot_translated = pyqtSignal(str)
+	screenshot_finished = pyqtSignal()
 	
 	def closeEvent(self, e):
 		if self.hwin != None:
@@ -389,6 +392,9 @@ class MainWindow(QMainWindow):
 		self.uncheckHelpBox.connect(self.uncheckTheHelpBox)
 		self.setEditorText.connect(self.updateEditor)
 		self.setConfigText.connect(self.updateConfig)
+		self.translate_screenshot.connect(self.translateScreenshotCB)
+		self.screenshot_translated.connect(self.screenshotTranslatedCB)
+		self.screenshot_finished.connect(self.screenshotFinishedCB)
 		self.credwin = None
 
 		self.shortcutActions={}
@@ -718,7 +724,6 @@ class MainWindow(QMainWindow):
 		SVG files for print usage, with light colors.
 		:param path: the path to a svg file
 		"""
-		from screenshots.printableSVG import lightenSvgFile, svg2png
 		try:
 			translate_svg_path = self.conf['DEFAULT']['translate_svg_path']
 			supported_languages = self.conf['DEFAULT']['supported_languages']
@@ -727,9 +732,9 @@ class MainWindow(QMainWindow):
 				os.path.dirname(path), "screen", "{lang}", "{filename}"
 			)
 			supported_languages = "en,es,fr,ml"
-		from translate_svg import translateDialog, SvgTranslator
+		from translate_svg import translateDialog
 		from PyQt5.QtSvg import QSvgWidget
-		from PyQt5.QtWidgets import QVBoxLayout
+		from PyQt5.QtWidgets import QVBoxLayout, QDialog, QCheckBox
 		d = translateDialog(self)
 		d.buttonBox.helpRequested.connect(self.translateScreenshotHelp)
 		svg=QSvgWidget(path)
@@ -741,31 +746,61 @@ class MainWindow(QMainWindow):
 		d.widthSpinBox.setValue(width)
 		ok = d.exec_()
 		if ok:
-			translate_svg_path = d.pathEdit.text()
+			self.translate_svg_path = d.pathEdit.text()
 			supported_languages = d.langEdit.text()
 			pngWanted=False
 			if d.widthCheckBox.isChecked():
 				pngWanted=True
-				width = d.widthSpinBox.value()
-				self.setConfig('DEFAULT', 'pngWidth', str(width))
-			self.setConfig('DEFAULT', 'translate_svg_path', translate_svg_path)
+				self.PNGwidth = d.widthSpinBox.value()
+				self.setConfig('DEFAULT', 'pngWidth', str(self.PNGwidth))
+			self.setConfig('DEFAULT', 'translate_svg_path', self.translate_svg_path)
 			self.setConfig('DEFAULT', 'supported_languages', supported_languages)
 			self.conf.read(cnf)
-			languages = [l.strip() for l in supported_languages.split(",")]
-			filename = os.path.basename(path)
-			for lang in languages:
-				langpath = os.path.abspath(
-				  translate_svg_path.format(filename=filename, lang=lang)
-				)
-				os.makedirs(os.path.abspath(os.path.dirname(langpath)), exist_ok=True)
-				with open(langpath, "w") as outfile:
-					svgData = SvgTranslator(lang).translateSvg(path)
-					outfile.write(svgData)
-				svg2png(langpath, app=self.app, width=width)
-				if "-dark" in langpath:
-					lightFile = lightenSvgFile(langpath)
-					svg2png(lightFile, app=self.app, width=width)
-									
+			self.targetLanguages = [l.strip() for l in supported_languages.split(",")]
+			self.sourceSVGpath = path
+			self.exportScreenshotBox = QDialog()
+			self.exportScreenshotBox.setWindowTitle(self.tr("Translating ..."))
+			self.translatedBoxes={}
+			vl = QVBoxLayout()
+			for e in languages:
+				lang = e.ident[:2]
+				if lang not in self.targetLanguages:
+					continue
+				cb = QCheckBox(self.tr("Export screenshot in {name} ({localname}).").format(name=e.name, localname=e.localName))
+				self.translatedBoxes[lang] = cb
+				vl.addWidget(cb)
+			self.exportScreenshotBox.setLayout(vl)
+			self.exportScreenshotBox.setModal(False)
+			self.exportScreenshotBox.show()
+			QTimer.singleShot(50, self.translate_screenshot)
+		return
+
+	@pyqtSlot()
+	def translateScreenshotCB(self):
+		"""
+		callback function to translate screenshots.
+		"""
+		from translate_thread import TranslateThread
+		t = TranslateThread(self)
+		t.start()
+		return
+	
+	@pyqtSlot(str)
+	def screenshotTranslatedCB(self, lang):
+		"""
+		Callback function to indicate the end of the translation
+		of a screenshot
+		"""
+		self.translatedBoxes[lang].setChecked(True)
+		return
+		
+	@pyqtSlot()
+	def screenshotFinishedCB(self):
+		"""
+		Callback function to indicate the end of the translation
+		of a screenshot
+		"""
+		QTimer.singleShot(1000, self.exportScreenshotBox.close)
 		return
 		
 	def translateScreenshotHelp(self):
