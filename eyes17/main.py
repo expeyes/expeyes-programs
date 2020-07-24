@@ -667,6 +667,7 @@ class MainWindow(QMainWindow):
 		return result+"."+ext
 		
 	def screenshot(self):
+		from screenshots.printableSVG import fixNonScalingStroke
 		try:
 			self.expWidget.timer.stop()
 		except:
@@ -700,6 +701,10 @@ class MainWindow(QMainWindow):
 			self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
+
+		# fix the width of oscilloscope's traces, for SVG readers which
+		# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
+		fixNonScalingStroke(path)
 
 		# if the language is currently English, it is possible to
 		# translate the screenshot in various languages

@@ -69,6 +69,68 @@ def lightenSvgFile(inFname, outFname=""):
             l=infile.readline()
     return outFname
 
+def openSVG(path):
+    """
+    opens a SVG file and returns its main element, together with width and
+    height of the viewport.
+    :param path: the path to a SVG file
+    :return: a tuple with the SVG contents, width and height of the viewport
+    :rtype: (xml.dom.Element, int, int)
+    """
+    from xml.dom import minidom
+    doc = minidom.parse(open(path))
+    svg = doc.getElementsByTagName("svg")[0]
+    sizeMatch = re.match(r"(\d+) (\d+) (\d+) (\d+)", svg.getAttribute("viewBox"))
+    w, h = int(sizeMatch.group(3)), int(sizeMatch.group(4))
+    return svg, w, h
+
+def fixNonScalingStroke(path):
+    """
+    fix the stroke width for SVG readers which cannot honor the attribute
+    'vector-effect = "non-scaling-stroke"' and render the oscilloscope's
+    traces too wide.
+    :param path: the path to a SVG file which has to be modified on place
+    """
+    svg, w, h = openSVG(path)
+    groups = svg.getElementsByTagName("g")
+    ## find the groups containing an oscilloscope trace
+    for g in groups:
+        paths = g.getElementsByTagName("path")
+        if paths:
+            moves=paths[0].getAttribute("d")
+            if len(moves) > 512:
+                # it is an oscilloscope trace
+                # get the matrix transformation, remove it from
+                # g's transform attribute and apply it to the path
+                m = g.getAttribute("transform")
+                g.removeAttribute("transform")
+                g.setAttribute("data-export", "applied the matrix")
+                a, b, c, d, e, f = re.findall(r"([.\-\d]+)", m)
+                a = float(a)
+                b = float(b)
+                c = float(c)
+                d = float(d)
+                e = float(e)
+                f = float(f)
+                paths[0].removeAttribute("vector-effect")
+                paths[0].removeAttribute("fill-rule")
+                new_moves = "M"
+                coords = re.findall(r"\S([.\-\d]+,[.\-\d]+) *", moves[1:])
+                ### As documented by
+                ### https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+                for x_comma_y in coords:
+                    x, y = x_comma_y.split(sep = ",")
+                    x = float(x)
+                    y = float(y)
+                    x_new = a * x + c * y + e
+                    y_new = b * x + d * y + f
+                    new_moves += f" {x_new:6f},{y_new:6f}"
+                paths[0].setAttribute("d", new_moves)
+    with open(path,"w") as outfile:
+        outfile.write('<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n')
+        outfile.write(svg.toxml())
+    return
+
 def svg2png (fName, width=600, app=None, oFilename=""):
     """
     Smart convertion to PNG files; stroke widths are widened when necessary,
@@ -81,27 +143,20 @@ def svg2png (fName, width=600, app=None, oFilename=""):
     calculated automatically
     :returns: the effective file name of the written PNG file
     """
-    from xml.dom import minidom
     from PyQt5.QtSvg import QSvgRenderer
     from PyQt5.QtGui import QImage, QPainter, QColor, QGuiApplication
     from math import sqrt
 
     if not app:
         app=QGuiApplication([])
-    doc = minidom.parse(open(fName))
-    svg = doc.getElementsByTagName("svg")[0]
-    sizeMatch = re.match(r"(\d+) (\d+) (\d+) (\d+)", svg.getAttribute("viewBox"))
-    w, h = int(sizeMatch.group(3)), int(sizeMatch.group(3))
+    svg, w, h = openSVG(fName)
     groups = svg.getElementsByTagName("g")
     scale = width/w
     for g in groups:
         if "stroke-width" in g.attributes:
             g.setAttribute("stroke-width", str(float(g.getAttribute("stroke-width"))/sqrt(scale)))
     qsr=QSvgRenderer(svg.toxml().encode("utf-8"))
-    # I do not know why, but without the correction, the height of the
-    # PNG image is too big. Are the viewport units misleading?
-    correction = 1.33
-    img=QImage(int(w*scale), int(h*scale/correction), QImage.Format_ARGB32)
+    img=QImage(int(w*scale), int(h*scale), QImage.Format_ARGB32)
     img.fill(QColor("white"))
     p=QPainter(img)
     qsr.render(p)
