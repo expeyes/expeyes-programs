@@ -702,15 +702,15 @@ class MainWindow(QMainWindow):
 			p.begin(generator)
 			self.render(p)
 			p.end()
+			# fix the width of oscilloscope's traces, for SVG readers which
+			# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
+			fixNonScalingStroke(path)
 
 		try:
 			self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
 
-		# fix the width of oscilloscope's traces, for SVG readers which
-		# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
-		fixNonScalingStroke(path)
 
 		# if the language is currently English, it is possible to
 		# translate the screenshot in various languages
@@ -826,6 +826,7 @@ You can customize the way they are used to build the path."""
 		return
 		
 	def screenshotPlot(self):
+		from screenshots.printableSVG import fixNonScalingStroke
 		try:
 			plt = self.expWidget.pwin
 		except Exception as e:
@@ -873,6 +874,10 @@ You can customize the way they are used to build the path."""
 				p.begin(generator)
 				self.render(p)
 				p.end()
+				# fix the width of oscilloscope's traces, for SVG readers which
+				# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
+				fixNonScalingStroke(path)
+
 				# if the language is currently English, it is possible to
 				# translate the screenshot in various languages
 				if self.lang[:2] == "en" and path:
@@ -882,7 +887,8 @@ You can customize the way they are used to build the path."""
 			self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
-
+		
+		return
 
 	def reconnect(self):
 		global p,eyes
