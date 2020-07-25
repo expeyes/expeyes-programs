@@ -1,7 +1,9 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser, csv
+from datetime import datetime
 from utils import cnf
 from language import languages
+from server import ScreenShotThread
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot, Qt, QTimer
 from PyQt5.QtGui import QIcon
 from QtVersion import *
@@ -353,12 +355,9 @@ class MainWindow(QMainWindow):
 	setConfigText = pyqtSignal(str)
 	translate_screenshot = pyqtSignal()
 	screenshot_translated = pyqtSignal(str)
-	screenshot_finished = pyqtSignal()
+	screenshot_translation_finished = pyqtSignal()
+	screenshot_request = pyqtSignal(str, str, str)
 	
-	def closeEvent(self, e):
-		if self.hwin != None:
-			self.hwin.close()
-
 	def __init__(self, lang, app, tr_eyes, tr_qt):
 		"""
 		The constructor.
@@ -394,7 +393,8 @@ class MainWindow(QMainWindow):
 		self.setConfigText.connect(self.updateConfig)
 		self.translate_screenshot.connect(self.translateScreenshotCB)
 		self.screenshot_translated.connect(self.screenshotTranslatedCB)
-		self.screenshot_finished.connect(self.screenshotFinishedCB)
+		self.screenshot_translation_finished.connect(self.screenshotTranslationFinishedCB)
+		self.screenshot_request.connect(self.screenshotRequestCB)
 		self.credwin = None
 
 		self.shortcutActions={}
@@ -403,7 +403,16 @@ class MainWindow(QMainWindow):
 			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
 			shortcut.activated.connect(self.shortcuts[a])
 			self.shortcutActions[a] = shortcut
+		self.screenShotThread = ScreenShotThread(self, port = 45594)
+		self.screenShotThread.start()
+		return
 
+	def closeEvent(self, event):
+		if self.hwin != None:
+			self.hwin.close()
+		self.screenShotThread.terminate()
+		self.screenShotThread.wait()
+		event.accept()
 
 	def uncheckTheHelpBox(self):
 		"""
@@ -672,10 +681,19 @@ class MainWindow(QMainWindow):
 				result += "_"
 		return result+"."+ext
 		
-	def screenshot(self):
+	def screenshot(self, tmpFileName=None):
+		"""
+		Create a full screenshot
+		:param tmpFileName: when this parameter is a path, it will be
+		  the name of the output file; no attempt of translation
+		  will be made
+		"""
 		from screenshots.printableSVG import fixNonScalingStroke
+		threadCalling = bool(tmpFileName)
 		try:
-			self.expWidget.timer.stop()
+			if not threadCalling:
+				#Timers cannot be stopped from another thread
+				self.expWidget.timer.stop()
 		except:
 			pass
 
@@ -685,18 +703,25 @@ class MainWindow(QMainWindow):
 			screenShotDir = '~/'
 		bw = self.conf['ScreenTheme']['BackGround']
 		screenShotPath=os.path.join(screenShotDir, self.safeFileName(self.title+"-screen-"+bw, 'svg').lower())
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', screenShotPath, 'SVG(*.svg)')
-		if path:
+		path=""
+		if not tmpFileName:
+			# ask interactively for a path if an automatic temporary file
+			# name is not set
+			path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', screenShotPath, 'SVG(*.svg)')
+		if path or tmpFileName:
 			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
 			self.conf.read(cnf)
 			generator = QtSvg.QSvgGenerator()
 			if path[-4:] != '.svg':
 				path+='.svg'
+			if tmpFileName:
+				path = tmpFileName
 			generator.setFileName(path)
 			target_rect = QtCore.QRectF(0, 0, 800, 600)
 			generator.setSize(target_rect.size().toSize())#self.size())
 			generator.setViewBox(self.rect())
-			generator.setTitle("ExpEYES 17 Screenshot")
+			d=datetime.now()
+			generator.setTitle(d.strftime("ExpEYES 17 Screenshot--%Y-%m-%d--%H-%M"))
 			generator.setDescription(self.title)
 			p = QtGui.QPainter()
 			p.begin(generator)
@@ -707,10 +732,14 @@ class MainWindow(QMainWindow):
 			fixNonScalingStroke(path)
 
 		try:
-			self.expWidget.timer.start(self.expWidget.TIMER)
+			if not threadCalling:
+				#Timers cannot be started from another thread
+				self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
-
+		
+		if tmpFileName:
+			return
 
 		# if the language is currently English, it is possible to
 		# translate the screenshot in various languages
@@ -795,13 +824,22 @@ class MainWindow(QMainWindow):
 		return
 		
 	@pyqtSlot()
-	def screenshotFinishedCB(self):
+	def screenshotTranslationFinishedCB(self):
 		"""
 		Callback function to indicate the end of the translation
 		of a screenshot
 		"""
 		QTimer.singleShot(1000, self.exportScreenshotBox.close)
 		return
+	
+	@pyqtSlot()
+	def screenshotRequestCB(self, format, width, shot):
+		"""
+		Callback to reply a signal created by the web service's thread
+		to make a screenshot, and feed it into a BytesIO. When this 
+		callback finishes, if fires a signal in the thread to serve the
+		result with suitable HTTP headers.
+		"""
 		
 	def translateScreenshotHelp(self):
 		"""
