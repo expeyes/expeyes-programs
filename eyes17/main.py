@@ -863,7 +863,13 @@ You can customize the way they are used to build the path."""
 		)
 		return
 		
-	def screenshotPlot(self):
+	def screenshotPlot(self, tmpFileName=None):
+		"""
+		Create a screenshot with the display only
+		:param tmpFileName: when this parameter is a path, it will be
+		  the name of the output file; no attempt of translation
+		  will be made
+		"""
 		from screenshots.printableSVG import fixNonScalingStroke
 		try:
 			plt = self.expWidget.pwin
@@ -872,11 +878,13 @@ You can customize the way they are used to build the path."""
 			print(' no plot found ',e)
 			return
 
+		threadCalling = bool(tmpFileName)
 		try:
-			self.expWidget.timer.stop()
+			if not threadCalling:
+				#Timers cannot be stopped from another thread
+				self.expWidget.timer.stop()
 		except:
 			pass
-
 
 		try:
 			ScreenShotDir = self.conf['DEFAULT']['ScreenShotDir']	
@@ -884,14 +892,19 @@ You can customize the way they are used to build the path."""
 			ScreenShotDir = '~/'
 		bw = self.conf['ScreenTheme']['BackGround']
 		ScreenShotPath=os.path.join(ScreenShotDir, self.safeFileName(self.title+"-small-screen-"+bw, 'svg').lower())			
-		path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotPath, 'SVG(*.svg);;PNG(*.png)')
-		if path:
+		path=""
+		if not tmpFileName:
+			# ask interactively for a path if an automatic temporary file
+			# name is not set
+			path, _filter  = QtWidgets.QFileDialog.getSaveFileName(self, 'Save File', ScreenShotPath, 'SVG(*.svg);;PNG(*.png)')
+		if path or tmpFileName:
 			self.setConfig('DEFAULT', 'ScreenShotDir', os.path.dirname(path))
 			self.conf.read(cnf)
 			#check if file extension is svg or png
 			if path[-4:] not in ['.svg','.png'] :
 				path+='.svg'
-
+			if tmpFileName:
+				path = tmpFileName
 			if path[-4:] == '.png':
 				ex = PQG_ImageExporter(plt.scene())#plotItem)
 				ex.parameters()['width'] = 600 #Default export width is 600px
@@ -900,13 +913,14 @@ You can customize the way they are used to build the path."""
 					ex.parameters()['width'] = val # Override with user conf
 				ex.export(path)
 
-			elif path[-4:] == '.svg':
+			elif threadCalling or path[-4:] == '.svg':
 				generator = QtSvg.QSvgGenerator()
 				generator.setFileName(path)
 				target_rect = QtCore.QRectF(0, 0, 800, 600)
 				generator.setSize(target_rect.size().toSize())#self.size())
 				generator.setViewBox(plt.rect())
-				generator.setTitle("ExpEYES 17 Smaller Screenshot")
+				d=datetime.now()
+				generator.setTitle(d.strftime("ExpEYES 17 Smaller Screenshot--%Y-%m-%d--%H-%M"))
 				generator.setDescription(self.title)
 				p = QtGui.QPainter()
 				p.begin(generator)
@@ -916,13 +930,18 @@ You can customize the way they are used to build the path."""
 				# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
 				fixNonScalingStroke(path)
 
+				if tmpFileName:
+					return
+				
 				# if the language is currently English, it is possible to
 				# translate the screenshot in various languages
 				if self.lang[:2] == "en" and path:
 					self.translateScreenshot(path)
 
 		try:
-			self.expWidget.timer.start(self.expWidget.TIMER)
+			if not threadCalling:
+				#Timers cannot be started from another thread
+				self.expWidget.timer.start(self.expWidget.TIMER)
 		except:
 			pass
 		

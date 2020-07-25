@@ -99,8 +99,10 @@ class ScreenShotThread(QThread):
                         # tmpFileName is a valid name for a temporary file
                         if vars["format"] == "svg":
                             # should take a look at
-                            # vars["shot"].startswith("Full")
-                            parent.screenshot(tmpFileName=tmpFileName)
+                            if vars["shot"].startswith("Full"):
+                                parent.screenshot(tmpFileName=tmpFileName)
+                            else:
+                                parent.screenshotPlot(tmpFileName=tmpFileName)
                             self.send_response(200)
                             self.send_header('Content-type','image/svg+xml')
                             self.end_headers()
@@ -109,7 +111,7 @@ class ScreenShotThread(QThread):
                             return
                         elif vars["format"] == "png":
                             message += "format PNG; "
-                            with open(tmpFileName,"w") as f: f.write("Sorry, not yet implemented : "+message+"\n")
+                            with open(tmpFileName,"w") as f: f.write("Sorry, PNG is not yet implemented : "+message+"\n")
                             try:
                                 width = int(vars["width"])
                             except:
@@ -118,10 +120,6 @@ class ScreenShotThread(QThread):
                         else:
                             message += "format UNKNOWN; "
                             with open(tmpFileName,"w") as f: f.write("Sorry, not yet implemented : "+message+"\n")
-                        if vars["shot"].startswith("Full"):
-                            message += "full Eyes17 snapshot"
-                        else:
-                            message += "snapshot of the display only"
                         # now, send the response
                         self.send_response(200)
                         self.send_header('Content-type','text/html')
