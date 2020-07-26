@@ -93,8 +93,16 @@ def fixNonScalingStroke(path):
     """
     svg, w, h = openSVG(path)
     groups = svg.getElementsByTagName("g")
-    ## keep only groups with big transform matrix
-    groups = [g for g in groups
+    # first remove childless groups
+    childless = [g for g in groups if len([el for el in g.childNodes if el.nodeType != 3]) == 0]  # 3 is the value of TEXT_NODE
+    removed=[]
+    for g in childless:
+        g.parentNode.removeChild(g)
+        removed.append(g)
+    for g in removed:
+        g.unlink()
+    # reload the group list and keep only groups with big transform matrix
+    groups = [g for g in svg.getElementsByTagName("g")
               if float("0"+"".join(re.findall(r"matrix\((\d+)", g.getAttribute("transform")))) > 2]
     ## find the groups containing an oscilloscope trace
     for g in groups:
