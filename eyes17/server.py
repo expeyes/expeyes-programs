@@ -42,11 +42,11 @@ class ScreenShotThread(QThread):
                         tmpFileName = ""
                         with NamedTemporaryFile(prefix="eyes17_") as tmp:
                             tmpFileName=tmp.name
-                        # now tmp should be deleted, but the name
+                        # now tmp is already deleted, but the name
                         # tmpFileName is a valid name for a temporary file
-                        if vars["format"] == "svg":
+                        if vars.get("format","").lower().startswith("svg"):
                             # should take a look at
-                            if vars["shot"].startswith("Full"):
+                            if vars.get("shot","").lower().startswith("full"):
                                 parent.screenshot(tmpFileName=tmpFileName)
                             else:
                                 parent.screenshotPlot(tmpFileName=tmpFileName)
@@ -56,7 +56,7 @@ class ScreenShotThread(QThread):
                             self.wfile.write(open(tmpFileName,"rb").read())
                             os.unlink(tmpFileName)
                             return
-                        elif vars["format"] == "png":
+                        elif vars.get("format","").lower().startswith("png"):
                             message += "format PNG; "
                             with open(tmpFileName,"w") as f: f.write("Sorry, PNG is not yet implemented : "+message+"\n")
                             try:
@@ -66,7 +66,7 @@ class ScreenShotThread(QThread):
                             message += f"width = {width}px; "
                         else:
                             message += "format UNKNOWN; "
-                            with open(tmpFileName,"w") as f: f.write("Sorry, not yet implemented : "+message+"\n")
+                            with open(tmpFileName,"w") as f: f.write("Sorry, not yet implemented : "+message+" "+repr(vars)+"\n")
                         # now, send the response
                         self.send_response(200)
                         self.send_header('Content-type','text/html')
@@ -82,11 +82,16 @@ class ScreenShotThread(QThread):
             return thisRequestHandler
         
         requestHandler = classFactory(self.parent())
-        with socketserver.TCPServer(("", self.port), requestHandler) as httpd:
-            print("EYES17's schreenshot service, at port:", self.port)
-            try:
-                httpd.serve_forever()
-            except Exception(err):
-                print("Closing EYESRequestHandler, err =", err)
-                httpd.socket.close()
+        self.httpd = socketserver.TCPServer(("", self.port), requestHandler)
+        print("EYES17's schreenshot service, at port:", self.port)
+        try:
+            self.httpd.serve_forever()
+        except Exception(err):
+            print("Closing EYESRequestHandler, error =", err)
+            self.httpd.socket.close()
+        return
+
+    def terminate(self):
+        self.httpd.socket.close()
+        super().terminate()
         return
