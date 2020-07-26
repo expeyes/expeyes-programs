@@ -101,10 +101,10 @@ def fixNonScalingStroke(path):
         removed.append(g)
     for g in removed:
         g.unlink()
-    # reload the group list and keep only groups with big transform matrix
+    # reload the group list and keep only groups with big transform matrices
     groups = [g for g in svg.getElementsByTagName("g")
               if float("0"+"".join(re.findall(r"matrix\((\d+)", g.getAttribute("transform")))) > 2]
-    ## find the groups containing an oscilloscope trace
+    ## find the groups containing a single path
     for g in groups:
         paths = g.getElementsByTagName("path")
         if len(paths) == 1:
