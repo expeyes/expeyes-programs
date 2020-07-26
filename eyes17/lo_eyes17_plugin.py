@@ -7,6 +7,7 @@ Started on 2020-07-25
 """
 
 import unohelper, uno
+import http.client
 from com.sun.star.beans import PropertyValue
 from com.sun.star.awt import Size
 
@@ -32,11 +33,17 @@ def svgFromEyes17():
         width = None
         height = None
         paraadjust = None
+        host = "localhost"
+        port = 45594
+        
         scale = 1000 * 2.54 / float(dpi)
         istream = ctx.ServiceManager.createInstanceWithContext("com.sun.star.io.SequenceInputStream", ctx)
         fbytes=b''
-        with open("/tmp/oscilloscope-screen-dark.svg", "rb") as f:
-            fbytes = f.read()
+        conn = http.client.HTTPConnection(host,port)
+        conn.request("GET", "/?format=svg")
+        r1 = conn.getresponse()
+        ## test wheter r1 has a good status ?
+        fbytes=r1.read()
         istream.initialize((uno.ByteSequence(fbytes),))
         graphic = graphicprovider.queryGraphic((PropertyValue('InputStream', 0, istream, 0), ))
         if graphic.SizePixel is None:
