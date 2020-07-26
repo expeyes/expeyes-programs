@@ -93,39 +93,40 @@ def fixNonScalingStroke(path):
     """
     svg, w, h = openSVG(path)
     groups = svg.getElementsByTagName("g")
+    ## keep only groups with big transform matrix
+    groups = [g for g in groups
+              if float("0"+"".join(re.findall(r"matrix\((\d+)", g.getAttribute("transform")))) > 2]
     ## find the groups containing an oscilloscope trace
     for g in groups:
         paths = g.getElementsByTagName("path")
-        if paths:
+        if len(paths) == 1:
             moves=paths[0].getAttribute("d")
-            if len(moves) > 512:
-                # it is an oscilloscope trace
-                # get the matrix transformation, remove it from
-                # g's transform attribute and apply it to the path
-                m = g.getAttribute("transform")
-                g.removeAttribute("transform")
-                g.setAttribute("data-export", "applied the matrix")
-                a, b, c, d, e, f = re.findall(r"([.\-\d]+)", m)
-                a = float(a)
-                b = float(b)
-                c = float(c)
-                d = float(d)
-                e = float(e)
-                f = float(f)
-                paths[0].removeAttribute("vector-effect")
-                paths[0].removeAttribute("fill-rule")
-                new_moves = "M"
-                coords = re.findall(r"\S([.\-\d]+,[.\-\d]+) *", moves[1:])
-                ### As documented by
-                ### https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
-                for x_comma_y in coords:
-                    x, y = x_comma_y.split(sep = ",")
-                    x = float(x)
-                    y = float(y)
-                    x_new = a * x + c * y + e
-                    y_new = b * x + d * y + f
-                    new_moves += f" {x_new:6f},{y_new:6f}"
-                paths[0].setAttribute("d", new_moves)
+            # get the matrix transformation, remove it from
+            # g's transform attribute and apply it to the path
+            m = g.getAttribute("transform")
+            g.removeAttribute("transform")
+            g.setAttribute("data-export", "applied the matrix")
+            a, b, c, d, e, f = re.findall(r"([.\-\d]+)", m)
+            a = float(a)
+            b = float(b)
+            c = float(c)
+            d = float(d)
+            e = float(e)
+            f = float(f)
+            paths[0].removeAttribute("vector-effect")
+            paths[0].removeAttribute("fill-rule")
+            new_moves = "M"
+            coords = re.findall(r"\S([.\-\d]+,[.\-\d]+) *", moves[1:])
+            ### As documented by
+            ### https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/transform
+            for x_comma_y in coords:
+                x, y = x_comma_y.split(sep = ",")
+                x = float(x)
+                y = float(y)
+                x_new = a * x + c * y + e
+                y_new = b * x + d * y + f
+                new_moves += f" {x_new:6f},{y_new:6f}"
+            paths[0].setAttribute("d", new_moves)
     with open(path,"w") as outfile:
         outfile.write('<?xml version="1.0" encoding="UTF-8" standalone="no"?>\n')
         outfile.write(svg.toxml())
