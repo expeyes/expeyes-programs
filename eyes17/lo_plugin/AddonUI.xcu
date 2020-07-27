@@ -27,7 +27,7 @@
 		<value>com.sun.star.text.TextDocument</value>
 	      </prop>
 	      <prop oor:name="URL" oor:type="xs:string">
-		<value>service:org.example.EYES17?full</value>
+		<value>vnd.sun.star.script:eyes17.oxt|python|lo_eyes17_plugin.py$fullSVGscreenShot?language=Python&amp;location=user:uno_packages</value>
 	      </prop>
 	      <prop oor:name="Title" oor:type="xs:string">
 		<value xml:lang="en">Paste EYES17's screenshots</value>

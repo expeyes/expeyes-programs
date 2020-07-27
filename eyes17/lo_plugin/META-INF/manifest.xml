@@ -2,7 +2,7 @@
 <manifest:manifest xmlns:manifest="http://openoffice.org/2001/manifest">
   <manifest:file-entry
       manifest:full-path="python/lo_eyes17_plugin.py"
-      manifest:media-type="application/vnd.sun.star.uno-component;type=Python"/>
+      manifest:media-type="application/vnd.sun.star.framework-script;type=Python"/>
   <manifest:file-entry
       manifest:full-path="AddonUI.xcu"
       manifest:media-type="application/vnd.sun.star.configuration-data"/>
