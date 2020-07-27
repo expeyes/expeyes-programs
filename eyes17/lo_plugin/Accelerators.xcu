@@ -9,7 +9,7 @@
     <node oor:name="Global">
       <node oor:name="ALT_S" oor:op="replace">
         <prop oor:name="Command">
-          <value>service:org.example.EYES17?fullSVGscreenShot</value>
+          <value>service:org.example.EYES17?full</value>
         </prop>
       </node>
     </node>

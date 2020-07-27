@@ -1,3 +1,4 @@
 #!/bin/sh
 
-zip ../eyes17.oxt manifest.xml lo_eyes17_plugin.py Addons.xcu
+rm ../eyes17.oxt
+zip -r ../eyes17.oxt . --exclude *.sh --exclude @excludes.txt

@@ -12,14 +12,14 @@
 	  <prop oor:name="MergeContext" oor:type="xs:string">
 	    <value>com.sun.star.text.TextDocument</value>
 	  </prop>
-	  <prop oor:name="MergePoint">
+	  <prop oor:name="MergePoint" oor:type="xs:string">
 	    <value>.uno:InsertMenu\.uno:GraphicMenu</value>
 	  </prop>
-	  <prop oor:name="MergeCommand">
+	  <prop oor:name="MergeCommand" oor:type="xs:string">
 	    <value>AddAfter</value>
 	  </prop>
-	  <prop oor:name="MergeFallback">
-	    <value>AddPath</value>
+	  <prop oor:name="MergeFallback" oor:type="xs:string">
+	    <value>Ignore</value>
 	  </prop>
 	  <node oor:name="MenuItems">
 	    <node oor:name="N002" oor:op="replace">
@@ -27,12 +27,12 @@
 		<value>com.sun.star.text.TextDocument</value>
 	      </prop>
 	      <prop oor:name="URL" oor:type="xs:string">
+		<value>service:org.example.EYES17?full</value>
+	      </prop>
 	      <prop oor:name="Title" oor:type="xs:string">
 		<value xml:lang="en">Paste EYES17's screenshots</value>
 		<value xml:lang="fr">Insérer de copies d'écrand de EYES17</value>
 		<value xml:lang="es">Insertar copias de pantalla de EYES17</value>
-	      </prop>
-		<value>service:org.example.EYES17?fullSVGscreenShot</value>
 	      </prop>
 	      <prop oor:name="Target" oor:type="xs:string">
 		<value>_self</value>
