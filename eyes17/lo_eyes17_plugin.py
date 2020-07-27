@@ -12,50 +12,87 @@ from com.sun.star.beans import PropertyValue
 from com.sun.star.awt import Size
 from com.sun.star.text.ControlCharacter import PARAGRAPH_BREAK
 
-def svgFromEyes17():
-    desktop = XSCRIPTCONTEXT.getDesktop()
-    doc = desktop.getCurrentComponent()
-    controller = doc.getCurrentController()
-    view_cursor = controller.getViewCursor()
-    cursor = view_cursor.getEnd()
-    if hasattr( doc, "Text" ):
-        drawPage = doc.getDrawPage()
+def fullSVGscreenShot():
+    """
+    Take and paste a full screenshot from Eyes17
+    """
+    return screenshotFromEyes17()
 
+def smallSVGscreenShot():
+    """
+    Take and paste a screenshot of "just the display part", from Eyes17
+    """
+    return screenshotFromEyes17(shot="")
+
+
+def screenshotFromEyes17(
+        host = "localhost",
+        port = 45594,
+        the_format = "svg",
+        shot = "full",
+        width = "",
+        height = "",
+        paraadjust = ""
+):
+    """
+    Communicate with ExpEYES17 through a socket to request a screenshot,
+    then pastes it into the Tex document.
+
+    :param host: an IP address, "localhost" by default
+    :param port: a port for the socket, 45594 by default
+    :param the_format: format for the screen shot, "svg" by default
+    :param shot: this parameter decides whether on wants a full scrren shot
+      or a screen shot containing the display of Eyes17; defaults to "full"
+    :param width: might be used later
+    :param height: might be used later
+    :param paraadjust: might be used later
+    """
+    url = f"/?format={the_format}&shot={shot}&width={width}&height={height}&paraadjust={paraadjust}"
+    return queryImageAndPaste(host, port, url, width, height, paraadjust)
+
+def queryImageAndPaste(host, port, url, width, height, paraadjust):
+    """
+    Query an image trough a socket, then pastes it into the Text document
+
+    :param host: an IP address, "localhost" by default
+    :param port: a port for the socket, 45594 by default
+    :param url: a well-formed url, to GET a response containing an
+      image in SVG format (maybe later, also PNG?)
+    :param width: might be used later
+    :param height: might be used later
+    :param paraadjust: might be used later
+    """
+    doc = XSCRIPTCONTEXT.getDesktop().getCurrentComponent()
+    cursor = doc.getCurrentController().getViewCursor().getEnd()
+    if hasattr( doc, "Text" ):
         undoManager = doc.getUndoManager()
-        undoManager.enterUndoContext( "Insert screenshot from Eyes17" )
+        undoManager.enterUndoContext("Insert screenshot from Eyes17")
 
         # do the work here
         ctx = uno.getComponentContext()
-        smgr = ctx.getServiceManager()
-        graphicprovider = smgr.createInstance("com.sun.star.graphic.GraphicProvider")
-        
-        dpi = 150
-        
-        # those might become parameters:
-        width = None
-        height = None
-        paraadjust = None
-        host = "localhost"
-        port = 45594
-        
-        scale = 1000 * 2.54 / dpi
-        istream = ctx.ServiceManager.createInstanceWithContext("com.sun.star.io.SequenceInputStream", ctx)
-        fbytes=b''
+        graphicprovider = ctx.ServiceManager.createInstance(
+            "com.sun.star.graphic.GraphicProvider")
+        istream = ctx.ServiceManager.createInstanceWithContext(
+            "com.sun.star.io.SequenceInputStream", ctx)
         conn = http.client.HTTPConnection(host,port)
         try:
-            conn.request("GET", "/?format=svg")
+            conn.request("GET", url)
         except:
-            doc.Text.insertString(cursor, f"Could not connect to {host}:{port}", 0)
+            doc.Text.insertString(
+                cursor, f"Could not connect to {host}:{port}", 0)
             doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
             return            
         r1 = conn.getresponse()
         if r1.reason != "OK":
-            doc.Text.insertString(cursor, f"Could not get http://{host}:{port}. Error: {r1.status} {r1.reason}", 0)
+            doc.Text.insertString(
+                cursor,
+                f"Could not get http://{host}:{port}. Error: {r1.status} {r1.reason}", 0)
             doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
             return
         fbytes=r1.read()
         istream.initialize((uno.ByteSequence(fbytes),))
-        graphic = graphicprovider.queryGraphic((PropertyValue('InputStream', 0, istream, 0), ))
+        graphic = graphicprovider.queryGraphic((PropertyValue(
+            'InputStream', 0, istream, 0), ))
         if graphic.SizePixel is None:
             # Then we're likely dealing with vector graphics. Then we try to
             # get the "real" size, which is enough information to
@@ -63,29 +100,57 @@ def svgFromEyes17():
             original_size = graphic.Size100thMM
         else:
             original_size = graphic.SizePixel
-        graphic_object_shape = doc.createInstance('com.sun.star.drawing.GraphicObjectShape')
+        graphic_object_shape = doc.createInstance(
+            'com.sun.star.drawing.GraphicObjectShape')
         graphic_object_shape.Graphic = graphic
-        if width and height:
-            size = Size(int(width * scale), int(height * scale))
-        elif width:
-            size = Size(int(width * scale), int((float(width)/original_size.Width) * original_size.Height * scale))
-        elif height:
-            size = Size(int((float(height)/original_size.Height) * original_size.Width * scale), int(height * scale))
-        else:
-            size = Size(int(original_size.Width * scale), original_size.Height * scale)
+        
+        size = adjustSize(original_size, width=width, height=height)
         graphic_object_shape.setSize(size)
         thisgraphicobject = doc.createInstance("com.sun.star.text.TextGraphicObject")
         thisgraphicobject.Graphic = graphic_object_shape.Graphic
         thisgraphicobject.setSize(size)
-        if paraadjust:
-            oldparaadjust = cursor.ParaAdjust
-            cursor.ParaAdjust = paraadjust
+        
+        ## for future enhancements: take in account paraadjust ##
+        if paraadjust:                                         ##
+            oldparaadjust = cursor.ParaAdjust                  ##
+            cursor.ParaAdjust = paraadjust                     ##
+        #########################################################
+        
         doc.Text.insertTextContent(cursor, thisgraphicobject, False)
         doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
-        if paraadjust:
-            cursor.ParaAdjust = oldparaadjust
+        
+        ## for future enhancements: take in account paraadjust ##
+        if paraadjust:                                         ##
+            cursor.ParaAdjust = oldparaadjust                  ##
+        #########################################################
         
         undoManager.leaveUndoContext()
+    return
 
+def adjustSize(size, dpi=150, width="", height=""):
+    """
+    Adjust the size of an image to fit the TextDocument
+    :param size: the image's native size
+    :param dpi: dots per inch, defaults to 150 dpi
+    :param width: maybe used in future enhancements
+    :param height: maybe used in future enhancements
+    :return: a Size object for the Text document
+    """
+    scale = 1000 * 2.54 / dpi
+    w = int(size.Width * scale)
+    h = int(size.Height * scale)
 
-        
+    ## for future enhancements: take in account width and height ##
+    if width and height:                                         ##
+        w = int(float(width) * scale)                            ##
+        h = int(float(height) * scale)                           ##
+    elif width:                                                  ##
+        w = int(float(width) * scale)                            ##
+        h = int(w / size.Width * size.Height)                    ##
+    elif height:                                                 ##
+        h = int(float(height) * scale)                           ##
+        w = int(h / size.Height * size.Width)                    ##
+    ###############################################################
+    
+    return Size(w,h)
+    
