@@ -10,10 +10,14 @@ import unohelper, uno
 import http.client
 from com.sun.star.beans import PropertyValue
 from com.sun.star.awt import Size
+from com.sun.star.text.ControlCharacter import PARAGRAPH_BREAK
 
 def svgFromEyes17():
     desktop = XSCRIPTCONTEXT.getDesktop()
     doc = desktop.getCurrentComponent()
+    controller = doc.getCurrentController()
+    view_cursor = controller.getViewCursor()
+    cursor = view_cursor.getEnd()
     if hasattr( doc, "Text" ):
         drawPage = doc.getDrawPage()
 
@@ -26,8 +30,6 @@ def svgFromEyes17():
         graphicprovider = smgr.createInstance("com.sun.star.graphic.GraphicProvider")
         
         dpi = 150
-        cursor = doc.Text.createTextCursor()
-        cursor.gotoEnd(False)
         
         # those might become parameters:
         width = None
@@ -36,13 +38,21 @@ def svgFromEyes17():
         host = "localhost"
         port = 45594
         
-        scale = 1000 * 2.54 / float(dpi)
+        scale = 1000 * 2.54 / dpi
         istream = ctx.ServiceManager.createInstanceWithContext("com.sun.star.io.SequenceInputStream", ctx)
         fbytes=b''
         conn = http.client.HTTPConnection(host,port)
-        conn.request("GET", "/?format=svg")
+        try:
+            conn.request("GET", "/?format=svg")
+        except:
+            doc.Text.insertString(cursor, f"Could not connect to {host}:{port}", 0)
+            doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
+            return            
         r1 = conn.getresponse()
-        ## test wheter r1 has a good status ?
+        if r1.reason != "OK":
+            doc.Text.insertString(cursor, f"Could not get http://{host}:{port}. Error: {r1.status} {r1.reason}", 0)
+            doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
+            return
         fbytes=r1.read()
         istream.initialize((uno.ByteSequence(fbytes),))
         graphic = graphicprovider.queryGraphic((PropertyValue('InputStream', 0, istream, 0), ))
@@ -64,7 +74,6 @@ def svgFromEyes17():
         else:
             size = Size(int(original_size.Width * scale), original_size.Height * scale)
         graphic_object_shape.setSize(size)
-        # doc.Text.insertTextContent(cursor, graphic_object_shape, False)
         thisgraphicobject = doc.createInstance("com.sun.star.text.TextGraphicObject")
         thisgraphicobject.Graphic = graphic_object_shape.Graphic
         thisgraphicobject.setSize(size)
@@ -72,6 +81,7 @@ def svgFromEyes17():
             oldparaadjust = cursor.ParaAdjust
             cursor.ParaAdjust = paraadjust
         doc.Text.insertTextContent(cursor, thisgraphicobject, False)
+        doc.Text.insertControlCharacter(cursor, PARAGRAPH_BREAK, 0)
         if paraadjust:
             cursor.ParaAdjust = oldparaadjust
         
