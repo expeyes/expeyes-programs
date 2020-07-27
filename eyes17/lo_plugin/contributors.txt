@@ -1,0 +1,5 @@
+[code]
+Georges Khaznadar <georgesk@debian.org> (original script, packaging)
+
+[translations]
+Georges Khaznadar (FR)

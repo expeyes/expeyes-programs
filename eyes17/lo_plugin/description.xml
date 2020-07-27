@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description
+    xmlns="http://openoffice.org/extensions/description/2006"
+    xmlns:dep="http://openoffice.org/extensions/description/2006"
+    xmlns:xlink="http://www.w3.org/1999/xlink" >
+   <identifier value="apso.python.script.organizer" />
+
+   <version value="0.1" />
+
+   <extension-description>
+      <src xlink:href="Descriptions/descr-en.txt" lang="en"/>
+      <src xlink:href="Descriptions/descr-fr.txt" lang="fr"/>
+   </extension-description>
+
+   <dependencies>
+      <OpenOffice.org-minimal-version value="3.4" dep:name="OpenOffice.org 3.4 minimum, or more recent" />
+   </dependencies>
+
+   <display-name>
+      <name>::EYES17:: </name>
+   </display-name>
+
+   <registration>
+      <simple-license accept-by="user" suppress-on-update="true" >
+         <license-text xlink:href="LICENSE" lang="en" />
+      </simple-license>
+   </registration>
+
+</description>
