@@ -7,10 +7,30 @@ Started on 2020-07-25
 """
 
 import unohelper, uno
+import traceback
 import http.client
 from com.sun.star.beans import PropertyValue
 from com.sun.star.awt import Size
 from com.sun.star.text.ControlCharacter import PARAGRAPH_BREAK
+from com.sun.star.task import XJobExecutor
+
+class EYES17 (unohelper.Base, XJobExecutor):
+    def __init__(self, ctx):
+        self.ctx = ctx
+        return
+    
+    def trigger(self, args):
+        try:
+            fullSVGscreenShot()
+        except:
+            traceback.print_exc()
+        return
+    
+g_ImplementationHelper = unohelper.ImplementationHelper()
+g_ImplementationHelper.addImplementation(
+    EYES17,
+    'org.example.EYES17',
+    ('com.sun.star.task.Job',))
 
 def fullSVGscreenShot():
     """

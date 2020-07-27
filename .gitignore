@@ -57,3 +57,6 @@ m4/
 
 # generated language files
 *.qm
+
+# LibreOffice extensions
+*.oxt
