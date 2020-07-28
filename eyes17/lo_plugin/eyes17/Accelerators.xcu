@@ -14,4 +14,13 @@
       </node>
     </node>
   </node>
+  <node oor:name="PrimaryKeys">
+    <node oor:name="Global">
+      <node oor:name="ALT_P" oor:op="replace">
+        <prop oor:name="Command">
+          <value>service:org.example.EYES17?display</value>
+        </prop>
+      </node>
+    </node>
+  </node>
 </oor:component-data>
