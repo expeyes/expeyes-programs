@@ -226,7 +226,7 @@
         <translation>வரைபடம் முடிந்தது</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven-pendulum.py" line="34"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation type="unfinished"></translation>
     </message>
@@ -236,7 +236,7 @@
         <translation>SQ1ஐ அமைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="81"/>
+        <location filename="../tof.py" line="83"/>
         <source>sqr1 set to </source>
         <translation>sqr1 அமைக்கப்பட்டது </translation>
     </message>
@@ -351,17 +351,17 @@
         <translation>செய்திகள்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="36"/>
+        <location filename="../editor.py" line="38"/>
         <source>Execute Code</source>
         <translation>மென்பொருளை இயக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="39"/>
+        <location filename="../editor.py" line="41"/>
         <source>Save Code</source>
         <translation>மென்பொருளை சேமிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../editor.py" line="67"/>
+        <location filename="../editor.py" line="69"/>
         <source>Code saved to </source>
         <translation>மென்பொருளை சேமிக்கப்பட்டது </translation>
     </message>
@@ -878,42 +878,42 @@ For Driven Pendulum Expt.</source>
         <translation>தரவு பகுப்பாய்வு பிழை</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="288"/>
+        <location filename="../RLCsteadystate.py" line="289"/>
         <source>Vtotal (A1) = %5.2f V</source>
         <translation>Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="289"/>
+        <location filename="../RLCsteadystate.py" line="290"/>
         <source>Vr (A2) = %5.2f V</source>
         <translation>Vr (A2) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="290"/>
+        <location filename="../RLCsteadystate.py" line="291"/>
         <source>Vlc (A2-A1) = %5.2f V</source>
         <translation>Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="292"/>
+        <location filename="../RLCsteadystate.py" line="293"/>
         <source>F = %5.1f Hz</source>
         <translation>F = %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="293"/>
+        <location filename="../RLCsteadystate.py" line="294"/>
         <source>Phase Diff = %5.1f deg</source>
         <translation>ஃபேஸ் வேறுபாடு</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="296"/>
+        <location filename="../RLCsteadystate.py" line="297"/>
         <source>Vc (A3-A1) = %5.2f V</source>
         <translation>Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="297"/>
+        <location filename="../RLCsteadystate.py" line="298"/>
         <source>Vl (A2-A3) = %5.2f V</source>
         <translation>Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="378"/>
+        <location filename="../RLCsteadystate.py" line="383"/>
         <source>Invalid Input in some field</source>
         <translation>சில தவறான உள்ளீடுகள்</translation>
     </message>
@@ -1172,7 +1172,7 @@ shows the actual frequency set.
         <translation> ல் முடிக்கப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source> Seconds</source>
         <translation> விநாடிகள்</translation>
     </message>
@@ -1247,22 +1247,22 @@ shows the actual frequency set.
         <translation>நேரம் மற்றும் தூரம் வரைபடம் வரையப்பட்டது</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="41"/>
+        <location filename="../tof.py" line="43"/>
         <source>Measure</source>
         <translation>அளவிடவும்</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="67"/>
+        <location filename="../tof.py" line="69"/>
         <source>start..</source>
         <translation>தொடங்கவும்..</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="73"/>
+        <location filename="../tof.py" line="75"/>
         <source>Time of flight =</source>
         <translation>பயண நேரம் =</translation>
     </message>
     <message>
-        <location filename="../tof.py" line="75"/>
+        <location filename="../tof.py" line="77"/>
         <source>Error. Try again</source>
         <translation>தவறு. மீண்டும் முயற்சிக்கவும்</translation>
     </message>
@@ -2013,7 +2013,7 @@ shows the actual frequency set.
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="419"/>
+        <location filename="../main.py" line="421"/>
         <source>Enable PopUp Help Window</source>
         <translation></translation>
     </message>
@@ -2256,127 +2256,127 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="499"/>
+        <location filename="../main.py" line="502"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="531"/>
+        <location filename="../main.py" line="535"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="578"/>
+        <location filename="../main.py" line="582"/>
         <source>Device</source>
         <translation>சாதனம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="579"/>
+        <location filename="../main.py" line="583"/>
         <source>Reconnect</source>
         <translation>மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="582"/>
+        <location filename="../main.py" line="586"/>
         <source>Choose Language</source>
         <translation>மொழியை தேர்ந்தெடுக்கவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="616"/>
         <source>School Expts</source>
         <translation>பள்ளி ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="620"/>
         <source>Electronics</source>
         <translation>மின்னணுவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="627"/>
         <source>Electrical</source>
         <translation>மின்னியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="631"/>
         <source>Sound</source>
         <translation>ஒலியியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="635"/>
         <source>Mechanics</source>
         <translation>இயங்குவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="635"/>
+        <location filename="../main.py" line="639"/>
         <source>Other Expts</source>
         <translation>மற்ற ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="639"/>
+        <location filename="../main.py" line="643"/>
         <source>I2C Modules</source>
         <translation>I2C தொகுதிகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="643"/>
+        <location filename="../main.py" line="647"/>
         <source>PythonCode</source>
         <translation>பைதான் கோடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="863"/>
         <source>Oscilloscope</source>
         <translation>அலைக்காட்டி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="580"/>
+        <location filename="../main.py" line="584"/>
         <source>LightBackGround</source>
         <translation>வெளிச்சமிக்க பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="581"/>
+        <location filename="../main.py" line="585"/>
         <source>DarkBackGround</source>
         <translation>இருண்ட பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="605"/>
+        <location filename="../main.py" line="609"/>
         <source>Screenshot</source>
         <translation>ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Missing Plot</source>
         <translation>வரைபடத்தை காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="797"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>வரைபடத்தை கண்டுபிடிக்க முடியவில்லை. வலது கிளிக் செய்து ஏற்றுமதி செய்ய முயற்சிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="608"/>
+        <location filename="../main.py" line="612"/>
         <source>Credits</source>
         <translation>நன் மதிப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="606"/>
+        <location filename="../main.py" line="610"/>
         <source>Whole Window Alt-s</source>
         <translation>முழு விண்டோ Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="607"/>
+        <location filename="../main.py" line="611"/>
         <source>Graph Only Alt-p</source>
         <translation>வரைபடம் மட்டும் Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="824"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>அகலத்தை (px) உள்ளீடவும். உயரம் தானாக அமைக்கப்படும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="605"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="610"/>
+        <location filename="../main.py" line="614"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>

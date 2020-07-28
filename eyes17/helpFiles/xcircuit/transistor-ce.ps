@@ -1,9 +1,9 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: clipping.ps
+%%Title: transistor-ce.ps
 %%Creator: XCircuit v3.8 rev78
-%%CreationDate: Tue Jul 21 05:53:04 2020
+%%CreationDate: Tue Jul 28 16:14:36 2020
 %%Pages: 1
-%%BoundingBox: 68 68 268 172
+%%BoundingBox: 68 68 352 274
 %%DocumentNeededResources: font Helvetica Times-Roman 
 %%EndComments
 %%BeginProlog
@@ -190,48 +190,112 @@ begingate
 endgate
 } def
 
-/analog::diode {
+/generic::arrowhead {
+% nonetwork
 begingate
-248 1.000 -18 -16 0 16 18 -16 3 polygon
-1 1.000 0 -48 0 -16 2 polygon
-1 1.000 0 48 0 16 2 polygon
-1 1.000 -18 16 18 16 2 polygon
+8 -28 beginpath
+3 -18 3 -15 0 0 curveto
+-3 -15 -3 -18 -8 -28 curveto
+-2 -26 2 -26 8 -28 curveto
+249 
+1.000 endpath
+endgate
+} def
+
+/analog::npn {
+begingate
+1 1.000 -48 0 -64 0 2 polygon
+1 1.000 -48 48 -48 -48 2 polygon
+1 1.000 0 48 -48 22 2 polygon
+1 1.000 0 48 0 64 2 polygon
+1 1.000 0 -48 -48 -22 2 polygon
+1 1.000 0 -48 0 -64 2 polygon
+1.000 120 0 -48 generic::arrowhead
 1.000 0.000 0.000 scb
-(d.m) {/Times-Roman cf} 2 9 0 1.000 0 48 pinlabel
-(d.p) {/Times-Roman cf} 2 13 0 1.000 0 -48 pinlabel
+(C) {/Times-Roman cf} 2 9 0 1.000 0 64 pinlabel
+(B) {/Times-Roman cf} 2 7 0 1.000 -64 0 pinlabel
+(E) {/Times-Roman cf} 2 13 0 1.000 0 -64 pinlabel
+0.180 0.545 0.341 scb
+(spice:Q%i %pC %pB %pE npn) {/Times-Roman cf} 2 4 0 1.000 -244 -139 infolabel
+(sim:b %pB %pE %pC) {/Times-Roman cf} 2 4 0 1.000 -244 -187 infolabel
+endgate
+} def
+
+/analog::capacitor {
+begingate
+1 1.000 0 -64 0 -6 2 polygon
+1 1.000 0 64 0 6 2 polygon
+1 1.000 -32 6 32 6 2 polygon
+1 1.000 -32 -6 32 -6 2 polygon
+1.000 0.000 0.000 scb
+(c.1) {/Times-Roman cf} 2 9 0 1.000 0 64 pinlabel
+(c.2) {/Times-Roman cf} 2 13 0 1.000 0 -64 pinlabel
+0.180 0.545 0.341 scb
+(spice:C%i %pc.1 %pc.2 1.0P) {/Times-Roman cf} 2 0 0 1.000 -208 -160 infolabel
+(sim:c %pc.1 %pc.2) {/Times-Roman cf} 2 0 0 1.000 -208 -208 infolabel
 endgate
 } def
 
 
 %%EndSetup
 
-%%Page: clipping 1
+%%Page: transistor-ce 1
 %%PageOrientation: Portrait
 /pgsave save def bop
-% 2.00 16.00 gridspace
 1.0000 inchscale
-2.6000 setlinewidth 480 -432 translate
+2.6000 setlinewidth 624 320 translate
 
-1.000 270 -80 800 analog::resistor
-0 1.000 -160 688 -160 640 -96 640 -96 688 4 polygon
-1 1.000 0 800 16 0.000 360.000 xcarc
-0 1.000 -32 688 -32 640 32 640 32 688 4 polygon
-0 1.000 96 688 96 640 192 640 192 688 4 polygon
-0 1.000 -288 880 -288 624 224 624 224 880 4 polygon
-1 1.000 128 800 16 0.000 360.000 xcarc
-1 1.000 -160 800 16 0.000 360.000 xcarc
-1 1.000 1 784 -48 720 0 688 0 784 spline
-1.000 90 64 800 analog::diode
-0 1.000 -272 688 -272 640 -176 640 -176 688 4 polygon
-1 1.000 -223 688 -256 784 -176 800 -224 688 spline
-1 1.000 -127 688 -176 736 -160 784 -128 688 spline
-(1K) {/Helvetica cf} 2 16 0 1.000 -96 832 label
-1 1.000 145 688 176 752 128 784 144 688 spline
-(WG) {/Helvetica cf} 2 16 0 1.000 -256 656 label
-(A1) {/Helvetica cf} 2 16 0 1.000 -144 656 label
-(A2) {/Helvetica cf} 2 16 0 1.000 -32 656 label
-{/Helvetica cf} 1 16 0 1.000 112 656 label
-(PV1) {/Helvetica cf} 2 16 0 1.000 112 656 label
+1.000 0 64 240 analog::resistor
+(PV1) {/Helvetica cf} 2 16 0 1.000 176 320 label
+(GND) {/Helvetica cf} 2 16 0 1.000 160 -64 label
+0 1.000 160 -16 160 -80 256 -80 256 -16 4 polygon
+0 1.000 160 368 160 304 272 304 272 368 4 polygon
+(Rc=1K) {/Helvetica cf} 2 16 0 1.000 96 224 label
+1.000 90 -160 0 analog::resistor
+(PV2) {/Helvetica cf} 2 16 0 1.000 -368 -80 label
+0 1.000 -400 -32 -400 -96 -272 -96 -272 -32 4 polygon
+(Rb=100K) {/Helvetica cf} 2 28 360 1.000 -224 -32 label
+(A1) {/Helvetica cf} 2 16 0 1.000 176 144 label
+0 1.000 160 192 160 128 240 128 240 192 4 polygon
+1 1.000 64 320 16 0.000 360.000 xcarc
+1.000 0 64 48 analog::npn
+1 1.000 64 -64 16 0.000 360.000 xcarc
+1 1.000 -80 0 16 0.000 360.000 xcarc
+1 1.000 64 160 16 0.000 360.000 xcarc
+1 1.000 64 144 64 112 2 polygon
+1 1.000 64 -16 64 -48 2 polygon
+1 1.000 -240 0 16 0.000 360.000 xcarc
+1 1.000 96 336 96 368 160 336 64 336 spline
+1 1.000 96 160 128 208 160 160 80 160 spline
+1 1.000 96 -64 128 -80 160 -32 80 -64 spline
+1 1.000 0 48 -16 48 2 polygon
+0 1.000 -320 256 -320 192 -224 192 -224 256 4 polygon
+1.000 90 -304 144 analog::resistor
+1.000 90 -144 144 analog::capacitor
+(1uF) {/Helvetica cf} 2 16 0 1.000 -176 80 label
+(R=10K) {/Helvetica cf} 2 16 0 1.000 -368 96 label
+{/Helvetica cf} 1 16 0 1.000 -112 240 label
+(WG) {/Helvetica cf} 2 16 0 1.000 -304 208 label
+1 1.000 -224 144 16 0.000 360.000 xcarc
+1 1.000 -384 144 16 0.000 360.000 xcarc
+1 1.000 -64 144 16 0.000 360.000 xcarc
+(80mV) {/Helvetica cf} 2 16 0 1.000 -432 224 label
+0 1.000 -432 400 -432 -128 304 -128 304 400 4 polygon
+0 1.000 -128 256 -128 192 -48 192 -48 256 4 polygon
+(A3) {/Helvetica cf} 2 16 0 1.000 -112 208 label
+1 1.000 -32 48 16 0.000 360.000 xcarc
+1 1.000 -240 0 -368 16 -336 -32 -256 0 spline
+1 1.000 -64 16 -64 48 -48 48 -80 16 spline
+1 1.000 -112 224 -160 240 -224 160 -128 224 spline
+1 1.000 -304 224 -416 224 -384 160 -320 224 spline
+0 1.000 -400 368 -400 304 -304 304 -304 368 4 polygon
+0 1.000 -96 368 -96 304 -16 304 -16 368 4 polygon
+1.000 90 -192 336 analog::resistor
+1 1.000 -128 336 -96 336 2 polygon
+1 1.000 -256 336 -304 336 2 polygon
+(GND) {/Helvetica cf} 2 16 0 1.000 -400 320 label
+(Rg) {/Helvetica cf} 2 16 0 1.000 -80 320 label
+1 1.000 -16 64 -80 128 -64 128 -32 64 spline
 pgsave restore showpage
 
 %%Trailer

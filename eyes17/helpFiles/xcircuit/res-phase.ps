@@ -1,9 +1,9 @@
 %!PS-Adobe-3.0 EPSF-3.0
-%%Title: clipping.ps
+%%Title: res-phase.ps
 %%Creator: XCircuit v3.8 rev78
-%%CreationDate: Tue Jul 21 05:53:04 2020
+%%CreationDate: Fri Jul 24 06:47:50 2020
 %%Pages: 1
-%%BoundingBox: 68 68 268 172
+%%BoundingBox: 68 68 304 172
 %%DocumentNeededResources: font Helvetica Times-Roman 
 %%EndComments
 %%BeginProlog
@@ -190,48 +190,35 @@ begingate
 endgate
 } def
 
-/analog::diode {
-begingate
-248 1.000 -18 -16 0 16 18 -16 3 polygon
-1 1.000 0 -48 0 -16 2 polygon
-1 1.000 0 48 0 16 2 polygon
-1 1.000 -18 16 18 16 2 polygon
-1.000 0.000 0.000 scb
-(d.m) {/Times-Roman cf} 2 9 0 1.000 0 48 pinlabel
-(d.p) {/Times-Roman cf} 2 13 0 1.000 0 -48 pinlabel
-endgate
-} def
-
 
 %%EndSetup
 
-%%Page: clipping 1
+%%Page: res-phase 1
 %%PageOrientation: Portrait
 /pgsave save def bop
-% 2.00 16.00 gridspace
 1.0000 inchscale
-2.6000 setlinewidth 480 -432 translate
+2.6000 setlinewidth 480 400 translate
 
-1.000 270 -80 800 analog::resistor
-0 1.000 -160 688 -160 640 -96 640 -96 688 4 polygon
-1 1.000 0 800 16 0.000 360.000 xcarc
-0 1.000 -32 688 -32 640 32 640 32 688 4 polygon
-0 1.000 96 688 96 640 192 640 192 688 4 polygon
-0 1.000 -288 880 -288 624 224 624 224 880 4 polygon
-1 1.000 128 800 16 0.000 360.000 xcarc
-1 1.000 -160 800 16 0.000 360.000 xcarc
-1 1.000 1 784 -48 720 0 688 0 784 spline
-1.000 90 64 800 analog::diode
-0 1.000 -272 688 -272 640 -176 640 -176 688 4 polygon
-1 1.000 -223 688 -256 784 -176 800 -224 688 spline
-1 1.000 -127 688 -176 736 -160 784 -128 688 spline
-(1K) {/Helvetica cf} 2 16 0 1.000 -96 832 label
-1 1.000 145 688 176 752 128 784 144 688 spline
-(WG) {/Helvetica cf} 2 16 0 1.000 -256 656 label
-(A1) {/Helvetica cf} 2 16 0 1.000 -144 656 label
-(A2) {/Helvetica cf} 2 16 0 1.000 -32 656 label
-{/Helvetica cf} 1 16 0 1.000 112 656 label
-(PV1) {/Helvetica cf} 2 16 0 1.000 112 656 label
+(A2) {/Helvetica cf} 2 16 0 1.000 64 -16 label
+(WG) {/Helvetica cf} 2 16 0 1.000 -256 -16 label
+(GND) {/Helvetica cf} 2 16 0 1.000 208 -16 label
+1.000 270 96 -144 analog::resistor
+1.000 270 -64 -144 analog::resistor
+0 1.000 -112 32 -112 -32 -32 -32 -32 32 4 polygon
+0 1.000 192 32 192 -32 304 -32 304 32 4 polygon
+0 1.000 -272 32 -272 -32 -160 -32 -160 32 4 polygon
+(R1) {/Helvetica cf} 2 16 0 1.000 80 -192 label
+(R2) {/Helvetica cf} 2 16 0 1.000 -96 -192 label
+1 1.000 16 -144 16 0.000 360.000 xcarc
+1 1.000 -144 -144 16 0.000 360.000 xcarc
+1 1.000 176 -144 16 0.000 360.000 xcarc
+1 1.000 -144 -144 -272 -112 -224 -32 -160 -144 spline
+1 1.000 208 -144 288 -112 256 -32 192 -144 spline
+0 1.000 -288 48 -288 -208 320 -208 320 48 4 polygon
+0 1.000 48 32 48 -32 128 -32 128 32 4 polygon
+(A1) {/Helvetica cf} 2 16 0 1.000 -96 -16 label
+1 1.000 -128 -128 -96 -32 -80 -32 -144 -128 spline
+1 1.000 32 -128 32 -64 96 -32 16 -128 spline
 pgsave restore showpage
 
 %%Trailer
