@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>in.expeyes.microhope</id>
+  
+  <name>microhope</name>
+  <summary>hardware &amp; software framework to learn microcontrollers</summary>
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  
+  <description>
+    <p>
+      This package provides a set of example programs to drive an ATmega32 microcontroller, together with a tutorial explaining how to compile them, upload them to the microcontroller, and how to make simple and more complicated modifications. It is meant to be used with the &quot;microhope&quot; board which makes it easy to upload code to the microcontroller through a USB link.
+    </p>
+    <p>
+      In addition to examples there is a library to drive all of the peripherals available on the &quot;microhope&quot; board: LED, LCD display, ADC connected to sensors.
+    </p>
+    <p>
+      A Graphic User Interface is provided too.
+    </p>
+  </description>
+  
+  <launchable type="desktop-id">in.expeyes.microhope-avr.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://screenshots.debian.net/screenshots/000/013/324/large.png</image>
+    </screenshot>
+  </screenshots>
+</component>
