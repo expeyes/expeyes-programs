@@ -12,7 +12,8 @@ from PyQt5.QtCore import QThread
 from tempfile import NamedTemporaryFile
 import os
 
-INDEX = open("server.html").read()
+this_dir = os.path.dirname(__file__)
+INDEX = open(os.path.join(this_dir,"server.html")).read()
 
 class ScreenShotThread(QThread):
     def __init__(self, parent, port = 45594):
