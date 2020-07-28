@@ -6,20 +6,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     oor:name="Accelerators" oor:package="org.openoffice.Office">
   <node oor:name="PrimaryKeys">
-    <node oor:name="Global">
-      <node oor:name="ALT_S" oor:op="replace">
-        <prop oor:name="Command">
-          <value>service:org.example.EYES17?full</value>
-        </prop>
-      </node>
-    </node>
-  </node>
-  <node oor:name="PrimaryKeys">
-    <node oor:name="Global">
-      <node oor:name="ALT_P" oor:op="replace">
-        <prop oor:name="Command">
-          <value>service:org.example.EYES17?display</value>
-        </prop>
+    <node oor:name="Modules">
+      <node oor:name="com.sun.star.text.TextDocument">
+	<node oor:name="S_MOD2" oor:op="replace">
+          <prop oor:name="Command">
+            <value>service:org.example.EYES17?full</value>
+          </prop>
+	</node>
+	<node oor:name="P_MOD2" oor:op="replace">
+          <prop oor:name="Command">
+            <value>service:org.example.EYES17?display</value>
+          </prop>
+	</node>
       </node>
     </node>
   </node>

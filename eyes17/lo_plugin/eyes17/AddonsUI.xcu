@@ -29,9 +29,9 @@
 		<value>service:org.example.EYES17?full</value>
 	      </prop>
 	      <prop oor:name="Title" oor:type="xs:string">
-		<value xml:lang="en">EYES17 full screenshots (Alt-S)</value>
-		<value xml:lang="fr">Copie d'écran complète d'EYES17 (Alt-S)</value>
-		<value xml:lang="es">Copia de pantalla total de EYES17 (Alt-S)</value>
+		<value xml:lang="en">EYES17 full screenshots</value>
+		<value xml:lang="fr">Copie d'écran complète d'EYES17</value>
+		<value xml:lang="es">Copia de pantalla total de EYES17</value>
 	      </prop>
 	      <prop oor:name="Target" oor:type="xs:string">
 		<value>_self</value>
@@ -45,9 +45,9 @@
 		<value>service:org.example.EYES17?display</value>
 	      </prop>
 	      <prop oor:name="Title" oor:type="xs:string">
-		<value xml:lang="en">EYES17's display screenshots (Alt-P)</value>
-		<value xml:lang="fr">Petite copie d'écran d'EYES17 (Alt-P)</value>
-		<value xml:lang="es">Copia de pantalla parcial de EYES17 (Alt-P)</value>
+		<value xml:lang="en">EYES17's display screenshots</value>
+		<value xml:lang="fr">Petite copie d'écran d'EYES17</value>
+		<value xml:lang="es">Copia de pantalla parcial de EYES17</value>
 	      </prop>
 	      <prop oor:name="Target" oor:type="xs:string">
 		<value>_self</value>
@@ -55,6 +55,34 @@
 	    </node>
 	  </node>
 	</node>
+      </node>
+    </node>
+    <node oor:name="Images">
+      <node oor:name="org.example.EYES17.image1" oor:op="replace">
+        <prop oor:name="URL">
+          <value>service:org.example.EYES17?full</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL" oor:type="xs:string">
+            <value>%origin%/images/fullSVG_small.png</value>
+          </prop>
+          <prop oor:name="ImageBigURL" oor:type="xs:string">
+            <value>%origin%/images/fullSVG_big.png</value>
+          </prop>
+        </node>
+      </node>
+      <node oor:name="org.example.EYES17.image2" oor:op="replace">
+        <prop oor:name="URL">
+          <value>service:org.example.EYES17?display</value>
+        </prop>
+        <node oor:name="UserDefinedImages">
+          <prop oor:name="ImageSmallURL" oor:type="xs:string">
+            <value>%origin%/images/dispSVG_small.png</value>
+          </prop>
+          <prop oor:name="ImageBigURL" oor:type="xs:string">
+            <value>%origin%/images/dispSVG_big.png</value>
+          </prop>
+        </node>
       </node>
     </node>
   </node>

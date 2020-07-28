@@ -1,0 +1,12 @@
+Permet d'obtenir des copies d'écran d'ExpEYES17. Deux nouvelles commandes
+apparaissent dans le menu Insertion ⇾ Média, l'une pour faire une copie
+d'écran complète, l'autre pour faire une copie d'écran des courbes seulement.
+
+On ne peut faire les copies d'écran que quand l'application eyes17 est
+lancée sur la même machine.
+
+On peut observer que les deux raccourci clavier suivants fonctionnent :
+
+- Alt-I M C, pour la copie complète (Insertion ⇾ Média -> Copie complète)
+
+- Alt-I M P, pour la petite copie (Insertion ⇾ Média -> Petite copie)
