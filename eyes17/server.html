@@ -7,58 +7,29 @@
 	  display: inline-block;
 	  border-color: black;
       }
-      table {
-	  margin: 1em;
-	  background: lightyellow;
-      }
-      table th, table td {
-	  margin: 0.5em;
-	  padding: 0.5em;
-	  border-radius: 0.5em;
-	  background: lightyellow;
-	  border: 1px solid orange;
-      }
-      table tr:nth-child(odd) td,  table tr:nth-child(odd) th{
-	  background: lightcyan;
-	  border-color: navy;
-      }
       .flex{
 	  flex: auto;
-	  margin: 0 10px;
+	  display: inline-block;
+	  background: lightyellow;
+	  border: 1px solid navy;
+	  padding: 1em;
+	  margin: 0.5em 1em;
+	  border-radius: 0.5em;
+	  width: 150px;
+	  text-align: center;
+	  font-weight: bold;
       }
     </style>
   </head>
   <body>
     <h1>EYE17 screenshot's service</h1>
-    <form action="" name="theform" method="get">
-      <fieldset>
-	<legend>Screenshot's options</legend>
-	<table>
-	  <tr>
-	    <th>
-	      <label for="format">Format</label>
-	    </th>
-	    <td>
-	      <select name="format" id="format">
-		<option value="svg">SVG</option>
-		<option value="png">PNG</option>
-	      </select>
-	    </td>
-	  </tr>
-	  <tr>
-	    <th>
-	      <label for="width">Width <br/>(in pixels, for PNG format)</label>
-	    </th>
-	    <td>
-	      <input type="text" name="width" id="width" placeholder="400"/>
-	    </td>
-	  </tr>
-	</table>
-	<div style="display: flex">
-	  <input class="flex" type="submit"  name="shot" value="Full screenshot"/>
-	  <input class="flex" type="submit"  name="shot" value="Just the display"/>
-	</div>
-      </fieldset>
-    </form>
-  </body>
+    <fieldset>
+      <div class="flex" onClick="document.location='/?format=svg&shot=full&mode=webpage'">
+	Full <br/> Screen shot
+      </div>
+      <div class="flex" onClick="document.location='/?format=svg&shot=&mode=webpage'">
+	Just the <br/> Display
+      </div>
+    </div>
+  </fieldset>
 </html>
