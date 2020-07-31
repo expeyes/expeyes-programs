@@ -31,5 +31,5 @@ class TranslateThread(QThread):
                     lightFile = lightenSvgFile(langpath)
                     svg2png(lightFile, app=self.parent().app, width=self.parent().PNGwidth)
             self.parent().screenshot_translated.emit(lang)
-        self.parent().screenshot_finished.emit()
+        self.parent().screenshot_translation_finished.emit()
         return
