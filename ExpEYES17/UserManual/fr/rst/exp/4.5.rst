@@ -15,12 +15,12 @@ calculer son inductance.
 .. image:: pics/RLtransient.png
 	   :width: 300px
 
-Dans un circuit RL, :math:`U = RI + L(dI/dt)` , équation
+Dans un circuit RL, :math:`U = RI + L(dI/dt)` , équation
 qui se résout en
-:math:`I = I_0 \times e^{− (R/L)t}`. Le
+:math:`I = I_0 \times e^{  (R/L)t}`. Le
 coefficient du terme exponentiel R/L peut être déduit du graphique de la
 tension aux bornes du bobinage. La résistance du bobinage doit être
-incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
+incluse dans les calculs, :math:`R = R_{ext} + R*_L`.
 
 **Procédure**
 

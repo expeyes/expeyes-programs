@@ -4,7 +4,7 @@ Mesure de résistances en série
 **Objectif**
 
 La résistance équivalente à une série de résistances est
-:math:`R = R_1 + R_2 + ⋯`. 
+:math:`R = R_1 + R_2 + \dots`. 
 
 .. image:: ./schematics/res-series.svg
    :width: 300px	   

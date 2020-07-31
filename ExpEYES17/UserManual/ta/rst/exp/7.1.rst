@@ -7,8 +7,8 @@ Temperature measurement using PT100
 
 Record the temperature of a liquid by using a Platinum Resistance
 Thermometer. Resistance of a PT100 element is related to the temperature
-by the equation :math:`R(T) = R_0 (1 + AT + BT^2)`, where
-:math:`A = 3,9083 \times 10^{−3}` and :math:`B =  − 5,775 \times 10^{−7}`.
+by the equation :math:`R(T) = R_0 (1 + AT + BT^2)`, where
+:math:`A = 3,9083 \times 10^{ 3}` and :math:`B =    5,775 \times 10^{ 7}`.
 
 .. image:: schematics/pt100.svg
 	   :width: 300px
@@ -32,7 +32,7 @@ across an known resistor. The input to A3 is amplified 11 times by
 connecting :math:`1~k\Omega` resistor from Rg to Ground.
 
 The resistance of PT100 is :math:`1000~\Omega` at :math:`0^\circ C`. It changes nearly :math:`0,4~\Omega /^\circ C`
-, changing the voltage by :math:`0, 4~mV`. The 12 bit ADC output changes
+, changing the voltage by :math:`0, 4~mV`. The 12 bit ADC output changes
 by 1 LSB for :math:`1,22~mV` change in input voltage, hence any temperature
 change less than 3 degrees will not be detected. Use an external
 non-inverting amplifier to increase the resolution. The gain of the

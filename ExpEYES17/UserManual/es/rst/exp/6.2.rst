@@ -24,7 +24,7 @@ continua como sensor, puede medir la velocidad angular en función del tiempo.
 
 La señal obtenida se muestra en la figura. Cuando se modeliza por una 
 ecuación
-:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, con 
+:math:`A = A_0 \sin(\omega t + \theta) \exp(   Dt) + C`, con 
 la ayuda de Grace, hemos obtenido una frecuencia angular de :math:`10~Hz`.
 
 Es conveniente realizar el péndulo con un mazo bastante pesado y una varilla 

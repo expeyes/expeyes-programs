@@ -5,7 +5,7 @@ Measuring Resistance parallel combination
 
 For parallel combination of resistors, this relation exists between
 the effective resistance :math:`R` and the components:
-:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots`
 
 .. image:: ./schematics/res-parallel.svg
    :width: 300px

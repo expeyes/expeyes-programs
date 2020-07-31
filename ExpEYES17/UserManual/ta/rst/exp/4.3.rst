@@ -21,7 +21,7 @@ different combinations can be studied.
 -  Note down the amplitude and phase measurements, in each case
 -  Repeat the measurements by changing the frequency.
 -  For RLC series circuit, the junction of L and C is monitored by A3
--  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH` and :math:`f = 1600~Hz`, adjust f to
+-  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH` and :math:`f = 1600~Hz`, adjust f to
    make phase shift zero
 -  The total voltage across L and C together goes almost to zero, the
    voltage across them are out of phase at resonance
@@ -33,7 +33,7 @@ resistor on A2. Subtracting the instantaneous values of A2 from A1 gives
 the combined voltage across the inductor and capacitor. We need to use
 an inductor with negligible resistance for good results. The phase
 difference between current and voltage is given by
-:math:`\Delta \Phi = \arctan((X_C − X_L)/X_R)`.
+:math:`\Delta \Phi = \arctan((X_C   X_L)/X_R)`.
 
 The total voltage, voltage across R and the voltage across LC are shown
 in figure. The phasor diagram shows the phase angle between the current

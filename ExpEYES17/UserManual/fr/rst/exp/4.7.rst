@@ -26,7 +26,7 @@ Dans le cas du signal sinusoïdal il y a un seul pic dominant, les pics
 plus petits sont une mesure de la distorsion du signal sinusoïdal.
 
 Un signal carré peut être représenté comme
-:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
+:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + \dots`.
 Dans la transformée de Fourier d’un signal carré de fréquence *f* , il y
 aura un composant *3 f* (dont l’amplitude est le tiers du composant *f*),
 un composant *5 f* (amplitude un cinquième), etc. comme montré sur

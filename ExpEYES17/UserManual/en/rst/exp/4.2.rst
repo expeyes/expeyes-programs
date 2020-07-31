@@ -16,7 +16,7 @@ Plot two signals in the X-Y mode and find out their phase difference. The phase 
 -  Make the connections as shown in the figure. Use 1K and 1uF
 -  Note down the maximum value and the y-intercept
 
-The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{int}}{y_{max}}\Bigg)`    
+The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{int}}{y_{max}}\Bigg)`    
 	   
 .. image:: pics/xyplot-screen.png
    :width: 500px

@@ -27,6 +27,6 @@ across the :math:`1~k\Omega` resistor.
 The base current is set by setting the voltage at one end of the :math:`100~k\Omega`
 resistor, the other end is connected to the transistor base. The value
 of base current is calculated by,
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
+:math:`I_b = (U_{PV2}   U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
 If A2 is not connected, the code assumes 0.6 volts at the base to
 calculate the base current.

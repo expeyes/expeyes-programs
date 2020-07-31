@@ -18,10 +18,10 @@ Measure the resistance of ionic solutions, using AC voltages, using normal tap w
 -  Enable A1 and A2 with the amplitude and frequency display options.
 
 Calculate the resistance using the method of comparing with a known resistance.
-Current flowing :math:`I = \frac{V_{A2}}{R_{1}}`
+Current flowing :math:`I = \frac{V_{A2}}{R_{1}}`
 
 Resistance offered by water 
-:math:`R_{w} = \frac {V_{A1} - V_{A2}}{I} = \frac {V_{A1} - V_{A2}}{V_{A2}}\times R_{1}`.
+:math:`R_{w} = \frac {V_{A1} - V_{A2}}{I} = \frac {V_{A1} - V_{A2}}{V_{A2}}\times R_{1}`.
 
 
 .. image:: pics/water-conduct.png

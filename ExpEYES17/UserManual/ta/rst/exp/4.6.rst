@@ -18,7 +18,7 @@ Separator latexpar\end_inset
 **Procedure**
 
 -  Select WG triangular wave option
--  Set WG to 500Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` and :math:`C = 1~\mu F`
+-  Set WG to 500Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` and :math:`C = 1~\mu F`
 -  Adjust the horizontal scale to view more than 4 cycles.
 -  Repeat the same for RC differentiator, at :math:`50~Hz`.
 

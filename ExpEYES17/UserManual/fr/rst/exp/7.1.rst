@@ -8,8 +8,8 @@ Mesure de température à l’aide d’une sonde PT100
 Enregistrer la température d’un liquide à l’aide d’un thermomètre à
 résistance de platine. La résistance d’un module PT100 est dépendante de
 la température par la relation
-:math:`R(T) = R_0 (1 + AT + BT^2)`, où
-:math:`A = 3,9083 \times 10^{−3}` et :math:`B =  − 5,775 \times 10^{−7}`.
+:math:`R(T) = R_0 (1 + AT + BT^2)`, où
+:math:`A = 3,9083 \times 10^{ 3}` et :math:`B =    5,775 \times 10^{ 7}`.
 
 
 .. image:: schematics/pt100.svg
@@ -36,7 +36,7 @@ tension aux bornes d’une résistance connue. L’entrée de A3 est amplifiée
 
 La résistance d’une sonde PT100 est :math:`1000~\Omega` à :math:`0^\circ C`. Elle change
 pratiquement de :math:`0,4~\Omega /^\circ C`, modifiant la tension de
-:math:`0, 4~mV`. La
+:math:`0, 4~mV`. La
 sortie du convertisseur analogique numérique change d’un bit de poids
 faible pour un changement de :math:`1,22~mV` dans la tension d’entrée, donc
 un changement de température de moins de 3°C ne serait pas toujours

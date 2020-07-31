@@ -4,7 +4,7 @@ Medir resistencias en serie
 **Objetivo**
 
 La resistencia equivalente a una serie de resistencias es
-:math:`R = R_1 + R_2 + ⋯`. 
+:math:`R = R_1 + R_2 + \dots`. 
 
 .. image:: ./schematics/res-series.svg
    :width: 300px	   

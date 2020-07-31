@@ -23,7 +23,7 @@ a function of time.\begin_inset Separator latexpar\end_inset
 **Discussion**
 
 The observed waveform is shown in figure. Fitting it with equation
-:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, using Grace gave an
+:math:`A = A_0 \sin(\omega t + \theta) \exp(   Dt) + C`, using Grace gave an
 angular frequency of :math:`10~Hz`.
 
 The pendulum should be made with a heavy bob and a light weight rod

@@ -8,7 +8,7 @@ Acceleration due to gravity using Rod pendulum
 Measure the period of oscillations of a rod pendulum using a light
 barrier and calculate the value of acceleration due to gravity. Period
 of oscillation of a uniform rod about one end is given by
-:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration
+:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration
 due to gravity. The pendulum (T-shaped, a knife edge attached to a 6mm
 dia rod) is made to swing between an LED and photo-transistor, connected
 to expEYES. The LED and photo-transistor are mounted on a U-shaped

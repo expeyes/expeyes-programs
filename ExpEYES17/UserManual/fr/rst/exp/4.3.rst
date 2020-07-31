@@ -22,7 +22,7 @@ alternatif. Trois combinaisons différentes peuvent être étudiées.
 -  Recommencer les mesures en changeant la fréquence.
 -  Pour le circuit série RLC, la jonction entre L et C est surveillées
    par A3
--  Pour la résonance, sélectionner :math:`C = 1~\mu F`,
+-  Pour la résonance, sélectionner :math:`C = 1~\mu F`,
    :math:`L = 10~mH` et :math:`f = 1600~Hz`, ajuster f pour obtenir un déphasage nul
 -  La tension totale aux bornes de L et C s’approche de zéro, les
    tensions de chacun sont déphasées à la résonance
@@ -34,7 +34,7 @@ de la résistance en A2. Si on soustrait les valeurs instantanées de A2
 de A1 on obtient la tension totale aux bornes de L et C. IL faut
 utiliser un bobinage avec une résistance négligeable pour de bons
 résultats. Le déphasage entre courant et tension est donnée par
-:math:`\Delta \Phi = \arctan((Z_C − Z_L)/Z_R)`.
+:math:`\Delta \Phi = \arctan((Z_C   Z_L)/Z_R)`.
 
 La tension totale, la tension aux bornes de R et la tension aux bornes
 de LC sont montrées dans la figure. Le diagramme de phase montre le

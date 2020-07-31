@@ -17,7 +17,7 @@ reduce the ripple (the AC component).
 
 -  Make connections and observe the output
 -  Connect a :math:`1~k\Omega` load resistor, note the difference in amplitude
--  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
+-  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
 -  Try different values load resistors and filter capacitors
 
 **Discussion**

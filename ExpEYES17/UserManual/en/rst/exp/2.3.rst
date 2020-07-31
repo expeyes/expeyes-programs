@@ -1,6 +1,6 @@
 Measuring Resistance series combination
 ========================================
-The effective resistance of a series combination of resistors is :math:`R = R_1 + R_2 + ⋯`. 
+The effective resistance of a series combination of resistors is :math:`R = R_1 + R_2 + \dots`. 
 
 **Objective**
 

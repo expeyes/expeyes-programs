@@ -6,7 +6,7 @@ Measuring Resistance series combination
 **Objective**
 
 The effective resistance of a
-series combination of resistors is :math:`R = R_1 + R_2 + ⋯`. 
+series combination of resistors is :math:`R = R_1 + R_2 + \dots`. 
 
 .. image:: ./schematics/res-series.svg
    :width: 300px	   

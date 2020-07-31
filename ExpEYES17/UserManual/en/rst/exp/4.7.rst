@@ -5,7 +5,7 @@ Transmission of electrical signals though a filter circuit depends on the freque
 **Objective**
 
 Draw the frequncy response curve of a fileter circuit, with 
-:math:`L = 10\mu H, C=1 \mu F R=100`. Expected resonant frequency of the bandpass filter :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`
+:math:`L = 10\mu H, C=1 \mu F R=100`. Expected resonant frequency of the bandpass filter :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`
 
 **Procedure**
 

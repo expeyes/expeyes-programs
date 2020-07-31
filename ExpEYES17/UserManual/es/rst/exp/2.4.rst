@@ -5,7 +5,7 @@ Medir resistencias en paralelo
 
 Para resistencias en paralelo, la relación para calcular la
 resistencia equivalente:
-:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots`
 
 .. image:: ./schematics/res-parallel.svg
    :width: 300px

@@ -34,14 +34,14 @@ capacitor.
 **Discussion**
 
 Explore the oscillatory nature of L and C in series. Resonant frequency
-of series LC circuit is given by :math:`f_0 = 1/(2\pi\sqrt{LC})`. The damping
+of series LC circuit is given by :math:`f_0 = 1/(2\pi\sqrt{LC})`. The damping
 factor is :math:`R/(2\sqrt{LC})`, and it is equal to 1 for critical
 damping.  Depending upon the value of C/L and R, the response could be under-damped,
 critically-damped or over-damped.
 
 We have used the 3000 turn coil and a :math:`0,1~\mu F` capacitor. The voltage
 across the capacitor after a 5 to 0V step is shown in figure. The
-measured resonant frequency tallies with :math:`f = 1/(2\pi\sqrt{LC})`,
+measured resonant frequency tallies with :math:`f = 1/(2\pi\sqrt{LC})`,
 within the component tolerance values.
 
 http://en.wikiversity.org/wiki/RLC\_circuit.

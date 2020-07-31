@@ -29,7 +29,7 @@ Quand SQ1 atteint la fréquence de résonance du pendule, son amplitude
 augmente. Un pendule long de 4 cm (du centre des aimants à l’axe de
 rotation) a résonné à environ :math:`2,5~Hz`, presque conformément à la
 fréquence naturelle calculée. La fréquence de résonance est donnée par
-:math:`f = 1/(2\pi\sqrt{g/l})`, où :math:`l` est la distance du centre de
+:math:`f = 1/(2\pi\sqrt{g/l})`, où :math:`l` est la distance du centre de
 l’aimant au point de suspension et :math:`g` est l’accélération de la
 pesanteur.
 

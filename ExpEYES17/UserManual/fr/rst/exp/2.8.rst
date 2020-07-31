@@ -7,10 +7,10 @@ Mesurer des résistances par comparaison
 
 Apprendre à appliquer la loi d’Ohm pour trouver le valeur d’une
 résistance inconnue par comparaison avec une résistance connue. La
-tension aux bornes d’une résistance est donnée par :math:`U = RI`. Si la
+tension aux bornes d’une résistance est donnée par :math:`U = RI`. Si la
 même valeur de courant parcourt deux résistances différentes, alors le
 rapport des tensions sera le même que le rapport des
-résistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
+résistances, :math:`I = U_{A1}/R_2 = (U_{PV1}   U_{A1})/R_1`.
 
 .. image:: schematics/res-compare.svg
 	   :width: 300px
@@ -21,8 +21,8 @@ résistances, :math:`I = U_{A1}/R_2 = (U_{PV1} − U_{A1})/R_1`.
 -  Connecter :math:`1~k\Omega` (:math:`R_2`) entre A1 et GND.
 -  Régler PV1 à 4 V.
 -  Mesurer la tension en A1. Calculer le courant
-   :math:`I = U_{A1}/R_2`. Valeur de
-   :math:`R_1 = (U_{PV1} − U_{A1})/I`.
+   :math:`I = U_{A1}/R_2`. Valeur de
+   :math:`R_1 = (U_{PV1}   U_{A1})/I`.
 -  Sélectionner « Électricité->Tracé d’une courbe courant-tension » dans
    le menu pour obtenir une courbe I-U.
 

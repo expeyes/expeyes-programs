@@ -22,7 +22,7 @@ and duty cycle of the output.
 The output waveform is shown below. The frequency and dutycycle can be calculated using the equations given below
 and compared with the measurements.
 
-:math:`T1 = 0.693(R1 + R2)C` and :math:`T2 = 0.693 R2 C`.
+:math:`T1 = 0.693(R1 + R2)C` and :math:`T2 = 0.693 R2 C`.
 Frequency :math:`f = \frac{1}{(T1+T2)}` and duty cycle :math:`= \frac{T1}{(T1+T2)}`
 
 .. image:: pics/ic555-screen.png

@@ -57,7 +57,7 @@ will become zero. This condition is called series resonance.
 -  Connect A1, A2 and A3 as shown in the figure.
 -  Note down the amplitude and phase measurements, in each case
 -  For RLC series circuit, the junction of L and C is monitored by A3
--  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH`
+-  For resonance select :math:`C = 1~\mu F`, :math:`L = 10~mH`
 -  Set frequency to :math:`f = 1600~Hz`, adjust it to make phase shift zero
 
 The resonance frequency for the given L and C is 1591.5 hz. We set it nearby to start with.

@@ -28,7 +28,7 @@ diferencia de potencial en los terminaless de la resistencia de
 La corriente de la base depende del ajuste de la fuente de tensión en el 
 extremo de la resistencia de :math:`100~k\Omega`, el otro extremo estando
 conectado a la base. El valor de la corriente de base está dada por
-:math:`I_b = (U_{PV2} − U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
+:math:`I_b = (U_{PV2}   U_{A2})/(100 \times 10^3) \times 10^6~\mu A`.
 Si A2 no está conectado, el código considera un valor de 0.6 V para el
 base para calcular la corriente en ella.
 

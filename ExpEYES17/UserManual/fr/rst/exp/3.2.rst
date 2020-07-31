@@ -19,7 +19,7 @@ alternative).
 -  Faire les connexions et observer les sorties
 -  Connecter une résistance de charge de :math:`1~k\Omega`, noter le changement
    d’amplitude
--  Connecter un condensateur de :math:`1 \mu F`,  et observer l’effet de filtrage.
+-  Connecter un condensateur de :math:`1 \mu F`,  et observer l’effet de filtrage.
 -  Essayer plusieurs valeurs de résistances de charge et de
    condensateurs de filtrage.
 

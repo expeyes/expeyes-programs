@@ -30,7 +30,7 @@ When SQ1 reaches the resonant frequency of the pendulum, the amplitude
 goes up due to resonance. A 4 cm (from the center of the magnet to the
 axis of oscillation) long pendulum resonated at around :math:`2,5~Hz`, almost
 tallying with its calculated natural frequency. The resonant frequency
-of the pendulum is given by :math:`f = 1/(2\pi\sqrt{g/l})`, where :math:`l` is the
+of the pendulum is given by :math:`f = 1/(2\pi\sqrt{g/l})`, where :math:`l` is the
 distance from the center of the magnet to the point of suspension and :math:`g`
 is the acceleration due to gravity.
 

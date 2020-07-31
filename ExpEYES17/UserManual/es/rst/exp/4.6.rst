@@ -18,7 +18,7 @@ transiciones.
 **Procedimiento**
 
 -  Seleccionar la opción de señal triangular para WG
--  Establecer WG a 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
+-  Establecer WG a 500 Hz (:math:`T = 2~ms`), :math:`R = 1~k\Omega` et :math:`C = 1~\mu F`
 -  Ajustar la escala horizontal para ver más de cuatro ciclos.
 -  Repetir lo mismo para el diferenciador RC, con :math:`50~Hz`.
 

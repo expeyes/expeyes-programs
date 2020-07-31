@@ -14,10 +14,10 @@ la fréquence et le rapport cyclique de la sortie.
 	   :width: 300px
 
 Le circuit est présenté sur la figure. La fréquence est données par
-:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La durée
+:math:`f = 1 /(\ln 2 \times C \times (R_1 + 2 R_2)`. La durée
 HAUTE est donnée par
-:math:`\ln 2 \times C \times (R_1 + R_2)`
-et la durée BASSE par :math:`\ln 2 \times C \times R_2`.
+:math:`\ln 2 \times C \times (R_1 + R_2)`
+et la durée BASSE par :math:`\ln 2 \times C \times R_2`.
 
 **Procédure**
 

@@ -28,13 +28,13 @@ Calcular el valor de la capacidad sobre la base de la curva.
 Cuando se aplica un paso de 0 a 5 V, el voltaje a través del
 el condensador se aproxima exponencialmente a 5 V como se muestra en el
 Fig. modelando la curva de descarga por
-:math:`U(t) = U_0 \times e^{− t/RC}` , 
+:math:`U(t) = U_0 \times e^{  t/RC}` , 
 podemos extraer la constante de tiempo RC y usarla para encontrar el
 valor de la capacidad.
 
 El voltaje a través de un condensador varía exponencialmente solo
 cuando se carga a través de un dipolo lineal, una resistencia por
 ejemplo. Si se carga utilizando una fuente de corriente constante, el
-el voltaje cambia linealmente, ya que :math:`Q = It = CU` , y el voltaje
+el voltaje cambia linealmente, ya que :math:`Q = It = CU` , y el voltaje
 crece linealmente con el tiempo como
-:math:`U = (I/C) \times t`.
+:math:`U = (I/C) \times t`.

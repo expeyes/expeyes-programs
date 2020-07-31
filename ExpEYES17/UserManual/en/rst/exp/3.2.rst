@@ -23,7 +23,7 @@ The output is shown below.
 .. image:: pics/halfwave-screen.png
 	   :width: 500px
 
--  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
+-  Connect a :math:`1 \mu F` capacitor, and see the filtering effect.
 -  Try different values load resistors and filter capacitors
 
 The effect of the RC filter is shown below.

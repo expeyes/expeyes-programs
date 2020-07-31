@@ -24,11 +24,11 @@ la théorie.
 
 La caractéristique U-I d’une jonction PN idéale est donnée par
 l’équation
-:math:`I = I_0 \times e^{(qU/kT) − 1}`, où
+:math:`I = I_0 \times e^{(qU/kT)   1}`, où
 :math:`I_0` est le courant de saturation inverse, :math:`q` la charge de
 l’électron, :math:`k` la constante de Boltzmann, :math:`T` la température en Kelvin.
 Pour une diode réelle, non-idéale, l’équation est
-:math:`I = I_0 \times e^{(qU/nkT) − 1}`, où :math:`n`
+:math:`I = I_0 \times e^{(qU/nkT)   1}`, où :math:`n`
 est le facteur d’idéalité, qui vaut 1 pour une diode idéale. Pour des
 diodes réelles il varie entre 1 et 2. On a utilisé une diode au silicium
 1N4148. La valeur de *n* pour 1N4148 est proche de 2. On a calculé la
@@ -36,10 +36,10 @@ valeur de :math:`n` en modélisant les valeurs expérimentales par l’équation
 
 La tension à laquelle une DEL commence à émettre de la lumière dépend de
 sa longueur d’onde et de la constante de Planck. L’énergie d’un photon
-est donnée par :math:`E = h\nu  = hc/\lambda`. Cette énergie est égale au
+est donnée par :math:`E = h\nu  = hc/\lambda`. Cette énergie est égale au
 travail d’un électron qui franchit un seuil de potentiel, qui est donné
-par :math:`E = eU_0`. Donc la constante de Planck est
-:math:`h = eU_0 \times \lambda / c`, où :math:`\lambda` est la longueur d’onde de la
+par :math:`E = eU_0`. Donc la constante de Planck est
+:math:`h = eU_0 \times \lambda / c`, où :math:`\lambda` est la longueur d’onde de la
 DEL, :math:`e` la charge de l’électron et :math:`c` la vitesse de la lumière.
 
 Recommencer cette expérience en chauffant la diode à différentes
