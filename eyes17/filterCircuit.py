@@ -23,8 +23,6 @@ class Expt(QWidget):
 	FREQ = FMIN
 	NSTEP = 100
 	STEP = 10	  # 10 hz
-	GMIN = 0.0		# filter amplitude Gain
-	GMAX = 3.0
 	Rload = 560.0
 	data = [ [], [] ]
 	currentTrace = None
@@ -32,17 +30,22 @@ class Expt(QWidget):
 	history = []		# Data store	
 	sources = ['A1','A2','A3', 'MIC']
 	trial = 0
-	
+	Ranges12 = ['16 V', '8 V','4 V', '2.5 V', '1 V', '.5V']	# Voltage ranges for A1 and A2
+	RangeVals12 = [16., 8., 4., 2.5, 1., 0.5]
+	Range = 2	
+	Wgains = ['80 mV','1V','3V']
+	wgainindex = 1
+		
 	def __init__(self, device=None):
 		QWidget.__init__(self)
 		self.p = device										# connection to the device hardware 
 		try:
-			self.p.select_range('A1',4.0)
-			self.p.select_range('A2',4.0)	
-			self.p.configure_trigger(0, 'A1', 0)
+			self.p.set_sine(1000)
+			self.p.set_sine_amp(self.wgainindex)
+			print (index)
 		except:
-			pass	
-
+			pass
+			
 		self.traceCols = utils.makeTraceColors()
 		
 		self.pwin = pg.PlotWidget()							# pyqtgraph window
@@ -50,29 +53,40 @@ class Expt(QWidget):
 		ax = self.pwin.getAxis('bottom')
 		ax.setLabel(self.tr('Frequency (Hz)'))	
 		ax = self.pwin.getAxis('left')
-		ax.setLabel(self.tr('Amplitude Gain'))
+		ax.setLabel(self.tr('Amplitude'))
 		self.pwin.disableAutoRange()
 		self.pwin.setXRange(self.FMIN, self.FMAX)
-		self.pwin.setYRange(self.GMIN, self.GMAX)
+		self.pwin.setYRange(0, self.RangeVals12[self.Range])
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignTop)
 		right.setSpacing(self.RPGAP)
 
-		'''
 		H = QHBoxLayout()
-		l = QLabel(text=self.tr('Rload ='))
-		l.setMaximumWidth(50)
-		H.addWidget(l)
-		self.LoadRes = utils.lineEdit(60, self.Rload, 6, None)
-		H.addWidget(self.LoadRes)
-		l = QLabel(text=self.tr('Ohm'))
-		l.setMaximumWidth(40)
-		H.addWidget(l)
+		l = QLabel(text=self.tr('WG range '))
+		l.setMaximumWidth(100)
+		H.addWidget(l) 
+		self.Xslider = utils.slider(0, len(self.Wgains)-1, self.wgainindex, 100, self.select_amplitude)
+		H.addWidget(self.Xslider)
+		self.amplitudeLabel = QLabel(text=self.tr(self.Wgains[self.wgainindex]))
+		self.amplitudeLabel.setMaximumWidth(60)
+		self.amplitudeLabel.setMinimumWidth(40)
+		H.addWidget(self.amplitudeLabel)
 		right.addLayout(H)
-		'''
-
+		
+		H = QHBoxLayout()
+		l = QLabel(text=self.tr('A2 range'))
+		l.setMaximumWidth(100)
+		H.addWidget(l) 
+		self.Xslider = utils.slider(0, len(self.RangeVals12)-1, self.Range, 100, self.select_range)
+		H.addWidget(self.Xslider)
+		self.rangeLabel = QLabel(text=self.tr(self.Ranges12[self.Range]))
+		self.rangeLabel.setMaximumWidth(60)
+		self.rangeLabel.setMinimumWidth(40)
+		H.addWidget(self.rangeLabel)
+		right.addLayout(H)
+		
 		H = QHBoxLayout()
 		l = QLabel(text=self.tr('Starting'))
 		l.setMaximumWidth(70)
@@ -96,11 +110,14 @@ class Expt(QWidget):
 		right.addLayout(H)
 		 
 		H = QHBoxLayout()
-		l = QLabel(text=self.tr('# of Steps ='))
-		l.setMaximumWidth(120)
+		l = QLabel(text=self.tr('Steps'))
+		l.setMaximumWidth(70)
 		H.addWidget(l)
 		self.NSTEPtext = utils.lineEdit(60, self.NSTEP, 6, None)
 		H.addWidget(self.NSTEPtext)
+		l = QLabel(text=self.tr(''))
+		l.setMaximumWidth(20)
+		H.addWidget(l)
 		right.addLayout(H)
 
 		b = QPushButton(self.tr("Start"))
@@ -141,6 +158,26 @@ class Expt(QWidget):
 		
 
 		#----------------------------- end of init ---------------
+	def select_amplitude(self,index):
+		self.wgainindex = index
+		try:
+			self.p.set_sine_amp(self.wgainindex)
+			print (index)
+		except:
+			self.comerr()
+			return		
+		self.amplitudeLabel.setText(self.Wgains[self.wgainindex])
+				
+	def select_range(self,index):
+		self.Range = index
+		x = self.Ranges12[self.Range]
+		try:
+			self.p.select_range('A2', self.RangeVals12[self.Range])
+		except:
+			self.comerr()
+			return		
+		self.rangeLabel.setText(self.Ranges12[self.Range])
+		self.pwin.setYRange(0, self.RangeVals12[self.Range])
 
 	def verify_fit(self,y,y1):
 		sum = 0.0
@@ -151,7 +188,30 @@ class Expt(QWidget):
 			return False
 		else:
 			return True
+
+	def analyze(self, data):
+		freq = data[0]
+		amp = data[1]
+		N = len(freq)
+		peak = np.argmax(amp)
+		fp = freq[peak]
+		ap = amp[peak]
+		'''
+		for k in range(peak):
+			if amp[k] >= ap/2:
+				f1 = freq[k]
+				a1 = amp[k]
+				break
+		for k in range(peak, len(freq)):
+			if amp[k] <= ap/2:
+				f2 = freq[k]
+				a2 = amp[k]
+				break
+		q = (f2-f1)/fp
+		'''
+		self.msg(self.tr('Peak = %5.3f V at %4.1f Hz.'%(ap, fp)))	
 				
+		
 	def update(self):
 		if self.running == False:
 			return
@@ -179,45 +239,29 @@ class Expt(QWidget):
 		goodFit = False
 		for k in range(3):	          # try 3 times
 			try:
-				t,v, tt,vv = self.p.capture2(NP, int(self.TG))	
+				t,v = self.p.capture1('A2', NP, int(self.TG))	
 			except:
 				self.comerr()
 				return 
 			try:
 				fa = em.fit_sine(t,v)
-			except:
-				self.msg(self.tr('Fit failed'))
-				fa = None
-			if fa != None:
 				if self.verify_fit(v,fa[0]) == False:	#compare trace with the fitted curve
 					continue
-				try:
-					fb = em.fit_sine(tt,vv)
-				except:
-					self.msg(self.tr('Fit failed'))
-					fb = None
-				if fb != None:
-					if self.verify_fit(vv,fb[0]) == False:     
-						continue
-					self.data[0].append(fr)
-					gain = abs(fb[1][0]) #/fa[1][0])
-					self.data[1].append(gain)
-					if self.gainMax < gain:
-						self.gainMax = gain
-						self.peakFreq = fr
-					goodFit = True
-					break
+			except:
+				self.msg(self.tr('Fit failed'))	
+				continue
+				
+			if fa != None:
+				self.data[0].append(fr)
+				self.data[1].append(abs(fa[1][0]))
+				break
 		
 		self.FREQ += self.STEP
-		#if goodFit == False: return
-
 		if self.FREQ > self.FMAX:
-			print ('Done')
 			self.running = False
 			self.history.append(self.data)
 			self.traces.append(self.currentTrace)
-			im = self.gainMax/self.Rload * 1000
-			self.msg(self.tr('completed'))
+			self.analyze(self.data)
 			return
 
 		if self.index > 1:			  # Draw the line
@@ -237,15 +281,23 @@ class Expt(QWidget):
 			return
 		
 		self.pwin.setXRange(self.FMIN, self.FMAX)
-		self.pwin.setYRange(self.GMIN, self.GMAX)
 		self.STEP = (self.FMAX - self.FMIN)/ self.NSTEP
 
 		try:	
 			self.p.select_range('A1',4)
-			self.p.select_range('A2',4)
+			self.p.select_range('A2', self.RangeVals12[self.Range])	
+			self.p.set_sine(1000)
+			t,v = self.p.capture1('A1', 1000, 5)	
 		except:
 			self.comerr()
 			return 
+		try:
+			fa = em.fit_sine(t,v)
+			amplitude = abs(fa[1][0])
+			self.msg(self.tr('Starting. Input Vp = %4.2f Volts at 1kHz'%amplitude))	
+		except:
+			self.msg(self.tr('fit err.No proper input on A1'))	
+			
 		self.running = True
 		self.data = [ [], [] ]
 		self.FREQ = self.FMIN
@@ -253,7 +305,6 @@ class Expt(QWidget):
 		self.index = 0
 		self.trial += 1
 		self.gainMax = 0.0
-		self.msg(self.tr('Started'))
 
 
 	def stop(self):
@@ -261,7 +312,6 @@ class Expt(QWidget):
 		self.running = False
 		self.history.append(self.data)
 		self.traces.append(self.currentTrace)
-		im = self.gainMax/self.Rload * 1000
 		self.msg(self.tr('user Stopped'))
 
 	def clear(self):
