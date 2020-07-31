@@ -1,0 +1,29 @@
+PNG = $(shell ls *.png)
+JPG = $(shell ls *.jpg)
+SVG = $(shell ls *.svg)
+
+PNG_PDF = $(patsubst %.png, %.pdf, $(PNG))
+JPG_PDF = $(patsubst %.jpg, %.pdf, $(JPG))
+SVG_PDF = $(patsubst %.svg, %.pdf, $(SVG))
+
+
+# make PDF files for every kind of image
+
+all: $(PNG_PDF) $(JPG_PDF) $(SVG_PDF)
+
+$(PNG_PDF): $(PNG)
+$(JPG_PDF): $(JPG)
+$(SVG_PDF): $(SVG)
+
+%.pdf: %.png
+	@echo "$< ==> $@"
+	@convert $< -resize 960x720 $@
+
+%.pdf: %.jpg
+	@echo "$< ==> $@"
+	@convert $< -resize 960x720 $@
+
+%.pdf: %.svg
+	@echo "$< ==> $@"
+	@rsvg-convert -f pdf $< --width 960 -o $@
+

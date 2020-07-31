@@ -4,13 +4,23 @@ LANGUAGES = en $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev 'pics|s
 RST_SUBDIRS = $(shell ls -d */rst)
 
 all: progress
-	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d; done
+	## inject the Makefile into rst/exp directories and
+	## let the engines run
+	for d in $(RST_SUBDIRS); do \
+	  cp Makefile-for-exp $$d/exp/Makefile; \
+	  $(MAKE) -C $$d; \
+	done
 
 clean:
 	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d clean; done
 
-distclean:
-	for d in $(RST_SUBDIRS); do $(MAKE) -C $$d distclean; done
+distclean: clean
+	## let the engines distclean subdirectories, then
+	## remove the Makefile from rst/exp directories
+	for d in $(RST_SUBDIRS); do \
+	  $(MAKE) -C $$d distclean; \
+	  rm -f $$d/exp/Makefile; \
+	done
 
 install:
 	# install PDF user manuals (when they exist)

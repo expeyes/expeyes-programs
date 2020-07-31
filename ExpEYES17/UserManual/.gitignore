@@ -23,3 +23,6 @@ doctrees/
 
 *.aux
 *.log
+
+# those Makefiles are generated
+*/rst/exp/Makefile

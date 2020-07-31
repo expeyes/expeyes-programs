@@ -58,24 +58,69 @@ def filterSphinxIncludeGraphics(t, verbose=False):
             new.append(lines[i])
     return "\n".join(new)
     
+def filterCurlyBraces(t,verbose=False):
+    """
+    remove .png in image names, replace by .pdf
+    """
+    if verbose:
+        sys.stderr.write("removing extra curly braces around image filenames\n")
+    return re.sub(r"(\\noindent\\sphinxincludegraphics.*){{(.*)}\.pdf}", r"\1{\2.pdf}", t)
 
+def filterGreek(t,verbose=False):
+    """
+    remove .png in image names, replace by .pdf
+    """
+    if verbose:
+        sys.stderr.write("replacing UTF-8 greek characters\n")
+        t = re.sub(r"π", r"$\\pi$", t)
+        t = re.sub(r"θ", r"$\\theta$", t)
+        t = re.sub(r"(\S+)Ω", r"$\1\\Omega$", t)
+    return re.sub(r"Ω", r"$\\Omega$", t)
+
+def filterSphinx(t,verbose=False):
+    """
+    remove .png in image names, replace by .pdf
+    """
+    if verbose:
+        sys.stderr.write("customizing some directives\n")
+        t = re.sub(r"\\usepackage{sphinx}", r"\\usepackage{sphinx}"+"\n"+r"\\usepackage{pdfpages}", t)
+    return re.sub(r"\\sphinxmaketitle", r"\\includepdf{coverpage.pdf}"+"\n"+r"\\includepdf{preface.pdf}", t)
+
+def l10n(t, lang):
+    """
+    make localization changes in the source text t
+    """
+    babel = {
+        "en": "English",
+        "fr": "French",
+        "es": "Spanish",
+    }
+    if lang not in babel:
+        return t
+    return re.sub(r"\\usepackage({babel})", r"\\usepackage[{name}]\1".format(name=babel[lang]), t) 
  
 filters=(
     filterSVG,
     filterPNG,
     filterJPG,
     filterNastyUnicode,
-    filterSphinxIncludeGraphics
+    filterSphinxIncludeGraphics,
+    filterCurlyBraces,
+    filterGreek,
+    filterSphinx,
 )
     
 if __name__=="__main__":
     buildDir=sys.argv[1]
+    lang = os.path.abspath(buildDir).split("/")[-5]
     texFile=sys.argv[2]
     t=""
     with open(buildDir+"/"+texFile, encoding="utf-8") as infile:
         t=infile.read()
     for f in filters:
         t=f(t, verbose=True)
+
+    t = l10n(t,lang)
     
     with open(buildDir+"/"+texFile+".tmp","w", encoding="utf-8") as outfile:
          outfile.write(t)
