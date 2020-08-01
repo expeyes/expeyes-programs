@@ -9,3 +9,8 @@ build/
 # python files, except prettyLaTeX.py
 *.py
 !prettyLaTeX.py
+
+# timestamps used by makefiles
+html-done
+epub-done
+pdf-done
