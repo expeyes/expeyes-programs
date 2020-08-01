@@ -33,13 +33,17 @@ def filterNastyUnicode(t,verbose=False):
     if verbose:
         sys.stderr.write("removing nasty unicode chars\n")
     toReplace={
-	  "\u2005": " ",
-	  "\u2003": " ",
-	  "\u200a": " ",
-	  "\u22ef": r"\\dots",
-	  "\u2212": "-",
-	  "↑": "",
-	  "↓": "",
+        "\u2005": " ",
+        "\u2003": " ",
+        "\u200a": " ",
+        "\u22ef": r"\\dots",
+        "\u2212": "-",
+        "↑": "",
+        "↓": "",
+        " ": "~",
+        "’": "'",
+        "«": "\\\\guillemotleft{}",
+        "»": "\\\\guillemotright{}",
     }
     for code, repl in toReplace.items():
         t=re.sub(code, repl, t)
@@ -47,7 +51,7 @@ def filterNastyUnicode(t,verbose=False):
 
 def filterSphinxIncludeGraphics(t, verbose=False):
     if verbose:
-        sys.stderr.write("remove empty lines between SphinxIncludeGraphics")
+        sys.stderr.write("remove empty lines between SphinxIncludeGraphics\n")
     pattern=re.compile(r"\\noindent\\sphinxincludegraphics.*")
     lines=t.split("\n")
     new=[lines[0], lines[1]] # always keep the two first lines
