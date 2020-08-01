@@ -29,7 +29,7 @@ aumenta. Un péndulo de 4 cm de largo (desde el centro de los imanes hasta
 el eje de 
 rotación) ha resonado :math:`2,5~Hz`, casi de acuerdo con la
 frecuencia natural calculada La frecuencia de resonancia viene dada por
-:math:`f = 1/(2\pi\sqrt{g/l})`, donde :math:`l` es la distancia desde el
+:math:`f = 1/(2\pi\sqrt{g/l})`, donde :math:`l` es la distancia desde el
 centro del imán en el punto de suspensión y :math:`g` es la aceleraciòn de la 
 gravedad.
 

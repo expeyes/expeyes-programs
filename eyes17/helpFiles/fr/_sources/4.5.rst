@@ -2,11 +2,11 @@ Réponse transitoire de circuits RL
 ==================================
 
 Dans un circuit RL, la tension est donnée par
-:math:`U(t) = RI(t) + L(dI/dt)`, ce qui donne, quand on le résout pour
-un échelon de tension, :math:`I = I_0 \times e^{− (R/L)t}`. Le
+:math:`U(t) = RI(t) + L(dI/dt)`, ce qui donne, quand on le résout pour
+un échelon de tension, :math:`I = I_0 \times e^{  (R/L)t}`. Le
 coefficient R/L du terme exponentiel peut être déduit du graphique de
 la tension aux bornes du bobinage. Il faut inclure la résistance
-propre du bobinage dans le calcul, :math:`R = R_{ext} + R*_L`.
+propre du bobinage dans le calcul, :math:`R = R_{ext} + R*_L`.
 
 Objectif
 ---------

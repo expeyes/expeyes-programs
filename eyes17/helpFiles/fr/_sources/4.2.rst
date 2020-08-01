@@ -22,7 +22,7 @@ Procédure
 -  Noter la valeur maximale :math:`y_{max}` et l'ordonnée à l'origine :math:`y_{o}`
 
 Le déphasage est donné par l'équation
-:math:`\theta = sin^{-1}\Bigg(\frac{y_{o}}{y_{max}}\Bigg)`    
+:math:`\theta = sin^{-1}\Bigg(\frac{y_{o}}{y_{max}}\Bigg)`    
 	   
 .. image:: pics/xyplot-screen.png
 	   :width: 400px

@@ -8,7 +8,7 @@ Aceleración de la gravedad con un péndulo pesado
 Medir el período de oscilación de un péndulo con ayuda de una 
 barrera fotoeléctrica y calcular la aceleración de la gravedad. 
 El período de oscilaciones de una varilla uniforme alrededor de uno 
-de sus extremos está dada por :math:`T = 2\pi\sqrt{2l/3g}`, donde :math:`l` es la
+de sus extremos está dada por :math:`T = 2\pi\sqrt{2l/3g}`, donde :math:`l` es la
 longitud y :math:`g` es la aceleración de la gravedad. El pèndulo (en forma
 de :math:`T`, un filo de cuchilla unido a una varilla de 6 mm de diámetro) y puesto en un
 oscilador entre una LED y un foto transistor, conectados en ExpEYES. La

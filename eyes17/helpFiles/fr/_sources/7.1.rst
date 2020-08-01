@@ -8,9 +8,9 @@ applique un courant constant, on mesure la tension qui en résulte, et
 on détermine la résistance du RTD. Les sondes PT100 sont des RTD
 populaires avec une résistance de :math:`100 \Omega` à 0° C. La
 résistance d'une sonde PT100 varie avec la température selon
-l'équation :math:`R(T) = R_0 (1 + AT + BT^2)`, où
-:math:`A = 3,9083 \times 10^{−3}` et
-:math:`B =  − 5,775 \times 10^{−7}`.
+l'équation :math:`R(T) = R_0 (1 + AT + BT^2)`, où
+:math:`A = 3,9083 \times 10^{ 3}` et
+:math:`B =    5,775 \times 10^{ 7}`.
 
 Objectif
 --------

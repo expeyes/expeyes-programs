@@ -19,7 +19,7 @@ Procedure
 -  Make the connections as shown in the figure. Use :math:`1 k\Omega` and :math:`1 \mu F`
 -  Note down the maximum value  :math:`y_{max}` and the y-intercept :math:`y_{int}`
 
-The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{int}}{y_{max}}\Bigg)`    
+The phase difference is given by the equation  :math:`\theta = sin^{-1}\Bigg(\frac{y_{int}}{y_{max}}\Bigg)`    
 	   
 .. image:: pics/xyplot-screen.png
 	   :width: 400px

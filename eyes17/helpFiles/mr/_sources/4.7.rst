@@ -7,7 +7,7 @@ Objective
 ---------
 
 Draw the frequency response curve of a filter circuit, with 
-:math:`L = 10\mu H, C=1 \mu F R=100`. Expected resonant frequency of the bandpass filter :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`
+:math:`L = 10\mu H, C=1 \mu F R=100`. Expected resonant frequency of the bandpass filter :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`
 
 Procedure
 ---------

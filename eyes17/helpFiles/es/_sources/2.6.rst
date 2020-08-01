@@ -19,4 +19,4 @@ Medir la capacidad de capacitores en serie.
 
 Para capacitores en serie, se calcula la capacidad equivalente gracias
 a la relación:
-:math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.
+:math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \dots`.

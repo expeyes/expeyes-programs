@@ -23,10 +23,10 @@ Procédure
    :math:`10~k\Omega`.
 -  Activer A1 et A2, et l'affichage de leurs amplitudes et fréquences.
 
-Calculer la résistance à l'aide de la méthode de comparaison à une résistance connue. Le courant qui passe vaut :math:`I = \frac{U_{A2}}{R_{1}}`.
+Calculer la résistance à l'aide de la méthode de comparaison à une résistance connue. Le courant qui passe vaut :math:`I = \frac{U_{A2}}{R_{1}}`.
 
 La résistance de l'eau vaut
-:math:`R_{w} = \frac {U_{A1} - U_{A2}}{I} = \frac {U_{A1} - U_{A2}}{U_{A2}}\times R_{1}`.
+:math:`R_{w} = \frac {U_{A1} - U_{A2}}{I} = \frac {U_{A1} - U_{A2}}{U_{A2}}\times R_{1}`.
       
 .. image:: pics/water-conduct.png
 	   :width: 300px

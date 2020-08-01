@@ -32,7 +32,7 @@ Discussion
 
 Le signal obtenu est montré sur la figure. Quand on le modélise par une
 équation
-:math:`A = A_0 \sin(\omega t + \theta) \exp( − Dt) + C`, à
+:math:`A = A_0 \sin(\omega t + \theta) \exp(   Dt) + C`, à
 l’aide de Grace, on a obtenu une fréquence angulaire de :math:`10~Hz`.
 
 Il convient de réaliser le pendule avec une masselotte assez lourde et

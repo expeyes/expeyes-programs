@@ -17,7 +17,7 @@ synchronisation avec la variation au point de départ. La phase de la
 sortie du microphone change quand on modifie sa distance au piézo. Quand
 on le déplace d’une longueur d’onde, la phase change de 360°. Si la
 phase change de *X* degrés pour un changement de la distance de :math:`\Delta D`,
-la longueur d’onde est donnée par :math:`\lambda = (360 \times \Delta D)/X`. On
+la longueur d’onde est donnée par :math:`\lambda = (360 \times \Delta D)/X`. On
 obtient la vitesse du son en multipliant cela par la fréquence.
 
 +----------------------------------------------------------------------------+
@@ -48,8 +48,8 @@ Discussion
 ----------
 
 À 3500 Hz, un changement de distance de 2 cm provoque un changement de
-phase de 176° à 102°. À l’aide de l’équation, :math:`v = f
-\times (360 \times \Delta D)/X`,
-:math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot
-s^{−1}`.  Il est important de conserver le microphone et le disque
+phase de 176° à 102°. À l’aide de l’équation, :math:`v = f
+\times (360 \times \Delta D)/X`,
+:math:`v = 3500 \times (360 \times 2)/(176   102) = 34054~cm\cdot
+s^{ 1}`.  Il est important de conserver le microphone et le disque
 piézo sur le même axe pour des résultats précis.

@@ -4,7 +4,7 @@ Accélération de la pesanteur à l’aide d’un pendule pesant
 La période des oscillations d'un pendule dépend de sa longueur et de
 la valeur de la gravité. La période des oscillations d'une barre
 uniforme (cas du pendule pesant) oscillant au bout d'une de ses
-extrémités est donnée par :math:`T = 2\pi\sqrt{2l/3g}`, où :math:`l`
+extrémités est donnée par :math:`T = 2\pi\sqrt{2l/3g}`, où :math:`l`
 est la longueur et :math:`g` l'accélération due à la gravité.
 
 Objectif

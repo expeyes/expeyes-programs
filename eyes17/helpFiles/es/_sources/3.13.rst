@@ -24,11 +24,11 @@ la teoría.
 
 La característica U-I de una unión PN ideal viene dada por 
 la ecuación
-:math:`I = I_0 \times e^{(qU/kT) − 1}`, donde
+:math:`I = I_0 \times e^{(qU/kT)   1}`, donde
 :math:`I_0` es la corriente de saturaciòn inversa, :math:`q` la carga del
 electrón, :math:`k` la constante de Boltzmann, :math:`T` la temperatura en Kelvin.
 Para un diodo real, no ideal, la ecuación es
-:math:`I = I_0 \times e^{(qU/nkT) − 1}`, donde :math:`n`
+:math:`I = I_0 \times e^{(qU/nkT)   1}`, donde :math:`n`
 es el factor ideal, que vale 1 para un diodo ideal. Para los
 diodos reales varía entre 1 et 2. Se utilizó un diodo de silicio
 1N4148. El valor de *n* para 1N4148 está próximo a 2. Hemos calculado el 
@@ -36,10 +36,10 @@ valor de :math:`n` modelizando los valores experimentados por la ecuación.
 
 El voltaje al que un LED comienza a emitir luz depende de
 su longitud de onda y la constante de Planck. La energía de un fotón
-está dada por :math:`E = h\nu  = hc/\lambda`. Esta energía es igual al
+está dada por :math:`E = h\nu  = hc/\lambda`. Esta energía es igual al
 trabajo de un electrón que cruza un umbral de potencial, que se da
-por :math:`E = eU_0`. Entonces la constante de Planck es
-:math:`h = eU_0 \times \lambda / c`, donde :math:`\lambda` es la longitud de onda del
+por :math:`E = eU_0`. Entonces la constante de Planck es
+:math:`h = eU_0 \times \lambda / c`, donde :math:`\lambda` es la longitud de onda del
 LED, :math:`e` la carga del electrón y :math:`c` la velocidad de la luz.
 
 Repita este experimento calentando el diodo a diferentes.

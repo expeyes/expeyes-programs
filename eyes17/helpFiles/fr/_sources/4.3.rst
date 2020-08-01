@@ -88,7 +88,7 @@ précise se nomme la résonance.
 -  Connecter A1, A2 et A3 selon le schéma ;
 -  Noter les amplitudes et les mesures de phases, dans chacun des cas ;
 -  Pour les circuits série RLC, le point commun à L et C est suivi par A3 ;
--  Pour la résonance choisir :math:`C = 1~\mu F`, :math:`L = 10~mH` ;
+-  Pour la résonance choisir :math:`C = 1~\mu F`, :math:`L = 10~mH` ;
 -  Régler la fréquence à :math:`f = 1600~Hz`, et l'ajuster pour annuler
    le déphasage.
 

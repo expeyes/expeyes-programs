@@ -1,11 +1,11 @@
 Transient Response of RL circuits
 =================================
 
-In an RL circuit :math:`V = RI + L(dI/dt)` and solving this will give
-:math:`I = I_0 \times e^{− (R/L)t}`. The coefficient of the exponential term R/L
+In an RL circuit :math:`V = RI + L(dI/dt)` and solving this will give
+:math:`I = I_0 \times e^{  (R/L)t}`. The coefficient of the exponential term R/L
 can be extracted from the graph of voltage across the inductor. The
 resistance of the inductor coil should be included in the
-calculations, :math:`R = R_{ext} + R*_L`.
+calculations, :math:`R = R_{ext} + R*_L`.
 
 Objective
 ---------

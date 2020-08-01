@@ -21,4 +21,4 @@ Discussion
 ----------
 
 For parallel combination, the effective capacitance is given by
-:math:`C = C_1 + C_2 + ⋯`.
+:math:`C = C_1 + C_2 + \dots`.

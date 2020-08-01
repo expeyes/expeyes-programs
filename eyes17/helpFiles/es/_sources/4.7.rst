@@ -25,7 +25,7 @@ En el caso de la señal sinusoidal solo hay un pico dominante, los picos
 más pequeños son una medida de distorsión de señal sinusoidal.
 
 Una señal cuadrada puede ser representada con 
-:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + ⋯`.
+:math:`f(\theta) = \sin(\theta) + \sin(3\theta)/3 + \sin(5\theta)/5 + \dots`.
 En la transformada de Fourier de una señal de frecuencia cuadrada *f* , habrá 
 un componente *3 f* (cuya amplitud es un tercio del componente *f*),
 un componente *5 f* (amplitud un quinto), etc. como se muestra en

@@ -4,7 +4,7 @@ Mesurer des résistances par comparaison
 Selon la loi d'Ohm, le courant dans un dipôle et la différence de
 potentiel à ses bornes sont proportionnels. La constante de
 proportionnalité se nomme la résistance. Mathématiquement :
-:math:`R =\frac{V}{I}`. Quand deux résistances sont connectées en
+:math:`R =\frac{V}{I}`. Quand deux résistances sont connectées en
 série, le courant est le même dans chacune :
 :math:`I=\frac{V_{1}}{R_{1}}=\frac{V_{2}}{R_{2}}`. Si la valeur d'une
 résistance et la tension à ses bornes sont connues, on peut calculer
@@ -31,8 +31,8 @@ Procédure
 -  Activer le bouton à cocher en haut à droite, pour mesurer la tension
    continue en A1.
 
-Le courant :math:`I = \frac{V_{A1}}{R_{2}}` et :math:`R_{1}`  peuvent être
-calculés à l'aide de :math:`R_{1}= \frac {V_{PV1} - V_{A1}}{I}`.
+Le courant :math:`I = \frac{V_{A1}}{R_{2}}` et :math:`R_{1}`  peuvent être
+calculés à l'aide de :math:`R_{1}= \frac {V_{PV1} - V_{A1}}{I}`.
 
 La loi d'Ohm dans les circuits en courant alternatif
 ----------------------------------------------------

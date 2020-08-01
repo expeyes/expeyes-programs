@@ -3,7 +3,7 @@ Acceleration due to gravity using Rod pendulum
 
 Period of oscillations of a pendulum depends on it's length and the value of gravity.
 Period of oscillation of a uniform rod about one end is given by
-:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration due to gravity.
+:math:`T = 2\pi\sqrt{2l/3g}`, where :math:`l` is the length and :math:`g` is the acceleration due to gravity.
 
 Objective
 ---------

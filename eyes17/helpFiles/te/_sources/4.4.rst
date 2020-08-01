@@ -26,14 +26,14 @@ Discussion
 
 Applying a 0 to 5V step makes the voltage across the capacitor to rise
 exponentially as shown in the figure. By fitting the discharge curve
-with :math:`V(t) = V_0 \times e^{− t/RC}`, we can extract the RC time
+with :math:`V(t) = V_0 \times e^{  t/RC}`, we can extract the RC time
 constant and find the values of capacitance from it.
 
 The voltage across a capacitor is exponential only when it is charged
 trough a linear element, a resistor for example. When charged from a
 constant current source, the voltage shows linear increase, because
-:math:`Q = It = CV` , and voltage increases linearly with time as
-:math:`V = (I/C) \times t`.
+:math:`Q = It = CV` , and voltage increases linearly with time as
+:math:`V = (I/C) \times t`.
 
 For detailed description of the theory of RC ircuits visit KhanAcademy_
 

@@ -19,4 +19,4 @@ Discussion
 ----------
 
 For a series combination of capacitors, the effective capacitance is
-given by the relation :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.
+given by the relation :math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \dots`.

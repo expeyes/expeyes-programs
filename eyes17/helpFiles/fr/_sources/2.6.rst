@@ -21,4 +21,4 @@ Discussion
 
 Pour des condensateurs en série, on peut calculer la capacité équivalente
 à l'aide de la formule :
-:math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + ⋯`.
+:math:`\frac{1}{C} = \frac{1}{C_1} + \frac{1}{C_2} + \dots`.

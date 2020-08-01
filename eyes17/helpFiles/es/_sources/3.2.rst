@@ -19,7 +19,7 @@ alterno).
 -  Hacer las conexiones y observar las salidas.
 -  Conectar una resistencia de carga de :math:`1~k\Omega`, notar el cambio
    de amplitud.
--  Conectar un capacitor de :math:`1 \mu F`,  y observar el efecto de filtración.
+-  Conectar un capacitor de :math:`1 \mu F`,  y observar el efecto de filtración.
 -  Probar varios valores de resistencia de carga y de capacitor de filtración.
 
 **Discusión**

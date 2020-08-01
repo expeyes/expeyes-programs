@@ -26,7 +26,7 @@ Procédure
 La courbe obtenue est représentée ci-dessous. La fréquence et le rapport cyclique peuvent être calculées à l'aide des équations suivantes et comparées aux mesures.
 
 Les durées des tensions haute et basse sont : :math:`T_{1} =
-0.693(R_{1} + R_{2})C` et :math:`T_{2} = 0.693 R_{2} C`.  La fréquence
+0.693(R_{1} + R_{2})C` et :math:`T_{2} = 0.693 R_{2} C`.  La fréquence
 vaut :math:`f = \frac{1}{(T_{1}+T_{2})}` et le rapport cyclique vaut
 :math:`= \frac{T_{1}}{(T_{1}+T_{2})}`
 

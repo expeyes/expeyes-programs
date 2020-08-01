@@ -21,4 +21,4 @@ Discussion
 
 Pour des condensateurs en parallèle, on peut calculer la capacité équivalente
 à l'aide de la formule :
-:math:`C = C_1 + C_2 + ⋯`.
+:math:`C = C_1 + C_2 + \dots`.

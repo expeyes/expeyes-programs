@@ -12,7 +12,7 @@ Objectif
 
 Tracer la réponse en fréquence d'un circuit de filtrage, avec
 :math:`L = 10\mu H, C=1 \mu F R=100`. La fréquence de résonance attendue
-pour ce filtre passe-bande est :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`.
+pour ce filtre passe-bande est :math:`f_0 = \frac{1}{(2\pi\sqrt{LC}}`.
 
 Procédure
 ----------

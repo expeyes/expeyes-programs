@@ -3,7 +3,7 @@ Mesure de résistances en parallèle
 
 Pour des résistances en parallèle, la relation suivante permet de calculer
 la résistance équivalente :
-:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + ⋯`
+:math:`\frac{1}{R} = \frac{1}{R_1} + \frac{1}{R_2} + \dots`
 
 Objectif
 --------

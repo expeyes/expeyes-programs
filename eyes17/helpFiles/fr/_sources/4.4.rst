@@ -29,13 +29,13 @@ Discussion
 Quand on applique un échelon de 0 à 5 V, la tension aux bornes du
 condensateur s’approche exponentiellement de 5 V comme montré sur la
 figure. En modélisant la courbe de décharge par
-:math:`U(t) = U_0 \times e^{− t/RC}` , on
+:math:`U(t) = U_0 \times e^{  t/RC}` , on
 peut extraire la constante de temps RC et s’en servir pour trouver la
 valeur de la capacité.
 
 Le tension aux bornes d’un condensateur ne varie exponentiellement que
 quand on le charge au travers d’un dipôle linéaire, une résistance par
 exemple. Si on le charge à l’aide d’une source de courant constant, la
-tension change linéairement, puisque :math:`Q = It = CU` , et la tension
+tension change linéairement, puisque :math:`Q = It = CU` , et la tension
 croît linéairement avec le temps comme
-:math:`U = (I/C) \times t`.
+:math:`U = (I/C) \times t`.

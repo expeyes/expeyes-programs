@@ -18,7 +18,7 @@ en sincronización con la variación en el punto de partida. La fase de la salid
 del micrófono cambia cuando cambia su distancia al piezo.Cuando se mueve 
 por una longitud de onda, la fase cambia en 360°. Si la fase cambia en *X* 
 grados para un cambio en la distancia de :math:`\Delta D`,
-la longitud de onda viene dada por :math:`\lambda = (360 \times \Delta D)/X`. Se 
+la longitud de onda viene dada por :math:`\lambda = (360 \times \Delta D)/X`. Se 
 obtiene la velocidad del sonido multiplicando esto por la frecuencia.
 
 +----------------------------------------------------------------------------+
@@ -43,7 +43,7 @@ obtiene la velocidad del sonido multiplicando esto por la frecuencia.
 
 A 3500 Hz, un cambio de distancia de 2 cm provoca un cambio en
 fase de 176° à 102°. Usando la ecuación,
-:math:`v = f \times (360 \times \Delta D)/X`, :math:`v = 3500 \times (360 \times 2)/(176 − 102) = 34054~cm\cdot s^{−1}`.
+:math:`v = f \times (360 \times \Delta D)/X`, :math:`v = 3500 \times (360 \times 2)/(176   102) = 34054~cm\cdot s^{ 1}`.
 Es importante mantener el micrófono y el disco piezoeléctrico en el
 mismo eje para resultados precisos.
 

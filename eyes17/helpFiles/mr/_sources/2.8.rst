@@ -1,7 +1,7 @@
 Measure resistance by comparison
 ================================
 
-According to Ohm's law, current through a conductor and the potential difference between it's end are proportional. The constant of proportionality is called the resistance. Mathematically :math:`R =\frac{V}{I}`. When two resistors are connected in series, the current will be same through both. :math:`I=\frac{V_{1}}{R_{1}}=\frac{V_{2}}{R_{2}}`. if the value of one resistance and the voltage across both are known, the other resistance can be calculated from  
+According to Ohm's law, current through a conductor and the potential difference between it's end are proportional. The constant of proportionality is called the resistance. Mathematically :math:`R =\frac{V}{I}`. When two resistors are connected in series, the current will be same through both. :math:`I=\frac{V_{1}}{R_{1}}=\frac{V_{2}}{R_{2}}`. if the value of one resistance and the voltage across both are known, the other resistance can be calculated from  
 :math:`R_{1}=R_{2}\times\frac{V_{1}}{V_{2}}`
 
 Objective
@@ -23,8 +23,8 @@ Procedure
 -  Set PV1 to 4 volts.
 -  Enable the Checkbutton on top right, to measure the DC voltage at A1.
 
-Current :math:`I = \frac{V_{A1}}{R_{2}}` and R1 can be calculated using
-:math:`R_{1} = \frac {V_{PV1} - V_{A1}}{I}`.
+Current :math:`I = \frac{V_{A1}}{R_{2}}` and R1 can be calculated using
+:math:`R_{1} = \frac {V_{PV1} - V_{A1}}{I}`.
 
 Ohm's law in AC circuits
 ------------------------

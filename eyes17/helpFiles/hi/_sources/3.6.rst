@@ -25,7 +25,7 @@ Procedure
 The output waveform is shown below. The frequency and dutycycle can be calculated using the equations given below
 and compared with the measurements.
 
-The durations of high and low voltage are: :math:`T_{1} = 0.693(R_{1} + R_{2})C` and :math:`T_{2} = 0.693 R_{2} C`.
+The durations of high and low voltage are: :math:`T_{1} = 0.693(R_{1} + R_{2})C` and :math:`T_{2} = 0.693 R_{2} C`.
 Frequency :math:`f = \frac{1}{(T_{1}+T_{2})}` and duty cycle :math:`= \frac{T_{1}}{(T_{1}+T_{2})}`
 
 .. image:: pics/ic555-screen.png
