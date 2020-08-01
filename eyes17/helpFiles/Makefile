@@ -1,8 +1,10 @@
 DESTDIR =
+LANGUAGES_WITH_MANUAL = en es fr ml
 LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit|cache")
 LANGUAGES_HTMLDONE = $(patsubst %, %/html-done, $(LANGUAGES))
-LANGUAGES_PDFDONE = $(patsubst %, %/pdf-done, $(LANGUAGES))
-LANGUAGES_EPUBDONE = $(patsubst %, %/epub-done, $(LANGUAGES))
+
+LANGUAGES_PDFDONE = $(patsubst %, %/pdf-done, $(LANGUAGES_WITH_MANUAL))
+LANGUAGES_EPUBDONE = $(patsubst %, %/epub-done, $(LANGUAGES_WITH_MANUAL))
 
 # try to take a timestamp from ../../debian/changelog and if that fails
 # replace by 1584377500, which is near 2020-1016 17:00 UTC
