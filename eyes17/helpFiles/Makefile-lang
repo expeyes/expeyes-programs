@@ -71,7 +71,7 @@ build/latex/$(TARGET).pdf : cover/coverpage.pdf cover/preface.pdf $(RSTSOURCES)
 	@echo generating PDF images in the LaTeX directory
 	rm -f $(BUILDDIR)/latex/Makefile-images
 	ln -s ../../../Makefile-images $(BUILDDIR)/latex
-	make -C $(BUILDDIR)/latex -f Makefile-images -j4
+	$(MAKE) -C $(BUILDDIR)/latex -f Makefile-images
 	@echo "Running LaTeX files through xelatex..."
 	$(MAKE) -C $(BUILDDIR)/latex all-pdf PDFLATEX="latexmk -xelatex -silent -f -dvi- -ps-" || cat $(BUILDDIR)/latex/expEYES-17.log
 	@echo "xelatex finished; the PDF files are in $(BUILDDIR)/latex."
