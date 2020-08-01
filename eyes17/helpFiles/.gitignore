@@ -14,3 +14,6 @@ build/
 html-done
 epub-done
 pdf-done
+
+# cache for generated PDF files
+cache/

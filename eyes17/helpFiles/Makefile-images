@@ -1,3 +1,5 @@
+#! /usr/bin/make
+
 # Makefile to convert svg, jpg and png files to PDF
 
 SVGFILES = $(shell ls *.svg)
@@ -7,18 +9,45 @@ TARGETS = $(patsubst %.svg, %.pdf, $(SVGFILES)) \
           $(patsubst %.jpg, %.pdf, $(JPGFILES)) \
           $(patsubst %.png, %.pdf, $(PNGFILES))
 
-all: $(TARGETS)
+IMAGECACHE = ../../../cache
+
+all: prepareCache $(TARGETS)
+
+prepareCache:
+	mkdir -p $(IMAGECACHE)
 
 %.pdf: %.png
-	convert $< -resize 960x720 $@
+	@echo "PNG -> $@"
+	@md5=$$(md5sum $<); \
+	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
+	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
+	else \
+	  convert $< -resize 960x720 $@; \
+	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
+	fi
 
 %.pdf: %.jpg
-	convert $< -resize 960x720 $@
+	@echo "JPG -> $@"
+	@md5=$$(md5sum $<); \
+	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
+	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
+	else \
+	  convert $< -resize 960x720 $@; \
+	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
+	fi
 
 %.pdf: %.svg
-	rsvg-convert -f pdf $< --width 960 -o $@
+	@echo "SVG -> $@"
+	@md5=$$(md5sum $<); \
+	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
+	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
+	else \
+	  rsvg-convert -f pdf $< --width 960 -o $@; \
+	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
+	fi
 
 clean:
 	rm -f $(TARGETS)
+	rm -rf $(IMAGECACHE)
 
 .PHONY: all clean

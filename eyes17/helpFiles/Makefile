@@ -1,5 +1,5 @@
 DESTDIR =
-LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit")
+LANGUAGES = $(shell find . -mindepth 1 -maxdepth 1 -type d | grep -Ev "pics|schematics|xcircuit|cache")
 LANGUAGES_HTMLDONE = $(patsubst %, %/html-done, $(LANGUAGES))
 LANGUAGES_PDFDONE = $(patsubst %, %/pdf-done, $(LANGUAGES))
 LANGUAGES_EPUBDONE = $(patsubst %, %/epub-done, $(LANGUAGES))
@@ -36,6 +36,7 @@ userManual: $(LANGUAGES_PDFDONE) $(LANGUAGES_EPUBDONE)
 
 
 clean:
+	rm -rf cache/
 	for l in $(LANGUAGES); do \
 	  rm -f $$l/pdf-done $$l/html-done $$l/epub-done $$l/*.html; \
 	  rm -rf $$l/_sources/__pycache__; \
