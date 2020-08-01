@@ -1,0 +1,28 @@
+
+% this include file is for Malayalam language
+
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{malayalam}
+\setotherlanguage{english}
+
+\newfontfamily\malayalamfont[Script=Malayalam, HyphenChar="00AD, Scale=1.2]{Rachana} 
+
+% In the above line we customized Hyphenation characters since
+% visbile hyphen, aka Soft Hyphen is not used for Malayalam
+
+\newfontfamily\englishfont[Script=Latin]{Linux Libertine O} 
+
+\newfontfamily\malayalamfonttt[Script=Malayalam, HyphenChar="00AD, Scale=1.2]{Rachana}
+% the above declaration is for the table of contents
+
+\lefthyphenmin=3
+\righthyphenmin=4
+\linespread{1.2}
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+\sloppy
+
+% end of Malayalam-specific declarations
+

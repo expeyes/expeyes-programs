@@ -29,8 +29,13 @@ clean:
 distclean:
 	rm -rf qt5HTML/* exp/_build exp/_static
 
-$(PDF): $(SOURCES)
-	$(MAKE) -C exp latexpdf
+$(PDF): $(SOURCES) include.tex
+	$(MAKE) -C exp latex
+	# modify the file exp/_build/latex/eyes17.tex
+	sed -i '/\\usepackage{cmap}/r include.tex' exp/_build/latex/eyes17.tex
+	# then prettyfy this source
+	python3 ../../prettyLaTeX.py exp/_build/latex eyes17.tex
+	cd exp/_build/latex; latexmk -xelatex -f -interaction=nonstopmode eyes17.tex 
 
 $(HTML): $(SOURCES)
 	$(MAKE) -C exp html
