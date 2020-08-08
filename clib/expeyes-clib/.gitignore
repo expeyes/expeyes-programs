@@ -8,3 +8,9 @@ src/capdemo2
 src/capdemo3
 src/capdemo4
 src/ccs-cap
+
+# files made by autoreconf
+autom4te.cache/
+depcomp
+install-sh
+missing
