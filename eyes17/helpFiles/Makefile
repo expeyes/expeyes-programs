@@ -40,7 +40,7 @@ userManual: $(LANGUAGES_PDFDONE) $(LANGUAGES_EPUBDONE)
 clean:
 	rm -rf cache/
 	for l in $(LANGUAGES); do \
-	  rm -f $$l/pdf-done $$l/html-done $$l/epub-done $$l/*.html; \
+	  rm -f $$l/pdf-done $$l/html-done $$l/epub-done; \
 	  rm -rf $$l/_sources/__pycache__; \
 	  $(MAKE) -C $$l clean; \
 	done
