@@ -1,2 +1,4 @@
 all:
-	compile.sh
+
+firmware:
+	./compile.sh kuttyPy
