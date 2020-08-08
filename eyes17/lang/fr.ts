@@ -176,7 +176,7 @@
     <message>
         <location filename="../filterCircuit.py" line="53"/>
         <source>Amplitude Gain</source>
-        <translation>Amplitude, gain</translation>
+        <translation type="obsolete">Amplitude, gain</translation>
     </message>
     <message>
         <location filename="../layouts/inputSelector.ui" line="169"/>
@@ -639,9 +639,9 @@
         <translation type="obsolete">Forme de WG</translation>
     </message>
     <message>
-        <location filename="../layouts/inputSelector.ui" line="169"/>
+        <location filename="../filterCircuit.py" line="56"/>
         <source>Amplitude</source>
-        <translation type="obsolete">Amplitude</translation>
+        <translation type="unfinished">Amplitude</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="90"/>
@@ -1085,19 +1085,19 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Code enregistré sous </translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="173"/>
+        <location filename="../filterCircuit.py" line="233"/>
         <source>Frequency = </source>
         <translation>Fréquence = </translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="197"/>
+        <location filename="../filterCircuit.py" line="251"/>
         <source>Fit failed</source>
         <translation>Échec du FIT</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
-        <translation>terminé</translation>
+        <translation type="obsolete">terminé</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="223"/>
@@ -1105,7 +1105,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Limites de fréquence non valides</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="265"/>
+        <location filename="../filterCircuit.py" line="315"/>
         <source>user Stopped</source>
         <translation>L&apos;utilisateur a arrêté</translation>
     </message>
@@ -1946,7 +1946,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation>Nombre d&apos;étapes =</translation>
+        <translation type="obsolete">Nombre d&apos;étapes =</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
@@ -1972,6 +1972,36 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
         <translation>Appareil reconnecté :</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="67"/>
+        <source>WG range </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="79"/>
+        <source>A2 range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="113"/>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="212"/>
+        <source>Peak = %5.3f V at %4.1f Hz.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="297"/>
+        <source>Starting. Input Vp = %4.2f Volts at 1kHz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="299"/>
+        <source>fit err.No proper input on A1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2745,7 +2775,7 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation>Pendule à barre</translation>
     </message>
     <message>
-        <location filename="../main.py" line="434"/>
+        <location filename="../main.py" line="409"/>
         <source>Enable PopUp Help Window</source>
         <translation>Activer la fenêtre surgissante d&apos;aide</translation>
     </message>
@@ -2863,12 +2893,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="514"/>
+        <location filename="../main.py" line="489"/>
         <source>Failed to load scope</source>
         <translation>Échec au chargement de l&apos;oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="546"/>
+        <location filename="../main.py" line="521"/>
         <source>Failed to load %s</source>
         <translation>Échec au chargement de %s</translation>
     </message>
@@ -2888,12 +2918,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation type="obsolete">Veuillez redémarrer l&apos;application pour noicir le fond de l&apos;écran.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="593"/>
+        <location filename="../main.py" line="568"/>
         <source>Device</source>
         <translation>Périphérique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="594"/>
+        <location filename="../main.py" line="569"/>
         <source>Reconnect</source>
         <translation>Reconnecter</translation>
     </message>
@@ -2908,117 +2938,117 @@ Pour l&apos;expe. de pendule forcé.</translation>
         <translation type="obsolete">Fond sombre la prochaine fois</translation>
     </message>
     <message>
-        <location filename="../main.py" line="597"/>
+        <location filename="../main.py" line="572"/>
         <source>Choose Language</source>
         <translation>Choix de la langue</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="602"/>
         <source>School Expts</source>
         <translation>Expériences scolaires</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="606"/>
         <source>Electronics</source>
         <translation>Électronique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="613"/>
         <source>Electrical</source>
         <translation>Électricité</translation>
     </message>
     <message>
-        <location filename="../main.py" line="642"/>
+        <location filename="../main.py" line="617"/>
         <source>Sound</source>
         <translation>Son</translation>
     </message>
     <message>
-        <location filename="../main.py" line="646"/>
+        <location filename="../main.py" line="621"/>
         <source>Mechanics</source>
         <translation>Mécanique</translation>
     </message>
     <message>
-        <location filename="../main.py" line="650"/>
+        <location filename="../main.py" line="625"/>
         <source>Other Expts</source>
         <translation>Autres expériences</translation>
     </message>
     <message>
-        <location filename="../main.py" line="654"/>
+        <location filename="../main.py" line="629"/>
         <source>I2C Modules</source>
         <translation>Modules I2C</translation>
     </message>
     <message>
-        <location filename="../main.py" line="658"/>
+        <location filename="../main.py" line="633"/>
         <source>PythonCode</source>
         <translation>Code Python</translation>
     </message>
     <message>
-        <location filename="../main.py" line="961"/>
+        <location filename="../main.py" line="936"/>
         <source>Oscilloscope</source>
         <translation>Oscilloscope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="595"/>
+        <location filename="../main.py" line="570"/>
         <source>LightBackGround</source>
         <translation>Fond clair</translation>
     </message>
     <message>
-        <location filename="../main.py" line="596"/>
+        <location filename="../main.py" line="571"/>
         <source>DarkBackGround</source>
         <translation>Fond sombre</translation>
     </message>
     <message>
-        <location filename="../main.py" line="620"/>
+        <location filename="../main.py" line="595"/>
         <source>Screenshot</source>
         <translation>Copie d&apos;écran</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Missing Plot</source>
         <translation>Graphique manquant</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>Impossible de trouver un graphique. Veuillez essayer un clic de droite et exporter</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="598"/>
         <source>Credits</source>
         <translation>Crédits</translation>
     </message>
     <message>
-        <location filename="../main.py" line="621"/>
+        <location filename="../main.py" line="596"/>
         <source>Whole Window Alt-s</source>
         <translation>Toute la fenêtre (Alt-s)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="597"/>
         <source>Graph Only Alt-p</source>
         <translation>Seulement le graphique (Alt-p)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="911"/>
+        <location filename="../main.py" line="886"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>Saisir la largeur (px). La hauteur sera auto-ajustée</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="591"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation>Langue = {} : traduit = {}, à préciser = {}, non traduit = {}</translation>
     </message>
     <message>
-        <location filename="../main.py" line="625"/>
+        <location filename="../main.py" line="600"/>
         <source>Quit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="766"/>
         <source>Translating ...</source>
         <translation>Traduction en cours ...</translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="773"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation>Export de la copie d&apos;écran en {name} ({localname}).</translation>
     </message>

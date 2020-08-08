@@ -373,7 +373,7 @@
     <message>
         <location filename="../filterCircuit.py" line="53"/>
         <source>Amplitude Gain</source>
-        <translation>એમ્પ્લીટયુડ ગેઇન</translation>
+        <translation type="obsolete">એમ્પ્લીટયુડ ગેઇન</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
@@ -396,19 +396,19 @@
         <translation type="obsolete">Number of Steps =</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="173"/>
+        <location filename="../filterCircuit.py" line="233"/>
         <source>Frequency = </source>
         <translation>વારંવારતા</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="197"/>
+        <location filename="../filterCircuit.py" line="251"/>
         <source>Fit failed</source>
         <translation>ફિટ અસફળ</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
-        <translation>પૂર્ણ થયું</translation>
+        <translation type="obsolete">પૂર્ણ થયું</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="223"/>
@@ -416,7 +416,7 @@
         <translation>વારંવારતા ની સીમા અમાન્ય</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="265"/>
+        <location filename="../filterCircuit.py" line="315"/>
         <source>user Stopped</source>
         <translation>વપરાશકર્તા થોભી ગયા</translation>
     </message>
@@ -1353,7 +1353,7 @@ shows the actual frequency set.
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation># પગલાં</translation>
+        <translation type="obsolete"># પગલાં</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="83"/>
@@ -1379,6 +1379,41 @@ shows the actual frequency set.
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
         <translation>ઉપકરણ ને ફરી થી જોડ્યું</translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="56"/>
+        <source>Amplitude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="67"/>
+        <source>WG range </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="79"/>
+        <source>A2 range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="113"/>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="212"/>
+        <source>Peak = %5.3f V at %4.1f Hz.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="297"/>
+        <source>Starting. Input Vp = %4.2f Volts at 1kHz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="299"/>
+        <source>fit err.No proper input on A1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2012,7 +2047,7 @@ shows the actual frequency set.
         <translation>રોડ લોલક</translation>
     </message>
     <message>
-        <location filename="../main.py" line="434"/>
+        <location filename="../main.py" line="409"/>
         <source>Enable PopUp Help Window</source>
         <translation>મદદ વિન્ડો કાર્યરત કરો</translation>
     </message>
@@ -2260,137 +2295,137 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="514"/>
+        <location filename="../main.py" line="489"/>
         <source>Failed to load scope</source>
         <translation>સ્કોપ લોડ કરવામાં અસફળ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="546"/>
+        <location filename="../main.py" line="521"/>
         <source>Failed to load %s</source>
         <translation>લોડ કરવામાં અસફળ %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="593"/>
+        <location filename="../main.py" line="568"/>
         <source>Device</source>
         <translation>ઉપકરણ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="594"/>
+        <location filename="../main.py" line="569"/>
         <source>Reconnect</source>
         <translation>ફરી સંપર્ક કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="597"/>
+        <location filename="../main.py" line="572"/>
         <source>Choose Language</source>
         <translation>ભાષા પસંદ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="602"/>
         <source>School Expts</source>
         <translation>શાળા ના પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="606"/>
         <source>Electronics</source>
         <translation>વીજાણુવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="613"/>
         <source>Electrical</source>
         <translation>વિદ્યુત</translation>
     </message>
     <message>
-        <location filename="../main.py" line="642"/>
+        <location filename="../main.py" line="617"/>
         <source>Sound</source>
         <translation>ધ્વનિ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="646"/>
+        <location filename="../main.py" line="621"/>
         <source>Mechanics</source>
         <translation>યંત્રવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="650"/>
+        <location filename="../main.py" line="625"/>
         <source>Other Expts</source>
         <translation>બીજા પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="654"/>
+        <location filename="../main.py" line="629"/>
         <source>I2C Modules</source>
         <translation>I2c મોડ્યૂલ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="658"/>
+        <location filename="../main.py" line="633"/>
         <source>PythonCode</source>
         <translation>પાયથનકોડ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="961"/>
+        <location filename="../main.py" line="936"/>
         <source>Oscilloscope</source>
         <translation>ઓસિલોસ્કોપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="595"/>
+        <location filename="../main.py" line="570"/>
         <source>LightBackGround</source>
         <translation>ઉજાશમાંય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="596"/>
+        <location filename="../main.py" line="571"/>
         <source>DarkBackGround</source>
         <translation>અંધકરમય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="620"/>
+        <location filename="../main.py" line="595"/>
         <source>Screenshot</source>
         <translation>સ્ક્રીનશોટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Missing Plot</source>
         <translation>આલેખ ખોવાયેલો છે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>કૃપા કરીને  જમણું બટન  દબાવો અને નિકાસ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="598"/>
         <source>Credits</source>
         <translation>જમા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="621"/>
+        <location filename="../main.py" line="596"/>
         <source>Whole Window Alt-s</source>
         <translation>આખી વિન્ડો Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="597"/>
         <source>Graph Only Alt-p</source>
         <translation>ફક્ત આલેખ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="911"/>
+        <location filename="../main.py" line="886"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>પહોળાઈ દર્જ કરો (px). ઉંચાઈ જાતે સેટ થશે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="591"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="625"/>
+        <location filename="../main.py" line="600"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="766"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="773"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>

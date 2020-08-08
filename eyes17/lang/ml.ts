@@ -358,7 +358,7 @@
     <message>
         <location filename="../filterCircuit.py" line="53"/>
         <source>Amplitude Gain</source>
-        <translation>ആംപ്ലിറ്റ്യൂഡ്  ഗെയ്ൻ</translation>
+        <translation type="obsolete">ആംപ്ലിറ്റ്യൂഡ്  ഗെയ്ൻ</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="61"/>
@@ -381,19 +381,19 @@
         <translation type="obsolete">ഘട്ടങ്ങളുടെ എണ്ണം =</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="173"/>
+        <location filename="../filterCircuit.py" line="233"/>
         <source>Frequency = </source>
         <translation>ഫ്രീക്വൻസി = </translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="197"/>
+        <location filename="../filterCircuit.py" line="251"/>
         <source>Fit failed</source>
         <translation>ഫിറ്റ് പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="220"/>
         <source>completed</source>
-        <translation>പൂർത്തിയായിരിക്കുന്നു</translation>
+        <translation type="obsolete">പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="223"/>
@@ -401,7 +401,7 @@
         <translation>ഫ്രീക്വൻസി ലിമിറ്റുകൾ ശരിയല്ല</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="265"/>
+        <location filename="../filterCircuit.py" line="315"/>
         <source>user Stopped</source>
         <translation>ഉപയോക്താവ് നിർത്തിയിരിക്കുന്നു</translation>
     </message>
@@ -1349,7 +1349,7 @@ shows the actual frequency set.
     <message>
         <location filename="../filterCircuit.py" line="99"/>
         <source># of Steps =</source>
-        <translation>സ്റ്റെപ്പുകൾ:=</translation>
+        <translation type="obsolete">സ്റ്റെപ്പുകൾ:=</translation>
     </message>
     <message>
         <location filename="../soundFreqResp.py" line="88"/>
@@ -1374,6 +1374,41 @@ shows the actual frequency set.
     <message>
         <location filename="../scope.py" line="188"/>
         <source>Device Reconnected:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="56"/>
+        <source>Amplitude</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="67"/>
+        <source>WG range </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="79"/>
+        <source>A2 range</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="113"/>
+        <source>Steps</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="212"/>
+        <source>Peak = %5.3f V at %4.1f Hz.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="297"/>
+        <source>Starting. Input Vp = %4.2f Volts at 1kHz</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../filterCircuit.py" line="299"/>
+        <source>fit err.No proper input on A1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2013,7 +2048,7 @@ shows the actual frequency set.
         <translation>റോഡ് പെൻഡുലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="434"/>
+        <location filename="../main.py" line="409"/>
         <source>Enable PopUp Help Window</source>
         <translation>സഹായജാലകം തുറക്കുക</translation>
     </message>
@@ -2266,12 +2301,12 @@ shows the actual frequency set.
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="514"/>
+        <location filename="../main.py" line="489"/>
         <source>Failed to load scope</source>
         <translation>സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="546"/>
+        <location filename="../main.py" line="521"/>
         <source>Failed to load %s</source>
         <translation>%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
@@ -2291,12 +2326,12 @@ shows the actual frequency set.
         <translation type="obsolete">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="593"/>
+        <location filename="../main.py" line="568"/>
         <source>Device</source>
         <translation>ഡിവൈസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="594"/>
+        <location filename="../main.py" line="569"/>
         <source>Reconnect</source>
         <translation>റീക്കണക്റ്റ്</translation>
     </message>
@@ -2311,117 +2346,117 @@ shows the actual frequency set.
         <translation type="obsolete">അടുത്ത തവണ ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="597"/>
+        <location filename="../main.py" line="572"/>
         <source>Choose Language</source>
         <translation>ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="602"/>
         <source>School Expts</source>
         <translation>സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="606"/>
         <source>Electronics</source>
         <translation>ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="613"/>
         <source>Electrical</source>
         <translation>ഇലെക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="642"/>
+        <location filename="../main.py" line="617"/>
         <source>Sound</source>
         <translation>ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="646"/>
+        <location filename="../main.py" line="621"/>
         <source>Mechanics</source>
         <translation>യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="650"/>
+        <location filename="../main.py" line="625"/>
         <source>Other Expts</source>
         <translation>മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="654"/>
+        <location filename="../main.py" line="629"/>
         <source>I2C Modules</source>
         <translation>I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="658"/>
+        <location filename="../main.py" line="633"/>
         <source>PythonCode</source>
         <translation>പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="961"/>
+        <location filename="../main.py" line="936"/>
         <source>Oscilloscope</source>
         <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="595"/>
+        <location filename="../main.py" line="570"/>
         <source>LightBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="596"/>
+        <location filename="../main.py" line="571"/>
         <source>DarkBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="620"/>
+        <location filename="../main.py" line="595"/>
         <source>Screenshot</source>
         <translation>സ്ക്രീൻഷോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="621"/>
+        <location filename="../main.py" line="596"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">മൊത്തം ജാലകം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="597"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">ഗ്രാഫ് മാത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Missing Plot</source>
         <translation>ഗ്രാഫ് കിട്ടുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="877"/>
+        <location filename="../main.py" line="852"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="911"/>
+        <location filename="../main.py" line="886"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>വീതി (എത്ര പിക്സൽ)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="598"/>
         <source>Credits</source>
         <translation type="unfinished">പ്രവർത്തകർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="616"/>
+        <location filename="../main.py" line="591"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="625"/>
+        <location filename="../main.py" line="600"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="766"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="773"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
