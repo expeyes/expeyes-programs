@@ -11,7 +11,7 @@ expeyes.1: expeyes-man.xml
 expeyes-junior.1: expeyes-junior-man.xml
 	$(XP) $(DB2MAN) $<
 
-expeyes-17.1: expeyes-17-man.xml
+expeyes-17.1: eyes17-doc-man.xml
 	$(XP) $(DB2MAN) $<
 
 expeyes-doc.1: expeyes-doc.xml
