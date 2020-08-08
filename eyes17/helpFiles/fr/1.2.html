@@ -1,0 +1,822 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="Docutils 0.16: http://docutils.sourceforge.net/" />
+<title>Le matériel</title>
+<style type="text/css">
+
+/*
+:Author: David Goodger (goodger@python.org)
+:Id: $Id: html4css1.css 7952 2016-07-26 18:15:59Z milde $
+:Copyright: This stylesheet has been placed in the public domain.
+
+Default cascading style sheet for the HTML output of Docutils.
+
+See http://docutils.sf.net/docs/howto/html-stylesheets.html for how to
+customize this style sheet.
+*/
+
+/* used to remove borders from tables and images */
+.borderless, table.borderless td, table.borderless th {
+  border: 0 }
+
+table.borderless td, table.borderless th {
+  /* Override padding for "table.docutils td" with "! important".
+     The right padding separates the table cells. */
+  padding: 0 0.5em 0 0 ! important }
+
+.first {
+  /* Override more specific margin styles with "! important". */
+  margin-top: 0 ! important }
+
+.last, .with-subtitle {
+  margin-bottom: 0 ! important }
+
+.hidden {
+  display: none }
+
+.subscript {
+  vertical-align: sub;
+  font-size: smaller }
+
+.superscript {
+  vertical-align: super;
+  font-size: smaller }
+
+a.toc-backref {
+  text-decoration: none ;
+  color: black }
+
+blockquote.epigraph {
+  margin: 2em 5em ; }
+
+dl.docutils dd {
+  margin-bottom: 0.5em }
+
+object[type="image/svg+xml"], object[type="application/x-shockwave-flash"] {
+  overflow: hidden;
+}
+
+/* Uncomment (and remove this text!) to get bold-faced definition list terms
+dl.docutils dt {
+  font-weight: bold }
+*/
+
+div.abstract {
+  margin: 2em 5em }
+
+div.abstract p.topic-title {
+  font-weight: bold ;
+  text-align: center }
+
+div.admonition, div.attention, div.caution, div.danger, div.error,
+div.hint, div.important, div.note, div.tip, div.warning {
+  margin: 2em ;
+  border: medium outset ;
+  padding: 1em }
+
+div.admonition p.admonition-title, div.hint p.admonition-title,
+div.important p.admonition-title, div.note p.admonition-title,
+div.tip p.admonition-title {
+  font-weight: bold ;
+  font-family: sans-serif }
+
+div.attention p.admonition-title, div.caution p.admonition-title,
+div.danger p.admonition-title, div.error p.admonition-title,
+div.warning p.admonition-title, .code .error {
+  color: red ;
+  font-weight: bold ;
+  font-family: sans-serif }
+
+/* Uncomment (and remove this text!) to get reduced vertical space in
+   compound paragraphs.
+div.compound .compound-first, div.compound .compound-middle {
+  margin-bottom: 0.5em }
+
+div.compound .compound-last, div.compound .compound-middle {
+  margin-top: 0.5em }
+*/
+
+div.dedication {
+  margin: 2em 5em ;
+  text-align: center ;
+  font-style: italic }
+
+div.dedication p.topic-title {
+  font-weight: bold ;
+  font-style: normal }
+
+div.figure {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+div.footer, div.header {
+  clear: both;
+  font-size: smaller }
+
+div.line-block {
+  display: block ;
+  margin-top: 1em ;
+  margin-bottom: 1em }
+
+div.line-block div.line-block {
+  margin-top: 0 ;
+  margin-bottom: 0 ;
+  margin-left: 1.5em }
+
+div.sidebar {
+  margin: 0 0 0.5em 1em ;
+  border: medium outset ;
+  padding: 1em ;
+  background-color: #ffffee ;
+  width: 40% ;
+  float: right ;
+  clear: right }
+
+div.sidebar p.rubric {
+  font-family: sans-serif ;
+  font-size: medium }
+
+div.system-messages {
+  margin: 5em }
+
+div.system-messages h1 {
+  color: red }
+
+div.system-message {
+  border: medium outset ;
+  padding: 1em }
+
+div.system-message p.system-message-title {
+  color: red ;
+  font-weight: bold }
+
+div.topic {
+  margin: 2em }
+
+h1.section-subtitle, h2.section-subtitle, h3.section-subtitle,
+h4.section-subtitle, h5.section-subtitle, h6.section-subtitle {
+  margin-top: 0.4em }
+
+h1.title {
+  text-align: center }
+
+h2.subtitle {
+  text-align: center }
+
+hr.docutils {
+  width: 75% }
+
+img.align-left, .figure.align-left, object.align-left, table.align-left {
+  clear: left ;
+  float: left ;
+  margin-right: 1em }
+
+img.align-right, .figure.align-right, object.align-right, table.align-right {
+  clear: right ;
+  float: right ;
+  margin-left: 1em }
+
+img.align-center, .figure.align-center, object.align-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.align-left {
+  text-align: left }
+
+.align-center {
+  clear: both ;
+  text-align: center }
+
+.align-right {
+  text-align: right }
+
+/* reset inner alignment in figures */
+div.align-right {
+  text-align: inherit }
+
+/* div.align-center * { */
+/*   text-align: left } */
+
+.align-top    {
+  vertical-align: top }
+
+.align-middle {
+  vertical-align: middle }
+
+.align-bottom {
+  vertical-align: bottom }
+
+ol.simple, ul.simple {
+  margin-bottom: 1em }
+
+ol.arabic {
+  list-style: decimal }
+
+ol.loweralpha {
+  list-style: lower-alpha }
+
+ol.upperalpha {
+  list-style: upper-alpha }
+
+ol.lowerroman {
+  list-style: lower-roman }
+
+ol.upperroman {
+  list-style: upper-roman }
+
+p.attribution {
+  text-align: right ;
+  margin-left: 50% }
+
+p.caption {
+  font-style: italic }
+
+p.credits {
+  font-style: italic ;
+  font-size: smaller }
+
+p.label {
+  white-space: nowrap }
+
+p.rubric {
+  font-weight: bold ;
+  font-size: larger ;
+  color: maroon ;
+  text-align: center }
+
+p.sidebar-title {
+  font-family: sans-serif ;
+  font-weight: bold ;
+  font-size: larger }
+
+p.sidebar-subtitle {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+p.topic-title {
+  font-weight: bold }
+
+pre.address {
+  margin-bottom: 0 ;
+  margin-top: 0 ;
+  font: inherit }
+
+pre.literal-block, pre.doctest-block, pre.math, pre.code {
+  margin-left: 2em ;
+  margin-right: 2em }
+
+pre.code .ln { color: grey; } /* line numbers */
+pre.code, code { background-color: #eeeeee }
+pre.code .comment, code .comment { color: #5C6576 }
+pre.code .keyword, code .keyword { color: #3B0D06; font-weight: bold }
+pre.code .literal.string, code .literal.string { color: #0C5404 }
+pre.code .name.builtin, code .name.builtin { color: #352B84 }
+pre.code .deleted, code .deleted { background-color: #DEB0A1}
+pre.code .inserted, code .inserted { background-color: #A3D289}
+
+span.classifier {
+  font-family: sans-serif ;
+  font-style: oblique }
+
+span.classifier-delimiter {
+  font-family: sans-serif ;
+  font-weight: bold }
+
+span.interpreted {
+  font-family: sans-serif }
+
+span.option {
+  white-space: nowrap }
+
+span.pre {
+  white-space: pre }
+
+span.problematic {
+  color: red }
+
+span.section-subtitle {
+  /* font-size relative to parent (h1..h6 element) */
+  font-size: 80% }
+
+table.citation {
+  border-left: solid 1px gray;
+  margin-left: 1px }
+
+table.docinfo {
+  margin: 2em 4em }
+
+table.docutils {
+  margin-top: 0.5em ;
+  margin-bottom: 0.5em }
+
+table.footnote {
+  border-left: solid 1px black;
+  margin-left: 1px }
+
+table.docutils td, table.docutils th,
+table.docinfo td, table.docinfo th {
+  padding-left: 0.5em ;
+  padding-right: 0.5em ;
+  vertical-align: top }
+
+table.docutils th.field-name, table.docinfo th.docinfo-name {
+  font-weight: bold ;
+  text-align: left ;
+  white-space: nowrap ;
+  padding-left: 0 }
+
+/* "booktabs" style (no vertical lines) */
+table.docutils.booktabs {
+  border: 0px;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  border-collapse: collapse;
+}
+table.docutils.booktabs * {
+  border: 0px;
+}
+table.docutils.booktabs th {
+  border-bottom: thin solid;
+  text-align: left;
+}
+
+h1 tt.docutils, h2 tt.docutils, h3 tt.docutils,
+h4 tt.docutils, h5 tt.docutils, h6 tt.docutils {
+  font-size: 100% }
+
+ul.auto-toc {
+  list-style-type: none }
+
+</style>
+<style type="text/css">
+
+/*
+*   math2html: convert LaTeX equations to HTML output.
+*
+*   Copyright (C) 2009,2010 Alex Fernández
+*
+*   Released under the terms of the `2-Clause BSD license'_, in short:
+*   Copying and distribution of this file, with or without modification,
+*   are permitted in any medium without royalty provided the copyright
+*   notice and this notice are preserved.
+*   This file is offered as-is, without any warranty.
+*
+* .. _2-Clause BSD license: http://www.spdx.org/licenses/BSD-2-Clause
+*
+*   Based on eLyXer: convert LyX source files to HTML output.
+*   http://elyxer.nongnu.org/
+*/
+/* --end--
+* CSS file for LaTeX formulas.
+*/
+
+/* Formulas */
+.formula {
+	text-align: center;
+	font-family: "Droid Serif", "DejaVu Serif", "STIX", serif;
+	margin: 1.2em 0;
+}
+span.formula {
+	white-space: nowrap;
+}
+div.formula {
+	padding: 0.5ex;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Basic features */
+a.eqnumber {
+	display: inline-block;
+	float: right;
+	clear: right;
+	font-weight: bold;
+}
+span.unknown {
+	color: #800000;
+}
+span.ignored, span.arraydef {
+	display: none;
+}
+.formula i {
+	letter-spacing: 0.1ex;
+}
+
+/* Alignment */
+.align-left, .align-l {
+	text-align: left;
+}
+.align-right, .align-r {
+	text-align: right;
+}
+.align-center, .align-c {
+	text-align: center;
+}
+
+/* Structures */
+span.overline, span.bar {
+	text-decoration: overline;
+}
+.fraction, .fullfraction {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+.fraction .fraction {
+	font-size: 80%;
+	line-height: 100%;
+}
+span.numerator {
+	display: block;
+}
+span.denominator {
+	display: block;
+	padding: 0ex;
+	border-top: thin solid;
+}
+sup.numerator, sup.unit {
+	font-size: 70%;
+	vertical-align: 80%;
+}
+sub.denominator, sub.unit {
+	font-size: 70%;
+	vertical-align: -20%;
+}
+span.sqrt {
+	display: inline-block;
+	vertical-align: middle;
+	padding: 0.1ex;
+}
+sup.root {
+	font-size: 70%;
+	position: relative;
+	left: 1.4ex;
+}
+span.radical {
+	display: inline-block;
+	padding: 0ex;
+	font-size: 150%;
+	vertical-align: top;
+}
+span.root {
+	display: inline-block;
+	border-top: thin solid;
+	padding: 0ex;
+	vertical-align: middle;
+}
+span.symbol {
+	line-height: 125%;
+	font-size: 125%;
+}
+span.bigsymbol {
+	line-height: 150%;
+	font-size: 150%;
+}
+span.largesymbol {
+	font-size: 175%;
+}
+span.hugesymbol {
+	font-size: 200%;
+}
+span.scripts {
+	display: inline-table;
+	vertical-align: middle;
+}
+.script {
+	display: table-row;
+	text-align: left;
+	line-height: 150%;
+}
+span.limits {
+	display: inline-table;
+	vertical-align: middle;
+}
+.limit {
+	display: table-row;
+	line-height: 99%;
+}
+sup.limit, sub.limit {
+	line-height: 100%;
+}
+span.symbolover {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 100%;
+	bottom: 0.5em;
+	width: 0px;
+}
+span.withsymbol {
+	display: inline-block;
+}
+span.symbolunder {
+	display: inline-block;
+	text-align: center;
+	position: relative;
+	float: right;
+	right: 80%;
+	top: 0.3em;
+	width: 0px;
+}
+
+/* Environments */
+span.array, span.bracketcases, span.binomial, span.environment {
+	display: inline-table;
+	text-align: center;
+	border-collapse: collapse;
+	margin: 0em;
+	vertical-align: middle;
+}
+span.arrayrow, span.binomrow {
+	display: table-row;
+	padding: 0ex;
+	border: 0ex;
+}
+span.arraycell, span.bracket, span.case, span.binomcell, span.environmentcell {
+	display: table-cell;
+	padding: 0ex 0.2ex;
+	line-height: 99%;
+	border: 0ex;
+}
+/*
+* CSS file for LaTeX formulas, extra stuff:
+* binomials, vertical braces, stackrel, fonts and colors.
+*/
+
+/* Inline binomials */
+span.binom {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	font-size: 80%;
+}
+span.binomstack {
+	display: block;
+	padding: 0em;
+}
+
+/* Over- and underbraces */
+span.overbrace {
+	border-top: 2pt solid;
+}
+span.underbrace {
+	border-bottom: 2pt solid;
+}
+
+/* Stackrel */
+span.stackrel {
+	display: inline-block;
+	text-align: center;
+}
+span.upstackrel {
+	display: block;
+	padding: 0em;
+	font-size: 80%;
+	line-height: 64%;
+	position: relative;
+	top: 0.15em;
+
+}
+span.downstackrel {
+	display: block;
+	vertical-align: bottom;
+	padding: 0em;
+}
+
+/* Fonts */
+span.mathsf, span.textsf {
+	font-style: normal;
+	font-family: sans-serif;
+}
+span.mathrm, span.textrm {
+	font-style: normal;
+	font-family: serif;
+}
+span.text, span.textnormal {
+	font-style: normal;
+}
+span.textipa {
+	color: #008080;
+}
+span.fraktur {
+	font-family: "Lucida Blackletter", eufm10, blackletter;
+}
+span.blackboard {
+	font-family: Blackboard, msbm10, serif;
+}
+span.scriptfont {
+	font-family: "Monotype Corsiva", "Apple Chancery", "URW Chancery L", cursive;
+	font-style: italic;
+}
+
+/* Colors */
+span.colorbox {
+	display: inline-block;
+	padding: 5px;
+}
+span.fbox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 2px;
+}
+span.boxed, span.framebox {
+	display: inline-block;
+	border: thin solid black;
+	padding: 5px;
+}
+
+
+</style>
+</head>
+<body>
+<div class="document" id="le-materiel">
+<h1 class="title">Le matériel</h1>
+
+<p>ExpEYES-17 est interfacé et alimenté grâce au port USB de l'ordinateur.
+Pour y connecter des signaux externes, il a plusieurs entrées/sorties,
+situées de chaque côté, comme montré sur la figure <a href="#id1"><span class="problematic" id="id2">:ref:`fig-e17`</span></a>.
+Il peut surveiller et contrôler des tensions à ses connexions. Pour
+mesurer d'autres paramètres (tels que la température, la pression,
+etc.), on a besoin de les convertir en signaux électriques à l'aide
+de capteurs adéquats.</p>
+<div class="system-message" id="id1">
+<p class="system-message-title">System Message: ERROR/3 (<tt class="docutils">_sources/1.2.rst</tt>, line 4); <em><a href="#id2">backlink</a></em></p>
+Unknown interpreted text role &quot;ref&quot;.</div>
+<p>La précision des mesures de tension est conditionnée par la stabilité
+de la référence à <span class="formula">3, 3<i>V</i></span> utilisée, elle varie de <span class="formula">50<i>ppm</i></span> par degré
+Celsius. Les erreurs de gain et d'offset sont éliminées par une calibration
+initiale, à l'aide du convertisseur analogique-numérique 16 bits.</p>
+<p>Bien que notre premier objectif soit de faire des expériences, nous
+vous conseillons de lire la brève description du matériel ci-dessous.
+L'appareil peut être aussi utilisé comme matériel de test pour des
+expériences d'électricité et d'électronique.</p>
+<p><strong>IMPORTANT&nbsp;:</strong></p>
+<p><em>Les tensions extérieures connectées à ExpEYES17 doivent être comprises dans les limites autorisées. Les entrées A1 et A2 doivent être dans l'intervalle</em>
+<span class="formula">±16</span>
+<em>volts et les entrées IN1 and IN2 doivent être dans l'intervalle de 0 à 3,3&nbsp;V. Des tension excessives peuvent provoquer des dommages permanents. Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs de tensions.</em></p>
+<div class="figure" id="fig-e17">
+<img alt="pics/eyes17-panel.*:width:400px" src="pics/eyes17-panel.*:width:400px" />
+<p class="caption">ExpEYES17</p>
+<div class="legend">
+La face avant d'expEYES17 avec les connexions externes sur le dessus.</div>
+</div>
+<div class="section" id="connexions-externes">
+<h1>Connexions externes</h1>
+<p>Les fonctions des connexions externes sont expliquées brièvement ci-dessous.
+Toutes les bornes de couleur noire sont des masses (0&nbsp;V), toutes
+les autres tensions sont mesurées par rapport à elles.</p>
+<div class="section" id="les-sorties">
+<h2>Les sorties&nbsp;:</h2>
+<div class="section" id="source-de-courant-constant-ccs">
+<h3>Source de courant constant (CCS)&nbsp;:</h3>
+<p>La source de courant constant peut être activée ou désactivée (ON
+et OFF) sous contrôle logiciel. La valeur nominale est 1,1&nbsp;mA mais
+peut varier d'une unité à l'autre, à cause de la tolérance des composants.
+Pour mesurer sa valeur exacte, connecter un ampèremètre entre CCS
+et GND. Une autre méthode consiste à connecter une résistance connue
+(environ <span class="formula">1<i>k</i>Ω</span>) et mesurer la différence de potentiel
+à ses bornes. La résistance de charge doit être inférieure à <span class="formula">3<i>k</i>Ω</span>
+pour cette source de courant.</p>
+</div>
+</div>
+<div class="section" id="tension-programmable-pv1">
+<h2>Tension programmable (PV1) :</h2>
+<p>Elle peut être réglée, par logiciel, à toute valeur comprise dans
+l'intervalle de -5&nbsp;V à +5&nbsp;V. La résolution est 12 bits, ce qui implique
+une résolution en tension d'environ <span class="formula">2, 5<i>mV</i></span>.</p>
+<div class="section" id="tension-programmable-pv2">
+<h3>Tension programmable (PV2) :</h3>
+<p>Elle peut être réglée, par logiciel, à toute valeur comprise dans
+l'intervalle de -3,3&nbsp;V à +3,3&nbsp;V. La résolution est 12 bits.</p>
+</div>
+<div class="section" id="signal-carre-sq1">
+<h3>Signal carré SQ1:</h3>
+<p>La sortie oscille entre 0 et 5&nbsp;V et la fréquence peut être ajustée
+entre 10&nbsp;Hz et 100&nbsp;kHz. Toutes les valeurs intermédiaires de fréquence
+ne sont pas possibles. On peut programmer le rapport cyclique. Quand
+on règle la fréquence à 0&nbsp;Hz provoque un état HAUT à la sortie, et
+si on la règle à -1&nbsp;Hz, la sortie passe à l'état BAS&nbsp;; dans les
+deux cas la génération de signal carré est désactivée. La sortie SQ1
+comporte une <strong>résistance série</strong> de <span class="formula">100Ω</span>
+intégrée si bien qu'elle peut commander des DELs directement.</p>
+</div>
+<div class="section" id="signal-carre-sq2">
+<h3>Signal carré SQ2:</h3>
+<p>La sortie oscille entre 0 et 5&nbsp;V et la fréquence peut être ajustée
+entre 10&nbsp;Hz et 100&nbsp;kHz. Toutes les valeurs intermédiaires de fréquence
+ne sont pas possibles. On peut programmer le rapport cyclique. La
+sortie SQR2 n'est pas disponible quand on active WG.</p>
+</div>
+<div class="section" id="sortie-numerique-od1">
+<h3>Sortie numérique (OD1) :</h3>
+<p>La tension en OD1 peut être réglée à 0 ou 5&nbsp;V, par logiciel.</p>
+</div>
+<div class="section" id="signal-sinusoidal-triangulaire-wg">
+<h3>Signal Sinusoïdal/Triangulaire WG&nbsp;:</h3>
+<p>Sa fréquence peut être ajustée entre 5&nbsp;Hz et 5&nbsp;kHz. La valeur crête
+peut être réglées à 3&nbsp;V, 1,0&nbsp;V ou 80&nbsp;mV. La forme du signal est
+programmable. À l'aide de l'interface utilisateur on peut sélectionner
+une forme sinusoïdale ou triangulaire. <span class="formula"><span class="overline"><i>WG</i></span></span> est le signal
+de WG, inversé..</p>
+</div>
+</div>
+<div class="section" id="entrees">
+<h2>Entrées&nbsp;:</h2>
+<div class="section" id="mesure-de-capacite-en-in1">
+<h3>Mesure de capacité en IN1&nbsp;:</h3>
+<p>On peut mesurer la valeur d'un condensateur connecté entre IN1 et
+GND. Ça marche mieux pour de petites valeurs de capacité, jusqu'à
+10&nbsp;nF, les résultats sont moins précis au-delà.</p>
+</div>
+<div class="section" id="frequencemetre-en-in2">
+<h3>Fréquencemètre en IN2&nbsp;:</h3>
+<p>Celui-ci est capable de mesurer des fréquences jusqu'à plusieurs MHz.</p>
+</div>
+<div class="section" id="capteur-de-resistance-sen">
+<h3>Capteur de résistance (SEN)&nbsp;:</h3>
+<p>Cette entrée est surtout conçue pour des capteurs comme des photo-résistances
+(LDR), des thermistances, des photo-transistors, etc. L'entrée SEN
+est connectée en interne à 3,3&nbsp;V à travers une résistance de <span class="formula">5, 1<i>k</i>Ω</span>.</p>
+</div>
+<div class="section" id="entrees-analogiques-math-pm16v-a1-a2">
+<h3>Entrées analogiques:math:<cite>pm16V</cite>, A1 &amp; A2&nbsp;:</h3>
+<p>Celles-ci peuvent mesurer des tensions dans l'intervalle <span class="formula">±16<i>V</i></span>.
+On peut choisir le calibre de 0,5&nbsp;V à 16&nbsp;V en pleine échelle. On
+peut visualiser la tension de ces entrées en fonction du temps, ce
+qui donne une fonction d'oscilloscope pour basses fréquences. La plus
+grande vitesse d'échantillonnage est 1 Méch/s pour un seul canal.
+Chacune des entrées a une impédance de <span class="formula">1<i>M</i>Ω</span> .</p>
+</div>
+<div class="section" id="entree-analogique-pm3-3v-a3">
+<h3>Entrée analogique <span class="formula">±3.3<i>V</i></span> A3&nbsp;:</h3>
+<p>Celle-ci peut mesurer une tension dans l'intervalle <span class="formula">±3.3<i>V</i></span>. On
+peut amplifier cette entrée en connectant une résistance entre Rg
+et GND, gain = <span class="formula">1 + <span class="fraction"><span class="ignored">(</span><span class="numerator"><i>Rg</i></span><span class="ignored">)/(</span><span class="denominator">10000</span><span class="ignored">)</span></span></span>. Cela permet d'afficher des signaux
+de très petite amplitude. L'impédance de l'entrée A3 est <span class="formula">10<i>M</i>Ω</span>.</p>
+</div>
+<div class="section" id="entree-microphone-mic">
+<h3>Entrée Microphone MIC&nbsp;:</h3>
+<p>Un microphone à condensateur peut être connecté à cette borne afin
+de capturer le signal à la sortie.</p>
+</div>
+</div>
+<div class="section" id="interface-pour-les-capteurs-i2c">
+<h2>Interface pour les capteurs I2C&nbsp;:</h2>
+<p>Les quatre connexions (+5&nbsp;V, GND, SCL et SDA) situées sur la bande
+de connexions Berg supporte les capteurs de la famille I2C. Le logiciel
+peut reconnaître un grand nombre de capteurs I2C disponibles dans
+le commerce.</p>
+</div>
+<div class="section" id="alimentation-pm6-v-10-ma">
+<h2>Alimentation <span class="formula">±6<i>V</i> ⁄ 10<i>mA</i></span> &nbsp;:</h2>
+<p>Les bornes VR+ et VR- sont des alimentations régulées. Elles fournissent
+peut de courant, mais assez pour alimenter un ampli-op.</p>
+</div>
+</div>
+<div class="section" id="kit-d-accessoires">
+<h1>Kit d'accessoires</h1>
+<img alt="pics/accessory.jpg" src="pics/accessory.jpg" style="width: 400px;" />
+<p>Quelques accessoires sont livrés avec expEYES.</p>
+<blockquote>
+<ul class="simple">
+<li>Fils électriques, avec une borne rigide mâle et avec une pince crocodile.</li>
+<li>Microphone à condensateur avec ses fils.</li>
+<li>Bobine d'induction (2)&nbsp;: du fil isolé 44SWG enroulé dans une bobine
+de diamètre 1&nbsp;cm. Environ 3000 tours (il peut y avoir quelques tours
+de plus). On peut utiliser ces bobines pour étudier l'inductance,
+l'induction électromagnétique, etc.</li>
+<li>Disque piézo-électrique (2)&nbsp;: sa fréquence de résonance est d'environ
+3500&nbsp;Hz. Il peut être alimenté par la sortie WG ou SQR1. Le disque
+est enfermé dans une coquille en plastique formant une cavité, qui
+augmente l'amplitude du son produit.</li>
+<li>Moteur CC&nbsp;: doit être alimenté par une tension continue de moins
+de 3&nbsp;V.</li>
+<li>Aimants permanents&nbsp;: (a) diamètre et longueur 10&nbsp;mm (b) diamètre
+5&nbsp;mm et longueur 10&nbsp;mm (c) aimants de taille bouton(2)</li>
+<li>DELs 5&nbsp;mm&nbsp;: rouge, bleue, verte, blanche.</li>
+<li>Condensateurs&nbsp;: 100&nbsp;pF, 0,1&nbsp;µF , 1&nbsp;µF et 22&nbsp;µF</li>
+<li>Inductances&nbsp;: 10&nbsp;mH / <span class="formula">20Ω</span>,</li>
+<li>Résistances&nbsp;:
+<span class="formula">560Ω</span>, <span class="formula">1<i>k</i>Ω</span>, <span class="formula">2, 2<i>k</i>Ω</span> ,
+<span class="formula">10<i>k</i>Ω</span>,
+<span class="formula">51<i>k</i>Ω</span> et <span class="formula">100<i>k</i>Ω</span></li>
+<li>photo-résistance (LDR )</li>
+<li>Deux diodes silicium (<tt class="docutils literal">1N4148</tt>) et une diode Zéner de <span class="formula">3, 3<i>V</i></span></li>
+<li>Transistor NPN (<tt class="docutils literal">2N2222</tt>)</li>
+</ul>
+</blockquote>
+</div>
+</div>
+</body>
+</html>
