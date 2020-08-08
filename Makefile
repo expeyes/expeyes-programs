@@ -14,7 +14,7 @@ all_arch:
 	    (cd $$d; autoreconf --install;) \
 	  fi; \
 	  if [ -x $$d/configure ]; then \
-	    (cd $$d; ./configure -prefix=/usr; $(MAKE) all;) \
+	    (cd $$d; ./configure --prefix=/usr; $(MAKE) all;) \
 	  else \
 	    $(MAKE) -C $$d all; \
 	  fi; \
