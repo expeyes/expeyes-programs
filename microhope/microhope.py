@@ -1,3 +1,5 @@
-from uhope import main
+#! /usr/bin/python3
 
-main.run()
+from uhope import run
+
+run()

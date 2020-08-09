@@ -18,4 +18,3 @@ def run():
 
     app = MicrohopeApp(0)
     app.MainLoop()
-
