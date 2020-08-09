@@ -37,6 +37,7 @@ class MicrohopeFrame(MyFrame):
         with open(os.path.join(self.dirname, self.filename)) as infile:
             self.control.SetValue(infile.read())
             self.SetTitle("Editing ... "+self.filename)
+            self.control.EmptyUndoBuffer()
             self.highlighting()
         return
     
@@ -47,8 +48,7 @@ class MicrohopeFrame(MyFrame):
         self.control.ClearDocumentStyle() 
         #self.control.SetLexerLanguage(style)
         self.control.SetLexer(wx.stc.STC_LEX_CPP)
-        text = self.control.GetValue()
-        self.control.Colourise(0, len(text))
+        self.control.Colourise(0, -1)
         print("tried to set the style", style)
         return
 
