@@ -4,6 +4,16 @@ import wx, gettext
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
+        """
+        acceltbl = wx.AcceleratorTable( [
+            (wx.ACCEL_CTRL, ord('Q'), self.Microhope_menubar.i_file_exit.GetId())
+        ])
+        self.SetAcceleratorTable(acceltbl)
+        """
+        return
+
+    def file_exit(self, event):
+        self.Close()
         return
 
 class MicrohopeApp(wx.App):
