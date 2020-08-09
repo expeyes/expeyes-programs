@@ -14,15 +14,14 @@ class MicrohopeFrame(MyFrame):
             self.file_open_()
         return
 
-    def file_open_(self):
-        with open(os.path.join(self.dirname, self.filename)) as infile:
-            self.control.SetValue(infile.read())
-            self.SetTitle("Editing ... "+self.filename)
-        return
-    
     def file_new(self, event):
-        self.filename = _("unNamed")
-        self.dirname = os.getcwd()
+        if self.control.IsModified():
+            ok = wx.MessageDialog( self, _("Clear the editor - are you sure?"),
+                                   _("Unsaved modifications ..."), wx.YES_NO).ShowModal()
+            if ok == wx.ID_YES:
+                self.filename = _("unNamed")
+                self.dirname = os.getcwd()
+                self.control.SetValue("")
         return
 
     def file_open(self, event):
@@ -31,10 +30,16 @@ class MicrohopeFrame(MyFrame):
             self.filename=dlg.GetFilename()
             self.dirname=dlg.GetDirectory()
             self.file_open_()
-            self.highlighting()
         dlg.Destroy()
         return
 
+    def file_open_(self):
+        with open(os.path.join(self.dirname, self.filename)) as infile:
+            self.control.SetValue(infile.read())
+            self.SetTitle("Editing ... "+self.filename)
+            self.highlighting()
+        return
+    
     def highlighting(self, style="cpp"):
         self.control.StyleSetFont(
             wx.stc.STC_STYLE_DEFAULT,
@@ -64,7 +69,7 @@ class MicrohopeFrame(MyFrame):
         return
 
     def file_exit(self, event):
-        ok = wx.MessageDialog( self, _("Exit - are you sure?\n"),
+        ok = wx.MessageDialog( self, _("Exit - are you sure?"),
                         _("Closing ..."), wx.YES_NO).ShowModal()
         if ok == wx.ID_YES:
             self.Close()
