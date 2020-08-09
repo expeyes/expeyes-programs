@@ -1,13 +1,25 @@
 from .uhope import MyFrame
-import wx, gettext, os
+import wx, gettext, os, sys
+import wx.stc
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         self.filename = _("unNamed")
         self.dirname = os.getcwd()
+        if len(sys.argv) > 1:
+            openfile = sys.argv[1]
+            self.dirname = os.path.dirname(openfile)
+            self.filename = os.path.basename(openfile)
+            self.file_open_()
         return
 
+    def file_open_(self):
+        with open(os.path.join(self.dirname, self.filename)) as infile:
+            self.control.SetValue(infile.read())
+            self.SetTitle("Editing ... "+self.filename)
+        return
+    
     def file_new(self, event):
         self.filename = _("unNamed")
         self.dirname = os.getcwd()
@@ -18,11 +30,21 @@ class MicrohopeFrame(MyFrame):
         if dlg.ShowModal() == wx.ID_OK:
             self.filename=dlg.GetFilename()
             self.dirname=dlg.GetDirectory()
-
-            with open(os.path.join(self.dirname, self.filename)) as infile:
-                self.control.SetValue(infile.read())
-            self.SetTitle("Editing ... "+self.filename)
+            self.file_open_()
+            self.highlighting()
         dlg.Destroy()
+        return
+
+    def highlighting(self, style="cpp"):
+        self.control.StyleSetFont(
+            wx.stc.STC_STYLE_DEFAULT,
+            wx.Font(10, wx.MODERN, wx.NORMAL, wx.NORMAL))
+        self.control.ClearDocumentStyle() 
+        #self.control.SetLexerLanguage(style)
+        self.control.SetLexer(wx.stc.STC_LEX_CPP)
+        text = self.control.GetValue()
+        self.control.Colourise(0, len(text))
+        print("tried to set the style", style)
         return
 
     def file_save_as(self,e):
@@ -57,6 +79,5 @@ class MicrohopeApp(wx.App):
     
 def run():
     gettext.install("app") # replace with the appropriate catalog name
-
     app = MicrohopeApp(0)
     app.MainLoop()
