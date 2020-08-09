@@ -1,5 +1,5 @@
-from .microhope import MyFrame
-import wx
+from .uhope import MyFrame
+import wx, gettext
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
@@ -13,7 +13,7 @@ class MicrohopeApp(wx.App):
         self.Microhope.Show()
         return True
     
-if __name__ == "__main__":
+def run():
     gettext.install("app") # replace with the appropriate catalog name
 
     app = MicrohopeApp(0)
