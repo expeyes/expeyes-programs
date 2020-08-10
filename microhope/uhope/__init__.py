@@ -1,7 +1,7 @@
 from .uhope import MyFrame
 import wx, gettext, os, sys
 import wx.stc
-from .the_keywords import setEditor, CppStyles
+from .the_keywords import setEditor, codeStyle, styles
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
@@ -45,8 +45,8 @@ class MicrohopeFrame(MyFrame):
         return
     
     def highlighting(self, style="cpp"):
-        setEditor(self.control, "cpp")
-        CppStyles(self.control)
+        setEditor(self.control, fileType="cpp")
+        codeStyle(self.control, fileType="cpp", style=styles["light"])
         self.control.Colourise(0, -1)
         return
 
