@@ -1,6 +1,7 @@
 from .uhope import MyFrame
 import wx, gettext, os, sys
 import wx.stc
+from .the_keywords import setEditor, CppStyles
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
@@ -22,6 +23,8 @@ class MicrohopeFrame(MyFrame):
                 self.filename = _("unNamed")
                 self.dirname = os.getcwd()
                 self.control.SetValue("")
+        else:
+            self.control.SetValue("")
         return
 
     def file_open(self, event):
@@ -42,14 +45,9 @@ class MicrohopeFrame(MyFrame):
         return
     
     def highlighting(self, style="cpp"):
-        self.control.StyleSetFont(
-            wx.stc.STC_STYLE_DEFAULT,
-            wx.Font(10, wx.MODERN, wx.NORMAL, wx.NORMAL))
-        self.control.ClearDocumentStyle() 
-        #self.control.SetLexerLanguage(style)
-        self.control.SetLexer(wx.stc.STC_LEX_CPP)
+        setEditor(self.control, "cpp")
+        CppStyles(self.control)
         self.control.Colourise(0, -1)
-        print("tried to set the style", style)
         return
 
     def file_save_as(self,e):
