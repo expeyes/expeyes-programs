@@ -2,10 +2,12 @@ from .uhope import MyFrame
 import wx, gettext, os, sys
 import wx.stc
 from .the_keywords import setEditor, codeStyle, styles
+from .examples import add_examples
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
+        add_examples(self)
         self.filename = _("unNamed")
         self.dirname = os.getcwd()
         if len(sys.argv) > 1:
@@ -14,6 +16,7 @@ class MicrohopeFrame(MyFrame):
             self.filename = os.path.basename(openfile)
             self.file_open_()
         return
+
 
     def file_new(self, event):
         if self.control.IsModified():
@@ -42,6 +45,14 @@ class MicrohopeFrame(MyFrame):
             self.SetTitle("Editing ... "+self.filename)
             self.control.EmptyUndoBuffer()
             self.highlighting()
+        return
+
+    def example_open(self, filename):
+        dirname = self.dirname
+        self.dirname = "/usr/share/microhope/microhope"
+        self.filename = filename
+        self.file_open_()
+        self.dirname = dirname
         return
     
     def highlighting(self, style="cpp"):
