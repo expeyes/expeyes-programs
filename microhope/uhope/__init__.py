@@ -10,6 +10,7 @@ class MicrohopeFrame(MyFrame):
         add_examples(self)
         self.filename = _("unNamed")
         self.dirname = os.getcwd()
+        self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
         if len(sys.argv) > 1:
             openfile = sys.argv[1]
             self.dirname = os.path.dirname(openfile)
@@ -77,11 +78,24 @@ class MicrohopeFrame(MyFrame):
             outfile.write(self.control.GetValue())
         return
 
-    def file_exit(self, event):
+    def file_init(self, event):
+        dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten."),_("uHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+        chk = dlg.ShowModal()
+        dlg.Destroy()
+        if chk == wx.ID_YES:
+            os.system("mkdir -p ~/microhope && cp -Rd /usr/share/microhope/microhope/* ~/microhope/")
+            wx.LogMessage(_("Created microhope environment"))
+        return
+
+    def OnCloseWindow(self, event):
         ok = wx.MessageDialog( self, _("Exit - are you sure?"),
                         _("Closing ..."), wx.YES_NO).ShowModal()
         if ok == wx.ID_YES:
-            self.Close()
+            self.Destroy()
+        return
+    
+    def file_exit(self, event):
+        self.Close()
         return
 
 class MicrohopeApp(wx.App):
