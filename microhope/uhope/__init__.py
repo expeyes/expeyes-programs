@@ -8,23 +8,27 @@ class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         add_examples(self)
-        self.filename = _("unNamed")
+        self.setFilename(_("unNamed"))
         self.dirname = os.getcwd()
         self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
         if len(sys.argv) > 1:
             openfile = sys.argv[1]
             self.dirname = os.path.dirname(openfile)
-            self.filename = os.path.basename(openfile)
+            self.setFilename(os.path.basename(openfile))
             self.file_open_()
         return
 
-
+    def setFilename(self, filename):
+        self.filename = filename
+        self.SetTitle("Editing ... "+self.filename)
+        return
+    
     def file_new(self, event):
         if self.control.IsModified():
             ok = wx.MessageDialog( self, _("Clear the editor - are you sure?"),
                                    _("Unsaved modifications ..."), wx.YES_NO).ShowModal()
             if ok == wx.ID_YES:
-                self.filename = _("unNamed")
+                self.setFilename(_("unNamed"))
                 self.dirname = os.getcwd()
                 self.control.SetValue("")
         else:
@@ -41,24 +45,24 @@ class MicrohopeFrame(MyFrame):
         return
 
     def file_open_(self):
-        with open(os.path.join(self.dirname, self.filename)) as infile:
-            self.control.SetValue(infile.read())
-            self.SetTitle("Editing ... "+self.filename)
-            self.control.EmptyUndoBuffer()
-            self.highlighting()
+        self.control.LoadFile(os.path.join(self.dirname, self.filename))
+        style = "cpp"
+        if self.filename.endswith(".py"):
+            style="py"
+        self.highlighting(style)
         return
 
     def example_open(self, filename):
         dirname = self.dirname
         self.dirname = "/usr/share/microhope/microhope"
-        self.filename = filename
+        self.setFilename(filename)
         self.file_open_()
         self.dirname = dirname
         return
     
     def highlighting(self, style="cpp"):
-        setEditor(self.control, fileType="cpp")
-        codeStyle(self.control, fileType="cpp", style=styles["light"])
+        setEditor(self.control, fileType=style)
+        codeStyle(self.control, fileType=style, style=styles["light"])
         self.control.Colourise(0, -1)
         return
 
@@ -66,16 +70,18 @@ class MicrohopeFrame(MyFrame):
         dlg = wx.FileDialog(self, _("Choose a file"), self.dirname, "", "*.*", \
                 wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT)
         if dlg.ShowModal() == wx.ID_OK:
-            self.filename=dlg.GetFilename()
+            self.setFilename(dlg.GetFilename())
             self.dirname=dlg.GetDirectory()
-            with open(os.path.join(self.dirname, self.filename),'w') as outfile:
-                outfile.write(self.control.GetValue())
+            self.control.SaveFile(os.path.join(self.dirname, self.filename))
         dlg.Destroy()
+        
         return
 
     def file_save(self,e):
-        with open(os.path.join(self.dirname, self.filename),'w') as outfile:
-            outfile.write(self.control.GetValue())
+        if _("unNamed") in self.filename:
+            self.file_save_as(e)
+        else:
+            self.control.SaveFile(os.path.join(self.dirname, self.filename))
         return
 
     def file_init(self, event):
@@ -88,8 +94,12 @@ class MicrohopeFrame(MyFrame):
         return
 
     def OnCloseWindow(self, event):
-        ok = wx.MessageDialog( self, _("Exit - are you sure?"),
-                        _("Closing ..."), wx.YES_NO).ShowModal()
+        if not self.control.IsModified():
+            self.Destroy()
+            return
+        # there is something modified
+        ok = wx.MessageDialog( self, _("Exit without saving the changes?"),
+                        _("The source has been modified ..."), wx.YES_NO).ShowModal()
         if ok == wx.ID_YES:
             self.Destroy()
         return
