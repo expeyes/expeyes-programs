@@ -3,13 +3,17 @@ import wx, gettext, os, sys
 import wx.stc
 from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
+from subprocess import Popen, PIPE
 
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         add_examples(self)
-        self.setFilename(_("unNamed"))
+        self.device = None
         self.dirname = os.getcwd()
+        self.setFilename(_("unNamed"))
+        # pre-check the view->statusbar menu
+        self.Microhope_menubar.i_view_statusbar.Check(True)
         self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
         if len(sys.argv) > 1:
             openfile = sys.argv[1]
@@ -20,7 +24,19 @@ class MicrohopeFrame(MyFrame):
 
     def setFilename(self, filename):
         self.filename = filename
-        self.SetTitle("Editing ... "+self.filename)
+        self.title()
+        return
+
+    def title(self):
+        """
+        make the window's title
+        """
+        the_title = _("µHOPE :: File --> {filename}\t\tDevice --> {device}")
+        the_title = the_title.format(
+            filename = os.path.join(self.dirname, self.filename)[-25:],
+            device = self.device
+        )
+        self.SetTitle(the_title)
         return
     
     def file_new(self, event):
@@ -85,14 +101,18 @@ class MicrohopeFrame(MyFrame):
         return
 
     def file_init(self, event):
-        dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten."),_("uHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+        dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten."),_("µHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
         chk = dlg.ShowModal()
         dlg.Destroy()
         if chk == wx.ID_YES:
             os.system("mkdir -p ~/microhope && cp -Rd /usr/share/microhope/microhope/* ~/microhope/")
-            wx.LogMessage(_("Created microhope environment"))
+            self.showMsg(_("Created microhope environment"))
         return
 
+    def showMsg(self, msg):
+        wx.LogMessage(msg)
+        return
+    
     def OnCloseWindow(self, event):
         if not self.control.IsModified():
             self.Destroy()
@@ -103,9 +123,42 @@ class MicrohopeFrame(MyFrame):
         if ok == wx.ID_YES:
             self.Destroy()
         return
-    
+
     def file_exit(self, event):
         self.Close()
+        return
+
+    def view_statusbar(self, event):
+        if self.Microhope_menubar.i_view_statusbar.IsChecked():
+            self.Microhope_statusbar.Show()
+        else:
+            self.Microhope_statusbar.Hide()
+        return
+
+    def device_detect(self, event):
+        command = "ls /dev/ttyUSB*"
+        process=Popen(command, shell=True, stdout=PIPE)
+        _, out = process.communicate()
+        result = process.returncode, out
+        devc = []
+        if result[0] == 0:
+                devc = result[1].split('\n')
+        command = "ls /dev/ttyACM*"	
+        process=Popen(command, shell=True, stdout=PIPE)
+        _, out = process.communicate()
+        result = process.returncode, out
+
+        if result[0] == 0:
+            devc = result[1].split('\n')
+        if devc == []:
+            self.showMsg(_('microHOPE hardware not found?'))
+            self.device = None
+            self.title()
+            return 
+        else:
+            self.device = devc[0]
+            self.title()
+            self.showMsg(_("Device is found at ")+ devc[0])
         return
 
 class MicrohopeApp(wx.App):
