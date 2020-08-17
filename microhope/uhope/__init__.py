@@ -16,12 +16,30 @@ class MicrohopeFrame(MyFrame):
         self.setFilename(_("unNamed"))
         # pre-check the view->statusbar menu
         self.Microhope_menubar.i_view_statusbar.Check(True)
-        self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
+        self.bindEvents()
         if len(sys.argv) > 1:
             openfile = sys.argv[1]
             self.dirname = os.path.dirname(openfile)
             self.setFilename(os.path.basename(openfile))
             self.file_open_()
+        return
+
+    def bindEvents(self):
+        self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
+        self.control.Bind(wx.EVT_CHAR_HOOK, self.controlEventChar)
+        return
+
+    def controlEventChar(self, event):
+        if (event.ControlDown() and  event.ShiftDown() and \
+           event.GetKeyCode() == 61) or \
+           (event.ControlDown() and event.GetKeyCode() == 43) :
+            # Shift+Ctrl+= is also Ctrl+PLUS on AZERTY keyboard
+            self.control.ZoomIn()
+        elif event.ControlDown() and  event.GetKeyCode() == 45:
+            self.control.ZoomOut()
+        else:
+            # default to the normal behavior
+            event.Skip()
         return
 
     def setFilename(self, filename):
