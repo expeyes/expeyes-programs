@@ -33,9 +33,16 @@ class MicrohopeFrame(MyFrame):
         """
         make the window's title
         """
-        the_title = _("µHOPE :: File --> {filename}\t\tDevice --> {device}")
+        fnameWidth = 25
+        def shortFilename():
+            filename = os.path.join(self.dirname, self.filename)
+            if len(filename) <= fnameWidth:
+                return filename
+            else:
+                return "... " + filename[-(fnameWidth-4):]
+        the_title = _("µHOPE :: File --> {filename:25s}\t\tDevice --> {device}")
         the_title = the_title.format(
-            filename = os.path.join(self.dirname, self.filename)[-25:],
+            filename = shortFilename(),
             device = self.device
         )
         self.SetTitle(the_title)
