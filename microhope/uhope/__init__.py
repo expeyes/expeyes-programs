@@ -5,6 +5,8 @@ from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
 from subprocess import Popen, PIPE
 
+_ = gettext.gettext
+
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
@@ -136,20 +138,13 @@ class MicrohopeFrame(MyFrame):
         return
 
     def device_detect(self, event):
-        command = "ls /dev/ttyUSB*"
-        process=Popen(command, shell=True, stdout=PIPE)
-        _, out = process.communicate()
-        result = process.returncode, out
         devc = []
-        if result[0] == 0:
-                devc = result[1].split('\n')
-        command = "ls /dev/ttyACM*"	
-        process=Popen(command, shell=True, stdout=PIPE)
-        _, out = process.communicate()
-        result = process.returncode, out
-
-        if result[0] == 0:
-            devc = result[1].split('\n')
+        for dev in ("ttyUSB", "ttyACM"):
+            command = f"ls /dev/{dev}* 2>/dev/null"
+            process=Popen(command, shell=True, stdout=PIPE)
+            out, _err = process.communicate()
+            if process.returncode == 0:
+                    devc += out.decode("utf-8").strip().split('\n')
         if devc == []:
             self.showMsg(_('microHOPE hardware not found?'))
             self.device = None
