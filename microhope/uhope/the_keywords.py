@@ -9,10 +9,10 @@ import wx
 import wx.stc
 
 faces = {
-    'times': 'Times',
-    'mono' : 'Courier',
-    'helv' : 'Helvetica',
-    'other': 'Courier',
+    'times': 'Liberation Serif',
+    'mono' : 'Liberation Mono',
+    'helv' : 'Calibri',
+    'other': 'Dejavu Sans',
     'size' : 10,
     'size2': 8,
 }
