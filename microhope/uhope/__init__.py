@@ -26,13 +26,11 @@ class MicrohopeFrame(MyFrame):
 
     def bindEvents(self):
         self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
-        self.control.Bind(wx.EVT_CHAR_HOOK, self.controlEventChar)
+        self.control.Bind(wx.EVT_CHAR, self.controlEventChar)
         return
 
     def controlEventChar(self, event):
-        if (event.ControlDown() and  event.ShiftDown() and \
-           event.GetKeyCode() == 61) or \
-           (event.ControlDown() and event.GetKeyCode() == 43) :
+        if event.ControlDown() and event.GetKeyCode() == 43 :
             # Shift+Ctrl+= is also Ctrl+PLUS on AZERTY keyboard
             self.control.ZoomIn()
         elif event.ControlDown() and  event.GetKeyCode() == 45:
