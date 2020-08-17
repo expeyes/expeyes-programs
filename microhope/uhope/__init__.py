@@ -14,6 +14,8 @@ class MicrohopeFrame(MyFrame):
         self.device = None
         self.dirname = os.getcwd()
         self.setFilename(_("unNamed"))
+        self.fileType="cpp"
+        self.colors="light"
         # pre-check the view->statusbar menu
         self.Microhope_menubar.i_view_statusbar.Check(True)
         self.bindEvents()
@@ -30,13 +32,11 @@ class MicrohopeFrame(MyFrame):
         return
 
     def controlEventChar(self, event):
-        if event.ControlDown() and event.GetKeyCode() == 43 :
-            # Shift+Ctrl+= is also Ctrl+PLUS on AZERTY keyboard
+        if event.ControlDown() and event.GetKeyCode() == 43 :   #Ctrl+Plus
             self.control.ZoomIn()
-        elif event.ControlDown() and  event.GetKeyCode() == 45:
+        elif event.ControlDown() and event.GetKeyCode() == 45:  #Ctrl+Minus
             self.control.ZoomOut()
         else:
-            # default to the normal behavior
             event.Skip()
         return
 
@@ -87,10 +87,10 @@ class MicrohopeFrame(MyFrame):
 
     def file_open_(self):
         self.control.LoadFile(os.path.join(self.dirname, self.filename))
-        style = "cpp"
+        self.fileType = "cpp"
         if self.filename.endswith(".py"):
-            style="py"
-        self.highlighting(style)
+            self.fileType="py"
+        self.highlighting()
         return
 
     def example_open(self, filename):
@@ -101,10 +101,20 @@ class MicrohopeFrame(MyFrame):
         self.dirname = dirname
         return
     
-    def highlighting(self, style="cpp"):
-        setEditor(self.control, fileType=style)
-        codeStyle(self.control, fileType=style, style=styles["light"])
+    def highlighting(self):
+        setEditor(self.control, fileType=self.fileType)
+        codeStyle(self.control, fileType=self.fileType, style=styles[self.colors])
         self.control.Colourise(0, -1)
+        return
+
+    def view_bw(self, event):
+        self.colors="light"
+        self.highlighting()
+        return
+
+    def view_wb(self, event):
+        self.colors="dark"
+        self.highlighting()
         return
 
     def file_save_as(self,e):
