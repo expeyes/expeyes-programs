@@ -189,6 +189,23 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_("Device is found at ")+ devc[0])
         return
 
+    def build_compile(self,event):
+        self.file_save(event)
+        fd = os.path.join(self.dirname, self.filename)
+        fname_witout_extn = os.path.join(self.dirname, os.path.splitext(self.filename)[0])
+        command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s  %s' %(fname_witout_extn, fd)
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0:
+            self.showMsg(_('Compilation Error :\n') + err.decode("utf-8"))
+            return
+        # no compilation error so far
+        command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname_witout_extn, fname_witout_extn) 
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        self.showMsg(_('Compilation Done'))
+        return
+
 class MicrohopeApp(wx.App):
     def OnInit(self):
         self.Microhope = MicrohopeFrame(None, wx.ID_ANY, "")
