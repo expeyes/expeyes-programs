@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Microhope 4.0.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 17:52+0200\n"
+"POT-Creation-Date: 2020-08-18 18:29+0200\n"
 "PO-Revision-Date: 2020-08-18 17:54+0200\n"
 "Last-Translator: Georges Khaznadar <georgesk@debian.org>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -815,6 +815,7 @@ msgid "line ={line}\t\tcolumn={column}"
 msgstr "ligne = {line}\t\tcolonne = {column}"
 
 #: ../mh-ide.py:276 ../mh-ide.py:305 ../__init__.py:124 ../__init__.py:166
+#: ../__init__.py:122 ../__init__.py:164
 msgid "Choose a file"
 msgstr "Choisir un fichier"
 
@@ -846,11 +847,11 @@ msgstr "µHOPE :: Statut"
 msgid "Filename not selected ."
 msgstr "Fichier non sélectionné."
 
-#: ../mh-ide.py:458 ../__init__.py:278
+#: ../mh-ide.py:458 ../__init__.py:278 ../__init__.py:276
 msgid "Compilation Error :\n"
 msgstr "Erreur de compilation :\n"
 
-#: ../mh-ide.py:468 ../__init__.py:283
+#: ../mh-ide.py:468 ../__init__.py:283 ../__init__.py:281
 msgid "Compilation Done"
 msgstr "Compilation terminée"
 
@@ -862,11 +863,11 @@ msgstr ""
 "Préphérique non sélectionné\n"
 "Veuillez choisir un périphérique"
 
-#: ../mh-ide.py:505 ../__init__.py:318
+#: ../mh-ide.py:505 ../__init__.py:318 ../__init__.py:316
 msgid "Upload Error:\n"
 msgstr "Erreur de chargement :\n"
 
-#: ../mh-ide.py:505 ../__init__.py:318
+#: ../mh-ide.py:505 ../__init__.py:318 ../__init__.py:316
 msgid ""
 "\n"
 "Try pressing microHOPE Reset button just before Uploading"
@@ -874,11 +875,11 @@ msgstr ""
 "\n"
 "Essayez d'appuyer sur le bouton RESET de µHOPE juste avant de charger"
 
-#: ../mh-ide.py:509 ../__init__.py:321
+#: ../mh-ide.py:509 ../__init__.py:321 ../__init__.py:319
 msgid "Upload Completed\n"
 msgstr "Chargement terminé\n"
 
-#: ../mh-ide.py:512 ../__init__.py:338
+#: ../mh-ide.py:512 ../__init__.py:338 ../__init__.py:336
 msgid ""
 "Steps:\n"
 "1.Write a program on editor / Open a programe C or Assembler files\n"
@@ -909,7 +910,7 @@ msgstr ""
 "microhope est recopier dans le répertoire personnel.\n"
 "Il contient des programmes d'exemple, les biblothèques de µH, etc."
 
-#: ../mh-ide.py:512 ../__init__.py:338
+#: ../mh-ide.py:512 ../__init__.py:338 ../__init__.py:336
 msgid "microHOPE-Help"
 msgstr "µHOPE-Aide"
 
@@ -948,15 +949,15 @@ msgstr ""
 "\t\t\t\t IUAC,New Delhi\n"
 "\t\t\t\t http://www.expeyes.in/microhope"
 
-#: ../mh-ide.py:527 ../__init__.py:344
+#: ../mh-ide.py:527 ../__init__.py:344 ../__init__.py:342
 msgid "About uHOPE"
 msgstr "À propos de µHOPE"
 
-#: ../mh-ide.py:555 ../__init__.py:295
+#: ../mh-ide.py:555 ../__init__.py:295 ../__init__.py:293
 msgid "Assembler Error :\n"
 msgstr "Erreur de l'assembleur :\n"
 
-#: ../mh-ide.py:569 ../__init__.py:303
+#: ../mh-ide.py:569 ../__init__.py:303 ../__init__.py:301
 msgid "Assembing Done"
 msgstr "Assemblage terminé"
 
@@ -964,7 +965,7 @@ msgstr "Assemblage terminé"
 msgid "Setting up MicroHOPE bootloader via USBASP....."
 msgstr "Mise en place du bootloader de µHOPE via USBASP..."
 
-#: ../mh-ide.py:573 ../__init__.py:239
+#: ../mh-ide.py:573 ../__init__.py:239 ../__init__.py:237
 msgid ""
 "Setting up MicroHOPE bootloader via USBASP.... \n"
 "It will take few seconds"
@@ -972,31 +973,31 @@ msgstr ""
 "Mise en place du bootloader de µHOPE via USBASP...\n"
 "Cela va durer quelques secondes"
 
-#: ../mh-ide.py:579 ../__init__.py:244
+#: ../mh-ide.py:579 ../__init__.py:244 ../__init__.py:242
 msgid "Error: Check Connections...."
 msgstr "Erreur : vérifier les connexions..."
 
-#: ../mh-ide.py:587 ../__init__.py:250
+#: ../mh-ide.py:587 ../__init__.py:250 ../__init__.py:248
 msgid "Error: Setting up fuses"
 msgstr "Erreur : mise en place de fuses"
 
-#: ../mh-ide.py:590 ../__init__.py:252
+#: ../mh-ide.py:590 ../__init__.py:252 ../__init__.py:250
 msgid "Upload Completed"
 msgstr "Chargement terminé"
 
-#: ../mh-ide.py:593 ../__init__.py:325
+#: ../mh-ide.py:593 ../__init__.py:325 ../__init__.py:323
 msgid "Uploading through USBASP ...."
 msgstr "Chargement via USBASP..."
 
-#: ../mh-ide.py:600 ../__init__.py:331
+#: ../mh-ide.py:600 ../__init__.py:331 ../__init__.py:329
 msgid "Check connections of USBASP"
 msgstr "Vérifier les connexions d'USBASP"
 
-#: ../mh-ide.py:604 ../__init__.py:334
+#: ../mh-ide.py:604 ../__init__.py:334 ../__init__.py:332
 msgid "Uploading via USBASP completed....."
 msgstr "Chargement via USBASP terminé..."
 
-#: ../mh-ide.py:623 ../__init__.py:227
+#: ../mh-ide.py:623 ../__init__.py:227 ../__init__.py:225
 msgid "microHOPE hardware not found?"
 msgstr "Matériel µHOPE non trouvé ?"
 
@@ -1008,11 +1009,11 @@ msgstr "µHOPE :: Fichier --> Nouveau Fichier"
 msgid "\t\tDevice --> Not Connected"
 msgstr "\t\tPériphérique --> Non connecté"
 
-#: ../mh-ide.py:635 ../__init__.py:234
+#: ../mh-ide.py:635 ../__init__.py:234 ../__init__.py:232
 msgid "Device is found at "
 msgstr "Périphérique trouvé à "
 
-#: ../mh-ide.py:829 ../__init__.py:184
+#: ../mh-ide.py:829 ../__init__.py:184 ../__init__.py:182
 msgid ""
 "Create microHope environment\n"
 "Do you want to create your own microHope environment?\n"
@@ -1038,39 +1039,40 @@ msgstr "µHOPE() init()"
 msgid "creating microhope environment"
 msgstr "Création de l'environnement pour microHOPE"
 
-#: ../__init__.py:52 ../__init__.py:116 ../__init__.py:177
+#: ../__init__.py:52 ../__init__.py:116 ../__init__.py:177 ../__init__.py:50
+#: ../__init__.py:114 ../__init__.py:175
 msgid "unNamed"
 msgstr "sansNom"
 
-#: ../__init__.py:103
+#: ../__init__.py:103 ../__init__.py:101
 msgid "µHOPE :: File --> {filename:25s}\t\tDevice --> {device}"
 msgstr "µHOPE :: Fichier-> {filename:25s}\t\tPériph. --> {device}"
 
-#: ../__init__.py:113
+#: ../__init__.py:113 ../__init__.py:111
 msgid "Clear the editor - are you sure?"
 msgstr "Effacer l'éditeur - vous êtes sûr ?"
 
-#: ../__init__.py:114
+#: ../__init__.py:114 ../__init__.py:112
 msgid "Unsaved modifications ..."
 msgstr "Modifications non enregistrées ..."
 
-#: ../__init__.py:184
+#: ../__init__.py:184 ../__init__.py:182
 msgid "µHOPE init()"
 msgstr "µHOPE init()"
 
-#: ../__init__.py:189
+#: ../__init__.py:189 ../__init__.py:187
 msgid "Created microhope environment"
 msgstr "L'environnement pour microHOPE a été créé"
 
-#: ../__init__.py:201
+#: ../__init__.py:201 ../__init__.py:199
 msgid "Exit without saving the changes?"
 msgstr "Sortir sans enregistrer les modifications ?"
 
-#: ../__init__.py:202
+#: ../__init__.py:202 ../__init__.py:200
 msgid "The source has been modified ..."
 msgstr "La source a été modifiée ..."
 
-#: ../__init__.py:308
+#: ../__init__.py:308 ../__init__.py:306
 msgid ""
 "Device not selected\n"
 "A new detection will be tried"
@@ -1086,7 +1088,7 @@ msgstr ""
 "Pas de matériel détecté\n"
 "Échec du chargement"
 
-#: ../__init__.py:344
+#: ../__init__.py:344 ../__init__.py:342
 msgid ""
 "microHOPE is a developement Board using Atmega32\n"
 "Created by: Dr.Ajith Kumar B P\n"
@@ -1098,7 +1100,7 @@ msgstr ""
 "\t\t\t\t IUAC,New Delhi\n"
 "\t\t\t\t http://www.expeyes.in/microhope"
 
-#: ../__init__.py:350
+#: ../__init__.py:350 ../__init__.py:348
 msgid ""
 "Arun Jayan\n"
 "arunjayan32@gmail.com\n"
@@ -1116,7 +1118,7 @@ msgstr ""
 "\n"
 "Contributeur : G Khaznadar <georgesk@debian.org>"
 
-#: ../__init__.py:350
+#: ../__init__.py:350 ../__init__.py:348
 msgid "Author and contributors of IDE"
 msgstr "Auteur et contributeurs de l'environnement graphique"
 
@@ -1304,11 +1306,10 @@ msgstr "aide"
 msgid "Microhope"
 msgstr "Microhope"
 
-#: ../__init__.py:311
+#: ../__init__.py:311 ../__init__.py:309
 msgid ""
 "No hardware was detected\n"
 "Upload failed"
 msgstr ""
 "Pas de matériel détecté\n"
 "Échec du chargement"
-
