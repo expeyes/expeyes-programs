@@ -197,6 +197,24 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_("Device is found at ")+ devc[0])
         return
 
+    def device_set_bootloader(self,event):
+        #self.SetTitle(_("Setting up MicroHOPE bootloader via USBASP....."))
+        self.showMsg(_("Setting up MicroHOPE bootloader via USBASP.... \nIt will take few seconds"))
+        command = 'avrdude -B10 -c usbasp -patmega32 -U flash:w:/usr/share/microhope/firmware/Bootloader_atmega32.hex'
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0 :
+            self.showMsg(_('Error: Check Connections....'))
+            return 
+        command = 'avrdude -B10 -c usbasp -patmega32 -U lfuse:w:0xff:m -U hfuse:w:0xda:m'
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0:
+            self.showMsg(_('Error: Setting up fuses'))
+            return 
+        self.showMsg(_('Upload Completed'))
+        return
+    
     def build_compile(self,event):
         self.file_save(event)
         fd = self.path
