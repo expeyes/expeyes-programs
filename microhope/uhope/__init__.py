@@ -308,7 +308,7 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_('Device not selected\nA new detection will be tried'))
             self.device_detect(event)
             if not self.device:
-                self.showMsg(_('No hardware was detected\nUpload filed'))
+                self.showMsg(_('No hardware was detected\nUpload failed'))
         assert (bool(self.device)) # the hardware should be detected
         fn = self.path_noext
         command= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(self.device, fn)
@@ -360,6 +360,7 @@ class MicrohopeApp(wx.App):
         return True
     
 def run():
-    gettext.install("app") # replace with the appropriate catalog name
+    #gettext.install(domain, localedir=None, codeset=None, names=None)
+    gettext.install("uhope") # replace with the appropriate catalog name
     app = MicrohopeApp(0)
     app.MainLoop()
