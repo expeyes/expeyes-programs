@@ -3,7 +3,7 @@ import wx, gettext, os, sys
 import wx.stc
 from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
-from subprocess import Popen, PIPE
+from subprocess import Popen, PIPE, call
 
 _ = gettext.gettext
 
@@ -25,6 +25,14 @@ class MicrohopeFrame(MyFrame):
             self.setFilename(os.path.basename(openfile))
             self.file_open_()
         return
+
+    @property
+    def path(self):
+        return os.path.join(self.dirname, self.filename)
+
+    @property
+    def path_noext(self):
+        return os.path.join(self.dirname, os.path.splitext(self.filename)[0])
 
     def bindEvents(self):
         self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
@@ -51,7 +59,7 @@ class MicrohopeFrame(MyFrame):
         """
         fnameWidth = 25
         def shortFilename():
-            filename = os.path.join(self.dirname, self.filename)
+            filename = self.path
             if len(filename) <= fnameWidth:
                 return filename
             else:
@@ -86,7 +94,7 @@ class MicrohopeFrame(MyFrame):
         return
 
     def file_open_(self):
-        self.control.LoadFile(os.path.join(self.dirname, self.filename))
+        self.control.LoadFile(self.path)
         self.fileType = "cpp"
         if self.filename.endswith(".py"):
             self.fileType="py"
@@ -123,7 +131,7 @@ class MicrohopeFrame(MyFrame):
         if dlg.ShowModal() == wx.ID_OK:
             self.setFilename(dlg.GetFilename())
             self.dirname=dlg.GetDirectory()
-            self.control.SaveFile(os.path.join(self.dirname, self.filename))
+            self.control.SaveFile(self.path)
         dlg.Destroy()
         
         return
@@ -132,7 +140,7 @@ class MicrohopeFrame(MyFrame):
         if _("unNamed") in self.filename:
             self.file_save_as(e)
         else:
-            self.control.SaveFile(os.path.join(self.dirname, self.filename))
+            self.control.SaveFile(self.path)
         return
 
     def file_init(self, event):
@@ -191,21 +199,41 @@ class MicrohopeFrame(MyFrame):
 
     def build_compile(self,event):
         self.file_save(event)
-        fd = os.path.join(self.dirname, self.filename)
-        fname_witout_extn = os.path.join(self.dirname, os.path.splitext(self.filename)[0])
-        command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s  %s' %(fname_witout_extn, fd)
+        fd = self.path
+        fn = self.path_noext # the path, without the extension
+        command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s  %s' %(fn, fd)
         process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
         out, err = process.communicate()
         if process.returncode != 0:
             self.showMsg(_('Compilation Error :\n') + err.decode("utf-8"))
             return
         # no compilation error so far
-        command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fname_witout_extn, fname_witout_extn) 
-        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
-        out, err = process.communicate()
+        command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fn, fn) 
+        call(command)
         self.showMsg(_('Compilation Done'))
         return
-
+    
+    def build_assemble(self,event):
+        self.file_save(event)
+        fd = self.path
+        fn = self.path_noext # the path, without the extension
+        command = 'avr-gcc -Wall -O2 -mmcu=atmega32 -o %s %s' %(fn, fd)
+        
+        process=Popen(command, shell=True, stdout=PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0:
+            self.showMsg(_('Assembler Error :\n') + err)
+            return
+        # avr-gcc was successful, make the .ext file
+        command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fn, fn) 
+        call(command, shell=True)
+        # avr-objcopy was successful, make the .lst file
+        command = 'avr-objdump -S %s > %s.lst'%(fn, fn)
+        call(command, shell=True)
+        self.showMsg(_('Assembing Done'))
+        return
+    
+    
 class MicrohopeApp(wx.App):
     def OnInit(self):
         self.Microhope = MicrohopeFrame(None, wx.ID_ANY, "")
