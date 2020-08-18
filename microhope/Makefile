@@ -1,20 +1,29 @@
 DESTDIR =
 
 
-all: uhope lang
-
-uhope: uhope.c
-	$(CC) uhope.c -o uhope $(CFLAGS) $(LDFLAGS) -DGDK_DISABLE_DEPRECATED -DGTK_DISABLE_DEPRECATED `pkg-config gtk+-2.0 --cflags --libs`
-
-install: uhope
-	install -m 755 uhope $(DESTDIR)/usr/bin
-
-clean:
-	rm -f *.o uhope *~ *.pyc
-
-lang:
+all:
 	$(MAKE) -C uhope/po all
 
-.PHONY: all install clean lang
+install: all
+	# install the main command to launch microhope
+	install -d $(DESTDIR)/usr/bin
+	install -m 755 microhope.py $(DESTDIR)/usr/bin
+	mv $(DESTDIR)/usr/bin/microhope.py $(DESTDIR)/usr/bin/microhope
+	# install the localization
+	$(MAKE) -C uhope/po install DESTDIR=$(DESTDIR)
+	# install the pixmaps
+	install -d $(DESTDIR)/usr/share/microhope/pixmaps
+	install -m 644 pixmaps/* $(DESTDIR)/usr/share/microhope/pixmaps
+	# install the python3 uhope library
+	install -d $(DESTDIR)/usr/lib/python3/dist-packages/uhope
+	install -m 644 uhope/*.py $(DESTDIR)/usr/lib/python3/dist-packages/uhope
+	python3 -m py_compile $(DESTDIR)/usr/lib/python3/dist-packages/uhope/*.py
+
+clean:
+	rm -f *.o uhope *~ *.pyc uhope/*~
+	find . -name "__pycache__" | xargs rm -f
+
+
+.PHONY: all install clean
 
 
