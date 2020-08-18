@@ -299,6 +299,24 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_("Uploading via USBASP completed....."))
         return
     
+    def about_help(self,event):
+        dlg = wx.MessageDialog(self,_("Steps:\n1.Write a program on editor / Open a programe C or Assembler files\n2.Compile it by cliking on compile\n3.You can view the objdump file(*.lst) by opening it in the editoring\n4.Connect microHOPE and wait a minute\n5.Click on Device->Detect Board to detect your board\n6.If microHOPE is not found , repeat or reconnect microHOPE\n7.Upload the hex file to microHOPE (Build->Upload)\n8.If upload fails check microHOPE and upload again\n\nNote: Make sure that microhope folder from /usr/share/microhope/microhope is copied to your home folder .\nIt contains example programes , mh-libs etc."),_("microHOPE-Help"),wx.OK|wx.ICON_INFORMATION)
+        dlg.ShowModal()
+        dlg.Destroy()
+        return
+    
+    def about_about(self,event):
+        abt = wx.MessageDialog(self,_("microHOPE is a developement Board using Atmega32\nCreated by: Dr.Ajith Kumar B P\n\t\t\t\t IUAC,New Delhi\n\t\t\t\t http://www.expeyes.in/microhope"),_("About uHOPE"), wx.OK|wx.ICON_INFORMATION)
+        abt.ShowModal()
+        abt.Destroy()
+        return
+    
+    def about_author(self,event):
+        dlg = wx.MessageDialog(self,_("Arun Jayan\narunjayan32@gmail.com\nFOSSR -College Of Engineering,Poonjar\n\nhttps://github.com/ArunJayan\n\nContributor: G Khaznadar <georgesk@debian.org>"),_("Author and contributors of IDE"),wx.OK|wx.ICON_INFORMATION)
+        dlg.ShowModal()
+        dlg.Destroy()
+        return
+    
 class MicrohopeApp(wx.App):
     def OnInit(self):
         self.Microhope = MicrohopeFrame(None, wx.ID_ANY, "")
