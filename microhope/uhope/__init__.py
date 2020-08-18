@@ -209,7 +209,7 @@ class MicrohopeFrame(MyFrame):
             return
         # no compilation error so far
         command = 'avr-objcopy -j .text -j .data -O ihex %s %s.hex' %(fn, fn) 
-        call(command)
+        call(command, shell=True)
         self.showMsg(_('Compilation Done'))
         return
     
@@ -231,6 +231,24 @@ class MicrohopeFrame(MyFrame):
         command = 'avr-objdump -S %s > %s.lst'%(fn, fn)
         call(command, shell=True)
         self.showMsg(_('Assembing Done'))
+        return
+
+    def build_upload(self,event):
+        if not self.device:
+            self.showMsg(_('Device not selected\nA new detection will be tried'))
+            self.device_detect(event)
+            if not self.device:
+                self.showMsg(_('No hardware was detected\nUpload filed'))
+        assert (bool(self.device)) # the hardware should be detected
+        fn = self.path_noext
+        command= 'avrdude -b 19200 -P %s -pm32 -c stk500v1 -U flash:w:%s.hex'%(self.device, fn)
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0:
+            self.showMsg(_('Upload Error:\n') + err.decode("utf-8") + _('\nTry pressing microHOPE Reset button just before Uploading'))
+            return
+        else:
+            self.showMsg(_('Upload Completed\n') + err.decode("utf-8"))
         return
     
     
