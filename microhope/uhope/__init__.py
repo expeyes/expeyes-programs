@@ -4,6 +4,7 @@ import wx.stc
 from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
 from subprocess import Popen, PIPE, call
+import serial
 
 _ = gettext.gettext
 
@@ -89,6 +90,7 @@ class MicrohopeFrame(MyFrame):
         if dlg.ShowModal() == wx.ID_OK:
             self.filename=dlg.GetFilename()
             self.dirname=dlg.GetDirectory()
+            self.title()
             self.file_open_()
         dlg.Destroy()
         return
@@ -213,6 +215,21 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_('Error: Setting up fuses'))
             return 
         self.showMsg(_('Upload Completed'))
+        return
+    
+    def pulseRTS(self,dev):
+        ser = serial.Serial(dev , 38400, stopbits = 1,timeout = 1.0)
+        ser.setRTS(0)
+        ser.setRTS(1)
+        ser.setRTS(0)
+        ser.close()
+        return
+    
+    def device_soft_rst(self,event):
+        if self.device == "/dev/ttyACM0":
+            self.pulseRTS('/dev/ttyACM0')
+        elif self.device == "/dev/ttyUSB0":
+            self.pulseRTS('/dev/ttyUSB0')
         return
     
     def build_compile(self,event):
