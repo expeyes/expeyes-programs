@@ -182,7 +182,7 @@ class MicrohopeFrame(MyFrame):
         devc = []
         for dev in ("ttyUSB", "ttyACM"):
             command = f"ls /dev/{dev}* 2>/dev/null"
-            process=Popen(command, shell=True, stdout=PIPE)
+            process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
             out, _err = process.communicate()
             if process.returncode == 0:
                     devc += out.decode("utf-8").strip().split('\n')
@@ -251,6 +251,18 @@ class MicrohopeFrame(MyFrame):
             self.showMsg(_('Upload Completed\n') + err.decode("utf-8"))
         return
     
+    def build_upload_USBASP(self,event):
+        self.showMsg(_("Uploading through USBASP ...."))
+        fn = self.path_noext
+        command ="avrdude -c usbasp -patmega32 -U flash:w:%s.hex"%(fn,)
+        process=Popen(command, shell=True, stdout = PIPE, stderr = PIPE)
+        out, err = process.communicate()
+        if process.returncode != 0:
+            self.showMsg(_("Check connections of USBASP"))
+            return
+        else:
+            self.showMsg(_("Uploading via USBASP completed....."))
+        return
     
 class MicrohopeApp(wx.App):
     def OnInit(self):
