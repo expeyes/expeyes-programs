@@ -41,13 +41,11 @@ from .examples import add_examples
 from subprocess import Popen, PIPE, call
 import serial
 
-_ = gettext.gettext
-
 class MicrohopeFrame(MyFrame):
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         add_examples(self)
-        self.device = None
+        self.device = ""
         self.dirname = os.getcwd()
         self.setFilename(_("unNamed"))
         self.fileType="cpp"
