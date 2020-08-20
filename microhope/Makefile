@@ -27,7 +27,7 @@ uninstall:
 
 clean:
 	rm -f *.o *~ *.pyc uhope/*~
-	find . -name "__pycache__" | xargs rm -f
+	find . -name "__pycache__" | xargs rm -rf
 
 archive:
 	tar czf $(TGZFILE) -C .. --exclude .gitignore --exclude __pycache__ --exclude "*~" microhope/Makefile microhope/microhope.py microhope/pixmaps microhope/uhope

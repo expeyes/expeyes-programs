@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-18 18:29+0200\n"
+"POT-Creation-Date: 2020-08-20 17:49+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -969,7 +969,7 @@ msgid "creating microhope environment"
 msgstr ""
 
 #: ../__init__.py:52 ../__init__.py:116 ../__init__.py:177 ../__init__.py:50
-#: ../__init__.py:114 ../__init__.py:175
+#: ../__init__.py:114 ../__init__.py:175 ../__init__.py:51
 msgid "unNamed"
 msgstr ""
 
@@ -1224,4 +1224,16 @@ msgstr ""
 msgid ""
 "No hardware was detected\n"
 "Upload failed"
+msgstr ""
+
+#: ../__init__.py:182
+#, python-brace-format
+msgid ""
+"Create microHope environment\n"
+"Do you want to create your own microHope environment?\n"
+"\n"
+"If you reply \"Yes\", a subdirectory named {localdir} will be created, and a "
+"set of files will be copied into it.\n"
+"\n"
+"If any previous installation existed, its contents will be overwriten."
 msgstr ""
