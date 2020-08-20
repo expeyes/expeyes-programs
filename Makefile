@@ -1,7 +1,7 @@
 DESTDIR =
-SUBDIRS = bin po clib/expeyes-clib microhope \
-          microhope/po microhope/microhope-doc
+SUBDIRS = bin po clib/expeyes-clib
 SUBDIRS_INDEP = expeyes-web \
+		microhope microhope/po microhope/microhope-doc \
 		eyes17 eyes17/lang eyes17/layouts eyes17/helpFiles \
 		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles
 
@@ -24,8 +24,6 @@ all_indep:
 	for d in $(SUBDIRS_INDEP); do \
 	  $(MAKE) -C $$d all; \
 	done
-	# make the bootloader hex file
-	# $(MAKE) -C microhope/firmware atmega32
 
 all_firmware:
 	for d in firmware kuttyPy/firmware microhope/firmware; do \

@@ -26,7 +26,7 @@ uninstall:
 	rm -rf $(DESTDIR)/usr/lib/python3/dist-packages/uhope
 
 clean:
-	rm -f *.o uhope *~ *.pyc uhope/*~
+	rm -f *.o *~ *.pyc uhope/*~
 	find . -name "__pycache__" | xargs rm -f
 
 archive:
