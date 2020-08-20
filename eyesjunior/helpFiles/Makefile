@@ -24,7 +24,6 @@ userManual:
 
 clean:
 	for l in $(LANGUAGES); do \
-	  rm -f $$l/*.html; \
 	  $(MAKE) -C $$l clean; \
 	done
 
