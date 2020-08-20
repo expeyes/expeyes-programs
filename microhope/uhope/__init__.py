@@ -42,15 +42,15 @@ from subprocess import Popen, PIPE, call
 import serial
 
 class MicrohopeFrame(MyFrame):
+    localdir = os.path.expanduser("~/.local/share/microhope")
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         add_examples(self)
         self.device = ""
-        self.dirname = os.getcwd()
+        self.dirname = self.localdir
         self.setFilename(_("unNamed"))
         self.fileType="cpp"
         self.colors="light"
-        # pre-check the view->statusbar menu
         self.Microhope_menubar.i_view_statusbar.Check(True)
         self.bindEvents()
         if len(sys.argv) > 1:
@@ -179,11 +179,11 @@ class MicrohopeFrame(MyFrame):
         return
 
     def file_init(self, event):
-        dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named microHope will be created in your home directory, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten."),_("µHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+        dlg = wx.MessageDialog(None,_("Create microHope environment\nDo you want to create your own microHope environment?\n\nIf you reply \"Yes\", a subdirectory named {localdir} will be created, and a set of files will be copied into it.\n\nIf any previous installation existed, its contents will be overwriten.").format(localdir = self.localdir),_("µHOPE init()"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
         chk = dlg.ShowModal()
         dlg.Destroy()
         if chk == wx.ID_YES:
-            os.system("mkdir -p ~/microhope && cp -Rd /usr/share/microhope/microhope/* ~/microhope/")
+            os.system(f"mkdir -p {self.localdir} && cp -Rd /usr/share/microhope/microhope/* {self.localdir}")
             self.showMsg(_("Created microhope environment"))
         return
 
