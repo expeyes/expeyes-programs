@@ -40,9 +40,12 @@ from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
 from subprocess import Popen, PIPE, call
 import serial
+import configparser
 
 class MicrohopeFrame(MyFrame):
     localdir = os.path.expanduser("~/.local/share/microhope")
+    configfile = os.path.expanduser("~/.local/share/microhope/config.ini")
+    
     def __init__(self, *args, **kw):
         MyFrame.__init__(self, *args, **kw)
         add_examples(self)
@@ -52,6 +55,8 @@ class MicrohopeFrame(MyFrame):
         self.fileType="cpp"
         self.colors="light"
         self.Microhope_menubar.i_view_statusbar.Check(True)
+        self.config = configparser.ConfigParser()
+        self.activateConfig()
         self.bindEvents()
         if len(sys.argv) > 1:
             openfile = sys.argv[1]
@@ -60,6 +65,39 @@ class MicrohopeFrame(MyFrame):
             self.file_open_()
         return
 
+    def activateConfig(self):
+        if not os.path.exists(self.configfile):
+            sample_config = f"""\
+[DEFAULT]
+  device =
+  dirname = {self.localdir}
+  filename = {_("unNamed")}
+"""
+            self.config.read_string(sample_config)
+            os.system(f"mkdir -p {os.path.dirname(self.configfile)}")
+            self.saveConfig()
+        # now self.configfile does exist
+        self.config.read(self.configfile)
+        device = self.config['DEFAULT'].get('device', '')
+        if device and os.path.exists(device):
+            self.device = device
+        dirname = self.config['DEFAULT'].get('dirname', '')
+        if dirname and os.path.isdir(dirname):
+            self.dirname = dirname
+        filename = self.config['DEFAULT'].get('filename', '')
+        if filename and os.path.exists(os.path.join(self.dirname, filename)):
+            self.filename = filename
+            self.file_open_()
+        self.title()
+        return
+
+    def saveConfig(self):
+        self.config['DEFAULT']['device'] = self.device
+        self.config['DEFAULT']['dirname'] = self.dirname
+        self.config['DEFAULT']['filename'] = self.filename
+        with open(self.configfile, "w") as configfile:
+            self.config.write(configfile)
+        
     @property
     def path(self):
         return os.path.join(self.dirname, self.filename)
@@ -199,6 +237,7 @@ class MicrohopeFrame(MyFrame):
         return
     
     def OnCloseWindow(self, event):
+        self.saveConfig()
         if not self.control.IsModified():
             self.Destroy()
             return
