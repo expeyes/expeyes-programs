@@ -184,7 +184,14 @@ class MicrohopeFrame(MyFrame):
         dlg.Destroy()
         if chk == wx.ID_YES:
             os.system(f"mkdir -p {self.localdir} && cp -Rd /usr/share/microhope/microhope/* {self.localdir}")
-            self.showMsg(_("Created microhope environment"))
+            dlg = wx.MessageDialog(None,_("Would you like to make your  own microHope environment visible\n from your home directory?"),_("Visible directory"),wx.YES_NO | wx.YES_DEFAULT |  wx.ICON_QUESTION)
+            chk = dlg.ShowModal()
+            dlg.Destroy()
+            if chk == wx.ID_YES:
+                os.system(f"rm -rf ~/microhope; ln -s {self.localdir} ~/microhope")
+                self.showMsg(_("Created microhope environment, visible from the home directory"))
+            else:
+                self.showMsg(_("Created microhope environment"))
         return
 
     def showMsg(self, msg):
