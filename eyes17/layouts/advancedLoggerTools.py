@@ -3,6 +3,7 @@ import functools,sys
 from functools import partial
 import numpy as np
 import time,struct
+from collections import OrderedDict
 
 
 try:
@@ -137,6 +138,24 @@ class LOGGER:
 							'function':self.TSL2561_timing
 							}
 					] },
+			0x48:{
+				'name':'ADS1115',
+				'init':self.ADS1115_init,
+				'read':self.ADS1115_read,
+				'fields':['Voltage'],
+				'min':[-5],
+				'max':[5],
+				'config':[{
+							'name':'channel',
+							'options':['UNI_0','UNI_1','UNI_2','UNI_3','DIFF_01','DIFF_23'],
+							'function':self.ADS1115_channel
+							},
+							{
+							'name':'Data Rate',
+							'options':['8','16','32','64','128','250','475','860'],
+							'function':self.ADS1115_rate
+							}
+					] },
 			0x68:{
 				'name':'MPU6050 3 Axis Accelerometer and Gyro (Ax, Ay, Az, Temp, Gx, Gy, Gz) ',
 				'init':self.MPU6050_init,
@@ -167,6 +186,14 @@ class LOGGER:
 				'fields':['Pressure','Temp','rH %%'],
 				'min':[0,0,0],
 				'max':[1600,100,100],
+				},
+			12:{ #0xc
+				'name':'AK8963 Mag',
+				'init':self.AK8963_init,
+				'read':self.AK8963_all,
+				'fields':['X','Y','Z'],
+				'min':[-32767,-32767,-32767],
+				'max':[32767,32767,32767],
 				},
 			119:{
 				'name':'MS5611 Pressure and Temperature Sensor',
@@ -307,6 +334,21 @@ class LOGGER:
 			else:
 				self.MPU6050_kalman.input([ np.int16((b[x*2]<<8)|b[x*2+1]) for x in range(7) ])
 				return self.MPU6050_kalman.output()
+
+
+	######## AK8963 magnetometer attacched to MPU925x #######
+	AK8963_ADDRESS =0x0C
+	_AK8963_CNTL = 0x0A
+	def AK8963_init(self):
+			self.I2CWriteBulk(self.AK8963_ADDRESS,[self._AK8963_CNTL,0]) #power down mag
+			self.I2CWriteBulk(self.AK8963_ADDRESS,[self._AK8963_CNTL,(1<<4)|6]) #mode   (0=14bits,1=16bits) <<4 | (2=8Hz , 6=100Hz)
+	def AK8963_all(self,disableKalman=False):
+		vals,tmt=self.I2CReadBulk(self.AK8963_ADDRESS,0x03,7) #6+1 . 1(ST2) should not have bit 4 (0x8) true. It's ideally 16 . overflow bit
+		if tmt:return None
+		ax,ay,az = struct.unpack('hhh',bytes(vals[:6]))
+		if not vals[6]&0x08:return [ax,ay,az]
+		else: return None
+
 
 
 	####### BMP280 ###################
@@ -702,6 +744,131 @@ class LOGGER:
 		#print (DeviceRangeStatusInternal)
 
 		return [d]
+
+
+	## ADS1115
+	REG_POINTER_MASK    = 0x3
+	REG_POINTER_CONVERT = 0
+	REG_POINTER_CONFIG  = 1
+	REG_POINTER_LOWTHRESH=2
+	REG_POINTER_HITHRESH =3
+
+	REG_CONFIG_OS_MASK      =0x8000
+	REG_CONFIG_OS_SINGLE    =0x8000
+	REG_CONFIG_OS_BUSY      =0x0000
+	REG_CONFIG_OS_NOTBUSY   =0x8000
+
+	REG_CONFIG_MUX_MASK     =0x7000
+	REG_CONFIG_MUX_DIFF_0_1 =0x0000  # Differential P = AIN0, N = AIN1 =default)
+	REG_CONFIG_MUX_DIFF_0_3 =0x1000  # Differential P = AIN0, N = AIN3
+	REG_CONFIG_MUX_DIFF_1_3 =0x2000  # Differential P = AIN1, N = AIN3
+	REG_CONFIG_MUX_DIFF_2_3 =0x3000  # Differential P = AIN2, N = AIN3
+	REG_CONFIG_MUX_SINGLE_0 =0x4000  # Single-ended AIN0
+	REG_CONFIG_MUX_SINGLE_1 =0x5000  # Single-ended AIN1
+	REG_CONFIG_MUX_SINGLE_2 =0x6000  # Single-ended AIN2
+	REG_CONFIG_MUX_SINGLE_3 =0x7000  # Single-ended AIN3
+
+	REG_CONFIG_PGA_MASK     =0x0E00  #bits 11:9
+	REG_CONFIG_PGA_6_144V   =(0<<9)  # +/-6.144V range = Gain 2/3
+	REG_CONFIG_PGA_4_096V   =(1<<9)  # +/-4.096V range = Gain 1
+	REG_CONFIG_PGA_2_048V   =(2<<9)  # +/-2.048V range = Gain 2 =default)
+	REG_CONFIG_PGA_1_024V   =(3<<9)  # +/-1.024V range = Gain 4
+	REG_CONFIG_PGA_0_512V   =(4<<9)  # +/-0.512V range = Gain 8
+	REG_CONFIG_PGA_0_256V   =(5<<9)  # +/-0.256V range = Gain 16
+
+	REG_CONFIG_MODE_MASK    =0x0100   #bit 8
+	REG_CONFIG_MODE_CONTIN  =(0<<8)   # Continuous conversion mode
+	REG_CONFIG_MODE_SINGLE  =(1<<8)   # Power-down single-shot mode =default)
+
+	REG_CONFIG_DR_MASK      =0x00E0  
+	REG_CONFIG_DR_8SPS    =(0<<5)   #8 SPS
+	REG_CONFIG_DR_16SPS    =(1<<5)   #16 SPS
+	REG_CONFIG_DR_32SPS    =(2<<5)   #32 SPS
+	REG_CONFIG_DR_64SPS    =(3<<5)   #64 SPS
+	REG_CONFIG_DR_128SPS   =(4<<5)   #128 SPS
+	REG_CONFIG_DR_250SPS   =(5<<5)   #260 SPS
+	REG_CONFIG_DR_475SPS   =(6<<5)   #475 SPS
+	REG_CONFIG_DR_860SPS   =(7<<5)   #860 SPS
+
+	REG_CONFIG_CMODE_MASK   =0x0010
+	REG_CONFIG_CMODE_TRAD   =0x0000
+	REG_CONFIG_CMODE_WINDOW =0x0010
+
+	REG_CONFIG_CPOL_MASK    =0x0008
+	REG_CONFIG_CPOL_ACTVLOW =0x0000
+	REG_CONFIG_CPOL_ACTVHI  =0x0008
+
+	REG_CONFIG_CLAT_MASK    =0x0004
+	REG_CONFIG_CLAT_NONLAT  =0x0000
+	REG_CONFIG_CLAT_LATCH   =0x0004
+
+	REG_CONFIG_CQUE_MASK    =0x0003
+	REG_CONFIG_CQUE_1CONV   =0x0000
+	REG_CONFIG_CQUE_2CONV   =0x0001
+	REG_CONFIG_CQUE_4CONV   =0x0002
+	REG_CONFIG_CQUE_NONE    =0x0003
+	ADS1115_gains = OrderedDict([('GAIN_TWOTHIRDS',REG_CONFIG_PGA_6_144V),('GAIN_ONE',REG_CONFIG_PGA_4_096V),('GAIN_TWO',REG_CONFIG_PGA_2_048V),('GAIN_FOUR',REG_CONFIG_PGA_1_024V),('GAIN_EIGHT',REG_CONFIG_PGA_0_512V),('GAIN_SIXTEEN',REG_CONFIG_PGA_0_256V)])
+	ADS1115_gain_scaling =  OrderedDict([('GAIN_TWOTHIRDS',0.1875),('GAIN_ONE',0.125),('GAIN_TWO',0.0625),('GAIN_FOUR',0.03125),('GAIN_EIGHT',0.015625),('GAIN_SIXTEEN',0.0078125)])
+	ADS1115_scaling = 1
+	ADS1115_channels = OrderedDict([('UNI_0',0),('UNI_1',1),('UNI_2',2),('UNI_3',3),('DIFF_01','01'),('DIFF_23','23')])
+	ADS1115_rates = OrderedDict([(8,REG_CONFIG_DR_8SPS),(16,REG_CONFIG_DR_16SPS),(32,REG_CONFIG_DR_32SPS),(64,REG_CONFIG_DR_64SPS),(128,REG_CONFIG_DR_128SPS),(250,REG_CONFIG_DR_250SPS),(475,REG_CONFIG_DR_475SPS),(860,REG_CONFIG_DR_860SPS)]) #sampling data rate
+	ADS1115_DATARATE = 250 #250SPS [ 8, 16, 32, 64, 128, 250, 475, 860 ]
+	ADS1115_GAIN = REG_CONFIG_PGA_4_096V  # +/-4.096V range = Gain 1 . [+-6, +-4, +-2, +-1, +-0.5, +- 0.25]
+	ADS1115_CHANNEL = 0 # ref: type_selection
+	ADS1115_ADDRESS = 0x48
+	
+	def ADS1115_init(self):
+		self.I2CWriteBulk(self.ADS1115_ADDRESS,[0x80 , 0x03 ]) #poweron
+
+	def ADS1115_gain(self,gain):
+		'''
+		options : 'GAIN_TWOTHIRDS','GAIN_ONE','GAIN_TWO','GAIN_FOUR','GAIN_EIGHT','GAIN_SIXTEEN'
+		'''
+		self.ADS1115_GAIN = self.ADS1115_gain_scaling.get(gain,REG_CONFIG_PGA_4_096V)
+		self.ADS1115_scaling = self.ADS1115_gain_scaling.get(gain)
+
+	def ADS1115_channel(self,channel):
+		'''
+		options 'UNI_0','UNI_1','UNI_2','UNI_3','DIFF_01','DIFF_23'
+		'''
+		self.ADS1115_CHANNEL = self.ADS1115_channels.get(channel,0)
+
+	def ADS1115_rate(self,rate):
+		'''
+		data rate options 8,16,32,64,128,250,475,860 SPS
+		'''
+		self.ADS1115_DATARATE = int(rate) # #default 250 sps
+
+	def ADS1115_read(self):
+		'''
+		returns a voltage from ADS1115 channel selected using ADS1115_channel. default UNI_0 (Unipolar from channel 0)
+		'''
+		if self.ADS1115_CHANNEL in [0,1,2,3]:
+			config = (self.REG_CONFIG_CQUE_NONE # Disable the comparator (default val)
+			|self.REG_CONFIG_CLAT_NONLAT        # Non-latching (default val)
+			|self.REG_CONFIG_CPOL_ACTVLOW 	    #Alert/Rdy active low   (default val)
+			|self.REG_CONFIG_CMODE_TRAD         # Traditional comparator (default val)
+			|(self.ADS1115_rates.get(self.ADS1115_DATARATE,self.REG_CONFIG_DR_250SPS))      # 250 samples per second (default)
+			|(self.REG_CONFIG_MODE_SINGLE)        # Single-shot mode (default)
+			|self.ADS1115_GAIN)
+			if self.ADS1115_CHANNEL == 0   : config |= self.REG_CONFIG_MUX_SINGLE_0
+			elif self.ADS1115_CHANNEL == 1 : config |= self.REG_CONFIG_MUX_SINGLE_1
+			elif self.ADS1115_CHANNEL == 2 : config |= self.REG_CONFIG_MUX_SINGLE_2
+			elif self.ADS1115_CHANNEL == 3 : config |= self.REG_CONFIG_MUX_SINGLE_3
+			#Set 'start single-conversion' bit
+			config |= self.REG_CONFIG_OS_SINGLE
+			self.I2CWriteBulk(self.ADS1115_ADDRESS,[self.REG_POINTER_CONFIG,(config>>8)&0xFF,config&0xFF])
+			time.sleep(1./self.ADS1115_DATARATE+.002) #convert to mS to S
+
+			b = self.I2CReadBulk(self.ADS1115_ADDRESS, self.REG_POINTER_CONVERT ,2)
+			if b is not None:
+				return [( (b[0]<<8)|b[1] )*self.ADS1115_scaling*1e-3] # scale and convert to volts
+
+		elif self.ADS1115_CHANNEL in ['01','23']:
+			return [0]
+
+
+
 
 class inputs():
 	def __init__(self,p):
