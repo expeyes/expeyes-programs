@@ -13,6 +13,8 @@ else:
 
 sys.path=[".."] + sys.path
 
+import expeyes.eyesj
+
 import expeyes.eyesj as eyes
 import expeyes.eyeplot as eyeplot
 import expeyes.eyemath as eyemath

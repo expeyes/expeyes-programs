@@ -532,6 +532,7 @@ class Expt(QtWidgets.QWidget):
 	def __init__(self, device=None):
 		QtWidgets.QWidget.__init__(self)
 		self.p = device
+		device.set_pv1(2)
 		self.I2C = device.I2C		#connection to the device hardware 	
 		self.sensorList = []
 		self.logger = LOGGER(self.I2C)
