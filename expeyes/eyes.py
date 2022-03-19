@@ -27,7 +27,8 @@ The hardware consisists of :
 '''
 from __future__ import print_function
 
-import serial, struct, math, time, commands, sys, os, glob, fnmatch
+from subprocess import run
+import serial, struct, math, time, sys, os, glob, fnmatch
 
 import gettext
 gettext.bindtextdomain("expeyes")
@@ -151,7 +152,9 @@ class Eyes:
         else:
             device_list = []    # gather unused ones from the linux_list
             for dev in linux_list:
-                res = commands.getoutput('lsof -t '+ str(dev))
+                cp = run('lsof -t '+ str(dev), shell=True,
+                         capture_output=True, encoding="utf-8")
+                res = cp.stdout
                 if res == '':
                     device_list.append(dev)
 

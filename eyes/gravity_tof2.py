@@ -4,7 +4,7 @@ Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
 from __future__ import print_function
-from Tkinter import *
+from tkinter import *
 import expeyes.eyes as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as em, math
 
 import gettext

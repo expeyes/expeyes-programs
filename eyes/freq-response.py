@@ -3,7 +3,7 @@ expEYES program
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
-from Tkinter import *
+from tkinter import *
 import expeyes.eyes as eyes, expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time, sys, numpy
 
 import gettext

@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 
 AXWIDTH = 30   # width of the axis display canvas
 

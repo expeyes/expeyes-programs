@@ -6,8 +6,8 @@ Date: 21-Oct-2013
 last edit : 6-Dec-2013
 '''
 
-from Tkinter import *
-from tkFileDialog import *
+from tkinter import *
+from tkinter.filedialog import *
 import commands, os.path
    
 # Global variables   
@@ -79,7 +79,7 @@ def openFile():
 	data = f.read() 			# Get all the text from file.
 	tw.delete(0.0, END)
 	tw.insert(0.0, data)    
-   	filename = f.name
+	filename = f.name
 	show_status()
 	mw.delete(0.0, END)
 	
@@ -157,7 +157,7 @@ def upload_usbasp():
 	show('Starting Upload via USBASP....')
 	fname = filename.split(".")[0]
 	cmd= 'avrdude -c usbasp -patmega32 -U flash:w:%s.hex'%(fname)
-	print cmd
+	print (cmd)
 	res = commands.getstatusoutput(cmd)
 	if res[0] != 0:
 		show('Upload Error: Make use USBASP programmer is connected', 'red')
@@ -180,7 +180,7 @@ def select_device():
 	res = commands.getstatusoutput(cmd)   # get the device name, mostly on USB0
 	if res[0] == 0:
 		devs += res[1].split('\n')
-	print devs
+	print (devs)
 	if devs == []:
 		show('microHOPE hardware not found?', 'red')
 		return
@@ -189,7 +189,7 @@ def select_device():
 		popup.add_command(label=k , command= lambda dev=k :set_device(dev), font=('Monospace', 12))
 	# display the popup menu
 	try:
-		print tw.winfo_rooty()
+		print (tw.winfo_rooty())
 		popup.tk_popup(tw.winfo_rootx()+130, tw.winfo_rooty()+15, 0)
 	finally:
 		popup.grab_release()	   

@@ -9,7 +9,7 @@ gettext.bindtextdomain("expeyes")
 gettext.textdomain('expeyes')
 _ = gettext.gettext
 
-from Tkinter import *
+from tkinter import *
 import expeyes.mca
 import expeyes.eyeplot as eyeplot, expeyes.eyemath as eyemath, time
 

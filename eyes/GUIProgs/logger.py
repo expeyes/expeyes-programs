@@ -2,7 +2,7 @@
 # Uses draw.py
 from __future__ import print_function
 
-from Tkinter import *
+from tkinter import *
 import phm, draw, time, sys
 
 NUMCHANS = 1		# Change number of channels if you like

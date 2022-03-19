@@ -69,7 +69,7 @@ def quit():
 	sys.exit()
 
 import expeyes.eyes as eyes, time
-from Tkinter import *
+from tkinter import *
 
 root = Tk()
 p=eyes.open()

@@ -133,7 +133,7 @@ class CRO:
     val = [10,20,50,100,200,500,1000]
     delay = None                        # delay is IntVar() of set_delay()
 
-    root = None                        # Tkinter Widgets
+    root = None                        # tkinter Widgets
 
     chan_status = []
     dinButtons  = []

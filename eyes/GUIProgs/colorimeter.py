@@ -1,6 +1,6 @@
 from __future__ import print_function
 
-from Tkinter import *
+from tkinter import *
 import phm, time, math, sys
 p=phm.phm()
 

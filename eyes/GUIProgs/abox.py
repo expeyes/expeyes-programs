@@ -1,4 +1,4 @@
-from Tkinter import *
+from tkinter import *
 import Image, ImageTk, ImageDraw, sys, math
 import phm, time
 import phmath

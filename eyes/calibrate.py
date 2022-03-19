@@ -11,7 +11,7 @@ gettext.textdomain('expeyes')
 _ = gettext.gettext
 
 from numpy import *
-from Tkinter import *
+from tkinter import *
 import expeyes.eyes as eyes, time
 
 

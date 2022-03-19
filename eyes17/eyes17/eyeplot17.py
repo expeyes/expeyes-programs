@@ -1,5 +1,5 @@
 '''
-Plotting libray, using Tkinter for expEYES
+Plotting libray, using tkinter for expEYES
 Author  : Ajith Kumar B.P, bpajith@gmail.com
 License : GNU GPL version 3
 '''
@@ -10,10 +10,7 @@ gettext.textdomain('expeyes')
 _ = gettext.gettext
 
 VER = sys.version[0]
-if VER == '3':
-	from tkinter import *
-else:
-	from Tkinter import *
+from tkinter import *
 	
 import os, sys
 
