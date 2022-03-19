@@ -163,6 +163,7 @@ QT_TRANSLATE_NOOP('MainWindow','Screenshot')
 QT_TRANSLATE_NOOP('MainWindow','Whole Window Alt-s')
 QT_TRANSLATE_NOOP('MainWindow','Graph Only Alt-p')
 QT_TRANSLATE_NOOP('MainWindow','Credits')
+QT_TRANSLATE_NOOP('MainWindow','Experiment List')
 
 schoolExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow',"Voltage measurement"), ('2.1','measure-dc')],
@@ -253,6 +254,7 @@ otherExpts = [
 modulesI2C = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysteresis (MPU925x Sensor)'),('8.1', 'BHCurve')],
 [QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),('8.2', 'lightsensorlogger')],
+[QT_TRANSLATE_NOOP('MainWindow','Temperature(MAX6675) Logger'),('8.5', 'thermocouplelogger')],
 [QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), ('8.3', 'MPU6050')],
 [QT_TRANSLATE_NOOP('MainWindow','General Purpose I2C Sensors'), ('8.4', 'i2cLogger')]
 ]
@@ -596,6 +598,9 @@ class MainWindow(QMainWindow):
 		action = sm.addAction(self.tr('Whole Window Alt-s'),  self.screenshot)
 		action = sm.addAction(self.tr('Graph Only Alt-p'),  self.screenshotPlot)
 		mb.addAction(self.tr('Credits'), self.showCredits)
+		mb.addAction(self.tr('Experiment List'), lambda item=('2.99','experiment-list'): self.callExpt(item))
+		mb.addSeparator()
+
 		mb.addSeparator()
 		mb.addAction(self.tr('Quit'), self.close)
 
@@ -973,6 +978,7 @@ def run():
 		p.set_pv1(0)
 		p.set_pv2(0)
 		p.set_state(OD1=0)
+		print('Version:',p.version_number)
 
 	app = QApplication(sys.argv)
 	# translation stuff

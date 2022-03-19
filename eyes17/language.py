@@ -54,6 +54,7 @@ class Language:
         try:
             svgProgress=minidom.parse(open(os.path.join(progressPath,progressName))).documentElement
         except:
+            print('not found',imagePath)        
             return None
         if os.path.exists(fl):
             # the flag does exist, lets append the progress
