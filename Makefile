@@ -77,7 +77,7 @@ install_arch:
 	install -m 644 desktop/*doc.desktop $(DESTDIR)/usr/share/applications
 	# subdirs stuff
 	for d in $(SUBDIRS); do \
-	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
+	  $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
 	# fix permissions in /usr/share/expeyes
 	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
@@ -87,7 +87,7 @@ install_arch:
 
 install_indep:
 	for d in $(SUBDIRS_INDEP); do \
-	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
+	  $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
 
 
