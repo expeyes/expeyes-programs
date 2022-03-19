@@ -96,8 +96,6 @@ class ADS1115:
 		self.conversionDelay = 8
 		self.name = 'ADS1115 16-bit ADC'
 		self.params={'setGain':self.gains.keys(),'setChannel':self.type_selection.keys(),'setDataRate':self.sdr_selection.keys()}
-		
-		
 
 		
 	def __readInt__(self,addr):

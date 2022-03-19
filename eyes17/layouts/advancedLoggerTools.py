@@ -143,8 +143,8 @@ class LOGGER:
 				'init':self.ADS1115_init,
 				'read':self.ADS1115_read,
 				'fields':['Voltage'],
-				'min':[-5],
-				'max':[5],
+				'min':[-20],
+				'max':[20],
 				'config':[{
 							'name':'channel',
 							'options':['UNI_0','UNI_1','UNI_2','UNI_3','DIFF_01','DIFF_23'],
@@ -154,6 +154,11 @@ class LOGGER:
 							'name':'Data Rate',
 							'options':['8','16','32','64','128','250','475','860'],
 							'function':self.ADS1115_rate
+							},
+							{
+							'name':'Gain',
+							'options':['GAIN_TWOTHIRDS','GAIN_ONE','GAIN_TWO','GAIN_FOUR','GAIN_EIGHT','GAIN_SIXTEEN'],
+							'function':self.ADS1115_gain
 							}
 					] },
 			0x68:{
@@ -809,7 +814,7 @@ class LOGGER:
 	REG_CONFIG_CQUE_NONE    =0x0003
 	ADS1115_gains = OrderedDict([('GAIN_TWOTHIRDS',REG_CONFIG_PGA_6_144V),('GAIN_ONE',REG_CONFIG_PGA_4_096V),('GAIN_TWO',REG_CONFIG_PGA_2_048V),('GAIN_FOUR',REG_CONFIG_PGA_1_024V),('GAIN_EIGHT',REG_CONFIG_PGA_0_512V),('GAIN_SIXTEEN',REG_CONFIG_PGA_0_256V)])
 	ADS1115_gain_scaling =  OrderedDict([('GAIN_TWOTHIRDS',0.1875),('GAIN_ONE',0.125),('GAIN_TWO',0.0625),('GAIN_FOUR',0.03125),('GAIN_EIGHT',0.015625),('GAIN_SIXTEEN',0.0078125)])
-	ADS1115_scaling = 1
+	ADS1115_scaling = 0.125
 	ADS1115_channels = OrderedDict([('UNI_0',0),('UNI_1',1),('UNI_2',2),('UNI_3',3),('DIFF_01','01'),('DIFF_23','23')])
 	ADS1115_rates = OrderedDict([(8,REG_CONFIG_DR_8SPS),(16,REG_CONFIG_DR_16SPS),(32,REG_CONFIG_DR_32SPS),(64,REG_CONFIG_DR_64SPS),(128,REG_CONFIG_DR_128SPS),(250,REG_CONFIG_DR_250SPS),(475,REG_CONFIG_DR_475SPS),(860,REG_CONFIG_DR_860SPS)]) #sampling data rate
 	ADS1115_DATARATE = 250 #250SPS [ 8, 16, 32, 64, 128, 250, 475, 860 ]
@@ -824,8 +829,17 @@ class LOGGER:
 		'''
 		options : 'GAIN_TWOTHIRDS','GAIN_ONE','GAIN_TWO','GAIN_FOUR','GAIN_EIGHT','GAIN_SIXTEEN'
 		'''
-		self.ADS1115_GAIN = self.ADS1115_gain_scaling.get(gain,REG_CONFIG_PGA_4_096V)
-		self.ADS1115_scaling = self.ADS1115_gain_scaling.get(gain)
+		print('setting gain:',str(gain))
+		if(type(gain) == int): #From the UI selectors which return index
+			self.ADS1115_GAIN = list(self.ADS1115_gains.items())[gain][1]
+			print('set gain with index selection:',self.ADS1115_GAIN)
+			self.ADS1115_scaling = list(self.ADS1115_gain_scaling.items())[gain][1]
+			print('Scaling factor:',self.ADS1115_scaling)
+		else:
+			self.ADS1115_GAIN = self.ADS1115_gains.get(gain,self.REG_CONFIG_PGA_4_096V)
+			self.ADS1115_scaling = self.ADS1115_gain_scaling.get(gain)
+			print('set gain type B:',str(gain),self.ADS1115_GAIN, self.ADS1115_scaling)
+
 
 	def ADS1115_channel(self,channel):
 		'''
@@ -862,6 +876,7 @@ class LOGGER:
 
 			b = self.I2CReadBulk(self.ADS1115_ADDRESS, self.REG_POINTER_CONVERT ,2)
 			if b is not None:
+				x = ( (b[0]<<8)|b[1] )*self.ADS1115_scaling*1e-3
 				return [( (b[0]<<8)|b[1] )*self.ADS1115_scaling*1e-3] # scale and convert to volts
 
 		elif self.ADS1115_CHANNEL in ['01','23']:
@@ -927,6 +942,39 @@ class inputs():
 				'max':[10],
 			},]
 
+		if self.p.version_number>=5: #SEELAB 3.0 . Includes SPI
+			self.permanentInputs.append({
+				'name':'MAX6675_temp',
+				'init':self.init_MAX6675,
+				'read':self.read_MAX6675,
+				'fields':['TEMP'],
+				'min':[0],
+				'max':[400],
+				'autorefresh':True,
+				'refreshDelay':500, #mS. 
+			})
+			self.permanentInputs.append({
+				'name':'MAX31865_temp',
+				'init':self.init_MAX31865,
+				'read':self.read_MAX31865,
+				'fields':['TEMP','Res'],
+				'min':[-30,50],
+				'max':[400,200],
+				'autorefresh':True,
+				'refreshDelay':60, #mS. 
+				'spinboxes':[{
+					'name':'Immerse in Ice Bath & Adjust till Temp = 0',
+					'minimum':800,
+					'maximum':1200,
+					'value':1017,
+					'function':self.MAX31865_zero
+					}
+			]
+
+
+			})
+
+
 		for a in self.permanentInputs:
 			a['type'] = 'input'
 
@@ -947,6 +995,68 @@ class inputs():
 		pass
 	def readAllVoltages(self):
 		return [self.p.get_average_voltage(a) for a in self.analogInputs]
+
+	def init_MAX6675(self):
+		self.startTime = time.time()
+		self.p.SPI.set_parameters(1,2,0,0,1)
+
+	def read_MAX6675(self):
+		try:
+			self.startTime = time.time()
+			self.p.SPI.start('CS1')
+			time.sleep(0.003)
+			self.p.SPI.stop('CS1')
+			time.sleep(0.001)
+			self.p.SPI.start('CS1')
+			#v1 = self.p.SPI.send8(0xFF)
+			#v2 = self.p.SPI.send8(0xFF)
+			#val = (v1<<8)|v2
+			val = self.p.SPI.send16(0xFFFF)
+			self.p.SPI.stop('CS1')
+			
+
+			if(val&0x4):
+				print('thermocouple not attached. :',val)
+				return [0]
+			print(val)
+			return [(val>>3)*0.25]
+		except Exception as e:
+			print (e)
+			return [0]
+	
+	MAX31865_Res0 = 101.7; # Resistance at 0 degC for 430ohm R_Ref
+	def init_MAX31865(self):
+		self.p.SPI.set_parameters(1,2,0,0,1)
+		self.p.SPI.start('CS1')
+		val = self.p.SPI.send16(0x8000|0x00C3) #address 0 , value B2
+		self.p.SPI.stop('CS1')
+	
+	def read_MAX31865(self):
+		try:
+			self.p.SPI.start('CS1')
+			cnf = self.p.SPI.send16(0x0000)
+			RTD_ADC_Code = self.p.SPI.send16(0x0000)>>1
+			self.p.SPI.stop('CS1')
+
+			R_REF = 430.0 # Reference Resistor
+			a = .00390830;	b = -.000000577500;		c = -0.00000000000418301
+			Res_RTD = (RTD_ADC_Code * R_REF) / 32768.0 # PT100 Resistance
+			temp_C = -(a*self.MAX31865_Res0) + np.sqrt(a*a*self.MAX31865_Res0*self.MAX31865_Res0 - 4*(b*self.MAX31865_Res0)*(self.MAX31865_Res0 - Res_RTD))
+			temp_C = temp_C / (2*(b*self.MAX31865_Res0))
+			temp_C_line = (RTD_ADC_Code/32.0) - 256.0
+			if (temp_C < 0):
+				temp_C = (RTD_ADC_Code/32) - 256
+
+			return [temp_C,Res_RTD]
+		except Exception as e:
+			print (e)
+			return [0,0]
+
+	def MAX31865_zero(self,val):
+		val = val/10.
+		print('zero:',val)
+		self.MAX31865_Res0 = val
+
 
 class outputs():
 	p=None
@@ -1009,7 +1119,7 @@ class outputs():
 				'min':[1],
 				'max':[5000],
 			},]
-		if self.p.version_number>=5:
+		if self.p.version_number>=5: #SEELAB 3.0 . Includes SPI
 			self.permanentOutputs.append({
 				'name':'AD9833_DDS',
 				'init':self.init_AD9833,
@@ -1029,6 +1139,11 @@ class outputs():
 	def init(self):
 		pass
 
+	def write(self,con):
+		self.p.SPI.start(self.CS)
+		self.p.SPI.send16(con)
+		self.p.SPI.stop(self.CS)
+
 	def init_AD9833(self):
 		self.CS='CS1'
 		self.p.SPI.set_parameters(2,2,1,1,0)
@@ -1039,11 +1154,6 @@ class outputs():
 		self.write((1<<self.DDS_B28) | self.waveform_mode )               #finished loading data
 		self.active_channel = 0
 		self.frequency  =  1000
-
-	def write(self,con):
-		self.p.SPI.start(self.CS)
-		self.p.SPI.send16(con)
-		self.p.SPI.stop(self.CS)
 
 	def set_AD9833(self,freq,register=0,**args):
 		self.active_channel = register
@@ -1080,5 +1190,4 @@ class outputs():
 		modebits = mode+1
 		if self.active_channel:    modebits|=(1<<self.DDS_FSELECT)
 		self.write(modebits )
-
 

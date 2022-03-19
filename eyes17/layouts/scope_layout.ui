@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>688</width>
-    <height>583</height>
+    <width>744</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1335,8 +1335,8 @@
    <slot>show_fft()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>517</y>
+     <x>742</x>
+     <y>564</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1351,8 +1351,8 @@
    <slot>save_data()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>721</x>
-     <y>517</y>
+     <x>574</x>
+     <y>564</y>
     </hint>
     <hint type="destinationlabel">
      <x>551</x>
@@ -1367,8 +1367,8 @@
    <slot>select_wave(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>721</x>
-     <y>183</y>
+     <x>574</x>
+     <y>189</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1383,8 +1383,8 @@
    <slot>select_wgain(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>183</y>
+     <x>742</x>
+     <y>189</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1399,8 +1399,8 @@
    <slot>awg_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>718</x>
-     <y>205</y>
+     <x>605</x>
+     <y>212</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1415,8 +1415,8 @@
    <slot>awg_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>211</y>
+     <x>742</x>
+     <y>218</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1431,8 +1431,8 @@
    <slot>sq1_dc()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>238</y>
+     <x>742</x>
+     <y>246</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1447,8 +1447,8 @@
    <slot>sq1_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>799</x>
-     <y>238</y>
+     <x>686</x>
+     <y>246</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1463,8 +1463,8 @@
    <slot>sq1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>717</x>
-     <y>232</y>
+     <x>604</x>
+     <y>240</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1479,8 +1479,8 @@
    <slot>pv1_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>265</y>
+     <x>742</x>
+     <y>274</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1495,8 +1495,8 @@
    <slot>pv2_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>292</y>
+     <x>742</x>
+     <y>302</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1511,8 +1511,8 @@
    <slot>pv1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>718</x>
-     <y>259</y>
+     <x>605</x>
+     <y>268</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1527,8 +1527,8 @@
    <slot>pv2_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>718</x>
-     <y>286</y>
+     <x>605</x>
+     <y>296</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1543,8 +1543,8 @@
    <slot>set_timebase(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>854</x>
-     <y>458</y>
+     <x>741</x>
+     <y>487</y>
     </hint>
     <hint type="destinationlabel">
      <x>617</x>
@@ -1559,8 +1559,8 @@
    <slot>select_trig_source(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>723</x>
-     <y>489</y>
+     <x>213</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
      <x>623</x>
@@ -1575,8 +1575,8 @@
    <slot>set_trigger(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>854</x>
-     <y>484</y>
+     <x>741</x>
+     <y>521</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -1591,8 +1591,8 @@
    <slot>show_voltmeter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>855</x>
-     <y>15</y>
+     <x>742</x>
+     <y>16</y>
     </hint>
     <hint type="destinationlabel">
      <x>613</x>
@@ -1611,7 +1611,7 @@
      <y>308</y>
     </hint>
     <hint type="destinationlabel">
-     <x>872</x>
+     <x>743</x>
      <y>307</y>
     </hint>
    </hints>

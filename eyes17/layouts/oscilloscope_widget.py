@@ -258,6 +258,22 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 			l = QtWidgets.QComboBox(); l.addItems(a.get('options',[]))
 			l.currentIndexChanged['int'].connect(a.get('function',None))
 			self.configLayout.addWidget(l) ; self.widgets.append(l)
+
+		for a in sensor.get('spinboxes',[]): #Load spinbox configuration options
+			label = QtWidgets.QLabel(a.get('name',''))
+			self.configLayout.addWidget(label) ; self.widgets.append(label)
+			l = QtWidgets.QSlider()
+			l.setOrientation(QtCore.Qt.Horizontal)
+			l.setProperty("class", "symmetric volts")
+			l.setMaximumSize(QtCore.QSize(300, 16777215))
+			MIN = a.get('minimum',0); MAX = a.get('maximum',100)
+			l.setMinimum(MIN)
+			l.setMaximum(MAX)
+			l.setValue(a.get('value',(MAX+MIN)/2)) #Move to midpoint if value is not specified
+			l.setObjectName(a.get('name','undef'))
+			l.valueChanged['int'].connect(a.get('function',None))
+			self.configLayout.addWidget(l) ; self.widgets.append(l)
+
 			
 		for a in self.gauges:
 				a.setParent(None)

@@ -195,7 +195,10 @@ class Interface():
 				else:
 					self.__print__('Cap and PCS calibration invalid') 
 					#self.displayDialog('Cap and PCS calibration invalid')
-					self.SOCKET_CAPACITANCE = 41e-12  #approx 41pF
+					if self.version_number >= 5.0 and self.version_number <= 6.0 : #Eyes19
+						self.SOCKET_CAPACITANCE = 44e-12  #approx 
+					else: #Eyes17
+						self.SOCKET_CAPACITANCE = 41e-12  #approx 41pF
 					self.resistanceScaling = 1.
 					self.CAP_RC_SCALING = 1.
 			except:
@@ -2012,6 +2015,7 @@ class Interface():
 			self.H.__get_ack__()
 			V=V_sum*3.3/16/4095
 			C = -ctime*1e-6/1e4/np.log(1-V/3.3)
+			self.__print__(f'Capacitor Range {V},{C}')
 			return  V,C
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
@@ -2026,7 +2030,7 @@ class Interface():
 		t=10
 		P=[1.5,50e-12]
 		for a in range(4):
-			P=list(self.__get_capacitor_range__(50*(10**a)))
+			P=list(self.__get_capacitor_range__(50*(7**a)))
 			if(P[0]>1.5):
 				if a==0 and P[0]>3.28: #pico farads range. Values will be incorrect using this method
 					P[1]=50e-12
