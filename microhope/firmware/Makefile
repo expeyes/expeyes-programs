@@ -171,7 +171,7 @@ atmega32: TARGET = atmega32
 atmega32: MCU_TARGET = atmega32
 atmega32: CFLAGS += '-DMAX_TIME_COUNT=F_CPU>>4' '-DNUM_LED_FLASHES=1' 
 atmega32: AVR_FREQ = 8000000L 
-atmega32: LDSECTION  = --section-start=.text=0x7800
+atmega32: LDSECTION  = --section-start=.text=0x7300
 atmega32: $(PROGRAM)_atmega32.hex
 
 atmega32_isp: atmega32
@@ -207,4 +207,3 @@ clean:
 
 %.bin: %.elf
 	$(OBJCOPY) -j .text -j .data -O binary $< $@
-	
