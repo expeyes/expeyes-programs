@@ -36,7 +36,7 @@ clean_firmware: clean
 
 install: install_arch install_indep
 
-install_arch:
+install_arch: all_arch
 	# for python3-expeyes
 	if grep -Eq "Debian|Ubuntu" /etc/issue; then \
 	  python3 setup.py install --install-layout=deb \
@@ -85,7 +85,7 @@ install_arch:
 	rm -f  $(DESTDIR)/usr/share/expeyes/clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
-install_indep:
+install_indep: all_indep
 	for d in $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done

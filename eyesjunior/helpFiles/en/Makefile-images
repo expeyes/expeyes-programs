@@ -1,3 +1,5 @@
+#! /usr/bin/make
+
 # Makefile to convert svg, jpg and png files to PDF
 
 SVGFILES = $(shell ls *.svg)
@@ -10,10 +12,14 @@ TARGETS = $(patsubst %.svg, %.pdf, $(SVGFILES)) \
 all: $(TARGETS)
 
 %.pdf: %.png
+	@echo "PNG -> $@"
+	convert $< -background white -alpha remove -alpha off  $<.png
+	img2pdf $<.png --pagesize 960x720 -o $@
+	rm -f $<.png
 	convert $< -resize 960x720 $@
 
 %.pdf: %.jpg
-	convert $< -resize 960x720 $@
+	img2pdf $< --pagesize 960x720 -o $@
 
 %.pdf: %.svg
 	rsvg-convert -f pdf $< --width 960 -o $@

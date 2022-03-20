@@ -22,7 +22,8 @@ prepareCache:
 	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
 	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
 	else \
-	  convert $< -resize 960x720 $@; \
+	  convert $< -background white -alpha remove -alpha off  $<.png; \
+	  img2pdf $<.png --pagesize 960x720 -o $@; rm -f $<.png; \
 	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
 	fi
 
@@ -32,7 +33,7 @@ prepareCache:
 	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
 	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
 	else \
-	  convert $< -resize 960x720 $@; \
+	  img2pdf $< --pagesize 960x720 -o $@; \
 	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
 	fi
 
