@@ -1,9 +1,12 @@
 DESTDIR =
-SUBDIRS = bin po clib/expeyes-clib
+SUBDIRS = po clib/expeyes-clib
 SUBDIRS_INDEP = expeyes-web \
 		microhope microhope/po microhope/microhope-doc \
 		eyes17 eyes17/lang eyes17/layouts eyes17/helpFiles \
-		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles
+		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles \
+		bin
+
+LANGS = ${shell ls eyes17/helpFiles| grep '^..$$'}
 
 all: all_arch all_indep all_firmware
 
@@ -48,7 +51,7 @@ install_arch: all_arch
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
 	# for expeyes
 	install -d $(DESTDIR)/usr/share/expeyes
-	cp -a eyes eyes17 $(DESTDIR)/usr/share/expeyes
+	cp -a eyes $(DESTDIR)/usr/share/expeyes
 	# icons
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/expeyes-logo.png \
