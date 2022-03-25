@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="fr_FR">
 <context>
     <name>@default</name>
     <message>
@@ -641,7 +642,7 @@
     <message>
         <location filename="../filterCircuit.py" line="56"/>
         <source>Amplitude</source>
-        <translation type="unfinished">Amplitude</translation>
+        <translation>Amplitude</translation>
     </message>
     <message>
         <location filename="../soundBeats.py" line="90"/>
@@ -1976,47 +1977,47 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../filterCircuit.py" line="67"/>
         <source>WG range </source>
-        <translation type="unfinished"></translation>
+        <translation>Calibre WG </translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="79"/>
         <source>A2 range</source>
-        <translation type="unfinished"></translation>
+        <translation>calibre A2</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="113"/>
         <source>Steps</source>
-        <translation type="unfinished"></translation>
+        <translation>Étapes</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="212"/>
         <source>Peak = %5.3f V at %4.1f Hz.</source>
-        <translation type="unfinished"></translation>
+        <translation>Pic = %5.3f V à %4.1f Hz.</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="297"/>
         <source>Starting. Input Vp = %4.2f Volts at 1kHz</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrage entrée Vp = %4.2f Volt à 1kHz</translation>
     </message>
     <message>
         <location filename="../filterCircuit.py" line="299"/>
         <source>fit err.No proper input on A1</source>
-        <translation type="unfinished"></translation>
+        <translation>fit err Pas de signal correct sur A1</translation>
     </message>
     <message>
         <location filename="../thermocouplelogger.py" line="55"/>
         <source>Temperature(C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Température (°C)</translation>
     </message>
     <message>
         <location filename="../thermocouplelogger.py" line="156"/>
         <source>thermocouple not attached. : </source>
-        <translation type="unfinished"></translation>
+        <translation>thermocouple non connecté&#xa0;: </translation>
     </message>
     <message>
         <location filename="../thermocouplelogger.py" line="159"/>
         <source>Temp: </source>
-        <translation type="unfinished"></translation>
+        <translation>Temp&#xa0;: </translation>
     </message>
 </context>
 <context>
@@ -2279,12 +2280,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../layouts/browser_layout.ui" line="99"/>
         <source>deep</source>
-        <translation type="unfinished"></translation>
+        <translation>profondeur</translation>
     </message>
     <message>
         <location filename="../layouts/browser_layout.ui" line="123"/>
         <source>Double click to launch any experiment</source>
-        <translation type="unfinished"></translation>
+        <translation>Double clic pour lancer les expériences</translation>
     </message>
     <message>
         <location filename="../layouts/browser_layout.ui" line="167"/>
@@ -2293,7 +2294,11 @@ Pour l&apos;expe. de pendule forcé.</translation>
 p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:&apos;Ubuntu&apos;; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
 </context>
 <context>
@@ -2926,7 +2931,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main.py" line="166"/>
         <source>Experiment List</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste d&apos;expériences</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="257"/>
+        <source>Temperature(MAX6675) Logger</source>
+        <translation>Enregistreur de température (MAX6675)</translation>
     </message>
 </context>
 <context>
@@ -3094,7 +3104,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main.py" line="601"/>
         <source>Experiment List</source>
-        <translation type="unfinished"></translation>
+        <translation>Liste d&apos;expériences</translation>
     </message>
 </context>
 <context>

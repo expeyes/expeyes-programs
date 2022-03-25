@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: expeyes 3.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-23 10:04+0530\n"
+"POT-Creation-Date: 2022-03-25 11:28+0100\n"
 "PO-Revision-Date: 2017-02-21 00:13+0100\n"
 "Last-Translator: Georges Khaznadar <georgesk@ofset.org>\n"
 "MIME-Version: 1.0\n"
@@ -40,6 +40,8 @@ msgstr "Graphique EYES"
 #: ../eyes-junior/sound-burst.py:122 ../eyes-junior/velocity-sound.py:99
 #: ../eyes/RCcircuit.py:98 ../eyes/RLCdischarge.py:86 ../eyes/RLcircuit.py:104
 #: ../eyes/sound.py:98 ../eyes/velocity-sound.py:98 ../expeyes/eyeplot.py:343
+#: ../eyes/explore.py:339 ../eyes/explore.py:460 ../eyes/explore.py:477
+#: ../eyes/explore.py:495 ../eyes/explore.py:515
 msgid "mS"
 msgstr "ms"
 
@@ -64,6 +66,8 @@ msgstr "ms"
 #: ../eyes/RLcircuit.py:104 ../eyes/RLcircuit.py:111 ../eyes/sound.py:98
 #: ../eyes/transistor.py:124 ../eyes/transistor.py:135
 #: ../eyes/velocity-sound.py:98 ../expeyes/eyeplot.py:345
+#: ../eyes/explore.py:339 ../eyes/explore.py:460 ../eyes/explore.py:477
+#: ../eyes/explore.py:495 ../eyes/explore.py:515
 msgid "V"
 msgstr "V"
 
@@ -77,19 +81,23 @@ msgid "Could not find EYES Junior hardware"
 msgstr "Le matériel EYES Junior n'a pas été trouvé"
 
 #: ../expeyes/eyesj.py:149 ../expeyes/eyes.py:119 ../expeyes/mca.py:40
+#: ../expeyes/eyes.py:120
 msgid "Check the connections."
 msgstr "Vérifiez les connexions."
 
 #: ../expeyes/eyesj.py:195 ../expeyes/eyes.py:163 ../expeyes/mca.py:71
+#: ../expeyes/eyes.py:166
 #, python-format
 msgid "Port %s is existing "
 msgstr "Le port %s existe "
 
 #: ../expeyes/eyesj.py:197 ../expeyes/eyes.py:165 ../expeyes/mca.py:73
+#: ../expeyes/eyes.py:168
 msgid "but could not open"
 msgstr "mais n'a pas pu être ouvert"
 
 #: ../expeyes/eyesj.py:199 ../expeyes/eyes.py:167 ../expeyes/mca.py:75
+#: ../expeyes/eyes.py:170
 msgid "and opened. "
 msgstr "et est ouvert."
 
@@ -262,12 +270,13 @@ msgstr "Erreur de SETDAC "
 #: ../expeyes/eyesj.py:1055 ../expeyes/eyesj.py:1067 ../expeyes/eyesj.py:1068
 #: ../expeyes/eyesj.py:1083 ../expeyes/eyesj.py:1093 ../expeyes/eyesj.py:1094
 #: ../expeyes/eyes.py:512 ../expeyes/eyes.py:530 ../expeyes/eyes.py:549
-#: ../expeyes/mca.py:149
+#: ../expeyes/mca.py:149 ../expeyes/eyes.py:515 ../expeyes/eyes.py:533
+#: ../expeyes/eyes.py:552
 msgid "Argument error"
 msgstr "Erreur d'argument"
 
 #: ../expeyes/eyesj.py:964 ../expeyes/eyesj.py:965 ../expeyes/eyes.py:518
-#: ../expeyes/mca.py:155
+#: ../expeyes/mca.py:155 ../expeyes/eyes.py:521
 msgid "READADC error "
 msgstr "Erreur de READADC "
 
@@ -312,7 +321,7 @@ msgid "CAPTURE error"
 msgstr "Erreur de CAPTURE"
 
 #: ../expeyes/eyesj.py:1118 ../expeyes/eyesj.py:1155 ../expeyes/eyesj.py:1156
-#: ../expeyes/eyes.py:622
+#: ../expeyes/eyes.py:622 ../expeyes/eyes.py:625
 msgid "CAPTURE error "
 msgstr "Erreur CAPTURE "
 
@@ -322,6 +331,7 @@ msgid "CAPTURE: size mismatch %d %d"
 msgstr "CAPTURE : erreur de taille %d %d"
 
 #: ../expeyes/eyesj.py:1125 ../expeyes/eyesj.py:1163 ../expeyes/eyes.py:630
+#: ../expeyes/eyes.py:633
 msgid "CAPTURE: size mismatch "
 msgstr "CAPTURE : erreur de taille"
 
@@ -387,97 +397,100 @@ msgstr "Largeur d'impulsion invalide"
 msgid "ERROR: SETPULWIDTH"
 msgstr "ERREUR : SETPULWIDTH"
 
-#: ../expeyes/eyes.py:118
+#: ../expeyes/eyes.py:118 ../expeyes/eyes.py:119
 msgid "Could not find Phoenix-EYES hardware"
 msgstr "Le matériel Phoenix-EYES n'a pas été trouvé"
 
-#: ../expeyes/eyes.py:180
+#: ../expeyes/eyes.py:180 ../expeyes/eyes.py:183
 msgid "Found EYES version "
 msgstr "Trouvé expEYES version "
 
-#: ../expeyes/eyes.py:183
+#: ../expeyes/eyes.py:183 ../expeyes/eyes.py:186
 msgid "No EYES hardware detected"
 msgstr "Pas de matériel expEYES trouvé"
 
-#: ../expeyes/eyes.py:395
+#: ../expeyes/eyes.py:395 ../expeyes/eyes.py:398
 msgid "eeprom write byte error = "
 msgstr "Erreur d'écriture d'eeprom octet = "
 
-#: ../expeyes/eyes.py:408
+#: ../expeyes/eyes.py:408 ../expeyes/eyes.py:411
 msgid "eeprom read block error = "
 msgstr "Erreur d'écriture d'eeprom bloc = "
 
-#: ../expeyes/eyes.py:428
+#: ../expeyes/eyes.py:428 ../expeyes/eyes.py:431
 #, python-format
 msgid "SC: ch = %d m=%10.6f  c=%10.6f"
 msgstr "SC: ch = %d m=%10.6f  c=%10.6f"
 
-#: ../expeyes/eyes.py:436
+#: ../expeyes/eyes.py:436 ../expeyes/eyes.py:439
 msgid "BAD Calibration data. EEPROM does not have any data "
 msgstr "Mauvaises données de calibration. L'EEPROM n'a aucune donnée "
 
-#: ../expeyes/eyes.py:443
+#: ../expeyes/eyes.py:443 ../expeyes/eyes.py:446
 #, python-format
 msgid "LC: ch = %d m=%10.6f  c=%10.6f"
 msgstr "LC: ch = %d m=%10.6f  c=%10.6f"
 
-#: ../expeyes/eyes.py:459
+#: ../expeyes/eyes.py:459 ../expeyes/eyes.py:462
 msgid "ERR:Current must be from 0.02 to 2.0 mA"
 msgstr "ERR : le courant doit être entre 0,02 et 2,0 mA"
 
 #: ../expeyes/eyes.py:480 ../expeyes/eyes.py:536 ../expeyes/eyes.py:556
+#: ../expeyes/eyes.py:483 ../expeyes/eyes.py:539 ../expeyes/eyes.py:559
 msgid "WRITEDAC error "
 msgstr "Erreur de WRITEDAC "
 
-#: ../expeyes/eyes.py:569
+#: ../expeyes/eyes.py:569 ../expeyes/eyes.py:572
 msgid "Sampling time MUST NOT exceed 250 microseconds"
 msgstr "Le temps d'échantillonnage NE DOIT PAS dépasser 250 µs"
 
-#: ../expeyes/eyes.py:575
+#: ../expeyes/eyes.py:575 ../expeyes/eyes.py:578
 msgid "SETSAMTIME ERROR "
 msgstr "ERREUR SETSAMTIME "
 
-#: ../expeyes/eyes.py:583
+#: ../expeyes/eyes.py:583 ../expeyes/eyes.py:586
 msgid "ADC datasize MUST be 1 or 2 bytes"
 msgstr "La taille des données ADC DOIT être de 1 ou 2 octets"
 
-#: ../expeyes/eyes.py:589
+#: ../expeyes/eyes.py:589 ../expeyes/eyes.py:592
 msgid "SETADCSIZE ERROR "
 msgstr "ERREUR SETADCSIZE "
 
-#: ../expeyes/eyes.py:610
+#: ../expeyes/eyes.py:610 ../expeyes/eyes.py:613
 msgid "QCAPTURE Error "
 msgstr "Erreur QCAPTURE "
 
-#: ../expeyes/eyes.py:675 ../expeyes/eyes.py:687
+#: ../expeyes/eyes.py:675 ../expeyes/eyes.py:687 ../expeyes/eyes.py:678
+#: ../expeyes/eyes.py:690
 msgid "CAPTURE01 error "
 msgstr "Erreur CAPTURE01 "
 
-#: ../expeyes/eyes.py:697
+#: ../expeyes/eyes.py:697 ../expeyes/eyes.py:700
 msgid "CAPTURE01: size mismatch "
 msgstr "CAPTURE01 : erreur de taille "
 
-#: ../expeyes/eyes.py:737
+#: ../expeyes/eyes.py:737 ../expeyes/eyes.py:740
 msgid "CAPTURE_M32 error "
 msgstr "Erreur CAPTURE_M32 "
 
-#: ../expeyes/eyes.py:744
+#: ../expeyes/eyes.py:744 ../expeyes/eyes.py:747
 msgid "CAPTURE_M32: size mismatch "
 msgstr "CAPTURE_M32 : erreur de taille "
 
-#: ../expeyes/eyes.py:787 ../expeyes/eyes.py:814
+#: ../expeyes/eyes.py:787 ../expeyes/eyes.py:814 ../expeyes/eyes.py:790
+#: ../expeyes/eyes.py:817
 msgid "wait_rising "
 msgstr "attente_montée"
 
-#: ../expeyes/eyes.py:896
+#: ../expeyes/eyes.py:896 ../expeyes/eyes.py:899
 msgid "Echo error = "
 msgstr "Écho erreur = "
 
-#: ../expeyes/eyes.py:925
+#: ../expeyes/eyes.py:925 ../expeyes/eyes.py:928
 msgid "Time Measurement call Error. CMD = "
 msgstr "Appel de mesure du temps erroné. CMD = "
 
-#: ../expeyes/eyes.py:1041
+#: ../expeyes/eyes.py:1041 ../expeyes/eyes.py:1044
 msgid "DIGIN error"
 msgstr "Erreur DIGIN"
 
@@ -505,85 +518,89 @@ msgstr "Pas de matériel MCA détecté"
 msgid "HIST read data error"
 msgstr "Erreur de lecture de donnée HIST"
 
-#: ../eyes/alpha.py:25 ../eyes/alpha.py:59
+#: ../eyes/alpha.py:25 ../eyes/alpha.py:59 ../eyes/alpha.py:27
+#: ../eyes/alpha.py:61
 msgid "Channel"
 msgstr "Canal"
 
 #: ../eyes/alpha.py:33 ../eyes/alpha.py:51 ../eyes/alpha.py:59
 #: ../eyes/alpha.py:68 ../eyes/alpha.py:96 ../eyes/alpha.py:130
+#: ../eyes/alpha.py:35 ../eyes/alpha.py:53 ../eyes/alpha.py:61
+#: ../eyes/alpha.py:70 ../eyes/alpha.py:98 ../eyes/alpha.py:132
 msgid "dN"
 msgstr "dN"
 
-#: ../eyes/alpha.py:38
+#: ../eyes/alpha.py:38 ../eyes/alpha.py:40
 msgid "No data yet"
 msgstr "Pas encore de données"
 
-#: ../eyes/alpha.py:41
+#: ../eyes/alpha.py:41 ../eyes/alpha.py:43
 msgid "Mark a Peak before calibration"
 msgstr "Marquer une crête avant la calibration"
 
-#: ../eyes/alpha.py:50
+#: ../eyes/alpha.py:50 ../eyes/alpha.py:52
 msgid "Energy (MeV)"
 msgstr "Énergie (MeV)"
 
-#: ../eyes/alpha.py:51
+#: ../eyes/alpha.py:51 ../eyes/alpha.py:53
 msgid "Energy(MeV)"
 msgstr "Énergie (MeV)"
 
-#: ../eyes/alpha.py:54
+#: ../eyes/alpha.py:54 ../eyes/alpha.py:56
 msgid "Calibration done"
 msgstr "Calibration terminée"
 
-#: ../eyes/alpha.py:60
+#: ../eyes/alpha.py:60 ../eyes/alpha.py:62
 msgid "Existing Calibration Removed. Do it again"
 msgstr "Calibration existante effacée. Il faut la refaire"
 
-#: ../eyes/alpha.py:68 ../eyes/alpha.py:141
+#: ../eyes/alpha.py:68 ../eyes/alpha.py:141 ../eyes/alpha.py:70
+#: ../eyes/alpha.py:143
 msgid "E"
 msgstr "E"
 
-#: ../eyes/alpha.py:75
+#: ../eyes/alpha.py:75 ../eyes/alpha.py:77
 msgid "No data to fit"
 msgstr "Pas de données à modéliser"
 
-#: ../eyes/alpha.py:79
+#: ../eyes/alpha.py:79 ../eyes/alpha.py:81
 #, python-format
 msgid "Amplitude= %5.1f  %s= %5.2f  sigma = %5.2f"
 msgstr "Amplitude = %5.1f  %s = %5.2f  sigma = %5.2f"
 
-#: ../eyes/alpha.py:110
+#: ../eyes/alpha.py:110 ../eyes/alpha.py:112
 msgid "Acquisition Started"
 msgstr "Acquisition démarrée"
 
-#: ../eyes/alpha.py:116
+#: ../eyes/alpha.py:116 ../eyes/alpha.py:118
 msgid "Acquisition stopped by user"
 msgstr "Acquisition arrêtée par l'utilisateur"
 
-#: ../eyes/alpha.py:121
+#: ../eyes/alpha.py:121 ../eyes/alpha.py:123
 msgid "Spectrum Cleared by user"
 msgstr "Spectre effacé par l'utilisateur"
 
-#: ../eyes/alpha.py:126
+#: ../eyes/alpha.py:126 ../eyes/alpha.py:128
 msgid "Histogram saved"
 msgstr "Histogramme enregistré"
 
-#: ../eyes/alpha.py:131
+#: ../eyes/alpha.py:131 ../eyes/alpha.py:133
 msgid "Called xmgrace"
 msgstr "Appel de xmGrace"
 
-#: ../eyes/alpha.py:141
+#: ../eyes/alpha.py:141 ../eyes/alpha.py:143
 msgid "dN/dE"
 msgstr "dN/dE"
 
-#: ../eyes/alpha.py:145
+#: ../eyes/alpha.py:145 ../eyes/alpha.py:147
 msgid "y-scale"
 msgstr "éch.-y"
 
-#: ../eyes/alpha.py:154
+#: ../eyes/alpha.py:154 ../eyes/alpha.py:156
 msgid "Auto/Man"
 msgstr "Auto/Man"
 
-#: ../eyes/alpha.py:156
+#: ../eyes/alpha.py:156 ../eyes/alpha.py:158
 msgid "UPDATE"
 msgstr "M-à-J."
 
@@ -597,6 +614,7 @@ msgstr "M-à-J."
 #: ../eyes/pendulum.py:118 ../eyes/phototransistor.py:104 ../eyes/pt100.py:208
 #: ../eyes/resistor_iv.py:127 ../eyes/rodpend.py:156
 #: ../eyes/temp-controller.py:190 ../eyes/transistor.py:137
+#: ../eyes/alpha.py:160
 msgid "START"
 msgstr "LANCER"
 
@@ -605,7 +623,7 @@ msgstr "LANCER"
 #: ../eyes-junior/Motion-Sensor-GUI.py:146 ../eyes-junior/pendulum.py:167
 #: ../eyes-junior/pt100.py:216 ../eyes-junior/rodpend.py:137
 #: ../eyes/logger.py:155 ../eyes/pendulum.py:120 ../eyes/pt100.py:210
-#: ../eyes/rodpend.py:158 ../eyes/temp-controller.py:192
+#: ../eyes/rodpend.py:158 ../eyes/temp-controller.py:192 ../eyes/alpha.py:162
 msgid "STOP"
 msgstr "STOP"
 
@@ -622,6 +640,7 @@ msgstr "STOP"
 #: ../eyes/resistor_iv.py:139 ../eyes/RLCdischarge.py:117
 #: ../eyes/RLcircuit.py:130 ../eyes/rodpend.py:160
 #: ../eyes/temp-controller.py:194 ../eyes/transistor.py:148
+#: ../eyes/alpha.py:164
 msgid "CLEAR"
 msgstr "EFFACER"
 
@@ -629,23 +648,24 @@ msgstr "EFFACER"
 #: ../eyes/explore.py:544 ../eyes/gravity_tof2.py:115
 #: ../eyes-junior/diode_iv.py:142 ../eyes-junior/pendulum.py:169
 #: ../eyes-junior/RLCdischarge.py:127 ../eyes/LED_iv.py:158
-#: ../eyes/pendulum.py:122 ../eyes/RLCdischarge.py:119
+#: ../eyes/pendulum.py:122 ../eyes/RLCdischarge.py:119 ../eyes/alpha.py:166
+#: ../eyes/explore.py:548
 msgid "FIT"
 msgstr "FIT"
 
-#: ../eyes/alpha.py:166
+#: ../eyes/alpha.py:166 ../eyes/alpha.py:168
 msgid "xmGrace"
 msgstr "xmGrace"
 
-#: ../eyes/alpha.py:171
+#: ../eyes/alpha.py:171 ../eyes/alpha.py:173
 msgid "Calibrate using Peak at"
 msgstr "Calibrer à l'aide de la tension crête à"
 
-#: ../eyes/alpha.py:177
+#: ../eyes/alpha.py:177 ../eyes/alpha.py:179
 msgid "MeV"
 msgstr "MeV"
 
-#: ../eyes/alpha.py:180
+#: ../eyes/alpha.py:180 ../eyes/alpha.py:182
 msgid "SAVE Histogram to"
 msgstr "Enregistrer l'histogramme dans"
 
@@ -670,7 +690,7 @@ msgstr "Enregistrer l'histogramme dans"
 #: ../eyes/RLCdischarge.py:113 ../eyes/RLcircuit.py:150 ../eyes/rodpend.py:185
 #: ../eyes/sound.py:130 ../eyes/temp-controller.py:204
 #: ../eyes/transistor.py:146 ../eyes/usound_tof.py:37
-#: ../eyes/velocity-sound.py:131
+#: ../eyes/velocity-sound.py:131 ../eyes/alpha.py:192 ../eyes/explore.py:557
 msgid "QUIT"
 msgstr "Quitter"
 
@@ -680,29 +700,31 @@ msgstr "Quitter"
 #: ../eyes-junior/induction.py:142 ../eyes-junior/interference-sound.py:172
 #: ../eyes-junior/RLCdischarge.py:132 ../eyes-junior/sound-burst.py:150
 #: ../eyes-junior/velocity-sound.py:135 ../eyes/RLCdischarge.py:124
-#: ../eyes/sound.py:140 ../eyes/velocity-sound.py:137
+#: ../eyes/sound.py:140 ../eyes/velocity-sound.py:137 ../eyes/alpha.py:197
+#: ../eyes/explore.py:562
 msgid "Messages"
 msgstr "Messages"
 
-#: ../eyes/alpha.py:199 ../eyes/alpha.py:200
+#: ../eyes/alpha.py:199 ../eyes/alpha.py:200 ../eyes/alpha.py:201
+#: ../eyes/alpha.py:202
 msgid "ERROR: Spectrometer hardware NOT found"
 msgstr "ERREUR : spectromètre PAS trouvé."
 
-#: ../eyes/alpha.py:202
+#: ../eyes/alpha.py:202 ../eyes/alpha.py:204
 msgid "PHOENIX Alpha Spectrometer"
 msgstr "Spectromètre Alpha PHOENIX"
 
 #: ../eyes/amfm.py:29 ../eyes/explore.py:254 ../eyes/interference-sound.py:86
 #: ../eyes-junior/amfm.py:38 ../eyes-junior/interference-sound.py:93
 #: ../eyes-junior/velocity-sound.py:75 ../eyes/sound.py:74
-#: ../eyes/velocity-sound.py:72
+#: ../eyes/velocity-sound.py:72 ../eyes/explore.py:257
 msgid "freq"
 msgstr "fréq"
 
 #: ../eyes/amfm.py:29 ../eyes/explore.py:254 ../eyes/interference-sound.py:86
 #: ../eyes-junior/amfm.py:38 ../eyes-junior/interference-sound.py:93
 #: ../eyes-junior/velocity-sound.py:75 ../eyes/sound.py:74
-#: ../eyes/velocity-sound.py:72
+#: ../eyes/velocity-sound.py:72 ../eyes/explore.py:257
 msgid "power"
 msgstr "puiss"
 
@@ -805,7 +827,7 @@ msgstr "UN USAGE IMPROPRE PEUT DÉFAIRE LA CALIBRATION"
 
 #: ../eyes/calibrate.py:172 ../eyes/explore.py:597
 #: ../eyes-junior/croplus.py:814 ../eyes-junior/pt100.py:252
-#: ../eyes/pt100.py:231
+#: ../eyes/pt100.py:231 ../eyes/explore.py:601
 msgid "Calibrate"
 msgstr "Calibrer"
 
@@ -851,6 +873,7 @@ msgstr "CH1 Vp = %5.2f V | Fréq = %5.2f Hz"
 #: ../eyes/cro.py:127 ../eyes/explore.py:515 ../eyes-junior/RCcircuit.py:127
 #: ../eyes-junior/RLCdischarge.py:106 ../eyes-junior/RLcircuit.py:128
 #: ../eyes/RCcircuit.py:114 ../eyes/RLCdischarge.py:98 ../eyes/RLcircuit.py:120
+#: ../eyes/explore.py:519
 msgid "mS/div"
 msgstr "ms/div"
 
@@ -965,7 +988,7 @@ msgstr "Caractéristique I-U de diode"
 msgid "EYES: Diode IV characteristics"
 msgstr "EYES : caractéritiques I-U de diode"
 
-#: ../eyes/explore.py:32
+#: ../eyes/explore.py:32 ../eyes/explore.py:35
 msgid ""
 "For help, click on the Terminal Boxes(1 to 32).\n"
 "LIZ : Lissajous figure.\n"
@@ -973,7 +996,7 @@ msgstr ""
 "Pour l'aide, cliquer sur les boîtes des bornes (1 à 32).\n"
 "LIS : figure de Lissajous.\n"
 
-#: ../eyes/explore.py:33
+#: ../eyes/explore.py:33 ../eyes/explore.py:36
 msgid ""
 "FT : Fourier Transform power spectrum.\n"
 "XM : Xmgrace 2D plotting program\n"
@@ -981,18 +1004,18 @@ msgstr ""
 "FT : transformée de Fourier (spectre de puissance).\n"
 "XM : grapheur 2D XmGrace\n"
 
-#: ../eyes/explore.py:34
+#: ../eyes/explore.py:34 ../eyes/explore.py:37
 msgid "XmGrace is NOT available under MSWindows"
 msgstr "XmGrace n'est PAS disponible sous MSWindows"
 
-#: ../eyes/explore.py:35
+#: ../eyes/explore.py:35 ../eyes/explore.py:38
 msgid ""
 "1.Software can read the voltage input level, LOW ( < .8V) or HIGH (>2V).\n"
 msgstr ""
 "1. Le logiciel peut lire le niveau de tension à l'entrée, BAS (< 0,8 V) ou "
 "HAUT (>2 V).\n"
 
-#: ../eyes/explore.py:36
+#: ../eyes/explore.py:36 ../eyes/explore.py:39
 msgid ""
 "If a square wave input is given, click on the Buttons for measuring "
 "frequency / duty cycle"
@@ -1000,11 +1023,11 @@ msgstr ""
 "Si on entre un signal carré, cliquer sur les boutons pour mesurer la "
 "fréquence/ le rapport cyclique"
 
-#: ../eyes/explore.py:37
+#: ../eyes/explore.py:37 ../eyes/explore.py:40
 msgid "2. Can sense input level"
 msgstr "2. Peut capter le niveau d'entrée"
 
-#: ../eyes/explore.py:38
+#: ../eyes/explore.py:38 ../eyes/explore.py:41
 msgid ""
 "3. Digital Output.  Can be set to 0 or 5 volts.\n"
 "Use the Checkbutton to change the Level"
@@ -1012,7 +1035,7 @@ msgstr ""
 "3. Sortie numérique. Peut être réglée à 0 ou 5V.\n"
 "Utiliser le bouton à cocher pour modifier le niveau"
 
-#: ../eyes/explore.py:39
+#: ../eyes/explore.py:39 ../eyes/explore.py:42
 msgid ""
 "4. Digital Output.  Can be set to 0 or 5 volts.\n"
 "Use the Checkbutton to change the Level"
@@ -1020,11 +1043,11 @@ msgstr ""
 "4. Sortie numérique. Peut être réglée à 0 ou 5V.\n"
 "Utiliser le bouton à cocher pour modifier le niveau"
 
-#: ../eyes/explore.py:40
+#: ../eyes/explore.py:40 ../eyes/explore.py:43
 msgid "5. Ground (zero volts)"
 msgstr "5. Masse (zéro volt)"
 
-#: ../eyes/explore.py:41
+#: ../eyes/explore.py:41 ../eyes/explore.py:44
 msgid ""
 "6. SQR1: Generates Square Wave. Voltage swings between 0 and 5V. Frequency "
 "is programmable from "
@@ -1032,12 +1055,12 @@ msgstr ""
 "6. SQR1 : générateur de signal carré. La tension oscille entre 0 et 5 V. La "
 "fréquence est programmable depuis "
 
-#: ../eyes/explore.py:42
+#: ../eyes/explore.py:42 ../eyes/explore.py:45
 msgid "Hz to1 MHz. All intermediate values of frequency are not possible."
 msgstr ""
 "Hz jusqu'à 1 MHz. Toutes les valeurs intermédiaires ne sont pas possibles."
 
-#: ../eyes/explore.py:43
+#: ../eyes/explore.py:43 ../eyes/explore.py:46
 msgid ""
 "7. SQR2: Generates Square Wave. The frequency range is controlled by "
 "software and fine adjustment "
@@ -1045,7 +1068,7 @@ msgstr ""
 "7. SQR2 : générateur de signal carré. La fréquence est contrôlé par le "
 "logiciel et un ajustement fin "
 
-#: ../eyes/explore.py:44
+#: ../eyes/explore.py:44 ../eyes/explore.py:47
 msgid ""
 "is done by an external 22 kOhm variable resistor. Frequency range is from "
 "0.7 Hz to 90 kHz."
@@ -1053,17 +1076,17 @@ msgstr ""
 "est réalisé par une résistance externe variable de 22 kOhm. L'intervalle de "
 "fréquence va de 0,7 Hz à 90 kHz."
 
-#: ../eyes/explore.py:45
+#: ../eyes/explore.py:45 ../eyes/explore.py:48
 msgid "8. 22 kOhm resistor used for frequency adjustment of SQR2."
 msgstr ""
 "8. Résistance de 22 kOhm utilisée pour l'ajustement en fréquence de SQR2."
 
-#: ../eyes/explore.py:46
+#: ../eyes/explore.py:46 ../eyes/explore.py:49
 msgid "9. 22 kOhm resistor used for frequency adjustment of SQR2."
 msgstr ""
 "9. Résistance de 22 kOhm utilisée pour l'ajustement en fréquence de SQR2."
 
-#: ../eyes/explore.py:47
+#: ../eyes/explore.py:47 ../eyes/explore.py:50
 #, python-format
 msgid ""
 "10. Programmable Pulse. Frequency is 488.3 Hz. Duty cycle from 0 to 100%% in "
@@ -1072,26 +1095,26 @@ msgstr ""
 "10. Impulsions programmables. Le fréquence est 488,3 Hz. Le rapport cyclique "
 "va de 0 à 100%% en 255 pas."
 
-#: ../eyes/explore.py:48
+#: ../eyes/explore.py:48 ../eyes/explore.py:51
 msgid "11. Ground"
 msgstr "11. Masse"
 
-#: ../eyes/explore.py:49
+#: ../eyes/explore.py:49 ../eyes/explore.py:52
 msgid "12. Output of Inverting Amplifier with a gain of 47. (Input at 14)"
 msgstr ""
 "12. Sortie d'amplificateur inverseur avec un gain de 47. (entrée en 14)"
 
-#: ../eyes/explore.py:50
+#: ../eyes/explore.py:50 ../eyes/explore.py:53
 msgid "13. Output of Inverting Amplifier with a gain of 47. (Input at 15)"
 msgstr ""
 "13. Sortie d'amplificateur inverseur avec un gain de 47. (entrée en 15)"
 
-#: ../eyes/explore.py:51
+#: ../eyes/explore.py:51 ../eyes/explore.py:54
 msgid "14. Input of Inverting Amplifier with a gain of 47. (Output at 12)"
 msgstr ""
 "14. Entrée  d'amplificateur inverseur avec un gain de 47. (sortie en 12)"
 
-#: ../eyes/explore.py:52
+#: ../eyes/explore.py:52 ../eyes/explore.py:55
 msgid ""
 "15. Input of Inverting Amplifier with a gain of 47. (Output at 13). Also "
 "acts as a Frequency counter, "
@@ -1099,7 +1122,7 @@ msgstr ""
 "15. Entrée  d'amplificateur inverseur avec un gain de 47. (sortie en 13). "
 "Agit aussi comme compteur de fréquence, "
 
-#: ../eyes/explore.py:53
+#: ../eyes/explore.py:53 ../eyes/explore.py:56
 msgid ""
 "for a bipolar a signal (amplitude from 100 mV to 5V). If the signal is "
 "unipolar feed it "
@@ -1107,15 +1130,15 @@ msgstr ""
 "pour un signal bipolaire (amplitude entre 100 mV et 5 V). Si la signal est "
 "unipolaire, l'amener "
 
-#: ../eyes/explore.py:54
+#: ../eyes/explore.py:54 ../eyes/explore.py:57
 msgid "via a series capacitor"
 msgstr "à travers un condensateur en série"
 
-#: ../eyes/explore.py:55
+#: ../eyes/explore.py:55 ../eyes/explore.py:58
 msgid "16. Ground"
 msgstr "16. Masse"
 
-#: ../eyes/explore.py:56
+#: ../eyes/explore.py:56 ../eyes/explore.py:59
 msgid ""
 "17. Input of Inverting Amplifier. Default Gain=100. The gain can be reduced "
 "by a series resistor at the input. "
@@ -1123,7 +1146,7 @@ msgstr ""
 "17. Entrée d'amplificateur inverseur. Gain par défaut = 100. Le gain peut "
 "être réduit par une résistance en série avec l'entrée."
 
-#: ../eyes/explore.py:57
+#: ../eyes/explore.py:57 ../eyes/explore.py:60
 msgid ""
 "The gain will be given by G = 10000/(100+R), where R is the value of the "
 "external series resistor."
@@ -1131,15 +1154,15 @@ msgstr ""
 "Le gain sera donné par G = 10000/(100+R), où R est la valeur de la "
 "résistance externe en série."
 
-#: ../eyes/explore.py:58
+#: ../eyes/explore.py:58 ../eyes/explore.py:61
 msgid "18. Output of the Inverting Amplifier (Input 17)"
 msgstr "18. Sortie d'amplificateur inverseur (entrée en 17)"
 
-#: ../eyes/explore.py:59
+#: ../eyes/explore.py:59 ../eyes/explore.py:62
 msgid "19. Ground"
 msgstr "19. Masse"
 
-#: ../eyes/explore.py:60
+#: ../eyes/explore.py:60 ../eyes/explore.py:63
 msgid ""
 "20. Gain control resistor for Non-Inverting amplifier, from 20 to Ground. "
 "Gain = 1 + 10000/Rg."
@@ -1147,15 +1170,15 @@ msgstr ""
 "20. Résistance de contrôle de gain pour amplificateur non-inverseur, entre "
 "30 et la masse. Gain = 1 + 10000/Rg."
 
-#: ../eyes/explore.py:61
+#: ../eyes/explore.py:61 ../eyes/explore.py:64
 msgid "21. Input of Non-Inverting Amplifier (Output 22)"
 msgstr "21. Entrée d'amplificateur non-inverseur (sortie en 22)"
 
-#: ../eyes/explore.py:62
+#: ../eyes/explore.py:62 ../eyes/explore.py:65
 msgid "22. Output of Non-Inverting Amplifier(Input 21)"
 msgstr "22. Sortie d'amplificateur non-inverseur (entrée en 21)"
 
-#: ../eyes/explore.py:63
+#: ../eyes/explore.py:63 ../eyes/explore.py:66
 msgid ""
 "23. Sensor Input. Connect Photo transistor collector here and emitter to "
 "Ground."
@@ -1163,29 +1186,29 @@ msgstr ""
 "23. Entrée capteur (senseur). Connecter le collecteur du photo-transistor "
 "ici et l'émetteur à la Masse."
 
-#: ../eyes/explore.py:64
+#: ../eyes/explore.py:64 ../eyes/explore.py:67
 msgid "24. Voltage measurement terminal. Input must be in the 0 to 5V range."
 msgstr ""
 "24. Borne de mesure de la tension. L'entrée doit être dans l'intervalle de 0 "
 "à 5 V."
 
-#: ../eyes/explore.py:65
+#: ../eyes/explore.py:65 ../eyes/explore.py:68
 msgid "25. Voltage measurement terminal. Input must be in the -5V to 5V range."
 msgstr ""
 "25. Borne de mesure de la tension. L'entrée doit être dans l'intervalle de "
 "-5 V à 5 V."
 
-#: ../eyes/explore.py:66
+#: ../eyes/explore.py:66 ../eyes/explore.py:69
 msgid "26. Voltage measurement terminal. Input must be in the -5V to 5V range."
 msgstr ""
 "26. Borne de mesure de la tension. L'entrée doit être dans l'intervalle de "
 "-5 V à 5 V."
 
-#: ../eyes/explore.py:67
+#: ../eyes/explore.py:67 ../eyes/explore.py:70
 msgid "27. Ground"
 msgstr "27. Masse"
 
-#: ../eyes/explore.py:68
+#: ../eyes/explore.py:68 ../eyes/explore.py:71
 msgid ""
 "28. Programmable constant current source. 0.05 to 2 milli ampere range. The "
 "load resistor "
@@ -1193,12 +1216,12 @@ msgstr ""
 "28. Source de courant constant programmable. Intervalle de 0,05 à 2 mA. La "
 "résistance de charge "
 
-#: ../eyes/explore.py:69
+#: ../eyes/explore.py:69 ../eyes/explore.py:72
 msgid "should be chosen to make the product of I and R less than 2 volts."
 msgstr ""
 "doit être choisie de telle façon que le produit R.I soit moins que 2 V."
 
-#: ../eyes/explore.py:70
+#: ../eyes/explore.py:70 ../eyes/explore.py:73
 msgid ""
 "29. Output of 30 through a 1kOhm resistor. Used for doing diode I-V "
 "characteristic."
@@ -1206,15 +1229,15 @@ msgstr ""
 "29. Sortie de 30 à travers une résistance de 1 kOhm. Utilisée pour faires "
 "les caractéristiques I-U de diodes."
 
-#: ../eyes/explore.py:71
+#: ../eyes/explore.py:71 ../eyes/explore.py:74
 msgid "30. Programmable voltage between -5V to +5V."
 msgstr "30. Tension programmable entre -5 V et +5 V."
 
-#: ../eyes/explore.py:72
+#: ../eyes/explore.py:72 ../eyes/explore.py:75
 msgid "31. Programmable voltage between 0 to +5V."
 msgstr "31. Tension programmable entre 0 et +5 V."
 
-#: ../eyes/explore.py:73
+#: ../eyes/explore.py:73 ../eyes/explore.py:76
 msgid ""
 "32. Sine wave output. Frequency around 90 Hz. Voltage swings between -4V to "
 "+4V."
@@ -1222,207 +1245,211 @@ msgstr ""
 "32. Sortie de signal sinusoïdal. Fréquence proche de 90 Hz. La tension "
 "oscille entre -4 V et +4 V."
 
-#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:771
+#: ../eyes/explore.py:121 ../eyes-junior/croplus.py:771 ../eyes/explore.py:124
 msgid "EXPERIMENTS"
 msgstr "EXPÉRIENCES"
 
-#: ../eyes/explore.py:165 ../eyes/explore.py:321
+#: ../eyes/explore.py:165 ../eyes/explore.py:321 ../eyes/explore.py:168
+#: ../eyes/explore.py:324
 msgid "LO"
 msgstr "BAS"
 
 #: ../eyes/explore.py:176 ../eyes/explore.py:181 ../eyes/explore.py:184
+#: ../eyes/explore.py:179 ../eyes/explore.py:187
 msgid "F"
 msgstr "F"
 
 #: ../eyes/explore.py:192 ../eyes/explore.py:201 ../eyes/explore.py:210
 #: ../eyes/explore.py:283 ../eyes/explore.py:315 ../eyes/explore.py:421
-#: ../eyes/explore.py:429
+#: ../eyes/explore.py:429 ../eyes/explore.py:195 ../eyes/explore.py:204
+#: ../eyes/explore.py:213 ../eyes/explore.py:286 ../eyes/explore.py:318
+#: ../eyes/explore.py:424 ../eyes/explore.py:432
 msgid "0 Hz"
 msgstr "0 Hz"
 
-#: ../eyes/explore.py:236
+#: ../eyes/explore.py:236 ../eyes/explore.py:239
 msgid "Traces saved to explore.dat"
 msgstr "Données enregistrées dans \"explore.dat\""
 
 #: ../eyes/explore.py:240 ../eyes-junior/ac-circuit.py:155
-#: ../eyes-junior/croplus.py:558
+#: ../eyes-junior/croplus.py:558 ../eyes/explore.py:243
 msgid "Could not find Xmgrace or Pygrace. Install them"
 msgstr "XmGrace ou Pygrace introuvables. Installez-les"
 
-#: ../eyes/explore.py:246
+#: ../eyes/explore.py:246 ../eyes/explore.py:249
 msgid "Could not find scipy package. Install it"
 msgstr "Le paquet scipy est introuvable. Installez-le"
 
-#: ../eyes/explore.py:255
+#: ../eyes/explore.py:255 ../eyes/explore.py:258
 msgid "Fourier transform Saved to exploreFFT.dat."
 msgstr "Transformée de Fourier enregistrée dans \"exploreFFT.dat\"."
 
-#: ../eyes/explore.py:324
+#: ../eyes/explore.py:324 ../eyes/explore.py:327
 msgid "HI"
 msgstr "HAUT"
 
-#: ../eyes/explore.py:352
+#: ../eyes/explore.py:352 ../eyes/explore.py:355
 msgid "python-scipy not installed. Required for data fitting"
 msgstr ""
 "python-scipy n'est pas installé. Il est nécessaire pour modéliser les données"
 
-#: ../eyes/explore.py:360
+#: ../eyes/explore.py:360 ../eyes/explore.py:363
 #, python-format
 msgid "CH%d %5.2f V , F= %5.2f Hz"
 msgstr "CH%d %5.2f V , F= %5.2f Hz"
 
-#: ../eyes/explore.py:362
+#: ../eyes/explore.py:362 ../eyes/explore.py:365
 #, python-format
 msgid "CH%d nosig "
 msgstr "CH%d nosig "
 
-#: ../eyes/explore.py:371
+#: ../eyes/explore.py:371 ../eyes/explore.py:374
 #, python-format
 msgid "CH0 : %5.2f V , %5.2f Hz "
 msgstr "CH0 : %5.2f V , %5.2f Hz "
 
-#: ../eyes/explore.py:373
+#: ../eyes/explore.py:373 ../eyes/explore.py:376
 msgid "CH0: no signal "
 msgstr "CH0 : pas de signal"
 
-#: ../eyes/explore.py:380
+#: ../eyes/explore.py:380 ../eyes/explore.py:383
 #, python-format
 msgid "| CH1 %5.2f V , %5.2f Hz"
 msgstr "| CH1 %5.2f V , %5.2f Hz"
 
-#: ../eyes/explore.py:382
+#: ../eyes/explore.py:382 ../eyes/explore.py:385
 #, python-format
 msgid " | dphi= %5.1f"
 msgstr " | dphi= %5.1f"
 
-#: ../eyes/explore.py:384
+#: ../eyes/explore.py:384 ../eyes/explore.py:387
 msgid "| CH1:no signal "
 msgstr "| CH1 : pas de signal "
 
-#: ../eyes/explore.py:436
+#: ../eyes/explore.py:436 ../eyes/explore.py:439
 msgid "Transaction Error."
 msgstr "Erreur de transaction."
 
-#: ../eyes/explore.py:539
+#: ../eyes/explore.py:539 ../eyes/explore.py:543
 msgid "LIZ"
 msgstr "LIS"
 
-#: ../eyes/explore.py:546
+#: ../eyes/explore.py:546 ../eyes/explore.py:550
 msgid "Save"
 msgstr "Enregistrer"
 
-#: ../eyes/explore.py:548
+#: ../eyes/explore.py:548 ../eyes/explore.py:552
 msgid "FT"
 msgstr "FT"
 
-#: ../eyes/explore.py:551
+#: ../eyes/explore.py:551 ../eyes/explore.py:555
 msgid "XM"
 msgstr "XM"
 
-#: ../eyes/explore.py:575
+#: ../eyes/explore.py:575 ../eyes/explore.py:579
 msgid "Resistor IV"
 msgstr "Courbe U-I de résistances"
 
-#: ../eyes/explore.py:576 ../eyes-junior/croplus.py:796
+#: ../eyes/explore.py:576 ../eyes-junior/croplus.py:796 ../eyes/explore.py:580
 msgid "RC Circuit"
 msgstr "Circuit RC"
 
-#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:797
+#: ../eyes/explore.py:577 ../eyes-junior/croplus.py:797 ../eyes/explore.py:581
 msgid "RL Circuit"
 msgstr "Circuit RL"
 
 #: ../eyes/explore.py:578 ../eyes-junior/croplus.py:798
-#: ../eyes/RLCdischarge.py:127
+#: ../eyes/RLCdischarge.py:127 ../eyes/explore.py:582
 msgid "RLC Discharge"
 msgstr "Décharge RLC"
 
-#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:799
+#: ../eyes/explore.py:579 ../eyes-junior/croplus.py:799 ../eyes/explore.py:583
 msgid "EM Induction"
 msgstr "Induction électro-magnétique"
 
-#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:800
+#: ../eyes/explore.py:580 ../eyes-junior/croplus.py:800 ../eyes/explore.py:584
 msgid "Diode IV"
 msgstr "Courbe I-U d'une diode"
 
-#: ../eyes/explore.py:581
+#: ../eyes/explore.py:581 ../eyes/explore.py:585
 msgid "LED IV"
 msgstr "Courbe I-U d'une DEL"
 
-#: ../eyes/explore.py:582 ../eyes-junior/croplus.py:801
+#: ../eyes/explore.py:582 ../eyes-junior/croplus.py:801 ../eyes/explore.py:586
 msgid "Transistor CE"
 msgstr "Transistor en émetteur commun"
 
-#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:803
+#: ../eyes/explore.py:583 ../eyes-junior/croplus.py:803 ../eyes/explore.py:587
 msgid "Frequency Response"
 msgstr "Réponse en fréquence"
 
 #: ../eyes/explore.py:584 ../eyes-junior/croplus.py:804
 #: ../eyes-junior/velocity-sound.py:138 ../eyes/usound_tof.py:41
-#: ../eyes/velocity-sound.py:140
+#: ../eyes/velocity-sound.py:140 ../eyes/explore.py:588
 msgid "Velocity of Sound"
 msgstr "Vitesse du son"
 
-#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:805
+#: ../eyes/explore.py:585 ../eyes-junior/croplus.py:805 ../eyes/explore.py:589
 msgid "Interference of Sound"
 msgstr "Interférences sonores"
 
-#: ../eyes/explore.py:586
+#: ../eyes/explore.py:586 ../eyes/explore.py:590
 msgid "Photo-Transistor CE"
 msgstr "Photo-transistor en émetteur commun"
 
-#: ../eyes/explore.py:587 ../eyes-junior/croplus.py:808
+#: ../eyes/explore.py:587 ../eyes-junior/croplus.py:808 ../eyes/explore.py:591
 msgid "Rod Pendulum"
 msgstr "Pendule pesant"
 
-#: ../eyes/explore.py:588
+#: ../eyes/explore.py:588 ../eyes/explore.py:592
 msgid "Gravity TOF"
 msgstr "Gravité par temps de vol (TDV)"
 
-#: ../eyes/explore.py:589 ../eyes-junior/croplus.py:809
+#: ../eyes/explore.py:589 ../eyes-junior/croplus.py:809 ../eyes/explore.py:593
 msgid "Pendulum Wavefrorm"
 msgstr "Signal du pendule"
 
-#: ../eyes/explore.py:590
+#: ../eyes/explore.py:590 ../eyes/explore.py:594
 msgid "40 kHz Piezo TOF"
 msgstr "TDV piézo 40 kHz"
 
-#: ../eyes/explore.py:591 ../eyes-junior/croplus.py:810
+#: ../eyes/explore.py:591 ../eyes-junior/croplus.py:810 ../eyes/explore.py:595
 msgid "PT100 Sensor"
 msgstr "Capteur PT100"
 
-#: ../eyes/explore.py:592
+#: ../eyes/explore.py:592 ../eyes/explore.py:596
 msgid "Temp Comptroller"
 msgstr "Contôleur de température"
 
-#: ../eyes/explore.py:593 ../eyes-junior/croplus.py:812
+#: ../eyes/explore.py:593 ../eyes-junior/croplus.py:812 ../eyes/explore.py:597
 msgid "Data Logger"
 msgstr "Enregistreur de données"
 
-#: ../eyes/explore.py:594
+#: ../eyes/explore.py:594 ../eyes/explore.py:598
 msgid "CRO"
 msgstr "Oscilloscope"
 
-#: ../eyes/explore.py:595 ../eyes-junior/croplus.py:802
+#: ../eyes/explore.py:595 ../eyes-junior/croplus.py:802 ../eyes/explore.py:599
 msgid "AM and FM"
 msgstr "AM et FM"
 
-#: ../eyes/explore.py:596
+#: ../eyes/explore.py:596 ../eyes/explore.py:600
 msgid "Music"
 msgstr "Musique"
 
-#: ../eyes/explore.py:607
+#: ../eyes/explore.py:607 ../eyes/explore.py:611
 msgid "Finished "
 msgstr "Terminé "
 
-#: ../eyes/explore.py:614 ../eyes-junior/croplus.py:823
+#: ../eyes/explore.py:614 ../eyes-junior/croplus.py:823 ../eyes/explore.py:620
 msgid "Finished \""
 msgstr "Terminé \""
 
-#: ../eyes/explore.py:627
+#: ../eyes/explore.py:627 ../eyes/explore.py:633
 msgid "EYES Hardware NOT found."
 msgstr "Boîtier EYES PAS trouvé."
 
-#: ../eyes/explore.py:628
+#: ../eyes/explore.py:628 ../eyes/explore.py:634
 msgid ""
 "EYES Hardware Not Found.\n"
 "Re-Connect USB cable and restart the program."
@@ -1430,7 +1457,7 @@ msgstr ""
 "Boîtier EYES PAS trouvé.\n"
 "Re-connecter le câble USB et relancer le programme."
 
-#: ../eyes/explore.py:632
+#: ../eyes/explore.py:632 ../eyes/explore.py:638
 msgid "EYES Hardware found on "
 msgstr "Boîtier EYES trouvé sur "
 
