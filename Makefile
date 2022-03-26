@@ -7,6 +7,7 @@ SUBDIRS_INDEP = expeyes-web \
 		bin
 
 LANGS = ${shell ls eyes17/helpFiles| grep '^..$$'}
+THIS_DIR = ${shell pwd}
 
 all: all_arch all_indep all_firmware
 
@@ -88,11 +89,60 @@ install_arch: all_arch
 	rm -f  $(DESTDIR)/usr/share/expeyes/clib
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
+DOCDIR_17 = $(DESTDIR)/usr/share/eyes17/doc
+
 install_indep: all_indep
 	for d in $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
-
+	# copy eyes17 docs' locations expEYES-17.{pdf|epub} to eyes17.{pdf|epub}
+	for lang in en fr es ml; do \
+	  mkdir -p $(DOCDIR_17)/$${lang}; \
+	  for ext in pdf epub; do \
+	    cp $$(find eyes17/helpFiles/$${lang} -name expEYES-17.$${ext}) \
+	       $(DOCDIR_17)/$${lang}/eyes17.$${ext}; \
+	  done; \
+	done
+	# fix a few permission
+	find $(DESTDIR) -name "*.pdf" -exec chmod -x {} \;
+	# PO files for expeyes
+	make -C po install DESTDIR=$(DESTDIR)
+	# PO files for microhope
+	make -C microhope/po install DESTDIR=$(DESTDIR)
+	# files from eyesjunior
+	mkdir -p $(DESTDIR)/usr/share/eyesj
+	cp -a eyesjunior/* $(DESTDIR)/usr/share/eyesj
+	# files from eyes17
+	mkdir -p $(DESTDIR)/usr/share/eyes17
+	for f in eyes17/server*.html eyes17/*.py ; do \
+	  cp $$f $(DESTDIR)/usr/share/eyes17; \
+	done
+	for d in code examples eyes17 html images lang layout screenshots; do \
+	  cp -a eyes17/$$d $(DESTDIR)/usr/share/eyes17; \
+	done
+	# help files for eyes17
+	mkdir -p $(DESTDIR)/usr/share/eyes17/helpFiles
+	for d in pics schematics; do \
+	  cp -a eyes17/helpFiles/$$d $(DESTDIR)/usr/share/eyes17/helpFiles; \
+	done
+	for l in $(LANGS); do \
+	  mkdir -p $(DESTDIR)/usr/share/eyes17/helpFiles/$$l; \
+	  cd $(THIS_DIR)/eyes17/helpFiles/$$l; \
+	  cp -a *.html pics schematics \
+		$(DESTDIR)/usr/share/eyes17/helpFiles/$$l; \
+	done
+	# clean VCS files
+	find $(DESTDIR) -name .gitignore | xargs rm -f
+	# remove doctrees
+	find $(DESTDIR) -type d -name 'doctrees' | xargs rm -rf
+	# remove useless Makefiles
+	find $(DESTDIR) -name "Makefile*" | xargs rm -f
+	# remove aj-arrange-files.sh
+	rm -f $(DESTDIR)/usr/share/eyesj/helpFiles/aj-arrange-files.sh
+	# remove stale symlinks which break py3compile's work
+	for f in conf.py prettyLaTeX.py; do \
+	  find $(DESTDIR)/usr/share/eyes17/helpFiles -name $$f | xargs rm -f; \
+	done
 
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
