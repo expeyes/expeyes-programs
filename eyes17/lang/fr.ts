@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<!DOCTYPE TS><TS version="2.0" language="fr_FR" sourcelanguage="">
 <context>
     <name>@default</name>
     <message>
@@ -2012,12 +2011,12 @@ Pour l&apos;expe. de pendule forcé.</translation>
     <message>
         <location filename="../thermocouplelogger.py" line="156"/>
         <source>thermocouple not attached. : </source>
-        <translation>thermocouple non connecté&#xa0;: </translation>
+        <translation>thermocouple non connecté : </translation>
     </message>
     <message>
         <location filename="../thermocouplelogger.py" line="159"/>
         <source>Temp: </source>
-        <translation>Temp&#xa0;: </translation>
+        <translation>Temp : </translation>
     </message>
 </context>
 <context>
