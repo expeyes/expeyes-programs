@@ -141,12 +141,13 @@ class Gauge(QtWidgets.QWidget):
 		else:
 			self.widget_diameter = self.height()
 
+		my_y = int(- self.widget_diameter / 2 * self.needle_scale_factor)
 		self.change_value_needle_style([QtGui.QPolygon([
 			QtCore.QPoint(4, 30),
 			QtCore.QPoint(-4, 30),
-			QtCore.QPoint(-2, - self.widget_diameter / 2 * self.needle_scale_factor),
-			QtCore.QPoint(0, - self.widget_diameter / 2 * self.needle_scale_factor - 6),
-			QtCore.QPoint(2, - self.widget_diameter / 2 * self.needle_scale_factor)
+			QtCore.QPoint(-2, my_y),
+			QtCore.QPoint(0, my_y - 6),
+			QtCore.QPoint(2, my_y)
 		])])
 
 		self.scale_fontsize = self.initial_scale_fontsize * self.widget_diameter / 400
