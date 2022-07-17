@@ -219,7 +219,7 @@ class Expt(QWidget):
 				if self.chanSelCB[ch].isChecked() == True:
 					dat.append( [self.timeData, self.voltData[ch] ])
 			self.p.save(dat,fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))
+			self.msg(self.tr('Traces saved to ') + fn)
 				
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

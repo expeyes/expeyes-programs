@@ -161,7 +161,7 @@ class Expt(QWidget):
 			if self.Diffmode.isChecked() == False:
 				self.Data[1] = tvs[1]   # A1
 				yint = self.find_yint(self.Data[1], self.Data[0])  
-				self.Yinter.setText(unicode(self.tr('Y-intercept = %5.3f V')) %yint)
+				self.Yinter.setText(self.tr('Y-intercept = %5.3f V') %yint)
 			else:
 				self.Yinter.setText('')
 				self.Data[1] = tvs[1] - tvs[3]  # A1-A2
@@ -181,8 +181,8 @@ class Expt(QWidget):
 			fb=None
 			print("fit_sine error:", err)
 		if fa != None and fb != None:
-			self.Xmax.setText(unicode(self.tr('Xmax = %5.3f V')) %fa[1][0])
-			self.Ymax.setText(unicode(self.tr('Ymax = %5.3f V')) %fb[1][0])
+			self.Xmax.setText(self.tr('Xmax = %5.3f V') %fa[1][0])
+			self.Ymax.setText(self.tr('Ymax = %5.3f V') %fb[1][0])
 		else:
 			self.Xmax.setText('')
 			self.Ymax.setText('')
@@ -196,7 +196,7 @@ class Expt(QWidget):
 		for ch in range(2):
 				dat.append( [self.Data[0], self.Data[1] ])
 		self.p.save(dat,fn)
-		ss = self.tr(unicode(fn))
+		ss = self.tr(fn)
 		self.msg(self.tr('Traces saved to ') + ss)
 			
 	def set_range(self, index):
@@ -231,7 +231,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 			self.set_wave()
 		
 	def msg(self, m):

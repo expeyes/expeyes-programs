@@ -191,7 +191,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))				
+			self.msg(self.tr('Traces saved to ') + fn)				
 			
 	def set_timebase(self, tb):
 		self.TBval = tb
@@ -226,7 +226,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 			self.set_wave()
 		
 	def msg(self, m):

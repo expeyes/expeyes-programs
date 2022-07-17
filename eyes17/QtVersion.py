@@ -13,53 +13,29 @@ Additionnally, this module provides the procedure showVersions() to
 display PyQt and Python version numbers, and defines the function unicode()
 when Python3 is used.
 
-Copyright (C) 2017, Georges Khaznadar <georgesk@debian.org>
+Change in July 2022 : from now on, only Qt6 is supported.
+
+Copyright (C) 2017-2022, Georges Khaznadar <georgesk@debian.org>
 License : GNU GPL version 3
 """
 
-PQT5 = False
-import sys, os
+import sys
 
-if sys.version_info.major==3:
-	PQT5=True
+PQT6=True
 
-if (os.getenv("QT_VERSION") and os.getenv("QT_VERSION").startswith("5")) or \
-   "-qt5" in sys.argv[1:]:
-	PQT5=True
-
-if PQT5 == True:
-	from PyQt5 import QtGui, QtCore, QtWidgets, QtSvg
-	from PyQt5.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
-		QSyntaxHighlighter
-	from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
-		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
+from PyQt6 import QtGui, QtCore, QtWidgets, QtSvg
+from PyQt6.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
+		QSyntaxHighlighter, QScreen
+from PyQt6.QtWidgets import QMainWindow, QApplication, QCheckBox, \
+		QStatusBar, QLabel, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
 		QMessageBox, QFileDialog
-	try:	# New versions of PyQt5 has removed QtWebkit. Insted use QWebEngineView
-		from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView
-		print ('loaded QWebEngineView')
-	except:
-		from PyQt5.QtWebKitWidgets import QWebView
-		print ('loaded QWebkit')
-	from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
-		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
-	from PyQt5.Qt import QT_VERSION_STR
-else:
-	from PyQt4 import QtGui, QtCore, QtSvg
-	from PyQt4 import QtGui as QtWidgets
-	from PyQt4.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
-		QSyntaxHighlighter
-	from PyQt4.QtGui import QMainWindow, QApplication, QCheckBox, \
-		QStatusBar, QLabel, QDesktopWidget, QWidget, QSlider, QLineEdit, \
-		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
-		QMessageBox, QFileDialog
-	from PyQt4.QtWebKit import QWebView, QWebSettings
-	from PyQt4.QtCore import Qt, QTimer, QUrl, QSize, \
-		QTranslator, QLocale, QLibraryInfo, QRegExp, QT_TRANSLATE_NOOP
-	from PyQt4.Qt import QT_VERSION_STR
+
+from PyQt6.QtWebEngineWidgets import QWebEngineView
+from PyQt6.QtCore import Qt, QTimer, QUrl, QSize, \
+		QTranslator, QLocale, QLibraryInfo, QRegularExpression, \
+		QT_TRANSLATE_NOOP
+QT_VERSION_STR="6"
 
 def showVersions():
 	print("Qt version: %s; Python version: %s" %(QT_VERSION_STR, sys.version))
-
-if sys.version_info.major==3:
-	unicode=str

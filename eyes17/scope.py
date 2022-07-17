@@ -170,23 +170,23 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			self.control_od1()
 			self.pv1_text()
 			self.pv2_text()
-			self.p.set_sqr1(self.SQ1val, self.dutyCycle)
+			if self.p: self.p.set_sqr1(self.SQ1val, self.dutyCycle)
 			self.select_wave(self.waveindex)
-			self.p.set_wave(self.AWGval)
+			if self.p: self.p.set_wave(self.AWGval)
 			self.select_wgain(self.wgainindex)
 			self.set_trigger(self.Triglevel*1000)
-			self.p.set_sine(self.AWGval)
-			self.p.configure_trigger(0, 'A1', 0)
+			if self.p: self.p.set_sine(self.AWGval)
+			if self.p: self.p.configure_trigger(0, 'A1', 0)
 			#self.select_range((0,2))
 			#self.select_range((1,2))
 			#self.select_range((2,0))
 			#self.select_range((3,0))
-			if self.p.calibrated:
+			if self.p and self.p.calibrated:
 				cal = self.tr('Calibrated ')
 			else:
 				cal = self.tr('Not Calibrated ')
 			self.msgwin.setText('<font color="green">' + self.tr('Device Reconnected:')+cal)
-			if self.p.version_number >= 5.0:
+			if self.p and self.p.version_number >= 5.0:
 				self.pcsFrame.show()
 				self.CCS.hide()
 			else:
@@ -232,7 +232,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 					ypos = np.max(ya)
 					pop = pg.plot(xa,ya, pen = self.traceCols[ch])
 					pop.showGrid(x=True, y=True)
-					txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+					txt = pg.TextItem(text=self.tr('Fundamental frequency = %5.1f Hz') %peak, color = 'w')
 					txt.setPos(peak, ypos)
 					pop.addItem(txt)
 					pop.setWindowTitle(self.tr('Frequency Spectrum'))
@@ -258,7 +258,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				if self.chanStatus[ch] == 1:
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = unicode(fn)
+			ss = fn
 			self.msg(self.tr('Traces saved to ') + ss)
 		self.timer.start(self.TIMER)
 
@@ -280,7 +280,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 					index = k
 			
 			self.resLabs[0] = pg.TextItem(
-				text= unicode(self.tr('Time: %6.2fmS ')) %t[index],
+				text= self.tr('Time: %6.2fmS ') %t[index],
 				color= self.resultCols[0]
 			)
 			self.resLabs[0].setPos(0, -11)
@@ -288,7 +288,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			
 			for k in range(self.MAXCHAN):
 				if self.chanStatus[k] == 1:
-					self.Results[k+1] = unicode(self.tr('%s:%6.2fV ')) %(self.sources[k],self.voltData[k][index])
+					self.Results[k+1] = self.tr('%s:%6.2fV ') %(self.sources[k],self.voltData[k][index])
 					self.resLabs[k+1] = pg.TextItem(text= self.Results[k+1],	color= self.resultCols[k])
 					self.resLabs[k+1].setPos(0, -12 - 1.0*k)
 					self.pwin.addItem(self.resLabs[k+1])
@@ -344,7 +344,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				r = 16./self.rangeVals[ch]
 				self.traceWidget[ch].setData(self.timeData[ch], self.voltData[ch] * r + 4*self.offValues[ch] )
 				if np.max(self.voltData[ch]) > self.rangeVals[ch]:
-					self.msg(unicode(self.tr('%s input is clipped. Increase range')) %self.sources[ch])
+					self.msg(self.tr('%s input is clipped. Increase range') %self.sources[ch])
 
 				if self.fitSelCB[ch].isChecked() == True:
 					try:
@@ -357,7 +357,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 						self.Amplitude[ch] = abs(fa[1][0])
 						self.Frequency[ch] = fa[1][1]*1000
 						self.Phase[ch] = fa[1][2] * 180/em.pi
-						s = unicode(self.tr('%5.2f V, %5.1f Hz')) %(self.Amplitude[ch],self.Frequency[ch])
+						s = self.tr('%5.2f V, %5.1f Hz') %(self.Amplitude[ch],self.Frequency[ch])
 						self.fitSelCB[ch].setText(s)
 				else:
 					self.fitSelCB[ch].setText('')
@@ -387,14 +387,14 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 						v = self.p.get_voltage(self.sources[ch])		# Voltmeter functions
 					except:
 						self.comerr()
-					self.voltMeterCB[ch].setText(unicode(self.tr('A%d %5.3f V')) %(ch+1,v))
+					self.voltMeterCB[ch].setText(self.tr('A%d %5.3f V') %(ch+1,v))
 				else:
 					self.voltMeterCB[ch].setText(self.tr('A%d'%(ch+1)))			
 
 			try:
 				res = self.p.get_resistance()
 				if res != np.Inf and res > 100  and  res < 100000:
-					self.RES.setText('Resistance: <font color="blue">'+unicode(self.tr('%5.0f Ohm')) %(res))
+					self.RES.setText('Resistance: <font color="blue">'+self.tr('%5.0f Ohm') %(res))
 				else:
 					self.RES.setText(self.tr('Resistance: <100Ohm  or  >100k'))
 				self.p.select_range('A1', self.rangeVals[0])
@@ -467,7 +467,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 					ypos = np.max(ya)
 					pop = pg.plot(xa,ya, pen = self.traceCols[ch])
 					pop.showGrid(x=True, y=True)
-					txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+					txt = pg.TextItem(text=self.tr('Fundamental frequency = %5.1f Hz') %peak, color = 'w')
 					txt.setPos(peak, ypos)
 					pop.addItem(txt)
 					pop.setWindowTitle(self.tr('Frequency Spectrum'))
@@ -493,7 +493,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				if self.chanStatus[ch] == 1:
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = unicode(fn)
+			ss = fn
 			self.msg(self.tr('Traces saved to ') + ss)
 		self.timer.start(self.TIMER)
 
@@ -580,7 +580,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 				self.comerr()
 
 	def pcs_slider(self,val):
-		self.PV2slider.setValue(val)
+		self.PV2slider.setValue(int(val))
 				
 	def sq1_dc(self):
 		try:
@@ -599,7 +599,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			return
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
-			self.SQ1slider.setValue(self.SQ1val)
+			self.SQ1slider.setValue(int(self.SQ1val))
 			try:
 				if 0 <= val < 4 : val = 0
 				self.SQ1text.setValue(val)
@@ -625,6 +625,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			self.comerr()
 
 	def set_wave(self):
+		if not self.p: return
 		try:
 			if self.waveindex <= 1:
 				res = self.p.set_wave(self.AWGval, self.Waves[self.waveindex])
@@ -647,7 +648,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			val = float(text)
 			if self.AWGmin <= val <= self.AWGmax:
 				self.AWGval = val
-				self.AWGslider.setValue(self.AWGval)
+				self.AWGslider.setValue(int(self.AWGval))
 				self.set_wave()
 		except:
 			return
@@ -705,7 +706,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 		if fr > 0:	
 			T = 1./fr
 			dc = hi*100/T
-			self.FREQ.setText(u'MEASURE FREQUENCY(IN2) '+unicode(self.tr('%5.1fHz %4.1f%%')) %(fr,dc))
+			self.FREQ.setText(u'MEASURE FREQUENCY(IN2) '+self.tr('%5.1fHz %4.1f%%') %(fr,dc))
 		else:
 			self.FREQ.setText(u'MEASURE FREQUENCY(IN2) '+self.tr('No signal'))
 	

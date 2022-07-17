@@ -213,7 +213,7 @@ shows the actual frequency set.\n'))
 			for ch in range(1):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = unicode(fn)
+			ss = fn
 			self.msg(self.tr('Trace saved to ') + ss)
 			
 	def set_timebase(self, tb):
@@ -240,7 +240,7 @@ shows the actual frequency set.\n'))
 	def sq1_slider(self, val):
 		if self.SQ1min <= val <= self.SQ1max:
 			self.SQ1val = val
-			self.SQ1text.setText(unicode(val))
+			self.SQ1text.setText(val)
 
 	def awg_text(self, text):
 		val = float(text)
@@ -251,7 +251,7 @@ shows the actual frequency set.\n'))
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

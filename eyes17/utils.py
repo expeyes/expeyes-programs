@@ -3,11 +3,7 @@ import sys, os, os.path, configparser
 
 from QtVersion import *
 
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
+from PyQt6 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 
@@ -236,7 +232,7 @@ class lineEdit(QLineEdit):
 	def __init__(self, width, val, maxsize, cback):
 		QLineEdit.__init__(self)
 		self.setFixedWidth(width)
-		self.setText(unicode(val))
+		self.setText(val)
 		#self.setValidator(QDoubleValidator(0.9,9.99,2))
 		if cback != None: self.textChanged.connect(cback)
 		self.setMaxLength(maxsize)

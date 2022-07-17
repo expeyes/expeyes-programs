@@ -60,16 +60,16 @@ class Expt(QWidget):
 
 	def saveCode(self):
 		fn = QFileDialog.getSaveFileName()
-		s =unicode(self.Edit.toPlainText())		
+		s =self.Edit.toPlainText()		
 		f = open(fn,'w')
 		f.write(s)
 		f.close()
-		self.msg(self.tr('Code saved to ') + unicode(fn))
+		self.msg(self.tr('Code saved to ') + fn)
 
 	def runCode(self):
 		self.msg('')
 		sys.stdout = x = ListStream()
-		s =unicode(self.Edit.toPlainText())		
+		s =self.Edit.toPlainText()		
 		self.msg('')
 		try:
 			submitted = compile(s.encode(), '<string>', mode='exec')
@@ -77,7 +77,7 @@ class Expt(QWidget):
 			sys.stdout = sys.__stdout__
 			self.msg(x.data)
 		except Exception as e:
-			self.msg(u'<font color="red">' + u'Err:' + unicode(e))
+			self.msg(u'<font color="red">' + u'Err:' + e)
 		
 	def update(self):
 		fn = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'code', self.mycode+'.py')

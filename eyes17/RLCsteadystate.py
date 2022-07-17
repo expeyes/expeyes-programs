@@ -285,16 +285,16 @@ class Expt(QWidget):
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = unicode(self.tr('Vtotal (A1) = %5.2f V')) %(self.Amplitude[0])
-		self.Results[1] = unicode(self.tr('Vr (A2) = %5.2f V')) %(self.Amplitude[1])
-		self.Results[2] = unicode(self.tr('Vlc (A2-A1) = %5.2f V')) %(self.Amplitude[2])
+		self.Results[0] = self.tr('Vtotal (A1 = %5.2f V')) %(self.Amplitude[0])
+		self.Results[1] = self.tr('Vr (A2 = %5.2f V')) %(self.Amplitude[1])
+		self.Results[2] = self.tr('Vlc (A2-A1 = %5.2f V')) %(self.Amplitude[2])
 
-		self.Results[5] = unicode(self.tr('F = %5.1f Hz')) %(self.Frequency[0])
-		self.Results[6] = unicode(self.tr('Phase Diff = %5.1f deg')) %phaseDiff
+		self.Results[5] = self.tr('F = %5.1f Hz') %(self.Frequency[0])
+		self.Results[6] = self.tr('Phase Diff = %5.1f deg') %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[3] = unicode(self.tr('Vc (A3-A1) = %5.2f V')) %(self.Amplitude[3])
-			self.Results[4] = unicode(self.tr('Vl (A2-A3) = %5.2f V')) %(self.Amplitude[4])
+			self.Results[3] = self.tr('Vc (A3-A1 = %5.2f V')) %(self.Amplitude[3])
+			self.Results[4] = self.tr('Vl (A2-A3 = %5.2f V')) %(self.Amplitude[4])
 		else:
 			self.Results[3] = ''
 			self.Results[4] = ''
@@ -389,7 +389,7 @@ class Expt(QWidget):
 			for ch in range(nc):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			self.msg(self.tr('Traces saved to ') +unicode(fn))
+			self.msg(self.tr('Traces saved to ') +fn)
 		self.timer.start(self.TIMER)		
 			
 	def set_timebase(self, tb):
@@ -430,7 +430,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 			self.set_wave()
 		
 	def msg(self, m):

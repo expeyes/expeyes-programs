@@ -198,7 +198,7 @@ class Expt(QWidget):
 		for ch in range(2):
 				dat.append( [self.Data[0], self.Data[1] ])
 		self.p.save(dat,fn)
-		ss = self.tr(unicode(fn))
+		ss = self.tr(fn)
 		self.msg(self.tr('Traces saved to ') + ss)
 			
 	def set_range(self, index):
@@ -233,7 +233,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 			self.set_wave()
 		
 	def msg(self, m):

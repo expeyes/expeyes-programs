@@ -8,7 +8,7 @@ Started on 2020-07-25
 
 import http.server
 import socketserver
-from PyQt5.QtCore import QThread
+from PyQt6.QtCore import QThread
 from tempfile import NamedTemporaryFile
 import os
 from datetime import datetime

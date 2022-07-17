@@ -1,4 +1,4 @@
-PYUIC?=pyuic5
+PYUIC?=pyuic6
 PYRCC?=pyrcc5
 PY_VERSION ?= 3
 
@@ -27,7 +27,7 @@ clean:
 	rm -rf *.pyc *~ __pycache__
 
 ui_%.py:  %.ui
-	$(PYUIC) --from-import $< -o $@
+	$(PYUIC) $< -o $@
 
 
 %_rc.py: %.qrc

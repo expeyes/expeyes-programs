@@ -11,11 +11,8 @@
 
 import math
 import sys
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
+from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt6.QtGui import QColor
 
 class Gauge(QtWidgets.QWidget):
 	valueChanged = QtCore.pyqtSignal(float)
@@ -83,10 +80,11 @@ class Gauge(QtWidgets.QWidget):
 		self.font = QtGui.QFont('Decorative', 20)
 
 		self.scale_polygon_colors = []
-		self.set_scale_polygon_colors([[.00, QtCore.Qt.red],
-									 [.1, QtCore.Qt.yellow],
-									 [.15, QtCore.Qt.green],
-									 [1, QtCore.Qt.transparent]])
+		self.set_scale_polygon_colors([
+                        [.00, QColor("red")],
+	                [.1, QColor("yellow")],
+		        [.15, QColor("green")],
+		        [1, QColor("transparent")]])
 
 		# initialize Scale value text
 		# self.enable_scale_text = True
@@ -356,9 +354,9 @@ class Gauge(QtWidgets.QWidget):
 		if 'list' in str(type(color_array)):
 			self.scale_polygon_colors = color_array
 		elif color_array == None:
-			self.scale_polygon_colors = [[.0, QtCore.Qt.transparent]]
+			self.scale_polygon_colors = [[.0, QColor("transparent")]]
 		else:
-			self.scale_polygon_colors = [[.0, QtCore.Qt.transparent]]
+			self.scale_polygon_colors = [[.0, QColor("transparent")]]
 
 		if not self.use_timer_event:
 			self.update()
@@ -524,7 +522,7 @@ class Gauge(QtWidgets.QWidget):
 		# Koordinatenursprung in die Mitte der Flaeche legen
 		my_painter.translate(self.width() / 2, self.height() / 2)
 
-		my_painter.setPen(QtCore.Qt.black)
+		my_painter.setPen(QColor("black"))
 		my_painter.rotate(self.scale_angle_start_value - self.angle_offset)
 		steps_size = (float(self.scale_angle_size) / float(self.scala_main_count * self.scala_subdiv_count))
 		scale_line_outer_start = self.widget_diameter/2

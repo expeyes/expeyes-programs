@@ -121,7 +121,7 @@ class Expt(QWidget):
 		right.addWidget(self.PV1slider)
 
 		H = QHBoxLayout()
-		self.Voltage = QLabel(unicode(self.tr('Voltage = %5.3f')) %self.PV1min)
+		self.Voltage = QLabel(self.tr('Voltage = %5.3f') %self.PV1min)
 		H.addWidget(self.Voltage)
 		right.addLayout(H)
 
@@ -158,9 +158,9 @@ class Expt(QWidget):
 		self.p.set_pv1(val)
 		a1 = self.p.get_voltage('A1')
 		volt = val- a1
-		self.Voltage.setText(unicode(self.tr('Voltage = %5.3f V')) %volt)
+		self.Voltage.setText(self.tr('Voltage = %5.3f V') %volt)
 		i = a1/res *1000
-		self.Current.setText(unicode(self.tr('Current = %5.3f mA')) %i)
+		self.Current.setText(self.tr('Current = %5.3f mA') %i)
 	
 	
 	def fit_curve(self):
@@ -266,7 +266,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))
+			self.msg(self.tr('Traces saved to ') + fn)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

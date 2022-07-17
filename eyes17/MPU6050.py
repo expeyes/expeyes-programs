@@ -218,7 +218,7 @@ class Expt(QWidget):
 				if self.sensorFlags[k] == True:
 					data.append([self.timeVal, self.dataVals[k]])
 			self.p.save(data, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))
+			self.msg(self.tr('Traces saved to ') + fn)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

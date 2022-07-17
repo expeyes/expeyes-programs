@@ -207,7 +207,7 @@ class Expt(QWidget):
 				v = self.p.get_voltage('A3')  		# Read A3
 				sum += v
 			v = sum/NT
-			self.A3val.setText(unicode(self.tr('%5.3f V')) %v)
+			self.A3val.setText(self.tr('%5.3f V') %v)
 		except:
 			self.comerr()
 			return 
@@ -315,7 +315,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))				
+			self.msg(self.tr('Traces saved to ') + fn)				
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

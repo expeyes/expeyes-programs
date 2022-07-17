@@ -7,11 +7,7 @@ License : GNU GPL version 3
 '''
 import sys
 
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
+from PyQt6 import QtGui, QtCore, QtWidgets
 
 import time, math, os.path, struct
 import utils

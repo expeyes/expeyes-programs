@@ -186,7 +186,7 @@ class Expt(QWidget):
 			for ch in range(2):
 					dat.append( [self.timeData[ch], self.voltData[ch] ])
 			self.p.save(dat,fn)
-			ss = unicode(fn)
+			ss = fn
 			self.msg(self.tr('Trace saved to ') + ss)			
 			
 	def set_timebase(self, tb):
@@ -219,7 +219,7 @@ class Expt(QWidget):
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText(unicode(val))
+			self.AWGtext.setText(val)
 			self.set_wave()
 		
 	def msg(self, m):

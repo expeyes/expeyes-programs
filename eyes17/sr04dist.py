@@ -168,7 +168,7 @@ class Expt(QWidget):
 			ypos = np.max(ya)
 			pop = pg.plot(xa,ya, pen = self.traceCols[self.trial%5])
 			pop.showGrid(x=True, y=True)
-			txt = pg.TextItem(text=unicode(self.tr('Fundamental frequency = %5.1f Hz')) %peak, color = 'w')
+			txt = pg.TextItem(text=self.tr('Fundamental frequency = %5.1f Hz') %peak, color = 'w')
 			txt.setPos(peak, ypos)
 			pop.addItem(txt)
 			pop.setWindowTitle(self.tr('Frequency Spectrum'))
@@ -273,7 +273,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))
+			self.msg(self.tr('Traces saved to ') + fn)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

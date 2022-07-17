@@ -216,7 +216,7 @@ class Expt(QWidget):
 	def save_data(self):
 		fn = self.Filename.text()
 		self.p.save(self.history, fn)
-		self.msg(self.tr('Traces saved to ') + unicode(fn))
+		self.msg(self.tr('Traces saved to ') + fn)
 			
 	def set_timebase(self, tb):
 		self.TBval = tb

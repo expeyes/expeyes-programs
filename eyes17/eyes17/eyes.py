@@ -74,6 +74,7 @@ class Interface():
 
 	BAUD = 500000
 	W1Type = 'sine'
+
 	def __init__(self,timeout=1.0,**kwargs):
 		self.verbose=kwargs.get('verbose',False)
 		self.initialArgs = kwargs
@@ -319,7 +320,7 @@ class Interface():
 			self.H.disconnect()
 			print(self.errmsg)
 			raise RuntimeError(self.errmsg)
-		
+
 	def capture1(self,ch,ns,tg,**kwargs):
 		"""
 		Blocking call that fetches an oscilloscope trace from the specified input channel

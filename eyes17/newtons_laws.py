@@ -9,11 +9,7 @@ import sys,time
 t = time.time()
 
 from utils import *
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
+from PyQt6 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 

@@ -172,7 +172,7 @@ class Expt(QWidget):
 		fn = QFileDialog.getSaveFileName()
 		if fn != '':
 			self.p.save(self.history, fn)
-			self.msg(self.tr('Traces saved to ') + unicode(fn))
+			self.msg(self.tr('Traces saved to ') + fn)
 		
 	def msg(self, m):
 		self.msgwin.setText(self.tr(m))

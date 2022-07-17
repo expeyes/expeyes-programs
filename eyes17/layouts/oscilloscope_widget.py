@@ -2,11 +2,7 @@ import sys, time
 import functools
 from functools import partial
 
-if sys.version_info.major==3:
-	from PyQt5 import QtGui, QtCore, QtWidgets
-else:
-	from PyQt4 import QtGui, QtCore
-	from PyQt4 import QtGui as QtWidgets
+from PyQt6 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 
@@ -29,7 +25,7 @@ class miniscope(QtWidgets.QWidget,ui_miniScope.Ui_Form):
 		super(miniscope, self).__init__(parent)
 		self.setupUi(self)
 		self.p = device
-		self.A1Box.addItems(self.p.allAnalogChannels)
+		if self.p: self.A1Box.addItems(self.p.allAnalogChannels)
 		self.splitter.setSizes([500,100])
 		self.activeParameter = 0
 
@@ -69,7 +65,7 @@ class miniscope(QtWidgets.QWidget,ui_miniScope.Ui_Form):
 
 	def read(self,**kwargs):
 		chan = str(self.A1Box.currentText())
-		if chan in self.p.allAnalogChannels:
+		if self.p and chan in self.p.allAnalogChannels:
 			for a in range(10): self.list.item(a).setText('')
 			if self.A2Box.isChecked(): #2 channel capture
 				t,v,t2,v2 = self.p.capture2(self.NP,self.TG,chan)
@@ -166,7 +162,7 @@ class DIOINPUT(QtWidgets.QDialog,ui_inputSelector.Ui_Dialog):
 		self.selectedGauge = None
 
 		self.p = device
-		self.I2C = self.p.I2C
+		if self.p: self.I2C = self.p.I2C
 		self.inputs = inputs(self.p)
 		self.outputs = outputs(self.p)
 		self.type = None
