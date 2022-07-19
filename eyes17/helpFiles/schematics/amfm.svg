@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="amfm"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 406 342"
+   sodipodi:docname="amfm.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/amfm.png"
+   inkscape:export-xdpi="71.641792"
+   inkscape:export-ydpi="71.641792"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata79">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs77" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1310"
+     inkscape:window-height="806"
+     id="namedview75"
+     showgrid="false"
+     inkscape:zoom="1.6281067"
+     inkscape:cx="189.4839"
+     inkscape:cy="170.75048"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="amfm"
+     inkscape:pagecheckerboard="0" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;amfm.ps&quot; Page 1
+</desc>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path4"
+     d="m 304,64 v 48 h 64 V 64 Z" />
+  <text
+     font-size="40"
+     id="text8"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="337.59277"
+     y="197.62183"><tspan
+       x="311.59277"
+       y="197.62183"
+       id="tspan6">A2</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path12"
+     d="m 304,160 v 48 h 64 v -48 z" />
+  <text
+     font-size="40"
+     id="text16"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="334.77158"
+     y="101.42298"><tspan
+       x="313.77158"
+       y="101.42298"
+       id="tspan14">A1</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path20"
+     d="m 16,16 v 96 H 208 V 16 Z" />
+  <text
+     font-size="40"
+     id="text24"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="337.53568"
+     y="295.16711"><tspan
+       x="294.53568"
+       y="295.16711"
+       id="tspan22">GND</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path28"
+     d="M 0,0 V 336 H 400 V 0 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="m 16,144 v 80 h 208 v -80 z" />
+  <text
+     font-size="40"
+     id="text40"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="75.405174"
+     y="182.47868"><tspan
+       x="22.40517"
+       y="182.47868"
+       id="tspan38">Modulation</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path44"
+     d="m 208,80 c 1,0 64,32 96,0" />
+  <text
+     font-size="40"
+     id="text48"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="95.501892"
+     y="293.27353"><tspan
+       x="52.501892"
+       y="293.27353"
+       id="tspan46">GND</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path52"
+     d="m 48,256 v 48 h 96 v -48 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path54"
+     d="m 288,256 v 48 h 96 v -48 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path56"
+     d="m 144,272 c 1,0 96,-32 144,0" />
+  <g
+     id="g9510">
+    <text
+       font-size="40"
+       id="text32"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       x="115.02312"
+       y="52.391064"><tspan
+         x="24.023125"
+         y="52.391064"
+         id="tspan30">External</tspan></text>
+    <text
+       font-size="40"
+       id="text60"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       x="21.558731"
+       y="93.451561"><tspan
+         x="21.558731"
+         y="93.451561"
+         id="tspan58">AM output</tspan></text>
+  </g>
+  <text
+     font-size="40"
+     id="text66"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="22.898201"
+     y="214.53308"><tspan
+       x="22.898201"
+       y="214.53308"
+       id="tspan64">signal</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path70"
+     d="m 224,192 c 1,0 80,16 80,-16" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:21.3333px;line-height:23px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+     x="146.93839"
+     y="37.493771"
+     id="text133" />
+</svg>

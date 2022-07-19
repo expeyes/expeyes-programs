@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="pendulum-velocity"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 598 406"
+   sodipodi:docname="pendulum-velocity.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/pendulum-velocity.png"
+   inkscape:export-xdpi="48.484848"
+   inkscape:export-ydpi="48.484848"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata81">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs79" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1572"
+     inkscape:window-height="961"
+     id="namedview77"
+     showgrid="false"
+     inkscape:zoom="0.8979933"
+     inkscape:cx="267.81937"
+     inkscape:cy="159.80075"
+     inkscape:window-x="53"
+     inkscape:window-y="26"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="pendulum-velocity"
+     inkscape:pagecheckerboard="0" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;pendulum-velocity.ps&quot; Page 1
+</desc>
+  <g
+     id="g136"
+     transform="translate(10.722822,3.28)">
+    <g
+       id="g12946"
+       transform="translate(10.517273,0.08)">
+      <text
+         y="134"
+         x="334.23999"
+         style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+         id="text6"
+         font-size="40"><tspan
+           id="tspan4"
+           y="134"
+           x="334.23999">D.C.</tspan></text>
+      <text
+         y="176"
+         x="334.79999"
+         style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+         id="text12"
+         font-size="40"><tspan
+           id="tspan10"
+           y="176"
+           x="334.79999">Motor</tspan></text>
+    </g>
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path16"
+     d="m 320,96 v 96 H 496 V 96 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path18"
+     d="m 496,128 v 32 h 32 v -32 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path20"
+     d="M 528,128 V 300"
+     sodipodi:nodetypes="cc" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="35"
+     id="ellipse22"
+     cy="336"
+     cx="528" />
+  <text
+     font-size="40"
+     id="text26"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="48.200005"
+     y="62.119999"><tspan
+       x="48.200005"
+       y="62.119999"
+       id="tspan24">A3</tspan></text>
+  <text
+     font-size="40"
+     id="text32"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="304"
+     y="336"><tspan
+       x="304"
+       y="336"
+       id="tspan30">Rg</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="m 32,16 v 64 h 80 V 16 Z" />
+  <text
+     font-size="40"
+     id="text40"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="35.779999"
+     y="206.58"><tspan
+       x="35.779999"
+       y="206.58"
+       id="tspan38">GND</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path44"
+     d="m 32,160 v 64 h 96 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path46"
+     d="m 288,288 v 64 h 80 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path48"
+     d="M 288,320 H 260" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50"
+     d="m 160,320 h 28" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path52"
+     d="m 188,320 6,14 12,-28 12,28 12,-28 12,28 12,-28 6,14" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path54"
+     d="M 320,128 C 289.78585,76.217877 240,16 112,48"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path56"
+     d="M 0,400 V 0 h 592 v 400 z" />
+  <text
+     font-size="40"
+     id="text60"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     transform="rotate(90)"
+     x="124.84"
+     y="-552.20483"><tspan
+       x="124.84"
+       y="-552.20483"
+       id="tspan58">pendulum</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path64"
+     d="m 128,192 c 16,0 64,-64 192,-32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path66"
+     d="m 160,320 c 2.63687,-34.52142 0,-96 -32,-128"
+     sodipodi:nodetypes="cc" />
+  <text
+     font-size="40"
+     id="text70"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="163.63501"
+     y="381.36313"><tspan
+       x="163.63501"
+       y="381.36313"
+       id="tspan68">100 Ω</tspan></text>
+</svg>
