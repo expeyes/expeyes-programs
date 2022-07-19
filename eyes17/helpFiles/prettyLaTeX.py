@@ -44,6 +44,7 @@ def filterNastyUnicode(t,verbose=False):
         "’": "'",
         "«": "\\\\guillemotleft{}",
         "»": "\\\\guillemotright{}",
+        "×": r"\\times{}"
     }
     for code, repl in toReplace.items():
         t=re.sub(code, repl, t)
