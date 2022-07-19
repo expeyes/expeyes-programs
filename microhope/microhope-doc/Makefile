@@ -1,5 +1,5 @@
 DESTDIR =
-SOURCES = $(shell ls *.lyx)
+SOURCES = $(wildcard *.lyx)
 PDFS    = $(patsubst %.lyx, %.pdf, $(SOURCES))
 TEXS    = $(patsubst %.lyx, %.tex, $(SOURCES))
 WARNING = LaTeX Warning: Label(s) may have changed. Rerun

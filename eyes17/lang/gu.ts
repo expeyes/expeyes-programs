@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="gu_IN" sourcelanguage="en_IN">
+<!DOCTYPE TS>
+<TS version="2.1" language="gu_IN" sourcelanguage="en_IN">
 <context>
     <name>Dialog</name>
     <message>
@@ -426,7 +427,7 @@
         <translation>માપન ચાલી રહ્યું છે</translation>
     </message>
     <message>
-        <location filename="../i2cLogger.py" line="543"/>
+        <location filename="../i2cLogger.py" line="539"/>
         <source>Scan</source>
         <translation>સ્કેન</translation>
     </message>
@@ -884,18 +885,18 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="288"/>
-        <source>Vtotal (A1) = %5.2f V</source>
-        <translation>V-ટોટલ (A1) = %5.2f V</translation>
+        <source>Vtotal (A1 = %5.2f V)</source>
+        <translation type="unfinished">V-ટોટલ (A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="289"/>
-        <source>Vr (A2) = %5.2f V</source>
-        <translation>Vr (A2) = %5.2f V</translation>
+        <source>Vr (A2 = %5.2f V)</source>
+        <translation type="unfinished">Vr (A2) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="290"/>
-        <source>Vlc (A2-A1) = %5.2f V</source>
-        <translation>Vlc (A2-A1) = %5.2f V</translation>
+        <source>Vlc (A2-A1 = %5.2f V)</source>
+        <translation type="unfinished">Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="292"/>
@@ -909,13 +910,13 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="296"/>
-        <source>Vc (A3-A1) = %5.2f V</source>
-        <translation>Vc (A3-A1) = %5.2f V</translation>
+        <source>Vc (A3-A1 = %5.2f V)</source>
+        <translation type="unfinished">Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="297"/>
-        <source>Vl (A2-A3) = %5.2f V</source>
-        <translation>Vl (A2-A3) = %5.2f V</translation>
+        <source>Vl (A2-A3 = %5.2f V)</source>
+        <translation type="unfinished">Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="378"/>
@@ -1073,37 +1074,37 @@ For Driven Pendulum Expt.</source>
         <translation>-માં સેટ કર્યું</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="635"/>
+        <location filename="../scope.py" line="636"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>WG થી SQ2 આઉટપુટ બદલ્યું</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="685"/>
+        <location filename="../scope.py" line="686"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished">વીજધારિત ખુબ વધારે અથવા ભુસંપર્ક સાથે શોર્ટ થયું</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="690"/>
         <source> pF</source>
         <translation> PF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="692"/>
+        <location filename="../scope.py" line="693"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="695"/>
+        <location filename="../scope.py" line="696"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="708"/>
+        <location filename="../scope.py" line="709"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="710"/>
+        <location filename="../scope.py" line="711"/>
         <source>No signal</source>
         <translation>સંકેત નથી</translation>
     </message>
@@ -2081,7 +2082,7 @@ p, li { white-space: pre-wrap; }
         <translation>રોડ લોલક</translation>
     </message>
     <message>
-        <location filename="../main.py" line="411"/>
+        <location filename="../main.py" line="414"/>
         <source>Enable PopUp Help Window</source>
         <translation>મદદ વિન્ડો કાર્યરત કરો</translation>
     </message>
@@ -2339,142 +2340,142 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="491"/>
+        <location filename="../main.py" line="494"/>
         <source>Failed to load scope</source>
         <translation>સ્કોપ લોડ કરવામાં અસફળ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="523"/>
+        <location filename="../main.py" line="526"/>
         <source>Failed to load %s</source>
         <translation>લોડ કરવામાં અસફળ %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="570"/>
+        <location filename="../main.py" line="573"/>
         <source>Device</source>
         <translation>ઉપકરણ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="571"/>
+        <location filename="../main.py" line="574"/>
         <source>Reconnect</source>
         <translation>ફરી સંપર્ક કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="574"/>
+        <location filename="../main.py" line="577"/>
         <source>Choose Language</source>
         <translation>ભાષા પસંદ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="607"/>
+        <location filename="../main.py" line="610"/>
         <source>School Expts</source>
         <translation>શાળા ના પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="611"/>
+        <location filename="../main.py" line="614"/>
         <source>Electronics</source>
         <translation>વીજાણુવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="618"/>
+        <location filename="../main.py" line="621"/>
         <source>Electrical</source>
         <translation>વિદ્યુત</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="625"/>
         <source>Sound</source>
         <translation>ધ્વનિ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="626"/>
+        <location filename="../main.py" line="629"/>
         <source>Mechanics</source>
         <translation>યંત્રવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="630"/>
+        <location filename="../main.py" line="633"/>
         <source>Other Expts</source>
         <translation>બીજા પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="634"/>
+        <location filename="../main.py" line="637"/>
         <source>I2C Modules</source>
         <translation>I2c મોડ્યૂલ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="641"/>
         <source>PythonCode</source>
         <translation>પાયથનકોડ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="941"/>
+        <location filename="../main.py" line="944"/>
         <source>Oscilloscope</source>
         <translation>ઓસિલોસ્કોપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="572"/>
+        <location filename="../main.py" line="575"/>
         <source>LightBackGround</source>
         <translation>ઉજાશમાંય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="573"/>
+        <location filename="../main.py" line="576"/>
         <source>DarkBackGround</source>
         <translation>અંધકરમય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="597"/>
+        <location filename="../main.py" line="600"/>
         <source>Screenshot</source>
         <translation>સ્ક્રીનશોટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="857"/>
+        <location filename="../main.py" line="860"/>
         <source>Missing Plot</source>
         <translation>આલેખ ખોવાયેલો છે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="857"/>
+        <location filename="../main.py" line="860"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>કૃપા કરીને  જમણું બટન  દબાવો અને નિકાસ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="600"/>
+        <location filename="../main.py" line="603"/>
         <source>Credits</source>
         <translation>જમા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="598"/>
+        <location filename="../main.py" line="601"/>
         <source>Whole Window Alt-s</source>
         <translation>આખી વિન્ડો Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="599"/>
+        <location filename="../main.py" line="602"/>
         <source>Graph Only Alt-p</source>
         <translation>ફક્ત આલેખ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="891"/>
+        <location filename="../main.py" line="894"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>પહોળાઈ દર્જ કરો (px). ઉંચાઈ જાતે સેટ થશે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="593"/>
+        <location filename="../main.py" line="596"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="605"/>
+        <location filename="../main.py" line="608"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="774"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="778"/>
+        <location filename="../main.py" line="781"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="604"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2482,7 +2483,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="316"/>
+        <location filename="../main.py" line="317"/>
         <source>Help: %s</source>
         <translation>મદદ: %s</translation>
     </message>

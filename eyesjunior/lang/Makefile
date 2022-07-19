@@ -1,9 +1,9 @@
 DESTDIR =
-TS_FILES = $(shell ls *.ts)
+TS_FILES = $(wildcard *.ts)
 QM_FILES = $(patsubst %.ts, %.qm, $(TS_FILES))
-SOURCES = $(shell ls ../*py ../code/*.py)
-FORMS = $(shell ls ../layouts/*.ui)
-PYLUPDATE ?= pylupdate5
+SOURCES = $(wildcard ../*py ../code/*.py)
+FORMS = $(wildcard ../layouts/*.ui)
+PYLUPDATE ?= pylupdate6
 
 all: $(QM_FILES)
 

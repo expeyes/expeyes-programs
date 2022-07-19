@@ -95,9 +95,9 @@ def l10n(t, lang):
     make localization changes in the source text t
     """
     babel = {
-        "en": "English",
-        "fr": "French",
-        "es": "Spanish",
+        "en": "english",
+        "fr": "french",
+        "es": "spanish",
     }
     if lang not in babel:
         return t

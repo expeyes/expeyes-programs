@@ -1,7 +1,7 @@
 DESTDIR = 
 
-SRCFILES = $(shell ls ../*.py)
-POFILES = $(shell ls *.po)
+SRCFILES = $(wildcard ../*.py)
+POFILES = $(wildcard *.po)
 MOFILES = $(patsubst %.po, %.mo, $(POFILES))
 LANG    = $(patsubst %.po, %, $(POFILES))
 

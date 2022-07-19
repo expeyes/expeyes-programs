@@ -2,9 +2,9 @@
 
 # Makefile to convert svg, jpg and png files to PDF
 
-SVGFILES = $(shell ls *.svg)
-JPGFILES = $(shell ls *.jpg)
-PNGFILES = $(shell ls *.png)
+SVGFILES = $(wildcard *.svg)
+JPGFILES = $(wildcard *.jpg)
+PNGFILES = $(wildcard *.png)
 TARGETS = $(patsubst %.svg, %.pdf, $(SVGFILES)) \
           $(patsubst %.jpg, %.pdf, $(JPGFILES)) \
           $(patsubst %.png, %.pdf, $(PNGFILES))
@@ -22,8 +22,7 @@ prepareCache:
 	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
 	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
 	else \
-	  convert $< -background white -alpha remove -alpha off  $<.png; \
-	  img2pdf $<.png --pagesize 960x720 -o $@; rm -f $<.png; \
+	  gm convert $< -background white $@; \
 	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
 	fi
 

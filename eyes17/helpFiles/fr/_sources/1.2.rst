@@ -26,7 +26,7 @@ expériences d'électricité et d'électronique.
 *volts et les entrées IN1 and IN2 doivent être dans l'intervalle de 0 à 3,3 V. Des tension excessives peuvent provoquer des dommages permanents. Pour mesurer des tensions plus hautes, diminuez-les en utilisant des diviseurs de tensions.*
 
 .. _fig-e17:
-.. figure:: pics/eyes17-panel.*
+.. figure:: pics/eyes17-panel.jpg
 	   :width: 400px
 
    ExpEYES17

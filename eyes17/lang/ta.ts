@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="ta_IN" sourcelanguage="en_IN">
+<!DOCTYPE TS>
+<TS version="2.1" language="ta_IN" sourcelanguage="en_IN">
 <context>
     <name>Dialog</name>
     <message>
@@ -426,7 +427,7 @@
         <translation>அளவீடு செயலில் உள்ளது</translation>
     </message>
     <message>
-        <location filename="../i2cLogger.py" line="543"/>
+        <location filename="../i2cLogger.py" line="539"/>
         <source>Scan</source>
         <translation>ஸ்கேன்</translation>
     </message>
@@ -879,18 +880,18 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="288"/>
-        <source>Vtotal (A1) = %5.2f V</source>
-        <translation>Vtotal (A1) = %5.2f V</translation>
+        <source>Vtotal (A1 = %5.2f V)</source>
+        <translation type="unfinished">Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="289"/>
-        <source>Vr (A2) = %5.2f V</source>
-        <translation>Vr (A2) = %5.2f V</translation>
+        <source>Vr (A2 = %5.2f V)</source>
+        <translation type="unfinished">Vr (A2) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="290"/>
-        <source>Vlc (A2-A1) = %5.2f V</source>
-        <translation>Vlc (A2-A1) = %5.2f V</translation>
+        <source>Vlc (A2-A1 = %5.2f V)</source>
+        <translation type="unfinished">Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="292"/>
@@ -904,13 +905,13 @@ For Driven Pendulum Expt.</source>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="296"/>
-        <source>Vc (A3-A1) = %5.2f V</source>
-        <translation>Vc (A3-A1) = %5.2f V</translation>
+        <source>Vc (A3-A1 = %5.2f V)</source>
+        <translation type="unfinished">Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="297"/>
-        <source>Vl (A2-A3) = %5.2f V</source>
-        <translation>Vl (A2-A3) = %5.2f V</translation>
+        <source>Vl (A2-A3 = %5.2f V)</source>
+        <translation type="unfinished">Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="378"/>
@@ -1068,37 +1069,37 @@ For Driven Pendulum Expt.</source>
         <translation> அமைக்கப்பட்டது </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="635"/>
+        <location filename="../scope.py" line="636"/>
         <source>Output Changed from WG to SQ2</source>
         <translation>வெளிப்பாடு WGல் இருந்து SQ2கு மாறியுள்ளது</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="685"/>
+        <location filename="../scope.py" line="686"/>
         <source>Capacitance too high or short to ground</source>
         <translation>மின்தேக்கம் மிக அதிகமாக அல்லது தரையிணைப்பு உள்ளது</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="690"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="692"/>
+        <location filename="../scope.py" line="693"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="695"/>
+        <location filename="../scope.py" line="696"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="708"/>
+        <location filename="../scope.py" line="709"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="710"/>
+        <location filename="../scope.py" line="711"/>
         <source>No signal</source>
         <translation>சிக்கல் இல்லை</translation>
     </message>
@@ -1749,7 +1750,7 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main.py" line="176"/>
         <source>Resistance by Ohm&apos;s law</source>
-        <translation>ஓம்&apos;ன் விதிப்படி மின்தடை</translation>
+        <translation>ஓம்'ன் விதிப்படி மின்தடை</translation>
     </message>
     <message>
         <location filename="../main.py" line="177"/>
@@ -2082,7 +2083,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="411"/>
+        <location filename="../main.py" line="414"/>
         <source>Enable PopUp Help Window</source>
         <translation></translation>
     </message>
@@ -2335,142 +2336,142 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="491"/>
+        <location filename="../main.py" line="494"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="523"/>
+        <location filename="../main.py" line="526"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="570"/>
+        <location filename="../main.py" line="573"/>
         <source>Device</source>
         <translation>சாதனம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="571"/>
+        <location filename="../main.py" line="574"/>
         <source>Reconnect</source>
         <translation>மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="574"/>
+        <location filename="../main.py" line="577"/>
         <source>Choose Language</source>
         <translation>மொழியை தேர்ந்தெடுக்கவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="607"/>
+        <location filename="../main.py" line="610"/>
         <source>School Expts</source>
         <translation>பள்ளி ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="611"/>
+        <location filename="../main.py" line="614"/>
         <source>Electronics</source>
         <translation>மின்னணுவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="618"/>
+        <location filename="../main.py" line="621"/>
         <source>Electrical</source>
         <translation>மின்னியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="622"/>
+        <location filename="../main.py" line="625"/>
         <source>Sound</source>
         <translation>ஒலியியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="626"/>
+        <location filename="../main.py" line="629"/>
         <source>Mechanics</source>
         <translation>இயங்குவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="630"/>
+        <location filename="../main.py" line="633"/>
         <source>Other Expts</source>
         <translation>மற்ற ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="634"/>
+        <location filename="../main.py" line="637"/>
         <source>I2C Modules</source>
         <translation>I2C தொகுதிகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="638"/>
+        <location filename="../main.py" line="641"/>
         <source>PythonCode</source>
         <translation>பைதான் கோடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="941"/>
+        <location filename="../main.py" line="944"/>
         <source>Oscilloscope</source>
         <translation>அலைக்காட்டி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="572"/>
+        <location filename="../main.py" line="575"/>
         <source>LightBackGround</source>
         <translation>வெளிச்சமிக்க பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="573"/>
+        <location filename="../main.py" line="576"/>
         <source>DarkBackGround</source>
         <translation>இருண்ட பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="597"/>
+        <location filename="../main.py" line="600"/>
         <source>Screenshot</source>
         <translation>ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="857"/>
+        <location filename="../main.py" line="860"/>
         <source>Missing Plot</source>
         <translation>வரைபடத்தை காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="857"/>
+        <location filename="../main.py" line="860"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation>வரைபடத்தை கண்டுபிடிக்க முடியவில்லை. வலது கிளிக் செய்து ஏற்றுமதி செய்ய முயற்சிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="600"/>
+        <location filename="../main.py" line="603"/>
         <source>Credits</source>
         <translation>நன் மதிப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="598"/>
+        <location filename="../main.py" line="601"/>
         <source>Whole Window Alt-s</source>
         <translation>முழு விண்டோ Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="599"/>
+        <location filename="../main.py" line="602"/>
         <source>Graph Only Alt-p</source>
         <translation>வரைபடம் மட்டும் Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="891"/>
+        <location filename="../main.py" line="894"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation>அகலத்தை (px) உள்ளீடவும். உயரம் தானாக அமைக்கப்படும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="593"/>
+        <location filename="../main.py" line="596"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="605"/>
+        <location filename="../main.py" line="608"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="774"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="778"/>
+        <location filename="../main.py" line="781"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="604"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2478,7 +2479,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="316"/>
+        <location filename="../main.py" line="317"/>
         <source>Help: %s</source>
         <translation>உதவி: %s</translation>
     </message>

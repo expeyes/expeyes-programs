@@ -6,7 +6,7 @@ SUBDIRS_INDEP = expeyes-web \
 		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles \
 		bin
 
-LANGS = ${shell ls eyes17/helpFiles| grep '^..$$'}
+LANGS = ${wildcard eyes17/helpFiles| grep '^..$$'}
 THIS_DIR = ${shell pwd}
 
 all: all_arch all_indep all_firmware
@@ -117,13 +117,9 @@ install_indep: all_indep
 	for f in eyes17/server*.html eyes17/*.py ; do \
 	  cp $$f $(DESTDIR)/usr/share/eyes17; \
 	done
-	for d in code examples eyes17 html images lang layout screenshots; do \
+	for d in code examples eyes17 html images lang layouts screenshots; do \
 	  cp -a eyes17/$$d $(DESTDIR)/usr/share/eyes17; \
 	done
-	# layouts for eyes17
-	mkdir -p $(DESTDIR)/usr/share/eyes17/layouts
-	cp eyes17/layouts/*.py eyes17/layouts/*.qss \
-	   $(DESTDIR)/usr/share/eyes17/layouts
 	# help files for eyes17
 	mkdir -p $(DESTDIR)/usr/share/eyes17/helpFiles
 	for d in pics schematics; do \

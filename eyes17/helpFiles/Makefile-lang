@@ -2,8 +2,8 @@
 
 ##### This part is to generate html files in the current directory ###########
 
-RSTSOURCES = $(shell ls _sources/*.rst)
-SOURCES = $(shell ls _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
+RSTSOURCES = $(wildcard _sources/*.rst)
+SOURCES = $(wildcard _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
 HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
 TARGET = $(shell cd _sources && python3 -c 'import conf; print(conf.project)')
 
@@ -23,7 +23,7 @@ all: $(HTML_FILES)
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = _sources
-SOURCES       = $(shell ls $(SOURCEDIR)/*.rst)
+SOURCES       = $(wildcard $(SOURCEDIR)/*.rst)
 BUILDDIR      = build
 
 PAPER = a4
@@ -64,7 +64,8 @@ build/latex/$(TARGET).pdf : cover/coverpage.pdf cover/preface.pdf $(RSTSOURCES)
 	cp cover/*.pdf $(BUILDDIR)/latex
 	@echo modifying the title page
 	cd $(BUILDDIR)/latex; \
-	  sed -i '/\\usepackage{sphinx}/r ../../include.tex' expEYES-17.tex; \
+	  cp expEYES-17.tex expEYES-17.tex.orig; \
+	  sed -i '/\\usepackage{sphinx}.*/r ../../include.tex' expEYES-17.tex; \
 	  sed -i 's/\\sphinxmaketitle/\\includepdf{coverpage.pdf}\n\\includepdf{preface.pdf}/' expEYES-17.tex;
 	@echo launching prettyLaTeX.py
 	python3 prettyLaTeX.py $(BUILDDIR)/latex expEYES-17.tex
@@ -93,6 +94,7 @@ clean:
 	find $(BUILDDIR)/latex -mindepth 1 -maxdepth 1 | grep -v expEYES-17.pdf | \
 	  xargs rm -rf
 	cd cover; rm -f *.aux *.log *~
+	rm -rf $(BUILDDIR)/doctrees *.html
 
 .PHONY: distclean
 distclean: clean

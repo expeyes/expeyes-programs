@@ -285,16 +285,16 @@ class Expt(QWidget):
 		
 		for k in range(self.MAXRES): self.Results[k] = ''
 		
-		self.Results[0] = self.tr('Vtotal (A1 = %5.2f V')) %(self.Amplitude[0])
-		self.Results[1] = self.tr('Vr (A2 = %5.2f V')) %(self.Amplitude[1])
-		self.Results[2] = self.tr('Vlc (A2-A1 = %5.2f V')) %(self.Amplitude[2])
+		self.Results[0] = self.tr('Vtotal (A1 = %5.2f V)') %(self.Amplitude[0])
+		self.Results[1] = self.tr('Vr (A2 = %5.2f V)') %(self.Amplitude[1])
+		self.Results[2] = self.tr('Vlc (A2-A1 = %5.2f V)') %(self.Amplitude[2])
 
 		self.Results[5] = self.tr('F = %5.1f Hz') %(self.Frequency[0])
 		self.Results[6] = self.tr('Phase Diff = %5.1f deg') %phaseDiff
 
 		if self.VLC.isChecked() == True:
-			self.Results[3] = self.tr('Vc (A3-A1 = %5.2f V')) %(self.Amplitude[3])
-			self.Results[4] = self.tr('Vl (A2-A3 = %5.2f V')) %(self.Amplitude[4])
+			self.Results[3] = self.tr('Vc (A3-A1 = %5.2f V)') %(self.Amplitude[3])
+			self.Results[4] = self.tr('Vl (A2-A3 = %5.2f V)') %(self.Amplitude[4])
 		else:
 			self.Results[3] = ''
 			self.Results[4] = ''

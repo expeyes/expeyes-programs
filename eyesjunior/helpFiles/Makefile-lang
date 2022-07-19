@@ -2,7 +2,7 @@
 
 ##### This part is to generate html files in the current directory ###########
 
-SOURCES = $(shell ls _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
+SOURCES = $(wildcard _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
 HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
 
 all: $(HTML_FILES)
@@ -21,7 +21,7 @@ all: $(HTML_FILES)
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
 SOURCEDIR     = _sources
-SOURCES       = $(shell ls $(SOURCEDIR)/*.rst)
+SOURCES       = $(wildcard $(SOURCEDIR)/*.rst)
 BUILDDIR      = build
 
 PAPER = a4

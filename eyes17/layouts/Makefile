@@ -2,8 +2,8 @@ PYUIC?=pyuic6
 PYRCC?=pyrcc5
 PY_VERSION ?= 3
 
-UI_FILES = $(shell ls *.ui)
-RC_FILES = $(shell ls *.qrc)
+UI_FILES = $(wildcard *.ui)
+RC_FILES = $(wildcard *.qrc)
 
 UI_COMPILED = $(patsubst %.ui, ui_%.py, $(UI_FILES))
 RC_COMPILED = $(patsubst %.qrc, %_rc.py, $(RC_FILES))

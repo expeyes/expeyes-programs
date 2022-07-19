@@ -2,9 +2,9 @@
 
 # Makefile to convert svg, jpg and png files to PDF
 
-SVGFILES = $(shell ls *.svg)
-JPGFILES = $(shell ls *.jpg)
-PNGFILES = $(shell ls *.png)
+SVGFILES = $(wildcard *.svg)
+JPGFILES = $(wildcard *.jpg)
+PNGFILES = $(wildcard *.png)
 TARGETS = $(patsubst %.svg, %.pdf, $(SVGFILES)) \
           $(patsubst %.jpg, %.pdf, $(JPGFILES)) \
           $(patsubst %.png, %.pdf, $(PNGFILES))
