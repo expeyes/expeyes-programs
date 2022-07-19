@@ -17,3 +17,6 @@ pdf-done
 
 # cache for generated PDF files
 cache/
+
+# generated HTML files
+*/*.html
