@@ -16,7 +16,7 @@ Pour un condensateur plan, :math:`C=\frac{\epsilon_{0}\epsilon_{r}A}{d}`,
 où A est l'aire des armatures qui se font face, d est la
 distance qui les sépare, :math:`\epsilon_{r}` est la constante
 diélectrique du matériau isolant et :math:`\epsilon_{0}` est la
-permittivité du vide dont la valeur est :math:`8.85418782 × 10^{-12}Fm^{-1}`.
+permittivité du vide dont la valeur est :math:`8.85418782 \times 10^{-12}Fm^{-1}`.
 
 Objectif
 --------
