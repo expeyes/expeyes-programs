@@ -17,6 +17,10 @@ una curva :math:`U(t)`. Comparar las curvas continuas y alternas.
 -  Activar el análisis en A1, para medir el amplitud y la frecuencia.
 -  Activar A2
 
+.. image:: pics/ac-dc-screen.png
+	   :width: 300px
+
+
 **Discusión**
 
 En la curva, si la linea del voltaje no cambia (si está horizontal), es
@@ -24,9 +28,4 @@ corriente continua pura. Si el voltaje cambia con el tiempo, hay un
 componente alterno. Si el voltaje medio se anula, entonces es alterna
 pura. En la segunda curva, el voltaje cambia entre cero y cinco voltios;
 ¿sería corriente alterna, continua, o cualquier otra cosa?
-
-.. image:: pics/ac-dc.png
-	   :width: 300px
-.. image:: pics/sqr-wave.png
-	   :width: 300px
 

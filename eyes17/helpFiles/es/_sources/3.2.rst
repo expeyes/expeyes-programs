@@ -9,18 +9,20 @@ Estudiar el funcionamiento de un diodo de unión PN como rectificador.
 Filtración RC para reducir las variaciones de voltaje (el componente
 alterno).
 
-.. image:: schematics/halfwave.svg
-	   :width: 300px
-.. image:: pics/halfwave.png
-	   :width: 300px
 
 **Procedimiento**
+
+.. image:: schematics/halfwave.svg
+	   :width: 300px
 
 -  Hacer las conexiones y observar las salidas.
 -  Conectar una resistencia de carga de :math:`1~k\Omega`, notar el cambio
    de amplitud.
 -  Conectar un capacitor de :math:`1 \mu F`,  y observar el efecto de filtración.
 -  Probar varios valores de resistencia de carga y de capacitor de filtración.
+   
+.. image:: pics/halfwave-screen.png
+	   :width: 400px
 
 **Discusión**
 

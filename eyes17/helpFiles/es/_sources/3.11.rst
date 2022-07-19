@@ -10,7 +10,10 @@ circuitos integrados de puertas lógicas TTL 7408 y 7432.
 
 **Procedimiento**
 
-.. image:: schematics/logic-gates.svg
+.. image:: schematics/gate-or-diode.svg
+	   :width: 300px
+
+.. image:: schematics/gate-and-ic.svg
 	   :width: 300px
 
 -  Activar A1, A2 y A3. Regular el calibre para A1 y A2 en 8 V 

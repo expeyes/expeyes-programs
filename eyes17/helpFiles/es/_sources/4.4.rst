@@ -9,12 +9,10 @@ Trazar la evolución de la tensión a los terminales de un condensador, cuando
 se cargue aplicando  un paso de voltaje a través de una resistencia. 
 Calcular el valor de la capacidad sobre la base de la curva.
 
+**Procedimiento**
+
 .. image:: schematics/RCtransient.svg
 	   :width: 300px
-.. image:: pics/RCtransient.png
-	   :width: 300px
-
-**Procedimiento**
 
 -  En el menú «Electricidad», seleccionar el sub-menú «Circuito RC en régimen
    transitorio».
@@ -22,6 +20,9 @@ Calcular el valor de la capacidad sobre la base de la curva.
    mostrar los gráficos.
 -  Ajustar la escala horizontal si es necesario, y comenzar nuevamente.
 -  Calcular la constante de tiempo RC.
+
+.. image:: pics/RCtransient-screen.png
+	   :width: 400px
 
 **Discusión**
 

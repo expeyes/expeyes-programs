@@ -23,20 +23,8 @@ la frecuencia se divide por dos. La señal de salida es una onda cuadrada simét
 incluso si la señal de entrada tiene un ciclo de trabajo diferente. 
 El alto voltaje de salida de un TTL es cercano a 4V solamente.
 
-+-------------------------------------------------------------------------+
-|.. image:: pics/clock-divider.png                                        |
-|	   :width: 300px                                                  |
-|.. image:: pics/clock-divider2.png                                       |
-|	   :width: 300px                                                  |
-+-------------------------------------------------------------------------+
-| Figura 3.1 Un circuito divisor de reloj, utilizando una báscula D. Se   |
-| muestran las salidas para dos tipos diferentes de señal de entrada.     |
-+-------------------------------------------------------------------------+
-
-
-
-
-
+.. image:: pics/clock-divider-screen-2.png
+	   :width: 400px
 
 
 

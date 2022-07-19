@@ -9,7 +9,7 @@ Calcular la velocidad del sonido midiendo la variación de presión según
 la distancia.
 
 El sonido viaja como una serie de compresiones y expansiones. La figura
-`5.1↓ <#fig:Sound-waves>`__\ (a) muestra las regiones de alta y baja 
+`5.2↓ <#fig:Sound-waves>`__\ (a) muestra las regiones de alta y baja 
 presión a lo largo de la dirección de propagación, junto con la salida de 
 un sensor de presión en las posiciones correspondientes.
 
@@ -22,12 +22,12 @@ la longitud de onda viene dada por :math:`\lambda = (360 \times \Delta D)/X`. Se
 obtiene la velocidad del sonido multiplicando esto por la frecuencia.
 
 +----------------------------------------------------------------------------+
-|.. image:: pics/sound_waves.png                                             |
+|.. image:: pics/sound-waves.png                                             |
 |	   :width: 300px                                                     |
 |.. image:: schematics/sound-velocity.svg                                    |
 |	   :width: 300px                                                     |
 +----------------------------------------------------------------------------+
-|Figura 5.1 (a) compresiones y expansiones a lo largo de la dirección de     |
+|Figura 5.2 (a) compresiones y expansiones a lo largo de la dirección de     |
 |la propagación del sonido. (b) diagrama de montaje                          |
 +----------------------------------------------------------------------------+
 

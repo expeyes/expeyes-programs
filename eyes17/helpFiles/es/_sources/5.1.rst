@@ -10,14 +10,15 @@ la frecuencia y midiendo la amplitud en la salida del micrófono.
 
 .. image:: schematics/sound-capture.svg
 	   :width: 300px
-.. image:: pics/piezo-freq-resp.png
-	   :width: 300px
 
 **Procedimiento**
 
 -  Conectar y fijar el timbre y el micrófono cara a cara 
 -  Hacer clic en el botón INICIO
 
+.. image:: pics/piezo-freq-resp-screen.png
+	   :width: 400px
+	   
 **Discusión**
 
 El gráfico de amplitud vs. frecuencia se muestra en la figura. 

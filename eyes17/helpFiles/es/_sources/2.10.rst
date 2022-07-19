@@ -25,6 +25,6 @@ La señal de antena del sector está mostrada abajo: hay cinco ciclos en
 voltaje alterno de la red eléctrica? ¿Por qué cambia el valor del
 voltaje cuando se toca el cable conectado en A3 con el mano?
 
-.. image:: pics/pickup.png
+.. image:: pics/line-pickup-screen.png
 	   :width: 300px
 

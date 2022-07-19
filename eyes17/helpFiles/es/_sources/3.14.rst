@@ -8,12 +8,11 @@ Característica de la salida (CE) de un transistor
 Trace la curva característica de salida de un transistor.  El
 colector está conectado a PV1 a través de una resistencia de :math:`1~k\Omega`.
 
-.. image:: schematics/transistor_out.svg
-	   :width: 300px
-.. image:: pics/transistor-ce.png
-	   :width: 300px
 
 **Procedimiento**
+
+.. image:: schematics/npn-ce-char.svg
+	   :width: 300px
 
 -  Ajustar el voltaje básico a 1 V y COMENZAR.
 -  Repetir para varios valores de la corriente básica.

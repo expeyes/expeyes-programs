@@ -8,15 +8,17 @@ Defasaje utilizando un diodo de unión PN
 Demostrar el cambio de una señal alterna en diferentes niveles,
 utilizando un diodo de unión PN
 
+**Procedimiento**
+
 .. image:: schematics/clamping.svg
 	   :width: 300px
-.. image:: pics/clamping.png
-	   :width: 300px
 
-**Procedimiento**
 
 -  Hacer las conexiones y observar las salidas.
 -  Cambiar PV1 y observar el cambio en las salidas.
+
+.. image:: pics/clamping-screen.png
+	   :width: 300px
 
 **Discusión**
 

@@ -295,7 +295,7 @@ un hilo y tirar :
 
 El resultado de este código se da a continuación.
 
-.. image:: pics/sine.png
+.. image:: pics/sine-mpl-screen.png
 	   :width: 400px
 
 
@@ -321,9 +321,7 @@ Conectar WG en A1, y un diodo entre A1 y A2. Iniciar el siguiente código :
 
 El resultado de este código se da a continuación.
 
-.. image:: pics/halfwave.png
-	   :width: 400px
-.. image:: pics/capture4.png
+.. image:: pics/halfwave-mpl-screen.png
 	   :width: 400px
 
 capture4(nMuestras, intervaloTiempo)
@@ -388,11 +386,6 @@ inicia el código siguiente. El resultado se muestra a continuación.
    plot(x,y)
    show()
 
-.. image:: pics/loadEquation.png
-	   :width: 400px
-.. image:: pics/loadTable.png
-	   :width: 400px
-
 
 load_table(tabla)
 """""""""""""""""
@@ -415,3 +408,8 @@ El resultado debido a esta tabla se muestra arriba.
    show()
 
 
+.. image:: pics/load-equation-mpl-screen.png
+	   :width: 400px
+	   
+.. image:: pics/load-table-mpl-screen.png
+	   :width: 400px

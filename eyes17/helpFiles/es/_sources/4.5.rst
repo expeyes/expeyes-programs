@@ -10,11 +10,6 @@ paso de voltaje a una resistencia y un bobinado en serie.
 Al medir el voltaje en función del tiempo a través del devanado, es posible
 calcular su inductancia
 
-.. image:: schematics/RLtransient.svg
-	   :width: 300px
-.. image:: pics/RLtransient.png
-	   :width: 300px
-
 En el circuito RL, :math:`U = RI + L(dI/dt)` , la ecuaciòn
 que se resuelve en
 :math:`I = I_0 \times e^{  (R/L)t}`. El
@@ -24,11 +19,17 @@ incluido en los cálculos, :math:`R = R_{ext} + R*_L`.
 
 **Procedimiento**
 
+.. image:: schematics/RLtransient.svg
+	   :width: 300px
+	   
 -  El devanado es el carrete de 3000 vueltas.
 -  Hacer clic en los botones * Escalón 0-> 5V * y * Escalón 5-> 0V * para mostrar gráficos.
 -  Ajustar la escala horizontal, si es necesario, y comenzar nuevamente.
 -  Calcular el valor de la inductancia.
 -  Insertar un núcleo de hierro en el bobinado y comenzar nuevamente.
+
+.. image:: pics/RLtransient-screen.png
+	   :width: 400px
 
 **Discusión**
 

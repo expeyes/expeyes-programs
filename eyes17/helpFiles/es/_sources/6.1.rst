@@ -17,8 +17,8 @@ como lo muestra la figura.
 
 .. image:: schematics/rod-pendulum.svg
 	   :width: 300px
-.. image:: pics/light-barrier-photo.jpg
-	   :width: 300px
+.. image:: pics/rod-pend-LB.jpg
+	   :width: 200px
 
 **Procedimiento**
 

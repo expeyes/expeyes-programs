@@ -7,7 +7,7 @@ Integrado de amplificador operacional
 
 Conectar un integrado de amplificador operacional y probarlo.
 
-.. image:: schematics/opamp-int.svg
+.. image:: schematics/opamp-inv.svg
 	   :width: 300px
 
 **Procedimiento**

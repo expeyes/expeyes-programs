@@ -11,8 +11,6 @@ por WG y :math:`\overline{WG}`.
 
 .. image:: schematics/fullwave.svg
 	   :width: 300px
-.. image:: pics/fullwave.png
-	   :width: 300px
 
 **Procedimiento**
 
@@ -20,6 +18,9 @@ por WG y :math:`\overline{WG}`.
 -  Activar A1, A2 y A3
 -  Fijar WG en 200 Hz y ajustar la base de tiempo para ver 4 o 5
    ciclos.
+   
+.. image:: pics/fullwave-screen.png
+	   :width: 400px
 
 **Discusión**
 

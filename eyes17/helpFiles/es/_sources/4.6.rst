@@ -12,8 +12,6 @@ transiciones.
 
 .. image:: schematics/RCintegration.svg
 	   :width: 300px
-.. image:: schematics/RCsteadystate.svg
-	   :width: 300px
 
 **Procedimiento**
 
@@ -30,7 +28,3 @@ Probar esto para otras formas de señales, por ejemplo, onda cuadrada.
 Si integramos una señal cuadrada se supone que debemos obtener una señal
 triangular.
 
-.. image:: pics/RCintegration.png
-	   :width: 300px
-.. image:: pics/RCdifferentiation.png
-	   :width: 300px

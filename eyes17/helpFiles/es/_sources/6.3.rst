@@ -7,16 +7,16 @@ Resonancia de un péndulo forzado
 
 Demostrar la resonancia de un péndulo forzado.
 
-.. image:: schematics/driven-pendulum.svg
-	   :width: 300px
-.. image:: pics/resonance-pendulum.jpg
-	   :width: 300px
-
 **Procedimiento**
 
 Realizar un péndulo con dos imanes de botón y un trozo 
 de papel. colgarlo y colocar la bobina de 3000 vueltas cerca, como se muestra 
 en la figura.
+
+.. image:: schematics/driven-pendulum.svg
+	   :width: 400px
+.. image:: pics/driven-pendulum-photo.jpg
+	   :width: 300px
 
 -  Conectar la bobina entre SQ1 y GND 
 -  Calcular la frecuencia de resonancia por la longitud del péndulo 
