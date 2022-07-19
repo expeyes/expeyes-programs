@@ -38,6 +38,7 @@ userManual: $(LANGUAGES_PDFDONE) $(LANGUAGES_EPUBDONE)
 
 
 clean:
+	rm -f $(LANGUAGES_PDFDONE) $(LANGUAGES_EPUBDONE)
 	rm -rf cache/
 	for l in $(LANGUAGES); do \
 	  rm -f $$l/pdf-done $$l/html-done $$l/epub-done; \
