@@ -35,10 +35,14 @@ override_dh_auto_clean:
 DocDir = $(CURDIR)/debian/eyes17/usr/share/expeyes/doc
 DocDirSource = $(CURDIR)/ExpEYES17/UserManual
 
-override_dh_install:
+override_dh_auto_install-indep:
 	make install_indep DESTDIR=$(CURDIR)/debian/tmp
-	dh_install
+	dh_auto_install -i
 	make -C po install DESTDIR=$(CURDIR)/debian/expeyes
 	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
 	# prevents lintian error about PYCACHE
 	find $(CURDIR)/debian/ -type d -name __pycache__| xargs rm -rf;
+
+override_dh_auto_install-arch:
+	make install_arch DESTDIR=$(CURDIR)/debian/tmp
+	dh_auto_install -a
