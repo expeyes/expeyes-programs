@@ -3,8 +3,8 @@
 ##### This part is to generate html files in the current directory ###########
 
 RSTSOURCES = $(wildcard _sources/*.rst)
-SOURCES = $(wildcard _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
-HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
+SOURCES_ = $(shell ls _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
+HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES_))
 TARGET = $(shell cd _sources && python3 -c 'import conf; print(conf.project)')
 
 all: $(HTML_FILES)
