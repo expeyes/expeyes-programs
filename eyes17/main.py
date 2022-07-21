@@ -1,5 +1,6 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser, csv
+import logging
 from datetime import datetime
 from utils import cnf
 from language import languages
@@ -521,7 +522,7 @@ class MainWindow(QMainWindow,QScreen):
 			self.title = e[0]
 			self.showHelp()
 		except Exception as err:
-			print("Exception:", err)	
+			logging.exception(err)	
 			self.expName = ''
 			self.setWindowTitle(self.tr('Failed to load %s') %e[0])
 		return
