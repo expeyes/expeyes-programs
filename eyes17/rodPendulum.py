@@ -90,10 +90,10 @@ class Expt(QWidget):
 
 		H = QHBoxLayout()
 		self.Results = QTextEdit()	
-		self.Results.setMaximumWidth(self.RPWIDTH/2-5)
+		self.Results.setMaximumWidth(self.RPWIDTH//2-5)
 		H.addWidget(self.Results)
 		self.gResults = QTextEdit()	
-		self.gResults.setMaximumWidth(self.RPWIDTH/2-5)
+		self.gResults.setMaximumWidth(self.RPWIDTH//2-5)
 		H.addWidget(self.gResults)
 		right.addLayout(H)
 	
