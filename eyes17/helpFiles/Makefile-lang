@@ -84,8 +84,17 @@ epub: build/epub/$(TARGET).epub
 
 build/epub/$(TARGET).epub: $(RSTSOURCES)
 	$(SPHINXBUILD) -b epub "$(SOURCEDIR)" $(ALLSPHINXOPTS) $(BUILDDIR)/epub
-	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	fname=$$(basename $$(ls $(BUILDDIR)/epub/*.epub)| sed 's/.epub//'); \
+	if [ -n "$$fname" ]; then \
+	  gm convert -density 300x300 $(BUILDDIR)/../cover/coverpage.pdf \
+	    $(BUILDDIR)/epub/coverpage.jpg; \
+	  ebook-polish --cover $(BUILDDIR)/epub/coverpage.jpg \
+	    $(BUILDDIR)/epub/$$fname.epub && \
+	    mv $(BUILDDIR)/epub/$${fname}_polished.epub \
+	    $(BUILDDIR)/epub/$$fname.epub; \
+	  echo; \
+	  echo "Build finished. The epub file is in $(BUILDDIR)/epub."; \
+	fi
 
 .PHONY: clean
 clean:
