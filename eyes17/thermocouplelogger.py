@@ -89,7 +89,7 @@ class Expt(QWidget):
 
 		for ch in range(self.MAXCHAN):
 			H = QHBoxLayout()
-			H.setAlignment(Qt.Alignment(0x1)) # Qt.AlignLeft
+			H.setAlignment(Qt.AlignmentFlag(0x1)) # Qt.AlignLeft
 			self.chanSelCB[ch] = QCheckBox()
 			H.addWidget(self.chanSelCB[ch])
 			l = QLabel(text='<font color="%s">%s' %(self.htmlColors[ch],self.sources[ch]))

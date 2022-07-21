@@ -95,7 +95,7 @@ class Expt(QWidget):
 
 		for ch in range(self.MAXCHAN):
 			H = QHBoxLayout()
-			H.setAlignment(Qt.Alignment(0x1)) # Qt.AlignLeft
+			H.setAlignment(Qt.AlignmentFlag(0x1)) # Qt.AlignLeft
 			self.chanSelCB[ch] = QCheckBox()
 			#self.chanSelCB[ch].stateChanged.connect(partial (self.select_channel,ch))
 			H.addWidget(self.chanSelCB[ch])
