@@ -157,14 +157,14 @@ class PythonHighlighter (QSyntaxHighlighter):
         """
         # Do other syntax formatting
         for expression, nth, format in self.rules:
-            index = expression.indexIn(text, 0)
+            index = expression.match(text, 0).capturedStart()
 
             while index >= 0:
                 # We actually want the index of the nth match
                 index = expression.pos(nth)
                 length = len(expression.cap(nth))
                 self.setFormat(index, length, format)
-                index = expression.indexIn(text, index + length)
+                index = expression.match(text, index + length).capturedStart()
 
         self.setCurrentBlockState(0)
 
@@ -187,14 +187,14 @@ class PythonHighlighter (QSyntaxHighlighter):
             add = 0
         # Otherwise, look for the delimiter on this line
         else:
-            start = delimiter.indexIn(text)
+            start = delimiter.match(text).capturedStart()
             # Move past this match
             add = delimiter.matchedLength()
 
         # As long as there's a delimiter match on this line...
         while start >= 0:
             # Look for the ending delimiter
-            end = delimiter.indexIn(text, start + add)
+            end = delimiter.match(text, start + add).capturedStart()
             # Ending delimiter on this line?
             if end >= add:
                 length = end - start + add + delimiter.matchedLength()
@@ -206,7 +206,7 @@ class PythonHighlighter (QSyntaxHighlighter):
             # Apply formatting
             self.setFormat(start, length, style)
             # Look for the next match
-            start = delimiter.indexIn(text, start + length)
+            start = delimiter.match(text, start + length).capturedStart()
 
         # Return True if still inside a multi-line string, False otherwise
         if self.currentBlockState() == in_state:
