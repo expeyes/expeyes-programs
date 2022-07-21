@@ -163,11 +163,11 @@ def makeFitTraceColors():
 	if forprint == True:
 		pg.setConfigOption('background', (227, 241, 209))
 		for p in penCols2:
-			x=pg.mkPen(p, width=1, style=Qt.DotLine)
+			x=pg.mkPen(p, width=1, style=Qt.PenStyle(3)) #Qt.DotLine
 			pens.append(x)
 	else:
 		for p in penCols:
-			x=pg.mkPen(p, width=1, style=Qt.DotLine)
+			x=pg.mkPen(p, width=1, style=Qt.PenStyle(3)) #Qt.DotLine
 			pens.append(x)
 	return pens	
 		
