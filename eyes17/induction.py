@@ -58,7 +58,7 @@ class Expt(QWidget):
 		right.setSpacing(self.RPGAP)
 
 		H = QHBoxLayout()
-		H.setAlignment(Qt.AlignLeft)
+		H.setAlignment(Qt.Alignment(0x1)) # Qt.AlignLeft
 		l = QLabel(text=self.tr('Select Range of A1'))
 		l.setMaximumWidth(150)
 		H.addWidget(l)
