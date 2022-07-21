@@ -90,7 +90,7 @@ class Expt(QWidget):
 
 
 		right = QVBoxLayout()				# right side vertical layout
-		right.setAlignment(Qt.AlignTop)
+		right.setAlignment(0x0020) #Qt.AlignTop
 		right.setSpacing(self.RPGAP)				
 
 		H = QHBoxLayout()

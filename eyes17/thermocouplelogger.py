@@ -62,7 +62,7 @@ class Expt(QWidget):
 			self.traces[ch] = self.pwin.plot([0,0],[0,0], pen = self.traceCols[ch])
 	
 		right = QVBoxLayout()							# right side vertical layout
-		right.setAlignment(Qt.AlignTop)
+		right.setAlignment(0x0020) #Qt.AlignTop
 		right.setSpacing(self.RPGAP)
 	
 		H = QHBoxLayout()
