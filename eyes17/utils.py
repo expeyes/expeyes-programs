@@ -232,7 +232,7 @@ class lineEdit(QLineEdit):
 	def __init__(self, width, val, maxsize, cback):
 		QLineEdit.__init__(self)
 		self.setFixedWidth(width)
-		self.setText(val)
+		self.setText(f"{val}")
 		#self.setValidator(QDoubleValidator(0.9,9.99,2))
 		if cback != None: self.textChanged.connect(cback)
 		self.setMaxLength(maxsize)
