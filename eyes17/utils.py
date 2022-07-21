@@ -206,7 +206,7 @@ def makeHtmlColors():
 
 class slider(QSlider):
 	def __init__(self, minval, maxval, setval, maxw, cback):
-		QSlider.__init__(self,Qt.Horizontal)
+		QSlider.__init__(self,Qt.Orientation(0x1)) #Qt.Horizontal
 		self.setMaximumWidth(maxw)
 		self.setMinimum(minval)
 		self.setMaximum(maxval)	

@@ -436,7 +436,7 @@ class DIOCONTROL(QtWidgets.QDialog,ui_dio_control.Ui_Dialog):
 
 		for a in sensor.get('write',[]): #Load configuration menus
 			l = QtWidgets.QSlider(self); l.setMinimum(a[1]); l.setMaximum(a[2]);l.setValue(a[3]);
-			l.setOrientation(QtCore.Qt.Horizontal)
+			l.setOrientation(QtCore.Qt.Orientation(0x1)) #Qt.Horizontal
 			l.valueChanged['int'].connect(functools.partial(self.write,l))
 			self.configLayout.addWidget(l) ; self.widgets.append(l)
 			
@@ -477,7 +477,7 @@ class DIOROBOT(QtWidgets.QDialog,ui_dio_robot.Ui_Dialog):
 
 		for a in sensor.get('write',[]): #Load configuration menus
 			l = QtWidgets.QSlider(self); l.setMinimum(a[1]); l.setMaximum(a[2]);l.setValue(a[3]);
-			l.setOrientation(QtCore.Qt.Horizontal)
+			l.setOrientation(QtCore.Qt.Orientation(0x1)) #Qt.Horizontal
 			l.valueChanged['int'].connect(functools.partial(self.write,l))
 			self.configLayout.addWidget(l) ; self.widgets.append(l)
 			
