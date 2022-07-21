@@ -62,7 +62,7 @@ class Expt(QWidget):
 		#self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
 		right = QVBoxLayout()							# right side vertical layout
-		right.setAlignment(0x0020) #Qt.AlignTop
+		right.setAlignment(Qt.AlignmentFlag(0x0020)) #Qt.AlignTop
 		right.setSpacing(self.RPGAP)
 					
 		H = QHBoxLayout()
