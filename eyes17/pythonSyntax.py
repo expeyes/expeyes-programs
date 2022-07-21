@@ -189,7 +189,7 @@ class PythonHighlighter (QSyntaxHighlighter):
         else:
             start = delimiter.match(text).capturedStart()
             # Move past this match
-            add = delimiter.matchedLength()
+            add = delimiter.capturedLength()
 
         # As long as there's a delimiter match on this line...
         while start >= 0:
@@ -197,7 +197,7 @@ class PythonHighlighter (QSyntaxHighlighter):
             end = delimiter.match(text, start + add).capturedStart()
             # Ending delimiter on this line?
             if end >= add:
-                length = end - start + add + delimiter.matchedLength()
+                length = end - start + add + delimiter.capturedLength()
                 self.setCurrentBlockState(0)
             # No; multi-line string
             else:
