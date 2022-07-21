@@ -90,17 +90,23 @@ install_arch: all_arch
 	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
 DOCDIR_17 = $(DESTDIR)/usr/share/eyes17/doc
+DEBIAN_DOCDIR = $(DESTDIR)/usr/share/doc/eyes17
 
 install_indep: all_indep
 	for d in $(SUBDIRS_INDEP); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
 	# copy eyes17 docs' locations expEYES-17.{pdf|epub} to eyes17.{pdf|epub}
+	mkdir -p $(DOCDIR_17)
 	for lang in en fr es ml; do \
-	  mkdir -p $(DOCDIR_17)/$${lang}; \
-	  for ext in pdf epub; do \
-	    cp $$(find eyes17/helpFiles/$${lang} -name expEYES-17.$${ext}) \
-	       $(DOCDIR_17)/$${lang}/eyes17.$${ext}; \
+	  mkdir -p $(DEBIAN_DOCDIR)/$${lang}; \
+	  ln -s ../../doc/eyes17/$${lang} $(DOCDIR_17); \
+	  install -m 644 \
+	       eyes17/helpFiles/$${lang}/build/latex/expEYES-17.pdf \
+	       $(DEBIAN_DOCDIR)/$${lang}/eyes17.pdf; \
+	  install -m 644 \
+	       eyes17/helpFiles/$${lang}/build/epub/expEYES-17.epub \
+	       $(DEBIAN_DOCDIR)/$${lang}/eyes17.epub; \
 	  done; \
 	done
 	# fix a few permission
@@ -120,7 +126,7 @@ install_indep: all_indep
 	for d in code examples eyes17 html images lang layouts screenshots; do \
 	  cp -a eyes17/$$d $(DESTDIR)/usr/share/eyes17; \
 	done
-	# help files for eyes17
+	# help files for eyes17s help popup
 	mkdir -p $(DESTDIR)/usr/share/eyes17/helpFiles
 	for d in pics schematics; do \
 	  cp -a eyes17/helpFiles/$$d $(DESTDIR)/usr/share/eyes17/helpFiles; \
@@ -150,6 +156,8 @@ clean:
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || $(MAKE) -C $$d clean; \
 	done
 	[ ! -d clib ] || (cd clib/expeyes-clib && sh clean-all.sh)
+	# fix compiles Python files created by the clean scripts above
+	find . -name __pycache__ | xargs rm -rf
 
 
 .PHONY: all all_arch all_indep all_firmware install install_arch install_indep clean clean_firmware
