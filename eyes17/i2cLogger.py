@@ -529,11 +529,11 @@ class Expt(QtWidgets.QWidget):
 		QtWidgets.QWidget.__init__(self)
 		self.p = device
 		device.set_pv1(2)
-		self.I2C = device.I2C		#connection to the device hardware 	
+		self.I2C = device.I2C	        #connection to the device hardware
 		self.sensorList = []
 		self.logger = LOGGER(self.I2C)
-		right = QtWidgets.QVBoxLayout()							# right side vertical layout
-		right.setAlignment(QtCore.Qt.AlignTop)
+		right = QtWidgets.QVBoxLayout() # right side vertical layout
+		right.setAlignment(QtCore.Qt.AlignmentFlag(0x0020)) # Qt.AlignTop
 		right.setSpacing(4)
 	
 		b = QtWidgets.QPushButton(self.tr("Scan"))
