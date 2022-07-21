@@ -107,7 +107,6 @@ install_indep: all_indep
 	  install -m 644 \
 	       eyes17/helpFiles/$${lang}/build/epub/expEYES-17.epub \
 	       $(DEBIAN_DOCDIR)/$${lang}/eyes17.epub; \
-	  done; \
 	done
 	# fix a few permission
 	find $(DESTDIR) -name "*.pdf" -exec chmod -x {} \;
