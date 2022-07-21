@@ -54,7 +54,7 @@ class Expt(QtWidgets.QMainWindow, ui_newtonslaws.Ui_MainWindow):
 		self.shortcutActions={}
 		self.shortcuts={" ":self.toggleRecord}
 		for a in self.shortcuts:
-			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
+			shortcut = QtGui.QShortcut(QtGui.QKeySequence(a), self)
 			shortcut.activated.connect(self.shortcuts[a])
 			self.shortcutActions[a] = shortcut
 

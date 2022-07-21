@@ -55,7 +55,7 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 		self.shortcutActions={}
 		self.shortcuts={" ":self.setRecord,'x':self.setX,'y':self.setY}
 		for a in self.shortcuts:
-			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
+			shortcut = QtGui.QShortcut(QtGui.QKeySequence(a), self)
 			shortcut.activated.connect(self.shortcuts[a])
 			self.shortcutActions[a] = shortcut
 
