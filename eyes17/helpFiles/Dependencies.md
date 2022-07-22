@@ -1,7 +1,7 @@
 # Dependencies to build user manuals #
 
 Here is the list of dependencies which allowed to build the user
-manuals, for a Debian Sid chroot, in March 2020.
+manuals, for a Debian Sid chroot, in July 2022.
 
 ``` shell
 # a short script to build an atualized table of dependencies
