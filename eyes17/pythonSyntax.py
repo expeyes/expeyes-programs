@@ -155,6 +155,11 @@ class PythonHighlighter (QSyntaxHighlighter):
     def highlightBlock(self, text):
         """Apply syntax highlighting to the given block of text.
         """
+        # Do multi-line strings
+        in_multiline = self.match_multiline(text, *self.tri_single)
+        if not in_multiline:
+            in_multiline = self.match_multiline(text, *self.tri_double)
+
         # Do other syntax formatting
         for expression, nth, format in self.rules:
             gm = expression.globalMatch(text, 0)
@@ -163,11 +168,6 @@ class PythonHighlighter (QSyntaxHighlighter):
                 self.setFormat(m.capturedStart(), m.capturedLength(), format)
                 
         self.setCurrentBlockState(0)
-
-        # Do multi-line strings
-        in_multiline = self.match_multiline(text, *self.tri_single)
-        if not in_multiline:
-            in_multiline = self.match_multiline(text, *self.tri_double)
 
 
     def match_multiline(self, text, delimiter, in_state, style):
