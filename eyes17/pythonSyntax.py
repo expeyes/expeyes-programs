@@ -42,7 +42,6 @@ POSSIBILITY OF SUCH DAMAGE.
 import sys
 
 from QtVersion import *
-from PyQt6.QtCore import QRegularExpression
 
 def format(color, style=''):
     """Return a QTextCharFormat with the given attributes.
@@ -110,8 +109,8 @@ class PythonHighlighter (QSyntaxHighlighter):
         # Multi-line strings (expression, flag, style)
         # FIXME: The triple-quotes in these two lines will mess up the
         # syntax highlighting from this point onward
-        self.tri_single = (QRegularExpression("'''"), 1, STYLES['string2'])
-        self.tri_double = (QRegularExpression('"""'), 2, STYLES['string2'])
+        self.tri_single = (QRegExp("'''"), 1, STYLES['string2'])
+        self.tri_double = (QRegExp('"""'), 2, STYLES['string2'])
 
         rules = []
 
@@ -147,8 +146,8 @@ class PythonHighlighter (QSyntaxHighlighter):
             (r'\b[+-]?[0-9]+(?:\.[0-9]+)?(?:[eE][+-]?[0-9]+)?\b', 0, STYLES['numbers']),
         ]
 
-        # Build a QRegularExpression for each pattern
-        self.rules = [(QRegularExpression(pat), index, fmt)
+        # Build a QRegExp for each pattern
+        self.rules = [(QRegExp(pat), index, fmt)
             for (pat, index, fmt) in rules]
 
 
@@ -157,14 +156,14 @@ class PythonHighlighter (QSyntaxHighlighter):
         """
         # Do other syntax formatting
         for expression, nth, format in self.rules:
-            index = expression.match(text, 0).capturedStart()
+            index = expression.indexIn(text, 0)
 
             while index >= 0:
                 # We actually want the index of the nth match
                 index = expression.pos(nth)
                 length = len(expression.cap(nth))
                 self.setFormat(index, length, format)
-                index = expression.match(text, index + length).capturedStart()
+                index = expression.indexIn(text, index + length)
 
         self.setCurrentBlockState(0)
 
@@ -176,7 +175,7 @@ class PythonHighlighter (QSyntaxHighlighter):
 
     def match_multiline(self, text, delimiter, in_state, style):
         """Do highlighting of multi-line strings. ``delimiter`` should be a
-        ``QRegularExpression`` for triple-single-quotes or triple-double-quotes, and
+        ``QRegExp`` for triple-single-quotes or triple-double-quotes, and
         ``in_state`` should be a unique integer to represent the corresponding
         state changes when inside those strings. Returns True if we're still
         inside a multi-line string when this function is finished.
@@ -187,17 +186,17 @@ class PythonHighlighter (QSyntaxHighlighter):
             add = 0
         # Otherwise, look for the delimiter on this line
         else:
-            start = delimiter.match(text).capturedStart()
+            start = delimiter.indexIn(text)
             # Move past this match
-            add = delimiter.capturedLength()
+            add = delimiter.matchedLength()
 
         # As long as there's a delimiter match on this line...
         while start >= 0:
             # Look for the ending delimiter
-            end = delimiter.match(text, start + add).capturedStart()
+            end = delimiter.indexIn(text, start + add)
             # Ending delimiter on this line?
             if end >= add:
-                length = end - start + add + delimiter.capturedLength()
+                length = end - start + add + delimiter.matchedLength()
                 self.setCurrentBlockState(0)
             # No; multi-line string
             else:
@@ -206,7 +205,7 @@ class PythonHighlighter (QSyntaxHighlighter):
             # Apply formatting
             self.setFormat(start, length, style)
             # Look for the next match
-            start = delimiter.match(text, start + length).capturedStart()
+            start = delimiter.indexIn(text, start + length)
 
         # Return True if still inside a multi-line string, False otherwise
         if self.currentBlockState() == in_state:
