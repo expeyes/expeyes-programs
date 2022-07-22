@@ -32,7 +32,7 @@ prepareCache:
 	if [ -f "$(IMAGECACHE)/$${md5}.$@" ]; then \
 	  cp "$(IMAGECACHE)/$${md5}.$@" $@; \
 	else \
-	  img2pdf $< --pagesize 960x720 -o $@; \
+	  gm convert $< $@; \
 	  cp $@ "$(IMAGECACHE)/$${md5}.$@"; \
 	fi
 
