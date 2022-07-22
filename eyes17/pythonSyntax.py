@@ -157,15 +157,11 @@ class PythonHighlighter (QSyntaxHighlighter):
         """
         # Do other syntax formatting
         for expression, nth, format in self.rules:
-            index = expression.indexIn(text, 0)
-
-            while index >= 0:
-                # We actually want the index of the nth match
-                index = expression.pos(nth)
-                length = len(expression.cap(nth))
-                self.setFormat(index, length, format)
-                index = expression.indexIn(text, index + length)
-
+            gm = expression.globalMatch(text, 0)
+            while gm.hasNext():
+                m = gm.next()
+                self.setFormat(m.capturedStart(), m.capturedLength(), format)
+                
         self.setCurrentBlockState(0)
 
         # Do multi-line strings
