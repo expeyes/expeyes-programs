@@ -5,7 +5,7 @@ manuals, for a Debian Sid chroot, in July 2022.
 
 ``` shell
 # a short script to build an atualized table of dependencies
-for p in dvipng fonts-smc-rachana graphicsmagick img2pdf latexmk librsvg2-bin locales python3-all python3-sphinx tex-gyre texlive-binaries texlive-fonts-extra texlive-fonts-extra-links texlive-fonts-recommended texlive-lang-french texlive-lang-spanish texlive-latex-extra texlive-xetex; do
+for p in dvipng fonts-smc-rachana graphicsmagick latexmk librsvg2-bin locales python3-all python3-sphinx tex-gyre texlive-binaries texlive-fonts-extra texlive-fonts-extra-links texlive-fonts-recommended texlive-lang-french texlive-lang-spanish texlive-latex-extra texlive-xetex; do
     dpkg-query -W --showformat '| ${Package} | ${Version} | ${Architecture} | ' $p ;
     dpkg-query -W --showformat '${Description}' $p| head -n1 | tr -d "\n";
     echo " |";
@@ -17,7 +17,6 @@ done
 | dvipng | 1.15-1.1+b1 | amd64 | convert DVI files to PNG graphics |
 | fonts-smc-rachana | 7.0.2-1 | all | Rachana malayalam font |
 | graphicsmagick | 1.4+really1.3.36+hg16481-2 | amd64 | collection of image processing tools |
-| img2pdf | 0.4.4-2 | all | Lossless conversion of raster images to PDF |
 | latexmk | 1:4.77-1 | all | Perl script for running LaTeX the correct number of times |
 | librsvg2-bin | 2.54.4+dfsg-1 | amd64 | command-line utility to convert SVG files |
 | locales | 2.33-7 | all | GNU C Library: National Language (locale) data [support] |
