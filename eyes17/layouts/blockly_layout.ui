@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>747</width>
+    <height>660</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QFrame" name="webFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="webLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+      </layout>
+     </widget>
+     <widget class="QPlainTextEdit" name="editor">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QFrame" name="frame_3">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="filenameLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="MinimumExpanding" vsizetype="Maximum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>9</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFontComboBox" name="fontComboBox">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../kuttypy-gui/utilities/templates/resplus.qrc">
+          <normaloff>:/control/plus.svg</normaloff>:/control/plus.svg</iconset>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../kuttypy-gui/utilities/templates/resplus.qrc">
+          <normaloff>:/control/minus.svg</normaloff>:/control/minus.svg</iconset>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../kuttypy-gui/utilities/templates/resplus.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>fontComboBox</sender>
+   <signal>currentTextChanged(QString)</signal>
+   <receiver>Form</receiver>
+   <slot>setFont(QString)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>609</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>605</x>
+     <y>657</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_3</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>fontPlus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>685</x>
+     <y>620</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>687</x>
+     <y>653</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>fontMinus()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>715</x>
+     <y>608</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>749</x>
+     <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>show_fft()</slot>
+  <slot>save_data()</slot>
+  <slot>select_wave(int)</slot>
+  <slot>select_wgain(int)</slot>
+  <slot>awg_slider(int)</slot>
+  <slot>awg_text()</slot>
+  <slot>sq1_dc()</slot>
+  <slot>sq1_slider(int)</slot>
+  <slot>sq1_text()</slot>
+  <slot>pv1_slider(int)</slot>
+  <slot>pv2_slider(int)</slot>
+  <slot>pv1_text()</slot>
+  <slot>pv2_text()</slot>
+  <slot>select_range_A1(int)</slot>
+  <slot>select_range_A2(int)</slot>
+  <slot>select_range_A3(int)</slot>
+  <slot>select_range_MIC(int)</slot>
+  <slot>set_timebase(int)</slot>
+  <slot>select_trig_source(int)</slot>
+  <slot>set_trigger(int)</slot>
+  <slot>show_voltmeter()</slot>
+  <slot>pcs_slider(int)</slot>
+  <slot>setFont(QString)</slot>
+  <slot>fontPlus()</slot>
+  <slot>fontMinus()</slot>
+ </slots>
+</ui>

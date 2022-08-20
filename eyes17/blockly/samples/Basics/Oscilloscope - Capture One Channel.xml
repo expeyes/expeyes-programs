@@ -1,0 +1,62 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+
+## The capture1 function
+
+This function instructs the hardware to record a set of  voltage values with a predefined time gap (micro seconds) between each reading.
+
+We then plot the data returned by this function which is of the form `[X[], Y[]]` where X is a set of time values in mS units, and Y is the set of voltages read for each.
+
+
+The above 2 steps are repeated 50 times, giving you a functional oscilloscope interface
+
+### Exercise
+
++ Connect the WG sine wave output to the A1 input and run the oscilloscope 
++ Find out why the measured sine wave plot is not stationary but keeps jumping around with a different starting phase each time.
++ Drag the `trigger` block and attach it above the repeat loop and redo the above. 
+
+## Main Oscilloscope Utility
+
+GO to the home screen and open the oscilloscope for full functionality.
+
+- Channel Selection
+   The four channels A1, A2, A3 and MIC can be selected for display using the Check buttons on the left side .
+
+- Input Voltage Range
+   Pulldown menus are provided against each channel for selecting the input voltage range. A1 and A2 have a maximum range of +/- 16 V
+
+- Amplitude and Frequency    
+   The ANALYSIS checkbutton fits the input signals against a standard Sine wave equation, and show frequency and amplitude. For more than one channel, the phase different W.r.t. the first trace is also shown
+   
+- Time base Slider
+   The time base slider is for selecting the duration of the X-axis. The allowed full range can be set from 1mS to 5 Sec
+   
+- Trigger Controls
+   A digital storage oscilloscope digitizes periodically and captures the input for a given duration and displays the result. To get a stable trace, the amplitude and slope of the input and the beginning of each capture operation should be kept same. This starting value is decided by the trigger level setting.
+
+
+]]>
+</description>
+
+      <block type="controls_repeat_ext" id="%f/NMFtZ(tQg(:i`%,w:" x="-12" y="-119">
+        <value name="TIMES">
+          <shadow type="math_number" id="v]Jc+G5WG|e.CWD1@dRg">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="plot_xyarray" id=":TN3K2f#20JSHp~_]u^1">
+            <value name="VALUE">
+              <block type="capture1" id="r.fF{`k,E}*8p@)G_$h3">
+                <field name="CHANNEL">A1</field>
+                <field name="SAMPLES">500</field>
+                <field name="TIMEGAP">1</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </xml>

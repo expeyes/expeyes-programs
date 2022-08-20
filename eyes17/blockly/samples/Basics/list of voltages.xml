@@ -1,0 +1,85 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Objective
+
+Learn to create a list of elements
+
+## Procedure
+
++ Drag the `create empty list` block, and the `set list to` block from the Lists menu
++ Connect them together
++ Create a repeat loop and insert into the last position of the list , the value read from the voltmeter
++ Print the list contents after getting the 10 values. 
+
+## Further
+
++ Create two lists. Store A2 values into the second. Print it
++ before the wait block, insert a `set_voltage` block and apply i/10 to it. Check that the resultant list is indeed from 0 to 1 V
+
+]]>
+
+</description>
+
+
+      <variables>
+        <variable id="ZHzR_1b9[t1=F!y{a.VT">list</variable>
+      </variables>
+      <block type="variables_set" id="Q1rs^P{4E1!n_,.TeUQ*" x="-43" y="59">
+        <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">list</field>
+        <value name="VALUE">
+          <block type="lists_create_with" id="FF_ga*HhO#jiLI;.l`C*">
+            <mutation items="0"></mutation>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext" id="Mm^6|oM;+Z@e){tU@H-D">
+            <value name="TIMES">
+              <shadow type="math_number" id="FS)@SW9w!grBo$PN?kc2">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="wait_seconds" id="r#H-^Lg}:/JeUrdUE[b0">
+                <field name="SECONDS">0.1</field>
+                <next>
+                  <block type="lists_setIndex" id="dXhDhC6kgWMly9+8-e71">
+                    <mutation at="false"></mutation>
+                    <field name="MODE">INSERT</field>
+                    <field name="WHERE">LAST</field>
+                    <value name="LIST">
+                      <block type="variables_get" id="P=mfcZ_FPd)e^z!IeGTU">
+                        <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">list</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="get_voltage" id="g~j-s=wS{UN=GRq?gtW9">
+                        <field name="CHANNEL">A1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="wait_seconds" id="9#4w,dJu*TuT7P)Ouo+R">
+                        <field name="SECONDS">0.1</field>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="cs_print" id="]OYMthR!eVUy-n-7Pi~A">
+                <value name="TEXT">
+                  <shadow type="text" id=")TtX2SEgr__0/cnFJTJV">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="0H#vTrWEtn)Qhhi2`VZ~">
+                    <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">list</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

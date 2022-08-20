@@ -1,0 +1,122 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+      <variables>
+        <variable id="LbE2%mV/CRs,w^fwYIZy">frequency</variable>
+        <variable id="8oCKW8v5+(G-{gasS[{f">data</variable>
+        <variable id="oO@Y1MX_h#buz,]gRP)W">amplitude</variable>
+      </variables>
+      <block type="scope_trigger" id="K%?Zfn7rURcx2oLM6?[w" x="-36" y="-333">
+        <field name="STATE">TRUE</field>
+        <field name="CHANNEL">0</field>
+        <field name="LEVEL">512</field>
+        <next>
+          <block type="controls_for" id="bRktR0bV8?@|W0EuUuKF">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">frequency</field>
+            <value name="FROM">
+              <shadow type="math_number" id="#AL3?f43C:BF,5)/wFf,">
+                <field name="NUM">2000</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="y=GE81RH(qnM,6285akA">
+                <field name="NUM">5000</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="LksuKV|$[(e~mhtFBQt[">
+                <field name="NUM">50</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="set_frequency" id="Apm#[Q2u5zgLKby#-ydn">
+                <field name="CHANNEL">WG</field>
+                <value name="FREQUENCY">
+                  <block type="variables_get" id="{}~NR8=Y25vczj/2K?R1">
+                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">frequency</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="j=#!P8(F:#BA1$Tqr9|G">
+                    <field name="SECONDS">0.1</field>
+                    <next>
+                      <block type="variables_set" id="I|rrOGX}:EWrC9N[_8ed">
+                        <field name="VAR" id="8oCKW8v5+(G-{gasS[{f">data</field>
+                        <value name="VALUE">
+                          <block type="capture1" id="|LZu6)`kId[`1:srn#_$">
+                            <field name="CHANNEL">MIC</field>
+                            <field name="SAMPLES">1000</field>
+                            <field name="TIMEGAP">2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="mECs|3?BvdD#+2YVPy]/">
+                            <field name="VAR" id="oO@Y1MX_h#buz,]gRP)W">amplitude</field>
+                            <value name="VALUE">
+                              <block type="capture_analysis" id="@oB0~._#8P]7zrgQWG4%">
+                                <field name="PARAMETER">0</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="controls_if" id="6od;]2fvJ{BDj;YL80tM">
+                                <value name="IF0">
+                                  <block type="logic_operation" id=")7sOoEt{Q}Rjukjd?SxA">
+                                    <field name="OP">AND</field>
+                                    <value name="A">
+                                      <block type="logic_compare" id="+Z+#7E(}n-;$IHZ1,g-(">
+                                        <field name="OP">GT</field>
+                                        <value name="A">
+                                          <block type="variables_get" id="X)$]QSLMDO$fKZYRDr)}">
+                                            <field name="VAR" id="oO@Y1MX_h#buz,]gRP)W">amplitude</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="n@Fj_y}*/}[|0bFlYwb_">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <block type="logic_compare" id="X$H]f=ZQVatBFknlz(Vp">
+                                        <field name="OP">LT</field>
+2022-08-01 13:00:17.127 28967-19003/com.cspark.research.eyes17 E/expeyes:                                     <value name="A">
+                                          <block type="variables_get" id="K{U-uK(L7O[8]B#0|]mD">
+                                            <field name="VAR" id="oO@Y1MX_h#buz,]gRP)W">amplitude</field>
+                                          </block>
+                                        </value>
+                                        <value name="B">
+                                          <block type="math_number" id="+S^=!nHEh}c5}4KA;W0H">
+                                            <field name="NUM">2</field>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <statement name="DO0">
+                                  <block type="plot_xy" id="_O#,}[b,Dg/QR_#4}kb]">
+                                    <value name="X">
+                                      <block type="variables_get" id="uzWQ@2w^sn8btm7xaS8$">
+                                        <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">frequency</field>
+                                      </block>
+                                    </value>
+                                    <value name="Y">
+                                      <block type="variables_get" id="cp9l7+:X^FI`@)M:S8w:">
+                                        <field name="VAR" id="oO@Y1MX_h#buz,]gRP)W">amplitude</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </statement>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </xml>

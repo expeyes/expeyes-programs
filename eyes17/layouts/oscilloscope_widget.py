@@ -2,7 +2,7 @@ import sys, time
 import functools
 from functools import partial
 
-from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 

@@ -3,8 +3,8 @@
 from xml.dom import minidom
 import sys, os, re
 from subprocess import call, Popen, PIPE
-from PyQt6.QtCore import QObject, QTranslator
-from PyQt6.QtWidgets import QDialog
+from PyQt5.QtCore import QObject, QTranslator
+from PyQt5.QtWidgets import QDialog
 import sys
 from layouts.ui_screenshot import Ui_Dialog
 

@@ -1,12 +1,11 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import sys, time, math, importlib, os, platform, os.path, configparser, csv
-import logging
 from datetime import datetime
 from utils import cnf
 from language import languages
 from server import ScreenShotThread
-from PyQt6.QtCore import pyqtSignal, QObject, pyqtSlot, Qt, QTimer
-from PyQt6.QtGui import QIcon
+from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot, Qt, QTimer
+from PyQt5.QtGui import QIcon
 from QtVersion import *
 showVersions()
 
@@ -249,7 +248,8 @@ mechanicsExpts = [
 otherExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('7.1','pt100')],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
-[QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')]
+[QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
+[QT_TRANSLATE_NOOP('MainWindow','Graphical Code Editor'), ('7.4','blockcoding')]
 ]
 
 modulesI2C = [ 
@@ -282,7 +282,7 @@ pythonCodes = [
 
 #---------------------------------------------------------------------
 		
-class helpWin(QWebEngineView, QScreen):
+class helpWin(QWebView):
 		
 	def closeEvent(self, e):
 		"""
@@ -305,8 +305,7 @@ class helpWin(QWebEngineView, QScreen):
 		:param lang: the desired language
 		"""
 
-		QWebEngineView.__init__(self)
-		QScreen.__init__(self)
+		QWebView.__init__(self)
 
 		self.parent=parent
 		self.lang=lang
@@ -315,13 +314,13 @@ class helpWin(QWebEngineView, QScreen):
 		print(fn)
 
 		self.load(QUrl.fromLocalFile(fn))
-		self.setWindowTitle(self.tr('Help: %s') %name[0])
+		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
 		#self.setMaximumSize(QSize(500, 1200))
 		self.show()
-		screen = self.geometry()
+		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
 
-class MainWindow(QMainWindow,QScreen):
+class MainWindow(QMainWindow):
 	WIDTH = 950
 	HEIGHT = 600
 	expWidget = None
@@ -350,7 +349,6 @@ class MainWindow(QMainWindow,QScreen):
 		:type  tr_qt: QTranslator
 		"""
 		QMainWindow.__init__(self)
-		QScreen.__init__(self)
 		self.lang=None # this will be set later, after self.translate() tries
 		self.app=app
 		self.tr_eyes=tr_eyes
@@ -380,7 +378,7 @@ class MainWindow(QMainWindow,QScreen):
 		self.shortcutActions={}
 		self.shortcuts={"Ctrl+R":self.reconnect,'Alt+s':self.screenshot,'Alt+p':self.screenshotPlot}
 		for a in self.shortcuts:
-			shortcut = QtGui.QShortcut(QtGui.QKeySequence(a), self)
+			shortcut = QtWidgets.QShortcut(QtGui.QKeySequence(a), self)
 			shortcut.activated.connect(self.shortcuts[a])
 			self.shortcutActions[a] = shortcut
 		self.screenShotThread = ScreenShotThread(self, port = 45594)
@@ -407,9 +405,8 @@ class MainWindow(QMainWindow,QScreen):
 		self.resize(self.WIDTH,self.HEIGHT)
 		self._x = 100
 		self._y = 10
-		palette = QPalette()
-		# background color
-		palette.setColor(QPalette.ColorRole(10), QColor(81,188,185)) #("#99ccff")) "#88bbcc"
+		palette = QPalette()								# background color
+		palette.setColor(QPalette.Background, QColor(81,188,185)) #("#99ccff")) "#88bbcc"
 		self.setPalette(palette)	
 
 		self.helpCB = QCheckBox(self.tr('Enable PopUp Help Window'))
@@ -421,7 +418,7 @@ class MainWindow(QMainWindow,QScreen):
 		self.statusBar.addWidget(self.helpCB)
 		
 		self.callExpt(electronicsExptsScope[0])					# Start the scope by default
-		self.screen = self.geometry()
+		self.screen = QDesktopWidget().screenGeometry()
 		self.show()
 		self.move(20, 20)
 		
@@ -482,8 +479,10 @@ class MainWindow(QMainWindow,QScreen):
 		if self.expName != 'scope':
 			explib = importlib.import_module('scope')
 			try:
-				if self.expWidget != None:
+				try:
 					self.expWidget.timer.stop()     # Stop the timer loop of current widget			
+				except:
+					pass
 				self.hwin = None
 				self.expWidget= None 			    # Let python delete it
 				w = explib.Expt(p) 
@@ -509,8 +508,10 @@ class MainWindow(QMainWindow,QScreen):
 		module_name =  e[1] if type(e[1]) is str else e[1][-1]
 		explib = importlib.import_module(module_name)
 		try:
-			if self.expWidget != None:
-				self.expWidget.timer.stop()	 # Stop the timer loop of current widget			
+			try:
+				self.expWidget.timer.stop()     # Stop the timer loop of current widget			
+			except:
+				pass
 			self.hwin = None
 			self.expWidget= None				 # Let python delete it
 			w = explib.Expt(p)
@@ -522,9 +523,9 @@ class MainWindow(QMainWindow,QScreen):
 			self.title = e[0]
 			self.showHelp()
 		except Exception as err:
-			logging.exception(err)	
+			print("Exception:", err)	
 			self.expName = ''
-			self.setWindowTitle(self.tr('Failed to load %s') %e[0])
+			self.setWindowTitle(unicode(self.tr('Failed to load %s')) %e[0])
 		return
 		
 	def runCode(self, e):
@@ -677,7 +678,10 @@ class MainWindow(QMainWindow,QScreen):
 		try:
 			if not threadCalling:
 				#Timers cannot be stopped from another thread
-				self.expWidget.timer.stop()
+				try:
+					self.expWidget.timer.stop()     # Stop the timer loop of current widget			
+				except:
+					pass
 		except:
 			pass
 
@@ -967,7 +971,7 @@ You can customize the way they are used to build the path."""
 		self.app.installTranslator(self.tr_eyes)
 		self.tr_qt=QTranslator()
 		self.tr_qt.load("qt_"+lang,
-					QLibraryInfo.path(QLibraryInfo.LibraryPath(10))) # 10 = QLibraryInfo.TranslationsPath
+			QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 		self.app.installTranslator(self.tr_qt)
 		self.uncheckHelpBox.emit()
 
@@ -992,11 +996,11 @@ def run():
 	app.installTranslator(t)
 	t1=QTranslator()
 	t1.load("qt_"+lang,
-		QLibraryInfo.path(QLibraryInfo.LibraryPath(10))) # 10 = QLibraryInfo.TranslationsPath
+		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
 	app.installTranslator(t1)
 
 	mw = MainWindow(lang, app, t, t1)
-	sys.exit(app.exec())
+	sys.exit(app.exec_())
 
 if __name__ == '__main__':
 	run()

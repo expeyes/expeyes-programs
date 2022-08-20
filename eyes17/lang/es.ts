@@ -1053,7 +1053,7 @@ Visualización de la frecuencia actual configurada.
         <translation>Gráfico I-V terminado</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>Iniciado</translation>
     </message>
@@ -1148,7 +1148,7 @@ Visualización de la frecuencia actual configurada.
         <translation>El voltaje base debe ser de .5 a 3</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation>Voltaje base no válido, debe ser de .5 a 3</translation>
     </message>
@@ -1183,7 +1183,7 @@ Visualización de la frecuencia actual configurada.
         <translation>El voltaje base debe ser de -0.5 a -3</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation>Voltaje base no válido, debe ser de -0.5 a -3</translation>
     </message>

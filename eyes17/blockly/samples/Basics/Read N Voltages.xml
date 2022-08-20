@@ -1,0 +1,31 @@
+ <xml xmlns="https://developers.google.com/blockly/xml">
+      <block type="controls_repeat_ext" id="Mm^6|oM;+Z@e){tU@H-D" x="16" y="66">
+        <value name="TIMES">
+          <shadow type="math_number" id="FS)@SW9w!grBo$PN?kc2">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="wait_seconds" id="r#H-^Lg}:/JeUrdUE[b0">
+            <field name="SECONDS">0.1</field>
+            <next>
+              <block type="cs_print" id="^c7PQB~?I3$6`}cI(YL]">
+                <value name="TEXT">
+                  <shadow type="text" id="S;Wo(5qr^XD=T+Q!ho1-">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="get_voltage" id="^qjm6WY}9*Q/I{1Yje*]">
+                    <field name="CHANNEL">A1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="9#4w,dJu*TuT7P)Ouo+R">
+                    <field name="SECONDS">0.1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </xml>

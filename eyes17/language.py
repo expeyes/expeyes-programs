@@ -108,7 +108,8 @@ languages = [
     Language('bn_IN', 'Bengali',   'বাংলা',     locales),
     Language('pa_IN', 'Punjabi',   'ਪੰਜਾਬੀ',     locales),
     Language('or_IN', 'Oriya',     'ଓଡ଼ିଆ',     locales),
-    Language('hi_IN', 'Hindi',     'हिन्दी',      locales)
+    Language('hi_IN', 'Hindi',     'हिन्दी',      locales),
+    Language('ar_BH', 'Arabic',     'العربية',      locales)
     ]
 
 def createFlagStatus(

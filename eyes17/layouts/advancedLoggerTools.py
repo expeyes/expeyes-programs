@@ -653,14 +653,14 @@ class LOGGER:
 		self.I2CWriteBulk(self.HMC5883L_ADDRESS,[self.HMC_CONFA,(self.HMCDataOutputRate<<2)|(self.HMCSamplesToAverage<<5)|(self.HMCMeasurementConf)])
 
 	def HMC5883L_getVals(self,addr,bytes):
-		vals = self.I2C.readBulk(self.ADDRESS,addr,bytes) 
+		vals = self.I2C.readBulk(self.HMC5883L_ADDRESS,addr,bytes) 
 		return vals
 	
 	def HMC5883L_all(self):
 		vals=self.HMC5883L_getVals(0x03,6)
 		if vals:
 			if len(vals)==6:
-				return [np.int16(vals[a*2]<<8|vals[a*2+1])/self.HMCGainScaling[self.HMCGainValue] for a in range(3)]
+				return [np.int16(vals[a*2]&0xff<<8|vals[a*2+1]&0xff)/self.HMCGainScaling[self.HMCGainValue] for a in range(3)]
 			else:
 				return False
 		else:

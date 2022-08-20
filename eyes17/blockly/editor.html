@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,height=device-width, initial-scale=0.9, maximum-scale=1">
+
+  
+  <!--<script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="javascript_compressed.js"></script>
+  <script src="python_compressed.js"></script>
+  <script src="msg/js/en.js"></script>
+  <script src="jquery.min.js"></script>
+  <script src="semantic.min.js"></script>
+  -->
+
+  <link rel="stylesheet" type="text/css" href="semantic.min.css">
+
+  <script src="jquery.min.js"></script>
+  <script src="semantic.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="blocks/api.js"></script>
+  <script src="blocks/acorn_interpreter.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="uplot/uPlot.min.css" />
+  <script type="text/javascript" src="uplot/uPlot.iife.js"></script>
+  <script type="text/javascript" src="plots.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+
+
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="ui content" style="top:0%;bottom:2%;">
+	<div class="ui icon warning small hidden message missingdevice">
+	  <div class="content">
+	    <div class="header">
+	      Missing Hardware!
+	    </div>
+	    <p>Is a SEELab3/ExpEYES17 Device Connected to the USB port?</p>
+	  </div>
+	</div>
+
+	<div class="ui hidden divider"></div>
+	<div class="ui fluid container">
+		<a onclick="startStep()" class="ui mini primary button "><i class="play icon"></i>Run!</a>
+
+		<a onclick="saveXMLtoDisc()" class="ui mini red button right floated" ><i class="save icon"></i>Save</a>
+		<a onclick="saveXML()" class="ui mini red button right floated" ><i class="download icon"></i></a>
+		<a onclick="loadXML(MyJavascriptInterface.loadLocalXML('eyeseditor'))" class="ui mini teal button right floated" ><i class="upload icon"></i></a>
+	</div>
+
+	<div class = "ui clearing green segment" style="height:40em;">
+		<div class="ui content" style="bottom:10%;top:10%;">
+		<pre id="editor">
+var i;
+for (i = 0; i < 100; i++) {
+	plot(get_voltage('A1'));
+	sleep(0.01);
+}
+
+		</pre>
+		</div>
+	</div>
+
+</div>
+
+<div class="ui basic modal results" style="top:0%;bottom:2%;">
+  <i class="close icon" onclick="off()"></i>  
+  <div class="header">
+    Output
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui content" style="padding:0.2rem ! important;">
+	  <div class="ui two column stackable top aligned grid">
+		<div class="ui vertical divider"></div>
+		<div class="top aligned row">
+		  <div class="column resplotarea"  style="background:#fffc;">
+			<div id="#resplot" class="ui description resplot">
+			</div>
+		  </div>
+
+		  <div class="column" >
+			<!--
+			<div class="ui horizontal celled list registers" style="color:red;">
+			</div>
+			<div class="ui description cmdarea" style="color:lightgreen;">
+			</div>
+			-->
+
+			<div class="ui icon header" style="color:white;">
+			  Results
+			</div>
+			</div>
+			<div class="ui scrolling content description printarea" style="color:white;scrollable:true;">
+			</div>
+		  </div>
+
+
+		</div>
+	</div>
+
+  </div>
+
+</div>
+
+
+
+<script src="ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/github");
+    editor.session.setMode("ace/mode/javascript");
+</script>
+
+
+
+
+  <script type="text/javascript">
+
+	var results = $('.description.printarea');
+	var command = $('.description.cmdarea');
+	var resultModal = 	  $('.modal.results');
+
+	//var registers = 	  $('.list.registers');
+	//var regvals = [];
+	var resplotarea = $('.resplotarea');
+	var resultplots = $('.description.resplot');
+/*
+	function showReg(reg, val){
+		if(regvals.indexOf(reg)!=-1){ // Register is already shown in the results segment. update it.
+			registers.find('.'+reg).text(reg+"="+val);
+		}else{
+			registers.append(`<div class="item ${reg}">${reg}=${val}</div>`)
+			regvals.push(reg);
+		}
+	}
+*/
+	function on() {
+	  results.html("");
+	  resultModal.modal('show');
+
+	}
+
+	function off() {
+	  resultModal.modal('hide');
+	  resetInterpreter();
+	  MyJavascriptInterface.closeFiles();
+	  stopGame();
+	}        
+
+	function resetInterpreter() {
+		myInterpreter = null;
+		if (runner) {
+			clearTimeout(runner);
+			runner = null;
+		}
+	}
+
+	var myInterpreter;
+
+	var runner;
+	var latestCode = '';
+
+	var devState = false;
+	if(typeof MyJavascriptInterface != 'undefined')
+		devState = MyJavascriptInterface.get_device_status();
+	
+	if(!devState){$('.message.missingdevice').closest('.message').transition('fade in','1000mS').transition('glow');}
+	function deviceConnected(){
+		$('.message.missingdevice').closest('.message').transition('fade out','300mS');
+	}
+	function deviceDisconnected(){
+		$('.message.missingdevice').closest('.message').transition('fade in','1000mS').transition('glow');
+	}
+
+    function startStep() {
+
+
+	latestCode = editor.getValue();
+
+	on();
+	clearPlot();
+	 resplotarea.show();
+
+	if(latestCode.indexOf('plot_xy(')>=0)
+		addPlot('xy'); // indicate XY
+	else if(latestCode.indexOf('plot_radar(')>=0)
+		addPolarPlot();
+	else if(latestCode.indexOf('plot(')>=0)
+		addPlot('');
+	else if(latestCode.indexOf('plot_xyarray(')>=0)
+		addPlot(''); 
+	else if(latestCode.indexOf('plot_xyyarray(')>=0)
+		addPlot('xyy'); 
+	  else
+	  	 resplotarea.hide();
+
+	runCode();
+	}
+
+
+    function runCode() {
+      if (!myInterpreter) {
+        // First statement of this code.
+        // Clear the program output.
+
+        // And then show generated code in an alert.
+        // In a timeout to allow the outputArea.value to reset first.
+        setTimeout(function() {
+          // Begin execution
+          highlightPause = false;
+          myInterpreter = new Interpreter(latestCode, initApi);
+          if(latestCode.search("alert") != -1) // -1 means not found
+			on();
+          
+          runner = function() {
+            if (myInterpreter) {
+              var hasMore = myInterpreter.run();
+              if (hasMore) {
+                // Execution is currently blocked by some async call.
+                // Try again later.
+                setTimeout(runner, 10);
+              } else {
+                // Program is complete.
+                resetInterpreter();
+                resetStepUi();
+              }
+            }
+          };
+          runner();
+        }, 1);
+        return;
+      }
+    }
+
+
+
+
+
+	function saveXML(){
+		MyJavascriptInterface.saveXML("eyeseditor",editor.getValue());
+	}
+	function saveXMLtoDisc(){
+		MyJavascriptInterface.saveXMLtoDisc("eyeseditor",editor.getValue());
+	}
+
+
+	function loadXML(xml) {
+		editor.setValue(xml);
+	}	
+
+	// Loads js file contents passed by OnlineExplorer.java . 
+	if(typeof MyJavascriptInterface != 'undefined')
+		loadXML(MyJavascriptInterface.loadXMLFile("js"));	
+
+
+  </script>
+
+
+
+
+
+
+
+</body>
+</html>
+

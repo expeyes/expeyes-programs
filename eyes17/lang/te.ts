@@ -147,7 +147,7 @@
         <translation>అవశేష అయస్కాంత క్షేత్రం (శక్తి): %.2f</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>ప్రారంభమైంది</translation>
     </message>
@@ -587,7 +587,7 @@
         <translation type="unfinished">బేస్ వోల్టేజ్ .5 నుండి 3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished">చెల్లని బేస్ వోల్టేజ్, .5 నుండి 3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
@@ -662,7 +662,7 @@
         <translation type="unfinished">బేస్ వోల్టేజ్ -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished">చెల్లని బేస్ వోల్టేజ్, -0.5 నుండి -3 వరకు మాత్రమే ఉండాలి</translation>
     </message>

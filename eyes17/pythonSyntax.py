@@ -5,7 +5,7 @@ Copyright (c) 2017 DavidBoddie <https://wiki.python.org/moin/DavidBoddie>
 HomePage: https://wiki.python.org/moin/PyQt/Python%20syntax%20highlighting
 
 Adapted by Georges Khaznadar <georgesk@debian.org> in 2022:
-  use the modules from PyQt6
+  use the modules from PyQt5
 
 License:
 the Modified BSD License
@@ -42,7 +42,7 @@ POSSIBILITY OF SUCH DAMAGE.
 import sys
 
 from QtVersion import *
-from PyQt6.QtCore import QRegularExpression
+from PyQt5.QtCore import QRegularExpression
 
 def format(color, style=''):
     """Return a QTextCharFormat with the given attributes.

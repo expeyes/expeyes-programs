@@ -1,0 +1,40 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+
+## The capture2 function
+
+This function instructs the hardware to record a set of  voltage values with a predefined time gap (micro seconds) between each reading, from 2 input channels at the same time.
+
+The first input is flexible, and can be configured to read A1, A2, A3, SEN, IN1 , or the MIC input.
+
+The Second input is always attached to read A2.
+
+We then plot the data returned by this function which is of the form `[X[], Y1[], Y2]` where X is a set of time values in mS units, and Y1, Y2 are the set of voltages read for each.
+
+The above 2 steps are repeated 50 times, giving you a functional 2 channel oscilloscope interface
+
+]]>
+</description>
+
+
+      <block type="controls_repeat_ext" id="%f/NMFtZ(tQg(:i`%,w:" x="-12" y="-119">
+        <value name="TIMES">
+          <shadow type="math_number" id="v]Jc+G5WG|e.CWD1@dRg">
+            <field name="NUM">50</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="plot_xyyarray" id="`os1vvP!7.l)^G;pgRxY">
+            <value name="VALUE">
+              <block type="capture2" id="U2XCYQ(C8EPZI7yS0yRe">
+                <field name="CHANNEL">A1</field>
+                <field name="SAMPLES">1000</field>
+                <field name="TIMEGAP">2</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </xml>

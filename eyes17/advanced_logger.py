@@ -22,7 +22,7 @@ import sys,time,configparser
 t = time.time()
 
 import utils
-from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 

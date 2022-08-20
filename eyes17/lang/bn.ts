@@ -152,7 +152,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation type="unfinished"></translation>
     </message>
@@ -587,7 +587,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished"></translation>
     </message>
@@ -676,7 +676,7 @@ For Driven Pendulum Expt.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!-- HTML file to host Blockly in a mobile WebView. -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,height=device-width, initial-scale=0.9, maximum-scale=1">
+  <script src="jquery.min.js"></script>
+  <script src="Markdown.Converter.min.js"></script>
+  <script src="semantic.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="semantic.min.css">
+  
+  <script src="blockly_compressed.js"></script>
+  <script src="blocks_compressed.js"></script>
+  <script src="javascript_compressed.js"></script>
+  <script src="python_compressed.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="msg/js/en.js"></script>
+  <script src="blocks/workspace_interpreted.js"></script>
+  <script src="blocks/api.js"></script>
+  <script src="blocks/acorn_interpreter.js"></script>
+  <script src="qrc:///qtwebchannel/qwebchannel.js" type="text/javascript"></script>
+
+  <link rel="stylesheet" type="text/css" href="uplot/uPlot.min.css" />
+  <script type="text/javascript" src="uplot/uPlot.iife.js"></script>
+  <script type="text/javascript" src="plots.js"></script>
+  <script type="text/javascript" src="game.js"></script>
+
+</head>
+<body>
+
+<xml xmlns="https://developers.google.com/blockly/xml" id="mytoolbox" style="display: none">
+  <category name="ExpEYES" colour="#995ba5">
+
+    <block type="get_voltage">
+      <field name="CHANNEL">A1</field>
+    </block>
+    <block type="set_voltage">
+      <field name="CHANNEL">PV1</field>
+    </block>
+    <block type="set_frequency">
+      <field name="CHANNEL">WG</field>
+    </block>
+    <block type="get_frequency">
+      <field name="CHANNEL">IN2</field>
+    </block>
+    <block type="multi_r2r">
+      <field name="CHANNEL">IN2</field>
+      <field name="EDGES">2</field>
+      <field name="TIMEOUT">2</field>
+    </block>
+    <block type="set_state">
+      <field name="CHANNEL">OD1</field>
+    </block>
+    <block type="capture1">
+      <field name="CHANNEL">A1</field>
+      <field name="SAMPLES">100</field>
+      <field name="TIMEGAP">1</field>
+    </block>
+
+    <block type="capture2">
+      <field name="CHANNEL">A1</field>
+      <field name="SAMPLES">100</field>
+      <field name="TIMEGAP">2</field>
+    </block>
+
+  <block type="scope_trigger">
+    </block>
+  <block type="capture_analysis">
+    </block>
+  <block type="capture_analysis_dual">
+    </block>
+
+
+    <block type="write_to_file">
+    </block>
+
+
+  </category>
+
+
+
+  <category name="Sensors" colour="#995b65">
+    <block type="read_SR04">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_BMP280">
+      <field name="CHANNEL">1</field>
+    </block>
+    <block type="read_MPU6050">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_VL53L0X">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_HMC5883L">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_MAX30100">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_ML8511">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_VOLTS">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="set_PCA9685">
+      <field name="CHANNEL">1</field>
+    </block>
+    <block type="set_servo">
+      <field name="CHANNEL">SQ1</field>
+    </block>
+  </category>
+  <category name="PLOTS" colour="#995b95">
+    <block type="plot_datapoint">
+	  <value name="YAXIS">
+        <shadow type="text">
+          <field name="TEXT">Y-Axis</field>
+        </shadow>
+      </value>
+    </block>  
+    <block type="plot_xy">
+    </block>  
+
+    <block type="plot_xyarray">
+    </block>  
+
+    <block type="plot_xarray_yarray">
+    </block>  
+
+    <block type="plot_xyyarray">
+    </block>  
+
+    <block type="plot_radar">
+	  <value name="MAXRADIUS">
+        <shadow type="math_number">
+          <field name="NUM">30</field>
+        </shadow>
+      </value>
+    </block>  
+
+    <block type="add_game">
+    </block>  
+    <block type="stop_game">
+    </block>  
+
+    <block type="set_bird_y">
+	<value name="Y">
+        <shadow type="math_number">
+          <field name="NUM">200</field>
+        </shadow>
+    </block>
+
+
+  </category>
+
+  <category name="Logic" colour="#5b80a5">
+    <block type="controls_if"></block>
+    <block type="logic_compare">
+      <field name="OP">EQ</field>
+    </block>
+    <block type="logic_operation">
+      <field name="OP">AND</field>
+    </block>
+    <block type="logic_negate"></block>
+    <block type="logic_boolean">
+      <field name="BOOL">TRUE</field>
+    </block>
+    <block type="logic_null"></block>
+    <block type="logic_ternary"></block>
+  </category>
+
+  
+  <category name="Math" colour="#5b67a5">
+    <block type="math_number">
+      <field name="NUM">0</field>
+    </block>
+    <block type="math_arithmetic">
+      <field name="OP">ADD</field>
+      <value name="A">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="B">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_single">
+      <field name="OP">ROOT</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">9</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_trig">
+      <field name="OP">SIN</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">45</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constant">
+      <field name="CONSTANT">PI</field>
+    </block>
+    <block type="math_number_property">
+      <mutation divisor_input="false"></mutation>
+      <field name="PROPERTY">EVEN</field>
+      <value name="NUMBER_TO_CHECK">
+        <shadow type="math_number">
+          <field name="NUM">0</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_round">
+      <field name="OP">ROUND</field>
+      <value name="NUM">
+        <shadow type="math_number">
+          <field name="NUM">3.1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_on_list">
+      <mutation op="SUM"></mutation>
+      <field name="OP">SUM</field>
+    </block>
+    <block type="math_modulo">
+      <value name="DIVIDEND">
+        <shadow type="math_number">
+          <field name="NUM">64</field>
+        </shadow>
+      </value>
+      <value name="DIVISOR">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_constrain">
+      <value name="VALUE">
+        <shadow type="math_number">
+          <field name="NUM">50</field>
+        </shadow>
+      </value>
+      <value name="LOW">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="HIGH">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_int">
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">100</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="math_random_float"></block>
+  </category>
+  <category name="Text" colour="#5ba58c">
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+    <block type="text_join">
+      <mutation items="2"></mutation>
+    </block>
+    <block type="text_append">
+      <field name="VAR" id="NA?/#Ojn#=$$1[^`/^Dd">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+    <block type="cs_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="Y/O[Wi.+6THk|+k0W/+b">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+  </category>
+  <category name="Loops" colour="#5ba55b">
+    <block type="wait_seconds">
+      <field name="SECONDS">1</field>
+    </block>
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_whileUntil">
+      <field name="MODE">WHILE</field>
+    </block>
+    <block type="controls_for">
+      <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+      <value name="FROM">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+      <value name="TO">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+      <value name="BY">
+        <shadow type="math_number">
+          <field name="NUM">1</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="controls_forEach">
+      <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+    </block>
+    <block type="controls_flow_statements">
+      <field name="FLOW">BREAK</field>
+    </block>
+  </category>
+  <category name="Lists" colour="#745ba5">
+    <block type="lists_create_with">
+      <mutation items="0"></mutation>
+    </block>
+    <block type="lists_getIndex">
+      <mutation statement="false" at="true"></mutation>
+      <field name="MODE">GET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="VALUE">
+        <block type="variables_get">
+          <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_setIndex">
+      <mutation at="true"></mutation>
+      <field name="MODE">SET</field>
+      <field name="WHERE">FROM_START</field>
+      <value name="LIST">
+        <block type="variables_get">
+          <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">list</field>
+        </block>
+      </value>
+    </block>
+    <block type="lists_split">
+      <mutation mode="SPLIT"></mutation>
+      <field name="MODE">SPLIT</field>
+      <value name="DELIM">
+        <shadow type="text">
+          <field name="TEXT">,</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="lists_length"></block>
+    <block type="lists_isEmpty"></block>
+    <block type="lists_create_with">
+      <mutation items="3"></mutation>
+    </block>
+    <block type="lists_sort">
+      <field name="TYPE">NUMERIC</field>
+      <field name="DIRECTION">1</field>
+    </block>
+  </category>
+  <sep></sep>
+  <category name="Variables" colour="#a55b80" custom="VARIABLE">
+  </category>
+  <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <sep></sep>
+
+
+
+  </category>
+
+
+</xml>
+
+<hr>
+
+<div class="ui icon warning small hidden message missingdevice">
+  <div class="content">
+    <div class="header">
+      Missing Hardware!
+    </div>
+    <p>Is a SEELab3/ExpEYES17 Device Connected to the USB port?</p>
+  </div>
+</div>
+
+
+<div class="ui content chatstatus" style="display:none;">
+      <span class="chatmsg"><i class="wifi icon"></i>Found peer over wifi: </span><a class="ui tiny basic green button" style="margin-left:20px;" onClick="MyJavascriptInterface.connectService()">Connect</a>
+</div>
+
+<div class="ui fluid container">
+	<a onclick="startStep()" class="ui mini primary button "><i class="play icon"></i>Run!</a>
+
+	<a onclick="MyJavascriptInterface.registerService()" class="ui basic mini button right floated" ><i class="wifi icon"></i></a>
+	<a onclick="showHelp()" class="ui mini green button right floated" ><i class="question circle icon"></i>HELP</a>
+	<a onclick="saveXMLtoDisc()" class="ui mini red button right floated" ><i class="save icon"></i>Save</a>
+	<a onclick="saveXML()" class="ui mini red button right floated" ><i class="download icon"></i></a>
+	<a onclick="loadXML(MyJavascriptInterface.loadLocalXML('expeyes'))" class="ui mini teal button right floated" ><i class="upload icon"></i></a>
+</div>
+
+<hr>
+
+
+<div class="ui basic modal results" style="top:0%;bottom:2%;">
+  <i class="close icon" onclick="off()"></i>  
+  <div class="header">
+    Output
+  </div>
+  <div class="ui divider"></div>
+  <div class="ui content" style="padding:0.2rem ! important;">
+	  <div class="ui two column stackable top aligned grid">
+		<div class="ui vertical divider"></div>
+		<div class="top aligned row">
+		  <div class="column resplotarea"  style="background:#fffc;">
+			<div id="#resplot" class="ui description resplot">
+			</div>
+		  </div>
+
+		  <div class="column">
+			<div class="ui horizontal celled list registers" style="color:red;">
+			</div>
+			<div class="ui description cmdarea" style="color:lightgreen;">
+			</div>
+
+			<div class="ui icon header" style="color:white;font-size:14pt;">
+			  Results
+			</div>
+			<div class="ui scrolling content description printarea" style="color:white;scrollable:true;">
+			</div>
+		  </div>
+
+
+		</div>
+	</div>
+
+  </div>
+
+</div>
+
+
+<div class="ui fullscreen modal help">
+  <i class="close icon"></i>
+  <div class="header">
+    Instructions
+  </div>
+  <div class="ui scrolling content">
+    Instructions
+  </div>
+</div>
+
+
+
+<div id="blocklyDiv">
+</div>
+
+
+  <script type="text/javascript">
+
+	var workspaceHelp = '';
+	var converter = new Markdown.Converter();
+	var results = $('.description.printarea');
+	var resultModal = 	  $('.modal.results');
+    var resplotarea = $('.resplotarea');
+    var resultplots = $('.description.resplot');
+
+	var registers = 	  $('.list.registers');
+	var regvals = [];
+	var command = $('.description.cmdarea');
+	
+	
+	var MyJavascriptInterface;
+	var devState = false;
+	//For Python QWebChannel, wrap everything inside QWebchannel class
+	window.onload = function()
+	{
+		new QWebChannel(qt.webChannelTransport, function(channel) {
+			MyJavascriptInterface = channel.objects.backend;
+
+
+
+				
+			if(typeof MyJavascriptInterface != 'undefined'){
+				MyJavascriptInterface.loadXMLFile("xml",function(lxml) {
+						localxml = lxml[0];
+						if(localxml.length>2)  //To prevent loading, MyJavascriptInterface can return an empty string
+							loadXML(localxml);	
+						}
+				);
+				
+				MyJavascriptInterface.get_device_status(function(stat){
+						devState = stat;
+						if(!devState){$('.message.missingdevice').closest('.message').transition('fade in','1000mS').transition('glow');}
+					});
+				
+
+
+			}
+			
+
+		});
+	}	
+
+
+
+	function showReg(reg, val){
+		if(regvals.indexOf(reg)!=-1){ // Register is already shown in the results segment. update it.
+			registers.find('.'+reg).text(reg+"="+val);
+		}else{
+			registers.append(`<div class="item ${reg}">${reg}=${val}</div>`)
+			regvals.push(reg);
+		}
+	}
+
+
+	var workspacePlayground = Blockly.inject('blocklyDiv', {
+		  media: 'media/',
+		  toolbox: mytoolbox,
+	  toolboxPosition : 'start',
+	  horizontal: true,
+	  css : true, 
+		  zoom: {controls: true}
+		});
+
+	function on() {
+	  results.html("");
+	  resultModal.modal('show');
+
+	}
+
+	function off() {
+	  resultModal.modal('hide');
+	  resetStepUi();
+	  resetInterpreter();
+	  MyJavascriptInterface.closeFiles();
+	  stopGame();
+	}        
+
+	function resetInterpreter() {
+	  myInterpreter = null;
+	  if (runner) {
+		clearTimeout(runner);
+		runner = null;
+	  }
+	}
+
+	function showJSCode() {
+	  // Generate JavaScript code and display it.
+	  Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+	  var code = Blockly.JavaScript.workspaceToCode(workspacePlayground);
+	}
+	var myInterpreter;
+	
+	var runner;
+	var highlightPause = false;
+	var latestCode = '';
+
+	function highlightBlock(id) {
+	  workspacePlayground.highlightBlock(id);
+	  highlightPause = true;
+	}
+
+	function resetStepUi() {
+	  workspacePlayground.highlightBlock(null);
+	  highlightPause = false;
+
+	}
+
+	function deviceConnected(){
+		$('.message.missingdevice').closest('.message').transition('fade out','300mS');
+	}
+	function deviceDisconnected(){
+		$('.message.missingdevice').closest('.message').transition('fade in','1000mS').transition('glow');
+	}
+
+
+
+	function chatDisconnected(){
+		$('.chatstatus').transition('fade out','300mS');
+	}
+	function chatConnected(message,connect){
+		$('.chatstatus > .chatmsg').text(message);
+		if(connect)$('.chatstatus > .button').show();
+		else $('.chatstatus > .button').hide();
+		$('.chatstatus').transition('fade in','1000mS').transition('glow');
+	}
+
+
+	function startStep() {
+
+
+	  // Generate JavaScript code and parse it.
+	  Blockly.JavaScript.STATEMENT_PREFIX = 'highlightBlock(%1);\n';
+	  Blockly.JavaScript.addReservedWords('highlightBlock');
+	  latestCode = Blockly.JavaScript.workspaceToCode(workspacePlayground);
+
+
+
+	  resetStepUi();
+	  on();
+	  clearPlot();
+		 resplotarea.show();
+
+	  if(latestCode.indexOf('plot_xy(')>=0)
+		addPlot('xy'); // indicate XY
+	  else if(latestCode.indexOf('plot_radar(')>=0)
+		addPolarPlot();
+	  else if(latestCode.indexOf('plot(')>=0)
+		addPlot('');
+	  else if(latestCode.indexOf('plot_xyarray(')>=0)
+		addPlot(''); 
+	  else if(latestCode.indexOf('plot_xarray_yarray(')>=0)
+		addPlot(''); 
+	  else if(latestCode.indexOf('plot_xyyarray(')>=0)
+		addPlot('xyy'); 
+	  else
+		 resplotarea.hide();
+
+	  runCode();
+	}
+
+
+	function runCode() {
+	  if (!myInterpreter) {
+		// First statement of this code.
+		// Clear the program output.
+		resetStepUi();
+
+		// And then show generated code in an alert.
+		// In a timeout to allow the outputArea.value to reset first.
+		setTimeout(function() {
+		  // Begin execution
+		  highlightPause = false;
+		  myInterpreter = new Interpreter(latestCode, initApi);
+		  if(latestCode.search("alert") != -1) // -1 means not found
+			on();
+		  
+		  runner = function() {
+			if (myInterpreter) {
+			  var hasMore = myInterpreter.run();
+			  if (hasMore) {
+				// Execution is currently blocked by some async call.
+				// Try again later.
+				setTimeout(runner, 10);
+			  } else {
+				// Program is complete.
+				resetInterpreter();
+				resetStepUi();
+			  }
+			}
+		  };
+		  runner();
+		}, 1);
+		return;
+	  }
+	}
+
+
+
+
+
+	function saveXML(){
+		var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+		var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+		MyJavascriptInterface.saveXML("expeyes",xmlText);
+	}
+	function saveXMLtoDisc(){
+		var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+		var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+		MyJavascriptInterface.saveXMLtoDisc("expeyes",xmlText);
+	}
+
+
+	function loadXML(xml) {
+		if (typeof xml != "string" || xml.length < 5) {
+			return false;
+		}
+		try {
+			var dom = Blockly.Xml.textToDom(xml);
+			Blockly.mainWorkspace.clear();
+			Blockly.Xml.domToWorkspace(dom,Blockly.mainWorkspace);
+
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(xml,"text/xml");
+			loadhelp(xmlDoc);
+			return true;
+		} catch (e) {
+			console.log("No Help Found",e);
+			return false;
+		}
+	}
+
+	function loadhelp(xml) {
+		try {
+			workspaceHelp = converter.makeHtml($(xml).find('description').text());
+			return true;
+		} catch (e) {
+			console.log("Invalid xml",e);
+			return false;
+		}
+	}
+
+	function showHelp(){
+		$('.fullscreen.modal.help > .content').html(workspaceHelp);
+		$('.fullscreen.modal.help')
+		  .modal('show')
+		;
+	}
+
+
+	function showCode() {
+	  // Generate Python code and display it.
+	  Blockly.Python.INFINITE_LOOP_TRAP = null;
+	   Blockly.Python.init(workspacePlayground)
+	  var code = Blockly.Python.workspaceToCode(workspacePlayground);
+	}
+	
+
+	function myUpdateFunction(event) {
+		resetInterpreter();
+		Blockly.Python.init(workspacePlayground)
+		Blockly.JavaScript.init(workspacePlayground)
+		MyJavascriptInterface.updateCode(Blockly.Python.workspaceToCode(workspacePlayground));
+
+		var xmlDom = Blockly.Xml.workspaceToDom(Blockly.mainWorkspace);
+		var xmlText = Blockly.Xml.domToPrettyText(xmlDom);
+
+	}
+	
+
+	workspacePlayground.addChangeListener(myUpdateFunction);
+
+
+
+
+
+  </script>
+
+
+
+
+</body>
+</html>

@@ -23,16 +23,18 @@ import sys
 
 PQT6=True
 
-from PyQt6 import QtGui, QtCore, QtWidgets, QtSvg
-from PyQt6.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
+from PyQt5 import QtGui, QtCore, QtWidgets, QtSvg
+from PyQt5.QtGui import QPalette, QColor, QFont, QTextCharFormat, \
 		QSyntaxHighlighter, QScreen
-from PyQt6.QtWidgets import QMainWindow, QApplication, QCheckBox, \
+from PyQt5.QtWidgets import QMainWindow, QApplication, QCheckBox, \
 		QStatusBar, QLabel, QWidget, QSlider, QLineEdit, \
 		QVBoxLayout, QHBoxLayout, QPushButton, QMenu, QTextEdit, \
-		QMessageBox, QFileDialog
+		QMessageBox, QFileDialog, QDesktopWidget
 
-from PyQt6.QtWebEngineWidgets import QWebEngineView
-from PyQt6.QtCore import Qt, QTimer, QUrl, QSize, \
+
+from PyQt5.QtWebEngineWidgets import QWebEngineView as QWebView
+from PyQt5.QtWebEngineWidgets import QWebEngineView
+from PyQt5.QtCore import Qt, QTimer, QUrl, QSize, \
 		QTranslator, QLocale, QLibraryInfo, QRegularExpression, \
 		QT_TRANSLATE_NOOP
 QT_VERSION_STR="6"

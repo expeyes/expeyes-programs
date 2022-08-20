@@ -147,7 +147,7 @@
         <translation>ശേഷിക്കുന്ന കാന്തിക വലയം: %.2f</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>ആരംഭിച്ചവ</translation>
     </message>
@@ -587,7 +587,7 @@
         <translation type="unfinished">ബെയ്സ് വോൾട്ടേജ് 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished">ബേസ് വോൾട്ടേജ് സ്വീകാര്യമല്ല, 5-നും 3-നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
@@ -662,7 +662,7 @@
         <translation type="unfinished">ബെയ്സ് വോൾട്ടേജ്  -0.5നും -3നും ഇടയ്ക്ക് ആകേണ്ടതാണ്</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished">പ്രപല്യത്തിലില്ലാത്ത ബേസ് വോൾട്ടേജ്, 5-നും 3-നും ഇടക്കാവണം</translation>
     </message>

@@ -3,7 +3,7 @@ import sys, os, os.path, configparser
 
 from QtVersion import *
 
-from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtGui, QtCore, QtWidgets
 
 import pyqtgraph as pg
 

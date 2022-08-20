@@ -152,8 +152,8 @@ def svg2png (fName, width=600, app=None, oFilename=""):
     calculated automatically
     :returns: the effective file name of the written PNG file
     """
-    from PyQt6.QtSvg import QSvgRenderer
-    from PyQt6.QtGui import QImage, QPainter, QColor, QGuiApplication
+    from PyQt5.QtSvg import QSvgRenderer
+    from PyQt5.QtGui import QImage, QPainter, QColor, QGuiApplication
     from math import sqrt
 
     if not app:

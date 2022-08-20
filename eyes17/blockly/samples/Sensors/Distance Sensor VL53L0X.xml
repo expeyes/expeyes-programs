@@ -1,0 +1,60 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Sensor Description
+
+The VL53L0X is a new generation Time-of-Flight (ToF) laser-ranging module housed in a small package , providing accurate distance measurement 
+over a wide range of target reflectances. It can measure absolute distances up to 2m, and has several potential applications in mechanics experiments.
+
+It integrates a leading-edge SPAD array (Single Photon Avalanche Diodes) and embeds ST’s second generation FlightSense™ patented technology.
+The VL53L0X’s 940 nm VCSEL emitter (Vertical Cavity Surface-Emitting Laser), is totally invisible to the human eye, 
+coupled with internal physical infrared filters, and this enables longer ranging distance, higher immunity to ambient light, and better robustness to cover glass optical crosstalk. 
+
+## This Sensor can be used to design several experiments to do with classical mechanics.
+
+The SR04 sound based ranging module suffers from limitations such as not being able to reflect effectively from spherical surfaces . 
+For most pendulums, the bob is spherical. The VL53L0X only needs the surface to be slightly reflective to light, and is a better alternative.
+
+
+## The Mass and Spring problem
+
+When a mass suspended on a spring is made to oscillate, the period of oscillation is given by T = 2 * pi * sqrt( m/k), 
+where m is the mass and k is the spring constant. We can measure the period of oscillation by measuring the distance 
+to the moving mass as a function of time. The distance versus time graph is fitted with a sine function to calculate the frequency.
+
+
+## Online Resources
+
++ [Blog Post](https://csparkresearch.in/seel3/android/add-vl53l0x-add-sensor-android-app.html)
+
+]]>
+</description>
+
+
+      <block type="text_print" id="XaxAGz^/lws6NcFR_N`A" x="50" y="104">
+        <value name="TEXT">
+          <shadow type="text" id="OPN,P7Iuh%t/onC[s[4A">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="q*9r|H4f0,xSmw~(c6nH">
+            <mutation items="3"></mutation>
+            <value name="ADD0">
+              <block type="text" id="OGPnjS~Z/+stDrbVeGE)">
+                <field name="TEXT">VL53L0X measured distance : </field>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="read_VL53L0X" id="2:Xp|IPsc+ek7x-^zlCG">
+                <field name="CHANNEL">0</field>
+              </block>
+            </value>
+            <value name="ADD2">
+              <block type="text" id="D)vX]|45]DsU7}+|S8~4">
+                <field name="TEXT"> mm</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </xml>

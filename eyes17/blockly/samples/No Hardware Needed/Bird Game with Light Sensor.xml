@@ -1,0 +1,48 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Bird game 
+
+addGame: Create a game
+set bird altitude; The height of the bird from the floor of the game box is set to the input number. It should be between 0(floor), and 1000(Roof)
+
+
+Your phone has a built in light sensor.
+
+The readings of the sensor increase with intensity of light falling on the light sensor which is usually located next to the front camera.
+
+These readings are measured and used to set the height of the character in the game.
+
+ Stand under a tubelight and move the phone close and away from the light to observe how the bird moves along with it.
+
+]]>
+</description>
+
+ <block type="add_game" id="3YCPo!vOJS|o7/NBf9#[" x="25" y="0">
+        <next>
+          <block type="controls_repeat_ext" id="ng~P`Ol9-.[1q1=SN^pU">
+            <value name="TIMES">
+              <shadow type="math_number" id="eCAq7h,Tp#T#5#UXVdMa">
+                <field name="NUM">10000</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="set_bird_y" id="Wl.)ky-Wt!w[_:zKLo#L">
+                <value name="Y">
+                  <shadow type="math_number" id="S~pg(N]Su,l~c-0Rl9*m">
+                    <field name="NUM">200</field>
+                  </shadow>
+                  <block type="get_phone_light" id="U3o32.78_b#50[5IvvFL">
+                    <field name="CHANNEL">0</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="stop_game" id="csu/*}K@-iRufK-do++G"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

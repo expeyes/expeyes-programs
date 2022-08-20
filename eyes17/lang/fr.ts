@@ -1056,7 +1056,7 @@ Affichage de l'ensemble de fréquences actuel.
         <translation>Graphique I U terminé</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>Démarré</translation>
     </message>
@@ -1151,7 +1151,7 @@ Affichage de l'ensemble de fréquences actuel.
         <translation>La tension de base devrait être entre 0,5 et 3</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation>Tension de base non valide ; elle doit être entre 0,5 et 3</translation>
     </message>
@@ -1186,7 +1186,7 @@ Affichage de l'ensemble de fréquences actuel.
         <translation>La tension de base devrait être entre -0,5 et -3</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation>Tension de base invalide, elle devrait être entre -0,5 et -3</translation>
     </message>

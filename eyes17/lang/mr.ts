@@ -157,7 +157,7 @@
         <translation type="unfinished">अवशिष्ट (रेसिड्युअल) मॅग्नेटिक फील्ड: %.2f</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation type="unfinished">सुरु केले</translation>
     </message>
@@ -577,7 +577,7 @@
         <translation type="unfinished">बेस व्होल्टेज .5V ते 3V पर्यंत असावे</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation type="unfinished">अवैध बेस व्होल्टेज, .5V ते 3V पर्यंत असू द्या</translation>
     </message>
@@ -664,7 +664,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished">बेस व्होल्टेज -0.5V ते -3V पर्यंत असावे</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation type="unfinished">अवैध बेस व्होल्टेज, -0.5V ते -3V पर्यंत असू द्या</translation>
     </message>

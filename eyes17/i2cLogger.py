@@ -7,7 +7,7 @@ License : GNU GPL version 3
 '''
 import sys
 
-from PyQt6 import QtGui, QtCore, QtWidgets
+from PyQt5 import QtGui, QtCore, QtWidgets
 
 import time, math, os.path, struct
 import utils

@@ -157,7 +157,7 @@
         <translation>மீதமுள்ள காந்தப்புலம்: %.2f</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="159"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>தொடங்கியது</translation>
     </message>
@@ -602,7 +602,7 @@
         <translation>அடிப்படை மின்னழுத்தம் .5ல் இருந்து 3 வரை இருக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="141"/>
+        <location filename="../npnCEout.py" line="140"/>
         <source>Invalid Base voltage, should be from .5 to 3</source>
         <translation>தவறான அடிப்படை மின்னழுத்தம், .5ல் இருந்து 3 வரை இருக்க வேண்டும்</translation>
     </message>
@@ -689,7 +689,7 @@ For Driven Pendulum Expt.</source>
         <translation>அடிப்படை மின்னழுத்தம் -0.5ல் இருந்து -3 வரை இருக்க வேண்டும்</translation>
     </message>
     <message>
-        <location filename="../pnpCEout.py" line="139"/>
+        <location filename="../pnpCEout.py" line="138"/>
         <source>Invalid Base voltage, should be from -0.5 to -3</source>
         <translation>தவறான அடிப்படை மின்னழுத்தம், -0.5ல் இருந்து -3 வரை இருக்க வேண்டும்</translation>
     </message>

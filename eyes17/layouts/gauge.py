@@ -11,8 +11,8 @@
 
 import math
 import sys
-from PyQt6 import QtGui, QtCore, QtWidgets
-from PyQt6.QtGui import QColor
+from PyQt5 import QtGui, QtCore, QtWidgets
+from PyQt5.QtGui import QColor
 
 class Gauge(QtWidgets.QWidget):
 	valueChanged = QtCore.pyqtSignal(float)
