@@ -104,7 +104,7 @@ clean:
 	  xargs rm -rf
 	cd cover; rm -f *.aux *.log *~
 	rm -rf $(BUILDDIR)/doctrees
-	if [ -z "$(EYES17_ONLY)" ] then rm -f *.html; fi
+	if [ -z "$(EYES17_ONLY)" ]; then rm -f *.html; fi
 
 
 .PHONY: distclean
