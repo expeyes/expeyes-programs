@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="ar" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="ar">
 <context>
     <name>Dialog</name>
     <message>
@@ -411,7 +412,7 @@
         <translation> القياس جاري </translation>
     </message>
     <message>
-        <location filename="../i2cLogger.py" line="543"/>
+        <location filename="../i2cLogger.py" line="539"/>
         <source>Scan</source>
         <translation> مسح </translation>
     </message>
@@ -832,17 +833,17 @@
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="288"/>
-        <source>Vtotal (A1) = %5.2f V</source>
+        <source>Vtotal (A1 = %5.2f V)</source>
         <translation type="unfinished">Vtotal (A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="289"/>
-        <source>Vr (A2) = %5.2f V</source>
+        <source>Vr (A2 = %5.2f V)</source>
         <translation type="unfinished">Vr (A2) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="290"/>
-        <source>Vlc (A2-A1) = %5.2f V</source>
+        <source>Vlc (A2-A1 = %5.2f V)</source>
         <translation type="unfinished">Vlc (A2-A1) = %5.2f V</translation>
     </message>
     <message>
@@ -857,12 +858,12 @@
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="296"/>
-        <source>Vc (A3-A1) = %5.2f V</source>
+        <source>Vc (A3-A1 = %5.2f V)</source>
         <translation type="unfinished">Vc (A3-A1) = %5.2f V</translation>
     </message>
     <message>
         <location filename="../RLCsteadystate.py" line="297"/>
-        <source>Vl (A2-A3) = %5.2f V</source>
+        <source>Vl (A2-A3 = %5.2f V)</source>
         <translation type="unfinished">Vl (A2-A3) = %5.2f V</translation>
     </message>
     <message>
@@ -986,32 +987,32 @@
         <translation> مقاومة: &lt;100Ohm  or  &gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="635"/>
+        <location filename="../scope.py" line="636"/>
         <source>Output Changed from WG to SQ2</source>
         <translation> تم تغيير الإخراج من WG إلى SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="689"/>
+        <location filename="../scope.py" line="690"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="692"/>
+        <location filename="../scope.py" line="693"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="695"/>
+        <location filename="../scope.py" line="696"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="708"/>
+        <location filename="../scope.py" line="709"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="710"/>
+        <location filename="../scope.py" line="711"/>
         <source>No signal</source>
         <translation> لا توجد تغطية </translation>
     </message>
@@ -1268,7 +1269,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"> set to </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="685"/>
+        <location filename="../scope.py" line="686"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished"> السعة عالية جدًا أو قصيرة على الأرض </translation>
     </message>
@@ -2362,12 +2363,12 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="492"/>
+        <location filename="../main.py" line="494"/>
         <source>Failed to load scope</source>
         <translation> فشل تحميل النطاق </translation>
     </message>
     <message>
-        <location filename="../main.py" line="524"/>
+        <location filename="../main.py" line="528"/>
         <source>Failed to load %s</source>
         <translation>%s فشل في التحميل </translation>
     </message>
@@ -2387,12 +2388,12 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete"> الرجاء إعادة تشغيل التطبيق لتعتيم خلفية الشاشة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="571"/>
+        <location filename="../main.py" line="575"/>
         <source>Device</source>
         <translation> جهاز </translation>
     </message>
     <message>
-        <location filename="../main.py" line="572"/>
+        <location filename="../main.py" line="576"/>
         <source>Reconnect</source>
         <translation> أعد الاتصال </translation>
     </message>
@@ -2407,122 +2408,122 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete"> خلفية أغمق في المرة القادمة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="575"/>
+        <location filename="../main.py" line="579"/>
         <source>Choose Language</source>
         <translation> اختر اللغة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="608"/>
+        <location filename="../main.py" line="612"/>
         <source>School Expts</source>
         <translation> الخبرة المدرسية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="612"/>
+        <location filename="../main.py" line="616"/>
         <source>Electronics</source>
         <translation> إلكترونيات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="619"/>
+        <location filename="../main.py" line="623"/>
         <source>Electrical</source>
         <translation> الكهرباء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="623"/>
+        <location filename="../main.py" line="627"/>
         <source>Sound</source>
         <translation> صوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="627"/>
+        <location filename="../main.py" line="631"/>
         <source>Mechanics</source>
         <translation> علم الميكانيكا </translation>
     </message>
     <message>
-        <location filename="../main.py" line="631"/>
+        <location filename="../main.py" line="635"/>
         <source>Other Expts</source>
         <translation> خبرة أخرى </translation>
     </message>
     <message>
-        <location filename="../main.py" line="635"/>
+        <location filename="../main.py" line="639"/>
         <source>I2C Modules</source>
         <translation>I2C الوحدات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="639"/>
+        <location filename="../main.py" line="643"/>
         <source>PythonCode</source>
         <translation> كود بيتون </translation>
     </message>
     <message>
-        <location filename="../main.py" line="942"/>
+        <location filename="../main.py" line="949"/>
         <source>Oscilloscope</source>
         <translation> راسم الذبذبات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="573"/>
+        <location filename="../main.py" line="577"/>
         <source>LightBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="574"/>
+        <location filename="../main.py" line="578"/>
         <source>DarkBackGround</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="598"/>
+        <location filename="../main.py" line="602"/>
         <source>Screenshot</source>
         <translation> لقطة شاشة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="599"/>
+        <location filename="../main.py" line="603"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"> نافذة كاملة Alt-s </translation>
     </message>
     <message>
-        <location filename="../main.py" line="600"/>
+        <location filename="../main.py" line="604"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"> Alt-p رسم بياني فقط  </translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="865"/>
         <source>Missing Plot</source>
         <translation> مؤامرة مفقود </translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="865"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="892"/>
+        <location filename="../main.py" line="899"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation> سيتم تعيين الارتفاع تلقائيًا أدخل العرض</translation>
     </message>
     <message>
-        <location filename="../main.py" line="601"/>
+        <location filename="../main.py" line="605"/>
         <source>Credits</source>
         <translation type="unfinished"> الاعتمادات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="594"/>
+        <location filename="../main.py" line="598"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="606"/>
+        <location filename="../main.py" line="610"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="772"/>
+        <location filename="../main.py" line="779"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="779"/>
+        <location filename="../main.py" line="786"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="602"/>
+        <location filename="../main.py" line="606"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
