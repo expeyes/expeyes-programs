@@ -4,8 +4,6 @@ Priority: optional
 Maintainer: Georges Khaznadar <georgesk@debian.org>
 Build-Depends: debhelper (>= 10), quilt,
  python3-all, dh-python,
- gcc-avr, binutils-avr, avr-libc (>=1:1.8.0+Atmel3.5.0),
- pkg-config, libgtk2.0-dev, x11proto-randr-dev (>= 1.5.0),
  pyqt5-dev-tools, qttools5-dev-tools, qt5-qmake
 Standards-Version: 4.1.5
 Homepage: http://expeyes.in/
