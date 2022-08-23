@@ -38,9 +38,11 @@ all_indep:
 	done
 
 all_firmware:
-	for d in firmware kuttyPy/firmware microhope/firmware; do \
-	  $(MAKE) -C $$d all; \
-	done
+	if [ -z "$(EYES17_ONLY)" ]; then \
+	  for d in firmware kuttyPy/firmware microhope/firmware; do \
+	    $(MAKE) -C $$d all; \
+	  done; \
+	fi
 
 clean_firmware: clean
 	# clean the bootloader hex file
@@ -58,30 +60,30 @@ install_arch: all_arch
 	fi
 	install -d $(DESTDIR)/lib/udev/rules.d/
 	install -m 644 99-phoenix.rules $(DESTDIR)/lib/udev/rules.d/
-	# for expeyes
-	install -d $(DESTDIR)/usr/share/expeyes
-	cp -a eyes $(DESTDIR)/usr/share/expeyes
-	# icons
+	## for expeyes
+	#install -d $(DESTDIR)/usr/share/expeyes
+	#cp -a eyes $(DESTDIR)/usr/share/expeyes
+	## icons
 	install -d $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/expeyes-logo.png \
-	  $(DESTDIR)/usr/share/icons/expeyes.png
-	install -m 644 pixmaps/expeyes-junior-icon.png \
-	  $(DESTDIR)/usr/share/icons
+	#install -m 644 pixmaps/expeyes-logo.png \
+	#  $(DESTDIR)/usr/share/icons/expeyes.png
+	#install -m 644 pixmaps/expeyes-junior-icon.png \
+	#  $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/eyes17-logo.png \
 	  $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/expeyes-progman-jr-doc.png \
-	  $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/expeyes-progman-jr-doc.svg \
-	  $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/nuclear-icon.png \
-	  $(DESTDIR)/usr/share/icons
-	# desktop files
+	#install -m 644 pixmaps/expeyes-progman-jr-doc.png \
+	#  $(DESTDIR)/usr/share/icons
+	#install -m 644 pixmaps/expeyes-progman-jr-doc.svg \
+	#  $(DESTDIR)/usr/share/icons
+	#install -m 644 pixmaps/nuclear-icon.png \
+	#  $(DESTDIR)/usr/share/icons
+	## desktop files
 	install -d $(DESTDIR)/usr/share/applications
-	install -m 644 desktop/expeyes.desktop \
-	  desktop/expeyes-junior.desktop desktop/Phoenix-ASM.desktop \
-	  desktop/expeyes-17.desktop \
+	#install -m 644 desktop/expeyes.desktop \
+	#  desktop/expeyes-junior.desktop desktop/Phoenix-ASM.desktop
+	install -m644 desktop/expeyes-17.desktop \
 	  $(DESTDIR)/usr/share/applications
-	$(MAKE) -C po install DESTDIR=$(DESTDIR)
+	#$(MAKE) -C po install DESTDIR=$(DESTDIR)
 	# for expeyes-doc-common
 	install -d $(DESTDIR)/usr/share/icons
 	install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
@@ -91,11 +93,11 @@ install_arch: all_arch
 	for d in $(SUBDIRS); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
 	done
-	# fix permissions in /usr/share/expeyes
-	find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
-	# for expeyes-clib
-	rm -f  $(DESTDIR)/usr/share/expeyes/clib
-	ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
+	## fix permissions in /usr/share/expeyes
+	#find $(DESTDIR)/usr/share/expeyes -type f -exec chmod 644 {} \;
+	## for expeyes-clib
+	#rm -f  $(DESTDIR)/usr/share/expeyes/clib
+	#ln -s /usr/lib/expeyes $(DESTDIR)/usr/share/expeyes/clib
 
 DOCDIR_17 = $(DESTDIR)/usr/share/eyes17/doc
 DEBIAN_DOCDIR = $(DESTDIR)/usr/share/doc/eyes17
@@ -118,13 +120,14 @@ install_indep: all_indep
 	done
 	# fix a few permission
 	find $(DESTDIR) -name "*.pdf" -exec chmod -x {} \;
-	# PO files for expeyes
-	make -C po install DESTDIR=$(DESTDIR)
-	# PO files for microhope
-	make -C microhope/po install DESTDIR=$(DESTDIR)
-	# files from eyesjunior
-	mkdir -p $(DESTDIR)/usr/share/eyesj
-	cp -a eyesjunior/* $(DESTDIR)/usr/share/eyesj
+	## PO files for expeyes
+	#make -C po install DESTDIR=$(DESTDIR)
+	## PO files for microhope
+	#make -C microhope/po install DESTDIR=$(DESTDIR)
+	## files from eyesjunior
+	#mkdir -p $(DESTDIR)/usr/share/eyesj
+	#cp -a eyesjunior/* $(DESTDIR)/usr/share/eyesj
+
 	# files from eyes17
 	mkdir -p $(DESTDIR)/usr/share/eyes17
 	for f in eyes17/server*.html eyes17/*.py ; do \
