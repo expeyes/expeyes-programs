@@ -1,4 +1,4 @@
-PYUIC?=pyuic6
+PYUIC?=pyuic5
 PYRCC?=pyrcc5
 PY_VERSION ?= 3
 
