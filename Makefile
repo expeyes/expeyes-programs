@@ -11,7 +11,7 @@ SUBDIRS_INDEP = expeyes-web \
 		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles \
 		bin
 ifeq ($(EYES17_ONLY), build_eyes17_only)
-	SUBDIRS_INDEP = eyes17 eyes17/lang eyes17/layouts eyes17/helpfiles
+	SUBDIRS_INDEP = eyes17 eyes17/lang eyes17/layouts eyes17/helpFiles
 endif
 
 LANGS = ${wildcard eyes17/helpFiles| grep '^..$$'}
