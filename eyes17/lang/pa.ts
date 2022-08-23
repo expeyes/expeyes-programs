@@ -2321,6 +2321,11 @@ p, li { white-space: pre-wrap; }
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../main.py" line="252"/>
+        <source>Graphical Code Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>editorHandler</name>
