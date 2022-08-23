@@ -1,8 +1,8 @@
-usr/share/expeyes/eyes17/code       usr/share/eyes17
-usr/share/expeyes/eyes17/html  	    usr/share/eyes17
-usr/share/expeyes/eyes17/lang/*.qm  usr/share/eyes17/lang
-usr/share/expeyes/eyes17/lang/*.ts  usr/share/eyes17/lang
-usr/share/expeyes/eyes17/*.py  	    usr/share/eyes17
+usr/share/eyes17/code       usr/share/eyes17
+usr/share/eyes17/html  	    usr/share/eyes17
+usr/share/eyes17/lang/*.qm  usr/share/eyes17/lang
+usr/share/eyes17/lang/*.ts  usr/share/eyes17/lang
+usr/share/eyes17/*.py  	    usr/share/eyes17
 usr/share/eyes17/doc		    usr/share/eyes17
 usr/share/eyes17/rst		    usr/share/eyes17
 eyes17/examples			    usr/share/eyes17
