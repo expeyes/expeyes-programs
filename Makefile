@@ -160,7 +160,8 @@ install_indep: all_indep
 clean:
 	rm -rf *~ *.pyc build/ eyes/*~ eyes/*.pyc eyes-junior/*~ eyes-junior/*.pyc doc/fr/Docs/eyes.out
 	for d in $(SUBDIRS) $(SUBDIRS_INDEP); do \
-	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || $(MAKE) -C $$d clean; \
+	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d distclean || \
+		$(MAKE) -C $$d clean EYES17_ONLY=$(EYES17_ONLY); \
 	done
 	[ ! -d clib ] || (cd clib/expeyes-clib && sh clean-all.sh)
 	# fix compiles Python files created by the clean scripts above

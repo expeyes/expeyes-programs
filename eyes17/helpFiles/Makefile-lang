@@ -103,7 +103,9 @@ clean:
 	find $(BUILDDIR)/latex -mindepth 1 -maxdepth 1 | grep -v expEYES-17.pdf | \
 	  xargs rm -rf
 	cd cover; rm -f *.aux *.log *~
-	rm -rf $(BUILDDIR)/doctrees *.html
+	rm -rf $(BUILDDIR)/doctrees
+	if [ -z "$(EYES17_ONLY)" ] then rm -f *.html; fi
+
 
 .PHONY: distclean
 distclean: clean
