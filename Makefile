@@ -1,10 +1,18 @@
 DESTDIR =
+EYES17_ONLY = $(shell ls build_eyes17_only 2>/dev/null)
 SUBDIRS = po clib/expeyes-clib
+ifeq ($(EYES17_ONLY), build_eyes17_only)
+	SUBDIRS =
+endif
+
 SUBDIRS_INDEP = expeyes-web \
 		microhope microhope/po microhope/microhope-doc \
 		eyes17 eyes17/lang eyes17/layouts eyes17/helpFiles \
 		eyesjunior/lang eyesjunior/layouts eyesjunior/helpFiles \
 		bin
+ifeq ($(EYES17_ONLY), build_eyes17_only)
+	SUBDIRS_INDEP = eyes17 eyes17/lang eyes17/layouts eyes17/helpfiles
+endif
 
 LANGS = ${wildcard eyes17/helpFiles| grep '^..$$'}
 THIS_DIR = ${shell pwd}
