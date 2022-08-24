@@ -14,6 +14,9 @@ eyes20/
 *-lyxformat-*.lyx
 
 # debian packaging temporaries
+debian/control
+debian/changelog
+
 debian/*.log
 debian/*.substvars
 debian/*.debhelper

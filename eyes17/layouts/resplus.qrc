@@ -1,11 +1,9 @@
 <RCC>
   <qresource prefix="control">
     <file>download.svg</file>
-    <file>kpyplus.jpeg</file>
     <file>refresh.svg</file>
     <file>plus.svg</file>
     <file>stop.svg</file>
-    <file>kuttypy.png</file>
     <file>play.svg</file>
     <file>document-open.png</file>
     <file>folder.png</file>

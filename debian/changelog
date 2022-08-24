@@ -1,3 +1,10 @@
+expeyes (4.4.3+dfsg-5) unstable; urgency=medium
+
+  * fixed the postinst script for python3-expeyes.
+    Closes: #904514
+
+ -- jithinbp <jithinbp@gmail.com>  Sat, 21 Aug 2018 10:00:49 +0200
+
 expeyes (4.4.3+dfsg-4) unstable; urgency=medium
 
   * fixed the postinst script for python3-expeyes.
