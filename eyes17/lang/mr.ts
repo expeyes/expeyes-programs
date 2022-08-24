@@ -1796,12 +1796,20 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">स्ट्रोबोस्कोप</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="9"/>
+=======
+        <location filename="../main.py" line="216"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Diode Characteristics</source>
         <translation type="unfinished">डायोडची  वैशिष्ट्ये</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="11"/>
+=======
+        <location filename="../main.py" line="217"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>NPN Output Characteristics</source>
         <translation type="unfinished">NPN आउटपुट कॅरेक्टरिस्टिक्स</translation>
     </message>
@@ -1856,7 +1864,11 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">समिंग अँप्लिफायर</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="10"/>
+=======
+        <location filename="../main.py" line="211"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Logic Gates</source>
         <translation type="unfinished">लॉजिक गेट्स</translation>
     </message>
@@ -1876,12 +1888,20 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">XY प्लॉटिंग</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="12"/>
+=======
+        <location filename="../main.py" line="226"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RLC Steady state response</source>
         <translation type="unfinished">RLC स्टेडी स्टेट प्रतिसाद</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="13"/>
+=======
+        <location filename="../main.py" line="227"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RC Transient response</source>
         <translation type="unfinished">RC क्षणिक (ट्रान्झियंट ) प्रतिसाद</translation>
     </message>

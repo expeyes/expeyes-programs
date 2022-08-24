@@ -2553,12 +2553,20 @@ p, li { white-space: pre-wrap; }
         <translation>Oscilloscope</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="9"/>
+=======
+        <location filename="../main.py" line="216"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Diode Characteristics</source>
         <translation>Caractéristique d&apos;une diode</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="11"/>
+=======
+        <location filename="../main.py" line="217"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>NPN Output Characteristics</source>
         <translation>Caractéristique d&apos;un transistor NPN</translation>
     </message>
@@ -2613,7 +2621,11 @@ p, li { white-space: pre-wrap; }
         <translation>Amplificateur additionneur</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="10"/>
+=======
+        <location filename="../main.py" line="211"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Logic Gates</source>
         <translation>Portes logiques</translation>
     </message>
@@ -2633,12 +2645,20 @@ p, li { white-space: pre-wrap; }
         <translation>Tracé XY</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="12"/>
+=======
+        <location filename="../main.py" line="226"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RLC Steady state response</source>
         <translation>Circuit RLC en régime permanent</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="13"/>
+=======
+        <location filename="../main.py" line="227"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RC Transient response</source>
         <translation>Circuit RC en régime transitoire</translation>
     </message>

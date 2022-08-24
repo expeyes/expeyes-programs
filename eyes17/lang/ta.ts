@@ -1827,12 +1827,20 @@ p, li { white-space: pre-wrap; }
         <translation>அலைக்காட்டி</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="9"/>
+=======
+        <location filename="../main.py" line="216"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Diode Characteristics</source>
         <translation>டையோடு பண்புகள்</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="11"/>
+=======
+        <location filename="../main.py" line="217"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>NPN Output Characteristics</source>
         <translation>NPN வெளியீடு பண்புகள்</translation>
     </message>
@@ -1887,7 +1895,11 @@ p, li { white-space: pre-wrap; }
         <translation>கூட்டு பெருக்கி</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="10"/>
+=======
+        <location filename="../main.py" line="211"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Logic Gates</source>
         <translation>லாஜிக் கேட்ஸ்</translation>
     </message>
@@ -1907,12 +1919,20 @@ p, li { white-space: pre-wrap; }
         <translation>XY வரையப்யடுகிறது</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="12"/>
+=======
+        <location filename="../main.py" line="226"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RLC Steady state response</source>
         <translation>RLC நிலையான தன்மை விளைவு</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="13"/>
+=======
+        <location filename="../main.py" line="227"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RC Transient response</source>
         <translation>RC நிலையற்றம் விளைவு</translation>
     </message>

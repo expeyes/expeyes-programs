@@ -38,8 +38,6 @@ DocDirSource = $(CURDIR)/ExpEYES17/UserManual
 override_dh_auto_install-indep:
 	make install_indep DESTDIR=$(CURDIR)/debian/tmp
 	dh_auto_install -i
-	make -C po install DESTDIR=$(CURDIR)/debian/expeyes
-	make -C microhope/po install DESTDIR=$(CURDIR)/debian/microhope
 	# prevents lintian error about PYCACHE
 	find $(CURDIR)/debian/ -type d -name __pycache__| xargs rm -rf;
 

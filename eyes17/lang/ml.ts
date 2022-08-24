@@ -1822,12 +1822,20 @@ p, li { white-space: pre-wrap; }
         <translation>സ്ട്രോബോസ്കോപ്പ്</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="9"/>
+=======
+        <location filename="../main.py" line="216"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Diode Characteristics</source>
         <translation>ഡയോഡ് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="11"/>
+=======
+        <location filename="../main.py" line="217"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>NPN Output Characteristics</source>
         <translation>NPN ഔട്ട്പുട്ട് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
@@ -1882,7 +1890,11 @@ p, li { white-space: pre-wrap; }
         <translation>സമ്മിങ് ആംപ്ലിഫയർ</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="10"/>
+=======
+        <location filename="../main.py" line="211"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>Logic Gates</source>
         <translation>ലോജിക്ക് ഗേറ്റുകൾ</translation>
     </message>
@@ -1902,12 +1914,20 @@ p, li { white-space: pre-wrap; }
         <translation>XY-പ്ലോട്ട്</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="12"/>
+=======
+        <location filename="../main.py" line="226"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RLC Steady state response</source>
         <translation>RLC സ്റ്റെഡിസ്റ്റേറ് റെസ്പോൺസ്</translation>
     </message>
     <message>
+<<<<<<< HEAD
         <location filename="../experiment-list.py" line="13"/>
+=======
+        <location filename="../main.py" line="227"/>
+>>>>>>> b2d1779236e4cd3df2013f88df0c8c29f84c0161
         <source>RC Transient response</source>
         <translation>RC ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>

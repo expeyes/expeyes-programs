@@ -1,9 +1,9 @@
-expeyes (4.4.3+dfsg-5) unstable; urgency=medium
+expeyes (5.0+pyqt5-1) unstable; urgency=medium
 
-  * fixed the postinst script for python3-expeyes.
-    Closes: #904514
+  * modified debian packaging files to output one deb package: eyes17,
+    depending on pyqt5
 
- -- jithinbp <jithinbp@gmail.com>  Sat, 21 Aug 2018 10:00:49 +0200
+ -- Georges Khaznadar <georgesk@debian.org>  Tue, 23 Aug 2022 19:42:32 +0200
 
 expeyes (4.4.3+dfsg-4) unstable; urgency=medium
 
