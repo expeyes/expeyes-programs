@@ -314,7 +314,7 @@ class helpWin(QWebView):
 		print(fn)
 
 		self.load(QUrl.fromLocalFile(fn))
-		self.setWindowTitle(unicode(self.tr('Help: %s')) %name[0])
+		self.setWindowTitle(self.tr('Help: %s') %name[0])
 		#self.setMaximumSize(QSize(500, 1200))
 		self.show()
 		screen = QDesktopWidget().screenGeometry()
@@ -525,7 +525,7 @@ class MainWindow(QMainWindow):
 		except Exception as err:
 			print("Exception:", err)	
 			self.expName = ''
-			self.setWindowTitle(unicode(self.tr('Failed to load %s')) %e[0])
+			self.setWindowTitle(self.tr('Failed to load %s') %e[0])
 		return
 		
 	def runCode(self, e):
