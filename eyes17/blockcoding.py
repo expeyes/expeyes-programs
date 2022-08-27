@@ -55,7 +55,7 @@ class webWin(QWebView):
 			print(fn)
 
 			self.load(QUrl.fromLocalFile(fn))
-			self.setWindowTitle(unicode(self.tr('Block Coding: %s')) %fn)
+			self.setWindowTitle(self.tr('Block Coding: %s') %fn)
 
 
 		except Exception as e:
