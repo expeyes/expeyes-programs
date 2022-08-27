@@ -14,7 +14,7 @@ $(QM_FILES): $(TS_FILES)
 	python3 makeStats.py lrelease.log
 
 $(TS_FILES): eyes17.pro
-	$(PYLUPDATE) eyes17.pro
+	$(PYLUPDATE) eyes17.pro LANG=C
 
 eyes17.pro: $(SOURCES)
 	@echo "# GENERATED FILE, DO NOT EDIT" > $@
