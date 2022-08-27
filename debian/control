@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Georges Khaznadar <georgesk@debian.org>
 Build-Depends: debhelper (>= 10), quilt,
  python3-all, dh-python,
- pyqt5-dev-tools, qttools5-dev-tools, qt5-qmake
+ pyqt5-dev-tools, qttools5-dev-tools, qt5-qmake,
+ locales
 Standards-Version: 4.1.5
 Homepage: http://expeyes.in/
 Vcs-Browser: https://salsa.debian.org/georgesk/expeyes
