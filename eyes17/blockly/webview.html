@@ -17,143 +17,75 @@
   <script src="msg/js/en.js"></script>
   <script src="blocks/workspace_interpreted.js"></script>
   <script src="blocks/api.js"></script>
+  <script src="blocks/analog_blocks.js"></script>
+  <script src="blocks/digital_blocks.js"></script>
+  <script src="blocks/game_blocks.js"></script>
+  <script src="blocks/piano_blocks.js"></script>
+  <link rel="stylesheet" type="text/css" href="piano.css">
+
   <script src="blocks/acorn_interpreter.js"></script>
   <script src="qrc:///qtwebchannel/qwebchannel.js" type="text/javascript"></script>
 
   <link rel="stylesheet" type="text/css" href="uplot/uPlot.min.css" />
   <script type="text/javascript" src="uplot/uPlot.iife.js"></script>
   <script type="text/javascript" src="plots.js"></script>
-  <script type="text/javascript" src="game.js"></script>
 
 </head>
 <body>
 
 <xml xmlns="https://developers.google.com/blockly/xml" id="mytoolbox" style="display: none">
-  <category name="ExpEYES" colour="#995ba5">
 
-    <block type="get_voltage">
-      <field name="CHANNEL">A1</field>
+  <category name="Variables" colour="#a55b80" custom="VARIABLE">  </category>
+  <category name="Text" colour="#5ba58c">
+    <block type="text">
+      <field name="TEXT"></field>
     </block>
-    <block type="set_voltage">
-      <field name="CHANNEL">PV1</field>
+    <block type="text_join">
+      <mutation items="2"></mutation>
     </block>
-    <block type="set_frequency">
-      <field name="CHANNEL">WG</field>
-    </block>
-    <block type="get_frequency">
-      <field name="CHANNEL">IN2</field>
-    </block>
-    <block type="multi_r2r">
-      <field name="CHANNEL">IN2</field>
-      <field name="EDGES">2</field>
-      <field name="TIMEOUT">2</field>
-    </block>
-    <block type="set_state">
-      <field name="CHANNEL">OD1</field>
-    </block>
-    <block type="capture1">
-      <field name="CHANNEL">A1</field>
-      <field name="SAMPLES">100</field>
-      <field name="TIMEGAP">1</field>
-    </block>
-
-    <block type="capture2">
-      <field name="CHANNEL">A1</field>
-      <field name="SAMPLES">100</field>
-      <field name="TIMEGAP">2</field>
-    </block>
-
-  <block type="scope_trigger">
-    </block>
-  <block type="capture_analysis">
-    </block>
-  <block type="capture_analysis_dual">
-    </block>
-
-
-    <block type="write_to_file">
-    </block>
-
-
-  </category>
-
-
-
-  <category name="Sensors" colour="#995b65">
-    <block type="read_SR04">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_BMP280">
-      <field name="CHANNEL">1</field>
-    </block>
-    <block type="read_MPU6050">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_VL53L0X">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_HMC5883L">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_MAX30100">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_ML8511">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="read_VOLTS">
-      <field name="CHANNEL">0</field>
-    </block>
-    <block type="set_PCA9685">
-      <field name="CHANNEL">1</field>
-    </block>
-    <block type="set_servo">
-      <field name="CHANNEL">SQ1</field>
-    </block>
-  </category>
-  <category name="PLOTS" colour="#995b95">
-    <block type="plot_datapoint">
-	  <value name="YAXIS">
+    <block type="text_append">
+      <field name="VAR" id="NA?/#Ojn#=$$1[^`/^Dd">item</field>
+      <value name="TEXT">
         <shadow type="text">
-          <field name="TEXT">Y-Axis</field>
+          <field name="TEXT"></field>
         </shadow>
       </value>
-    </block>  
-    <block type="plot_xy">
-    </block>  
-
-    <block type="plot_xyarray">
-    </block>  
-
-    <block type="plot_xarray_yarray">
-    </block>  
-
-    <block type="plot_xyyarray">
-    </block>  
-
-    <block type="plot_radar">
-	  <value name="MAXRADIUS">
-        <shadow type="math_number">
-          <field name="NUM">30</field>
-        </shadow>
-      </value>
-    </block>  
-
-    <block type="add_game">
-    </block>  
-    <block type="stop_game">
-    </block>  
-
-    <block type="set_bird_y">
-	<value name="Y">
-        <shadow type="math_number">
-          <field name="NUM">200</field>
-        </shadow>
     </block>
-
-
+    <block type="cs_print">
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_prompt_ext">
+      <mutation type="TEXT"></mutation>
+      <field name="TYPE">TEXT</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
+    <block type="text_getSubstring">
+      <mutation at1="true" at2="true"></mutation>
+      <field name="WHERE1">FROM_START</field>
+      <field name="WHERE2">FROM_START</field>
+      <value name="STRING">
+        <block type="variables_get">
+          <field name="VAR" id="Y/O[Wi.+6THk|+k0W/+b">text</field>
+        </block>
+      </value>
+    </block>
+    <block type="text_trim">
+      <field name="MODE">BOTH</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT">abc</field>
+        </shadow>
+      </value>
+    </block>
   </category>
-
   <category name="Logic" colour="#5b80a5">
     <block type="controls_if"></block>
     <block type="logic_compare">
@@ -168,9 +100,7 @@
     </block>
     <block type="logic_null"></block>
     <block type="logic_ternary"></block>
-  </category>
-
-  
+  </category>  
   <category name="Math" colour="#5b67a5">
     <block type="math_number">
       <field name="NUM">0</field>
@@ -271,56 +201,6 @@
     </block>
     <block type="math_random_float"></block>
   </category>
-  <category name="Text" colour="#5ba58c">
-    <block type="text">
-      <field name="TEXT"></field>
-    </block>
-    <block type="text_join">
-      <mutation items="2"></mutation>
-    </block>
-    <block type="text_append">
-      <field name="VAR" id="NA?/#Ojn#=$$1[^`/^Dd">item</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT"></field>
-        </shadow>
-      </value>
-    </block>
-    <block type="cs_print">
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_prompt_ext">
-      <mutation type="TEXT"></mutation>
-      <field name="TYPE">TEXT</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-    <block type="text_getSubstring">
-      <mutation at1="true" at2="true"></mutation>
-      <field name="WHERE1">FROM_START</field>
-      <field name="WHERE2">FROM_START</field>
-      <value name="STRING">
-        <block type="variables_get">
-          <field name="VAR" id="Y/O[Wi.+6THk|+k0W/+b">text</field>
-        </block>
-      </value>
-    </block>
-    <block type="text_trim">
-      <field name="MODE">BOTH</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT">abc</field>
-        </shadow>
-      </value>
-    </block>
-  </category>
   <category name="Loops" colour="#5ba55b">
     <block type="wait_seconds">
       <field name="SECONDS">1</field>
@@ -403,15 +283,156 @@
       <field name="DIRECTION">1</field>
     </block>
   </category>
-  <sep></sep>
-  <category name="Variables" colour="#a55b80" custom="VARIABLE">
+
+
+  <category name="PLOTS" colour="#995b95">
+    <block type="plot_datapoint">
+	  <value name="YAXIS">
+        <shadow type="text">
+          <field name="TEXT">Y-Axis</field>
+        </shadow>
+      </value>
+    </block>  
+    <block type="plot_xy">
+    </block>  
+
+    <block type="plot_xyarray">
+    </block>  
+
+    <block type="plot_xarray_yarray">
+    </block>  
+
+    <block type="plot_xyyarray">
+    </block>  
+
+    <block type="plot_radar">
+	  <value name="MAXRADIUS">
+        <shadow type="math_number">
+          <field name="NUM">30</field>
+        </shadow>
+      </value>
+    </block>  
+
+
   </category>
-  <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
+  <category name="Functions" colour="#995ba5" custom="PROCEDURE">
+  </category>
+
+
   <sep></sep>
+
+  <category name="ExpEYES" colour="#995ba5">
+
+    <block type="get_voltage">
+      <field name="CHANNEL">A1</field>
+    </block>
+    <block type="set_voltage">
+      <field name="CHANNEL">PV1</field>
+    </block>
+    <block type="set_frequency">
+      <field name="CHANNEL">WG</field>
+    </block>
+    <block type="get_frequency">
+      <field name="CHANNEL">IN2</field>
+    </block>
+    <block type="multi_r2r">
+      <field name="CHANNEL">IN2</field>
+      <field name="EDGES">2</field>
+      <field name="TIMEOUT">2</field>
+    </block>
+    <block type="set_state">
+      <field name="CHANNEL">OD1</field>
+    </block>
+    <block type="capture1">
+      <field name="CHANNEL">A1</field>
+      <field name="SAMPLES">100</field>
+      <field name="TIMEGAP">1</field>
+    </block>
+
+    <block type="capture2">
+      <field name="CHANNEL">A1</field>
+      <field name="SAMPLES">100</field>
+      <field name="TIMEGAP">2</field>
+    </block>
+
+  <block type="scope_trigger">
+    </block>
+  <block type="capture_analysis">
+    </block>
+  <block type="capture_analysis_dual">
+    </block>
+
+
+    <block type="write_to_file">
+    </block>
+
+
+  </category>
+
+  <category name="Sensors" colour="#995b65">
+    <block type="read_SR04">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_BMP280">
+      <field name="CHANNEL">1</field>
+    </block>
+    <block type="read_MPU6050">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_VL53L0X">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_HMC5883L">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_MAX30100">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_ML8511">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="read_VOLTS">
+      <field name="CHANNEL">0</field>
+    </block>
+    <block type="set_PCA9685">
+      <field name="CHANNEL">1</field>
+    </block>
+    <block type="set_servo">
+      <field name="CHANNEL">SQ1</field>
+    </block>
+  </category>
+
+  <category name="Games" colour="#995b65">
+
+    <block type="add_game">
+    </block>  
+    <block type="stop_game">
+    </block>  
+
+    <block type="set_bird_y">
+	<value name="Y">
+        <shadow type="math_number">
+          <field name="NUM">200</field>
+        </shadow>
+	</value>
+    </block>
+
+    <block type="add_piano">
+    </block>  
+
+    <block type="play_piano">
+	<value name="NOTE">
+        <shadow type="text">
+          <field name="TEXT">C</field>
+        </shadow>
+	</value>
+
+    </block>
 
 
 
   </category>
+
 
 
 </xml>
@@ -461,7 +482,7 @@
 		  </div>
 
 		  <div class="column">
-			<div class="ui horizontal celled list registers" style="color:red;">
+			<div class="ui horizontal celled list registers" style="color:red;width:100%;">
 			</div>
 			<div class="ui description cmdarea" style="color:lightgreen;">
 			</div>
@@ -566,6 +587,8 @@
 		});
 
 	function on() {
+		resultplots.empty();
+		registers.empty();
 	  results.html("");
 	  resultModal.modal('show');
 
@@ -663,6 +686,15 @@
 	}
 
 
+
+	function initAllApis(i,sc){
+		initApi(i,sc);
+		initAnalog(i,sc);
+		initDigital(i,sc);
+		initGames(i,sc);
+		initPiano(i,sc);
+	}
+
 	function runCode() {
 	  if (!myInterpreter) {
 		// First statement of this code.
@@ -674,7 +706,7 @@
 		setTimeout(function() {
 		  // Begin execution
 		  highlightPause = false;
-		  myInterpreter = new Interpreter(latestCode, initApi);
+		  myInterpreter = new Interpreter(latestCode, initAllApis);
 		  if(latestCode.search("alert") != -1) // -1 means not found
 			on();
 		  
