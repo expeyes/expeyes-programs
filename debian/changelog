@@ -1,3 +1,10 @@
+expeyes (5.0+pyqt5-2) unstable; urgency=medium
+
+  * added piano block to codeblocks: eyes17,
+    depending on pyqt5
+
+ -- Jithin BP <jithinbp@gmail.com>  Sun Aug 28 15:13:00 2022
+
 expeyes (5.0+pyqt5-1) unstable; urgency=medium
 
   * modified debian packaging files to output one deb package: eyes17,

@@ -1778,6 +1778,7 @@ class Interface():
 		sets OD1 HIGH, Turn Off CCS, but leave SQR1 untouched.
 
 		"""
+		print(kwargs)
 		data=0
 		if 'OD1' in kwargs:
 			data|= 0x10|(1 if kwargs.get('OD1') else 0)
@@ -2581,6 +2582,11 @@ class Interface():
 			self.H.__get_ack__()        
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+
+	def set_sq1(self,freq,duty_cycle=50):
+		return set_sqr1(freq, duty_cycle)
+	def set_sq2(self,freq,duty_cycle=50):
+		return set_sqr2(freq, duty_cycle)
 
 	def set_sqr1(self,freq,duty_cycle=50):
 		"""
