@@ -1,0 +1,40 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+# Introduction
+
+This interface is made up of interlocking graphical widgets with predefined tasks
+which can be put together to create a set of instructions to be executed by the phone using
+the Kuttypy hardware.
+
+## Hello World
+
+
++ First, open the Text toolbox on the left, and drag the `Text` block to the workspace. Set the text contents of the text box.
++ Then drag a `Print` block from the `Text` toolbox to the workspace.
+
++ Now link the text block to the print block like attaching a jigsaw puzzle
+
+
+## Execute the code
+
++ Click on the `Run` button to view the results
+
+
+Explore the other sample programs for understanding the various possibilities
+
+]]>
+</description>
+
+      <block type="cs_print" id="OvdOc).Qgs|:`SiWRgDA" x="15" y="133">
+        <value name="TEXT">
+          <shadow type="text" id="W#9%QeySd^mGaf5S3@at">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text" id="13`r!2J@7-NM?)AMp)m8">
+            <field name="TEXT">Hello!😁</field>
+          </block>
+        </value>
+      </block>
+    </xml>

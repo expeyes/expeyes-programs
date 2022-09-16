@@ -1,0 +1,72 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</variable>
+    <variable id="}+DpkjOSXUlcS,{cd*AR">data1</variable>
+    <variable id="gWUIv[4jv`fBv;t26kp6">data2</variable>
+  </variables>
+  <block type="scope_trigger" id="8GES]Bkbq,gwF-t7k9_!" x="58" y="74">
+    <field name="STATE">TRUE</field>
+    <field name="CHANNEL">0</field>
+    <field name="LEVEL">512</field>
+    <next>
+      <block type="controls_repeat_ext" id="4aOxWA:WoJ$C7Ea{Kh17">
+        <value name="TIMES">
+          <shadow type="math_number" id="#v`5/~4[wv/u}eUe-V1t">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="capture2" id="iBPIXvisL61lk4IU2:GL">
+            <field name="CHANNEL">A1</field>
+            <field name="SAMPLES">100</field>
+            <field name="TIMEGAP">20</field>
+            <field name="TIMESTAMPS" id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</field>
+            <field name="DATA1" id="}+DpkjOSXUlcS,{cd*AR">data1</field>
+            <field name="DATA2" id="gWUIv[4jv`fBv;t26kp6">data2</field>
+            <next>
+              <block type="plot_xyyarray" id="qXbfJLTs..Q4~l*cfgq^">
+                <value name="X">
+                  <block type="variables_get" id="}`Re@/O+ZcK@8;5$9G;3">
+                    <field name="VAR" id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</field>
+                  </block>
+                </value>
+                <value name="Y1">
+                  <block type="variables_get" id="R~fE@mQ(^4g,RfCL=U3+">
+                    <field name="VAR" id="}+DpkjOSXUlcS,{cd*AR">data1</field>
+                  </block>
+                </value>
+                <value name="Y2">
+                  <block type="variables_get" id="g=#`^K=#yVA-r_1MsnMK">
+                    <field name="VAR" id="gWUIv[4jv`fBv;t26kp6">data2</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="cs_print" id="Q:D6mKtg1BoT1?F-pzu*">
+                    <value name="TEXT">
+                      <shadow type="text" id="_Dec%*O}Kr12;Kp({kE:">
+                        <field name="TEXT">hello</field>
+                      </shadow>
+                      <block type="sine_fit_arrays" id="XZgp36`J/9%uK?XHFjx9">
+                        <field name="PARAMETER">1</field>
+                        <value name="X">
+                          <block type="variables_get" id="0#18ra4XPq9y-{dzTA-5">
+                            <field name="VAR" id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</field>
+                          </block>
+                        </value>
+                        <value name="Y">
+                          <block type="variables_get" id="Ncy/Tt;gI5aL!m.pnAYx">
+                            <field name="VAR" id="}+DpkjOSXUlcS,{cd*AR">data1</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

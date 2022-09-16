@@ -1,0 +1,18 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="controls_repeat_ext" id="`a`I3;_u|LE0T1fflHCi" x="5" y="16">
+    <value name="TIMES">
+      <shadow type="math_number" id="(Z]4^/_e4We8,Z7}?;XD">
+        <field name="NUM">1000</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="plot_datapoint" id="8I|;`[-,LH^?Jql$HF%Q">
+        <value name="VALUE">
+          <block type="read_SR04" id="P^gh.l+EB]]9jh_JG|TH">
+            <field name="CHANNEL">0</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

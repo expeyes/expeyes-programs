@@ -1,0 +1,162 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="{fVR-yHrNsdiJC$xDoOA">song</variable>
+    <variable id="}KE@V7,)cpEQ-Df=Q3r(">j</variable>
+  </variables>
+  <block type="add_piano" id="XvN)V-r4VX~8T@brh*bd" x="4" y="0">
+    <next>
+      <block type="variables_set" id="G;H*RJ=ldTS8/hW.r=Z#">
+        <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+        <value name="VALUE">
+          <block type="lists_split" id="75f_0FN4r#j=5o6oO?^A">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="INPUT">
+              <block type="text" id="fW.LxLq4p#`mihu(g2_;">
+                <field name="TEXT">2D#,2D,2D#,2D,2D#,A#,2C#,B,G#</field>
+              </block>
+            </value>
+            <value name="DELIM">
+              <shadow type="text" id="K^7SqC^Vu?)?)#QY6FeG">
+                <field name="TEXT">,</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_forEach" id="-Q_B(DWd;sxY=V^WUe/1">
+            <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+            <value name="LIST">
+              <block type="variables_get" id="l44dA4Z50-b9#gc$uVF;">
+                <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="play_piano" id=".h[Si?;07jUjl?LsKBG.">
+                <value name="NOTE">
+                  <shadow type="text" id="}eaU)/bKe[@zK2.t+p/T">
+                    <field name="TEXT">C</field>
+                  </shadow>
+                  <block type="variables_get" id="QA]c|I/rN|KCrcDMdH~X">
+                    <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="%]Tcx;K5P)#u@gN08PW#">
+                    <field name="SECONDS">0.25</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="wait_seconds" id="!)E24cJ4ETpuTrOIuUB/">
+                <field name="SECONDS">0.5</field>
+                <next>
+                  <block type="variables_set" id="pj9!4FMyiFJU@=O+jxmC">
+                    <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+                    <value name="VALUE">
+                      <block type="lists_split" id=".dl8~~QIUSxk7P`8?TMY">
+                        <mutation mode="SPLIT"></mutation>
+                        <field name="MODE">SPLIT</field>
+                        <value name="INPUT">
+                          <block type="text" id="DewZBM,+fw7$j~SK)s:d">
+                            <field name="TEXT">D#,G,G#,A#</field>
+                          </block>
+                        </value>
+                        <value name="DELIM">
+                          <shadow type="text" id="2NpGVK}Ay5MY+q6(|h5C">
+                            <field name="TEXT">,</field>
+                          </shadow>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="controls_forEach" id="J+/:_;KI,te?MUw,BVXG">
+                        <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                        <value name="LIST">
+                          <block type="variables_get" id="0u5+L!`}r=nl.$ICPGNI">
+                            <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+                          </block>
+                        </value>
+                        <statement name="DO">
+                          <block type="play_piano" id="i1/[3hTxXdb0`?f0^pqB">
+                            <value name="NOTE">
+                              <shadow type="text" id="}eaU)/bKe[@zK2.t+p/T">
+                                <field name="TEXT">C</field>
+                              </shadow>
+                              <block type="variables_get" id="A_pd3Eq%RT4eyd#3qy^Y">
+                                <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="wait_seconds" id="-2y-.ojhDwv8sBGW^Hs[">
+                                <field name="SECONDS">0.3</field>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                        <next>
+                          <block type="wait_seconds" id="2#H}v6lVBDzU,uRX,1J4">
+                            <field name="SECONDS">0.5</field>
+                            <next>
+                              <block type="variables_set" id="YZFhUg0z7:-l_zttKkMO">
+                                <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+                                <value name="VALUE">
+                                  <block type="lists_split" id="wHn!/j*vUh-?Ua0TAlez">
+                                    <mutation mode="SPLIT"></mutation>
+                                    <field name="MODE">SPLIT</field>
+                                    <value name="INPUT">
+                                      <block type="text" id="FJ8L.YZn.3CFS5A9f:U|">
+                                        <field name="TEXT">D#,B,A#,G#</field>
+                                      </block>
+                                    </value>
+                                    <value name="DELIM">
+                                      <shadow type="text" id="m*BWeIbJgVO}LWvKX;NP">
+                                        <field name="TEXT">,</field>
+                                      </shadow>
+                                    </value>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="controls_forEach" id="W1|JxpL2BD7,842~]NIz">
+                                    <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                                    <value name="LIST">
+                                      <block type="variables_get" id="j@gD[DpK80u[$R[CuL|u">
+                                        <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+                                      </block>
+                                    </value>
+                                    <statement name="DO">
+                                      <block type="play_piano" id="0UMm*7zX~LdWB,!F*#rs">
+                                        <value name="NOTE">
+                                          <shadow type="text" id="}eaU)/bKe[@zK2.t+p/T">
+                                            <field name="TEXT">C</field>
+                                          </shadow>
+                                          <block type="variables_get" id="|RzO_F}fkS6y=#o~pyH@">
+                                            <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="wait_seconds" id="1:}3H$$of!7#264]h_*P">
+                                            <field name="SECONDS">0.3</field>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </statement>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

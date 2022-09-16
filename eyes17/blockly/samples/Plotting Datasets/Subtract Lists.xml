@@ -1,0 +1,144 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="a_;X!2y|^#ue*J*LA{vt">list</variable>
+    <variable id="*^V4#z,-`)${R44o)hk^">list2</variable>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+  </variables>
+  <block type="lists_new" id="u:e583J3JA+BHvC%n2M)" x="27" y="12">
+    <field name="list" id="a_;X!2y|^#ue*J*LA{vt">list</field>
+    <next>
+      <block type="lists_new" id="`n.1.L+r]Mir#KN=m,;t">
+        <field name="list" id="*^V4#z,-`)${R44o)hk^">list2</field>
+        <next>
+          <block type="controls_for" id="$@Nt*yAASrDJ7z!pHq)%">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="*{TJ=CU@]BRPL]((.yld">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="JT,lYg8w|!0~gNoyS{RL">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="=IQY@s_:)^)Zo:mZyt|`">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="lists_push" id="5aaFhBd1If!]l+Y?0c@F">
+                <field name="list" id="a_;X!2y|^#ue*J*LA{vt">list</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="d*|Q77A=lCQUv.GRTg{c">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="19ERlHjr5#byR9%w|gh[">
+                        <field name="NUM">1</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="(/iE;.9e5uHl@Y5/_[Jr">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="m8EcYkv1hMA@m9o0ahL?">
+                        <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="lists_push" id="7Mz[$pr=f%H!Cy/:Rm(^">
+                    <field name="list" id="*^V4#z,-`)${R44o)hk^">list2</field>
+                    <value name="VALUE">
+                      <block type="variables_get" id="B_CZsP-F^Pk/9B?.S@)@">
+                        <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="cs_print" id=":]v?+bv~H|Tw0.gM^N]D">
+                <value name="TEXT">
+                  <shadow type="text" id="Y(JiR,8ibYO+yNEUc*]A">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                  <block type="text_join" id="~_;MvL8Z!oD:$7*=.TV~">
+                    <mutation items="2"></mutation>
+                    <value name="ADD0">
+                      <block type="text" id="G^]_lentlQ6i=~i:aoNC">
+                        <field name="TEXT">List 1 is </field>
+                      </block>
+                    </value>
+                    <value name="ADD1">
+                      <block type="variables_get" id=":[|-8wU@a,jI#.^D#z?%">
+                        <field name="VAR" id="a_;X!2y|^#ue*J*LA{vt">list</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="cs_print" id="ezLwu?5^6Jj!VT(mP.lB">
+                    <value name="TEXT">
+                      <shadow type="text" id="LnDq`7WC:B@s*edf.g5v">
+                        <field name="TEXT">hello</field>
+                      </shadow>
+                      <block type="text_join" id=",u^mK9I:.]fjOJF+5FEB">
+                        <mutation items="2"></mutation>
+                        <value name="ADD0">
+                          <block type="text" id="HBBXXTfB^8*.@*=!Q_}!">
+                            <field name="TEXT">List 2 is </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="variables_get" id="mOORkziFl/|wn)$E3YQr">
+                            <field name="VAR" id="*^V4#z,-`)${R44o)hk^">list2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lists_subtract" id="yQr2{LL,6gixalV_jiiJ">
+                        <field name="list" id="a_;X!2y|^#ue*J*LA{vt">list</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="g@/UP=1YnC~?#Pb,,mbb">
+                            <field name="VAR" id="*^V4#z,-`)${R44o)hk^">list2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="cs_print" id="V2mZ^Myq0A0}(}|mfZD,">
+                            <value name="TEXT">
+                              <shadow type="text" id="LnDq`7WC:B@s*edf.g5v">
+                                <field name="TEXT">hello</field>
+                              </shadow>
+                              <block type="text_join" id="S2t6H15p)(hc8a06UCNx">
+                                <mutation items="2"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="]@bvr}6Nc|R`JPe3`we+">
+                                    <field name="TEXT">List1 - List 2 is </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id="O/4|f+[r$f]5woEXr+M(">
+                                    <field name="VAR" id="a_;X!2y|^#ue*J*LA{vt">list</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

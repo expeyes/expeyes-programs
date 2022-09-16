@@ -1,0 +1,48 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Introduction
+
+KuttyPy apps can exchange data over local wifi. This is an experimental feature
+
+
+## Bird game Remote
+
++ Open the `Bird Game with Remote Light Sensor` on another phone connected to the same WiFi network
++ Click on the wifi icon next to the help icon on both phones
++ On one of the phones, you will see a message just above the toolbar of the form `Found Client, IP Address.` followed by a connect button
++ Once they are connected successfully with each other, both phones will show a message `Connected to <IP>: Kuttypy`
+
+Now you can run the game on the other phone which will wait for luminosity readings from this connected phone in order to control the bird.
+
+The readings of the sensor increase with intensity of light falling on the light sensor which is usually located next to the front camera. These readings are measured and used to set the height of the character in the game.
+
+ Stand under a tubelight and move this second phone close and away from the light to observe how the bird moves along with it on the other phone.
+
+
+]]>
+</description>
+ <block type="controls_whileUntil" id=".{Z)z=N#scEFP4Cd]#kB" x="8" y="0">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="T%vh,hWbmX`rmg(.]Gaw">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="sendMessage" id="!uzz/(;}-cq.G*q#[]B!">
+            <value name="TEXT">
+              <block type="get_phone_light" id="_VyvjcanG|8VZkpo5E9V">
+                <field name="CHANNEL">0</field>
+              </block>
+            </value>
+            <next>
+              <block type="wait_seconds" id="/*)I7{qMe]HTUPZ/uqNm">
+                <field name="SECONDS">0.1</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </xml>

@@ -1,0 +1,70 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Play Happy Birthday
+
++ Create a string of notes to play the first line of the Happy Birthday song
++ C,C,D,C,F,E
++ Split the string using the comma delimiter to create a list.
++ Play the contents of this list [C,C ..E] one by one.
++ Wait half a second before playing each note.
+
+]]>
+</description>
+
+      <variables>
+        <variable id="o+S3/T[!LUE{c-j2BeYI">notes</variable>
+        <variable id="}KE@V7,)cpEQ-Df=Q3r(">mynote</variable>
+      </variables>
+      <block type="add_piano" id="XvN)V-r4VX~8T@brh*bd" x="0" y="20">
+        <next>
+          <block type="variables_set" id="%]#|]:gVX_:G^_dWHa8Y">
+            <field name="VAR" id="o+S3/T[!LUE{c-j2BeYI">notes</field>
+            <value name="VALUE">
+              <block type="lists_split" id="B),{G$J7U,:BlR-xTnP-">
+                <mutation mode="SPLIT"></mutation>
+                <field name="MODE">SPLIT</field>
+                <value name="INPUT">
+                  <block type="text" id="dZkP4XuxHUbfjEG,6vPq">
+                    <field name="TEXT">C,C,D,C,F,E</field>
+                  </block>
+                </value>
+                <value name="DELIM">
+                  <shadow type="text" id="$@b~F2t,@p@5qnuPMu1F">
+                    <field name="TEXT">,</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="controls_forEach" id="4$$@%iO}YyMQ?.@9kGS/">
+                <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">mynote</field>
+                <value name="LIST">
+                  <block type="variables_get" id="R|F5:kR*vbhf6Vd9/cvj">
+                    <field name="VAR" id="o+S3/T[!LUE{c-j2BeYI">notes</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="play_piano" id=".h[Si?;07jUjl?LsKBG.">
+                    <value name="NOTE">
+                      <shadow type="text" id="}eaU)/bKe[@zK2.t+p/T">
+                        <field name="TEXT">C</field>
+                      </shadow>
+                      <block type="variables_get" id="OA7`V6U:p:U,$]ltz|JO">
+                        <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">mynote</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="wait_seconds" id="%]Tcx;K5P)#u@gN08PW#">
+                        <field name="SECONDS">0.5</field>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

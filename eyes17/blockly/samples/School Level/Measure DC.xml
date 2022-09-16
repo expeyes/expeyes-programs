@@ -1,0 +1,45 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Measuring DC voltage
+
+<img class="ui image fluid" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJtZWFzdXJlLWRjIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiAgdmlld0JveD0iLTYgLTYgNDIyIDI2MiI+CjxkZXNjPgpYQ2lyY3VpdCBWZXJzaW9uIDMuNwpGaWxlICJtZWFzdXJlLWRjLnBzIiBQYWdlIDEKPC9kZXNjPgo8ZyBzdHJva2U9ImJsYWNrIj4KPHBhdGggZD0iTTE2LDE2IEwxNiw4MCAxMjgsODAgMTI4LDE2IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgIDMyICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkdORDwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMjg4ICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkExPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTI3MiwzMiBMMjcyLDgwIDM1Miw4MCAzNTIsMzIgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTAsMCBMMCwyNTYgNDE2LDI1NiA0MTYsMCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTEyLDE0NCBMMTEyLDIyNCAyNTYsMjI0IDI1NiwxNDQgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTI1NiwxNzYgTDI1NiwxOTIgMjcyLDE5MiAyNzIsMTc2IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yNzIsMTc2IEMyODgsMTc2IDMzNiwxNjAgMzIwLDgwICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTExMiwxNzYgQzEyOCwxNzYgMTYsMTYwIDY0LDgwICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxNDQgMTkyKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+Q2VsbDwvdHNwYW4+CjwvdGV4dD48L2c+CjwvZz4KPC9zdmc+Cg=='/>
+
+Connect the voltage source between A1 and Ground.
+
+
+]]>	
+</description>
+
+  <block type="controls_whileUntil" id="-cb%|b`CiZfhuwByfu^z" x="0" y="0">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <block type="logic_boolean" id="+J0fUSdR}V.sXi9F|A04">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="cs_sticker" id="+?U,ebuK]DJ`$+!$i-%2">
+        <value name="LABEL">
+          <shadow type="text" id=",(zY_-b74?{V+2W,X{A2">
+            <field name="TEXT">Voltage at A1</field>
+          </shadow>
+        </value>
+        <value name="TEXT">
+          <shadow type="text" id="xqfJe40R2+83LGb?aHi8">
+            <field name="TEXT">Reading</field>
+          </shadow>
+          <block type="get_voltage" id="^qjm6WY}9*Q/I{1Yje*]">
+            <field name="CHANNEL">A1</field>
+          </block>
+        </value>
+        <next>
+          <block type="wait_seconds" id="9#4w,dJu*TuT7P)Ouo+R">
+            <field name="SECONDS">0.5</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>

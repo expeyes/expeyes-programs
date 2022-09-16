@@ -1,0 +1,57 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+
+##  RLC transient response
+
+<img class="ui image fluid" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJSTEN0cmFuc2llbnQiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiICB2aWV3Qm94PSItNiAtNiA1NTAgMzEwIj4KPGRlc2M+ClhDaXJjdWl0IFZlcnNpb24gMy43CkZpbGUgIlJMQ3RyYW5zaWVudC5wcyIgUGFnZSAxCjwvZGVzYz4KPGcgc3Ryb2tlPSJibGFjayI+CjxwYXRoIGQ9Ik0zMiwyMjQgTDMyLDI3MiAxMjgsMjcyIDEyOCwyMjQgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxMjggIDgwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+TDwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMzIwICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkM8L3RzcGFuPgo8L3RleHQ+PC9nPgo8ZWxsaXBzZSBjeD0iMjQwIiBjeT0iMTEyIiByeD0iMTYiIHJ5PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTI1NiwxMTIgTDMxNCwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMzg0LDExMiBMMzI2LDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zMjYsODAgTDMyNiwxNDQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMzE0LDgwIEwzMTQsMTQ0ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTIwOCwyMjQgTDIwOCwyNzIgMjcyLDI3MiAyNzIsMjI0IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zODQsMjI0IEwzODQsMjcyIDQ4MCwyNzIgNDgwLDIyNCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMCwwIEwwLDMwNCA1NDQsMzA0IDU0NCwwIHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxlbGxpcHNlIGN4PSI0MDAiIGN5PSIxMTIiIHJ4PSIxNiIgcnk9IjE2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZWxsaXBzZSBjeD0iODAiIGN5PSIxMTIiIHJ4PSIxNiIgcnk9IjE2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjQwLDEyOCBDMjQxLDEyOCAxOTIsMTkyIDI0MCwyMjQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNODAsMTI4IEM4MSwxMjggOTYsMTYwIDgwLDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00MDAsMTI4IEM0MDEsMTI4IDQwMCwxNzYgNDQ4LDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xNzgsMTEyIEMxODIsOTIgMTk4LDkyIDIwMiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTc4LDExMiBDMTc0LDEzMiAxODYsMTMyIDE4MiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTE4LDExMiBDMTIyLDkyIDEzOCw5MiAxNDIsMTEyICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTEzOCwxMTIgQzE0Miw5MiAxNTgsOTIgMTYyLDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xNTgsMTEyIEMxNjIsOTIgMTc4LDkyIDE4MiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTM4LDExMiBDMTM0LDEzMiAxNDYsMTMyIDE0MiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTU4LDExMiBDMTU0LDEzMiAxNjYsMTMyIDE2MiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjAyLDExMiBMMjI0LDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xMTgsMTEyIEw5NiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxICAzMiAyNTYpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5PRDE8L3RzcGFuPgo8L3RleHQ+PC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDIwOCAyNDApIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj48L3RzcGFuPgo8L3RleHQ+PC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDIwOCAyNTYpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5BMTwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMzg0IDI1NikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkdORDwvdHNwYW4+CjwvdGV4dD48L2c+CjwvZz4KPC9zdmc+Cg=='/>
+
+- Make the conenctions as shown in the figure
+
+Use a 0.1uF capacitor and the coil supplied with the kit
+The inductance of the coil is arounf 100mH and resistance around 500 Ohms. The transient response will be
+underdamped with these vaues.
+To get the charging curve, set OD1 to zero volts first. Set the Capture call to
+make it 5 volts. 
+
+---
+
+]]>
+</description>
+
+  <variables>
+    <variable id="iO%*Y5R2ilWL{dy(/l8s">timestamps</variable>
+    <variable id="(M*9|qEp#,!~hmd~`UwK">data1</variable>
+  </variables>
+  <block type="set_state" id=")o,qeqlKN2I~Ko0=-BYt" x="4" y="6">
+    <field name="CHANNEL">OD1</field>
+    <field name="STATE">ON</field>
+    <next>
+      <block type="capture_action_plot" id="6g3L5MK]8lX`Y/VZasU=">
+        <field name="ACTION">LOW</field>
+        <field name="CHANNEL">A1</field>
+        <field name="SAMPLES">500</field>
+        <field name="TIMEGAP">5</field>
+        <field name="TIMESTAMPS" id="iO%*Y5R2ilWL{dy(/l8s">timestamps</field>
+        <field name="DATA1" id="(M*9|qEp#,!~hmd~`UwK">data1</field>
+        <next>
+          <block type="save_lists" id="4]D8(vQ6h7xF5=c_0Y/?">
+            <field name="FNAME">transientRC.csv</field>
+            <value name="COL1">
+              <block type="variables_get" id="$lFMful7Uyxt{uDl)Qp-">
+                <field name="VAR" id="iO%*Y5R2ilWL{dy(/l8s">timestamps</field>
+              </block>
+            </value>
+            <value name="COL2">
+              <block type="variables_get" id="l}zw#C}vF)H`.=Y_TmVE">
+                <field name="VAR" id="(M*9|qEp#,!~hmd~`UwK">data1</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+  <description xmlns="http://www.w3.org/1999/xhtml"></description>
+</xml>

@@ -1,0 +1,71 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="7(ZGr`o0t^kbJE=lDW4?">x</variable>
+  </variables>
+  <block type="variables_set" id="Kn7h7cUG[3a(AkiLV|!%" x="83" y="-130">
+    <field name="VAR" id="7(ZGr`o0t^kbJE=lDW4?">x</field>
+    <value name="VALUE">
+      <block type="math_number" id="}|NB[q1JnZS1e[*GI,;O">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="xEPH2{^B,lJ$@A9)Vq3D">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_compare" id="l|iM+QS|x?gwh;Ye,PdV">
+            <field name="OP">LTE</field>
+            <value name="A">
+              <block type="variables_get" id="GpxJ#TG_Bt^|%~]Av$dF">
+                <field name="VAR" id="7(ZGr`o0t^kbJE=lDW4?">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="I#2b,xcxsa0-e.YW))wB">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="cs_print" id="7/bBed6V=i02Ju,DMz%8">
+            <value name="TEXT">
+              <shadow type="text" id="+c@%:TFMrTUOHs5!k08#">
+                <field name="TEXT">hello</field>
+              </shadow>
+              <block type="variables_get" id="CxnBo}.^_uS0aPa,NbN}">
+                <field name="VAR" id="7(ZGr`o0t^kbJE=lDW4?">x</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="J4MshG1T/bA$m~~cFh3N">
+                <field name="VAR" id="7(ZGr`o0t^kbJE=lDW4?">x</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="V7)0!iLyY2sm#^@lwuCi">
+                    <field name="OP">ADD</field>
+                    <value name="A">
+                      <shadow type="math_number" id="..`NqXBAoZ@t{ZWLkkqD">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="Dc(*Hq?gn.P]0VkcWhkc">
+                        <field name="VAR" id="7(ZGr`o0t^kbJE=lDW4?">x</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="1:ALMKdAj?k;s?lPBBuT">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_number" id="!$Z@QF;#$c^q)[?A2*k%">
+                        <field name="NUM">1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

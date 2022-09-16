@@ -1,0 +1,93 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Introduction to lists
+
+In this example we have done the following
+
++ Created an empty list using the create list block
++ Dragged a `set list to` block and attached it to the create list block
++ renamed the list to mylist
+
++ Display the list on the screen using the print block
+
+
+]]>
+</description>
+
+      <variables>
+        <variable id="1+GAo?@z+(,^32-UFg++">mylist</variable>
+      </variables>
+      <block type="variables_set" id="EM.NIo4B[5O%SKI]P^Ff" x="0" y="0">
+        <field name="VAR" id="1+GAo?@z+(,^32-UFg++">mylist</field>
+        <value name="VALUE">
+          <block type="lists_create_with" id="PXEETt+2ksQY+Z|9bQj)">
+            <mutation items="0"></mutation>
+          </block>
+        </value>
+        <next>
+          <block type="lists_setIndex" id="3??u/BDV,DCTNtcaT]_=">
+            <mutation at="false"></mutation>
+            <field name="MODE">INSERT</field>
+            <field name="WHERE">LAST</field>
+            <value name="LIST">
+              <block type="variables_get" id="~^G}$_*){;;5g2vv3$l-">
+                <field name="VAR" id="1+GAo?@z+(,^32-UFg++">mylist</field>
+              </block>
+            </value>
+            <value name="TO">
+              <block type="math_number" id="H?jOH3^b==(3czLvH.Ob">
+                <field name="NUM">1</field>
+              </block>
+            </value>
+            <next>
+              <block type="lists_setIndex" id="AD7TwhK{i}l-Xyf_7[5K">
+                <mutation at="false"></mutation>
+                <field name="MODE">INSERT</field>
+                <field name="WHERE">LAST</field>
+                <value name="LIST">
+                  <block type="variables_get" id="z:GqfJa=W#.Mj(~2M}5u">
+                    <field name="VAR" id="1+GAo?@z+(,^32-UFg++">mylist</field>
+                  </block>
+                </value>
+                <value name="TO">
+                  <block type="math_number" id="!oe4att3ki|,,)Y%3;ps">
+                    <field name="NUM">2</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lists_setIndex" id="v*#hQt0.*+rhbrACmGq9">
+                    <mutation at="false"></mutation>
+                    <field name="MODE">INSERT</field>
+                    <field name="WHERE">LAST</field>
+                    <value name="LIST">
+                      <block type="variables_get" id="y_+/0R%:{50-{iLr!~HV">
+                        <field name="VAR" id="1+GAo?@z+(,^32-UFg++">mylist</field>
+                      </block>
+                    </value>
+                    <value name="TO">
+                      <block type="math_number" id="F1$j0td|%7037{K$mj+^">
+                        <field name="NUM">3</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="cs_print" id="OvdOc).Qgs|:`SiWRgDA">
+                        <value name="TEXT">
+                          <shadow type="text" id="W#9%QeySd^mGaf5S3@at">
+                            <field name="TEXT">abc</field>
+                          </shadow>
+                          <block type="variables_get" id="}fF?4J{eCMNAnRv^-h[6">
+                            <field name="VAR" id="1+GAo?@z+(,^32-UFg++">mylist</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

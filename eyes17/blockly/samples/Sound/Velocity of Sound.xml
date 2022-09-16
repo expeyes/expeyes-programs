@@ -1,0 +1,95 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Velocity of Sound
+
+<img  class="ui image fluid"  src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgdmlld0JveD0iLTYgLTYgNzEwIDMxMCIKICAgaGVpZ2h0PSIxMDAlIgogICB3aWR0aD0iMTAwJSIKICAgaWQ9InNvdW5kLXZlbG9jaXR5IgogICB2ZXJzaW9uPSIxLjEiPgogIDxtZXRhZGF0YQogICAgIGlkPSJtZXRhZGF0YTg3Ij4KICAgIDxyZGY6UkRGPgogICAgICA8Y2M6V29yawogICAgICAgICByZGY6YWJvdXQ9IiI+CiAgICAgICAgPGRjOmZvcm1hdD5pbWFnZS9zdmcreG1sPC9kYzpmb3JtYXQ+CiAgICAgICAgPGRjOnR5cGUKICAgICAgICAgICByZGY6cmVzb3VyY2U9Imh0dHA6Ly9wdXJsLm9yZy9kYy9kY21pdHlwZS9TdGlsbEltYWdlIiAvPgogICAgICAgIDxkYzp0aXRsZT48L2RjOnRpdGxlPgogICAgICA8L2NjOldvcms+CiAgICA8L3JkZjpSREY+CiAgPC9tZXRhZGF0YT4KICA8ZGVmcwogICAgIGlkPSJkZWZzODUiIC8+CiAgPGRlc2MKICAgICBpZD0iZGVzYzIiPgpYQ2lyY3VpdCBWZXJzaW9uIDMuOApGaWxlICZxdW90O3NvdW5kLXZlbG9jaXR5LnBzJnF1b3Q7IFBhZ2UgMQo8L2Rlc2M+CiAgPGcKICAgICBpZD0iZzgwIgogICAgIHN0cm9rZT0iYmxhY2siPgogICAgPGcKICAgICAgIGlkPSJnOCIKICAgICAgIGZpbGw9IiMwMDAwMDAiCiAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxICAzMiAxNzYpIj4KICAgICAgPHRleHQKICAgICAgICAgaWQ9InRleHQ2IgogICAgICAgICBmb250LXNpemU9IjQwIgogICAgICAgICBmb250LWZhbWlseT0iSGVsdmV0aWNhIgogICAgICAgICBzdHJva2U9Im5vbmUiPgogICAgICAgIDx0c3BhbgogICAgICAgICAgIGlkPSJ0c3BhbjQiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICB4PSIwIj5XRzwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgIDwvZz4KICAgIDxnCiAgICAgICBpZD0iZzE0IgogICAgICAgZmlsbD0iIzAwMDAwMCIKICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMTkyIDI1NikiPgogICAgICA8dGV4dAogICAgICAgICBpZD0idGV4dDEyIgogICAgICAgICBmb250LXNpemU9IjQwIgogICAgICAgICBmb250LWZhbWlseT0iSGVsdmV0aWNhIgogICAgICAgICBzdHJva2U9Im5vbmUiPgogICAgICAgIDx0c3BhbgogICAgICAgICAgIGlkPSJ0c3BhbjEwIgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgeD0iMCI+QnV6emVyPC90c3Bhbj4KICAgICAgPC90ZXh0PgogICAgPC9nPgogICAgPGcKICAgICAgIGlkPSJnMjAiCiAgICAgICBmaWxsPSIjMDAwMDAwIgogICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAgMzIgMjU2KSI+CiAgICAgIDx0ZXh0CiAgICAgICAgIGlkPSJ0ZXh0MTgiCiAgICAgICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgICAgIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiCiAgICAgICAgIHN0cm9rZT0ibm9uZSI+CiAgICAgICAgPHRzcGFuCiAgICAgICAgICAgaWQ9InRzcGFuMTYiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICB4PSIwIj5HTkQ8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgICA8ZwogICAgICAgaWQ9ImcyNiIKICAgICAgIGZpbGw9IiMwMDAwMDAiCiAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDYwOCAxNjApIj4KICAgICAgPHRleHQKICAgICAgICAgaWQ9InRleHQyNCIKICAgICAgICAgZm9udC1zaXplPSI0MCIKICAgICAgICAgZm9udC1mYW1pbHk9IkhlbHZldGljYSIKICAgICAgICAgc3Ryb2tlPSJub25lIj4KICAgICAgICA8dHNwYW4KICAgICAgICAgICBpZD0idHNwYW4yMiIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIHg9IjAiPk1JQzwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgIDwvZz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDI4IgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNNTkyLDEyOCBMNTkyLDE5MiA2ODgsMTkyIDY4OCwxMjggeiIgLz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDMwIgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNNDQ4LDE3NiBMNDQ4LDI0MCA1MjgsMjQwIDUyOCwxNzYgeiIgLz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDMyIgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNMTI4LDIwOCBMMTI4LDI3MiAxNiwyNzIgMTYsMjA4IHoiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGgzNCIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTE3NiwxNjAgTDE3NiwyODggMzIwLDI4OCAzMjAsMTYwIHoiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGgzNiIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTE2LDEyOCBMMTYsMTkyIDEyOCwxOTIgMTI4LDEyOCB6IiAvPgogICAgPHBhdGgKICAgICAgIGlkPSJwYXRoMzgiCiAgICAgICBzdHJva2U9IiMwMDAwMDAiCiAgICAgICBzdHJva2UtbGluZWNhcD0icm91bmQiCiAgICAgICBzdHJva2UtbGluZWpvaW49ImJldmVsIgogICAgICAgc3Ryb2tlLXdpZHRoPSIyIgogICAgICAgZmlsbD0ibm9uZSIKICAgICAgIGQ9Ik0xMjgsMjQwIEwxNDQsMjQwIDE0NCwyMjQgMTc2LDIyNCAiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGg0MCIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTEyOCwxNjAgTDE0NCwxNjAgMTQ0LDE5MiAxNzYsMTkyICIgLz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDQyIgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNNDY0LDE3NiBMNDY0LDI0MCAiIC8+CiAgICA8ZwogICAgICAgaWQ9Imc0OCIKICAgICAgIGZpbGw9IiMwMDAwMDAiCiAgICAgICB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDU5MiAyNTYpIj4KICAgICAgPHRleHQKICAgICAgICAgaWQ9InRleHQ0NiIKICAgICAgICAgZm9udC1zaXplPSI0MCIKICAgICAgICAgZm9udC1mYW1pbHk9IkhlbHZldGljYSIKICAgICAgICAgc3Ryb2tlPSJub25lIj4KICAgICAgICA8dHNwYW4KICAgICAgICAgICBpZD0idHNwYW40NCIKICAgICAgICAgICB5PSIwIgogICAgICAgICAgIHg9IjAiPkdORDwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgIDwvZz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDUwIgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNNjg4LDIwOCBMNjg4LDI3MiA1OTIsMjcyIDU5MiwyMDggeiIgLz4KICAgIDxwYXRoCiAgICAgICBpZD0icGF0aDUyIgogICAgICAgc3Ryb2tlPSIjMDAwMDAwIgogICAgICAgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIgogICAgICAgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIKICAgICAgIHN0cm9rZS13aWR0aD0iMiIKICAgICAgIGZpbGw9Im5vbmUiCiAgICAgICBkPSJNNTI4LDE5MiBMNTYwLDE5MiA1NjAsMTYwIDU5MiwxNjAgIiAvPgogICAgPHBhdGgKICAgICAgIGlkPSJwYXRoNTQiCiAgICAgICBzdHJva2U9IiMwMDAwMDAiCiAgICAgICBzdHJva2UtbGluZWNhcD0icm91bmQiCiAgICAgICBzdHJva2UtbGluZWpvaW49ImJldmVsIgogICAgICAgc3Ryb2tlLXdpZHRoPSIyIgogICAgICAgZmlsbD0ibm9uZSIKICAgICAgIGQ9Ik01MjgsMjI0IEw1NjAsMjI0IDU2MCwyNDAgNTkyLDI0MCAiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGg1NiIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTMyLDMyIEwzMiw5NiAxMjgsOTYgMTI4LDMyIHoiIC8+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGg1OCIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTE0NCwxNjAgTDE0NCw2NCAxMjgsNjQgIiAvPgogICAgPGcKICAgICAgIGlkPSJnNjQiCiAgICAgICBmaWxsPSIjMDAwMDAwIgogICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAgNjQgIDgwKSI+CiAgICAgIDx0ZXh0CiAgICAgICAgIHRyYW5zZm9ybT0ic2NhbGUoMS4wMzg1MjE1LDAuOTYyOTA3MzgpIgogICAgICAgICB5PSIwLjc1MTI3NTY2IgogICAgICAgICBzdHlsZT0iZm9udC1zaXplOjUwLjgxNTg3MjE5cHg7Zm9udC1mYW1pbHk6SGVsdmV0aWNhO3N0cm9rZTpub25lO3N0cm9rZS13aWR0aDoxLjI3MDM5NjgzIgogICAgICAgICB4PSItMTQuODM3MTg1IgogICAgICAgICBpZD0idGV4dDYyIgogICAgICAgICBmb250LXNpemU9IjQwIj4KICAgICAgICA8dHNwYW4KICAgICAgICAgICBzdHlsZT0ic3Ryb2tlLXdpZHRoOjEuMjcwMzk2ODMiCiAgICAgICAgICAgaWQ9InRzcGFuNjAiCiAgICAgICAgICAgeT0iMC43NTEyNzU2NiIKICAgICAgICAgICB4PSItMTQuODM3MTg1Ij5BMjwvdHNwYW4+CiAgICAgIDwvdGV4dD4KICAgIDwvZz4KICAgIDxnCiAgICAgICBpZD0iZzcwIgogICAgICAgZmlsbD0iIzAwMDAwMCIKICAgICAgIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMjA4IDIyNCkiPgogICAgICA8dGV4dAogICAgICAgICBpZD0idGV4dDY4IgogICAgICAgICBmb250LXNpemU9IjQwIgogICAgICAgICBmb250LWZhbWlseT0iSGVsdmV0aWNhIgogICAgICAgICBzdHJva2U9Im5vbmUiPgogICAgICAgIDx0c3BhbgogICAgICAgICAgIGlkPSJ0c3BhbjY2IgogICAgICAgICAgIHk9IjAiCiAgICAgICAgICAgeD0iMCI+UGllem88L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgICA8cGF0aAogICAgICAgaWQ9InBhdGg3MiIKICAgICAgIHN0cm9rZT0iIzAwMDAwMCIKICAgICAgIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIKICAgICAgIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiCiAgICAgICBzdHJva2Utd2lkdGg9IjIiCiAgICAgICBmaWxsPSJub25lIgogICAgICAgZD0iTTAsMzA0IEwwLDAgNzA0LDAgNzA0LDMwNCB6IiAvPgogICAgPGcKICAgICAgIGlkPSJnNzgiCiAgICAgICBmaWxsPSIjMDAwMDAwIgogICAgICAgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSA0NjQgMjI0KSI+CiAgICAgIDx0ZXh0CiAgICAgICAgIGlkPSJ0ZXh0NzYiCiAgICAgICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgICAgIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiCiAgICAgICAgIHN0cm9rZT0ibm9uZSI+CiAgICAgICAgPHRzcGFuCiAgICAgICAgICAgaWQ9InRzcGFuNzQiCiAgICAgICAgICAgeT0iMCIKICAgICAgICAgICB4PSIwIj5NaWM8L3RzcGFuPgogICAgICA8L3RleHQ+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K'/>
+
+- Connect the buzzer from WG to ground
+- Connect WG to A2 for monitoring
+- Connect the mic to the MIC input 
+
+Keep the microphone in front of the buzzer to get a good signal. Adjust the distance between the buzzer and microphone to make the two
+signals in phase. Mark the position, move it away to make the two signals out of phase. The distance moved will be half wave length.
+velocity = 2 x D x frequency
+ 
+Sound waves are longitudinal, it is a series of low pressure and high pressure regions. In this experiment a Piezo buzzer makes a single frequency sound.
+A microphone kept in front of it gives a sine wave output. If we keep another microphone at a distance of half wave length away from the first one
+the two outputs will be 180 degree out of phase. The reason is that when the first one is at a high pressure region the second one
+will be at the low pressure region. There is no need of two microphones when we have the signal that drives the Piezo buzzer. 
+
+
+]]>
+
+</description>	
+  <variables>
+    <variable id="p2;|y@rv#%f/+bN}(kds">timestamps</variable>
+    <variable id="qIsUPRU,p*.[t8B]q/x{">data1</variable>
+    <variable id="0uH*MyPf(EpwI:lYH|0:">data2</variable>
+  </variables>
+  <block type="scope_trigger" id="Bs;iWhs)b5s-4a-U)aEE" x="92" y="60">
+    <field name="STATE">TRUE</field>
+    <field name="CHANNEL">0</field>
+    <field name="LEVEL">512</field>
+    <next>
+      <block type="set_frequency" id="7=yKW7jMZ5rg?]9.7ht5">
+        <field name="CHANNEL">WG</field>
+        <value name="FREQUENCY">
+          <block type="math_number" id="gtb2CS$aYK}cSKVmdxdh">
+            <field name="NUM">3000</field>
+          </block>
+        </value>
+        <next>
+          <block type="set_frequency_slider" id=",En9@BI]OxM~IxOyf#Jv">
+            <field name="CHANNEL">WG</field>
+            <next>
+              <block type="controls_whileUntil" id="f`J1|UIOHO^4GdlbXdM3">
+                <field name="MODE">WHILE</field>
+                <value name="BOOL">
+                  <block type="logic_boolean" id="7Q|PR^vb%adLe^)r|#/{">
+                    <field name="BOOL">TRUE</field>
+                  </block>
+                </value>
+                <statement name="DO">
+                  <block type="capture2" id="MqLULFRTbTZtDTK(zBb6">
+                    <field name="CHANNEL">MIC</field>
+                    <field name="SAMPLES">300</field>
+                    <field name="TIMEGAP">2</field>
+                    <field name="TIMESTAMPS" id="p2;|y@rv#%f/+bN}(kds">timestamps</field>
+                    <field name="DATA1" id="qIsUPRU,p*.[t8B]q/x{">data1</field>
+                    <field name="DATA2" id="0uH*MyPf(EpwI:lYH|0:">data2</field>
+                    <next>
+                      <block type="plot_xyyarray" id="4!9|Y}qRN646Os)n{oj8">
+                        <value name="X">
+                          <block type="variables_get" id="*)-Yw`WIQb_4x#pMCZ|]">
+                            <field name="VAR" id="p2;|y@rv#%f/+bN}(kds">timestamps</field>
+                          </block>
+                        </value>
+                        <value name="Y1">
+                          <block type="variables_get" id=",etregY@y$na@c62Wt`w">
+                            <field name="VAR" id="qIsUPRU,p*.[t8B]q/x{">data1</field>
+                          </block>
+                        </value>
+                        <value name="Y2">
+                          <block type="variables_get" id="ZN}Mp*UY6Le.8m,ai{Jv">
+                            <field name="VAR" id="0uH*MyPf(EpwI:lYH|0:">data2</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="wait_seconds" id="+P~z=}a]X_9]ii]C18.4">
+                            <field name="SECONDS">0.1</field>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

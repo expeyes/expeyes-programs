@@ -1,0 +1,71 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+      <variables>
+        <variable id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</variable>
+        <variable id="}+DpkjOSXUlcS,{cd*AR">data1</variable>
+        <variable id="}_FZPW-Ao{,f?p{wO}|N">fftx</variable>
+        <variable id="[BtV2#Z:$.46FbWhpe,7">ffty</variable>
+      </variables>
+      <block type="set_frequency" id="6=E,(-;Q`Dg,:wlLJsi1" x="36" y="64">
+        <field name="CHANNEL">WG</field>
+        <value name="FREQUENCY">
+          <block type="math_number" id="T:XJ4Jj8^SZXGB0`BZIQ">
+            <field name="NUM">1000</field>
+          </block>
+        </value>
+        <next>
+          <block type="scope_trigger" id="8GES]Bkbq,gwF-t7k9_!">
+            <field name="STATE">TRUE</field>
+            <field name="CHANNEL">0</field>
+            <field name="LEVEL">512</field>
+            <next>
+              <block type="controls_repeat_ext" id="4aOxWA:WoJ$C7Ea{Kh17">
+                <value name="TIMES">
+                  <shadow type="math_number" id="#v`5/~4[wv/u}eUe-V1t">
+                    <field name="NUM">10</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="capture1" id="WYWKG39EO]]iNsir~yWS">
+                    <field name="CHANNEL">A1</field>
+                    <field name="SAMPLES">5000</field>
+                    <field name="TIMEGAP">10</field>
+                    <field name="TIMESTAMPS" id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</field>
+                    <field name="DATA1" id="}+DpkjOSXUlcS,{cd*AR">data1</field>
+                    <next>
+                      <block type="fourier_transform" id="(hzT#y~l;4dqH3W#8f]s">
+                        <field name="FFTX" id="}_FZPW-Ao{,f?p{wO}|N">fftx</field>
+                        <field name="FFTY" id="[BtV2#Z:$.46FbWhpe,7">ffty</field>
+                        <value name="X">
+                          <block type="variables_get" id="0#18ra4XPq9y-{dzTA-5">
+                            <field name="VAR" id="xRj$Iw~AK|ZlHEf8)aLv">timestamps</field>
+                          </block>
+                        </value>
+                        <value name="Y">
+                          <block type="variables_get" id="Ncy/Tt;gI5aL!m.pnAYx">
+                            <field name="VAR" id="}+DpkjOSXUlcS,{cd*AR">data1</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="plot_xyarray" id=":[Gm%-^26N9U.rFi)4=f">
+                            <value name="X">
+                              <block type="variables_get" id="!}i+3LD4dZuQn*t;K=(0">
+                                <field name="VAR" id="}_FZPW-Ao{,f?p{wO}|N">fftx</field>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <block type="variables_get" id="nFqCd1-`p9B6yJ-r+7/m">
+                                <field name="VAR" id="[BtV2#Z:$.46FbWhpe,7">ffty</field>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+</xml>

@@ -1,0 +1,87 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Bird game 
+
+Tilt your phone up and down to move the bird up/Down.
+
+addGame: Create a game
+set bird altitude; The height of the bird from the floor of the game box is set to the input number. It should be between 0(floor), and 1000(Roof)
+
+
+Your phone has a built in rotation sensor.
+
+The rotation values are between -1 and 1 
+
+These readings are measured and scaled to 0 to 1000 range by using basic arithmetic operators, and are then used to set the height of the character in the game.
+
+Tilt your phone up and down to move the bird up/Down.
+]]>
+</description>
+<variables>
+        <variable id="(eG:3Li8hL6{B*coh|%{">height</variable>
+      </variables>
+      <block type="add_game" id="3YCPo!vOJS|o7/NBf9#[" x="0" y="-322">
+        <next>
+          <block type="controls_repeat_ext" id="ng~P`Ol9-.[1q1=SN^pU">
+            <value name="TIMES">
+              <shadow type="math_number" id="eCAq7h,Tp#T#5#UXVdMa">
+                <field name="NUM">10000</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="variables_set" id="_7zX2{OAM)%2nV1uq|00">
+                <field name="VAR" id="(eG:3Li8hL6{B*coh|%{">height</field>
+                <value name="VALUE">
+                  <block type="math_arithmetic" id="bxX+.6.-Mea/_I|nK(:]">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <shadow type="math_number" id="M3ty:b[3c|X8FDz740HX">
+                        <field name="NUM">1000</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="DV.Iq`Mh[$.DMy[h2}xW">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="math_arithmetic" id="T2qeHGql10R}hNN(M1;o">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                          <shadow type="math_number" id=";R3patlab5y=evq-^@Yi">
+                            <field name="NUM">0.5</field>
+                          </shadow>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="AdL01;T2iZA,/Dg-RDG}">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="get_phone_rotation" id="|AfP$w:8D=snjS5@S+*_">
+                            <field name="CHANNEL">0</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="set_bird_y" id="Wl.)ky-Wt!w[_:zKLo#L">
+                    <value name="Y">
+                      <shadow type="math_number" id="S~pg(N]Su,l~c-0Rl9*m">
+                        <field name="NUM">200</field>
+                      </shadow>
+                      <block type="variables_get" id="zI_Fr`@g#$9C4I8yx(AN">
+                        <field name="VAR" id="(eG:3Li8hL6{B*coh|%{">height</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="stop_game" id="csu/*}K@-iRufK-do++G"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>

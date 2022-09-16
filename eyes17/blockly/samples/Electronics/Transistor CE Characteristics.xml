@@ -1,0 +1,138 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+##  Transistor output Characteristic 
+
+<img class="ui image fluid" src='data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+CjxzdmcKICAgeG1sbnM6ZGM9Imh0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvIgogICB4bWxuczpjYz0iaHR0cDovL2NyZWF0aXZlY29tbW9ucy5vcmcvbnMjIgogICB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiCiAgIHhtbG5zOnN2Zz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIKICAgeG1sbnM6c29kaXBvZGk9Imh0dHA6Ly9zb2RpcG9kaS5zb3VyY2Vmb3JnZS5uZXQvRFREL3NvZGlwb2RpLTAuZHRkIgogICB4bWxuczppbmtzY2FwZT0iaHR0cDovL3d3dy5pbmtzY2FwZS5vcmcvbmFtZXNwYWNlcy9pbmtzY2FwZSIKICAgdmVyc2lvbj0iMS4xIgogICBpZD0idHJhbnNpc3Rvcl9vdXQiCiAgIHdpZHRoPSIxMDAlIgogICBoZWlnaHQ9IjEwMCUiCiAgIHZpZXdCb3g9Ii02IC02IDU2NiA0NTQiCiAgIHNvZGlwb2RpOmRvY25hbWU9InRyYW5zaXN0b3Jfb3V0LnN2ZyIKICAgaW5rc2NhcGU6ZXhwb3J0LWZpbGVuYW1lPSIvaG9tZS9nZW9yZ2Vzay9kZXZlbG9wcGVtZW50L2V4cGV5ZXMvZXhwZXllcy9FeHBFWUVTMTcvVXNlck1hbnVhbC9mci9yc3QvZXhwL3NjaGVtYXRpY3MvdHJhbnNpc3Rvcl9vdXQucG5nIgogICBpbmtzY2FwZTpleHBvcnQteGRwaT0iNTEuMjQ1NTUyIgogICBpbmtzY2FwZTpleHBvcnQteWRwaT0iNTEuMjQ1NTUyIgogICBpbmtzY2FwZTp2ZXJzaW9uPSIwLjkyLjIgKDVjM2U4MGQsIDIwMTctMDgtMDYpIj4KICA8bWV0YWRhdGEKICAgICBpZD0ibWV0YWRhdGExMTUiPgogICAgPHJkZjpSREY+CiAgICAgIDxjYzpXb3JrCiAgICAgICAgIHJkZjphYm91dD0iIj4KICAgICAgICA8ZGM6Zm9ybWF0PmltYWdlL3N2Zyt4bWw8L2RjOmZvcm1hdD4KICAgICAgICA8ZGM6dHlwZQogICAgICAgICAgIHJkZjpyZXNvdXJjZT0iaHR0cDovL3B1cmwub3JnL2RjL2RjbWl0eXBlL1N0aWxsSW1hZ2UiIC8+CiAgICAgICAgPGRjOnRpdGxlPjwvZGM6dGl0bGU+CiAgICAgIDwvY2M6V29yaz4KICAgIDwvcmRmOlJERj4KICA8L21ldGFkYXRhPgogIDxkZWZzCiAgICAgaWQ9ImRlZnMxMTMiIC8+CiAgPHNvZGlwb2RpOm5hbWVkdmlldwogICAgIHBhZ2Vjb2xvcj0iI2ZmZmZmZiIKICAgICBib3JkZXJjb2xvcj0iIzY2NjY2NiIKICAgICBib3JkZXJvcGFjaXR5PSIxIgogICAgIG9iamVjdHRvbGVyYW5jZT0iMTAiCiAgICAgZ3JpZHRvbGVyYW5jZT0iMTAiCiAgICAgZ3VpZGV0b2xlcmFuY2U9IjEwIgogICAgIGlua3NjYXBlOnBhZ2VvcGFjaXR5PSIwIgogICAgIGlua3NjYXBlOnBhZ2VzaGFkb3c9IjIiCiAgICAgaW5rc2NhcGU6d2luZG93LXdpZHRoPSIxNjY4IgogICAgIGlua3NjYXBlOndpbmRvdy1oZWlnaHQ9IjEwMTMiCiAgICAgaWQ9Im5hbWVkdmlldzExMSIKICAgICBzaG93Z3JpZD0iZmFsc2UiCiAgICAgaW5rc2NhcGU6em9vbT0iMS42NDY3ODU1IgogICAgIGlua3NjYXBlOmN4PSIyODQuMjE0NDkiCiAgICAgaW5rc2NhcGU6Y3k9IjIyNyIKICAgICBpbmtzY2FwZTp3aW5kb3cteD0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3cteT0iMCIKICAgICBpbmtzY2FwZTp3aW5kb3ctbWF4aW1pemVkPSIxIgogICAgIGlua3NjYXBlOmN1cnJlbnQtbGF5ZXI9InRyYW5zaXN0b3Jfb3V0IiAvPgogIDxkZXNjCiAgICAgaWQ9ImRlc2MyIj4KWENpcmN1aXQgVmVyc2lvbiAzLjcKRmlsZSAmcXVvdDtucG5fY2Vfb3V0LnBzJnF1b3Q7IFBhZ2UgMQo8L2Rlc2M+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNCIKICAgICBkPSJNIDMzNiw0OCBWIDc2IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDYiCiAgICAgZD0iTSAzMzYsMTc2IFYgMTQ4IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDgiCiAgICAgZD0ibSAzMzYsMTQ4IDE0LC02IC0yOCwtMTIgMjgsLTEyIC0yOCwtMTIgMjgsLTEyIC0yOCwtMTIgMTQsLTYiIC8+CiAgPGNpcmNsZQogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIHI9IjE2IgogICAgIGlkPSJlbGxpcHNlMTYiCiAgICAgY3k9IjI3MiIKICAgICBjeD0iMjA4IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDE4IgogICAgIGQ9Im0gNDY0LDE3NiB2IDQ4IGggNjQgdiAtNDggeiIgLz4KICA8cGF0aAogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGgyMCIKICAgICBkPSJtIDQ0OCwyODggdiA0OCBoIDk2IHYgLTQ4IHoiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoMjIiCiAgICAgZD0iTSAwLDAgViA0NDggSCA1NjAgViAwIFoiIC8+CiAgPGNpcmNsZQogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIHI9IjE2IgogICAgIGlkPSJlbGxpcHNlMjQiCiAgICAgY3k9IjE5MiIKICAgICBjeD0iMzM2IiAvPgogIDxjaXJjbGUKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICByPSIxNiIKICAgICBpZD0iZWxsaXBzZTI2IgogICAgIGN5PSIzMiIKICAgICBjeD0iMzM2IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDI4IgogICAgIGQ9Im0gMTYsODAgdiA0OCBoIDk2IFYgODAgWiIgLz4KICA8cGF0aAogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGgzMCIKICAgICBkPSJNIDI4OCwyNzIgSCAyNzIiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoMzIiCiAgICAgZD0ibSAyODgsMjI0IHYgOTYiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoMzQiCiAgICAgZD0ibSAzMzYsMjI0IC00OCwyNiIgLz4KICA8cGF0aAogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGgzNiIKICAgICBkPSJNIDMzNiwyMjQgViAyMDgiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoMzgiCiAgICAgZD0iTSAzMzYsMzIwIDI4OCwyOTQiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNDAiCiAgICAgZD0ibSAzMzYsMzIwIHYgMTYiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDojMDAwMDAwO3N0cm9rZTpub25lIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGg0MiIKICAgICBkPSJtIDMwOCwzMTMgYyAxMSwxIDE0LDIgMjgsNyAtMTEsLTEwIC0xNCwtMTIgLTIwLC0yMSAtMiw2IC00LDEwIC04LDE0IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDQ0IgogICAgIGQ9Im0gMjI0LDI3MiBoIDQ4IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDQ2IgogICAgIGQ9Ik0gMTkyLDI3MiBIIDE2NCIgLz4KICA8cGF0aAogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGg0OCIKICAgICBkPSJNIDY0LDI3MiBIIDkyIiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDUwIgogICAgIGQ9Im0gOTIsMjcyIDYsMTQgMTIsLTI4IDEyLDI4IDEyLC0yOCAxMiwyOCAxMiwtMjggNiwxNCIgLz4KICA8Y2lyY2xlCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgcj0iMTYiCiAgICAgaWQ9ImVsbGlwc2U1MiIKICAgICBjeT0iMjcyIgogICAgIGN4PSI0OCIgLz4KICA8Y2lyY2xlCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgcj0iMTYiCiAgICAgaWQ9ImVsbGlwc2U1NCIKICAgICBjeT0iMzg0IgogICAgIGN4PSIzMzYiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNTYiCiAgICAgZD0iTSAzMzYsMzY4IFYgMzM2IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDU4IgogICAgIGQ9Ik0gNDgsMjU2IEMgNDksMjU2IDAsMTkyIDY0LDEyOCIgLz4KICA8cGF0aAogICAgIHN0eWxlPSJmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVjYXA6cm91bmQ7c3Ryb2tlLWxpbmVqb2luOmJldmVsIgogICAgIGlua3NjYXBlOmNvbm5lY3Rvci1jdXJ2YXR1cmU9IjAiCiAgICAgaWQ9InBhdGg2MCIKICAgICBkPSJtIDM1MiwxOTIgYyAxLDAgNjQsLTY0IDExMiwwIiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDYyIgogICAgIGQ9Im0gMzUyLDM4NCBjIDEsMCA0OCwxNiA5NiwtODAiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNjQiCiAgICAgZD0ibSAxMjgsMzg0IHYgNDggaCA2NCB2IC00OCB6IiAvPgogIDxwYXRoCiAgICAgc3R5bGU9ImZpbGw6bm9uZTtzdHJva2U6IzAwMDAwMDtzdHJva2Utd2lkdGg6MjtzdHJva2UtbGluZWNhcDpyb3VuZDtzdHJva2UtbGluZWpvaW46YmV2ZWwiCiAgICAgaW5rc2NhcGU6Y29ubmVjdG9yLWN1cnZhdHVyZT0iMCIKICAgICBpZD0icGF0aDY2IgogICAgIGQ9Im0gMjA4LDI4OCBjIDEsMCAxNiw2NCAtNDgsOTYiIC8+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNjgiCiAgICAgZD0ibSA0NDgsNjQgdiA0OCBoIDk2IFYgNjQgWiIgLz4KICA8dGV4dAogICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgaWQ9InRleHQ3MiIKICAgICBzdHlsZT0iZm9udC1zaXplOjQwcHg7Zm9udC1mYW1pbHk6SGVsdmV0aWNhO2ZpbGw6IzAwMDAwMDtzdHJva2U6bm9uZSIKICAgICB4PSI5NiIKICAgICB5PSIyNDAiPgogICAgPHRzcGFuCiAgICAgICB4PSI5NiIKICAgICAgIHk9IjI0MCIKICAgICAgIGlkPSJ0c3BhbjcwIj4xMDAga86pPC90c3Bhbj4KICA8L3RleHQ+CiAgPHBhdGgKICAgICBzdHlsZT0iZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpiZXZlbCIKICAgICBpbmtzY2FwZTpjb25uZWN0b3ItY3VydmF0dXJlPSIwIgogICAgIGlkPSJwYXRoNzYiCiAgICAgZD0ibSA0NDgsODAgYyAxLDAgLTE2LC02NCAtOTYsLTQ4IiAvPgogIDx0ZXh0CiAgICAgZm9udC1zaXplPSI0MCIKICAgICBpZD0idGV4dDgwIgogICAgIHN0eWxlPSJmb250LXNpemU6NDBweDtmb250LWZhbWlseTpIZWx2ZXRpY2E7ZmlsbDojMDAwMDAwO3N0cm9rZTpub25lIgogICAgIHg9IjI1LjI0MTI0OSIKICAgICB5PSIxMTguNTgiPgogICAgPHRzcGFuCiAgICAgICB4PSIyNS4yNDEyNDkiCiAgICAgICB5PSIxMTguNTgiCiAgICAgICBpZD0idHNwYW43OCI+UFYyPC90c3Bhbj4KICA8L3RleHQ+CiAgPHRleHQKICAgICBmb250LXNpemU9IjQwIgogICAgIGlkPSJ0ZXh0ODYiCiAgICAgc3R5bGU9ImZvbnQtc2l6ZTo0MHB4O2ZvbnQtZmFtaWx5OkhlbHZldGljYTtmaWxsOiMwMDAwMDA7c3Ryb2tlOm5vbmUiCiAgICAgeD0iNDYwLjUyMTI0IgogICAgIHk9IjEwMi41OCI+CiAgICA8dHNwYW4KICAgICAgIHg9IjQ2MC41MjEyNCIKICAgICAgIHk9IjEwMi41OCIKICAgICAgIGlkPSJ0c3Bhbjg0Ij5QVjE8L3RzcGFuPgogIDwvdGV4dD4KICA8dGV4dAogICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgaWQ9InRleHQ5MiIKICAgICBzdHlsZT0iZm9udC1zaXplOjQwcHg7Zm9udC1mYW1pbHk6SGVsdmV0aWNhO2ZpbGw6IzAwMDAwMDtzdHJva2U6bm9uZSIKICAgICB4PSI0NzUuMzYwNjMiCiAgICAgeT0iMjE0LjU4Ij4KICAgIDx0c3BhbgogICAgICAgeD0iNDc1LjM2MDYzIgogICAgICAgeT0iMjE0LjU4IgogICAgICAgaWQ9InRzcGFuOTAiPkExPC90c3Bhbj4KICA8L3RleHQ+CiAgPHRleHQKICAgICBmb250LXNpemU9IjQwIgogICAgIGlkPSJ0ZXh0OTgiCiAgICAgc3R5bGU9ImZvbnQtc2l6ZTo0MHB4O2ZvbnQtZmFtaWx5OkhlbHZldGljYTtmaWxsOiMwMDAwMDA7c3Ryb2tlOm5vbmUiCiAgICAgeD0iNDUxLjc4IgogICAgIHk9IjMyNi41Nzk5OSI+CiAgICA8dHNwYW4KICAgICAgIHg9IjQ1MS43OCIKICAgICAgIHk9IjMyNi41Nzk5OSIKICAgICAgIGlkPSJ0c3Bhbjk2Ij5HTkQ8L3RzcGFuPgogIDwvdGV4dD4KICA8dGV4dAogICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgaWQ9InRleHQxMDQiCiAgICAgc3R5bGU9ImZvbnQtc2l6ZTo0MHB4O2ZvbnQtZmFtaWx5OkhlbHZldGljYTtmaWxsOiMwMDAwMDA7c3Ryb2tlOm5vbmUiCiAgICAgeD0iMTM2LjA4MDYzIgogICAgIHk9IjQyMi41Nzk5OSI+CiAgICA8dHNwYW4KICAgICAgIHg9IjEzNi4wODA2MyIKICAgICAgIHk9IjQyMi41Nzk5OSIKICAgICAgIGlkPSJ0c3BhbjEwMiI+QTI8L3RzcGFuPgogIDwvdGV4dD4KICA8dGV4dAogICAgIGZvbnQtc2l6ZT0iNDAiCiAgICAgaWQ9InRleHQ3Mi0zIgogICAgIHN0eWxlPSJmb250LXNpemU6NDBweDtmb250LWZhbWlseTpIZWx2ZXRpY2E7ZmlsbDojMDAwMDAwO3N0cm9rZTpub25lIgogICAgIHg9IjIxOC4wNjk5IgogICAgIHk9IjEyNi43MTQyOCI+CiAgICA8dHNwYW4KICAgICAgIHg9IjIxOC4wNjk5IgogICAgICAgeT0iMTI2LjcxNDI4IgogICAgICAgaWQ9InRzcGFuNzAtNiI+MSBrzqk8L3RzcGFuPgogIDwvdGV4dD4KPC9zdmc+Cg=='/>
+
+- Make connections as shown
+
+The voltage applied to the base via a 100k resistor is set to 1 volt. Change the
+base current by changing this value set on PV2.
+
+The output is saved to a file named 'transistorCE.txt'.
+
+
+]]>
+</description> 	
+  <variables>
+    <variable id="(NO.k7G7NP%gS*E/5?Ih">Vcc</variable>
+    <variable id="rCV!0|lE+6qjUii;sSS?">Vc</variable>
+    <variable id="HHylR!vXJH.bj4!as~z}">current</variable>
+  </variables>
+  <block type="set_voltage" id="4PmpveZCleR2HD#Mq_.K" x="4" y="9">
+    <field name="CHANNEL">PV2</field>
+    <value name="VOLTAGE">
+      <block type="math_number" id="En{^6pGqIXD8vFRuv7dV">
+        <field name="NUM">1</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_for" id="GuE)Zp,9oMZw`uwey-|K">
+        <field name="VAR" id="(NO.k7G7NP%gS*E/5?Ih">Vcc</field>
+        <value name="FROM">
+          <shadow type="math_number" id="~@SgPo(KL?`@?TCIGbfl">
+            <field name="NUM">0.1</field>
+          </shadow>
+        </value>
+        <value name="TO">
+          <shadow type="math_number" id=",pfp*{}Ifr?Sd~Qb=qrM">
+            <field name="NUM">5</field>
+          </shadow>
+        </value>
+        <value name="BY">
+          <shadow type="math_number" id="[#LI3!(OxxJxjT-?ZQ^K">
+            <field name="NUM">0.1</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="set_voltage" id="_knm(V;Z`oF8?NxW3$fY">
+            <field name="CHANNEL">PV1</field>
+            <value name="VOLTAGE">
+              <block type="variables_get" id="~oE|VC_$R^:b0yk8Eh-.">
+                <field name="VAR" id="(NO.k7G7NP%gS*E/5?Ih">Vcc</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="Yg~*w-vWZl9Nt-O.wxu%">
+                <field name="VAR" id="rCV!0|lE+6qjUii;sSS?">Vc</field>
+                <value name="VALUE">
+                  <block type="get_voltage" id="_.uz?k#1b(kL2{kQv}KS">
+                    <field name="CHANNEL">A1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Ma|k*f7/*Cs2eDHzN9le">
+                    <field name="VAR" id="HHylR!vXJH.bj4!as~z}">current</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="..%_%y4Y$^54p7Z0iQMQ">
+                        <field name="OP">MINUS</field>
+                        <value name="A">
+                          <shadow type="math_number" id="+_cm0Cr]/|)A$[%hb!|,">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="_x12fJ{K3x}3X3B@e.qh">
+                            <field name="VAR" id="(NO.k7G7NP%gS*E/5?Ih">Vcc</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="hCL`0Uq|xB4g)O!P))+W">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="]VZ=am(eguG6%DRF4GCq">
+                            <field name="VAR" id="rCV!0|lE+6qjUii;sSS?">Vc</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="plot_xy" id="!@62Hk;BFvh;M*s?E[HX">
+                        <value name="X">
+                          <block type="variables_get" id="?[~eob.Elx:0Ra9?[`81">
+                            <field name="VAR" id="rCV!0|lE+6qjUii;sSS?">Vc</field>
+                          </block>
+                        </value>
+                        <value name="Y">
+                          <block type="variables_get" id="Qsw}x9M%N9pI@cqMl9iP">
+                            <field name="VAR" id="HHylR!vXJH.bj4!as~z}">current</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="write_to_file" id=")sb7:9X3JBK*o:x+Kb)P">
+                            <field name="NEWLINE">TRUE</field>
+                            <field name="FNAME">transistorCE.csv</field>
+                            <value name="TEXT">
+                              <block type="text_join" id="1o8xf7`-x5W`HfB##nr]">
+                                <mutation items="3"></mutation>
+                                <value name="ADD0">
+                                  <block type="variables_get" id="qJ6L`S2T__(u`dey-SY`">
+                                    <field name="VAR" id="rCV!0|lE+6qjUii;sSS?">Vc</field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="text" id="Ma%z-w!5s!Qq$h.R+I9d">
+                                    <field name="TEXT">,</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="variables_get" id="/G^x{Q$O_(gJSN4Jea~)">
+                                    <field name="VAR" id="HHylR!vXJH.bj4!as~z}">current</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

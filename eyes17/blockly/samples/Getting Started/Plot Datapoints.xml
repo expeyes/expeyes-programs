@@ -1,0 +1,42 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="plot_xy" id="1kU3*^DIFI9+@Beun?f%" x="-47" y="37">
+    <value name="X">
+      <block type="math_number" id="EK~+8|f?LE@IFTb)p.(5">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <value name="Y">
+      <block type="math_number" id=")O,+ig[_@MqTr;K9}]mS">
+        <field name="NUM">0</field>
+      </block>
+    </value>
+    <next>
+      <block type="plot_xy" id="-WG+1j4}^OT|cDaGjrma">
+        <value name="X">
+          <block type="math_number" id="_NwDr$q%#?M;=(0~;aBx">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <value name="Y">
+          <block type="math_number" id="Q)Qx_YvU~)BaEu)[3Y]E">
+            <field name="NUM">4</field>
+          </block>
+        </value>
+        <next>
+          <block type="plot_xy" id="sAL9j1)#`9Ry,a7RslUM">
+            <value name="X">
+              <block type="math_number" id="Ek/x}MooFu(!Hn2/j0sa">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+            <value name="Y">
+              <block type="math_number" id=")T~N^Ac?$zZ$wC]{ZCzB">
+                <field name="NUM">3</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

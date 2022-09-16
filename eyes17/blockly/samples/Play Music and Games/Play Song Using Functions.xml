@@ -1,0 +1,178 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="15^DRFvr@8I,YoQK6FhW">notes</variable>
+    <variable id="{fVR-yHrNsdiJC$xDoOA">song</variable>
+    <variable id="}KE@V7,)cpEQ-Df=Q3r(">j</variable>
+  </variables>
+  <block type="procedures_defnoreturn" id="MkQyus|r)ZW:k(zw4cZx" x="0" y="0">
+    <mutation>
+      <arg name="notes" varid="15^DRFvr@8I,YoQK6FhW"></arg>
+    </mutation>
+    <field name="NAME">play song</field>
+    <comment pinned="false" h="80" w="160">Describe this function...</comment>
+    <statement name="STACK">
+      <block type="variables_set" id="G;H*RJ=ldTS8/hW.r=Z#">
+        <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+        <value name="VALUE">
+          <block type="lists_split" id="75f_0FN4r#j=5o6oO?^A">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="INPUT">
+              <block type="variables_get" id="]DSbV97Q+-*!D+.UiTE2">
+                <field name="VAR" id="15^DRFvr@8I,YoQK6FhW">notes</field>
+              </block>
+            </value>
+            <value name="DELIM">
+              <shadow type="text" id="K^7SqC^Vu?)?)#QY6FeG">
+                <field name="TEXT">,</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="controls_forEach" id="-Q_B(DWd;sxY=V^WUe/1">
+            <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+            <value name="LIST">
+              <block type="variables_get" id="l44dA4Z50-b9#gc$uVF;">
+                <field name="VAR" id="{fVR-yHrNsdiJC$xDoOA">song</field>
+              </block>
+            </value>
+            <statement name="DO">
+              <block type="play_piano" id=".h[Si?;07jUjl?LsKBG.">
+                <value name="NOTE">
+                  <shadow type="text" id="}eaU)/bKe[@zK2.t+p/T">
+                    <field name="TEXT">C</field>
+                  </shadow>
+                  <block type="variables_get" id="QA]c|I/rN|KCrcDMdH~X">
+                    <field name="VAR" id="}KE@V7,)cpEQ-Df=Q3r(">j</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="%]Tcx;K5P)#u@gN08PW#">
+                    <field name="SECONDS">0.25</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+  <block type="add_piano" id="XvN)V-r4VX~8T@brh*bd" x="65" y="-284">
+    <next>
+      <block type="procedures_callnoreturn" id="YQ?(3ItBLMcA//l-287$">
+        <mutation name="play song">
+          <arg name="notes"></arg>
+        </mutation>
+        <value name="ARG0">
+          <block type="text" id="fW.LxLq4p#`mihu(g2_;">
+            <field name="TEXT">2D#,2D,2D#,2D,2D#,A#,2C#,B,G#</field>
+          </block>
+        </value>
+        <next>
+          <block type="wait_seconds" id="CSCGZgOYxh*YDWD/Mic;">
+            <field name="SECONDS">0.5</field>
+            <next>
+              <block type="procedures_callnoreturn" id="!MCHsvmDl--*6Fqm_(Qt">
+                <mutation name="play song">
+                  <arg name="notes"></arg>
+                </mutation>
+                <value name="ARG0">
+                  <block type="text" id="DewZBM,+fw7$j~SK)s:d">
+                    <field name="TEXT">D#,G,G#,A#</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="vJS%=66BctBD,`.S,62f">
+                    <field name="SECONDS">0.5</field>
+                    <next>
+                      <block type="procedures_callnoreturn" id="#=%.7R(-MUa[H44^AH?p">
+                        <mutation name="play song">
+                          <arg name="notes"></arg>
+                        </mutation>
+                        <value name="ARG0">
+                          <block type="text" id="FJ8L.YZn.3CFS5A9f:U|">
+                            <field name="TEXT">D#,B,A#,G#</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="wait_seconds" id="v?WYq7klTf!7Yb[,3?O^">
+                            <field name="SECONDS">0.5</field>
+                            <next>
+                              <block type="procedures_callnoreturn" id="CUiiPu=aqT9Z,:qc^WFt">
+                                <mutation name="play song">
+                                  <arg name="notes"></arg>
+                                </mutation>
+                                <value name="ARG0">
+                                  <block type="text" id="+b/i*[j()BVUNx)F`*S8">
+                                    <field name="TEXT">A#,B,2C#,2D#</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="wait_seconds" id="QRXcmqHNe=mcGPx+Gg`u">
+                                    <field name="SECONDS">0.5</field>
+                                    <next>
+                                      <block type="procedures_callnoreturn" id="DL`IOFQ@DOn!I_gPBYm@">
+                                        <mutation name="play song">
+                                          <arg name="notes"></arg>
+                                        </mutation>
+                                        <value name="ARG0">
+                                          <block type="text" id="g$iDT$?(P107z8[sG69o">
+                                            <field name="TEXT">A#,2E,2D#,2C#</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="wait_seconds" id="9vKY`T{1MR!C(r:BLmWb">
+                                            <field name="SECONDS">0.5</field>
+                                            <next>
+                                              <block type="procedures_callnoreturn" id="Q1DOeNi[WhBO8!DGe/gQ">
+                                                <mutation name="play song">
+                                                  <arg name="notes"></arg>
+                                                </mutation>
+                                                <value name="ARG0">
+                                                  <block type="text" id="GW}yy?7u0rTz#fxU3[Dv">
+                                                    <field name="TEXT">G#,2D#,2C#,B</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="wait_seconds" id="Rgh;_$V+ocn-AKfb+(U#">
+                                                    <field name="SECONDS">0.5</field>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id=")/uT_(CGR2r1nQ2O_8H5">
+                                                        <mutation name="play song">
+                                                          <arg name="notes"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="text" id="!-*zRFQ+?L53JKn|,Xd5">
+                                                            <field name="TEXT">G#,2C#,B,A#</field>
+                                                          </block>
+                                                        </value>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

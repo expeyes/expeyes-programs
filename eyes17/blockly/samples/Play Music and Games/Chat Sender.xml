@@ -1,0 +1,35 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+      <block type="controls_repeat_ext" id="ng~P`Ol9-.[1q1=SN^pU" x="10" y="21">
+        <value name="TIMES">
+          <shadow type="math_number" id="eCAq7h,Tp#T#5#UXVdMa">
+            <field name="NUM">100</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="controls_if" id="aW|rlFbp^5Dq0~9yk,=_">
+            <value name="IF0">
+              <block type="hasMessage" id="gusBU49b.L8.2l]N:.Ll">
+                <field name="ID">1</field>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="cs_print" id="W|X~a}mKBFjO$Si30;G.">
+                <value name="TEXT">
+                  <shadow type="text" id="u+05W65]v0wW,6Hq/cX0">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                  <block type="receiveMessage" id="vYgD(l{^4TaQRb*nG@,z">
+                    <field name="ID">1</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+            <next>
+              <block type="wait_seconds" id=",AF;-Dj2EfH~VO!-i$z5">
+                <field name="SECONDS">0.01</field>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </xml>

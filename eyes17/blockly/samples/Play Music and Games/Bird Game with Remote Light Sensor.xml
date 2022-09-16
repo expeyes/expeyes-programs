@@ -1,0 +1,58 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+## Bird game 
+
++ Open the Bird Game Remote program on another phone connected to the same WiFi network
++ Click on the wifi icon next to the help icon on both phones
++ On one of the phones, you will see a message just above the toolbar of the form `Found Client, IP Address.` followed by a connect button
++ Once they are connected successfully with each other, both phones will show a message `Connected to <IP>: Kuttypy`
+
+Now you can run this program which will wait for luminosity readings from the connected phone in order to control the bird.
+
+The readings of the sensor increase with intensity of light falling on the light sensor which is usually located next to the front camera. These readings are measured and used to set the height of the character in the game.
+
+ Stand under a tubelight and move the second phone close and away from the light to observe how the bird moves along with it on the first phone.
+
+]]>
+</description>
+
+<block type="add_game" id="3YCPo!vOJS|o7/NBf9#[" x="8" y="11">
+        <next>
+          <block type="controls_repeat_ext" id="ng~P`Ol9-.[1q1=SN^pU">
+            <value name="TIMES">
+              <shadow type="math_number" id="eCAq7h,Tp#T#5#UXVdMa">
+                <field name="NUM">10000</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="controls_if" id="aW|rlFbp^5Dq0~9yk,=_">
+                <value name="IF0">
+                  <block type="hasMessage" id="gusBU49b.L8.2l]N:.Ll"></block>
+                </value>
+                <statement name="DO0">
+                  <block type="set_bird_y" id="Wl.)ky-Wt!w[_:zKLo#L">
+                    <value name="Y">
+                      <shadow type="math_number" id="S~pg(N]Su,l~c-0Rl9*m">
+                        <field name="NUM">200</field>
+                      </shadow>
+                      <block type="receiveMessage" id="vYgD(l{^4TaQRb*nG@,z"></block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="wait_seconds" id=",AF;-Dj2EfH~VO!-i$z5">
+                    <field name="SECONDS">0.01</field>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="stop_game" id="csu/*}K@-iRufK-do++G"></block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </xml>
+

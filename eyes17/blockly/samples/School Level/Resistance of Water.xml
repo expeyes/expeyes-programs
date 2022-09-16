@@ -1,0 +1,105 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+##  Resistance of Water
+
+Resistance of water is an indication of it's purity. Water conducts mostly due to the dissolved salts. If you have never tried measuring the resistance of ordinary tap water try doing it with a multimeter. Are you getting a stable reading ?
+
+<img src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJyZXMtd2F0ZXIiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiICB2aWV3Qm94PSItNiAtNiA1OTggMzEwIj4KPGRlc2M+ClhDaXJjdWl0IFZlcnNpb24gMy43CkZpbGUgInJlcy13YXRlci5wcyIgUGFnZSAxCjwvZGVzYz4KPGcgc3Ryb2tlPSJibGFjayI+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMTEyIDI3MikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPldhdGVyPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTk2LDE5MiBMOTYsMjg4IDI1NiwyODggMjU2LDE5MiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik05NiwyMjQgTDI1NiwyMjQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxICAzMiAgNjQpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5XRzwvdHNwYW4+CjwvdGV4dD48L2c+CjxwYXRoIGQ9Ik0xNiwxNiBMMTYsODAgMTEyLDgwIDExMiwxNiB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjA4LDI0MCBDMjI0LDI0MCAyMjQsMzIgMzIwLDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMjg4ICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkEyPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTI3MiwxNiBMMjcyLDgwIDM1Miw4MCAzNTIsMTYgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTM1MiwyMjQgTDM4MCwyMjQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNNDgwLDIyNCBMNDUyLDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00NTIsMjI0IEw0NDYsMjEwIDQzNCwyMzggNDIyLDIxMCA0MTAsMjM4IDM5OCwyMTAgMzg2LDIzOCAzODAsMjI0ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTQ2NCwxNiBMNDY0LDgwIDU3Niw4MCA1NzYsMTYgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxNjAgMjA4KSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+UjwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgNDAwIDE5MikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPlIxPC90c3Bhbj4KPC90ZXh0PjwvZz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxNjAgIDY0KSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+QTE8L3RzcGFuPgo8L3RleHQ+PC9nPgo8cGF0aCBkPSJNMTYwLDE2IEwxNjAsODAgMjI0LDgwIDIyNCwxNiB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZWxsaXBzZSBjeD0iMzM2IiBjeT0iMjI0IiByeD0iMTYiIHJ5PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGVsbGlwc2UgY3g9IjQ5NiIgY3k9IjIyNCIgcng9IjE2IiByeT0iMTYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgNDgwICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkdORDwvdHNwYW4+CjwvdGV4dD48L2c+CjxwYXRoIGQ9Ik0xMjgsMjQwIEMxNDQsMjQwIDEyOCwxNjAgNjQsODAgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTkyLDgwIEMyMDgsODAgMTQ0LDE0NCA2NCw4MCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zMzYsMjA4IEMzNTIsMjA4IDI4OCw4MCAzMDQsODAgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNNDk2LDIwOCBDNTEyLDIwOCA0OTYsODAgNTEyLDgwICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTAsMCBMMCwzMDQgNTkyLDMwNCA1OTIsMCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8L2c+Cjwvc3ZnPgo='/>
+
+- Make the connections as per the schematic. 
+
+Choose the resistor comparable to that of water, start with 10k.
+Enable A1 and A2 with the amplitude and frequency display options.
+Calculate the resistance using the method of comparing with a known resistance.
+Current flowing I = VA2/R1
+
+]]>	
+</description>
+
+  <variables>
+    <variable id="J-+@|mBt7ruFM6)FhVT-">timestamps</variable>
+    <variable id="NsNgyd_8Jh5$%CRlizEp">data1</variable>
+    <variable id="lJEBaS2!pcJs,/7Ddo-S">data2</variable>
+  </variables>
+  <block type="set_frequency" id="gpCl(26UF/yWoc^EiRo{" x="7" y="8">
+    <field name="CHANNEL">SQ1</field>
+    <value name="FREQUENCY">
+      <block type="math_number" id="CJ%,Y3X@l=g@ni$~/f7h">
+        <field name="NUM">1000</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="zZ;fAGE}L7O9pm]F*P;,">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="t5^j!$/?f%O=CvtO_$Fz">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="capture_plot" id="_%1G2Qvl9OS@[XjX93l!">
+            <field name="CHANNEL">A1</field>
+            <field name="TIMESTAMPS" id="J-+@|mBt7ruFM6)FhVT-">timestamps</field>
+            <field name="DATA1" id="NsNgyd_8Jh5$%CRlizEp">data1</field>
+            <field name="DATA2" id="lJEBaS2!pcJs,/7Ddo-S">data2</field>
+            <next>
+              <block type="cs_sticker" id="{r#5+H7l.DNXK0cPjO%6">
+                <value name="LABEL">
+                  <shadow type="text" id="?_/0x_zn^aR;kuPHWGIO">
+                    <field name="TEXT">A1 Amplitude</field>
+                  </shadow>
+                </value>
+                <value name="TEXT">
+                  <shadow type="text" id="|P|EVX6e=tKE,jO3?E}V">
+                    <field name="TEXT">Reading</field>
+                  </shadow>
+                  <block type="sine_fit_arrays" id="%95{nq,tCqD(N0:hQsza">
+                    <field name="PARAMETER">0</field>
+                    <value name="X">
+                      <block type="variables_get" id="ANQYv%zl7!yXhoJah(c1">
+                        <field name="VAR" id="J-+@|mBt7ruFM6)FhVT-">timestamps</field>
+                      </block>
+                    </value>
+                    <value name="Y">
+                      <block type="variables_get" id="iirn{)=;G/+Rbf)tE0Ij">
+                        <field name="VAR" id="NsNgyd_8Jh5$%CRlizEp">data1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="cs_sticker" id="!H(_z{8Y$9*Nqc17:X6o">
+                    <value name="LABEL">
+                      <shadow type="text" id="%#9MoWB=*HT!A^,D#X$M">
+                        <field name="TEXT">A2 Amplitude</field>
+                      </shadow>
+                    </value>
+                    <value name="TEXT">
+                      <shadow type="text" id="|P|EVX6e=tKE,jO3?E}V">
+                        <field name="TEXT">Reading</field>
+                      </shadow>
+                      <block type="sine_fit_arrays" id="|;|xB=FDsNIUI[d2}m~H">
+                        <field name="PARAMETER">0</field>
+                        <value name="X">
+                          <block type="variables_get" id="9VhGlVm50i4*,Zc)`ELJ">
+                            <field name="VAR" id="J-+@|mBt7ruFM6)FhVT-">timestamps</field>
+                          </block>
+                        </value>
+                        <value name="Y">
+                          <block type="variables_get" id="XG{YBe(b.VkM`:RZa(w$">
+                            <field name="VAR" id="lJEBaS2!pcJs,/7Ddo-S">data2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>
