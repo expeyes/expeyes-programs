@@ -244,17 +244,17 @@
         <translation>Tension (V)</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="75"/>
+        <location filename="../thermocouplelogger.py" line="69"/>
         <source>Total Duration</source>
         <translation>Durée totale</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="91"/>
+        <location filename="../thermocouplelogger.py" line="85"/>
         <source>Seconds</source>
         <translation>secondes</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="86"/>
+        <location filename="../thermocouplelogger.py" line="80"/>
         <source>Measure every</source>
         <translation>Mesurer toutes les</translation>
     </message>
@@ -559,7 +559,7 @@
         <translation type="obsolete">RLCtransient.txt</translation>
     </message>
     <message>
-        <location filename="../RLtransient.py" line="97"/>
+        <location filename="../RLCtransient.py" line="90"/>
         <source>Rext =</source>
         <translation>R_ext =</translation>
     </message>
@@ -940,7 +940,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Pas de signal</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="173"/>
+        <location filename="../thermocouplelogger.py" line="170"/>
         <source>Data logger plot completed</source>
         <translation>Graphique de l&apos;enregistreur terminé</translation>
     </message>
@@ -950,7 +950,7 @@ Affichage de l&apos;ensemble de fréquences actuel.
         <translation>Durée invalide</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="191"/>
+        <location filename="../thermocouplelogger.py" line="189"/>
         <source>Invalid time interval between reads</source>
         <translation>Intervalle de temps entre lectures invalide</translation>
     </message>
@@ -2300,8 +2300,18 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/blockly_layout.ui" line="119"/>
+        <location filename="../layouts/blockly_layout.ui" line="81"/>
         <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/blockly_layout.ui" line="59"/>
+        <source>Examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/blockly_layout.ui" line="235"/>
+        <source>&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2809,7 +2819,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Graphical Code Editor</source>
+        <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3077,7 +3087,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>webWin</name>
     <message>
-        <location filename="../blockcoding.py" line="58"/>
+        <location filename="../blockcoding.py" line="94"/>
         <source>Block Coding: %s</source>
         <translation type="unfinished"></translation>
     </message>

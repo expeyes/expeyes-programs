@@ -1174,6 +1174,7 @@ Blockly.Xml.clearWorkspaceAndLoadFromXml($('#samplexml')[0], workspacePlayground
 	}
 	function loadRawXml(msg){
             var parsedxml = Blockly.Xml.textToDom(msg);
+            loadhelp(parsedxml);
             Blockly.Xml.clearWorkspaceAndLoadFromXml(parsedxml,workspacePlayground);
             }
 

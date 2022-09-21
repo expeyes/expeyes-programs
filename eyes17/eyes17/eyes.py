@@ -30,6 +30,7 @@ import time
 import sys
 import numpy as np
 from . import eyemath17
+from .SENSORS import ALLSENSORS
 
 # Need to do this since 'eyes.py' redefines 'open'
 fileOpen=open
@@ -150,6 +151,8 @@ class Interface():
 		self.CAP_RC_SCALING  = 1.
 		self.rtime = lambda t: t/64e6
 
+		self.active_sensors = {}
+
 		self.digital_inputs=['IN2','SQR1_READ','OD1_READ','SEN','SQR1','OD1','SQ2','SQ3']
 		self.digital_outputs=['OD1','CCS','SQR1','SQR2']
 		self.allDigitalChannels = self.digital_inputs
@@ -163,6 +166,7 @@ class Interface():
 		#logic analyzer section of the device.  It also contains methods to generate plottable data
 		#from the original timestamp arrays.
 		self.I2C = I2C(self.H)
+		self.sensors = ALLSENSORS.LOGGER(self.I2C)
 		if self.version_number >= 5.0:
 			from .Peripherals import SPI
 			self.SPI = SPI(self.H)
@@ -260,6 +264,29 @@ class Interface():
 						self.__print__(NAME, ' not calibrated' , a[5:], len(a[5:]),a)
 						continue
 					self.DAC.CHANS[NAME].load_calibration_polynomial(fits)
+
+
+	def get_sensor(self,sensor, param):
+		if sensor not in self.active_sensors:
+			if(sensor=='BMP280'):
+				self.sensors.BMP280_init()
+				self.active_sensors[sensor] = self.sensors.BMP280_all
+			elif(sensor=='MPU6050'):
+				self.sensors.MPU6050_init()
+				self.active_sensors[sensor] = self.sensors.MPU6050_all
+			elif(sensor=='VL53L0X'):
+				self.sensors.VL53L0X_init()
+				self.active_sensors[sensor] = self.sensors.VL53L0X_all
+			elif(sensor=='HMC5883L'):
+				self.sensors.HMC5883L_init()
+				self.active_sensors[sensor] = self.sensors.HMC5883L_all
+			elif(sensor=='SR04'):
+				self.active_sensors[sensor] = self.sr04_distance
+			else:
+				return 0
+
+		return self.active_sensors[sensor]()[param]
+
 
 	def get_resistance(self):
 		V = self.get_average_voltage('SEN')

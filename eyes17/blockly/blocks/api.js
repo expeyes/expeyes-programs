@@ -1,89 +1,5 @@
 /*--------------- Phone Sensors ----------------------*/
 
-//----------------ACCELEROMETER (GRAVITY)
-
-Blockly.Blocks['get_phone_accel'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Gravity")
-        .appendField(new Blockly.FieldDropdown([["X","0"],["Y","1"],["Z","2"]]), "CHANNEL");
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['get_phone_accel'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_phone_sensor(\'GRAVITY\',\''+dropdown_channel+'\')';
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.Python['get_phone_accel'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_sensor(\'GRAVITY\',\''+dropdown_channel+'\')';
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-
-
-
-//----------------ROTATION (ACCELEROMETER+GYRO+COMPASS fusion sensor)
-
-Blockly.Blocks['get_phone_rotation'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Phone's Rotation")
-        .appendField(new Blockly.FieldDropdown([["X","0"],["Y","1"],["Z","2"]]), "CHANNEL");
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("Measure phone's angle of rotation ");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['get_phone_rotation'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_phone_sensor(\'ROTATION\',\''+dropdown_channel+'\')';
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.Python['get_phone_rotation'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_phone_sensor(\'ROTATION\',\''+dropdown_channel+'\')';
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-
-
-//----------------Luminosity (Inbuilt lux meter of phone)
-
-Blockly.Blocks['get_phone_light'] = {
-  init: function() {
-    this.appendDummyInput()
-        .appendField("Phone's sensor")
-        .appendField(new Blockly.FieldDropdown([["LUMINOSITY","0"]]), "CHANNEL");
-    this.setOutput(true, null);
-    this.setColour(230);
- this.setTooltip("Measure phone's angle of rotation ");
- this.setHelpUrl("");
-  }
-};
-
-Blockly.JavaScript['get_phone_light'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_phone_sensor(\'LUMINOSITY\',\''+dropdown_channel+'\')';
-  return [code, Blockly.JavaScript.ORDER_NONE];
-};
-
-Blockly.Python['get_phone_light'] = function(block) {
-  var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_phone_sensor(\'LUMINOSITY\',\''+dropdown_channel+'\')';
-  return [code, Blockly.Python.ORDER_NONE];
-};
-
-
 
 
 Blockly.defineBlocksWithJsonArray([{
@@ -383,40 +299,33 @@ function initApi(interpreter, scope) {
 
 
 		  // Add APIs for the sine fit analysis calls. pass entire data to native java for processing.
-		  interpreter.setProperty(scope, 'sine_fit_arrays', interpreter.createNativeFunction(
-				function(x,y,param) {
-				  return JSBridge.sine_fit_arrays(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)),param).toFixed(3);
+		  interpreter.setProperty(scope, 'sine_fit_arrays', interpreter.createAsyncFunction(
+				function(x,y,param, callback) {
+					JSBridge.sine_fit_arrays(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)),param,callback);
 				})
 			);
-		  interpreter.setProperty(scope, 'sine_fit_two_arrays', interpreter.createNativeFunction(
-				function(x,y,x2,y2,param) {
-				  return JSBridge.sine_fit_two_arrays(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)),JSON.stringify(Object.values(x2.a)),JSON.stringify(Object.values(y2.a)),param).toFixed(3);
+		  interpreter.setProperty(scope, 'sine_fit_two_arrays', interpreter.createAsyncFunction(
+				function(x,y,x2,y2,param, callback) {
+				  JSBridge.sine_fit_two_arrays(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)),JSON.stringify(Object.values(x2.a)),JSON.stringify(Object.values(y2.a)),param, callback);
 				})
 			);
 		  // Add an API for the FFT block.  copied from wait_block. Async attempt
-		  interpreter.setProperty(scope, 'fourier_transform', interpreter.createNativeFunction(
-				function fourier_transform(x,y) {
-                                return JSBridge.fourier_transform(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)));
+		  interpreter.setProperty(scope, 'fourier_transform', interpreter.createAsyncFunction(
+				function fourier_transform(x,y, callback) {
+                                JSBridge.fourier_transform(JSON.stringify(Object.values(x.a)),JSON.stringify(Object.values(y.a)), callback);
                 		  })
 			);
 
 
 			// File writing calls
 		  // Add an API for the writeToFile call
-		  interpreter.setProperty(scope, 'write_to_file', interpreter.createNativeFunction(
-				function(fname, txt, newline) {
+		  interpreter.setProperty(scope, 'write_to_file', interpreter.createAsyncFunction(
+				function(fname, txt, newline, callback) {
 					if(newline){txt+='\n';}
-			  return JSBridge.writeToFile(fname,txt);
+			  callback( JSBridge.writeToFile(fname,txt) );
 				})
 			);
 
-
-		  // Add an API for the get_phone_sensor call
-		  interpreter.setProperty(scope, 'get_phone_sensor', interpreter.createNativeFunction(
-				function(sensor,param) {
-				  return JSBridge.get_phone_sensor(sensor,param);
-				})
-			);
 
 
 

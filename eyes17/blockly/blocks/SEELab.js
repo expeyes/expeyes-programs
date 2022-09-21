@@ -784,7 +784,7 @@ Blockly.JavaScript['read_SR04'] = function(block) {
 Blockly.Python['read_SR04'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'sr04_distance()';
+  var code = 'p.sr04_distance()';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -814,7 +814,7 @@ Blockly.JavaScript['read_BMP280'] = function(block) {
 Blockly.Python['read_BMP280'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'BMP280\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'BMP280\','+dropdown_channel+')';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -846,7 +846,7 @@ Blockly.JavaScript['read_MAX30100'] = function(block) {
 Blockly.Python['read_MAX30100'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'MAX30100\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'MAX30100\','+dropdown_channel+')';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -875,7 +875,7 @@ Blockly.JavaScript['read_MPU6050'] = function(block) {
 Blockly.Python['read_MPU6050'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'MPU6050\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'MPU6050\','+dropdown_channel+')';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -903,7 +903,7 @@ Blockly.JavaScript['read_VL53L0X'] = function(block) {
 Blockly.Python['read_VL53L0X'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'VL53L0X\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'VL53L0X\','+dropdown_channel+')';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -931,7 +931,7 @@ Blockly.JavaScript['read_ML8511'] = function(block) {
 Blockly.Python['read_ML8511'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'ML8511\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'ML8511\','+dropdown_channel+')';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -989,7 +989,7 @@ Blockly.JavaScript['read_HMC5883L'] = function(block) {
 Blockly.Python['read_HMC5883L'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'HMC5883L\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'HMC5883L\','+dropdown_channel+')';
   return [code, Blockly.Python.ORDER_NONE];
 };
 
@@ -1392,18 +1392,18 @@ function initSEELab(interpreter, scope) {
 
 
 		  // Add an API for the capture_action block.
-		  var wrapper = function capture_action(channel, ns, tg, action) {
-                return HWBridge.capture_action(channel , ns ,tg, action,10);
+		  var wrapper = function capture_action(channel, ns, tg, action, callback) {
+                return HWBridge.capture_action(channel , ns ,tg, action,10, callback);
 		  };
-		  interpreter.setProperty(scope, 'capture_action', interpreter.createNativeFunction(wrapper));
+		  interpreter.setProperty(scope, 'capture_action', interpreter.createAsyncFunction(wrapper));
 
 
 
 
 		  // Add an API for the get_sensor call
-		  interpreter.setProperty(scope, 'get_sensor', interpreter.createNativeFunction(
-				function(sensor,param) {
-				  return HWBridge.get_sensor(sensor,param);
+		  interpreter.setProperty(scope, 'get_sensor', interpreter.createAsyncFunction(
+				function(sensor,param, callback) {
+				  return HWBridge.get_sensor(sensor,param, callback);
 				})
 			);
 		  // Add an API for the get_sr04 call

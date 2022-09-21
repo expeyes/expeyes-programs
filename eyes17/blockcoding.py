@@ -4,7 +4,7 @@ import sys, time, math, os.path
 import utils
 from QtVersion import *
 
-import sys, time, tempfile, json
+import sys, time, tempfile, json, socket
 from utils import pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -71,7 +71,6 @@ class webWin(QWebView):
 		self.parent=parent
 		self.p  = self.parent.p
 		self.lang=lang
-		self.path = os.path.join(self.parent.blocksPath,'samples')
 		self.mypage = webPage(self)
 		self.setPage(self.mypage)
 
@@ -104,6 +103,12 @@ class webWin(QWebView):
 			QMainWindow.__init__(self)
 			self.parent = parent
 			self.local_xml  = ''
+			self.openFileWriters = {}
+			self.MCAST_GRP = '234.0.0.1'
+			self.MCAST_PORT = 9999
+			self.MULTICAST_TTL = 2
+			self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+			self.sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, self.MULTICAST_TTL)
 
 		def setLocalXML(self,fname):
 			self.local_xml = open(fname).read()
@@ -115,8 +120,16 @@ class webWin(QWebView):
 
 		@QtCore.pyqtSlot(str, bool)
 		def xmlCode(self,code, bcast):
-			code = "import eyes17.eyes as eyes\np = eyes.open()\n\n"+code
-			#self.parent.editor.setPlainText(code)
+			if bcast:
+				self.sock.sendto(code.encode(), (self.MCAST_GRP, self.MCAST_PORT))
+
+		@QtCore.pyqtSlot()
+		def startStepBroadcast(self):
+				self.sock.sendto("!+".encode(), (self.MCAST_GRP, self.MCAST_PORT))
+
+		@QtCore.pyqtSlot()
+		def offBroadcast(self):
+				self.sock.sendto("!-".encode(), (self.MCAST_GRP, self.MCAST_PORT))
 
 		@QtCore.pyqtSlot(str, str)
 		def saveXML(self,name, code):
@@ -129,8 +142,21 @@ class webWin(QWebView):
 
 		@QtCore.pyqtSlot()
 		def closeFiles(self):
-			pass
+			for a in self.openFileWriters:
+				try: a.close()
+				except: pass
+			self.openFileWriters = {}
 
+		@QtCore.pyqtSlot(str, str)
+		def writeToFile(self, fname, data):
+			if fname not in self.openFileWriters:
+				self.openFileWriters[fname] = open(os.path.join(os.path.expanduser('~'),fname),'wt')
+			self.openFileWriters[fname].write(data)
+
+
+		@QtCore.pyqtSlot(str, str,str,str,str)
+		def save_lists(self, fname, x,y1,y2,y3):
+			print('not implemented')
 
 		@QtCore.pyqtSlot(str, result=str)
 		def loadLocalXML(self,tp):
@@ -180,6 +206,57 @@ class webWin(QWebView):
 			''']
 
 
+		@QtCore.pyqtSlot(str, str, result=str)
+		def fourier_transform(self,xin, yin):
+			x = json.loads(xin)
+			v = json.loads(yin)
+			dt = x[1] - x[0]
+			try:	
+				xa,ya = em.fft(np.array(v),dt)
+				#peak = self.peak_index(xa,ya)
+				#ypos = np.max(ya)
+				#pop = pg.plot(xa,ya, pen = self.traceCols[ch])
+				return json.dumps([xa.tolist(),ya.tolist()])
+			except Exception as err:
+				print('FFT error:', err)
+			return json.dumps([[],[]])
+
+
+		@QtCore.pyqtSlot(str, str, int, result=float)
+		def sine_fit_arrays(self,xa, ya, p):
+			x = json.loads(xa)
+			y = json.loads(ya)
+			try:	
+				yfit, fa = em.fit_sine(np.array(x),np.array(y))
+				if(p==0):return fa[0]
+				elif(p==1):return fa[1]*1000
+				elif(p==2):return 180*fa[2]/np.pi
+			except Exception as err:
+				print('fit_sine error:', err)
+			return 0
+				
+		@QtCore.pyqtSlot(str, str, str, str, int, result=float)
+		def sine_fit_two_arrays(self,xa, ya,xa2,ya2, p):
+			x = json.loads(xa)
+			y = json.loads(ya)
+			x2 = json.loads(xa2)
+			y2 = json.loads(ya2)
+			try:	
+				yfit, fa = em.fit_sine(np.array(x),np.array(y))
+				yfit2, fa2 = em.fit_sine(np.array(x2),np.array(y2))
+				if(p==0): #Amp ratio (Gain)
+					if(fa[0]>0):
+						return fa2[0]/fa[0]
+				elif(p==1): #Freq ratio (X)
+					if(fa[1]>0):
+						return fa2[1]/fa[1]
+				elif(p==2): #Phase difference
+					return 180*(fa2[2] - fa[2])/np.pi
+			except Exception as err:
+				print('fit_sine2 error:', err)
+			return 0
+
+
 	class HWHandler(QtCore.QObject):
 		def __init__(self,parent):
 			QMainWindow.__init__(self)
@@ -205,10 +282,20 @@ class webWin(QWebView):
 		def capture2(self,chan, ns, tg):
 			x, y, _, y2 = self.p.capture2( ns, tg , chan)
 			return json.dumps([x.tolist(),y.tolist(), y2.tolist()])
+
 		@QtCore.pyqtSlot(str,int, int ,result=str)
 		def capture4(self,chan, ns, tg):
 			x, y , _, y3, _, y4 = self.p.capture4( ns, tg, chan)
 			return json.dumps([x.tolist(),y.tolist(), y2.tolist(), y3.tolist(), y4.tolist()])
+
+
+		@QtCore.pyqtSlot(str,int, int , str, int, result=str)
+		def capture_action(self,chan, ns, tg, action, t):
+			x, y = self.p.capture2( ns, tg , chan, action, t)
+			return json.dumps([x.tolist(),y.tolist()])
+
+
+
 
 
 		@QtCore.pyqtSlot(str, float,result=float)
@@ -331,7 +418,7 @@ class Expt(QtWidgets.QWidget, ui_blockly_layout.Ui_Form):
 	def __init__(self, device=None):
 		super(Expt, self).__init__()
 		self.setupUi(self)
-		self.samplepath = "blockly/samples"
+		self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"blockly/samples") 
 		try:
 			self.setStyleSheet(open(os.path.join(os.path.dirname(__file__),"layouts/style.qss"), "r").read())
 		except Exception as e:
@@ -365,6 +452,7 @@ class Expt(QtWidgets.QWidget, ui_blockly_layout.Ui_Form):
 		path = os.path.join(*texts)
 		sample  = os.path.join(self.samplepath,path)
 		self.web.setLocalXML(sample)
+		self.filenameLabel.setText(path)
 		
 		self.web.mypage.runJavaScript("loadXML(JSBridge.loadLocalXML('local_opened_file',loadRawXml));")
 

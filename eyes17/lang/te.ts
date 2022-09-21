@@ -461,17 +461,17 @@
         <translation>వోల్టేజ్ (V)</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="75"/>
+        <location filename="../thermocouplelogger.py" line="69"/>
         <source>Total Duration</source>
         <translation>మొత్తం వ్యవధి</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="91"/>
+        <location filename="../thermocouplelogger.py" line="85"/>
         <source>Seconds</source>
         <translation>సెకండ్స్</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="86"/>
+        <location filename="../thermocouplelogger.py" line="80"/>
         <source>Measure every</source>
         <translation>ప్రతి కొలత</translation>
     </message>
@@ -481,7 +481,7 @@
         <translation>TSL2561 సెన్సార్ కనుగొనబడలేదు</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="173"/>
+        <location filename="../thermocouplelogger.py" line="170"/>
         <source>Data logger plot completed</source>
         <translation>డేటా లాగర్ ప్లాట్ పూర్తయింది</translation>
     </message>
@@ -491,7 +491,7 @@
         <translation>చెల్లని వ్యవధి</translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="191"/>
+        <location filename="../thermocouplelogger.py" line="189"/>
         <source>Invalid time interval between reads</source>
         <translation>కొలతల మధ్య చెల్లని సమయ విరామం సరికాదు</translation>
     </message>
@@ -1233,7 +1233,7 @@ For Driven Pendulum Expt.</source>
         <translation>కొన్ని ఫీల్డ్‌లో చెల్లని ఇన్‌పుట్</translation>
     </message>
     <message>
-        <location filename="../RLtransient.py" line="97"/>
+        <location filename="../RLCtransient.py" line="90"/>
         <source>Rext =</source>
         <translation>Rext =</translation>
     </message>
@@ -1703,8 +1703,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/blockly_layout.ui" line="119"/>
+        <location filename="../layouts/blockly_layout.ui" line="81"/>
         <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/blockly_layout.ui" line="59"/>
+        <source>Examples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/blockly_layout.ui" line="235"/>
+        <source>&gt;</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2212,7 +2222,7 @@ p, li { white-space: pre-wrap; }
     </message>
     <message>
         <location filename="../main.py" line="252"/>
-        <source>Graphical Code Editor</source>
+        <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2480,7 +2490,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>webWin</name>
     <message>
-        <location filename="../blockcoding.py" line="58"/>
+        <location filename="../blockcoding.py" line="94"/>
         <source>Block Coding: %s</source>
         <translation type="unfinished"></translation>
     </message>

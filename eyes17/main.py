@@ -249,7 +249,7 @@ otherExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('7.1','pt100')],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
-[QT_TRANSLATE_NOOP('MainWindow','Graphical Code Editor'), ('7.4','blockcoding')]
+[QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')]
 ]
 
 modulesI2C = [ 
@@ -498,12 +498,13 @@ class MainWindow(QMainWindow):
 		self.showHelp()
 	
 
-	def callExpt(self, e):
+	def callExpt(self, details):
 		"""
 		:parm: e lst with a title and a HTML file designation; when e[1]
 		is not a string, then it is an iterable with possible HTML file names,
 		and the last file name may also be a module name.
 		"""	
+		e = details
 		self.title=e[0] # record the title of the experiments, for snapshots
 		module_name =  e[1] if type(e[1]) is str else e[1][-1]
 		explib = importlib.import_module(module_name)
@@ -515,6 +516,11 @@ class MainWindow(QMainWindow):
 			self.hwin = None
 			self.expWidget= None				 # Let python delete it
 			w = explib.Expt(p)
+			try:
+				w.callExptReference(self.callExpt, self.scope_help, self.runCode)
+			except:
+				pass
+
 			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
@@ -522,6 +528,8 @@ class MainWindow(QMainWindow):
 			self.hlpName = e[1]
 			self.title = e[0]
 			self.showHelp()
+			w.show()
+
 		except Exception as err:
 			print("Exception:", err)	
 			self.expName = ''
