@@ -41,7 +41,7 @@ def open(**kwargs):
 		return obj
 	else:
 		print('Device opening Error')
-		return None
+		return obj
 		#raise RuntimeError('Could Not Connect')
     
 
