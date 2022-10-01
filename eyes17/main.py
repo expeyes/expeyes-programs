@@ -564,7 +564,7 @@ class MainWindow(QMainWindow):
 	class portSelectionDialog(QtWidgets.QDialog):
 		def __init__(self,parent=None):
 			super(MainWindow.portSelectionDialog, self).__init__(parent)
-			self.button_layout = QtGui.QVBoxLayout()
+			self.button_layout = QtWidgets.QVBoxLayout()
 			self.setLayout(self.button_layout)
 			self.btns=[]
 			self.doneButton = QtWidgets.QPushButton("Done")
