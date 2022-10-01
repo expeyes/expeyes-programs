@@ -3040,142 +3040,254 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="775"/>
+=======
+        <location filename="../main.py" line="778"/>
+>>>>>>> Stashed changes
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="656"/>
+=======
+        <location filename="../main.py" line="659"/>
+>>>>>>> Stashed changes
         <source>Failed to load scope</source>
         <translation type="unfinished">Error al cargar el osciloscopio</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="698"/>
+=======
+        <location filename="../main.py" line="701"/>
+>>>>>>> Stashed changes
         <source>Failed to load %s</source>
         <translation type="unfinished">Error al cargar %s</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="745"/>
+=======
+        <location filename="../main.py" line="748"/>
+>>>>>>> Stashed changes
         <source>Device</source>
         <translation type="unfinished">Dispositivo</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="746"/>
+=======
+        <location filename="../main.py" line="749"/>
+>>>>>>> Stashed changes
         <source>Reconnect</source>
         <translation type="unfinished">Reconexión</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="747"/>
+=======
+        <location filename="../main.py" line="750"/>
+>>>>>>> Stashed changes
         <source>LightBackGround</source>
         <translation type="unfinished">Fondo brillante</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="748"/>
+=======
+        <location filename="../main.py" line="751"/>
+>>>>>>> Stashed changes
         <source>DarkBackGround</source>
         <translation type="unfinished">Fondo oscuro</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="749"/>
+=======
+        <location filename="../main.py" line="752"/>
+>>>>>>> Stashed changes
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="768"/>
+=======
+        <location filename="../main.py" line="771"/>
+>>>>>>> Stashed changes
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="772"/>
+=======
+        <location filename="../main.py" line="775"/>
+>>>>>>> Stashed changes
         <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="773"/>
+=======
+        <location filename="../main.py" line="776"/>
+>>>>>>> Stashed changes
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="774"/>
+=======
+        <location filename="../main.py" line="777"/>
+>>>>>>> Stashed changes
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="776"/>
+=======
+        <location filename="../main.py" line="779"/>
+>>>>>>> Stashed changes
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="780"/>
+=======
+        <location filename="../main.py" line="783"/>
+>>>>>>> Stashed changes
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="782"/>
+=======
+        <location filename="../main.py" line="785"/>
+>>>>>>> Stashed changes
         <source>School Expts</source>
         <translation type="unfinished">Exp. escolares</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="786"/>
+=======
+        <location filename="../main.py" line="789"/>
+>>>>>>> Stashed changes
         <source>Electronics</source>
         <translation type="unfinished">Electrónico</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="793"/>
+=======
+        <location filename="../main.py" line="796"/>
+>>>>>>> Stashed changes
         <source>Electrical</source>
         <translation type="unfinished">Electricidad</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="797"/>
+=======
+        <location filename="../main.py" line="800"/>
+>>>>>>> Stashed changes
         <source>Sound</source>
         <translation type="unfinished">Sonido</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="801"/>
+=======
+        <location filename="../main.py" line="804"/>
+>>>>>>> Stashed changes
         <source>Mechanics</source>
         <translation type="unfinished">Mecánica</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="805"/>
+=======
+        <location filename="../main.py" line="808"/>
+>>>>>>> Stashed changes
         <source>Other Expts</source>
         <translation type="unfinished">Otras experiencias</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="809"/>
+=======
+        <location filename="../main.py" line="812"/>
+>>>>>>> Stashed changes
         <source>I2C Modules</source>
         <translation type="unfinished">Módules I2C</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="813"/>
+=======
+        <location filename="../main.py" line="816"/>
+>>>>>>> Stashed changes
         <source>PythonCode</source>
         <translation type="unfinished">Código Python</translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="949"/>
+=======
+        <location filename="../main.py" line="952"/>
+>>>>>>> Stashed changes
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="956"/>
+=======
+        <location filename="../main.py" line="959"/>
+>>>>>>> Stashed changes
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="1035"/>
+=======
+        <location filename="../main.py" line="1038"/>
+>>>>>>> Stashed changes
         <source>Missing Plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="1035"/>
+=======
+        <location filename="../main.py" line="1038"/>
+>>>>>>> Stashed changes
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="1069"/>
+=======
+        <location filename="../main.py" line="1072"/>
+>>>>>>> Stashed changes
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
+<<<<<<< Updated upstream
         <location filename="../main.py" line="1119"/>
+=======
+        <location filename="../main.py" line="1122"/>
+>>>>>>> Stashed changes
         <source>Oscilloscope</source>
         <translation type="unfinished">Osciloscopio</translation>
     </message>
@@ -3183,7 +3295,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>webWin</name>
     <message>
-        <location filename="../blockcoding.py" line="94"/>
+        <location filename="../blockcoding.py" line="98"/>
         <source>Block Coding: %s</source>
         <translation type="unfinished"></translation>
     </message>

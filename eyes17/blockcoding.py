@@ -53,6 +53,10 @@ class webWin(QWebView):
 	def setLocalXML(self,fname):
 		self.handler.setLocalXML(fname)
 
+	def updateHandler(self,device):
+		self.p = device
+		self.hwhandler.updateHandler(device)
+
 	def __init__(self, parent, name = '', lang="en"):
 		"""
 		Class for the help window
@@ -69,7 +73,7 @@ class webWin(QWebView):
 		QWebView.__init__(self)
 
 		self.parent=parent
-		self.p  = self.parent.p
+		self.p  = parent.p
 		self.lang=lang
 		self.mypage = webPage(self)
 		self.setPage(self.mypage)
@@ -264,6 +268,9 @@ class webWin(QWebView):
 			self.parent = parent
 			self.active_sensors = {}
 
+		def updateHandler(self,device):
+			self.p = device
+
 
 		@QtCore.pyqtSlot(str, result=float)
 		def get_voltage(self,chan):
@@ -435,6 +442,14 @@ class Expt(QtWidgets.QWidget, ui_blockly_layout.Ui_Form):
 		
 		load_project_structure(self.samplepath,self.directoryBrowser)
 	
+	def updateHandler(self,device):
+		if(device.connected):
+			self.p = device
+			self.web.updateHandler(device)
+			self.web.mypage.runJavaScript("deviceConnected();")
+		else:
+			self.web.mypage.runJavaScript("deviceDisconnected();")
+		
 	def showDirectory(self):
 		self.directoryBrowser.setVisible(True)
 

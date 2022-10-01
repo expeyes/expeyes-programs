@@ -544,6 +544,9 @@ class MainWindow(QMainWindow):
 							p.fd.close()
 						except:pass
 						p.connected = False
+						try:
+							self.expWidget.updateHandler(p)
+						except: pass
 
 			elif True in L.values():
 				reply = QtWidgets.QMessageBox.question(self, 'Connection', 'Device Available. Connect?', QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.No)
@@ -1120,7 +1123,13 @@ You can customize the way they are used to build the path."""
 			self.expName = 'scope'
 
 		self.expWidget.p = p
-		self.expWidget.msg('')
+		try:
+			self.expWidget.msg('')
+		except: pass
+		try:
+			self.expWidget.updateHandler(p)
+		except: pass
+
 		if p != None: 
 			print('recovering...',self.expName)
 			if self.expName == ('3.1','scope'):
