@@ -1,0 +1,128 @@
+ <xml xmlns="https://developers.google.com/blockly/xml">
+      <variables>
+        <variable id="s^(vW(XYZh/i$?{6Vaww">timestamps</variable>
+        <variable id="9T9gwq}aEeNfyNVws7uO">data1</variable>
+        <variable id="0L_*b=JnB8A`#-K*Eg64">data2</variable>
+      </variables>
+      <block type="scope_trigger" id="$8C9A2Z$3u5Om-)/Qnw3" x="6" y="27">
+        <field name="STATE">TRUE</field>
+        <field name="CHANNEL">0</field>
+        <field name="LEVEL">512</field>
+        <next>
+          <block type="set_frequency" id=".sJlj^$tdBAzh@VhOg|e">
+            <field name="CHANNEL">WG</field>
+            <value name="FREQUENCY">
+              <block type="math_number" id=";6Yg`!;jq0j-!8KXF%(G">
+                <field name="NUM">150</field>
+              </block>
+            </value>
+            <next>
+              <block type="controls_repeat_ext" id="copm*{axv%=|M/!4zI{a">
+                <value name="TIMES">
+                  <shadow type="math_number" id="x%UD#szE3F?M3)[g7ieg">
+                    <field name="NUM">100</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="capture2" id=".s}waMkw#v|;o:%J!l+w">
+                    <field name="CHANNEL">A1</field>
+                    <field name="SAMPLES">200</field>
+                    <field name="TIMEGAP">50</field>
+                    <field name="TIMESTAMPS" id="s^(vW(XYZh/i$?{6Vaww">timestamps</field>
+                    <field name="DATA1" id="9T9gwq}aEeNfyNVws7uO">data1</field>
+                    <field name="DATA2" id="0L_*b=JnB8A`#-K*Eg64">data2</field>
+                    <next>
+                      <block type="cs_sticker" id="7!T}wLT=UF|CdY3#,,5(">
+                        <value name="LABEL">
+                          <shadow type="text" id="FPr?#~R?w2*7)tewB3_d">
+                            <field name="TEXT">Phase difference</field>
+                          </shadow>
+                        </value>
+                        <value name="TEXT">
+                          <shadow type="text" id="%D16N=ff}LF}ah5I-S!e">
+                            <field name="TEXT">Reading</field>
+                          </shadow>
+                          <block type="sine_fit_two_arrays" id="s]2X(to$nBjT3%^D7RvT">
+                            <field name="PARAMETER">2</field>
+                            <value name="X">
+                              <block type="variables_get" id="72+8HY;[;i^sYyYX[m;J">
+                                <field name="VAR" id="s^(vW(XYZh/i$?{6Vaww">timestamps</field>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <block type="variables_get" id="8W1?csIi.G+|5^}V;YSp">
+                                <field name="VAR" id="9T9gwq}aEeNfyNVws7uO">data1</field>
+                              </block>
+                            </value>
+                            <value name="X2">
+                              <block type="variables_get" id="VW,6-v,,8R5SJfFd6D9{">
+                                <field name="VAR" id="s^(vW(XYZh/i$?{6Vaww">timestamps</field>
+                              </block>
+                            </value>
+                            <value name="Y2">
+                              <block type="variables_get" id="bS,5j{;sby/mJ+IL2a+$">
+                                <field name="VAR" id="0L_*b=JnB8A`#-K*Eg64">data2</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="plot_xyyyarray" id="5M=RO~0SII9L{i!yy^rX">
+                            <value name="X">
+                              <block type="variables_get" id="y%#+r/g{ZrAS8%T~z7v_">
+                                <field name="VAR" id="s^(vW(XYZh/i$?{6Vaww">timestamps</field>
+                              </block>
+                            </value>
+                            <value name="Y1">
+                              <block type="variables_get" id="~i^~|Un[%}kM]?@I#K`x">
+                                <field name="VAR" id="9T9gwq}aEeNfyNVws7uO">data1</field>
+                              </block>
+                            </value>
+                             <value name="Y2">
+                              <block type="variables_get" id="k?5~Fa^4Q|8o@-o6W2=p">
+                                <field name="VAR" id="0L_*b=JnB8A`#-K*Eg64">data2</field>
+                              </block>
+                            </value>
+                            <value name="Y3">
+                              <block type="lists_subtract_return" id="0WD;%GkpD$)/c@X+20n?">
+                                <field name="list" id="9T9gwq}aEeNfyNVws7uO">data1</field>
+                                <field name="list2" id="0L_*b=JnB8A`#-K*Eg64">data2</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="wait_seconds" id="WEp:By@pnH/G_if;X.R}">
+                                <field name="SECONDS">0.1</field>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </statement>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+
+<description>
+<![CDATA[
+
+
+
+##  Steady state response of RC circuit
+
+<img class="ui image fluid" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJSQ3N0ZWFkeXN0YXRlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiAgdmlld0JveD0iLTYgLTYgNTY2IDI5NCI+CjxkZXNjPgpYQ2lyY3VpdCBWZXJzaW9uIDMuNwpGaWxlICJSQ3N0ZWFkeXN0YXRlLnBzIiBQYWdlIDEKPC9kZXNjPgo8ZyBzdHJva2U9ImJsYWNrIj4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSA0MzIgIDgwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+UjwvdHNwYW4+CjwvdGV4dD48L2c+CjxlbGxpcHNlIGN4PSIzNTIiIGN5PSIxMTIiIHJ4PSIxNiIgcnk9IjE2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjA4LDExMiBMMjY2LDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zMzYsMTEyIEwyNzgsMTEyICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTI3OCw4MCBMMjc4LDE0NCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yNjYsODAgTDI2NiwxNDQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMzIwLDIyNCBMMzIwLDI3MiAzODQsMjcyIDM4NCwyMjQgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTQ0OCwyMjQgTDQ0OCwyNzIgNTQ0LDI3MiA1NDQsMjI0IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0wLDAgTDAsMjg4IDU2MCwyODggNTYwLDAgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGVsbGlwc2UgY3g9IjUxMiIgY3k9IjExMiIgcng9IjE2IiByeT0iMTYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zNTIsMTI4IEMzNTMsMTI4IDMwNCwxOTIgMzUyLDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00OTYsMTEyIEw0NjgsMTEyICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTM2OCwxMTIgTDM5NiwxMTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMzk2LDExMiBMNDAyLDEyNiA0MTQsOTggNDI2LDEyNiA0MzgsOTggNDUwLDEyNiA0NjIsOTggNDY4LDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zMiwyMjQgTDMyLDI3MiAxMjgsMjcyIDEyOCwyMjQgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGVsbGlwc2UgY3g9IjE5MiIgY3k9IjExMiIgcng9IjE2IiByeT0iMTYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xNzYsMjI0IEwxNzYsMjcyIDI0MCwyNzIgMjQwLDIyNCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDI1NiAgNjQpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5DPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTUxMiwxMjggQzUxMywxMjggNDQ4LDE5MiA0OTYsMjI0ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTgwLDIyNCBDMTEyLDE3NiA0OCwxNDQgMTc2LDExMiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yMDgsMjI0IEMyMDksMjI0IDE2MCwxNjAgMTkyLDEyOCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgIDQ4IDI1NikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPldHPC90c3Bhbj4KPC90ZXh0PjwvZz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxOTIgMjU2KSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+QTE8L3RzcGFuPgo8L3RleHQ+PC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDMyMCAyNTYpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5BMjwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgNDQ4IDI1NikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkdORDwvdHNwYW4+CjwvdGV4dD48L2c+CjwvZz4KPC9zdmc+Cg=='/>
+
+- Make the connections as shown in the figure
+
+The phase shift across the capacitor will be displayed. Compare it with the
+theoretical value.
+
+
+]]>
+</description>
+
+    </xml>
+

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>747</width>
-    <height>660</height>
+    <width>969</width>
+    <height>659</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,10 +16,7 @@
   <property name="styleSheet">
    <string notr="true"/>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <property name="spacing">
-    <number>0</number>
-   </property>
+  <layout class="QGridLayout" name="gridLayout">
    <property name="leftMargin">
     <number>0</number>
    </property>
@@ -32,53 +29,7 @@
    <property name="bottomMargin">
     <number>0</number>
    </property>
-   <item>
-    <widget class="QSplitter" name="splitter">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <widget class="QFrame" name="webFrame">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <layout class="QVBoxLayout" name="webLayout">
-       <property name="spacing">
-        <number>0</number>
-       </property>
-       <property name="leftMargin">
-        <number>0</number>
-       </property>
-       <property name="topMargin">
-        <number>0</number>
-       </property>
-       <property name="rightMargin">
-        <number>0</number>
-       </property>
-       <property name="bottomMargin">
-        <number>0</number>
-       </property>
-      </layout>
-     </widget>
-     <widget class="QPlainTextEdit" name="editor">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-     </widget>
-    </widget>
-   </item>
-   <item>
+   <item row="1" column="1">
     <widget class="QFrame" name="frame_3">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
@@ -102,6 +53,17 @@
       <property name="bottomMargin">
        <number>0</number>
       </property>
+      <item>
+       <widget class="QPushButton" name="pushButton">
+        <property name="text">
+         <string>Examples</string>
+        </property>
+        <property name="icon">
+         <iconset resource="../../../kuttypy-gui/utilities/templates/resplus.qrc">
+          <normaloff>:/control/plus.svg</normaloff>:/control/plus.svg</iconset>
+        </property>
+       </widget>
+      </item>
       <item>
        <widget class="QLabel" name="filenameLabel">
         <property name="sizePolicy">
@@ -167,6 +129,117 @@
      </layout>
     </widget>
    </item>
+   <item row="0" column="1">
+    <widget class="QSplitter" name="splitter">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QFrame" name="webFrame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="webLayout">
+       <property name="spacing">
+        <number>0</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+      </layout>
+     </widget>
+     <widget class="QPlainTextEdit" name="editor">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Maximum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="2">
+    <widget class="QFrame" name="directoryFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+      <item>
+       <widget class="QTreeWidget" name="directoryBrowser">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>13</pointsize>
+         </font>
+        </property>
+        <attribute name="headerVisible">
+         <bool>false</bool>
+        </attribute>
+        <attribute name="headerHighlightSections">
+         <bool>true</bool>
+        </attribute>
+        <column>
+         <property name="text">
+          <string>&gt;</string>
+         </property>
+        </column>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
   </layout>
  </widget>
  <resources>
@@ -180,8 +253,8 @@
    <slot>setFont(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>609</x>
-     <y>620</y>
+     <x>908</x>
+     <y>658</y>
     </hint>
     <hint type="destinationlabel">
      <x>605</x>
@@ -196,8 +269,8 @@
    <slot>fontPlus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>685</x>
-     <y>620</y>
+     <x>938</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>687</x>
@@ -212,12 +285,44 @@
    <slot>fontMinus()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>715</x>
-     <y>608</y>
+     <x>968</x>
+     <y>657</y>
     </hint>
     <hint type="destinationlabel">
      <x>749</x>
      <y>603</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>directoryBrowser</sender>
+   <signal>itemDoubleClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>Form</receiver>
+   <slot>loadExample(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>38</x>
+     <y>277</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-16</x>
+     <y>277</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>showDirectory()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>648</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-15</x>
+     <y>37</y>
     </hint>
    </hints>
   </connection>
@@ -248,5 +353,7 @@
   <slot>setFont(QString)</slot>
   <slot>fontPlus()</slot>
   <slot>fontMinus()</slot>
+  <slot>loadExample(QTreeWidgetItem*,int)</slot>
+  <slot>showDirectory()</slot>
  </slots>
 </ui>

@@ -1,0 +1,119 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="1!nNOJ,xbGYK5q(SLS^I">voltages</variable>
+    <variable id="*5DXE.3z785=kC(pb]#N">currents</variable>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">setv</variable>
+    <variable id="H_*1`7mVc%,q5xFloyPr">measured_voltage</variable>
+  </variables>
+  <block type="lists_new" id="7OOHJHc[t_^1PHETXAh@" x="5" y="5">
+    <field name="list" id="1!nNOJ,xbGYK5q(SLS^I">voltages</field>
+    <next>
+      <block type="lists_new" id="1T/TAUm4bfg8K4VJz@xm">
+        <field name="list" id="*5DXE.3z785=kC(pb]#N">currents</field>
+        <next>
+          <block type="controls_for" id="}Y1!K,-|[w}_}ekZ9(35">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">setv</field>
+            <value name="FROM">
+              <shadow type="math_number" id="IZ5#,JeKHtr3^UtSTR|r">
+                <field name="NUM">0</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="Q=5z+md@ljb,zt(q/(8q">
+                <field name="NUM">4</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="NCovMr:Df(zz:pSJ~[nh">
+                <field name="NUM">0.1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="set_voltage" id="_O`vv~/r;:T*wtIsFWWq">
+                <field name="CHANNEL">PV1</field>
+                <value name="VOLTAGE">
+                  <block type="variables_get" id=",OS$[/xL3Mz@qf@oCi|=">
+                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">setv</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="Tx+@YMEy66MfoIs.M-}T">
+                    <field name="VAR" id="H_*1`7mVc%,q5xFloyPr">measured_voltage</field>
+                    <value name="VALUE">
+                      <block type="get_voltage" id="r?R:j:g]u$!r?anqP_)`">
+                        <field name="CHANNEL">A1</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="lists_push" id="O%.V|GBD8iORCP]0;{QY">
+                        <field name="list" id="1!nNOJ,xbGYK5q(SLS^I">voltages</field>
+                        <value name="VALUE">
+                          <block type="variables_get" id="ls=v;nt}b@cys_:gMcMf">
+                            <field name="VAR" id="H_*1`7mVc%,q5xFloyPr">measured_voltage</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="lists_push" id=".,Y7c$R0W[Q)N-0(R$Ua">
+                            <field name="list" id="*5DXE.3z785=kC(pb]#N">currents</field>
+                            <value name="VALUE">
+                              <block type="math_arithmetic" id="~Oo%T,AN:xjLL^weRN-R">
+                                <field name="OP">DIVIDE</field>
+                                <value name="A">
+                                  <shadow type="math_number" id="R%AbjzOjLA+fBp(8:x,H">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="math_arithmetic" id="9+i[cM].0[%!AYX}Rupg">
+                                    <field name="OP">MINUS</field>
+                                    <value name="A">
+                                      <shadow type="math_number" id="}x9(!:$PxL8Y|fCy2:fw">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="variables_get" id="MI4{TDw;Y1-+eF@/1Mah">
+                                        <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">setv</field>
+                                      </block>
+                                    </value>
+                                    <value name="B">
+                                      <shadow type="math_number" id="Vx6DV.E[^EK0[XA*6z{*">
+                                        <field name="NUM">1</field>
+                                      </shadow>
+                                      <block type="variables_get" id="Jw1)(p4%OsdJz_BLS?vB">
+                                        <field name="VAR" id="H_*1`7mVc%,q5xFloyPr">measured_voltage</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id=")T$IvxiT[vJXT^8,+1:n">
+                                    <field name="NUM">1000</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="plot_xyarray" id="[)`)8!4^KyA!AHh;AO!h">
+                <value name="X">
+                  <block type="variables_get" id="xpUyhv@=t/E;dS-P~b6v">
+                    <field name="VAR" id="1!nNOJ,xbGYK5q(SLS^I">voltages</field>
+                  </block>
+                </value>
+                <value name="Y">
+                  <block type="variables_get" id="t)Fb~OnA$meW7f#=BwaX">
+                    <field name="VAR" id="*5DXE.3z785=kC(pb]#N">currents</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

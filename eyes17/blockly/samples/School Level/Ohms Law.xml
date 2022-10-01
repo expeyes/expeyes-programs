@@ -1,0 +1,133 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+## Measuring Resistance using Ohm's law
+
+<img class="ui image fluid"  src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJyZXMtY29tcGFyZSIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgIHZpZXdCb3g9Ii02IC02IDYxNCAyNjIiPgo8ZGVzYz4KWENpcmN1aXQgVmVyc2lvbiAzLjcKRmlsZSAicmVzLWNvbXBhcmUucHMiIFBhZ2UgMQo8L2Rlc2M+CjxnIHN0cm9rZT0iYmxhY2siPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDI4OCAgNjQpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5BMTwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgIDMyICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPlBWMTwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgNDk2ICA2NCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkdORDwvdHNwYW4+CjwvdGV4dD48L2c+CjxwYXRoIGQ9Ik0zMjAsMTkyIEwzNDgsMTkyICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTQ0OCwxOTIgTDQyMCwxOTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNNDIwLDE5MiBMNDE0LDE3OCA0MDIsMjA2IDM5MCwxNzggMzc4LDIwNiAzNjYsMTc4IDM1NCwyMDYgMzQ4LDE5MiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xNjAsMTkyIEwxODgsMTkyICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTI4OCwxOTIgTDI2MCwxOTIgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjYwLDE5MiBMMjU0LDE3OCAyNDIsMjA2IDIzMCwxNzggMjE4LDIwNiAyMDYsMTc4IDE5NCwyMDYgMTg4LDE5MiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yNzIsMTYgTDI3Miw4MCAzNTIsODAgMzUyLDE2IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00ODAsMTYgTDQ4MCw4MCA1OTIsODAgNTkyLDE2IHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xNiwxNiBMMTYsODAgMTI4LDgwIDEyOCwxNiB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDIwOCAyNDApIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5SMTwvdHNwYW4+CjwvdGV4dD48L2c+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMzY4IDI0MCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPlIyPC90c3Bhbj4KPC90ZXh0PjwvZz4KPGVsbGlwc2UgY3g9IjMwNCIgY3k9IjE5MiIgcng9IjE2IiByeT0iMTYiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxlbGxpcHNlIGN4PSIxNDQiIGN5PSIxOTIiIHJ4PSIxNiIgcnk9IjE2IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZWxsaXBzZSBjeD0iNDY0IiBjeT0iMTkyIiByeD0iMTYiIHJ5PSIxNiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTEyOCwxOTIgQzE0NCwxOTIgMTYsMTYwIDY0LDgwICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTMwNCwxNzYgQzMyMCwxNzYgMzUyLDk2IDMyMCw4MCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00ODAsMTkyIEM0OTYsMTkyIDU3NiwxNjAgNTQ0LDgwICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTAsMCBMMCwyNTYgNjA4LDI1NiA2MDgsMCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8L2c+Cjwvc3ZnPgo='/>
+
+- Make the connections as shown in the figure
+- Use a 1k resistor for R2
+- Set 3 volts on PV1
+
+Current through R1 and  R2 are same (ignoring the current flowing into A2 due to the
+finite input resistance of 1Meg). Current I = A1/R2
+
+R1 = (PV1-A1)/I
+]]>	
+</description>
+
+  <variables>
+    <variable id="2uc9%V|k3m51k2MR2xKs">r2</variable>
+    <variable id="SA.TL!hgHfkSD8RM,4mI">pv1</variable>
+    <variable id="+6EgdYjb`pV^iI]g9~0u">a1</variable>
+    <variable id=",hqy%b+l5s3N52st#0y^">current</variable>
+  </variables>
+  <block type="variables_set" id="K1lGs9k{g0j1,rc_$pbg" x="1" y="7">
+    <field name="VAR" id="2uc9%V|k3m51k2MR2xKs">r2</field>
+    <value name="VALUE">
+      <block type="math_number" id="m`sWJl);u~)bP0cC(Wi*">
+        <field name="NUM">1000</field>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="%mPFJqqbsdhD1d6V060z">
+        <field name="VAR" id="SA.TL!hgHfkSD8RM,4mI">pv1</field>
+        <value name="VALUE">
+          <block type="math_number" id="_X1}T72?HM#K{cE,Ui=(">
+            <field name="NUM">3</field>
+          </block>
+        </value>
+        <next>
+          <block type="set_voltage" id="kdl]L*6`8]IJY7Rz5Yyx">
+            <field name="CHANNEL">PV1</field>
+            <value name="VOLTAGE">
+              <block type="variables_get" id="9|CCYTX}+i)6!;k/8hz+">
+                <field name="VAR" id="SA.TL!hgHfkSD8RM,4mI">pv1</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="~4@CEl%((eR[%Qqn7b?%">
+                <field name="VAR" id="+6EgdYjb`pV^iI]g9~0u">a1</field>
+                <value name="VALUE">
+                  <block type="get_voltage" id="$ZQ)Lg:$E0b.9iSHKu4!">
+                    <field name="CHANNEL">A1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="[^q5!AIyT^)pz1@2:{Bl">
+                    <field name="VAR" id=",hqy%b+l5s3N52st#0y^">current</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="a6tl;i$t||)vfP)G8`c/">
+                        <field name="OP">DIVIDE</field>
+                        <value name="A">
+                          <shadow type="math_number" id="Q,jj~G+_FVbStd[-*[x*">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="KEGSpDQNj)2Wme)lsG;,">
+                            <field name="VAR" id="+6EgdYjb`pV^iI]g9~0u">a1</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="BL)aVVU1/:XXx*JV9sQG">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="WbJq9/_e|eSYcDW_oCmN">
+                            <field name="VAR" id="2uc9%V|k3m51k2MR2xKs">r2</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="cs_print" id="ePJ#-f0wGrB8K7]vgrmG">
+                        <value name="TEXT">
+                          <shadow type="text" id=":KW0bbA1kX}3M4/h:2R^">
+                            <field name="TEXT">hello</field>
+                          </shadow>
+                          <block type="math_arithmetic" id="wYxL_9])@~Cz`ZWs)o$y">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow type="math_number" id="9?FYxuNxFE4B~B$POdKY">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="math_arithmetic" id="@^ac1xx3Tp@k.F83hPDZ">
+                                <field name="OP">MINUS</field>
+                                <value name="A">
+                                  <shadow type="math_number" id=";9.*a?{o/ga=Gk{g+!Bw">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="87!1|i;URgXuneB)XU?4">
+                                    <field name="VAR" id="SA.TL!hgHfkSD8RM,4mI">pv1</field>
+                                  </block>
+                                </value>
+                                <value name="B">
+                                  <shadow type="math_number" id="?4wXV5[@I+Rh0t?7r}{j">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                  <block type="variables_get" id="io?ki![G(B3Pjz^?yJ/z">
+                                    <field name="VAR" id="+6EgdYjb`pV^iI]g9~0u">a1</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow type="math_number" id="3m^ac6Ul)7;l^XoOjyZM">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="a`Ao|bQuJ^Bw{v8u]:*-">
+                                <field name="VAR" id=",hqy%b+l5s3N52st#0y^">current</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

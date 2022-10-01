@@ -1,0 +1,104 @@
+
+/*---------PIANO ----------*/
+
+
+.nowplaying {
+      font-size: 30px;
+      line-height: 1;
+      color: #eee;
+      text-shadow: 0 0 5rem #028ae9;
+      transition: all .07s ease;
+      min-height: 20px;
+    }
+
+.keys {
+      display: block;
+      width: 100%;
+      height: 150px;
+      max-width: 880px;
+      position: relative;
+      margin: 40px auto 0;
+      cursor: none;
+    }
+
+.key {
+      position: relative;
+      border: 4px solid black;
+      border-radius: .5rem;
+      transition: all .07s ease;
+      display: block;
+      box-sizing: border-box;
+      z-index: 2;
+    }
+
+.key:not(.sharp) {
+      float: left;
+      width: 10%;
+      height: 100%;
+      background: rgba(255, 255, 255, .8);    
+    }
+
+.key.sharp {
+      position: absolute;
+      width: 6%;
+      height: 60%;
+      background: #000;
+      color: #cee;
+      top: 0;
+      z-index: 3;
+    }
+
+.key[data-note="C#"] {
+      left: 7%;
+    }
+
+.key[data-note="D#"] {
+      left: 17%;
+    }
+
+.key[data-note="F#"]  {
+      left: 37%;
+    }
+
+.key[data-note="G#"] {
+      left: 47%;
+    }
+
+.key[data-note="A#"] {
+      left: 57%;    
+    }
+
+.key[data-note="2C#"] {
+      left: 77%;    
+    }
+
+.key[data-note="2D#"] {
+      left: 87%;    
+    }
+
+.playing {
+      transform: scale(.95);
+      border-color: #028ae9;
+      box-shadow: 0 0 1rem #028ae9;
+    }
+
+.hints {
+      display: block;
+      width: 100%;
+      opacity: 0.5;
+      position: absolute;
+      bottom: 7px;
+      font-size: 11px;
+    }
+
+.nhints {
+      display: block;
+      width: 100%;
+      opacity: 0.5;
+      color:blue;
+      position: absolute;
+      bottom: 24px;
+      left:20%;
+      font-size: 13px;
+    }
+

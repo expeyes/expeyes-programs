@@ -1,0 +1,45 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+  </variables>
+  <block type="controls_for" id="m@*nkv?[n5n)fsbgHt`n" x="0" y="0">
+    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+    <value name="FROM">
+      <shadow type="math_number" id="f.1,}G`7Sz_{3Lhn{okr">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id="2~*j7dLoBVmwa~7*$A~C">
+        <field name="NUM">360</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id="HS/HmI.hk0`~5TUPVUG?">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="plot_xy" id="EnNR|KDOtM;-5Z9a_=Rv">
+        <value name="X">
+          <block type="variables_get" id=".U(fg)Wpac[Z;02q+E]$">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+          </block>
+        </value>
+        <value name="Y">
+          <block type="math_trig" id="}:QXY8|5_).z0cZBw$Vi">
+            <field name="OP">SIN</field>
+            <value name="NUM">
+              <shadow type="math_number" id="Szn{LbL@7Oa9l(/=3WPi">
+                <field name="NUM">45</field>
+              </shadow>
+              <block type="variables_get" id="c;,S[ga-GFfz@/uyU~I?">
+                <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

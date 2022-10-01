@@ -1,0 +1,44 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="o3v;5k6rCQ){F-,QZq!/">x</variable>
+  </variables>
+  <block type="variables_set" id="C)qQh%fG=/U%B)rSz8_C" x="-7" y="10">
+    <field name="VAR" id="o3v;5k6rCQ){F-,QZq!/">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="uq`J$CpaNc+aS,lr3{PI">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <shadow type="text" id="Xl700Jzjf|Lv#Z#GZ?Td">
+            <field name="TEXT">abc</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="cs_print" id="OvdOc).Qgs|:`SiWRgDA">
+        <value name="TEXT">
+          <shadow type="text" id="W#9%QeySd^mGaf5S3@at">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="math_arithmetic" id="o}N++?s#2HB_kh$PWG%2">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="hEt~xGm^u#+1eW}~v?)B">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="variables_get" id="!n1s*#j+HsFdORXhlUIA">
+                <field name="VAR" id="o3v;5k6rCQ){F-,QZq!/">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="2e~b!6?%2#e#oT_D^xl_">
+                <field name="NUM">2</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+      </block>
+    </next>
+  </block>
+</xml>

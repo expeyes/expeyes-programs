@@ -1,0 +1,81 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+
+##  Digitizing sound
+
+<img class="ui image fluid" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJzb3VuZC1jYXB0dXJlIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiAgdmlld0JveD0iLTYgLTYgODg2IDI5NCI+CjxkZXNjPgpYQ2lyY3VpdCBWZXJzaW9uIDMuNwpGaWxlICJzb3VuZC1jYXB0dXJlLnBzIiBQYWdlIDEKPC9kZXNjPgo8ZyBzdHJva2U9ImJsYWNrIj4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSA1MTIgMTI4KSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+U291cmNlIG9mIFNvdW5kPC90c3Bhbj4KPC90ZXh0PjwvZz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAgMzIgMjQwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+R05EPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTE2LDE5MiBMMTYsMjU2IDEyOCwyNTYgMTI4LDE5MiB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTI4LDQ4IEwxMjgsMTEyIDMyLDExMiAzMiw0OCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxICA0OCAgOTYpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5NSUM8L3RzcGFuPgo8L3RleHQ+PC9nPgo8ZyB0cmFuc2Zvcm09Im1hdHJpeCggICAxICAgIDAgICAtMCAgICAxIDI4OCAyMjQpIiBmaWxsPSIjMDAwMDAwIiA+Cjx0ZXh0IHN0cm9rZT0ibm9uZSIgZm9udC1mYW1pbHk9IkhlbHZldGljYSIgZm9udC1zaXplPSI0MCIgPjx0c3BhbiB4PSIwIiB5PSIwIj5NaWM8L3RzcGFuPgo8L3RleHQ+PC9nPgo8cGF0aCBkPSJNMzA0LDExMiBMMzA0LDE3NiAzNTIsMTc2IDM1MiwxMTIgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTMwNCwxMjggQzI0MCw0OCAxNzYsMTYwIDEyOCw4MCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0zMDQsMTYwIEMxNzYsMjI0IDE3NiwxNjAgMTI4LDIyNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgNTEyIDE3NikiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPldoaXN0bGUsIGJ1enplciBldGM8L3RzcGFuPgo8L3RleHQ+PC9nPgo8cGF0aCBkPSJNNTEyLDgwIEw1MTIsMjA4IDg2NCwyMDggODY0LDgwIHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00OTIsMTIwIEM0ODIsMTI1IDQ3OSwxMjUgNDY0LDEyOCBDNDc5LDEzMSA0ODIsMTMxIDQ5MiwxMzYgQzQ5MCwxMzAgNDkwLDEyNiA0OTIsMTIwICIgZmlsbD0iIzAwMDAwMCIgc3Ryb2tlPSJub25lIiAvPgo8cGF0aCBkPSJNNDkyLDEzNiBDNDgyLDE0MSA0NzksMTQxIDQ2NCwxNDQgQzQ3OSwxNDcgNDgyLDE0NyA0OTIsMTUyIEM0OTAsMTQ2IDQ5MCwxNDIgNDkyLDEzNiAiIGZpbGw9IiMwMDAwMDAiIHN0cm9rZT0ibm9uZSIgLz4KPHBhdGggZD0iTTAsMCBMMCwyODggODgwLDI4OCA4ODAsMCB6IiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8L2c+Cjwvc3ZnPgo='/>
+
+Place a sound source in front of the microphone and observe the waveform.
+
+]]>	
+</description>
+  <variables>
+    <variable id="@X+|E..Oe?D`3VPgf,]h">timestamps</variable>
+    <variable id="iI7+@[._G[|uQoWWCkZ-">data1</variable>
+  </variables>
+  <block type="controls_whileUntil" id="4zA6w#iFS6sXjLrU~Ctf" x="0" y="0">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <block type="logic_boolean" id="||B8-,v+Bw6BiZwRLdy!">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="capture1" id="W#/hCNlPJg={2B_9*?Su">
+        <field name="CHANNEL">MIC</field>
+        <field name="SAMPLES">500</field>
+        <field name="TIMEGAP">4</field>
+        <field name="TIMESTAMPS" id="@X+|E..Oe?D`3VPgf,]h">timestamps</field>
+        <field name="DATA1" id="iI7+@[._G[|uQoWWCkZ-">data1</field>
+        <next>
+          <block type="plot_xyarray" id="xad?06Fh1Sa:^vykE@2C">
+            <value name="X">
+              <block type="variables_get" id="z;9=#4IB/E~0Ka8Qtypp">
+                <field name="VAR" id="@X+|E..Oe?D`3VPgf,]h">timestamps</field>
+              </block>
+            </value>
+            <value name="Y">
+              <block type="variables_get" id="x+GJ#G%OB9tk^LcGQpp[">
+                <field name="VAR" id="iI7+@[._G[|uQoWWCkZ-">data1</field>
+              </block>
+            </value>
+            <next>
+              <block type="cs_sticker" id="Y}CTK/8*JJ%m^T$F#fkU">
+                <value name="LABEL">
+                  <shadow type="text" id="/7=W8q6F9n)AWB8nW`tz">
+                    <field name="TEXT">Frequency</field>
+                  </shadow>
+                </value>
+                <value name="TEXT">
+                  <shadow type="text" id="d4}{*w+%^[bRM[GdaBL3">
+                    <field name="TEXT">Reading</field>
+                  </shadow>
+                  <block type="sine_fit_arrays" id=")pMs~}M()FPLwx/%-/]A">
+                    <field name="PARAMETER">1</field>
+                    <value name="X">
+                      <block type="variables_get" id="87(v$s)XKa1r(?zWZ:Tz">
+                        <field name="VAR" id="@X+|E..Oe?D`3VPgf,]h">timestamps</field>
+                      </block>
+                    </value>
+                    <value name="Y">
+                      <block type="variables_get" id="WK4Fm`3E1pyXEw:2F6K,">
+                        <field name="VAR" id="iI7+@[._G[|uQoWWCkZ-">data1</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="w?{JT2xi,=(}k)?#+]Uc">
+                    <field name="SECONDS">0.1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
+

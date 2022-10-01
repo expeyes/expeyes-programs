@@ -22,6 +22,7 @@ class Handler():
 		self.occupiedPorts=set()
 		self.blockingSocket = None
 		self.ARM = False
+		self.portname = ''
 		if 'port' in kwargs:
 			self.portname=kwargs.get('port',None)
 			try:

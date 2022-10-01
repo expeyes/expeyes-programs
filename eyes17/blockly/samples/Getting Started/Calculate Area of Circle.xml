@@ -1,0 +1,74 @@
+ <xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="A[;^1W,!XrD1yp]{Ligb">radius</variable>
+    <variable id="q*MF(Gj|cmUFeD8p2,xH">area</variable>
+  </variables>
+  <block type="variables_set" id="GT})?;Wr|^c=b5YMVK8Q" x="16" y="59">
+    <field name="VAR" id="A[;^1W,!XrD1yp]{Ligb">radius</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="a*YeJ-NgAYebueuqGLij">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="s_k*-@Ke|fZGm?vd-m.B">
+            <field name="TEXT">Enter Radius</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="#,xrO-v8R2*77=M#tD33">
+        <field name="VAR" id="q*MF(Gj|cmUFeD8p2,xH">area</field>
+        <value name="VALUE">
+          <block type="math_arithmetic" id="ab{*X6I3flNk}JH67id3">
+            <field name="OP">MULTIPLY</field>
+            <value name="A">
+              <shadow type="math_number" id="+*K+$p8/fQfsPQgK!o%I">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_constant" id="ftMhH(L@Cy#2R;`FSo$I">
+                <field name="CONSTANT">PI</field>
+              </block>
+            </value>
+            <value name="B">
+              <shadow type="math_number" id="SST8yZ|-wFTo}b@4fQ+,">
+                <field name="NUM">1</field>
+              </shadow>
+              <block type="math_arithmetic" id="(sy9-JZpA-t#Rzo~,HaG">
+                <field name="OP">MULTIPLY</field>
+                <value name="A">
+                  <shadow type="math_number" id="iF6(d1[u)-5#eZ-|@#YR">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="J061hUbDs57pr[}?[q7z">
+                    <field name="VAR" id="A[;^1W,!XrD1yp]{Ligb">radius</field>
+                  </block>
+                </value>
+                <value name="B">
+                  <shadow type="math_number" id="uJ$G=0dg$ZhqYK`3:qAX">
+                    <field name="NUM">1</field>
+                  </shadow>
+                  <block type="variables_get" id="E$N0X{2=_w%rbaA~;0[;">
+                    <field name="VAR" id="A[;^1W,!XrD1yp]{Ligb">radius</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="cs_print" id=",tIj886:iy`O[9v99|C?">
+            <value name="TEXT">
+              <shadow type="text" id="deht5fx7`ZdY1.z^)AjX">
+                <field name="TEXT">hello</field>
+              </shadow>
+              <block type="variables_get" id="+Q/4fKPL-kC|+x~|v=Dm">
+                <field name="VAR" id="q*MF(Gj|cmUFeD8p2,xH">area</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

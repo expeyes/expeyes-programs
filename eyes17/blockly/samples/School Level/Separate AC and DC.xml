@@ -1,0 +1,51 @@
+<xml xmlns="https://developers.google.com/blockly/xml"> 
+<description>	
+<![CDATA[
+##  Separating AC and DC
+
+<img  class="ui image fluid" src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIgogICB2ZXJzaW9uPSIxLjEiCiAgIGlkPSJhY2RjLXNlcGFyYXRpbmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiICB2aWV3Qm94PSItNiAtNiA0NzAgMzc0Ij4KPGRlc2M+ClhDaXJjdWl0IFZlcnNpb24gMy43CkZpbGUgImFjZGMtc2VwYXJhdGluZy5wcyIgUGFnZSAxCjwvZGVzYz4KPGcgc3Ryb2tlPSJibGFjayI+CjxwYXRoIGQ9Ik0yODgsMjA4IEwyMzAsMjA4ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTE2MCwyMDggTDIxOCwyMDggIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjE4LDI0MCBMMjE4LDE3NiAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yMzYsMTc4IEE3NCw3NCAwIDAsMCAyMzYsMjM4ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAgMzIgIDgwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+U1ExPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTE2LDMyIEwxNiw5NiAxMTIsOTYgMTEyLDMyIHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxnIHRyYW5zZm9ybT0ibWF0cml4KCAgIDEgICAgMCAgIC0wICAgIDEgMzY4ICA4MCkiIGZpbGw9IiMwMDAwMDAiID4KPHRleHQgc3Ryb2tlPSJub25lIiBmb250LWZhbWlseT0iSGVsdmV0aWNhIiBmb250LXNpemU9IjQwIiA+PHRzcGFuIHg9IjAiIHk9IjAiPkExPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTM1MiwzMiBMMzUyLDk2IDQzMiw5NiA0MzIsMzIgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAzNjggMjI0KSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+QTI8L3RzcGFuPgo8L3RleHQ+PC9nPgo8cGF0aCBkPSJNMzUyLDE3NiBMMzUyLDI0MCA0MzIsMjQwIDQzMiwxNzYgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxOTIgMTYwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+MXVGPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTExMiw2NCBDMTYwLDExMiAyNTYsLTE2IDM1Miw2NCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0xMTIsNjQgQzEyOCw2NCAxNDQsMjA4IDE2MCwyMDggIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMjg4LDIwOCBDMzA0LDIwOCAzMjAsMjQwIDM1MiwyMDggIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMCwwIEwwLDM2OCA0NjQsMzY4IDQ2NCwwIHoiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik0yNzIsMzA0IEwyNDQsMzA0ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPHBhdGggZD0iTTE0NCwzMDQgTDE3MiwzMDQgIiBmaWxsPSJub25lIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lam9pbj0iYmV2ZWwiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlPSIjMDAwMDAwIiAvPgo8cGF0aCBkPSJNMTcyLDMwNCBMMTc4LDMxOCAxOTAsMjkwIDIwMiwzMTggMjE0LDI5MCAyMjYsMzE4IDIzOCwyOTAgMjQ0LDMwNCAiIGZpbGw9Im5vbmUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVqb2luPSJiZXZlbCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2U9IiMwMDAwMDAiIC8+CjxwYXRoIGQ9Ik00OCwyNzIgTDQ4LDMzNiAxNDQsMzM2IDE0NCwyNzIgeiIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAgNDggMzIwKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+R05EPC90c3Bhbj4KPC90ZXh0PjwvZz4KPHBhdGggZD0iTTI3MiwzMDQgQzI4OCwzMDQgMzA0LDI4OCAzNTIsMjA4ICIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWpvaW49ImJldmVsIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZT0iIzAwMDAwMCIgLz4KPGcgdHJhbnNmb3JtPSJtYXRyaXgoICAgMSAgICAwICAgLTAgICAgMSAxNzYgMzUyKSIgZmlsbD0iIzAwMDAwMCIgPgo8dGV4dCBzdHJva2U9Im5vbmUiIGZvbnQtZmFtaWx5PSJIZWx2ZXRpY2EiIGZvbnQtc2l6ZT0iNDAiID48dHNwYW4geD0iMCIgeT0iMCI+MTAwSzwvdHNwYW4+CjwvdGV4dD48L2c+CjwvZz4KPC9zdmc+Cg=='/>
+
+- Make the connections as shown in the figure
+- view the waveforms
+ 
+If the voltage is not changing with time, it is pure DC. If it is changing with time, it has an AC component. if the average voltage is zero, it is pure DC.
+ 
+A square wave swinging between 0 and 5V is a 2.5 DC plus an AC changing
+from -2.5V to +2.5V. The capacitor allows the DC component to pass through and blocks
+the DC.
+
+---
+]]>
+</description>
+  <variables>
+    <variable id="J-+@|mBt7ruFM6)FhVT-">timestamps</variable>
+    <variable id="NsNgyd_8Jh5$%CRlizEp">data1</variable>
+    <variable id="lJEBaS2!pcJs,/7Ddo-S">data2</variable>
+  </variables>
+  <block type="set_frequency" id="gpCl(26UF/yWoc^EiRo{" x="0" y="10">
+    <field name="CHANNEL">SQ1</field>
+    <value name="FREQUENCY">
+      <block type="math_number" id="CJ%,Y3X@l=g@ni$~/f7h">
+        <field name="NUM">1000</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_whileUntil" id="zZ;fAGE}L7O9pm]F*P;,">
+        <field name="MODE">WHILE</field>
+        <value name="BOOL">
+          <block type="logic_boolean" id="t5^j!$/?f%O=CvtO_$Fz">
+            <field name="BOOL">TRUE</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="capture_plot" id="M]okFzx#vu^39@BcUlYL">
+            <field name="CHANNEL">A1</field>
+            <field name="TIMESTAMPS" id="J-+@|mBt7ruFM6)FhVT-">timestamps</field>
+            <field name="DATA1" id="NsNgyd_8Jh5$%CRlizEp">data1</field>
+            <field name="DATA2" id="lJEBaS2!pcJs,/7Ddo-S">data2</field>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

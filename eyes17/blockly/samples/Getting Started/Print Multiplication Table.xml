@@ -1,0 +1,78 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+  </variables>
+  <block type="controls_for" id="wIS1koa2nmXg||omia]m" x="-136" y="-184">
+    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+    <value name="FROM">
+      <shadow type="math_number" id="D_oxpM6}.6q0gQ8kg?#=">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id="y5LG*@mT60d!)S$,}C8%">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id=":-8df?se:oZ=%2^EyW!3">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="cs_print" id="OvdOc).Qgs|:`SiWRgDA">
+        <value name="TEXT">
+          <shadow type="text" id="W#9%QeySd^mGaf5S3@at">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="text_join" id="DWKitDMpfd9CPX-P?e*N">
+            <mutation items="2"></mutation>
+            <value name="ADD0">
+              <block type="text_join" id="ru]VCM!$VW2#.{#oEIMN">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="i,Ys[LgQOk%rL6[Z%-TO">
+                    <field name="TEXT">Five x </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="variables_get" id="ODhIoxSmVM*[~xRUwnHF">
+                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="ADD1">
+              <block type="text_join" id="93p@7?`}~ML*=4v?~_2_">
+                <mutation items="2"></mutation>
+                <value name="ADD0">
+                  <block type="text" id="73$ov1q`[#N!C-yUOgvQ">
+                    <field name="TEXT"> equals  </field>
+                  </block>
+                </value>
+                <value name="ADD1">
+                  <block type="math_arithmetic" id=".tTiEhHUh_w1*?P..$o!">
+                    <field name="OP">MULTIPLY</field>
+                    <value name="A">
+                      <shadow type="math_number" id="DXF=[]It^u9Dm:$+%Y1s">
+                        <field name="NUM">5</field>
+                      </shadow>
+                    </value>
+                    <value name="B">
+                      <shadow type="math_number" id="*s/RAOLs}k.^z^kX)TzB">
+                        <field name="NUM">1</field>
+                      </shadow>
+                      <block type="variables_get" id="j@lKvY+I.:v2+dwHbz..">
+                        <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>

@@ -1,0 +1,84 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="ZHzR_1b9[t1=F!y{a.VT">x</variable>
+    <variable id="N7nwk@CxHmhU(-f8V2*s">y</variable>
+  </variables>
+  <block type="variables_set" id="5?ix2XIgjGnMY?MBr8rc" x="0" y="0">
+    <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">x</field>
+    <value name="VALUE">
+      <block type="lists_split" id="`oM,#mNbLbt2dr78eEAC">
+        <mutation mode="SPLIT"></mutation>
+        <field name="MODE">SPLIT</field>
+        <value name="INPUT">
+          <block type="text" id="rIq|Z9`Lr/{:;1BF[9Rs">
+            <field name="TEXT">3,5,6</field>
+          </block>
+        </value>
+        <value name="DELIM">
+          <shadow type="text" id="fkRF7H=UU%[;:z9(N0[J">
+            <field name="TEXT">,</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="variables_set" id="8e!Ombz$Y~#`^TdFSGlm">
+        <field name="VAR" id="N7nwk@CxHmhU(-f8V2*s">y</field>
+        <value name="VALUE">
+          <block type="lists_split" id="d=f/=j}eCQR9]G1vcS6J">
+            <mutation mode="SPLIT"></mutation>
+            <field name="MODE">SPLIT</field>
+            <value name="INPUT">
+              <block type="text" id="$92BhhIiSnlFF{O#v@.T">
+                <field name="TEXT">5,6,7</field>
+              </block>
+            </value>
+            <value name="DELIM">
+              <shadow type="text" id="_gZ#S]2vG@mZzw`:yIH3">
+                <field name="TEXT">,</field>
+              </shadow>
+            </value>
+          </block>
+        </value>
+        <next>
+          <block type="plot_xyarray" id="/d(1xtSvjD%/:YNz27e`">
+            <value name="X">
+              <block type="variables_get" id="0/Fkg+JjgmMty,lV!v+z">
+                <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">x</field>
+              </block>
+            </value>
+            <value name="Y">
+              <block type="variables_get" id="cEspO4Hn2W4dpn=V}zY%">
+                <field name="VAR" id="N7nwk@CxHmhU(-f8V2*s">y</field>
+              </block>
+            </value>
+            <next>
+              <block type="cs_print" id="1wH/69{~@-q#,ORV)(VL">
+                <value name="TEXT">
+                  <shadow type="text" id=".#q8Oq`3C{z=$Z)~Ze-V">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="variables_get" id="1@,k*hJHk_Fm`=3D~N%6">
+                    <field name="VAR" id="N7nwk@CxHmhU(-f8V2*s">y</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="cs_print" id="-AWi^$y`n?iP.v/zGz_(">
+                    <value name="TEXT">
+                      <shadow type="text" id="$)wFOG8RCB8@|*ZCRj@/">
+                        <field name="TEXT">hello</field>
+                      </shadow>
+                      <block type="variables_get" id="i/c1}-*,%c}wWS?8X~yV">
+                        <field name="VAR" id="ZHzR_1b9[t1=F!y{a.VT">x</field>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

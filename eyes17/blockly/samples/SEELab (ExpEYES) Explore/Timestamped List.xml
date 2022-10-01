@@ -1,0 +1,87 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<variables>
+        <variable id="RLp_g6Nx,E^bRhWYo21/">list</variable>
+        <variable id="~rzO)C0*]MSYi@emzDC-">timevals</variable>
+        <variable id="xSzYH!3=}z|6Lvc%+#T)">clock</variable>
+      </variables>
+      <block type="set_frequency" id="q~gUnm.oN7Pt%KRwf{1n" x="5" y="5">
+        <field name="CHANNEL">WG</field>
+        <value name="FREQUENCY">
+          <block type="math_number" id="c7feEM,Obb4ZmVyb6aM|">
+            <field name="NUM">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="wait_seconds" id="bKFn{s!JTct4ki(bi^4*">
+            <field name="SECONDS">1</field>
+            <next>
+              <block type="controls_repeat_ext" id="smYItFJk%{~l5IG9,q}W">
+                <value name="TIMES">
+                  <shadow type="math_number" id="tr2.nt:|Av{UEJ%#JN`Q">
+                    <field name="NUM">50</field>
+                  </shadow>
+                </value>
+                <statement name="DO">
+                  <block type="lists_push_time" id="c#ua!P+01?OfpFe$GqYR">
+                    <field name="list" id="RLp_g6Nx,E^bRhWYo21/">list</field>
+                    <field name="timevals" id="~rzO)C0*]MSYi@emzDC-">timevals</field>
+                    <field name="clock" id="xSzYH!3=}z|6Lvc%+#T)">clock</field>
+                    <value name="VALUE">
+                      <block type="get_voltage" id=":r*-ytVdF|k!G1.SXUm+">
+                        <field name="CHANNEL">A1</field>
+                      </block>
+                    </value>
+                  </block>
+                </statement>
+                <next>
+                  <block type="plot_xyarray" id="F%7;]U5|rr`!~tM=+muH">
+                    <value name="X">
+                      <block type="variables_get" id="S=p;E@FW%_6MeNA2D0Eo">
+                        <field name="VAR" id="~rzO)C0*]MSYi@emzDC-">timevals</field>
+                      </block>
+                    </value>
+                    <value name="Y">
+                      <block type="variables_get" id="ffz#cP5!%1-q?%K:.QT?">
+                        <field name="VAR" id="RLp_g6Nx,E^bRhWYo21/">list</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="cs_sticker" id="pM)ctSU0~mA%,zXIeplo">
+                        <value name="LABEL">
+                          <shadow type="text" id="`DJU1gv}dy1xbKV!pw}E">
+                            <field name="TEXT">Frequency</field>
+                          </shadow>
+                        </value>
+                        <value name="TEXT">
+                          <shadow type="text" id="8x(Ta|OIuS=oM;E.~X=p">
+                            <field name="TEXT">Reading</field>
+                          </shadow>
+                          <block type="sine_fit_arrays" id="~U!z-Ov-sZKo;I;HS2C?">
+                            <field name="PARAMETER">1</field>
+                            <value name="X">
+                              <block type="variables_get" id="BuEf/:QFaf%?u0~iY7ED">
+                                <field name="VAR" id="~rzO)C0*]MSYi@emzDC-">timevals</field>
+                              </block>
+                            </value>
+                            <value name="Y">
+                              <block type="variables_get" id="NMG0mN!=giI~*I]2jS2z">
+                                <field name="VAR" id="RLp_g6Nx,E^bRhWYo21/">list</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+
+    <description><![CDATA[Add values to a list that also keeps the time.
+    
+    Plot the generated timestamps list vs the values list
+    
+    Also Analyse them to extract the frequency of the sine wave ]]></description></xml>

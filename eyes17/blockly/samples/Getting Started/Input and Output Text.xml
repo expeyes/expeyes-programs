@@ -1,0 +1,60 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="K@|I.V$.qIe*LP-mjl6q">name</variable>
+    <variable id="U.{cMt3C9q!Oz2PRfz/o">age</variable>
+  </variables>
+  <block type="variables_set" id="MgAi/t?0A,z/M:AJr|NW" x="16" y="59">
+    <field name="VAR" id="K@|I.V$.qIe*LP-mjl6q">name</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="h;Jq)Q=T!a/VvC}uvE4L">
+        <mutation type="TEXT"></mutation>
+        <field name="TYPE">TEXT</field>
+        <value name="TEXT">
+          <shadow type="text" id="y-EqX^l*3n~GusTJP+p!">
+            <field name="TEXT">Enter your name</field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="cs_print" id="OvdOc).Qgs|:`SiWRgDA">
+        <value name="TEXT">
+          <shadow type="text" id="W#9%QeySd^mGaf5S3@at">
+            <field name="TEXT">abc</field>
+          </shadow>
+          <block type="variables_get" id="ZTR*3I6Bh`{3Ln|)5IYg">
+            <field name="VAR" id="K@|I.V$.qIe*LP-mjl6q">name</field>
+          </block>
+        </value>
+        <next>
+          <block type="variables_set" id="0N9}lcSF.A,XO)~ebU6K">
+            <field name="VAR" id="U.{cMt3C9q!Oz2PRfz/o">age</field>
+            <value name="VALUE">
+              <block type="text_prompt_ext" id="^Ov@Ne?kJd#QPl?rwGjI">
+                <mutation type="NUMBER"></mutation>
+                <field name="TYPE">NUMBER</field>
+                <value name="TEXT">
+                  <shadow type="text" id="%#r+Z%o};lO7=#g.mAEk">
+                    <field name="TEXT">Enter your age</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <next>
+              <block type="cs_print" id="Tgv80KVIT!)0mjv^kIl|">
+                <value name="TEXT">
+                  <shadow type="text" id=";~Y*PO]BnFD`xX+7Q0HS">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                  <block type="variables_get" id="Z-}:/8{R|p`8%*;^$#F1">
+                    <field name="VAR" id="U.{cMt3C9q!Oz2PRfz/o">age</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

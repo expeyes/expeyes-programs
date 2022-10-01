@@ -1,0 +1,50 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="wL:qei.hdnn.uE,c0%4O">x</variable>
+  </variables>
+  <block type="variables_set" id="qPxt_9{D0T?]o#c-@`?/" x="14" y="-205">
+    <field name="VAR" id="wL:qei.hdnn.uE,c0%4O">x</field>
+    <value name="VALUE">
+      <block type="text_prompt_ext" id="M|!tceFuE/Ne86zAcpNH">
+        <mutation type="NUMBER"></mutation>
+        <field name="TYPE">NUMBER</field>
+        <value name="TEXT">
+          <shadow type="text" id="ad-_ACa9B=:JjW9(g1rx">
+            <field name="TEXT">Enter a number </field>
+          </shadow>
+        </value>
+      </block>
+    </value>
+    <next>
+      <block type="controls_if" id=";W@`2[`E4}UddI3r;*tI">
+        <value name="IF0">
+          <block type="logic_compare" id=")}d(Z2K?7W|Bf%,!09jK">
+            <field name="OP">LT</field>
+            <value name="A">
+              <block type="variables_get" id="{s?[#4B9rK4x1)_F=feK">
+                <field name="VAR" id="wL:qei.hdnn.uE,c0%4O">x</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="LHJ/c~Hv$r0)v4y^@e]n">
+                <field name="NUM">5</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="cs_print" id="35p2%u+f;ts=kD~p){Ke">
+            <value name="TEXT">
+              <shadow type="text" id="O?0/bz5}Ojx=`@f#Wy?g">
+                <field name="TEXT">hello</field>
+              </shadow>
+              <block type="variables_get" id="Qj|qGS[e92YLo4P9vs#i">
+                <field name="VAR" id="wL:qei.hdnn.uE,c0%4O">x</field>
+              </block>
+            </value>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

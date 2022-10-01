@@ -1,5 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path, configparser, csv
+import sys, time, math, importlib, os, platform, os.path, configparser, csv, serial, fcntl
 from datetime import datetime
 from utils import cnf
 from language import languages
@@ -249,7 +249,7 @@ otherExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('7.1','pt100')],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
-[QT_TRANSLATE_NOOP('MainWindow','Graphical Code Editor'), ('7.4','blockcoding')]
+[QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')]
 ]
 
 modulesI2C = [ 
@@ -383,6 +383,19 @@ class MainWindow(QMainWindow):
 			self.shortcutActions[a] = shortcut
 		self.screenShotThread = ScreenShotThread(self, port = 45594)
 		self.screenShotThread.start()
+
+		self.shortlist=self.getFreePorts(None)
+		self.deviceSelector = self.portSelectionDialog()
+		self.deviceSelector.setList(self.shortlist,p.H)
+
+
+		self.startTime = time.time()
+		self.timer = QtCore.QTimer()
+		self.timer.timeout.connect(self.locateDevices)
+		self.timer.start(500)
+
+
+
 		return
 
 	def closeEvent(self, event):
@@ -449,6 +462,155 @@ class MainWindow(QMainWindow):
 			self.sigConfig.emit(value)
 
 
+
+	def listPorts(self):
+		'''
+		Make a list of available serial ports. For auto scanning and connecting
+		'''
+		import glob
+		system_name = platform.system()
+		if system_name == "Windows":
+			# Scan for available ports.
+			available = []
+			for i in range(256):
+				try:
+					s = serial.Serial('COM%d'%i)
+					available.append('COM%d'%i)
+					s.close()
+				except serial.SerialException:
+					pass
+			return available
+		elif system_name == "Darwin":
+			# Mac
+			return glob.glob('/dev/tty*') + glob.glob('/dev/cu*')
+		else:
+			# Assume Linux or something else
+			return glob.glob('/dev/ttyACM*')
+
+	def isPortFree(self,portname):
+		try:
+			fd = serial.Serial(portname, 500000, stopbits=1, timeout = 1.0)
+			if fd.isOpen():
+				if 'inux' in platform.system(): #Linux based system
+					try:
+						fcntl.flock(fd.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+						fd.close()
+						return True #Port is available
+					except IOError:
+						fd.close()
+						return False #Port is not available
+
+				else:
+					fd.close()
+					return True #Port is available
+			else:
+				fd.close()
+				return False #Port is not available
+
+		except serial.SerialException as ex:
+			return False #Port is not available
+
+	def getFreePorts(self,openPort=None):
+		'''
+		Find out which ports are currently free 
+		'''
+		portlist={}
+		for a in self.listPorts():
+			if a != openPort:
+				portlist[a] = self.isPortFree(a)
+			else:
+				portlist[a] = False
+		return portlist
+
+
+	def locateDevices(self):
+		L={}
+		try:L = self.getFreePorts(p.H.portname)
+		except Exception as e:pass
+		total = len(L)
+		menuChanged = False
+		if L != self.shortlist:
+			menuChanged = True
+
+			self.deviceSelector.setList(L,p.H)
+			#Check for, and handle disconnect event
+			if p.connected:
+				if platform.system() == "Windows": return #Ignore disconnect event on windows
+				if p.H.portname not in L:
+						self.setWindowTitle('Error : Device Disconnected')
+						QtWidgets.QMessageBox.warning(self, 'Connection Error', 'Device Disconnected. Please check the connections')
+						try:
+							p.H.portname = None
+							p.fd.close()
+						except:pass
+						p.connected = False
+
+			elif True in L.values():
+				reply = QtWidgets.QMessageBox.question(self, 'Connection', 'Device Available. Connect?', QtWidgets.QMessageBox.Yes, QtWidgets.QMessageBox.No)
+				if reply == QtWidgets.QMessageBox.Yes:
+					self.reconnect()
+
+			#update the shortlist
+			self.shortlist=L
+
+		
+	####################
+
+	def selectDevice(self):
+		if self.deviceSelector.exec_():
+			self.reconnect(port = self.deviceSelector.getSelection())
+
+
+	class portSelectionDialog(QtWidgets.QDialog):
+		def __init__(self,parent=None):
+			super(MainWindow.portSelectionDialog, self).__init__(parent)
+			self.button_layout = QtGui.QVBoxLayout()
+			self.setLayout(self.button_layout)
+			self.btns=[]
+			self.doneButton = QtWidgets.QPushButton("Done")
+			self.button_layout.addWidget(self.doneButton)
+			self.doneButton.clicked.connect(self.finished)
+			
+
+		def setList(self,L,handler):
+			for a in self.btns:
+				a.setParent(None)
+				del a
+			self.btns=[]
+
+			self.button_group = QtWidgets.QButtonGroup()
+
+			#moods[0].setChecked(True)
+			pos=0
+			for i in L:
+				# Add each radio button to the button layout
+				btn = QtWidgets.QRadioButton(i)
+				self.button_layout.addWidget(btn)
+				self.btns.append(btn)
+				if handler:
+					if handler.connected:
+						if handler.portname == i:
+							btn.setStyleSheet("color:green;")
+				if not L[i]: #Port in use
+					btn.setEnabled(False)
+
+				self.button_group.addButton(btn, pos)
+				pos+=1
+
+			# Set the layout of the group box to the button layout
+
+		#Print out the ID & text of the checked radio button
+		def finished(self):
+			if self.button_group.checkedId()!= -1:
+				self.done(QtWidgets.QDialog.Accepted)
+		def getSelection(self):
+			if self.button_group.checkedId()!= -1:
+				return self.button_group.checkedButton().text()
+			else:
+				return False
+
+
+
 	def showCredits(self):
 		if self.credwin == None:
 			self.credwin = helpWin(self, (self.tr('Credits'),('1.1','Credits')), self.lang)
@@ -498,12 +660,13 @@ class MainWindow(QMainWindow):
 		self.showHelp()
 	
 
-	def callExpt(self, e):
+	def callExpt(self, details):
 		"""
 		:parm: e lst with a title and a HTML file designation; when e[1]
 		is not a string, then it is an iterable with possible HTML file names,
 		and the last file name may also be a module name.
 		"""	
+		e = details
 		self.title=e[0] # record the title of the experiments, for snapshots
 		module_name =  e[1] if type(e[1]) is str else e[1][-1]
 		explib = importlib.import_module(module_name)
@@ -515,6 +678,11 @@ class MainWindow(QMainWindow):
 			self.hwin = None
 			self.expWidget= None				 # Let python delete it
 			w = explib.Expt(p)
+			try:
+				w.callExptReference(self.callExpt, self.scope_help, self.runCode)
+			except:
+				pass
+
 			self.setWindowTitle(self.tr(e[0]))
 			self.setCentralWidget(w)
 			self.expWidget = w
@@ -522,6 +690,8 @@ class MainWindow(QMainWindow):
 			self.hlpName = e[1]
 			self.title = e[0]
 			self.showHelp()
+			w.show()
+
 		except Exception as err:
 			print("Exception:", err)	
 			self.expName = ''
@@ -711,10 +881,10 @@ class MainWindow(QMainWindow):
 			d=datetime.now()
 			generator.setTitle(d.strftime("ExpEYES 17 Screenshot--%Y-%m-%d--%H-%M"))
 			generator.setDescription(self.title)
-			p = QtGui.QPainter()
-			p.begin(generator)
-			self.render(p)
-			p.end()
+			ptr = QtGui.QPainter()
+			ptr.begin(generator)
+			self.render(ptr)
+			ptr.end()
 			# fix the width of oscilloscope's traces, for SVG readers which
 			# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
 			fixNonScalingStroke(path)
@@ -910,10 +1080,10 @@ You can customize the way they are used to build the path."""
 				d=datetime.now()
 				generator.setTitle(d.strftime("ExpEYES 17 Smaller Screenshot--%Y-%m-%d--%H-%M"))
 				generator.setDescription(self.title)
-				p = QtGui.QPainter()
-				p.begin(generator)
-				self.render(p)
-				p.end()
+				ptr = QtGui.QPainter()
+				ptr.begin(generator)
+				self.render(ptr)
+				ptr.end()
 				# fix the width of oscilloscope's traces, for SVG readers which
 				# do not honor the attribute 'vector-effect = "non-scaling-stroke"'
 				fixNonScalingStroke(path)
@@ -935,13 +1105,13 @@ You can customize the way they are used to build the path."""
 		
 		return
 
-	def reconnect(self):
+	def reconnect(self, **kwargs):
 		global p,eyes
 		try:
 			p.H.disconnect()
 		except:
 			pass
-		p=eyes.open()
+		p=eyes.open(**kwargs)
 		if self.expWidget is None:
 			explib = importlib.import_module('scope')
 			self.expWidget = explib.Expt(p) 
@@ -980,7 +1150,7 @@ def run():
 	global app,p,eyes
 	import eyes17.eyes as eyes
 	p = eyes.open()
-	if p != None: 
+	if p.H.connected:
 		p.set_sine(1000)
 		p.set_sqr1(-1)
 		p.set_pv1(0)
