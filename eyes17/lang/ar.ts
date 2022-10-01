@@ -98,6 +98,26 @@
         <source>PNG, width =</source>
         <translation type="unfinished"> العرض </translation>
     </message>
+    <message>
+        <location filename="../layouts/eyes17_manuals.ui" line="14"/>
+        <source>Choose the format</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/eyes17_manuals.ui" line="20"/>
+        <source>Format for the User Manual</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/eyes17_manuals.ui" line="26"/>
+        <source>PDF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/eyes17_manuals.ui" line="36"/>
+        <source>EPUB</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Expt</name>
@@ -2536,12 +2556,12 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../main.py" line="747"/>
         <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">  خفيفة  الخلفية </translation>
     </message>
     <message>
         <location filename="../main.py" line="748"/>
         <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">  خلفية داكنة </translation>
     </message>
     <message>
         <location filename="../main.py" line="749"/>

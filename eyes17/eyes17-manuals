@@ -1,45 +1,8 @@
 #! /usr/bin/python3
 import locale, re, os, subprocess, sys
 from PyQt5.QtWidgets import QApplication, QMessageBox, QDialog
-from PyQt5 import QtCore, QtGui, QtWidgets
-
-# Created by: PyQt5 UI code generator 5.15.7
-class Ui_Dialog(object):
-    def setupUi(self, Dialog):
-        Dialog.setObjectName("Dialog")
-        Dialog.resize(229, 138)
-        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.groupBox = QtWidgets.QGroupBox(Dialog)
-        self.groupBox.setObjectName("groupBox")
-        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.groupBox)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.radioButton = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton.setChecked(True)
-        self.radioButton.setObjectName("radioButton")
-        self.verticalLayout_2.addWidget(self.radioButton)
-        self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox)
-        self.radioButton_2.setObjectName("radioButton_2")
-        self.verticalLayout_2.addWidget(self.radioButton_2)
-        self.verticalLayout.addWidget(self.groupBox)
-        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
-        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        #self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
-        self.buttonBox.setObjectName("buttonBox")
-        self.verticalLayout.addWidget(self.buttonBox)
-
-        self.retranslateUi(Dialog)
-        self.buttonBox.accepted.connect(Dialog.accept) # type: ignore
-        self.buttonBox.rejected.connect(Dialog.reject) # type: ignore
-        QtCore.QMetaObject.connectSlotsByName(Dialog)
-
-    def retranslateUi(self, Dialog):
-        _translate = QtCore.QCoreApplication.translate
-        Dialog.setWindowTitle(_translate("Dialog", "Format ???"))
-        self.groupBox.setTitle(_translate("Dialog", "Format for the User Manual"))
-        self.radioButton.setText(_translate("Dialog", "PDF"))
-        self.radioButton_2.setText(_translate("Dialog", "EPUB"))
+from PyQt5.QtCore import QTranslator, QLocale, QLibraryInfo
+from layouts.ui_eyes17_manuals import Ui_Dialog
 
 class FormatDialog(QDialog, Ui_Dialog):
     def __init__(self, parent=None):
@@ -81,6 +44,30 @@ def installed_manual(lc, aformat="pdf"):
         if os.path.exists(fname):
             return fname
     return
+
+def formatDialog():
+    aformat = None
+    app = QApplication(sys.argv)
+    # translation #################
+    lang=QLocale.system().name()
+    tr_eyes=QTranslator()
+    tr_eyes.load("lang/"+lang, os.path.dirname(__file__))
+    app.installTranslator(tr_eyes)
+    tr_qt=QTranslator()
+    tr_qt.load("qt_"+lang,
+	       QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+    app.installTranslator(tr_qt)
+    ##############################
+    fd = FormatDialog()
+    fd.show()
+    result = app.exec_()
+    # harvest the radio buttons' status
+    if fd.radioPDF.isChecked():
+        aformat = "pdf"
+    elif fd.radioEPUB.isChecked():
+        aformat = "epub"
+    return aformat
+    
                    
     
 if __name__ == "__main__":
@@ -90,16 +77,7 @@ if __name__ == "__main__":
         aformat = sys.argv[1]
     else:
         # or it may be given by a graphic dialog
-        app = QApplication(sys.argv)
-        fd = FormatDialog()
-        fd.show()
-        result = app.exec_()
-        # harvest the radio buttons' status
-        if fd.radioButton.isChecked():
-            aformat = "pdf"
-        elif fd.radioButton_2.isChecked():
-            aformat = "epub"
-        else: aformat=None
+        aformat = formatDialog()
     if aformat not in ("pdf", "epub"):
         # in case of any error, default to "pdf"
         aformat = "pdf"
