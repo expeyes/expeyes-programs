@@ -530,6 +530,7 @@ class Expt(QtWidgets.QWidget):
 		self.p = device
 		device.set_pv1(2)
 		self.I2C = device.I2C	        #connection to the device hardware
+		self.I2C.config(100000)
 		self.sensorList = []
 		self.logger = LOGGER(self.I2C)
 		right = QtWidgets.QVBoxLayout() # right side vertical layout

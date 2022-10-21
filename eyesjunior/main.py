@@ -1,5 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path, configparser
+import sys, time, math, importlib, os, platform, os.path, metaconfig
 from utils import cnf
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot
 from PyQt5.QtGui import QIcon
@@ -225,7 +225,7 @@ class MainWindow(QMainWindow):
 		self.tr_eyes=tr_eyes
 		self.tr_qt=tr_qt
 
-		self.conf = configparser.ConfigParser()
+		self.conf = metaconfig.ConfigParser()
 		self.conf.read(cnf)
 		
 		try:
@@ -358,7 +358,7 @@ class MainWindow(QMainWindow):
 		@param key for example: 'Background'
 		@param value the text to assign to the key, for example: 'dark'
 		"""
-		self.conf = configparser.ConfigParser()
+		self.conf = metaconfig.ConfigParser()
 		self.conf.read(cnf)
 		self.conf[section][key] = value
 		with open(cnf,"w") as out: self.conf.write(out)

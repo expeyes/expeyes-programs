@@ -1,5 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path, configparser, csv, serial, fcntl
+import sys, time, math, importlib, os, platform, os.path, metaconfig, csv, serial, fcntl
 from datetime import datetime
 from utils import cnf
 from language import languages
@@ -135,7 +135,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger
+	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs
 
 """
 Translations in advance for the menus:
@@ -249,7 +249,8 @@ otherExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('7.1','pt100')],
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
-[QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')]
+[QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')],
+[QT_TRANSLATE_NOOP('MainWindow','Circuit Simulator'), ('7.5','circuitjs')]
 ]
 
 modulesI2C = [ 
@@ -320,6 +321,20 @@ class helpWin(QWebView):
 		screen = QDesktopWidget().screenGeometry()
 		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
 
+class simWin(QWebView):					
+	def __init__(self, parent, name = '', lang="en"):
+		QWebView.__init__(self)
+		self.parent=parent
+		self.lang=lang
+		circuitjsPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'site')
+		fn = os.path.join(circuitjsPath , 'circuitjs.html')
+		self.load(QUrl.fromLocalFile(fn))
+		self.setWindowTitle(self.tr('Circuit Simulator'))
+		self.show()
+		screen = QDesktopWidget().screenGeometry()
+		self.resize(screen.width()*0.7,screen.height()*0.7)
+		self.move(screen.width()-self.width()-20, screen.height()-self.height()-60)
+
 class MainWindow(QMainWindow):
 	WIDTH = 950
 	HEIGHT = 600
@@ -328,6 +343,7 @@ class MainWindow(QMainWindow):
 	hlpName = ''
 	hwin = None
 	credwin = None
+	simulatorwin = None
 	uncheckHelpBox = pyqtSignal()
 	setEditorText = pyqtSignal(str)
 	setConfigText = pyqtSignal(str)
@@ -355,7 +371,7 @@ class MainWindow(QMainWindow):
 		self.tr_qt=tr_qt
 		self.title = None # the title is set by self.setExp
 
-		self.conf = configparser.ConfigParser()
+		self.conf = metaconfig.ConfigParser()
 		self.conf.read(cnf)
 		
 		try:
@@ -619,6 +635,11 @@ class MainWindow(QMainWindow):
 			self.credwin = helpWin(self, (self.tr('Credits'),('1.1','Credits')), self.lang)
 		self.credwin.show()
 
+	def showSimulator(self):
+		if self.simulatorwin == None:
+			self.simulatorwin = simWin(self, (self.tr('Credits'),('1.1','Credits')), self.lang)
+		self.simulatorwin.show()
+
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
 			if self.hwin == None:
@@ -716,7 +737,7 @@ class MainWindow(QMainWindow):
 		@param key for example: 'Background'
 		@param value the text to assign to the key, for example: 'dark'
 		"""
-		self.conf = configparser.ConfigParser()
+		self.conf = metaconfig.ConfigParser()
 		self.conf.read(cnf)
 		self.conf[section][key] = value
 		with open(cnf,"w") as out: self.conf.write(out)
@@ -776,6 +797,7 @@ class MainWindow(QMainWindow):
 		action = sm.addAction(self.tr('Whole Window Alt-s'),  self.screenshot)
 		action = sm.addAction(self.tr('Graph Only Alt-p'),  self.screenshotPlot)
 		mb.addAction(self.tr('Credits'), self.showCredits)
+		mb.addAction(self.tr('Circuit Simulator'), self.showSimulator)
 		mb.addAction(self.tr('Experiment List'), lambda item=('2.99','experiment-list'): self.callExpt(item))
 		mb.addSeparator()
 

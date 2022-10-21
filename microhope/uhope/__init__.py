@@ -40,7 +40,7 @@ from .the_keywords import setEditor, codeStyle, styles
 from .examples import add_examples
 from subprocess import Popen, PIPE, call
 import serial
-import configparser
+import metaconfig
 
 class MicrohopeFrame(MyFrame):
     localdir = os.path.expanduser("~/.local/share/microhope")
@@ -55,7 +55,7 @@ class MicrohopeFrame(MyFrame):
         self.fileType="cpp"
         self.colors="light"
         self.Microhope_menubar.i_view_statusbar.Check(True)
-        self.config = configparser.ConfigParser()
+        self.config = metaconfig.ConfigParser()
         self.activateConfig()
         self.bindEvents()
         if len(sys.argv) > 1:

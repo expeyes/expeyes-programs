@@ -1,5 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, os, os.path, configparser
+import sys, os, os.path, metaconfig
 
 from QtVersion import *
 
@@ -148,7 +148,7 @@ language = en_IN
 	with open(cnf,"w") as out: out.write(defaultConfiguration)
 #######################################################################
 
-config = configparser.ConfigParser()
+config = metaconfig.ConfigParser()
 config.read(cnf)
 
 penCols   = ['y','g','r','m','c']     #pqtgraph pen colors

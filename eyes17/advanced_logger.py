@@ -18,7 +18,7 @@ Author  : Jithin B.P, jithinbp@gmail.com
 Date    : Sep-2019
 License : GNU GPL version 3
 '''
-import sys,time,configparser
+import sys,time,metaconfig
 t = time.time()
 
 import utils
@@ -70,7 +70,7 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 		self.timer.start(2)
 
 	def setConfig(self,text):
-		config = configparser.ConfigParser(allow_no_value=True)
+		config = metaconfig.ConfigParser(allow_no_value=True)
 		config.read_string(text)
 		print('received configuration:',config)
 		if 'logging' in config:

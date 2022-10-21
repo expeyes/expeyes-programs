@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>908</width>
+    <height>613</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <layout class="QVBoxLayout" name="webLayout_2">
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <property name="leftMargin">
+    <number>0</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <item>
+    <widget class="QFrame" name="webFrame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="webLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <property name="leftMargin">
+       <number>0</number>
+      </property>
+      <property name="topMargin">
+       <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>0</number>
+      </property>
+      <property name="bottomMargin">
+       <number>0</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="../../../kuttypy-gui/utilities/templates/resplus.qrc"/>
+ </resources>
+ <connections/>
+ <slots>
+  <slot>show_fft()</slot>
+  <slot>save_data()</slot>
+  <slot>select_wave(int)</slot>
+  <slot>select_wgain(int)</slot>
+  <slot>awg_slider(int)</slot>
+  <slot>awg_text()</slot>
+  <slot>sq1_dc()</slot>
+  <slot>sq1_slider(int)</slot>
+  <slot>sq1_text()</slot>
+  <slot>pv1_slider(int)</slot>
+  <slot>pv2_slider(int)</slot>
+  <slot>pv1_text()</slot>
+  <slot>pv2_text()</slot>
+  <slot>select_range_A1(int)</slot>
+  <slot>select_range_A2(int)</slot>
+  <slot>select_range_A3(int)</slot>
+  <slot>select_range_MIC(int)</slot>
+  <slot>set_timebase(int)</slot>
+  <slot>select_trig_source(int)</slot>
+  <slot>set_trigger(int)</slot>
+  <slot>show_voltmeter()</slot>
+  <slot>pcs_slider(int)</slot>
+  <slot>setFont(QString)</slot>
+  <slot>fontPlus()</slot>
+  <slot>fontMinus()</slot>
+  <slot>loadExample(QTreeWidgetItem*,int)</slot>
+  <slot>showDirectory()</slot>
+ </slots>
+</ui>

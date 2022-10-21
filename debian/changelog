@@ -1,9 +1,9 @@
 expeyes (5.0+pyqt5-2) unstable; urgency=medium
 
-  * added piano block to codeblocks: eyes17,
-    depending on pyqt5
+  * added piano block to codeblocks
+  * replaced configparser which is discontinued in python 3.10 with python3-metaconfig
 
- -- Jithin BP <jithinbp@gmail.com>  Sun Aug 28 15:13:00 2022
+ -- Jithin BP <jithinbp@gmail.com>  Tue, 15 Oct 2022 19:42:32 +0530
 
 expeyes (5.0+pyqt5-1) unstable; urgency=medium
 

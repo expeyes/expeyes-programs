@@ -363,6 +363,109 @@ Blockly.Python['multi_r2r'] = function(block) {
   return [code,Blockly.Python.ORDER_NONE];
 };
 
+Blockly.Blocks['singlePinEdges'] = {
+
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Digital Timer")
+        .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'))
+        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL")
+        .appendField(new Blockly.FieldDropdown([["rising","rising"], ["falling","falling"],["4 rising","4xrising"],["16 rising","16xrising"]]), "TYPE");
+    this.appendDummyInput()
+        .appendField("Edges:")
+        .appendField(new Blockly.FieldDropdown([["1","1"],["2","2"], ["3","3"], ["4","4"]]), "EDGES")
+        .appendField("Timeout:")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["5","5"], ["10","10"], ["20","20"]]), "TIMEOUT");
+    this.appendDummyInput()
+        .appendField("First edge starts the timer [t1=0]");
+    this.setInputsInline(false);
+    this.setOutput(true, "Number");
+    this.setColour(330);
+ this.setTooltip("Measure time between multiple edges from IN2/SEN");
+ this.setHelpUrl("");
+  },
+
+};
+
+
+Blockly.JavaScript['singlePinEdges'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var type = block.getFieldValue('TYPE');
+  var edges = block.getFieldValue('EDGES');
+  var dropdown_timeout = block.getFieldValue('TIMEOUT');
+  var code = 'JSON.parse(singlePinEdges(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+'))';
+  return [code,Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['singlePinEdges'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var type = block.getFieldValue('TYPE');
+  var edges = block.getFieldValue('EDGES');
+  var dropdown_timeout = block.getFieldValue('TIMEOUT');
+  var code = 'p.singlePinEdges(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
+  return [code,Blockly.Python.ORDER_NONE];
+};
+
+
+
+
+Blockly.Blocks['singlePinEdgesAction'] = {
+
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Digital Timer")
+        .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'));
+    this.appendDummyInput()
+        .appendField("SET ")
+        .appendField(new Blockly.FieldDropdown([["OD1","OD1"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "OUTPUT")
+        .appendField(new Blockly.FieldDropdown([["ON","ON"], ["OFF","OFF"]]), "STATE")
+        .appendField("at t=0");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL")
+        .appendField(new Blockly.FieldDropdown([["rising","rising"], ["falling","falling"],["4 rising","4xrising"],["16 rising","16xrising"]]), "TYPE");
+    this.appendDummyInput()
+        .appendField("Edges:")
+        .appendField(new Blockly.FieldDropdown([["1","1"],["2","2"], ["3","3"], ["4","4"]]), "EDGES")
+        .appendField("Timeout:")
+        .appendField(new Blockly.FieldDropdown([["1","1"], ["2","2"], ["3","3"], ["5","5"], ["10","10"], ["20","20"]]), "TIMEOUT");
+    this.setInputsInline(false);
+    this.setOutput(true, "Number");
+    this.setColour(330);
+ this.setTooltip("Measure time between multiple edges from IN2/SEN");
+ this.setHelpUrl("");
+  },
+
+};
+
+
+Blockly.JavaScript['singlePinEdgesAction'] = function(block) {
+  var dropdown_output = block.getFieldValue('OUTPUT');
+  var dropdown_state = block.getFieldValue('STATE');
+  var state = true;
+  block.setColour('#0ec244');//Make block green
+  if(dropdown_state === 'OFF' ){
+      block.setColour('#f33');//Make block red
+	  state = false;
+	  }
+
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var type = block.getFieldValue('TYPE');
+  var edges = block.getFieldValue('EDGES');
+  var dropdown_timeout = block.getFieldValue('TIMEOUT');
+  var code = 'JSON.parse(singlePinEdgesAction(\''+dropdown_channel+'\',\''+type+'\','+edges+',\''+dropdown_output+'\','+state+','+dropdown_timeout+'))';
+  return [code,Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['singlePinEdgesAction'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var type = block.getFieldValue('TYPE');
+  var edges = block.getFieldValue('EDGES');
+  var dropdown_timeout = block.getFieldValue('TIMEOUT');
+  var code = 'p.singlePinEdgesAction(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
+  return [code,Blockly.Python.ORDER_NONE];
+};
+
+
 
 /*----------Capture routine. Capture 1---------*/
 
@@ -762,6 +865,93 @@ Blockly.Python['action_timing'] = function(block) {
 /*---------- Get Sensor --------------*/
 
 
+Blockly.Blocks['scanI2C'] = {
+
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Scan I2C port, and get a")
+    this.appendDummyInput()
+        .appendField("list of detected sensors")
+    this.setColour(330);
+    this.setOutput(true, null);
+    this.setTooltip("Scan I2C");
+    this.setHelpUrl("");
+  },
+
+};
+
+
+Blockly.JavaScript['scanI2C'] = function(block) {
+  var code = 'JSON.parse(scanI2C())';
+  return [code,Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['scanI2C'] = function(block) {
+  var code = 'p.I2C.scan()';
+  return [code,Blockly.Python.ORDER_NONE];
+};
+
+
+
+
+Blockly.Blocks['scanI2CString'] = {
+
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Scan I2C port, and get detected")
+    this.appendDummyInput()
+        .appendField("sensors in a comma separated string")
+    this.setColour(330);
+    this.setOutput(true, null);
+    this.setTooltip("Scan I2C");
+    this.setHelpUrl("");
+  },
+
+};
+
+
+Blockly.JavaScript['scanI2CString'] = function(block) {
+  var code = 'scanI2CString()';
+  return [code,Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['scanI2CString'] = function(block) {
+  var code = 'str(p.I2C.scan())';
+  return [code,Blockly.Python.ORDER_NONE];
+};
+
+
+
+Blockly.Blocks['read_I2C_sensor'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read I2C Sensor:")
+        .appendField(new Blockly.FieldDropdown([["BMP280","BMP280"], ["HMC5883L","HMC5883L"], ["TSL2561","TSL2561"], ["QMC5883L","QMC5883L"], ["MPU6050","MPU6050"],["MAX30100","MAX30100"],["VL53L0X","VL53L0X"]]), "NAME");
+    this.appendDummyInput()
+        .appendField("Address:")
+        .appendField(new Blockly.FieldNumber(13, 1, 127, 1), "ADDR");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['read_I2C_sensor'] = function(block) {
+  var name = block.getFieldValue('NAME');
+  var addr = block.getFieldValue('ADDR');
+  var code = 'JSON.parse(get_generic_sensor(\''+name+'\','+addr+'))';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['read_I2C_sensor'] = function(block) {
+  var name = block.getFieldValue('NAME');
+  var addr = block.getFieldValue('ADDR');
+  var code = 'p.get_generic_sensor(\''+name+'\','+addr+')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
 
 //----------------SR04_distance
 
@@ -849,6 +1039,129 @@ Blockly.Python['read_MAX30100'] = function(block) {
   var code = 'p.get_sensor(\'MAX30100\','+dropdown_channel+')';
   return [code, Blockly.Python.ORDER_NONE];
 };
+
+//MAX6675
+
+Blockly.Blocks['read_MAX6675'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read Temperature from")
+        .appendField(new Blockly.FieldImage("media/THERMOMETER.png", 30, 30));
+    this.appendDummyInput()
+        .appendField("MAX6675 Module on")
+        .appendField(new Blockly.FieldDropdown([["CS1","1"], ["CS2","2"], ["CS3","3"], ["CS4","4"]]), "CHANNEL")
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['read_MAX6675'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var code = 'MAX6675('+dropdown_channel+')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['read_MAX6675'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var code = 'p.get_sensor(\'MAX6675\','+dropdown_channel+')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+
+//---------TSL2561
+
+Blockly.Blocks['read_TSL2561'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read TSL2561(lum)")
+        .appendField(new Blockly.FieldDropdown([["LUMINOSITY(total)","0"], ["Infrared","1"]]), "CHANNEL");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['read_TSL2561'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var code = 'get_sensor(\'TSL2561\',\''+dropdown_channel+'\')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['read_TSL2561'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'p.get_sensor(\'TSL2561\',\''+dropdown_channel+'\')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+//----------------HMC5883L
+
+Blockly.Blocks['read_QMC5883L'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Read QMC5883L")
+        .appendField(new Blockly.FieldImage("media/MAGNETOMETER.png", 20, 20, { alt: "*", flipRtl: "FALSE" }))
+        .appendField(new Blockly.FieldDropdown([["Hx","0"], ["Hy","1"], ["Hz","2"]]), "CHANNEL");
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['read_QMC5883L'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'get_sensor(\'QMC5883L\',\''+dropdown_channel+'\')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['read_QMC5883L'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  // TODO: Assemble JavaScript into code variable.
+  var code = 'p.get_sensor(\'QMC5883L\',\''+dropdown_channel+'\')';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+// AD9833 Sine Wave generator module
+
+Blockly.Blocks['set_AD9833'] = {
+  init: function() {
+    this.appendValueInput("FREQ")
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Set AD9833  ")
+        .appendField(new Blockly.FieldDropdown([["CS1","1"], ["CS2","2"]]), "CHANNEL")
+        .appendField("Frequency ");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Set dual AD9833 module frequency");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.JavaScript['set_AD9833'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var freq = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.JavaScript.ORDER_NONE);
+  var code = 'set_dual_AD9833('+dropdown_channel+',' + freq+  ');\n';
+  return code;
+};
+
+
+Blockly.Python['set_AD9833'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var freq = Blockly.JavaScript.valueToCode(block, 'FREQ', Blockly.Python.ORDER_NONE);
+  var code = 'p.set_dual_AD9833('+dropdown_channel+',' + freq+  ')\n';
+
+  return code;
+};
+
+
 
 //----------------MPU6050
 
@@ -1115,6 +1428,123 @@ Blockly.Python['set_servo'] = function(block) {
 
 /*--------------- EVENT DRIVEN CALLS -------------*/
 
+
+/*---timer----*/
+Blockly.Blocks['cs_start_timer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("CREATE TIMER")
+        .appendField(new Blockly.FieldImage("media/clock.svg", 25, 25,  "*"));
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Create Timer");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['cs_start_timer'] = function(block) {
+  var code = 'var mytimer = new Date();\n';
+  return code;
+};
+
+Blockly.Python['cs_start_timer'] = function(block) {
+  var txt = Blockly.Python.valueToCode(block, 'TEXT', Blockly.Python.ORDER_NONE);
+  var code = 'mytimer = time.time()\n';
+  return code;
+};
+
+Blockly.Blocks['cs_get_timer'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("READ TIMER(mS)")
+        .appendField(new Blockly.FieldImage("media/clock.svg", 25, 25,  "*"));
+    this.setOutput(true, "Number");
+    this.setColour(230);
+ this.setTooltip("Create Timer");
+ this.setHelpUrl("");
+  }
+};
+
+Blockly.JavaScript['cs_get_timer'] = function(block) {
+  var code = 'new Date()-mytimer';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+Blockly.Python['cs_get_timer'] = function(block) {
+  var code = 'time.time()-mytimer';
+  return [code, Blockly.Python.ORDER_NONE];
+};
+
+/*--------------- EVENT DRIVEN CALLS -------------*/
+Blockly.Blocks['generic_slider'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("New Slider")
+        .appendField(new Blockly.FieldTextInput("myvar"), "NAME");
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Min:")
+        .appendField(new Blockly.FieldNumber(0, -1e9, 1e9, 1), "MIN")
+        .appendField("Max:")
+        .appendField(new Blockly.FieldNumber(100, -1e9, 1e9, 1), "MAX");
+
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Add generic slider");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.JavaScript['generic_slider'] = function(block) {
+  var name = block.getFieldValue('NAME');
+  var mn = block.getFieldValue('MIN');
+  var mx = block.getFieldValue('MAX');
+  var code = 'add_slider(\''+name+'\','+mn+','+mx+');\n';
+  return code;
+};
+
+
+Blockly.Python['generic_slider'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var code = '# Add Event driven slider \n';
+  return code;
+};
+
+Blockly.Blocks['generic_slider_value'] = {
+  init: function() {
+    this.appendDummyInput()
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("Value of")
+        .appendField(new Blockly.FieldTextInput("myvar"), "NAME");
+
+    this.setInputsInline(false);
+    this.setOutput(true, null);
+    this.setColour(230);
+ this.setTooltip("get generic slider value");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.JavaScript['generic_slider_value'] = function(block) {
+  var name = block.getFieldValue('NAME');
+  var code = 'get_slider_variable(\''+name+'\')';
+  return [code, Blockly.JavaScript.ORDER_NONE];
+};
+
+
+Blockly.Python['generic_slider_value'] = function(block) {
+  var dropdown_channel = block.getFieldValue('CHANNEL');
+  var code = '# Add Event driven slider \n';
+  return code;
+};
+
+
 Blockly.Blocks['set_frequency_slider'] = {
   init: function() {
     this.appendDummyInput()
@@ -1226,6 +1656,8 @@ function addSlider(value){
 
 
 }
+
+
 
 
 

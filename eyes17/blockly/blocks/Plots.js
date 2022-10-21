@@ -1,185 +1,29 @@
 
-
 var colors = ['red','orange','yellow','olive','green','teal','blue','violet','purple','pink','brown','grey','black'];
 var recentcolor=0;
-var activePlot;
-var uPlotOptions;
 
-
-function f(x) {
-	return Math.random() - 0.5 + Math.sin(x * 0.00002) * 40 + Math.sin(x * 0.001) * 5 + Math.sin(x * 0.1) * 2;
-}
-
-function getData(fill,max) {
-	const data = [
-		Array(max),
-		Array(max)
-	];
-
-	for (let x = 0; x < fill; x++) {
-		data[0][x] = x/1000;
-		data[1][x] = 0;
-	}
-	return data;
-}
-
-
-var mydata = getData(1000,1000);
-var lastPosition = 0;
+var mydata = {};
 var startTime = new Date();
 var activePlot=null;
-
+var myplots = {}
+var options = {}
+var plotdatastack = {};
 
 var clearPlot = function(){
+    plotdatastack = {};
 	 resultplots.empty();
+	 myplots  = {};
+	 options = {};
 }
 
-var addPlot = function(plotType,autoScalingX,autoScalingY){
-
-	myseries = [
-					{
-						label: "data",
-					},
-					{
-						label: "Y",
-						stroke: "magenta",
-					}
-				];
-
-	myaxes = [
-					{
-					    size: 30,
-						labelGap: 20,
-						labelSize: 20,
-					},
-					{
-						size: 40,
-						labelSize: 12,
-						stroke: "magenta",
-					}
-				]
-
-	if(plotType == 'xy'){
-		myaxes[0].label = 'X Data';
-		myaxes[1].label = 'Y Data';
-	}
-
-	if(plotType == 'xyy'){
-		myseries = [
-						{
-							label: "data",
-						},
-						{
-							label: "Y",
-							stroke: "magenta",
-						},
-						{
-							label: "Y2",
-							stroke: "green",
-						}
-					];
-
-
-		myaxes = [
-						{
-							size: 20,
-							label: 'Time(mS)',
-							labelSize: 20,
-						},
-						{
-							size: 25,
-							label: 'Chan 1',
-							labelGap: 10,
-							labelSize: 12,
-							stroke: "magenta",
-						},
-						{
-							size: 25,
-							label: 'Chan 2',
-							labelGap: 10,
-							labelSize: 12,
-							stroke: "green",
-						}
-					];
-
-	}
-	if(plotType == 'xyyy'){
-		myseries = [
-						{
-							label: "data",
-						},
-						{
-							label: "Y1",
-							stroke: "magenta",
-						},
-						{
-							label: "Y2",
-							stroke: "green",
-						},
-                        {
-                            label: "Y3",
-                            stroke: "blue",
-                        }
-					];
-
-
-		myaxes = [
-						{
-							size: 20,
-							label: 'Time(mS)',
-							labelSize: 20,
-						}
-					];
-
-	}
-
-
-	uPlotOptions = {
-				width: resultplots.width()<300?300:resultplots.width(),
-				height: resultplots.height()<300?300:resultplots.height(),
- 	paths: u => null,
- 	points: {
- 		space: 0,
- 	},
- 					legend:{
-					show: false
-				},
-
-				cursor: {
-					drag: {
-						setScale: false,
-					}
-				},
-				scales: {
-					x: {
-						time: false,
-						auto: autoScalingX,
-					},
-					y: {
-						auto: autoScalingY,
-					},
-				},
-				series: myseries,
-				axes: myaxes,
-			};
-
-
-	if(plotType == 'polar'){
-			uPlotOptions['axes']= null;
-		}
-
-	lastPosition = 0;
-	startTime = new Date();
-	activePlot = new uPlot(uPlotOptions,[[],[],[],[]], resultplots[0]);
-	console.log(uPlotOptions);
-
-
+function createPlots(latestCode){
+            mydata = {}; startTime = new Date();
+            if(latestCode.indexOf('plot_radar(')>=0)
+              addPolarPlot();
 }
 
 
-
-var polarPositions = []
-
+var polarPositions = [];
 
 var addPolarPlot = function(){
 	polarPositions = [];
@@ -192,37 +36,37 @@ var addPolarPlot = function(){
 	</svg>
 
 	<!-- Pie -->
-	 <svg class="polar" viewBox="-1 -1 2 2" style="transform: rotate(-90deg)">
+	 <svg class="polar" viewBox="-1 -1 2 2" style="transform: rotate(-90deg);position: absolute;">
 	</svg>
 
 	<!-- Slice borders -->
-	<svg viewBox="0 0 200 200" style="transform: rotate(0deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(0deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
-	<svg viewBox="0 0 200 200" style="transform: rotate(60deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(60deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
-	<svg viewBox="0 0 200 200" style="transform: rotate(-60deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(-60deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
-	<svg viewBox="0 0 200 200" style="transform: rotate(30deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(30deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
-	<svg viewBox="0 0 200 200" style="transform: rotate(-30deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(-30deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
-	<svg viewBox="0 0 200 200" style="transform: rotate(90deg)" xmlns="http://www.w3.org/2000/svg">
+	<svg viewBox="0 0 200 200" style="transform: rotate(90deg);position:absolute;" xmlns="http://www.w3.org/2000/svg">
 	  <line x1="0" y1="300" x2="0" y2="0" stroke-width="1" stroke="#ffffff33" transform="translate(100, 0)">
 	</svg>
 
 
 	<!-- Concentric circles -->
-	<svg viewBox="0 0 200 200" class="polar circle">
+	<svg viewBox="0 0 200 200" class="polar circle" style="position:absolute;">
 	    <circle cx="100" cy="100" r="100" fill="none" stroke="white" stroke-width="1"  stroke-opacity=".5" />
 	    <circle cx="100" cy="100" r="80" fill="none" stroke="white" stroke-width="1" stroke-opacity=".5"/>
 	    <circle cx="100" cy="100" r="60" fill="none" stroke="white" stroke-width="1" stroke-opacity=".5"/>
@@ -251,58 +95,157 @@ var addPolarPlot = function(){
 
 }
 
+var makePlotIfUnavailable = function(plotname){
+    if(!(plotname in myplots)){
+        mydata[plotname] = [];
+        var w = resultplots.width()<300?300:resultplots.width();
+        var h = resultplots.height()<300 ? 300:resultplots.height();
+        if(h>400)h=400;
+        startTime = new Date();
+        resultplots.append($('<div id="cs_'+plotname+'">').width(w).height(h));
+        myplots[plotname] = 0;
+        options[plotname] = {
+                series: {
+                    lines: {
+                        show: true,
+                        lineWidth: 2
+                    },
+                    points: {
+                        show: true
+                    }
+                },
+                xaxis: {
+                    gridLines: true,
+                    autoScaleMargin : 0.1,
+                    autoScale: 'exact',
+                    growOnly : true
+                },
+                yaxis: {
+                    gridLines: true,
+                    autoScaleMargin : 0.1,
+                    autoScale: 'exact',
+                    growOnly : true
+                },
 
-var addDataPoint = function(x){
-	mydata[0][lastPosition] = (new Date() - startTime)/1000.;
-	mydata[1][lastPosition] = x;
-	lastPosition ++;
-	activePlot.setData([mydata[0].slice(0,lastPosition),mydata[1].slice(0,lastPosition)]);
+                legend: {
+                    show: true,
+                    noColumns: 1,
+                    labelFormatter: null, // fn: string -> string
+                    container: null, // container (as jQuery object) to put legend in, null means default on top of graph
+                    position: 'ne', // position of default legend container within plot
+                    margin: 5, // distance from grid edge to default legend container within plot
+                    sorted: null // default to no legend sorting
+                }
+        };
+
+    }
+}
+var addDataPoint = function(plotname, x){
+    makePlotIfUnavailable(plotname);
+    if(myplots[plotname]==0){
+        	startTime = new Date();
+        	mydata[plotname].push([0,x]);
+    }else{
+        	mydata[plotname].push([(new Date() - startTime)/1000.,x]);
+	}
+	myplots[plotname] ++;
+	//if(myplots[plotname]>20)options[plotname].series.points.show = false;
+	//else options[plotname].series.points.show = true;
+	options[plotname].series.line.show = false;
+
+    options[plotname].xaxes = [{ position: 'bottom', axisLabel: 'Time (S)', show: true }];
+    $.plot("#cs_"+plotname, [{color: "red", lines: {show: true, lineWidth: 2}, data: mydata[plotname], label: "Y data"}], options[plotname]);
+}
+var addDataPointXY = function(plotname, x,y){
+    makePlotIfUnavailable(plotname);
+    mydata[plotname].push([x,y]);
+	myplots[plotname] ++;
+	//if(myplots[plotname]>200)options[plotname].series.points.show = false;
+	//else options[plotname].series.points.show = true;
+	options[plotname].series.line.show = false;
+    $.plot("#cs_"+plotname, [ mydata[plotname] ], options[plotname]);
 }
 
-var plotArraysXY = function(X,Y){
-nx = Object.values(X.a)
-ny = Object.values(Y.a)
 
-mydata[0] = nx;
-mydata[1] = ny;
+var plotArraysXYStack = function(plotname,X,Y, state){
+    makePlotIfUnavailable(plotname);
+    options[plotname].series.points.show = false;
+    if(!(plotname in plotdatastack))plotdatastack[plotname] = [];
 
-activePlot.setData([nx,ny]);
-}
+    if(state)plotdatastack[plotname] = [ {color: colors[plotdatastack[plotname].length % colors.length], lines: {show: true, lineWidth: 2}, data: [], label: "Chan "+plotdatastack[plotname].length} ];
+    else plotdatastack[plotname].push( {color: colors[plotdatastack[plotname].length % colors.length], lines: {show: true, lineWidth: 2}, data: [], label: "Chan "+plotdatastack[plotname].length} );
 
+    nx = Object.values(X.a)
+    ny = Object.values(Y.a)
+    dat = plotdatastack[plotname][plotdatastack[plotname].length - 1];
+    for (i=0;i<nx.length;i++){
+        dat.data.push([nx[i],ny[i]]);
+    }
 
-var plotArraysXYY = function(x,y1, y2){
-nx = Object.values(x.a)
-ny1 = Object.values(y1.a)
-ny2 = Object.values(y2.a)
-
-mydata[0] = nx;
-mydata[1] = ny1;
-
-activePlot.setData([nx,ny1,ny2]);
+    $.plot("#cs_"+plotname, plotdatastack[plotname], options[plotname]);
 
 }
 
+var plotArraysXY = function(plotname,X,Y){
+    makePlotIfUnavailable(plotname);
+    options[plotname].series.points.show = false;
+    mydata[plotname] = [
+        {color: "red", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 1"},
+    ];
+    nx = Object.values(X.a)
+    ny = Object.values(Y.a)
+    for (i=0;i<nx.length;i++){
+        mydata[plotname][0].data.push([nx[i],ny[i]]);
+    }
 
-var plotArraysXYYY = function(x,y1, y2, y3){
-nx = Object.values(x.a)
-ny1 = Object.values(y1.a)
-ny2 = Object.values(y2.a)
-ny3 = Object.values(y3.a)
-
-mydata[0] = nx;
-mydata[1] = ny1;
-
-activePlot.setData([nx,ny1,ny2, ny3]);
+    $.plot("#cs_"+plotname, mydata[plotname], options[plotname]);
 
 }
 
 
-var addDataPointXY = function(x,y){
-	mydata[0][lastPosition] = x
-	mydata[1][lastPosition] = y;
-	lastPosition ++;
-	activePlot.setData([mydata[0].slice(0,lastPosition),mydata[1].slice(0,lastPosition)]);
+var plotArraysXYY = function(plotname, X,Y1, Y2){
+    makePlotIfUnavailable(plotname);
+    options.series.points.show = false;
+    mydata[plotname] = [
+        {color: "red", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 1"},
+        {color: "blue", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 2"},
+    ];
+
+    nx = Object.values(X.a)
+    ny1 = Object.values(Y1.a)
+    ny2 = Object.values(Y2.a)
+    for (i=0;i<nx.length;i++){
+        mydata[plotname][0].data.push([nx[i],ny1[i]]);
+        mydata[plotname][1].data.push([nx[i],ny2[i]]);
+    }
+
+    $.plot("#cs_"+plotname, mydata[plotname] , options[plotname]);
+
 }
+
+var plotArraysXYYY = function(plotname, X,Y1, Y2, Y3){
+    makePlotIfUnavailable(plotname);
+    options[plotname].series.points.show = false;
+    mydata[plotname] = [
+        {color: "red", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 1"},
+        {color: "blue", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 2"},
+        {color: "forestgreen", lines: {show: true, lineWidth: 2}, data: [], label: "Chan 3"},
+    ];
+
+    nx = Object.values(X.a)
+    ny1 = Object.values(Y1.a)
+    ny2 = Object.values(Y2.a)
+    ny3 = Object.values(Y3.a)
+    for (i=0;i<nx.length;i++){
+        mydata[plotname][0].data.push([nx[i],ny1[i]]);
+        mydata[plotname][1].data.push([nx[i],ny2[i]]);
+        mydata[plotname][2].data.push([nx[i],ny3[i]]);
+    }
+
+    $.plot("#cs_"+plotname, mydata[plotname] , options[plotname]);
+
+}
+
 
 var addDataPointPolar = function(angle, radius, maxrad){
 	angle = angle%360;
@@ -313,7 +256,6 @@ var addDataPointPolar = function(angle, radius, maxrad){
 
 }
 
-
 /*---------------------- Plot against Time ---------------*/
 
 
@@ -322,7 +264,8 @@ Blockly.Blocks['plot_datapoint'] = {
     this.appendDummyInput()
         .appendField("PLOT X Vs Time:");
     this.appendValueInput("VALUE")
-        .setAlign(Blockly.ALIGN_RIGHT)
+        .setAlign(Blockly.ALIGN_LEFT)
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
         .appendField("X :")
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
@@ -336,7 +279,8 @@ Blockly.Blocks['plot_datapoint'] = {
 
 Blockly.JavaScript['plot_datapoint'] = function(block) {
   var value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
-  var code = 'sleep(0.001);\n'+'plot('+value+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'sleep(0.001);\n'+'plot(\''+name+'\','+value+');\n';
 
   return code;
 };
@@ -354,17 +298,21 @@ Blockly.Python['plot_datapoint'] = function(block) {
 Blockly.Blocks['plot_scale'] = {
   init: function() {
     this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME");
+    this.appendDummyInput()
+        .appendField(" : Set Range");
+    this.appendDummyInput()
         .appendField("Plot X Range, Min: ")
         .appendField(new Blockly.FieldNumber(0), "XMIN")
         .appendField("  Max: ")
-        .appendField(new Blockly.FieldNumber(10), "XMAX");
+        .appendField(new Blockly.FieldNumber(10), "XMAX")
+        .appendField(new Blockly.FieldDropdown([["fixed","none"], ["autoscale","exact"]]), "SCALEX")
     this.appendDummyInput()
         .appendField("Plot Y Range, Min: ")
         .appendField(new Blockly.FieldNumber(-5), "YMIN")
         .appendField("  Max: ")
-        .appendField(new Blockly.FieldNumber(5), "YMAX");
-    this.appendDummyInput()
-        .appendField("Invoke after Plotting.");
+        .appendField(new Blockly.FieldNumber(5), "YMAX")
+        .appendField(new Blockly.FieldDropdown([["fixed","none"], ["autoscale","exact"]]), "SCALEY");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -380,7 +328,12 @@ Blockly.JavaScript['plot_scale'] = function(block) {
   var xmax = Number(block.getFieldValue('XMAX'));
   var ymin = Number(block.getFieldValue('YMIN'));
   var ymax = Number(block.getFieldValue('YMAX'));
-  var code = 'plot_scale(\'x\','+xmin+','+xmax+');\nplot_scale(\'y\','+ymin+','+ymax+');\n';
+  var scalex = block.getFieldValue('SCALEX');
+  var scaley = block.getFieldValue('SCALEY');
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'plot_scale(\''+name+'\',\'x\','+xmin+','+xmax+',\''+scalex+'\');\n';
+  code += 'plot_scale(\''+name+'\',\'y\','+ymin+','+ymax+',\''+scaley+'\');\n';
+
   return code;
 };
 
@@ -390,13 +343,19 @@ Blockly.Python['plot_scale'] = function(block) {
   var xmax = Number(block.getFieldValue('XMAX'));
   var ymin = Number(block.getFieldValue('YMIN'));
   var ymax = Number(block.getFieldValue('YMAX'));
-  var code = 'plot_scale(\'x\','+xmin+','+xmax+');\nplot_scale(\'y\','+ymin+','+ymax+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'plot_scale(\''+name+'\',\'x\','+xmin+','+xmax+')\n';
+  code += 'plot_scale(\''+name+'\',\'y\','+ymin+','+ymax+')\n';
   return code;
 };
 
 
 Blockly.Blocks['plot_scale_x'] = {
   init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME");
+    this.appendDummyInput()
+        .appendField(" : Set X Range");
     this.appendDummyInput()
         .appendField("Plot X Range, Min: ")
         .appendField(new Blockly.FieldNumber(0), "XMIN");
@@ -416,7 +375,8 @@ Blockly.Blocks['plot_scale_x'] = {
 Blockly.JavaScript['plot_scale_x'] = function(block) {
   var vmin = Number(block.getFieldValue('XMIN'));
   var vmax = Number(block.getFieldValue('XMAX'));
-  var code = 'plot_scale(\'x\','+vmin+','+vmax+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'plot_scale(\''+name+'\',\'x\','+vmin+','+vmax+');\n';
 
   return code;
 };
@@ -433,6 +393,10 @@ Blockly.Python['plot_scale_x'] = function(block) {
 
 Blockly.Blocks['plot_scale_y'] = {
   init: function() {
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME");
+    this.appendDummyInput()
+        .appendField(" : Set Y Range");
     this.appendDummyInput()
         .appendField("Plot Y Range, Min: ")
         .appendField(new Blockly.FieldNumber(0), "YMIN");
@@ -452,7 +416,8 @@ Blockly.Blocks['plot_scale_y'] = {
 Blockly.JavaScript['plot_scale_y'] = function(block) {
   var vmin = Number(block.getFieldValue('YMIN'));
   var vmax = Number(block.getFieldValue('YMAX'));
-  var code = 'plot_scale(\'y\','+vmin+','+vmax+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'plot_scale(\''+name+'\',\'y\','+vmin+','+vmax+');\n';
 
   return code;
 };
@@ -476,7 +441,11 @@ Blockly.Blocks['plot_xyarray'] = {
         .appendField("PLOT ARRAY X[]:")
     this.appendValueInput("Y")
         .setAlign(Blockly.ALIGN_RIGHT)
-        .appendField("ARRAY Y[]:")
+        .appendField("ARRAY Y[]:");
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "CLEAR")
+        .appendField("Clear?");
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -490,7 +459,10 @@ Blockly.Blocks['plot_xyarray'] = {
 Blockly.JavaScript['plot_xyarray'] = function(block) {
   var X = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
   var Y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
-  var code = 'sleep(0.001);\n'+'plot_xyarray('+X+','+Y+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var clr = block.getFieldValue('CLEAR');
+  var state = (clr == "TRUE")?true:false;
+  var code = 'sleep(0.001);\n'+'plot_xyarray(\''+name+'\','+X+','+Y+','+state+');\n';
 
   return code;
 };
@@ -520,6 +492,7 @@ Blockly.Blocks['plot_xyyarray'] = {
         .appendField("ARRAY Y1[]:")
     this.appendValueInput("Y2")
         .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
         .appendField("ARRAY Y2[]:")
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
@@ -535,7 +508,8 @@ Blockly.JavaScript['plot_xyyarray'] = function(block) {
   var X = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
   var Y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_NONE);
   var Y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_NONE);
-  var code = 'sleep(0.001);\n'+'plot_xyyarray('+X+','+Y1+','+Y2+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'sleep(0.001);\n'+'plot_xyyarray(\''+name+'\','+X+','+Y1+','+Y2+');\n';
 
   return code;
 };
@@ -559,6 +533,7 @@ Blockly.Blocks['plot_xyyyarray'] = {
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("PLOT ARRAY X[]:")
     this.appendValueInput("Y1")
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("ARRAY Y1[]:")
     this.appendValueInput("Y2")
@@ -582,7 +557,8 @@ Blockly.JavaScript['plot_xyyyarray'] = function(block) {
   var Y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_NONE);
   var Y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_NONE);
   var Y3 = Blockly.JavaScript.valueToCode(block, 'Y3', Blockly.JavaScript.ORDER_NONE);
-  var code = 'sleep(0.001);\n'+'plot_xyyyarray('+X+','+Y1+','+Y2+','+Y3+');\n';
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'sleep(0.001);\n'+'plot_xyyyarray(\''+name+'\','+X+','+Y1+','+Y2+','+Y3+');\n';
 
   return code;
 };
@@ -605,6 +581,7 @@ Blockly.Blocks['plot_xy'] = {
     this.appendDummyInput()
         .appendField("PLOT X,Y")
     this.appendValueInput("X")
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("X:")
     this.appendValueInput("Y")
@@ -621,9 +598,10 @@ Blockly.Blocks['plot_xy'] = {
 
 
 Blockly.JavaScript['plot_xy'] = function(block) {
+  var name = block.getFieldValue('PLOTNAME');
   var vx = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
   var vy = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
-  var code = 'sleep(0.001);\n'+'plot_xy('+vx+','+vy+')\n';
+  var code = 'sleep(0.001);\n'+'plot_xy(\''+name+'\','+vx+','+vy+')\n';
 
   return code;
 };
@@ -686,18 +664,6 @@ Blockly.Python['plot_radar'] = function(block) {
 };
 
 
-function getSize() {
-    return {
-        width: resultplots.width(),
-        height: 300,
-    }
-}
-
-window.addEventListener("resize", e => {
-				if(activePlot != null)
-					activePlot.setSize(getSize());
-			});
-
 
 //-------------------- API ------------------------
 
@@ -705,8 +671,8 @@ function initPlots(interpreter, scope) {
 			// PLOT CALLS
 		  // Add an API for the plot call
 		  interpreter.setProperty(scope, 'plot', interpreter.createNativeFunction(
-				function( value) {
-				  return addDataPoint(value);
+				function(plotname,  value) {
+				  return addDataPoint(plotname, value);
 				})
 			);
 
@@ -714,39 +680,40 @@ function initPlots(interpreter, scope) {
 
 		  // Add an API for the XY plot call
 		  interpreter.setProperty(scope, 'plot_scale', interpreter.createNativeFunction(
-				function( axis, vmin,vmax) {
-                    activePlot.setScale(axis, { min: vmin, max: vmax});
-                    console.log(axis);
-                    console.log({ min: vmin, max: vmax});
+				function( plotname, axis, vmin,vmax, scale) {
+				    makePlotIfUnavailable(plotname);
+				    if(axis === 'x'){options[plotname].xaxis.min = vmin; options[plotname].xaxis.max = vmax; options[plotname].xaxis.autoScale=scale;}
+				    else if(axis === 'y'){options[plotname].yaxis.min = vmin; options[plotname].yaxis.max = vmax; options[plotname].yaxis.autoScale=scale;}
 				})
 			);
 		  // Add an API for the XY plot call
 		  interpreter.setProperty(scope, 'plot_xy', interpreter.createNativeFunction(
-				function( vx,vy) {
-				  return addDataPointXY(vx,vy);
+				function(plotname, vx,vy) {
+				  return addDataPointXY(plotname, vx,vy);
 				})
 			);
 
 
 		  // Add an API for the XY plot call
 		  interpreter.setProperty(scope, 'plot_xyarray', interpreter.createNativeFunction(
-				function( X,Y) {
-				  return plotArraysXY(X,Y);
+				function(plotname,  X,Y, state) {
+                  console.log(state);
+    				  return plotArraysXYStack(plotname, X,Y, state);
 				})
 			);
 
 
 		  // Add an API for the XYY array plot call
 		  interpreter.setProperty(scope, 'plot_xyyarray', interpreter.createNativeFunction(
-				function( x,y1, y2) {
-				  return plotArraysXYY(x,y1, y2);
+				function( plotname, x,y1, y2) {
+				  return plotArraysXYY(plotname, x,y1, y2);
 				})
 			);
 
 		  // Add an API for the XYY array plot call
 		  interpreter.setProperty(scope, 'plot_xyyyarray', interpreter.createNativeFunction(
-				function( x,y1, y2, y3) {
-				  return plotArraysXYYY(x,y1, y2, y3);
+				function( plotname, x,y1, y2, y3) {
+				  return plotArraysXYYY(plotname, x,y1, y2, y3);
 				})
 			);
 
