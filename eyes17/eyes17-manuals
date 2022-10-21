@@ -1,0 +1,100 @@
+#! /usr/bin/python3
+import locale, re, os, subprocess, sys
+from PyQt5.QtWidgets import QApplication, QMessageBox, QDialog
+from PyQt5.QtCore import QTranslator, QLocale, QLibraryInfo
+from layouts.ui_eyes17_manuals import Ui_Dialog
+
+class FormatDialog(QDialog, Ui_Dialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self,parent)
+        #Ui_Dialog.__init__(self)
+        self.setupUi(self)
+        
+class ErrorDialog(QMessageBox):
+    def __init__(self, title, message, parent=None):
+        super(ErrorDialog, self).__init__(parent)
+        self.setWindowTitle(title)
+        self.setText(message)
+        self.setIcon(QMessageBox.Warning)
+        
+def Error(title, message):
+    ed = ErrorDialog(title, message)
+    ed.show()
+
+def installed_manual(lc, aformat="pdf"):
+    """
+    returns the installed manual if it exists
+    @param lc the locale
+    @param aformat "pdf" or "epub", currently
+    """
+    docdir = "/usr/share/eyes17/doc"
+    for locale in (lc, re.sub("_.*$", "", lc)):
+        # for example if locale == "es_AR", let us try "es_AR" first,
+        # then "es"
+        fname = os.path.join(docdir, locale, "eyes17." + aformat)
+        if os.path.exists(fname):
+            return fname
+        fname = fname + ".gz"
+        if os.path.exists(fname):
+            # if the first match is wrong, let us try a compressed format
+            return fname
+    if not lc.startswith("en"):
+        # in last resort, try to get the English manual
+        fname = installed_manual("en", aformat=aformat)
+        if os.path.exists(fname):
+            return fname
+    return
+
+def formatDialog():
+    aformat = None
+    app = QApplication(sys.argv)
+    # translation #################
+    lang=QLocale.system().name()
+    tr_eyes=QTranslator()
+    tr_eyes.load("lang/"+lang, os.path.dirname(__file__))
+    app.installTranslator(tr_eyes)
+    tr_qt=QTranslator()
+    tr_qt.load("qt_"+lang,
+	       QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+    app.installTranslator(tr_qt)
+    ##############################
+    fd = FormatDialog()
+    fd.show()
+    result = app.exec_()
+    # harvest the radio buttons' status
+    if fd.radioPDF.isChecked():
+        aformat = "pdf"
+    elif fd.radioEPUB.isChecked():
+        aformat = "epub"
+    return aformat
+    
+                   
+    
+if __name__ == "__main__":
+    # which is the format of the User Manual?
+    if len(sys.argv) > 1:
+        # it can be given by the command line
+        aformat = sys.argv[1]
+    else:
+        # or it may be given by a graphic dialog
+        aformat = formatDialog()
+    if aformat not in ("pdf", "epub"):
+        # in case of any error, default to "pdf"
+        aformat = "pdf"
+
+    locale = re.sub(r"\..*", "", os.environ["LANG"])
+    if len(locale) < 2:
+        lc = locale.getlocale()
+        locale = lc[0]
+    fname = installed_manual(locale, aformat)
+    if fname is None:
+        app = QApplication(sys.argv)
+        Error('No User Manual',
+              'Maybe the package eyes17-manual-{locale}\nis not correctly installed'.format(locale=locale[:2])
+              )
+        sys.exit(app.exec_())
+    else:
+        if aformat == "pdf":
+            subprocess.call(["evince", fname])
+        elif aformat == "epub":
+            subprocess.call(["ebook-viewer", fname])
