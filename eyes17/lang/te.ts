@@ -246,7 +246,7 @@
         <translation>sqr1 కు సెట్ చేయబడింది </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="169"/>
+        <location filename="../RLCsteadystate.py" line="410"/>
         <source> Hz</source>
         <translation> Hz</translation>
     </message>
@@ -326,7 +326,7 @@
         <translation>సమయం (S)</translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="60"/>
+        <location filename="../RLCsteadystate.py" line="85"/>
         <source>Voltage</source>
         <translation>వోల్టేజ్</translation>
     </message>
@@ -351,7 +351,7 @@
         <translation>కాన్సంట్రేషన్ =</translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="120"/>
+        <location filename="../RLCsteadystate.py" line="202"/>
         <source>messages</source>
         <translation>సందేశములు</translation>
     </message>
@@ -371,7 +371,7 @@
         <translation>కోడ్  ఈ ఫైల్ లో సేవ్  చేయబడింది</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="54"/>
+        <location filename="../soundFreqResp.py" line="48"/>
         <source>Frequency (Hz)</source>
         <translation>ఫ్రీక్వెన్సీ (Hz)</translation>
     </message>
@@ -416,7 +416,7 @@
         <translation type="obsolete">పూర్తయింది</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="280"/>
+        <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
         <translation>చెల్లని ఫ్రీక్వెన్సీ పరిమితులు</translation>
     </message>
@@ -436,7 +436,7 @@
         <translation>స్కాన్ చేయండి</translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="58"/>
+        <location filename="../RLCsteadystate.py" line="83"/>
         <source>Time (mS)</source>
         <translation>సమయం(mS)</translation>
     </message>
@@ -586,7 +586,7 @@
         <translation> వ్యవధి లేదా రీడ్‌ల మధ్య సమయం  సరికాదు(&gt; 10 mSec)</translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="212"/>
+        <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
         <translation>సేవ్ చేయడానికి ఏ గ్రాఫులు మెమరీ లో ప్రస్తుతం లేవు</translation>
     </message>
@@ -766,7 +766,7 @@
         <translation>చెల్లని CCS ఇన్పుట్</translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="88"/>
+        <location filename="../RLCsteadystate.py" line="123"/>
         <source>Timebase</source>
         <translation>టైమ్ బేస్</translation>
     </message>
@@ -801,12 +801,12 @@
         <translation>డేటా మరియు గ్రాఫ్లు క్లియర్ చేయబడినవి</translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="207"/>
+        <location filename="../RLCsteadystate.py" line="410"/>
         <source>AWG set to </source>
         <translation>AWG సెట్ చేయబడింది </translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="75"/>
+        <location filename="../RLCsteadystate.py" line="131"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
@@ -1356,12 +1356,12 @@ shows the actual frequency set.
         <translation>PV1 పివి 1 ముగుస్తోంది</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="91"/>
+        <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
         <translation>ప్రారంభిస్తోంది</translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="102"/>
+        <location filename="../soundFreqResp.py" line="72"/>
         <source>Ending</source>
         <translation>ఆపబడుతోంది</translation>
     </message>
@@ -1851,408 +1851,538 @@ p, li { white-space: pre-wrap; }
         <translation>స్త్రోబోస్కోప్</translation>
     </message>
     <message>
-        <location filename="../layouts/advancedLogger.ui" line="14"/>
-        <source>MainWindow</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="28"/>
-        <source>None</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="33"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="38"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="43"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="48"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="53"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="58"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="63"/>
-        <source>8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="68"/>
-        <source>9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="73"/>
-        <source>10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="81"/>
-        <source>RECORD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="91"/>
-        <source>Calculate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="111"/>
-        <source>Averaging Samples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="118"/>
-        <source>Number of samples considered for moving average in results calculation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="125"/>
-        <source>Polynomial Degree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="132"/>
-        <source>Degree of the polynomial used for smoothing the data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="204"/>
-        <source>Spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="42"/>
-        <source>CHOOSE Y PARAMETER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="49"/>
-        <source>Click the Button above to select X axis parameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="56"/>
-        <source>Click the Button above to select Y axis parameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="69"/>
-        <source>CHOOSE X PARAMETER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="107"/>
-        <source>Datapoints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="154"/>
-        <source> milliSeconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="127"/>
-        <source>LOG DATA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="134"/>
-        <source>Time Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="167"/>
-        <source>Settling Time b/w X and Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="36"/>
-        <source>Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="37"/>
-        <source>School Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="38"/>
-        <source>Electronics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="39"/>
-        <source>Electrical</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="40"/>
-        <source>Sound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="41"/>
-        <source>Mechanics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="42"/>
-        <source>Other Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="43"/>
-        <source>I2C Modules</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="44"/>
-        <source>PythonCode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="49"/>
-        <source>Reconnect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="50"/>
-        <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="51"/>
-        <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="52"/>
-        <source>Choose Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="53"/>
-        <source>Screenshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="54"/>
-        <source>Whole Window Alt-s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="55"/>
-        <source>Graph Only Alt-p</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="56"/>
-        <source>Credits</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="57"/>
-        <source>Experiment List</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="93"/>
-        <source>Halfwave Rectifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="168"/>
-        <source>Fullwave Rectifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="95"/>
-        <source>Diode Clipping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="96"/>
-        <source>Diode Clamping</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="97"/>
-        <source>IC555 Multivibrator</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="98"/>
-        <source>Transistor Amplifier (CE)</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="99"/>
-        <source>Inverting Amplifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="100"/>
-        <source>Non-Inverting Amplifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="101"/>
-        <source>Summing Amplifier</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="102"/>
-        <source>Logic Gates</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="103"/>
-        <source>Clock Divider Circuit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../experiment-list.py" line="107"/>
         <source>Diode Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>డయోడ్ లక్షణాలు</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="108"/>
         <source>NPN Output Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>NPN అవుట్పుట్ లక్షణాలు </translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="109"/>
         <source>PNP Output Characteristics</source>
-        <translation type="unfinished"></translation>
+        <translation>PNP అవుట్పుట్ లక్షణాలు </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="93"/>
+        <source>Halfwave Rectifier</source>
+        <translation>హాఫ్ వేవ్ రెక్టిఫైయర్ </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="168"/>
+        <source>Fullwave Rectifier</source>
+        <translation>ఫుల్‌వేవ్ రెక్టిఫైయర్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="95"/>
+        <source>Diode Clipping</source>
+        <translation>డయోడ్ క్లిప్పింగ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="96"/>
+        <source>Diode Clamping</source>
+        <translation>డయోడ్ క్లేమ్పింగ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="97"/>
+        <source>IC555 Multivibrator</source>
+        <translation>IC555 మల్టీవైబ్రేటర్ </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="98"/>
+        <source>Transistor Amplifier (CE)</source>
+        <translation>ట్రాన్సిస్టర్ యాంప్లిఫైయర్  (CE)</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="99"/>
+        <source>Inverting Amplifier</source>
+        <translation>ఇన్వెర్టింగ్ యాంప్లిఫైయర్ </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="100"/>
+        <source>Non-Inverting Amplifier</source>
+        <translation>నాన్-ఇన్వెర్టింగ్ యాంప్లిఫైయర్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="101"/>
+        <source>Summing Amplifier</source>
+        <translation>సమ్మింగ్ యాంప్లిఫైయర్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="102"/>
+        <source>Logic Gates</source>
+        <translation>లాజిక్ గేట్స్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="103"/>
+        <source>Clock Divider Circuit</source>
+        <translation>క్లాక్ డివైడర్ సర్క్యూట్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="115"/>
         <source>Plot I-V Curve</source>
-        <translation type="unfinished"></translation>
+        <translation>I-V కర్వ్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="116"/>
         <source>XY Plotting</source>
-        <translation type="unfinished"></translation>
+        <translation>XY-గ్రాఫ్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="117"/>
         <source>RLC Steady state response</source>
-        <translation type="unfinished"></translation>
+        <translation>RLC స్టడీ స్టేట్ రెస్పాన్స్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="118"/>
         <source>RC Transient response</source>
-        <translation type="unfinished"></translation>
+        <translation>RC ట్రాన్సియెంట్ రెస్పాన్స్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="119"/>
         <source>RL Transient response</source>
-        <translation type="unfinished"></translation>
+        <translation>RL ట్రాన్సియెంట్ రెస్పాన్స్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="120"/>
         <source>RLC transient response</source>
-        <translation type="unfinished"></translation>
+        <translation>RLC ట్రాన్సియెంట్ రెస్పాన్స్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="121"/>
         <source>Frequency Response of Filter Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫిల్టర్ సర్క్యూట్ యొక్క ఫ్రీక్వెన్సీ స్పందన</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="122"/>
         <source>Electromagnetic Induction</source>
-        <translation type="unfinished"></translation>
+        <translation>ఎలక్ట్రోమాగ్నెటిక్ ఇండక్షన్ </translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="126"/>
         <source>Frequency Response of Piezo Buzzer</source>
-        <translation type="unfinished"></translation>
+        <translation>పిజో బజర్ యొక్క ఫ్రీక్వెన్సీ స్పందన</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="127"/>
         <source>Velocity of Sound</source>
-        <translation type="unfinished"></translation>
+        <translation>ధ్వని వేగం</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="128"/>
         <source>Sound beats</source>
-        <translation type="unfinished"></translation>
+        <translation>సౌండ్ బీట్స్ </translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="132"/>
         <source>Rod Pendulum with Light barrier</source>
-        <translation type="unfinished"></translation>
+        <translation>లైట్ అవరోధం రాడ్ పెండ్యులం</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="133"/>
-        <source>Pendulum Waveform</source>
-        <translation type="unfinished"></translation>
+        <location filename="../main.py" line="125"/>
+        <source>????? Waveform</source>
+        <translation type="obsolete">లోలకం Waveform</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="134"/>
         <source>Driven Pendulum resonance</source>
-        <translation type="unfinished"></translation>
+        <translation>నడిచే లోలకం ప్రతిధ్వని </translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="135"/>
         <source>Distance by HY-SRF04 Echo module</source>
-        <translation type="unfinished"></translation>
+        <translation>HY-SRF04 ఎకో మాడ్యూల్ ద్వారా దూరం</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="136"/>
         <source>Gravity by Time of Flight</source>
-        <translation type="unfinished"></translation>
+        <translation>ఫ్లైట్ సమయం ద్వారా గ్రావిటీ</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="140"/>
         <source>Temperatue, PT100 Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>ఉష్ణోగ్రత, PT100 సెన్సార్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="141"/>
         <source>Data Logger</source>
-        <translation type="unfinished">డేటా లాగర్</translation>
+        <translation>డేటా లాగర్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="142"/>
         <source>Advanced Data Logger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="143"/>
-        <source>Visual Programming Editor</source>
-        <translation type="unfinished"></translation>
+        <translation>అధునాతన డేటా లాగర్</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="147"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">మాగ్నెటిక్ హిస్టెరిసిస్(MPU925x సెన్సార్)</translation>
     </message>
     <message>
         <location filename="../experiment-list.py" line="148"/>
         <source>Luminosity(TSL2561) Logger</source>
+        <translation>లుమినోసిటీ (TSL2561)లాగర్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="150"/>
+        <source>MPU-6050 Acccn, Velocity and Temp</source>
+        <translation>MPU-6050  త్వరణం, వెలాసిటీ మరియు ఉష్ణోగ్రత</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="151"/>
+        <source>General Purpose I2C Sensors</source>
+        <translation>జనరల్ పర్పస్ I2C సెన్సార్లు </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="155"/>
+        <source>Read Inputs</source>
+        <translation>ఇన్‌పుట్‌లను చదవండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="156"/>
+        <source>Set DC Voltages</source>
+        <translation>DC వోల్టేజ్‌లను సెట్ చేయండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="157"/>
+        <source>Capture Single Input</source>
+        <translation>ఒకే ఇన్‌పుట్‌ను సంగ్రహించండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="158"/>
+        <source>Capture Two Inputs</source>
+        <translation>రెండు ఇన్‌పుట్‌లను సంగ్రహించండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="159"/>
+        <source>Capture Four Inputs</source>
+        <translation>రెండు ఇన్‌పుట్‌లను సంగ్రహించండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="160"/>
+        <source>Triangular Waveform</source>
+        <translation>ట్రయాన్గ్యులర్ Waveform</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="161"/>
+        <source>Arbitrary Waveform</source>
+        <translation>ఆర్బిట్రేరీ Waveform</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="162"/>
+        <source>Waveform Table</source>
+        <translation>Waveform టేబుల్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="163"/>
+        <source>RC Transient</source>
+        <translation>RC ట్రాన్సియెంట్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="164"/>
+        <source>RL Transient</source>
+        <translation>RL ట్రాన్సియెంట్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="165"/>
+        <source>RC Integration</source>
+        <translation>RC అనుసంధానం</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="166"/>
+        <source>Clipping with Diode</source>
+        <translation>డయోడ్‌తో క్లిప్పింగ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="167"/>
+        <source>Clamping with Diode</source>
+        <translation>డయోడ్‌తో క్లేమ్పింగ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="169"/>
+        <source>NPN Ib vs IC plot</source>
+        <translation>NPN Ib-IC గ్రాఫ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="170"/>
+        <source>Fourier Transform</source>
+        <translation>ఫోరియర్ ట్రాన్స్ఫార్మ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="171"/>
+        <source>Rod Pendulum</source>
+        <translation>రాడ్ లోలకం</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="441"/>
+        <source>Enable PopUp Help Window</source>
+        <translation>పాపప్ సహాయ విండోను ప్రారంభించండి</translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load scope</source>
+        <translation type="obsolete">పరిధిని లోడ్ చేయడంలో విఫలమైంది</translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load %s</source>
+        <translation type="obsolete">%s లోడ్ చేయడంలో విఫలమైంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="46"/>
+        <source>No immediate application</source>
+        <translation type="obsolete">ఎటువంటి తక్షణ అప్లికేషన్ లేదు</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="47"/>
+        <source>Please restart the application to lighten the screen&apos;s background</source>
+        <translation type="obsolete">స్క్రీన్ ని కొంచెం కాంతి వంతము (తెలుపు ఛాయా) చేయటానికి అప్లికేషన్ ను మరి యొక సారీ మొదలు పెట్టుము.</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="48"/>
+        <source>Please restart the application to darken the screen&apos;s background.</source>
+        <translation type="obsolete">స్క్రీన్ బాక్గ్రౌండ్ ను కొంచెం కాంతి విహీనము (నలుపు ఛాయా) చేయటానికి అప్లికేషన్ ను మరి యొక సారీ మొదలు పెట్టుము.</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="36"/>
+        <source>Device</source>
+        <translation>పరికరం</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="49"/>
+        <source>Reconnect</source>
+        <translation>రీకనెక్ట్ </translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="39"/>
+        <source>LightBackGround next time</source>
+        <translation type="obsolete">లైట్ బ్యాక్‌గ్రౌండ్ తదుపరిసారి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="40"/>
+        <source>DarkBackGround next time</source>
+        <translation type="obsolete">డార్క్ బ్యాక్‌గ్రౌండ్ తదుపరిసారి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="52"/>
+        <source>Choose Language</source>
+        <translation>భాషను ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="37"/>
+        <source>School Expts</source>
+        <translation>పాఠశాల ప్రయోగాలు</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="38"/>
+        <source>Electronics</source>
+        <translation>ఎలక్ట్రానిక్స్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="39"/>
+        <source>Electrical</source>
+        <translation>ఎలక్ట్రికల్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="40"/>
+        <source>Sound</source>
+        <translation>ధ్వని</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="41"/>
+        <source>Mechanics</source>
+        <translation>మెకానిక్స్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="42"/>
+        <source>Other Expts</source>
+        <translation>ఇతర ప్రయోగాలు</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="43"/>
+        <source>I2C Modules</source>
+        <translation>I2C మాడ్యూల్స్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="44"/>
+        <source>PythonCode</source>
+        <translation>పైథాన్ కోడ్</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="14"/>
+        <source>MainWindow</source>
+        <translation>MainWindow</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="42"/>
+        <source>CHOOSE Y PARAMETER</source>
+        <translation>Y పారామిటర్ ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="49"/>
+        <source>Click the Button above to select X axis parameter</source>
+        <translation>X-అక్షం పరామితిని (పారామిటర్ ని) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="56"/>
+        <source>Click the Button above to select Y axis parameter</source>
+        <translation>Y-అక్షం పరామితిని (పారామిటర్ ని) ఎంచుకోవడానికి పై బటన్ క్లిక్ చేయండి</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="69"/>
+        <source>CHOOSE X PARAMETER</source>
+        <translation>X-పారామిటర్ ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="107"/>
+        <source>Datapoints</source>
+        <translation>డేటా పాయింట్లు</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="154"/>
+        <source> milliSeconds</source>
+        <translation> మిల్లీసెకన్లు </translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="127"/>
+        <source>LOG DATA</source>
+        <translation>లాగ్ డేటా</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="134"/>
+        <source>Time Interval</source>
+        <translation>టైమ్ ఇంటర్వెల్</translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="167"/>
+        <source>Settling Time b/w X and Y</source>
+        <translation>టైమ్ ని సెట్ చేయడం b / w X మరియు Y.</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="28"/>
+        <source>None</source>
+        <translation>-</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="33"/>
+        <source>2</source>
+        <translation>2</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="38"/>
+        <source>3</source>
+        <translation>3</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="43"/>
+        <source>4</source>
+        <translation>4</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="48"/>
+        <source>5</source>
+        <translation>5</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="53"/>
+        <source>6</source>
+        <translation>6</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="58"/>
+        <source>7</source>
+        <translation>7</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="63"/>
+        <source>8</source>
+        <translation>8</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="68"/>
+        <source>9</source>
+        <translation>9</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="73"/>
+        <source>10</source>
+        <translation>10</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="81"/>
+        <source>RECORD</source>
+        <translation>రికార్డ్</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="91"/>
+        <source>Calculate</source>
+        <translation>లెక్కించు</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="111"/>
+        <source>Averaging Samples</source>
+        <translation>సగటు నమూనాలు</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="118"/>
+        <source>Number of samples considered for moving average in results calculation</source>
+        <translation>ఫలితాల గణనలో సగటును తరలించడానికి పరిగణించబడిన నమూనాల సంఖ్య</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="125"/>
+        <source>Polynomial Degree</source>
+        <translation>పోలినోమియల్ డిగ్రీ</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="132"/>
+        <source>Degree of the polynomial used for smoothing the data</source>
+        <translation>డేటాను సున్నితంగా చేయడానికి ఉపయోగించే బహుపది (polynomial) డిగ్రీ</translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="204"/>
+        <source>Spline</source>
+        <translation>సామాగ్రి </translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="50"/>
+        <source>LightBackGround</source>
+        <translation>లైట్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="51"/>
+        <source>DarkBackGround</source>
+        <translation>డార్క్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="53"/>
+        <source>Screenshot</source>
+        <translation>స్క్రీన్ షాట్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="54"/>
+        <source>Whole Window Alt-s</source>
+        <translation>మొత్తం విండో Alt-s</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="55"/>
+        <source>Graph Only Alt-p</source>
+        <translation>గ్రాఫ్ మాత్రమే Alt-p</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="56"/>
+        <source>Credits</source>
+        <translation>క్రెడిట్స్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="133"/>
+        <source>Pendulum Waveform</source>
+        <translation type="unfinished">లోలకం వేవ్‌ఫ్రామ్</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="57"/>
+        <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2261,258 +2391,331 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="150"/>
-        <source>MPU-6050 Acccn, Velocity and Temp</source>
+        <location filename="../experiment-list.py" line="143"/>
+        <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="151"/>
-        <source>General Purpose I2C Sensors</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="155"/>
-        <source>Read Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="156"/>
-        <source>Set DC Voltages</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="157"/>
-        <source>Capture Single Input</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="158"/>
-        <source>Capture Two Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="159"/>
-        <source>Capture Four Inputs</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="160"/>
-        <source>Triangular Waveform</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="161"/>
-        <source>Arbitrary Waveform</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="162"/>
-        <source>Waveform Table</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="163"/>
-        <source>RC Transient</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="164"/>
-        <source>RL Transient</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="165"/>
-        <source>RC Integration</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="166"/>
-        <source>Clipping with Diode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="167"/>
-        <source>Clamping with Diode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="169"/>
-        <source>NPN Ib vs IC plot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="170"/>
-        <source>Fourier Transform</source>
-        <translation type="unfinished">ఫోరియర్ ట్రాన్స్ఫార్మ్</translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="171"/>
-        <source>Rod Pendulum</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="425"/>
-        <source>Enable PopUp Help Window</source>
+        <location filename="../main.py" line="253"/>
+        <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>editorHandler</name>
     <message>
-        <location filename="../main.py" line="957"/>
+        <location filename="../main.py" line="494"/>
+        <source>Failed to load scope</source>
+        <translation type="obsolete">పరిధిని లోడ్ చేయడంలో విఫలమైంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="528"/>
+        <source>Failed to load %s</source>
+        <translation type="obsolete">%s లోడ్ చేయడంలో విఫలమైంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="478"/>
+        <source>No immediate application</source>
+        <translation type="obsolete">తక్షణ దరఖాస్తు లేదు</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="466"/>
+        <source>Please restart the application to lighten the screen&apos;s background</source>
+        <translation type="obsolete">లైట్  స్క్రీన్ బ్యాక్ గ్రౌండ్ గా మార్చడానికి దయచేసి మరల ప్రారంభిచనుంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="478"/>
+        <source>Please restart the application to darken the screen&apos;s background.</source>
+        <translation type="obsolete">డార్క్  స్క్రీన్ బ్యాక్ గ్రౌండ్ గా మార్చడానికి దయచేసి మరల ప్రారంభిచనుంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="575"/>
+        <source>Device</source>
+        <translation type="obsolete">పరికరం</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="576"/>
+        <source>Reconnect</source>
+        <translation type="obsolete">రీకనెక్ట్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="492"/>
+        <source>LightBackGround next time</source>
+        <translation type="obsolete">లైట్ బ్యాక్‌గ్రౌండ్ తదుపరిసారి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="493"/>
+        <source>DarkBackGround next time</source>
+        <translation type="obsolete">డార్క్ బ్యాక్‌గ్రౌండ్ తదుపరిసారి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="579"/>
+        <source>Choose Language</source>
+        <translation type="obsolete">భాషను ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="612"/>
+        <source>School Expts</source>
+        <translation type="obsolete">పాఠశాల ప్రయోగాలు</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="616"/>
+        <source>Electronics</source>
+        <translation type="obsolete">ఎలక్ట్రానిక్స్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="623"/>
+        <source>Electrical</source>
+        <translation type="obsolete">ఎలక్ట్రికల్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="627"/>
+        <source>Sound</source>
+        <translation type="obsolete">ధ్వని</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="631"/>
+        <source>Mechanics</source>
+        <translation type="obsolete">మెకానిక్స్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="635"/>
+        <source>Other Expts</source>
+        <translation type="obsolete">ఇతర ప్రయోగాలు</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="639"/>
+        <source>I2C Modules</source>
+        <translation type="obsolete">I2C మాడ్యూల్స్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="643"/>
+        <source>PythonCode</source>
+        <translation type="obsolete">పైథాన్ కోడ్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="949"/>
         <source>Oscilloscope</source>
         <translation type="obsolete">ఒస్సిల్లోస్కోప్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="605"/>
+        <source>Credits</source>
+        <translation type="obsolete">క్రెడిట్స్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="577"/>
+        <source>LightBackGround</source>
+        <translation type="obsolete">లైట్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="578"/>
+        <source>DarkBackGround</source>
+        <translation type="obsolete">డార్క్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="602"/>
+        <source>Screenshot</source>
+        <translation type="obsolete">స్క్రీన్ షాట్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="603"/>
+        <source>Whole Window Alt-s</source>
+        <translation type="obsolete">మొత్తం విండో Alt-s</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="604"/>
+        <source>Graph Only Alt-p</source>
+        <translation type="obsolete">గ్రాఫ్ మాత్రమే Alt-p</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="865"/>
+        <source>Missing Plot</source>
+        <translation type="obsolete">ప్లాట్ లేదు</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="865"/>
+        <source>Unable to locate a plot. Please try to right click and export</source>
+        <translation type="obsolete">దయచేసి కుడి క్లిక్ చేసి ఎగుమతి చేయడానికి ప్రయత్నించండి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="899"/>
+        <source>Enter Width(px). Height will be autoset</source>
+        <translation type="obsolete">వెడల్పు (px) నమోదు చేయండి.ఎత్తు ఆటోసెట్ అవుతుంది</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="598"/>
+        <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
+        <translation type="obsolete">భాష = {}: పూర్తయింది = {}, పూర్తి చేయడానికి = {}, అనువదించని = {}</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="610"/>
+        <source>Quit</source>
+        <translation type="obsolete">క్విట్</translation>
     </message>
 </context>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="317"/>
+        <location filename="../main.py" line="318"/>
         <source>Help: %s</source>
-        <translation type="unfinished"></translation>
+        <translation>సహాయం: %s</translation>
     </message>
 </context>
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="778"/>
+        <location filename="../main.py" line="799"/>
         <source>Credits</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">క్రెడిట్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="659"/>
+        <location filename="../main.py" line="680"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పరిధిని లోడ్ చేయడంలో విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../main.py" line="701"/>
+        <location filename="../main.py" line="722"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">%s లోడ్ చేయడంలో విఫలమైంది</translation>
     </message>
     <message>
-        <location filename="../main.py" line="748"/>
+        <location filename="../main.py" line="769"/>
         <source>Device</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పరికరం</translation>
     </message>
     <message>
-        <location filename="../main.py" line="749"/>
+        <location filename="../main.py" line="770"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="750"/>
-        <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="751"/>
-        <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.py" line="752"/>
-        <source>Choose Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../main.py" line="771"/>
+        <source>LightBackGround</source>
+        <translation type="unfinished">లైట్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="772"/>
+        <source>DarkBackGround</source>
+        <translation type="unfinished">డార్క్ బ్యాక్‌గ్రౌండ్</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="773"/>
+        <source>Choose Language</source>
+        <translation type="unfinished">భాషను ఎంచుకోండి</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="792"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">భాష = {}: పూర్తయింది = {}, పూర్తి చేయడానికి = {}, అనువదించని = {}</translation>
     </message>
     <message>
-        <location filename="../main.py" line="775"/>
+        <location filename="../main.py" line="796"/>
         <source>Screenshot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">స్క్రీన్ షాట్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="776"/>
+        <location filename="../main.py" line="797"/>
         <source>Whole Window Alt-s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">మొత్తం విండో Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="777"/>
+        <location filename="../main.py" line="798"/>
         <source>Graph Only Alt-p</source>
+        <translation type="unfinished">గ్రాఫ్ మాత్రమే Alt-p</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="800"/>
+        <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="779"/>
+        <location filename="../main.py" line="801"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="783"/>
+        <location filename="../main.py" line="805"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">క్విట్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="785"/>
+        <location filename="../main.py" line="807"/>
         <source>School Expts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పాఠశాల ప్రయోగాలు</translation>
     </message>
     <message>
-        <location filename="../main.py" line="789"/>
+        <location filename="../main.py" line="811"/>
         <source>Electronics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఎలక్ట్రానిక్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="796"/>
+        <location filename="../main.py" line="818"/>
         <source>Electrical</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఎలక్ట్రికల్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="800"/>
+        <location filename="../main.py" line="822"/>
         <source>Sound</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ధ్వని</translation>
     </message>
     <message>
-        <location filename="../main.py" line="804"/>
+        <location filename="../main.py" line="826"/>
         <source>Mechanics</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">మెకానిక్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="808"/>
+        <location filename="../main.py" line="830"/>
         <source>Other Expts</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ఇతర ప్రయోగాలు</translation>
     </message>
     <message>
-        <location filename="../main.py" line="812"/>
+        <location filename="../main.py" line="834"/>
         <source>I2C Modules</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">I2C మాడ్యూల్స్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="816"/>
+        <location filename="../main.py" line="838"/>
         <source>PythonCode</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">పైథాన్ కోడ్</translation>
     </message>
     <message>
-        <location filename="../main.py" line="952"/>
+        <location filename="../main.py" line="974"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="959"/>
+        <location filename="../main.py" line="981"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1038"/>
+        <location filename="../main.py" line="1060"/>
         <source>Missing Plot</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">ప్లాట్ లేదు</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1038"/>
+        <location filename="../main.py" line="1060"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">దయచేసి కుడి క్లిక్ చేసి ఎగుమతి చేయడానికి ప్రయత్నించండి</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1072"/>
+        <location filename="../main.py" line="1094"/>
         <source>Enter Width(px). Height will be autoset</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">వెడల్పు (px) నమోదు చేయండి.ఎత్తు ఆటోసెట్ అవుతుంది</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1122"/>
+        <location filename="../main.py" line="1144"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">ఒస్సిల్లోస్కోప్</translation>
+    </message>
+</context>
+<context>
+    <name>simWin</name>
+    <message>
+        <location filename="../main.py" line="332"/>
+        <source>Circuit Simulator</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2520,6 +2723,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../blockcoding.py" line="98"/>
         <source>Block Coding: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../circuitjs.py" line="97"/>
+        <source>Simulator: %s</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -256,7 +256,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="169"/>
+        <location filename="../RLCsteadystate.py" line="410"/>
         <source> Hz</source>
         <translation type="unfinished"></translation>
     </message>
@@ -336,7 +336,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="60"/>
+        <location filename="../RLCsteadystate.py" line="85"/>
         <source>Voltage</source>
         <translation type="unfinished"></translation>
     </message>
@@ -361,7 +361,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="120"/>
+        <location filename="../RLCsteadystate.py" line="202"/>
         <source>messages</source>
         <translation type="unfinished"></translation>
     </message>
@@ -381,7 +381,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="54"/>
+        <location filename="../soundFreqResp.py" line="48"/>
         <source>Frequency (Hz)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -416,7 +416,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="280"/>
+        <location filename="../soundFreqResp.py" line="223"/>
         <source>Invalid Frequency limits</source>
         <translation type="unfinished"></translation>
     </message>
@@ -436,7 +436,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="58"/>
+        <location filename="../RLCsteadystate.py" line="83"/>
         <source>Time (mS)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -586,7 +586,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../MPU6050.py" line="212"/>
+        <location filename="../soundFreqResp.py" line="282"/>
         <source>No Traces available for saving</source>
         <translation type="unfinished"></translation>
     </message>
@@ -780,7 +780,7 @@ For Driven Pendulum Expt.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="88"/>
+        <location filename="../RLCsteadystate.py" line="123"/>
         <source>Timebase</source>
         <translation type="unfinished"></translation>
     </message>
@@ -840,12 +840,12 @@ For Driven Pendulum Expt.</translation>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="207"/>
+        <location filename="../RLCsteadystate.py" line="410"/>
         <source>AWG set to </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../soundVelocity.py" line="75"/>
+        <location filename="../RLCsteadystate.py" line="131"/>
         <source>WG</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1351,12 +1351,12 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="91"/>
+        <location filename="../soundFreqResp.py" line="61"/>
         <source>Starting</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../filterCircuit.py" line="102"/>
+        <location filename="../soundFreqResp.py" line="72"/>
         <source>Ending</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1841,228 +1841,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/advancedLogger.ui" line="14"/>
-        <source>MainWindow</source>
+        <location filename="../experiment-list.py" line="107"/>
+        <source>Diode Characteristics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/newtonslaws.ui" line="28"/>
-        <source>None</source>
+        <location filename="../experiment-list.py" line="108"/>
+        <source>NPN Output Characteristics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/newtonslaws.ui" line="33"/>
-        <source>2</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="38"/>
-        <source>3</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="43"/>
-        <source>4</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="48"/>
-        <source>5</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="53"/>
-        <source>6</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="58"/>
-        <source>7</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="63"/>
-        <source>8</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="68"/>
-        <source>9</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="73"/>
-        <source>10</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="81"/>
-        <source>RECORD</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="91"/>
-        <source>Calculate</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="111"/>
-        <source>Averaging Samples</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="118"/>
-        <source>Number of samples considered for moving average in results calculation</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="125"/>
-        <source>Polynomial Degree</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="132"/>
-        <source>Degree of the polynomial used for smoothing the data</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/newtonslaws.ui" line="204"/>
-        <source>Spline</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="42"/>
-        <source>CHOOSE Y PARAMETER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="49"/>
-        <source>Click the Button above to select X axis parameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="56"/>
-        <source>Click the Button above to select Y axis parameter</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="69"/>
-        <source>CHOOSE X PARAMETER</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="107"/>
-        <source>Datapoints</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="154"/>
-        <source> milliSeconds</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="127"/>
-        <source>LOG DATA</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="134"/>
-        <source>Time Interval</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../layouts/advancedLogger.ui" line="167"/>
-        <source>Settling Time b/w X and Y</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="36"/>
-        <source>Device</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="37"/>
-        <source>School Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="38"/>
-        <source>Electronics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="39"/>
-        <source>Electrical</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="40"/>
-        <source>Sound</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="41"/>
-        <source>Mechanics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="42"/>
-        <source>Other Expts</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="43"/>
-        <source>I2C Modules</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="44"/>
-        <source>PythonCode</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="49"/>
-        <source>Reconnect</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="50"/>
-        <source>LightBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="51"/>
-        <source>DarkBackGround</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="52"/>
-        <source>Choose Language</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="53"/>
-        <source>Screenshot</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="54"/>
-        <source>Whole Window Alt-s</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="55"/>
-        <source>Graph Only Alt-p</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="56"/>
-        <source>Credits</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="57"/>
-        <source>Experiment List</source>
+        <location filename="../experiment-list.py" line="109"/>
+        <source>PNP Output Characteristics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2118,21 +1908,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../experiment-list.py" line="103"/>
         <source>Clock Divider Circuit</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="107"/>
-        <source>Diode Characteristics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="108"/>
-        <source>NPN Output Characteristics</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="109"/>
-        <source>PNP Output Characteristics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2231,11 +2006,6 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="143"/>
-        <source>Visual Programming Editor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../experiment-list.py" line="147"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"></translation>
@@ -2243,11 +2013,6 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../experiment-list.py" line="148"/>
         <source>Luminosity(TSL2561) Logger</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../experiment-list.py" line="149"/>
-        <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2341,15 +2106,278 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="425"/>
+        <location filename="../main.py" line="441"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load scope</source>
+        <translation type="obsolete">Failed to load scope</translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <source>Failed to load %s</source>
+        <translation type="obsolete">Failed to load %s</translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="36"/>
+        <source>Device</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="49"/>
+        <source>Reconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="50"/>
+        <source>LightBackGround</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="51"/>
+        <source>DarkBackGround</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="52"/>
+        <source>Choose Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="37"/>
+        <source>School Expts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="38"/>
+        <source>Electronics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="39"/>
+        <source>Electrical</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="40"/>
+        <source>Sound</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="41"/>
+        <source>Mechanics</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="42"/>
+        <source>Other Expts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="43"/>
+        <source>I2C Modules</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="44"/>
+        <source>PythonCode</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="14"/>
+        <source>MainWindow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="42"/>
+        <source>CHOOSE Y PARAMETER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="49"/>
+        <source>Click the Button above to select X axis parameter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="56"/>
+        <source>Click the Button above to select Y axis parameter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="69"/>
+        <source>CHOOSE X PARAMETER</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="107"/>
+        <source>Datapoints</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="154"/>
+        <source> milliSeconds</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="127"/>
+        <source>LOG DATA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="134"/>
+        <source>Time Interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/advancedLogger.ui" line="167"/>
+        <source>Settling Time b/w X and Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="28"/>
+        <source>None</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="33"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="38"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="43"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="48"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="53"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="58"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="63"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="68"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="73"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="81"/>
+        <source>RECORD</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="91"/>
+        <source>Calculate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="111"/>
+        <source>Averaging Samples</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="118"/>
+        <source>Number of samples considered for moving average in results calculation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="125"/>
+        <source>Polynomial Degree</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="132"/>
+        <source>Degree of the polynomial used for smoothing the data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/newtonslaws.ui" line="204"/>
+        <source>Spline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="53"/>
+        <source>Screenshot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="54"/>
+        <source>Whole Window Alt-s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="55"/>
+        <source>Graph Only Alt-p</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="56"/>
+        <source>Credits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="57"/>
+        <source>Experiment List</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="149"/>
+        <source>Temperature(MAX6675) Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../experiment-list.py" line="143"/>
+        <source>Visual Programming Editor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="253"/>
+        <source>Circuit Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>editorHandler</name>
+    <message>
+        <location filename="../main.py" line="494"/>
+        <source>Failed to load scope</source>
+        <translation type="obsolete">Failed to load scope</translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="528"/>
+        <source>Failed to load %s</source>
+        <translation type="obsolete">Failed to load %s</translation>
     </message>
 </context>
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="317"/>
+        <location filename="../main.py" line="318"/>
         <source>Help: %s</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2357,143 +2385,156 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="778"/>
+        <location filename="../main.py" line="799"/>
         <source>Credits</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="659"/>
+        <location filename="../main.py" line="680"/>
         <source>Failed to load scope</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="701"/>
+        <location filename="../main.py" line="722"/>
         <source>Failed to load %s</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="748"/>
+        <location filename="../main.py" line="769"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="749"/>
+        <location filename="../main.py" line="770"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="750"/>
+        <location filename="../main.py" line="771"/>
         <source>LightBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="751"/>
+        <location filename="../main.py" line="772"/>
         <source>DarkBackGround</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="752"/>
+        <location filename="../main.py" line="773"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="792"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="775"/>
+        <location filename="../main.py" line="796"/>
         <source>Screenshot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="776"/>
+        <location filename="../main.py" line="797"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="777"/>
+        <location filename="../main.py" line="798"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="779"/>
+        <location filename="../main.py" line="800"/>
+        <source>Circuit Simulator</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="801"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="783"/>
+        <location filename="../main.py" line="805"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="785"/>
+        <location filename="../main.py" line="807"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="789"/>
+        <location filename="../main.py" line="811"/>
         <source>Electronics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="796"/>
+        <location filename="../main.py" line="818"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="800"/>
+        <location filename="../main.py" line="822"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="804"/>
+        <location filename="../main.py" line="826"/>
         <source>Mechanics</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="808"/>
+        <location filename="../main.py" line="830"/>
         <source>Other Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="812"/>
+        <location filename="../main.py" line="834"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="816"/>
+        <location filename="../main.py" line="838"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="952"/>
+        <location filename="../main.py" line="974"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="959"/>
+        <location filename="../main.py" line="981"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1038"/>
+        <location filename="../main.py" line="1060"/>
         <source>Missing Plot</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1038"/>
+        <location filename="../main.py" line="1060"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1072"/>
+        <location filename="../main.py" line="1094"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1122"/>
+        <location filename="../main.py" line="1144"/>
         <source>Oscilloscope</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>simWin</name>
+    <message>
+        <location filename="../main.py" line="332"/>
+        <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2502,6 +2543,11 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../blockcoding.py" line="98"/>
         <source>Block Coding: %s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../circuitjs.py" line="97"/>
+        <source>Simulator: %s</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

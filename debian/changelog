@@ -1,3 +1,9 @@
+expeyes (5.0+pyqt5-3) unstable; urgency=medium
+
+  * added simulator for testing
+
+ -- Jithin BP <jithinbp@gmail.com>  Tue, 22 Oct 2022 19:42:32 +0530
+
 expeyes (5.0+pyqt5-2) unstable; urgency=medium
 
   * added piano block to codeblocks
