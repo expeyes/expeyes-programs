@@ -135,7 +135,7 @@ if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
-	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs
+	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs, multiplexedlogger
 
 """
 Translations in advance for the menus:
@@ -250,7 +250,8 @@ otherExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')],
-[QT_TRANSLATE_NOOP('MainWindow','Circuit Simulator'), ('7.5','circuitjs')]
+[QT_TRANSLATE_NOOP('MainWindow','Circuit Simulator'), ('7.5','circuitjs')],
+[QT_TRANSLATE_NOOP('MainWindow','Multiplexed Logger'), ('7.6','multiplexedlogger')]
 ]
 
 modulesI2C = [ 

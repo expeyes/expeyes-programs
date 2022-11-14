@@ -717,13 +717,13 @@ class LOGGER:
 
 	def VL53L0X_init(self):
 		val1 = self.I2CReadBulk(self.VL53L0X_address, self.VL53L0X_REG_IDENTIFICATION_REVISION_ID,1)[0]
-		#print ("Revision ID: " + hex(val1))
+		print ("Revision ID: " + hex(val1))
 		val1 = self.I2CReadBulk(self.VL53L0X_address, self.VL53L0X_REG_IDENTIFICATION_MODEL_ID,1)[0]
-		#print ("Device ID: " + hex(val1))
+		print ("Device ID: " + hex(val1))
 		val1 = self.I2CReadBulk(self.VL53L0X_address, self.VL53L0X_REG_PRE_RANGE_CONFIG_VCSEL_PERIOD,1)[0]
-		#print ("PRE_RANGE_CONFIG_VCSEL_PERIOD=" + hex(val1) + " decode: " + str(self.VL53L0X_decode_vcsel_period(val1)))
+		print ("PRE_RANGE_CONFIG_VCSEL_PERIOD=" + hex(val1) + " decode: " + str(self.VL53L0X_decode_vcsel_period(val1)))
 		val1 = self.I2CReadBulk(self.VL53L0X_address, self.VL53L0X_REG_FINAL_RANGE_CONFIG_VCSEL_PERIOD,1)[0]
-		#print ("FINAL_RANGE_CONFIG_VCSEL_PERIOD=" + hex(val1) + " decode: " + str(self.VL53L0X_decode_vcsel_period(val1)))
+		print ("FINAL_RANGE_CONFIG_VCSEL_PERIOD=" + hex(val1) + " decode: " + str(self.VL53L0X_decode_vcsel_period(val1)))
 
 	def VL53L0X_all(self):
 		val1 = self.I2CWriteBulk(self.VL53L0X_address, [self.VL53L0X_REG_SYSRANGE_START, 0x01])

@@ -938,7 +938,7 @@ For Driven Pendulum Expt.</source>
         <translation>சில தவறான உள்ளீடுகள்</translation>
     </message>
     <message>
-        <location filename="../RLCtransient.py" line="90"/>
+        <location filename="../RLtransient.py" line="97"/>
         <source>Rext =</source>
         <translation>Rext =</translation>
     </message>
@@ -1470,7 +1470,7 @@ shows the actual frequency set.
         <translation>1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1297"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="498"/>
         <source>A2</source>
         <translation>A2</translation>
     </message>
@@ -1535,7 +1535,7 @@ shows the actual frequency set.
         <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; சைன் சிக்கலில் இருந்து &lt;/p&gt;&lt;p&gt;sinusoidal signal லீஸ்ட் ஸ்கொயர் பிட்டங் மூலம் எடுக்கப்பட்டது.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;சைன் அலை உள்ளீடு வழங்கப்பட்டதாக கருதப்படுகிறது.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;கலைவையான அலைகளுக்கு ஃபூரியர் மாற்றம் பட்டனை பயன்படுத்தவும்&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1309"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="503"/>
         <source>A3</source>
         <translation>A3</translation>
     </message>
@@ -1675,7 +1675,7 @@ shows the actual frequency set.
         <translation>அனைத்தையும் காட்டு</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1285"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="493"/>
         <source>A1</source>
         <translation>A1</translation>
     </message>
@@ -1741,6 +1741,166 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../layouts/list_layout.ui" line="89"/>
         <source>&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="50"/>
+        <source>PeripheralCollection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="209"/>
+        <source>PeripheralCollectionInner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="266"/>
+        <source>10</source>
+        <translation type="unfinished">10</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="285"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="292"/>
+        <source>13</source>
+        <translation type="unfinished">13</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="299"/>
+        <source>0</source>
+        <translation type="unfinished">0</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="322"/>
+        <source>8</source>
+        <translation type="unfinished">8</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="329"/>
+        <source>4</source>
+        <translation type="unfinished">4</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="336"/>
+        <source>7</source>
+        <translation type="unfinished">7</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="343"/>
+        <source>9</source>
+        <translation type="unfinished">9</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="362"/>
+        <source>Start</source>
+        <translation type="unfinished">தொடங்கு</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="369"/>
+        <source>11</source>
+        <translation type="unfinished">11</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="376"/>
+        <source>14</source>
+        <translation type="unfinished">14</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="395"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="402"/>
+        <source>5</source>
+        <translation type="unfinished">5</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="409"/>
+        <source>1</source>
+        <translation type="unfinished">1</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="419"/>
+        <source>15</source>
+        <translation type="unfinished">15</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="426"/>
+        <source>3</source>
+        <translation type="unfinished">3</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="448"/>
+        <source>Stop</source>
+        <translation type="unfinished">நிறுத்து</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="455"/>
+        <source>12</source>
+        <translation type="unfinished">12</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="462"/>
+        <source>6</source>
+        <translation type="unfinished">6</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="482"/>
+        <source>2</source>
+        <translation type="unfinished">2</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="309"/>
+        <source> S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="312"/>
+        <source>Duration </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="469"/>
+        <source>mS</source>
+        <translation type="unfinished">mS</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="472"/>
+        <source>Settling Delay </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="508"/>
+        <source>ADS1115_UNI_0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="513"/>
+        <source>ADS1115_UNI_1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="518"/>
+        <source>ADS1115_UNI_2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="523"/>
+        <source>ADS1115_UNI_3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="528"/>
+        <source>ADS1115_DIFF_01</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="533"/>
+        <source>ADS1115_DIFF_23</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2117,7 +2277,7 @@ p, li { white-space: pre-wrap; }
         <translation></translation>
     </message>
     <message>
-        <location filename="../main.py" line="441"/>
+        <location filename="../main.py" line="442"/>
         <source>Enable PopUp Help Window</source>
         <translation></translation>
     </message>
@@ -2376,6 +2536,11 @@ p, li { white-space: pre-wrap; }
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../main.py" line="254"/>
+        <source>Multiplexed Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>editorHandler</name>
@@ -2498,7 +2663,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="318"/>
+        <location filename="../main.py" line="319"/>
         <source>Help: %s</source>
         <translation>உதவி: %s</translation>
     </message>
@@ -2506,147 +2671,147 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="799"/>
+        <location filename="../main.py" line="800"/>
         <source>Credits</source>
         <translation type="unfinished">நன் மதிப்பு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="680"/>
+        <location filename="../main.py" line="681"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">Failed to load scope</translation>
     </message>
     <message>
-        <location filename="../main.py" line="722"/>
+        <location filename="../main.py" line="723"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="769"/>
+        <location filename="../main.py" line="770"/>
         <source>Device</source>
         <translation type="unfinished">சாதனம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="770"/>
+        <location filename="../main.py" line="771"/>
         <source>Reconnect</source>
         <translation type="unfinished">மீண்டும் இணைக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="772"/>
         <source>LightBackGround</source>
         <translation type="unfinished">வெளிச்சமிக்க பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="772"/>
+        <location filename="../main.py" line="773"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">இருண்ட பின்னணி</translation>
     </message>
     <message>
-        <location filename="../main.py" line="773"/>
+        <location filename="../main.py" line="774"/>
         <source>Choose Language</source>
         <translation type="unfinished">மொழியை தேர்ந்தெடுக்கவம்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="793"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="796"/>
+        <location filename="../main.py" line="797"/>
         <source>Screenshot</source>
         <translation type="unfinished">ஸ்கிரீன்ஷாட்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="797"/>
+        <location filename="../main.py" line="798"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">முழு விண்டோ Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="799"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">வரைபடம் மட்டும் Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="800"/>
+        <location filename="../main.py" line="801"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="801"/>
+        <location filename="../main.py" line="802"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="805"/>
+        <location filename="../main.py" line="806"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="807"/>
+        <location filename="../main.py" line="808"/>
         <source>School Expts</source>
         <translation type="unfinished">பள்ளி ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="811"/>
+        <location filename="../main.py" line="812"/>
         <source>Electronics</source>
         <translation type="unfinished">மின்னணுவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="819"/>
         <source>Electrical</source>
         <translation type="unfinished">மின்னியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="823"/>
         <source>Sound</source>
         <translation type="unfinished">ஒலியியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="826"/>
+        <location filename="../main.py" line="827"/>
         <source>Mechanics</source>
         <translation type="unfinished">இயங்குவியல்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="830"/>
+        <location filename="../main.py" line="831"/>
         <source>Other Expts</source>
         <translation type="unfinished">மற்ற ஆய்வுகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="834"/>
+        <location filename="../main.py" line="835"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C தொகுதிகள்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="838"/>
+        <location filename="../main.py" line="839"/>
         <source>PythonCode</source>
         <translation type="unfinished">பைதான் கோடு</translation>
     </message>
     <message>
-        <location filename="../main.py" line="974"/>
+        <location filename="../main.py" line="975"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="981"/>
+        <location filename="../main.py" line="982"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1060"/>
+        <location filename="../main.py" line="1061"/>
         <source>Missing Plot</source>
         <translation type="unfinished">வரைபடத்தை காணவில்லை</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1060"/>
+        <location filename="../main.py" line="1061"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished">வரைபடத்தை கண்டுபிடிக்க முடியவில்லை. வலது கிளிக் செய்து ஏற்றுமதி செய்ய முயற்சிக்கவும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1094"/>
+        <location filename="../main.py" line="1095"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished">அகலத்தை (px) உள்ளீடவும். உயரம் தானாக அமைக்கப்படும்</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1144"/>
+        <location filename="../main.py" line="1145"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">அலைக்காட்டி</translation>
     </message>
@@ -2654,7 +2819,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="332"/>
+        <location filename="../main.py" line="333"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>

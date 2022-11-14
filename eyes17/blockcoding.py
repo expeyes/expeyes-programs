@@ -272,13 +272,16 @@ class webWin(QWebView):
 			self.p = device
 
 
+
 		@QtCore.pyqtSlot(str, result=float)
 		def get_voltage(self,chan):
+			print('get voltage')
 			return self.p.get_voltage(chan)
 
 		@QtCore.pyqtSlot(int,str,float)
 		def configure_trigger(self,chan , name, voltage):
-			self.p.configure_trigger(chan, name, voltage)
+			print('trigger:',chan, name, voltage)
+			self.p.configure_trigger(int(chan), name, float(voltage))
 
 
 		@QtCore.pyqtSlot(str, int, int, result=str)
@@ -333,9 +336,14 @@ class webWin(QWebView):
 
 		@QtCore.pyqtSlot(result=bool)
 		def get_device_status(self):
+			print(self.p.connected, self.p)
 			if self.p != None:
 				return self.p.connected
 			else: return False
+
+		@QtCore.pyqtSlot()
+		def programStarting(self):
+			return
 
 
 		@QtCore.pyqtSlot(str, str, result=float)

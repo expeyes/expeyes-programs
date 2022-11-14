@@ -1,0 +1,23 @@
+Multiplexed Data Logger
+=======================
+
+The CD74HC4067 is an analog multiplexer. It connects one of its 16 inputs (C0 - C15) to the SIG
+output pin based on the logic level on the input pins S0,S1,S2,S3. These 4 digital input pins constitute
+a 4 bit number that decides the analog input to be mapped to SIG.
+
+Set CS1,CS2,CS3,CS4 pins on the SEELab3 device are connected to the configuration inputs of the CD74HC4067
+multiplexer, and the set_multiplexer call of the eyes17 library can be used to select the input.
+
+The SIG output signal of the multiplexer can now be connected to a voltmeter input in order to measure any of the C0-C15 inputs. The other
+end of the signal source must be connected to GND(Ground).
+The software allows selecting up to 16 of the available inputs for data logging for a specified interval.
+
+Voltmeter options
++ A1, A2, A3 are built in voltmeters of the SEELab3/ExpEYES17 . The SIG output can be connected to any of these.
++ The ADS1115 is a 16 bit ADC with 4 unipolar as well as 2 differential input options.
++ For unipolar inputs, UNI_0, UNI_1, UNI_2, or UNI_3 pin can be connected to SIG with the other end of each sample connected to GND.
++ For Differential inputs, DIFF_01, and DIFF_23 are available. connect SIG to ADS1, and ADS0 to the other end of the sample to get differential readings.
+
+
+.. image:: schematics/multiplexerlogger.svg
+   :width: 600px

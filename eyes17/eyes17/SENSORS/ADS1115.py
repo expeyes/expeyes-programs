@@ -144,7 +144,7 @@ class ADS1115:
 		|self.REG_CONFIG_CPOL_ACTVLOW 	    # Alert/Rdy active low   (default val)
 		|self.REG_CONFIG_CMODE_TRAD         # Traditional comparator (default val)
 		|self.sdr_selection[self.rate]      # 1600 samples per second (default)
-		|self.REG_CONFIG_MODE_SINGLE)       # Single-shot mode (default)
+		|self.REG_CONFIG_MODE_CONTIN)       # Single-shot mode (default)
 
 		#Set PGA/voltage range
 		config |= self.gains[self.gain]
@@ -167,7 +167,7 @@ class ADS1115:
 		|self.REG_CONFIG_CPOL_ACTVLOW 	    #Alert/Rdy active low   (default val)
 		|self.REG_CONFIG_CMODE_TRAD         # Traditional comparator (default val)
 		|self.sdr_selection[self.rate]         #  samples per second 
-		|self.REG_CONFIG_MODE_SINGLE)       # Single-shot mode (default)
+		|self.REG_CONFIG_MODE_CONTIN)       # Single-shot mode (default)
 
 		#Set PGA/voltage range
 		config |= self.gains[self.gain]

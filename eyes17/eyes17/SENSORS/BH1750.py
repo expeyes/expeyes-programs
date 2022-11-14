@@ -14,7 +14,7 @@ class BRIDGE():
 	gain_choices=[RES_500mLx,RES_1000mLx,RES_4000mLx]
 	gain_literal_choices=['500mLx','1000mLx','4000mLx']
 	gain = 0
-	scaling=[2,1,.25]
+	scaling=[2,1,2]
 	
 	#--------------Parameters--------------------
 	#This must be defined in order to let GUIs automatically create menus

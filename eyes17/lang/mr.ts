@@ -918,7 +918,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished">काही फील्डमध्ये अवैध इनपुट</translation>
     </message>
     <message>
-        <location filename="../RLCtransient.py" line="90"/>
+        <location filename="../RLtransient.py" line="97"/>
         <source>Rext =</source>
         <translation type="unfinished">Rext =</translation>
     </message>
@@ -1444,7 +1444,7 @@ shows the actual frequency set.
         <translation type="unfinished">1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1297"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="498"/>
         <source>A2</source>
         <translation type="unfinished">A2</translation>
     </message>
@@ -1509,7 +1509,7 @@ shows the actual frequency set.
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;फ्रिक्वेन्सी&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;सायन्यूसॉइडल सिग्नल लीस्टस्क्वेअर फिटिंग वापरुन.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;इथे साइन वेव्ह इनपुट केली असे गृहीत धरले आहे.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;मिश्रित सिग्नलसाठी, फूरियर ट्रान्सफॉर्म बटण वापरा&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1309"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="503"/>
         <source>A3</source>
         <translation type="unfinished">A3</translation>
     </message>
@@ -1649,7 +1649,7 @@ shows the actual frequency set.
         <translation type="unfinished">सर्व  ट्रेसेस दाखवा</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1285"/>
+        <location filename="../layouts/multiplexed_logger.ui" line="493"/>
         <source>A1</source>
         <translation type="unfinished">A1</translation>
     </message>
@@ -1710,6 +1710,166 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../layouts/list_layout.ui" line="89"/>
         <source>&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="50"/>
+        <source>PeripheralCollection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="209"/>
+        <source>PeripheralCollectionInner</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="266"/>
+        <source>10</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="285"/>
+        <source>Clear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="292"/>
+        <source>13</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="299"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="322"/>
+        <source>8</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="329"/>
+        <source>4</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="336"/>
+        <source>7</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="343"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="362"/>
+        <source>Start</source>
+        <translation type="unfinished">सुरु करा</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="369"/>
+        <source>11</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="376"/>
+        <source>14</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="395"/>
+        <source>Save</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="402"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="409"/>
+        <source>1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="419"/>
+        <source>15</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="426"/>
+        <source>3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="448"/>
+        <source>Stop</source>
+        <translation type="unfinished">थांबवा</translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="455"/>
+        <source>12</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="462"/>
+        <source>6</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="482"/>
+        <source>2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="309"/>
+        <source> S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="312"/>
+        <source>Duration </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="469"/>
+        <source>mS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="472"/>
+        <source>Settling Delay </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="508"/>
+        <source>ADS1115_UNI_0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="513"/>
+        <source>ADS1115_UNI_1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="518"/>
+        <source>ADS1115_UNI_2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="523"/>
+        <source>ADS1115_UNI_3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="528"/>
+        <source>ADS1115_DIFF_01</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/multiplexed_logger.ui" line="533"/>
+        <source>ADS1115_DIFF_23</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2091,7 +2251,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">रॉड पेन्डूलम</translation>
     </message>
     <message>
-        <location filename="../main.py" line="441"/>
+        <location filename="../main.py" line="442"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished">पॉपअप हेल्प विंडो उपलब्ध करा</translation>
     </message>
@@ -2335,6 +2495,11 @@ p, li { white-space: pre-wrap; }
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../main.py" line="254"/>
+        <source>Multiplexed Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>editorHandler</name>
@@ -2457,7 +2622,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="318"/>
+        <location filename="../main.py" line="319"/>
         <source>Help: %s</source>
         <translation type="unfinished">हेल्प (मदत): %s</translation>
     </message>
@@ -2465,147 +2630,147 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="799"/>
+        <location filename="../main.py" line="800"/>
         <source>Credits</source>
         <translation type="unfinished">क्रेडिट्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="680"/>
+        <location filename="../main.py" line="681"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">स्कोप लोड होऊ शकला नाही</translation>
     </message>
     <message>
-        <location filename="../main.py" line="722"/>
+        <location filename="../main.py" line="723"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">लोड करण्यात अयशस्वी %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="769"/>
+        <location filename="../main.py" line="770"/>
         <source>Device</source>
         <translation type="unfinished">डिव्हाईस</translation>
     </message>
     <message>
-        <location filename="../main.py" line="770"/>
+        <location filename="../main.py" line="771"/>
         <source>Reconnect</source>
         <translation type="unfinished">पुन्हा कनेक्ट करा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="772"/>
         <source>LightBackGround</source>
         <translation type="unfinished">हलका बॅकग्राउंड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="772"/>
+        <location filename="../main.py" line="773"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">गडद बॅकग्राउंड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="773"/>
+        <location filename="../main.py" line="774"/>
         <source>Choose Language</source>
         <translation type="unfinished">भाषा निवडा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="793"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="796"/>
+        <location filename="../main.py" line="797"/>
         <source>Screenshot</source>
         <translation type="unfinished">स्क्रीनशॉट</translation>
     </message>
     <message>
-        <location filename="../main.py" line="797"/>
+        <location filename="../main.py" line="798"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">संपूर्ण विंडो Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="799"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">फक्त ग्राफ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="800"/>
+        <location filename="../main.py" line="801"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="801"/>
+        <location filename="../main.py" line="802"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="805"/>
+        <location filename="../main.py" line="806"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="807"/>
+        <location filename="../main.py" line="808"/>
         <source>School Expts</source>
         <translation type="unfinished">स्कूल एक्सपेरिमेन्ट्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="811"/>
+        <location filename="../main.py" line="812"/>
         <source>Electronics</source>
         <translation type="unfinished">इलेक्ट्रॉनिक्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="819"/>
         <source>Electrical</source>
         <translation type="unfinished">इलेक्ट्रिकल</translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="823"/>
         <source>Sound</source>
         <translation type="unfinished">ध्वनी</translation>
     </message>
     <message>
-        <location filename="../main.py" line="826"/>
+        <location filename="../main.py" line="827"/>
         <source>Mechanics</source>
         <translation type="unfinished">मेकॅनिक्स (यांत्रिकी)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="830"/>
+        <location filename="../main.py" line="831"/>
         <source>Other Expts</source>
         <translation type="unfinished">इतर प्रयोग</translation>
     </message>
     <message>
-        <location filename="../main.py" line="834"/>
+        <location filename="../main.py" line="835"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C मॉड्यूल्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="838"/>
+        <location filename="../main.py" line="839"/>
         <source>PythonCode</source>
         <translation type="unfinished">पायथन कोड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="974"/>
+        <location filename="../main.py" line="975"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="981"/>
+        <location filename="../main.py" line="982"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1060"/>
+        <location filename="../main.py" line="1061"/>
         <source>Missing Plot</source>
         <translation type="unfinished">प्लॉट मिस्सीन्ग आहे</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1060"/>
+        <location filename="../main.py" line="1061"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished">प्लॉट शोधण्यात अक्षम. कृपया राईट क्लिक करून एक्सपोर्ट करण्याचा प्रयत्न करा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1094"/>
+        <location filename="../main.py" line="1095"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished">रुंदी (px मध्ये) एंटर करा. उंची ऑटोसेट होईल.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1144"/>
+        <location filename="../main.py" line="1145"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">ऑसिलोस्कोप</translation>
     </message>
@@ -2613,7 +2778,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="332"/>
+        <location filename="../main.py" line="333"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>

@@ -1824,6 +1824,35 @@ class Interface():
 		except Exception as ex:
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
+
+
+
+	def set_multiplexer(self,value):
+		"""
+		Set CS1-4 to value's binary. Used to drive multiplexers such as CD74HC4067
+				
+		.. tabularcolumns:: |p{3cm}|p{11cm}|
+		
+		================    ============================================================================================
+		**Arguments** 
+		================    ============================================================================================
+		value               value 0 to 15
+		================    ============================================================================================
+		"""
+		try:
+			#CS1 = 3, CS2=4, CS3=5, CS4 = 6
+			buf = b''
+			for i in range(4):
+				buf+=CP.SPI_HEADER
+				if(value&(0x1<<i)):buf+=CP.STOP_SPI
+				else:buf+=CP.START_SPI
+				buf+=CP.Byte.pack(i+3)
+			self.H.fd.write(buf)
+		except Exception as ex:
+			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
+
+
+
 #---------- Time Interval Measurements from expEYES-jr ----------------------
 
 	def tim_helper(self, cmd, src, dst,timeout = 2.5):

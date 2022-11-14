@@ -4,34 +4,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,height=device-width, initial-scale=0.9, maximum-scale=1">
- 
- 
- 
-  
- 
- 
   <script src="jquery.min.js"></script>
   <script src="Markdown.Converter.min.js"></script>
   <script src="semantic.min.js"></script>
   <link rel="stylesheet" type="text/css" href="semantic.min.css">
+
+
   
   <script src="blockly_compressed.js"></script>
   <script src="blocks_compressed.js"></script>
   <script src="javascript_compressed.js"></script>
   <script src="python_compressed.js"></script>
   <link rel="stylesheet" type="text/css" href="webviewstyle.css">
+  <link rel="stylesheet" type="text/css" href="gauge.min.css">
+  <link rel="stylesheet" type="text/css" href="gauge-glossy.min.css">
   <script src="msg/js/en.js"></script>
-
   <link rel="stylesheet" type="text/css" href="piano.css">
-
-
   <script src="blocks/api.js"></script>
-  <script src="blocks/Plots.js"></script>
+  <script src="blocks/FlotPlots.js"></script>
   <script src="blocks/Lists.js"></script>
   <script src="blocks/IO.js"></script>
   <script src="blocks/Games.js"></script>
   <script src="blocks/Sounds.js"></script>
-  <script src="blocks/SEELab.js"></script>
+  <script src="blocks/SEELabOnly.js"></script>
+  <script src="blocks/Sensors.js"></script>
 
   <script src="cv/cvutils.js"></script>
 
@@ -57,6 +53,7 @@
   <script language="javascript" type="text/javascript" src="flot/jquery.flot.drawSeries.js"></script>
   <script language="javascript" type="text/javascript" src="flot/jquery.flot.uiConstants.js"></script>
   <script language="javascript" type="text/javascript" src="flot/jquery.flot.legend.js"></script>
+  <script language="javascript" type="text/javascript" src="flot/jquery.flot.symbol.js"></script>
   <script language="javascript" type="text/javascript" src="flot/jquery.flot.axislabels.js"></script>
 
 
@@ -137,8 +134,18 @@
       </value>
     </block>
 
-    <block type="text_join">
+    <block type="text_join" >
       <mutation items="2"></mutation>
+      <value name="ADD0">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+      <value name="ADD1">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
     </block>
 
     <block type="lists_subtract_return">
@@ -150,9 +157,6 @@
 
     <block type="logic_negate"></block>
     <sep></sep>
-
-
-
   </category>
 
   <category name="Logic" colour="#5b80a5">
@@ -205,32 +209,6 @@
       </value>
     </block>
 
-    <block type="text_join">
-      <mutation items="2"></mutation>
-    </block>
-
-
-    <block type="text_append">
-      <field name="VAR" id="NA?/#Ojn#=$$1[^`/^Dd">item</field>
-      <value name="TEXT">
-        <shadow type="text">
-          <field name="TEXT"></field>
-        </shadow>
-      </value>
-    </block>
-
-    <block type="cs_search">
-      <value name="CHILD">
-        <shadow type="text">
-          <field name="TEXT">small string</field>
-        </shadow>
-      </value>
-      <value name="PARENT">
-        <shadow type="text">
-          <field name="TEXT">much longer string</field>
-        </shadow>
-      </value>
-    </block>
 
     <block type="write_to_file">
     </block>
@@ -257,13 +235,20 @@
     <block type="controls_repeat_ext">
       <value name="TIMES">
         <shadow type="math_number">
-          <field name="NUM">10</field>
+          <field name="NUM">20</field>
         </shadow>
       </value>
     </block>
+
     <block type="controls_whileUntil">
       <field name="MODE">WHILE</field>
+      <value name="BOOL">
+        <shadow type="logic_boolean">
+          <field name="BOOL">TRUE</field>
+        </shadow>
+      </value>
     </block>
+
     <block type="controls_for">
       <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
       <value name="FROM">
@@ -290,6 +275,53 @@
     </block>
   </category>
   <sep></sep>
+
+
+  <category name="Text" colour="%{BKY_TEXTS_HUE}">
+
+    <block type="text">
+      <field name="TEXT"></field>
+    </block>
+
+    <block type="text_join" >
+      <mutation items="2"></mutation>
+      <value name="ADD0">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+      <value name="ADD1">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="text_append">
+      <field name="VAR" id="NA?/#Ojn#=$$1[^`/^Dd">item</field>
+      <value name="TEXT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
+    </block>
+
+    <block type="cs_search">
+      <value name="CHILD">
+        <shadow type="text">
+          <field name="TEXT">small string</field>
+        </shadow>
+      </value>
+      <value name="PARENT">
+        <shadow type="text">
+          <field name="TEXT">much longer string</field>
+        </shadow>
+      </value>
+    </block>
+
+
+  </category>
+
 
 
   <category name="Math" colour="#5b67a5">
@@ -381,9 +413,15 @@
   <category name="Lists" colour="#745ba5">
     <block type="lists_new">
     </block>
+
     <block type="lists_split">
       <mutation mode="SPLIT"></mutation>
       <field name="MODE">SPLIT</field>
+      <value name="INPUT">
+        <shadow type="text">
+          <field name="TEXT"></field>
+        </shadow>
+      </value>
       <value name="DELIM">
         <shadow type="text">
           <field name="TEXT">,</field>
@@ -483,7 +521,7 @@
     <block type="set_frequency">
       <field name="CHANNEL">WG</field>
     </block>
-    <block type="get_freq">
+    <block type="get_frequency">
       <field name="CHANNEL">IN2</field>
     </block>
     <block type="get_resistance">
@@ -491,6 +529,10 @@
 
     <block type="get_capacitance">
     </block>
+
+    <block type="read_i2c_sensor_flexible_dynamic">
+    </block>
+
 
     <block type="multi_r2r">
       <field name="CHANNEL">IN2</field>
@@ -516,10 +558,6 @@
 
     <block type="set_servo">
       <field name="CHANNEL">SQ1</field>
-    </block>
-    <block type="cs_start_timer">
-    </block>
-    <block type="cs_get_timer">
     </block>
 
   <category name="Captures" colour="#5ba55b">
@@ -574,7 +612,17 @@
     </category>
 
     <category name="Sensors" colour="#5b67a5">
-      <block type="scanI2C">
+      <block type="read_i2c_sensor_flexible_dynamic">
+      </block>
+
+      <block type="scanI2Cselector">
+      </block>
+      <block type="read_i2c_sensor_flexible">
+        <value name="NAME">
+          <shadow type="text">
+            <field name="TEXT">[118]BMP280</field>
+          </shadow>
+        </value>
       </block>
       <block type="scanI2CString">
       </block>
@@ -584,6 +632,9 @@
       <block type="read_SR04">
       </block>
       <block type="read_BMP280">
+        <field name="CHANNEL">1</field>
+      </block>
+      <block type="read_MS5611">
         <field name="CHANNEL">1</field>
       </block>
       <block type="read_MPU6050">
@@ -598,6 +649,14 @@
       </block>
       <block type="read_HMC5883L">
         <field name="CHANNEL">0</field>
+      </block>
+      <block type="read_ADS1115">
+        <field name="CHANNEL">0</field>
+      </block>
+      <block type="read_INA219">
+        <field name="CHANNEL">0</field>
+      </block>
+      <block type="read_TCS34725">
       </block>
       <block type="read_TSL2561">
         <field name="CHANNEL">0</field>
@@ -615,6 +674,9 @@
       </block>
       <block type="set_PCA9685">
         <field name="CHANNEL">1</field>
+      </block>
+      <block type="read_HX711">
+        <field name="CHANNEL">25</field>
       </block>
 
 
@@ -638,54 +700,46 @@
 
   </category>
 
-  <category name="PC" colour="#5b67a5">
+  <category name="Phone" colour="#5b67a5">
+    <block type="cs_start_timer">
+    </block>
+    <block type="cs_get_timer">
+    </block>
 
-	<block type="start_camera">
-	</block>
+    <category name="OPENCV" colour="#ff4">
+      <block type="start_camera">
+      </block>
 
-	<block type="get_frame">
-	</block>
+      <block type="get_frame">
+      </block>
 
-	<block type="to_gray">
-	</block>
-	<block type="subtract_bg">
-	</block>
-	<block type="cv_subtract">
-	</block>
+      <block type="to_gray">
+      </block>
+      <block type="subtract_bg">
+      </block>
+      <block type="cv_subtract">
+      </block>
 
-	<block type="choose_blob_shade">
-	</block>
+      <block type="choose_blob_shade">
+      </block>
 
-	<block type="get_blobs">
-	<field name="NAME">src</field>
-	</block>
+      <block type="get_blobs">
+        <field name="NAME">src</field>
+      </block>
 
-	<block type="get_biggest_circle">
-	<field name="NAME">src</field>
-	</block>
-	<block type="get_lines">
-	<field name="NAME">src</field>
-	</block>
+      <block type="get_biggest_circle">
+        <field name="NAME">src</field>
+      </block>
+      <block type="get_lines">
+        <field name="NAME">src</field>
+      </block>
+    </category>
 
 
   </category>
 
 
   <category name="Games" colour="#995b95">
-
-
-    <block type="sendMessage">
-      <field name="ID">0</field>
-    </block>  
-
-    <block type="hasMessage">
-      <field name="ID">0</field>
-    </block>  
-
-    <block type="receiveMessage">
-      <field name="ID">0</field>
-    </block>  
-
 
     <block type="add_game">
     </block>  
@@ -1100,13 +1154,22 @@ var blocklyArea = document.getElementById('blocklyArea');
 	  results.html("");cvresults.html("");
 	}
 
+    $('.blocklyToolboxContents').first().append(`
+    <div width="85%">
+      <div class = "ui fluid buttons" style="margin-top:30px;">
+        <a onClick= "workspacePlayground.undo(false)" class="ui mini red basic button"><i class="undo icon"></i></a>
+        <a onClick= "workspacePlayground.undo(true)" class="ui mini green basic button"><i class="redo icon"></i></a>
+      </div>
+    </div>
+    `);
 
 
 	function playButtonOff(){		
       isRunning = false;
-      $('.runbutton').removeClass('red').addClass('primary');
+      $('.runbutton').removeClass('red').removeClass('orange').addClass('primary');
       $('.runbutton > .text').text('Run!');
-      $('.runbutton > .icon').removeClass('stop').addClass('play');
+      $('.runbutton > .icon').removeClass('stop').removeClass('double angle down').addClass('play');
+
 	}
 	function off() {
       if(socket != null && isTeacher)socket.emit('run blockly', {state:false, room:roomname});
@@ -1221,11 +1284,13 @@ var blocklyArea = document.getElementById('blocklyArea');
       initPlots(interpreter, scope);
       initGames(interpreter, scope);
       initSEELab(interpreter, scope);
+      initSensors(interpreter, scope);
       initSounds(interpreter, scope);
 
       initCV(interpreter, scope); //OPENCV
 
     }
+
 
 
     function runCode() {
@@ -1240,10 +1305,15 @@ var blocklyArea = document.getElementById('blocklyArea');
           // Begin execution
           try{
               highlightPause = false;
+              if(!latestCode.startsWith('programStarting'))
+                 latestCode = 'programStarting();' + latestCode;
               if((latestCode.search('write_to_file') != -1 ) || (latestCode.search('save_lists') != -1 ))
-                latestCode = 'startStorage();\n' + latestCode;
+                  latestCode = 'startStorage();\n' + latestCode;
 
-              myInterpreter = new Interpreter(latestCode, initAllApis);
+              console.log(latestCode);
+              try{myInterpreter = new Interpreter(latestCode, initAllApis);}
+              catch(e){console.log(e.message+';'+e.stack);off();return;};
+
               if(latestCode.search("alert") != -1) // -1 means not found
                 on();
 
@@ -1292,11 +1362,12 @@ var blocklyArea = document.getElementById('blocklyArea');
                   } else {
                     console.log("we're done here");
                     // Program is complete.
-                    $('.runbutton').removeClass('red').addClass('orange');
-                    $('.runbutton > .text').text('Done!');
-
+                    //$('.runbutton').removeClass('red').addClass('orange');
+                    //$('.runbutton > .text').text('Done!');
+                    //$('.runbutton > .icon').removeClass('stop').addClass('double angle down');
                     resetInterpreter();
                     resetStepUi();
+                    off();
                   }
                 }
               };
@@ -1328,7 +1399,7 @@ var blocklyArea = document.getElementById('blocklyArea');
                 });
                 // Stop Program.
                 off();
-                setTimeout(()=>{$('.ui.results.sidebar').sidebar('hide');},50);
+                setTimeout(()=>{console.log('closing due to error');  $('.ui.results.sidebar').sidebar('hide');},50);
                 return;
               }
 
@@ -1337,6 +1408,7 @@ var blocklyArea = document.getElementById('blocklyArea');
         return;
       }
     }
+
 
 
 
@@ -1413,7 +1485,7 @@ var blocklyArea = document.getElementById('blocklyArea');
                 dimPage             : false,
                 transition          : 'overlay',
                 mobileTransition    : 'overlay'})
-                .sidebar('toggle');
+                .sidebar('show');
 	}
 
 	function loadquiz(xml) {
