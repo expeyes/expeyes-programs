@@ -6,8 +6,8 @@ usr/share/eyes17/*.py  	    usr/share/eyes17
 usr/share/eyes17/doc		    usr/share/eyes17
 eyes17/examples			    usr/share/eyes17
 desktop/expeyes-17.desktop     	    usr/share/applications
-desktop/eyes17-doc.desktop     	    usr/share/applications
+desktop/eyes17-manuals.desktop     	    usr/share/applications
 pixmaps/eyes17-logo.png        	    usr/share/icons
-pixmaps/eyes17-doc.png        	    usr/share/icons
+pixmaps/eyes17-manuals.png        	    usr/share/icons
 bin/eyes17		       	    usr/bin
-bin/eyes17-doc		       	    usr/bin
+bin/eyes17-manuals		       	    usr/bin

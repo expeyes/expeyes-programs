@@ -1,0 +1,122 @@
+#! /usr/bin/python3
+import locale, re, os, subprocess, sys
+from PyQt5.QtWidgets import QApplication, QMessageBox, QDialog
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+# Created by: PyQt5 UI code generator 5.15.7
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(229, 138)
+        self.verticalLayout = QtWidgets.QVBoxLayout(Dialog)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.groupBox = QtWidgets.QGroupBox(Dialog)
+        self.groupBox.setObjectName("groupBox")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.groupBox)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.radioButton = QtWidgets.QRadioButton(self.groupBox)
+        self.radioButton.setChecked(True)
+        self.radioButton.setObjectName("radioButton")
+        self.verticalLayout_2.addWidget(self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.groupBox)
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.verticalLayout_2.addWidget(self.radioButton_2)
+        self.verticalLayout.addWidget(self.groupBox)
+        self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
+        self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
+        #self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setObjectName("buttonBox")
+        self.verticalLayout.addWidget(self.buttonBox)
+
+        self.retranslateUi(Dialog)
+        self.buttonBox.accepted.connect(Dialog.accept) # type: ignore
+        self.buttonBox.rejected.connect(Dialog.reject) # type: ignore
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Format ???"))
+        self.groupBox.setTitle(_translate("Dialog", "Format for the User Manual"))
+        self.radioButton.setText(_translate("Dialog", "PDF"))
+        self.radioButton_2.setText(_translate("Dialog", "EPUB"))
+
+class FormatDialog(QDialog, Ui_Dialog):
+    def __init__(self, parent=None):
+        QDialog.__init__(self,parent)
+        #Ui_Dialog.__init__(self)
+        self.setupUi(self)
+        
+class ErrorDialog(QMessageBox):
+    def __init__(self, title, message, parent=None):
+        super(ErrorDialog, self).__init__(parent)
+        self.setWindowTitle(title)
+        self.setText(message)
+        self.setIcon(QMessageBox.Warning)
+        
+def Error(title, message):
+    ed = ErrorDialog(title, message)
+    ed.show()
+
+def installed_manual(lc, aformat="pdf"):
+    """
+    returns the installed manual if it exists
+    @param lc the locale
+    @param aformat "pdf" or "epub", currently
+    """
+    docdir = "/usr/share/eyes17/doc"
+    for locale in (lc, re.sub("_.*$", "", lc)):
+        # for example if locale == "es_AR", let us try "es_AR" first,
+        # then "es"
+        fname = os.path.join(docdir, locale, "eyes17." + aformat)
+        if os.path.exists(fname):
+            return fname
+        fname = fname + ".gz"
+        if os.path.exists(fname):
+            # if the first match is wrong, let us try a compressed format
+            return fname
+    if not lc.startswith("en"):
+        # in last resort, try to get the English manual
+        fname = installed_manual("en", aformat=aformat)
+        if os.path.exists(fname):
+            return fname
+    return
+                   
+    
+if __name__ == "__main__":
+    # which is the format of the User Manual?
+    if len(sys.argv) > 1:
+        # it can be given by the command line
+        aformat = sys.argv[1]
+    else:
+        # or it may be given by a graphic dialog
+        app = QApplication(sys.argv)
+        fd = FormatDialog()
+        fd.show()
+        result = app.exec_()
+        # harvest the radio buttons' status
+        if fd.radioButton.isChecked():
+            aformat = "pdf"
+        elif fd.radioButton_2.isChecked():
+            aformat = "epub"
+        else: aformat=None
+    if aformat not in ("pdf", "epub"):
+        # in case of any error, default to "pdf"
+        aformat = "pdf"
+
+    locale = re.sub(r"\..*", "", os.environ["LANG"])
+    if len(locale) < 2:
+        lc = locale.getlocale()
+        locale = lc[0]
+    fname = installed_manual(locale, aformat)
+    if fname is None:
+        app = QApplication(sys.argv)
+        Error('No User Manual',
+              'Maybe the package eyes17-manual-{locale}\nis not correctly installed'.format(locale=locale[:2])
+              )
+        sys.exit(app.exec_())
+    else:
+        if aformat == "pdf":
+            subprocess.call(["evince", fname])
+        elif aformat == "epub":
+            subprocess.call(["ebook-viewer", fname])

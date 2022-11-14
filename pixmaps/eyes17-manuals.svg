@@ -2,24 +2,24 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg2"
    width="46.236145"
    height="40.356628"
    viewBox="0 0 46.236146 40.356629"
-   sodipodi:docname="eyes17-doc.svg"
-   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
-   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/pixmaps/eyes17-doc.png"
+   sodipodi:docname="eyes17-manuals.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/github/expeyes/pixmaps/eyes-manuals.png"
    inkscape:export-xdpi="132.88306"
-   inkscape:export-ydpi="132.88306">
+   inkscape:export-ydpi="132.88306"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata8">
     <rdf:RDF>
@@ -462,8 +462,8 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="832"
-     inkscape:window-height="697"
+     inkscape:window-width="1479"
+     inkscape:window-height="787"
      id="namedview4"
      showgrid="false"
      fit-margin-top="0"
@@ -471,12 +471,13 @@
      fit-margin-right="0"
      fit-margin-bottom="0"
      inkscape:zoom="7.7138615"
-     inkscape:cx="-39.583157"
-     inkscape:cy="6.2438119"
-     inkscape:window-x="764"
+     inkscape:cx="-10.435759"
+     inkscape:cy="12.898857"
+     inkscape:window-x="143"
      inkscape:window-y="125"
      inkscape:window-maximized="0"
-     inkscape:current-layer="svg2" />
+     inkscape:current-layer="svg2"
+     inkscape:pagecheckerboard="0" />
   <g
      id="g4976"
      transform="translate(31.390012,-18.553848)"
