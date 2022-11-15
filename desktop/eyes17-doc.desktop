@@ -1,9 +1,10 @@
+#!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=0.9.0
 Type=Application
 
-Exec=/usr/share/eyes17/eyes17-manual
-Icon=eyes17-doc
+Exec=/usr/bin/eyes17-manuals
+Icon=eyes17-manuals
 
 Name=EYES17 Manual
 
