@@ -1,13 +1,24 @@
-usr/share/eyes17/code       usr/share/eyes17
-usr/share/eyes17/html  	    usr/share/eyes17
-usr/share/eyes17/lang/*.qm  usr/share/eyes17/lang
-usr/share/eyes17/lang/*.ts  usr/share/eyes17/lang
-usr/share/eyes17/*.py  	    usr/share/eyes17
-usr/share/eyes17/doc		    usr/share/eyes17
-eyes17/examples			    usr/share/eyes17
-desktop/expeyes-17.desktop     	    usr/share/applications
-desktop/eyes17-manuals.desktop     	    usr/share/applications
 pixmaps/eyes17-logo.png        	    usr/share/icons
-pixmaps/eyes17-manuals.png        	    usr/share/icons
+pixmaps/eyes17-manuals.png          usr/share/icons
 bin/eyes17		       	    usr/bin
-bin/eyes17-manuals		       	    usr/bin
+bin/eyes17-manuals		    usr/bin
+usr/lib/python3/dist-packages
+usr/share/doc/eyes17
+usr/share/applications/expeyes-17.desktop
+usr/share/applications/eyes17-doc.desktop
+usr/share/icons/eyes17-logo.png
+
+usr/share/eyes17/*.py
+usr/share/eyes17/*.html
+usr/share/eyes17/html
+usr/share/eyes17/lang
+usr/share/eyes17/screenshots
+usr/share/eyes17/images
+usr/share/eyes17/eyes17
+usr/share/eyes17/code
+usr/share/eyes17/doc
+usr/share/eyes17/examples
+usr/share/eyes17/layouts
+usr/share/eyes17/helpFiles
+
+lib/udev/rules.d
