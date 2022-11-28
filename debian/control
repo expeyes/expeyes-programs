@@ -2,22 +2,47 @@ Source: expeyes
 Section: science
 Priority: optional
 Maintainer: Georges Khaznadar <georgesk@debian.org>
-Build-Depends: debhelper (>= 10), quilt,
- python3-all, dh-python,
- pyqt5-dev-tools, qttools5-dev-tools, qt5-qmake,
- locales
-Standards-Version: 4.1.5
-Homepage: http://expeyes.in/
+Build-Depends: debhelper-compat (=13),
+ python3-all,
+ dh-python,
+ python3-docutils,
+ python3-pygments,
+ pkg-config,
+ wxglade,
+ x11proto-randr-dev,
+ pyqt5-dev-tools,
+ qttools5-dev-tools,
+ qt5-qmake,
+ img2pdf,
+ locales,
+Standards-Version: 4.6.1
+Homepage: https://expeyes.in/
 Vcs-Browser: https://salsa.debian.org/georgesk/expeyes
 Vcs-Git: https://salsa.debian.org/georgesk/expeyes.git
 
 Package: eyes17
 Architecture: all
-Depends: python3, ${misc:Depends}, ${python3:Depends},
- python3-pyqtgraph, python3-pyqt5, python3-pyqt5.qtwebkit,
- python-configparser
-Recommends: python3-numpy, python3-scipy,
- python3-pyqt5.qtwebengine
+Depends: python3,
+ ${misc:Depends},
+ ${python3:Depends},
+ python3-pyqt6,
+ python3-numpy,
+ python3-scipy,
+ python3-pyqt6.qtwebchannel,
+ python3-pyqt6.qtwebengine,
+ libqt6webenginecore6-bin,
+ python3-pyqt6.qtsvg,
+ qt6-qpa-plugins,
+ python3-serial
+Recommends: fonts-lohit-mlym,
+ python3-pyqtgraph,
+ libreoffice,
+ eyes17-blockly
+Suggests:
+ eyes17-manuals-en|eyes17-manuals
+Conflicts: python3-expeyes (<< 4.5.8+dfsg-2),
+ python-expeyes (<< 4.5.8+dfsg-2),
+ eyes17 (<< 4.5.8+dfsg-2)
 Description: hardware & software framework for developing science experiments
  This package provides high level interfaces for making science experiments
  with an ExpEYES-17 box.
@@ -32,7 +57,22 @@ Description: hardware & software framework for developing science experiments
  generator, better time resolution, better voltage resolution, supports
  seamlessly cheap I2C sensors.
 
-
+Package: eyes17-blockly-plugin
+Architecture: all
+Depends: ${misc:Depends},
+Description: blockly extension for eyes17
+ This package provides a blockly extension, which allows young users to
+ create simple programs to drive Eyes-17 in a funny and nice way.
+ .
+ ExpEYES-17 is from the PHOENIX project of Inter-University Accelerator
+ Centre, New Delhi. It is a hardware & software framework for
+ developing science experiments, demonstrations and projects and learn
+ science and engineering by exploration. Capable of doing real time
+ measurements and analysing the data in different ways. When compared with
+ previous ExpEYES boxes (Expeyes, Expeyes-Junior), ExpEYES-17 is richer
+ in various features: multiple soft input ranges, more flexible wave
+ generator, better time resolution, better voltage resolution, supports
+ seamlessly cheap I2C sensors.
 
 
 
