@@ -86,9 +86,9 @@ install_arch: all_arch
 	#$(MAKE) -C po install DESTDIR=$(DESTDIR)
 	# for expeyes-doc-common
 	install -d $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
+	# install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
-	install -m 644 desktop/*doc.desktop $(DESTDIR)/usr/share/applications
+	install -m 644 desktop/eyes17-doc.desktop $(DESTDIR)/usr/share/applications
 	# subdirs stuff
 	for d in $(SUBDIRS); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
