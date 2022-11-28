@@ -14,9 +14,6 @@ eyes20/
 *-lyxformat-*.lyx
 
 # debian packaging temporaries
-debian/eyes17-blockly-plugin/
-debian/eyes17/
-debian/tmp/
 debian/*.log
 debian/*.substvars
 debian/*.debhelper
@@ -34,7 +31,9 @@ debian/tmp/
 debian/expeyes-doc-common/
 debian/microhope/
 debian/expeyes-doc-*/
+debian/eyes17-blockly-plugin/
 debian/eyes17/
+debian/tmp/
 
 # autoconf generated files
 Makefile.in
