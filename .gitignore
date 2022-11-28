@@ -33,7 +33,6 @@ debian/microhope/
 debian/expeyes-doc-*/
 debian/eyes17-blockly-plugin/
 debian/eyes17/
-debian/tmp/
 
 # autoconf generated files
 Makefile.in
