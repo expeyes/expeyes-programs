@@ -1,3 +1,13 @@
+expeyes (5.0.1+pyqt5-3) unstable; urgency=medium
+
+  * bumped the version number, as binary files were added for blockly:
+    this implies making a new orig tarball
+  * separated the packages : eyes17 and eyes17-blockly-plugin; the first
+    on recommends the second one. When packaging for Debian, the second one
+    should go to debian/non-free, and become just a suggestion.
+
+ -- Georges Khaznadar <georgesk@debian.org>  Mon, 28 Nov 2022 17:56:51 +0100
+
 expeyes (5.0+pyqt5-2) unstable; urgency=medium
 
   * added piano block to codeblocks: eyes17,
