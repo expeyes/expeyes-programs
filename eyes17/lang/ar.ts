@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="2.0" language="ar" sourcelanguage="">
+<!DOCTYPE TS>
+<TS version="2.1" language="ar">
 <context>
     <name>Dialog</name>
     <message>
@@ -13,7 +14,7 @@
         <translation> مسجل البيانات</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_control.ui" line="51"/>
+        <location filename="../layouts/dio_sensor.ui" line="59"/>
         <source>Initialize</source>
         <translation> تهيئة</translation>
     </message>
@@ -131,22 +132,22 @@
         <translation> المجال المغنطيسي (H)</translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="75"/>
+        <location filename="../thermocouplelogger.py" line="103"/>
         <source>Start</source>
         <translation> بداية </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="79"/>
+        <location filename="../thermocouplelogger.py" line="107"/>
         <source>Stop</source>
         <translation> قف </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="87"/>
+        <location filename="../thermocouplelogger.py" line="111"/>
         <source>Clear Traces</source>
         <translation>  آثار واضحة </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="96"/>
+        <location filename="../XYplot.py" line="72"/>
         <source>Save Data</source>
         <translation> حفظ البيانات </translation>
     </message>
@@ -166,17 +167,17 @@
         <translation> تم الانتهاء من التآمر: %.2f</translation>
     </message>
     <message>
-        <location filename="../diodeIV.py" line="162"/>
+        <location filename="../pnpCEout.py" line="158"/>
         <source>Started</source>
         <translation>  بدأت </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="257"/>
+        <location filename="../thermocouplelogger.py" line="210"/>
         <source>User Stopped</source>
         <translation> توقف المستخدم </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="264"/>
+        <location filename="../thermocouplelogger.py" line="218"/>
         <source>Cleared Traces and Data</source>
         <translation> تم مسح الآثار والبيانات  </translation>
     </message>
@@ -186,17 +187,17 @@
         <translation> لا توجد بيانات لحفظها </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="276"/>
+        <location filename="../XYplot.py" line="200"/>
         <source>Traces saved to </source>
         <translation> تم حفظ الآثار في </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="282"/>
+        <location filename="../XYplot.py" line="241"/>
         <source>Error. Try Device-&gt;Reconnect</source>
         <translation> خطأ. جرب الجهاز &gt; أعد الاتصال </translation>
     </message>
     <message>
-        <location filename="../diodeIV.py" line="38"/>
+        <location filename="../pnpCEout.py" line="40"/>
         <source>Voltage (V)</source>
         <translation> الفولتية (V)</translation>
     </message>
@@ -221,12 +222,12 @@
         <translation> mA , عامل المثالية = </translation>
     </message>
     <message>
-        <location filename="../diodeIV.py" line="112"/>
+        <location filename="../rodPendulum.py" line="140"/>
         <source>Analysis failed. Could not fit data</source>
         <translation>  فشل التحليل. لا يمكن احتواء البيانات </translation>
     </message>
     <message>
-        <location filename="../diodeIV.py" line="133"/>
+        <location filename="../pnpCEout.py" line="117"/>
         <source>Completed plotting I-V</source>
         <translation>I-V تم الانتهاء من التآمر </translation>
     </message>
@@ -241,27 +242,27 @@
         <translation> تعيين SQ1</translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="169"/>
+        <location filename="../tof.py" line="81"/>
         <source>sqr1 set to </source>
         <translation> تم تعيين sqrl </translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="410"/>
+        <location filename="../XYplot.py" line="211"/>
         <source> Hz</source>
         <translation> Hz</translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="38"/>
+        <location filename="../rodPendulum.py" line="38"/>
         <source>Trials</source>
         <translation> التجارب </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="40"/>
+        <location filename="../rodPendulum.py" line="40"/>
         <source>Time Period (mSec)</source>
         <translation> الفترة الزمنية (mSec)</translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="57"/>
+        <location filename="../rodPendulum.py" line="57"/>
         <source>Pendulum length</source>
         <translation> طول البندول </translation>
     </message>
@@ -271,7 +272,7 @@
         <translation>cm</translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="67"/>
+        <location filename="../rodPendulum.py" line="67"/>
         <source>Clear Data and Traces</source>
         <translation> مسح البيانات والآثار </translation>
     </message>
@@ -281,42 +282,42 @@
         <translation>WG ക്രമീകരിക്കുക</translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="99"/>
+        <location filename="../rodPendulum.py" line="84"/>
         <source>Number of trials</source>
         <translation> عدد التجارب </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="153"/>
+        <location filename="../rodPendulum.py" line="138"/>
         <source>Frequency of Oscillation = </source>
         <translation> تردد التذبذب = </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="153"/>
+        <location filename="../rodPendulum.py" line="138"/>
         <source> Hz. Damping Factor = </source>
         <translation> Hz. عامل التخميد = </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="186"/>
+        <location filename="../rodPendulum.py" line="155"/>
         <source>Timeout</source>
         <translation>  مهلة </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="201"/>
+        <location filename="../rodPendulum.py" line="170"/>
         <source>Completed</source>
         <translation> اكتمل  </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="217"/>
+        <location filename="../rodPendulum.py" line="186"/>
         <source>Invalid Number of trials</source>
         <translation> عدد غير صالح من المحاولات  </translation>
     </message>
     <message>
-        <location filename="../drivenRodPendulum.py" line="223"/>
+        <location filename="../rodPendulum.py" line="192"/>
         <source>Invalid Length</source>
         <translation> طول غير صحيح </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="250"/>
+        <location filename="../thermocouplelogger.py" line="205"/>
         <source>Started Measurements</source>
         <translation> بدأت القياسات </translation>
     </message>
@@ -326,7 +327,7 @@
         <translation> الوقت (S)</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="85"/>
+        <location filename="../XYplot2.py" line="83"/>
         <source>Voltage</source>
         <translation> الفولتية </translation>
     </message>
@@ -351,7 +352,7 @@
         <translation> تركيز =</translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="202"/>
+        <location filename="../XYplot.py" line="130"/>
         <source>messages</source>
         <translation> الرسائل </translation>
     </message>
@@ -391,7 +392,7 @@
         <translation type="obsolete">  إلى </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="159"/>
+        <location filename="../XYplot.py" line="86"/>
         <source>Hz</source>
         <translation>Hz</translation>
     </message>
@@ -436,7 +437,7 @@
         <translation> مسح </translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="83"/>
+        <location filename="../thermocouplelogger.py" line="53"/>
         <source>Time (mS)</source>
         <translation> الوقت (mS)</translation>
     </message>
@@ -476,7 +477,7 @@
         <translation> تم الكشف عن الجهد فوق العتبة. الفولتية الذروة: </translation>
     </message>
     <message>
-        <location filename="../lightsensorlogger.py" line="61"/>
+        <location filename="../logger.py" line="55"/>
         <source>Voltage(V)</source>
         <translation> الفولتية (V)</translation>
     </message>
@@ -506,7 +507,7 @@
         <translation> اكتملت مؤامرة مسجل البيانات </translation>
     </message>
     <message>
-        <location filename="../sr04dist.py" line="230"/>
+        <location filename="../thermocouplelogger.py" line="179"/>
         <source>Invalid Duration</source>
         <translation> المدة غير صحيحة </translation>
     </message>
@@ -591,12 +592,12 @@
         <translation> لا توجد آثار متاحة للحفظ </translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="55"/>
+        <location filename="../pnpCEout.py" line="53"/>
         <source>Vbase (via 100kOhm)</source>
         <translation> Vbase (عبر 100kOhm)</translation>
     </message>
     <message>
-        <location filename="../npnCEout.py" line="60"/>
+        <location filename="../pnpCEout.py" line="58"/>
         <source>V</source>
         <translation>V</translation>
     </message>
@@ -636,7 +637,7 @@
         <translation>R(على الأرض )</translation>
     </message>
     <message>
-        <location filename="../plotIV.py" line="68"/>
+        <location filename="../RLtransient.py" line="102"/>
         <source>Ohm</source>
         <translation> أوم </translation>
     </message>
@@ -766,7 +767,7 @@
         <translation> إدخال CCS غير صالح </translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="123"/>
+        <location filename="../soundVelocity.py" line="88"/>
         <source>Timebase</source>
         <translation>  القاعدة الزمنية </translation>
     </message>
@@ -781,7 +782,7 @@
         <translation>RC القاعدة الوظيفية </translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="93"/>
+        <location filename="../RLtransient.py" line="111"/>
         <source>Clear Data &amp; Traces</source>
         <translation></translation>
     </message>
@@ -801,12 +802,12 @@
         <translation> مسح البيانات والآثار </translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="410"/>
+        <location filename="../XYplot.py" line="211"/>
         <source>AWG set to </source>
         <translation>AWG تعيين ل </translation>
     </message>
     <message>
-        <location filename="../RLCsteadystate.py" line="131"/>
+        <location filename="../XYplot.py" line="79"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
@@ -1151,12 +1152,12 @@
         <translation> خطأ. حاول مرة أخرى </translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="54"/>
+        <location filename="../XYplot.py" line="56"/>
         <source>Voltage  A2</source>
         <translation> الفولتية  A2</translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="171"/>
+        <location filename="../XYplot.py" line="147"/>
         <source>Voltage (A2)</source>
         <translation> الفولتية (A2)</translation>
     </message>
@@ -1176,17 +1177,17 @@
         <translation>XYplot.txt</translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="119"/>
+        <location filename="../XYplot.py" line="92"/>
         <source>Voltage range</source>
         <translation> نطاق الفولتية </translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="124"/>
+        <location filename="../XYplot.py" line="97"/>
         <source>Volts</source>
         <translation> فولت  </translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="169"/>
+        <location filename="../XYplot.py" line="145"/>
         <source>Voltage (A1-A2)</source>
         <translation> فولت (A1-A2)</translation>
     </message>
@@ -1223,12 +1224,12 @@ For Driven Pendulum Expt.</source>
         <translation>PV1 بدء</translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="81"/>
+        <location filename="../RLtransient.py" line="88"/>
         <source>0 -&gt; 5V step on OD1</source>
         <translation type="unfinished">OD1  5 إلى فولت </translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="85"/>
+        <location filename="../RLtransient.py" line="92"/>
         <source>5 -&gt; 0V step on OD1</source>
         <translation type="unfinished">OD1  إلى الصفر </translation>
     </message>
@@ -1253,7 +1254,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"> إدخال غير صالح في بعض المجالات </translation>
     </message>
     <message>
-        <location filename="../RLCtransient.py" line="90"/>
+        <location filename="../RLtransient.py" line="97"/>
         <source>Rext =</source>
         <translation type="unfinished">Rext</translation>
     </message>
@@ -1339,7 +1340,7 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../XYplot2.py" line="129"/>
+        <location filename="../XYplot.py" line="102"/>
         <source>show (A1-A2) Vs A2</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1449,15 +1450,27 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../diodeIV.py" line="40"/>
+        <location filename="../pnpCEout.py" line="42"/>
         <source>Current (mA)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../blockcoding.py" line="439"/>
+        <source>Blockly is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../blockcoding.py" line="439"/>
+        <source>You wanted to launch eyes17&apos;s blockly plugin.
+Unfortunately the plugin is missing... Consider
+installing it (it is a non-free package).</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Form</name>
     <message>
-        <location filename="../layouts/list_layout.ui" line="14"/>
+        <location filename="../layouts/simulator_layout.ui" line="14"/>
         <source>Form</source>
         <translation> استمارة </translation>
     </message>
@@ -1749,377 +1762,377 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../experiment-list.py" line="92"/>
+        <location filename="../main.py" line="201"/>
         <source>Oscilloscope</source>
         <translation>  راسم الذبذبات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="60"/>
+        <location filename="../main.py" line="169"/>
         <source>Voltage measurement</source>
         <translation> قياس الفولتية </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="61"/>
+        <location filename="../main.py" line="170"/>
         <source>Resistance measurement</source>
         <translation> قياس المقاومة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="62"/>
+        <location filename="../main.py" line="171"/>
         <source>Resistors in Series</source>
         <translation> المقاومات على التوالي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="63"/>
+        <location filename="../main.py" line="172"/>
         <source>Resistors in Parallel</source>
         <translation>المقاومات بالتوازي</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="64"/>
+        <location filename="../main.py" line="173"/>
         <source>Capacitance measurement</source>
         <translation> قياس السعة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="65"/>
+        <location filename="../main.py" line="174"/>
         <source>Capacitors in Series</source>
         <translation> المكثفات على التوالي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="66"/>
+        <location filename="../main.py" line="175"/>
         <source>Capacitors in Parallel</source>
         <translation> المكثفات على التوالي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="67"/>
+        <location filename="../main.py" line="176"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation> المقاومة بموجب قانون أوم </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="68"/>
+        <location filename="../main.py" line="177"/>
         <source>Direct and Alternating Currents</source>
         <translation> DC و AC </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="69"/>
+        <location filename="../main.py" line="178"/>
         <source>AC mains pickup</source>
         <translation> لاقط التيار المتردد </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="70"/>
+        <location filename="../main.py" line="179"/>
         <source>Separating AC and DC</source>
         <translation>DCو AC  متفرق  </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="71"/>
+        <location filename="../main.py" line="180"/>
         <source>Conducting Human body</source>
         <translation> إجراء جسم الإنسان </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="72"/>
+        <location filename="../main.py" line="181"/>
         <source>Resistance of Human body</source>
         <translation> مقاومة جسم الإنسان </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="73"/>
+        <location filename="../main.py" line="182"/>
         <source>Light Dependent Resistor</source>
         <translation> مقاوم يعتمد على الضوء </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="74"/>
+        <location filename="../main.py" line="183"/>
         <source>Lemon Cell</source>
         <translation> خلية الليمون </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="75"/>
+        <location filename="../main.py" line="184"/>
         <source>Simple AC generator</source>
         <translation> مولد AC بسيط </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="76"/>
+        <location filename="../main.py" line="185"/>
         <source>Transformer</source>
         <translation> محول </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="77"/>
+        <location filename="../main.py" line="186"/>
         <source>Resistance of Water</source>
         <translation> مقاومة الماء </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="78"/>
+        <location filename="../main.py" line="187"/>
         <source>Generating Sound</source>
         <translation> توليد الصوت </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="79"/>
+        <location filename="../main.py" line="188"/>
         <source>Digitizing Sound</source>
         <translation> رقمنة الصوت </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="80"/>
+        <location filename="../main.py" line="189"/>
         <source>Stroboscope</source>
         <translation> ستروبسكوب </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="107"/>
+        <location filename="../main.py" line="216"/>
         <source>Diode Characteristics</source>
         <translation> خصائص الديود </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="108"/>
+        <location filename="../main.py" line="217"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN خصائص الإخراج </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="109"/>
+        <location filename="../main.py" line="218"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP خصائص الإخراج </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="93"/>
+        <location filename="../main.py" line="202"/>
         <source>Halfwave Rectifier</source>
         <translation> معدل نصف الموجة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="168"/>
+        <location filename="../main.py" line="278"/>
         <source>Fullwave Rectifier</source>
         <translation> مقوم الموجة الكاملة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="95"/>
+        <location filename="../main.py" line="204"/>
         <source>Diode Clipping</source>
         <translation> قص الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="96"/>
+        <location filename="../main.py" line="205"/>
         <source>Diode Clamping</source>
         <translation> لقط الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="97"/>
+        <location filename="../main.py" line="206"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555 هزاز متعدد </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="98"/>
+        <location filename="../main.py" line="207"/>
         <source>Transistor Amplifier (CE)</source>
         <translation> مضخم الترانزستور (CE)</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="99"/>
+        <location filename="../main.py" line="208"/>
         <source>Inverting Amplifier</source>
         <translation> مضخم عكسي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="100"/>
+        <location filename="../main.py" line="209"/>
         <source>Non-Inverting Amplifier</source>
         <translation> مضخم غير مقلوب </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="101"/>
+        <location filename="../main.py" line="210"/>
         <source>Summing Amplifier</source>
         <translation> مكبر للصوت </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="102"/>
+        <location filename="../main.py" line="211"/>
         <source>Logic Gates</source>
         <translation> منطق البوابات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="103"/>
+        <location filename="../main.py" line="212"/>
         <source>Clock Divider Circuit</source>
         <translation> حلبة مقسم الساعة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="115"/>
+        <location filename="../main.py" line="224"/>
         <source>Plot I-V Curve</source>
         <translation> رسم منحنى I-V </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="116"/>
+        <location filename="../main.py" line="225"/>
         <source>XY Plotting</source>
         <translation>XY- التخطيط </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="117"/>
+        <location filename="../main.py" line="226"/>
         <source>RLC Steady state response</source>
         <translation>RLC استجابة حالة ثابتة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="118"/>
+        <location filename="../main.py" line="227"/>
         <source>RC Transient response</source>
         <translation>RC استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="119"/>
+        <location filename="../main.py" line="228"/>
         <source>RL Transient response</source>
         <translation>RL استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="120"/>
+        <location filename="../main.py" line="229"/>
         <source>RLC transient response</source>
         <translation>RLC استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="121"/>
+        <location filename="../main.py" line="230"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation> استجابة التردد لدائرة المرشح </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="122"/>
+        <location filename="../main.py" line="231"/>
         <source>Electromagnetic Induction</source>
         <translation> الحث الكهرومغناطيسي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="126"/>
+        <location filename="../main.py" line="235"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation> استجابة تردد بيزو الجرس </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="127"/>
+        <location filename="../main.py" line="236"/>
         <source>Velocity of Sound</source>
         <translation> سرعة الصوت </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="128"/>
+        <location filename="../main.py" line="237"/>
         <source>Sound beats</source>
         <translation> يدق الصوت </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="132"/>
+        <location filename="../main.py" line="241"/>
         <source>Rod Pendulum with Light barrier</source>
         <translation> البندول مع حاجز الضوء </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="133"/>
+        <location filename="../main.py" line="242"/>
         <source>Pendulum Waveform</source>
         <translation type="unfinished"> البندول الموجي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="134"/>
+        <location filename="../main.py" line="243"/>
         <source>Driven Pendulum resonance</source>
         <translation> صدى البندول مدفوعة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="135"/>
+        <location filename="../main.py" line="244"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation> قس المسافة HY-SRF704</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="136"/>
+        <location filename="../main.py" line="245"/>
         <source>Gravity by Time of Flight</source>
         <translation> الجاذبية حسب زمن الرحلة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="140"/>
+        <location filename="../main.py" line="249"/>
         <source>Temperatue, PT100 Sensor</source>
         <translation> درجة الحرارة،PT100 المستشعر </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="141"/>
+        <location filename="../main.py" line="250"/>
         <source>Data Logger</source>
         <translation> مسجل البيانات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="142"/>
+        <location filename="../main.py" line="251"/>
         <source>Advanced Data Logger</source>
         <translation> مسجل بيانات متقدم </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="147"/>
+        <location filename="../main.py" line="257"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"> التباطؤ المغناطيسي (MPU925x المستشعر)</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="148"/>
+        <location filename="../main.py" line="258"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation> لمعان (TSL2561) المسجل </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="150"/>
+        <location filename="../main.py" line="260"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050  التسارع والسرعة ودرجة الحرارة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="151"/>
+        <location filename="../main.py" line="261"/>
         <source>General Purpose I2C Sensors</source>
         <translation> هدف عام I2C مجسات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="155"/>
+        <location filename="../main.py" line="265"/>
         <source>Read Inputs</source>
         <translation> قراءة المدخلات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="156"/>
+        <location filename="../main.py" line="266"/>
         <source>Set DC Voltages</source>
         <translation> ضبط الفولتية DC </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="157"/>
+        <location filename="../main.py" line="267"/>
         <source>Capture Single Input</source>
         <translation> التقاط المدخلات الفردية </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="158"/>
+        <location filename="../main.py" line="268"/>
         <source>Capture Two Inputs</source>
         <translation> التقاط اثنين من المدخلات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="159"/>
+        <location filename="../main.py" line="269"/>
         <source>Capture Four Inputs</source>
         <translation> التقاط أربعة مدخلات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="160"/>
+        <location filename="../main.py" line="270"/>
         <source>Triangular Waveform</source>
         <translation> الشكل الموجي الثلاثي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="161"/>
+        <location filename="../main.py" line="271"/>
         <source>Arbitrary Waveform</source>
         <translation> الموجي التعسفي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="162"/>
+        <location filename="../main.py" line="272"/>
         <source>Waveform Table</source>
         <translation> الموجي التعسفي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="163"/>
+        <location filename="../main.py" line="273"/>
         <source>RC Transient</source>
         <translation> RC عابر </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="164"/>
+        <location filename="../main.py" line="274"/>
         <source>RL Transient</source>
         <translation> RL عابر </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="165"/>
+        <location filename="../main.py" line="275"/>
         <source>RC Integration</source>
         <translation> التكامل RC </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="166"/>
+        <location filename="../main.py" line="276"/>
         <source>Clipping with Diode</source>
         <translation> القص مع الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="167"/>
+        <location filename="../main.py" line="277"/>
         <source>Clamping with Diode</source>
         <translation> تحامل مع الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="169"/>
+        <location filename="../main.py" line="279"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib-IC حبكة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="170"/>
+        <location filename="../main.py" line="280"/>
         <source>Fourier Transform</source>
         <translation> تحويل فورييه </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="171"/>
+        <location filename="../main.py" line="281"/>
         <source>Rod Pendulum</source>
         <translation> رود البندول </translation>
     </message>
@@ -2154,72 +2167,72 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete"> يرجى إعادة تشغيل التطبيق لتفتيح خلفية الشاشة.</translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="36"/>
+        <location filename="../main.py" line="145"/>
         <source>Device</source>
         <translation> جهاز </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="49"/>
+        <location filename="../main.py" line="158"/>
         <source>Reconnect</source>
         <translation> أعد الاتصال </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="50"/>
+        <location filename="../main.py" line="159"/>
         <source>LightBackGround</source>
         <translation>  خفيفة  الخلفية </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="51"/>
+        <location filename="../main.py" line="160"/>
         <source>DarkBackGround</source>
         <translation>  خلفية داكنة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="52"/>
+        <location filename="../main.py" line="161"/>
         <source>Choose Language</source>
         <translation>  اختر اللغة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="37"/>
+        <location filename="../main.py" line="146"/>
         <source>School Expts</source>
         <translation> الخبرة المدرسية  </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="38"/>
+        <location filename="../main.py" line="147"/>
         <source>Electronics</source>
         <translation> إلكترونيات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="39"/>
+        <location filename="../main.py" line="148"/>
         <source>Electrical</source>
         <translation> الكهرباء </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="40"/>
+        <location filename="../main.py" line="149"/>
         <source>Sound</source>
         <translation> يبدو </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="41"/>
+        <location filename="../main.py" line="150"/>
         <source>Mechanics</source>
         <translation> علم الميكانيكا </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="42"/>
+        <location filename="../main.py" line="151"/>
         <source>Other Expts</source>
         <translation> خبرة أخرى </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="43"/>
+        <location filename="../main.py" line="152"/>
         <source>I2C Modules</source>
         <translation>I2C الوحدات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="44"/>
+        <location filename="../main.py" line="153"/>
         <source>PythonCode</source>
         <translation> كود Python </translation>
     </message>
     <message>
-        <location filename="../layouts/advancedLogger.ui" line="14"/>
+        <location filename="../layouts/newtonslaws.ui" line="14"/>
         <source>MainWindow</source>
         <translation> النافذة الرئيسية </translation>
     </message>
@@ -2354,37 +2367,37 @@ p, li { white-space: pre-wrap; }
         <translation> خدد </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="53"/>
+        <location filename="../main.py" line="162"/>
         <source>Screenshot</source>
         <translation type="unfinished"> لقطة شاشة </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="54"/>
+        <location filename="../main.py" line="163"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"> نافذة كاملة Alt-s </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="55"/>
+        <location filename="../main.py" line="164"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"> رسم بياني فقط Alt-p </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="56"/>
+        <location filename="../main.py" line="165"/>
         <source>Credits</source>
         <translation type="unfinished"> الاعتمادات </translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="57"/>
+        <location filename="../main.py" line="166"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="149"/>
+        <location filename="../main.py" line="259"/>
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../experiment-list.py" line="143"/>
+        <location filename="../main.py" line="252"/>
         <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2689,7 +2702,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>webWin</name>
     <message>
-        <location filename="../blockcoding.py" line="98"/>
+        <location filename="../blockcoding.py" line="94"/>
         <source>Block Coding: %s</source>
         <translation type="unfinished"></translation>
     </message>
