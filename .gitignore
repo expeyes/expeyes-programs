@@ -14,9 +14,9 @@ eyes20/
 *-lyxformat-*.lyx
 
 # debian packaging temporaries
-debian/control
-debian/changelog
-
+debian/eyes17-blockly-plugin/
+debian/eyes17/
+debian/tmp/
 debian/*.log
 debian/*.substvars
 debian/*.debhelper
