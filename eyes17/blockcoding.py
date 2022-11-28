@@ -14,7 +14,7 @@ from layouts import ui_blockly_layout, syntax
 from layouts.advancedLoggerTools import LOGGER
 
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
-
+from PyQt5.QtWidgets import QMessageBox
 
 class webPage(QWebEnginePage):
 	def __init__(self, *args, **kwargs):
@@ -418,23 +418,32 @@ class Expt(QtWidgets.QWidget, ui_blockly_layout.Ui_Form):
 	def __init__(self, device=None):
 		super(Expt, self).__init__()
 		self.setupUi(self)
-		self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"blockly/samples") 
-		try:
-			self.setStyleSheet(open(os.path.join(os.path.dirname(__file__),"layouts/style.qss"), "r").read())
-		except Exception as e:
-			print('stylesheet missing. ',e)
-		self.p = device						# connection to the device hardware 
+		self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"blockly/samples")
+		if os.path.exists(self.samplepath):
+				try:
+					self.setStyleSheet(open(os.path.join(os.path.dirname(__file__),"layouts/style.qss"), "r").read())
+				except Exception as e:
+					print('stylesheet missing. ',e)
+				self.p = device						# connection to the device hardware
 
-		self.blocksPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'blockly')
-		self.web = webWin(self,'block coding')
-		self.webLayout.addWidget(self.web)
+				self.blocksPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'blockly')
+				self.web = webWin(self,'block coding')
+				self.webLayout.addWidget(self.web)
 
-		self.highlight = syntax.PythonHighlighter(self.editor.document())
-		self.editorFont = QtGui.QFont()
-		self.editorFont.setPointSize(10)
-		
-		load_project_structure(self.samplepath,self.directoryBrowser)
-	
+				self.highlight = syntax.PythonHighlighter(self.editor.document())
+				self.editorFont = QtGui.QFont()
+				self.editorFont.setPointSize(10)
+
+				load_project_structure(self.samplepath,self.directoryBrowser)
+		else:
+				QMessageBox.warning(None,
+									self.tr("Blockly is missing"),
+									self.tr("""\
+You wanted to launch eyes17's blockly plugin.
+Unfortunately the plugin is missing... Consider
+installing it (it is a non-free package)."""))
+		return
+
 	def showDirectory(self):
 		self.directoryBrowser.setVisible(True)
 

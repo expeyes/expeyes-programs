@@ -1451,6 +1451,18 @@ shows the actual frequency set.
         <source>Temp: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../blockcoding.py" line="439"/>
+        <source>Blockly is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../blockcoding.py" line="439"/>
+        <source>You wanted to launch eyes17&apos;s blockly plugin.
+Unfortunately the plugin is missing... Consider
+installing it (it is a non-free package).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Form</name>
