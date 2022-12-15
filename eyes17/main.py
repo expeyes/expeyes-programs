@@ -136,6 +136,7 @@ if 'Windows' in pf:
 	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity
 	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs, multiplexedlogger
+	import BHCurve, BHCurveHMC
 
 """
 Translations in advance for the menus:
@@ -256,6 +257,7 @@ otherExpts = [
 
 modulesI2C = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysteresis (MPU925x Sensor)'),('8.1', 'BHCurve')],
+[QT_TRANSLATE_NOOP('MainWindow','Magnetic Hysteresis (HMC5883L Sensor)'),('8.1', 'BHCurveHMC')],
 [QT_TRANSLATE_NOOP('MainWindow','Luminosity(TSL2561) Logger'),('8.2', 'lightsensorlogger')],
 [QT_TRANSLATE_NOOP('MainWindow','Temperature(MAX6675) Logger'),('8.5', 'thermocouplelogger')],
 [QT_TRANSLATE_NOOP('MainWindow','MPU-6050 Acccn, Velocity and Temp'), ('8.3', 'MPU6050')],

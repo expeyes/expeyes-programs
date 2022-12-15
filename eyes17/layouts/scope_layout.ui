@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>744</width>
-    <height>600</height>
+    <width>873</width>
+    <height>616</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -239,20 +239,137 @@
        <property name="spacing">
         <number>2</number>
        </property>
-       <item row="0" column="1" colspan="3">
-        <widget class="QLabel" name="label_4">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+       <item row="4" column="1" colspan="4">
+        <widget class="QPushButton" name="CAP">
          <property name="text">
-          <string>Measure Voltages</string>
+          <string>Capacitance (IN1):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1" colspan="4">
+        <widget class="QPushButton" name="FREQ">
+         <property name="text">
+          <string>Frequency (IN2):</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="4">
+        <widget class="QComboBox" name="comboBox_2">
+         <property name="currentIndex">
+          <number>2</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>80 mV</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>1V</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>3V (Amplitude)</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="17" column="1" colspan="3">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="text">
+          <string>SAVE Traces</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="4">
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="text">
+          <string>Fourier Transform</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>SHOW ALL</string>
          </property>
         </widget>
        </item>
        <item row="13" column="1" colspan="4">
+        <widget class="Line" name="line_3">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1" colspan="4">
+        <widget class="QFrame" name="frame_5">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="OD1">
+            <property name="text">
+             <string>OD1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="CCS">
+            <property name="text">
+             <string>CCS</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="CS1">
+            <property name="text">
+             <string>CS1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="CS2">
+            <property name="text">
+             <string>CS2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="CS3">
+            <property name="text">
+             <string>CS3</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="CS4">
+            <property name="text">
+             <string>CS4</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="14" column="1" colspan="4">
         <widget class="QFrame" name="frame_4">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -600,7 +717,194 @@
          </layout>
         </widget>
        </item>
-       <item row="10" column="1" rowspan="2" colspan="4">
+       <item row="0" column="1" colspan="3">
+        <widget class="QLabel" name="label_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Measure Voltages</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1" colspan="4">
+        <widget class="QFrame" name="frame_7">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::NoFrame</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="spacing">
+           <number>3</number>
+          </property>
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item>
+           <widget class="QCheckBox" name="voltMeterCB1">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>A1</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="voltMeterCB2">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>A2</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="voltMeterCB3">
+            <property name="font">
+             <font>
+              <pointsize>9</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>A3</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="16" column="1" colspan="4">
+        <widget class="QFrame" name="frame_6">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <property name="leftMargin">
+           <number>0</number>
+          </property>
+          <property name="topMargin">
+           <number>0</number>
+          </property>
+          <property name="rightMargin">
+           <number>0</number>
+          </property>
+          <property name="bottomMargin">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Timebase</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="3">
+           <widget class="QSlider" name="horizontalSlider_6">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimum">
+             <number>-3300</number>
+            </property>
+            <property name="maximum">
+             <number>3300</number>
+            </property>
+            <property name="value">
+             <number>99</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="2">
+           <widget class="QComboBox" name="trigBox">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>55</width>
+              <height>16777215</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1" colspan="3">
+           <widget class="QSlider" name="TBslider">
+            <property name="maximum">
+             <number>8</number>
+            </property>
+            <property name="pageStep">
+             <number>1</number>
+            </property>
+            <property name="value">
+             <number>1</number>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="tickPosition">
+             <enum>QSlider::TicksAbove</enum>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QCheckBox" name="trigEnable">
+            <property name="text">
+             <string>Trigger</string>
+            </property>
+            <property name="checked">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="6" column="1" colspan="4">
+        <widget class="Line" name="line">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1" rowspan="2" colspan="4">
         <widget class="QFrame" name="frame_3">
          <property name="frameShape">
           <enum>QFrame::NoFrame</enum>
@@ -1022,196 +1326,14 @@
          </layout>
         </widget>
        </item>
-       <item row="15" column="1" colspan="4">
-        <widget class="QFrame" name="frame_6">
-         <property name="frameShape">
-          <enum>QFrame::StyledPanel</enum>
-         </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QGridLayout" name="gridLayout_5">
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item row="0" column="0">
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>Timebase</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="3">
-           <widget class="QSlider" name="horizontalSlider_6">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimum">
-             <number>-3300</number>
-            </property>
-            <property name="maximum">
-             <number>3300</number>
-            </property>
-            <property name="value">
-             <number>99</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="2">
-           <widget class="QComboBox" name="trigBox">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>55</width>
-              <height>16777215</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="1" colspan="3">
-           <widget class="QSlider" name="TBslider">
-            <property name="maximum">
-             <number>8</number>
-            </property>
-            <property name="pageStep">
-             <number>1</number>
-            </property>
-            <property name="value">
-             <number>1</number>
-            </property>
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="tickPosition">
-             <enum>QSlider::TicksAbove</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QCheckBox" name="trigEnable">
-            <property name="text">
-             <string>Trigger</string>
-            </property>
-            <property name="checked">
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </widget>
-       </item>
-       <item row="16" column="1" colspan="3">
-        <widget class="QPushButton" name="pushButton_4">
-         <property name="text">
-          <string>SAVE Traces</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="3" colspan="2">
-        <widget class="QCheckBox" name="CCS">
-         <property name="text">
-          <string>CCS</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1" colspan="4">
+       <item row="9" column="1" colspan="4">
         <widget class="Line" name="line_2">
          <property name="orientation">
           <enum>Qt::Horizontal</enum>
          </property>
         </widget>
        </item>
-       <item row="16" column="4">
-        <widget class="QPushButton" name="pushButton_5">
-         <property name="text">
-          <string>Fourier Transform</string>
-         </property>
-        </widget>
-       </item>
-       <item row="12" column="1" colspan="4">
-        <widget class="Line" name="line_3">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1" colspan="4">
-        <widget class="QLabel" name="RES">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Resistance on SEN</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1" colspan="4">
-        <widget class="QPushButton" name="FREQ">
-         <property name="text">
-          <string>Frequency (IN2):</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1" colspan="2">
-        <widget class="QCheckBox" name="OD1">
-         <property name="text">
-          <string>OD1</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1" colspan="4">
-        <widget class="Line" name="line">
-         <property name="orientation">
-          <enum>Qt::Horizontal</enum>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="4">
-        <widget class="QComboBox" name="comboBox_2">
-         <property name="currentIndex">
-          <number>2</number>
-         </property>
-         <item>
-          <property name="text">
-           <string>80 mV</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>1V</string>
-          </property>
-         </item>
-         <item>
-          <property name="text">
-           <string>3V (Amplitude)</string>
-          </property>
-         </item>
-        </widget>
-       </item>
-       <item row="9" column="1" colspan="3">
+       <item row="10" column="1" colspan="3">
         <widget class="QComboBox" name="Wshape">
          <item>
           <property name="text">
@@ -1230,87 +1352,17 @@
          </item>
         </widget>
        </item>
-       <item row="4" column="1" colspan="4">
-        <widget class="QPushButton" name="CAP">
-         <property name="text">
-          <string>Capacitance (IN1):</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="4">
-        <widget class="QPushButton" name="pushButton">
-         <property name="text">
-          <string>SHOW ALL</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1" colspan="4">
-        <widget class="QFrame" name="frame_7">
+       <item row="3" column="1" colspan="4">
+        <widget class="QLabel" name="RES">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <property name="frameShape">
-          <enum>QFrame::NoFrame</enum>
+         <property name="text">
+          <string>Resistance on SEN</string>
          </property>
-         <property name="frameShadow">
-          <enum>QFrame::Raised</enum>
-         </property>
-         <layout class="QHBoxLayout" name="horizontalLayout">
-          <property name="spacing">
-           <number>3</number>
-          </property>
-          <property name="leftMargin">
-           <number>0</number>
-          </property>
-          <property name="topMargin">
-           <number>0</number>
-          </property>
-          <property name="rightMargin">
-           <number>0</number>
-          </property>
-          <property name="bottomMargin">
-           <number>0</number>
-          </property>
-          <item>
-           <widget class="QCheckBox" name="voltMeterCB1">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>A1</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="voltMeterCB2">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>A2</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="voltMeterCB3">
-            <property name="font">
-             <font>
-              <pointsize>9</pointsize>
-             </font>
-            </property>
-            <property name="text">
-             <string>A3</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
         </widget>
        </item>
       </layout>
@@ -1399,8 +1451,8 @@
    <slot>awg_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>605</x>
-     <y>212</y>
+     <x>721</x>
+     <y>231</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1431,8 +1483,8 @@
    <slot>sq1_dc()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>742</x>
-     <y>246</y>
+     <x>871</x>
+     <y>265</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1447,8 +1499,8 @@
    <slot>sq1_text()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>686</x>
-     <y>246</y>
+     <x>815</x>
+     <y>265</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1463,8 +1515,8 @@
    <slot>sq1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>604</x>
-     <y>240</y>
+     <x>720</x>
+     <y>259</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1511,8 +1563,8 @@
    <slot>pv1_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>605</x>
-     <y>268</y>
+     <x>721</x>
+     <y>287</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1527,8 +1579,8 @@
    <slot>pv2_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>605</x>
-     <y>296</y>
+     <x>721</x>
+     <y>315</y>
     </hint>
     <hint type="destinationlabel">
      <x>608</x>
@@ -1575,8 +1627,8 @@
    <slot>set_trigger(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>741</x>
-     <y>521</y>
+     <x>870</x>
+     <y>538</y>
     </hint>
     <hint type="destinationlabel">
      <x>619</x>
@@ -1607,12 +1659,76 @@
    <slot>pcs_slider(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>676</x>
-     <y>308</y>
+     <x>792</x>
+     <y>340</y>
     </hint>
     <hint type="destinationlabel">
      <x>743</x>
      <y>307</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CS1</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>CS_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>152</x>
+     <y>166</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-13</x>
+     <y>173</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CS2</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>CS_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>321</x>
+     <y>169</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-10</x>
+     <y>163</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CS3</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>CS_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>516</x>
+     <y>165</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-26</x>
+     <y>185</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CS4</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>CS_changed()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>700</x>
+     <y>174</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>899</x>
+     <y>161</y>
     </hint>
    </hints>
   </connection>
@@ -1640,5 +1756,6 @@
   <slot>set_trigger(int)</slot>
   <slot>show_voltmeter()</slot>
   <slot>pcs_slider(int)</slot>
+  <slot>CS_changed()</slot>
  </slots>
 </ui>

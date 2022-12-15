@@ -125,17 +125,20 @@ class LOGGER:
 				'init':self.HMC5883L_init,
 				'read':self.HMC5883L_all,
 				'fields':['Mx','My','Mz'],
-				'min':[-5000,-5000,-5000],
-				'max':[5000,5000,5000],
+				'min':[-8,-8,-8],
+				'max':[8,8,8]
+				 },
+			13:{
+				'name':'QMC5883L 3 Axis Magnetometer ',
+				'init':self.QMC5883L_init,
+				'read':self.QMC5883L_all,
+				'fields':['Mx','My','Mz'],
+				'min':[-8,-8,-8],
+				'max':[8,8,8],
 				'config':[{
-							'name':'gain',
-							'options':['1x','16x'],
-							'function':self.TSL2561_gain
-							},
-							{
-							'name':'Integration Time',
-							'options':['3 mS','101 mS','402 mS'],
-							'function':self.TSL2561_timing
+							'name':'range',
+							'options':['2g','8g'],
+							'function':self.QMC_RANGE
 							}
 					] },
 			0x48:{
@@ -652,20 +655,60 @@ class LOGGER:
 	def __writeHMCCONFA__(self):
 		self.I2CWriteBulk(self.HMC5883L_ADDRESS,[self.HMC_CONFA,(self.HMCDataOutputRate<<2)|(self.HMCSamplesToAverage<<5)|(self.HMCMeasurementConf)])
 
-	def HMC5883L_getVals(self,addr,bytes):
-		vals = self.I2C.readBulk(self.HMC5883L_ADDRESS,addr,bytes) 
+	def HMC5883L_getVals(self,addr,numbytes):
+		vals = self.I2C.readBulk(self.HMC5883L_ADDRESS,addr,numbytes) 
 		return vals
 	
 	def HMC5883L_all(self):
 		vals=self.HMC5883L_getVals(0x03,6)
+		print(vals)
 		if vals:
 			if len(vals)==6:
-				return [np.int16(vals[a*2]&0xff<<8|vals[a*2+1]&0xff)/self.HMCGainScaling[self.HMCGainValue] for a in range(3)]
+				return [np.int16((vals[a*2]<<8)|vals[a*2+1])/self.HMCGainScaling[self.HMCGainValue] for a in range(3)]
 			else:
 				return False
 		else:
 			return False
 
+
+
+
+	####################### QMC5883L MAGNETOMETER ###############
+
+	QMC5883L_ADDRESS = 13
+	QMC_scaling = 3000
+
+	def QMC5883L_init(self):
+		self.I2CWriteBulk(self.QMC5883L_ADDRESS,[0x0A,0x80]) #0x80=reset. 0x40= rollover
+		self.I2CWriteBulk(self.QMC5883L_ADDRESS,[0x0B,0x01]) #init , set/reset period
+		self.QMC_RANGE(1)
+
+	def QMC_RANGE(self,r): #0=2G, 1=8G
+		if r==1 :
+			self.I2CWriteBulk(self.QMC5883L_ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b10000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(8g)
+			self.QMC_scaling = 3000
+		elif r==0 :
+			self.I2CWriteBulk(self.QMC5883L_ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b00000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(2g)
+			self.QMC_scaling = 12000
+
+	def QMC5883L_getVals(self,addr,numbytes):
+		vals = self.I2C.readBulk(self.QMC5883L_ADDRESS,addr,numbytes) 
+		return vals
+	
+	def QMC5883L_all(self):
+		vals=self.QMC5883L_getVals(0x00,6)
+		if vals:
+			if len(vals)==6:
+				v = [np.int16((vals[a*2+1]&0xff<<8)|vals[a*2]&0xff)/self.QMC_scaling for a in range(3)]
+				print(v)
+				return v
+			else:
+				return False
+		else:
+			return False
+	
+	###### PCA9685 Servo PWM driver. 16 channel.
+	
 	PCA9685_address = 64
 	def PCA9685_init(self):
 		prescale_val = int((25000000.0 / 4096 / 60.)  - 1) # default clock at 25MHz

@@ -659,6 +659,14 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			self.AWGtext.setValue(val)
 			self.set_wave()
 
+	def CS_changed(self):
+		pos = 0
+		if(self.CS1.isChecked()):pos|=1
+		if(self.CS2.isChecked()):pos|=2
+		if(self.CS3.isChecked()):pos|=4
+		if(self.CS4.isChecked()):pos|=8
+		self.p.set_multiplexer(pos)
+
 	def control_od1(self):
 		try:
 			state = self.OD1.isChecked()
