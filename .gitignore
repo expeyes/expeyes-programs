@@ -35,6 +35,7 @@ debian/expeyes-doc-common/
 debian/microhope/
 debian/expeyes-doc-*/
 debian/eyes17/
+debian/eyes17-blockly-plugin/
 
 # autoconf generated files
 Makefile.in

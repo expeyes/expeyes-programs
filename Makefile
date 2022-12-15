@@ -86,9 +86,9 @@ install_arch: all_arch
 	#$(MAKE) -C po install DESTDIR=$(DESTDIR)
 	# for expeyes-doc-common
 	install -d $(DESTDIR)/usr/share/icons
-	install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
+	# install -m 644 pixmaps/*doc.png $(DESTDIR)/usr/share/icons
 	install -d $(DESTDIR)/usr/share/applications
-	install -m 644 desktop/*doc.desktop $(DESTDIR)/usr/share/applications
+	install -m 644 desktop/eyes17-doc.desktop $(DESTDIR)/usr/share/applications
 	# subdirs stuff
 	for d in $(SUBDIRS); do \
 	  [ ! -f $$d/Makefile ] || $(MAKE) -C $$d install DESTDIR=$(DESTDIR); \
@@ -133,7 +133,7 @@ install_indep: all_indep
 	for f in eyes17/server*.html eyes17/*.py ; do \
 	  cp $$f $(DESTDIR)/usr/share/eyes17; \
 	done
-	for d in code examples eyes17 html images lang layouts blockly site screenshots; do \
+	for d in code examples eyes17 html images lang layouts blockly  screenshots; do \
 	  cp -a eyes17/$$d $(DESTDIR)/usr/share/eyes17; \
 	done
 	# help files for eyes17s help popup

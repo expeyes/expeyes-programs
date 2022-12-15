@@ -126,12 +126,12 @@
 <context>
     <name>Expt</name>
     <message>
-        <location filename="../BHCurve.py" line="40"/>
+        <location filename="../BHCurveHMC.py" line="39"/>
         <source>Voltage (V) -&gt; Current -&gt; Magnetic Field(B)</source>
         <translation>व्होल्टेज (V) -&gt; करंट  -&gt; मॅग्नेटिक फील्ड (B)</translation>
     </message>
     <message>
-        <location filename="../BHCurve.py" line="42"/>
+        <location filename="../BHCurveHMC.py" line="41"/>
         <source>Magnetic Field (H)</source>
         <translation>मॅग्नेटिक फील्ड (H)</translation>
     </message>
@@ -146,7 +146,7 @@
         <translation>थांबवा</translation>
     </message>
     <message>
-        <location filename="../BHCurve.py" line="62"/>
+        <location filename="../BHCurveHMC.py" line="61"/>
         <source>Set Zero</source>
         <translation>शून्य सेट करा</translation>
     </message>
@@ -166,12 +166,12 @@
         <translation type="unfinished">MPU925x सेन्सर आढळला नाही</translation>
     </message>
     <message>
-        <location filename="../BHCurve.py" line="122"/>
+        <location filename="../BHCurveHMC.py" line="120"/>
         <source>Completed plotting B-H</source>
         <translation type="unfinished">B-H प्लॉटिंग पूर्ण  झाले</translation>
     </message>
     <message>
-        <location filename="../BHCurve.py" line="132"/>
+        <location filename="../BHCurveHMC.py" line="130"/>
         <source>Residual Magnetic Field: %.2f</source>
         <translation type="unfinished">अवशिष्ट (रेसिड्युअल) मॅग्नेटिक फील्ड: %.2f</translation>
     </message>
@@ -778,12 +778,12 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished">mS/div</translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="81"/>
+        <location filename="../RLtransient.py" line="88"/>
         <source>0 -&gt; 5V step on OD1</source>
         <translation type="unfinished">0 -&gt; 5V OD1 वरची  स्टेप</translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="85"/>
+        <location filename="../RLtransient.py" line="92"/>
         <source>5 -&gt; 0V step on OD1</source>
         <translation type="unfinished">5 -&gt; 0V OD1 वरची  स्टेप</translation>
     </message>
@@ -793,7 +793,7 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished">RC कॅल्कुलेट करा</translation>
     </message>
     <message>
-        <location filename="../RCtransient.py" line="93"/>
+        <location filename="../RLtransient.py" line="111"/>
         <source>Clear Data &amp; Traces</source>
         <translation type="unfinished">ट्रेसेस आणि डेटा  क्लिअर करा</translation>
     </message>
@@ -1073,32 +1073,32 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished">आउटपुट WG वरून SQ2 वर बदलले</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="686"/>
+        <location filename="../scope.py" line="694"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished">कॅपेसिटन्स  खूप जास्त  किंवा ग्राउंड शी शॉर्ट झाले आहे</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="690"/>
+        <location filename="../scope.py" line="698"/>
         <source> pF</source>
         <translation type="unfinished"> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="693"/>
+        <location filename="../scope.py" line="701"/>
         <source> nF</source>
         <translation type="unfinished"> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="696"/>
+        <location filename="../scope.py" line="704"/>
         <source> uF</source>
         <translation type="unfinished"> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="709"/>
+        <location filename="../scope.py" line="717"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation type="unfinished">%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="711"/>
+        <location filename="../scope.py" line="719"/>
         <source>No signal</source>
         <translation type="unfinished">सिग्नल नाही</translation>
     </message>
@@ -1425,6 +1425,18 @@ shows the actual frequency set.
         <source>Temp: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../blockcoding.py" line="447"/>
+        <source>Blockly is missing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../blockcoding.py" line="447"/>
+        <source>You wanted to launch eyes17&apos;s blockly plugin.
+Unfortunately the plugin is missing... Consider
+installing it (it is a non-free package).</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Form</name>
@@ -1464,47 +1476,47 @@ shows the actual frequency set.
         <translation type="unfinished">A2-A1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1323"/>
+        <location filename="../layouts/scope_layout.ui" line="1375"/>
         <source>.</source>
         <translation type="unfinished">.</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="251"/>
+        <location filename="../layouts/scope_layout.ui" line="729"/>
         <source>Measure Voltages</source>
         <translation type="unfinished">व्होल्टेजेस मोजा</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="433"/>
+        <location filename="../layouts/scope_layout.ui" line="550"/>
         <source>16V</source>
         <translation type="unfinished">16V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="438"/>
+        <location filename="../layouts/scope_layout.ui" line="555"/>
         <source>8V</source>
         <translation type="unfinished">8V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="580"/>
+        <location filename="../layouts/scope_layout.ui" line="697"/>
         <source>4V</source>
         <translation type="unfinished">4V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="448"/>
+        <location filename="../layouts/scope_layout.ui" line="565"/>
         <source>2.5V</source>
         <translation type="unfinished">2.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1204"/>
+        <location filename="../layouts/scope_layout.ui" line="707"/>
         <source>1V</source>
         <translation type="unfinished">1V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="595"/>
+        <location filename="../layouts/scope_layout.ui" line="712"/>
         <source>0.5V</source>
         <translation type="unfinished">0.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="496"/>
+        <location filename="../layouts/scope_layout.ui" line="613"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;फ्रिक्वेन्सी&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;सायन्यूसॉइडल सिग्नल लीस्टस्क्वेअर फिटिंग वापरुन.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;इथे साइन वेव्ह इनपुट केली असे गृहीत धरले आहे.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;मिश्रित सिग्नलसाठी, फूरियर ट्रान्सफॉर्म बटण वापरा&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
@@ -1514,137 +1526,137 @@ shows the actual frequency set.
         <translation type="unfinished">A3</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="585"/>
+        <location filename="../layouts/scope_layout.ui" line="702"/>
         <source>2V</source>
         <translation type="unfinished">2V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="411"/>
+        <location filename="../layouts/scope_layout.ui" line="528"/>
         <source>MIC</source>
         <translation type="unfinished">MIC</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="854"/>
+        <location filename="../layouts/scope_layout.ui" line="1158"/>
         <source> Volts</source>
         <translation type="unfinished"> Volts</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="897"/>
+        <location filename="../layouts/scope_layout.ui" line="1201"/>
         <source> %</source>
         <translation type="unfinished"> %</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="959"/>
+        <location filename="../layouts/scope_layout.ui" line="1263"/>
         <source>symmetric</source>
         <translation type="unfinished">सिमिट्रिक</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1015"/>
+        <location filename="../layouts/scope_layout.ui" line="1319"/>
         <source> Hz</source>
         <translation type="unfinished"> Hz</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="841"/>
+        <location filename="../layouts/scope_layout.ui" line="1145"/>
         <source>symmetric volts</source>
         <translation type="unfinished">सिमिट्रिक व्होल्टस</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="884"/>
+        <location filename="../layouts/scope_layout.ui" line="1188"/>
         <source>SQ1</source>
         <translation type="unfinished">SQ1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="940"/>
+        <location filename="../layouts/scope_layout.ui" line="1244"/>
         <source>PV2</source>
         <translation type="unfinished">PV2</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="983"/>
+        <location filename="../layouts/scope_layout.ui" line="1287"/>
         <source>WG</source>
         <translation type="unfinished">WG</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="806"/>
+        <location filename="../layouts/scope_layout.ui" line="1110"/>
         <source>PV1</source>
         <translation type="unfinished">PV1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="742"/>
+        <location filename="../layouts/scope_layout.ui" line="1046"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished">&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tकॉन्स्टन्ट करंट सोर्स आउटपुटवर व्होल्टेज ची  व्हॅल्यू&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1049"/>
+        <location filename="../layouts/scope_layout.ui" line="826"/>
         <source>Timebase</source>
         <translation type="unfinished">टाइमबेस</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1113"/>
+        <location filename="../layouts/scope_layout.ui" line="890"/>
         <source>Trigger</source>
         <translation type="unfinished">ट्रिगर</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1126"/>
+        <location filename="../layouts/scope_layout.ui" line="281"/>
         <source>SAVE Traces</source>
         <translation type="unfinished">ट्रेसेस सेव्ह करा</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1133"/>
+        <location filename="../layouts/scope_layout.ui" line="337"/>
         <source>CCS</source>
         <translation type="unfinished">CCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1147"/>
+        <location filename="../layouts/scope_layout.ui" line="288"/>
         <source>Fourier Transform</source>
         <translation type="unfinished">फूरियर ट्रान्सफॉर्म </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1167"/>
+        <location filename="../layouts/scope_layout.ui" line="1364"/>
         <source>Resistance on SEN</source>
         <translation type="unfinished">SEN वरचा रेझिस्टन्स </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1174"/>
+        <location filename="../layouts/scope_layout.ui" line="252"/>
         <source>Frequency (IN2):</source>
         <translation type="unfinished">फ्रिक्वेन्सी (IN2)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1181"/>
+        <location filename="../layouts/scope_layout.ui" line="330"/>
         <source>OD1</source>
         <translation type="unfinished">OD1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1199"/>
+        <location filename="../layouts/scope_layout.ui" line="263"/>
         <source>80 mV</source>
         <translation type="unfinished">80mV</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1209"/>
+        <location filename="../layouts/scope_layout.ui" line="273"/>
         <source>3V (Amplitude)</source>
         <translation type="unfinished">3V (अँप्लिटयुड )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1218"/>
+        <location filename="../layouts/scope_layout.ui" line="1340"/>
         <source>WG( Sinusoidal )</source>
         <translation type="unfinished">WG( सायन्यूसॉइडल )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1223"/>
+        <location filename="../layouts/scope_layout.ui" line="1345"/>
         <source>WG( Triangle )</source>
         <translation type="unfinished">WG (ट्रँग्यूलर )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1228"/>
+        <location filename="../layouts/scope_layout.ui" line="1350"/>
         <source>SQ2( Square )</source>
         <translation type="unfinished">SQ2( स्क्वेअर )</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1236"/>
+        <location filename="../layouts/scope_layout.ui" line="245"/>
         <source>Capacitance (IN1):</source>
         <translation type="unfinished">कॅपेसिटन्स  (IN1):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1243"/>
+        <location filename="../layouts/scope_layout.ui" line="295"/>
         <source>SHOW ALL</source>
         <translation type="unfinished">सर्व  ट्रेसेस दाखवा</translation>
     </message>
@@ -1664,17 +1676,17 @@ shows the actual frequency set.
         <translation type="unfinished">कर्सर</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="666"/>
+        <location filename="../layouts/scope_layout.ui" line="970"/>
         <source>1.65mA</source>
         <translation type="unfinished">1.65mA</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="685"/>
+        <location filename="../layouts/scope_layout.ui" line="989"/>
         <source>PCS</source>
         <translation type="unfinished">PCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="723"/>
+        <location filename="../layouts/scope_layout.ui" line="1027"/>
         <source>Voltage across PCS(mV):</source>
         <translation type="unfinished">PCS व्होल्टेज (mV):</translation>
     </message>
@@ -1870,6 +1882,26 @@ p, li { white-space: pre-wrap; }
     <message>
         <location filename="../layouts/multiplexed_logger.ui" line="533"/>
         <source>ADS1115_DIFF_23</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="344"/>
+        <source>CS1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="351"/>
+        <source>CS2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="358"/>
+        <source>CS3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="365"/>
+        <source>CS4</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2251,7 +2283,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">रॉड पेन्डूलम</translation>
     </message>
     <message>
-        <location filename="../main.py" line="442"/>
+        <location filename="../main.py" line="444"/>
         <source>Enable PopUp Help Window</source>
         <translation type="unfinished">पॉपअप हेल्प विंडो उपलब्ध करा</translation>
     </message>
@@ -2491,13 +2523,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="253"/>
+        <location filename="../main.py" line="254"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="254"/>
+        <location filename="../main.py" line="255"/>
         <source>Multiplexed Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="260"/>
+        <source>Magnetic Hysteresis (HMC5883L Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2622,7 +2659,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="319"/>
+        <location filename="../main.py" line="321"/>
         <source>Help: %s</source>
         <translation type="unfinished">हेल्प (मदत): %s</translation>
     </message>
@@ -2630,147 +2667,147 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="800"/>
+        <location filename="../main.py" line="802"/>
         <source>Credits</source>
         <translation type="unfinished">क्रेडिट्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="681"/>
+        <location filename="../main.py" line="683"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">स्कोप लोड होऊ शकला नाही</translation>
     </message>
     <message>
-        <location filename="../main.py" line="723"/>
+        <location filename="../main.py" line="725"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">लोड करण्यात अयशस्वी %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="770"/>
+        <location filename="../main.py" line="772"/>
         <source>Device</source>
         <translation type="unfinished">डिव्हाईस</translation>
     </message>
     <message>
-        <location filename="../main.py" line="771"/>
+        <location filename="../main.py" line="773"/>
         <source>Reconnect</source>
         <translation type="unfinished">पुन्हा कनेक्ट करा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="772"/>
+        <location filename="../main.py" line="774"/>
         <source>LightBackGround</source>
         <translation type="unfinished">हलका बॅकग्राउंड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="773"/>
+        <location filename="../main.py" line="775"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">गडद बॅकग्राउंड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="774"/>
+        <location filename="../main.py" line="776"/>
         <source>Choose Language</source>
         <translation type="unfinished">भाषा निवडा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="793"/>
+        <location filename="../main.py" line="795"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="797"/>
+        <location filename="../main.py" line="799"/>
         <source>Screenshot</source>
         <translation type="unfinished">स्क्रीनशॉट</translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="800"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">संपूर्ण विंडो Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="799"/>
+        <location filename="../main.py" line="801"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">फक्त ग्राफ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="801"/>
+        <location filename="../main.py" line="803"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="802"/>
+        <location filename="../main.py" line="804"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="806"/>
+        <location filename="../main.py" line="808"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="808"/>
+        <location filename="../main.py" line="810"/>
         <source>School Expts</source>
         <translation type="unfinished">स्कूल एक्सपेरिमेन्ट्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="812"/>
+        <location filename="../main.py" line="814"/>
         <source>Electronics</source>
         <translation type="unfinished">इलेक्ट्रॉनिक्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="821"/>
         <source>Electrical</source>
         <translation type="unfinished">इलेक्ट्रिकल</translation>
     </message>
     <message>
-        <location filename="../main.py" line="823"/>
+        <location filename="../main.py" line="825"/>
         <source>Sound</source>
         <translation type="unfinished">ध्वनी</translation>
     </message>
     <message>
-        <location filename="../main.py" line="827"/>
+        <location filename="../main.py" line="829"/>
         <source>Mechanics</source>
         <translation type="unfinished">मेकॅनिक्स (यांत्रिकी)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="831"/>
+        <location filename="../main.py" line="833"/>
         <source>Other Expts</source>
         <translation type="unfinished">इतर प्रयोग</translation>
     </message>
     <message>
-        <location filename="../main.py" line="835"/>
+        <location filename="../main.py" line="837"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C मॉड्यूल्स</translation>
     </message>
     <message>
-        <location filename="../main.py" line="839"/>
+        <location filename="../main.py" line="841"/>
         <source>PythonCode</source>
         <translation type="unfinished">पायथन कोड</translation>
     </message>
     <message>
-        <location filename="../main.py" line="975"/>
+        <location filename="../main.py" line="977"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="982"/>
+        <location filename="../main.py" line="984"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1061"/>
+        <location filename="../main.py" line="1063"/>
         <source>Missing Plot</source>
         <translation type="unfinished">प्लॉट मिस्सीन्ग आहे</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1061"/>
+        <location filename="../main.py" line="1063"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished">प्लॉट शोधण्यात अक्षम. कृपया राईट क्लिक करून एक्सपोर्ट करण्याचा प्रयत्न करा</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1095"/>
+        <location filename="../main.py" line="1097"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished">रुंदी (px मध्ये) एंटर करा. उंची ऑटोसेट होईल.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1145"/>
+        <location filename="../main.py" line="1147"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">ऑसिलोस्कोप</translation>
     </message>
@@ -2778,7 +2815,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="333"/>
+        <location filename="../main.py" line="335"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2786,7 +2823,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>webWin</name>
     <message>
-        <location filename="../blockcoding.py" line="98"/>
+        <location filename="../blockcoding.py" line="94"/>
         <source>Block Coding: %s</source>
         <translation type="unfinished"></translation>
     </message>
