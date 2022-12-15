@@ -110,7 +110,11 @@ class Expt(QtWidgets.QWidget, ui_multiplexed_logger.Ui_Form):
 		except:
 			self.comerr()
 			
-		if (time.time() - self.startTime) > self.TMAX:
+		dt = time.time() - self.startTime
+
+		self.progressBar.setProperty("value", int(100*dt/self.TMAX))
+
+		if dt > self.TMAX:
 			self.running = False
 			self.msg(self.tr('Data logger plot completed'))
 			return
@@ -128,11 +132,15 @@ class Expt(QtWidgets.QWidget, ui_multiplexed_logger.Ui_Form):
 		self.startTime = time.time()
 		self.timer.stop()
 		self.timer.start(self.TIMER)
+		self.msg(self.tr('Started'))
 
 	def stopLogging(self):
+		self.msg(self.tr('User Stopped'))
+		self.running = False
 		self.timer.stop()
 
 	def clearTraces(self):
+		self.msg(self.tr('Cleared Traces and Data'))
 		self.timeData=[]
 		self.voltData=[]
 		for pos in range(16):
@@ -140,8 +148,36 @@ class Expt(QtWidgets.QWidget, ui_multiplexed_logger.Ui_Form):
 			self.timeData.append([])
 			self.voltData.append([])
 
+	def msg(self, m):
+		self.msgwin.setText(self.tr(m))
 	def saveTraces(self):
-		pass
+		#if self.running == True:
+		#	self.msg(self.tr('Measurement in progress'))
+		#	return
+		import numpy as np
+		datasizes = np.zeros(16, np.int32)
+		for a in range(16): #Calculate the largest array size.
+			datasizes[a] = len(self.timeData[a])
+		
+		if datasizes.max()==0:
+			self.msg(self.tr('No data to save'))
+			return
+		fn = QFileDialog.getSaveFileName()
+		if(len(fn)==2): #Tuple
+			fn = fn[0]
+		print(fn)
+		if fn != '':
+			f = open(fn,'wt')
+			f.write(','.join(['t%d,C%d'%(a,a) for a in range(16)])+'\n')
+			for a in range(datasizes.max()):
+				for pos in range(16):
+					if a < datasizes[pos]: #Data exists here
+						f.write('%.3f,%f,'%(self.timeData[pos][a],self.voltData[pos][a]))
+					else: #Data does not exist here
+						f.write(',,')
+				f.write('\n')
+			f.close()
+			self.msg(self.tr('Traces saved to ') + fn)
 
 
 

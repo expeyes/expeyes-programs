@@ -693,7 +693,9 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 			if cap == None:
 				self.msg(self.tr('Capacitance too high or short to ground'))
 			else:
-				if cap < 1.0e-9:
+				if cap < 1.0e-12:
+					self.CAP.setText('MEASURE CAP(IN1) '+ self.tr(' : < 1pF'))
+				elif cap < 1.0e-9:
 					ss = '%6.1f'%(cap*1e12)
 					self.CAP.setText('MEASURE CAP(IN1) '+ ss +self.tr(' pF'))
 				elif cap < 1.0e-6:

@@ -251,7 +251,6 @@ otherExpts = [
 [QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')],
-[QT_TRANSLATE_NOOP('MainWindow','Circuit Simulator'), ('7.5','circuitjs')],
 [QT_TRANSLATE_NOOP('MainWindow','Multiplexed Logger'), ('7.6','multiplexedlogger')]
 ]
 
@@ -645,20 +644,22 @@ class MainWindow(QMainWindow):
 
 	def showHelp(self):
 		if self.helpCB.isChecked() == True:
-			if self.hwin == None:
-				self.hwin = helpWin(self, (self.title,self.hlpName), self.lang)
-				if(self.hlpName[1] in ['editor','advanced_logger']):
-					try:
-						from PyQt5.QtWebChannel import QWebChannel
-						self.channel = QWebChannel()
-						self.handler = self.editorHandler(self.setEditorText,self.setConfigText)
-						self.channel.registerObject('handler', self.handler)
-						self.hwin.page().setWebChannel(self.channel)
-						print('online help available')
-					except Exception as e:
-						print(e)
+			if self.hwin != None: self.hwin.hide()
+
+			self.hwin = helpWin(self, (self.title,self.hlpName), self.lang)
+			if(self.hlpName[1] in ['editor','advanced_logger']):
+				try:
+					from PyQt5.QtWebChannel import QWebChannel
+					self.channel = QWebChannel()
+					self.handler = self.editorHandler(self.setEditorText,self.setConfigText)
+					self.channel.registerObject('handler', self.handler)
+					self.hwin.page().setWebChannel(self.channel)
+					print('online help available')
+				except Exception as e:
+					print(e)
 
 			self.hwin.show()
+			print('showing help window',self.hlpName)
 		else:
 			if self.hwin != None: self.hwin.hide()
 	
