@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="fullwave"
+   width="430"
+   height="300"
+   viewBox="-6 -6 430 300"
+   sodipodi:docname="Ohms_Law.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title2921">Some Title</title>
+  <defs
+     id="defs129">
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-5"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-7" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-3-3"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-8-1" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-3-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-8-6" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview127"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="1.563671"
+     inkscape:cx="66.829915"
+     inkscape:cy="135.89815"
+     inkscape:window-width="1582"
+     inkscape:window-height="928"
+     inkscape:window-x="95"
+     inkscape:window-y="115"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="fullwave"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;fullwave.ps&quot; Page 1
+</desc>
+  <path
+     d="M 36.491864,155.05147 36.123424,91.75276 170.81528,90.71818"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path56"
+     style="stroke:#d40000;stroke-width:4;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#DotS-4)"
+     sodipodi:nodetypes="ccc" />
+  <path
+     d="M 253.73542,169.71778 251.9276,90.21784"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path56-8"
+     style="stroke:#d40000;stroke-width:3.95077;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#DotS-4-3)"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 291.9276,90.21784 h -40"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path56-8-4"
+     style="stroke:#d40000;stroke-width:3.95077;stroke-miterlimit:4;stroke-dasharray:none"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="M 402.30111,169.71778 400.49329,90.21784"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path56-8-8"
+     style="stroke:#d40000;stroke-width:3.95077;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#DotS-4-3-3)"
+     sodipodi:nodetypes="cc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f2f2f2;fill-opacity:1;stroke:none"
+     x="11.42021"
+     y="353.15436"
+     id="A1-9"><title
+       id="title1095-6">huh</title><tspan
+       sodipodi:role="line"
+       id="tspan11305-5-7-5-4-2"
+       x="11.42021"
+       y="353.15436"
+       style="font-size:13.3333px;fill:#f2f2f2" /></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:7.48997px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.468123"
+     x="236.52081"
+     y="174.01677"
+     id="A1"><tspan
+       id="tspan5933-4-5"
+       x="236.52081"
+       y="174.01677"
+       style="font-size:7.48997px;fill:#333333;stroke-width:0.468123"
+       sodipodi:role="line">A1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:7.48997px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.468123"
+     x="176.28293"
+     y="87.373978"
+     id="dsf-3"><tspan
+       id="tspan5933-4-5-6"
+       x="176.28293"
+       y="87.373978"
+       style="font-size:7.48997px;fill:#f9f9f9;stroke-width:0.468123"
+       sodipodi:role="line">VAR:R1:1000:Ω</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none"
+     x="31.16507"
+     y="174.4581"
+     id="PV1"><desc
+       id="desc930">min=-5
+max=5
+value=1
+
+#Configure Automatic Sweep
+
+sweep=PV1
+title= V(A1) vs I ( PV1-A1)/R1) 
+start=-5
+stop=5
+stepsize=0.01
+delay=1
+settling=2
+
+yaxis=(PV1-A1)/R1
+ylabel=Current 
+ymin=-0.01
+ymax=0.01
+
+xaxis=A1
+xmin=-5
+xmax=5
+
+xunits=V
+yunits=A
+
+range=5
+</desc><tspan
+       sodipodi:role="line"
+       id="tspan11456"
+       x="31.16507"
+       y="174.4581"
+       style="font-size:16px;fill:#333333">PV1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:10.3665px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#333333;fill-opacity:1;stroke:none;stroke-width:0.647905"
+     x="120.62924"
+     y="17.112083"
+     id="as"><tspan
+       sodipodi:role="line"
+       id="tspan11456-2"
+       x="120.62924"
+       y="17.112083"
+       style="font-size:10.3665px;fill:#333333;stroke-width:0.647905">Current=(PV1-A1)/R1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:8.4825px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.530157"
+     x="121.12155"
+     y="6.2218399"
+     id="asd"><tspan
+       sodipodi:role="line"
+       id="tspan11456-2-8"
+       x="121.12155"
+       y="6.2218399"
+       style="font-size:8.4825px;fill:#f9f9f9;stroke-width:0.530157">EQ:(PV1-A1)/R1</tspan></text>
+  <metadata
+     id="metadata2840">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Some Title</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jithin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>#Parameters for launching the experiment
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+autoscaleY=true
+xlabel=Current ((PV1-A1)/R1)
+ylabel=Voltage(A1)
+xunits=A
+yunits=V
+
+input=A1
+output=PV1
+start=-5
+stop=5
+stepsize=0.1
+xequation=(PV1-A1)/R1
+yequation=A1
+logging=true
+title=Ohm's Law. Resistor's I vs V
+
+xmin=-10e-3
+xmax=10e-3
+ymin=-5
+ymax=5
+fitmode=linear
+intro=Measure current vs voltage
+
+variables=R1:1000:Ω</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+        <dc:description>## What is Ohm's Law
+
+Ohm's law is a fundamental principle in electricity that describes the relationship between voltage (V), current (I), and resistance (R) in an electrical circuit.
+It states that the current flowing through a conductor between two points is directly proportional to the voltage across the conductor and inversely proportional 
+to the resistance of the conductor. 
+
+Mathematically, Ohm's law is expressed as:
+
+`V = I * R`
+
+
+
+Where:
+
+    V represents the voltage measured in volts (V),
+    I represents the current measured in amperes (A),
+    R represents the resistance measured in ohms (Ω).
+
+According to Ohm's law, if the resistance in a circuit remains constant, the current flowing through the circuit is directly proportional 
+to the applied voltage. Similarly, if the voltage remains constant, the current is inversely proportional to the resistance.
+
+So if you know the current flowing through a resistor(R), and you know the potential difference across it, you can calculate its resistance as R=V/I . 
+
+## Verifying Ohm's Law
+
+Connect a known value resistor(1K) between PV1(Voltage Source) and A1(Voltmeter), and an unknown value resistor from A1 to Ground.
+
+* Using Ohm's law, we calculate the current flowing through R1 as (PV1 - A1)/1K . 
+
+* Since the same current must now flow through R2 also in order to reach GND , we can calculate R2 as A1/I where I was earlier calculated.
+
+## Bonus assignment
+
+Replace R2 with a diode/LED/Zener, and observe the behaviour.
+This program can also be used to observe the IV characteristics of different devices.
+
+</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 251.9276,90.21784 v 0 h -14.47661 l -7.30426,10.65758 -12.55715,-21.74962 -11.90437,20.61896 -11.14158,-19.6054 -6.70679,10.07848 h -17.02156"
+     id="path5701"
+     sodipodi:nodetypes="ccccccccc" />
+  <path
+     style="fill:none;stroke:#008000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     d="m 373.03992,90.21784 h 27.45337 -41.92998 l -7.30426,10.65758 -12.55715,-21.74961 -11.90437,20.61896 -11.14158,-19.6054 -6.70679,10.07847 H 291.9276"
+     id="path5701-5"
+     sodipodi:nodetypes="ccccccccc" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:18.3475px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.982903"
+     x="376.41092"
+     y="191.01767"
+     id="text12513"><tspan
+       sodipodi:role="line"
+       id="tspan12511"
+       x="376.41092"
+       y="191.01767"
+       style="font-size:18.3475px;stroke-width:0.982903">GND</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:14.5412px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.908823"
+     x="295.70535"
+     y="36.901871"
+     id="text8710"><tspan
+       sodipodi:role="line"
+       x="295.70535"
+       y="36.901871"
+       id="tspan8714"
+       style="font-size:14.5412px;stroke-width:0.908823">R2=?   (V / I)</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:14.5412px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:0.908823"
+     x="195.51268"
+     y="70.145111"
+     id="text8710-3"><tspan
+       sodipodi:role="line"
+       x="195.51268"
+       y="70.145111"
+       id="tspan8714-5"
+       style="font-size:14.5412px;stroke-width:0.908823">R1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18.6667px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="-1.3133974"
+     y="12.158358"
+     id="text12588"><tspan
+       sodipodi:role="line"
+       id="tspan12586"
+       x="-1.3133974"
+       y="12.158358"
+       style="font-size:18.6667px">Ohm's Law</tspan></text>
+</svg>

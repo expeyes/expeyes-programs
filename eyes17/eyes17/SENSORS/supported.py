@@ -1,7 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
 import inspect
 
-from . import HMC5883L,MPU6050,MLX90614,BMP180,TSL2561,SHT21,BH1750,SSD1306,ADS1115
+from . import HMC5883L,MPU6050,MLX90614,BMP180,TSL2561,SHT21,BH1750,SSD1306,ADS1115, QMC5883L
 
 supported={
 0x68:MPU6050,  #3-axis gyro,3-axis accel,temperature
@@ -11,6 +11,7 @@ supported={
 0x77:BMP180,   #Pressure, Temperature, altitude
 0x39:TSL2561,  #Luminosity
 0x40:SHT21,    #Temperature, Humidity
+0x60:MCP4725,    #12 bit DAC
 0x48:ADS1115,   #16-bit ADC
 0x23:BH1750,    #Luminosity
 #0x3C:SSD1306,    #OLED display

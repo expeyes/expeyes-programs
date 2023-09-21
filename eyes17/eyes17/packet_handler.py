@@ -138,6 +138,7 @@ class Handler():
 		if len(x)>2:#remove newline character
 			x=x[:-1]
 		self.status = 0#ord(x[-1]) #last byte represents included features such as NRF, HX711 etc
+		print('version tail:',bin(self.status))
 		return x[:-1]
 
 	def reconnect(self,**kwargs):

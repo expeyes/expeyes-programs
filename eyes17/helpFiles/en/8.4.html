@@ -363,7 +363,33 @@ ul.auto-toc {
 <div class="document" id="i2c-logger">
 <h1 class="title">I2C Logger</h1>
 
-<p>Scan for the I2C sensors connected. The detected sensors can be accessed.</p>
+<p>A wide variety of sensors for physical parameters such as pressure, temperature,
+humidity, light intensity, magnetic fields etc use the I2C communication interface
+to exchange data.</p>
+<p>Make the following connections between the sensor and ExpEYES/SEELab device
+5V -&gt; Vcc of the sensor
+GND -&gt; GND
+SCL -&gt; SCL
+SDA -&gt; SDA</p>
+<p>These pins are usually found in this order in most sensors, so
+the top right side of the SEELab3/ExpEYES devices also have these in this
+order in order to help plug sensors easily.</p>
+<img alt="pics/i2clogger.png" src="pics/i2clogger.png" style="width: 600px;" />
+<div class="section" id="procedure">
+<h1>Procedure</h1>
+<ul class="simple">
+<li>Click on the scan button to allow the device to search for any connected sensors and guess their name</li>
+<li>Scan may not always be correct since multiple sensors can share the same address sometimes.</li>
+<li>If the address or name of the sensor does not match, select your sensor name from the top left menu, set the correct address, and add manually</li>
+<li>click on 'start measurements' for the sensor you want to view</li>
+<li>In order to change from the default analog gauge view, click on the data logger button on the top left</li>
+<li>The data logger records and plots readings with time, and you can pause at any point to analyze the data</li>
+<li>Select the region to be analyzed, and click on sine fit if the data is periodic</li>
+<li>You can also save the data</li>
+</ul>
+<img alt="pics/i2cloggergauge.png" src="pics/i2cloggergauge.png" style="width: 600px;" />
+<img alt="pics/i2cloggerplot.png" src="pics/i2cloggerplot.png" style="width: 600px;" />
+</div>
 </div>
 </body>
 </html>

@@ -53,6 +53,13 @@ latexpdf:
 	  $(MAKE) real_latexpdf; \
 	fi
 
+cover/coverpage.pdf: cover/coverpage.tex
+	cd cover; pdflatex coverpage.tex
+
+cover/preface.pdf: cover/preface.tex
+	cd cover; pdflatex preface.tex
+
+
 real_latexpdf: build/latex/$(TARGET).pdf
 
 build/latex/$(TARGET).pdf : cover/coverpage.pdf cover/preface.pdf $(RSTSOURCES)
@@ -105,6 +112,9 @@ clean:
 	cd cover; rm -f *.aux *.log *~
 	rm -rf $(BUILDDIR)/doctrees
 	if [ -z "$(EYES17_ONLY)" ]; then rm -f *.html; fi
+
+
+
 
 
 .PHONY: distclean

@@ -6,260 +6,38 @@ Date    : Sep-2019
 License : GNU GPL version 3
 '''
 import sys
-
 from PyQt5 import QtGui, QtCore, QtWidgets
 
-import time, math, os.path, struct
-import utils
+import time, math,os, os.path, struct
 
 from collections import OrderedDict
 
-from layouts import ui_dio_sensor,ui_dio_control,ui_dio_robot
+from layouts import ui_dio_sensor,ui_dio_control,ui_dio_robot, ui_sensor_row, ui_sensor_logger
 from layouts.advancedLoggerTools import LOGGER
 
 from layouts.gauge import Gauge
 import functools
 from functools import partial
-import time
 
-
-try:
-	from scipy import optimize
-except:
-	print('scipy not available')
-
-
-
-
-from pyqtgraph.exporters import Exporter
-from pyqtgraph.parametertree import Parameter
-from pyqtgraph.Qt import QtGui, QtCore, QtSvg, USE_PYSIDE
-from pyqtgraph import functions as fn
-import pyqtgraph as pg
-
-__all__ = ['PQG_ImageExporter']
-
-
-class PQG_ImageExporter(Exporter):
-    Name = "Working Image Exporter (PNG, TIF, JPG, ...)"
-    allowCopy = True
-
-    def __init__(self, item):
-        Exporter.__init__(self, item)
-        tr = self.getTargetRect()
-        if isinstance(item, QtGui.QGraphicsItem):
-            scene = item.scene()
-        else:
-            scene = item
-        # scene.views()[0].backgroundBrush()
-        bgbrush = pg.mkBrush('w')
-        bg = bgbrush.color()
-        if bgbrush.style() == QtCore.Qt.NoBrush:
-            bg.setAlpha(0)
-
-        self.params = Parameter(name='params', type='group', children=[
-            {'name': 'width', 'type': 'int',
-                'value': tr.width(), 'limits': (0, None)},
-            {'name': 'height', 'type': 'int',
-                'value': tr.height(), 'limits': (0, None)},
-            {'name': 'antialias', 'type': 'bool', 'value': True},
-            {'name': 'background', 'type': 'color', 'value': bg},
-        ])
-        self.params.param('width').sigValueChanged.connect(self.widthChanged)
-        self.params.param('height').sigValueChanged.connect(self.heightChanged)
-
-    def widthChanged(self):
-        sr = self.getSourceRect()
-        ar = float(sr.height()) / sr.width()
-        self.params.param('height').setValue(
-            self.params['width'] * ar, blockSignal=self.heightChanged)
-
-    def heightChanged(self):
-        sr = self.getSourceRect()
-        ar = float(sr.width()) / sr.height()
-        self.params.param('width').setValue(
-            self.params['height'] * ar, blockSignal=self.widthChanged)
-
-    def parameters(self):
-        return self.params
-
-    def export(self, fileName=None, toBytes=False, copy=False):
-        if fileName is None and not toBytes and not copy:
-            if USE_PYSIDE:
-                filter = ["*."+str(f)
-                          for f in QtGui.QImageWriter.supportedImageFormats()]
-            else:
-                filter = ["*."+bytes(f).decode('utf-8')
-                          for f in QtGui.QImageWriter.supportedImageFormats()]
-            preferred = ['*.png', '*.tif', '*.jpg']
-            for p in preferred[::-1]:
-                if p in filter:
-                    filter.remove(p)
-                    filter.insert(0, p)
-            self.fileSaveDialog(filter=filter)
-            return
-
-        targetRect = QtCore.QRect(
-            0, 0, self.params['width'], self.params['height'])
-        sourceRect = self.getSourceRect()
-
-        #self.png = QtGui.QImage(targetRect.size(), QtGui.QImage.Format_ARGB32)
-        # self.png.fill(pyqtgraph.mkColor(self.params['background']))
-        w, h = self.params['width'], self.params['height']
-        if w == 0 or h == 0:
-            raise Exception(
-                "Cannot export image with size=0 (requested export size is %dx%d)" % (w, h))
-        bg = np.empty((int(self.params['width']), int(
-            self.params['height']), 4), dtype=np.ubyte)
-        color = self.params['background']
-        bg[:, :, 0] = color.blue()
-        bg[:, :, 1] = color.green()
-        bg[:, :, 2] = color.red()
-        bg[:, :, 3] = color.alpha()
-        self.png = fn.makeQImage(bg, alpha=True)
-
-        # set resolution of image:
-        origTargetRect = self.getTargetRect()
-        resolutionScale = targetRect.width() / origTargetRect.width()
-        #self.png.setDotsPerMeterX(self.png.dotsPerMeterX() * resolutionScale)
-        #self.png.setDotsPerMeterY(self.png.dotsPerMeterY() * resolutionScale)
-
-        painter = QtGui.QPainter(self.png)
-        #dtr = painter.deviceTransform()
-        try:
-            self.setExportMode(True, {
-                               'antialias': self.params['antialias'], 'background': self.params['background'], 'painter': painter, 'resolutionScale': resolutionScale})
-            painter.setRenderHint(
-                QtGui.QPainter.Antialiasing, self.params['antialias'])
-            self.getScene().render(painter, QtCore.QRectF(
-                targetRect), QtCore.QRectF(sourceRect))
-        finally:
-            self.setExportMode(False)
-        painter.end()
-
-        if copy:
-            QtGui.QApplication.clipboard().setImage(self.png)
-        elif toBytes:
-            return self.png
-        else:
-            self.png.save(fileName)
-
-
-PQG_ImageExporter.register()
-
-
-
-
-
-
-import pyqtgraph as pg
 import numpy as np
+import utils
 
-colors=[(0,255,0),(255,0,0),(255,255,100),(10,255,255)]+[(50+np.random.randint(200),50+np.random.randint(200),150+np.random.randint(100)) for a in range(10)]
-
-Byte =     struct.Struct("B") # size 1
-ShortInt = struct.Struct("H") # size 2
-Integer=   struct.Struct("I") # size 4
-
-############# MATHEMATICAL AND ANALYTICS ###############
-
-def find_peak(va):
-	vmax = 0.0
-	size = len(va)
-	index = 0
-	for i in range(1,size):		# skip first 2 channels, DC
-		if va[i] > vmax:
-			vmax = va[i]
-			index = i
-	return index
-
-#-------------------------- Fourier Transform ------------------------------------
-def fft(ya, si):
-	'''
-	Returns positive half of the Fourier transform of the signal ya. 
-	Sampling interval 'si', in milliseconds
-	'''
-	NP = len(ya)
-	if NP%2: #odd number
-		ya = ya[:-1]
-		NP-=1
-	v = np.array(ya)
-	tr = abs(np.fft.fft(v))/NP
-	frq = np.fft.fftfreq(NP, si)
-	x = frq.reshape(2,int(NP/2))
-	y = tr.reshape(2,int(NP/2))
-	return x[0], y[0]    
-
-def find_frequency(x,y):		# Returns the fundamental frequency using FFT
-	tx,ty = fft(y, x[1]-x[0])
-	index = find_peak(ty)
-	if index == 0:
-		return None
-	else:
-		return tx[index]
-
-#-------------------------- Sine Fit ------------------------------------------------
-def sine_eval(x,p):			# y = a * sin(2*pi*f*x + phi)+ offset
-	return p[0] * np.sin(2*np.pi*p[1]*x+p[2])+p[3]
-
-def sine_erf(p,x,y):					
-	return y - sine_eval(x,p)
-
-
-def fit_sine(xa,ya, freq = 0):	# Time in mS, V in volts, freq in Hz, accepts numpy arrays
-	size = len(ya)
-	mx = max(ya)
-	mn = min(ya)
-	amp = (mx-mn)/2
-	off = np.average(ya)
-	if freq == 0:						# Guess frequency not given
-		freq = find_frequency(xa,ya)
-	if freq == None:
-		return None
-	#print 'guess a & freq = ', amp, freq
-	par = [amp, freq, 0.0, off] # Amp, freq, phase , offset
-	par, pcov = optimize.leastsq(sine_erf, par, args=(xa, ya))
-	return par
-	
-
-#--------------------------Damped Sine Fit ------------------------------------------------
-def dsine_eval(x,p):
-	return     p[0] * np.sin(2*np.pi*p[1]*x+p[2]) * np.exp(-p[4]*x) + p[3]
-def dsine_erf(p,x,y):
-	return y - dsine_eval(x,p)
-
-
-def fit_dsine(xlist, ylist, freq = 0):
-	size = len(xlist)
-	xa = np.array(xlist, dtype=np.float)
-	ya = np.array(ylist, dtype=np.float)
-	amp = (max(ya)-min(ya))/2
-	off = np.average(ya)
-	if freq == 0:
-		freq = find_frequency(xa,ya)
-	if freq==None: return None
-	par = [amp, freq, 0.0, off, 0.] # Amp, freq, phase , offset, decay constant
-	par, pcov = optimize.leastsq(dsine_erf, par,args=(xa,ya))
-
-	return par
-
-
-############# MATHEMATICAL AND ANALYTICS ###############
 
 
 ########### I2C : SENSOR AND CONTROL LAYOUTS ##################
 
 
 class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
-	def __init__(self,parent,sensor):
+	def __init__(self,parent,sensor, addr):
 		super(DIOSENSOR, self).__init__(parent)
 		name = sensor['name']
 		self.initialize = sensor['init']
+		self.address = addr
 		self.read = sensor['read']
 		self.isPaused = False
 		self.setupUi(self)
+		colors = ['#00ffff','#008080','#ff0000','#800000','#ff00ff','#800080','#00FF00','#008000','#ffff00','#808000','#0000ff','#000080','#a0a0a4','#808080','#ffffff','#4000a0']
 		self.currentPage = 0
-		self.scale = 1.
 		self.max = sensor.get('max',None)
 		self.min = sensor.get('min',None)
 		self.fields = sensor.get('fields',None)
@@ -282,15 +60,18 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 
 
 
-		self.curves = {}; self.fitCurves = {}
+		self.curves = {}; self.curveData={}; self.fitCurves = {}
+		self.cbs = {}
 		self.gauges = {}
 		self.datapoints=0
 		self.T = 0
 		self.time = np.empty(300)
 		self.start_time = time.time()
 		row = 1; col=1;
+		MAXCOL = 4;
+		if len(self.fields)>=6:MAXCOL=5
 		for a,b,c in zip(self.fields,self.min,self.max):
-			gauge = Gauge(self)
+			gauge = Gauge(self,a)
 			gauge.setObjectName(a)
 			gauge.set_MinValue(b)
 			gauge.set_MaxValue(c)
@@ -299,18 +80,40 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 			#self.listWidget.setItemWidget(listItem, gauge)
 			self.gaugeLayout.addWidget(gauge,row,col)
 			col+= 1
-			if col == 4:
+			if col == MAXCOL:
 				row += 1
 				col = 1
-			self.gauges[gauge] = [a,b,c] #Name ,min, max value
+			self.gauges[a] = [gauge,a,b,c] #Name ,min, max value
 			
-			curve = self.graph.plot(pen=colors[len(self.curves.keys())])
-			fitcurve = self.graph.plot(pen=colors[len(self.curves.keys())],width=2)
-			self.curves[curve] = np.empty(300)
-			self.fitCurves[curve] = fitcurve
 
+			curve = self.graph.plot(pen=colors[len(self.curves.keys())], connect="finite")
+			fitcurve = self.graph.plot(pen=colors[len(self.curves.keys())],width=2, connect="finite")
+			cbs = QtWidgets.QCheckBox(a)
+			cbs.setStyleSheet('background-color:%s;'%(colors[len(self.curves.keys())]) )
+			self.parameterLayout.addWidget(cbs)
+			cbs.setChecked(True)
+			cbs.clicked.connect(self.toggled)
+
+			self.curves[a] = curve
+			self.curveData[a] = np.empty(300)
+			self.fitCurves[a] = fitcurve
+			self.cbs[a] = cbs
 		
 		self.setWindowTitle('Sensor : %s'%name)
+
+	def toggled(self):
+		for inp in self.fields:
+			if self.cbs[inp].isChecked():
+				self.curves[inp].setVisible(True)
+				self.gauges[inp][0].set_NeedleColor()
+				self.gauges[inp][0].set_enable_filled_Polygon()
+			else:
+				self.curves[inp].setVisible(False)
+				self.gauges[inp][0].set_NeedleColor(255,0,0,30)
+				self.gauges[inp][0].set_enable_filled_Polygon(False)
+
+	def setDuration(self):
+		self.graph.setRange(xRange=[-1*int(self.durationBox.value()), 0])
 
 	def next(self):
 		if self.currentPage==1:
@@ -322,10 +125,19 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 
 		self.monitors.setCurrentIndex(self.currentPage)
 
-	def changeRange(self,state):
-		for a in self.gauges:
-			self.scale = self.gauges[a][1]/65535. if state else 1.
-			a.set_MaxValue(self.gauges[a][1] if state else 65535)
+	def restartLogging(self):
+		self.pauseLogging(False); self.pauseButton.setChecked(False)
+		self.setDuration()
+		for pos in self.fields:
+			self.curves[pos].setData([],[])
+			self.datapoints=0
+			self.T = 0
+			self.curveData[pos] = np.empty(300)
+			self.time = np.empty(300)
+			self.start_time = time.time()
+	
+	def readValues(self):	
+		return self.read()
 
 	def setValue(self,vals):
 		if vals is None:
@@ -333,8 +145,9 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 			return
 		if self.currentPage == 0: #Update Analog Gauges
 			p=0
-			for a in self.gauges:
-				a.update_value(vals[p]*self.scale)
+			for a in self.fields:
+				if(self.cbs[a].isChecked()):
+					self.gauges[a][0].update_value(vals[p])
 				p+=1
 		elif self.currentPage == 1: #Update Data Logger
 			if self.isPaused: return
@@ -346,90 +159,131 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 				self.time = np.empty(self.time.shape[0] * 2) #double the size
 				self.time[:tmp.shape[0]] = tmp
 
-			for a in self.curves:
-				self.curves[a][self.datapoints] = vals[p] * self.scale
+			for a in self.fields:
+				self.curveData[a][self.datapoints] = vals[p]
 				if not p: self.datapoints += 1 #Increment datapoints once per set. it's shared
 
-				if self.datapoints >= self.curves[a].shape[0]-1:
-					tmp = self.curves[a]
-					self.curves[a] = np.empty(self.curves[a].shape[0] * 2) #double the size
-					self.curves[a][:tmp.shape[0]] = tmp
-				a.setData(self.time[:self.datapoints],self.curves[a][:self.datapoints])
-				a.setPos(-self.T, 0)
+				if self.datapoints >= self.curveData[a].shape[0]-1:
+					tmp = self.curveData[a]
+					self.curveData[a] = np.empty(self.curveData[a].shape[0] * 2) #double the size
+					self.curveData[a][:tmp.shape[0]] = tmp
+				self.curves[a].setData(self.time[:self.datapoints],self.curveData[a][:self.datapoints])
+				self.curves[a].setPos(-self.T, 0)
 				p+=1
 
 	def sineFit(self):
-		self.pauseBox.setChecked(True)
+		self.pauseButton.setChecked(True); self.isPaused = True;
 		S,E=self.region.getRegion()
 		start = (np.abs(self.time[:self.datapoints]- self.T - S)).argmin()
 		end = (np.abs(self.time[:self.datapoints]-self.T - E)).argmin()
 		print(self.T,start,end,S,E,self.time[start],self.time[end])
 		res = 'Amp, Freq, Phase, Offset<br>'
 		for a in self.curves:
-			try:
-					fa=fit_sine(self.time[start:end],self.curves[a][start:end])
-					if fa is not None:
-							amp=abs(fa[0])
-							freq=fa[1]
-							phase = fa[2]
-							offset = fa[3]
-							s = '%5.2f , %5.3f Hz, %.2f, %.1f<br>'%(amp,freq, phase, offset)
-							res+= s
-							x = np.linspace(self.time[start],self.time[end],1000)
-							self.fitCurves[a].clear()
-							self.fitCurves[a].setData(x-self.T,sine_eval(x,fa))
-			except Exception as e:
-					res+='--<br>'
-					print (e.message)
-					pass
-		QtWidgets.QMessageBox.information(self, ' Sine Fit Results ', res)
+			if self.cbs[a].isChecked():
+				try:
+						fa=utils.fit_sine(self.time[start:end],self.curveData[a][start:end])
+						if fa is not None:
+								amp=abs(fa[0])
+								freq=fa[1]
+								phase = fa[2]
+								offset = fa[3]
+								s = '%5.2f , %5.3f Hz, %.2f, %.1f<br>'%(amp,freq, phase, offset)
+								res+= s
+								x = np.linspace(self.time[start],self.time[end],1000)
+								self.fitCurves[a].clear()
+								self.fitCurves[a].setData(x-self.T,utils.sine_eval(x,fa))
+								self.fitCurves[a].setVisible(True)
 
+				except Exception as e:
+						res+='--<br>'
+						print (e.message)
+
+		self.msgBox = QtWidgets.QMessageBox(self)
+		self.msgBox.setWindowModality(QtCore.Qt.NonModal)
+		self.msgBox.setWindowTitle('Sine Fit Results')
+		self.msgBox.setText(res)
+		self.msgBox.show()
 
 	def dampedSineFit(self):
-		self.pauseBox.setChecked(True)
+		self.pauseButton.setChecked(True); self.isPaused = True;
 		S,E=self.region.getRegion()
 		start = (np.abs(self.time[:self.datapoints]- self.T - S)).argmin()
 		end = (np.abs(self.time[:self.datapoints]-self.T - E)).argmin()
 		print(self.T,start,end,S,E,self.time[start],self.time[end])
 		res = 'Amplitude, Freq, phase, Damping<br>'
 		for a in self.curves:
-			try:
-					fa=fit_dsine(self.time[start:end],self.curves[a][start:end])
-					if fa is not None:
-							amp=abs(fa[0])
-							freq=fa[1]
-							decay=fa[4]
-							phase = fa[2]
-							s = '%5.2f , %5.3f Hz, %.3f, %.3e<br>'%(amp,freq,phase,decay)
-							res+= s
-							x = np.linspace(self.time[start],self.time[end],1000)
-							self.fitCurves[a].clear()
-							self.fitCurves[a].setData(x-self.T,dsine_eval(x,fa))
-			except Exception as e:
-					res+='--<br>'
-					print (e.message)
-					pass
-		QtWidgets.QMessageBox.information(self, ' Damped Sine Fit Results ', res)
+			if self.cbs[a].isChecked():
+				try:
+						fa=utils.fit_dsine(self.time[start:end],self.curveData[a][start:end])
+						if fa is not None:
+								amp=abs(fa[0])
+								freq=fa[1]
+								decay=fa[4]
+								phase = fa[2]
+								s = '%5.2f , %5.3f Hz, %.3f, %.3e<br>'%(amp,freq,phase,decay)
+								res+= s
+								x = np.linspace(self.time[start],self.time[end],1000)
+								self.fitCurves[a].clear()
+								self.fitCurves[a].setData(x-self.T,utils.dsine_eval(x,fa))
+								self.fitCurves[a].setVisible(True)
+				except Exception as e:
+						res+='--<br>'
+						print (e.message)
+
+		self.msgBox = QtWidgets.QMessageBox(self)
+		self.msgBox.setWindowModality(QtCore.Qt.NonModal)
+		self.msgBox.setWindowTitle('Damped Sine Fit Results')
+		self.msgBox.setText(res)
+		self.msgBox.show()
+
+	def pauseLogging(self,v):
+		self.isPaused = v
+		for inp in self.fields:
+			self.fitCurves[inp].setVisible(False)
 
 
-	def pause(self,val):
-		self.isPaused = val
-		if not val: #clear fit plots
-			for a in self.curves:
-				self.fitCurves[a].clear()
+
+	def saveTraces(self):
+		self.pauseButton.setChecked(True); self.isPaused = True;
+		fn = QtWidgets.QFileDialog.getSaveFileName(self,"Save file",QtCore.QDir.currentPath(),
+        "Text files (*.txt);;CSV files (*.csv);;All files (*.*)", "CSV files (*.csv)")
+		if(len(fn)==2): #Tuple
+			fn = fn[0]
+		print(fn)
+		if fn != '':
+			f = open(fn,'wt')
+			f.write('time')
+			for inp in self.fields:
+				if self.cbs[inp].isChecked():
+					f.write(',%s'%(inp))
+			f.write('\n')
+
+			for a in range(self.datapoints):
+				f.write('%.3f'%(self.time[a]-self.time[0]))
+				for inp in self.fields:
+					if self.cbs[inp].isChecked():
+						f.write(',%.3f'%(self.curveData[inp][a]))
+				f.write('\n')
+			f.close()
+
 
 	def launch(self):
 		if self.initialize is not None:
-			self.initialize()
+			self.initialize(address = self.address)
 		self.show()
 
 
 class DIOCONTROL(QtWidgets.QDialog,ui_dio_control.Ui_Dialog):
-	def __init__(self,parent,sensor):
+	def __init__(self,parent,sensor, addr):
 		super(DIOCONTROL, self).__init__(parent)
 		name = sensor['name']
 		self.initialize = sensor['init']
+		self.address = addr
 		self.setupUi(self)
+		self.isPaused = False		
+		self.currentPage = 0 #Only one page exists.
+		self.val = 0
+
 		self.widgets =[]
 		self.gauges = {}
 		self.functions = {}
@@ -451,23 +305,26 @@ class DIOCONTROL(QtWidgets.QDialog,ui_dio_control.Ui_Dialog):
 			
 		self.setWindowTitle('Control : %s'%name)
 
+	def readValues(self):
+		return None
+
 	def write(self,w,val):
+		self.val = val
 		self.gauges[w].update_value(val)
 		self.functions[w](val)
 
 
 	def launch(self):
-		self.initialize()
+		self.initialize(address=self.address)
 		self.show()
 
 
-
-
 class DIOROBOT(QtWidgets.QDialog,ui_dio_robot.Ui_Dialog):
-	def __init__(self,parent,sensor):
+	def __init__(self,parent,sensor, addr):
 		super(DIOROBOT, self).__init__(parent)
 		name = sensor['name']
 		self.initialize = sensor['init']
+		self.address = addr
 		self.setupUi(self)
 		self.widgets =[]
 		self.gauges = OrderedDict()
@@ -519,89 +376,133 @@ class DIOROBOT(QtWidgets.QDialog,ui_dio_robot.Ui_Dialog):
 						
 
 	def launch(self):
-		self.initialize()
+		self.initialize(address = self.address)
 		self.show()
 
 
+class SENSORROW(QtWidgets.QWidget,ui_sensor_row.Ui_Form):
+	def __init__(self,parent,**kwargs):
+		super(SENSORROW, self).__init__(parent)
+		self.setupUi(self)
+		self.title.setText(kwargs.get('name'))
+		self.description.setText(kwargs.get('description'))
+		self.address = kwargs.get('address')
+		self.addressNumber.display(self.address)
+		self.scene = QtWidgets.QGraphicsScene()
+		self.image.setScene(self.scene)
+		self.image_qt = QtGui.QImage(os.path.join(os.path.dirname(os.path.abspath(__file__)),'blockly','media',kwargs.get('name')+'.jpeg'))
+		print(os.path.join('blockly','media',kwargs.get('name')+'.jpeg'))
+		pic = QtWidgets.QGraphicsPixmapItem()
+		pic.setPixmap(QtGui.QPixmap.fromImage(self.image_qt))
+		#self.scene.setSceneRect(0, 0, 100, 100)
+		self.scene.addItem(pic)
 
-class Expt(QtWidgets.QWidget):
+
+class Expt(QtWidgets.QWidget, ui_sensor_logger.Ui_Form):
 	def __init__(self, device=None):
 		QtWidgets.QWidget.__init__(self)
+		self.setupUi(self)
 		self.p = device
-		device.set_pv1(2)
 		self.I2C = device.I2C	        #connection to the device hardware
-		self.I2C.config(100000)
+		self.I2C.config(400000)
 		self.sensorList = []
-		self.logger = LOGGER(self.I2C)
-		right = QtWidgets.QVBoxLayout() # right side vertical layout
-		right.setAlignment(QtCore.Qt.AlignmentFlag(0x0020)) # Qt.AlignTop
-		right.setSpacing(4)
-	
-		b = QtWidgets.QPushButton(self.tr("Scan"))
-		right.addWidget(b)
-		b.clicked.connect(self.scan)
 		
-		self.sensorLayout = QtWidgets.QHBoxLayout()
+		#Prepare list of sensor->address map
+		self.manualSensor = None
+		logger = LOGGER(self.I2C)		
+		self.defaultMap = {}
+		for addr in logger.sensors:
+			self.defaultMap[logger.sensors[addr]['name'].split(' ')[0]] = addr
+
+		self.sensorCombo.addItems(self.defaultMap.keys())
 		
-		full = QtWidgets.QVBoxLayout()
-		full.addLayout(right)
-		full.addLayout(self.sensorLayout)
-		self.msgwin = QtWidgets.QLabel(text=self.tr(''))
-		self.msgwin.setMinimumWidth(500)
-		full.addWidget(self.msgwin)
-				
-		self.setLayout(full)
+		#Non I2C Sensors
+		self.nonI2CSensors={}
+		self.nonI2CSensors['SR04'] = {'name':'SR04 Distance Sensor','init':lambda **kwargs: print('init sr04'),'read':lambda: [self.p.sr04_distance()],'min':[0],'max':[200],'fields':['Distance']}
+		self.nonI2CSensors['Voltage A1'] = {'name':'A1 Voltage Measurement','init':lambda **kwargs: print('init A1'),'read':lambda: [self.p.get_voltage('A1')],'min':[-16],'max':[16],'fields':['V']}
+		self.nonI2CSensors['Voltage SEN'] = {'name':'SEN Voltage Measurement','init':lambda **kwargs: print(''),'read':lambda: [self.p.get_voltage('SEN')],'min':[0],'max':[3.3],'fields':['V']}
+		self.nonI2CSensors['Resistance'] = {'name':'SEN-GND Resistance Measurement','init':lambda **kwargs: print(''),'read':lambda: [self.p.get_resistance()],'min':[100],'max':[100e3],'fields':['Ohms']}
+
+		self.sensorCombo.addItems(self.nonI2CSensors.keys())
 
 		self.startTime = time.time()
 		self.timer = QtCore.QTimer()
 		self.timer.timeout.connect(self.updateEverything)
 		self.timer.start(2)
+		self.scan()
+
+	def setManualSensor(self,name):
+		self.manualSensor = str(name)
+		self.addressBox.setValue(self.defaultMap.get(self.manualSensor,0))
+
+	def addSensor(self):
+		if self.manualSensor in self.defaultMap:
+			addr = self.addressBox.value()
+			logger = LOGGER(self.I2C)		
+			s = logger.sensors[ self.defaultMap[self.manualSensor] ]
+			btn = SENSORROW(self,name=s['name'].split(' ')[0],address=addr,description=' '.join(s['name'].split(' ')[1:])+'\n\nA Manually added I2C sensor.')
+			dialog = DIOSENSOR(self,s, addr)
+			btn.launchButton.clicked.connect(dialog.launch)
+			self.sensorLayout.addWidget(btn)
+			self.sensorList.append([dialog,btn, logger])
+		elif self.manualSensor in self.nonI2CSensors:
+			s = self.nonI2CSensors[self.manualSensor]
+			btn = SENSORROW(self,name=s['name'].split(' ')[0],address=0,description=' '.join(s['name'].split(' ')[1:])+'\n\nNot an I2C sensor.')
+			dialog = DIOSENSOR(self,s, 0)
+			btn.launchButton.clicked.connect(dialog.launch)
+			self.sensorLayout.addWidget(btn)
+			self.sensorList.append([dialog,btn])
+			
+
 
 	def updateEverything(self):
 		for a in self.sensorList:
 			if a[0].isVisible():
-				if a[0].currentPage == 0 or a[0].isPaused == 0: #If on logger page(1) , pause button should be unchecked
-					v = a[0].read()
+				if a[0].isPaused == 0 or (a[0].currentPage != None and a[0].currentPage == 0): #If on logger page(1) , pause button should be unchecked
+					v = a[0].readValues()
 					if v is not None:
 						a[0].setValue(v)
-
 
 
 	############ I2C SENSORS #################
 	def scan(self):
 		if self.p.connected:
-			x = self.logger.I2CScan()
+			logger = LOGGER(self.I2C)		
+			x = logger.I2CScan()
 			print('Responses from: ',x)
+			self.resultLabel.setText('Responses from addresses: '+str(x))
 			for a in self.sensorList:
 				a[0].setParent(None)
 				a[1].setParent(None)
 			self.sensorList = []
 			for a in x:
-				s = self.logger.sensors.get(a,None)
+				possiblesensors = logger.sensormap.get(a,None)
+				if len(possiblesensors)>0:
+					for sens in possiblesensors:
+						s = logger.namedsensors.get(sens)
+						btn = SENSORROW(self,name=s['name'].split(' ')[0],address=a,description=' '.join(s['name'].split(' ')[1:])+'\n\nA sensor that uses the I2C port to communicate')
+						dialog = DIOSENSOR(self,s, a)
+						btn.launchButton.clicked.connect(dialog.launch)
+						self.sensorLayout.addWidget(btn)
+						self.sensorList.append([dialog,btn, logger])
+						continue
+
+				s = logger.controllers.get(a,None)
 				if s is not None:
 					btn = QtWidgets.QPushButton(s['name']+':'+hex(a))
-					dialog = DIOSENSOR(self,s)
+					dialog = DIOCONTROL(self,s, a)
 					btn.clicked.connect(dialog.launch)
 					self.sensorLayout.addWidget(btn)
-					self.sensorList.append([dialog,btn])
+					self.sensorList.append([dialog,btn, logger])
 					continue
 
-				s = self.logger.controllers.get(a,None)
+				s = logger.special.get(a,None)
 				if s is not None:
 					btn = QtWidgets.QPushButton(s['name']+':'+hex(a))
-					dialog = DIOCONTROL(self,s)
+					dialog = DIOROBOT(self,s, a)
 					btn.clicked.connect(dialog.launch)
 					self.sensorLayout.addWidget(btn)
-					#self.sensorList.append([dialog,btn])
-					continue
-
-				s = self.logger.special.get(a,None)
-				if s is not None:
-					btn = QtWidgets.QPushButton(s['name']+':'+hex(a))
-					dialog = DIOROBOT(self,s)
-					btn.clicked.connect(dialog.launch)
-					self.sensorLayout.addWidget(btn)
-					#self.sensorList.append([dialog,btn])
+					self.sensorList.append([dialog,btn, logger])
 					continue
 
 if __name__ == '__main__':

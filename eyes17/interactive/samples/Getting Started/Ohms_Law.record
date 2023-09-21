@@ -1,0 +1,28 @@
+[default]
+#Parameters for launching the experiment
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+autoscaleY=true
+xlabel=Current ((PV1-A1)/R1)
+ylabel=Voltage(A1)
+xunits=A
+yunits=V
+
+input=A1
+output=PV1
+start=-5
+stop=5
+stepsize=0.1
+xequation=(PV1-A1)/R1
+yequation=A1
+logging=true
+title=Ohm's Law. Resistor's I vs V
+
+xmin=-10e-3
+xmax=10e-3
+ymin=-5
+ymax=5
+fitmode=linear
+intro=Measure current vs voltage
+
+variables=R1:1000:Ω

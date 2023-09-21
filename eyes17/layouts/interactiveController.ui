@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>483</width>
+    <height>432</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <pointsize>9</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>Configure Axis</string>
+  </property>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <property name="sizeGripEnabled">
+   <bool>true</bool>
+  </property>
+  <property name="modal">
+   <bool>false</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>3</number>
+   </property>
+   <property name="topMargin">
+    <number>3</number>
+   </property>
+   <property name="rightMargin">
+    <number>3</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>3</number>
+   </property>
+   <item row="0" column="2">
+    <widget class="QComboBox" name="subSelection">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>80</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="5">
+    <widget class="QDoubleSpinBox" name="minValue">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="prefix">
+      <string>Min </string>
+     </property>
+     <property name="minimum">
+      <double>-65535.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>65535.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="6">
+    <widget class="QDoubleSpinBox" name="maxValue">
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="prefix">
+      <string>Max </string>
+     </property>
+     <property name="minimum">
+      <double>-65535.000000000000000</double>
+     </property>
+     <property name="maximum">
+      <double>65535.000000000000000</double>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QComboBox" name="availableInputs">
+     <property name="maximumSize">
+      <size>
+       <width>200</width>
+       <height>16777215</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>REFRESH</string>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="7">
+    <layout class="QGridLayout" name="gaugeLayout">
+     <property name="spacing">
+      <number>3</number>
+     </property>
+    </layout>
+   </item>
+   <item row="2" column="0" colspan="7">
+    <layout class="QHBoxLayout" name="configLayout">
+     <item>
+      <widget class="QLabel" name="message">
+       <property name="maximumSize">
+        <size>
+         <width>16777215</width>
+         <height>20</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(204, 0, 0);
+font: 13pt &quot;Ubuntu&quot;;</string>
+       </property>
+       <property name="text">
+        <string>.</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="res.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>init()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>57</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>49</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>subSelection</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>subSelectionChanged(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>217</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>322</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>availableInputs</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Dialog</receiver>
+   <slot>selectSensor(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>123</x>
+     <y>12</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>141</x>
+     <y>0</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>changeRange(bool)</slot>
+  <slot>next()</slot>
+  <slot>sineFit()</slot>
+  <slot>pause(bool)</slot>
+  <slot>dampedSineFit()</slot>
+  <slot>init()</slot>
+  <slot>selectSensor(int)</slot>
+  <slot>subSelectionChanged(int)</slot>
+  <slot>confirm()</slot>
+ </slots>
+</ui>

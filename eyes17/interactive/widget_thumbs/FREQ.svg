@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.458332mm"
+   height="26.458332mm"
+   viewBox="0 0 26.458332 26.458332"
+   version="1.1"
+   id="svg55968"
+   inkscape:version="1.1.2 (1:1.1+202202050950+0a00cf5339)"
+   sodipodi:docname="FREQ.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview55970"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="6.004061"
+     inkscape:cx="43.803685"
+     inkscape:cy="36.725143"
+     inkscape:window-width="1551"
+     inkscape:window-height="752"
+     inkscape:window-x="301"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1028-5-0" />
+  <defs
+     id="defs55965">
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient55414"
+       id="linearGradient54064"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(209.61825,-610.33482)"
+       x1="124.38175"
+       y1="416.33481"
+       x2="224.38174"
+       y2="416.33481" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient55414">
+      <stop
+         style="stop-color:#000080;stop-opacity:1"
+         offset="0"
+         id="stop55410" />
+      <stop
+         style="stop-color:#36bdc4;stop-opacity:0.51881325"
+         offset="1"
+         id="stop55412" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.028571,-210.1842)">
+    <g
+       id="g1028-5-0"
+       transform="matrix(0.26458333,0,0,0.26458333,50.060486,131.92169)">
+      <g
+         id="g1028-5-0-2-4"
+         transform="translate(-57.19149,-38.204701)">
+        <rect
+           style="fill:url(#linearGradient54064);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4"
+           id="rect18298-9-2-8-0"
+           width="99.998741"
+           height="100"
+           x="334"
+           y="-244"
+           transform="rotate(90)"
+           ry="10.450147" />
+        <g
+           id="g26449-4-1-4-0"
+           transform="matrix(1.3028729,0,0,1.3028729,269.02636,271.7887)">
+          <rect
+             style="fill:#e6e6e6;fill-opacity:0.518813;fill-rule:evenodd;stroke:none;stroke-width:4"
+             id="rect18904-6-0-7-4"
+             width="23.059883"
+             height="24.110979"
+             x="-91.581017"
+             y="48.754421"
+             ry="3.7464318" />
+        </g>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5"
+           style="font-size:17.8061px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.445152"
+           x="185.46568"
+           y="353.69977"><tspan
+             x="185.46568"
+             y="353.69977"
+             id="tspan90-4-48-6-0-6"
+             style="fill:#f9f9f9;stroke-width:0.445152">FREQ</tspan></text>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5-8"
+           style="font-size:8.75883px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.218971"
+           x="181.1759"
+           y="362.68747"><tspan
+             x="181.1759"
+             y="362.68747"
+             id="tspan90-4-48-6-0-6-5"
+             style="fill:#f9f9f9;stroke-width:0.218971">Frequency(IN2)</tspan></text>
+      </g>
+      <ellipse
+         style="fill:#000000;fill-opacity:0;fill-rule:evenodd;stroke:#333333;stroke-width:1.13386;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path2314"
+         cx="108.06474"
+         cy="313.27982"
+         rx="12.495797"
+         ry="13.238528" />
+      <ellipse
+         style="fill:#ff0000;fill-opacity:0;fill-rule:evenodd;stroke:#ff0000;stroke-width:0.75590552;stroke-miterlimit:4;stroke-dasharray:0.75590552,1.51181104;stroke-dashoffset:0"
+         id="path2314-5"
+         cx="108.06474"
+         cy="313.27982"
+         rx="12.495797"
+         ry="13.238528" />
+      <path
+         style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         d="m 97.129569,317.68957 h 4.077061 v -9.3207 h 4.45179 v 9.3207 h 5.24273 v -9.3207 h 5.50488 v 9.3207 h 4.19934"
+         id="path2670"
+         sodipodi:nodetypes="cccccccccc" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:11.1222px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.278055"
+         x="89.990814"
+         y="338.41141"
+         id="text1851"><tspan
+           sodipodi:role="line"
+           id="tspan1849"
+           x="89.990814"
+           y="338.41141"
+           style="fill:#ffffff;stroke-width:0.278055">TAP TO REFRESH</tspan></text>
+    </g>
+  </g>
+  <metadata
+     id="metadata884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>type=DIGITALINPUT
+automatic=false
+min=0.1
+max=8e6
+command=get_frequency
+channel=IN2
+units=Hz
+channel_options=[&quot;IN2&quot;,&quot;SEN&quot;]</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.458332mm"
+   height="26.458332mm"
+   viewBox="0 0 26.458332 26.458332"
+   version="1.1"
+   id="svg55968"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="SERVO3.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview55970"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="4.9161223"
+     inkscape:cx="-19.934411"
+     inkscape:cy="49.73432"
+     inkscape:window-width="1860"
+     inkscape:window-height="1016"
+     inkscape:window-x="60"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1028-5-0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs55965">
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient55414"
+       id="linearGradient54064"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(209.61825,-610.33482)"
+       x1="124.38175"
+       y1="416.33481"
+       x2="224.38174"
+       y2="416.33481" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient55414">
+      <stop
+         style="stop-color:#000080;stop-opacity:1"
+         offset="0"
+         id="stop55410" />
+      <stop
+         style="stop-color:#36bdc4;stop-opacity:0.51881325"
+         offset="1"
+         id="stop55412" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB"
+       inkscape:label="Drop Shadow"
+       id="filter3194"
+       x="-0.071337002"
+       y="0"
+       width="1.071337"
+       height="1.0488963">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood3184" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite3186" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur3188" />
+      <feOffset
+         dx="-2.1221"
+         dy="1.6"
+         result="offset"
+         id="feOffset3190" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite3192" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.028571,-210.1842)">
+    <g
+       id="g1028-5-0"
+       transform="matrix(0.26458333,0,0,0.26458333,50.060486,131.92169)">
+      <g
+         id="g1028-5-0-2-4"
+         transform="translate(-57.19149,-38.204701)">
+        <rect
+           style="fill:url(#linearGradient54064);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4"
+           id="rect18298-9-2-8-0"
+           width="99.998741"
+           height="100"
+           x="334"
+           y="-244"
+           transform="rotate(90)"
+           ry="10.450147" />
+        <g
+           id="g26449-4-1-4-0"
+           transform="matrix(1.3028729,0,0,1.3028729,269.02636,271.7887)">
+          <rect
+             style="fill:#e6e6e6;fill-opacity:0.518813;fill-rule:evenodd;stroke:none;stroke-width:4"
+             id="rect18904-6-0-7-4"
+             width="23.059883"
+             height="24.110979"
+             x="-91.581017"
+             y="48.754421"
+             ry="3.7464318" />
+        </g>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5"
+           style="font-size:14.1283px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.353206"
+           x="181.52821"
+           y="351.01862"><tspan
+             x="181.52821"
+             y="351.01862"
+             id="tspan90-4-48-6-0-6"
+             style="fill:#f9f9f9;stroke-width:0.353206">PCA9685</tspan></text>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5-8"
+           style="font-size:9.17025px;font-family:Helvetica;fill:#e580ff;stroke:none;stroke-width:0.229256"
+           x="183.15152"
+           y="362.9722"><tspan
+             x="183.15152"
+             y="362.9722"
+             id="tspan90-4-48-6-0-6-5"
+             style="fill:#e580ff;stroke-width:0.229256">CHANNEL 3</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:7.62502px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.677832"
+         x="89.647263"
+         y="337.08261"
+         id="text4157"><tspan
+           sodipodi:role="line"
+           id="tspan4155"
+           x="89.647263"
+           y="337.08261"
+           style="font-size:7.62502px;fill:#ffffff;stroke-width:0.677832">16 Channel Servo Driver</tspan></text>
+      <image
+         width="29.747536"
+         height="32.72229"
+         preserveAspectRatio="none"
+         xlink:href="data:image/png;base64,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 ZMRKU9c6ZgAAAABJRU5ErkJggg== "
+         id="image618"
+         x="90.755722"
+         y="298.66196"
+         style="filter:url(#filter3194)" />
+    </g>
+  </g>
+  <metadata
+     id="metadata884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>type=SERVO
+min=1
+max=180
+#label can be gauge or text
+label=text
+stepsize=0.1
+units=Deg
+command=set_pca9685_3</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

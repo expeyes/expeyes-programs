@@ -1,0 +1,8 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Measured Voltage Vs Time\nduration=20\nymin=-16\nymax=16\nw=200\nh=200\nlabel=gauge\nrangeA1=true",
+        "x": 698.7361500000001,
+        "y": 156.3622868490613
+    }
+}

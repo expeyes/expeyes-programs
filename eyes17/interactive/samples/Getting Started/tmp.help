@@ -1,0 +1,29 @@
+## PV1 : programmable voltage source
+
+It is a DC voltage source like a battery, but whose voltage output can be adjusted between -5 Volts and +5Volts. The (-) terminal which you associate with batteries, is internally connected to the GND pin, and the (+) output is available on the PV1 pin located in the bottom left corner of the device.
+
+## PV2
+
+This is like PV1, but has a voltage range of -3.3 Volts to 3.3 Volts. 
+
+
+### What's the GND pin ?
+
+* ( for those used to a minus(black) probe, and a plus(red) probe for measurements. )
+
+
+In test and measurement equipment, a common ground(GND) is used as a reference point for electrical measurements and to establish a common reference potential 
+between different components or devices. It serves as a shared reference point for all the signals. 
+
+So if you need to use the PV1 voltage source to spin a small motor, and  are wondering where the other end of the connector should go in order 
+to complete the circuit and ensure flow of current, you now know that it may flow into any of the GND pins. 
+The other end of PV1 is also internally connected to the GND reference, thereby completing the circuit.
+
+
+To measure PV1 using A1, you can simply connect them together since both share the same GND reference internally
+
+
+
+## Online Resources
+
++ [ExpEYES.in](https://expeyes.in/experiments/school-level/measureDC.html)

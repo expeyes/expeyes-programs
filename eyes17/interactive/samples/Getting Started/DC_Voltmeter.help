@@ -1,0 +1,65 @@
+## Voltage:
+
+![](https://expeyes.in/experiments/GetStart/images/measure-DC-setup-eyes17.jpg)
+
+[Online Help @ ExpEYES.in](https://expeyes.in/experiments/GetStart/measureDC.html)
+
+
+Voltage is a measure of electrical potential difference. Think of it like the "push" or "force" that makes electricity flow through a circuit. It is similar to the pressure in a water pipe that makes the water flow. Voltage is measured in volts (V).
+
+Imagine you have a water tank placed higher than a faucet. The water tank has more potential energy because it is higher up, and when you open the faucet, the water flows down due to the pressure difference. In the same way, voltage is the potential energy that makes electric charges (like electrons) flow through a wire or circuit.
+
+## Current:
+
+Current refers to the flow of electric charges, specifically the flow of electrons through a circuit. It is like the rate of flow of water in a pipe. Current is measured in amperes (A).
+
+Let's go back to the water analogy. When you open the faucet, the water starts flowing through the pipe. The amount of water that flows per unit of time is the current. Similarly, in an electrical circuit, the current is the flow of electrons through a wire. It represents the amount of electric charge passing through a point in the circuit per unit of time.
+
+## To summarize:
+
+* Voltage is the "push" or "force" that makes electricity flow.
+
+* It is similar to the pressure in a water pipe that makes water flow.
+
+* Voltage is measured in volts (V).
+
+* Current is the flow of electric charges, specifically electrons.
+
+* It is similar to the flow of water in a pipe.
+
+* Current is measured in amperes (A).
+
+Voltage is what makes electricity flow, and current is the actual flow of electricity itself. Both voltage and current are essential concepts in understanding how electricity works in circuits.
+
+
+
+## Measuring Voltage using SEELab
+
+A1 is a voltmeter with +/-16 Volts input range. The positive input of the voltmeter is the A1 pin on the device, and the negative input is connected internally to ground(GND) . 
+To measure a voltage, connect one end of the source to A1 pin, and the other to any of the Ground(GND) pins marked on the device.
+
+It is also capable of measuring up to 1 million readings every second, and so it also functions as an oscilloscope input
+
+
+
+### What's the GND pin ?
+
+* ( for those used to a minus(black) probe, and a plus(red) probe for measurements. )
+
+
+In test and measurement equipment, a common ground(GND) is used as a reference point for electrical measurements and to establish a common reference potential 
+between different components or devices. It serves as a shared reference point for all the signals. So if you need to use the PV1 voltage source to spin a small motor, and 
+are wondering where the other end of the connect should go in order to complete the circuit and ensure flow of current, you now know that it may flow into any of the GND pins. The other end of PV1 is also internally connected to the GND reference, thereby completing the circuit.
+
+
+* Reference Point: The common ground acts as a reference point or a common zero voltage level for all the electrical signals within the system. It provides a baseline against which all other voltages or currents are measured. By connecting different components or devices to a common ground, their potentials are aligned, allowing for meaningful comparisons and measurements.
+
+* Signal Measurement: In test and measurement equipment, various signals are measured and analyzed. These signals may originate from different sources or devices, such as sensors, transducers, or electronic circuits. To accurately measure these signals, they need to be referenced to a common ground to eliminate any potential differences or offsets. By connecting the ground of the measurement instrument to the common ground, the measured signals are effectively referenced to the same potential, enabling accurate measurements.
+
+
+In summary, a common ground in test and measurement equipment is used as a reference point for electrical measurements, to align the potentials of different components or devices, and to ensure accurate measurements, signal integrity, and safety. It plays a crucial role in establishing a common reference potential and eliminating potential differences or offsets in electrical signals within the system.
+
+
+## Online Resources
+
++ [ExpEYES.in](https://expeyes.in/experiments/school-level/measureDC.html)

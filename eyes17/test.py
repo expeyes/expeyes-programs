@@ -1,9 +1,10 @@
 from layouts.advancedLoggerTools import inputs
 import eyes17.eyes
+import time
 dev = eyes17.eyes.open()
-inp = inputs(dev)
-inp.init_ADS8691()
-dev.SPI.set_parameters(1,1,0,0,1)
-while 1:
-	inp.ADS8691_range(3)
-	inp.read_ADS8691()
+
+print('clear')
+dev.set_state(OD1=0)
+time.sleep(1)
+print('measure')
+print(dev.set2ftime('OD1','SEN'))

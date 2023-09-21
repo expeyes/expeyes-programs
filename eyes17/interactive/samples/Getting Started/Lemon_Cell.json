@@ -1,0 +1,8 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Voltage Vs Time\nduration=20\nymax=2\nymin=-2\nrangeA1=true\nrange=1",
+        "x": 758.2848297372226,
+        "y": 132.47130821512602
+    }
+}

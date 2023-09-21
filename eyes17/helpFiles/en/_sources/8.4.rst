@@ -1,4 +1,39 @@
 I2C Logger
 ==========
 
-Scan for the I2C sensors connected. The detected sensors can be accessed.
+A wide variety of sensors for physical parameters such as pressure, temperature,
+humidity, light intensity, magnetic fields etc use the I2C communication interface
+to exchange data.
+
+Make the following connections between the sensor and ExpEYES/SEELab device
+5V -> Vcc of the sensor
+GND -> GND
+SCL -> SCL
+SDA -> SDA
+
+These pins are usually found in this order in most sensors, so 
+the top right side of the SEELab3/ExpEYES devices also have these in this
+order in order to help plug sensors easily.
+
+.. image:: pics/i2clogger.png
+	   :width: 600px
+
+
+Procedure
+---------
+
+
+- Click on the scan button to allow the device to search for any connected sensors and guess their name
+- Scan may not always be correct since multiple sensors can share the same address sometimes.
+- If the address or name of the sensor does not match, select your sensor name from the top left menu, set the correct address, and add manually
+- click on 'start measurements' for the sensor you want to view
+- In order to change from the default analog gauge view, click on the data logger button on the top left
+- The data logger records and plots readings with time, and you can pause at any point to analyze the data
+- Select the region to be analyzed, and click on sine fit if the data is periodic
+- You can also save the data
+
+.. image:: pics/i2cloggergauge.png
+	   :width: 600px
+
+.. image:: pics/i2cloggerplot.png
+	   :width: 600px

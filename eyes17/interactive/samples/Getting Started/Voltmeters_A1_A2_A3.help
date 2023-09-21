@@ -1,0 +1,8 @@
+## Voltmeter : A1
+A1 is a voltmeter with +/-16V input range. The positive input of the voltmeter is the A1 pin on the device, and the negative input is connected internally to ground(GND) . To measure a voltage, connect one end of the source to A1 pin, and the other to any of the Ground(GND) pins marked on the device.
+
+## Voltmeter : A2
+A2 is a voltmeter with +/-16V input range. 
+
+## Voltmeter : A3
+A3 is a voltmeter with +/-3.3V input range.

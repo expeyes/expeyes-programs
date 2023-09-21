@@ -32,6 +32,11 @@ override_dh_auto_clean:
 	dh_auto_clean
 	rm -rf $(HOME)
 
+# Added by jithin. latest debuild makes .zst compressed files which
+# do not work with older ubuntu. needs xz-utils package.
+override_dh_builddeb:
+	dh_builddeb -- -Zxz
+
 DocDir = $(CURDIR)/debian/eyes17/usr/share/expeyes/doc
 DocDirSource = $(CURDIR)/ExpEYES17/UserManual
 

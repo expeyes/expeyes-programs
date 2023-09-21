@@ -1,0 +1,66 @@
+# Diode IV Characteristics
+
+![Diode IV](pics/diodeiv.jpg "Diode IV")
+
+The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by plotting the current against the voltage.
+
+## Objective
+
+Draw the V-I Characteristics of diode and compare the result with the theory.
+
+![Diode IV screenshot](pics/diodeiv.gif "Diode IV GIF")
+
+
+## Procedure
+
+![Diode IV schematic](pics/diode_iv.svg "Diode IV schematic")
+  
+  
+-  Make the connections as shown in the figure. Use 1000 Ohm resistor
+-  Click on START to draw the characteristic curve.
+-  Analyse the data
+-  Plot the IV of LEDs
+
+
+![Diode IV screenshot](pics/diodeiv_4148.jpg "Diode IV")
+
+It is possible to do this by manually taking the reading, from the voltmeter GUI.
+The steps involved are:
+- Launch the Voltmeter UI, and also click on the 'I/O controls' option to add the PV1 slider.
+- Set PV1 to 100mV
+- Read the voltage at A1, which is the voltage across the diode
+- Calculate current from `I=(V_{PV1}-V_{A1})/(1000)`
+- Increment PV1 by 100mV per step, up to 5V, and repeat the process
+- plot the readings of I against A1.
+
+
+Discussion
+----------
+
+The IV characteristic of an ideal PN junction diode is given by equation
+:math:`I = I_0 \times e^{(qU/kT)   1}`, where :math:`I_0` is the reverse saturation
+current, :math:`q` the charge of electron, :math:`k` the Boltzmann constant, :math:`T` the
+temperature in Kelvin. For a practical, non-ideal, diode, the equation
+is :math:`I = I_0 \times e^{(qU/nkT)   1}`, where :math:`n` is the ideality factor, that
+is 1 for an ideal diode. For practical diodes it varies from 1 to 2. We
+have used a IN4148 silicon diode. The value of *n* for 1N4148 is around 2.
+We have calculated the value of :math:`n` by fitting the experimental data with
+the equation.
+
+The voltage at which LED starts emitting light depends on its wavelength
+and Planck’s constant. Energy of a photon is given by :math:`E = h\nu  = hc/\lambda` .
+This energy is equal to the energy of an electron that overcomes the
+junction barrier and is given by :math:`E = eV_0`. So Planck’s constant
+:math:`h = eV_0 \times \lambda / c`, where :math:`\lambda` is the wavelength of light from the LED, :math:`e`
+the charge of electron and :math:`c` the velocity of light.
+
+Repeat the experiment by heating the diode to different temperatures.
+
+
+![Diode IV screenshot](pics/diodeiv_zener.jpg "Diode IV")
+
+## Read more online
+
+[Wikibooks](https://en.wikibooks.org/wiki/Practical_Electronics/Diodes/Diode_operation_characteristics)
+
+[ExpEYES.in Diode IV](https://expeyes.in/experiments/electronics/diodeIV.html)

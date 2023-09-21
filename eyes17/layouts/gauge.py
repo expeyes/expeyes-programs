@@ -17,9 +17,9 @@ from PyQt5.QtGui import QColor
 class Gauge(QtWidgets.QWidget):
 	valueChanged = QtCore.pyqtSignal(float)
 
-	def __init__(self, parent=None,name=''):
+	def __init__(self, parent=None, name=''):
 		super(Gauge, self).__init__(parent)
-		self.decimals=True
+		self.decimals = True
 
 		self.use_timer_event = False
 		self.black = QtGui.QColor(0, 0, 0, 255)
@@ -160,6 +160,7 @@ class Gauge(QtWidgets.QWidget):
 			self.update()
 
 	def update_value(self, value, mouse_controlled = False):
+		if(value == None):return
 		if value <= self.value_min:
 			self.value = self.value_min
 		elif value >= self.value_max:
@@ -431,7 +432,7 @@ class Gauge(QtWidgets.QWidget):
 				(((self.widget_diameter / 2) - (self.pen.width() / 2)) * self.gauge_color_inner_radius_factor),
 				self.scale_angle_start_value, self.scale_angle_size)
 
-			gauge_rect = QtCore.QRect(QtCore.QPoint(0, 0), QtCore.QSize(self.widget_diameter / 2 - 1, self.widget_diameter - 1))
+			gauge_rect = QtCore.QRect(QtCore.QPoint(0, 0), QtCore.QSize(int(self.widget_diameter / 2 - 1), int(self.widget_diameter - 1)))
 			grad = QtGui.QConicalGradient(QtCore.QPointF(0, 0), - self.scale_angle_size - self.scale_angle_start_value +
 									self.angle_offset - 1)
 
@@ -456,7 +457,7 @@ class Gauge(QtWidgets.QWidget):
 		my_painter = QtGui.QPainter(self)
 		my_painter.setRenderHint(QtGui.QPainter.Antialiasing)
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		my_painter.translate(self.width() / 2, self.height() / 2)
+		my_painter.translate(int(self.width() / 2), int(self.height() / 2))
 
 		# my_painter.setPen(QtCore.Qt.NoPen)
 		self.pen = QtGui.QPen(QtGui.QColor(0, 0, 0, 255))
@@ -470,7 +471,7 @@ class Gauge(QtWidgets.QWidget):
 		scale_line_lenght = (self.widget_diameter / 2) - (self.widget_diameter / 20)
 		# print(stepszize)
 		for i in range(self.scala_main_count+1):
-			my_painter.drawLine(scale_line_lenght, 0, scale_line_outer_start, 0)
+			my_painter.drawLine(int(scale_line_lenght), 0, int(scale_line_outer_start), 0)
 			my_painter.rotate(steps_size)
 
 	def create_scale_marker_values_text(self):
@@ -479,9 +480,9 @@ class Gauge(QtWidgets.QWidget):
 		painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		painter.translate(self.width() / 2, self.height() / 2)
+		painter.translate(int(self.width() / 2), int(self.height() / 2))
 		# painter.save()
-		font = QtGui.QFont(self.scale_fontname, self.scale_fontsize)
+		font = QtGui.QFont(self.scale_fontname, int(self.scale_fontsize))
 		fm = QtGui.QFontMetrics(font)
 
 		pen_shadow = QtGui.QPen()
@@ -505,13 +506,13 @@ class Gauge(QtWidgets.QWidget):
 				else: text = str('%d'%(int(val)))
 			w = fm.width(text) + 1
 			h = fm.height()
-			painter.setFont(QtGui.QFont(self.scale_fontname, self.scale_fontsize))
+			painter.setFont(QtGui.QFont(self.scale_fontname, int(self.scale_fontsize)))
 			angle = angle_distance * i + float(self.scale_angle_start_value - self.angle_offset)
 			x = text_radius * math.cos(math.radians(angle))
 			y = text_radius * math.sin(math.radians(angle))
 			# print(w, h, x, y, text)
 			text = [x - int(w/2), y - int(h/2), int(w), int(h), QtCore.Qt.AlignCenter, text]
-			painter.drawText(text[0], text[1], text[2], text[3], text[4], text[5])
+			painter.drawText(int(text[0]), int(text[1]), int(text[2]), int(text[3]), text[4], text[5])
 		# painter.restore()
 
 	def create_fine_scaled_marker(self):
@@ -520,7 +521,7 @@ class Gauge(QtWidgets.QWidget):
 
 		my_painter.setRenderHint(QtGui.QPainter.Antialiasing)
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		my_painter.translate(self.width() / 2, self.height() / 2)
+		my_painter.translate(int(self.width() / 2), int(self.height() / 2))
 
 		my_painter.setPen(QColor("black"))
 		my_painter.rotate(self.scale_angle_start_value - self.angle_offset)
@@ -528,7 +529,7 @@ class Gauge(QtWidgets.QWidget):
 		scale_line_outer_start = self.widget_diameter/2
 		scale_line_lenght = (self.widget_diameter / 2) - (self.widget_diameter / 40)
 		for i in range((self.scala_main_count * self.scala_subdiv_count)+1):
-			my_painter.drawLine(scale_line_lenght, 0, scale_line_outer_start, 0)
+			my_painter.drawLine(int(scale_line_lenght), 0, int(scale_line_outer_start), 0)
 			my_painter.rotate(steps_size)
 
 	def create_values_text(self):
@@ -537,11 +538,11 @@ class Gauge(QtWidgets.QWidget):
 		painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		painter.translate(self.width() / 2, self.height() / 2)
+		painter.translate(int(self.width() / 2), int(self.height() / 2))
 		# painter.save()
 		# xShadow = 3.0
 		# yShadow = 3.0
-		font = QtGui.QFont(self.value_fontname, self.value_fontsize)
+		font = QtGui.QFont(self.value_fontname, int(self.value_fontsize))
 		fm = QtGui.QFontMetrics(font)
 
 		pen_shadow = QtGui.QPen()
@@ -553,11 +554,11 @@ class Gauge(QtWidgets.QWidget):
 
 		# angle_distance = (float(self.scale_angle_size) / float(self.scala_main_count))
 		# for i in range(self.scala_main_count + 1):
-		if self.decimals: text = str('%.2f'%(self.value))
+		if self.decimals: text = str('%.4f'%(self.value))
 		else: text = str('%d'%(self.value))
 		w = fm.width(text) + 1
 		h = fm.height()
-		painter.setFont(QtGui.QFont(self.value_fontname, self.value_fontsize))
+		painter.setFont(QtGui.QFont(self.value_fontname, int(self.value_fontsize)))
 
 		# Mitte zwischen Skalenstart und Skalenende:
 		# Skalenende = Skalenanfang - 360 + Skalenlaenge
@@ -569,7 +570,7 @@ class Gauge(QtWidgets.QWidget):
 		y = text_radius * math.sin(math.radians(angle))
 		# print(w, h, x, y, text)
 		text = [x - int(w/2), y - int(h/2), int(w), int(h), QtCore.Qt.AlignCenter, text]
-		painter.drawText(text[0], text[1], text[2], text[3], text[4], text[5])
+		painter.drawText(int(text[0]), int(text[1]), int(text[2]), int(text[3]), text[4], text[5])
 		# painter.restore()
 
 
@@ -579,8 +580,8 @@ class Gauge(QtWidgets.QWidget):
 		# painter.setRenderHint(QtGui.QPainter.HighQualityAntialiasing)
 		painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
-		painter.translate(self.width() / 2, 0)
-		font = QtGui.QFont(self.title_fontname, self.title_fontsize)
+		painter.translate(int(self.width() / 2), 0)
+		font = QtGui.QFont(self.title_fontname, int(self.title_fontsize))
 		fm = QtGui.QFontMetrics(font)
 		pen_shadow = QtGui.QPen()
 		pen_shadow.setBrush(self.DisplayTitleColor)
@@ -590,7 +591,7 @@ class Gauge(QtWidgets.QWidget):
 		text = self.title_text
 		w = fm.width(text) + 1
 		h = fm.height()
-		painter.setFont(QtGui.QFont(self.title_fontname, self.title_fontsize))
+		painter.setFont(QtGui.QFont(self.title_fontname, int(self.title_fontsize) ))
 
 		angle_end = float(self.scale_angle_start_value + self.scale_angle_size - 360)
 		angle = (angle_end - self.scale_angle_start_value) / 2 + self.scale_angle_start_value
@@ -599,7 +600,7 @@ class Gauge(QtWidgets.QWidget):
 		y = text_radius * math.sin(math.radians(angle))
 		# print(w, h, x, y, text)
 		text = [x - int(w/2), y , int(w), int(h), QtCore.Qt.AlignCenter, text]
-		painter.drawText(text[0], text[1], text[2], text[3], text[4], text[5])
+		painter.drawText(int(text[0]), int(text[1]), int(text[2]), int(text[3]), text[4], text[5])
 		# painter.restore()
 
 
@@ -609,7 +610,7 @@ class Gauge(QtWidgets.QWidget):
 		painter.setRenderHint(QtGui.QPainter.Antialiasing)
 
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		painter.translate(self.width() / 2, self.height() / 2)
+		painter.translate(int(self.width() / 2), int(self.height() / 2))
 		painter.setPen(QtCore.Qt.NoPen)
 		# painter.setPen(QtCore.Qt.NoPen)
 		painter.setBrush(self.CenterPointColor)
@@ -621,7 +622,7 @@ class Gauge(QtWidgets.QWidget):
 		#painter.setRenderHint(QtGui.QPainter.HighQualityAntialiasing)
 		painter.setRenderHint(QtGui.QPainter.Antialiasing)
 		# Koordinatenursprung in die Mitte der Flaeche legen
-		painter.translate(self.width() / 2, self.height() / 2)
+		painter.translate(int(self.width() / 2), int(self.height() / 2))
 		painter.setPen(QtCore.Qt.NoPen)
 		painter.setBrush(self.NeedleColor)
 		painter.rotate(((self.value - self.value_offset - self.value_min) * self.scale_angle_size /

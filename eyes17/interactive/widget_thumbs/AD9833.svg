@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.458332mm"
+   height="26.458332mm"
+   viewBox="0 0 26.458332 26.458332"
+   version="1.1"
+   id="svg55968"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="AD9833.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview55970"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="2.6218925"
+     inkscape:cx="156.757"
+     inkscape:cy="14.302646"
+     inkscape:window-width="1860"
+     inkscape:window-height="1016"
+     inkscape:window-x="60"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1028-5-0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs55965">
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient55414"
+       id="linearGradient54064"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(209.61825,-610.33482)"
+       x1="124.38175"
+       y1="416.33481"
+       x2="224.38174"
+       y2="416.33481" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient55414">
+      <stop
+         style="stop-color:#000080;stop-opacity:1"
+         offset="0"
+         id="stop55410" />
+      <stop
+         style="stop-color:#36bdc4;stop-opacity:0.51881325"
+         offset="1"
+         id="stop55412" />
+    </linearGradient>
+    <filter
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="Drop Shadow"
+       id="filter2263"
+       x="-0.078000478"
+       y="0"
+       width="1.0780005"
+       height="1.067843">
+      <feFlood
+         flood-opacity="0.498039"
+         flood-color="rgb(0,0,0)"
+         result="flood"
+         id="feFlood2253" />
+      <feComposite
+         in="flood"
+         in2="SourceGraphic"
+         operator="in"
+         result="composite1"
+         id="feComposite2255" />
+      <feGaussianBlur
+         in="composite1"
+         stdDeviation="0"
+         result="blur"
+         id="feGaussianBlur2257" />
+      <feOffset
+         dx="-1.9"
+         dy="1.1"
+         result="offset"
+         id="feOffset2259" />
+      <feComposite
+         in="SourceGraphic"
+         in2="offset"
+         operator="over"
+         result="composite2"
+         id="feComposite2261" />
+    </filter>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.028571,-210.1842)">
+    <g
+       id="g1028-5-0"
+       transform="matrix(0.26458333,0,0,0.26458333,50.060486,131.92169)">
+      <g
+         id="g1028-5-0-2-4"
+         transform="translate(-57.19149,-38.204701)">
+        <rect
+           style="fill:url(#linearGradient54064);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4"
+           id="rect18298-9-2-8-0"
+           width="99.998741"
+           height="100"
+           x="334"
+           y="-244"
+           transform="rotate(90)"
+           ry="10.450147" />
+        <g
+           id="g26449-4-1-4-0"
+           transform="matrix(1.3028729,0,0,1.3028729,269.02636,271.7887)">
+          <path
+             style="fill:#f4d7e3;fill-opacity:0.518813;fill-rule:evenodd;stroke:none;stroke-width:6.72482;filter:url(#filter2263)"
+             d="m -93.306552,62.474538 c 0.279921,-1.17096 0.56001,-2.341247 0.83993,-3.404105 0.279921,-1.062859 0.56001,-2.016607 0.839931,-2.774831 0.280089,-0.758224 0.56001,-1.319074 0.83993,-1.632619 0.280089,-0.313545 0.56001,-0.377935 0.840099,-0.188799 0.279921,0.189303 0.559842,0.63331 0.839931,1.290157 0.27992,0.657015 0.560009,1.527376 0.83993,2.530551 0.279921,1.003176 0.56001,2.138999 0.83993,3.303066 0.280089,1.164235 0.56001,2.355369 0.839931,3.465133 0.280089,1.109764 0.56001,2.136308 0.840099,2.986662 0.27992,0.850354 0.559841,1.5225 0.83993,1.956083 0.279921,0.433752 0.56001,0.62709 0.839931,0.563877 0.27992,-0.06304 0.560009,-0.384156 0.83993,-0.932397 0.280089,-0.548409 0.56001,-1.324454 0.839931,-2.256514 0.280088,-0.932061 0.560009,-2.019969 0.83993,-3.163526 0.280089,-1.143556 0.56001,-2.34192 0.840099,-3.485476 0.27992,-1.143724 0.559841,-2.231128 0.83993,-3.163525 0.279921,-0.932397 0.56001,-1.707769 0.839931,-2.256515 0.27992,-0.548745 0.560009,-0.868847 0.83993,-0.932396 0.280089,-0.06372 0.56001,0.130629 0.839931,0.563876 0.280088,0.433247 0.560009,1.106065 0.840098,1.956083 0.279921,0.84985 0.559842,1.877067 0.839931,2.986663 0.27992,1.109595 0.560009,2.300898 0.83993,3.465133 0.279921,1.164067 0.56001,2.299554 0.839931,3.303065 0.280088,1.003512 0.560009,1.8732 0.83993,2.530552 0.280089,0.657351 0.56001,1.100349 0.840099,1.290157 0.27992,0.18964 0.559841,0.124241 0.83993,-0.188799 0.279921,-0.313041 0.56001,-0.874732 0.839931,-1.63262 0.27992,-0.757887 0.560009,-1.71214 0.83993,-2.77483 0.280089,-1.06269 0.56001,-2.233146 0.839931,-3.404106"
+             title="t sin(2*t)"
+             id="path990" />
+        </g>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5"
+           style="font-size:14.1283px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.353206"
+           x="185.52821"
+           y="351.01862"><tspan
+             x="185.52821"
+             y="351.01862"
+             id="tspan90-4-48-6-0-6"
+             style="fill:#f9f9f9;stroke-width:0.353206">AD9833</tspan></text>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5-8"
+           style="font-size:10.4368px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.26092"
+           x="185.02487"
+           y="363.91071"><tspan
+             x="185.02487"
+             y="363.91071"
+             id="tspan90-4-48-6-0-6-5"
+             style="fill:#f9f9f9;stroke-width:0.26092">DDS SINE</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8.75946px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.651902"
+         x="89.679306"
+         y="337.08673"
+         id="text4157"><tspan
+           sodipodi:role="line"
+           id="tspan4155"
+           x="89.679306"
+           y="337.08673"
+           style="font-size:8.75946px;fill:#ffffff;stroke-width:0.651902">2MHz Sine Wave Gen</tspan></text>
+    </g>
+  </g>
+  <metadata
+     id="metadata884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>type=WAVEGEN
+min=1
+max=2000000
+#label can be gauge or text
+label=text
+command=set_ad9833
+stepsize=1000
+units=Hz</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

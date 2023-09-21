@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="26.458332mm"
+   height="26.458332mm"
+   viewBox="0 0 26.458332 26.458332"
+   version="1.1"
+   id="svg55968"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   sodipodi:docname="SR04_PRECISE.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview55970"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="3.1908842"
+     inkscape:cx="33.533025"
+     inkscape:cy="24.287939"
+     inkscape:window-width="1551"
+     inkscape:window-height="752"
+     inkscape:window-x="369"
+     inkscape:window-y="166"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g1028-5-0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <defs
+     id="defs55965">
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient55414"
+       id="linearGradient54064"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="translate(209.61825,-610.33482)"
+       x1="124.38175"
+       y1="416.33481"
+       x2="224.38174"
+       y2="416.33481" />
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient55414">
+      <stop
+         style="stop-color:#000080;stop-opacity:1"
+         offset="0"
+         id="stop55410" />
+      <stop
+         style="stop-color:#36bdc4;stop-opacity:0.51881325"
+         offset="1"
+         id="stop55412" />
+    </linearGradient>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-73.028571,-210.1842)">
+    <g
+       id="g1028-5-0"
+       transform="matrix(0.26458333,0,0,0.26458333,50.060486,131.92169)">
+      <g
+         id="g1028-5-0-2-4"
+         transform="translate(-57.19149,-38.204701)">
+        <rect
+           style="fill:url(#linearGradient54064);fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:4"
+           id="rect18298-9-2-8-0"
+           width="99.998741"
+           height="100"
+           x="334"
+           y="-244"
+           transform="rotate(90)"
+           ry="10.450147" />
+        <g
+           id="g26449-4-1-4-0"
+           transform="matrix(1.3028729,0,0,1.3028729,269.02636,271.7887)">
+          <rect
+             style="fill:#e6e6e6;fill-opacity:0.518813;fill-rule:evenodd;stroke:none;stroke-width:4"
+             id="rect18904-6-0-7-4"
+             width="23.059883"
+             height="24.110979"
+             x="-91.581017"
+             y="48.754421"
+             ry="3.7464318" />
+        </g>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5"
+           style="font-size:17.8061px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.445152"
+           x="187.46568"
+           y="351.69977"><tspan
+             x="187.46568"
+             y="351.69977"
+             id="tspan90-4-48-6-0-6"
+             style="fill:#f9f9f9;stroke-width:0.445152">SR04</tspan></text>
+        <text
+           font-size="40"
+           id="text92-6-5-0-9-5-8"
+           style="font-size:10.4368px;font-family:Helvetica;fill:#f9f9f9;stroke:none;stroke-width:0.26092"
+           x="185.02487"
+           y="363.91071"><tspan
+             x="185.02487"
+             y="363.91071"
+             id="tspan90-4-48-6-0-6-5"
+             style="fill:#f9f9f9;stroke-width:0.26092">DISTANCE</tspan></text>
+      </g>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.595381"
+         x="89.734932"
+         y="336.50974"
+         id="text4157"><tspan
+           sodipodi:role="line"
+           id="tspan4155"
+           x="89.734932"
+           y="336.50974"
+           style="font-size:8px;fill:#ffffff;stroke-width:0.595381">SQ2-&gt;TRIG, ECHO-&gt;IN2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:8px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:0.595381"
+         x="89.734932"
+         y="392.50974"
+         id="text4157-9"><tspan
+           sodipodi:role="line"
+           id="tspan4155-1"
+           x="89.734932"
+           y="392.50974"
+           style="font-size:8px;fill:#ff0000;stroke-width:0.595381">Precision Mode</tspan></text>
+      <rect
+         style="fill:#006680;fill-opacity:1;fill-rule:evenodd;stroke:#0088aa;stroke-width:0.377953;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect6233"
+         width="25.597691"
+         height="12.541595"
+         x="94.943291"
+         y="301.07471"
+         ry="2.2261515" />
+      <circle
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#b3b3b3;stroke-width:0.377953;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path6257"
+         cx="100.57649"
+         cy="307.45575"
+         r="4.3420048" />
+      <circle
+         style="fill:#333333;fill-opacity:1;fill-rule:evenodd;stroke:#b3b3b3;stroke-width:0.377953;stroke-miterlimit:4;stroke-dasharray:none"
+         id="path6257-3"
+         cx="114.57649"
+         cy="307.45575"
+         r="4.3420048" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:2.35386px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.17654"
+         x="103.76769"
+         y="312.82434"
+         id="text4157-8"><tspan
+           sodipodi:role="line"
+           id="tspan4155-8"
+           x="103.76769"
+           y="312.82434"
+           style="font-size:2.35386px;fill:#ffffff;stroke-width:0.17654">SR-04</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:5.37498px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.403125"
+         x="-322.59851"
+         y="99.282295"
+         id="text4157-8-9"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan4155-8-3"
+           style="font-size:5.37498px;fill:#ffffff;stroke-width:0.403125"
+           x="-322.59851"
+           y="99.282295">5V</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:5.37498px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.403125"
+         x="-326.07074"
+         y="106.00182"
+         id="text4157-8-9-6"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan4155-8-3-9"
+           style="font-size:5.37498px;fill:#ffffff;stroke-width:0.403125"
+           x="-326.07074"
+           y="106.00182">SQ2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:5.37498px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.403125"
+         x="-324.03412"
+         y="112.72137"
+         id="text4157-8-9-6-7"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan4155-8-3-9-2"
+           style="font-size:5.37498px;fill:#ffffff;stroke-width:0.403125"
+           x="-324.03412"
+           y="112.72137">IN2</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:5.37498px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.403125"
+         x="-327.55359"
+         y="119.44091"
+         id="text4157-8-9-6-8"
+         transform="rotate(-90)"><tspan
+           sodipodi:role="line"
+           id="tspan4155-8-3-9-29"
+           style="font-size:5.37498px;fill:#ffffff;stroke-width:0.403125"
+           x="-327.55359"
+           y="119.44091">GND</tspan></text>
+    </g>
+  </g>
+  <metadata
+     id="metadata884">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>type=DIGITALINPUT
+min=0.1
+max=1000
+#label can be gauge or text
+label=gauge
+command=sr04_distance
+units=Cm</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

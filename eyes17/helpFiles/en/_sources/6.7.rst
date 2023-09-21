@@ -1,0 +1,33 @@
+Distance Measurement, Light Echo module
+=======================================
+
+Distance can be measured by sending a pulse of light to the target and measuring the
+time interval to receive the reflected signal. The VL53L0X is a sensor which
+is capable of measuring distance by this method. It emits a short and harmless
+laser pulse which is reflected from the object in front, and returns to the sensor.
+It measures the time taken for the round trip of this laser pulse, and calculated distance.
+
+It works well between distances of 5cm to 50cm
+
+-  Make the connections to the VL53L0X (5V, GND, SCl, SDA)
+-  Keep a flat surface around 10 cm from the VL53L0X module
+-  Monitor the analog gauge and see if it looks okay
+-  Press START to record data
+-  Change the distance with time
+-  Fit the selected region with sine/damped sine functions
+
+
+Discussion
+----------
+
+This can be used for various oscillating mechanics experiments such as coupled
+pendulum, mass spring system etc
+
+The VL53L0X accuracy can vary up to 7% based on the total distance, and reflectance of the object. Refer to the datasheet.
+However, it has several advantages over the SR04 in that it can measure distances to curved as well as sloping surfaces.
+It can also measure through glass partitions.
+
+
++ [Datasheet for the VL53L0X distance sensor](https://www.st.com/resource/en/datasheet/vl53l0x.pdf)
+
++ [Datasheet for the SR04 sensor](https://web.eece.maine.edu/~zhu/book/lab/HC-SR04%20User%20Manual.pdf)

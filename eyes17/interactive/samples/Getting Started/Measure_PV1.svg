@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="lemon-cell"
+   width="560"
+   height="416.16284"
+   viewBox="-6 -6 560 416.16284"
+   sodipodi:docname="Measure_PV1.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs71" />
+  <sodipodi:namedview
+     id="namedview69"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.98122558"
+     inkscape:cx="293.51049"
+     inkscape:cy="159.49442"
+     inkscape:window-width="1551"
+     inkscape:window-height="752"
+     inkscape:window-x="284"
+     inkscape:window-y="195"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="g36"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;lemon-cell.ps&quot; Page 1
+</desc>
+  <rect
+     style="fill:#ffffff;fill-rule:evenodd;stroke:none;stroke-width:22.6672"
+     id="rect928"
+     width="560"
+     height="411.93158"
+     x="-6"
+     y="-6" />
+  <g
+     transform="translate(26,118)"
+     fill="#000000"
+     id="g16"
+     style="stroke:#000000" />
+  <g
+     transform="translate(474,154)"
+     fill="#000000"
+     id="g22"
+     style="stroke:#000000" />
+  <g
+     transform="translate(170,186)"
+     fill="#000000"
+     id="g30"
+     style="stroke:#000000" />
+  <g
+     transform="translate(202,224)"
+     fill="#000000"
+     id="g36"
+     style="stroke:#000000">
+    <text
+       stroke="none"
+       font-family="Helvetica"
+       font-size="40px"
+       id="text34"
+       x="-178.86903"
+       y="147.25095"
+       style="white-space:pre;inline-size:192.448;display:inline"
+       xml:space="preserve" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:29.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+       x="-191.74442"
+       y="66.310211"
+       id="text7961"><tspan
+         sodipodi:role="line"
+         id="tspan7959"
+         x="-191.74442"
+         y="66.310211"
+         style="font-size:29.3333px">1) Connect PV1 to A1, and measure.</tspan><tspan
+         sodipodi:role="line"
+         x="-191.74442"
+         y="102.97684"
+         style="font-size:29.3333px"
+         id="tspan2379">2) PV1 is like an adjustable battery. </tspan><tspan
+         sodipodi:role="line"
+         x="-191.74442"
+         y="139.64346"
+         style="font-size:29.3333px"
+         id="tspan5347">click the PV1 icon to adjust its value</tspan></text>
+  </g>
+  <g
+     transform="translate(282,74)"
+     fill="#000000"
+     id="g48"
+     style="stroke:#000000" />
+  <g
+     transform="translate(298,186)"
+     fill="#000000"
+     id="g54"
+     style="stroke:#000000" />
+  <metadata
+     id="metadata2566">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>## PV1 : programmable voltage source
+
+It is a DC voltage source like a battery, but whose voltage output can be adjusted between -5 Volts and +5Volts. The (-) terminal which you associate with batteries, is internally connected to the GND pin, and the (+) output is available on the PV1 pin located in the bottom left corner of the device.
+
+## PV2
+
+This is like PV1, but has a voltage range of -3.3 Volts to 3.3 Volts. 
+
+
+### What's the GND pin ?
+
+* ( for those used to a minus(black) probe, and a plus(red) probe for measurements. )
+
+
+In test and measurement equipment, a common ground(GND) is used as a reference point for electrical measurements and to establish a common reference potential 
+between different components or devices. It serves as a shared reference point for all the signals. 
+
+So if you need to use the PV1 voltage source to spin a small motor, and  are wondering where the other end of the connector should go in order 
+to complete the circuit and ensure flow of current, you now know that it may flow into any of the GND pins. 
+The other end of PV1 is also internally connected to the GND reference, thereby completing the circuit.
+
+
+To measure PV1 using A1, you can simply connect them together since both share the same GND reference internally
+
+
+
+## Online Resources
+
++ [ExpEYES.in](https://expeyes.in/experiments/school-level/measureDC.html)</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:19.6385px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#1a1a1a;fill-opacity:1;stroke:none;stroke-width:0.490963"
+     x="302.19733"
+     y="45.709816"
+     id="A1"><desc
+       id="desc851">logging=true
+title=Measured Voltage Vs Time
+duration=20
+interval=2
+min=-5
+max=5
+ymin=-5
+ymax=5
+w=200
+h=200
+label=gauge
+range=5</desc><tspan
+       sodipodi:role="line"
+       id="tspan2449"
+       x="302.19733"
+       y="45.709816"
+       style="fill:#1a1a1a;stroke:none;stroke-width:0.490963">A1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:17.3306px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f2f2f2;stroke-width:0.433266"
+     x="21.331741"
+     y="58.322548"
+     id="PV1"><desc
+       id="desc7265">min=-5
+max=5
+value=1.5
+stepsize=0.05</desc><tspan
+       sodipodi:role="line"
+       id="tspan5372"
+       x="21.331741"
+       y="58.322548"
+       style="fill:#f2f2f2;stroke-width:0.433266">PV1</tspan></text>
+  <path
+     style="fill:none;stroke:#ff0000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+     d="m 56.532088,48.663316 0,-23.227046 H 336.70184 v 55.31549"
+     id="path5376"
+     sodipodi:nodetypes="cccc" />
+  <g
+     id="g426"
+     transform="translate(14.953549,-44.867043)" />
+</svg>

@@ -1,0 +1,7 @@
+## Conducting human
+
+The human body is a weak conductor. 
+
+We can demonstrate this by touching a wire connected to PV1( which is a Programmable voltage source), and touching another wire connected to the A2(Voltage input) with the other hand. 
+
+We can see a voltage appearing on A2 when we connect PV1 with A2 via our body. To see the original voltage, we connect PV1 to A1 directly via a wire.

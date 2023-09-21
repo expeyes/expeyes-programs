@@ -1,0 +1,14 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "label=gauge\nmin=-6\nmax=6\nw=200\nh=200\n\nlogging=true\ntitle=Voltage (A1) Vs Time\nduration=20\nymax=8\nymin=--8",
+        "x": 772.4037946788773,
+        "y": 47.24351661462445
+    },
+    "GRAPH:2": {
+        "ID": "GRAPH:2",
+        "desc": "mode=scope\ntitle=Fast visualisation of A1\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 3\nNS=500\nTG=10\nxaxis=time\ny1=A1\nymin=-10\nymax=10\nxunits=mS\nyunits=V\n\ntrigger=true\ntrigger_channel=y1\ntrigger_level=510",
+        "x": 1098.9820008042902,
+        "y": 997.5480706151899
+    }
+}

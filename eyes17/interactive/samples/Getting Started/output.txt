@@ -1,0 +1,32 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 508.4002880032011,
+        "y": 669.9346123136241
+    },
+    "EQ:(PV1-A1)/R1:A": {
+        "ID": "EQ:(PV1-A1)/R1:A",
+        "desc": "",
+        "x": 818.2773078643469,
+        "y": 82.14694518324586
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "title=Current(PV1-A1/R1) Vs Voltage (A1)\n\nmin=0\nmax=5\n\n#sweep\nsweep=PV1\nstart=0\nstepsize=0.01\nstop=5\ndelay=10\n\n\nxaxis=A1\nyaxis=(PV1-A1)/R1\nxmin=0\nxmax=3\nymin=0\nymax=0.005\n\nxunits=V\nyunits=A\nrange=5",
+        "x": 147.1270140701537,
+        "y": 669.9346123136241
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 859.3131568966161,
+        "y": 830.5272044372014
+    },
+    "VAR:R1:1000:\u03a9": {
+        "ID": "VAR:R1:1000:\u03a9",
+        "desc": "",
+        "x": 278.9438436749116,
+        "y": 291.4168534090782
+    }
+}

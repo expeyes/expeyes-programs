@@ -1,2 +1,13 @@
 #git+https://github.com/bashtage/sphinx-material
 sphinx_materialdesign_theme
+
+eyes17~=1.0.0
+numpy~=1.17.4
+pyserial~=3.4
+scipy~=1.3.3
+future~=0.18.2
+PyQt5~=5.14.1
+pyqtgraph~=0.11.0rc0
+setuptools~=63.2.0
+metaconfig~=0.1.4a1
+markdown2~=2.3.7

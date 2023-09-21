@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="conducting-human"
+   width="492.18176"
+   height="393.40323"
+   viewBox="-6 -6 492.18176 393.40323"
+   sodipodi:docname="DC_Resistance_of_Human_Body.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs57" />
+  <sodipodi:namedview
+     id="namedview55"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="8.6051142"
+     inkscape:cx="64.380319"
+     inkscape:cy="189.07361"
+     inkscape:window-width="1249"
+     inkscape:window-height="855"
+     inkscape:window-x="551"
+     inkscape:window-y="53"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="conducting-human"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <desc
+     id="desc2">
+XCircuit Version 3.8
+File &quot;conducting-human.ps&quot; Page 1
+</desc>
+  <circle
+     cx="338.55246"
+     cy="200.77644"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="ellipse12"
+     r="16" />
+  <path
+     d="M -4.91827,-4.91827 V 386.3215 H 485.10004 V -4.91827 Z"
+     fill="none"
+     stroke-width="2.16346"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path18"
+     inkscape:export-filename="/home/jithin/AndroidStudioProjects/ExpEYESNew/app/src/main/assets/imagemaps/conducting-human.png"
+     inkscape:export-xdpi="96"
+     inkscape:export-ydpi="96" />
+  <circle
+     cx="209.79695"
+     cy="197.22397"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="ellipse20"
+     r="16" />
+  <text
+     font-size="40"
+     id="PV1"
+     style="font-size:14.4196px;font-family:Helvetica;fill:#000000;stroke:none;stroke-width:0.360489"
+     x="38.673386"
+     y="183.81976"><desc
+       id="desc1337-6">min=-5
+max=5
+stepsize=0.1
+value=1
+
+</desc><tspan
+       x="38.673386"
+       y="183.81976"
+       id="tspan78-7"
+       style="stroke-width:0.360489">PV1</tspan></text>
+  <text
+     font-size="40"
+     id="A1"
+     style="font-size:15.521px;font-family:Helvetica;fill:#000000;stroke:none;stroke-width:0.388025"
+     x="36.805008"
+     y="44.234592"><tspan
+       x="36.805008"
+       y="44.234592"
+       id="tspan90"
+       style="stroke-width:0.388025">A1</tspan></text>
+  <text
+     font-size="40"
+     id="A2"
+     style="font-size:18.9788px;font-family:Helvetica;fill:#000000;stroke:none;stroke-width:0.47447"
+     x="355.22498"
+     y="85.700211"><tspan
+       x="355.22498"
+       y="85.700211"
+       id="tspan90-1"
+       style="stroke-width:0.47447">A2</tspan></text>
+  <path
+     style="fill:none;stroke:#aa0000;stroke-width:4.27011;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     id="path60"
+     d="M 50.081818,179.05937 C 181.5147,135.8528 150.60188,204.08952 194.42755,192.71795"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#aa0000;stroke-width:4.27011;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     id="path60-2"
+     d="M 36.448878,45.388014 C 17.010255,81.403694 11.698723,169.51829 44.23692,177.20125"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#aa0000;stroke-width:4.27011;stroke-linecap:round;stroke-linejoin:bevel;stroke-miterlimit:4;stroke-dasharray:none"
+     inkscape:connector-curvature="0"
+     id="path60-2-4"
+     d="M 360.46776,78.797816 C 331.95208,53.852703 328.10747,165.49213 342.58469,185.21446"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g2115"
+     transform="matrix(0.87629468,0,0,0.87629468,443.03779,841.742)">
+    <g
+       id="g2081"
+       transform="matrix(0.23272139,0,0,0.23272139,-463.9665,-920.57837)">
+      <polyline
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         points="1011.003,1554.381     1037.852,1399.531 1100.429,1420.39 1130.357,1349.651 1152.123,1412.228 1330.783,1396.81 1241.906,1154.667 1065.06,1143.784     952.603,1366.882 1037.852,1399.531   "
+         id="polyline2043" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1206.29"
+         y1="1407.553"
+         x2="1206.032"
+         y2="1566.651"
+         id="line2045" />
+      <polyline
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         points="1146.681,1150.132     1146.681,1099.345 1261.858,1104.787 1258.23,960.589 1317.179,935.195 1313.552,810.949 993.414,799.159 973.462,937.009     1030.597,946.078 1030.597,1092.997 1146.681,1099.345   "
+         id="polyline2047" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1316.272"
+         y1="871.71198"
+         x2="1421.474"
+         y2="839.96997"
+         id="line2049" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="985.25201"
+         y1="860.82898"
+         x2="893.65399"
+         y2="828.17999"
+         id="line2051" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1159.3781"
+         y1="805.508"
+         x2="1158.4709"
+         y2="746.55902"
+         id="line2053" />
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         d="m 1163.912,692.145 c 0,0 79.808,1.814 93.411,-49.88"
+         id="path2055" />
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         cx="1294.507"
+         cy="1579.098"
+         rx="90.691002"
+         ry="63.483002"
+         id="ellipse2057" />
+      <ellipse
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         cx="922.44897"
+         cy="1565.495"
+         rx="90.691002"
+         ry="63.483002"
+         id="ellipse2059" />
+      <circle
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         cx="1453.895"
+         cy="825.23297"
+         r="37.41"
+         id="circle2061" />
+      <circle
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         cx="859.41901"
+         cy="806.86798"
+         r="40.811001"
+         id="circle2063" />
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         d="m 1337.585,602.814 c 0,75.506 -76.589,136.716 -171.065,136.716 -94.477,0 -171.065,-61.21 -171.065,-136.716 0,-37.456 18.847,-71.395 49.376,-96.088 31.012,-25.084 74.079,-40.628 121.689,-40.628 94.476,0 171.065,61.21 171.065,136.716 z"
+         id="path2065" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1004.297"
+         y1="473.57999"
+         x2="1044.8311"
+         y2="506.72699"
+         id="line2067" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1083.198"
+         y1="428.689"
+         x2="1101.563"
+         y2="476.30099"
+         id="line2069" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1169.58"
+         y1="411.004"
+         x2="1170.941"
+         y2="464.73801"
+         id="line2071" />
+      <path
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         d="m 1247.121,427.328 c 0,2.041 -20.405,46.252 -20.405,46.252"
+         id="path2073" />
+      <line
+         fill="none"
+         stroke="#000000"
+         stroke-width="16.3243"
+         stroke-miterlimit="10"
+         x1="1323.301"
+         y1="466.77899"
+         x2="1290.652"
+         y2="507.58899"
+         id="line2075" />
+      <ellipse
+         transform="matrix(0.9874,-0.1581,0.1581,0.9874,-75.2853,199.8064)"
+         cx="1218.553"
+         cy="573.22699"
+         rx="23.806"
+         ry="41.151001"
+         id="ellipse2077" />
+      <ellipse
+         transform="matrix(0.2622,-0.965,0.965,0.2622,274.0083,1496.6952)"
+         cx="1115.8459"
+         cy="569.146"
+         rx="41.151001"
+         ry="23.806"
+         id="ellipse2079" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:23.9572px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#aa0000;fill-opacity:1;stroke:none;stroke-width:0.598931"
+       x="-118.36302"
+       y="-607.22034"
+       id="text3319"><tspan
+         sodipodi:role="line"
+         x="-118.36302"
+         y="-607.22034"
+         id="tspan3321"
+         style="fill:#aa0000;stroke:none;stroke-width:0.598931">Do not touch</tspan><tspan
+         sodipodi:role="line"
+         x="-118.36302"
+         y="-577.27386"
+         id="tspan8483"
+         style="fill:#aa0000;stroke:none;stroke-width:0.598931">with cut/</tspan><tspan
+         sodipodi:role="line"
+         x="-118.36302"
+         y="-547.32733"
+         id="tspan8487"
+         style="fill:#aa0000;stroke:none;stroke-width:0.598931">bruised skin</tspan></text>
+  </g>
+  <metadata
+     id="metadata3272">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:description>## Conducting human
+
+The human body is a weak conductor. 
+
+We can demonstrate this by touching a wire connected to PV1( which is a Programmable voltage source), and touching another wire connected to the A2(Voltage input) with the other hand. 
+
+We can see a voltage appearing on A2 when we connect PV1 with A2 via our body. To see the original voltage, we connect PV1 to A1 directly via a wire.
+
+</dc:description>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:8.4825px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.530157"
+     x="0.28182358"
+     y="337.62225"
+     id="asd"><tspan
+       sodipodi:role="line"
+       id="tspan11456-2-8"
+       x="0.28182358"
+       y="337.62225"
+       style="font-size:8.4825px;fill:#f9f9f9;stroke-width:0.530157">EQ:1000000*(A1-A2)/A2:Ω</tspan></text>
+</svg>

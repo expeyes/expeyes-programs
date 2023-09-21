@@ -1,0 +1,12 @@
+## LDR Experiment
+
+
+
+A Light Dependent Resistor's resistance changes with the intensity of the light falling
+on it.
+
+Connect the LDR between SEN and Ground, and observe the resistance .
+
+## Measuring frequency using an LDR
+
+shine a fluctuating light source on the LDR, and observe the signal fluctuations on the oscilloscope shown below the schematic. You can use this to calculate the frequency of the fluctuations.

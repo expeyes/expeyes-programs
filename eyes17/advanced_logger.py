@@ -42,11 +42,11 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 	def __init__(self, device=None):
 		super(Expt, self).__init__()
 		self.setupUi(self)
-		self.splitter.setSizes([100,400])
+		self.splitter.setSizes([100, 400])
 		self.logging = False
 
 		self.p = device
-		self.I2C = device.I2C		#connection to the device hardware 	
+		self.I2C = device.I2C		#connection to the device hardware
 
 		self.curve = self.plot.plot(pen=colors[0])
 		self.X = []
@@ -81,11 +81,11 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 			if 'datapoints' in config['logging']:
 				self.datapointsBox.setValue(int(config['logging']['datapoints']))
 
-		for name,axis in zip(['x-axis','y-axis'],[self.XInput,self.YInput]):
+		for name, axis in zip(['x-axis', 'y-axis'], [self.XInput, self.YInput]):
 			if name in config:
 				if 'tool' in config[name]:
 					axis.setWindow(config[name]['tool'])
-					print(name,' set to ',config[name]['tool'])
+					print(name, ' set to ', config[name]['tool'])
 				if 'minimum' in config[name]:
 					axis.minValue.setValue(float(config[name]['minimum']))
 				if 'maximum' in config[name]:

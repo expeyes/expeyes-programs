@@ -1,0 +1,26 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 660.0580744186046,
+        "y": 485.5067883
+    },
+    "EQ:(PV1-A1)/R1": {
+        "ID": "EQ:(PV1-A1)/R1",
+        "desc": "",
+        "x": 338.0136279069767,
+        "y": 17.358933321000002
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nvalue=1\n\n#Configure Automatic Sweep\n\nsweep=PV1\ntitle= V(A1) vs I ( PV1-A1)/R1) \nstart=-5\nstop=5\nstepsize=0.01\ndelay=1\nsettling=2\n\nyaxis=(PV1-A1)/R1\nylabel=Current \nymin=-0.01\nymax=0.01\n\nxaxis=A1\nxmin=-5\nxmax=5\n\nxunits=V\nyunits=A\n\nrange=5\n",
+        "x": 86.97228837209303,
+        "y": 486.73809900000003
+    },
+    "VAR:R1:1000:\u03a9": {
+        "ID": "VAR:R1:1000:\u03a9",
+        "desc": "",
+        "x": 491.9523627906977,
+        "y": 243.77339862
+    }
+}

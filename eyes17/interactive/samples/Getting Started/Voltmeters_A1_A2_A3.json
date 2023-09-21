@@ -1,0 +1,20 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Measured A1 Voltage Vs Time\nduration=20\nmin=-16\nmax=16\nymin=-15\nymax=15\nw=200\nh=200\nlabel=gauge",
+        "x": 43.713426428571424,
+        "y": 124.96402285714287
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "logging=true\ntitle=Measured A2 Voltage Vs Time\nduration=20\nmin=-16\nmax=16\nymin=-15\nymax=15\nw=200\nh=200\nlabel=gauge",
+        "x": 437.99914285714283,
+        "y": 124.96402285714287
+    },
+    "A3": {
+        "ID": "A3",
+        "desc": "logging=true\ntitle=Measured A3 Voltage Vs Time\nduration=20\nmin=-3.3\nmax=3.3\nymin=-3.3\nymax=3.3\nw=200\nh=200\nlabel=gauge",
+        "x": 840.85635,
+        "y": 124.96402285714287
+    }
+}

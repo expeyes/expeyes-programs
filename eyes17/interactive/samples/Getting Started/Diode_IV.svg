@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="fullwave"
+   width="467.53647"
+   height="407.47305"
+   viewBox="-6 -6 467.53646 407.47305"
+   sodipodi:docname="Diode_IV.svg"
+   inkscape:version="1.2.2 (1:1.2.2+202212051550+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <title
+     id="title2921">Some Title</title>
+  <defs
+     id="defs129">
+    <marker
+       style="overflow:visible"
+       id="DotS-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS-4-2-9"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path26004-3-5-3" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send-0-4-6"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         id="path25952-3-0-8" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker6908"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path6906" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="DotS"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path6705" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker8138"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path8136" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="marker8142"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="DotS"
+       inkscape:isstock="true">
+      <path
+         transform="matrix(0.2,0,0,0.2,1.48,0.2)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="m -2.5,-1 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z"
+         id="path8140" />
+    </marker>
+  </defs>
+  <sodipodi:namedview
+     id="namedview127"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="3.4326581"
+     inkscape:cx="315.35328"
+     inkscape:cy="80.549822"
+     inkscape:window-width="1452"
+     inkscape:window-height="782"
+     inkscape:window-x="423"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="fullwave"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;fullwave.ps&quot; Page 1
+</desc>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.3333px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f2f2f2;fill-opacity:1;stroke:none"
+     x="1.1170831"
+     y="314.61111"
+     id="A1-9"><title
+       id="title1095-6">huh</title><tspan
+       sodipodi:role="line"
+       id="tspan11305-5-7-5-4-2"
+       x="1.1170831"
+       y="314.61111"
+       style="font-size:13.3333px;fill:#f2f2f2" /></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ececec;fill-opacity:1;stroke:none"
+     x="198.07973"
+     y="260.97543"
+     id="dsf"><tspan
+       id="tspan5933-4-5"
+       x="198.07973"
+       y="260.97543"
+       style="font-size:16px;fill:#ececec"
+       sodipodi:role="line">A1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none"
+     x="57.322704"
+     y="260.97543"
+     id="sdasd"><desc
+       id="desc934">title=Current(PV1-A1/R1) Vs Voltage (A1)
+
+min=0
+max=5
+
+#sweep
+sweep=PV1
+start=0
+stepsize=0.01
+stop=5
+delay=10
+
+
+xaxis=A1
+yaxis=(PV1-A1)/R1
+xmin=0
+xmax=3
+ymin=0
+ymax=0.005
+
+xunits=V
+yunits=A
+range=5</desc><tspan
+       sodipodi:role="line"
+       id="tspan11456"
+       x="57.322704"
+       y="260.97543"
+       style="font-size:16px;fill:#e6e6e6">PV1</tspan></text>
+  <metadata
+     id="metadata2840">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Some Title</dc:title>
+        <dc:creator>
+          <cc:Agent>
+            <dc:title>Jithin</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:description># Diode IV Characteristics
+
+![Diode IV](pics/diodeiv.jpg &quot;Diode IV&quot;)
+
+The current through a PN jnction varies in a non-linear fashion with the voltage applied across it. The current is very small until the applied voltage exceeds the forward voltage of the diode. This can be visualized by plotting the current against the voltage.
+
+## Objective
+
+Draw the V-I Characteristics of diode and compare the result with the theory.
+
+![Diode IV screenshot](pics/diodeiv.gif &quot;Diode IV GIF&quot;)
+
+
+## Procedure
+
+![Diode IV schematic](pics/diode_iv.svg &quot;Diode IV schematic&quot;)
+  
+  
+-  Make the connections as shown in the figure. Use 1000 Ohm resistor
+-  Click on START to draw the characteristic curve.
+-  Analyse the data
+-  Plot the IV of LEDs
+
+
+![Diode IV screenshot](pics/diodeiv_4148.jpg &quot;Diode IV&quot;)
+
+It is possible to do this by manually taking the reading, from the voltmeter GUI.
+The steps involved are:
+- Launch the Voltmeter UI, and also click on the 'I/O controls' option to add the PV1 slider.
+- Set PV1 to 100mV
+- Read the voltage at A1, which is the voltage across the diode
+- Calculate current from `I=(V_{PV1}-V_{A1})/(1000)`
+- Increment PV1 by 100mV per step, up to 5V, and repeat the process
+- plot the readings of I against A1.
+
+
+Discussion
+----------
+
+The IV characteristic of an ideal PN junction diode is given by equation
+:math:`I = I_0 \times e^{(qU/kT)   1}`, where :math:`I_0` is the reverse saturation
+current, :math:`q` the charge of electron, :math:`k` the Boltzmann constant, :math:`T` the
+temperature in Kelvin. For a practical, non-ideal, diode, the equation
+is :math:`I = I_0 \times e^{(qU/nkT)   1}`, where :math:`n` is the ideality factor, that
+is 1 for an ideal diode. For practical diodes it varies from 1 to 2. We
+have used a IN4148 silicon diode. The value of *n* for 1N4148 is around 2.
+We have calculated the value of :math:`n` by fitting the experimental data with
+the equation.
+
+The voltage at which LED starts emitting light depends on its wavelength
+and Planck’s constant. Energy of a photon is given by :math:`E = h\nu  = hc/\lambda` .
+This energy is equal to the energy of an electron that overcomes the
+junction barrier and is given by :math:`E = eV_0`. So Planck’s constant
+:math:`h = eV_0 \times \lambda / c`, where :math:`\lambda` is the wavelength of light from the LED, :math:`e`
+the charge of electron and :math:`c` the velocity of light.
+
+Repeat the experiment by heating the diode to different temperatures.
+
+
+![Diode IV screenshot](pics/diodeiv_zener.jpg &quot;Diode IV&quot;)
+
+## Read more online
+
+[Wikibooks](https://en.wikibooks.org/wiki/Practical_Electronics/Diodes/Diode_operation_characteristics)
+
+[ExpEYES.in Diode IV](https://expeyes.in/experiments/electronics/diodeIV.html)</dc:description>
+        <dc:language>diodeIV Characteristics.xml</dc:language>
+        <dc:contributor>
+          <cc:Agent>
+            <dc:title>#Parameters for launching the experiment
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+xlabel=Voltage(A1)
+ylabel=Current ((PV1-A1)/R1)
+xunits=V
+yunits=A
+interval=50
+input=A1
+output=PV1
+start=0
+stop=5
+stepsize=0.1
+xequation=A1
+yequation=(PV1-A1)/R1
+logging=true
+title=IV Characteristics
+ymin=0
+ymax=6e-3
+xmin=0
+xmax=5
+intro=Measure current vs voltage
+
+#comma separated
+variables=R1:1000:Ω</dc:title>
+          </cc:Agent>
+        </dc:contributor>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <circle
+     cx="268.49509"
+     cy="110.41885"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="ellipse4"
+     r="19.184237" />
+  <path
+     d="m 345.23203,184.70849 v 38.36847 h 76.73695 v -38.36847 z"
+     fill="none"
+     stroke-width="1.59869"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path8"
+     style="stroke:#aa0000" />
+  <circle
+     cx="421.96899"
+     cy="110.41885"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="ellipse12"
+     r="19.184237" />
+  <circle
+     cx="76.652718"
+     cy="110.41885"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="ellipse14"
+     r="19.184237" />
+  <path
+     d="m 326.0478,88.83657 38.36847,21.58226 -38.36847,21.58227 z"
+     fill="#000000"
+     stroke="none"
+     id="path16"
+     style="stroke-width:1.19901" />
+  <path
+     d="M 287.67932,110.41883 H 326.0478"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path18" />
+  <path
+     d="M 402.78474,110.41883 H 364.41627"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path20" />
+  <path
+     d="M 364.41627,88.83657 V 132.0011"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path22" />
+  <path
+     d="m 421.96898,129.60307 c 1.19901,0 54.23283,16.73695 0,55.10542"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path26"
+     sodipodi:nodetypes="cc" />
+  <path
+     d="m 230.12661,244.70849 c 1.19902,0 76.73695,-57.55271 38.36848,-115.10542"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path28"
+     style="stroke:#d40000;stroke-width:4.79606;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker6908);marker-end:url(#DotS)" />
+  <path
+     d="M 57.468482,244.70849 C 38.284245,206.34002 -0.08422781,187.15578 76.652719,129.60307"
+     fill="none"
+     stroke-width="2"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path30"
+     style="stroke:#d40000;stroke-width:4.79606;stroke-miterlimit:4;stroke-dasharray:none;marker-start:url(#marker6908);marker-end:url(#DotS)" />
+  <text
+     stroke="none"
+     font-family="Helvetica"
+     font-size="31.9737px"
+     id="text46"
+     style="fill:#000000;stroke-width:0.79934"
+     x="348.55481"
+     y="214.88828"><tspan
+       x="348.55481"
+       y="214.88828"
+       id="tspan44"
+       style="stroke-width:0.79934">GND</tspan></text>
+  <path
+     d="M 249.31085,110.41883 H 215.73843"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path50" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:9.71458px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.607161"
+     x="108.68035"
+     y="113.52248"
+     id="dsf-3-6"><tspan
+       id="tspan5933-4-5-6-2"
+       x="108.68035"
+       y="113.52248"
+       style="font-size:9.71458px;fill:#f9f9f9;stroke-width:0.607161"
+       sodipodi:role="line">VAR:R1:1000:Ω</tspan></text>
+  <path
+     d="M 95.836953,110.41883 H 129.40937"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path52" />
+  <path
+     d="m 129.40937,110.41883 7.19409,16.78621 14.38818,-33.572407 14.38817,33.572407 14.38818,-33.572407 14.38818,33.572407 14.38818,-33.572407 7.19408,16.786197"
+     fill="none"
+     stroke-width="2.39803"
+     stroke-linejoin="bevel"
+     stroke-linecap="round"
+     stroke="#000000"
+     id="path54" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:15.2297px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#800000;fill-opacity:1;stroke:none;stroke-width:0.951857"
+     x="89.705627"
+     y="56.063984"
+     id="sa"><tspan
+       sodipodi:role="line"
+       id="tspan5295"
+       x="89.705627"
+       y="56.063984"
+       style="font-size:15.2297px;fill:#800000;stroke-width:0.951857">Current=(PV1-A1)/R1</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:13.5614px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#f9f9f9;fill-opacity:1;stroke:none;stroke-width:0.339035"
+     x="318.81207"
+     y="32.000637"
+     id="text2627"><tspan
+       sodipodi:role="line"
+       id="tspan2625"
+       x="318.81207"
+       y="32.000637"
+       style="fill:#f9f9f9;stroke-width:0.339035">EQ:(PV1-A1)/R1:A</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:16px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px"
+     x="334.8002"
+     y="323.53485"
+     id="text2084"><tspan
+       sodipodi:role="line"
+       id="tspan2082"
+       x="334.8002"
+       y="323.53485"
+       style="font-size:16px;fill:#f9f9f9">RECORD</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-size:18.8601px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;stroke-width:1.17875"
+     x="133.62157"
+     y="91.176445"
+     id="text8710-3-9"><tspan
+       sodipodi:role="line"
+       x="133.62157"
+       y="91.176445"
+       id="tspan8714-5-1"
+       style="font-size:18.8601px;stroke-width:1.17875">R1</tspan></text>
+</svg>

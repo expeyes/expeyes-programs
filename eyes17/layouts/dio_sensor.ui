@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>450</width>
-    <height>370</height>
+    <width>657</width>
+    <height>404</height>
    </rect>
   </property>
   <property name="font">
@@ -43,8 +43,77 @@
    <property name="spacing">
     <number>3</number>
    </property>
-   <item row="1" column="0" colspan="4">
-    <layout class="QHBoxLayout" name="configLayout"/>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string>Initialize</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" rowspan="4">
+    <widget class="QFrame" name="frame">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>10</width>
+       <height>10</height>
+      </size>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Sunken</enum>
+     </property>
+     <layout class="QVBoxLayout" name="parameterLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>1</number>
+      </property>
+      <property name="topMargin">
+       <number>1</number>
+      </property>
+      <property name="rightMargin">
+       <number>1</number>
+      </property>
+      <property name="bottomMargin">
+       <number>1</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text">
+         <string>Parameters</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
    <item row="0" column="3">
     <widget class="QPushButton" name="switcher">
@@ -53,26 +122,27 @@
      </property>
     </widget>
    </item>
-   <item row="0" column="0">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Initialize</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="QCheckBox" name="log_2">
-     <property name="text">
-      <string>Scale</string>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="5">
+   <item row="2" column="1" rowspan="2" colspan="4">
     <widget class="QStackedWidget" name="monitors">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="currentIndex">
       <number>0</number>
      </property>
      <widget class="QWidget" name="page">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <layout class="QVBoxLayout" name="verticalLayout">
        <property name="spacing">
         <number>0</number>
@@ -118,15 +188,30 @@
        <property name="verticalSpacing">
         <number>0</number>
        </property>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton_2">
+       <item row="1" column="0" colspan="5">
+        <widget class="PlotWidget" name="graph"/>
+       </item>
+       <item row="2" column="0" rowspan="2">
+        <widget class="QPushButton" name="pushButton_4">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>25</height>
+          </size>
+         </property>
          <property name="text">
-          <string>SINE FIT</string>
+          <string>Restart</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QCheckBox" name="pauseBox">
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="pauseButton">
          <property name="maximumSize">
           <size>
            <width>70</width>
@@ -138,6 +223,13 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>SINE FIT</string>
+         </property>
+        </widget>
+       </item>
        <item row="2" column="2">
         <widget class="QPushButton" name="pushButton_3">
          <property name="text">
@@ -145,25 +237,86 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0" colspan="3">
-        <widget class="PlotWidget" name="graph"/>
+       <item row="3" column="2">
+        <widget class="QSpinBox" name="durationBox">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="suffix">
+          <string> S</string>
+         </property>
+         <property name="prefix">
+          <string>Duration </string>
+         </property>
+         <property name="minimum">
+          <number>2</number>
+         </property>
+         <property name="maximum">
+          <number>300</number>
+         </property>
+         <property name="value">
+          <number>5</number>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="4" rowspan="2">
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>150</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Save Data</string>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
     </widget>
    </item>
-   <item row="0" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
+   <item row="1" column="1" colspan="3">
+    <widget class="QFrame" name="frame_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
      </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
      </property>
-    </spacer>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="configLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+     </layout>
+    </widget>
    </item>
   </layout>
  </widget>
@@ -179,29 +332,13 @@
  </resources>
  <connections>
   <connection>
-   <sender>log_2</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>Dialog</receiver>
-   <slot>changeRange(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>149</x>
-     <y>26</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>362</x>
-     <y>50</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>pushButton</sender>
    <signal>clicked()</signal>
    <receiver>Dialog</receiver>
    <slot>initialize()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>39</x>
+     <x>112</x>
      <y>25</y>
     </hint>
     <hint type="destinationlabel">
@@ -217,8 +354,8 @@
    <slot>next()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>443</x>
-     <y>21</y>
+     <x>650</x>
+     <y>24</y>
     </hint>
     <hint type="destinationlabel">
      <x>372</x>
@@ -233,28 +370,12 @@
    <slot>sineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>259</x>
-     <y>369</y>
+     <x>120</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
      <x>467</x>
      <y>364</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>pauseBox</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>Dialog</receiver>
-   <slot>pause(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>40</x>
-     <y>361</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>40</x>
-     <y>380</y>
     </hint>
    </hints>
   </connection>
@@ -265,12 +386,76 @@
    <slot>dampedSineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>380</x>
-     <y>361</y>
+     <x>145</x>
+     <y>53</y>
     </hint>
     <hint type="destinationlabel">
      <x>397</x>
      <y>385</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_4</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>restartLogging()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>187</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>114</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pauseButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>Dialog</receiver>
+   <slot>pauseLogging(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>186</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_6</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>saveTraces()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>299</x>
+     <y>68</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>428</x>
+     <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>durationBox</sender>
+   <signal>editingFinished()</signal>
+   <receiver>Dialog</receiver>
+   <slot>setDuration()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>63</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>294</x>
+     <y>403</y>
     </hint>
    </hints>
   </connection>
@@ -280,7 +465,10 @@
   <slot>initialize()</slot>
   <slot>next()</slot>
   <slot>sineFit()</slot>
-  <slot>pause(bool)</slot>
+  <slot>pauseLogging(bool)</slot>
   <slot>dampedSineFit()</slot>
+  <slot>restartLogging()</slot>
+  <slot>saveTraces()</slot>
+  <slot>setDuration()</slot>
  </slots>
 </ui>

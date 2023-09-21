@@ -1,3 +1,4 @@
+
 QPushButton:hover{
         background: qlineargradient(x1 : 0, y1 : 0, x2 : 0, y2 :   1, stop :   0.0 #ffd9aa,     stop :   0.5 #ffbb6e, stop :   0.55 #feae42, stop :   1.0 #fedb74);
 }
@@ -90,4 +91,27 @@ QLCDNumber {
 color:rgb(239, 41, 41);
 background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #eee, stop:1 #ccc);
 
+}
+
+
+QProgressBar::chunk {
+    background-color: #8D465D;
+    width: 5px;
+    margin-right: 0.5px;
+   margin-left:0.5px;
+
+}
+QProgressBar {
+    border-radius: 1px;
+    text-align: center;
+   font-size:1pt;
+  height:3px;
+}
+
+.myframe{
+    border: 1px solid #565a5e;
+    width: 10px;
+    background: #eee;
+    margin: 0px;
+    border-radius: 4px;
 }

@@ -1,0 +1,20 @@
+{
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title= Voltage (SEN)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 9\nNS=1000\nTG=20\nx=time\ny1=SEN\nymin=0\nymax=3.3",
+        "x": 1167.7550654205606,
+        "y": 727.9474850999999
+    },
+    "RES": {
+        "ID": "RES",
+        "desc": "logging=true\ntitle=Measured Resistance Vs Time\nduration=20\nmin=10\nmax=100000\nymin=10\nymax=100000\nyunits=\u03a9\nautoscaleY=true",
+        "x": 42.212392523364485,
+        "y": 514.5986240999999
+    },
+    "SEN": {
+        "ID": "SEN",
+        "desc": "ymin=0\nymax=3.3\nw=200\nh=200\nlabel=gauge",
+        "x": 53.51695140186916,
+        "y": 44.63320675
+    }
+}

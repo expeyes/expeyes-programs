@@ -1,0 +1,29 @@
+Data Logger
+===========
+
+This is a data logger for the voltmeters included in the device - A1, A2, A3, SEN, IN1
+
+Connect your input signal between any of the above inputs, and any GND pin.
+For sensors requiring a biasing voltage, use the SEN input which is pulled-up to 3.3V via an internal 5K resistor.
+For example, to measure the voltage induced in a solenoid due to a changing magnetic field, connect one end to A1,
+and the other end to GND. 
+
+If induced signals are very small, use the A3 input, and also connect a 100 ohm resistor from Rg to GND. This
+amplifies your signal by around 100 times.
+
+
+.. image:: pics/data_logger_gauges.png
+	   :width: 700px
+	   
+- Default view shows signals as analog gauges.
+- Gauges become transparent if the input is deactivated using the selection boxes on the left.
+- Click the data logger button to view plots
+
+.. image:: pics/data_logger_plots.png
+	   :width: 700px
+
+- Select the signal area using the region selector, and use sine fit button to analyze
+- Restart plot or unpause it
+- The entry field called duration is used to specify how many seconds of data you wish to see on the screen.
+- In order to adjust the plot, place the cursor on the axis to be zoomed, and scroll the mousewheel. Right Click and drag will also zoom.
+- In order to pan the plot, click and drag on either axis, or the plot window.

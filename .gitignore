@@ -66,4 +66,7 @@ m4/
 # LibreOffice extensions
 *.oxt
 
+#Pycharm IDE files
+eyes17/.idea
+
 SEELAB_EYES

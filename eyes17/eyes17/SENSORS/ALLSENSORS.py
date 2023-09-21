@@ -809,7 +809,7 @@ class LOGGER:
 		vals=self.QMC5883L_getVals(0x00,6)
 		if vals:
 			if len(vals)==6:
-				return [np.int16(vals[a*2+1]&0xff<<8|vals[a*2]&0xff)/self.QMC_scaling for a in range(3)]
+				return [np.int16(vals[a*2+1]<<8|vals[a*2])/self.QMC_scaling for a in range(3)]
 			else:
 				return False
 		else:

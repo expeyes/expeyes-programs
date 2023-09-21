@@ -5,6 +5,14 @@ from QtVersion import *
 
 from PyQt5 import QtGui, QtCore, QtWidgets
 
+
+import numpy as np
+try:
+	from scipy import optimize
+except:
+	print('scipy not available')
+
+
 import pyqtgraph as pg
 
 from pyqtgraph.exporters import Exporter
@@ -239,3 +247,89 @@ class lineEdit(QLineEdit):
 		self.setStyleSheet("border: 1px solid white;")
 		
 
+
+
+############# MATHEMATICAL AND ANALYTICS ###############
+
+def find_peak(va):
+	vmax = 0.0
+	size = len(va)
+	index = 0
+	for i in range(1,size):		# skip first 2 channels, DC
+		if va[i] > vmax:
+			vmax = va[i]
+			index = i
+	return index
+
+#-------------------------- Fourier Transform ------------------------------------
+def fft(ya, si):
+	'''
+	Returns positive half of the Fourier transform of the signal ya. 
+	Sampling interval 'si', in milliseconds
+	'''
+	NP = len(ya)
+	if NP%2: #odd number
+		ya = ya[:-1]
+		NP-=1
+	v = np.array(ya)
+	tr = abs(np.fft.fft(v))/NP
+	frq = np.fft.fftfreq(NP, si)
+	x = frq.reshape(2,int(NP/2))
+	y = tr.reshape(2,int(NP/2))
+	return x[0], y[0]    
+
+def find_frequency(x,y):		# Returns the fundamental frequency using FFT
+	tx,ty = fft(y, x[1]-x[0])
+	index = find_peak(ty)
+	if index == 0:
+		return None
+	else:
+		return tx[index]
+
+#-------------------------- Sine Fit ------------------------------------------------
+def sine_eval(x,p):			# y = a * sin(2*pi*f*x + phi)+ offset
+	return p[0] * np.sin(2*np.pi*p[1]*x+p[2])+p[3]
+
+def sine_erf(p,x,y):					
+	return y - sine_eval(x,p)
+
+
+def fit_sine(xa,ya, freq = 0):	# Time in mS, V in volts, freq in Hz, accepts numpy arrays
+	size = len(ya)
+	mx = max(ya)
+	mn = min(ya)
+	amp = (mx-mn)/2
+	off = np.average(ya)
+	if freq == 0:						# Guess frequency not given
+		freq = find_frequency(xa,ya)
+	if freq == None:
+		return None
+	#print 'guess a & freq = ', amp, freq
+	par = [amp, freq, 0.0, off] # Amp, freq, phase , offset
+	par, pcov = optimize.leastsq(sine_erf, par, args=(xa, ya))
+	return par
+	
+
+#--------------------------Damped Sine Fit ------------------------------------------------
+def dsine_eval(x,p):
+	return     p[0] * np.sin(2*np.pi*p[1]*x+p[2]) * np.exp(-p[4]*x) + p[3]
+def dsine_erf(p,x,y):
+	return y - dsine_eval(x,p)
+
+
+def fit_dsine(xlist, ylist, freq = 0):
+	size = len(xlist)
+	xa = np.array(xlist, dtype=np.float)
+	ya = np.array(ylist, dtype=np.float)
+	amp = (max(ya)-min(ya))/2
+	off = np.average(ya)
+	if freq == 0:
+		freq = find_frequency(xa,ya)
+	if freq==None: return None
+	par = [amp, freq, 0.0, off, 0.] # Amp, freq, phase , offset, decay constant
+	par, pcov = optimize.leastsq(dsine_erf, par,args=(xa,ya))
+
+	return par
+
+
+############# MATHEMATICAL AND ANALYTICS ###############

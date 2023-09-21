@@ -1,0 +1,8 @@
+{
+    "RES": {
+        "ID": "RES",
+        "desc": "logging=true\nduration=10\nunits=\u03a9\nyunits=\u03a9\nmax=100e3\nmin=100",
+        "x": 384.439844298974,
+        "y": 479.80184239807164
+    }
+}

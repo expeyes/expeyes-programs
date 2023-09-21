@@ -24,7 +24,7 @@ pf = platform.platform()
 print (pf)	
 if 'Windows' in pf:
 	import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity, thermocouplelogger
-	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient, BHCurve, lightsensorlogger
+	import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient, BHCurve, lightsensorlogger, data_logger
 	import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity, drivenpendulum
 	import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding
 
@@ -138,7 +138,8 @@ mechanicsExpts = [
 
 otherExpts = [ 
 [QT_TRANSLATE_NOOP('MainWindow','Temperatue, PT100 Sensor'), ('7.1','pt100')],
-[QT_TRANSLATE_NOOP('MainWindow','Data Logger'), ('7.2','logger')],
+[QT_TRANSLATE_NOOP('MainWindow','Simple Data Logger'), ('7.2','logger')],
+[QT_TRANSLATE_NOOP('MainWindow','Continuous Data Logger'),('3.16','data_logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Advanced Data Logger'), ('7.3','advanced_logger')],
 [QT_TRANSLATE_NOOP('MainWindow','Visual Programming Editor'), ('7.4','blockcoding')]
 ]

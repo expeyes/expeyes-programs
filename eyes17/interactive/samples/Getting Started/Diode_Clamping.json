@@ -1,0 +1,26 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 105.62748438468043,
+        "y": 47.097986508805235
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 642.0147371175277,
+        "y": 47.097986508805235
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nstepsize=0.02\n\n#sweep\n\nmode=scope\nsweep=PV1\nstart=-5\nstop=5\ntitle=Input(A1) vs Clamped Output(A2)\n\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\n\nxaxis=time\ny1=A1\ny2=A2\nymin=-10\nymax=10",
+        "x": 642.0147371175277,
+        "y": 680.9005684142018
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "",
+        "x": 105.62748438468043,
+        "y": 680.9005684142018
+    }
+}

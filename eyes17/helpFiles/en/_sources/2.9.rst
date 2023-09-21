@@ -47,5 +47,5 @@ Separating these components will be explained in the coming sections.
 
 If the voltage is not changing with time, it is pure DC. If it is
 changing with time, it has an AC component. if the average voltage is
-zero, it is pure DC.
+zero, it is pure AC.
 

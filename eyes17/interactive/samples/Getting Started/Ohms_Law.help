@@ -1,0 +1,35 @@
+## What is Ohm's Law
+
+Ohm's law is a fundamental principle in electricity that describes the relationship between voltage (V), current (I), and resistance (R) in an electrical circuit.
+It states that the current flowing through a conductor between two points is directly proportional to the voltage across the conductor and inversely proportional 
+to the resistance of the conductor. 
+
+Mathematically, Ohm's law is expressed as:
+
+`V = I * R`
+
+
+
+Where:
+
+    V represents the voltage measured in volts (V),
+    I represents the current measured in amperes (A),
+    R represents the resistance measured in ohms (Ω).
+
+According to Ohm's law, if the resistance in a circuit remains constant, the current flowing through the circuit is directly proportional 
+to the applied voltage. Similarly, if the voltage remains constant, the current is inversely proportional to the resistance.
+
+So if you know the current flowing through a resistor(R), and you know the potential difference across it, you can calculate its resistance as R=V/I . 
+
+## Verifying Ohm's Law
+
+Connect a known value resistor(1K) between PV1(Voltage Source) and A1(Voltmeter), and an unknown value resistor from A1 to Ground.
+
+* Using Ohm's law, we calculate the current flowing through R1 as (PV1 - A1)/1K . 
+
+* Since the same current must now flow through R2 also in order to reach GND , we can calculate R2 as A1/I where I was earlier calculated.
+
+## Bonus assignment
+
+Replace R2 with a diode/LED/Zener, and observe the behaviour.
+This program can also be used to observe the IV characteristics of different devices.

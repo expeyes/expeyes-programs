@@ -43,6 +43,15 @@ class Expt(QWidget):
 		self.pwin.setYRange(self.IMIN, self.IMAX)
 		self.pwin.hideButtons()								# Do not show the 'A' button of pg
 
+
+		self.region = pg.LinearRegionItem()
+		self.region.setBrush([255,0,50,50])
+		self.region.setZValue(10)
+		for a in self.region.lines: a.setCursor(QtGui.QCursor(QtCore.Qt.SizeHorCursor)); 
+		self.pwin.addItem(self.region, ignoreBounds=False)
+		self.region.setRegion([0.2,3])
+
+
 		right = QVBoxLayout()							# right side vertical layout
 		right.setAlignment(Qt.AlignmentFlag(0x0020)) #Qt.AlignTop
 		right.setSpacing(self.RPGAP)
@@ -61,6 +70,11 @@ class Expt(QWidget):
 		b = QPushButton(self.tr("FIT with I=Io* exp(qV/nkT)"))
 		right.addWidget(b)
 		b.clicked.connect(self.fit_curve)		
+
+
+		b = QPushButton(self.tr("FIT with I=V/R"))
+		right.addWidget(b)
+		b.clicked.connect(self.fit_curve_resistance)		
 
 		b = QPushButton(self.tr("Clear Traces"))
 		right.addWidget(b)
@@ -94,9 +108,14 @@ class Expt(QWidget):
 	def fit_curve(self):
 		if self.running == True or self.data[0]==[]:
 			return
-		f = em.fit_exp(self.data[0], self.data[1])
+
+		S,E=self.region.getRegion()
+		start = (np.abs(np.array(self.data[0]) - S)).argmin()
+		end = (np.abs(np.array(self.data[0]) - E)).argmin()
+
+		f = em.fit_exp(self.data[0][start:end], self.data[1][start:end])
 		if f != None:
-			self.traces.append(self.pwin.plot(self.data[0], f[0], pen = self.traceCols[self.trial%5]))
+			self.traces.append(self.pwin.plot(self.data[0][start:end], f[0], pen = self.traceCols[self.trial%5]))
 			self.trial += 1
 			k = 1.38e-23    # Boltzmann const
 			q = 1.6e-19     # unit charge
@@ -107,7 +126,24 @@ class Expt(QWidget):
 			ss1 = '%5.2e'%Io
 			ss2 = '%5.2f'%n
 			self.msg(self.tr('Fitted with Diode Equation : Io = ') +ss1 + self.tr(' mA , Ideality factor = ') + ss2)
-			self.history.append((self.data[0], f[0]))			
+			self.history.append((self.data[0][start:end], f[0]))			
+		else:
+			self.msg(self.tr('Analysis failed. Could not fit data'))
+
+	def fit_curve_resistance(self): #fit_line
+		if self.running == True or self.data[0]==[]:
+			return
+
+		S,E=self.region.getRegion()
+		start = (np.abs(np.array(self.data[0]) - S)).argmin()
+		end = (np.abs(np.array(self.data[0]) - E)).argmin()
+
+		f = em.fit_line(self.data[0][start:end], self.data[1][start:end])
+		if f != None:
+			self.traces.append(self.pwin.plot(self.data[0][start:end], f[0], pen = self.traceCols[self.trial%5]))
+			self.trial += 1
+			self.msg(self.tr('Fitted with Straight Line : Slope = ') +'%.2e, '%(f[1][0])+ self.tr('offset = ')+ '%.2e'%(f[1][1]))
+			self.history.append((self.data[0][start:end], f[0]))			
 		else:
 			self.msg(self.tr('Analysis failed. Could not fit data'))
 				

@@ -24,6 +24,7 @@ class Expt(QWidget):
 		try:
 			self.p.set_state(OD1=1)
 		except:
+			print('could not set OD1 to 5V')
 			pass
 
 		full = QVBoxLayout()
