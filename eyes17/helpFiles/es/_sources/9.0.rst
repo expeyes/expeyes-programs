@@ -285,7 +285,7 @@ un hilo y tirar :
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -310,7 +310,7 @@ Conectar WG en A1, y un diodo entre A1 y A2. Iniciar el siguiente código :
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -336,7 +336,7 @@ se muestra a continuación.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -356,7 +356,7 @@ correspondiente está cargada.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_wave(1000, 'sine')
    p.set_wave(100)          # frec. 100Hz con la tabla corriente
    x,y = p.capture1('A1', 500,50)
@@ -375,7 +375,7 @@ inicia el código siguiente. El resultado se muestra a continuación.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    
    def f1(x):
        return sin(x) + sin(3*x)/3
@@ -398,7 +398,7 @@ El resultado debido a esta tabla se muestra arriba.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    x = arange(-256, 256)
    x = abs(x)
    p.load_table(x)

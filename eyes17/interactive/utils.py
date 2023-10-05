@@ -2,7 +2,13 @@
 import sys, os, os.path, metaconfig
 
 from PyQt5 import QtGui, QtCore, QtWidgets
-
+try:
+	from configparser import ConfigParser
+except:
+	try:
+		from ConfigParser import ConfigParser
+	except:
+		from metaconfig import ConfigParser
 
 import numpy as np
 from PyQt5.QtCore import Qt
@@ -157,7 +163,7 @@ language = en_IN
 	with open(cnf,"w") as out: out.write(defaultConfiguration)
 #######################################################################
 
-config = metaconfig.ConfigParser()
+config = ConfigParser()
 config.read(cnf)
 
 penCols   = ['y','g','r','m','c']     #pqtgraph pen colors

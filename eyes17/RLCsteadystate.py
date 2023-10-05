@@ -424,13 +424,13 @@ class Expt(QWidget):
 		val = float(text)
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGslider.setValue(self.AWGval)
+			self.AWGslider.setValue(int(self.AWGval))
 			self.set_wave()
 
 	def awg_slider(self, val):
 		if self.AWGmin <= val <= self.AWGmax:
 			self.AWGval = val
-			self.AWGtext.setText('%.1f'%(val))
+			self.AWGtext.setText('%d' % (val))
 			self.set_wave()
 		
 	def msg(self, m):

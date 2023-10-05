@@ -152,7 +152,7 @@ ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine(1000)
    p.select_range('A1', 4)
    t,v = p.capture1('A1', 300, 10)
@@ -169,7 +169,7 @@ ExpEYESന്റെ പൈത്തൺ പ്രോഗ്രാമുകൾ
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine(1000)
    p.select_range('A1', 4)
    t,v,tt,vv = p.capture2(300, 10)
@@ -186,7 +186,7 @@ capture4() ഫങ്ക്ഷൻ  A1,A2,A3, MIC എന്നീ നാലു ഇ
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -206,7 +206,7 @@ WG വേവ് ടേബിൾ
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_wave(1000, 'sine')
    p.set_wave(100)       # Sets 100Hz using the existing table
    time.sleep(0.2)
@@ -223,7 +223,7 @@ WG വേവ് ടേബിൾ
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
 
    def f1(x):
        return sin(x) + sin(3*x)/3 

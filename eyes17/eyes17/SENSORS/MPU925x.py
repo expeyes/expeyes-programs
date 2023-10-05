@@ -170,7 +170,7 @@ if __name__ == "__main__":
 	A = connect(I.I2C) 
 	t,x,y,z = I.I2C.capture(A.ADDRESS,0x43,6,5000,1000,'int') 
 	#print (t,x,y,z)
-	from pylab import *
+	from matplotlib import pyplot as plt
 	plot(t,x)
 	plot(t,y)
 	plot(t,z)

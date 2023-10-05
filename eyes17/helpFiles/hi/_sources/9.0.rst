@@ -282,7 +282,7 @@ interface. Connect WG to A1 with a wire and run;
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -307,7 +307,7 @@ Connect WG to A1 and a diode from A1 to A2. Run the code below
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -332,7 +332,7 @@ Connect WG to A3 and run the code given below. Result is shown above.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -354,7 +354,7 @@ corresponding wavetable is loaded.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_wave(1000, 'sine')
    p.set_wave(100)       # Sets 100Hz using the existing table
    x,y = p.capture1('A1', 500,50)
@@ -372,7 +372,7 @@ code below. The output also is shown below.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
 
    def f1(x):
        return sin(x) + sin(3*x)/3 
@@ -395,7 +395,7 @@ triagular wave. The tableoutput also is shown above.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    x = arange(-256, 256)
    x = abs(x)
    p.load_table(x)

@@ -1,7 +1,7 @@
 import eyes17.eyes
 p = eyes17.eyes.open()
 
-from pylab import *
+from matplotlib import pyplot as plt
 
 p.set_sine(200)
 p.set_pv1(1.35)       # will clip at 1.35 + diode drop

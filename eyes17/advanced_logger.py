@@ -18,7 +18,7 @@ Author  : Jithin B.P, jithinbp@gmail.com
 Date    : Sep-2019
 License : GNU GPL version 3
 '''
-import sys,time,metaconfig
+import sys,time
 t = time.time()
 
 import utils
@@ -31,7 +31,7 @@ from collections import OrderedDict
 
 from layouts import ui_advancedLogger
 from layouts.oscilloscope_widget import DIOINPUT, colors
-
+from utils import ConfigParser
 import functools
 from functools import partial
 
@@ -70,7 +70,7 @@ class Expt(QtWidgets.QMainWindow, ui_advancedLogger.Ui_MainWindow):
 		self.timer.start(2)
 
 	def setConfig(self,text):
-		config = metaconfig.ConfigParser(allow_no_value=True)
+		config = ConfigParser(allow_no_value=True)
 		config.read_string(text)
 		print('received configuration:',config)
 		if 'logging' in config:

@@ -285,7 +285,7 @@ d'un fil et lancer :
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -310,7 +310,7 @@ Connecter WG à A1, et une diode entre A1 et A2. Lancer le code ci-dessous :
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -336,7 +336,7 @@ est montré ci-dessus.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_sine_amp(2)
    p.set_sine(1000)
    p.select_range('A1', 4)
@@ -359,7 +359,7 @@ correspondante est chargée.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    p.set_wave(1000, 'sine')
    p.set_wave(100)          # fréq. 100Hz avec la table existante
    x,y = p.capture1('A1', 500,50)
@@ -378,7 +378,7 @@ lancer le code ci-dessous. Le résultat est montré plus bas.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    
    def f1(x):
        return sin(x) + sin(3*x)/3
@@ -401,7 +401,7 @@ Le résultat dû à ce tableau est montré ci-dessus.
 
 .. code-block:: python
 
-   from pylab import *
+   from matplotlib import pyplot as plt
    x = arange(-256, 256)
    x = abs(x)
    p.load_table(x)

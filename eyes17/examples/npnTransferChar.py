@@ -1,7 +1,7 @@
 import eyes17.eyes
 p = eyes17.eyes.open()
 
-from pylab import *
+from matplotlib import pyplot as plt
 vcc = p.set_pv1(4.8)
 
 iba = []

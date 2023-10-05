@@ -3,7 +3,7 @@
 
 # Connect WG to A1
 
-from pylab import *
+from matplotlib import pyplot as plt
 
 x = arange(-256, 256)
 x = abs(x)
@@ -11,5 +11,5 @@ p.load_table(x)
 p.set_wave(400)
 
 x,y = p.capture1('A1', 500,10)
-plot(x,y)
-show()
+plt.plot(x,y)
+plt.show()

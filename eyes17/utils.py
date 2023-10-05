@@ -1,5 +1,14 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, os, os.path, metaconfig
+import sys, os, os.path
+
+#Solve this mess. settle on one version of configparser.
+try:
+	from configparser import ConfigParser
+except:
+	try:
+		from ConfigParser import ConfigParser
+	except:
+		from metaconfig import ConfigParser
 
 from QtVersion import *
 
@@ -156,7 +165,7 @@ language = en_IN
 	with open(cnf,"w") as out: out.write(defaultConfiguration)
 #######################################################################
 
-config = metaconfig.ConfigParser()
+config = ConfigParser()
 config.read(cnf)
 
 penCols   = ['y','g','r','m','c']     #pqtgraph pen colors

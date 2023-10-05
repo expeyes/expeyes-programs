@@ -1,7 +1,7 @@
 import eyes17.eyes
 p = eyes17.eyes.open()
 
-from pylab import *
+from matplotlib import pyplot as plt
 
 p.set_wave(500,'tria')
 p.select_range('A1',4)

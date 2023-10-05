@@ -378,7 +378,7 @@ class Interface():
 
         Example
 
-        >>> from pylab import *
+        >>> from matplotlib import pyplot as plt
         >>> import eyes17.eyes
         >>> I=eyes17.eyes.open()
         >>> x,y = I.capture1('A1',3200,1)
@@ -494,7 +494,7 @@ class Interface():
 
         Example
 
-        >>> from pylab import *
+        >>> from matplotlib import pyplot as plt
         >>> I=eyes17.Interface()
         >>> x,y1,y2,y3,y4 = I.capture4(800,1.75)
         >>> plot(x,y1)
@@ -591,7 +591,7 @@ class Interface():
 
         .. code-block:: python
 
-            from pylab import *
+            from matplotlib import pyplot as plt
             I=eyes17.open()
             x,y = I.__capture_fullspeed__('A1',2000,1)
             plot(x,y)
@@ -2144,7 +2144,7 @@ class Interface():
             self.__print__('N:%d tg:%d fitres:%s' % (samples, tg, str(fitres)))
             if fitres is not None:
                 cVal = fitres
-                # from pylab import *
+                # from matplotlib import pyplot as plt
                 # plot(x,yfit)
                 # show()
                 # print('RC:',fitres[0],fitres[1]," samples:",samples," tg:",tg)
@@ -3263,7 +3263,7 @@ if __name__ == "__main__":
 # I.set_state(CCS = True)
 # x,y,x2,y2,x3,y3 = I.capture_hr_multiple(1000,1,'A1','A2','A3')
 # print (y,y2,y3)
-# from pylab import *
+# from matplotlib import pyplot as plt
 # plot(x,y)
 # plot(x2,y2)
 # plot(x3,y3)
@@ -3279,7 +3279,7 @@ if __name__ == "__main__":
 # I.select_range('A2',.5)
 # while 1:
 #	print (I.get_voltage('A1'))
-# from pylab import *
+# from matplotlib import pyplot as plt
 # x,y,x2,y2 = I.capture2(11,10)
 # print (x,x2)
 # x=[];y=[]

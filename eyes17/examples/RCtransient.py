@@ -1,7 +1,7 @@
 import eyes17.eyes
 p = eyes17.eyes.open()
 
-from pylab import *
+from matplotlib import pyplot as plt
 import time
 
 p.set_state(OD1=0)			# OD1 to LOW

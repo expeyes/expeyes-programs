@@ -1,7 +1,7 @@
 #import eyes17.eyes          # uncomment these two lines while running stand-alone
 #p = eyes17.eyes.open()
 from __future__ import print_function
-from pylab import *
+from matplotlib import pyplot as plt
 vcc = p.set_pv1(4.8)
 
 iba = []
@@ -19,5 +19,5 @@ while pv2 <= 3:
 	ica.append(ic)
 	print (ib, ic)
 	pv2 += 1
-plot(iba,ica)
-show()
+plt.plot(iba,ica)
+plt.show()

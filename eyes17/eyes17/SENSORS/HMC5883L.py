@@ -96,7 +96,7 @@ if __name__ == "__main__":
 	A.setGain(2)
 	t,x,y,z = I.I2C.capture(A.ADDRESS,0x03,6,400,10000,'int') 
 	#print (t,x,y,z)
-	from pylab import *
+	from matplotlib import pyplot as plt
 	plot(t,x)
 	plot(t,y)
 	plot(t,z)

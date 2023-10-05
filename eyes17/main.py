@@ -1,7 +1,7 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
-import sys, time, math, importlib, os, platform, os.path, metaconfig, csv, serial
+import sys, time, math, importlib, os, platform, os.path, csv, serial
 from datetime import datetime
-from utils import cnf
+from utils import cnf, ConfigParser
 from language import languages
 from server import ScreenShotThread
 from PyQt5.QtCore import pyqtSignal, QObject, pyqtSlot, Qt, QTimer
@@ -377,7 +377,7 @@ class MainWindow(QMainWindow):
         self.tr_qt = tr_qt
         self.title = None  # the title is set by self.setExp
 
-        self.conf = metaconfig.ConfigParser()
+        self.conf = ConfigParser()
         self.conf.read(cnf)
 
         try:
@@ -756,7 +756,7 @@ class MainWindow(QMainWindow):
 		@param key for example: 'Background'
 		@param value the text to assign to the key, for example: 'dark'
 		"""
-        self.conf = metaconfig.ConfigParser()
+        self.conf = ConfigParser()
         self.conf.read(cnf)
         self.conf[section][key] = value
         with open(cnf, "w") as out: self.conf.write(out)
@@ -818,7 +818,8 @@ class MainWindow(QMainWindow):
         sm = mb.addMenu(self.tr('Screenshot'))
         action = sm.addAction(self.tr('Whole Window Alt-s'), self.screenshot)
         action = sm.addAction(self.tr('Graph Only Alt-p'), self.screenshotPlot)
-        mb.addAction(self.tr('Interactive Schematics(Beta)'), lambda item=('2.98', 'schematic_display'): self.callExpt(item))
+        mb.addAction(self.tr('Interactive Schematics(Beta)'),
+                     lambda item=('2.98', 'schematic_display'): self.callExpt(item))
         mb.addAction(self.tr('Experiment List'), lambda item=('2.99', 'experiment-list'): self.callExpt(item))
         mb.addAction(self.tr('Circuit Simulator'), self.showSimulator)
         mb.addAction(self.tr('Stepper Motor Controller'), self.newStepperController)

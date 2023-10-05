@@ -385,8 +385,8 @@ installed. They should be inside a directory named eyes17, that could be
 in your home directory or on the Python PATH. <strong>Every program should
 start with the following 2 lines</strong></p>
 <pre class="code python literal-block">
-<span class="keyword namespace">import</span> <span class="name namespace">eyes17.eyes</span>
-<span class="name">p</span> <span class="operator">=</span> <span class="name">eyes17</span><span class="operator">.</span><span class="name">eyes</span><span class="operator">.</span><span class="name">open</span><span class="punctuation">()</span>
+<span class="keyword namespace">import</span> <span class="name namespace">eyes17.eyes</span><span class="whitespace">
+</span><span class="name">p</span> <span class="operator">=</span> <span class="name">eyes17</span><span class="operator">.</span><span class="name">eyes</span><span class="operator">.</span><span class="name">open</span><span class="punctuation">()</span>
 </pre>
 <p>The variable <tt class="docutils literal">p</tt> is the software object, representing the hardware.</p>
 <p>The following sections explains the Python function calls to access the
@@ -398,8 +398,8 @@ usage.</p>
 <p>Sets the DC voltages at PV1 and PV2. PV1 range is -5 to 5. PV2 range is
 -3.3 to 3.3.</p>
 <pre class="code python literal-block">
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv1</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv2</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
+<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv1</span><span class="punctuation">(</span><span class="literal number integer">4</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">set_pv2</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
 </pre>
 <p>The value set is printed. Measure the voltages using a meter.</p>
 </div>
@@ -407,11 +407,11 @@ usage.</p>
 <h1>get_voltage(input)</h1>
 <p>Returns the voltage at the specified input.</p>
 <pre class="code python literal-block">
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A2'</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A3'</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'MIC'</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'SEN'</span><span class="punctuation">)</span>
+<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A2'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A3'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'MIC'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'SEN'</span><span class="punctuation">)</span>
 </pre>
 <p>Connect PV1 to A1 and use the set_pv1() and get_voltage together. This
 function sets the input range by trial</p>
@@ -459,8 +459,8 @@ ranges)</p>
 <h1>set_state(OUPUT=value)</h1>
 <p>Sets the output of OD1, SQ1 etc. Connect OD1 to A1 and run</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">set_state</span><span class="punctuation">(</span><span class="name">OD1</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_state</span><span class="punctuation">(</span><span class="name">OD1</span><span class="operator">=</span><span class="literal number integer">1</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_voltage</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">)</span>
 </pre>
 </div>
 <div class="section" id="set-sine-frequency">
@@ -521,8 +521,8 @@ set.</p>
 <p>Measures the frequency of a square wave on the input, IN2 or SEN.
 Connect SQ1 to IN2 and run the code</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_freq</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">get_freq</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
 </pre>
 </div>
 <div class="section" id="duty-cycle-input">
@@ -530,8 +530,8 @@ Connect SQ1 to IN2 and run the code</p>
 <p>Measures the duty cycle a square wave on the input, IN2 or SEN. Connect
 SQ1 to IN2 and run the code</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">duty_cycle</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">duty_cycle</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">)</span>
 </pre>
 </div>
 <div class="section" id="r2ftime-input1-input2">
@@ -541,8 +541,8 @@ one on input2, the inputs can be the same also. This can be tested using
 a square wave.</p>
 <p>Connect SQ1 to IN2 and run</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">r2ftime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal string single">'IN2'</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal number integer">30</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">r2ftime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal string single">'IN2'</span><span class="punctuation">)</span>
 </pre>
 <p>0.0003</p>
 <p>The 1kHz square wave with 30% duty cycle has a Period of one millisecond
@@ -556,8 +556,8 @@ specified, default value is 1. The allowed values are 1,2,4,8,12,16,32
 and 48. This can be tested using a square wave.</p>
 <p>Connect SQ1 to IN2 and run</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
-<span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">multi_r2rtime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">set_sqr1</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name builtin">print</span> <span class="name">p</span><span class="operator">.</span><span class="name">multi_r2rtime</span><span class="punctuation">(</span><span class="literal string single">'IN2'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>
 </pre>
 <p>0.008</p>
 </div>
@@ -566,8 +566,8 @@ and 48. This can be tested using a square wave.</p>
 <p>The input range of A1 and A2 can be set from ±0.5V to ±16V
 fullscale, using the programmable gain amplifiers.</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
 </pre>
 </div>
 <div class="section" id="id1">
@@ -575,8 +575,8 @@ fullscale, using the programmable gain amplifiers.</p>
 <p>The input range of A1 and A2 can be set from ±0.5V to ±16V
 fullscale, using the programmable gain amplifiers.</p>
 <pre class="code python literal-block">
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
+<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>         <span class="comment single"># 4volt maximum</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">8</span><span class="punctuation">)</span>         <span class="comment single"># 8 volt maximum</span>
 </pre>
 </div>
 <div class="section" id="capture1-input-number-of-samples-time-interval">
@@ -592,13 +592,13 @@ microseconds (range 2 to 1000 usec).</p>
 can be done using the matplotlib module, imported using the pylab
 interface. Connect WG to A1 with a wire and run;</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
-<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
-<span class="name">show</span><span class="punctuation">()</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 <p>The output of this code is given below.</p>
 <img alt="pics/sine-mpl-screen.png" src="pics/sine-mpl-screen.png" style="width: 400px;" />
@@ -610,14 +610,14 @@ upto 10000. The time gap between two consecutive samples id given in
 microseconds (range 2 to 1000 usec).</p>
 <p>Connect WG to A1 and a diode from A1 to A2. Run the code below</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
-<span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">,</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture2</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span><span class="punctuation">)</span>
-<span class="name">show</span><span class="punctuation">()</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">,</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture2</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">t</span><span class="punctuation">,</span><span class="name">v</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">tt</span><span class="punctuation">,</span><span class="name">vv</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 <p>The output of this code is given below.</p>
 <img alt="pics/halfwave-mpl-screen.png" src="pics/halfwave-mpl-screen.png" style="width: 400px;" />
@@ -629,14 +629,14 @@ could be upto 10000. The time gap between two consecutive samples id
 given in microseconds (range 2 to 1000 usec).</p>
 <p>Connect WG to A3 and run the code given below. Result is shown above.</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span>
-<span class="name">res</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture4</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">5</span><span class="punctuation">])</span>        <span class="comment single"># A3</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">7</span><span class="punctuation">])</span>        <span class="comment single"># MIC</span>
-<span class="name">show</span><span class="punctuation">()</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine_amp</span><span class="punctuation">(</span><span class="literal number integer">2</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_sine</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">select_range</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">4</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">res</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture4</span><span class="punctuation">(</span><span class="literal number integer">300</span><span class="punctuation">,</span> <span class="literal number integer">10</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">4</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">5</span><span class="punctuation">])</span>        <span class="comment single"># A3</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">6</span><span class="punctuation">],</span><span class="name">res</span><span class="punctuation">[</span><span class="literal number integer">7</span><span class="punctuation">])</span>        <span class="comment single"># MIC</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 <img alt="pics/capture4-mpl-screen.png" src="pics/capture4-mpl-screen.png" style="width: 400px;" />
 </div>
@@ -646,15 +646,15 @@ given in microseconds (range 2 to 1000 usec).</p>
 existing wave table. If wavetype is specified ('sine' or 'tria')</p>
 <p>corresponding wavetable is loaded.</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal string single">'sine'</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">)</span>       <span class="comment single"># Sets 100Hz using the existing table</span>
-<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">,</span> <span class="literal string single">'tria'</span><span class="punctuation">)</span>  <span class="comment single"># Sets triagular wave table and generates 100Hz</span>
-<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
-<span class="name">show</span><span class="punctuation">()</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">1000</span><span class="punctuation">,</span> <span class="literal string single">'sine'</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">)</span>       <span class="comment single"># Sets 100Hz using the existing table</span><span class="whitespace">
+</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">100</span><span class="punctuation">,</span> <span class="literal string single">'tria'</span><span class="punctuation">)</span>  <span class="comment single"># Sets triagular wave table and generates 100Hz</span><span class="whitespace">
+</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">50</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 </div>
 <div class="section" id="load-equation-function-span">
@@ -662,16 +662,16 @@ existing wave table. If wavetype is specified ('sine' or 'tria')</p>
 <p>Makes the wave table using the quation. Connect WG to A1 and run the
 code below. The output also is shown below.</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
 
-<span class="keyword">def</span> <span class="name function">f1</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span>
-    <span class="keyword">return</span> <span class="name">sin</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="name">sin</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="operator">*</span><span class="name">x</span><span class="punctuation">)</span><span class="operator">/</span><span class="literal number integer">3</span>
+</span><span class="keyword">def</span> <span class="name function">f1</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">):</span><span class="whitespace">
+</span>    <span class="keyword">return</span> <span class="name">sin</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span> <span class="operator">+</span> <span class="name">sin</span><span class="punctuation">(</span><span class="literal number integer">3</span><span class="operator">*</span><span class="name">x</span><span class="punctuation">)</span><span class="operator">/</span><span class="literal number integer">3</span><span class="whitespace">
 
-<span class="name">p</span><span class="operator">.</span><span class="name">load_equation</span><span class="punctuation">(</span><span class="name">f1</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="operator">-</span><span class="name">pi</span><span class="punctuation">,</span><span class="name">pi</span><span class="punctuation">])</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span>
-<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
-<span class="name">show</span><span class="punctuation">()</span>
+</span><span class="name">p</span><span class="operator">.</span><span class="name">load_equation</span><span class="punctuation">(</span><span class="name">f1</span><span class="punctuation">,</span> <span class="punctuation">[</span><span class="operator">-</span><span class="name">pi</span><span class="punctuation">,</span><span class="name">pi</span><span class="punctuation">])</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 </div>
 <div class="section" id="load-table-function-span">
@@ -681,14 +681,14 @@ and run the code below. After taking the absolute value, the table
 starts with 256, goes down to zero and then goes upto 255, tracing a
 triagular wave. The tableoutput also is shown above.</p>
 <pre class="code python literal-block">
-<span class="keyword namespace">from</span> <span class="name namespace">pylab</span> <span class="keyword namespace">import</span> <span class="operator">*</span>
-<span class="name">x</span> <span class="operator">=</span> <span class="name">arange</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">256</span><span class="punctuation">,</span> <span class="literal number integer">256</span><span class="punctuation">)</span>
-<span class="name">x</span> <span class="operator">=</span> <span class="name builtin">abs</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">load_table</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span>
-<span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span>
-<span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span>
-<span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span>
-<span class="name">show</span><span class="punctuation">()</span>
+<span class="keyword namespace">from</span> <span class="name namespace">matplotlib</span> <span class="keyword namespace">import</span> <span class="name">pyplot</span> <span class="keyword">as</span> <span class="name">plt</span><span class="whitespace">
+</span><span class="name">x</span> <span class="operator">=</span> <span class="name">arange</span><span class="punctuation">(</span><span class="operator">-</span><span class="literal number integer">256</span><span class="punctuation">,</span> <span class="literal number integer">256</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">x</span> <span class="operator">=</span> <span class="name builtin">abs</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">load_table</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">p</span><span class="operator">.</span><span class="name">set_wave</span><span class="punctuation">(</span><span class="literal number integer">400</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span> <span class="operator">=</span> <span class="name">p</span><span class="operator">.</span><span class="name">capture1</span><span class="punctuation">(</span><span class="literal string single">'A1'</span><span class="punctuation">,</span> <span class="literal number integer">500</span><span class="punctuation">,</span><span class="literal number integer">10</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">plot</span><span class="punctuation">(</span><span class="name">x</span><span class="punctuation">,</span><span class="name">y</span><span class="punctuation">)</span><span class="whitespace">
+</span><span class="name">show</span><span class="punctuation">()</span>
 </pre>
 <img alt="pics/load-equation-mpl-screen.png" src="pics/load-equation-mpl-screen.png" style="width: 400px;" />
 <img alt="pics/load-table-mpl-screen.png" src="pics/load-table-mpl-screen.png" style="width: 400px;" />

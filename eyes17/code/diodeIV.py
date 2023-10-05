@@ -1,4 +1,4 @@
-from pylab import *
+from matplotlib import pyplot as plt
 
 
 voltage = []
@@ -13,7 +13,7 @@ while v <= 5.0:
   current.append(i)
   v = v + 0.050    # 50 mV step
 
-xlabel('Voltage')
-ylabel('Current')
-plot(voltage, current, linewidth = 2)
-show()
+plt.xlabel('Voltage')
+plt.ylabel('Current')
+plt.plot(voltage, current, linewidth = 2)
+plt.show()

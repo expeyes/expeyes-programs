@@ -3,7 +3,7 @@
 
 # Connect WG to A1
 
-from pylab import *
+from matplotlib import pyplot as plt
 
 def f1(x):                         #
 	return sin(x) + sin(3*x)/3
@@ -12,5 +12,5 @@ p.load_equation(f1, [-pi,pi])
 p.set_wave(400)
 
 x,y = p.capture1('A1', 500,10)
-plot(x,y)
-show()
+plt.plot(x,y)
+plt.show()

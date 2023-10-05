@@ -3,7 +3,7 @@ p = eyes17.eyes.open()
 
 # Connect WG to A1
 
-from pylab import *
+from matplotlib import pyplot as plt
 
 x = arange(-256, 256)
 x = abs(x)

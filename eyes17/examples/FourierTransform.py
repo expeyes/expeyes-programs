@@ -1,7 +1,7 @@
 import eyes17.eyes
 p = eyes17.eyes.open()
 
-from pylab import *
+from matplotlib import pyplot as plt
 import eyes17.eyemath17 as em
 
 p.set_sine(1000)

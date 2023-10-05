@@ -9,5 +9,5 @@ future~=0.18.2
 PyQt5~=5.14.1
 pyqtgraph~=0.11.0rc0
 setuptools~=63.2.0
-metaconfig~=0.1.4a1
+configparser>=5.0.0
 markdown2~=2.3.7
