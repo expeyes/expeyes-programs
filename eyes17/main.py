@@ -65,12 +65,8 @@ class PQG_ImageExporter(Exporter):
 
     def export(self, fileName=None, toBytes=False, copy=False):
         if fileName is None and not toBytes and not copy:
-            if USE_PYSIDE:
-                filter = ["*." + str(f)
-                          for f in QtGui.QImageWriter.supportedImageFormats()]
-            else:
-                filter = ["*." + bytes(f).decode('utf-8')
-                          for f in QtGui.QImageWriter.supportedImageFormats()]
+            filter = ["*." + bytes(f).decode('utf-8')
+                      for f in QtGui.QImageWriter.supportedImageFormats()]
             preferred = ['*.png', '*.tif', '*.jpg']
             for p in preferred[::-1]:
                 if p in filter:
@@ -132,7 +128,7 @@ pf = platform.platform()
 print(pf)
 if 'Windows' in pf:
     import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity, data_logger
-    import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient
+    import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient, driven_pendulum, XYPlotContinuous
     import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity, schematic_display
     import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs, multiplexedlogger, \
         single_channel_logger
@@ -227,7 +223,9 @@ electricalExpts = [
     [QT_TRANSLATE_NOOP('MainWindow', 'RL Transient response'), ('4.5', 'RLtransient')],
     [QT_TRANSLATE_NOOP('MainWindow', 'RLC transient response'), ('4.6', 'RLCtransient')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Frequency Response of Filter Circuit'), ('4.7', 'filterCircuit')],
-    [QT_TRANSLATE_NOOP('MainWindow', 'Electromagnetic Induction'), ('4.8', 'induction')]
+    [QT_TRANSLATE_NOOP('MainWindow', 'Electromagnetic Induction'), ('4.8', 'induction')],
+    [QT_TRANSLATE_NOOP('MainWindow', 'Flexible XY Plot'), ('4.9', 'XYPlotContinuous')]
+
 ]
 
 soundExpts = [
@@ -239,7 +237,7 @@ soundExpts = [
 mechanicsExpts = [
     [QT_TRANSLATE_NOOP('MainWindow', 'Rod Pendulum with Light barrier'), ('6.1', 'rodPendulum')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Pendulum Waveform'), ('6.2', 'pendulumVelocity')],
-    [QT_TRANSLATE_NOOP('MainWindow', 'Driven Pendulum resonance'), ('6.3', 'driven-pendulum')],
+    [QT_TRANSLATE_NOOP('MainWindow', 'Driven Pendulum resonance'), ('6.3', 'driven_pendulum')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Distance by HY-SRF04 Echo module'), ('6.4', 'sr04dist')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Distance by VL53L0X LIDAR module'), ('6.7', 'single_channel_logger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Gravity by Time of Flight'), ('6.5', 'tof')]

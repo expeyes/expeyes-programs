@@ -30,7 +30,7 @@ import time
 import sys
 import numpy as np
 from . import eyemath17
-from .SENSORS import ALLSENSORS
+from .SENSORS import ALLSENSORS, supported
 
 # Need to do this since 'eyes.py' redefines 'open'
 fileOpen = open
@@ -279,6 +279,9 @@ class Interface():
             if (sensor == 'BMP280'):
                 self.sensors.BMP280_init()
                 self.active_sensors[sensor] = self.sensors.BMP280_all
+            if (sensor == 'TSL2561'):
+                self.sensors.TSL2561_init()()
+                self.active_sensors[sensor] = self.sensors.TSL2561_all()
             elif (sensor == 'MPU6050'):
                 self.sensors.MPU6050_init()
                 self.active_sensors[sensor] = self.sensors.MPU6050_all
@@ -294,6 +297,59 @@ class Interface():
                 return 0
 
         return self.active_sensors[sensor]()[param]
+
+    def __guess_sensor__(self, verbose=True):
+        addresses = self.I2C.scan()
+        senslist = []
+        if(len(addresses)>10):
+            print('Check connectiosn. >10 sensors responded')
+        if verbose:
+            print('DETECTED : ', addresses)
+        for address in addresses:
+            if address in self.sensors.sensors:
+                mysens = self.sensors.sensors.get(address)
+                senslist.append(mysens)
+                if verbose:
+                    print('____DOCS____ : '+mysens['name']+ '@' + str(address))
+                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)-1}]")
+                    print('\tsens will be None if no sensor was detected ')
+                    print('\tAvailable Fields:', )
+                    for a in range(len(mysens['fields'])):
+                        print(f"\t\t{mysens['fields'][a]}: from {mysens['min'][a]} to {mysens['max'][a]}")
+                    print(f"\tTo Initialize: sens['init']() ,To read: sens.['read']()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
+                    if 'config' in mysens:
+                        print(f"\tconfiguration options")
+                        for a in range(len(mysens['config'])):
+                            print(f"\t\t{mysens['config'][a]['name']}: {mysens['config'][a]['function']}, options: {mysens['config'][a]['options']}")
+                else:
+                    print('possible sensor@', address, ' name:' + mysens['name'])
+
+        return mysens
+
+    def guess_sensor(self, verbose=True):
+        addresses = self.I2C.scan()
+        senslist = []
+        if(len(addresses)>10):
+            print('Check connectiosn. >10 sensors responded')
+        if verbose:
+            print('DETECTED : ', addresses)
+        for address in addresses:
+            if address in supported.supported:
+                mysens = self.sensors.sensors.get(address)
+                senslist.append(supported.supported.get(address).connect(self.I2C))
+                if verbose:
+                    print('____DOCS____ : '+mysens['name']+ '@' + str(address))
+                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)}]")
+                    print('\tsens will be None if no sensor was detected ')
+                    print('\tAvailable Fields:', )
+                    for a in range(len(mysens['fields'])):
+                        print(f"\t\t{mysens['fields'][a]}: from {mysens['min'][a]} to {mysens['max'][a]}")
+                    print(f"\tTo read: sens.getVals()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
+                else:
+                    print('possible sensor@', address, ' name:' + mysens['name'])
+
+        return senslist
+
 
     def get_resistance(self):
         V = self.get_average_voltage('SEN')
@@ -1254,7 +1310,7 @@ class Interface():
     def get_voltage(self, channel_name, **kwargs):
         '''
         Reads voltage from specified channel , and returns the value.
-        Autorange is enabled for this function, and it automatically selects the appropriate voltage range is either A1, or A2 are specified
+        Autorange is enabled for this function, and it automatically selects the appropriate voltage range if either A1, or A2 are specified
 
         :return: V
         '''

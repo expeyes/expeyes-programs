@@ -307,7 +307,7 @@
         <translation>I-V പ്ലോട്ടിങ്ങ് പൂർത്തിയായിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven_pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation>ഈ പ്രോഗ്രാം WG റദ്ദ് ചെയ്തുകൊണ്ട്  SQ1നെ 0.1Hz മുതൽ 50Hz വരെ സൂക്ഷ്മമായി ഫ്രീക്വൻസി  മാറ്റാവുന്ന രീതിയിൽ സെറ്റ് ചെയ്യും. </translation>
     </message>
@@ -2270,262 +2270,262 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="201"/>
+        <location filename="../main.py" line="197"/>
         <source>Oscilloscope</source>
         <translation>ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="170"/>
+        <location filename="../main.py" line="166"/>
         <source>Voltage measurement</source>
         <translation>വോൾട്ടജിന്റെ അളവ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="171"/>
+        <location filename="../main.py" line="167"/>
         <source>Resistance measurement</source>
         <translation>റെസിസ്റ്റൻസിന്റെ അളവ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="172"/>
+        <location filename="../main.py" line="168"/>
         <source>Resistors in Series</source>
         <translation>സീരീസ് റെസിസ്റ്റേർസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="173"/>
+        <location filename="../main.py" line="169"/>
         <source>Resistors in Parallel</source>
         <translation>പാരലൽ റെസിസ്റ്റേർസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="174"/>
+        <location filename="../main.py" line="170"/>
         <source>Capacitance measurement</source>
         <translation>കപ്പാസിറ്റൻസിന്റെ അളവ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="175"/>
+        <location filename="../main.py" line="171"/>
         <source>Capacitors in Series</source>
         <translation>സീരീസ് കപ്പാസിറ്റൻസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="176"/>
+        <location filename="../main.py" line="172"/>
         <source>Capacitors in Parallel</source>
         <translation>പാരലൽ കപ്പാസിറ്റൻസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="177"/>
+        <location filename="../main.py" line="173"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation>റെസ്റ്റിസ്റ്റൻസ് ഓം നിയമമുപയോഗിച്ച് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="178"/>
+        <location filename="../main.py" line="174"/>
         <source>Direct and Alternating Currents</source>
         <translation>DCയും ACയും </translation>
     </message>
     <message>
-        <location filename="../main.py" line="179"/>
+        <location filename="../main.py" line="175"/>
         <source>AC mains pickup</source>
         <translation>എസി മെയിൻസ് പിക്കപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="180"/>
+        <location filename="../main.py" line="176"/>
         <source>Separating AC and DC</source>
         <translation>DCയും ACയും വേർതിരിക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="181"/>
+        <location filename="../main.py" line="177"/>
         <source>Conducting Human body</source>
         <translation>മനുഷ്യ ശരീരത്തിന്റെ വൈദ്യുതി വാഹനശക്തി</translation>
     </message>
     <message>
-        <location filename="../main.py" line="182"/>
+        <location filename="../main.py" line="178"/>
         <source>Resistance of Human body</source>
         <translation>മനുഷ്യ ശരീരത്തിന്റെ റെസ്റ്റിസ്റ്റൻസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="183"/>
+        <location filename="../main.py" line="179"/>
         <source>Light Dependent Resistor</source>
         <translation>ലൈറ്റ് ഡിപ്പൻഡന്റ് റെസിസ്റ്റർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="184"/>
+        <location filename="../main.py" line="180"/>
         <source>Lemon Cell</source>
         <translation>നാരങ്ങ സെൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="185"/>
+        <location filename="../main.py" line="181"/>
         <source>Simple AC generator</source>
         <translation>ലളിതമായ AC ജെനെറേറ്റർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="186"/>
+        <location filename="../main.py" line="182"/>
         <source>Transformer</source>
         <translation>ട്രാൻസ്ഫോർമർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="187"/>
+        <location filename="../main.py" line="183"/>
         <source>Resistance of Water</source>
         <translation>വെള്ളത്തിന്റെ റെസിസ്റ്റൻസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="188"/>
+        <location filename="../main.py" line="184"/>
         <source>Generating Sound</source>
         <translation>ശബ്ദോത്പാദനം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="189"/>
+        <location filename="../main.py" line="185"/>
         <source>Digitizing Sound</source>
         <translation>ശബ്ദത്തിന്റെ ഡിജിറ്റൈസിങ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="190"/>
+        <location filename="../main.py" line="186"/>
         <source>Stroboscope</source>
         <translation>സ്ട്രോബോസ്കോപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="216"/>
+        <location filename="../main.py" line="212"/>
         <source>Diode Characteristics</source>
         <translation>ഡയോഡ് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="217"/>
+        <location filename="../main.py" line="213"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN ഔട്ട്പുട്ട് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="218"/>
+        <location filename="../main.py" line="214"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP ഔട്ട്പുട്ട് കാരക്ടറിസ്റ്റിക്സ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="202"/>
+        <location filename="../main.py" line="198"/>
         <source>Halfwave Rectifier</source>
         <translation>ഹാഫ് വേവ് റെക്റ്റിഫയർ </translation>
     </message>
     <message>
-        <location filename="../main.py" line="280"/>
+        <location filename="../main.py" line="278"/>
         <source>Fullwave Rectifier</source>
         <translation>ഫുൾ വെയ്വ്വ് റെക്ട്ടിഫൈയർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="204"/>
+        <location filename="../main.py" line="200"/>
         <source>Diode Clipping</source>
         <translation>ഡയോട് ക്ലിപ്പിങ്ങ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="205"/>
+        <location filename="../main.py" line="201"/>
         <source>Diode Clamping</source>
         <translation>ഡയോട് ക്ലാംപിങ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="206"/>
+        <location filename="../main.py" line="202"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555 മൾട്ടി വൈബ്രേറ്റർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="207"/>
+        <location filename="../main.py" line="203"/>
         <source>Transistor Amplifier (CE)</source>
         <translation>ട്രാൻസിസ്റ്റർ ആംപ്ലിഫയർ  (സി.ഇ)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="208"/>
+        <location filename="../main.py" line="204"/>
         <source>Inverting Amplifier</source>
         <translation>ഇൻവേർട്ടിങ്ങ് ആംപ്ലിഫയർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="209"/>
+        <location filename="../main.py" line="205"/>
         <source>Non-Inverting Amplifier</source>
         <translation>നോൺ ഇൻവേർട്ടിങ്ങ് ആംപ്ലിഫയർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="210"/>
+        <location filename="../main.py" line="206"/>
         <source>Summing Amplifier</source>
         <translation>സമ്മിങ് ആംപ്ലിഫയർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="211"/>
+        <location filename="../main.py" line="207"/>
         <source>Logic Gates</source>
         <translation>ലോജിക്ക് ഗേറ്റുകൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="212"/>
+        <location filename="../main.py" line="208"/>
         <source>Clock Divider Circuit</source>
         <translation>ക്ലോക്ക് ഡിവൈഡർ സർക്യൂട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="223"/>
+        <location filename="../main.py" line="219"/>
         <source>Plot I-V Curve</source>
         <translation>I-V കർവിന്റെ പ്ലോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="224"/>
+        <location filename="../main.py" line="220"/>
         <source>XY Plotting</source>
         <translation>XY-പ്ലോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="225"/>
+        <location filename="../main.py" line="221"/>
         <source>RLC Steady state response</source>
         <translation>RLC സ്റ്റെഡിസ്റ്റേറ് റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="226"/>
+        <location filename="../main.py" line="222"/>
         <source>RC Transient response</source>
         <translation>RC ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="227"/>
+        <location filename="../main.py" line="223"/>
         <source>RL Transient response</source>
         <translation>RL ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="228"/>
+        <location filename="../main.py" line="224"/>
         <source>RLC transient response</source>
         <translation>RLC ട്രാൻഷിയൻറ്  റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="229"/>
+        <location filename="../main.py" line="225"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation>ഫിൽട്ടർ  ഫ്രീക്വൻസി റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="230"/>
+        <location filename="../main.py" line="226"/>
         <source>Electromagnetic Induction</source>
         <translation>വൈദ്യുതകാന്തികപ്രേരണം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="234"/>
+        <location filename="../main.py" line="232"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation>ബസ്സറിന്റെ ഫ്രീക്വൻസി  റെസ്പോൺസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="235"/>
+        <location filename="../main.py" line="233"/>
         <source>Velocity of Sound</source>
         <translation>ശബ്ദത്തിന്റെ പ്രവേഗം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="236"/>
+        <location filename="../main.py" line="234"/>
         <source>Sound beats</source>
         <translation>ബീറ്റുകൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="240"/>
+        <location filename="../main.py" line="238"/>
         <source>Rod Pendulum with Light barrier</source>
         <translation>പെൻഡുലം. Light Barrier</translation>
     </message>
     <message>
-        <location filename="../main.py" line="241"/>
+        <location filename="../main.py" line="239"/>
         <source>Pendulum Waveform</source>
         <translation>പെൻഡുലം വേവ്ഫോം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="242"/>
+        <location filename="../main.py" line="240"/>
         <source>Driven Pendulum resonance</source>
         <translation>ഡ്രിവൺ പെൻഡുലത്തിന്റെ റെസൊനൻസ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="243"/>
+        <location filename="../main.py" line="241"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation>ദൂരം അളക്കുക HY-SRF704</translation>
     </message>
     <message>
-        <location filename="../main.py" line="245"/>
+        <location filename="../main.py" line="243"/>
         <source>Gravity by Time of Flight</source>
         <translation>ഗുരുത്വാകർഷണം ടൈം ഓഫ് ഫ്ളൈറ്റ് </translation>
     </message>
@@ -2535,117 +2535,117 @@ p, li { white-space: pre-wrap; }
         <translation>താപനില, PT100 സെൻസർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="250"/>
+        <location filename="../main.py" line="248"/>
         <source>Simple Data Logger</source>
         <translation type="unfinished">ഡാറ്റാ ലോഗർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="252"/>
+        <location filename="../main.py" line="250"/>
         <source>Advanced Data Logger</source>
         <translation>അഡ്വാൻസ്ഡ്  ഡാറ്റാ ലോഗർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="258"/>
+        <location filename="../main.py" line="256"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished">മാഗ്നറ്റിക് ഹിസ്റ്ററ്റിസിസ് (MPU925xസെൻസർ)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="260"/>
+        <location filename="../main.py" line="258"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation>ലൂമിനോസറ്റി (TSL2561)ലോഗർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="262"/>
+        <location filename="../main.py" line="260"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050  ആക്സലെറേഷൻ ആക്സലെറേഷൻ  താപനില</translation>
     </message>
     <message>
-        <location filename="../main.py" line="263"/>
+        <location filename="../main.py" line="261"/>
         <source>General Purpose I2C Sensors</source>
         <translation>പലതരം I2C സെൻസറുകൾ </translation>
     </message>
     <message>
-        <location filename="../main.py" line="267"/>
+        <location filename="../main.py" line="265"/>
         <source>Read Inputs</source>
         <translation>ഇൻപുട്ടുകൾ റീഡ് ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="268"/>
+        <location filename="../main.py" line="266"/>
         <source>Set DC Voltages</source>
         <translation>ഡിസി വോൾട്ടേജുകൾ ക്രമീകരിക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="269"/>
+        <location filename="../main.py" line="267"/>
         <source>Capture Single Input</source>
         <translation>ഒരു ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="270"/>
+        <location filename="../main.py" line="268"/>
         <source>Capture Two Inputs</source>
         <translation>രണ്ട് ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="271"/>
+        <location filename="../main.py" line="269"/>
         <source>Capture Four Inputs</source>
         <translation>നാല് ഇൻപുട്ട് കാപ്ച്ചർ  ചെയ്യുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="272"/>
+        <location filename="../main.py" line="270"/>
         <source>Triangular Waveform</source>
         <translation>ട്രയാൻഗുലർ വേവ്ഫോം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="273"/>
+        <location filename="../main.py" line="271"/>
         <source>Arbitrary Waveform</source>
         <translation>ഏതുതരത്തിലുമുള്ള വേവ്ഫോം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="274"/>
+        <location filename="../main.py" line="272"/>
         <source>Waveform Table</source>
         <translation>വേവ്ഫോം പട്ടിക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="275"/>
+        <location filename="../main.py" line="273"/>
         <source>RC Transient</source>
         <translation>RC ട്രാൻഷിയൻറ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="276"/>
+        <location filename="../main.py" line="274"/>
         <source>RL Transient</source>
         <translation>RL ട്രാൻഷിയൻറ് </translation>
     </message>
     <message>
-        <location filename="../main.py" line="277"/>
+        <location filename="../main.py" line="275"/>
         <source>RC Integration</source>
         <translation>RC ഇൻന്റെഗ്രേഷൻ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="278"/>
+        <location filename="../main.py" line="276"/>
         <source>Clipping with Diode</source>
         <translation>ഡയോഡ്  ക്ലിപ്പിങ്ങ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="279"/>
+        <location filename="../main.py" line="277"/>
         <source>Clamping with Diode</source>
         <translation>ഡയോഡ്  ക്ലാമ്പിങ്ങ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="281"/>
+        <location filename="../main.py" line="279"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib-IC പ്ലോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="282"/>
+        <location filename="../main.py" line="280"/>
         <source>Fourier Transform</source>
         <translation>ഫോറിയർ ട്രാൻസ്ഫോം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="283"/>
+        <location filename="../main.py" line="281"/>
         <source>Rod Pendulum</source>
         <translation>റോഡ് പെൻഡുലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="448"/>
+        <location filename="../main.py" line="446"/>
         <source>Enable PopUp Help Window</source>
         <translation>സഹായജാലകം തുറക്കുക</translation>
     </message>
@@ -2675,67 +2675,67 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">ഇരുണ്ട പശ്ച്ചാത്തലത്തിനായി അപ്ലിക്കേഷൻ റീസ്റ്റാർട്ട് ചെയ്യുക.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="146"/>
+        <location filename="../main.py" line="142"/>
         <source>Device</source>
         <translation>ഉപകരണം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="159"/>
+        <location filename="../main.py" line="155"/>
         <source>Reconnect</source>
         <translation>വീണ്ടും ഘടിപ്പിക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="160"/>
+        <location filename="../main.py" line="156"/>
         <source>LightBackGround</source>
         <translation>ഇളം പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="161"/>
+        <location filename="../main.py" line="157"/>
         <source>DarkBackGround</source>
         <translation>ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="162"/>
+        <location filename="../main.py" line="158"/>
         <source>Choose Language</source>
         <translation>ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="147"/>
+        <location filename="../main.py" line="143"/>
         <source>School Expts</source>
         <translation>സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="148"/>
+        <location filename="../main.py" line="144"/>
         <source>Electronics</source>
         <translation>ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="149"/>
+        <location filename="../main.py" line="145"/>
         <source>Electrical</source>
         <translation>ഇലക്ട്രിക്കൽ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="150"/>
+        <location filename="../main.py" line="146"/>
         <source>Sound</source>
         <translation>ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="151"/>
+        <location filename="../main.py" line="147"/>
         <source>Mechanics</source>
         <translation>യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="152"/>
+        <location filename="../main.py" line="148"/>
         <source>Other Expts</source>
         <translation>മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="153"/>
+        <location filename="../main.py" line="149"/>
         <source>I2C Modules</source>
         <translation>I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="154"/>
+        <location filename="../main.py" line="150"/>
         <source>PythonCode</source>
         <translation>പൈത്തൺ കോഡ്</translation>
     </message>
@@ -2875,63 +2875,68 @@ p, li { white-space: pre-wrap; }
         <translation>സ്പ്ലൈൻ </translation>
     </message>
     <message>
-        <location filename="../main.py" line="163"/>
+        <location filename="../main.py" line="159"/>
         <source>Screenshot</source>
         <translation type="unfinished">സ്ക്രീൻഷോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="164"/>
+        <location filename="../main.py" line="160"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">മൊത്തം ജാലകം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="165"/>
+        <location filename="../main.py" line="161"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">ഗ്രാഫ് മാത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="166"/>
+        <location filename="../main.py" line="162"/>
         <source>Credits</source>
         <translation type="unfinished">പ്രവർത്തകർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="167"/>
+        <location filename="../main.py" line="163"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="261"/>
+        <location filename="../main.py" line="259"/>
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="254"/>
+        <location filename="../main.py" line="252"/>
         <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="253"/>
+        <location filename="../main.py" line="251"/>
         <source>Multiplexed Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="257"/>
         <source>Magnetic Hysteresis (HMC5883L Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="249"/>
+        <location filename="../main.py" line="247"/>
         <source>Temperature, PT100 Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="251"/>
+        <location filename="../main.py" line="249"/>
         <source>Continuous Data Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="244"/>
+        <location filename="../main.py" line="242"/>
         <source>Distance by VL53L0X LIDAR module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="227"/>
+        <source>Flexible XY Plot</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3066,7 +3071,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="320"/>
+        <location filename="../main.py" line="318"/>
         <source>Help: %s</source>
         <translation>സഹായം: %s</translation>
     </message>
@@ -3074,157 +3079,157 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="825"/>
+        <location filename="../main.py" line="824"/>
         <source>Credits</source>
         <translation type="unfinished">പ്രവർത്തകർ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="700"/>
+        <location filename="../main.py" line="698"/>
         <source>Failed to load scope</source>
         <translation type="unfinished">സ്കോപ്പ് ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="741"/>
+        <location filename="../main.py" line="739"/>
         <source>Failed to load %s</source>
         <translation type="unfinished">%s ലോഡ് ചെയ്യുന്നതിൽ പരാജയപ്പെട്ടിരിക്കുന്നു</translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="789"/>
         <source>Device</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="790"/>
         <source>Reconnect</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="793"/>
+        <location filename="../main.py" line="791"/>
         <source>LightBackGround</source>
         <translation type="unfinished">ഇളം പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="794"/>
+        <location filename="../main.py" line="792"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">ഇരുണ്ട പശ്ചാത്തലം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="795"/>
+        <location filename="../main.py" line="793"/>
         <source>Choose Language</source>
         <translation type="unfinished">ഭാഷ തിരഞ്ഞെടുക്കുക</translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="812"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="816"/>
         <source>Screenshot</source>
         <translation type="unfinished">സ്ക്രീൻഷോട്ട്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="817"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">മൊത്തം ജാലകം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="820"/>
+        <location filename="../main.py" line="818"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">ഗ്രാഫ് മാത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="823"/>
+        <location filename="../main.py" line="822"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="821"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="829"/>
+        <location filename="../main.py" line="828"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="831"/>
+        <location filename="../main.py" line="830"/>
         <source>School Expts</source>
         <translation type="unfinished">സ്കൂൾ പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="835"/>
+        <location filename="../main.py" line="834"/>
         <source>Electronics</source>
         <translation type="unfinished">ഇലെക്ട്രോണിക്സ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="842"/>
+        <location filename="../main.py" line="841"/>
         <source>Electrical</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="846"/>
+        <location filename="../main.py" line="845"/>
         <source>Sound</source>
         <translation type="unfinished">ശബ്ദം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="850"/>
+        <location filename="../main.py" line="849"/>
         <source>Mechanics</source>
         <translation type="unfinished">യന്ത്രശാസ്‌ത്രം</translation>
     </message>
     <message>
-        <location filename="../main.py" line="854"/>
+        <location filename="../main.py" line="853"/>
         <source>Other Expts</source>
         <translation type="unfinished">മറ്റ് പരീക്ഷണങ്ങൾ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="857"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C മോഡ്യൂൾസ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="862"/>
+        <location filename="../main.py" line="861"/>
         <source>PythonCode</source>
         <translation type="unfinished">പൈത്തൺ കോഡ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="998"/>
+        <location filename="../main.py" line="997"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1005"/>
+        <location filename="../main.py" line="1004"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1085"/>
+        <location filename="../main.py" line="1084"/>
         <source>Missing Plot</source>
         <translation type="unfinished">ഗ്രാഫ് കിട്ടുന്നില്ല</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1085"/>
+        <location filename="../main.py" line="1084"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1122"/>
+        <location filename="../main.py" line="1121"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished">വീതി (എത്ര പിക്സൽ)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1174"/>
+        <location filename="../main.py" line="1173"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">ഓസിലോസ്‌കോപ്പ്</translation>
     </message>
     <message>
-        <location filename="../main.py" line="821"/>
+        <location filename="../main.py" line="819"/>
         <source>Interactive Schematics(Beta)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="824"/>
+        <location filename="../main.py" line="823"/>
         <source>Stepper Motor Controller</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3232,7 +3237,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="336"/>
+        <location filename="../main.py" line="334"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>

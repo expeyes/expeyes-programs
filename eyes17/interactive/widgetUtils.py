@@ -1,5 +1,5 @@
 import configparser
-import math
+import math, re
 import time
 from functools import partial
 
@@ -874,6 +874,7 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
 
     def __init__(self, parent, device):
         super(miniscope, self).__init__(parent)
+        self.XYEnabled = False
         self.setupUi(self)
         self.p = device
         self.chanStatus = [1, 0, 0, 0]  # PyQt problem. chanStatus somehow getting preserved ???
@@ -894,9 +895,18 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         self.plot.setYRange(-16, 16)
         self.plot.hideButtons()  # Do not show the 'A' button of pg
 
+        self.XYplot.setXRange(-5, 5)
+        self.XYplot.setYRange(-5, 5)
+
         for ch in range(self.MAXCHAN):  # initialize the pg trace widgets
             self.traceWidget[ch] = self.plot.plot([0, 0], [0, 0], pen=self.traceCols[ch])
         self.diffTraceW = self.plot.plot([0, 0], [0, 0], pen=self.traceCols[-1])
+
+        self.XYTrace = self.XYplot.plot([0, 0], [0, 0], pen=self.traceCols[0])
+        self.xc = "A1"
+        self.yc = "A2"
+        self.xeq = "A1"
+        self.yeq = "A2"
 
         self.chanSelCB = [self.A1Box, self.A2Box, self.A3Box, self.MICBox]
         self.rangeSelPB = [self.A1Range, self.A2Range]
@@ -937,6 +947,28 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         except Exception as e:
             print('Could not set trigger source', e)
 
+    def updateChannels(self):
+        if self.chanStatus[0] == 1 and self.chanStatus[1] == 1:  # channel 1, 2 is selected
+            self.xchan.setText(self.A1Map.currentText())
+            self.xc = self.xeq = self.A1Map.currentText()
+            self.ychan.setText("A2")
+            self.yc = self.yeq = "A2"
+            self.XYEnabled = True
+            self.updateLabel()
+        else:
+            self.XYEnabled = False
+            self.XYTrace.clear()
+
+    def updateX(self):
+        self.xeq = self.xchan.text()
+        print(self.xeq, 'vs', self.yeq)
+        self.updateLabel()
+
+    def updateY(self):
+        self.yeq = self.ychan.text()
+        print(self.xeq, 'vs', self.yeq)
+        self.updateLabel()
+
     def set_timebase(self, tb):
         print('oscilloscope timebase changed:', tb)
         self.TBval = tb
@@ -959,7 +991,16 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         except:
             self.comerr()
             return
+    def A1MapChanged(self,chan):
 
+        self.xchan.setText(self.A1Map.currentText())
+        self.xc = self.xeq = self.A1Map.currentText()
+        self.ychan.setText("A2")
+        self.yc = self.yeq = "A2"
+        self.updateLabel()
+
+    def updateLabel(self):
+        self.XYLabel.setText(self.xeq+" Vs "+self.yeq)
     def set_trigger_level(self, tr):
         self.Triglevel = tr * 0.001  # convert to volts
         try:
@@ -971,6 +1012,15 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         except:
             print('trig set error')
 
+    def setWG(self, v):
+        self.WGLabel.setText('WG:' + '%.2f'%self.p.set_sine(v))
+
+    def setSQ1(self, v):
+        self.SQ1Label.setText('SQ1:' + '%.2f'%self.p.set_sq1(v))
+
+    def setPV1(self, v):
+        self.PV1Label.setText('PV1:' + '%.3f'%(self.p.set_pv1(v / 1000.)))
+
     def select_channel(self, ch):
         if self.chanSelCB[ch].isChecked():
             self.chanStatus[ch] = 1
@@ -978,6 +1028,8 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         else:
             self.chanStatus[ch] = 0
             self.plot.removeItem(self.traceWidget[ch])
+
+        self.updateChannels()
 
     def changeParameter(self, p):
         self.activeParameter = p
@@ -1142,6 +1194,18 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
                             self.fitSelCB[ch].setText(s)
                     else:
                         self.fitSelCB[ch].setText('')
+
+            if self.XYEnabled and len(self.xdata[0]) > 10 :
+                self.XYplot.setLabel('bottom', self.xeq)
+                self.XYplot.setLabel('left', self.yeq)
+
+                xdata = self.ydata[0]
+                ydata = self.ydata[1]
+
+                xdata = eval(self.xeq, {self.xc: self.ydata[0], 'A2': self.ydata[1]})
+                ydata = eval(self.yeq, {self.xc: self.ydata[0], 'A2': self.ydata[1]})
+
+                self.XYTrace.setData(xdata, ydata)
 
         return
 
@@ -1512,7 +1576,7 @@ class Datalogger(QtWidgets.QWidget, ui_interactive_data_logger.Ui_Form):
                              desc.getfloat('default', 'ymax', fallback=desc.getfloat('default', 'max', fallback=5)))
 
         self.graph.setLabel('bottom', 'Time -->', units='S', **self.labelStyle)
-        self.graph.setXRange(desc.getfloat('default', 'duration', fallback=5)*-1, 0)  # xrange = [0, 5]
+        self.graph.setXRange(desc.getfloat('default', 'duration', fallback=5) * -1, 0)  # xrange = [0, 5]
 
     def init_fields(self):
         print('init fields')

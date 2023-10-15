@@ -486,9 +486,9 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         self.controls = None
 
         global propMap, imageMap
-        super(Expt, self).__init__()
         self.raster_width = None
         self.raster_height = None
+        super(Expt, self).__init__()
         self.setupUi(self)
         with open(os.path.join(path, "defaults.aiken"), 'rb') as file:
             buffer = file.read()

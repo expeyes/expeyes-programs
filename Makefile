@@ -133,7 +133,7 @@ install_indep: all_indep
 	for f in eyes17/server*.html eyes17/*.py ; do \
 	  cp $$f $(DESTDIR)/usr/share/eyes17; \
 	done
-	for d in code examples eyes17 html images lang layouts blockly site screenshots; do \
+	for d in code examples eyes17 html images lang layouts blockly site interactive screenshots; do \
 	  cp -a eyes17/$$d $(DESTDIR)/usr/share/eyes17; \
 	done
 	# help files for eyes17s help popup

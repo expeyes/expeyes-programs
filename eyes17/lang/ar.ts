@@ -307,7 +307,7 @@
         <translation>I-V تم الانتهاء من التآمر </translation>
     </message>
     <message>
-        <location filename="../driven-pendulum.py" line="32"/>
+        <location filename="../driven_pendulum.py" line="32"/>
         <source>This program sets SQ1 to high resolution mode. WG will be disabled.Frequency can be changed from 0.1 Hz to 50Hz</source>
         <translation type="unfinished">. 50Hz الي 0.1Hz  يمكن تغيير التردد من. سيتم تعطيل WG.  يحدد هذا البرنامج SQ1  . </translation>
     </message>
@@ -2277,262 +2277,262 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="201"/>
+        <location filename="../main.py" line="197"/>
         <source>Oscilloscope</source>
         <translation>  راسم الذبذبات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="170"/>
+        <location filename="../main.py" line="166"/>
         <source>Voltage measurement</source>
         <translation> قياس الفولتية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="171"/>
+        <location filename="../main.py" line="167"/>
         <source>Resistance measurement</source>
         <translation> قياس المقاومة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="172"/>
+        <location filename="../main.py" line="168"/>
         <source>Resistors in Series</source>
         <translation> المقاومات على التوالي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="173"/>
+        <location filename="../main.py" line="169"/>
         <source>Resistors in Parallel</source>
         <translation>المقاومات بالتوازي</translation>
     </message>
     <message>
-        <location filename="../main.py" line="174"/>
+        <location filename="../main.py" line="170"/>
         <source>Capacitance measurement</source>
         <translation> قياس السعة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="175"/>
+        <location filename="../main.py" line="171"/>
         <source>Capacitors in Series</source>
         <translation> المكثفات على التوالي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="176"/>
+        <location filename="../main.py" line="172"/>
         <source>Capacitors in Parallel</source>
         <translation> المكثفات على التوالي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="177"/>
+        <location filename="../main.py" line="173"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation> المقاومة بموجب قانون أوم </translation>
     </message>
     <message>
-        <location filename="../main.py" line="178"/>
+        <location filename="../main.py" line="174"/>
         <source>Direct and Alternating Currents</source>
         <translation> DC و AC </translation>
     </message>
     <message>
-        <location filename="../main.py" line="179"/>
+        <location filename="../main.py" line="175"/>
         <source>AC mains pickup</source>
         <translation> لاقط التيار المتردد </translation>
     </message>
     <message>
-        <location filename="../main.py" line="180"/>
+        <location filename="../main.py" line="176"/>
         <source>Separating AC and DC</source>
         <translation>DCو AC  متفرق  </translation>
     </message>
     <message>
-        <location filename="../main.py" line="181"/>
+        <location filename="../main.py" line="177"/>
         <source>Conducting Human body</source>
         <translation> إجراء جسم الإنسان </translation>
     </message>
     <message>
-        <location filename="../main.py" line="182"/>
+        <location filename="../main.py" line="178"/>
         <source>Resistance of Human body</source>
         <translation> مقاومة جسم الإنسان </translation>
     </message>
     <message>
-        <location filename="../main.py" line="183"/>
+        <location filename="../main.py" line="179"/>
         <source>Light Dependent Resistor</source>
         <translation> مقاوم يعتمد على الضوء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="184"/>
+        <location filename="../main.py" line="180"/>
         <source>Lemon Cell</source>
         <translation> خلية الليمون </translation>
     </message>
     <message>
-        <location filename="../main.py" line="185"/>
+        <location filename="../main.py" line="181"/>
         <source>Simple AC generator</source>
         <translation> مولد AC بسيط </translation>
     </message>
     <message>
-        <location filename="../main.py" line="186"/>
+        <location filename="../main.py" line="182"/>
         <source>Transformer</source>
         <translation> محول </translation>
     </message>
     <message>
-        <location filename="../main.py" line="187"/>
+        <location filename="../main.py" line="183"/>
         <source>Resistance of Water</source>
         <translation> مقاومة الماء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="188"/>
+        <location filename="../main.py" line="184"/>
         <source>Generating Sound</source>
         <translation> توليد الصوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="189"/>
+        <location filename="../main.py" line="185"/>
         <source>Digitizing Sound</source>
         <translation> رقمنة الصوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="190"/>
+        <location filename="../main.py" line="186"/>
         <source>Stroboscope</source>
         <translation> ستروبسكوب </translation>
     </message>
     <message>
-        <location filename="../main.py" line="216"/>
+        <location filename="../main.py" line="212"/>
         <source>Diode Characteristics</source>
         <translation> خصائص الديود </translation>
     </message>
     <message>
-        <location filename="../main.py" line="217"/>
+        <location filename="../main.py" line="213"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN خصائص الإخراج </translation>
     </message>
     <message>
-        <location filename="../main.py" line="218"/>
+        <location filename="../main.py" line="214"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP خصائص الإخراج </translation>
     </message>
     <message>
-        <location filename="../main.py" line="202"/>
+        <location filename="../main.py" line="198"/>
         <source>Halfwave Rectifier</source>
         <translation> معدل نصف الموجة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="280"/>
+        <location filename="../main.py" line="278"/>
         <source>Fullwave Rectifier</source>
         <translation> مقوم الموجة الكاملة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="204"/>
+        <location filename="../main.py" line="200"/>
         <source>Diode Clipping</source>
         <translation> قص الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="205"/>
+        <location filename="../main.py" line="201"/>
         <source>Diode Clamping</source>
         <translation> لقط الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="206"/>
+        <location filename="../main.py" line="202"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555 هزاز متعدد </translation>
     </message>
     <message>
-        <location filename="../main.py" line="207"/>
+        <location filename="../main.py" line="203"/>
         <source>Transistor Amplifier (CE)</source>
         <translation> مضخم الترانزستور (CE)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="208"/>
+        <location filename="../main.py" line="204"/>
         <source>Inverting Amplifier</source>
         <translation> مضخم عكسي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="209"/>
+        <location filename="../main.py" line="205"/>
         <source>Non-Inverting Amplifier</source>
         <translation> مضخم غير مقلوب </translation>
     </message>
     <message>
-        <location filename="../main.py" line="210"/>
+        <location filename="../main.py" line="206"/>
         <source>Summing Amplifier</source>
         <translation> مكبر للصوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="211"/>
+        <location filename="../main.py" line="207"/>
         <source>Logic Gates</source>
         <translation> منطق البوابات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="212"/>
+        <location filename="../main.py" line="208"/>
         <source>Clock Divider Circuit</source>
         <translation> حلبة مقسم الساعة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="223"/>
+        <location filename="../main.py" line="219"/>
         <source>Plot I-V Curve</source>
         <translation> رسم منحنى I-V </translation>
     </message>
     <message>
-        <location filename="../main.py" line="224"/>
+        <location filename="../main.py" line="220"/>
         <source>XY Plotting</source>
         <translation>XY- التخطيط </translation>
     </message>
     <message>
-        <location filename="../main.py" line="225"/>
+        <location filename="../main.py" line="221"/>
         <source>RLC Steady state response</source>
         <translation>RLC استجابة حالة ثابتة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="226"/>
+        <location filename="../main.py" line="222"/>
         <source>RC Transient response</source>
         <translation>RC استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="227"/>
+        <location filename="../main.py" line="223"/>
         <source>RL Transient response</source>
         <translation>RL استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="228"/>
+        <location filename="../main.py" line="224"/>
         <source>RLC transient response</source>
         <translation>RLC استجابة عابرة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="229"/>
+        <location filename="../main.py" line="225"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation> استجابة التردد لدائرة المرشح </translation>
     </message>
     <message>
-        <location filename="../main.py" line="230"/>
+        <location filename="../main.py" line="226"/>
         <source>Electromagnetic Induction</source>
         <translation> الحث الكهرومغناطيسي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="234"/>
+        <location filename="../main.py" line="232"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation> استجابة تردد بيزو الجرس </translation>
     </message>
     <message>
-        <location filename="../main.py" line="235"/>
+        <location filename="../main.py" line="233"/>
         <source>Velocity of Sound</source>
         <translation> سرعة الصوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="236"/>
+        <location filename="../main.py" line="234"/>
         <source>Sound beats</source>
         <translation> يدق الصوت </translation>
     </message>
     <message>
-        <location filename="../main.py" line="240"/>
+        <location filename="../main.py" line="238"/>
         <source>Rod Pendulum with Light barrier</source>
         <translation> البندول مع حاجز الضوء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="241"/>
+        <location filename="../main.py" line="239"/>
         <source>Pendulum Waveform</source>
         <translation type="unfinished"> البندول الموجي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="242"/>
+        <location filename="../main.py" line="240"/>
         <source>Driven Pendulum resonance</source>
         <translation> صدى البندول مدفوعة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="243"/>
+        <location filename="../main.py" line="241"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation> قس المسافة HY-SRF704</translation>
     </message>
     <message>
-        <location filename="../main.py" line="245"/>
+        <location filename="../main.py" line="243"/>
         <source>Gravity by Time of Flight</source>
         <translation> الجاذبية حسب زمن الرحلة </translation>
     </message>
@@ -2542,117 +2542,117 @@ p, li { white-space: pre-wrap; }
         <translation> درجة الحرارة،PT100 المستشعر </translation>
     </message>
     <message>
-        <location filename="../main.py" line="250"/>
+        <location filename="../main.py" line="248"/>
         <source>Simple Data Logger</source>
         <translation type="unfinished"> مسجل البيانات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="252"/>
+        <location filename="../main.py" line="250"/>
         <source>Advanced Data Logger</source>
         <translation> مسجل بيانات متقدم </translation>
     </message>
     <message>
-        <location filename="../main.py" line="258"/>
+        <location filename="../main.py" line="256"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"> التباطؤ المغناطيسي (MPU925x المستشعر)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="260"/>
+        <location filename="../main.py" line="258"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation> لمعان (TSL2561) المسجل </translation>
     </message>
     <message>
-        <location filename="../main.py" line="262"/>
+        <location filename="../main.py" line="260"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050  التسارع والسرعة ودرجة الحرارة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="263"/>
+        <location filename="../main.py" line="261"/>
         <source>General Purpose I2C Sensors</source>
         <translation> هدف عام I2C مجسات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="267"/>
+        <location filename="../main.py" line="265"/>
         <source>Read Inputs</source>
         <translation> قراءة المدخلات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="268"/>
+        <location filename="../main.py" line="266"/>
         <source>Set DC Voltages</source>
         <translation> ضبط الفولتية DC </translation>
     </message>
     <message>
-        <location filename="../main.py" line="269"/>
+        <location filename="../main.py" line="267"/>
         <source>Capture Single Input</source>
         <translation> التقاط المدخلات الفردية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="270"/>
+        <location filename="../main.py" line="268"/>
         <source>Capture Two Inputs</source>
         <translation> التقاط اثنين من المدخلات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="271"/>
+        <location filename="../main.py" line="269"/>
         <source>Capture Four Inputs</source>
         <translation> التقاط أربعة مدخلات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="272"/>
+        <location filename="../main.py" line="270"/>
         <source>Triangular Waveform</source>
         <translation> الشكل الموجي الثلاثي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="273"/>
+        <location filename="../main.py" line="271"/>
         <source>Arbitrary Waveform</source>
         <translation> الموجي التعسفي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="274"/>
+        <location filename="../main.py" line="272"/>
         <source>Waveform Table</source>
         <translation> الموجي التعسفي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="275"/>
+        <location filename="../main.py" line="273"/>
         <source>RC Transient</source>
         <translation> RC عابر </translation>
     </message>
     <message>
-        <location filename="../main.py" line="276"/>
+        <location filename="../main.py" line="274"/>
         <source>RL Transient</source>
         <translation> RL عابر </translation>
     </message>
     <message>
-        <location filename="../main.py" line="277"/>
+        <location filename="../main.py" line="275"/>
         <source>RC Integration</source>
         <translation> التكامل RC </translation>
     </message>
     <message>
-        <location filename="../main.py" line="278"/>
+        <location filename="../main.py" line="276"/>
         <source>Clipping with Diode</source>
         <translation> القص مع الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="279"/>
+        <location filename="../main.py" line="277"/>
         <source>Clamping with Diode</source>
         <translation> تحامل مع الصمام الثنائي </translation>
     </message>
     <message>
-        <location filename="../main.py" line="281"/>
+        <location filename="../main.py" line="279"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib-IC حبكة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="282"/>
+        <location filename="../main.py" line="280"/>
         <source>Fourier Transform</source>
         <translation> تحويل فورييه </translation>
     </message>
     <message>
-        <location filename="../main.py" line="283"/>
+        <location filename="../main.py" line="281"/>
         <source>Rod Pendulum</source>
         <translation> رود البندول </translation>
     </message>
     <message>
-        <location filename="../main.py" line="448"/>
+        <location filename="../main.py" line="446"/>
         <source>Enable PopUp Help Window</source>
         <translation> تفعيل نافذة المساعدة المنبثقة </translation>
     </message>
@@ -2682,67 +2682,67 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete"> يرجى إعادة تشغيل التطبيق لتفتيح خلفية الشاشة.</translation>
     </message>
     <message>
-        <location filename="../main.py" line="146"/>
+        <location filename="../main.py" line="142"/>
         <source>Device</source>
         <translation> جهاز </translation>
     </message>
     <message>
-        <location filename="../main.py" line="159"/>
+        <location filename="../main.py" line="155"/>
         <source>Reconnect</source>
         <translation> أعد الاتصال </translation>
     </message>
     <message>
-        <location filename="../main.py" line="160"/>
+        <location filename="../main.py" line="156"/>
         <source>LightBackGround</source>
         <translation>  خفيفة  الخلفية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="161"/>
+        <location filename="../main.py" line="157"/>
         <source>DarkBackGround</source>
         <translation>  خلفية داكنة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="162"/>
+        <location filename="../main.py" line="158"/>
         <source>Choose Language</source>
         <translation>  اختر اللغة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="147"/>
+        <location filename="../main.py" line="143"/>
         <source>School Expts</source>
         <translation> الخبرة المدرسية  </translation>
     </message>
     <message>
-        <location filename="../main.py" line="148"/>
+        <location filename="../main.py" line="144"/>
         <source>Electronics</source>
         <translation> إلكترونيات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="149"/>
+        <location filename="../main.py" line="145"/>
         <source>Electrical</source>
         <translation> الكهرباء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="150"/>
+        <location filename="../main.py" line="146"/>
         <source>Sound</source>
         <translation> يبدو </translation>
     </message>
     <message>
-        <location filename="../main.py" line="151"/>
+        <location filename="../main.py" line="147"/>
         <source>Mechanics</source>
         <translation> علم الميكانيكا </translation>
     </message>
     <message>
-        <location filename="../main.py" line="152"/>
+        <location filename="../main.py" line="148"/>
         <source>Other Expts</source>
         <translation> خبرة أخرى </translation>
     </message>
     <message>
-        <location filename="../main.py" line="153"/>
+        <location filename="../main.py" line="149"/>
         <source>I2C Modules</source>
         <translation>I2C الوحدات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="154"/>
+        <location filename="../main.py" line="150"/>
         <source>PythonCode</source>
         <translation> كود Python </translation>
     </message>
@@ -2882,63 +2882,68 @@ p, li { white-space: pre-wrap; }
         <translation> خدد </translation>
     </message>
     <message>
-        <location filename="../main.py" line="163"/>
+        <location filename="../main.py" line="159"/>
         <source>Screenshot</source>
         <translation type="unfinished"> لقطة شاشة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="164"/>
+        <location filename="../main.py" line="160"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"> نافذة كاملة Alt-s </translation>
     </message>
     <message>
-        <location filename="../main.py" line="165"/>
+        <location filename="../main.py" line="161"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"> رسم بياني فقط Alt-p </translation>
     </message>
     <message>
-        <location filename="../main.py" line="166"/>
+        <location filename="../main.py" line="162"/>
         <source>Credits</source>
         <translation type="unfinished"> الاعتمادات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="167"/>
+        <location filename="../main.py" line="163"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="261"/>
+        <location filename="../main.py" line="259"/>
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="254"/>
+        <location filename="../main.py" line="252"/>
         <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="253"/>
+        <location filename="../main.py" line="251"/>
         <source>Multiplexed Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="257"/>
         <source>Magnetic Hysteresis (HMC5883L Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="249"/>
+        <location filename="../main.py" line="247"/>
         <source>Temperature, PT100 Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="251"/>
+        <location filename="../main.py" line="249"/>
         <source>Continuous Data Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="244"/>
+        <location filename="../main.py" line="242"/>
         <source>Distance by VL53L0X LIDAR module</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="227"/>
+        <source>Flexible XY Plot</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3073,7 +3078,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="320"/>
+        <location filename="../main.py" line="318"/>
         <source>Help: %s</source>
         <translation> مساعدة: %s</translation>
     </message>
@@ -3081,157 +3086,157 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="825"/>
+        <location filename="../main.py" line="824"/>
         <source>Credits</source>
         <translation type="unfinished"> الاعتمادات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="700"/>
+        <location filename="../main.py" line="698"/>
         <source>Failed to load scope</source>
         <translation type="unfinished"> فشل تحميل النطاق </translation>
     </message>
     <message>
-        <location filename="../main.py" line="741"/>
+        <location filename="../main.py" line="739"/>
         <source>Failed to load %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="789"/>
         <source>Device</source>
         <translation type="unfinished"> جهاز </translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="790"/>
         <source>Reconnect</source>
         <translation type="unfinished"> أعد الاتصال </translation>
     </message>
     <message>
-        <location filename="../main.py" line="793"/>
+        <location filename="../main.py" line="791"/>
         <source>LightBackGround</source>
         <translation type="unfinished">  خفيفة  الخلفية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="794"/>
+        <location filename="../main.py" line="792"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">  خلفية داكنة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="795"/>
+        <location filename="../main.py" line="793"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="814"/>
+        <location filename="../main.py" line="812"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="816"/>
         <source>Screenshot</source>
         <translation type="unfinished"> لقطة شاشة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="817"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"> نافذة كاملة Alt-s </translation>
     </message>
     <message>
-        <location filename="../main.py" line="820"/>
+        <location filename="../main.py" line="818"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"> Alt-p رسم بياني فقط  </translation>
     </message>
     <message>
-        <location filename="../main.py" line="823"/>
+        <location filename="../main.py" line="822"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="821"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="829"/>
+        <location filename="../main.py" line="828"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="831"/>
+        <location filename="../main.py" line="830"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="835"/>
+        <location filename="../main.py" line="834"/>
         <source>Electronics</source>
         <translation type="unfinished"> إلكترونيات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="842"/>
+        <location filename="../main.py" line="841"/>
         <source>Electrical</source>
         <translation type="unfinished"> الكهرباء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="846"/>
+        <location filename="../main.py" line="845"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="850"/>
+        <location filename="../main.py" line="849"/>
         <source>Mechanics</source>
         <translation type="unfinished"> علم الميكانيكا </translation>
     </message>
     <message>
-        <location filename="../main.py" line="854"/>
+        <location filename="../main.py" line="853"/>
         <source>Other Expts</source>
         <translation type="unfinished"> خبرة أخرى </translation>
     </message>
     <message>
-        <location filename="../main.py" line="858"/>
+        <location filename="../main.py" line="857"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C الوحدات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="862"/>
+        <location filename="../main.py" line="861"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="998"/>
+        <location filename="../main.py" line="997"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1005"/>
+        <location filename="../main.py" line="1004"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1085"/>
+        <location filename="../main.py" line="1084"/>
         <source>Missing Plot</source>
         <translation type="unfinished"> مؤامرة مفقود </translation>
     </message>
     <message>
-        <location filename="../main.py" line="1085"/>
+        <location filename="../main.py" line="1084"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1122"/>
+        <location filename="../main.py" line="1121"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"> سيتم تعيين الارتفاع تلقائيًا أدخل العرض</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1174"/>
+        <location filename="../main.py" line="1173"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="821"/>
+        <location filename="../main.py" line="819"/>
         <source>Interactive Schematics(Beta)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="824"/>
+        <location filename="../main.py" line="823"/>
         <source>Stepper Motor Controller</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3239,7 +3244,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="336"/>
+        <location filename="../main.py" line="334"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>

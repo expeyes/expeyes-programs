@@ -1,0 +1,67 @@
+|,METHOD,|,DESCRIPTION,|
+|,--------------,|,-----------------------,|
+|,get_version,|,Returns a version string,|
+|,reconnect,|,reconnect to the device. Needed if the USB cable was replugged,|
+|,guess_sensor,|,"scans the I2C bus, and returns a list of sensor options",|
+|,get_resistance,|,measure resistance between SEN and GND,|
+|,capture1,|,Oscilloscope: Single Channel,|
+|,capture_action,|,Oscilloscope: Single Channel with an initial action such as set_state,|
+|,capture2,|,Oscilloscope: 2 Channels,|
+|,capture4,|,Oscilloscope: 4 Channels,|
+|,capture1_hr,|,Oscilloscope: Single Channel . High Resolution ,|
+|,capture_traces,|,Oscilloscope: Initialization,|
+|,capture_hr_multiple,|,"Oscilloscope: High Res , multiple channels. Sequential Sampling*",|
+|,fetch_trace,|,Fetch oscilloscope buffer from the hardware,|
+|,oscilloscope_progress,|,Total samples collected. ,|
+|,configure_trigger,|,trigger level and channel for the oscilloscope,|
+|,set_gain,|,gain for A1 or A2 inputs,|
+|,select_range,|,"Voltage Range Selection for A1, or A2 . Similar to the range knob on a multimeter",|
+|,get_voltage,|,"measure voltage . Input channel options A1, A2, A3, IN1, SEN",|
+|,get_voltage_time,|,measure voltage as well as a timestamp. Returns a tuple,|
+|,voltmeter_autorange,|,autorange the voltmeter,|
+|,get_average_voltage,|,measure an averaged voltage value,|
+|,get_high_freq,|,measure high frequencies on IN2 (>100KHz),|
+|,get_freq,|,measure frequency on IN2,|
+|,MeasureInterval,|,timing measurements for digital signals on IN2 or SEN,|
+|,MeasureMultipleDigitalEdges,|,timing measurements for digital signals on IN2 or SEN,|
+|,SinglePinEdges,|,timing measurements for digital signals on IN2 or SEN,|
+|,DoublePinEdges,|,timing measurements for digital signals on IN2 or SEN,|
+|,get_states,|,"get logic level on inputs SEN, IN2",|
+|,get_state,|,"get logic level on inputs SEN, IN2",|
+|,set_state,|,set output state of OD1  / SQ1 / SQ2 / CS1-4/ ,|
+|,stepper_move,|,Stepper motor movement,|
+|,stepper_forward,|,Stepper motor movement,|
+|,stepper_reverse,|,Stepper motor movement,|
+|,set_multiplexer,|,Set CS1-4 to control analog multiplexers . Only on SEElab3,|
+|,duty_cycle,|,measure duty cycle on IN2,|
+|,r2rtime,|,Timing measurements on IN2/SEN. Rising Edge to Rising edge,|
+|,f2ftime,|,Timing measurements on IN2/SEN. Falling Edge to Falling edge,|
+|,r2ftime,|,Timing measurements on IN2/SEN. ,|
+|,f2rtime,|,Timing measurements on IN2/SEN. ,|
+|,multi_r2rtime,|,Timing measurements on IN2/SEN. Multiple rising edges. ,|
+|,set2rtime,|,"Enable an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN",|
+|,set2ftime,|,"Enable an output such as OD1/SQ1, and then measure time to a falling edge",|
+|,clr2rtime,|,"Turn off an output such as OD1/SQ1, and then measure time to a rising edge on IN2/SEN",|
+|,clr2ftime,|,"Turn off an output such as OD1/SQ1, and then measure time to a falling edge",|
+|,capacitance_via_RC_discharge,|,Measure capacitance. For values >1uF,|
+|,get_capacitor_range,|,estimate capacitance of capacitor connected on IN1-GND,|
+|,get_capacitance,|,measure capacitance.,|
+|,get_temperature,|,measure CPU temperature,|
+|,get_ctmu_voltage,|,-,|
+|,read_bulk_flash,|,-,|
+|,write_bulk_flash,|,"Do not touch. Especially locations 0,3 which are used to store the calibration coefficients.",|
+|,set_sine,|,set frequency of sine wave on WG,|
+|,set_wave,|,set wave type ‘sine’ / ‘tria’,|
+|,set_sine_amp,|,set amplitude of the sine wave output on WG,|
+|,load_equation,|,load an arbitrary waveform to WG using an equation,|
+|,load_table,|,load a set of 512 points to the wave generator,|
+|,set_sq1,|,set frequency of square wave on SQ1,|
+|,set_sq2,|,set frequency of square wave on SQ2,|
+|,set_sq1_dc,|,set the duty cycle of the square wave on SQ1,|
+|,set_sq2_dc,|,set the duty cycle of the square wave on SQ2,|
+|,set_pv1,|,Set the voltage output on PV1 (-5V to 5V),|
+|,set_pv2,|,Set the voltage output on PV2 (-3V to 3V),|
+|,servo,|,Set the angle of a servo motor connected to SQ1,|
+|,sr04_distance,|,"Measure distance using the SR04 sensor. SQ2→Trig, IN2←ECHO",|
+|,sr04_distance_time,|,Measure Timestamped distance,|
+|,save,|,save an array to a csv file,|

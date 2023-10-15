@@ -1,3 +1,9 @@
+expeyes (5.0+pyqt5-6) unstable; urgency=medium
+
+  * Added advanced XY plot, removed dependency on pylab
+
+ -- Jithin BP <jithinbp@gmail.com>  Wed, 11 Oct 2023 10:19:32 +0530
+
 expeyes (5.0+pyqt5-5) unstable; urgency=medium
 
   * fixed issues with time measurement call singlepinedges

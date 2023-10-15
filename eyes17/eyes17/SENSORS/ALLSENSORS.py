@@ -1,5 +1,5 @@
 import numpy as np
-import functools, time
+import functools, time, struct
 from collections import OrderedDict
 def bswap(val):
 	return struct.unpack('<H', struct.pack('>H', val))[0]

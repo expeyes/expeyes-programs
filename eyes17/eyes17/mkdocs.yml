@@ -1,0 +1,126 @@
+site_name: ExpEYES-17/SEELab3 Programmer's Manual
+
+theme:
+  name: material
+  logo: images/eyes17-logo.png
+  favicon: 'images/eyes17-logo.png'
+  features:
+    - content.action.edit
+    - content.action.view
+    - navigation.footer
+    - content.code.copy
+  icon:
+    annotation: material/arrow-right-circle 
+
+
+#theme: 'readthedocs'
+
+markdown_extensions:
+    - toc:
+        permalink: True
+    - admonition
+    - attr_list
+    - def_list
+    - md_in_html
+    - smarty
+    - attr_list
+    - wikilinks
+    - codehilite:
+        linenums: False
+    - pymdownx.arithmatex
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.caret
+    - pymdownx.critic
+    - pymdownx.details
+    - pymdownx.inlinehilite
+    - pymdownx.magiclink
+    - pymdownx.mark
+    - pymdownx.smartsymbols
+    - pymdownx.superfences:
+       preserve_tabs: true
+    - pymdownx.tasklist:
+        custom_checkbox: True
+    - pymdownx.tilde
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+
+extra_css: ["assets/main.css","assets/styles.scss"]
+site_favicon: 'images/favicon.ico'
+
+plugins:
+   - search
+   - table-reader
+   - with-pdf:
+        author: Jithin BP
+        #cover: false
+        cover-logo: images/eyes17-logo.png
+        cover_title: ExpEYES-17 Programmer's Manual
+        cover_subtitle: Also shared with SEELab3
+        toc_title: Contents
+        #heading_shift: false
+        toc_level: 3
+        ordered_chapter_level: 2
+        #excludes_children:
+        #    - 'release-notes/:upgrading'
+        #    - 'release-notes/:changelog'
+        #
+        #exclude_pages:
+        #    - 'bugs/'
+        #    - 'appendix/contribute/'
+        #
+        output_path: pdf/document.pdf
+        enabled_if_env: PDF
+        #
+        #debug_html: true
+        #show_anchors: true
+        #verbose: true  
+   - social:
+      cards: true
+      cards_font: Roboto
+
+extra:
+  palette:
+      primary: '#087da1'
+      accent: '#00a889'
+
+
+repo_name: 'expeyes-programs'
+repo_url: 'https://github.com/expeyes/expeyes-programs'
+copyright: 'Jithin B P'
+
+google_analytics:
+  - 'UA-67472997-4'
+  - 'auto'
+
+site_url: https://csparkresearch.in
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/twitter 
+      link: https://x.com/csparkresearch
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/csparkresearch
+    - icon: fontawesome/brands/github
+      link: https://github.com/csparkresearch
+
+nav:
+  - Home: 'index.md'
+  - Installation: 'installation.md'
+  - Python - Functions:
+      - 'Introduction': 'programming/intro.md'
+      - 'Voltage Measurements': 'programming/analog.md'
+      - 'Capacitance/Resistance': 'programming/meters.md'
+      - 'Digital I/O': 'programming/digital.md'
+      - 'Timing Measurements': 'programming/timing.md'
+      - 'Oscilloscope': 'programming/capture.md'
+      - 'I2C and Sensors': 'programming/I2C.md'
+      - 'I2C and Sensors': 'programming/sensors.md'
+  - Projects:
+      - 'R2R DAC Wavegen': 'programming/r2r_wavegen.md'
+      - 'Optics: Malus Law': 'malus.md'
+  - 2-Hour Tutorial: 'workshop.md'
+
