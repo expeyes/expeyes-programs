@@ -13,15 +13,15 @@ all: $(TARGETS)
 
 %.pdf: %.png
 	@echo "PNG -> $@"
-	convert $< -background white -alpha remove -alpha off  $<.png
-	img2pdf $<.png --pagesize 960x720 -o $@
-	rm -f $<.png
-	convert $< -resize 960x720 $@
+	gm convert $< -resize 960x720 -background white $@
 
 %.pdf: %.jpg
-	img2pdf $< --pagesize 960x720 -o $@
+	@echo "JPG -> $@"
+	gm convert $< -resize 960x720 -background white $@
+
 
 %.pdf: %.svg
+	@echo "SVG -> $@"
 	rsvg-convert -f pdf $< --width 960 -o $@
 
 clean:
