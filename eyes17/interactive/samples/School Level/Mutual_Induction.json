@@ -1,0 +1,26 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 109.33306800000001,
+        "y": 449.64374
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 813.41864,
+        "y": 462.50968
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=Applied Signal(WG on A1) vs Induced (A2)\nmode=scope\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=500\nTG=20\nx=time\ny1=A1\ny2=A2\nymin=-4\nymax=4\nfitmode=sine\nselectorStart=30\nselectorEnd=90\n",
+        "x": 1161.9237,
+        "y": 889.9113799999999
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=100\nmax=5000\nvalue=1000\nfixOrder=0",
+        "x": 109.51226800000002,
+        "y": 149.70095799999999
+    }
+}

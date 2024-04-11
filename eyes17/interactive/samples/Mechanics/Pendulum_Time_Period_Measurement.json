@@ -1,0 +1,20 @@
+{
+    "SEN": {
+        "ID": "SEN",
+        "desc": "title=Voltage on SEN\nlogging=true\nduration=5\ninterval=5\nmin=0\nmax=3.5",
+        "x": 899.1102428571429,
+        "y": 115.2245173625
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "state=on\ntristate=true\nmin=5\nmax=20\nvalue=10\nstepsize=0.1",
+        "x": 54.55392857142857,
+        "y": 147.23273499375
+    },
+    "TIMING": {
+        "ID": "TIMING",
+        "desc": "channel=SEN\nunits=S\ncommand=multi_r2r\nautomatic=false\nlevel=2",
+        "x": 82.81275857142857,
+        "y": 850.8867456249999
+    }
+}

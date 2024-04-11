@@ -1,0 +1,29 @@
+# Zener Diode IV Characteristics
+
+Refer to the Simple Diode IV Characteristics first .
+The only difference here is that the input voltage varies from -5 to 5 instead of 0 to 5. This way we can observe the breakdown of a 3.3V Zener diode in the reverse bias condition.
+
+## Objective
+
+Draw the V-I Characteristics of zener diode and compare the result with the theory.
+
+
+## Procedure
+
+  
+-  Make the connections as shown in the figure. Use 1000 Ohm resistor
+-  Click on START to draw the characteristic curve.
+-  Analyse the data
+
+
+
+It is possible to do this by manually taking the reading, from the voltmeter GUI.
+The steps involved are:
+- Launch the Voltmeter UI, and also click on the 'I/O controls' option to add the PV1 slider.
+- Set PV1 to 100mV
+- Read the voltage at A1, which is the voltage across the diode
+- Calculate current from `I=(V_{PV1}-V_{A1})/(1000)`
+- Increment PV1 by 100mV per step, up to 5V, and repeat the process
+- plot the readings of I against A1.
+
+[ExpEYES.in Zener IV](https://expeyes.in/experiments/electronics/zenerIV.html)

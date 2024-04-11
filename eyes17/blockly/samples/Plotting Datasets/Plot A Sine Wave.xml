@@ -1,0 +1,45 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">angle</variable>
+  </variables>
+  <block type="controls_for" id="Mu[Mx,`M82x]w$+!]()Q" x="15" y="43">
+    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
+    <value name="FROM">
+      <shadow type="math_number" id="s5$j8gDPdnlD8?-U#.|}">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id=")O#81(FYzpDZxms3)5^?">
+        <field name="NUM">360</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id="cW=15{APFW^n%+UnnZY_">
+        <field name="NUM">10</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="plot_xy" id="%mBD]5+Co)[$(SicwzEr">
+        <value name="X">
+          <block type="variables_get" id=",UbfE$83WUKuAp4#$[C]">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
+          </block>
+        </value>
+        <value name="Y">
+          <block type="math_trig" id="~;;D;K#L7lF=;PP6Pz6#">
+            <field name="OP">SIN</field>
+            <value name="NUM">
+              <shadow type="math_number" id="w.=T^XPa^yAh#WZ`W(T3">
+                <field name="NUM">45</field>
+              </shadow>
+              <block type="variables_get" id="Kl3h7t@Ooqg~Z-dJS3k)">
+                <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
+              </block>
+            </value>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+<description><![CDATA[<h2>Plot XY point</h2><p>Plotting graphs is convenient for visualizing data. It is used heavily in mathematics and sciences. SEElab supports the following kinds of plots:</p><p><br></p><p><br></p><ul><li>Ploting a variable as a function of time (obtained from the system)</li><li>Plotting individual (x,y) coordinates</li><li>Plotting data stored in lists.</li></ul><p><br></p><p>This example demonstrates 'plotXY', that plots a single point.</p><p>We use a Count loop running from 0 to 360. Each iteration plots a point using the loop index as x coordinate and the sine of it as y coordinate.</p><p><br></p><h2>Exercises </h2><p><br></p><ul><li>Add a small wait block inside the loop to observe the plot form gradually.</li><li>Change the frequency of the sine wave by inputting angle*frequency into the sine function. </li><li>Change the phase by adding a constant to angle before inputting </li></ul>]]></description></xml>

@@ -1,4 +1,5 @@
 # -*- coding: utf-8; mode: python; indent-tabs-mode: t; tab-width:4 -*-
+import functools
 import sys, time, math, importlib, os, platform, os.path, csv, serial
 from datetime import datetime
 from utils import cnf, ConfigParser
@@ -129,8 +130,8 @@ print(pf)
 if 'Windows' in pf:
     import diodeIV, editor, filterCircuit, induction, MPU6050, npnCEout, pendulumVelocity, data_logger
     import plotIV, pnpCEout, pt100, RCtransient, RLCsteadystate, RLCtransient, driven_pendulum, XYPlotContinuous
-    import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity, schematic_display
-    import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, blockcoding, circuitjs, multiplexedlogger, \
+    import RLtransient, rodPendulum, scope, soundBeats, soundFreqResp, soundVelocity, schematic_display2
+    import sr04dist, utils, logger, XYplot, i2cLogger, tof, advanced_logger, advanced_logger_pe, blockcoding, circuitjs, multiplexedlogger, \
         single_channel_logger
     import BHCurve, BHCurveHMC
 
@@ -218,7 +219,7 @@ electronicsExpts = [
 electricalExpts = [
     [QT_TRANSLATE_NOOP('MainWindow', 'Plot I-V Curve'), ('4.1', 'plotIV')],
     [QT_TRANSLATE_NOOP('MainWindow', 'XY Plotting'), ('4.2', 'XYplot')],
-    [QT_TRANSLATE_NOOP('MainWindow', 'RLC Steady state response'), ('4.3', 'RLCsteadystate')],
+    # [QT_TRANSLATE_NOOP('MainWindow', 'RLC Steady state response'), ('4.3', 'RLCsteadystate')],
     [QT_TRANSLATE_NOOP('MainWindow', 'RC Transient response'), ('4.4', 'RCtransient')],
     [QT_TRANSLATE_NOOP('MainWindow', 'RL Transient response'), ('4.5', 'RLtransient')],
     [QT_TRANSLATE_NOOP('MainWindow', 'RLC transient response'), ('4.6', 'RLCtransient')],
@@ -248,6 +249,7 @@ otherExpts = [
     [QT_TRANSLATE_NOOP('MainWindow', 'Simple Data Logger'), ('7.2', 'logger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Continuous Data Logger'), ('3.16', 'data_logger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Advanced Data Logger'), ('7.3', 'advanced_logger')],
+    [QT_TRANSLATE_NOOP('MainWindow', 'Ferroelectric PE Loop Tracer'), ('7.7', 'advanced_logger_pe')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Multiplexed Logger'), ('7.6', 'multiplexedlogger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Visual Programming Editor'), ('7.4', 'blockcoding')],
 ]
@@ -356,7 +358,7 @@ class MainWindow(QMainWindow):
     screenshot_request = pyqtSignal(str, str, str)
     stepperDialog = None
 
-    def __init__(self, lang, app, tr_eyes, tr_qt):
+    def __init__(self, lang, app, tr_eyes, tr_qt, **kwargs):
         """
 		The constructor.
 		:param lang: the autodetected language, which comes from shell variables
@@ -456,6 +458,10 @@ class MainWindow(QMainWindow):
         self.show()
         self.move(20, 20)
 
+    def setTheme(self, theme):
+        self.setStyleSheet("")
+        self.setStyleSheet(open(os.path.join(path["themes"], theme + ".qss"), "r").read())
+
     def updateEditor(self, text):
         if self.expName[1] == 'editor':
             text = text.replace('import eyes17.eyes', '#import eyes17.eyes')
@@ -502,7 +508,7 @@ class MainWindow(QMainWindow):
             return available
         elif system_name == "Darwin":
             # Mac
-            return glob.glob('/dev/tty*') + glob.glob('/dev/cu*')
+            return glob.glob('/dev/tty.usb*') + glob.glob('/dev/cu*')
         else:
             # Assume Linux or something else
             return glob.glob('/dev/ttyACM*')
@@ -522,9 +528,13 @@ class MainWindow(QMainWindow):
                         return False  # Port is not available
 
                 else:
+                    fd.reset_input_buffer()
+                    fd.reset_output_buffer()
                     fd.close()
                     return True  # Port is available
             else:
+                fd.reset_input_buffer()
+                fd.reset_output_buffer()
                 fd.close()
                 return False  # Port is not available
 
@@ -816,8 +826,20 @@ class MainWindow(QMainWindow):
         sm = mb.addMenu(self.tr('Screenshot'))
         action = sm.addAction(self.tr('Whole Window Alt-s'), self.screenshot)
         action = sm.addAction(self.tr('Graph Only Alt-p'), self.screenshotPlot)
+
+        sm = mb.addMenu(self.tr('Themes'))
+        themes = [a.split('.qss')[0] for a in os.listdir(path["themes"]) if '.qss' in a]
+        print(themes, path["themes"])
+        for theme in themes:
+            action = sm.addAction(theme, functools.partial(self.setTheme, theme))
+
+
+        mb.addAction(QT_TRANSLATE_NOOP('MainWindow','Visual Programming'),
+                     lambda item=('7.4', 'blockcoding'): self.callExpt(item))
+
         mb.addAction(self.tr('Interactive Schematics(Beta)'),
-                     lambda item=('2.98', 'schematic_display'): self.callExpt(item))
+                     lambda item=('2.98', 'schematic_display2'): self.callExpt(item))
+
         mb.addAction(self.tr('Experiment List'), lambda item=('2.99', 'experiment-list'): self.callExpt(item))
         mb.addAction(self.tr('Circuit Simulator'), self.showSimulator)
         mb.addAction(self.tr('Stepper Motor Controller'), self.newStepperController)
@@ -1207,10 +1229,43 @@ You can customize the way they are used to build the path."""
         self.app.installTranslator(self.tr_qt)
         self.uncheckHelpBox.emit()
 
+def firstExistingPath(l):
+    """
+    Returns the first existing path taken from a list of
+    possible paths.
+    @param l a list of paths
+    @return the first path which exists in the filesystem, or None
+    """
+    for p in l:
+        if os.path.exists(p):
+            return p
+    return None
+def common_paths():
+    """
+    Finds common paths
+    @result a dictionary of common paths
+    """
+    path = {}
+    curPath = os.path.dirname(os.path.realpath(__file__))
+    path["current"] = curPath
+    sharedPath = "/usr/share/eyes17"
+    path["translation"] = firstExistingPath(
+        [os.path.join(p, "lang") for p in
+         (curPath, sharedPath,)])
+
+    path["themes"] = firstExistingPath(
+        [os.path.join(p, 'layouts', 'themes') for p in
+         (curPath, sharedPath,)])
+
+    lang = str(QtCore.QLocale.system().name())
+    shortLang = lang[:2]
+    return path
+
 
 def run():
     # Program starts here
-    global app, p, eyes
+    global app, p, eyes, path
+    path = common_paths()
     import eyes17.eyes as eyes
     p = eyes.open()
     if p.H.connected:
@@ -1232,7 +1287,7 @@ def run():
             QLibraryInfo.location(QLibraryInfo.TranslationsPath))
     app.installTranslator(t1)
 
-    mw = MainWindow(lang, app, t, t1)
+    mw = MainWindow(lang, app, t, t1, path=path)
     sys.exit(app.exec_())
 
 

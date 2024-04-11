@@ -1,0 +1,12 @@
+## Introduction
+
+The AD9833 is a Direct Digital Synthesizer capable of sine and triangle wave generation up to 2MHz with 24bit resolution. It can be used with expeyes/seelab
+
+AD9833 must be connected to expeyes/SEELab via the SPI pins. 
+
+
+The AD633 modulator IC is fed with a 50kHz sine wave from the AD9833 at pin 3. this is the carrier frequency.
+
+Pin 1 is connected to WG which will provide the modulation frequency.
+
+These inputs are monitored using A1, A2 pins, and the A3 input will monitor the modulated output.

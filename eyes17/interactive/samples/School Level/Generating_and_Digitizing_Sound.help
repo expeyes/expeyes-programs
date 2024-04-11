@@ -1,0 +1,49 @@
+# What is Sound?
+
+Sound waves are a type of mechanical wave that carries energy through the medium of air or any other material substance.
+They are created by vibrations or oscillations of objects, such as vocal cords, musical instruments, or speakers. 
+Sound waves propagate as a series of compressions and rarefactions, causing particles in the medium to oscillate back and forth.
+
+Some properties of sound
+
+* Wavelength: The wavelength of a sound wave is the distance between two consecutive points in the wave that are in the same phase. e.g., distance from one compression to the next compression.
+
+* Frequency: The frequency of a sound wave is the number of complete cycles or vibrations it undergoes per unit of time. 1 Hz equals one cycle per second. Frequency determines the pitch of a sound, and high frequencies sound shrill.
+
+* Amplitude: The amplitude of a sound wave refers to the maximum displacement of particles in the medium from their resting or equilibrium position as the wave passes through. It represents the intensity or loudness of the sound and is typically measured in decibels (dB)
+
+* Propagation Speed: The speed at which sound waves travel through a medium depends on the properties of the medium, such as its density and elasticity. In dry air at room temperature, sound typically travels at a speed of approximately 340 meters per second. the next experiment will deal with measuring speed of sound.
+
+* Compression and Rarefaction: As sound waves propagate, they create areas of compression and rarefaction in the medium. In the compression phase, particles are close together, resulting in higher pressure. In the rarefaction phase, particles are spread apart, resulting in lower pressure. These alternating compressions and rarefactions give rise to the oscillating nature of sound waves.
+
+* Propagation in Mediums: Sound waves require a medium, such as air, water, or solids, to travel through. In a medium, the particles interact with each other, passing energy from one particle to the next. Sound waves cannot propagate in a vacuum since there are no particles to transmit the vibrations.
+
+* Reflection, Refraction, and Diffraction: Sound waves can be reflected, refracted, and diffracted when they encounter boundaries or obstacles. Reflection occurs when sound waves bounce off a surface. Refraction occurs when sound waves change direction due to a change in the medium's properties. Diffraction occurs when sound waves bend around obstacles or spread out after passing through a narrow opening.
+
+* The SR04 Echo module used previously for measuring distance uses the fact that sound can reflect from surfaces, and that it has a known speed, to calculate distance. 
+
+# Condensor Microphone
+
+
+A condenser microphone, also known as a capacitor microphone, operates based on the principle of capacitance variation in response to sound waves. It consists of a thin diaphragm, a backplate, and an electrically charged capacitor.
+
+## Here's a description of how a condenser microphone works
+
+* Diaphragm: The diaphragm of a condenser microphone is a thin, conductive material (usually metal-coated Mylar or gold-sputtered diaphragm) that is sensitive to sound waves. The diaphragm is designed to vibrate in response to sound pressure variations.
+
+* Backplate: The backplate is a fixed, rigid plate positioned close to the diaphragm. It acts as the other plate of the capacitor, forming an electrical field with the diaphragm.
+
+* Capacitor: The combination of the diaphragm and backplate forms a capacitor, where the diaphragm acts as one plate, and the backplate acts as the other. The space between the diaphragm and backplate acts as the dielectric of the capacitor.
+
+* Polarizing Voltage: A polarizing voltage is applied across the diaphragm and backplate to establish an electrical field between them. This voltage maintains a constant charge on the capacitor. 
+
+* Signal Processing: When you plug in a microphone between the MIC input and GND pin of the SEELab device, it applies this polarizing voltage, and carefully monitors and amplifies the voltage fluctuations caused by sound waves striking the diaphragm. 
+
+* Detection: When sound waves reach the diaphragm, it vibrates in response to the pressure variations. As the diaphragm moves, the distance between the diaphragm and backplate changes, causing a variation in the capacitance of the microphone.
+
+* Capacitance Variation: The varying capacitance due to the diaphragm's movement creates a corresponding electrical signal. The signal is directly proportional to the sound pressure level and frequency of the incoming sound waves.
+
+* Signal Amplification: The low impedance signal from the impedance converter is then amplified by an internal opamp, and connected to the Oscilloscope of the SEELab device internally
+
+
+You can collect up to 10000 voltage readings at a rate of 1 reading per microsecond via the SEELab device.

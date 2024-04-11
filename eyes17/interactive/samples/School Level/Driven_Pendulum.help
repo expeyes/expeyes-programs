@@ -1,0 +1,16 @@
+# Driven pendulum, Resonance
+
+A pendulum is made using two button magnets and a piece of paper (One magnet will also work, but with two you won't need glue/tape to attach it to the paper). 
+
+It is suspended on horizontal needle. A coil, powered by SQ1, is kept in front of that. The pendulum will start oscillating and the amplitude will go very high at resonance.
+
+It is like pushing a swing, but instead of physically touching, we are using an oscillating magnetic field
+
++ Adjust SQ1 and find out the resonant frequency
++ Change the length of the paper and observe what happens to resonant frequency with length
+
+You can also calculate the natural frequency by measuring the voltage induced in the coil
++ Connect the coil between A1 and GND, and let the magnet oscillate in front of it by giving a small initial push
++ The changing magnetic field will induce an EMF in the coil whose value will be plotted
++ Use sine fitting to calculate the natural frequency
++ Select the region carefully since the signal may be poor. If it's too poor, visually estimate the time between oscillations by using the cursor, and then calculate frequency(1/time period)

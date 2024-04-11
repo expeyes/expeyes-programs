@@ -1,0 +1,38 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 24.898622222222222,
+        "y": 329.5728392207792
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 833.2019595959597,
+        "y": 586.0551854545455
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=2\nxaxis=time\ny1=A1\ny2=A2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Input(A1) and Output(A2)\nfitmode=sine\nrangeA1=true\nrangeA2=true\n\nselectorStart=20\nselectorEnd=80\n",
+        "x": 1165.2740808080807,
+        "y": 800.4797294155844
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nstepsize=0.1\nvalue=5",
+        "x": 841.5555151515151,
+        "y": 330.3215212337662
+    },
+    "PV2": {
+        "ID": "PV2",
+        "desc": "min=-3\nmax=3\nvalue=0\nvalue=0.5\n",
+        "x": 29.73429696969697,
+        "y": 678.833695
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=500\nmax=2000\nvalue=1000\nstepsize=1",
+        "x": 25.072175757575756,
+        "y": 51.91103957792208
+    }
+}

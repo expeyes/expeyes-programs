@@ -1,0 +1,22 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <block type="controls_whileUntil" id="Af1b2`NDZ.sS~b0IcdeB" x="8" y="55">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <shadow type="logic_boolean" id="=pZ0b$a/Y27Dih|eT12#">
+        <field name="BOOL">TRUE</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="plot_datapoint" id="uI%i08YNKEQ`NtlmN}vt">
+        <field name="PLOTNAME">myplot</field>
+        <value name="VALUE">
+          <block type="read_i2c_sensor_flexible_dynamic" id="lR^(fl*8ql|[8O9^?js*">
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+<description>
+<![CDATA[<h1>Automatically Scan and allow the user to select a sensor</h1><p><br></p><p>In this experiment we shall use a user input block which scans the I2C port for supported sensors, and shows the user a list of detected sensors to select from.</p><p><br></p><p>The parameters supported by the selected Sensor are automatically fed into the adjacent drop-down menu for the user to select.</p><p><br></p><h2>connections for I2C sensors</h2><p><br></p><p>Sensors which use the I2C communication interface require 4 connections to be made.</p><ul><li>VCC ( Can be 5V or 3.3V). The 4 wire sensor cable has 5V, and most commonly available sensors have a 3.3V regulator on board to convert the voltage . </li><li>GND . Ground</li><li>SCl. Clock pin. Internally pulled up to 3.3V via 10K resistor</li><li>SDA . Data . Internally pulled up to 3.3V via 10K</li></ul><p>*If the sensor chip itself operates at 5V(INA219, some boards of QMC5883L etc), the pull up should be to 5V , or else communication errors will occur. To do this, connect a 2K resistor each from SCL to 5V, and from SDA to 5V (this can be done on the SCL,SDA,5V pins located at the top right side of the 40*2 connector of SEELab)</p><p><br></p><h2>Recording data</h2><<p><br></p><p>E.g., the MPU6050 allows choosing the input ranges of the accelerometer and gyroscope. Click on the configure option, and select the required range before starting acquisition.</p><p>It also has 6 parameters to choose from : acceleration along 3 axes, and angular velocity along 3 axes</p><p><br></p><p>For the TSL2561 LUMINOSITY sensor, 2 options, IR, full spectrum are available. One is chosen and logged in the first picture.</p><p><br></p><h2>Recording a thermocouple's voltage with ADS1115 16-bit ADC</h2><p><br></p><iframe class="ql-video" frameborder="0" allowfullscreen="true" src="https://www.youtube.com/embed/NyA2bcWTmzw?showinfo=0"></iframe><p><br></p><p><br></p><p><br></p>]]>
+</description>
+</xml>

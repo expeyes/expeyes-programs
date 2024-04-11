@@ -1,0 +1,54 @@
+ <xml xmlns="https://developers.google.com/blockly/xml">
+<description>
+<![CDATA[
+## Description
+
+the IN2 input is a fast digital input capable of measuring 3.3 V (Maximum 5.5V) level signals. When an input voltage goes from 0V to 3.3V , it is known as a rising edge. The opposite is called a falling edge.
+
+
+The rising edge timer is used to measure intervals between multiple rising edges, where you can select up to 4 number of events.
+The first edge initiates the timer, and is not returned to the user. So if 4 edges are requested, you will get 3 points in the returned list unless a timeout has occurred.
+
+## Exercise
+
++ Set SQ1 frequency to 100 Hz, and connect SQ1 to IN2 using a wire.
++ Connect SQ1 to IN2, and measure the time interval between two rising edges.
++ Change it to 4 rising edges, and record the time.
++ Draw your conclusions.
+
+]]>
+</description>
+
+ <block type="set_frequency" id="YDtE~:*m?^W2$t5.d)S(" x="6" y="37">
+        <field name="CHANNEL">SQ1</field>
+        <value name="FREQUENCY">
+          <block type="math_number" id="x4PRjo67@^~cKjKreBdg">
+            <field name="NUM">20000</field>
+          </block>
+        </value>
+        <next>
+          <block type="controls_repeat_ext" id="pmnc$le23vqSM?w-@r*T">
+            <value name="TIMES">
+              <shadow type="math_number" id="$}G]#qkIk$sAhCP3o_rN">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="cs_print" id="ksXHp-NHY,{S^^8h#oxq">
+                <value name="TEXT">
+                  <shadow type="text" id="%:okeo$Gd,rT~f~P5Q9E">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                  <block type="singlePinEdges" id="=iaDAHpT~4C8JeqE@s,^">
+                    <field name="CHANNEL">IN2</field>
+                    <field name="TYPE">rising</field>
+                    <field name="EDGES">4</field>
+                    <field name="TIMEOUT">2</field>
+                  </block>
+                </value>
+              </block>
+            </statement>
+          </block>
+        </next>
+      </block>
+    </xml>

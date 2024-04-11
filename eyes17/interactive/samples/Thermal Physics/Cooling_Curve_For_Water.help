@@ -1,0 +1,30 @@
+Measure temperature vs time
+
+
+
+The relationship between the resistance of a PT1000 and the temperature can be described by a polynomial equation known as the Callendar-Van Dusen equation:
+
++ T = (-a + sqrt(a^2 - 4b(1 - R/R0)))/(2*b)
+
+where:
+
++ T = temperature in degrees Celsius
++ R = resistance of PT1000 in ohms
++ R0 = resistance of PT1000 at 0°C, which is 1000 ohms
++ a = 3.9083 x 10^-3 (constant)
++ b = -5.775 x 10^-7 (constant)
+
+This equation is commonly used to convert the resistance of a PT1000 into a temperature reading.
+
+
+## Calibration
+
+R0 is often never 1000 Ω because of manufacturing variations, so it must be measured.
+
+Procedure
+
++ Place the sensor in ice which is melting in water(Use distilled water for the ice)
++ In this situation, the water and ice are both at 0 degrees.
++ Once the reading is stable, note down the resistance value.
++ tap on the PT1000 block, and in the popup dialog, enter the actual resistance at 0 degrees(R0) .
++ Click okay, and now you should see 0 degrees measured at ice which is melting..

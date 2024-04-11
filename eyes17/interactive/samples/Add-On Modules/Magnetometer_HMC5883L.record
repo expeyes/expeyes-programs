@@ -1,0 +1,15 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+xlabel=Time
+ylabel=Magnetic Field
+xunits=S
+yunits=G
+
+input=HMC5883L:0
+logging=true
+title=Magnetic Field Vs Time
+duration=20
+ymin=-8
+ymax=8
+intro=Record Magnetic with respect to time

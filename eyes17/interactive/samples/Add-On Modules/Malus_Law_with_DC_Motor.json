@@ -1,0 +1,20 @@
+{
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=0.5\nmax=4\nstepsize=0.1\nvalue=2",
+        "x": 32.292104445317115,
+        "y": 615.2253097413561
+    },
+    "SQ2": {
+        "ID": "SQ2",
+        "desc": "tristate=true",
+        "x": 45.52686145866112,
+        "y": 171.8342324693165
+    },
+    "TSL2591:0": {
+        "ID": "TSL2591:0",
+        "desc": "w=150\nh=150\n\nlogging=true\ntitle=Intensity(Lux) vs Time\nduration=20\nymax=88000\nyunits=Lux\nfitmode=sine",
+        "x": 774.0762030677448,
+        "y": 101.65536418702003
+    }
+}

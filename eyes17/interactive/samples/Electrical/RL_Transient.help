@@ -1,0 +1,17 @@
+# RL Transient response
+
+This is a work in progress. 
+
+Tap on OD1 to set it ON/OFF , and observe that A1 behaves accordingly.
+
+Now tap on the `SET OD1 LOW` or `SET OD1 HIGH` capture which records the transient behaviour and plots it.
+
+
+e.g. , if OD1 was OFF, then use the `SET OD1 HIGH` to view the charging curve of the RL
+
+Use the visual programming interface instead of the interactive schematic
+
+### Features to implement
+
++ Adjustable timebase
++ Curve fit to exponential equation

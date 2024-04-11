@@ -1527,12 +1527,12 @@ shows the actual frequency set.
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../blockcoding.py" line="447"/>
+        <location filename="../blockcoding.py" line="505"/>
         <source>Blockly is missing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../blockcoding.py" line="447"/>
+        <location filename="../blockcoding.py" line="505"/>
         <source>You wanted to launch eyes17&apos;s blockly plugin.
 Unfortunately the plugin is missing... Consider
 installing it (it is a non-free package).</source>
@@ -1544,7 +1544,7 @@ installing it (it is a non-free package).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_logger.py" line="278"/>
+        <location filename="../data_logger.py" line="286"/>
         <source>Clear Traces and Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2051,12 +2051,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="386"/>
+        <location filename="../layouts/data_logger.ui" line="213"/>
         <source>SEN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="396"/>
+        <location filename="../layouts/data_logger.ui" line="223"/>
         <source>IN1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2081,42 +2081,42 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished">ડેટા સંગ્રહ</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="463"/>
+        <location filename="../layouts/data_logger.ui" line="290"/>
         <source>16 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="468"/>
+        <location filename="../layouts/data_logger.ui" line="295"/>
         <source>8 V</source>
         <translation type="unfinished">4 V {8 ?}</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="473"/>
+        <location filename="../layouts/data_logger.ui" line="300"/>
         <source>4 V</source>
         <translation type="unfinished">4 V</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="478"/>
+        <location filename="../layouts/data_logger.ui" line="305"/>
         <source>2.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="483"/>
+        <location filename="../layouts/data_logger.ui" line="310"/>
         <source>1.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="488"/>
+        <location filename="../layouts/data_logger.ui" line="315"/>
         <source>1 V</source>
         <translation type="unfinished">4 V {1 ?}</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="493"/>
+        <location filename="../layouts/data_logger.ui" line="320"/>
         <source>0.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="498"/>
+        <location filename="../layouts/data_logger.ui" line="325"/>
         <source>0.25 V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2270,261 +2270,341 @@ p, li { white-space: pre-wrap; }
         <source>Step Size</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../layouts/interactive_layout2.ui" line="481"/>
+        <source>cat-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/interactive_layout2.ui" line="536"/>
+        <source>dirframe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/interactive_layout2.ui" line="554"/>
+        <source>subcat-scroll</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/category_row_2.ui" line="26"/>
+        <source>materialcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/category_row_2.ui" line="75"/>
+        <source>materialcard-image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/category_row_2.ui" line="91"/>
+        <source>category-description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/expt_row.ui" line="32"/>
+        <source>materialsubcard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/expt_row.ui" line="111"/>
+        <source>expt-description</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/expt_row.ui" line="136"/>
+        <source>expt-image</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/interactive_layout2.ui" line="124"/>
+        <source>controls-frame</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="537"/>
+        <source>Custom A1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="547"/>
+        <source>35.5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="554"/>
+        <source>-17.905</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="561"/>
+        <source>Slope</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="568"/>
+        <source>Offset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="575"/>
+        <source>OD1 Output</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../main.py" line="166"/>
+        <location filename="../main.py" line="167"/>
         <source>Voltage measurement</source>
         <translation>વિદ્યુત દબાણ માપો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="167"/>
+        <location filename="../main.py" line="168"/>
         <source>Resistance measurement</source>
         <translation>વીજ અવરોધ માપો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="168"/>
+        <location filename="../main.py" line="169"/>
         <source>Resistors in Series</source>
         <translation>વીજ અવરોધ શ્રેણી મા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="169"/>
+        <location filename="../main.py" line="170"/>
         <source>Resistors in Parallel</source>
         <translation>વીજ અવરોધ સમાંતર મા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="170"/>
+        <location filename="../main.py" line="171"/>
         <source>Capacitance measurement</source>
         <translation>વીજધારિતા માપન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="171"/>
+        <location filename="../main.py" line="172"/>
         <source>Capacitors in Series</source>
         <translation>વીજધારક શ્રેણી મા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="172"/>
+        <location filename="../main.py" line="173"/>
         <source>Capacitors in Parallel</source>
         <translation>વીજધારક સમાંતર મા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="173"/>
+        <location filename="../main.py" line="174"/>
         <source>Resistance by Ohm&apos;s law</source>
         <translation>ઓહ્મ ના નિયમ પ્રમાણે  વીજ અવરોધ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="174"/>
+        <location filename="../main.py" line="175"/>
         <source>Direct and Alternating Currents</source>
         <translation>ડાયરેક્ટ અને  અલ્ટરનેટીંગ કર્રેન્ત</translation>
     </message>
     <message>
-        <location filename="../main.py" line="175"/>
+        <location filename="../main.py" line="176"/>
         <source>AC mains pickup</source>
         <translation>AC મેન્સ પીકઅપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="176"/>
+        <location filename="../main.py" line="177"/>
         <source>Separating AC and DC</source>
         <translation>AC અને DC ને અલગ કરી રહ્યા છીએ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="177"/>
+        <location filename="../main.py" line="178"/>
         <source>Conducting Human body</source>
         <translation>વીજ વાહક માનવ શરીર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="178"/>
+        <location filename="../main.py" line="179"/>
         <source>Resistance of Human body</source>
         <translation>માનવ શરીર નો વીજ અવરોધ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="179"/>
+        <location filename="../main.py" line="180"/>
         <source>Light Dependent Resistor</source>
         <translation>પ્રકાશ અવલંબિત વીજ અવરોધ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="180"/>
+        <location filename="../main.py" line="181"/>
         <source>Lemon Cell</source>
         <translation>લીંબૂ કોષ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="181"/>
+        <location filename="../main.py" line="182"/>
         <source>Simple AC generator</source>
         <translation type="unfinished">સરળ AC જનરેટર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="182"/>
+        <location filename="../main.py" line="183"/>
         <source>Transformer</source>
         <translation>પરિવર્તક</translation>
     </message>
     <message>
-        <location filename="../main.py" line="183"/>
+        <location filename="../main.py" line="184"/>
         <source>Resistance of Water</source>
         <translation>પાણી નો વીજ અવરોધ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="184"/>
+        <location filename="../main.py" line="185"/>
         <source>Generating Sound</source>
         <translation>અવાજ ઉત્પન્ન થઇ રહ્યો છે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="185"/>
+        <location filename="../main.py" line="186"/>
         <source>Digitizing Sound</source>
         <translation>ડિજિટાઇઝિંગ અવાજ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="186"/>
+        <location filename="../main.py" line="187"/>
         <source>Stroboscope</source>
         <translation>સ્ટ્રોબોસ્કોપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="197"/>
+        <location filename="../main.py" line="198"/>
         <source>Oscilloscope</source>
         <translation>ઓસિલોસ્કોપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="212"/>
+        <location filename="../main.py" line="213"/>
         <source>Diode Characteristics</source>
         <translation>ડાયોડ ની લાક્ષણિકતાઓ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="213"/>
+        <location filename="../main.py" line="214"/>
         <source>NPN Output Characteristics</source>
         <translation>NPN ની આઉટપુટ લાક્ષણિકતાઓ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="214"/>
+        <location filename="../main.py" line="215"/>
         <source>PNP Output Characteristics</source>
         <translation>PNP ની આઉટપુટ લાક્ષણિકતાઓ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="198"/>
+        <location filename="../main.py" line="199"/>
         <source>Halfwave Rectifier</source>
         <translation>અર્ધતરંગ રેક્ટિફાયર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="278"/>
+        <location filename="../main.py" line="280"/>
         <source>Fullwave Rectifier</source>
         <translation>પૂર્ણતરંગ રેક્ટિફાયર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="200"/>
+        <location filename="../main.py" line="201"/>
         <source>Diode Clipping</source>
         <translation>ડાયોડ ક્લિપિંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="201"/>
+        <location filename="../main.py" line="202"/>
         <source>Diode Clamping</source>
         <translation>ડાયોડ ક્લેમ્પિંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="202"/>
+        <location filename="../main.py" line="203"/>
         <source>IC555 Multivibrator</source>
         <translation>IC555  મલ્ટિવાયબ્રેટર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="203"/>
+        <location filename="../main.py" line="204"/>
         <source>Transistor Amplifier (CE)</source>
         <translation type="unfinished">અર્ધવિદ્યુતવાહક એમ્પ્લીફાયર(CE)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="204"/>
+        <location filename="../main.py" line="205"/>
         <source>Inverting Amplifier</source>
         <translation>ઈન્વર્ટિંગ એમ્પ્લીફાયર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="205"/>
+        <location filename="../main.py" line="206"/>
         <source>Non-Inverting Amplifier</source>
         <translation>નોન-ઈન્વર્ટિંગ એમ્પ્લીફાયર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="206"/>
+        <location filename="../main.py" line="207"/>
         <source>Summing Amplifier</source>
         <translation>સમિંગ એમ્પ્લીફાયર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="207"/>
+        <location filename="../main.py" line="208"/>
         <source>Logic Gates</source>
         <translation>લોગીક ગેટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="208"/>
+        <location filename="../main.py" line="209"/>
         <source>Clock Divider Circuit</source>
         <translation>ક્લોક ડિવાઈડર સર્કિટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="219"/>
+        <location filename="../main.py" line="220"/>
         <source>Plot I-V Curve</source>
         <translation>I-V આલેખ દોરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="220"/>
+        <location filename="../main.py" line="221"/>
         <source>XY Plotting</source>
         <translation>XY આલેખ દોરાઈ રહ્યો છે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="221"/>
+        <location filename="../experiment-list.py" line="117"/>
         <source>RLC Steady state response</source>
         <translation>RLC સ્ટેડી સ્ટેટ રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="222"/>
+        <location filename="../main.py" line="223"/>
         <source>RC Transient response</source>
         <translation>RC ટ્રાન્સીયેન્ટ રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="223"/>
+        <location filename="../main.py" line="224"/>
         <source>RL Transient response</source>
         <translation>RL ટ્રાન્સીયેન્ટ  રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="224"/>
+        <location filename="../main.py" line="225"/>
         <source>RLC transient response</source>
         <translation>RLC ટ્રાન્સીયેન્ટ રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="225"/>
+        <location filename="../main.py" line="226"/>
         <source>Frequency Response of Filter Circuit</source>
         <translation>ફિલ્ટર સર્કિટ નો વારંવારતા રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="226"/>
+        <location filename="../main.py" line="227"/>
         <source>Electromagnetic Induction</source>
         <translation>ઇલેક્રોમેગ્નેટિક ઇન્ડક્શન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="232"/>
+        <location filename="../main.py" line="233"/>
         <source>Frequency Response of Piezo Buzzer</source>
         <translation>પીઝો બફર નો વારંવારતા રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="233"/>
+        <location filename="../main.py" line="234"/>
         <source>Velocity of Sound</source>
         <translation>અવાઝ નો વેગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="234"/>
+        <location filename="../main.py" line="235"/>
         <source>Sound beats</source>
         <translation>સાઉન્ડ બીટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="238"/>
+        <location filename="../main.py" line="239"/>
         <source>Rod Pendulum with Light barrier</source>
         <translation type="unfinished">લોલક તરંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="240"/>
+        <location filename="../main.py" line="241"/>
         <source>Driven Pendulum resonance</source>
         <translation>ડ્રિવન લોલક રિસ્પોન્સ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="241"/>
+        <location filename="../main.py" line="242"/>
         <source>Distance by HY-SRF04 Echo module</source>
         <translation>HY-SRF04 ઇકો મોડ્યૂલ દ્વારા અંતર </translation>
     </message>
     <message>
-        <location filename="../main.py" line="243"/>
+        <location filename="../main.py" line="244"/>
         <source>Gravity by Time of Flight</source>
         <translation>ઓફ ફ્લાઈટ મારફતે ગુરુત્વાકર્ષણ</translation>
     </message>
@@ -2534,117 +2614,117 @@ p, li { white-space: pre-wrap; }
         <translation>તાપમાન, PT100 સેન્સર</translation>
     </message>
     <message>
-        <location filename="../main.py" line="248"/>
+        <location filename="../main.py" line="249"/>
         <source>Simple Data Logger</source>
         <translation type="unfinished">ડેટા સાચવણી</translation>
     </message>
     <message>
-        <location filename="../main.py" line="250"/>
+        <location filename="../main.py" line="251"/>
         <source>Advanced Data Logger</source>
         <translation>એડવાન્સ ડેટા સાચવણી</translation>
     </message>
     <message>
-        <location filename="../main.py" line="247"/>
+        <location filename="../main.py" line="248"/>
         <source>Temperature, PT100 Sensor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="258"/>
+        <location filename="../main.py" line="260"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation> લુમિનોસિટી (TSL2561) સાચવણી</translation>
     </message>
     <message>
-        <location filename="../main.py" line="260"/>
+        <location filename="../main.py" line="262"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050 પ્રવેગ, વેગ અને તાપમાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="261"/>
+        <location filename="../main.py" line="263"/>
         <source>General Purpose I2C Sensors</source>
         <translation>I2C સેન્સર નો સામાંન્ય હેતુ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="265"/>
+        <location filename="../main.py" line="267"/>
         <source>Read Inputs</source>
         <translation>ઇનપુટ વાંચો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="266"/>
+        <location filename="../main.py" line="268"/>
         <source>Set DC Voltages</source>
         <translation>DC વીજ દબાણ સેટ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="267"/>
+        <location filename="../main.py" line="269"/>
         <source>Capture Single Input</source>
         <translation>એક ઇનપુટ લ્યો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="268"/>
+        <location filename="../main.py" line="270"/>
         <source>Capture Two Inputs</source>
         <translation>બે ઇનપુટ લ્યો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="269"/>
+        <location filename="../main.py" line="271"/>
         <source>Capture Four Inputs</source>
         <translation>ચાર ઇનપુટ લ્યો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="270"/>
+        <location filename="../main.py" line="272"/>
         <source>Triangular Waveform</source>
         <translation>ત્રિકોણ તરંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="271"/>
+        <location filename="../main.py" line="273"/>
         <source>Arbitrary Waveform</source>
         <translation>નિયમહીન તરંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="272"/>
+        <location filename="../main.py" line="274"/>
         <source>Waveform Table</source>
         <translation>તરંગ ટેબલ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="273"/>
+        <location filename="../main.py" line="275"/>
         <source>RC Transient</source>
         <translation>RC ટ્રાન્સીયેન્ટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="274"/>
+        <location filename="../main.py" line="276"/>
         <source>RL Transient</source>
         <translation>RL ટ્રાન્સીયેન્ટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="275"/>
+        <location filename="../main.py" line="277"/>
         <source>RC Integration</source>
         <translation>RC  ઇન્ટિગ્રેશન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="276"/>
+        <location filename="../main.py" line="278"/>
         <source>Clipping with Diode</source>
         <translation>ડાયોડ સાથે ક્લિપપિંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="277"/>
+        <location filename="../main.py" line="279"/>
         <source>Clamping with Diode</source>
         <translation>ડાયોડ સાથે ક્લેમ્પિંગ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="279"/>
+        <location filename="../main.py" line="281"/>
         <source>NPN Ib vs IC plot</source>
         <translation>NPN Ib અને IC આલેખ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="280"/>
+        <location filename="../main.py" line="282"/>
         <source>Fourier Transform</source>
         <translation>કૂરીઅર ટ્રાન્સફો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="281"/>
+        <location filename="../main.py" line="283"/>
         <source>Rod Pendulum</source>
         <translation>રોડ લોલક</translation>
     </message>
     <message>
-        <location filename="../main.py" line="446"/>
+        <location filename="../main.py" line="448"/>
         <source>Enable PopUp Help Window</source>
         <translation>મદદ વિન્ડો કાર્યરત કરો</translation>
     </message>
@@ -2659,67 +2739,67 @@ p, li { white-space: pre-wrap; }
         <translation type="obsolete">Failed to load %s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="142"/>
+        <location filename="../main.py" line="143"/>
         <source>Device</source>
         <translation>ઉપકરણ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="155"/>
+        <location filename="../main.py" line="156"/>
         <source>Reconnect</source>
         <translation>ફરી સંપર્ક કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="156"/>
+        <location filename="../main.py" line="157"/>
         <source>LightBackGround</source>
         <translation>ઉજાશમાંય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="157"/>
+        <location filename="../main.py" line="158"/>
         <source>DarkBackGround</source>
         <translation>અંધકરમય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="158"/>
+        <location filename="../main.py" line="159"/>
         <source>Choose Language</source>
         <translation>ભાષા પસંદ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="143"/>
+        <location filename="../main.py" line="144"/>
         <source>School Expts</source>
         <translation>શાળા ના પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="144"/>
+        <location filename="../main.py" line="145"/>
         <source>Electronics</source>
         <translation type="unfinished">વીજાણુવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="145"/>
+        <location filename="../main.py" line="146"/>
         <source>Electrical</source>
         <translation>વિદ્યુત</translation>
     </message>
     <message>
-        <location filename="../main.py" line="146"/>
+        <location filename="../main.py" line="147"/>
         <source>Sound</source>
         <translation>ધ્વનિ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="147"/>
+        <location filename="../main.py" line="148"/>
         <source>Mechanics</source>
         <translation>યંત્રવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="148"/>
+        <location filename="../main.py" line="149"/>
         <source>Other Expts</source>
         <translation>બીજા પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="149"/>
+        <location filename="../main.py" line="150"/>
         <source>I2C Modules</source>
         <translation>I2C મોડ્યૂલ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="150"/>
+        <location filename="../main.py" line="151"/>
         <source>PythonCode</source>
         <translation>પાયથનકોડ</translation>
     </message>
@@ -2859,73 +2939,83 @@ p, li { white-space: pre-wrap; }
         <translation>સ્પલાઇન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="159"/>
+        <location filename="../main.py" line="160"/>
         <source>Screenshot</source>
         <translation>સ્ક્રીનશોટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="160"/>
+        <location filename="../main.py" line="161"/>
         <source>Whole Window Alt-s</source>
         <translation>આખી વિન્ડો Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="161"/>
+        <location filename="../main.py" line="162"/>
         <source>Graph Only Alt-p</source>
         <translation>ફક્ત આલેખ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="162"/>
+        <location filename="../main.py" line="163"/>
         <source>Credits</source>
         <translation>જમા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="256"/>
+        <location filename="../main.py" line="258"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="239"/>
+        <location filename="../main.py" line="240"/>
         <source>Pendulum Waveform</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="163"/>
+        <location filename="../main.py" line="164"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="261"/>
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="252"/>
+        <location filename="../main.py" line="254"/>
         <source>Visual Programming Editor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="251"/>
+        <location filename="../main.py" line="253"/>
         <source>Multiplexed Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="257"/>
+        <location filename="../main.py" line="259"/>
         <source>Magnetic Hysteresis (HMC5883L Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="249"/>
+        <location filename="../main.py" line="250"/>
         <source>Continuous Data Logger</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="242"/>
+        <location filename="../main.py" line="243"/>
         <source>Distance by VL53L0X LIDAR module</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="227"/>
+        <location filename="../main.py" line="228"/>
         <source>Flexible XY Plot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="833"/>
+        <source>Visual Programming</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="252"/>
+        <source>Ferroelectric PE Loop Tracer</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3050,7 +3140,7 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>helpWin</name>
     <message>
-        <location filename="../main.py" line="318"/>
+        <location filename="../main.py" line="320"/>
         <source>Help: %s</source>
         <translation>મદદ: %s</translation>
     </message>
@@ -3058,165 +3148,170 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="824"/>
+        <location filename="../main.py" line="842"/>
         <source>Credits</source>
         <translation type="unfinished">જમા</translation>
     </message>
     <message>
-        <location filename="../main.py" line="698"/>
+        <location filename="../main.py" line="704"/>
         <source>Failed to load scope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="739"/>
+        <location filename="../main.py" line="745"/>
         <source>Failed to load %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="789"/>
+        <location filename="../main.py" line="795"/>
         <source>Device</source>
         <translation type="unfinished">ઉપકરણ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="790"/>
+        <location filename="../main.py" line="796"/>
         <source>Reconnect</source>
         <translation type="unfinished">ફરી સંપર્ક કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="791"/>
+        <location filename="../main.py" line="797"/>
         <source>LightBackGround</source>
         <translation type="unfinished">ઉજાશમાંય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="792"/>
+        <location filename="../main.py" line="798"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">અંધકરમય પૃષ્ઠ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="793"/>
+        <location filename="../main.py" line="799"/>
         <source>Choose Language</source>
         <translation type="unfinished">ભાષા પસંદ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="812"/>
+        <location filename="../main.py" line="818"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="816"/>
+        <location filename="../main.py" line="822"/>
         <source>Screenshot</source>
         <translation type="unfinished">સ્ક્રીનશોટ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="817"/>
+        <location filename="../main.py" line="823"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished">આખી વિન્ડો Alt-s</translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="824"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished">ફક્ત આલેખ Alt-p</translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="840"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="821"/>
+        <location filename="../main.py" line="839"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="828"/>
+        <location filename="../main.py" line="846"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="830"/>
+        <location filename="../main.py" line="848"/>
         <source>School Expts</source>
         <translation type="unfinished">શાળા ના પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="834"/>
+        <location filename="../main.py" line="852"/>
         <source>Electronics</source>
         <translation type="unfinished">વીજાણુવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="859"/>
         <source>Electrical</source>
         <translation type="unfinished">વિદ્યુત</translation>
     </message>
     <message>
-        <location filename="../main.py" line="845"/>
+        <location filename="../main.py" line="863"/>
         <source>Sound</source>
         <translation type="unfinished">ધ્વનિ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="849"/>
+        <location filename="../main.py" line="867"/>
         <source>Mechanics</source>
         <translation type="unfinished">યંત્રવિજ્ઞાન</translation>
     </message>
     <message>
-        <location filename="../main.py" line="853"/>
+        <location filename="../main.py" line="871"/>
         <source>Other Expts</source>
         <translation type="unfinished">બીજા પ્રયોગો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="857"/>
+        <location filename="../main.py" line="875"/>
         <source>I2C Modules</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="861"/>
+        <location filename="../main.py" line="879"/>
         <source>PythonCode</source>
         <translation type="unfinished">પાયથનકોડ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="997"/>
+        <location filename="../main.py" line="1015"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1004"/>
+        <location filename="../main.py" line="1022"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1084"/>
+        <location filename="../main.py" line="1102"/>
         <source>Missing Plot</source>
         <translation type="unfinished">આલેખ ખોવાયેલો છે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1084"/>
+        <location filename="../main.py" line="1102"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished">કૃપા કરીને  જમણું બટન  દબાવો અને નિકાસ કરો</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1121"/>
+        <location filename="../main.py" line="1139"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished">પહોળાઈ દર્જ કરો (px). ઉંચાઈ જાતે સેટ થશે</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1173"/>
+        <location filename="../main.py" line="1191"/>
         <source>Oscilloscope</source>
         <translation type="unfinished">ઓસિલોસ્કોપ</translation>
     </message>
     <message>
-        <location filename="../main.py" line="819"/>
+        <location filename="../main.py" line="836"/>
         <source>Interactive Schematics(Beta)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="823"/>
+        <location filename="../main.py" line="841"/>
         <source>Stepper Motor Controller</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="826"/>
+        <source>Themes</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>simWin</name>
     <message>
-        <location filename="../main.py" line="334"/>
+        <location filename="../main.py" line="336"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>

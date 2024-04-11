@@ -1,0 +1,18 @@
+# LC Transient response
+
+
+Tap on OD1 to set it ON/OFF , and observe that A1 behaves accordingly.
+
+Now tap on the `SET OD1 LOW` or `SET OD1 HIGH` capture which records the transient behaviour and plots it.
+
+
+e.g. , if OD1 was OFF, then use the `SET OD1 HIGH` to view the charging curve of the LC
+
+
+The values chosen are for an underdamped response. The coil has in inductance more than 100mH and a resistance of around 500Ω. To increase damping, you may add a series resistor, or use a larger value capacitor.
+
+## Discussion
+
+Explore the oscillatory nature of L and C in series. Resonant frequency of series LC circuit is given by f0 = 1 ⁄ (2π√LC). The damping factor is R ⁄ (2√LC), and it is equal to 1 for critical damping. Depending upon the value of C/L and R, the response could be under-damped, critically-damped or over-damped.
+
+We have used the 3000 turn coil and a 0, 1μF capacitor. The voltage across the capacitor after a 5 to 0V step is shown in figure. The measured resonant frequency tallies with f = 1 ⁄ (2π√LC), within the component tolerance values.

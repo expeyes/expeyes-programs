@@ -1,0 +1,26 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Measured Voltage Vs Time\nduration=60\ninterval=2\nymin=-0.1\nymax=3.5\nrange=5\nautoscaleY=true\nfitmode=linear",
+        "x": 602.9699781818182,
+        "y": 205.47141818181817
+    },
+    "PCS": {
+        "ID": "PCS",
+        "desc": "min=0\nmax=2\nvalue=0.5\n",
+        "x": 90.7669701818182,
+        "y": 146.2993549090909
+    },
+    "PCSV": {
+        "ID": "PCSV",
+        "desc": "min=0\nmax=3.3\nvalue=0.5",
+        "x": 90.45197890909091,
+        "y": 440.93984727272726
+    },
+    "PV2": {
+        "ID": "PV2",
+        "desc": "min=-3.3\nmax=3.3\nvalue=0.1",
+        "x": 905.0234836363637,
+        "y": 447.53995636363635
+    }
+}

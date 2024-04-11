@@ -1,0 +1,20 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Applied Voltage(PV1 or WG) Vs Time\nduration=20\ninterval=5\nmin=-5\nmax=5\nymin=-5\nymax=5\nrange=5",
+        "x": 105.333068,
+        "y": 89.643738
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nvalue=2\nstepsize=0.01",
+        "x": 113.51226800000002,
+        "y": 345.70095999999995
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=3\nmax=10\nvalue=5\nstepsize=0.05\nfixOrder=2",
+        "x": 109.51226800000002,
+        "y": 629.70092
+    }
+}

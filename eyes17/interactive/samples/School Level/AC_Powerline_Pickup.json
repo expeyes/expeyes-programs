@@ -1,0 +1,14 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=p2p",
+        "x": 78.33905425507847,
+        "y": 89.26442779079368
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=Picked up Voltage(A1)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 5\nrangeA1=true\nNS=500\nTG=20\nx=time\ny1=A1\nyunits=V\nymin=-4\nymax=4\n  fitmode=sine\n",
+        "x": 17.80748063479638,
+        "y": 896.5110345941999
+    }
+}

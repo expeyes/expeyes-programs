@@ -1,0 +1,23 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+sweep=true
+xlabel=Voltage(A1)
+ylabel=Current ((PV1-A1)/1000)
+xunits=V
+yunits=A
+
+input=A1
+output=PV1
+start=-5
+stop=5
+stepsize=0.1
+xequation=A1
+yequation=(PV1-A1)/1000
+logging=true
+title=Output current vs voltage
+ymin=-0.05
+ymax=0.05
+xmin=-5
+xmax=5
+intro=Measure obtained current vs voltage for different load resistors

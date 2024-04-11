@@ -1,0 +1,50 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 111.10353509433963,
+        "y": 462.11522918181817
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 710.7647094339624,
+        "y": 462.2546012727272
+    },
+    "A3AC": {
+        "ID": "A3AC",
+        "desc": "channel=amp",
+        "x": 361.9488679245283,
+        "y": 462.76629627272723
+    },
+    "EQ:(A2_RMS)/500:A": {
+        "ID": "EQ:(A2_RMS)/500:A",
+        "desc": "#micro is ok. do not show nano\nminOrder=-6",
+        "x": 797.5931773584906,
+        "y": 3.6679778018181817
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "\ntitle=Oscilloscope: Vr, Vlc, Vl, Vc\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A1-A2,A3-A2,A1-A3]\nynames=[WG(A1),Vr,Vlc,Vl,Vc]\nhidechannels=[0]\nylabel=\nyunits=\nymin=-3.75\nymax=3.75\ntrigger_channel=y2\ntrigger_level=512\nfitmode=sine\nselectorStart=0\nselectorEnd=70\ncursor=false\n",
+        "x": 1129.0512,
+        "y": 726.0164530909091
+    },
+    "GRAPH:1-6": {
+        "ID": "GRAPH:1-6",
+        "desc": "\ntitle=Vr, Vc(A1-A3)\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A1-A3]\nynames=[WG(A1),Vr(A2),Vc(A1-A3)]\nymin=-3.75\nymax=3.75\ntrigger_channel=y2\ntrigger_level=512\nfitmode=sine\nselectorStart=20\nselectorEnd=80\ncursor=false\n",
+        "x": 1142.6361056603776,
+        "y": 726.0164530909091
+    },
+    "GRAPH:1-6-3": {
+        "ID": "GRAPH:1-6-3",
+        "desc": "\ntitle=Vwg , Vlr, Vr, Vl(A3-A2)\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A3-A2]\nynames=[WG(A1),Vr(A2),Vl(A3-A2)]\nymin=-3.75\nymax=3.75\ntrigger_channel=y2\ntrigger_level=512\nfitmode=sine\nselectorStart=20\nselectorEnd=80\n",
+        "x": 1156.2210113207548,
+        "y": 726.0164530909091
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=10\nmax=5000\nvalue=1600\nstepsize=1\nfixOrder=0\n\n",
+        "x": 109.24752,
+        "y": 215.3354557909091
+    }
+}

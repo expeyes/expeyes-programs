@@ -1,0 +1,8 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Pulse\nduration=5\nymax=3\nymin=0\nrangeA1=true\nautoscaleY=true",
+        "x": 920.7535695715319,
+        "y": 379.7580885428572
+    }
+}

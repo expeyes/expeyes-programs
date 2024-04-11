@@ -1,0 +1,7 @@
+NPN Transistor Common Emitter output Characteristics
+
+Vary PV1 and observe the current throught the transistor.
+
+Open the IO controls menu, and increase PV2 from 0.6 onwards and record the saturation current of the transistor for different base currents
+
+[ExpEYES.in NPN Characteristics](https://expeyes.in/experiments/electronics/npn.html)

@@ -37,7 +37,7 @@ echo "Setting User Permissions for USB port for ExpEYES17/SEELab3: Your Lab @ Ho
 
 echo "SUBSYSTEM==\"usb\",ATTRS{idVendor}==\"03eb\", ATTRS{idProduct}==\"21ff\", MODE=\"666\"" > /etc/udev/rules.d/99-eyes.rules
 echo "SUBSYSTEM==\"tty\",ATTRS{idVendor}==\"0403\", ATTRS{idProduct}==\"6001\", MODE=\"666\"" >> /etc/udev/rules.d/99-eyes.rules
-echo "SUBSYSTEM==\"tty\",ATTRS{idVendor}==\"04d8\", ATTRS{idProduct}==\"00df\", MODE=\"666\"" >> /etc/udev/rules.d/99-eyes.rules
+echo "SUBSYSTEM==\"usb\",ATTRS{idVendor}==\"04d8\", ATTRS{idProduct}==\"00df\", MODE=\"666\"" >> /etc/udev/rules.d/99-eyes.rules
 echo "SUBSYSTEM==\"tty\",ATTRS{idVendor}==\"1a86\", ATTRS{idProduct}==\"7523\", MODE=\"666\"" >> /etc/udev/rules.d/99-eyes.rules
 
 echo "ATTRS{idVendor}==\"03eb\", ATTRS{idProduct}==\"21ff\", ENV{ID_MM_DEVICE_IGNORE}=\"1\""  >> /etc/udev/rules.d/99-eyes.rules

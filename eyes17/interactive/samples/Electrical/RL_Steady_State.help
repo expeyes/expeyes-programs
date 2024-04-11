@@ -1,0 +1,30 @@
+# RL Steady State Response
+
+Under a sinusoidal signal, the three basic passive components Resistance, Inductance, and Capacitance show different phase relationships between the voltage and current. For a resistor the voltage waveforms are “in-phase” with the current. In a pure inductance the voltage waveform “leads” the current by 90 degree. In a pure capacitance the voltage waveform “lags” the current by 90 degree. Using ExpEYES/SEELab we can study these things experimentally. 
+
+
+We will also explore the phase relationships between voltages at various points in the circuit. 
+
+
+RL Circuits will be studied here.
+
+## Objective
+
+Measure the amplitude and phase values in an RL circuit. The phase difference of voltages at the two ends of the inductor is given by
+
+θ = tanh(XL)/R , where  XL = 2πfL
+
+
+
++ Use a bread board as shown in the figure.
++ Fix a 10mH inductor and 1kΩ resistor.
++ Make the connections as shown in the first schematic.
++ Repeat the measurements, at different frequencies.
+
+Measure the waveforms for the RL circuit. 
+
+The red trace (voltage at A2) is the voltage waveform across the resistance. This can be considered as the current waveform since voltage and current are in phase across a resistance. 
+
+The A1-A2(Green) trace is the voltage across the inductor, and it can be seen that the current waveform is lagging by 90 deg.
+
+To calculate current waveform, select the analysis button, and note the phase difference between the red trace(A2 : Current), and Green Trace (A1-A2 : Vl) .

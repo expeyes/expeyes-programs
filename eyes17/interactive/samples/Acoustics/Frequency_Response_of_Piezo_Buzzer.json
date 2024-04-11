@@ -1,0 +1,20 @@
+{
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 40.86879610045922,
+        "y": 426.9401714666667
+    },
+    "MIC": {
+        "ID": "MIC",
+        "desc": "",
+        "x": 861.890221652665,
+        "y": 353.8980365666667
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=1000\nmax=5000\nvalue=2800\n\n#Sweep options\nsweep=WG\nstart=10\nstop=5000\nstepsize=10\n\ntitle=A2(input) and MIC(output)\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nchannels=2\nxaxis=time\ny1=MIC\ny2=A2\nymin=-4\nymax=4\nfitmode=sine\n\n  ",
+        "x": 39.94924612274817,
+        "y": 71.93479227666667
+    }
+}

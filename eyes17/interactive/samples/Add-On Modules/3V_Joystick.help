@@ -1,0 +1,3 @@
+##  Joystick (Variable Resistor/potentiometer)
+
+The Joystick used on game controllers is usually a set of 2 variable resistors. One end is connected to 3.3V (CS1,CS2..) , and the other to GND . When the Joystick is at the center, the midpoint voltage of this potentiometer is at 3.3/2 = 1.65 Volts. When it is moved towards the 3.3V side, the voltage approaches 3.3, and when it is moved towards GND(0V), the voltage moves towards 0. A set of 2 such resistors allow us to use the joystick in 2 directions (X, Y)

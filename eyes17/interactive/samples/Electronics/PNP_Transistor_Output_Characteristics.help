@@ -1,0 +1,21 @@
+# PNP Transistor Common Emitter output Characteristics
+
+The basic working principle of a transistor is controlling a bigger current in circuit using a small current in another circuit. Being a three terminal device, one terminal has to be common for the two crcuits. The common emitter configuration is very common in most of the applications. We can explore the working of the transistor by studying the relationships between various voltages at different terminals and currents through them.
+
+## Objective
+
+Using a PNP transistor, plot the Collector voltage against the collector current in a common emitter configuration. Repeat it for different base currennts. Collector current is calculated from the voltage across the a 1K resistor, in the collector circuit.
+
+Vary PV1 and observe the current throught the transistor.
+
+Open the IO controls menu, and decrease PV2 from -0.6 onwards and record the saturation current of the transistor for different base currents
+
+# Discussion
+
+The characteristic curves for different base currents are measured. The collector current is obtained from the voltage difference across the 1kΩ resistor.
+
+The base current is set by setting the voltage at one end of the 100kΩ resistor, the other end is connected to the transistor base. If A2 is not connected, the code assumes -0.6 volts at the base to calculate the base current.
+
+
+
+[ExpEYES.in PNP Characteristics](https://expeyes.in/experiments/electronics/pnp.html)

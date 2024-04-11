@@ -1,0 +1,22 @@
+# Measure Duty Cycle
+
+Duty cycle is the ratio of ON time vs OFF time of an oscillating signal
+
+Connect SQ1 to the IN2 input, and tap it to measure the duty cycle. Now adjust the duty cycle of SQ1 and measure again.
+
+For SEN input you can also see the analog signal move up and down in the oscilloscope graph of SEN shown below. This is because SEN supports analog voltage measurements as well as digital timing measurements.
+
+
+## Activity: Digital Communication
+
+You will need 2 SEELab/ExpEYES17 devices, an LDR, and a small diode laser for a proper demo.
+
+We shall attempt to convey information from one device to another using light.
+
++ Connect the laser to SQ1 and GND of one SEELab. This will be the information transmitter
++ For the second SEELab, connect the LDR between SEN and GND.
++ For the Laser, Set the duty cycle to 100(Always ON), and let it shine on the LDR of the other SEELab. 
++ Check that the voltage of SEN is below at least 2 Volts when the LDR is illuminated.
++ Block the laser from falling on the LDR and check that the voltage exceeds at least 3.5V.
++ Now allow the laser to fall on the LDR, and set the frequency to some value below 100Hz, and try different duty cycles as well.
++ On the SEELab with the LDR, tap on the SEN timing measurement button , and observe that the same values are received

@@ -1,0 +1,26 @@
+{
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=0\nymax=5\nchannels=1\nxaxis=time\ny1=A1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 4\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=650\ntitle=Monitor LED( SQ1-> A1)\n  ",
+        "x": 1148.8969401488482,
+        "y": 750.4685170922497
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=3\nvalue=1\nstepsize=0.1",
+        "x": 889.0801690520518,
+        "y": 143.74188797733868
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=5\nmax=200\nvalue=45\nstepsize=0.1",
+        "x": 49.47776523934068,
+        "y": 274.785439352148
+    },
+    "SQ1DC": {
+        "ID": "SQ1DC",
+        "desc": "min=0\nmax=100\nvalue=5",
+        "x": 49.47776523934068,
+        "y": 513.6079631916288
+    }
+}

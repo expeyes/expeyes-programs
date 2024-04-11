@@ -1,0 +1,11 @@
+## Stroboscopic Effect
+
+The stroboscopic effect is when a moving object looks like it's frozen in different positions, like in a cartoon. This happens when a light flashes very quickly while the object is moving, and our eyes see the object at different places each time the light flashes. It's like taking a bunch of pictures of the object as it moves, and then looking at the pictures one by one. We often see this effect in disco lights or in action movies when things are moving really fast.
+
+The DC Motor is connected to PV1 to make it spin. Apply at least 1 volt, and observe that the speed of rotation increases with the voltage.
+
+Perform the experiment in a dimly lit room .
+
+A white LED is connected to SQ1 whose frequency can be controlled. The duty cycle is set to 5% , so the LED is ON only 5% of the time, and is off 95% of the time.
+
+Illuminate the spinning rotor of the DVD motor using this LED, and adjust the frequency such that the rotor appears to be in a fixed position. This is the rotational frequency of the motor.

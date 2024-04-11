@@ -39,6 +39,8 @@ class VL53L01X:
         vcsel_period_pclks = (vcsel_period_reg + 1) << 1;
         return vcsel_period_pclks
 
+    def getRaw(self):
+        return self.getVals()
 
     def getVals(self):
         val1 = self.I2CWriteBulk(self.VL53L0X_address, [self.VL53L0X_REG_SYSRANGE_START, 0x01])

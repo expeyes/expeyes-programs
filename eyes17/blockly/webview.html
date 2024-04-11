@@ -20,6 +20,8 @@
   <link rel="stylesheet" type="text/css" href="gauge-glossy.min.css">
   <script src="msg/js/en.js"></script>
   <link rel="stylesheet" type="text/css" href="piano.css">
+
+  <script src="blocks/blockHelp.js"></script>
   <script src="blocks/api.js"></script>
   <script src="blocks/FlotPlots.js"></script>
   <script src="blocks/Lists.js"></script>
@@ -505,7 +507,6 @@
 
   <sep></sep>
 
-
   <category name="ExpEYES" colour="#a55b80">
 
     <block type="get_voltage">
@@ -533,7 +534,6 @@
     <block type="read_i2c_sensor_flexible_dynamic">
     </block>
 
-
     <block type="multi_r2r">
       <field name="CHANNEL">IN2</field>
       <field name="SKIP">0</field>
@@ -558,6 +558,24 @@
 
     <block type="set_servo">
       <field name="CHANNEL">SQ1</field>
+    </block>
+
+    <block type="init_stepper">
+    </block>
+
+    <block type="move_stepper">
+      <value name="STEPS">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+
+      <value name="DELAY">
+        <shadow type="math_number">
+          <field name="NUM">10</field>
+        </shadow>
+      </value>
+
     </block>
 
   <category name="Captures" colour="#5ba55b">
@@ -661,6 +679,9 @@
       <block type="read_TSL2561">
         <field name="CHANNEL">0</field>
       </block>
+      <block type="read_TSL2591">
+        <field name="CHANNEL">0</field>
+      </block>
       <block type="read_QMC5883L">
         <field name="CHANNEL">0</field>
       </block>
@@ -677,6 +698,12 @@
       </block>
       <block type="read_HX711">
         <field name="CHANNEL">25</field>
+      </block>
+
+      <block type="read_ph_meter">
+        <field name="CHANNEL">A1</field>
+        <field name="SLOPE">-17.905</field>
+        <field name="OFFSET">35.5</field>
       </block>
 
 
@@ -797,6 +824,10 @@
 <div class="ui content mygrid pusher" style="padding:0.2rem ! important;">
 <div class="ui two column top aligned grid expand">
 	<div class= "ui row">
+      <div class="top aligned row">
+        <div class="ui relaxed horizontal divided list gauges">
+        </div>
+      </div>
 
 		<div class="column ten wide expand">
 		  <div id="toolbar" class="ui secondary menu mini ">
@@ -866,23 +897,14 @@
 </div>
 
 
-
-<div class="ui fullscreen modal help" style="height:100%;">
+<div class="ui help modal">
   <i class="close icon"></i>
-  <div class="column" style="height:95%;padding:10px;">
-    <div class="ui top attached tabular menu">
-      <a class="active item" data-tab="summary">Instructions</a>
-      <a class="item" data-tab="edit"><i class="icon edit sign"></i></a>
-    </div>
-
-    <div class="ui tab active" data-tab="summary" style="height:99%;">
-      <div class="ui content" style="overflow-y:auto;height:100%;word-wrap:break-word;">
-        Instructions
-      </div>
-    </div>
-
-    <div class="ui tab" data-tab="edit" style="height:99%;">
-      <textarea class = "edittext" style="height:100%;"></textarea>
+  <div id="helptitle" class="header">
+    Title
+  </div>
+  <div class="image content">
+    <div id="helpdescription" class="description">
+      Help
     </div>
   </div>
 </div>
@@ -907,6 +929,8 @@
     var isRunning = false;
 
 	var registers = 	  $('.list.registers');
+	var gaugearea = 	  $('.list.gauges');
+
 	var regvals = [];
 	var command = $('.description.cmdarea');
 
@@ -914,6 +938,21 @@
 
     // Initialize Help Window sidebar
     var helpeditor = loadquill();
+
+    // Initialize function helps (Block wise help)
+    var helptitle = $('#helptitle');
+    var helpdescription = $('#helpdescription');
+
+    function showBlockHelp(name){
+        helptitle.text(name);
+        helpdescription.html(Blockly.Msg[name]);
+        $('.ui.modal')
+          .modal({
+            blurring: true
+          })
+          .modal('show')
+        ;
+    }
 
 
 
@@ -941,7 +980,7 @@
 						if(!devState){$('.message.missingdevice').closest('.message').transition('fade in','1000mS').transition('glow');}
 					});
 				
-
+                getSensorList();
 
 			}else{
 				alert('no hardware bridge');
@@ -1074,7 +1113,7 @@ var blocklyArea = document.getElementById('blocklyArea');
     blocklyDiv.style.left = x + 'px';
     blocklyDiv.style.top = y + 'px';
     blocklyDiv.style.width = blocklyArea.offsetWidth + 'px';
-    blocklyDiv.style.height = blocklyArea.offsetHeight + 'px';
+    blocklyDiv.style.height = (blocklyArea.offsetHeight-20) + 'px';
     Blockly.svgResize(workspacePlayground);
   };
   window.addEventListener('resize', onresize, false);
@@ -1307,8 +1346,6 @@ var blocklyArea = document.getElementById('blocklyArea');
               highlightPause = false;
               if(!latestCode.startsWith('programStarting'))
                  latestCode = 'programStarting();' + latestCode;
-              if((latestCode.search('write_to_file') != -1 ) || (latestCode.search('save_lists') != -1 ))
-                  latestCode = 'startStorage();\n' + latestCode;
 
               console.log(latestCode);
               try{myInterpreter = new Interpreter(latestCode, initAllApis);}
@@ -1461,6 +1498,7 @@ var blocklyArea = document.getElementById('blocklyArea');
             var parsedxml = Blockly.Xml.textToDom(msg);
             loadhelp(parsedxml);
             Blockly.Xml.clearWorkspaceAndLoadFromXml(parsedxml,workspacePlayground);
+            console.log('loaded new file');
             }
 
 
@@ -1472,7 +1510,6 @@ var blocklyArea = document.getElementById('blocklyArea');
 			}else{ // Process markdown
   			  helpeditor.clipboard.dangerouslyPasteHTML(converter.makeHtml(workspaceMD));
             }
-
 			return true;
 		} catch (e) {
 			console.log("Invalid xml",e);

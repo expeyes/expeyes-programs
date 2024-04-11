@@ -1,0 +1,14 @@
+{
+    "GRAPH:1-3": {
+        "ID": "GRAPH:1-3",
+        "desc": "title=Microphone Input(MIC)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 3\nNS=500\nTG=2\nx=time\ny1=MIC\nymin=-4\nymax=4\nfitmode=sine\n\nautomatic=false\nthreshold=1.2\nmaxthreshold=3.2\n  ",
+        "x": 1155.7771269648404,
+        "y": 753.5620902857142
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=500\nmax=5000\nvalue=1000\n\n  ",
+        "x": 35.189727870360166,
+        "y": 248.42252159999998
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "HMC5883L:0": {
+        "ID": "HMC5883L:0",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10\nunits=G",
+        "x": 79.01840572068335,
+        "y": 79.0882586017405
+    },
+    "HMC5883L:1": {
+        "ID": "HMC5883L:1",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10\nunits=G",
+        "x": 79.02313080435975,
+        "y": 373.56331614257465
+    },
+    "HMC5883L:2": {
+        "ID": "HMC5883L:2",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10\nunits=G",
+        "x": 79.01840572068335,
+        "y": 654.3860725546152
+    },
+    "HMC5883L:3": {
+        "ID": "HMC5883L:3",
+        "desc": "w=150\nh=150\nlogging=true\nduration=10\nunits=G",
+        "x": 433.8741525082116,
+        "y": 583.6569904624321
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 873.6547571368756,
+        "y": 695.8209679417223
+    }
+}

@@ -1,8 +1,11 @@
+import functools
 import os
 
+from PyQt5 import QtWidgets, QtGui
 from PyQt5.QtGui import QIcon, QPainter
 from PyQt5.QtWidgets import QTreeWidgetItem, QGraphicsView
 from PyQt5.QtCore import Qt, QTimer
+
 
 
 def load_defaults(buffer):
@@ -28,6 +31,7 @@ def load_defaults(buffer):
     return pMap, iMap
     # print(propMap.keys())
 
+
 class CustomGraphicsView(QGraphicsView):
     def __init__(self, scene):
         super().__init__(scene)
@@ -38,7 +42,6 @@ class CustomGraphicsView(QGraphicsView):
     def resizeEvent(self, event):
         super().resizeEvent(event)
         self.fitInView(self.sceneRect(), Qt.KeepAspectRatio)
-
 
 
 def load_project_structure(startpath, thumbpath, tree):
@@ -53,4 +56,5 @@ def load_project_structure(startpath, thumbpath, tree):
             if name.endswith('.png'):
                 parent_itm = QTreeWidgetItem(tree, [name.replace('.png', '')])
                 parent_itm.setIcon(0, QIcon(os.path.join(thumbpath, element.replace('.png', '.jpg'))))
+
 

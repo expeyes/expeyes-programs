@@ -1,0 +1,44 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 50.01047645647427,
+        "y": 220.40275638857145
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 332.46083287687503,
+        "y": 217.76669753142858
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=A1 vs A2\nmode=scope\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=2000\nTG=5\nx=time\ny1=A1\ny2=A2\nyunits=V\nxunits=V\nymin=-8\nymax=8\nxmin=-8\nxmax=8\n\n## xyx  and xyy must be in ylist array\nxy=true\nxyx=A1\nxyy=A2\n\n\nrangeA1=true\nrangeA2=true\n",
+        "x": 1154.4746141299502,
+        "y": 194.6425898057143
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nvalue=0\nstepsize=0.01\n",
+        "x": 604.32358252597,
+        "y": 511.8036829714286
+    },
+    "PV2": {
+        "ID": "PV2",
+        "desc": "min=-3\nmax=3\nvalue=0\nstepsize=0.01",
+        "x": 912.1606212181621,
+        "y": 511.8036829714286
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=10\nmax=5000\nvalue=1000\n",
+        "x": 332.70266603285944,
+        "y": 511.8036829714286
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=10\nmax=5000\nvalue=1000\n",
+        "x": 38.446702590922136,
+        "y": 511.8036829714286
+    }
+}

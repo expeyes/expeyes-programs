@@ -1,0 +1,20 @@
+{
+    "OD1": {
+        "ID": "OD1",
+        "desc": "",
+        "x": 545.7569540363287,
+        "y": 227.017418624281
+    },
+    "SEN": {
+        "ID": "SEN",
+        "desc": "logging=true\ntitle=Switch Status\nmin=0\nmax=3.3\nduration=20",
+        "x": 448.8826930992657,
+        "y": 880.5062919629867
+    },
+    "TIMING": {
+        "ID": "TIMING",
+        "desc": "channel=SEN\nunits=S\ncommand=edges_action\nedgetype=all\npoints=2\naction=OD1\nTG=2\n# Correction accounts for 3mS delay in the relay demagnetising\ncorrection=-3e-3\nautomatic=false",
+        "x": 810.0848745419379,
+        "y": 515.1639462543045
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=rms",
+        "x": 446.1978339622641,
+        "y": 462.229158
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=rms",
+        "x": 792.2741433962265,
+        "y": 462.368530090909
+    },
+    "EQ:(A1minusA2_PHASE-A2_PHASE):\u00b0": {
+        "ID": "EQ:(A1minusA2_PHASE-A2_PHASE):\u00b0",
+        "desc": "#micro is ok. do not show nano\nminOrder=-6",
+        "x": 15.881894716981133,
+        "y": 648.9990779999999
+    },
+    "EQ:(A2_RMS)/1000:A": {
+        "ID": "EQ:(A2_RMS)/1000:A",
+        "desc": "#micro is ok. do not show nano\nminOrder=-6",
+        "x": 699.8590188679244,
+        "y": 3.7721985627272723
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=100\nmax=5000\nvalue=1000\nstepsize=1\n\nfixOrder=0",
+        "x": 27.738086037735847,
+        "y": 328.51726718181817
+    }
+}

@@ -608,7 +608,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
             self.SQ1val = val
             self.SQ1slider.setValue(int(self.SQ1val))
             try:
-                if 0 <= val < 4: val = 0
+                if 0 <= val < .1: val = 0
                 self.SQ1text.setValue(val)
                 res = self.p.set_sqr1(val, self.dutyCycle)
                 # res = self.p.set_sqrs(val, self.dutyCycle)

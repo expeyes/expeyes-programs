@@ -615,7 +615,7 @@ function initApi(interpreter, scope) {
 		  interpreter.setProperty(scope, 'write_to_file', interpreter.createAsyncFunction(
 				function(fname, txt, newline,callback) {
 					if(newline){txt+='\n';}
-			  return JSBridge.writeToFile(fname,txt,callback);
+			        return JSBridge.writeToFile(fname,txt,callback);
 				})
 			);
 

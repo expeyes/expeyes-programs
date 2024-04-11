@@ -1,0 +1,93 @@
+/*
+Style Sheet for QT Applications
+Author: jihtin
+*/
+/* Define color palette */
+
+/* General styling for buttons */
+QPushButton, QCheckBox {
+    background-color: #ccd0d1;
+    color: #333333;
+    border: 1px solid #bdc3c7;
+    border-radius: 5px;
+    padding: 8px 16px;
+}
+
+QPushButton:hover , QCheckBox:hover{
+    background-color: #d0d3d4;
+    border: 1px solid #bdc3c7;
+}
+
+/* Primary button styling */
+QPushButton[primary="true"] {
+    background-color: #3498db;
+    color: #ffffff;
+    border: 1px solid #3498db;
+}
+
+QPushButton[primary="true"]:hover {
+    background-color: #2980b9;
+    border: 1px solid #2980b9;
+}
+
+/* Dropdown styling */
+QComboBox {
+    background-color: #ecf0f1;
+    color: #333333;
+    border: 1px solid #bdc3c7;
+    padding: 6px;
+}
+
+/* Tab styling */
+QTabWidget::pane {
+    border: 1px solid #bdc3c7;
+    border-top: none;
+}
+
+QTabBar::tab {
+    background-color: #ecf0f1;
+    color: #333333;
+    padding: 8px 16px;
+}
+
+QTabBar::tab:selected {
+    background-color: #34787b;
+    color: #ffffff;
+}
+
+/* Dock styling */
+QDockWidget {
+    titlebar-close-icon: url(:/icons/close.png);
+    titlebar-normal-icon: url(:/icons/normal.png);
+    titlebar-maximize-icon: url(:/icons/maximize.png);
+    titlebar-minimize-icon: url(:/icons/minimize.png);
+}
+
+/* Frame styling */
+QFrame {
+    background-color: #ecf0f1;
+    color: #333333;
+}
+
+
+/* --- RUN button --*/
+QCheckBox::indicator:checked {
+
+	height: 10px;
+	width: 10px;
+	border-style:solid;
+	border-width: 1px;
+	border-color: #0f0;
+	color: #a9b7c6;
+	background-color: #02ff6f;
+}
+QCheckBox::indicator:unchecked {
+
+	height: 10px;
+	width: 10px;
+	border-style:solid;
+	border-width: 1px;
+	border-color: #411;
+	color: #a9b7c6;
+	background-color: #994444;
+}

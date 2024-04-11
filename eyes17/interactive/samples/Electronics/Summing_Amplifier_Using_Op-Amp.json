@@ -1,0 +1,32 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 982.4336908253938,
+        "y": 602.6510669400001
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 29.328023537348926,
+        "y": 44.194214327999994
+    },
+    "A3": {
+        "ID": "A3",
+        "desc": "",
+        "x": 29.328023537348926,
+        "y": 430.50760146000005
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nstepsize=0.01\n\n\nmode=scope\nsweep=PV1\nstart=-5\nstop=5\ntitle=Input(A2,A3) vs Output(A1)\n\nchannels=3\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nfitmode=sine\nxaxis=time\nylist=[A1,A2,A3]\nynames=[A2(PV1),A3(PV2),A1(Out)]\nymin=-5\nymax=5",
+        "x": 26.84109367953617,
+        "y": 227.63772408000003
+    },
+    "PV2": {
+        "ID": "PV2",
+        "desc": "min=-3\nmax=3\nstepsize=0.01",
+        "x": 26.84109367953617,
+        "y": 610.43498112
+    }
+}

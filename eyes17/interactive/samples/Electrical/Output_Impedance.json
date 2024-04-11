@@ -1,0 +1,38 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 940.8479322188111,
+        "y": 148.91836381714285
+    },
+    "EQ:A1/1000": {
+        "ID": "EQ:A1/1000",
+        "desc": "",
+        "x": 713.8903220769539,
+        "y": 492.7080651428572
+    },
+    "EQ:PV1/1000": {
+        "ID": "EQ:PV1/1000",
+        "desc": "",
+        "x": 716.0198300622599,
+        "y": 638.7272722285715
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=PV1 vs A1\n\nxaxis=A1\nyaxis=(PV1-A1)/1000\nxmin=0\nxmax=3\nymin=0\nymax=0.005\n\nxunits=V\nyunits=A",
+        "x": 13.37056247580051,
+        "y": 764.4056112000001
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nstepsize=0.1\n\n#Configure Automatic Sweep\n\nsweep=PV1\ntitle=V(A1) vs I ( A1/1000)\nstart=-5\nstop=5\nstepsize=0.01\ndelay=1\nsettling=2\n\nxaxis=A1\nxmin=-5\nxmax=5\n\nyaxis=A1/1000\nymin=-.005\nymax=.005",
+        "x": 98.77883272533316,
+        "y": 158.13257780571428
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 8.880015477865227,
+        "y": 521.5162957714286
+    }
+}

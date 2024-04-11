@@ -1,0 +1,30 @@
+[default]
+#Parameters for launching the experiment
+# ui = sweeplogger/samplelogger/datalogger
+ui=cvlogger
+xlabel=Voltage(A1-A2)
+ylabel=Current ((PV1-A1)/R1)
+xunits=V
+yunits=A
+
+input=A1
+output=PV1
+start=-3
+stop=3
+stepsize=0.1
+xequation=A1-A2
+yequation=(PV1-A1)/R1
+logging=true
+title=Cyclic Voltammetry
+ymin=-0.005
+ymax=0.005
+xmin=-3
+xmax=3
+intro=Measure current vs Voltage
+extrainputs=A2
+halfcycles=2
+#comma separated
+variables=R1:1000:Ω
+settlingDelay=20
+autoscaleY=true
+autoscaleX=true

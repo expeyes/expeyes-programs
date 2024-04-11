@@ -1,0 +1,7 @@
+# Logic Gates
+
+Logic gate circuits can perform operations like AND, OR etc. They can be implemented using PN junction diodes for demonstration purpose. A wide range of logic gate ICs are also available.
+
+### Objective
+
+Study of logic gates using SQ1, SQ2 as inputs monitored by A1, A2 , and output on A3

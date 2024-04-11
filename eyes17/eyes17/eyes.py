@@ -21,6 +21,7 @@ import os, time
 
 from . import commands_proto as CP
 from . import packet_handler as packet_handler
+from . import wifi_packet_handler_udp as wifi_packet_handler_udp
 from collections import OrderedDict
 
 from .achan import *
@@ -37,6 +38,16 @@ fileOpen = open
 
 
 def open(**kwargs):
+    obj = Interface(**kwargs)
+    if obj.H.fd != None:
+        return obj
+    else:
+        print('Device opening Error')
+        return obj
+    # raise RuntimeError('Could Not Connect')
+
+def open_android(**kwargs):
+    kwargs['ip'] = 'detect'
     obj = Interface(**kwargs)
     if obj.H.fd != None:
         return obj
@@ -119,10 +130,12 @@ class Interface():
 
         # --------------------------Initialize communication handler, and subclasses-----------------
         self.timestamp = None
-        self.H = packet_handler.Handler(**kwargs)
+        if('ip' in kwargs):
+            self.H = wifi_packet_handler_udp.Handler(**kwargs)
+        else:
+            self.H = packet_handler.Handler(**kwargs)
         self.version_number = 1.0
         try:
-            # self.H = packet_handler.Handler(**kwargs)
             self.version = self.H.version_string
             try:
                 self.version_number = float(self.version[-3:])
@@ -137,6 +150,7 @@ class Interface():
 
         try:
             self.__runInitSequence__(**kwargs)
+            print('W###################-------------')
 
         except Exception as ex:
             self.errmsg = "failed to run init sequence. Check device connections\n" + str(ex)
@@ -180,15 +194,16 @@ class Interface():
             self.SPI = SPI(self.H)
         # self.I2C.pullSCLLow(5000)
         self.hexid = ''
-        if self.H.connected:
-            for a in self.gains: self.set_gain(a, self.gains[a], True)  # Force load gain
-            self.load_equation('sine')
-            self.hexid = hex(self.device_id())
 
+        if self.H.connected and 'ip' not in kwargs:
+            for a in self.gains: self.set_gain(a, self.gains[a], True)  # Force load gain
+            self.hexid = hex(self.device_id())
+            if 'ip' not in kwargs:
+                self.load_equation('sine')
         self.DAC = PWMDAC(self.H, 3.3, 0)
         self.calibrated = False
         # -------Check for calibration data if connected. And process them if found---------------
-        if kwargs.get('load_calibration', True) and self.H.connected:
+        if kwargs.get('load_calibration', True) and self.H.connected and 'ip' not in kwargs:
             import struct
             cap_and_pcs = self.read_bulk_flash(self.CAP_AND_PCS, 5 + 8 * 4)  # READY+calibration_string
             try:
@@ -279,7 +294,7 @@ class Interface():
             if (sensor == 'BMP280'):
                 self.sensors.BMP280_init()
                 self.active_sensors[sensor] = self.sensors.BMP280_all
-            if (sensor == 'TSL2561'):
+            elif (sensor == 'TSL2561'):
                 self.sensors.TSL2561_init()()
                 self.active_sensors[sensor] = self.sensors.TSL2561_all()
             elif (sensor == 'MPU6050'):
@@ -339,7 +354,7 @@ class Interface():
                 senslist.append(supported.supported.get(address).connect(self.I2C))
                 if verbose:
                     print('____DOCS____ : '+mysens['name']+ '@' + str(address))
-                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)}]")
+                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)-1}]")
                     print('\tsens will be None if no sensor was detected ')
                     print('\tAvailable Fields:', )
                     for a in range(len(mysens['fields'])):

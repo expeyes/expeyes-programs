@@ -1,0 +1,143 @@
+{
+  "Getting Started":
+  {
+    "image": "Getting Started.jpg",
+    "directory": "Getting Started",
+    "description": "A collection of simple introductory topics such as measurement of voltage, resistance, capacitance etc",
+    "files": {
+      "DC Voltmeter.svg": "Measure a DC Voltage from a source such as a battery",
+      "Measure PV1.svg": "Measure the voltage of the adjustable voltage source PV1",
+      "Measure Capacitance.svg": "Measure capacitance value of different capacitors",
+      "Measure Resistance.svg": "Measure resistors in series and in parallel",
+      "Study of LDR.svg": "Observe the behaviour of a light dependent resistor",
+      "Ohms Law.svg": "Study DC Ohm's Law",
+      "Lemon Cell.svg": "Make a lemon cell and measure its voltage",
+      "DC Resistance of Human Body.svg": "Measure resistance of the human body with a DC signal",
+      "Potentiometer using HB pencil.svg": "Make a potential divider network using a graphite pencil",
+      "Voltmeters A1,A2,A3.svg": "A collection of 3 voltmeters (A1, A2, and A3)"
+    }
+  },
+  "School Level":
+    {
+      "image": "School Level.jpg",
+      "directory": "School Level",
+      "description": "Fundamental concepts taught in High School. lemon cell, AC/DC , echo sensor, AC generator using coil etc..",
+      "files": {
+        "Study An Electromagnet.svg": "Pass current through a coil to create a magnetic field and observe its effect on a permanent magnet",
+        "Driven Pendulum.svg": "Use a solenoid connected to an AC source to push a hanging permanent magnet back and forth. Study resonance ",
+        "Electromagnetic Induction.svg": "Drop a magnet through a solenoid, and visualize the voltage signal induced due to the changing magnetic flux. ",
+        "Simple AC Generator.svg": "Use a solenoid and a rotating magnet to generate electricity",
+        "Direct and Alternating Currents.svg": "What is AC? What is DC? What is a mixed signal?",
+        "AC Through A Resistor.svg": "Behaviour of AC current flowing through a resistor",
+        "AC Through A Capacitor.svg": "Behaviour of an AC current flowing through a capacitor",
+        "AC Through An Inductor.svg": "Behaviour of an AC current flowing through an inductor",
+        "AC Through Series LCR.svg": "Behaviour of an AC current flowing through a series LCR Circuit",
+        "Measuring the Conductivity of Water.svg": "Measure AC and DC conductivity of water",
+        "AC Resistance of Human Body.svg": "Measure resistance of the human body with an AC signal",
+        "Mutual Induction.svg": "Use 2 coils and create a working model of a transformer",
+        "AC Powerline Pickup.svg": "Understand electrical noise due to 50/60Hz power lines surrounding us",
+        "Generating and Digitizing Sound.svg": "Measure sound and visualize it",
+        "Stroboscope.svg": "Measure speed of a rotating object using a flashing LED",
+        "Distance using ultrasound echo module SR04.svg": "Measure distance using an SR04 Echo module",
+        "Optical Communication.svg": "Transmit signals from one device using a laser connected to SQ1, and receive on another device"
+      }
+    },
+  "Electrical":
+  {
+    "image": "Electrical.jpg",
+    "directory": "Electrical",
+    "description": "RL , RC , RLC steady state and transient responses. Bode plots, and filter characterisation",
+    "files": {
+      "XY plotting Lissajous figures.svg": "Make Lissajous figures by plotting A1 vs A2",
+      "AC-DC Separating.svg": "Separate AC and DC components from a mixed signal",
+      "Duty Cycle measurement.svg": "Measure Duty Cycle(Ratio of ON vs OFF Time) on digital inputs IN2/SEN",
+      "RC Transient.svg": "Study transient behaviour of RC Circuits",
+      "RL Transient.svg": "Study transient behaviour of RL Circuits",
+      "RLC Transient.svg": "Study transient behaviour of RLC Circuits",
+      "RC Steady State.svg": "Study Steady State behaviour of RC Circuits",
+      "RL Steady State.svg": "Study Steady State behaviour of RL Circuits",
+      "RLC Steady State.svg": "Study Steady State behaviour of RLC Circuits",
+      "Study of Filter circuits.svg": "Study passive and active filters. Plots amplitude and phase vs frequency",
+      "Ohms Law using AC.svg": "Study Ohm's Law with AC signals using their RMS amplitude",
+      "Output Impedance.svg": "Study Output Impedance",
+      "2 Phase AC Generator.svg": "Use 2 solenoids and a rotating magnet to generate 2 phase electricity",
+      "3 Phase AC Generator.svg": "Use 3 coils and a rotating magnet to generate 3 phase signals",
+      "Fourier Transformations.svg": "Take the fourier transform of sinusoidal signal and compare with the time signal"
+    }
+
+  },
+  "Electronics":
+  {
+    "image": "Electronics.jpg",
+    "directory": "Electronics",
+    "description": "Learn about simple circuits such as Rectifiers, Filters, Diode and transistor Characteristics ...",
+    "files": {
+      "Half Wave Rectifier.svg": "Make a half wave rectifier. Study the effect of capacitors on filtering the output signal",
+      "Full Wave Rectifier.svg": "Make a full wave rectifier",
+      "Clipping circuit using Diode.svg": "Clip signals at different levels using a diode and an adjustable power source",
+      "Clamping circuit using Diode.svg": "Shift mean value of signals using a diode and an adjustable power source",
+      "Oscillator using IC555.svg": "Make an oscillator using the 555 IC",
+      "Logic Gates.svg": "Simple Logic OR Gate using 2 Diodes",
+      "Diode VI Characteristics.svg": "Characteristics of a simple diode",
+      "Zener Diode Characteristics.svg": "IV Characteristics of a zener diode",
+      "NPN Transistor Output Characteristics.svg": "Study the Common Emitter Characteristics of an NPN Transistor",
+      "PNP Transistor Output Characteristics.svg": "Study the Common Emitter Characteristics of a PNP Transistor",
+      "Transistor Amplifier.svg": "Make an amplifier with an NPN transistor. Also used to make a simple AM radio receiver.",
+      "Inverting Amplifier Using Op-Amp.svg": "Make an inverting amplifier using an Op-Amp",
+      "Summing Amplifier Using Op-Amp.svg": "Make a summing junction and add various DC and AC signals together",
+      "Amplitude Modulation.svg": "Amplitude modulation using an AD633 analog multiplier",
+      "LM317 regulator study.svg": "Make an adjustable voltage source capable of driving high loads",
+      "Sensitive Current to Voltage Converter.svg": "a small signal amplifier. ",
+      "Cyclic Voltammetry.svg": "Electrochemical technique used to investigate the reduction and oxidation processes of molecular species and study electron transfer-initiated chemical reactions"
+    }
+  },
+  "Mechanics":
+  {
+    "image": "Mechanics.jpg",
+    "directory": "Mechanics",
+    "description": "Simple pendulum, monitoring a mass spring system using a LIDAR, time of flight ...",
+    "files" : {
+      "Digitizing Pendulum Oscillations.svg": "Study Oscillations of a simple pendulum to extract precise time period. Use this to calculate acceleration due to gravity",
+      "Pendulum Time Period Measurement.svg": "Calculate the time period of a rod pendulum using a light barrier. ",
+      "Distance Measurement Using SR04 Echo Module.svg": "Measure distance using the SR04 module. Use this for mechanics experiments such as mass-spring systems",
+      "Gravity Using Time of Flight.svg": "Measure time of flight of a falling object, and use it to estimate the value of accelration due to gravity",
+      "Distance Measurement Using VL53LOX LIDAR.svg": "Measure distance using the VL53L0X LIDAR module. Use this for mechanics experiments such as mass-spring systems, coupled pendulums etc",
+      "Measure Speed Using A Laser.svg": "Measure travel times of projectiles using a laser and a phototransistor. Calculate speed using the known travel distance"
+    }
+  },
+  "Acoustics":
+  {
+    "image": "Acoustics.jpg",
+    "directory": "Acoustics",
+    "description": "Sound experiments : Measuring sound waves, speed of sound, fourier transforms, interference of sound(beats) etc",
+    "files" : {
+      "sound.svg": "Study sound waves being converted to electrical signals by the MICrophone",
+      "Velocity of Sound.svg": "Calculate the speed of sound by measuring phase shifts of a created sound and measured value at a fixed distance",
+      "Fourier Transform of Sound.svg": "Record short sound signals with the mic and view the fourier transformed signal",
+      "Interference of Sound.svg": "Create sound beats using two piezo buzzers and also analyse the mixed signal using fourier transformation",
+      "Frequency Response of Piezo Buzzer.svg": "Calculate the resonant frequency of the piezo buzzer by measuring loudness at different frequencies"
+    }
+  },
+  "Thermal Physics":
+  {
+    "image": "Thermal Physics.jpg",
+    "directory": "Thermal Physics",
+    "description": "Temperature measurement experiments such as Newton's Law of Cooling",
+    "files": {
+      "Cooling Curve For Water.svg": "Observe Newtons Law of Cooling using a PT1000 sensor dipped in boiling water",
+      "Measuring Pressure BMP280.svg": "Measure Pressure and Temperature using a BMP280 sensor",
+      "Measuring Pressure BMP180.svg": "Measure Pressure and Temperature with a BMP180 sensor"
+    }
+  },
+  "Add-On Modules":
+  {
+    "image": "Add-On Modules.jpg",
+    "directory": "Add-On Modules",
+    "description": "Explore a range of add-on modules and sensors which use the I2C communication interface. Such as BMP280 for pressure, HMC5883 for magnetic fields and so on",
+    "files": {
+      "Pulse Sensor.svg": "Measure your heart rate with a simple light based pulse sensor.",
+      "Sine Wave Phase Difference.svg": "Use a dual AD9833 module (CS1,CS2) to study and measure phase shifts",
+      "3V Joystick.svg": "Check out how the potentiometers in Joysticks work"
+    }
+  }
+}

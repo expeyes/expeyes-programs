@@ -1,0 +1,16 @@
+# Ohms law using a constant current
+
+PCS is a programmable constant current source with a maximum current output of 3.3mA, and a maximum voltage of 3V . The maximum current capability is subject to the load resistance because the voltage limit will be reached before the current setting if a big resistance is used.
+V = I * R , so if R is 100 Ohms , and you set the PCS value to 3.3mA , it will adjust its voltage
+to 330mV .
+
+The resolution of this current source is 12 bit, implying 4096 discrete current levels within its full range
+
+## PCS Voltage monitoring
+
+For clarity, PCS output voltage is being monitored by A1 as per the schematic diagram. However, there is an internal voltmeter which can do the same job.
+
+
+## Association with PV2
+
+The current source is controlled by the same DAC output which controls PV2, so only one of them can be used simultaneously. For clarifying this, a PV2 control knob is provided on the screen

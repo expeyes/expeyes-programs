@@ -6,7 +6,8 @@ from functools import partial
 from PyQt5 import QtGui, QtCore, QtWidgets
 from PyQt5.QtCore import pyqtSignal, Qt
 from interactive.MyTypes import Measurement
-from layouts import ui_xyLoggerControls, ui_timeLoggerControls
+from layouts import ui_xyLoggerControls2 as ui_xyLoggerControls
+from layouts import ui_timeLoggerControls2 as ui_timeLoggerControls
 
 NOLOGGING = 0
 DATALOGGER = 1  # Vs time
@@ -14,7 +15,7 @@ NLOGGER = 2  # Vs N(samples)
 SWEEPLOGGER = 3
 
 
-class xy_logger_controls(QtWidgets.QWidget, ui_xyLoggerControls.Ui_Form):
+class xy_logger_controls(QtWidgets.QDialog, ui_xyLoggerControls.Ui_Dialog):
     init = pyqtSignal()
     newdata = pyqtSignal(int, list, list)
     LOGTYPE = SWEEPLOGGER
@@ -121,8 +122,7 @@ class xy_logger_controls(QtWidgets.QWidget, ui_xyLoggerControls.Ui_Form):
         self.progressBar.setValue(0)
         self.init.emit()
 
-
-class time_logger_controls(QtWidgets.QWidget, ui_timeLoggerControls.Ui_Form):
+class time_logger_controls(QtWidgets.QDialog, ui_timeLoggerControls.Ui_Dialog):
     init = pyqtSignal()
     newdata = pyqtSignal(int, list, list)
     LOGTYPE = DATALOGGER

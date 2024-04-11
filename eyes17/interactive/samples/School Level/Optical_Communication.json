@@ -1,0 +1,26 @@
+{
+    "DC_SEN": {
+        "ID": "DC_SEN",
+        "desc": "automatic=false",
+        "x": 807.9961374807021,
+        "y": 274.52269748841485
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=0\nymax=4\nchannels=1\nxaxis=time\ny1=SEN\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 9\nNS=500\nTG=5\ntitle=Voltage on SEN input\n\n  ",
+        "x": 1156.7192355318011,
+        "y": 762.1657929935014
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=4\nmax=25\nvalue=10\nstepsize=0.1",
+        "x": 19.3609752861227,
+        "y": 197.13298026129135
+    },
+    "SQ1DC": {
+        "ID": "SQ1DC",
+        "desc": "min=1\nmax=99\nvalue=50",
+        "x": 19.3609752861227,
+        "y": 440.13299647378307
+    }
+}

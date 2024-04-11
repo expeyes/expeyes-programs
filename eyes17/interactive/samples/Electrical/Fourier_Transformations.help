@@ -1,0 +1,23 @@
+## Fourier Transforms of Sound Signals
+
+The Fourier transform is a mathematical tool that can be used to decompose a signal into its constituent frequencies. This is useful for sound signals, as it allows us to analyze the different frequencies that make up a sound.
+
+The Fourier transform of a sound signal is a graph that shows the amplitude of each frequency present in the signal. The amplitude of a frequency is a measure of its loudness. The higher the amplitude, the louder the frequency.
+
+The Fourier transform can be used to do a number of things with sound signals. For example, it can be used to:
+
+* Identify the different notes that are present in a piece of music.
+* Filter out unwanted frequencies, such as background noise.
+* Create new sounds from scratch.
+
+The Fourier transform is a powerful tool that can be used to analyze and manipulate sound signals. It is a valuable tool for anyone who works with sound, such as musicians, engineers, and scientists.
+
+Here are some examples of how the Fourier transform is used in sound engineering:
+
+* **Equalization:** Equalization is the process of adjusting the levels of different frequencies in a sound signal. This is often done to improve the sound quality of a recording or to make a sound signal more compatible with a specific playback system. The Fourier transform can be used to identify the frequencies that are present in a sound signal and to adjust their levels accordingly.
+* **Noise reduction:** Noise reduction is the process of removing unwanted noise from a sound signal. This is often done to improve the intelligibility of speech or to make a sound signal more enjoyable to listen to. The Fourier transform can be used to identify the frequencies that are present in noise and to remove them from the sound signal.
+* **Sound synthesis:** Sound synthesis is the process of creating new sounds from scratch. This can be done by combining different frequencies together or by using mathematical models to generate sound waves. The Fourier transform can be used to analyze existing sounds and to use that information to create new sounds.
+
+## Fourier Transform with WG(Sine Wave)
+
+The input frequency can be adjusted , and the output is analyzed. For more fun experiments, head over to the Sound section and try the Interference of Sound Experiment.

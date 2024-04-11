@@ -1,0 +1,21 @@
+[default]
+#Parameters for launching the experiment
+ui=samplelogger
+xlabel=Datapoints
+ylabel=Timing
+xunits=N
+command=multi_r2r
+#Input channel
+arg1=SEN
+#edges of R2R
+arg2=2
+#Timeout
+arg3=2
+yunits=S
+input=SEN
+title=Timing Measurements
+samples=20
+timegap=20
+ymin=0
+ymax=3
+intro=Record Time period of oscillations

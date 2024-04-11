@@ -1,0 +1,26 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=rms",
+        "x": 21.263189928057557,
+        "y": 43.146489028333335
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=rms",
+        "x": 921.494215827338,
+        "y": 194.67440371666666
+    },
+    "A3AC": {
+        "ID": "A3AC",
+        "desc": "channel=rms",
+        "x": 59.56619568345323,
+        "y": 529.1941170833333
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=Induced Voltages(A1,A2)\nmode=scope\nchannels=3\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 7\nNS=500\nTG=20\nx=time\nylist=[A1,A2,A3]\nynames=[A1,A2,A3]\nymin=-4\nymax=4\nfitmode=sine\n",
+        "x": 1146.3321007194245,
+        "y": 27.961724991666664
+    }
+}

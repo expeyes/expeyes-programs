@@ -1,0 +1,32 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 73.3728983816901,
+        "y": 62.26224058440013
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 973.9217426495024,
+        "y": 270.6999468802024
+    },
+    "EQ:A2_RMS/A1_RMS:.": {
+        "ID": "EQ:A2_RMS/A1_RMS:.",
+        "desc": "",
+        "x": 917.0419658448651,
+        "y": 686.3636014621097
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=2\nxaxis=time\ny1=A1\ny2=A2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Input(A1) and Output(A2)\nfitmode=sine\nrangeA1=true\nselectorStart=20\nselectorEnd=80",
+        "x": 1170.6749656391873,
+        "y": 1.2340050544137084
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "",
+        "x": 81.43620120942153,
+        "y": 566.4993572050038
+    }
+}

@@ -102,7 +102,7 @@ var makePlotIfUnavailable = function(plotname){
         var h = resultplots.height()<300 ? 300:resultplots.height();
         if(h>400)h=400;
         startTime = new Date();
-        resultplots.append($('<span style="color:red">'+plotname+'</span><hr color="red">'));
+        resultplots.append($('<span style="color:red" onclick="savePlotData(\''+plotname+'\');">'+plotname+' [Touch to Save Data]</span><hr color="red">'));
         resultplots.append($('<div id="cs_'+plotname+'">').width(w).height(h));
         myplots[plotname] = 0;
         options[plotname] = {
@@ -143,6 +143,8 @@ var makePlotIfUnavailable = function(plotname){
 
     }
 }
+
+
 var addDataPoint = function(plotname, x){
     makePlotIfUnavailable(plotname);
     if(myplots[plotname]==0){
@@ -159,6 +161,40 @@ var addDataPoint = function(plotname, x){
     options[plotname].xaxes = [{ position: 'bottom', axisLabel: 'Time (S)', show: true }];
     $.plot("#cs_"+plotname, [{color: "red", lines: {show: true, lineWidth: 2}, data: mydata[plotname], label: "Y data"}], options[plotname]);
 }
+
+
+var addDataPoints = function(plotname, x){ // X is an Array of points
+    x = myInterpreter.pseudoToNative(x); // Convert to native array
+    makePlotIfUnavailable(plotname);
+    var t=0;
+    if(myplots[plotname]==0){
+        	startTime = new Date();
+        	for(var i=0;i<x.length;i++){
+                mydata[plotname].push({ lines: {show: true, lineWidth: 1}, data: [] ,label:'Y'+(i+1) } ); //, label: params[i]
+        	}
+    }else{
+        t = (new Date() - startTime)/1000.;
+	}
+	// Push points in
+	try{
+        for(var i=0;i<x.length;i++){
+            mydata[plotname][i].data.push([t,x[i]]);
+            if(myplots[plotname]==20)mydata[plotname][i].points = {show:false};
+        }
+
+        myplots[plotname] ++;
+        //if(myplots[plotname]>20)options[plotname].series.points.show = false;
+        //else options[plotname].series.points.show = true;
+        options[plotname].series.lines.show = false;
+
+        options[plotname].xaxes = [{ position: 'bottom', axisLabel: 'Time (S)', show: true }];
+        $.plot("#cs_"+plotname, mydata[plotname], options[plotname]);
+    }catch(e){
+        console.log('Plot Err:'+e);
+    }
+}
+
+
 var addDataPointXY = function(plotname, x,y){
     makePlotIfUnavailable(plotname);
     mydata[plotname].push([x,y]);
@@ -178,8 +214,10 @@ var plotArraysXYStack = function(plotname,X,Y, state){
     if(state)plotdatastack[plotname] = [ {color: colors[plotdatastack[plotname].length % colors.length], lines: {show: true, lineWidth: 2}, data: [], label: "Chan "+plotdatastack[plotname].length} ];
     else plotdatastack[plotname].push( {color: colors[plotdatastack[plotname].length % colors.length], lines: {show: true, lineWidth: 2}, data: [], label: "Chan "+plotdatastack[plotname].length} );
 
-    nx = Object.values(X.a)
-    ny = Object.values(Y.a)
+    nx = myInterpreter.pseudoToNative(X); // Convert to native array
+    ny = myInterpreter.pseudoToNative(Y); // Convert to native array
+    //nx = Object.values(X.a)
+    //ny = Object.values(Y.a)
     dat = plotdatastack[plotname][plotdatastack[plotname].length - 1];
     for (i=0;i<nx.length;i++){
         dat.data.push([nx[i],ny[i]]);
@@ -249,6 +287,36 @@ var plotArraysXYYY = function(plotname, X,Y1, Y2, Y3){
 
 }
 
+var savePlotData = function(plotname){
+   if(mydata[plotname].length == 0)return;
+   if(mydata[plotname][0].constructor == Array){
+       x=[];
+       y=[];
+       for (var i=0;i<mydata[plotname].length;i++){
+           x.push(parseFloat(mydata[plotname][i][0]));
+           y.push(parseFloat(mydata[plotname][i][1]));
+       }
+       JSBridge.save_lists(plotname+".csv",JSON.stringify(x),JSON.stringify(y),"[]","[]");
+       alert("Saved to SEELab3 directory :"+plotname+".csv");
+
+   }
+   else if(mydata[plotname][0].constructor == Object){ // plot_xyyarray, xyyyarray etc store dicts.
+        msg = ''
+       for (var dset=0;dset<mydata[plotname].length;dset++){
+           x=[];
+           y=[];
+           for (var i=0;i<mydata[plotname][dset].data.length;i++){
+               x.push(parseFloat(mydata[plotname][dset].data[i][0]));
+               y.push(parseFloat(mydata[plotname][dset].data[i][1]));
+           }
+           JSBridge.save_lists(plotname+'_'+dset+'.csv',JSON.stringify(x),JSON.stringify(y),"[]","[]");
+           msg+=plotname+'_'+dset+'.csv ,';
+        }
+         alert("Saved to SEELab3 directory :"+msg);
+   }
+
+
+}
 
 var addDataPointPolar = function(angle, radius, maxrad){
 	angle = angle%360;
@@ -265,11 +333,11 @@ var addDataPointPolar = function(angle, radius, maxrad){
 Blockly.Blocks['plot_datapoint'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("PLOT X Vs Time:");
+        .appendField("PLOT Y Vs Time:");
     this.appendValueInput("VALUE")
         .setAlign(Blockly.ALIGN_LEFT)
         .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
-        .appendField("X :")
+        .appendField("Y :")
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -290,6 +358,42 @@ Blockly.JavaScript['plot_datapoint'] = function(block) {
 
 
 Blockly.Python['plot_datapoint'] = function(block) {
+  var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var code = 'plot('+value+')\n';
+
+  return code;
+};
+/*---------------------- Plot multiple points against Time ---------------*/
+
+
+Blockly.Blocks['plot_datapoints'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("PLOT Y[] Vs Time:");
+    this.appendValueInput("VALUE")
+        .setAlign(Blockly.ALIGN_LEFT)
+        .appendField(new Blockly.FieldTextInput("myplot"), "PLOTNAME")
+        .appendField("Y[] :")
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(230);
+ this.setTooltip("Plot datapoints against time");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.JavaScript['plot_datapoints'] = function(block) {
+  var value = Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
+  var name = block.getFieldValue('PLOTNAME');
+  var code = 'sleep(0.001);\n'+'plot_array(\''+name+'\','+value+');\n';
+
+  return code;
+};
+
+
+Blockly.Python['plot_datapoints'] = function(block) {
   var value = Blockly.Python.valueToCode(block, 'VALUE', Blockly.Python.ORDER_NONE);
   var code = 'plot('+value+')\n';
 
@@ -676,6 +780,13 @@ function initPlots(interpreter, scope) {
 		  interpreter.setProperty(scope, 'plot', interpreter.createNativeFunction(
 				function(plotname,  value) {
 				  return addDataPoint(plotname, value);
+				})
+			);
+
+		  // Add an API for the plot array call
+		  interpreter.setProperty(scope, 'plot_array', interpreter.createNativeFunction(
+				function(plotname,  values) {
+				  return addDataPoints(plotname, values);
 				})
 			);
 

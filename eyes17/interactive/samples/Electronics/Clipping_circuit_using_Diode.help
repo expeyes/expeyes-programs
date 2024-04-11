@@ -1,0 +1,11 @@
+# Diode Clipping
+
+This is used to clip/limit the amplitude of a signal to a maximum value.
+
+ When the signal voltage exceeds PV1+knee voltage of the diode, it flows into PV1, and the voltage is clipped to
+a maximum of PV1+knee voltage.
+
+For the 4148 diodes, the knee voltage is typically 0.6 V . So if you set PV1 as 1V , and apply a sine wave,
+the sine wave will be perfect below 1.6V, but the portion above it will be flattened at 1.6V.
+
++ [ExpEYES.in Diode Clipping](https://expeyes.in/experiments/electronics/clipping.html)

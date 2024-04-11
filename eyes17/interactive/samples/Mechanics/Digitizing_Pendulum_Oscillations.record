@@ -1,0 +1,15 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+xlabel=Time
+ylabel=Voltage
+xunits=S
+yunits=V
+
+input=A1
+logging=true
+title=Voltage Vs Time
+duration=10
+ymin=-1
+ymax=1
+intro=Record Voltage with respect to time

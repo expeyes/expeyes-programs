@@ -1,0 +1,32 @@
+Halfwave rectifier using a PN junction
+===============================
+
+Generate DC from an AC signal using a half wave rectifier made with a diode and a capacitor. The output of this circuit also on the filter capacitor to provide DC output. 
+
+The half cycle extraction results in larger ripple and is not suitable for higher current. A fullwave rectifier solves this by providing
+output for both negative and positive halfcycles. However it requires two out of phase AC inputs, generally
+provided by a transformer with a center tap. 
+
+Objective
+---------
+
+Make a half wave rectifier, using two diodes. And a sinusoidal AC waveform from WG output.
+
+ 
+
+Procedure
+---------
+
+-  Make connections on a breadboard
+-  Enable A1, A2
+
+Discussion
+----------
+
+Adding capacitors to reduce the ripple is left as an exercise to the
+user. This experiment is only to demonstrate the working of a half wave
+rectifier, it cannot provide more than few milli amperes of current.
+
+A full-wave rectifier is superior to half-wave rectifier. Why ? Try the full wave circuit and decide
+
++ [ExpEYES.in Half Wave](https://expeyes.in/experiments/electronics/halfwave.html)

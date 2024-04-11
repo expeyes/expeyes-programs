@@ -1,3 +1,51 @@
+var stepper_pos=0;
+var set_stepper_pos = [], cursteppos=0;
+
+var ap = 1;
+var an = 4;
+var bp = 2;
+var bn = 8;
+
+var step_positions=[ap + bp, an + bp, an + bn, ap + bn]; //# {AP+BP,AN+BP,AN+BN,AP+BN}; //full step sequence.
+
+// ----------DOM MANIPULATION
+const SVG_NS = "http://www.w3.org/2000/svg";
+const SVG_XLINK = "http://www.w3.org/1999/xlink"
+// an object to define the properties and text content of the text element
+
+// a function to create a text element
+function drawText(parent, props, textcontent) {
+  // create a new text element
+  let text = document.createElementNS(SVG_NS, "text");
+  //set the attributes for the text
+  for (var name in props) {
+    if (props.hasOwnProperty(name)) {
+      text.setAttributeNS(null, name, props[name]);
+    }
+  }
+  text.textContent = textcontent;
+  parent.appendChild(text);
+  return text;
+}
+
+
+// a function to create an image
+function drawImage(parent, props, url) {
+  // create a new text element
+  let img = document.createElementNS(SVG_NS, "image");
+  //set the attributes for the text
+  for (var name in props) {
+    if (props.hasOwnProperty(name)) {
+      img.setAttributeNS(null, name, props[name]);
+    }
+  }
+  img.setAttributeNS(SVG_XLINK, 'xlink:href', url);
+  //text.textContent = textcontent;
+  parent.appendChild(img);
+  return img;
+}
+
+
 
 
 /* --------------- Get Voltage ------------ */
@@ -6,7 +54,8 @@ Blockly.Blocks['get_voltage'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("READ VOLTAGE")
-        .appendField(new Blockly.FieldDropdown([["A1","A1"],["A2","A2"],["A3","A3"],["SEN","SEN"],["IN1","IN1"],["CCS","CCS"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["A1","A1"],["A2","A2"],["A3","A3"],["SEN","SEN"],["IN1","IN1"],["CCS","CCS"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('get_voltage');},'SS'));
     this.setOutput(true, "Number");
     this.setColour(330);
  this.setTooltip("Read Voltage from selected channel");
@@ -24,7 +73,7 @@ Blockly.JavaScript['get_voltage'] = function(block) {
 Blockly.Python['get_voltage'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble Python into code variable.
-  var code = 'get_voltage(\''+dropdown_channel+'\')';
+  var code = 'p.get_voltage(\''+dropdown_channel+'\')';
   return [code,Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -34,7 +83,8 @@ Blockly.Python['get_voltage'] = function(block) {
 Blockly.Blocks['get_resistance'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("READ RESISTANCE");
+        .appendField("READ RESISTANCE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('get_resistance');},'SS'));
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/resistor.svg", 150, 25,  "*"))
     this.setOutput(true, "Number");
@@ -51,7 +101,7 @@ Blockly.JavaScript['get_resistance'] = function(block) {
 };
 
 Blockly.Python['get_resistance'] = function(block) {
-  var code = 'get_resistance()';
+  var code = 'p.get_resistance()';
   return [code,Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -60,7 +110,8 @@ Blockly.Blocks['get_capacitance'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("READ CAPACITANCE ")
-        .appendField(new Blockly.FieldDropdown([["pF","0"],["uF","1"]]), "RANGE");
+        .appendField(new Blockly.FieldDropdown([["pF","0"],["uF","1"]]), "RANGE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('get_capacitance');},'SS'));
     this.appendDummyInput()
         .appendField(new Blockly.FieldImage("media/capacitor.svg", 150, 25,  "*"))
     this.setOutput(true, "Number");
@@ -81,7 +132,7 @@ Blockly.JavaScript['get_capacitance'] = function(block) {
 };
 
 Blockly.Python['get_capacitance'] = function(block) {
-  var code = 'get_capacitance()';
+  var code = 'p.get_capacitance()';
   return [code,Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -94,7 +145,8 @@ Blockly.Blocks['select_range'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Select ")
-        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('select_range');},'SS'));
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Range: ")
@@ -120,7 +172,7 @@ Blockly.JavaScript['select_range'] = function(block) {
 Blockly.Python['select_range'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var range = block.getFieldValue('RANGE');
-  var code = 'select_range(\''+dropdown_channel+'\',' + range+  ')\n';
+  var code = 'p.select_range(\''+dropdown_channel+'\',' + range+  ')\n';
   return code;
 };
 
@@ -134,7 +186,8 @@ Blockly.Blocks['set_voltage'] = {
         .setCheck(null)
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("SET VOLTAGE")
-        .appendField(new Blockly.FieldDropdown([["PV1","PV1"], ["PV2","PV2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["PV1","PV1"], ["PV2","PV2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_voltage');},'SS'));
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -156,7 +209,7 @@ Blockly.JavaScript['set_voltage'] = function(block) {
 Blockly.Python['set_voltage'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var value_voltage = Blockly.Python.valueToCode(block, 'VOLTAGE', Blockly.Python.ORDER_NONE);
-  var code = 'set_voltage(\''+dropdown_channel+'\','+value_voltage+')\n';
+  var code = 'p.set_voltage(\''+dropdown_channel+'\','+value_voltage+')\n';
   return code;
 };
 
@@ -167,7 +220,8 @@ Blockly.Blocks['select_sine_amp'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Sine(WG) Amplitude ")
-        .appendField(new Blockly.FieldDropdown([["3V","2"], ["1V","1"], ["80mV","0"]]), "RANGE");
+        .appendField(new Blockly.FieldDropdown([["3V","2"], ["1V","1"], ["80mV","0"]]), "RANGE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('select_sine_amp');},'SS'));
     this.setInputsInline(true);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -187,7 +241,7 @@ Blockly.JavaScript['select_sine_amp'] = function(block) {
 
 Blockly.Python['select_sine_amp'] = function(block) {
   var range = block.getFieldValue('RANGE');
-  var code = 'select_sine_amp(' + range+  ')\n';
+  var code = 'p.select_sine_amp(' + range+  ')\n';
   return code;
 };
 
@@ -202,7 +256,8 @@ Blockly.Blocks['set_frequency'] = {
     this.appendValueInput("FREQUENCY")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("SET FREQUENCY")
-        .appendField(new Blockly.FieldDropdown([["WG","WG"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["WG","WG"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_frequency');},'SS'));
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -225,11 +280,11 @@ Blockly.Python['set_frequency'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var value_frequency = Blockly.Python.valueToCode(block, 'FREQUENCY', Blockly.Python.ORDER_NONE);
   if(dropdown_channel === "WG")
-	var code = 'set_sine('+value_frequency+')\n';
+	var code = 'p.set_sine('+value_frequency+')\n';
   else if(dropdown_channel === "SQ1")
-	var code = 'set_sq1('+value_frequency+',50)\n';
+	var code = 'p.set_sq1('+value_frequency+',50)\n';
   else if(dropdown_channel === "SQ2")
-	var code = 'set_sq2('+value_frequency+',50)\n';
+	var code = 'p.set_sq2('+value_frequency+',50)\n';
 
   return code;
 };
@@ -245,7 +300,8 @@ Blockly.Blocks['get_frequency'] = {
     this.appendDummyInput()
         .appendField("READ FREQUENCY")
         .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'))
-        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('get_frequency');},'SS'));
     this.setInputsInline(false);
     this.setOutput(true, "Number");
     this.setColour(330);
@@ -269,7 +325,7 @@ Blockly.JavaScript['get_frequency'] = function(block) {
 
 Blockly.Python['get_frequency'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
-  var code = 'get_frequency(\''+dropdown_channel+'\')';
+  var code = 'p.get_frequency(\''+dropdown_channel+'\')';
   return [code,Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -285,7 +341,8 @@ Blockly.Blocks['multi_r2r'] = {
     this.appendDummyInput()
         .appendField("Rising Edge Timer")
         .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'))
-        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('multi_r2r');},'SS'));
     this.appendDummyInput()
         .appendField("Skip:")
         .appendField(new Blockly.FieldDropdown([["0","0"],["1","1"], ["2","2"], ["4","4"], ["8","8"], ["12","12"], ["16","16"], ["32","32"], ["48","48"]]), "SKIP")
@@ -313,7 +370,7 @@ Blockly.Python['multi_r2r'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var dropdown_edges = block.getFieldValue('SKIP');
   var dropdown_timeout = block.getFieldValue('TIMEOUT');
-  var code = 'multi_r2r(\''+dropdown_channel+'\','+(dropdown_edges+2)+','+dropdown_timeout+')';
+  var code = 'p.multi_r2r(\''+dropdown_channel+'\','+(dropdown_edges+2)+','+dropdown_timeout+')';
   return [code,Blockly.Python.ORDER_NONE];
 };
 
@@ -325,7 +382,8 @@ Blockly.Blocks['singlePinEdges'] = {
         .appendField("Digital Timer")
         .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'))
         .appendField(new Blockly.FieldDropdown([["IN2","IN2"], ["SEN","SEN"]]), "CHANNEL")
-        .appendField(new Blockly.FieldDropdown([["rising","rising"], ["falling","falling"],["4 rising","4xrising"],["16 rising","16xrising"]]), "TYPE");
+        .appendField(new Blockly.FieldDropdown([["rising","rising"], ["falling","falling"],["4 rising","4xrising"],["16 rising","16xrising"]]), "TYPE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('singlePinEdges');},'SS'));
     this.appendDummyInput()
         .appendField("Edges:")
         .appendField(new Blockly.FieldDropdown([["1","1"],["2","2"], ["3","3"], ["4","4"]]), "EDGES")
@@ -357,7 +415,7 @@ Blockly.Python['singlePinEdges'] = function(block) {
   var type = block.getFieldValue('TYPE');
   var edges = block.getFieldValue('EDGES');
   var dropdown_timeout = block.getFieldValue('TIMEOUT');
-  var code = 'singlePinEdges(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
+  var code = 'p.singlePinEdges(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
   return [code,Blockly.Python.ORDER_NONE];
 };
 
@@ -369,7 +427,8 @@ Blockly.Blocks['singlePinEdgesAction'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Digital Timer")
-        .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'));
+        .appendField(new Blockly.FieldImage("media/ttl.png", 20, 20,  "*", this.collapse,'SS'))
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('singlePinEdgesAction');},'SS'));
     this.appendDummyInput()
         .appendField("SET ")
         .appendField(new Blockly.FieldDropdown([["OD1","OD1"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "OUTPUT")
@@ -416,7 +475,7 @@ Blockly.Python['singlePinEdgesAction'] = function(block) {
   var type = block.getFieldValue('TYPE');
   var edges = block.getFieldValue('EDGES');
   var dropdown_timeout = block.getFieldValue('TIMEOUT');
-  var code = 'singlePinEdgesAction(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
+  var code = 'p.singlePinEdgesAction(\''+dropdown_channel+'\',\''+type+'\','+edges+','+dropdown_timeout+')';
   return [code,Blockly.Python.ORDER_NONE];
 };
 
@@ -429,7 +488,8 @@ Blockly.Blocks['capture1'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Capture 1 |")
-        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"], ["A3","A3"], ["SEN","SEN"], ["IN1","IN1"], ["MIC","MIC"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"], ["A3","A3"], ["SEN","SEN"], ["IN1","IN1"], ["MIC","MIC"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('capture1');},'SS'));
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("SAMPLES")
@@ -467,7 +527,7 @@ Blockly.Python['capture1'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var number_samples = block.getFieldValue('SAMPLES');
   var number_timegap = block.getFieldValue('TIMEGAP');
-  var code = 'timestamps,data1 = capture1(\''+dropdown_channel+'\','+number_samples+','+number_timegap+')\n';
+  var code = 'timestamps,data1 = p.capture1(\''+dropdown_channel+'\','+number_samples+','+number_timegap+')\n';
   return code;
 };
 
@@ -479,7 +539,8 @@ Blockly.Blocks['capture2'] = {
     this.appendDummyInput()
         .appendField("Capture 2, ")
         .appendField(new Blockly.FieldDropdown([["Chan 1: A1","A1"], ["Chan 1: A2","A2"], ["Chan 1: A3","A3"], ["Chan 1: SEN","SEN"], ["Chan 1: IN1","IN1"], ["Chan 1: MIC","MIC"]]), "CHANNEL")
-        .appendField("Chan 2: A2");
+        .appendField("Chan 2: A2")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('capture2');},'SS'));
     this.appendDummyInput()
         .appendField("SAMPLES")
         .appendField(new Blockly.FieldNumber(0, 10, 5000, 1), "SAMPLES")
@@ -508,8 +569,7 @@ Blockly.JavaScript['capture2'] = function(block) {
   var datavar1 = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('DATA1'), 'VARIABLE');
   var datavar2 = Blockly.JavaScript.nameDB_.getName(block.getFieldValue('DATA2'), 'VARIABLE');
 
-  var code = "var jsondata = await capture2('"+dropdown_channel+"',"+number_samples+","+number_timegap+");\n";
-  code+= "tmpjson=JSON.parse(jsondata);"+timevar+"=tmpjson[0];"+datavar1+"=tmpjson[1];"+datavar2+"=tmpjson[2];\n";
+  var code = "var jsondata = capture2('"+dropdown_channel+"',"+number_samples+","+number_timegap+");\ntmpjson = JSON.parse(jsondata);"+timevar+"=tmpjson[0];"+datavar1+"=tmpjson[1];"+datavar2+"=tmpjson[2];\n";
   return code;
 };
 
@@ -517,7 +577,7 @@ Blockly.Python['capture2'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var number_samples = block.getFieldValue('SAMPLES');
   var number_timegap = block.getFieldValue('TIMEGAP');
-  var code = 'timstamps,data1,data2 = capture2('+number_samples+','+number_timegap+',\''+dropdown_channel+'\')\n';
+  var code = 'timestamps,data1,data2 = p.capture2('+number_samples+','+number_timegap+',\''+dropdown_channel+'\')\n';
   return code;
 };
 
@@ -528,7 +588,8 @@ Blockly.Blocks['capture4'] = {
     this.appendDummyInput()
         .appendField("Capture 4 |")
         .appendField(new Blockly.FieldDropdown([["Chan 1: A1","A1"], ["Chan 1: A2","A2"], ["Chan 1: A3","A3"], ["Chan 1: SEN","SEN"], ["Chan 1: IN1","IN1"], ["Chan 1: MIC","MIC"]]), "CHANNEL")
-        .appendField(", Chan 2: A2");
+        .appendField(", Chan 2: A2")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('capture4');},'SS'));
     this.appendDummyInput()
         .appendField("SAMPLES")
         .appendField(new Blockly.FieldNumber(0, 10, 5000, 1), "SAMPLES")
@@ -569,7 +630,7 @@ Blockly.Python['capture4'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var number_samples = block.getFieldValue('SAMPLES');
   var number_timegap = block.getFieldValue('TIMEGAP');
-  var code = 'timstamps,data1,data2, data3, data4 = capture4('+number_samples+','+number_timegap+',\''+dropdown_channel+'\')\n';
+  var code = 'timestamps,data1,data2, data3, data4 = p.capture4('+number_samples+','+number_timegap+',\''+dropdown_channel+'\')\n';
   return code;
 };
 
@@ -580,7 +641,8 @@ Blockly.Blocks['scope_trigger'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Oscilloscope Trigger")
-        .appendField(new Blockly.FieldCheckbox("TRUE"), "STATE");
+        .appendField(new Blockly.FieldCheckbox("TRUE"), "STATE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('scope_trigger');},'SS'));
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["Channel 1","0"], ["Channel 2","1"], ["Channel 3","2"], ["Channel 4","3"]]), "CHANNEL")
         .appendField(" Level:")
@@ -608,7 +670,7 @@ Blockly.Python['scope_trigger'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var level = block.getFieldValue('LEVEL');
   var state = block.getFieldValue('STATE');
-  var code = 'scope_trigger(0,\'A1\'' + level + ');\n';
+  var code = 'p.scope_trigger(0,\'A1\'' + level + ');\n';
 
   return code;
 };
@@ -619,7 +681,8 @@ Blockly.Blocks['capture_plot'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Capture And Plot")
-        .appendField(new Blockly.FieldDropdown([["Chan 1: A1","A1"], ["Chan 1: A2","A2"], ["Chan 1: A3","A3"], ["Chan 1: SEN","SEN"], ["Chan 1: IN1","IN1"], ["Chan 1: MIC","MIC"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["Chan 1: A1","A1"], ["Chan 1: A2","A2"], ["Chan 1: A3","A3"], ["Chan 1: SEN","SEN"], ["Chan 1: IN1","IN1"], ["Chan 1: MIC","MIC"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('capture_plot');},'SS'));
     this.appendDummyInput()
         .appendField("Chan 2: A2,")
         .appendField("SAMPLES:")
@@ -678,7 +741,8 @@ Blockly.Blocks['capture_action_plot'] = {
         .appendField("Set OD1 ")
         .appendField(new Blockly.FieldDropdown([["ON(5V)","HIGH"], ["OFF","LOW"]]), "ACTION")
         .appendField(", Capture")
-        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"], ["A3","A3"], ["SEN","SEN"], ["IN1","IN1"], ["MIC","MIC"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["A1","A1"], ["A2","A2"], ["A3","A3"], ["SEN","SEN"], ["IN1","IN1"], ["MIC","MIC"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('capture_action_plot');},'SS'));
     this.appendDummyInput()
         .appendField("SAMPLES:")
         .appendField(new Blockly.FieldNumber(0, 10, 5000, 1), "SAMPLES")
@@ -714,7 +778,7 @@ Blockly.Python['capture_action_plot'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var number_samples = block.getFieldValue('SAMPLES');
   var number_timegap = block.getFieldValue('TIMEGAP');
-  var code = 'timestamps,data1 = capture_action(\''+dropdown_channel+'\','+number_samples+','+number_timegap+',\''+action+'\')\n';
+  var code = 'timestamps,data1 = p.capture_action(\''+dropdown_channel+'\','+number_samples+','+number_timegap+',\''+action+'\')\n';
   code += 'sleep(0.01);\n'+'plot_xyarray(timestamps,data1);\n';
   return code;
 };
@@ -726,7 +790,8 @@ Blockly.Python['capture_action_plot'] = function(block) {
 Blockly.Blocks['read_SR04'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Read SR04 Distance(cm)");
+        .appendField("Read SR04 Distance(cm)")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('read_SR04');},'SS'));
     this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
@@ -742,7 +807,7 @@ Blockly.JavaScript['read_SR04'] = function(block) {
 Blockly.Python['read_SR04'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'sr04_distance()';
+  var code = 'p.sr04_distance()';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 //----------------HX711_load cell
@@ -750,7 +815,8 @@ Blockly.Python['read_SR04'] = function(block) {
 Blockly.Blocks['read_HX711'] = {
   init: function() {
     this.appendDummyInput()
-        .appendField("Read HX711 LoadCell");
+        .appendField("Read HX711 LoadCell")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('read_HX711');},'SS'));
     this.appendDummyInput()
         .appendField(new Blockly.FieldDropdown([["Chan A 128x","25"], ["Chan B 32x","26"], ["Chan A 64x","27"], ["OFF","0"], ["ON","1"]]), "CHANNEL");
     this.setOutput(true, null);
@@ -769,7 +835,7 @@ Blockly.JavaScript['read_HX711'] = function(block) {
 Blockly.Python['read_HX711'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'hx711()';
+  var code = 'p.hx711()';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -779,7 +845,8 @@ Blockly.Blocks['read_VOLTS'] = {
   init: function() {
     this.appendDummyInput()
         .appendField("Read VOLTS")
-        .appendField(new Blockly.FieldDropdown([["A1","0"],["A2","1"],["A3","2"],["SEN","3"],["IN1","4"],["CCS","5"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["A1","0"],["A2","1"],["A3","2"],["SEN","3"],["IN1","4"],["CCS","5"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('read_VOLTS');},'SS'));
     this.setOutput(true, null);
     this.setColour(230);
  this.setTooltip("");
@@ -797,7 +864,7 @@ Blockly.JavaScript['read_VOLTS'] = function(block) {
 Blockly.Python['read_VOLTS'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   // TODO: Assemble JavaScript into code variable.
-  var code = 'get_sensor(\'VOLTS\',\''+dropdown_channel+'\')';
+  var code = 'p.get_sensor(\'VOLTS\',\''+dropdown_channel+'\')';
   return [code, Blockly.JavaScript.ORDER_NONE];
 };
 
@@ -810,7 +877,8 @@ Blockly.Blocks['set_state'] = {
     this.appendDummyInput()
         .appendField("SET")
         .appendField(new Blockly.FieldDropdown([["OD1","OD1"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "CHANNEL")
-        .appendField(new Blockly.FieldDropdown([["ON","ON"], ["OFF","OFF"]]), "STATE");
+        .appendField(new Blockly.FieldDropdown([["ON","ON"], ["OFF","OFF"]]), "STATE")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_state');},'SS'));
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
     this.setColour(330);
@@ -837,7 +905,7 @@ Blockly.Python['set_state'] = function(block) {
   var dropdown_state = block.getFieldValue('STATE');
   var state = 'true';
   if(dropdown_state === 'OFF' ) state = "false";
-  var code = 'set_state(\''+dropdown_channel+'\',' + state+  ')';
+  var code = 'p.set_state(\''+dropdown_channel+'\',' + state+  ')';
   return code;
 };
 
@@ -850,7 +918,8 @@ Blockly.Blocks['set_servo'] = {
     this.appendValueInput("ANGLE")
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("SERVO ")
-        .appendField(new Blockly.FieldDropdown([["SQ1 Angle","SQ1"], ["SQ2 Angle","SQ2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["SQ1 Angle","SQ1"], ["SQ2 Angle","SQ2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_servo');},'SS'));
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -872,8 +941,126 @@ Blockly.JavaScript['set_servo'] = function(block) {
 Blockly.Python['set_servo'] = function(block) {
   var dropdown_channel = block.getFieldValue('CHANNEL');
   var value_angle = Blockly.Python.valueToCode(block, 'ANGLE', Blockly.Python.ORDER_NONE);
-  var code = 'set_servo(\''+dropdown_channel+'\',' + value_angle+  ')\n'; // TODO: Change to set_sq1(frequency, duty cycle) or set_sq2
+  var code = 'p.set_servo(\''+dropdown_channel+'\',' + value_angle+  ')\n'; // TODO: Change to set_sq1(frequency, duty cycle) or set_sq2
 
+  return code;
+};
+
+
+
+/*------------- SET STEPPER MOTOR via CS1-4 ----------*/
+
+/*---------- STEPPER MOTORS ------------*/
+
+Blockly.Blocks['init_stepper'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Init Stepper Motor[ CS1-4]");
+    this.appendDummyInput()
+        .appendField("CS1,CS2,CS3,CS4 are outputs. LOW.");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(330);
+ this.setTooltip("init stepper");
+ this.setHelpUrl("");
+  }
+};
+
+
+Blockly.JavaScript['init_stepper'] = function(block) {
+  stepper_pos=0;
+  cursteppos = 4;
+  return 'init_stepper();\n';
+};
+
+
+Blockly.Python['init_stepper'] = function(block) {
+  return '#init stepper\n';
+};
+
+
+
+Blockly.Blocks['move_stepper'] = {
+  init: function() {
+    this.appendDummyInput()
+        .appendField("Move Stepper:        ");
+    this.appendDummyInput()
+        .appendField(" ");
+    this.appendValueInput("STEPS")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("STEPS: ");
+    this.appendValueInput("DELAY")
+        .setCheck(null)
+        .setAlign(Blockly.ALIGN_RIGHT)
+        .appendField("DELAY: ");
+    this.setInputsInline(false);
+    this.setPreviousStatement(true, null);
+    this.setNextStatement(true, null);
+    this.setColour(330);
+ this.setTooltip("move stepper motor");
+ this.setHelpUrl("");
+
+  props= {
+   x: 135,
+   y: 15,
+   "fill": "lightgreen",
+   "dominant-baseline": "middle",
+   "text-anchor": "middle",
+  };
+
+
+  this.txt = drawText(this.getSvgRoot(),props,":");
+
+  imgprops= {
+   x: 0,
+   y: 30,
+   "dominant-baseline": "middle",
+   "text-anchor": "middle",
+   width: '80px',
+   height: '80px'
+  };
+  this.imgbody = drawImage(this.getSvgRoot(),imgprops, "media/stepper_motor_body.png");
+  this.imgshaft = drawImage(this.getSvgRoot(),imgprops, "media/stepper_motor_shaft.png");
+
+
+
+  },
+  set_stepper_display: function(val, angle) {
+      this.txt.textContent = '['+val+']';
+      this.imgshaft.setAttributeNS(null, "transform", `rotate(${angle} ${41} ${71})`);
+  }
+
+};
+
+
+Blockly.JavaScript['move_stepper'] = function(block) {
+  var code = '';
+  var motor=1;
+
+  var steps = Blockly.JavaScript.valueToCode(block, 'STEPS', Blockly.JavaScript.ORDER_NONE);
+  var msdelay = Blockly.JavaScript.valueToCode(block, 'DELAY', Blockly.JavaScript.ORDER_NONE);
+  set_stepper_pos.push(block);
+  if( steps>0 ) // clockwise
+      code = 'for(var i=0;i<'+steps+';i++){\nmove_stepper_cw();\nsleep('+msdelay*.001+');\n}\n';
+  else
+      code = 'for(var i=0;i<'+steps*-1+';i++){\nmove_stepper_ccw();\nsleep('+msdelay*.001+');\n}\n';
+  return code;
+};
+
+
+Blockly.Python['move_stepper'] = function(block) {
+  var code = '';
+  var motor=1;
+
+  var steps = Blockly.JavaScript.valueToCode(block, 'STEPS', Blockly.JavaScript.ORDER_NONE);
+  var msdelay = Blockly.JavaScript.valueToCode(block, 'DELAY', Blockly.JavaScript.ORDER_NONE);
+  set_stepper_pos.push(block);
+  if( steps>0 ) // clockwise
+      code = 'p.stepper_move('+steps+',True,'+msdelay*.001+')\n';
+  else
+      code = 'p.stepper_move('+steps*-1+',False,'+msdelay*.001+')\n';
   return code;
 };
 
@@ -885,7 +1072,8 @@ Blockly.Blocks['generic_slider'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("New Slider")
-        .appendField(new Blockly.FieldTextInput("myvar"), "NAME");
+        .appendField(new Blockly.FieldTextInput("myvar"), "NAME")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('generic_slider');},'SS'));
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Min:")
@@ -923,7 +1111,8 @@ Blockly.Blocks['generic_slider_value'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Value of")
-        .appendField(new Blockly.FieldTextInput("myvar"), "NAME");
+        .appendField(new Blockly.FieldTextInput("myvar"), "NAME")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('generic_slider_value');},'SS'));
 
     this.setInputsInline(false);
     this.setOutput(true, null);
@@ -954,7 +1143,8 @@ Blockly.Blocks['set_frequency_slider'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("FREQUENCY Slider")
-        .appendField(new Blockly.FieldDropdown([["WG","WG"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["WG","WG"], ["SQ1","SQ1"], ["SQ2","SQ2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_frequency_slider');},'SS'));
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("Min:")
@@ -1010,7 +1200,8 @@ Blockly.Blocks['set_voltage_slider'] = {
     this.appendDummyInput()
         .setAlign(Blockly.ALIGN_RIGHT)
         .appendField("VOLTAGE Slider")
-        .appendField(new Blockly.FieldDropdown([["PV1","PV1"], ["PV2","PV2"]]), "CHANNEL");
+        .appendField(new Blockly.FieldDropdown([["PV1","PV1"], ["PV2","PV2"]]), "CHANNEL")
+        .appendField(new Blockly.FieldImage("media/help.svg", 25, 25,  "*", ()=>{showBlockHelp('set_voltage_slider');},'SS'));
     this.setInputsInline(false);
     this.setPreviousStatement(true, null);
     this.setNextStatement(true, null);
@@ -1232,6 +1423,40 @@ function initSEELab(interpreter, scope) {
 				})
 			);
 
+
+
+		  // Add an API for stepper
+		  var wrapper = interpreter.createAsyncFunction(
+				function(callback) {
+				  HWBridge.set_multiplexer(0,callback);
+				});
+		  interpreter.setProperty(scope, 'init_stepper', wrapper);
+
+		  var wrapper = interpreter.createAsyncFunction(
+				function(motor, callback) {
+                  stepper_pos+=1;
+                  cursteppos+=1;
+                  if(cursteppos>3)cursteppos=0;
+				  HWBridge.set_multiplexer(step_positions[cursteppos], callback);
+                  for(var i=0;i<set_stepper_pos.length;i++){
+                    set_stepper_pos[i].set_stepper_display(stepper_pos, stepper_pos);
+                  }
+				});
+		  interpreter.setProperty(scope, 'move_stepper_cw', wrapper);
+
+		  var wrapper = interpreter.createAsyncFunction(
+				function(motor, callback) {
+                  stepper_pos-=1;
+                  cursteppos-=1;
+                  if(cursteppos<0)cursteppos=3;
+				  HWBridge.set_multiplexer(step_positions[cursteppos], callback);
+                  for(var i=0;i<set_stepper_pos.length;i++){
+                    set_stepper_pos[i].set_stepper_display(stepper_pos, stepper_pos);
+                  }
+				});
+		  interpreter.setProperty(scope, 'move_stepper_ccw', wrapper);
+
+
 		  interpreter.setProperty(scope, 'add_slider', interpreter.createNativeFunction(
 				function( value, mn, mx) {
 				  return addSlider(value,mn,mx);
@@ -1239,8 +1464,8 @@ function initSEELab(interpreter, scope) {
 			);
 
 		  interpreter.setProperty(scope, 'get_slider_variable', interpreter.createAsyncFunction(
-				function( value) {
-				  return sliderVariables[value];
+				function( value,callback) {
+				  callback(sliderVariables[value]);
 				})
 			);
 

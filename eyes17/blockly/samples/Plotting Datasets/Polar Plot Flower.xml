@@ -1,9 +1,9 @@
 <xml xmlns="https://developers.google.com/blockly/xml">
   <variables>
-    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">angle</variable>
   </variables>
   <block type="controls_for" id="m@*nkv?[n5n)fsbgHt`n" x="10" y="0">
-    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
     <value name="FROM">
       <shadow type="math_number" id="f.1,}G`7Sz_{3Lhn{okr">
         <field name="NUM">0</field>
@@ -40,12 +40,12 @@
                     <field name="NUM">1</field>
                   </shadow>
                   <block type="variables_get" id="c;,S[ga-GFfz@/uyU~I?">
-                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
                   </block>
                 </value>
                 <value name="B">
                   <shadow type="math_number" id="=QB{}B9OIZ+aUkJMC7jU">
-                    <field name="NUM">5</field>
+                    <field name="NUM">4</field>
                   </shadow>
                 </value>
               </block>
@@ -54,10 +54,10 @@
         </value>
         <value name="ANGLE">
           <block type="variables_get" id=".U(fg)Wpac[Z;02q+E]$">
-            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">angle</field>
           </block>
         </value>
       </block>
     </statement>
   </block>
-</xml>
+<description><![CDATA[<p>F<span style="color: rgb(0, 0, 0);">or the Polar plot the radius and angle are provided. Radius must be within the maximum radius specified. </span></p><p><span style="color: rgb(0, 0, 0);">In this example we use a Count loop ranging from 0 to 360. It is used as the angle coordinate. The radius is four times the sine of the angle. </span></p><p><span style="color: rgb(0, 0, 0);">Change the value of 4 and run it to view the result</span></p>]]></description></xml>

@@ -5,6 +5,8 @@ import utils
 from QtVersion import *
 
 import sys, time, tempfile, json, socket
+
+from interactive.widgetUtils import MyRow, MyExptRow
 from utils import pg
 import numpy as np
 import eyes17.eyemath17 as em
@@ -16,45 +18,46 @@ from layouts.advancedLoggerTools import LOGGER
 from PyQt5.QtWebEngineWidgets import QWebEngineView, QWebEnginePage
 from PyQt5.QtWidgets import QMessageBox
 
+
 class webPage(QWebEnginePage):
-	def __init__(self, *args, **kwargs):
-		super(webPage, self).__init__()
-		self.featurePermissionRequested.connect(self.onFeaturePermissionRequested)
-	def javaScriptConsoleMessage(self,level, msg, line, source):
-		print (' \033[4;33m line %d: %s !! %s , %s \033[0m' % ( line, msg, source,level))
+    def __init__(self, *args, **kwargs):
+        super(webPage, self).__init__()
+        self.featurePermissionRequested.connect(self.onFeaturePermissionRequested)
 
-	def onFeaturePermissionRequested(self, url, feature):
-		print('feature requested',feature)
-		if feature in (QWebEnginePage.MediaAudioCapture, 
-			QWebEnginePage.MediaVideoCapture, 
-			QWebEnginePage.MediaAudioVideoCapture,
-			QWebEnginePage.DesktopVideoCapture,
-			QWebEnginePage.DesktopAudioVideoCapture):
-			self.setFeaturePermission(url, feature, QWebEnginePage.PermissionGrantedByUser)
-		else:
-			self.setFeaturePermission(url, feature, QWebEnginePage.PermissionDeniedByUser)
+    def javaScriptConsoleMessage(self, level, msg, line, source):
+        print(' \033[4;33m line %d: %s !! %s , %s \033[0m' % (line, msg, source, level))
 
+    def onFeaturePermissionRequested(self, url, feature):
+        print('feature requested', feature)
+        if feature in (QWebEnginePage.MediaAudioCapture,
+                       QWebEnginePage.MediaVideoCapture,
+                       QWebEnginePage.MediaAudioVideoCapture,
+                       QWebEnginePage.DesktopVideoCapture,
+                       QWebEnginePage.DesktopAudioVideoCapture):
+            self.setFeaturePermission(url, feature, QWebEnginePage.PermissionGrantedByUser)
+        else:
+            self.setFeaturePermission(url, feature, QWebEnginePage.PermissionDeniedByUser)
 
-	def certificateError(self, certificateError):
-		certificateError.isOverridable()
-		certificateError.ignoreCertificateError()
-		return True
+    def certificateError(self, certificateError):
+        certificateError.isOverridable()
+        certificateError.ignoreCertificateError()
+        return True
 
 
 class webWin(QWebView):
-	def closeEvent(self, e):
-		"""
+    def closeEvent(self, e):
+        """
 		Sends a message to self.parent to tell that the checkbox for
 		the help window should be unchecked.
 		"""
-		print('leaving...')
-		return
-			
-	def setLocalXML(self,fname):
-		self.handler.setLocalXML(fname)
+        print('leaving...')
+        return
 
-	def __init__(self, parent, name = '', lang="en"):
-		"""
+    def setLocalXML(self, fname):
+        self.handler.setLocalXML(fname)
+
+    def __init__(self, parent, name='', lang="en"):
+        """
 		Class for the help window
 		:param parent: this is the main window
 		:param name: a tuple (title, HTML file indication)
@@ -66,112 +69,107 @@ class webWin(QWebView):
 		:param lang: the desired language
 		"""
 
-		QWebView.__init__(self)
+        QWebView.__init__(self)
 
-		self.parent=parent
-		self.p  = self.parent.p
-		self.lang=lang
-		self.mypage = webPage(self)
-		self.setPage(self.mypage)
+        self.parent = parent
+        self.p = self.parent.p
+        self.lang = lang
+        self.mypage = webPage(self)
+        self.setPage(self.mypage)
 
+        try:
+            from PyQt5.QtWebChannel import QWebChannel
+            self.channel = QWebChannel()
+            self.handler = self.dataHandler(self.parent)
+            self.channel.registerObject('backend', self.handler)
 
-		try:
-			from PyQt5.QtWebChannel import QWebChannel
-			self.channel = QWebChannel()
-			self.handler = self.dataHandler(self.parent)
-			self.channel.registerObject('backend', self.handler)
+            self.hwhandler = self.HWHandler(self.parent)
+            self.channel.registerObject('hwbackend', self.hwhandler)
 
-			self.hwhandler = self.HWHandler(self.parent)
-			self.channel.registerObject('hwbackend', self.hwhandler)
+            self.page().setWebChannel(self.channel)
 
+            fn = os.path.join(self.parent.blocksPath, 'webview.html')
 
-
-			self.page().setWebChannel(self.channel)
-
-			fn = os.path.join(self.parent.blocksPath , 'webview.html')
-
-			self.load(QUrl.fromLocalFile(fn))
-			self.setWindowTitle(self.tr('Block Coding: %s') %fn)
+            self.load(QUrl.fromLocalFile(fn))
+            self.setWindowTitle(self.tr('Block Coding: %s') % fn)
 
 
-		except Exception as e:
-			print(e)
+        except Exception as e:
+            print(e)
 
+    class dataHandler(QtCore.QObject):
+        def __init__(self, parent):
+            QMainWindow.__init__(self)
+            self.parent = parent
+            self.local_xml = ''
+            self.openFileWriters = {}
+            self.MCAST_GRP = '234.0.0.1'
+            self.MCAST_PORT = 9999
+            self.MULTICAST_TTL = 2
+            self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
+            self.sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, self.MULTICAST_TTL)
 
-	class dataHandler(QtCore.QObject):
-		def __init__(self,parent):
-			QMainWindow.__init__(self)
-			self.parent = parent
-			self.local_xml  = ''
-			self.openFileWriters = {}
-			self.MCAST_GRP = '234.0.0.1'
-			self.MCAST_PORT = 9999
-			self.MULTICAST_TTL = 2
-			self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM, socket.IPPROTO_UDP)
-			self.sock.setsockopt(socket.IPPROTO_IP, socket.IP_MULTICAST_TTL, self.MULTICAST_TTL)
+        def setLocalXML(self, fname):
+            self.local_xml = open(fname).read()
+            print('newlocal xml from', fname)
 
-		def setLocalXML(self,fname):
-			self.local_xml = open(fname).read()
+        @QtCore.pyqtSlot(str)
+        def updateCode(self, code):
+            code = "import eyes17.eyes as eyes\np = eyes.open()\n\n" + code
+            self.parent.editor.setPlainText(code)
 
-		@QtCore.pyqtSlot(str)
-		def updateCode(self,code):
-			code = "import eyes17.eyes as eyes\np = eyes.open()\n\n"+code
-			self.parent.editor.setPlainText(code)
+        @QtCore.pyqtSlot(str, bool)
+        def xmlCode(self, code, bcast):
+            if bcast:
+                self.sock.sendto(code.encode(), (self.MCAST_GRP, self.MCAST_PORT))
 
-		@QtCore.pyqtSlot(str, bool)
-		def xmlCode(self,code, bcast):
-			if bcast:
-				self.sock.sendto(code.encode(), (self.MCAST_GRP, self.MCAST_PORT))
+        @QtCore.pyqtSlot()
+        def startStepBroadcast(self):
+            self.sock.sendto("!+".encode(), (self.MCAST_GRP, self.MCAST_PORT))
 
-		@QtCore.pyqtSlot()
-		def startStepBroadcast(self):
-				self.sock.sendto("!+".encode(), (self.MCAST_GRP, self.MCAST_PORT))
+        @QtCore.pyqtSlot()
+        def offBroadcast(self):
+            self.sock.sendto("!-".encode(), (self.MCAST_GRP, self.MCAST_PORT))
 
-		@QtCore.pyqtSlot()
-		def offBroadcast(self):
-				self.sock.sendto("!-".encode(), (self.MCAST_GRP, self.MCAST_PORT))
+        @QtCore.pyqtSlot(str, str)
+        def saveXML(self, name, code):
+            import shelve
+            shelf = shelve.open(name)
+            shelf['code'] = code
+            shelf.close()
+            print('wrote', name)
 
-		@QtCore.pyqtSlot(str, str)
-		def saveXML(self,name, code):
-			import shelve
-			shelf = shelve.open(name)
-			shelf['code'] = code
-			shelf.close()
-			print('wrote',name)
-			
+        @QtCore.pyqtSlot()
+        def closeFiles(self):
+            for a in self.openFileWriters:
+                try:
+                    a.close()
+                except:
+                    pass
+            self.openFileWriters = {}
 
-		@QtCore.pyqtSlot()
-		def closeFiles(self):
-			for a in self.openFileWriters:
-				try: a.close()
-				except: pass
-			self.openFileWriters = {}
+        @QtCore.pyqtSlot(str, str)
+        def writeToFile(self, fname, data):
+            if fname not in self.openFileWriters:
+                self.openFileWriters[fname] = open(os.path.join(os.path.expanduser('~'), fname), 'wt')
+            self.openFileWriters[fname].write(data)
 
-		@QtCore.pyqtSlot(str, str)
-		def writeToFile(self, fname, data):
-			if fname not in self.openFileWriters:
-				self.openFileWriters[fname] = open(os.path.join(os.path.expanduser('~'),fname),'wt')
-			self.openFileWriters[fname].write(data)
+        @QtCore.pyqtSlot(str, str, str, str, str)
+        def save_lists(self, fname, x, y1, y2, y3):
+            print('not implemented')
 
+        @QtCore.pyqtSlot(str, result=str)
+        def loadLocalXML(self, tp):
+            if (tp == 'local_opened_file'):
+                return self.local_xml
+            import shelve
+            shelf = shelve.open(tp)
+            return shelf['code']
 
-		@QtCore.pyqtSlot(str, str,str,str,str)
-		def save_lists(self, fname, x,y1,y2,y3):
-			print('not implemented')
+        @QtCore.pyqtSlot(str, result=list)
+        def loadXMLFile(self, tp):
 
-		@QtCore.pyqtSlot(str, result=str)
-		def loadLocalXML(self,tp):
-			print('load local',tp)
-			if(tp == 'local_opened_file'):
-				return self.local_xml
-			import shelve
-			shelf = shelve.open(tp)
-			return shelf['code']
-
-
-		@QtCore.pyqtSlot(str, result=list)
-		def loadXMLFile(self,tp):
-			
-			return ['''
+            return ['''
  <xml xmlns="https://developers.google.com/blockly/xml">
       <block type="controls_repeat_ext" id="Mm^6|oM;+Z@e){tU@H-D" x="16" y="66">
         <value name="TIMES">
@@ -205,312 +203,417 @@ class webWin(QWebView):
     </xml>
 			''']
 
+        @QtCore.pyqtSlot(str, str, result=str)
+        def fourier_transform(self, xin, yin):
+            x = json.loads(xin)
+            v = json.loads(yin)
+            dt = x[1] - x[0]
+            try:
+                xa, ya = em.fft(np.array(v), dt)
+                # peak = self.peak_index(xa,ya)
+                # ypos = np.max(ya)
+                # pop = pg.plot(xa,ya, pen = self.traceCols[ch])
+                return json.dumps([xa.tolist(), ya.tolist()])
+            except Exception as err:
+                print('FFT error:', err)
+            return json.dumps([[], []])
 
-		@QtCore.pyqtSlot(str, str, result=str)
-		def fourier_transform(self,xin, yin):
-			x = json.loads(xin)
-			v = json.loads(yin)
-			dt = x[1] - x[0]
-			try:	
-				xa,ya = em.fft(np.array(v),dt)
-				#peak = self.peak_index(xa,ya)
-				#ypos = np.max(ya)
-				#pop = pg.plot(xa,ya, pen = self.traceCols[ch])
-				return json.dumps([xa.tolist(),ya.tolist()])
-			except Exception as err:
-				print('FFT error:', err)
-			return json.dumps([[],[]])
+        @QtCore.pyqtSlot(str, str, int, result=float)
+        def sine_fit_arrays(self, xa, ya, p):
+            x = json.loads(xa)
+            y = json.loads(ya)
+            try:
+                yfit, fa = em.fit_sine(np.array(x), np.array(y))
+                if (p == 0):
+                    return fa[0]
+                elif (p == 1):
+                    return fa[1] * 1000
+                elif (p == 2):
+                    return 180 * fa[2] / np.pi
+            except Exception as err:
+                print('fit_sine error:', err)
+            return 0
 
+        @QtCore.pyqtSlot(str, str, str, str, int, result=float)
+        def sine_fit_two_arrays(self, xa, ya, xa2, ya2, p):
+            x = json.loads(xa)
+            y = json.loads(ya)
+            x2 = json.loads(xa2)
+            y2 = json.loads(ya2)
+            try:
+                yfit, fa = em.fit_sine(np.array(x), np.array(y))
+                yfit2, fa2 = em.fit_sine(np.array(x2), np.array(y2))
+                if (p == 0):  # Amp ratio (Gain)
+                    if (fa[0] > 0):
+                        return fa2[0] / fa[0]
+                elif (p == 1):  # Freq ratio (X)
+                    if (fa[1] > 0):
+                        return fa2[1] / fa[1]
+                elif (p == 2):  # Phase difference
+                    return 180 * (fa2[2] - fa[2]) / np.pi
+            except Exception as err:
+                print('fit_sine2 error:', err)
+            return 0
 
-		@QtCore.pyqtSlot(str, str, int, result=float)
-		def sine_fit_arrays(self,xa, ya, p):
-			x = json.loads(xa)
-			y = json.loads(ya)
-			try:	
-				yfit, fa = em.fit_sine(np.array(x),np.array(y))
-				if(p==0):return fa[0]
-				elif(p==1):return fa[1]*1000
-				elif(p==2):return 180*fa[2]/np.pi
-			except Exception as err:
-				print('fit_sine error:', err)
-			return 0
-				
-		@QtCore.pyqtSlot(str, str, str, str, int, result=float)
-		def sine_fit_two_arrays(self,xa, ya,xa2,ya2, p):
-			x = json.loads(xa)
-			y = json.loads(ya)
-			x2 = json.loads(xa2)
-			y2 = json.loads(ya2)
-			try:	
-				yfit, fa = em.fit_sine(np.array(x),np.array(y))
-				yfit2, fa2 = em.fit_sine(np.array(x2),np.array(y2))
-				if(p==0): #Amp ratio (Gain)
-					if(fa[0]>0):
-						return fa2[0]/fa[0]
-				elif(p==1): #Freq ratio (X)
-					if(fa[1]>0):
-						return fa2[1]/fa[1]
-				elif(p==2): #Phase difference
-					return 180*(fa2[2] - fa[2])/np.pi
-			except Exception as err:
-				print('fit_sine2 error:', err)
-			return 0
+    class HWHandler(QtCore.QObject):
+        def __init__(self, parent):
+            QMainWindow.__init__(self)
+            self.p = parent.p
+            self.logger = LOGGER(self.p.I2C)
+            self.parent = parent
+            self.active_sensors = {}
 
+        @QtCore.pyqtSlot(str, result=float)
+        def get_voltage(self, chan):
+            return self.p.get_voltage(chan)
 
-	class HWHandler(QtCore.QObject):
-		def __init__(self,parent):
-			QMainWindow.__init__(self)
-			self.p = parent.p
-			self.parent = parent
-			self.active_sensors = {}
+        @QtCore.pyqtSlot(int, str, float)
+        def configure_trigger(self, chan, name, voltage):
+            self.p.configure_trigger(int(chan), name, float(voltage))
 
+        @QtCore.pyqtSlot(str, int, int, result=str)
+        def capture1(self, chan, ns, tg):
+            x, y = self.p.capture1(chan, ns, tg)
+            return json.dumps([x.tolist(), y.tolist()])
 
+        @QtCore.pyqtSlot(str, int, int, result=str)
+        def capture2(self, chan, ns, tg):
+            x, y, _, y2 = self.p.capture2(ns, tg, chan)
+            return json.dumps([x.tolist(), y.tolist(), y2.tolist()])
 
-		@QtCore.pyqtSlot(str, result=float)
-		def get_voltage(self,chan):
-			print('get voltage')
-			return self.p.get_voltage(chan)
+        @QtCore.pyqtSlot(str, int, int, result=str)
+        def capture4(self, chan, ns, tg):
+            x, y, _, y2, _, y3, _, y4 = self.p.capture4(ns, tg, chan)
+            return json.dumps([x.tolist(), y.tolist(), y2.tolist(), y3.tolist(), y4.tolist()])
 
-		@QtCore.pyqtSlot(int,str,float)
-		def configure_trigger(self,chan , name, voltage):
-			print('trigger:',chan, name, voltage)
-			self.p.configure_trigger(int(chan), name, float(voltage))
+        @QtCore.pyqtSlot(str, int, int, str, int, result=str)
+        def capture_action(self, chan, ns, tg, action, t):
+            x, y = self.p.capture2(ns, tg, chan, action, t)
+            return json.dumps([x.tolist(), y.tolist()])
 
+        @QtCore.pyqtSlot(str, float, result=float)
+        def set_voltage(self, chan, value):
+            if chan == 'PV1':
+                return self.p.set_pv1(value)
+            elif chan == 'PV2':
+                return self.p.set_pv2(value)
 
-		@QtCore.pyqtSlot(str, int, int, result=str)
-		def capture1(self,chan, ns, tg):
-			x, y = self.p.capture1(chan, ns, tg)
-			return json.dumps([x.tolist(),y.tolist()])
-		@QtCore.pyqtSlot(str,int, int , result=str)
-		def capture2(self,chan, ns, tg):
-			x, y, _, y2 = self.p.capture2( ns, tg , chan)
-			return json.dumps([x.tolist(),y.tolist(), y2.tolist()])
+        @QtCore.pyqtSlot(str, str, str, float, result=float)
+        def DoublePinEdges(self, cmd, src, dst, timeout):
+            edge1 = 'rising' if cmd in ['r2r', 'r2f'] else 'falling'
+            edge2 = 'rising' if cmd in ['f2r', 'r2r'] else 'falling'
+            T1, T2 = self.p.DoublePinEdges(src, dst, edge1, edge2, 1, 2, timeout,
+                                           sequential=True)  # src,src,rising edges , rising edges, total 2, total 2, 1 second timeout.
+            if T2 is not None:
+                if T2[0]:
+                    return T2[0]
+                else:
+                    return T2[1]
+            else:
+                return -1
 
-		@QtCore.pyqtSlot(str,int, int ,result=str)
-		def capture4(self,chan, ns, tg):
-			x, y , _, y3, _, y4 = self.p.capture4( ns, tg, chan)
-			return json.dumps([x.tolist(),y.tolist(), y2.tolist(), y3.tolist(), y4.tolist()])
+        @QtCore.pyqtSlot(str, str, str, float, result=float)
+        def SinglePinEdges(self, cmd, src, dst, timeout):
+            edge = 'rising' if cmd in ['s2r', 'c2r'] else 'falling'
+            if cmd[0] == 's':
+                T = self.SinglePinEdges(dst, edge, 1, timeout, src=1)
+            elif cmd[0] == 'c':
+                T = self.SinglePinEdges(dst, edge, 1, timeout, src=0)
+            if T is not None:
+                return T[0]
+            else:
+                return -1
 
+        @QtCore.pyqtSlot(result=bool)
+        def get_device_status(self):
+            if self.p != None:
+                return self.p.connected
+            else:
+                return False
 
-		@QtCore.pyqtSlot(str,int, int , str, int, result=str)
-		def capture_action(self,chan, ns, tg, action, t):
-			x, y = self.p.capture2( ns, tg , chan, action, t)
-			return json.dumps([x.tolist(),y.tolist()])
+        @QtCore.pyqtSlot()
+        def programStarting(self):
+            return
 
+        @QtCore.pyqtSlot(str, str, result=float)
+        def get_sensor(self, sensor, param):
+            return self.p.get_sensor(sensor, int(param))
 
+        @QtCore.pyqtSlot(int)
+        def set_sine_amp(self, value):
+            self.p.set_sine_amp(value)
 
+        @QtCore.pyqtSlot(str, float)
+        def select_range(self, chan, value):
+            self.p.select_range(chan, value)
 
+        @QtCore.pyqtSlot(str, int)
+        def select_range_raw(self, chan, value):
+            self.p.set_gain(chan, value)
 
-		@QtCore.pyqtSlot(str, float,result=float)
-		def set_voltage(self,chan, value):
-			if chan=='PV1':
-				return self.p.set_pv1(value)
-			elif chan=='PV2':
-				return self.p.set_pv2(value)
+        @QtCore.pyqtSlot(str, float, result=float)
+        def set_frequency(self, chan, value):
+            if chan == 'WG':
+                return self.p.set_sine(value)
+            elif chan == 'SQ1':
+                return self.p.set_sq1(value)
+            elif chan == 'SQ2':
+                return self.p.set_sq2(value)
 
-		@QtCore.pyqtSlot(str, str, str, float, result=float)
-		def DoublePinEdges(self,cmd, src, dst, timeout):
-			edge1 = 'rising' if cmd in ['r2r','r2f'] else 'falling'
-			edge2 = 'rising' if cmd in ['f2r','r2r'] else 'falling'
-			T1,T2 = self.p.DoublePinEdges(src,dst,edge1,edge2,1,2,timeout,sequential=True) #src,src,rising edges , rising edges, total 2, total 2, 1 second timeout.
-			if T2 is not None:
-				if T2[0]:return T2[0]
-				else: return T2[1]
-			else:return -1
+        @QtCore.pyqtSlot(float, result=float)
+        def set_sine(self, value):
+            return self.p.set_sine(value)
 
-		@QtCore.pyqtSlot(str, str, str, float, result=float)
-		def SinglePinEdges(self,cmd, src, dst, timeout):
-			edge = 'rising' if cmd in ['s2r','c2r'] else 'falling'
-			if cmd[0]=='s':   T = self.SinglePinEdges(dst,edge,1,timeout,src=1)
-			elif cmd[0]=='c': T = self.SinglePinEdges(dst,edge,1,timeout,src=0)			
-			if T is not None:return T[0]
-			else:return -1
+        @QtCore.pyqtSlot(int)
+        def select_sine_amp(self, value):
+            # 0 = 80mV, 1 = 100mV, 2 = 3V
+            return self.p.set_sine_amp(value)
 
+        @QtCore.pyqtSlot(float, float, result=float)
+        def set_sqr1(self, value, dc):
+            return self.p.set_sqr1(value, dc)
 
-		@QtCore.pyqtSlot(result=bool)
-		def get_device_status(self):
-			print(self.p.connected, self.p)
-			if self.p != None:
-				return self.p.connected
-			else: return False
+        @QtCore.pyqtSlot(float, float, result=float)
+        def set_sqr2(self, value, dc):
+            return self.p.set_sqr2(value, dc)
 
-		@QtCore.pyqtSlot()
-		def programStarting(self):
-			return
+        @QtCore.pyqtSlot(str, float, result=float)
+        def get_frequency(self, chan, tmt):
+            return self.p.get_freq(chan, tmt)
 
+        @QtCore.pyqtSlot(result=float)
+        def get_resistance(self):
+            return self.p.get_resistance()
 
-		@QtCore.pyqtSlot(str, str, result=float)
-		def get_sensor(self,sensor, param):
-			return self.p.get_sensor(sensor, int(param))
+        @QtCore.pyqtSlot(result=float)
+        def get_capacitance(self):
+            return self.p.get_capacitance()
 
+        @QtCore.pyqtSlot(str, bool)
+        def set_state(self, channel, value):
+            self.p.set_state(**{channel: value})
 
-		@QtCore.pyqtSlot(int)
-		def set_sine_amp(self,value):
-			self.p.set_sine_amp(value)
+        @QtCore.pyqtSlot(str, int, float, result=float)
+        def multi_r2r(self, channel, edges, timeout):
+            return self.p.multi_r2rtime(channel, edges, timeout)
 
-		@QtCore.pyqtSlot(str,float)
-		def select_range(self,chan,value):
-			self.p.select_range(chan,value)
+        @QtCore.pyqtSlot(int)
+        def set_multiplexer(self, value):
+            self.p.set_multiplexer(value)
 
+        @QtCore.pyqtSlot(int, bool, float)
+        def stepper_move(self, steps, dir, delay):
+            self.p.stepper_move(steps, dir, delay)
 
-		@QtCore.pyqtSlot(str, float,result=float)
-		def set_frequency(self,chan, value):
-			if chan=='WG':
-				return self.p.set_sine(value)
-			elif chan=='SQ1':
-				return self.p.set_sq1(value)
-			elif chan=='SQ2':
-				return self.p.set_sq2(value)
+        @QtCore.pyqtSlot(result=str)
+        def getAllSensors(self):
+            sensors=[]
+            for addr in self.logger.addressmap:
+                sensors.append('['+str(addr)+']'+self.logger.addressmap[addr])
+            print('getAllSensors',self.logger.addressmap,sensors)
+            return json.dumps(sensors)
 
-		@QtCore.pyqtSlot(float,result=float)
-		def set_sine(self,value):
-				return self.p.set_sine(value)
+        @QtCore.pyqtSlot(result=str)
+        def scanI2C(self):
+            sensors = []
+            self.active_sensors={} # Empty sensors list. forces re-init for everyone
+            x = self.logger.I2CScan()
+            print('Responses from: ', x)
+            for a in x:
+                possiblesensors = self.logger.sensormap.get(a, None)
+                if len(possiblesensors) > 0:
+                    for sens in possiblesensors:
+                        s = self.logger.namedsensors.get(sens)
+                        sensors.append('[' + str(a) + ']' + s['name'].split(' ')[0])
+                        continue
+            print('found', sensors)
+            return json.dumps(sensors)
 
-		@QtCore.pyqtSlot(float,float, result=float)
-		def set_sqr1(self,value,dc):
-				return self.p.set_sqr1(value, dc)
+        @QtCore.pyqtSlot(str, result=str)
+        def getSensorParameters(self, name):
+            print('found sensor params for', name)
+            return json.dumps(self.logger.namedsensors[name]["fields"])
 
-		@QtCore.pyqtSlot(float, float,result=float)
-		def set_sqr2(self,value, dc):
-				return self.p.set_sqr2(value, dc)
-
-
-		@QtCore.pyqtSlot(str,float, result=float)
-		def get_freq(self,chan, tmt):
-			return self.p.get_freq(chan,tmt)
-
-		@QtCore.pyqtSlot(result=float)
-		def get_resistance(self):
-			return self.p.get_resistance()
-
-		@QtCore.pyqtSlot(result=float)
-		def get_capacitance(self):
-			return self.p.get_capacitance()
-
-		@QtCore.pyqtSlot(str, bool)
-		def set_state(self, channel, value):
-			self.p.set_state(**{channel:value})
-
-
-		@QtCore.pyqtSlot(str, int, float, result=float)
-		def multi_r2r(self, channel, edges, timeout):
-			return self.p.multi_r2rtime(channel, edges, timeout)
-
-
+        @QtCore.pyqtSlot(str,int, result=str)
+        def get_generic_sensor(self, name,addr):
+            if name not in self.active_sensors:
+                self.active_sensors[name] = self.logger.namedsensors[name]
+                self.logger.namedsensors[name]['init'](address=addr)
+            return json.dumps(self.active_sensors[name]['read']())
 
 def load_project_structure(startpath, tree):
-	"""
+    """
 	Load Project structure tree
 	:param startpath: 
 	:param tree: 
 	:return: 
 	"""
-	import os
-	from PyQt5.QtWidgets import QTreeWidgetItem
-	from PyQt5.QtGui import QIcon
-	for element in os.listdir(startpath):
-		path_info = startpath + "/" + element
-		if os.path.isdir(path_info):
-			parent_itm = QTreeWidgetItem(tree, [os.path.basename(element)])
-			load_project_structure(path_info, parent_itm)
-			parent_itm.setIcon(0, QIcon(os.path.join(startpath,element+'.jpg')) )
-		else:
-			name = os.path.basename(element)
-			if(name.endswith('.jpeg')):
-				parent_itm = QTreeWidgetItem(tree, [os.path.basename(element.replace('.jpeg','.xml'))])
-				parent_itm.setIcon(0, QIcon(os.path.join(startpath,element)) )
-			elif(name.endswith('.xml')):
-				parent_itm = QTreeWidgetItem(tree, [os.path.basename(element)])
+
+    import os
+    from PyQt5.QtWidgets import QTreeWidgetItem
+    from PyQt5.QtGui import QIcon
+    for element in os.listdir(startpath):
+        path_info = startpath + "/" + element
+        if os.path.isdir(path_info):
+            parent_itm = QTreeWidgetItem(tree, [os.path.basename(element)])
+            load_project_structure(path_info, parent_itm)
+            parent_itm.setIcon(0, QIcon(os.path.join(startpath, element + '.jpg')))
+        else:
+            name = os.path.basename(element)
+            if (name.endswith('.jpeg')):
+                parent_itm = QTreeWidgetItem(tree, [os.path.basename(element.replace('.jpeg', '.xml'))])
+                parent_itm.setIcon(0, QIcon(os.path.join(startpath, element)))
+            elif (name.endswith('.xml')):
+                parent_itm = QTreeWidgetItem(tree, [os.path.basename(element)])
+
 
 class Expt(QtWidgets.QWidget, ui_blockly_layout.Ui_Form):
-	def __init__(self, device=None):
-		super(Expt, self).__init__()
-		self.setupUi(self)
-		self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)),"blockly/samples")
-		if os.path.exists(self.samplepath):
-				try:
-					self.setStyleSheet(open(os.path.join(os.path.dirname(__file__),"layouts/style.qss"), "r").read())
-				except Exception as e:
-					print('stylesheet missing. ',e)
-				self.p = device						# connection to the device hardware
+    def __init__(self, device=None):
+        super(Expt, self).__init__()
+        self.setupUi(self)
+        self.subcatScroll.setVisible(False)
+        self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "blockly/samples")
+        if os.path.exists(self.samplepath):
+            self.thumbnailpath = os.path.join(self.samplepath, "thumbs")
 
-				self.blocksPath = os.path.join(os.path.dirname(os.path.abspath(__file__)),'blockly')
-				self.web = webWin(self,'block coding')
-				self.webLayout.addWidget(self.web)
+            try:
+                self.setStyleSheet(open(os.path.join(os.path.dirname(__file__), "layouts/style.qss"), "r").read())
+            except Exception as e:
+                print('stylesheet missing. ', e)
+            self.p = device  # connection to the device hardware
 
-				self.highlight = syntax.PythonHighlighter(self.editor.document())
-				self.editorFont = QtGui.QFont()
-				self.editorFont.setPointSize(10)
+            self.blocksPath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'blockly')
+            self.web = webWin(self, 'block coding')
+            self.webLayout.addWidget(self.web)
 
-				load_project_structure(self.samplepath,self.directoryBrowser)
-		else:
-				QMessageBox.warning(None,
-									self.tr("Blockly is missing"),
-									self.tr("""\
+            self.highlight = syntax.PythonHighlighter(self.editor.document())
+            self.editorFont = QtGui.QFont()
+            self.editorFont.setPointSize(10)
+
+            # load_project_structure(self.samplepath, self.directoryBrowser)
+            with open(os.path.join(self.samplepath, 'visual_experiments.json')) as expts:
+                self.expts = json.loads(expts.read())
+
+            print(self.expts)
+
+            # load_project_structure(self.samplepath, self.thumbnailpath, self.directoryBrowser)
+            self.load_categories(self.samplepath, self.thumbnailpath, self.expts)
+
+
+
+        else:
+            QMessageBox.warning(None,
+                                self.tr("Blockly is missing"),
+                                self.tr("""\
 You wanted to launch eyes17's blockly plugin.
 Unfortunately the plugin is missing... Consider
 installing it (it is a non-free package)."""))
-		return
 
-	def showDirectory(self):
-		self.directoryBrowser.setVisible(True)
+        self.setTheme('visual_styles')
+        return
 
-	def loadExample(self, item, col):
-		if(not item.text(col).endswith('xml')):
-			return
-		texts = []
+    def showDirectory(self):
+        self.directoryBrowser.setVisible(True)
 
-		self.directoryBrowser.setVisible(False)
+    def setTheme(self, theme):
+        self.setStyleSheet("")
+        self.setStyleSheet(open(os.path.join(self.samplepath, theme + ".qss"), "r").read())
+        print('Theme set to ', os.path.join(self.samplepath, theme + ".qss"))
 
-		while item is not None:
-			texts.append(item.text(0))
-			item = item.parent()
-		texts.reverse()
-		path = os.path.join(*texts)
-		sample  = os.path.join(self.samplepath,path)
-		self.web.setLocalXML(sample)
-		self.filenameLabel.setText(path)
-		
-		self.web.mypage.runJavaScript("loadXML(JSBridge.loadLocalXML('local_opened_file',loadRawXml));")
+    def load_categories(self, startpath, thumbpath, exptjson):
+        for cat in exptjson:
+            catdeets = exptjson[cat]
+            name = catdeets['image'].split('.')[0]
+            clickevent = partial(self.load_subcategory, startpath, catdeets['files'], catdeets['directory'])
+            catrow = MyRow(name, catdeets['description'], os.path.join(startpath, catdeets['image']),
+                           catdeets['directory'], clickevent)
+            self.categoryLayout.addWidget(catrow)
 
-	def fontPlus(self):
-		size = self.editorFont.pointSize()
-		if size>40: return
-		self.editorFont.setPointSize(size+1)
-		self.editor.setFont(self.editorFont)
+    exptCards = []
+    activeCategory = None
 
-	def fontMinus(self):
-		size = self.editorFont.pointSize()
-		if size<5: return
-		self.editorFont.setPointSize(size-1)
-		self.editor.setFont(self.editorFont)
+    def load_subcategory(self, startpath, files, directory, ev):
+        self.setTheme('visual_styles')
 
-	def setFont(self,font):
-		self.editorFont.setFamily(font)
-		self.editor.setFont(self.editorFont)
+        if (directory == self.activeCategory):
+            self.activeCategory = None
+            self.subcatScroll.setVisible(False)
+        else:
+            self.subcatScroll.setVisible(True)
+            self.activeCategory = directory
 
+        for a in self.exptCards:
+            self.subcategoryLayout.removeWidget(a)
+        self.exptCards = []
+        self.subcategoryLabel.setText(directory)
+        for name in files:
+            desc = files[name]
+            fname = name + '.xml'
+            # name = fname.split('.')[0].replace(' ','_') #Replace spaces with _ for python files.
+            clickevent = partial(self.loadExample, os.path.join(startpath, directory, name))
+            catrow = None
+            for extension in ['.jpg', '.jpeg', '.png']:
+                if os.path.exists(os.path.join(self.thumbnailpath, name + extension)):
+                    catrow = MyExptRow(name, desc, os.path.join(self.thumbnailpath, name + extension), directory,
+                                       clickevent)
+                    break
+            if catrow is None:
+                for extension in ['.jpg', '.jpeg', '.png']:
+                    if os.path.exists(os.path.join(self.samplepath, directory, name + extension)):
+                        catrow = MyExptRow(name, desc, os.path.join(self.samplepath, directory, name + extension),
+                                           directory, clickevent)
+                        break
 
+            if catrow is None:
+                print('No thumb found.', name)
+                catrow = MyExptRow(name, desc, None, directory,
+                                   clickevent)  # os.path.join(self.samplepath, directory, name + extension)
 
+            if (catrow is not None):
+                self.subcategoryLayout.addWidget(catrow)
+                self.exptCards.append(catrow)
 
+    def loadExample(self, item, ev):
+        self.activeCategory = None
+        self.subcatScroll.setVisible(False)
+        self.web.setLocalXML(item + '.xml')
+        self.filenameLabel.setText(item + '.xml')
 
+        self.web.mypage.runJavaScript("JSBridge.loadLocalXML('local_opened_file',loadRawXml);")
 
+    def fontPlus(self):
+        size = self.editorFont.pointSize()
+        if size > 40: return
+        self.editorFont.setPointSize(size + 1)
+        self.editor.setFont(self.editorFont)
+
+    def fontMinus(self):
+        size = self.editorFont.pointSize()
+        if size < 5: return
+        self.editorFont.setPointSize(size - 1)
+        self.editor.setFont(self.editorFont)
+
+    def setFont(self, font):
+        self.editorFont.setFamily(font)
+        self.editor.setFont(self.editorFont)
 
 
 if __name__ == '__main__':
-	import eyes17.eyes
-	dev = eyes17.eyes.open()
-	app = QApplication(sys.argv)
+    import eyes17.eyes
 
-	# translation stuff
-	lang=QLocale.system().name()
-	t=QTranslator()
-	t.load("lang/"+lang, os.path.dirname(__file__))
-	app.installTranslator(t)
-	t1=QTranslator()
-	t1.load("qt_"+lang,
-		QLibraryInfo.location(QLibraryInfo.TranslationsPath))
-	app.installTranslator(t1)
+    dev = eyes17.eyes.open()
+    app = QApplication(sys.argv)
 
-	mw = Expt(dev)
-	mw.show()
-	sys.exit(app.exec_())
+    # translation stuff
+    lang = QLocale.system().name()
+    t = QTranslator()
+    t.load("lang/" + lang, os.path.dirname(__file__))
+    app.installTranslator(t)
+    t1 = QTranslator()
+    t1.load("qt_" + lang,
+            QLibraryInfo.location(QLibraryInfo.TranslationsPath))
+    app.installTranslator(t1)
+
+    mw = Expt(dev)
+    mw.show()
+    sys.exit(app.exec_())

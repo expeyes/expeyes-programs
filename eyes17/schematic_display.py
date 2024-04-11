@@ -18,9 +18,10 @@ import pyqtgraph as pg
 from eyes17 import eyes
 from interactive.MyTypes import IoTypes, DisplayTypes, Measurement, GraphTypes, IOClassification
 from interactive.interactiveControlUtils import xy_logger_controls, NOLOGGING, SWEEPLOGGER, DATALOGGER, NLOGGER
-from interactive.myUtils import load_defaults, load_project_structure, CustomGraphicsView
-from interactive.widgetUtils import miniscope, Gauge, myLabel, DIOINPUT, Datalogger, popupEditor, XYlogger
-from layouts import ui_interactive_layout
+from interactive.myUtils import load_defaults,  CustomGraphicsView
+from interactive.widgetUtils import miniscope, Gauge, myLabel, DIOINPUT, Datalogger, popupEditor, XYlogger, MyRow, \
+    MyExptRow
+from layouts import ui_interactive_layout2 as ui_interactive_layout
 
 imageMap = {}
 propMap = {}
@@ -472,6 +473,13 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
     ]
 
     def __init__(self, device=None):
+        super(Expt, self).__init__()
+        self.setupUi(self)
+        self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "interactive", "samples")
+        self.thumbnailpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "interactive", "thumbs")
+        self.setTheme('interactive_styles')
+        self.image_extension = '.jpg'
+
         self.p = device
         self.running = False
         self.graphItems = []
@@ -488,14 +496,10 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         global propMap, imageMap
         self.raster_width = None
         self.raster_height = None
-        super(Expt, self).__init__()
-        self.setupUi(self)
         with open(os.path.join(path, "defaults.aiken"), 'rb') as file:
             buffer = file.read()
             propMap, imageMap = load_defaults(buffer)
 
-        self.samplepath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "interactive", "samples")
-        self.thumbnailpath = os.path.join(os.path.dirname(os.path.abspath(__file__)), "interactive", "thumbs")
 
         self.oscilloscope = miniscope(None, device)
         self.data_logger = Datalogger()
@@ -515,6 +519,7 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
 
         self.elementPixmapItems = {}
         self.elements = {}
+        self.subcatScroll.setVisible(False)
 
         self.loadSchematic(os.path.join(self.samplepath, "Getting Started", "Lemon_Cell"))
         if os.path.exists(self.samplepath):
@@ -525,7 +530,13 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
                 print('stylesheet missing. ', e)
             self.schematicsPath = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'interactive')
 
-            load_project_structure(self.samplepath, self.thumbnailpath, self.directoryBrowser)
+            with open(os.path.join(self.samplepath, 'experiments.json')) as expts:
+                self.expts = json.loads(expts.read())
+
+            print(self.expts)
+
+            #load_project_structure(self.samplepath, self.thumbnailpath, self.directoryBrowser)
+            self.load_categories(self.samplepath, self.thumbnailpath, self.expts)
 
         self.startTime = time.time()
         self.interval = 0.1  # Seconds
@@ -533,6 +544,67 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         self.timer.timeout.connect(self.update_everything)
         self.timer.start(2)
         self.running = True
+
+    def setTheme(self, theme):
+        self.setStyleSheet("")
+        self.setStyleSheet(open(os.path.join(self.samplepath, theme + ".qss"), "r").read())
+        print('Theme set to ', os.path.join(self.samplepath, theme + ".qss"))
+
+    def load_categories(self,startpath, thumbpath, exptjson):
+        for cat in exptjson:
+            catdeets = exptjson[cat]
+            print('DEETS:', catdeets)
+            name = catdeets['image'].split('.')[0]
+            clickevent = partial(self.load_subcategory, startpath, catdeets['files'], catdeets['directory'])
+            catrow = MyRow(name, catdeets['description'], os.path.join(startpath, catdeets['image']),
+                           catdeets['directory'], clickevent)
+            self.categoryLayout.addWidget(catrow)
+
+    exptCards = []
+    activeCategory =None
+    def load_subcategory(self,startpath, files, directory, ev):
+        self.setTheme('interactive_styles')
+
+        if(directory == self.activeCategory):
+            self.activeCategory = None
+            self.subcatScroll.setVisible(False)
+        else:
+            self.subcatScroll.setVisible(True)
+            self.activeCategory = directory
+
+        for a in self.exptCards:
+            self.subcategoryLayout.removeWidget(a)
+        self.exptCards = []
+        self.subcategoryLabel.setText(directory)
+        for fname in files:
+            desc = files[fname]
+            name = fname.split('.')[0].replace(' ','_') #Replcae spaces with _ for python files.
+            clickevent = partial(self.load_expt, os.path.join(startpath, directory, name))
+            if os.path.exists(os.path.join(self.thumbnailpath, name+'.jpg')):
+                catrow = MyExptRow(name, desc, os.path.join(self.thumbnailpath, name+'.jpg'), directory, clickevent)
+            elif os.path.exists(os.path.join(self.samplepath,directory, name+'.png')):
+                catrow = MyExptRow(name, desc, os.path.join(self.samplepath,directory, name+'.png'), directory, clickevent)
+            self.subcategoryLayout.addWidget(catrow)
+            self.exptCards.append(catrow)
+
+    def load_expt(self,path, ev):
+        print(path, ev)
+        self.activeCategory = None
+        self.subcatScroll.setVisible(False)
+
+        self.filenameLabel.setText(path)
+
+        if os.path.exists(path + self.image_extension):
+            self.scene.clear()
+            self.loadSchematic(path)
+        else:
+            return
+
+        if os.path.exists(path + '.help'):
+            self.loadHelp(path + '.help')
+
+        #self.directoryFrame.setVisible(False)
+
 
     def plotTabChanged(self, tb):
         if tb == self.graphTabs.indexOf(self.scopeTab):
@@ -597,7 +669,7 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         self.data_logger.add_field(name, minimum, maximum)
 
     def show_directory(self):
-        self.directoryBrowser.setVisible(True)
+        self.directoryFrame.setVisible(True)
 
     def load_example(self, item, col):
         self.running = False
@@ -611,7 +683,7 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         self.filenameLabel.setText(path)
 
         sample = os.path.join(self.samplepath, path)
-        if os.path.exists(sample + '.png'):
+        if os.path.exists(sample + self.image_extension):
             self.scene.clear()
             self.loadSchematic(sample)
         else:
@@ -619,8 +691,11 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
 
         if os.path.exists(sample + '.help'):
             self.loadHelp(sample + '.help')
+        else:
+            print('missing help:',sample)
+            self.webView.setHtml('missing help')
 
-        self.directoryBrowser.setVisible(False)
+        self.directoryFrame.setVisible(False)
 
     def loadHelp(self, fname):
         with open(fname, 'r') as helpfile:
@@ -638,7 +713,7 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
         self.elementPixmapItems.clear()
         self.graphConfs = []
         self.activeGraphConf = -1
-        self.image_path = title + '.png'
+        self.image_path = title + self.image_extension
         self.json_path = title + '.json'
         self.record_path = title + '.record'
         self.raster_width, self.raster_height = get_png_dimensions(self.image_path)
@@ -680,8 +755,10 @@ class Expt(QWidget, ui_interactive_layout.Ui_Form):
                     self.LOGTYPE = SWEEPLOGGER
                     self.controls = xy_logger_controls(self, self.record_conf, self.elements)
 
+                self.controlsFrame.setVisible(False)
                 if self.controls is not None:
                     print('initializing self.controls .....', list(self.record_conf['default']))
+                    self.controlsFrame.setVisible(True)
                     self.controls.init.connect(self.toggle_recording)
                     self.controls.newdata.connect(self.newdata)
                     self.controlsLayout.addWidget(self.controls)

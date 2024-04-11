@@ -1,0 +1,17 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+xlabel=Time
+ylabel=Distance
+xunits=S
+yunits=mm
+
+input=VL53L0X:0
+logging=true
+title=Distance Vs Time
+duration=20
+fitmode=sine
+
+ymin=0
+ymax=800
+intro=Record Distance with respect to time

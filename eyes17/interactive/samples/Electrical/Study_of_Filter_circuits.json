@@ -1,0 +1,20 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 870.9442522024353,
+        "y": 507.61773537500005
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 11.738733725545135,
+        "y": 508.09498712500005
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=10\nmax=5000\nvalue=1000\n\n#Sweep options\nsweep=WG\nstart=10\nstop=5000\nstepsize=10\n\ntitle=A2(input) and A1(output)\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nSIGFILTEROUT=A1\nNS=500\nTG=5\nchannels=2\nxaxis=time\ny1=A1\ny2=A2\nymin=-4\nymax=4\nfitmode=sine\n\n  ",
+        "x": 3.7331246027190423,
+        "y": 90.0083067125
+    }
+}

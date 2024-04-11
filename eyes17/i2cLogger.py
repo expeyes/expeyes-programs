@@ -42,12 +42,51 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 		self.min = sensor.get('min',None)
 		self.fields = sensor.get('fields',None)
 		self.widgets =[]
+		self.buttonframe = None
+		def initbuttonframe():
+			if self.buttonframe is None:
+				self.buttonframe = QtWidgets.QFrame()
+				self.configLayout.addWidget(self.buttonframe)
+				self.widgets.append(self.buttonframe)
+
 		for a in sensor.get('config',[]): #Load configuration menus
-			l = QtWidgets.QLabel(a.get('name',''))
-			self.configLayout.addWidget(l) ; self.widgets.append(l)
-			l = QtWidgets.QComboBox(); l.addItems(a.get('options',[]))
-			l.currentIndexChanged['int'].connect(a.get('function',None))
-			self.configLayout.addWidget(l) ; self.widgets.append(l)
+			widgettype = a.get('widget', 'dropdown')
+			if widgettype == 'button':
+				l = QtWidgets.QPushButton(a.get('name', 'Button'))
+				l.clicked.connect(a.get('function', None))
+			elif widgettype == 'spinbox':
+				l = QtWidgets.QLabel(a.get('name', ''))
+				self.buttonLayout.addWidget(l);
+				self.widgets.append(l)
+				l = QtWidgets.QSpinBox()
+				l.setMinimum(a.get('min', 0))
+				l.setMaximum(a.get('max', 100))
+				val = a.get('value',0)
+				if 'readbackfunction' in a:
+					val = a.get('readbackfunction')(address=addr)
+				l.setValue(val)
+				l.valueChanged.connect(a.get('function', None))
+			elif widgettype == 'doublespinbox':
+				l = QtWidgets.QLabel(a.get('name', ''))
+				self.buttonLayout.addWidget(l);
+				self.widgets.append(l)
+				l = QtWidgets.QDoubleSpinBox()
+				l.setMinimum(a.get('min', 0))
+				l.setMaximum(a.get('max', 100))
+				if 'readbackfunction' in a:
+					val = a.get('readbackfunction')()
+				l.setValue(val)
+				l.valueChanged.connect(a.get('function', None))
+			elif widgettype == 'dropdown':
+				l = QtWidgets.QLabel(a.get('name', ''))
+				self.buttonLayout.addWidget(l);
+				self.widgets.append(l)
+				l = QtWidgets.QComboBox()
+				l.addItems(a.get('options',[]))
+				l.currentIndexChanged['int'].connect(a.get('function',None))
+
+			self.buttonLayout.addWidget(l)
+			self.widgets.append(l)
 			
 		self.graph.setRange(xRange=[-5, 0])
 		import pyqtgraph as pg
@@ -243,29 +282,52 @@ class DIOSENSOR(QtWidgets.QDialog,ui_dio_sensor.Ui_Dialog):
 
 
 
+	def saveRegion(self):
+		self.__saveTraces__(True)
 	def saveTraces(self):
-		self.pauseButton.setChecked(True); self.isPaused = True;
-		fn = QtWidgets.QFileDialog.getSaveFileName(self,"Save file",QtCore.QDir.currentPath(),
-        "Text files (*.txt);;CSV files (*.csv);;All files (*.*)", "CSV files (*.csv)")
-		if(len(fn)==2): #Tuple
+		self.__saveTraces__(False)
+
+	def __saveTraces__(self, considerRegion):
+		print('saving region' if considerRegion else 'saving all data')
+		self.pauseButton.setChecked(True);
+		self.isPaused = True;
+		fn = QtWidgets.QFileDialog.getSaveFileName(self, "Save file", QtCore.QDir.currentPath(),
+		                                           "Text files (*.txt);;CSV files (*.csv);;All files (*.*)",
+		                                           "CSV files (*.csv)")
+		if (len(fn) == 2):  # Tuple
 			fn = fn[0]
 		print(fn)
+
+
+
 		if fn != '':
-			f = open(fn,'wt')
+			f = open(fn, 'wt')
 			f.write('time')
 			for inp in self.fields:
 				if self.cbs[inp].isChecked():
-					f.write(',%s'%(inp))
+					f.write(',%s' % (inp))
 			f.write('\n')
 
-			for a in range(self.datapoints):
-				f.write('%.3f'%(self.time[a]-self.time[0]))
-				for inp in self.fields:
-					if self.cbs[inp].isChecked():
-						f.write(',%.3f'%(self.curveData[inp][a]))
-				f.write('\n')
-			f.close()
+			if considerRegion:
+				S, E = self.region.getRegion()
+				start = (np.abs(self.time[:self.datapoints] - self.T - S)).argmin()
+				end = (np.abs(self.time[:self.datapoints] - self.T - E)).argmin()
+				print(self.T, start, end, S, E, self.time[start], self.time[end])
+				for a in range(start, end):
+					f.write('%.3f' % (self.time[a] - self.time[start]))
+					for inp in self.fields:
+						if self.cbs[inp].isChecked():
+							f.write(',%.3f' % (self.curveData[inp][a]))
+					f.write('\n')
 
+			else:
+				for a in range(self.datapoints):
+					f.write('%.3f' % (self.time[a] - self.time[0]))
+					for inp in self.fields:
+						if self.cbs[inp].isChecked():
+							f.write(',%.3f' % (self.curveData[inp][a]))
+					f.write('\n')
+			f.close()
 
 	def launch(self):
 		if self.initialize is not None:

@@ -1,0 +1,16 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+input=PT1000
+logging=true
+title=Temperature Vs Time
+intro=Measure and plot temperature using PT1000 sensor against time
+duration=300
+ymin=0
+fitmode=exp
+ymax=120
+ymin=-10
+xlabel=Time
+ylabel=Distance
+xunits=S
+yunits=C

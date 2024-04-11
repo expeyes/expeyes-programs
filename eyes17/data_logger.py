@@ -124,10 +124,10 @@ class Expt(QtWidgets.QWidget, ui_data_logger.Ui_Form):
 		self.p = device						# connection to the device hardware 
 		self.currentPage = 0
 		self.isPaused = False
-		self.fields = ['A1','A2','A3','SEN','IN1']
-		self.min = [-16,-16,-3.3,0,0]
-		self.max = [16,  16, 3.3,3.3,3.3]
-		self.cbs = {'A1':self.A1Box,'A2':self.A2Box,'A3':self.A3Box,'SEN':self.SENBox,'IN1':self.IN1Box}
+		self.fields = ['A1','A2','A3','SEN','IN1','CUSTOM_A1']
+		self.min = [-16,-16,-3.3,0,0, 0]
+		self.max = [16,  16, 3.3,3.3,3.3,14]
+		self.cbs = {'A1':self.A1Box,'A2':self.A2Box,'A3':self.A3Box,'SEN':self.SENBox,'IN1':self.IN1Box,'CUSTOM_A1':self.CUSTOMBox}
 		pos = 0
 		colors = ['#00ffff','#008080','#ff0000','#800000','#ff00ff','#800080','#00FF00','#008000','#ffff00','#808000','#0000ff','#000080','#a0a0a4','#808080','#ffffff','#4000a0']
 		labelStyle = {'color': 'rgb(200,250,200)', 'font-size': '12pt'}
@@ -150,7 +150,7 @@ class Expt(QtWidgets.QWidget, ui_data_logger.Ui_Form):
 		self.valueTable.setHorizontalHeaderLabels(self.fields)
 		for a in self.cbs:
 			self.cbs[a].setStyleSheet('background-color:%s;'%colors[pos])
-			item = QtGui.QTableWidgetItem()
+			item = QtWidgets.QTableWidgetItem()
 			self.valueTable.setItem(0,pos,item)
 			item.setText('')
 			pos+=1
@@ -211,6 +211,12 @@ class Expt(QtWidgets.QWidget, ui_data_logger.Ui_Form):
 				self.gauges[inp][0].set_NeedleColor(255,0,0,30)
 				self.gauges[inp][0].set_enable_filled_Polygon(False)
 
+	def setSQ1(self, val):
+		self.p.set_sqr1(val)
+
+	def offSQ1(self):
+		self.p.set_sqr1(-1)
+
 	def pauseLogging(self,v):
 		self.isPaused = v
 		for inp in self.fields:
@@ -228,6 +234,9 @@ class Expt(QtWidgets.QWidget, ui_data_logger.Ui_Form):
 		self.p.select_range('A2',r)
 		self.gauges['A2'][0].set_MinValue(-1*r)
 		self.gauges['A2'][0].set_MaxValue(r)
+
+	def setOD1(self,state):
+		self.p.set_state(OD1 = state)
 
 	def show_voltmeter(self):
 		self.voltmeter.launch('WG')
@@ -252,7 +261,19 @@ class Expt(QtWidgets.QWidget, ui_data_logger.Ui_Form):
 		pos = 0
 		for inp in self.fields:
 			if self.cbs[inp].isChecked():
-				v = self.p.get_average_voltage(inp,samples=2)
+				if inp != 'CUSTOM_A1':
+					v = self.p.get_average_voltage(inp,samples=2)
+					if inp=='A3':
+						try:
+							rg = float(self.rgEdit.text())
+							v *= (1.+10.e3/rg)
+							print(v)
+						except Exception as e:
+							print(e,v)
+				else:
+					v = self.p.get_average_voltage('A1',samples=2)
+					v = float(self.slopeEdit.text())*v + float(self.offsetEdit.text())
+
 				self.valueTable.item(0,pos).setText('%.3f'%v)
 			else:
 				v= 0

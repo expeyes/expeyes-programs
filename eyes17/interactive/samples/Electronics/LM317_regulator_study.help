@@ -1,0 +1,12 @@
+## LM317 Based High Current Voltage Source
+
+PV1 is only rated to supply up to 20mA . But a cheap adjustable voltage regulator
+such as LM317 can be used to get a few hundred mA directly via the 5V supply
+
+A DVD Motor is connected to this circuit, and the speed of the motor is adjusted.
+
+Do not use small loads which can draw more than 300mA because the USB port of your laptop/phone is not rated to deliver more than 500mA.
+
+Adjust PV1 from -1.25 to 4 Volts and observe the Voltage at the output as monitored by A1.
+
+The LM317 is designed to set the voltage at the output equal to voltage at the adjust pin +1.25 Volts. So setting PV1 to -1.25 volts will bring the output new 0 Volts

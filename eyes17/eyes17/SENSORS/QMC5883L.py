@@ -30,10 +30,10 @@ class QMC5883L():
 
 	def QMC_RANGE(self,r):
 		if r=='2G':
-			self.I2C.writeBulk(self.QMC5883L_ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b10000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(8g)
+			self.I2C.writeBulk(self.ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b10000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(8g)
 			self.QMC_scaling = 3000
 		elif r=='8G':
-			self.I2C.writeBulk(self.QMC5883L_ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b00000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(2g)
+			self.I2C.writeBulk(self.ADDRESS,[0x09,0b001|0b000 | 0b100 | 0b00000]) #Mode. continuous|oversampling(512) | rate 50Hz | range(2g)
 			self.QMC_scaling = 12000	
 
 	def getVals(self,addr,numbytes):

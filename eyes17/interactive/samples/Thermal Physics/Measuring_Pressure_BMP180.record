@@ -1,0 +1,16 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+input=BMP180:1
+logging=true
+title=Pressure Vs Time
+intro="Measure air Pressure and plot against time
+duration=60
+ymin=0.040
+ymax=1.6
+autoscaleY=true
+xlabel=Time
+ylabel=Pressure
+xunits=S
+yunits=Bar
+

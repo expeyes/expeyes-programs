@@ -1,0 +1,20 @@
+{
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=measure natural frequency (A1-coil-GND)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 11\nNS=1000\nTG=20\nx=time\ny1=A1\nymin=-0.2\nymax=0.2\nautoscaleY=true\nfitmode=sine\nselectorStart=30\nselectorEnd=90\n",
+        "x": 1168.8721338048724,
+        "y": 808.0292273507349
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=0.1\nvalue=2\nmax=5\nstepsize=0.01\nfixOrder=2",
+        "x": 25.781384421342132,
+        "y": 70.55821986655376
+    },
+    "SQ1DC": {
+        "ID": "SQ1DC",
+        "desc": "min=0\nvalue=25\nmax=100\nstepsize=0.1",
+        "x": 18.369623263301605,
+        "y": 536.6904815755751
+    }
+}

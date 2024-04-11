@@ -1,0 +1,14 @@
+{
+    "BUTTON": {
+        "ID": "BUTTON",
+        "desc": "action=capture\nNS=500",
+        "x": 57.449888431460764,
+        "y": 328.82774732174926
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=Induced Voltage (A1)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 6\nrangeA1=true\nNS=1000\nTG=20\nx=time\ny1=A1\nyunits=V\nymin=-4\nymax=4\nautomatic=false\nthreshold=0.5\ntrigger=false\ntriggerbutton=false",
+        "x": 3.1787386025845414,
+        "y": 560.1081026711448
+    }
+}

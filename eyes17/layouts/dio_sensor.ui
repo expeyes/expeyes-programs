@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>657</width>
-    <height>404</height>
+    <width>766</width>
+    <height>455</height>
    </rect>
   </property>
   <property name="font">
@@ -27,7 +27,7 @@
   <property name="modal">
    <bool>false</bool>
   </property>
-  <layout class="QGridLayout" name="gridLayout">
+  <layout class="QGridLayout" name="gridLayout" columnstretch="2,2,2,2,0" columnminimumwidth="100,0,0,0,0">
    <property name="leftMargin">
     <number>3</number>
    </property>
@@ -43,27 +43,7 @@
    <property name="spacing">
     <number>3</number>
    </property>
-   <item row="0" column="2">
-    <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>40</width>
-       <height>20</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
-   <item row="0" column="1">
-    <widget class="QPushButton" name="pushButton">
-     <property name="text">
-      <string>Initialize</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" rowspan="4">
+   <item row="0" column="0" rowspan="5">
     <widget class="QFrame" name="frame">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
@@ -115,14 +95,93 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="3">
-    <widget class="QPushButton" name="switcher">
+   <item row="1" column="1" colspan="3">
+    <widget class="QFrame" name="frame_2">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QVBoxLayout" name="configLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
+      <property name="topMargin">
+       <number>2</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
+      </property>
+      <property name="bottomMargin">
+       <number>2</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item row="2" column="1" colspan="3">
+    <widget class="QFrame" name="frame_3">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <property name="spacing">
+       <number>2</number>
+      </property>
+      <property name="leftMargin">
+       <number>1</number>
+      </property>
+      <property name="topMargin">
+       <number>1</number>
+      </property>
+      <property name="rightMargin">
+       <number>1</number>
+      </property>
+      <property name="bottomMargin">
+       <number>1</number>
+      </property>
+     </layout>
+    </widget>
+   </item>
+   <item row="0" column="2">
+    <spacer name="horizontalSpacer">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>40</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item row="0" column="1">
+    <widget class="QPushButton" name="pushButton">
      <property name="text">
-      <string>Data Logger</string>
+      <string>Initialize</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="1" rowspan="2" colspan="4">
+   <item row="3" column="1" rowspan="3" colspan="4">
     <widget class="QStackedWidget" name="monitors">
      <property name="sizePolicy">
       <sizepolicy hsizetype="Preferred" vsizetype="MinimumExpanding">
@@ -188,9 +247,6 @@
        <property name="verticalSpacing">
         <number>0</number>
        </property>
-       <item row="1" column="0" colspan="5">
-        <widget class="PlotWidget" name="graph"/>
-       </item>
        <item row="2" column="0" rowspan="2">
         <widget class="QPushButton" name="pushButton_4">
          <property name="sizePolicy">
@@ -210,30 +266,10 @@
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QCheckBox" name="pauseButton">
-         <property name="maximumSize">
-          <size>
-           <width>70</width>
-           <height>16777215</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pause</string>
-         </property>
-        </widget>
-       </item>
        <item row="2" column="1">
         <widget class="QPushButton" name="pushButton_2">
          <property name="text">
           <string>SINE FIT</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QPushButton" name="pushButton_3">
-         <property name="text">
-          <string>DAMPED SINE FIT</string>
          </property>
         </widget>
        </item>
@@ -262,8 +298,31 @@
          </property>
         </widget>
        </item>
-       <item row="2" column="4" rowspan="2">
-        <widget class="QPushButton" name="pushButton_6">
+       <item row="2" column="2">
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>DAMPED SINE FIT</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="6">
+        <widget class="PlotWidget" name="graph"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QCheckBox" name="pauseButton">
+         <property name="maximumSize">
+          <size>
+           <width>70</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Pause</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="5" rowspan="2">
+        <widget class="QPushButton" name="saveButton">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
            <horstretch>0</horstretch>
@@ -281,41 +340,47 @@
          </property>
         </widget>
        </item>
+       <item row="2" column="4" rowspan="2">
+        <widget class="QPushButton" name="saveRegionButton">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Maximum" vsizetype="Minimum">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>25</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Save Region</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="3">
+        <spacer name="horizontalSpacer_2">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
       </layout>
      </widget>
     </widget>
    </item>
-   <item row="1" column="1" colspan="3">
-    <widget class="QFrame" name="frame_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
+   <item row="0" column="3" colspan="2">
+    <widget class="QPushButton" name="switcher">
+     <property name="text">
+      <string>Data Logger</string>
      </property>
-     <property name="frameShape">
-      <enum>QFrame::NoFrame</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" name="configLayout">
-      <property name="spacing">
-       <number>2</number>
-      </property>
-      <property name="leftMargin">
-       <number>2</number>
-      </property>
-      <property name="topMargin">
-       <number>2</number>
-      </property>
-      <property name="rightMargin">
-       <number>2</number>
-      </property>
-      <property name="bottomMargin">
-       <number>2</number>
-      </property>
-     </layout>
     </widget>
    </item>
   </layout>
@@ -370,8 +435,8 @@
    <slot>sineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>120</x>
-     <y>53</y>
+     <x>214</x>
+     <y>359</y>
     </hint>
     <hint type="destinationlabel">
      <x>467</x>
@@ -386,8 +451,8 @@
    <slot>dampedSineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>53</y>
+     <x>296</x>
+     <y>359</y>
     </hint>
     <hint type="destinationlabel">
      <x>397</x>
@@ -402,8 +467,8 @@
    <slot>restartLogging()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>187</x>
-     <y>68</y>
+     <x>154</x>
+     <y>374</y>
     </hint>
     <hint type="destinationlabel">
      <x>114</x>
@@ -418,8 +483,8 @@
    <slot>pauseLogging(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>120</x>
-     <y>63</y>
+     <x>214</x>
+     <y>383</y>
     </hint>
     <hint type="destinationlabel">
      <x>186</x>
@@ -428,14 +493,14 @@
    </hints>
   </connection>
   <connection>
-   <sender>pushButton_6</sender>
+   <sender>saveButton</sender>
    <signal>clicked()</signal>
    <receiver>Dialog</receiver>
    <slot>saveTraces()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>299</x>
-     <y>68</y>
+     <x>638</x>
+     <y>374</y>
     </hint>
     <hint type="destinationlabel">
      <x>428</x>
@@ -450,12 +515,28 @@
    <slot>setDuration()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>145</x>
-     <y>63</y>
+     <x>296</x>
+     <y>382</y>
     </hint>
     <hint type="destinationlabel">
      <x>294</x>
      <y>403</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>saveRegionButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Dialog</receiver>
+   <slot>saveRegion()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>462</x>
+     <y>366</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-2</x>
+     <y>375</y>
     </hint>
    </hints>
   </connection>
@@ -470,5 +551,7 @@
   <slot>restartLogging()</slot>
   <slot>saveTraces()</slot>
   <slot>setDuration()</slot>
+  <slot>saveData()</slot>
+  <slot>saveRegion()</slot>
  </slots>
 </ui>

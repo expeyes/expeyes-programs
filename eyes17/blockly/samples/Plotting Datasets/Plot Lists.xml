@@ -1,0 +1,85 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="y94{/iI86ejV.#k{%hHM">a</variable>
+    <variable id="B{S`oo+Q`Sk[yO)n/.1*">b</variable>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+  </variables>
+  <block type="lists_new" id="?W=..Z3m{j=3LcTBP*-c" x="10" y="107">
+    <field name="list" id="y94{/iI86ejV.#k{%hHM">a</field>
+    <next>
+      <block type="lists_new" id="GFSahJ|~pVJZ1;zPBm$V">
+        <field name="list" id="B{S`oo+Q`Sk[yO)n/.1*">b</field>
+        <next>
+          <block type="controls_for" id="#Fq#-aW+TM*7Wm6Mfeh|">
+            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+            <value name="FROM">
+              <shadow type="math_number" id="`[GI!;Kx=*l~lN-;i}^L">
+                <field name="NUM">-10</field>
+              </shadow>
+            </value>
+            <value name="TO">
+              <shadow type="math_number" id="F7~0A=F?EJe734wHD{Qe">
+                <field name="NUM">10</field>
+              </shadow>
+            </value>
+            <value name="BY">
+              <shadow type="math_number" id="s*cIXN:210pP+2:T:~gQ">
+                <field name="NUM">1</field>
+              </shadow>
+            </value>
+            <statement name="DO">
+              <block type="lists_push" id="W^Y07tE,BmN*HyCunKSx">
+                <field name="list" id="y94{/iI86ejV.#k{%hHM">a</field>
+                <value name="VALUE">
+                  <block type="variables_get" id="1_7Z$BR3+_)P#|$^FZ7^">
+                    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="lists_push" id="WC]kQ1zRRyT-#yDS2fT#">
+                    <field name="list" id="B{S`oo+Q`Sk[yO)n/.1*">b</field>
+                    <value name="VALUE">
+                      <block type="math_arithmetic" id="qiiS{JI=C_Qo=qol,zp@">
+                        <field name="OP">MULTIPLY</field>
+                        <value name="A">
+                          <shadow type="math_number" id="zfg?)qN?hN$)xpQ52uKt">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="Rzd7C.QxU?oh{59({jK_">
+                            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <shadow type="math_number" id="M@qKvY(@E3,^MY$a~EQ]">
+                            <field name="NUM">1</field>
+                          </shadow>
+                          <block type="variables_get" id="D5)Ao?)j/?:BJ`@R9Im~">
+                            <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </statement>
+            <next>
+              <block type="plot_xyarray" id="{7?|0n4e3{V7|83S4%Xy">
+                <value name="X">
+                  <block type="variables_get" id="{k{C~i|[p0s#kkl)ZX*W">
+                    <field name="VAR" id="y94{/iI86ejV.#k{%hHM">a</field>
+                  </block>
+                </value>
+                <value name="Y">
+                  <block type="variables_get" id="X|pI)0c0x.*ZLK:HA.Md">
+                    <field name="VAR" id="B{S`oo+Q`Sk[yO)n/.1*">b</field>
+                  </block>
+                </value>
+              </block>
+            </next>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+<description><![CDATA[<h1>Plot arrays</h1><p><br></p><p><span style="color: rgb(0, 0, 0);">The&nbsp;</span><strong style="color: rgb(0, 0, 0);">Plot Array block</strong><span style="color: rgb(0, 0, 0);">&nbsp;requires two lists, for the x and y coordinates. </span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Two empty lists are created and a&nbsp;</span><strong style="color: rgb(0, 0, 0);">Count loop&nbsp;</strong><span style="color: rgb(0, 0, 0);">fills them. During each iteration the loop index is appended to the x-list and its square to the y-list. </span></p><p><br></p><p><span style="color: rgb(0, 0, 0);">Plot Array block is also used for plotting the data arrays returned by the Capture blocks inside the ExpEYES section.</span></p>]]></description></xml>

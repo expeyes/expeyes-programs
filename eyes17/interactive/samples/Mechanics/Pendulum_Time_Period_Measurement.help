@@ -1,0 +1,25 @@
+## Acceleration due to gravity using Rod pendulum
+
+Period of oscillations of a pendulum depends on it's length and the value of gravity. 
+Period of oscillation of a uniform rod about one end is given by T = 2π√(2l ⁄ 3g), where l is the length and g is the acceleration due to gravity.
+
+## Objective
+
+Measure the period of oscillations of a rod pendulum using a photo-transisor and LED arrangement. The pendulum (T-shaped, a knife edge attached to a 6mm dia rod) is made to swing between an LED and photo-transistor, connected to SEELab/ExpEYES. The LED and photo-transistor are mounted on a U-shaped bracket as shown.
+
+## Procedure
+
++ Set SQ1 to 5Hz by touching the SQ1 icon and dragging it up/down.
++ Remove the pendulum, and let the blinking LED light flash on the photosensor
++ Observe that the voltage on SEN input is near 0 when light is falling on it, and near 3Volts without light.
++ Now touch the SQ1 icon, and click on ON. This will make the LED shine without blinking.
++ Oscillate the pendulum , and watch the input signal from SEN as it fluctuates along with the pendulum
++ Click on the TIMING button to measure the time period of the pendulum
++ Switch to the record tab and get multiple measurements.
++ Calculate g from the known pendulum length, and the measured time period.
+
++ Repeat with different pendulum lengths.
+
+## Discussion
+
+The period of oscillation can be measured with an accuracy of a few microseconds. However mainly there are two sources of error. The length is measured from the knife edge to the bottom and used in the formula. But there is a small mass projecting above the knife edge that is not included in the calculation. Also the calculations assume that the pendulum must be exactly vertical in the resting position, which has to be ensured.

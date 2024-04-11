@@ -1,0 +1,26 @@
+{
+    "AD9833_1": {
+        "ID": "AD9833_1",
+        "desc": "min=2000\nmax=10000\nvalue=5000\nstepsize=1",
+        "x": 24.97216747788852,
+        "y": 661.671836284333
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A3]\nynames=[A1(Mod),A2(Carr),A3(Out)]\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope (A1,A2, A3 )\nfitmode=sine\n",
+        "x": 1144.9766745596148,
+        "y": 922.4333968793487
+    },
+    "GRAPH:1-8": {
+        "ID": "GRAPH:1-8",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=1\nxaxis=time\nylist=[A3]\nynames=[A3(Modulated Output)]\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Modulated Output(A3)\nfitmode=sine\n",
+        "x": 1160.2820118942452,
+        "y": 922.4333968793487
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=50\nmax=5000\nvalue=2000\nstepsize=1\n\n",
+        "x": 23.767303008032346,
+        "y": 66.69741266262302
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "DC_IN2": {
+        "ID": "DC_IN2",
+        "desc": "automatic=false",
+        "x": 578.3141023255813,
+        "y": 138.32077340714287
+    },
+    "DC_SEN": {
+        "ID": "DC_SEN",
+        "desc": "automatic=false",
+        "x": 578.3141023255813,
+        "y": 482.3863235714286
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=0\nymax=5\nchannels=1\nxaxis=time\ny1=A1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=650\ntitle=Voltage on A1 input\nfitmode=sine\n\n  ",
+        "x": 1085.8753953488372,
+        "y": 750.8171950714285
+    },
+    "GRAPH:1-3": {
+        "ID": "GRAPH:1-3",
+        "desc": "mode=scope\nymin=0\nymax=5\nchannels=1\nxaxis=time\ny1=SEN\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=650\ntitle=Voltage on SEN input\n  fitmode=sine\n\n  ",
+        "x": 1130.526558139535,
+        "y": 750.8171950714285
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=100\nmax=5000\nstepsize=1\nvalue=1000",
+        "x": 14.215499441860464,
+        "y": 139.03440657857143
+    },
+    "SQ1DC": {
+        "ID": "SQ1DC",
+        "desc": "min=0\nmax=100\nvalue=50",
+        "x": 14.215499441860464,
+        "y": 483.0999344285715
+    }
+}

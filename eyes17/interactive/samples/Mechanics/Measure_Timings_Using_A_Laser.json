@@ -1,0 +1,14 @@
+{
+    "SEN": {
+        "ID": "SEN",
+        "desc": "logging=true\ntitle=Sensor Voltage Level\nmin=0\nmax=3.3\nduration=5",
+        "x": 81.20033089719135,
+        "y": 966.8523740334111
+    },
+    "TIMINGS:2": {
+        "ID": "TIMINGS:2",
+        "desc": "channel=SEN\nunits=S\ncommand=sen_times\nautomatic=false\nlevel=4\ntimeout=10",
+        "x": 117.73298562595207,
+        "y": 315.0557994037402
+    }
+}

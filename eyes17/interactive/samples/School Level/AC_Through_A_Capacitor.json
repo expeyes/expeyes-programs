@@ -1,0 +1,26 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=rms",
+        "x": 120.16013886792454,
+        "y": 516.8367717837838
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=rms",
+        "x": 719.8213132075472,
+        "y": 516.9762195135135
+    },
+    "EQ:(A2_RMS)/1000:A": {
+        "ID": "EQ:(A2_RMS)/1000:A",
+        "desc": "#micro is ok. do not show nano\nminOrder=-6",
+        "x": 726.8439396226415,
+        "y": 5.463565674594594
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=20\nmax=5000\nvalue=150\nstepsize=1\nfixOrder=0\n\n",
+        "x": 118.3041237735849,
+        "y": 247.16042210810812
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 27.303837509134834,
+        "y": 696.3106292238627
+    },
+    "VL53L0X:0": {
+        "ID": "VL53L0X:0",
+        "desc": "w=150\nh=150\nfitmode=sine\nlogging=true\ntitle=Distance(mm) vs Time\nduration=20\nymax=800\nyunits=mm",
+        "x": 40.008422091871104,
+        "y": 152.21933075892642
+    }
+}

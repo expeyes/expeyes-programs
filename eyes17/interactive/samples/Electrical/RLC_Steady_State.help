@@ -1,0 +1,14 @@
+# RLC Steady State Response
+
+Under a sinusoidal signal, the three basic passive components Resistance, Inductance, and Capacitance show different phase relationships between the voltage and current. For a resistor the voltage waveforms are “in-phase” with the current. In a pure inductance the voltage waveform “leads” the current by 90 degree. In a pure capacitance the voltage waveform “lags” the current by 90 degree. Using ExpEYES/SEELab we can study these things experimentally. 
+
+
+We will also explore the phase relationships between voltages at various points in the circuit. Three different cases RC, RL and RLC will be studied. The voltage and phase values at series resonance condition will be explored. 
+
+When both inductor and capacitor are present the phase shift across LC is given by
+
+θ = tanh(XL-Xc)/R
+
+where Xc =  1/2πfC , and XL = 2πfL
+
+The inductive reactance increases with frequency while the capacitive reactance decreases with it. At some frequency they will become equal and the phase shift across LC will become zero. The total voltage across LC also will become zero. This condition is called series resonance.

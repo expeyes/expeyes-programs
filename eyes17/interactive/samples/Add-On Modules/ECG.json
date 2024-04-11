@@ -1,0 +1,20 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 92.01212417685895,
+        "y": 276.07231157894734
+    },
+    "GRAPH:1-6": {
+        "ID": "GRAPH:1-6",
+        "desc": "mode=scope\nymin=0\nymax=5\nchannels=1\nxaxis=time\ny1=A1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 9\nNS=100\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Biopotential Signal(A1) Vs Time",
+        "x": 1090.1612547362247,
+        "y": 837.1870515789474
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 812.8526188868246,
+        "y": 620.5974321052631
+    }
+}

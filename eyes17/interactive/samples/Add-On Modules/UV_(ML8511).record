@@ -1,0 +1,14 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+xlabel=Time
+ylabel=UV Intensity
+xunits=S
+
+input=ML8511:0
+logging=true
+title=UV Vs Time
+duration=20
+ymin=0
+ymax=3
+intro=Record UV Intensity with respect to time

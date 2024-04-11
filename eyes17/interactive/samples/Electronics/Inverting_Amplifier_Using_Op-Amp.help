@@ -1,0 +1,11 @@
+# Inverting opamp
+
+Prepare the circuit on a breadboard. 
+
+The input waveform is a small amplitude sine wave. Set the sine wave amplitude to 80mV.
+
+For the 10K,1K combination, gain is given by Rf/Ri = 10x . So the output signal should ideally be around 800mV amplitude.
+
+However, this may vary depending on the opamp chosen. Some inexpensive opamps do now follow the ideal equation, and may have significant gain compression(Gain reduces with amplitude).
+
+[ExpEYES.in Inverting Op Amp](https://expeyes.in/experiments/electronics/inv-amp.html)

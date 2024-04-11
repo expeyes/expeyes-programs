@@ -1,0 +1,14 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\ntitle=Direction 1 Vs Time\nduration=20\nymin=0\nymax=3.3\nmin=0\nmax=3.3\nw=200\nh=200\nymin=0\nlabel=gauge",
+        "x": 44.97813175844996,
+        "y": 593.5998179729869
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "logging=true\ntitle=Voltage Vs Time\nduration=20\nymin=0\nymax=3.3\nmin=0\nmax=3.3\nw=200\nh=200\nymin=0\nlabel=gauge",
+        "x": 514.5743451907798,
+        "y": 593.5998179729869
+    }
+}

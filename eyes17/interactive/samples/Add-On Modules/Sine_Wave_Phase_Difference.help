@@ -1,0 +1,13 @@
+## Introduction
+
+The AD9833 is a Direct Digital Synthesizer capable of sine and triangle wave generation up to 2MHz with 24bit resolution. It can be used with expeyes-19
+
+It AD9833 must be connected to expeyes/SEELab via the SPI pins. 
+
+We have developed an add-on module with 2 AD9833 ICs. Controlled via CS1, and CS2 chip selects. The input clock of 64MHz is shared by both, so exact phase differences can be set.
+
+## AD9833 with the Android App
+ 
+Plug in the module, and try adjusting the frequencies of each sine wave independently.
+
+When the phase control is used, the last set frequency is applied to both of the outputs, and the phase difference is configured.

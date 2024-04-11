@@ -1,0 +1,74 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+      <block type="controls_repeat_ext" id="xrVpj7)2,r:*0h=dkt=9" x="10" y="30">
+        <value name="TIMES">
+          <shadow type="math_number" id="%3/YgbV%p7v4_,=!6TXX">
+            <field name="NUM">10</field>
+          </shadow>
+        </value>
+        <statement name="DO">
+          <block type="wait_seconds" id="YPp?`R/3=gtYif4cD!zG">
+            <field name="SECONDS">0.1</field>
+            <next>
+              <block type="cs_print" id="%EKPJAJn=`P)^+dy8Z?a">
+                <value name="TEXT">
+                  <shadow type="text" id="8ND/VN|gbf=q?DV[o3:;">
+                    <field name="TEXT">hello</field>
+                  </shadow>
+                  <block type="get_voltage" id="DcC.~))OZ%BebiT9},P6">
+                    <field name="CHANNEL">A1</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="wait_seconds" id="MFP_CLBm}BjGH)}|VC+I">
+                    <field name="SECONDS">0.1</field>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+
+<quizzing>
+[
+    {
+      "id": 1,
+      "question": "What is the Maximum Range of the voltmeters on A1 and A2?",
+      "A": "-3V to +3V",
+      "B": "0V to 5V",
+      "C": "-16V to 16V",
+      "D": "-5V to 5V",
+      "answer": 3
+    },
+    {
+      "id": 2,
+      "question": "What is the Maximum Range of the voltmeter on A3?",
+      "A": "-3V to +3V",
+      "B": "0V to 5V",
+      "C": "-16V to 16V",
+      "D": "-5V to 5V",
+      "answer": 1
+    },
+    {
+      "id": 3,
+      "question": "What is input impedance of A1 and A2?",
+      "A": "1 MOhm",
+      "B": "10 MOhm",
+      "C": "50 Ohm",
+      "D": "10 Ohm",
+      "answer": 1
+    },
+    {
+      "id": 4,
+      "question": "Which measurement can be made using SEN input?",
+      "A": "Capacitance",
+      "B": "Resistance",
+      "C": "Current",
+      "D": "pH",
+      "answer": 2
+    }
+
+]
+
+</quizzing>
+</xml>

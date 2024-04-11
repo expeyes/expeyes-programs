@@ -1,0 +1,41 @@
+[default]
+#Parameters for launching the experiment
+
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+
+xlabel=Frequency(WG)
+ylabel=Amplitude Ratio (OUT/IN)
+xunits=Hz
+yunits=
+
+input=scope
+# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS
+timebase = 2
+NS=200
+A1MAP=A1
+output=WG
+start=100
+stop=5000
+stepsize=20
+settlingDelay=20
+xequation=WG
+yequation=AMPRATIO
+yequationlabel=Gain
+
+y2equation=PHASESHIFT
+y2min=0
+y2max=360
+
+logging=true
+title=Bode Plots
+ymin=0
+ymax=1.5
+xmin=0
+xmax=5000
+intro=Measure Amplitude ratio vs frequency
+
+#Marker for 
+markereq=WG
+markerunits=Hz
+# Specify input variables not being recorded as part of the experiment, but which are being used for calculating marker. comma separated list

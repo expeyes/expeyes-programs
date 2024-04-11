@@ -1,0 +1,26 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 106.68394294115713,
+        "y": 48.25052724270765
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "",
+        "x": 810.7149365337067,
+        "y": 48.25052724270765
+    },
+    "PV1": {
+        "ID": "PV1",
+        "desc": "min=-5\nmax=5\nstepsize=0.02\n\n#sweep\n\nmode=scope\nsweep=PV1\nstart=-5\nstop=5\ntitle=Input(A1) vs Clipped Output(A2)\n\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\n\nxaxis=time\ny1=A1\ny2=A2\nymin=-5\nymax=5",
+        "x": 800.5741212702064,
+        "y": 717.4270497148397
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=4\nmax=2000\nvalue=1000\nstepsize=1",
+        "x": 106.68394294115713,
+        "y": 707.2879880049799
+    }
+}

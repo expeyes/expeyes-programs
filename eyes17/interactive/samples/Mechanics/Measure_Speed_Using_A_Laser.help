@@ -1,0 +1,9 @@
+## Timing measurements using a laser and a photo transistor
+
++ Point the laser at the phototransistor via a couple of mirrors as shown in the diagram
++ Click the timing button
++ Move and object through the laser path such that it interrupts the beam twice.
++ When the first interruption occurs, the timer is started
++ The timer stops when the second interruption occurs.
+
+When the TIMING button is clicked, the

@@ -1,0 +1,20 @@
+{
+    "GRAPH:1-3": {
+        "ID": "GRAPH:1-3",
+        "desc": "title=Microphone Input(MIC)\nmode=scope\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 4\nNS=1000\nTG=2\nx=time\ny1=MIC\nymin=-3.5\nymax=3.5\nfitmode=none\n\ntriggerbutton=false\ntrigger=false\nfftbutton=true",
+        "x": 1155.7771269648404,
+        "y": 767.1392331428572
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=2000\nmax=4000\nvalue=2700\ntristate=true",
+        "x": 928.4928700358237,
+        "y": 512.4123462857143
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=2000\nmax=4000\nvalue=3200\ntristate=true",
+        "x": 928.4928700358237,
+        "y": 64.36665915428571
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "MPU6050:0": {
+        "ID": "MPU6050:0",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10",
+        "x": 44.884674312189055,
+        "y": 83.96366341221957
+    },
+    "MPU6050:1": {
+        "ID": "MPU6050:1",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10",
+        "x": 44.88939939586547,
+        "y": 378.43872095305375
+    },
+    "MPU6050:2": {
+        "ID": "MPU6050:2",
+        "desc": "w=130\nh=130\nlogging=true\nduration=10",
+        "x": 44.884674312189055,
+        "y": 659.2614773650943
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "#Parameters for launching the experiment\nui=datalogger\nxlabel=Time\nylabel=Acceleration\nxunits=S\nyunits=?\n\ninput=MPU6050:0\nlogging=true\ntitle=Acceleration Vs Time\nduration=20\nymin=-16\nymax=16\nintro=Record Ax with respect to time",
+        "x": 788.426535757847,
+        "y": 670.361311497112
+    }
+}

@@ -1,0 +1,12 @@
+# AC Pickup
+
+You know that familiar humming noise we often hear from faulty audio systems? The buzz that you hear
+if you touch the input lead of a home theater instead of plugging it into a phone/music player?
+
+That's because your body acts as an antenna, and picks up the 50Hz electricity that flows through your house, powering lights, fans etc. 
+
+In this experiment, we try to measure this, and observe the voltage as a function of time. 
+You will see that it oscillates back and forth approximately every 20mS, which corresponds to 50Hz. In some countries this frequency is 60Hz.
+The amplitude of this signal will also increase if you move closer to switchboards or electrical appliances which run on AC power. 
+`Never touch exposed AC wires!!`
+simply going close to them (1 feet away) is enough to get a strong signal picked up.

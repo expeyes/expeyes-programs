@@ -1,0 +1,38 @@
+{
+    "AD9833_1": {
+        "ID": "AD9833_1",
+        "desc": "max=10000\nvalue=1000\nstepsize=1",
+        "x": 62.742615690228305,
+        "y": 129.63216494001261
+    },
+    "AD9833_2": {
+        "ID": "AD9833_2",
+        "desc": "max=10000\nvalue=1000\nstepsize=1",
+        "x": 64.40078573350394,
+        "y": 494.8810611432804
+    },
+    "AD9833_PHASE": {
+        "ID": "AD9833_PHASE",
+        "desc": "",
+        "x": 636.7725907257351,
+        "y": 489.1898793752891
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=2\nxaxis=time\nylist=[A1,A2]\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope A1,A2\nfitmode=sine\n",
+        "x": 1093.9588834441806,
+        "y": 922.4333968793487
+    },
+    "GRAPH:1-3": {
+        "ID": "GRAPH:1-3",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=1\nxaxis=time\ny1=A2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope A2\nfitmode=sine\n",
+        "x": 1132.8318383667945,
+        "y": 922.4683448133433
+    },
+    "GRAPH:1-7": {
+        "ID": "GRAPH:1-7",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=1\nxaxis=time\ny1=A1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope A2\nfitmode=sine\n",
+        "x": 1114.3659998903543,
+        "y": 922.4333968793487
+    }
+}

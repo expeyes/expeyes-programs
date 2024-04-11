@@ -1,5 +1,5 @@
 import configparser
-import math, re
+import math, re, os
 import time
 from functools import partial
 
@@ -17,10 +17,55 @@ from interactive import utils
 from interactive.MyTypes import Measurement
 from layouts import ui_interactiveScope, ui_interactiveController, ui_interactive_data_logger, ui_popupEditor, \
     ui_interactive_xy_logger
+from layouts import ui_category_row_2 as ui_category_row
+from layouts import ui_expt_row
+
 from interactive.advancedLoggerTools import fit_sine, sine_eval, inputs, outputs, LOGGER, dsine_eval, fit_dsine
 
 colors = ['#00ff00', '#ff0000', '#ffff80', (10, 255, 255)] + [
     (50 + np.random.randint(200), 50 + np.random.randint(200), 150 + np.random.randint(100)) for a in range(10)]
+
+
+
+class MyRow(QtWidgets.QFrame, ui_category_row.Ui_Form):
+    set_output = None
+
+    def __init__(self, title, description, imagepath, directory, clickEvent, parent=None):
+        super(MyRow, self).__init__(parent)
+        self.setupUi(self)
+        self.title.setText(title)
+        self.description.setText(description)
+        # self.scene = QtWidgets.QGraphicsScene()
+        # self.image.setScene(self.scene)
+        self.directory = directory
+        self.pic = QtGui.QPixmap(imagepath)
+        self.scaled_pixmap = self.pic.scaled(self.image.size(), aspectRatioMode=1, transformMode=Qt.SmoothTransformation)
+        self.image.setPixmap(self.scaled_pixmap)
+
+        self.mousePressEvent = clickEvent
+
+
+class MyExptRow(QtWidgets.QFrame, ui_expt_row.Ui_Form):
+    set_output = None
+
+    def __init__(self, title, description, imagepath, directory, clickEvent, parent=None):
+        super(MyExptRow, self).__init__(parent)
+        self.setupUi(self)
+        self.title.setText(title)
+        self.description.setText(description)
+        # self.scene = QtWidgets.QGraphicsScene()
+        # self.image.setScene(self.scene)
+        self.directory = directory
+        if(imagepath is not None and os.path.exists(imagepath)):
+            self.pic = QtGui.QPixmap(imagepath)
+            self.scaled_pixmap = self.pic.scaled(self.image.size(), aspectRatioMode=1,
+                                                 transformMode=Qt.SmoothTransformation)
+            self.image.setPixmap(self.scaled_pixmap)
+        else:
+            self.image.setParent(None)
+            self.gridLayout_2.setColumnStretch(1, 0)
+
+        self.mousePressEvent = clickEvent
 
 
 class PopupDialogMixin(object):  # will not work (with PySide at least) unless implemented as 'new style' class.
@@ -108,6 +153,8 @@ class myLabel(QLabel):
     def wheelEvent(self, event):
         # event.angleDelta().y() # baseline_speed
         self.scrolled.emit(event)
+
+
 
 
 class Gauge(QtWidgets.QWidget, QtWidgets.QGraphicsWidget):
@@ -930,11 +977,7 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
 
         self.set_timebase(self.TBval)
 
-        self.results = []
-        for a in ['amplitude', 'frequency', 'phase', 'offset', '', '', '', '', '', '']:
-            x = QtWidgets.QListWidgetItem(a)
-            self.list.addItem(x)
-            self.results.append(None)
+
 
     def select_trig_source(self, index):
         src = self.sources[self.Trigindex]
@@ -991,7 +1034,8 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         except:
             self.comerr()
             return
-    def A1MapChanged(self,chan):
+
+    def A1MapChanged(self, chan):
 
         self.xchan.setText(self.A1Map.currentText())
         self.xc = self.xeq = self.A1Map.currentText()
@@ -1000,7 +1044,8 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
         self.updateLabel()
 
     def updateLabel(self):
-        self.XYLabel.setText(self.xeq+" Vs "+self.yeq)
+        self.XYLabel.setText(self.xeq + " Vs " + self.yeq)
+
     def set_trigger_level(self, tr):
         self.Triglevel = tr * 0.001  # convert to volts
         try:
@@ -1013,13 +1058,13 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
             print('trig set error')
 
     def setWG(self, v):
-        self.WGLabel.setText('WG:' + '%.2f'%self.p.set_sine(v))
+        self.WGLabel.setText('WG:' + '%.2f' % self.p.set_sine(v))
 
     def setSQ1(self, v):
-        self.SQ1Label.setText('SQ1:' + '%.2f'%self.p.set_sq1(v))
+        self.SQ1Label.setText('SQ1:' + '%.2f' % self.p.set_sq1(v))
 
     def setPV1(self, v):
-        self.PV1Label.setText('PV1:' + '%.3f'%(self.p.set_pv1(v / 1000.)))
+        self.PV1Label.setText('PV1:' + '%.3f' % (self.p.set_pv1(v / 1000.)))
 
     def select_channel(self, ch):
         if self.chanSelCB[ch].isChecked():
@@ -1031,15 +1076,10 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
 
         self.updateChannels()
 
-    def changeParameter(self, p):
-        self.activeParameter = p
-        self.message.setText('Selected Parameter = %s of %s' % (self.list.item(p).text(), self.A1Map.currentText()))
 
     def read(self, **kwargs):
         chan = str(self.A1Map.currentText())
         if self.p and chan in self.p.allAnalogChannels:
-            for a in range(10):
-                self.list.item(a).setText('')
             totalTime = self.NP * self.TG * 1e-6  # in S units
             if totalTime < 50e-3:  # Acceptable time for UI freeze. 50mS
                 try:
@@ -1195,7 +1235,7 @@ class miniscope(QtWidgets.QWidget, ui_interactiveScope.Ui_Form):
                     else:
                         self.fitSelCB[ch].setText('')
 
-            if self.XYEnabled and len(self.xdata[0]) > 10 :
+            if self.XYEnabled and len(self.xdata[0]) > 10:
                 self.XYplot.setLabel('bottom', self.xeq)
                 self.XYplot.setLabel('left', self.yeq)
 

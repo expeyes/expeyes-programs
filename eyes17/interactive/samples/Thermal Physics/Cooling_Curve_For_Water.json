@@ -1,0 +1,8 @@
+{
+    "PT1000": {
+        "ID": "PT1000",
+        "desc": "w=150\nh=150\n\nlogging=true\ntitle=Temperature Vs Time\nduration=300\nymax=120\nymin=-10\nyunits=C",
+        "x": 33.72819259250405,
+        "y": 285.94523090872553
+    }
+}

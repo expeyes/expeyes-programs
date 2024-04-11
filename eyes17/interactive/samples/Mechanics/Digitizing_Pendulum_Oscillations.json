@@ -1,0 +1,8 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "title=Voltage on A1\nlogging=true\nduration=20\nmin=-1\nmax=1\nrangeA1=true\nautoscaleY=true\nfitmode=dsine",
+        "x": 931.0117279518176,
+        "y": 284.54438143682216
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "logging=true\nmode=scope\nxaxis=time\ntitle=Oscilloscope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nchannels=2\nylist=[A1,A2]\nNS=500\nTG=3\nymin=-5\nymax=5\nfitmode=sine\n\n  ",
+        "x": 867.4655273316869,
+        "y": 540.6661964130715
+    },
+    "AD9833_1": {
+        "ID": "AD9833_1",
+        "desc": "",
+        "x": 93.35329035948901,
+        "y": 129.63216494001261
+    },
+    "AD9833_2": {
+        "ID": "AD9833_2",
+        "desc": "",
+        "x": 100.11323951430809,
+        "y": 438.7602912248088
+    },
+    "AD9833_PHASE": {
+        "ID": "AD9833_PHASE",
+        "desc": "",
+        "x": 578.9736933775059,
+        "y": 245.0022489300483
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=1\nxaxis=time\ny1=A1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope A1\nfitmode=sine\n",
+        "x": 1093.9588834441806,
+        "y": 922.4333968793487
+    },
+    "GRAPH:1-7": {
+        "ID": "GRAPH:1-7",
+        "desc": "mode=scope\nymin=-5\nymax=5\nchannels=1\nxaxis=time\ny1=A2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\ntrigger_channel=y1\ntrigger_level=512\ntitle=Oscilloscope A2\nfitmode=sine\n",
+        "x": 1114.3659998903543,
+        "y": 922.4333968793487
+    }
+}

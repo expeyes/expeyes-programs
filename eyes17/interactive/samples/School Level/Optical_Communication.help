@@ -1,0 +1,29 @@
+# Activity: Digital Communication
+
+You will need 2 SEELab/ExpEYES17 devices, an LDR, and a small diode laser for a proper demo.
+
+We shall attempt to convey information from one device to another using light.
+
++ Connect the laser to SQ1 and GND of one SEELab. This will be the information transmitter
++ For the second SEELab, connect the LDR between SEN and GND.
++ This experiment is best performed using two separate devices
+where one student decides to send data, and the other chooses to receive it.
+
++ You can also be both, and aim the laser/LED to the LDR on the same device, but it's not as much fun
+
+## The Sender
+
+SQ1 is a voltage output which can turn on/off at a specified frequency.  This can be adjusted.
+You can also adjust the duty cycle, which is the ratio of the ON time vs the OFF time.
+
+Connect SQ1 to a laser/LED, and you are now transmitting information.
+
+## The receiver
+
+Connect an LDR between SEN and GND. When the LASER beam/bright light falls on the LDR, the voltage of SEN will drop below 1V. And it will be above 2V when the light is absent. In complete darkness the voltage will be around 3V
+
+
+You can also see this voltage signal move up and down in the oscilloscope graph of SEN shown below. This is because SEN supports analog voltage measurements as well as digital timing measurements.
+
++ tap on the SEN timing measurement button , and observe that the same values are received.
++ The duty cycle will be inverted because SEN is LOW when the LASER is ON, and HIGH when the LASER is OFF. So 20% duty cycle becomes 100-20 = 80% .

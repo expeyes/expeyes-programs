@@ -1,0 +1,38 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "digital=true",
+        "x": 99.264022,
+        "y": 235.98556
+    },
+    "A2": {
+        "ID": "A2",
+        "desc": "digital=true",
+        "x": 99.264022,
+        "y": 475.46302
+    },
+    "A3": {
+        "ID": "A3",
+        "desc": "",
+        "x": 844.44836,
+        "y": 103.684334
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "\ntitle=A1, A2, A3\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 5\nNS=1000\nTG=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A3]\nynames=[Input A1, Input A2, Output A3]\nymin=0\nymax=5\ntrigger_channel=y1\ntrigger_level=620\n",
+        "x": 1092.19702,
+        "y": 873.21136
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "state=on\ntristate=true\nmin=4\nmax=500\nvalue=200\nstepsize=1",
+        "x": 97.835572,
+        "y": 30.564706
+    },
+    "SQ2": {
+        "ID": "SQ2",
+        "desc": "state=on\ntristate=true\nmin=4\nmax=500\nvalue=200\nstepsize=1",
+        "x": 97.835572,
+        "y": 680.11828
+    }
+}

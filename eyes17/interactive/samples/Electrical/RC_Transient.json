@@ -1,0 +1,26 @@
+{
+    "A1": {
+        "ID": "A1",
+        "desc": "",
+        "x": 690.8509395348838,
+        "y": 261.28092249285714
+    },
+    "OD1": {
+        "ID": "OD1",
+        "desc": "",
+        "x": 86.97228837209303,
+        "y": 179.7920547107143
+    },
+    "SET_HIGH_CAPTURE": {
+        "ID": "SET_HIGH_CAPTURE",
+        "desc": "mode=scope\ntitle=0V to 5V Step\n\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nxaxis=time\ny1=A1\nymin=0\nymax=5\nfitmode=exp\n\n\n#Specify exponential curvefit instead of sine\nfitmode=exp\n#Charging to 5V level\nfitmax=5\n\nrange=5",
+        "x": 33.46904093023256,
+        "y": 519.6825322857143
+    },
+    "SET_LOW_CAPTURE": {
+        "ID": "SET_LOW_CAPTURE",
+        "desc": "mode=scope\ntitle=5V to 0V Step\n\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nxaxis=time\ny1=A1\nymin=0\nymax=5\nfitmode=exp\n\n\n#Specify exponential curvefit instead of sine\nfitmode=exp\n#Charging to 5V level\nfitmax=5",
+        "x": 356.43533023255816,
+        "y": 518.3922645
+    }
+}

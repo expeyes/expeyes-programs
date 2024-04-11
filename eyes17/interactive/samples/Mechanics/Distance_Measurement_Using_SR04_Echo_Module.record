@@ -1,0 +1,18 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+input=SR04
+logging=true
+title=Distance Vs Time
+intro="Measure Distance with SR04 and plot against time
+duration=20
+interval=5
+fitmode=sine
+ymin=0
+ymax=80
+
+xlabel=Time
+ylabel=Distance
+xunits=S
+yunits=cm
+

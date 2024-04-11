@@ -1,0 +1,37 @@
+[default]
+#Parameters for launching the experiment
+
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+
+xlabel=Voltage(A1)
+ylabel=Current ((PV1-A1)/R2)
+xunits=V
+yunits=A
+
+input=A1
+output=PV1
+start=0
+stop=-5
+stepsize=0.1
+xequation=A1
+yequation=(PV1-A1)/R2
+logging=true
+title=PNP Transistor CE Characteristics
+ymin=-6e-3
+ymax=0
+xmin=-5
+xmax=0
+intro=Measure collector current vs voltage
+
+#Marker for Current. specify a label and an equation
+markerlabel=Ib
+markereq=(PV2-A2)/R1
+markerunits=A
+# Specify input variables not being recorded as part of the experiment, but which are being used for calculating marker. comma separated list
+
+extrainputs=A2
+extraoutputs=PV2
+
+#comma separated
+variables=R1:100000:Ω,R2:1000:Ω

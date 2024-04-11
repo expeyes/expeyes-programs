@@ -1,0 +1,15 @@
+[default]
+#Parameters for launching the experiment
+ui=datalogger
+xlabel=Time
+ylabel=Acceleration
+xunits=S
+yunits=?
+
+input=MPU6050:0
+logging=true
+title=Acceleration Vs Time
+duration=20
+ymin=-16
+ymax=16
+intro=Record Ax against to time

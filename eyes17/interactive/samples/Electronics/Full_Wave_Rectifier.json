@@ -1,0 +1,38 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 311.3276083721097,
+        "y": 755.5637290660801
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 18.25563223359094,
+        "y": 312.22858406107684
+    },
+    "A3AC": {
+        "ID": "A3AC",
+        "desc": "channel=peak",
+        "x": 642.8212795600098,
+        "y": 756.0458363767378
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=Inputs(A1, A2) vs Output(A3)\nmode=scope\nchannels=3\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=500\nTG=5\nx=time\ny1=A1\ny2=A2\ny3=A3\nymin=-4\nymax=4\nselectorStart=0\nselectorEnd=0\nfitmode=sine\n\n  ",
+        "x": 1156.4176095168937,
+        "y": 962.2862377853023
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=10\nmax=5000\nvalue=1000\n\n\n  ",
+        "x": 31.123422781956197,
+        "y": 756.0458363767378
+    },
+    "WGB": {
+        "ID": "WGB",
+        "desc": "",
+        "x": 15.35296334799981,
+        "y": 25.310078402159355
+    }
+}

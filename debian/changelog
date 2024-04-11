@@ -1,3 +1,15 @@
+expeyes (5.0+pyqt5-8) unstable; urgency=medium
+
+  * Modifications to data logger for ph meter
+
+ -- Jithin BP <jithinbp@gmail.com>  Fri, 09 Feb 2024 10:19:32 +0530
+
+expeyes (5.0+pyqt5-7) unstable; urgency=medium
+
+  * Added interactive schematics. improvements to visual coding
+
+ -- Jithin BP <jithinbp@gmail.com>  Tue, 05 Dec 2023 10:19:32 +0530
+
 expeyes (5.0+pyqt5-6) unstable; urgency=medium
 
   * Added advanced XY plot, removed dependency on pylab

@@ -35,7 +35,7 @@ class LOGGER:
 				'min':[-5000,-5000,-5000],
 				'max':[5000,5000,5000]
 				},
-			0x1E:{
+			0x0C:{
 				'name':'QMC5883L 3 Axis Magnetometer ',
 				'init':self.QMC5883L_init,
 				'read':self.QMC5883L_all,

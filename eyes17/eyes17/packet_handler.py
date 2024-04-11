@@ -29,14 +29,14 @@ class Handler():
 				self.fd,self.version_string,self.connected=self.connectToPort(self.portname)
 				if self.connected:return
 			except Exception as ex:
-				print('Failed to connect to ',self.portname,ex.message)
+				print('Failed to connect to ',self.portname,ex)
 				
 		else:	#Scan and pick a port	
 			L = self.listPorts()
 			for a in L:
 				try:
 					self.portname=a
-					self.fd,self.version_string,self.connected=self.connectToPort(self.portname)			
+					self.fd,self.version_string,self.connected = self.connectToPort(self.portname)
 					if self.connected:return
 				except :
 					pass
@@ -63,7 +63,7 @@ class Handler():
 			return available
 		elif system_name == "Darwin":
 			# Mac
-			return glob.glob('/dev/tty*') + glob.glob('/dev/cu*')
+			return glob.glob('/dev/tty.usb*') + glob.glob('/dev/cu*')
 		else:
 			# Assume Linux or something else
 			return glob.glob('/dev/ttyACM*') + glob.glob('/dev/ttyUSB*')
@@ -84,21 +84,35 @@ class Handler():
 				self.occupiedPorts.add(portname)
 				raise RuntimeError("Another program is using %s (%d)" % (portname) )
 		
-		fd = serial.Serial(portname, 9600, stopbits=1, timeout = 0.02)
-		fd.read(100);fd.close()
-		fd = serial.Serial(portname, self.BAUD, stopbits=1, timeout = 1.0,writeTimeout = 0)
+		self.tmpfd = serial.Serial(portname, 9600, stopbits=1, timeout = 0.02)
+		self.tmpfd.read(100);self.tmpfd.close()
+		self.tmpfd = serial.Serial(portname, self.BAUD, stopbits=1, timeout = 1.0,writeTimeout = 0)
+		print('opened', portname)
 
-		self.cleanup_buffer(fd)
-		if(fd.inWaiting()):
-			fd.setTimeout(0.1)
-			fd.read(1000)
-			fd.flush()
-			fd.setTimeout(1.0)
+		self.cleanup_buffer(self.tmpfd)
+		if(self.tmpfd.inWaiting()):
+			self.tmpfd.setTimeout(0.1)
+			self.tmpfd.read(1000)
+			self.tmpfd.flush()
+			self.tmpfd.setTimeout(1.0)
 		#fd = self.switchBaud(fd,portname) # change if raspberrypi detected
-		version= self.get_version(fd)
+		version= self.get_version(self.tmpfd)
 		if version[:len(self.expected_version)]==self.expected_version:
-			return fd,version,True
+			return self.tmpfd,version,True
 		print ('version check failed',len(version),version)
+
+		#free up the port
+		self.tmpfd.reset_input_buffer()
+		self.tmpfd.reset_output_buffer()
+		self.tmpfd.close()
+		print('freed', portname)
+		if self.blockingSocket:
+			print('freed socket of', portname, self.blockingSocket)
+			self.blockingSocket.shutdown(1)
+			self.blockingSocket.close()
+			self.blockingSocket = None
+			self.tmpfd.__del__()
+
 		return None,'',False
 
 	def switchBaud(self,fd,portname):
@@ -273,7 +287,7 @@ class Handler():
 		self.loadBurst=False
 		acks=self.fd.read(self.inputQueueSize)
 		self.inputQueueSize=0
-		return [Byte.unpack(a)[0] for a in acks]
+		return [CP.Byte.unpack(a)[0] for a in acks]
 
 	def raiseException(self,ex):
 			raise RuntimeError(ex)

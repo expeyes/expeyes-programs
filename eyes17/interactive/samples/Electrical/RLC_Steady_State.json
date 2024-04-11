@@ -1,0 +1,32 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=amp",
+        "x": 120.16013886792454,
+        "y": 539.1927943636364
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=amp",
+        "x": 719.8213132075472,
+        "y": 539.3321664545454
+    },
+    "A3AC": {
+        "ID": "A3AC",
+        "desc": "channel=amp",
+        "x": 371.0054716981132,
+        "y": 539.8438388181819
+    },
+    "GRAPH:1-6-3": {
+        "ID": "GRAPH:1-6-3",
+        "desc": "\ntitle=Vwg , Vlr, Vr, Vl(A3-A2)\nmode=scope\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 1\nNS=500\nTG=5\nchannels=3\nxaxis=time\nylist=[A1,A2,A3-A2]\nynames=[WG(A1),Vr(A2),Vl(A3-A2)]\nymin=-3.75\nymax=3.75\ntrigger_channel=y1\ntrigger_level=512\nfitmode=sine\nselectorStart=20\nselectorEnd=80\n\n#Comma separated values for derived traces\nextratraces=y1-y2",
+        "x": 8.986181660377358,
+        "y": 695.3263202727273
+    },
+    "WG": {
+        "ID": "WG",
+        "desc": "min=10\nmax=5000\nvalue=1600\nstepsize=1\n\n",
+        "x": 118.3041237735849,
+        "y": 269.66272172727275
+    }
+}

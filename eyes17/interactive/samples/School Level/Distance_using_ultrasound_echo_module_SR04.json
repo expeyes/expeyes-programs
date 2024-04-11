@@ -1,0 +1,32 @@
+{
+    "GRAPH:2": {
+        "ID": "GRAPH:2",
+        "desc": "mode=scope\ntitle=A1(SQ2), A2(IN2) , A3 monitoring - A1 Trigger\nchannels=3\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=2500\nTG=2\nxaxis=time\ny1=A1\ny2=A2\ny3=A3\nymin=-2\nymax=5\nxunits=mS\nyunits=V\nfitmode=sine\n\ntrigger=true\ntrigger_channel=y1\ntrigger_level=650",
+        "x": 1157.222857594486,
+        "y": -1.1731424521099223
+    },
+    "GRAPH:3": {
+        "ID": "GRAPH:3",
+        "desc": "mode=scope\ntitle=A1(SQ2), A2(IN2) monitoring - No Trigger\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=5000\nTG=2\nxaxis=time\ny1=A1\ny2=A2\nymin=0\nymax=5\nxunits=mS\nyunits=V\nfitmode=sine\n\n\ntrigger=false\n",
+        "x": 1157.222857594486,
+        "y": 6.033935798946682
+    },
+    "GRAPH:4": {
+        "ID": "GRAPH:4",
+        "desc": "mode=scope\ntitle=MIC\nchannels=1\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 2\nNS=1000\nTG=2\nxaxis=time\ny1=MIC\nymin=-3\nymax=3\nxunits=mS\nyunits=V\nfitmode=sine\n\ntrigger=false\n",
+        "x": 1156.3470861921987,
+        "y": 13.062173992504093
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 661.9850984259672,
+        "y": 679.7591777874433
+    },
+    "SR04": {
+        "ID": "SR04",
+        "desc": "w=150\nh=150\n\nlogging=true\ntitle=Distance Vs Time\nduration=20\nymax=200\nautoscaleY=true\nylabel=distance\nyunits=cm",
+        "x": 59.88604538631979,
+        "y": 670.3935906468034
+    }
+}

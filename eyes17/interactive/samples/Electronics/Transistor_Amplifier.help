@@ -1,0 +1,27 @@
+## Transistor Amplifier CE
+
+The experiment to draw the transistor characteristics can be modified to convert it into a common emitter amplifier. 
+
+All we need to do is to reduce the amplitude of WG to a value less than 80 mV. This reduced output is connected to the base through a 1μF capacitor. 
+
+Amplitude Reduction can be carried out in software. For SEELab3 devices, you can also connect a 100 Ohm resistor across the adjust socket which is located between the WG and WGBar sockets.
+
+<iframe width="320" height="500" src="https://www.youtube.com/embed/NTng3mu1NdQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
++ Fix the transistor on bread board and make connection as shown in the figure.
++ Set base voltage to the 1 volt and START.
++ Enable A1 and A2
++ Use the slider to change base voltage to observe the shift in operating point.
++ The output is shown below. It can be seen that the input and output signals are 180 degree out of phase.
+
+## Discussion
+
+The base current is set the PV2 voltage applied via the 100kΩ resistor. This sets DC operating point of the circuit.Choose this to get minimum distortion in the output.
+
+## AM Radio
+
+Instead of using the sine wave from WG as the input, use a long wire with one unconnected end, and the other directly connected to the base of the transistor. Set the bias, and observe if there are any fluctuations in the output signal at A2. Connect a small earphone between A2 and GND and listen to the fluctuations.
+
+
+
+[ExpEYES.in Transistor Amplifier](https://expeyes.in/experiments/electronics/tr-amp.html)

@@ -1,0 +1,24 @@
+[default]
+#Parameters for launching the experiment
+# ui = sweeplogger/samplelogger/datalogger
+ui=sweeplogger
+xlabel=Voltage(A1)
+ylabel=Current ((PV1-A1)/1000)
+xunits=V
+yunits=A
+
+input=A1
+output=PV1
+start=-5
+stop=5
+stepsize=0.1
+xequation=A1
+yequation=(PV1-A1)/1000
+logging=true
+title=IV Characteristics
+ymin=-6e-3
+ymax=6e-3
+xmin=-5
+xmax=5
+intro=Measure current vs voltage
+cyclic=true

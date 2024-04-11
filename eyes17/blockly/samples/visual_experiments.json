@@ -1,0 +1,117 @@
+{
+  "Getting Started":
+  {
+    "image": "Getting Started.jpg",
+    "directory": "Getting Started",
+    "description": "A collection of simple introductory topics such as measurement of voltage, resistance, capacitance etc",
+    "files": {
+      "Calculate Area of Circle": "Ask user for radius value, and use an equation to calculate area.",
+      "Hello World": "Print hello world on the screen",
+      "If Condition": "Introduce logical operators",
+      "Input and Output Text": "Display test on the screen, and fetch input from the user",
+      "Input and Output Text in a Loop": "Introduce loops",
+      "Plot Datapoints": "Introduction to plotting graphs",
+      "Plot Using Loops": "Continuous plotting",
+      "Print Multiplication Table": "Write a program to generate multiplication tables of any number",
+      "Print N Times": "Loops",
+      "Read Text Input": "Get user input",
+      "While Loops": "While Loops",
+      "Write Data To A File": "Save stuff to a file"
+    }
+  },"Explore SEELab[ExpEYES]":
+  {
+    "image": "Explore SEELab[ExpEYES].jpg",
+    "directory": "Explore SEELab[ExpEYES]",
+    "description": "Get started with simple measurements using ExpEYES/SEElab3",
+    "files": {
+      "Acquire Voltages": "Program to acquire voltage data from A1, A2, or A3 inputs",
+      "Measure AC": "Measure instantaneous AC voltages with a multimeter to observe their behaviour",
+      "Oscilloscope - Capture And Analyze Single Trace": "Use an oscilloscope to capture and analyze a single trace",
+      "Oscilloscope - Capture And Analyze Two Channels": "Use an oscilloscope to capture and analyze two channels",
+      "Gravity using time of flight": "Measure gravity using the time of flight method",
+      "Measure WG and SQ1": "Measure waveforms and square waves using specific equipment",
+      "Plot AC and DC": "Generate plots for AC and DC signals",
+      "Rod Pendulum Timing Measurements": "Perform timing measurements using a rod pendulum",
+      "Time Multiple Edges": "Time multiple edges in a signal",
+      "Time Rising Edges": "Time the rising edges in a signal",
+      "Fourier Transformations": "Explore Fourier transformations and their applications"
+    }
+  },
+  "School Level":
+    {
+      "image": "School Level.jpg",
+      "directory": "School Level",
+      "description": "Fundamental concepts taught in High School. lemon cell, AC/DC , echo sensor, AC generator using coil etc..",
+      "files": {
+        "AC Generator": "Simulate an AC generator",
+        "Resistance of the Human Body": "Explore the electrical resistance of the human body",
+        "Capture Sound": "Implement sound capturing functionality",
+        "Resistance of Water": "Study the electrical resistance of water",
+        "Lemon Cell": "Create a simulation or experiment related to a lemon cell",
+        "Separate AC and DC": "Develop a program to separate AC and DC signals",
+        "Measure DC": "Build a system to measure DC voltage",
+        "Transformer": "Explore the principles of transformers",
+        "Ohms Law": "Apply Ohm's Law in a practical scenario"
+      }
+    },
+  "Electrical":
+  {
+    "image": "Electrical.jpg",
+    "directory": "Electrical",
+    "description": "RL , RC , RLC steady state and transient responses. Bode plots, and filter characterisation",
+    "files": {
+      "RC Transient Response": "Study the transient response of an RC circuit",
+      "Steady State Response": "Examine the steady-state response of a system",
+      "RLC Transient Response": "Analyze the transient response of an RLC circuit"
+    }
+  },
+  "Electronics":
+  {
+    "image": "Electronics.jpg",
+    "directory": "Electronics",
+    "description": "Learn about simple circuits such as Rectifiers, Filters, Diode and transistor Characteristics ...",
+    "files": {
+      "Half Wave Rectifier": "Make a half wave rectifier. Study the effect of capacitors on filtering the output signal",
+      "Full Wave Rectifier": "Make a full wave rectifier",
+      "Clipping circuit using Diode": "Clip signals at different levels using a diode and an adjustable power source",
+      "Clamping circuit using Diode": "Shift mean value of signals using a diode and an adjustable power source",
+      "Logic Gates": "Simple Logic OR Gate using 2 Diodes",
+      "Diode VI Characteristics": "Characteristics of a simple diode",
+      "NPN Transistor Output Characteristics": "Study the Common Emitter Characteristics of an NPN Transistor",
+      "Transistor Amplifier": "Make an amplifier with an NPN transistor. Also used to make a simple AM radio receiver.",
+      "Inverting Amplifier Using Op-Amp": "Make an inverting amplifier using an Op-Amp",
+      "Summing Amplifier Using Op-Amp": "Make a summing junction and add various DC and AC signals together"
+    }
+  },
+  "Acoustics":
+  {
+    "image": "Acoustics.jpg",
+    "directory": "Acoustics",
+    "description": "Sound experiments : Measuring sound waves, speed of sound, fourier transforms, interference of sound(beats) etc",
+    "files" : {
+      "Velocity of Sound": "Calculate the speed of sound by measuring phase shifts of a created sound and measured value at a fixed distance"
+    }
+  },
+  "Sensor Addons":
+  {
+    "image": "Sensor Addons.jpg",
+    "directory": "Sensor Addons",
+    "description": "Explore a range of add-on modules and sensors which use the I2C communication interface. Such as BMP280 for pressure, HMC5883 for magnetic fields and so on",
+    "files": {
+      "Data Logger": "Implement a program for logging data from any supported I2C sensor",
+      "Distance Sensor VL53L0X": "Utilize a VL53L0X distance sensor and gather distance data",
+      "Fourier analysis of mechanical oscillations ": "Conduct Fourier analysis on mechanical oscillations",
+      "HX711 differential amplifier ": "Use an HX711 differential amplifier and fetch raw readings from it",
+      "MAX6675 thermometer": "Interface with a MAX6675 thermometer and collect temperature data",
+      "Measure Heart Rate (MAX30100)": "Measure heart rate using a MAX30100 sensor",
+      "Phone Controlled Robot": "Develop a robot controlled via a mobile phone",
+      "Plot 2 Sensors In Parallel": "Plot data from two sensors operating in parallel",
+      "Programmable 24 bit Sine Wave Generator AD9833": "Program a 24-bit sine wave generator using AD9833",
+      "Radar with VL53L0X and a Servo Motor": "Build a radar system using VL53L0X and a servo motor",
+      "Robot Maintains Safe Distance": "Implement a robot that maintains a safe distance from obstacles",
+      "Robot Obeys Hand": "Create a robot that follows hand gestures",
+      "SR04 Plot Distance": "Plot distance data using an SR04 sensor",
+      "TCS34725 colour sensor": "Utilize a TCS34725 color sensor for color analysis"
+    }
+  }
+}

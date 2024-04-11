@@ -1,0 +1,14 @@
+# 3 Phase AC Generator
+
+* Try the 2 phase generator experiment first if you have not already.
+
+
+We'll spin the square magnet perpendicular to its magnetic axis, and measure the induced voltages in 3 coils placed at 120 degree angles to each other.
+The 3 solenoids will create 3 phases of AC current. The phases are offset by 120 degrees, which means that the peaks of the current in each phase will occur 120 degrees apart. 
+
+As the magnet spins, it will create an electric current in the solenoids. The current will be alternating current (AC), which means that the direction of the current will change periodically. The frequency of the AC current will depend on the speed of the magnet.
+Fit the three curves and observe the phase difference in each. Align and correct the positions of the coils if necessary.
+
+
+
+[Online Help @ ExpEYES.in]()

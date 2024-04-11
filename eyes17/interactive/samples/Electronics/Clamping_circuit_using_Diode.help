@@ -1,0 +1,19 @@
+## Diode Clamping Experiment
+![Diode Clamping](pics/diodeclamping.jpg "Diode Clamping photo")
+
+An AC signal's mean can be shifted using a diode and a DC voltage.
+In this experiment we use a sine wave from WG, and use PV1 voltage
+source and a 4148 diode to shift the mean of the sine wave which was originally
+at 0 volts.
+
+Make the connections as per the schematic, which monitors the original input signal
+at A1, and the shifted output at A2. Change PV1 by touching and sliding up/down on the PV1
+controller on the schematic. Observe that the output signal shown on A2 is shifting with it.
+
+## Diode Clamping Experiment: Screen Recording
+![Diode Clamping](pics/diodeclamping.gif "Diode Clamping Experiment")
+
+
+
+
+[ExpEYES.in Diode Clamping](https://expeyes.in/experiments/electronics/clamping.html)

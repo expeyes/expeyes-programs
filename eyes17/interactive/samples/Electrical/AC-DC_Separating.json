@@ -1,0 +1,26 @@
+{
+    "A1AC": {
+        "ID": "A1AC",
+        "desc": "channel=p2p",
+        "x": 843.11088,
+        "y": 196.0151376
+    },
+    "A2AC": {
+        "ID": "A2AC",
+        "desc": "channel=p2p",
+        "x": 837.98268,
+        "y": 608.137392
+    },
+    "GRAPH:1": {
+        "ID": "GRAPH:1",
+        "desc": "title=A1 and A2 oscilloscope\nmode=scope\nchannels=2\n# NS*TG= {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000,400} #mS\ntimebase = 3\nNS=1000\nTG=5\nx=time\ny1=A1\ny2=A2\nymin=-8\nymax=8\ntrigger=true\ntrigger_channel=y1\ntrigger_level=650\nfitmode=sine\n\nselectorStart=10\nselectorEnd=90\n\n\n  ",
+        "x": 1053.6036000000001,
+        "y": 991.066104
+    },
+    "SQ1": {
+        "ID": "SQ1",
+        "desc": "min=200\nvalue=1000\nmax=2000",
+        "x": 34.77942,
+        "y": 196.94046
+    }
+}

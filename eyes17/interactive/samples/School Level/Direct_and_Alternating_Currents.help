@@ -1,0 +1,30 @@
+# Direct and Alternating Currents
+
+The magnitude and direction of current from a drycell does not change with time. It is called DC or dirrect current. The mains supply we get is of different kind. The mains supply in India is 230V at 50 Hz. A frequency of 50 Hz means the change in voltage repeats every 20 milliseconds. If we measure the voltage across the phase and neutral terminals of a household power socket, the voltage will increase from zero to 325V (230√2) in 5 mS and it will be back to zero in the next 5 mS. During the third 5mS it will reach -325V and will again reach zero during the fourth 5mS. These type of current is called alternating current (AC). To study the behavior of AC, an oscilloscope is required.
+
+## Objective
+
+Introduce the concept of time dependent voltages, using a V(t) graph. Compare the graph of DC and AC.
+
+## Procedure
+
++ Connect WG to A1. WG is an AC source. it oscillates between -3Volts and 3Volts 
++ Connect2 SQ1 to A2. This oscillates between 0 Volts and 5 Volts
++ Connect PV2 to A3. This is a DC source. It can be set between -3.3V and 3.3Volts
++  Set PV1  to 2 volts and Set WG to 1000 Hz
+
+Analysis is enabled on A1 by default(Highlighted region in the graph), and this fits the sinusoidal signal to a standard sine function to calculate Peak amplitude, frequency, phase shift, and the RMS voltage value. The RMS value is shown in the A1 block in the schematic diagram, and is updated each time the oscilloscope fits the highlighted sine wave portion.
+
+By default, 80% of the graph is highlighted for analysis, but you can touch the graph and drag to create a new section for analysis. 
+
+## Interpretation
+
+The shape of the signal (Flat for PV1/Sinusoidal for WG) should not lead to a conclusion that voltages can either be DC or AC only. 
+
+There could be combination of both. For example, take the case of a squarewave that changes between 0 and 5V.
+
+
+Is the graph obtained for A2 channel AC or DC ? It is a 2.5 DC plus an AC changing from -2.5V to +2.5V. Separating these components will be explained in the next experiment which uses a capacitor which blocks the DC component.
+
+
+If the voltage is not changing with time, it is pure DC. If it is changing with time, it has an AC component. if the average voltage is zero, it is pure DC.

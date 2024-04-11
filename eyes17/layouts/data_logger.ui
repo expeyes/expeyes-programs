@@ -141,8 +141,8 @@
                 <rect>
                  <x>0</x>
                  <y>0</y>
-                 <width>768</width>
-                 <height>458</height>
+                 <width>795</width>
+                 <height>444</height>
                 </rect>
                </property>
                <layout class="QGridLayout" name="gridLayout_6">
@@ -161,7 +161,226 @@
                 <property name="spacing">
                  <number>2</number>
                 </property>
-                <item row="3" column="1" rowspan="9">
+                <item row="12" column="0">
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="text">
+                   <string>I/O Controls</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="4" column="0">
+                 <widget class="Line" name="line">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                 </widget>
+                </item>
+                <item row="3" column="0">
+                 <layout class="QGridLayout" name="gridLayout">
+                  <item row="1" column="0">
+                   <widget class="QCheckBox" name="A2Box">
+                    <property name="text">
+                     <string>A2</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="comboBox_4">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>16 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>8 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>4 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>2.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>1.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>1 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>0.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>0.25 V</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="4" column="0">
+                   <widget class="QCheckBox" name="IN1Box">
+                    <property name="text">
+                     <string>IN1</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="3" column="0">
+                   <widget class="QCheckBox" name="SENBox">
+                    <property name="text">
+                     <string>SEN</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QCheckBox" name="A1Box">
+                    <property name="text">
+                     <string>A1</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="1" column="1">
+                   <widget class="QComboBox" name="comboBox_3">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <item>
+                     <property name="text">
+                      <string>16 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>8 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>4 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>2.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>1.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>1 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>0.5 V</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>0.25 V</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QCheckBox" name="A3Box">
+                    <property name="text">
+                     <string>A3</string>
+                    </property>
+                    <property name="checked">
+                     <bool>false</bool>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="2" column="1">
+                   <widget class="QFrame" name="frame_2">
+                    <property name="frameShape">
+                     <enum>QFrame::StyledPanel</enum>
+                    </property>
+                    <property name="frameShadow">
+                     <enum>QFrame::Raised</enum>
+                    </property>
+                    <layout class="QHBoxLayout" name="horizontalLayout">
+                     <property name="spacing">
+                      <number>10</number>
+                     </property>
+                     <property name="leftMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="topMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="rightMargin">
+                      <number>0</number>
+                     </property>
+                     <property name="bottomMargin">
+                      <number>0</number>
+                     </property>
+                     <item>
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>Rg =</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="rgEdit">
+                       <property name="toolTip">
+                        <string>Connect a resistor between GND and Rg to amplify A3</string>
+                       </property>
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>Ω</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item row="3" column="1" rowspan="10">
                  <widget class="QStackedWidget" name="monitors">
                   <property name="currentIndex">
                    <number>0</number>
@@ -348,165 +567,121 @@
                   </widget>
                  </widget>
                 </item>
-                <item row="3" column="0">
-                 <layout class="QGridLayout" name="gridLayout">
-                  <item row="0" column="0">
-                   <widget class="QCheckBox" name="A1Box">
-                    <property name="text">
-                     <string>A1</string>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="0">
-                   <widget class="QCheckBox" name="A2Box">
-                    <property name="text">
-                     <string>A2</string>
-                    </property>
-                    <property name="checked">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QCheckBox" name="A3Box">
-                    <property name="text">
-                     <string>A3</string>
-                    </property>
-                    <property name="checked">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="3" column="0">
-                   <widget class="QCheckBox" name="SENBox">
-                    <property name="text">
-                     <string>SEN</string>
-                    </property>
-                    <property name="checked">
-                     <bool>true</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="4" column="0">
-                   <widget class="QCheckBox" name="IN1Box">
-                    <property name="text">
-                     <string>IN1</string>
-                    </property>
-                    <property name="checked">
-                     <bool>false</bool>
-                    </property>
-                   </widget>
-                  </item>
-                  <item row="1" column="1">
-                   <widget class="QComboBox" name="comboBox_3">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>16 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>8 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>4 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>2.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>1.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>1 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>0.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>0.25 V</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                  <item row="0" column="1">
-                   <widget class="QComboBox" name="comboBox_4">
-                    <property name="sizePolicy">
-                     <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                      <horstretch>0</horstretch>
-                      <verstretch>0</verstretch>
-                     </sizepolicy>
-                    </property>
-                    <item>
-                     <property name="text">
-                      <string>16 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>8 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>4 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>2.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>1.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>1 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>0.5 V</string>
-                     </property>
-                    </item>
-                    <item>
-                     <property name="text">
-                      <string>0.25 V</string>
-                     </property>
-                    </item>
-                   </widget>
-                  </item>
-                 </layout>
-                </item>
-                <item row="11" column="0">
-                 <widget class="QPushButton" name="pushButton">
-                  <property name="text">
-                   <string>I/O Controls</string>
+                <item row="5" column="0">
+                 <widget class="QFrame" name="frame">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
                   </property>
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QFormLayout" name="formLayout">
+                   <item row="0" column="0" colspan="2">
+                    <widget class="QCheckBox" name="CUSTOMBox">
+                     <property name="text">
+                      <string>Custom A1</string>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label">
+                     <property name="text">
+                      <string>Slope</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLineEdit" name="slopeEdit">
+                     <property name="text">
+                      <string>-17.905</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_2">
+                     <property name="text">
+                      <string>Offset</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLineEdit" name="offsetEdit">
+                     <property name="text">
+                      <string>35.5</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QCheckBox" name="CUSTOMBox_2">
+                     <property name="text">
+                      <string>OD1 Output</string>
+                     </property>
+                     <property name="checked">
+                      <bool>false</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item row="6" column="0">
+                 <widget class="QFrame" name="frame_3">
+                  <property name="frameShape">
+                   <enum>QFrame::NoFrame</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_2">
+                   <property name="spacing">
+                    <number>0</number>
+                   </property>
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_5">
+                     <property name="text">
+                      <string>SQ1</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QDoubleSpinBox" name="sq1Box">
+                     <property name="suffix">
+                      <string> Hz</string>
+                     </property>
+                     <property name="maximum">
+                      <double>1000000.000000000000000</double>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="pushButton_5">
+                     <property name="text">
+                      <string>OFF</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
@@ -559,13 +734,13 @@
                <number>1</number>
               </property>
               <property name="columnCount">
-               <number>5</number>
+               <number>6</number>
               </property>
               <attribute name="horizontalHeaderMinimumSectionSize">
                <number>80</number>
               </attribute>
               <attribute name="horizontalHeaderDefaultSectionSize">
-               <number>55</number>
+               <number>100</number>
               </attribute>
               <attribute name="horizontalHeaderHighlightSections">
                <bool>true</bool>
@@ -580,6 +755,7 @@
                <bool>true</bool>
               </attribute>
               <row/>
+              <column/>
               <column/>
               <column/>
               <column/>
@@ -614,8 +790,8 @@
    <slot>saveTraces()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>46</x>
-     <y>551</y>
+     <x>330</x>
+     <y>105</y>
     </hint>
     <hint type="destinationlabel">
      <x>0</x>
@@ -630,8 +806,8 @@
    <slot>restartLogging()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>86</x>
-     <y>280</y>
+     <x>246</x>
+     <y>105</y>
     </hint>
     <hint type="destinationlabel">
      <x>-11</x>
@@ -726,8 +902,8 @@
    <slot>toggled()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>63</x>
-     <y>211</y>
+     <x>60</x>
+     <y>220</y>
     </hint>
     <hint type="destinationlabel">
      <x>-11</x>
@@ -742,8 +918,8 @@
    <slot>sineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>344</x>
-     <y>554</y>
+     <x>279</x>
+     <y>85</y>
     </hint>
     <hint type="destinationlabel">
      <x>333</x>
@@ -758,8 +934,8 @@
    <slot>dampedSineFit()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>651</x>
-     <y>548</y>
+     <x>300</x>
+     <y>85</y>
     </hint>
     <hint type="destinationlabel">
      <x>651</x>
@@ -774,8 +950,8 @@
    <slot>setDuration()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>63</x>
-     <y>229</y>
+     <x>264</x>
+     <y>93</y>
     </hint>
     <hint type="destinationlabel">
      <x>-17</x>
@@ -790,8 +966,8 @@
    <slot>pauseLogging(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>107</x>
-     <y>344</y>
+     <x>282</x>
+     <y>114</y>
     </hint>
     <hint type="destinationlabel">
      <x>-14</x>
@@ -806,8 +982,8 @@
    <slot>setA2Range(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>105</x>
-     <y>111</y>
+     <x>215</x>
+     <y>129</y>
     </hint>
     <hint type="destinationlabel">
      <x>-10</x>
@@ -838,12 +1014,60 @@
    <slot>show_voltmeter()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>567</y>
+     <x>113</x>
+     <y>512</y>
     </hint>
     <hint type="destinationlabel">
      <x>109</x>
      <y>591</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>CUSTOMBox_2</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>Form</receiver>
+   <slot>setOD1(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>35</x>
+     <y>347</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>34</x>
+     <y>542</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sq1Box</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Form</receiver>
+   <slot>setSQ1(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>156</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-25</x>
+     <y>424</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton_5</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>offSQ1()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>205</x>
+     <y>377</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>-8</x>
+     <y>452</y>
     </hint>
    </hints>
   </connection>
@@ -862,5 +1086,8 @@
   <slot>setA1Range(QString)</slot>
   <slot>setA2Range(QString)</slot>
   <slot>show_voltmeter()</slot>
+  <slot>setOD1(bool)</slot>
+  <slot>setSQ1(double)</slot>
+  <slot>offSQ1()</slot>
  </slots>
 </ui>

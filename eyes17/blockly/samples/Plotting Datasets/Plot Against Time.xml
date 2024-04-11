@@ -1,0 +1,52 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="LbE2%mV/CRs,w^fwYIZy">i</variable>
+  </variables>
+  <block type="controls_for" id="m@*nkv?[n5n)fsbgHt`n" x="2" y="12">
+    <field name="VAR" id="LbE2%mV/CRs,w^fwYIZy">i</field>
+    <value name="FROM">
+      <shadow type="math_number" id="f.1,}G`7Sz_{3Lhn{okr">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="TO">
+      <shadow type="math_number" id="2~*j7dLoBVmwa~7*$A~C">
+        <field name="NUM">20</field>
+      </shadow>
+    </value>
+    <value name="BY">
+      <shadow type="math_number" id="HS/HmI.hk0`~5TUPVUG?">
+        <field name="NUM">1</field>
+      </shadow>
+    </value>
+    <statement name="DO">
+      <block type="plot_datapoint" id="Ih}`LU}:u`OU|b8}8gO,">
+        <value name="VALUE">
+          <block type="get_phone_accel" id="eH#y3h`WqNN5;nyoX}qR">
+            <field name="CHANNEL">2</field>
+          </block>
+        </value>
+        <next>
+          <block type="wait_seconds" id="qnG~}]7mEEN6gAc~DDI1">
+            <field name="SECONDS">0.5</field>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+<description><![CDATA[<h1>Plot vs Time</h1><p><br></p><p>The Plot data vs time uses the system time as the X coordinate and the Data provided as the Y coordinate.</p><p><br></p><p><br></p><p>This example uses the acceleration measured by the phone in the downward direction as input data . Tilt the phone while the program is running</p>]]></description>
+<quizzing>
+[
+		{
+		  "id": 1,
+		  "question": "What is the Maximum Range of the voltmeters on A1 and A2?",
+		  "A": "-3V to +3V",
+		  "B": "0V to 5V",
+		  "C": "-16V to 16V",
+		  "D": "-5V to 5V",
+		  "answer": 3
+		}
+]
+
+</quizzing>
+</xml>

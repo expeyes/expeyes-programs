@@ -1,0 +1,20 @@
+{
+    "BMP280:0": {
+        "ID": "BMP280:0",
+        "desc": "\nlogging=true\ntitle=Temperature variation\nduration=300\nyunits=C\nautoscaleY=true",
+        "x": 443.1443131903141,
+        "y": 57.86374930627794
+    },
+    "BMP280:1": {
+        "ID": "BMP280:1",
+        "desc": "label=gauge\nw=120\nh=120\n\nlogging=true\ntitle=Pressure variation\nduration=60\nyunits=Bar\nautoscaleY=true",
+        "x": 33.53951922151686,
+        "y": 57.86374930627794
+    },
+    "RECORD": {
+        "ID": "RECORD",
+        "desc": "",
+        "x": 879.2769240371688,
+        "y": 16.400107801097615
+    }
+}

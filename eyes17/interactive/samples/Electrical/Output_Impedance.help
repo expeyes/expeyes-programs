@@ -1,0 +1,6 @@
+# Output Impedance
+
+This is a demo to show that the set output voltage on PV1 will drop if the load is too high (Small resistance)
+
+You may compare the expected output (Set PV1/resistance) vs the actual output (A1/resistance) for
+various resistance values
