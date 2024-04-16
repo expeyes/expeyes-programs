@@ -11,10 +11,11 @@ import eyes17.eyemath17 as em
 from functools import partial
 
 from layouts import ui_scope_layout
-
+from layouts.advancedLoggerTools import LOGGER
+from sensor_utilities import DIOSENSOR, DIOROBOT, DIOCONTROL
 
 class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
-    TIMER = 50
+    TIMER = 2
     loopCounter = 0
     AWGmin = 1
     AWGmax = 5000
@@ -87,6 +88,7 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
 
     def __init__(self, device=None):
         super(Expt, self).__init__()
+        self.sensorList = []
         self.setupUi(self)
         try:
             self.setStyleSheet(open(os.path.join(os.path.dirname(__file__), "layouts/style.qss"), "r").read())
@@ -215,6 +217,61 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
             print(e)
             self.msgwin.setText('<font color="red">' + self.tr('Error. Could not connect. Check cable. '))
 
+    ############ I2C SENSORS #################
+    def i2cScan(self):
+        if self.p.connected:
+            logger = LOGGER(self.p.I2C)
+            x = logger.I2CScan()
+            print('Responses from: ', x)
+            self.A1Map.clear()
+            self.A1Map.addItems(self.sources)
+            for a in self.sensorList:
+                a[0].setParent(None)
+                a[1].setParent(None)
+
+            self.sensorList = []
+            for a in x:
+                possiblesensors = logger.sensormap.get(a, None)
+                if len(possiblesensors) > 0:
+                    for sens in possiblesensors:
+                        s = logger.namedsensors.get(sens)
+                        btn = QPushButton(self)
+                        name = s['name'].split(' ')[0]+'['+str(a)+']'
+                        btn.setText(name) #e.g. TSL2561[29]
+                        btn.setToolTip(' '.join(s['name'].split(' ')[1:])) #e.g. Luminosity sensor
+                        dialog = DIOSENSOR(self, s, a)
+                        btn.clicked.connect(dialog.launch)
+                        self.sensorLayout.addWidget(btn)
+                        self.sensorList.append([dialog, btn, name])
+
+                        #self.A1Map.addItem(name)
+                        continue
+
+                s = logger.controllers.get(a, None)
+                if s is not None:
+                    btn = QtWidgets.QPushButton(s['name'] + ':' + hex(a))
+                    dialog = DIOCONTROL(self, s, a)
+                    btn.clicked.connect(dialog.launch)
+                    self.sensorLayout.addWidget(btn)
+                    self.sensorList.append([dialog, btn, logger])
+                    continue
+
+                s = logger.special.get(a, None)
+                if s is not None:
+                    btn = QtWidgets.QPushButton(s['name'] + ':' + hex(a))
+                    dialog = DIOROBOT(self, s, a)
+                    btn.clicked.connect(dialog.launch)
+                    self.sensorLayout.addWidget(btn)
+                    self.sensorList.append([dialog, btn, logger])
+                    continue
+            if len(self.sensorList)>0:
+                self.resultLabel.setText('')
+            else:
+                if  len(x)>0:
+                    self.resultLabel.setText(str(x))
+                else:
+                    self.resultLabel.setText('None Found')
+
     def show_fft(self):
         for ch in range(4):
             if self.chanStatus[ch] == 1:
@@ -323,28 +380,41 @@ class Expt(QtWidgets.QWidget, ui_scope_layout.Ui_Form):
                     return
                 if v is not None:
                     self.voltmeter.setValue(v)
-        if self.Freeze.isChecked(): return
 
-        try:
-            if self.chanStatus[2] == 1 or self.chanStatus[3] == 1:  # channel 3 or 4 selected
-                self.timeData[0], self.voltData[0], \
-                    self.timeData[1], self.voltData[1], \
-                    self.timeData[2], self.voltData[2], \
-                    self.timeData[3], self.voltData[3] = self.p.capture4(self.NP, self.TG,
-                                                                         str(self.A1Map.currentText()),
+        for a in self.sensorList:
+            if a[0].isVisible():
+                if a[0].isPaused == 0 or (a[0].currentPage != None and a[0].currentPage == 0):  # If on logger page(1) , pause button should be unchecked
+                    v = a[0].readValues()
+                    if v is not None:
+                        a[0].setValue(v)
+
+        # Check if oscilloscope is paused. If so, continue.
+        if self.Freeze.isChecked(): return
+        A1Map = str(self.A1Map.currentText())
+        if(A1Map in self.sources):
+            try:
+                if self.chanStatus[2] == 1 or self.chanStatus[3] == 1:  # channel 3 or 4 selected
+                    self.timeData[0], self.voltData[0], \
+                        self.timeData[1], self.voltData[1], \
+                        self.timeData[2], self.voltData[2], \
+                        self.timeData[3], self.voltData[3] = self.p.capture4(self.NP, self.TG,
+                                                                             A1Map,
+                                                                             trigger=self.trigEnable.isChecked())
+                elif self.chanStatus[1] == 1:  # channel 2 is selected
+                    self.timeData[0], self.voltData[0], \
+                        self.timeData[1], self.voltData[1] = self.p.capture2(self.NP, self.TG,
+                                                                             A1Map,
+                                                                             trigger=self.trigEnable.isChecked())
+                elif self.chanStatus[0] == 1:  # only A1 selected
+                    self.timeData[0], self.voltData[0] = self.p.capture1(A1Map, self.NP, self.TG,
                                                                          trigger=self.trigEnable.isChecked())
-            elif self.chanStatus[1] == 1:  # channel 2 is selected
-                self.timeData[0], self.voltData[0], \
-                    self.timeData[1], self.voltData[1] = self.p.capture2(self.NP, self.TG,
-                                                                         str(self.A1Map.currentText()),
-                                                                         trigger=self.trigEnable.isChecked())
-            elif self.chanStatus[0] == 1:  # only A1 selected
-                self.timeData[0], self.voltData[0] = self.p.capture1(str(self.A1Map.currentText()), self.NP, self.TG,
-                                                                     trigger=self.trigEnable.isChecked())
-        except:
-            self.comerr()
-            self.p.connected = False
-            return
+            except:
+                self.comerr()
+                self.p.connected = False
+                return
+
+        #elif self.chanStatus[0] == 1:
+        #    self.timeData[0], self.voltData[0] = self.p.capture_i2c(0x68, 0x3B+10, 2, 4000, 40) #  address, register, chunksize, totalchunks, tg MPU
 
         for ch in range(4):
             if self.chanStatus[ch] == 1:

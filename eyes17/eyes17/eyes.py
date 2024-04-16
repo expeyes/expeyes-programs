@@ -46,6 +46,7 @@ def open(**kwargs):
         return obj
     # raise RuntimeError('Could Not Connect')
 
+
 def open_android(**kwargs):
     kwargs['ip'] = 'detect'
     obj = Interface(**kwargs)
@@ -130,7 +131,7 @@ class Interface():
 
         # --------------------------Initialize communication handler, and subclasses-----------------
         self.timestamp = None
-        if('ip' in kwargs):
+        if ('ip' in kwargs):
             self.H = wifi_packet_handler_udp.Handler(**kwargs)
         else:
             self.H = packet_handler.Handler(**kwargs)
@@ -167,7 +168,7 @@ class Interface():
         self.streaming = False
         self.achans = [analogAcquisitionChannel(a) for a in bipolars]
         self.gain_values = gains
-        self.buff = np.zeros(10000)
+        self.buff = np.zeros(8000*6)
         self.SOCKET_CAPACITANCE = 0
         self.resistanceScaling = 1.
         self.CAP_RC_SCALING = 1.
@@ -316,7 +317,7 @@ class Interface():
     def __guess_sensor__(self, verbose=True):
         addresses = self.I2C.scan()
         senslist = []
-        if(len(addresses)>10):
+        if (len(addresses) > 10):
             print('Check connectiosn. >10 sensors responded')
         if verbose:
             print('DETECTED : ', addresses)
@@ -325,17 +326,20 @@ class Interface():
                 mysens = self.sensors.sensors.get(address)
                 senslist.append(mysens)
                 if verbose:
-                    print('____DOCS____ : '+mysens['name']+ '@' + str(address))
-                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)-1}]")
+                    print('____DOCS____ : ' + mysens['name'] + '@' + str(address))
+                    print(
+                        f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist) - 1}]")
                     print('\tsens will be None if no sensor was detected ')
                     print('\tAvailable Fields:', )
                     for a in range(len(mysens['fields'])):
                         print(f"\t\t{mysens['fields'][a]}: from {mysens['min'][a]} to {mysens['max'][a]}")
-                    print(f"\tTo Initialize: sens['init']() ,To read: sens.['read']()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
+                    print(
+                        f"\tTo Initialize: sens['init']() ,To read: sens.['read']()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
                     if 'config' in mysens:
                         print(f"\tconfiguration options")
                         for a in range(len(mysens['config'])):
-                            print(f"\t\t{mysens['config'][a]['name']}: {mysens['config'][a]['function']}, options: {mysens['config'][a]['options']}")
+                            print(
+                                f"\t\t{mysens['config'][a]['name']}: {mysens['config'][a]['function']}, options: {mysens['config'][a]['options']}")
                 else:
                     print('possible sensor@', address, ' name:' + mysens['name'])
 
@@ -344,7 +348,7 @@ class Interface():
     def guess_sensor(self, verbose=True):
         addresses = self.I2C.scan()
         senslist = []
-        if(len(addresses)>10):
+        if (len(addresses) > 10):
             print('Check connectiosn. >10 sensors responded')
         if verbose:
             print('DETECTED : ', addresses)
@@ -353,18 +357,19 @@ class Interface():
                 mysens = self.sensors.sensors.get(address)
                 senslist.append(supported.supported.get(address).connect(self.I2C))
                 if verbose:
-                    print('____DOCS____ : '+mysens['name']+ '@' + str(address))
-                    print(f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist)-1}]")
+                    print('____DOCS____ : ' + mysens['name'] + '@' + str(address))
+                    print(
+                        f"\tstore this sensor's module into a variable. e.g. : sens = p.guess_sensor()[{len(senslist) - 1}]")
                     print('\tsens will be None if no sensor was detected ')
                     print('\tAvailable Fields:', )
                     for a in range(len(mysens['fields'])):
                         print(f"\t\t{mysens['fields'][a]}: from {mysens['min'][a]} to {mysens['max'][a]}")
-                    print(f"\tTo read: sens.getVals()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
+                    print(
+                        f"\tTo read: sens.getVals()\n\t\t the read function returns a list of readings for sensors with multiple measurement options.")
                 else:
                     print('possible sensor@', address, ' name:' + mysens['name'])
 
         return senslist
-
 
     def get_resistance(self):
         V = self.get_average_voltage('SEN')
@@ -1161,7 +1166,8 @@ class Interface():
 
         try:
             for a in range(int(upto - offset)):
-                self.achans[channel_number - 1].yaxis[offset+a] = self.achans[channel_number - 1].fix_value(CP.ShortInt.unpack(data[a * 2:a * 2 + 2])[0])
+                self.achans[channel_number - 1].yaxis[offset + a] = self.achans[channel_number - 1].fix_value(
+                    CP.ShortInt.unpack(data[a * 2:a * 2 + 2])[0])
 
             self.achans[channel_number - 1].fetched_length = upto
         except Exception as ex:
@@ -1488,6 +1494,111 @@ class Interface():
             self.raiseException(ex, "Communication Error , Function : " + inspect.currentframe().f_code.co_name)
 
     # -------------------------------------------------------------------------------------------------------------------#
+
+    # --------------- I2C SCOPE-------------------
+    fetched_i2c_scope_buffer = 0
+    def __capture_i2c_init__(self, address, register, chunksize, samples, tg):
+        if (tg < 30): tg=30 #30uS minimum
+        if (samples * chunksize/2 > self.MAX_SAMPLES): # /2 because samples here are in bytes not ints.
+            self.__print__('Sample limit exceeded. 10,000 max')
+            samples = self.MAX_SAMPLES*2 / chunksize
+
+        self.timebase = int(tg)
+        self.samples = samples
+        self.fetched_i2c_scope_buffer = 0
+
+        try:
+            self.H.__sendByte__(CP.I2C_HEADER)
+            self.H.__sendByte__(CP.I2C_START_SCOPE)
+            self.H.__sendByte__(address)  # 7 bit I2C address
+            self.H.__sendByte__(register)  # Register to read from
+            self.H.__sendByte__(chunksize)  # bytes per reading.
+            self.H.__sendInt__(samples)  # total chunks to collect
+            self.H.__sendInt__(tg)  # Timegap between samples.  8MHz timer clock
+            self.H.__get_ack__()
+
+        except Exception as ex:
+            print(ex, 'communication error')
+            return None
+
+    def capture_i2c(self, address, register, chunksize, totalchunks, tg):
+        """
+        Blocking call that fetches oscilloscope traces from an I2C sensor
+
+        """
+        self.__capture_i2c_init__(address, register, chunksize, totalchunks, tg)
+        time.sleep(totalchunks * tg * 1e-6 )
+        #time.sleep(0.2)
+        samples = totalchunks * chunksize  # samples are in bytes, but retrieve_buffer is in integers
+        if samples % 2 == 1:
+            samples += 1
+        samples = int(samples/2)
+        self.samples = samples
+
+        data = b''
+        splitting = 100
+        try:
+            for i in range(int(samples / splitting)):
+                self.H.__sendByte__(CP.COMMON)
+                self.H.__sendByte__(CP.RETRIEVE_BUFFER)
+                self.H.__sendInt__(i * splitting) #Start
+                self.H.__sendInt__(splitting) #numbytes
+                data += self.H.fd.read(int(splitting * 2))  # reading int by int sometimes causes a communication error. this works better.
+                self.H.__get_ack__()
+
+            if samples % splitting:
+                self.H.__sendByte__(CP.COMMON)
+                self.H.__sendByte__(CP.RETRIEVE_BUFFER)
+                self.H.__sendInt__(samples - samples % splitting) #start
+                self.H.__sendInt__(samples % splitting) #numbytes
+                data += self.H.fd.read(int(2 * (
+                        samples % splitting)))  # reading int by int may cause packets to be dropped. this works better.
+                self.H.__get_ack__()
+        except Exception as ex:
+            self.raiseException(ex, "Communication Error , Function : " + inspect.currentframe().f_code.co_name)
+
+        try:
+            if len(data) == samples*2:
+                for a in range(int(samples)): self.buff[a] = np.int16((data[a * 2] << 8) | data[a * 2 + 1])
+            else:
+                print('mismatch', samples, len(data))
+                return np.linspace(0, 1e-3 * tg * (totalchunks - 1), self.samples), np.zeros(self.samples)
+
+        except Exception as ex:
+            msg = "Incorrect Number of Bytes Received\n"
+            raise RuntimeError(msg)
+
+        return np.linspace(0, 1e-3 * tg * (totalchunks - 1), self.samples), self.buff[:self.samples]
+
+    def __retrieve_incremental_buffer__(self, upto):
+        samples = upto-self.fetched_i2c_scope_buffer
+        #print('fetch upto', upto, 'from', self.fetched_i2c_scope_buffer,samples)
+
+        self.H.__sendByte__(CP.COMMON)
+        self.H.__sendByte__(CP.RETRIEVE_BUFFER)
+        self.H.__sendInt__(self.fetched_i2c_scope_buffer)  # Start
+        self.H.__sendInt__(samples)  # numbytes
+        data = self.H.fd.read(samples*2)  # reading int by int sometimes causes a communication error. this works better.
+        if len(data)<samples*2:
+            print('insufficient data', len(data))
+            if self.H.fd.inWaiting():
+                data+=self.H.fd.read()
+            return None
+            #print('insufficient data retry:', len(data), samples*2)
+        self.H.__get_ack__()
+
+        if len(data) == samples*2:
+                for a in range(samples):
+                    #Push byte by byte into the buffer. let the sensor methods sort them into ints or multiple ints.
+                    self.buff[(self.fetched_i2c_scope_buffer+a)*2] = data[a*2] #np.int16((data[a * 2] << 8) | data[a * 2 + 1])
+                    self.buff[(self.fetched_i2c_scope_buffer+a)*2 + 1] = data[a*2 +1] #np.int16((data[a * 2] << 8) | data[a * 2 + 1])
+        else:
+            print('insufficient data . return.', self.fetched_i2c_scope_buffer)
+            return self.buff[:self.fetched_i2c_scope_buffer*2]
+
+        self.fetched_i2c_scope_buffer += samples
+        #print(f'fetched_i2c_scope_buffer incremented by {samples} to {self.fetched_i2c_scope_buffer}')
+        return self.buff[:self.fetched_i2c_scope_buffer*2]
 
     # |===============================================DIGITAL SECTION====================================================|
     # |This section has commands related to digital measurement and control. These include the Logic Analyzer, frequency |
@@ -2111,9 +2222,9 @@ class Interface():
 
             edge = 'rising' if cmd in ['s2r', 'c2r'] else 'falling'
             if cmd[0] == 's':
-                T = self.SinglePinEdges(dst, edge, 1, timeout, **{src:1})
+                T = self.SinglePinEdges(dst, edge, 1, timeout, **{src: 1})
             elif cmd[0] == 'c':
-                T = self.SinglePinEdges(dst, edge, 1, timeout, **{src:0})
+                T = self.SinglePinEdges(dst, edge, 1, timeout, **{src: 0})
 
             if T is not None:
                 return T[0]

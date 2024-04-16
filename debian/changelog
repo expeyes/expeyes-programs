@@ -1,3 +1,9 @@
+expeyes (5.0+pyqt5-9) unstable; urgency=medium
+
+  * Modifications to I2C logger. Add BH1750 support
+
+ -- Jithin BP <jithinbp@gmail.com>  Thu, 11 Apr 2024 10:19:32 +0530
+
 expeyes (5.0+pyqt5-8) unstable; urgency=medium
 
   * Modifications to data logger for ph meter

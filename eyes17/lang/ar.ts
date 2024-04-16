@@ -2,6 +2,19 @@
 <!DOCTYPE TS>
 <TS version="2.1" language="ar">
 <context>
+    <name>DIOSENSORSCOPE</name>
+    <message>
+        <location filename="../sensorscope_utilities.py" line="273"/>
+        <source>Frequency Spectrum 2</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../sensorscope_utilities.py" line="291"/>
+        <source>Fundamental frequency = %5.1f Hz</source>
+        <translation type="unfinished"> التردد الأساسى = %5.1f Hz</translation>
+    </message>
+</context>
+<context>
     <name>Dialog</name>
     <message>
         <location filename="../layouts/dio_sensor.ui" line="19"/>
@@ -9,12 +22,12 @@
         <translation> قراءة الاستشعار</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="121"/>
+        <location filename="../layouts/dio_sensor.ui" line="382"/>
         <source>Data Logger</source>
         <translation> مسجل البيانات</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="62"/>
+        <location filename="../layouts/dio_sensor.ui" line="180"/>
         <source>Initialize</source>
         <translation> تهيئة</translation>
     </message>
@@ -24,17 +37,17 @@
         <translation type="obsolete"> مقياس</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="229"/>
+        <location filename="../layouts/dio_sensor.ui" line="272"/>
         <source>SINE FIT</source>
         <translation type="unfinished">سين فت</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="222"/>
+        <location filename="../layouts/dio_sensor.ui" line="320"/>
         <source>Pause</source>
         <translation> وقفة</translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="236"/>
+        <location filename="../layouts/dio_sensor.ui" line="304"/>
         <source>DAMPED SINE FIT</source>
         <translation>دامبد سين فت </translation>
     </message>
@@ -169,28 +182,178 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="209"/>
+        <location filename="../layouts/dio_sensor.ui" line="265"/>
         <source>Restart</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="249"/>
+        <location filename="../layouts/dio_sensor.ui" line="285"/>
         <source> S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="252"/>
+        <location filename="../layouts/dio_sensor.ui" line="288"/>
         <source>Duration </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="280"/>
+        <location filename="../layouts/dio_sensor.ui" line="339"/>
         <source>Save Data</source>
         <translation type="unfinished"> حفظ البيانات </translation>
     </message>
     <message>
-        <location filename="../layouts/dio_sensor.ui" line="111"/>
+        <location filename="../layouts/dio_sensor.ui" line="91"/>
         <source>Parameters</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor.ui" line="358"/>
+        <source>Save Region</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/timeLoggerControls2.ui" line="14"/>
+        <source>Record against Time</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="35"/>
+        <source>Title</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/timeLoggerControls2.ui" line="42"/>
+        <source>Duration</source>
+        <translation type="unfinished"> مدة </translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="129"/>
+        <source>interval</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="136"/>
+        <source> mS</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="84"/>
+        <source>myframe</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="106"/>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="164"/>
+        <source>START</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="175"/>
+        <source>STOP</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="186"/>
+        <source>CLEAR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="14"/>
+        <source>Record X Vs Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="42"/>
+        <source>Start Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="52"/>
+        <source>Stop Value</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/xyLoggerControls2.ui" line="62"/>
+        <source>Step Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="163"/>
+        <source>1000 mS total</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="217"/>
+        <source>Controls</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="234"/>
+        <source> Neighbours</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="237"/>
+        <source>+ </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="263"/>
+        <source>CAPTURE DATA</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="266"/>
+        <source>C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="285"/>
+        <source>Pause When Done</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="295"/>
+        <source>S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="305"/>
+        <source>D</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="312"/>
+        <source>FFT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="315"/>
+        <source>F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="335"/>
+        <source>Auto Y Axis</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="342"/>
+        <source>Y</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="364"/>
+        <source>Ctrl+S</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/dio_sensor_scope.ui" line="386"/>
+        <source>Ctrl+Shift+S</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1017,7 +1180,7 @@
         <translation> mH</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="166"/>
+        <location filename="../scope.py" line="168"/>
         <source>Reconnecting...</source>
         <translation> إعادة الاتصال...</translation>
     </message>
@@ -1027,7 +1190,7 @@
         <translation type="obsolete"> تمت إعادة توصيل الجهاز </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="216"/>
+        <location filename="../scope.py" line="218"/>
         <source>Error. Could not connect. Check cable. </source>
         <translation> خطأ. تعذر الاتصال. تحقق من الكابل </translation>
     </message>
@@ -1042,72 +1205,72 @@
         <translation> الطيف الترددي </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="483"/>
+        <location filename="../scope.py" line="553"/>
         <source>FFT Error</source>
         <translation>FFT خطأ </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="285"/>
+        <location filename="../scope.py" line="342"/>
         <source>Time: %6.2fmS </source>
         <translation> وقت: %6.2fmS </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="294"/>
+        <location filename="../scope.py" line="351"/>
         <source>%s:%6.2fV </source>
         <translation>%s:%6.2fV </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="367"/>
+        <location filename="../scope.py" line="437"/>
         <source>%5.2f V, %5.1f Hz</source>
         <translation>%5.2f V, %5.1f Hz</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="399"/>
+        <location filename="../scope.py" line="469"/>
         <source>A%d %5.3f V</source>
         <translation>A%d %5.3f V</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="401"/>
+        <location filename="../scope.py" line="471"/>
         <source>A%d</source>
         <translation>A%d</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="406"/>
+        <location filename="../scope.py" line="476"/>
         <source>%5.0f Ohm</source>
         <translation>%5.0f أوم </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="408"/>
+        <location filename="../scope.py" line="478"/>
         <source>Resistance: &lt;100Ohm  or  &gt;100k</source>
         <translation> مقاومة: &amp;lt;100Ohm  or  &amp;gt;100k</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="645"/>
+        <location filename="../scope.py" line="715"/>
         <source>Output Changed from WG to SQ2</source>
         <translation> تم تغيير الإخراج من WG إلى SQ2</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="709"/>
+        <location filename="../scope.py" line="779"/>
         <source> pF</source>
         <translation> pF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="712"/>
+        <location filename="../scope.py" line="782"/>
         <source> nF</source>
         <translation> nF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="715"/>
+        <location filename="../scope.py" line="785"/>
         <source> uF</source>
         <translation> uF</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="728"/>
+        <location filename="../scope.py" line="798"/>
         <source>%5.1fHz %4.1f%%</source>
         <translation>%5.1fHz %4.1f%%</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="730"/>
+        <location filename="../scope.py" line="800"/>
         <source>No signal</source>
         <translation> لا توجد تغطية </translation>
     </message>
@@ -1349,22 +1512,22 @@ For Driven Pendulum Expt.</source>
         <translation type="unfinished"> فشل في ملاءمة المنحنى مع V = Vo * exp (-t * L / R)</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="354"/>
+        <location filename="../scope.py" line="424"/>
         <source>%s input is clipped. Increase range</source>
         <translation type="unfinished">تم قطع إدخال٪ s. زيادة النطاق </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="454"/>
+        <location filename="../scope.py" line="524"/>
         <source>Range of</source>
         <translation type="unfinished">Range of</translation>
     </message>
     <message>
-        <location filename="../scope.py" line="454"/>
+        <location filename="../scope.py" line="524"/>
         <source> set to </source>
         <translation type="unfinished"> set to </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="703"/>
+        <location filename="../scope.py" line="773"/>
         <source>Capacitance too high or short to ground</source>
         <translation type="unfinished"> السعة عالية جدًا أو قصيرة على الأرض </translation>
     </message>
@@ -1460,17 +1623,17 @@ shows the actual frequency set.
         <translation> الوقت الكلي </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="184"/>
+        <location filename="../scope.py" line="186"/>
         <source>Calibrated </source>
         <translation> معايرة </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="186"/>
+        <location filename="../scope.py" line="188"/>
         <source>Not Calibrated </source>
         <translation> غير معايرة </translation>
     </message>
     <message>
-        <location filename="../scope.py" line="187"/>
+        <location filename="../scope.py" line="189"/>
         <source>Device Reconnected:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1542,12 +1705,12 @@ installing it (it is a non-free package).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../scope.py" line="706"/>
+        <location filename="../scope.py" line="776"/>
         <source> : &lt; 1pF</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../data_logger.py" line="286"/>
+        <location filename="../data_logger.py" line="299"/>
         <source>Clear Traces and Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1595,7 +1758,7 @@ installing it (it is a non-free package).</source>
         <translation>1mS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="783"/>
+        <location filename="../layouts/scope_layout.ui" line="1159"/>
         <source>A2</source>
         <translation>A2</translation>
     </message>
@@ -1610,7 +1773,7 @@ installing it (it is a non-free package).</source>
         <translation> عبر تحقق التكرار </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="138"/>
+        <location filename="../layouts/scope_layout.ui" line="41"/>
         <source>A2-A1</source>
         <translation>A2-A1</translation>
     </message>
@@ -1620,102 +1783,102 @@ installing it (it is a non-free package).</source>
         <translation>.</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="729"/>
+        <location filename="../layouts/scope_layout.ui" line="649"/>
         <source>Measure Voltages</source>
         <translation> قياس الفولتية </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="550"/>
+        <location filename="../layouts/scope_layout.ui" line="402"/>
         <source>16V</source>
         <translation>16V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="555"/>
+        <location filename="../layouts/scope_layout.ui" line="407"/>
         <source>8V</source>
         <translation>8V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="697"/>
+        <location filename="../layouts/scope_layout.ui" line="549"/>
         <source>4V</source>
         <translation>4V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="565"/>
+        <location filename="../layouts/scope_layout.ui" line="417"/>
         <source>2.5V</source>
         <translation>2.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="707"/>
+        <location filename="../layouts/scope_layout.ui" line="616"/>
         <source>1V</source>
         <translation>1V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="712"/>
+        <location filename="../layouts/scope_layout.ui" line="564"/>
         <source>0.5V</source>
         <translation>0.5V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="613"/>
+        <location filename="../layouts/scope_layout.ui" line="465"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Amplitude&lt;/span&gt; and &lt;span style=&quot; font-weight:600;&quot;&gt;frequency&lt;/span&gt; extracted from the&lt;/p&gt;&lt;p&gt;sinusoidal signal using least square fitting.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;This assumes a sine wave input is provided.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;For mixed signals, use the FOURIER transform button&lt;/p&gt;&lt;p&gt;below.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="795"/>
+        <location filename="../layouts/scope_layout.ui" line="1171"/>
         <source>A3</source>
         <translation>A3</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="702"/>
+        <location filename="../layouts/scope_layout.ui" line="554"/>
         <source>2V</source>
         <translation>2V</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="528"/>
+        <location filename="../layouts/scope_layout.ui" line="380"/>
         <source>MIC</source>
         <translation>MIC</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1158"/>
+        <location filename="../layouts/scope_layout.ui" line="931"/>
         <source> Volts</source>
         <translation> فولت </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1201"/>
+        <location filename="../layouts/scope_layout.ui" line="974"/>
         <source> %</source>
         <translation> %</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1263"/>
+        <location filename="../layouts/scope_layout.ui" line="1036"/>
         <source>symmetric</source>
         <translation>symmetric</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1319"/>
+        <location filename="../layouts/scope_layout.ui" line="1092"/>
         <source> Hz</source>
         <translation>Hz</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1145"/>
+        <location filename="../layouts/scope_layout.ui" line="918"/>
         <source>symmetric volts</source>
         <translation type="unfinished">symmetric volts</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1188"/>
+        <location filename="../layouts/scope_layout.ui" line="961"/>
         <source>SQ1</source>
         <translation>SQ1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1244"/>
+        <location filename="../layouts/scope_layout.ui" line="1017"/>
         <source>PV2</source>
         <translation>PV2</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1287"/>
+        <location filename="../layouts/scope_layout.ui" line="1060"/>
         <source>WG</source>
         <translation>WG</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1110"/>
+        <location filename="../layouts/scope_layout.ui" line="883"/>
         <source>PV1</source>
         <translation>PV1</translation>
     </message>
@@ -1725,112 +1888,112 @@ installing it (it is a non-free package).</source>
         <translation type="obsolete"> جهد المصدر الحالي:</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1046"/>
+        <location filename="../layouts/scope_layout.ui" line="819"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The voltage value at the constant current source output&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="826"/>
+        <location filename="../layouts/scope_layout.ui" line="143"/>
         <source>Timebase</source>
         <translation> قاعدة زمنية </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="890"/>
+        <location filename="../layouts/scope_layout.ui" line="207"/>
         <source>Trigger</source>
         <translation> اثار </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="281"/>
+        <location filename="../layouts/scope_layout.ui" line="220"/>
         <source>SAVE Traces</source>
         <translation> حفظ الآثار </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="337"/>
+        <location filename="../layouts/scope_layout.ui" line="1239"/>
         <source>CCS</source>
         <translation>CCS</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="288"/>
+        <location filename="../layouts/scope_layout.ui" line="636"/>
         <source>Fourier Transform</source>
         <translation> تحويل فورييه </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1364"/>
+        <location filename="../layouts/scope_layout.ui" line="581"/>
         <source>Resistance on SEN</source>
         <translation>SEN- المقاومة على </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="252"/>
+        <location filename="../layouts/scope_layout.ui" line="1301"/>
         <source>Frequency (IN2):</source>
         <translation>ഫീക്വൻസി (IN2):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="330"/>
+        <location filename="../layouts/scope_layout.ui" line="1226"/>
         <source>OD1</source>
         <translation>OD1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="263"/>
+        <location filename="../layouts/scope_layout.ui" line="611"/>
         <source>80 mV</source>
         <translation>80 mV</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="273"/>
+        <location filename="../layouts/scope_layout.ui" line="621"/>
         <source>3V (Amplitude)</source>
         <translation>3V (السعة)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1340"/>
+        <location filename="../layouts/scope_layout.ui" line="589"/>
         <source>WG( Sinusoidal )</source>
         <translation>WG (سين)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1345"/>
+        <location filename="../layouts/scope_layout.ui" line="594"/>
         <source>WG( Triangle )</source>
         <translation>WG (مثلث)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1350"/>
+        <location filename="../layouts/scope_layout.ui" line="599"/>
         <source>SQ2( Square )</source>
         <translation>SQ2 (ميدان)</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="245"/>
+        <location filename="../layouts/scope_layout.ui" line="656"/>
         <source>Capacitance (IN1):</source>
         <translation> السعة.(IN1):</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="295"/>
+        <location filename="../layouts/scope_layout.ui" line="1105"/>
         <source>SHOW ALL</source>
         <translation> عرض الكل </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="771"/>
+        <location filename="../layouts/scope_layout.ui" line="1147"/>
         <source>A1</source>
         <translation>A1</translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="151"/>
+        <location filename="../layouts/scope_layout.ui" line="1494"/>
         <source>FREEZE</source>
         <translation> تجميد </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="164"/>
+        <location filename="../layouts/scope_layout.ui" line="1481"/>
         <source>Cursor</source>
         <translation> المؤشر </translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="970"/>
+        <location filename="../layouts/scope_layout.ui" line="743"/>
         <source>1.65mA</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="989"/>
+        <location filename="../layouts/scope_layout.ui" line="762"/>
         <source>PCS</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="1027"/>
+        <location filename="../layouts/scope_layout.ui" line="800"/>
         <source>Voltage across PCS(mV):</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2029,22 +2192,22 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="344"/>
+        <location filename="../layouts/scope_layout.ui" line="1252"/>
         <source>CS1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="351"/>
+        <location filename="../layouts/scope_layout.ui" line="1265"/>
         <source>CS2</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="358"/>
+        <location filename="../layouts/scope_layout.ui" line="1278"/>
         <source>CS3</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/scope_layout.ui" line="365"/>
+        <location filename="../layouts/scope_layout.ui" line="1291"/>
         <source>CS4</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2054,12 +2217,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="213"/>
+        <location filename="../layouts/data_logger.ui" line="253"/>
         <source>SEN</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="223"/>
+        <location filename="../layouts/data_logger.ui" line="243"/>
         <source>IN1</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2084,42 +2247,42 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"> مسجل البيانات</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="290"/>
+        <location filename="../layouts/data_logger.ui" line="280"/>
         <source>16 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="295"/>
+        <location filename="../layouts/data_logger.ui" line="285"/>
         <source>8 V</source>
         <translation type="unfinished">4 V {8 ?}</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="300"/>
+        <location filename="../layouts/data_logger.ui" line="290"/>
         <source>4 V</source>
         <translation type="unfinished">4 V</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="305"/>
+        <location filename="../layouts/data_logger.ui" line="295"/>
         <source>2.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="310"/>
+        <location filename="../layouts/data_logger.ui" line="300"/>
         <source>1.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="315"/>
+        <location filename="../layouts/data_logger.ui" line="305"/>
         <source>1 V</source>
         <translation type="unfinished">4 V {1 ?}</translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="320"/>
+        <location filename="../layouts/data_logger.ui" line="310"/>
         <source>0.5 V</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="325"/>
+        <location filename="../layouts/data_logger.ui" line="315"/>
         <source>0.25 V</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2129,12 +2292,12 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/sensor_row.ui" line="102"/>
+        <location filename="../layouts/sensor_row.ui" line="61"/>
         <source>Sensor Name</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/sensor_row.ui" line="115"/>
+        <location filename="../layouts/sensor_row.ui" line="102"/>
         <source>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
@@ -2143,7 +2306,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/sensor_row.ui" line="89"/>
+        <location filename="../layouts/sensor_row.ui" line="147"/>
         <source>Start Measurements</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2169,7 +2332,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/sensor_logger.ui" line="159"/>
+        <location filename="../layouts/sensor_logger.ui" line="162"/>
         <source>Add Manually</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2274,17 +2437,17 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/interactive_layout2.ui" line="481"/>
+        <location filename="../layouts/interactive_layout3.ui" line="415"/>
         <source>cat-scroll</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/interactive_layout2.ui" line="536"/>
+        <location filename="../layouts/interactive_layout3.ui" line="470"/>
         <source>dirframe</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/interactive_layout2.ui" line="554"/>
+        <location filename="../layouts/interactive_layout3.ui" line="488"/>
         <source>subcat-scroll</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2319,38 +2482,73 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/interactive_layout2.ui" line="124"/>
+        <location filename="../layouts/interactive_layout3.ui" line="130"/>
         <source>controls-frame</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="537"/>
+        <location filename="../layouts/data_logger.ui" line="588"/>
         <source>Custom A1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="547"/>
+        <location filename="../layouts/data_logger.ui" line="619"/>
         <source>35.5</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="554"/>
+        <location filename="../layouts/data_logger.ui" line="605"/>
         <source>-17.905</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="561"/>
+        <location filename="../layouts/data_logger.ui" line="598"/>
         <source>Slope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="568"/>
+        <location filename="../layouts/data_logger.ui" line="612"/>
         <source>Offset</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../layouts/data_logger.ui" line="575"/>
+        <location filename="../layouts/data_logger.ui" line="626"/>
         <source>OD1 Output</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="357"/>
+        <source>Rg =</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="364"/>
+        <source>Connect a resistor between GND and Rg to amplify A3</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="374"/>
+        <source>Ω</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/data_logger.ui" line="680"/>
+        <source>OFF</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/interactive_layout3.ui" line="265"/>
+        <source>RECORD</source>
+        <translation type="unfinished"> سجل </translation>
+    </message>
+    <message>
+        <location filename="../layouts/scope_layout.ui" line="1314"/>
+        <source>I2C Sensors</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../layouts/sensor_row.ui" line="134"/>
+        <source>Show sensorscope</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2632,22 +2830,22 @@ p, li { white-space: pre-wrap; }
         <translation> مسجل بيانات متقدم </translation>
     </message>
     <message>
-        <location filename="../main.py" line="258"/>
+        <location filename="../main.py" line="259"/>
         <source>Magnetic Hysteresis (MPU925x Sensor)</source>
         <translation type="unfinished"> التباطؤ المغناطيسي (MPU925x المستشعر)</translation>
     </message>
     <message>
-        <location filename="../main.py" line="260"/>
+        <location filename="../main.py" line="261"/>
         <source>Luminosity(TSL2561) Logger</source>
         <translation> لمعان (TSL2561) المسجل </translation>
     </message>
     <message>
-        <location filename="../main.py" line="262"/>
+        <location filename="../main.py" line="263"/>
         <source>MPU-6050 Acccn, Velocity and Temp</source>
         <translation>MPU-6050  التسارع والسرعة ودرجة الحرارة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="263"/>
+        <location filename="../main2.py" line="262"/>
         <source>General Purpose I2C Sensors</source>
         <translation> هدف عام I2C مجسات </translation>
     </message>
@@ -2987,7 +3185,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="261"/>
+        <location filename="../main.py" line="262"/>
         <source>Temperature(MAX6675) Logger</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3002,7 +3200,7 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="259"/>
+        <location filename="../main.py" line="260"/>
         <source>Magnetic Hysteresis (HMC5883L Sensor)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -3027,13 +3225,18 @@ p, li { white-space: pre-wrap; }
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="833"/>
+        <location filename="../main.py" line="837"/>
         <source>Visual Programming</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../main.py" line="252"/>
         <source>Ferroelectric PE Loop Tracer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../main.py" line="258"/>
+        <source>I2C Sensor Data Logger</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -3176,162 +3379,162 @@ p, li { white-space: pre-wrap; }
 <context>
     <name>portSelectionDialog</name>
     <message>
-        <location filename="../main.py" line="842"/>
+        <location filename="../main.py" line="846"/>
         <source>Credits</source>
         <translation type="unfinished"> الاعتمادات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="704"/>
+        <location filename="../main.py" line="708"/>
         <source>Failed to load scope</source>
         <translation type="unfinished"> فشل تحميل النطاق </translation>
     </message>
     <message>
-        <location filename="../main.py" line="745"/>
+        <location filename="../main.py" line="749"/>
         <source>Failed to load %s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="795"/>
+        <location filename="../main.py" line="799"/>
         <source>Device</source>
         <translation type="unfinished"> جهاز </translation>
     </message>
     <message>
-        <location filename="../main.py" line="796"/>
+        <location filename="../main.py" line="800"/>
         <source>Reconnect</source>
         <translation type="unfinished"> أعد الاتصال </translation>
     </message>
     <message>
-        <location filename="../main.py" line="797"/>
+        <location filename="../main.py" line="801"/>
         <source>LightBackGround</source>
         <translation type="unfinished">  خفيفة  الخلفية </translation>
     </message>
     <message>
-        <location filename="../main.py" line="798"/>
+        <location filename="../main.py" line="802"/>
         <source>DarkBackGround</source>
         <translation type="unfinished">  خلفية داكنة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="799"/>
+        <location filename="../main.py" line="803"/>
         <source>Choose Language</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="818"/>
+        <location filename="../main.py" line="822"/>
         <source>Language = {} : done = {}, to finish = {}, untranslated = {}</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="822"/>
+        <location filename="../main.py" line="826"/>
         <source>Screenshot</source>
         <translation type="unfinished"> لقطة شاشة </translation>
     </message>
     <message>
-        <location filename="../main.py" line="823"/>
+        <location filename="../main.py" line="827"/>
         <source>Whole Window Alt-s</source>
         <translation type="unfinished"> نافذة كاملة Alt-s </translation>
     </message>
     <message>
-        <location filename="../main.py" line="824"/>
+        <location filename="../main.py" line="828"/>
         <source>Graph Only Alt-p</source>
         <translation type="unfinished"> Alt-p رسم بياني فقط  </translation>
     </message>
     <message>
-        <location filename="../main.py" line="840"/>
+        <location filename="../main.py" line="844"/>
         <source>Circuit Simulator</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="839"/>
+        <location filename="../main.py" line="843"/>
         <source>Experiment List</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="846"/>
+        <location filename="../main.py" line="850"/>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="848"/>
+        <location filename="../main.py" line="852"/>
         <source>School Expts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="852"/>
+        <location filename="../main.py" line="856"/>
         <source>Electronics</source>
         <translation type="unfinished"> إلكترونيات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="859"/>
+        <location filename="../main.py" line="863"/>
         <source>Electrical</source>
         <translation type="unfinished"> الكهرباء </translation>
     </message>
     <message>
-        <location filename="../main.py" line="863"/>
+        <location filename="../main.py" line="867"/>
         <source>Sound</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="867"/>
+        <location filename="../main.py" line="871"/>
         <source>Mechanics</source>
         <translation type="unfinished"> علم الميكانيكا </translation>
     </message>
     <message>
-        <location filename="../main.py" line="871"/>
+        <location filename="../main.py" line="875"/>
         <source>Other Expts</source>
         <translation type="unfinished"> خبرة أخرى </translation>
     </message>
     <message>
-        <location filename="../main.py" line="875"/>
+        <location filename="../main.py" line="879"/>
         <source>I2C Modules</source>
         <translation type="unfinished">I2C الوحدات </translation>
     </message>
     <message>
-        <location filename="../main.py" line="879"/>
+        <location filename="../main.py" line="883"/>
         <source>PythonCode</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1015"/>
+        <location filename="../main.py" line="1019"/>
         <source>Translating ...</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1022"/>
+        <location filename="../main.py" line="1026"/>
         <source>Export screenshot in {name} ({localname}).</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1102"/>
+        <location filename="../main.py" line="1106"/>
         <source>Missing Plot</source>
         <translation type="unfinished"> مؤامرة مفقود </translation>
     </message>
     <message>
-        <location filename="../main.py" line="1102"/>
+        <location filename="../main.py" line="1106"/>
         <source>Unable to locate a plot. Please try to right click and export</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="1139"/>
+        <location filename="../main.py" line="1143"/>
         <source>Enter Width(px). Height will be autoset</source>
         <translation type="unfinished"> سيتم تعيين الارتفاع تلقائيًا أدخل العرض</translation>
     </message>
     <message>
-        <location filename="../main.py" line="1191"/>
+        <location filename="../main.py" line="1195"/>
         <source>Oscilloscope</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="836"/>
+        <location filename="../main.py" line="840"/>
         <source>Interactive Schematics(Beta)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="841"/>
+        <location filename="../main.py" line="845"/>
         <source>Stepper Motor Controller</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../main.py" line="826"/>
+        <location filename="../main.py" line="830"/>
         <source>Themes</source>
         <translation type="unfinished"></translation>
     </message>

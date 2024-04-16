@@ -110,6 +110,11 @@ def fit_dsine(xlist, ylist, freq=0):
 
 class LOGGER:
     def __init__(self, I2C):
+        self.p = None
+        self.scope_NP = 0
+        self.scope_TG = 1000
+        self.scope_start_time = time.time()
+
         self.sensors = {
             0x39: {
                 'name': 'TSL2561 Luminosity Sensor',
@@ -255,11 +260,11 @@ class LOGGER:
         }
         self.namedsensors = {
             'GMCOUNTER': {
-                'address': [0xe,0xf,0x10, 0x11, 0x12],
+                'address': [0xe, 0xf, 0x10, 0x11, 0x12],
                 'name': 'CSpark GM Counter',
                 'init': self.CSGM_init,
                 'read': self.CSGM_all,
-                'fields': ['count','voltage'],
+                'fields': ['count', 'voltage'],
                 'min': [0, 0],
                 'max': [65535, 1000],
                 'config': [{
@@ -274,7 +279,7 @@ class LOGGER:
                         'name': 'Save To Flash',
                         'widget': 'button',
                         'function': self.CSGM_save
-                    },{
+                    }, {
                         'name': 'Start',
                         'widget': 'button',
                         'function': self.CSGM_start
@@ -296,11 +301,11 @@ class LOGGER:
                 'init': self.BH1750_init,
                 'read': self.BH1750_all,
                 'fields': ['luminosity(mLx)'],
-                'min': [0,0],
+                'min': [0, 0],
                 'max': [32767],
                 'config': [{
                     'name': 'sensitivity',
-                    'options': ['500mLx','1000mLx', '4000mLx'],
+                    'options': ['500mLx', '1000mLx', '4000mLx'],
                     'function': self.BH1750_gain
                 }
                 ]},
@@ -385,6 +390,8 @@ class LOGGER:
                 'name': 'MPU6050 3 Axis Accelerometer and Gyro (Ax, Ay, Az, Temp, Gx, Gy, Gz) ',
                 'init': self.MPU6050_init,
                 'read': self.MPU6050_all,
+                'startscope': self.MPU6050_startscope,
+                'fetchscope': self.MPU6050_fetchscope,
                 'fields': ['Ax', 'Ay', 'Az', 'Temp', 'Gx', 'Gy', 'Gz'],
                 'min': [-1 * 2 ** 15, -1 * 2 ** 15, -1 * 2 ** 15, 0, -1 * 2 ** 15, -1 * 2 ** 15, -1 * 2 ** 15],
                 'max': [2 ** 15, 2 ** 15, 2 ** 15, 2 ** 16, 2 ** 15, 2 ** 15, 2 ** 15],
@@ -404,6 +411,20 @@ class LOGGER:
                         'function': self.MPU6050_kalman_set
                     }
                 ]},
+            'BMP180': {
+                'address': [0x77],
+                'name': 'BMP180 Pressure and Temperature sensor',
+                'init': self.BMP180_init,
+                'read': self.BMP180_all,
+                'fields': ['Pressure', 'Temp'],
+                'min': [0, 0],
+                'max': [1600, 100],
+                'config': [{
+                    'name': 'Oversampling',
+                    'options': ['0', '1', '2', '3'],
+                    'function': self.BMP180_setOversampling
+                }]
+            },
             'BMP280': {
                 'address': [0x76],
                 'name': 'BMP280 Pressure and Temperature sensor',
@@ -570,6 +591,9 @@ class LOGGER:
     CSGM_VOLTS_READ_LOCATION = 110
     CSGM_VOLTS_WRITE_LOCATION = 112
 
+    def set_device(self, d):
+        self.p = d
+
     def CSGM_init(self, **kwargs):
         self.CSGM_ADDRESS = kwargs.get('address', self.CSGM_ADDRESS)
 
@@ -602,7 +626,8 @@ class LOGGER:
             return False
 
     def CSGM_config(self, volts):
-        self.I2CWriteBulk(self.CSGM_ADDRESS, [self.CSGM_VOLTS_WRITE_LOCATION, int(volts) & 0xFF, int(volts >> 8) & 0xFF])
+        self.I2CWriteBulk(self.CSGM_ADDRESS,
+                          [self.CSGM_VOLTS_WRITE_LOCATION, int(volts) & 0xFF, int(volts >> 8) & 0xFF])
 
     def CSGM_start(self):
         self.I2CWriteBulk(self.CSGM_ADDRESS, [self.CSGM_START_LOCATION])
@@ -615,7 +640,7 @@ class LOGGER:
 
     def CSGM_save(self):
         self.I2CWriteBulk(self.CSGM_ADDRESS, [self.CSGM_SAVE_LOCATION])
-        time.sleep(0.1) #Wait for save.
+        time.sleep(0.1)  # Wait for save.
 
     MPU6050_kalman = 0
     MPU6050_ADDRESS = 0x68
@@ -673,7 +698,56 @@ class LOGGER:
                 self.MPU6050_kalman.input([np.int16((b[x * 2] << 8) | b[x * 2 + 1]) for x in range(7)])
                 return self.MPU6050_kalman.output()
 
-    ######## AK8963 magnetometer attacched to MPU925x #######
+    MPU6050_scope_chunk_length = 1
+    MPU6050_scope_start_reg = 0x3B
+
+    def MPU6050_startscope(self, NP, TG, parameters):
+        self.MPU6050_scope_start_reg = 0x3B + parameters[0] * 2
+        self.MPU6050_scope_chunk_length = (parameters[-1] - parameters[0] + 1) * 2  # 0,1,3
+        #print(f'starting from {hex(self.MPU6050_scope_start_reg)} reading {self.MPU6050_scope_chunk_length} bytes')
+        # ADDRESS, Start Register, bytes/chunk.
+        self.p.__capture_i2c_init__(self.MPU6050_ADDRESS, self.MPU6050_scope_start_reg, self.MPU6050_scope_chunk_length,
+                                    NP, TG)
+        self.scope_NP = NP
+        self.scope_TG = TG
+        self.scope_start_time = time.time()
+
+    def MPU6050_fetchscope(self):
+        chunksize = 250  # Get 200 chunkds of data at a time minimum. chunk size in bytes = samples*scope_chunk_length
+        elapsed_time = max(0.,
+                           time.time() - self.scope_start_time - 0.1)  # 0.1 seconds headstart.   Timeelapsed since start cap
+        available_samples = min(self.scope_NP,
+                                int(1e6 * elapsed_time / self.scope_TG))  # Total samples that should have been acquired by this time.
+        if self.scope_TG < 300:  # too short acquisition time. retrieve data later.
+            if available_samples < self.scope_NP:
+                return 0, None, None
+
+        if available_samples - self.p.fetched_i2c_scope_buffer > chunksize:  # chunk size to prevent packet drops
+            #print(f'too many samples available {available_samples}. reduce to {self.p.fetched_i2c_scope_buffer + chunksize}')
+            available_samples = self.p.fetched_i2c_scope_buffer + chunksize
+
+        if available_samples > (
+                self.p.fetched_i2c_scope_buffer + chunksize * .8) or available_samples == self.scope_NP or elapsed_time > 0.2:
+            params = int(self.MPU6050_scope_chunk_length / 2)
+
+            #print('should have', available_samples, 'out of ', self.scope_NP, '. bytes=', available_samples*params*2, 'fetched', self.p.fetched_i2c_scope_buffer, 'params',params)
+            v = self.p.__retrieve_incremental_buffer__(int(available_samples * params))
+            if v is None:
+                return -1, None, None
+            total_bytes = len(v)
+            vals = int(total_bytes / params / 2)
+            values = np.zeros(shape=(params, vals))
+            #print(params,vals,len(v),v[:10])
+            for a in range(vals):
+                for b in range(params):
+                    # print(a,b,a * params + b*2)
+                    values[b][a] = np.int16((int(v[ (a*params + b) * 2]) << 8) | int(v[ (a*params + b)*2 + 1]))
+            status = 2 if vals==self.scope_NP else 1
+            return status, np.linspace(0, 1e-6 * self.scope_TG * vals, vals), values
+
+        return 0, None, None
+
+    ######## AK8963 magnetometer attached to MPU925x #######
     AK8963_ADDRESS = 0x0C
     _AK8963_CNTL = 0x0A
 
@@ -692,6 +766,125 @@ class LOGGER:
             return [ax, ay, az]
         else:
             return None
+
+    ########## BMP180 ##############
+    BMP180_ADDRESS = 0x77
+    BMP180_REG_CONTROL = 0xF4
+    BMP180_REG_RESULT = 0xF6
+    BMP180_CMD_TEMP = 0x2E
+    BMP180_CMD_P0 = 0x34
+    BMP180_CMD_P1 = 0x74
+    BMP180_CMD_P2 = 0xB4
+    BMP180_CMD_P3 = 0xF4
+    BMP180_oversampling = 0
+    BMP180_NUMPLOTS = 2
+    BMP180_PLOTNAMES = ['Temperature', 'Pressure', 'Altitude']
+    BMP180_name = 'Altimeter BMP180'
+    BMP180_params = {'setOversampling': [0, 1, 2, 3]}
+
+    BMP180_c3 = 0
+    BMP180_c4 = 0
+    BMP180_b1 = 0
+    BMP180_c5 = 0
+    BMP180_c6 = 0
+    BMP180_mc = 0
+    BMP180_md = 0
+    BMP180_x0 = 0
+    BMP180_x1 = 0
+    BMP180_x2 = 0
+    BMP180_y0 = 0
+    BMP180_y1 = 0
+    BMP180_y2 = 0
+    BMP180_p0 = 0
+    BMP180_p1 = 0
+    BMP180_p2 = 0
+    BMP180_P = 1000
+    BMP180_T = 25
+
+    def BMP180_init(self, **kwargs):
+        self.BMP180_ADDRESS = kwargs.get('address', self.BMP180_ADDRESS)
+        MB = self.__readInt__(0xBA)
+        self.BMP180_c3 = 160.0 * pow(2, -15) * self.__readInt__(0xAE)
+        self.BMP180_c4 = pow(10, -3) * pow(2, -15) * self.__readUInt__(0xB0)
+        self.BMP180_b1 = pow(160, 2) * pow(2, -30) * self.__readInt__(0xB6)
+        self.BMP180_c5 = (pow(2, -15) / 160) * self.__readUInt__(0xB2)
+        self.BMP180_c6 = self.__readUInt__(0xB4)
+        self.BMP180_mc = (pow(2, 11) / pow(160, 2)) * self.__readInt__(0xBC)
+        self.BMP180_md = self.__readInt__(0xBE) / 160.0
+        self.BMP180_x0 = self.__readInt__(0xAA)
+        self.BMP180_x1 = 160.0 * pow(2, -13) * self.__readInt__(0xAC)
+        self.BMP180_x2 = pow(160, 2) * pow(2, -25) * self.__readInt__(0xB8)
+        self.BMP180_y0 = self.BMP180_c4 * pow(2, 15)
+        self.BMP180_y1 = self.BMP180_c4 * self.BMP180_c3
+        self.BMP180_y2 = self.BMP180_c4 * self.BMP180_b1
+        self.BMP180_p0 = (3791.0 - 8.0) / 1600.0
+        self.BMP180_p1 = 1.0 - 7357.0 * pow(2, -20)
+        self.BMP180_p2 = 3038.0 * 100.0 * pow(2, -36)
+        self.BMP180_T = 25
+        print('calib:', self.BMP180_x0, self.BMP180_x1, self.BMP180_x2,
+              self.BMP180_y0, self.BMP180_y1, self.BMP180_p0, self.BMP180_p1, self.BMP180_p2)
+        self.BMP180_initTemperature()
+        self.BMP180_readTemperature()
+        self.BMP180_initPressure()
+
+    def __readInt__(self, addr):
+        return np.int16(self.__readUInt__(addr))
+
+    def __readUInt__(self, addr):
+        vals = self.I2CReadBulk(self.BMP180_ADDRESS, addr, 2)
+        v = 1. * ((vals[0] << 8) | vals[1])
+        return v
+
+    def BMP180_initTemperature(self):
+        self.I2CWriteBulk(self.BMP180_ADDRESS, [self.BMP180_REG_CONTROL, self.BMP180_CMD_TEMP])
+        time.sleep(0.005)
+
+    def BMP180_readTemperature(self):
+        vals = self.I2CReadBulk(self.BMP180_ADDRESS, self.BMP180_REG_RESULT, 2)
+        if vals is None: return None
+        if vals:
+            if len(vals) == 2:
+                T = (vals[0] << 8) + vals[1]
+                a = self.BMP180_c5 * (T - self.BMP180_c6)
+                self.BMP180_T = a + (self.BMP180_mc / (a + self.BMP180_md))
+                return self.BMP180_T
+        return None
+
+    def BMP180_setOversampling(self, num):
+        self.BMP180_oversampling = int(num)
+
+    def BMP180_initPressure(self):
+        os = [0x34, 0x74, 0xb4, 0xf4]
+        delays = [0.005, 0.008, 0.014, 0.026]
+        self.I2CWriteBulk(self.BMP180_ADDRESS, [self.BMP180_REG_CONTROL, os[self.BMP180_oversampling]])
+        time.sleep(delays[self.BMP180_oversampling])
+
+    def BMP180_readPressure(self):
+        vals = self.I2CReadBulk(self.BMP180_ADDRESS, self.BMP180_REG_RESULT, 3)
+        if vals is None: return None
+        if len(vals) == 3:
+            P = 1. * (vals[0] << 8) + vals[1] + (vals[2] / 256.0)
+            s = self.BMP180_T - 25.0
+            x = (self.BMP180_x2 * pow(s, 2)) + (self.BMP180_x1 * s) + self.BMP180_x0
+            y = (self.BMP180_y2 * pow(s, 2)) + (self.BMP180_y1 * s) + self.BMP180_y0
+            z = (P - x) / y
+            self.BMP180_P = (self.BMP180_p2 * pow(z, 2)) + (self.BMP180_p1 * z) + self.BMP180_p0
+            return self.BMP180_P
+        else:
+            return None
+
+    def BMP180_sealevel(self, P, A):
+        '''
+        given a calculated pressure and altitude, return the sealevel
+        '''
+        return P / pow(1 - (A / 44330.0), 5.255)
+
+    def BMP180_all(self):
+        self.BMP180_initTemperature()
+        self.BMP180_readTemperature()
+        self.BMP180_initPressure()
+        self.BMP180_readPressure()
+        return [self.BMP180_P, self.BMP180_T]
 
     ####### BMP280 ###################
     # https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bme280-ds002.pdf
@@ -904,23 +1097,22 @@ class LOGGER:
         return [0.005 * I[0] / self._INA3221_SHUNT_RESISTOR_VALUE, 0.005 * I[1] / self._INA3221_SHUNT_RESISTOR_VALUE,
                 0.005 * I[2] / self._INA3221_SHUNT_RESISTOR_VALUE]
 
-    #BH1750
-    BH1750_GAIN = 0x00  # 0x11=500 , 0x10 = 1000, 0x13 = 4000mLx
-    BH1750_TIMING = 0x00  # 0x00=3 mS , 0x01 = 101 mS, 0x02 = 402mS
+    # BH1750
+    BH1750_GAIN = 0x11  # 0x11=500 , 0x10 = 1000, 0x13 = 4000mLx
     BH1750_ADDRESS = 35
-    BH1750_SCALING= 1.0
+    BH1750_SCALING = 1.0
 
     def BH1750_init(self, **kwargs):
         self.BH1750_ADDRESS = kwargs.get('address', self.BH1750_ADDRESS)
-        self.BH1750_gain(0) #500mLx range
+        self.BH1750_gain(0)  # 500mLx range
         time.sleep(0.1)
         return self.BH1750_all()
 
     def BH1750_gain(self, gain):
-        self.BH1750_GAIN = [0x11,0x10,0x13][gain]
-        if gain == 0 : #500 mLx
+        self.BH1750_GAIN = [0x11, 0x10, 0x13][gain]
+        if gain == 0:  # 500 mLx
             self.BH1750_SCALING = 1.
-        else: #1000mLx or 4000mLx
+        else:  # 1000mLx or 4000mLx
             self.BH1750_SCALING = 2.
         self.I2CWriteBulk(self.BH1750_ADDRESS, [self.BH1750_GAIN])  # poweron
 
@@ -929,14 +1121,12 @@ class LOGGER:
         returns a 2 element list. total,IR
         returns None if communication timed out with I2C sensor
         '''
-        b = self.I2CReadBulk(self.BH1750_ADDRESS, 0x80 | 0x20 | 0x0C, 4)
-        b = self.I2C.simpleRead(self.BH1750_ADDRESS,2)
+        b = self.I2C.simpleRead(self.BH1750_ADDRESS, 2)
         if b is None: return None
         if None not in b:
-            return [ float((b[0] << 8) | b[1]) * self.BH1750_SCALING /2.]  # total lux
+            return [float((b[0] << 8) | b[1]) * self.BH1750_SCALING / 2.]  # total lux
 
-    #TSL2561
-
+    # TSL2561
 
     TSL_GAIN = 0x00  # 0x00=1x , 0x10 = 16x
     TSL_TIMING = 0x00  # 0x00=3 mS , 0x01 = 101 mS, 0x02 = 402mS
@@ -1074,7 +1264,7 @@ class LOGGER:
 
     def TSL2591_Read_FullSpectrum(self):
         """Read the full spectrum (IR + visible) light and return its value"""
-        data = (self.TSL2591_Read_CHAN1() << 16) | TSL2591_self.Read_CHAN0()
+        data = (self.TSL2591_Read_CHAN1() << 16) | self.TSL2591_Read_CHAN0()
         return data
 
     def TSL2591_Read_Infrared(self):

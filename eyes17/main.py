@@ -255,12 +255,12 @@ otherExpts = [
 ]
 
 modulesI2C = [
+    [QT_TRANSLATE_NOOP('MainWindow', 'I2C Sensor Data Logger'), ('8.4', 'i2cLogger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Magnetic Hysteresis (MPU925x Sensor)'), ('8.1', 'BHCurve')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Magnetic Hysteresis (HMC5883L Sensor)'), ('8.1', 'BHCurveHMC')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Luminosity(TSL2561) Logger'), ('8.2', 'lightsensorlogger')],
     [QT_TRANSLATE_NOOP('MainWindow', 'Temperature(MAX6675) Logger'), ('8.5', 'thermocouplelogger')],
-    [QT_TRANSLATE_NOOP('MainWindow', 'MPU-6050 Acccn, Velocity and Temp'), ('8.3', 'MPU6050')],
-    [QT_TRANSLATE_NOOP('MainWindow', 'General Purpose I2C Sensors'), ('8.4', 'i2cLogger')]
+    [QT_TRANSLATE_NOOP('MainWindow', 'MPU-6050 Acccn, Velocity and Temp'), ('8.3', 'MPU6050')]
 ]
 
 pythonCodes = [
