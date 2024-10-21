@@ -9,6 +9,6 @@ setReg(PORTC,255)
 
 while 1:
 	val = getReg(PINC)
-	print val
+	print (val)
 	setReg(PORTB, val)
 	time.sleep(.1)

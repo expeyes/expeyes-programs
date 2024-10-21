@@ -40,7 +40,7 @@ class poDic:
                 elif self.mode=="msgstr":
                     msgstr+=o.group(1)
                 else:
-                    print "error, '%s' not usable" %o.group(1)
+                    print ("error, '%s' not usable" %o.group(1))
         # record the last one
         if self.mode=="msgstr":
             self.dict[msgid]=msgstr
@@ -69,8 +69,8 @@ def localizeManual(pofile, lyxfile, prefix="new-"):
     @param lyxfile a LyX file
     @param prefix a prefix to make the name of the new file
     """
-    menuitem=re.compile("^menuitem\{(.*)\}$")
-    buttonlabel=re.compile("^buttonlabel\{(.*)\}$")
+    menuitem=re.compile(r"^menuitem\{(.*)\}$")
+    buttonlabel=re.compile(r"^buttonlabel\{(.*)\}$")
     patterns=(menuitem,buttonlabel)
     manFileName=os.path.abspath(lyxfile)
     newFileName=os.path.join(os.path.dirname(manFileName),prefix+os.path.basename(manFileName))
@@ -88,11 +88,11 @@ def localizeManual(pofile, lyxfile, prefix="new-"):
                 if podic[key]:
                     l=l.replace(key, podic[key])
                 else:
-                    print "ERROR: menuitem not found in dictionary '%s'" %key
+                    print ("ERROR: menuitem not found in dictionary '%s'" %key)
         outfile.write(l)
     outfile.close()
     infile.close()
-    print "localized %s => %s (using %s)" %(lyxfile,newFileName, pofile)
+    print ("localized %s => %s (using %s)" %(lyxfile,newFileName, pofile))
 
 
 if __name__=="__main__":
@@ -103,5 +103,5 @@ Usage: python update-manual.py <Po file> <LyX file>"""
         lyxfile=sys.argv[2]
         localizeManual(pofile, lyxfile, "new-")
     except:
-        print usage
+        print (usage)
 

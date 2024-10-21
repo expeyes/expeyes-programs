@@ -99,12 +99,12 @@ def connectKP(s):  	 # Establish connection to ATmega32 connected to USB port
 		if ver == VERSION:
 			return fd
 		else:
-			print 'Found port %s, but no kuttyPy on it',s
+			print ('Found port %s, but no kuttyPy on it',s)
 			return None
 	except:
 		pass
 	#Exception as e:
-	#print str(e)
+	#print (str(e))
 		
 def findKP():
 	device_list = []
@@ -117,11 +117,11 @@ def findKP():
 			device_list.append(k)
 	elif 'inux' in pf:	
 		device_list = ['/dev/ttyUSB0', '/dev/ttyUSB1', '/dev/ttyACM0','/dev/ttyACM1']
-	#print device_list
+	#print (device_list)
 	for dev in device_list:
 		res = connectKP(dev)
 		if res != None:
-			print 'KuttyPy found on port ',dev
+			print ('KuttyPy found on port ',dev)
 			return res
 	
 
@@ -152,7 +152,7 @@ def readADC(ch):        # Read the ADC channel
 
 KP = findKP()
 if KP == None:
-	print 'Hardware NOT detected. Exiting'
+	print ('Hardware NOT detected. Exiting')
 	sys.exit(0)
 	
 

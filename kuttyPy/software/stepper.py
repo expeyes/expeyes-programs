@@ -17,7 +17,7 @@ def rotateMotor (nsteps, direction):
 			else:
 				pos -= 1
 		setReg(PORTA,seq[pos])         # set the uC register 
-		print 'PORTA set to ',seq[pos]
+		print ('PORTA set to ',seq[pos])
 		time.sleep(.05)
 
 

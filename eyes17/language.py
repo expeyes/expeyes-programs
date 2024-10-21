@@ -15,7 +15,7 @@ class Language:
           if this list is non-empty, weird language idents raise an exception
         """
         if locales:
-            found = [l for l in locales if re.match("^#?\s*"+ident+" ", l)]
+            found = [l for l in locales if re.match(r"^#?\s*"+ident+" ", l)]
             if not found:
                 raise Exception(f"locale {ident} is unknown for Linux")
         self.ident = ident

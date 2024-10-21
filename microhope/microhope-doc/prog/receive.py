@@ -8,7 +8,7 @@ while(1):
 		pass
 	x=ser.read()
 	if ord(x) == 0:     #Print when end of string 
-		print val
+		print (val)
 		val = ''
 	else:
 		val = val + x

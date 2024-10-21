@@ -1,4 +1,4 @@
-'''                                                                              PA0
+r'''                                                                              PA0
 Connect LEDs from PB0..PB7 to Ground via 5k resistors.                            |
 Change the voltage at PA0 using a potentiometer, using a connection like    5V__/\/\/\__GND
 '''
@@ -24,5 +24,5 @@ def readADC(ch):        # Read the ADC channel
 	return (hi << 8) | low
 
 while 1:
-	print readADC(0)
+	print (readADC(0))
 	time.sleep(1)

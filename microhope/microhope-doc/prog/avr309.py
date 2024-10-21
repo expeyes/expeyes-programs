@@ -51,7 +51,7 @@ class avrusb:
       if len(res) < 3:
         break
       else:
-        print 'Cleared ', res[0] + res[1]*256, 'bytes'
+        print ('Cleared ', res[0] + res[1]*256, 'bytes')
   
   def read(self, nb):	 # loop until getting 'nb' bytes
     index = 0

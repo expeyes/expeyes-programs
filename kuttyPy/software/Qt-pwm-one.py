@@ -24,7 +24,7 @@ class mwin(QWidget):
 		self.init_pwm()
 	
 	def set_pwm(self, val):
-		print val
+		print (val)
 		setReg (OCR1AH , (val>>8)&0x3)   #Output Compare register values
 		setReg (OCR1AL , val&0xFF)   #Output Compare register values
 		

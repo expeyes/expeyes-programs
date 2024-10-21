@@ -32,7 +32,7 @@ class mwin(QWidget):
 		setReg(DDRB, 255)
 		
 	def setbit(self, bit):
-		print bit
+		print (bit)
 		self.PBdata = 0
 		if self.bits[bit].isChecked() == True:
 			setBits(PORTB, 1 << bit)

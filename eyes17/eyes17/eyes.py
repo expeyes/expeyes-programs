@@ -562,7 +562,7 @@ class Interface():
 			return None
 
 	def __capture_fullspeed__(self,chan,samples,tg,*args,**kwargs):
-		"""
+		r"""
 		Blocking call that fetches oscilloscope traces from a single oscilloscope channel at a maximum speed of 2MSPS
 		
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
@@ -686,7 +686,7 @@ class Interface():
 		return self.buff[:int(samples)]
 
 	def capture_traces(self,num,samples,tg,channel_one_input='A1',CH123SA=0,**kwargs):
-		"""
+		r"""
 		Instruct the ADC to start sampling. use fetch_trace to retrieve the data
 
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
@@ -803,7 +803,7 @@ class Interface():
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
 	def capture_highres_traces(self,channel,samples,tg,**kwargs):
-		"""
+		r"""
 		Instruct the ADC to start sampling. use fetch_trace to retrieve the data
 
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
@@ -848,7 +848,7 @@ class Interface():
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
 	def capture_hr_multiple(self,samples,tg,*args):
-		"""
+		r"""
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
 		
 		=================== ============================================================================================
@@ -1246,7 +1246,7 @@ class Interface():
 
 
 	def get_average_voltage(self,channel_name,**kwargs):
-		""" 
+		r"""
 		Return the voltage on the selected channel
 		
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
@@ -1674,7 +1674,7 @@ class Interface():
 			self.raiseException(ex, "Communication Error , Function : "+inspect.currentframe().f_code.co_name)
 
 	def DoublePinEdges(self,channel1,channel2,edge1,edge2,points1,points2,timeout=1.0,**kwargs):
-		""" 
+		r"""
 		Measures a set of timestamped logic level changes(Type can be selected) from one digital input.
 
 		.. tabularcolumns:: |p{3cm}|p{11cm}|
@@ -1788,7 +1788,7 @@ class Interface():
 		return self.get_states()[input_id]
 
 	def set_state(self,**kwargs):
-		"""
+		r"""
 		
 		set the logic level on digital outputs OD1,CCS,SQR1
 
