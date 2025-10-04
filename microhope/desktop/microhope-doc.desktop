@@ -3,7 +3,7 @@ Version=2.0.0
 Type=Application
 
 Exec=microhope-doc
-Icon=gnome-word.png
+Icon=microhope-doc.svg
 
 Name=microHOPE Manual
 
