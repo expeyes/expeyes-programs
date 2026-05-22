@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   id="opto-electric"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 742 438"
+   sodipodi:docname="opto-electric.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/opto-electric.png"
+   inkscape:export-xdpi="39.024391"
+   inkscape:export-ydpi="39.024391"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata119">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs117" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1680"
+     inkscape:window-height="1050"
+     id="namedview115"
+     showgrid="false"
+     inkscape:zoom="1.4474394"
+     inkscape:cx="365.81842"
+     inkscape:cy="219.00744"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="opto-electric"
+     inkscape:pagecheckerboard="0" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;opto-electric.ps&quot; Page 1
+</desc>
+  <text
+     font-size="40"
+     id="text6"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="32"
+     y="208"><tspan
+       x="32"
+       y="208"
+       id="tspan4">SQ1</tspan></text>
+  <text
+     font-size="40"
+     id="text12"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="32"
+     y="400"><tspan
+       x="32"
+       y="400"
+       id="tspan10">GND</tspan></text>
+  <text
+     font-size="40"
+     id="text18"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="624"
+     y="192"><tspan
+       x="624"
+       y="192"
+       id="tspan16">SEN</tspan></text>
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path22"
+     d="m 258,256 -18,32 -18,-32 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path24"
+     d="m 240,224 v 32" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path26"
+     d="M 240,320 V 288" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path28"
+     d="M 258,288 H 222" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path30"
+     d="M 448,272 H 432" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path32"
+     d="m 448,224 v 96" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path34"
+     d="m 496,224 -48,26" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="M 496,224 V 208" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path38"
+     d="M 496,320 448,294" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path40"
+     d="m 496,320 v 16" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path42"
+     d="m 468,313 c 11,1 14,2 28,7 -11,-10 -14,-12 -20,-21 -2,6 -4,10 -8,14" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path44"
+     d="m 16,160 v 64 h 112 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path46"
+     d="m 16,352 v 64 h 112 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path48"
+     d="m 608,144 v 64 h 112 v -64 z" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path50"
+     d="m 276,264 c 10,-5 13,-5 28,-8 -15,-3 -18,-3 -28,-8 2,6 2,10 0,16" />
+  <text
+     font-size="40"
+     id="text54"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="128"
+     y="288"><tspan
+       x="128"
+       y="288"
+       id="tspan52">LED</tspan></text>
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse58"
+     cy="208"
+     cx="240" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse60"
+     cy="336"
+     cx="240" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path62"
+     d="m 128,384 c 16,0 96,-32 112,-32" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse64"
+     cy="192"
+     cx="496" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse66"
+     cy="352"
+     cx="496" />
+  <text
+     font-size="40"
+     id="text70"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="528"
+     y="272"><tspan
+       x="528"
+       y="272"
+       id="tspan68">Photo</tspan></text>
+  <text
+     font-size="40"
+     id="text76"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="528"
+     y="304"><tspan
+       x="528"
+       y="304"
+       id="tspan74">transistor</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path80"
+     d="m 496,368 c 16,0 -240,96 -368,16" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path82"
+     d="m 276,296 c 10,-5 13,-5 28,-8 -15,-3 -18,-3 -28,-8 2,6 2,10 0,16" />
+  <path
+     style="fill:#000000;stroke:none"
+     inkscape:connector-curvature="0"
+     id="path84"
+     d="m 276,280 c 10,-5 13,-5 28,-8 -15,-3 -18,-3 -28,-8 2,6 2,10 0,16" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path86"
+     d="M 0,432 V 0 h 736 v 432 z" />
+  <text
+     font-size="40"
+     id="text90"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="48"
+     y="96"><tspan
+       x="48"
+       y="96"
+       id="tspan88">A1</tspan></text>
+  <text
+     font-size="40"
+     id="text96"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="624"
+     y="80"><tspan
+       x="624"
+       y="80"
+       id="tspan94">A2</tspan></text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path100"
+     d="M 608,32 V 96 H 720 V 32 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path102"
+     d="m 16,48 v 64 H 128 V 48 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path104"
+     d="m 512,192 c 0,0 80,-48 96,-16" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path106"
+     d="m 496,176 c 1,0 0,-96 112,-112" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path108"
+     d="m 128,192 c 1,0 96,-16 96,16" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path110"
+     d="M 240,192 C 241,192 224,96 128,80" />
+</svg>

@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="logic-gates"
+   width="100%"
+   height="100%"
+   viewBox="-6 -6 646 438"
+   sodipodi:docname="logic-gates.svg"
+   inkscape:export-filename="/home/georgesk/developpement/expeyes/expeyes/ExpEYES17/UserManual/fr/rst/exp/schematics/logic-gates.png"
+   inkscape:export-xdpi="44.859814"
+   inkscape:export-ydpi="44.859814"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)">
+  <metadata
+     id="metadata155">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs153" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1668"
+     inkscape:window-height="1013"
+     id="namedview151"
+     showgrid="false"
+     inkscape:zoom="1.619195"
+     inkscape:cx="323"
+     inkscape:cy="219"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="logic-gates" />
+  <desc
+     id="desc2">
+XCircuit Version 3.7
+File &quot;logic-gates.ps&quot; Page 1
+</desc>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path4"
+     d="m 400,288 h -64 v -96 h 64" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path6"
+     d="m 400,288 a 48,48 0 0 0 0,-96" />
+  <text
+     font-size="40"
+     id="text10"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="47.787556"
+     y="368.04355">
+    <tspan
+       x="47.787556"
+       y="368.04355"
+       id="tspan8">SQ2</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text16"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="51.067558"
+     y="168.56172">
+    <tspan
+       x="51.067558"
+       y="168.56172"
+       id="tspan14">SQ1</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path24"
+     d="m 272,272 h 64" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path26"
+     d="M 336,208 H 272" />
+  <text
+     font-size="40"
+     id="text30"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="528.1806"
+     y="68.932007">
+    <tspan
+       x="528.1806"
+       y="68.932007"
+       id="tspan28">A3</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path36"
+     d="m 448,240 h 48" />
+  <text
+     font-size="40"
+     id="text40"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="258.29968"
+     y="68.932007">
+    <tspan
+       x="258.29968"
+       y="68.932007"
+       id="tspan38">5V</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text46"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="507.78"
+     y="368.76355">
+    <tspan
+       x="507.78"
+       y="368.76355"
+       id="tspan44">GND</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50"
+     d="m 496,322.18356 v 64 h 112 v -64 z" />
+  <text
+     font-size="40"
+     id="text56"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="344.02869"
+     y="256">
+    <tspan
+       x="344.02869"
+       y="256"
+       id="tspan54">7408</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text62"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="304"
+     y="200">
+    <tspan
+       x="304"
+       y="200"
+       id="tspan60">1</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text68"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="304"
+     y="264">
+    <tspan
+       x="304"
+       y="264"
+       id="tspan66">2</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text74"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="464"
+     y="232">
+    <tspan
+       x="464"
+       y="232"
+       id="tspan72">3</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text80"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="400"
+     y="176">
+    <tspan
+       x="400"
+       y="176"
+       id="tspan78">14</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text86"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="416"
+     y="336">
+    <tspan
+       x="416"
+       y="336"
+       id="tspan84">7</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path90"
+     d="M 384,192 V 160" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path92"
+     d="m 384,288 v 32" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse94"
+     cy="144"
+     cx="384" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse96"
+     cy="240"
+     cx="512" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse98"
+     cy="208"
+     cx="256" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse100"
+     cy="272"
+     cx="256" />
+  <circle
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     r="16"
+     id="ellipse102"
+     cy="336"
+     cx="384" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path104"
+     d="M 0,0 V 432 H 640 V 0 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path106"
+     d="m 249.72706,287.28537 c 0,16 -27.47387,68.48696 -104.85365,72.57528"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path108"
+     d="m 144,150.76889 c 32.81305,0.21835 63.90235,-7.37512 105.82581,42.27404"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path110"
+     d="m 384,352 c 13.52964,29.64436 61.64436,8.41683 111.38241,7.91396"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path112"
+     d="m 384,128 c -0.0574,-25.32122 -0.61759,-73.206501 -44.23709,-75.116635"
+     sodipodi:nodetypes="cc" />
+  <g
+     id="g338"
+     transform="translate(0,8)">
+    <path
+       d="m 592,80 v 28"
+       id="path114"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="M 592,208 V 180"
+       id="path116"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+    <path
+       d="m 592,180 14,-6 -28,-12 28,-12 -28,-12 28,-12 -28,-12 14,-6"
+       id="path118"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel" />
+  </g>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path120"
+     d="m 528,240 c 16,0 63.93965,5.00343 64,-24"
+     sodipodi:nodetypes="cc" />
+  <text
+     font-size="40"
+     id="text128"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="67.234436"
+     y="69.23201">
+    <tspan
+       x="67.234436"
+       y="69.23201"
+       id="tspan126">A1</tspan>
+  </text>
+  <text
+     font-size="40"
+     id="text134"
+     style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+     x="63.954433"
+     y="274.27216">
+    <tspan
+       x="63.954433"
+       y="274.27216"
+       id="tspan132">A2</tspan>
+  </text>
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path138"
+     d="m 144,256 c 52.68302,15.7213 61.10108,63.44259 1.74681,86.39254"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path140"
+     d="m 144,144 c 67.53091,-13.10108 64,-80 0,-96"
+     sodipodi:nodetypes="cc" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-3"
+     d="m 31.873805,322.18356 v 64 H 143.87381 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-6"
+     d="m 31.873809,227.69216 v 64 H 143.87381 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-7"
+     d="m 31.873807,122.70172 v 64 H 143.87381 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-5"
+     d="m 31.873806,22.652008 v 64 H 143.87381 v -64 z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-35"
+     d="m 227.0325,22.652004 v 64.000004 h 112 V 22.652004 Z" />
+  <path
+     style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:bevel"
+     inkscape:connector-curvature="0"
+     id="path50-62"
+     d="m 496,22.652008 v 64 h 112 v -64 z" />
+  <g
+     id="g333"
+     transform="translate(30.879541,0.61759082)">
+    <text
+       y="136.58891"
+       x="508.85468"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text144"
+       font-size="40">
+      <tspan
+         id="tspan142"
+         y="136.58891"
+         x="508.85468">1</tspan>
+    </text>
+    <text
+       y="180.52608"
+       x="492.07468"
+       style="font-size:40px;font-family:Helvetica;fill:#000000;stroke:none"
+       id="text144-9"
+       font-size="40">
+      <tspan
+         id="tspan142-1"
+         y="180.52608"
+         x="492.07468">kΩ</tspan>
+    </text>
+  </g>
+</svg>
