@@ -24,9 +24,9 @@ un fototransistor.
 
 La entrada SEN está conectada en 5 V a través de una resistencia de 
 :math:`5,1~k\Omega`. La salida del fototransistor crea una señal de frecuencia
-:math:`1~kHz`como muestra la figura. La onda cuadrada es el voltaje que 
+:math:`1~kHz` como muestra la figura. La onda cuadrada es el voltaje que 
 alimenta el LED. Cuando el LED está encendido, el fototransistor es un
-conductor y el voltaje en el colector cae a :math:`0,2~V`. Cuando el LED
+conductor y el voltaje en el colector cae a :math:`0,2~V` . Cuando el LED
 está apagado, el transistor entra en modo de aislamiento y el colector vuelve
 al voltaje de la fuente de alimentación. Los tiempos de ascenso y caída del
 foto transistor parecen ser diferentes. Encuentra el límite superior en

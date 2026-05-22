@@ -39,7 +39,7 @@ escuela hasta la universidad. También se puede utilizar como equipo de prueba
 para ingenieros electrónicos o aficionados al bricolaje. La arquitectura simple y 
 abierta de expEYES permite usuarios para desarrollar nuevas experiencias 
 sin entrar en los detalles de la electrónica y la programación de computadoras.
-Este manual del usuario describe * expEYES-17 * con varios experimentos, 
+Este manual del usuario describe *expEYES-17* con varios experimentos, 
 y también hay un manual del programador.
 
 

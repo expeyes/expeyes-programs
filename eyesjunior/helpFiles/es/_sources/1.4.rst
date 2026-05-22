@@ -3,12 +3,12 @@ El programa principal de gráficos
 
 Inicie Aplicaciones-> Educación-> ExpEYES-17 desde el menú. Una 
 pantalla de osciloscopio de cuatro canales con muchas más funciones, 
-abierta como se muestra en la figura :ref:`the-scope17-screen`.
+abierta como se muestra en la figura [scope17_].
 Podemos elegir muchas experiencias del menú.
 
-.. _the-scope17-screen:
-.. figure:: pics/scope17.*
-
+.. figure:: pics/scope-screen-es.png
+    :name: scope17
+    
     Scope17
 
     La pantalla scope17 que muestra dos trazas

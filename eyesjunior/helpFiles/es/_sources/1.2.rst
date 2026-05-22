@@ -5,7 +5,7 @@ ExpEYES-17 está conectado y alimentado a través
 del puerto USB de la computadora.
 Para conectar señales externas, tiene varias entradas / 
 salidas, ubicadas en cada lado, como se muestra en la 
-figura: ref: `fig-e17`.
+figura [figE17_].
 Puede monitorear y controlar voltajes en sus conexiones. 
 Para medir otros parámetros (como temperatura, presión, etc.), 
 es necesario convertirlos en señales eléctricas utilizando sensores adecuados.
@@ -27,9 +27,11 @@ experimentos de electricidad y electrónica.
 :math:`\pm16`
 *los voltios y las entradas IN1 e IN2 deben estar en el rango de 0 a 3.3 V. El voltaje excesivo puede causar daños permanentes. Para medir voltajes más altos, disminuya usando divisores de voltaje.*
 
-.. _fig-e17:
-.. figure:: pics/eyes17-panel.jpg
-	   :width: 400px
+.. _figE17:
+
+.. figure::
+   pics/eyes17-panel.jpg
+   :figwidth: 400px
 
    ExpEYES17
    
