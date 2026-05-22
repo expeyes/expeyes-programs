@@ -3,7 +3,7 @@
 ##### This part is to generate html files in the current directory ###########
 
 SOURCES = $(wildcard _sources/*.rst | grep -v index.rst | sed 's%_sources/%%')
-HTML_FILES = $(patsubst %.rst, %.html, $(SOURCES))
+HTML_FILES = $(patsubst _sources/%.rst, %.html, $(SOURCES))
 
 all: $(HTML_FILES)
 	@echo
